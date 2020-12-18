@@ -5,7 +5,7 @@
     typeof="BreadcrumbList"
   >
     <li class="inline-block" property="itemListElement" typeof="ListItem">
-      <nuxt-link property="item" typeof="WebPage" to="/">
+      <nuxt-link no-prefetch property="item" typeof="WebPage" to="/">
         <span property="name">Vonage Learn</span>
       </nuxt-link>
       <meta property="position" content="1" />
@@ -17,7 +17,7 @@
       property="itemListElement"
       typeof="ListItem"
     >
-      <nuxt-link property="item" typeof="WebPage" :to="crumb.path">
+      <nuxt-link no-prefetch property="item" typeof="WebPage" :to="crumb.path">
         <span property="name">{{
           $route.fullPath === crumb.path && title !== null ? title : crumb.title
         }}</span>
@@ -42,7 +42,13 @@ export default {
     crumbs() {
       const fullPath = this.$route.fullPath
       const path = fullPath.startsWith('/') ? fullPath.substring(1) : fullPath
-      const params = path.split('#').shift().split('?').shift().split('/')
+      const params = path
+        .split('#')
+        .shift()
+        .split('?')
+        .shift()
+        .split('/')
+        .filter((p) => p.length > 0)
       const crumbs = []
 
       let newPath = ''
