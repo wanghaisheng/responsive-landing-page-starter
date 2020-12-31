@@ -261,6 +261,7 @@ export default {
   // https://nuxtjs.org/docs/2.x/configuration-glossary/configuration-router#base
   router: {
     routeNameSplitter: '/',
+    trailingSlash: true,
   },
 
   build: {
