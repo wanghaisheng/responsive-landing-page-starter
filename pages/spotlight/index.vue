@@ -204,6 +204,7 @@
               method="POST"
               data-netlify="true"
               netlify-honeypot="some-info"
+              action="/spotlight/success/"
             >
               <div class="hidden">
                 <input type="hidden" name="form-name" value="spotlight" />
