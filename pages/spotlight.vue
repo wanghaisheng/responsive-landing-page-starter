@@ -208,7 +208,8 @@
               <div class="hidden">
                 <input type="hidden" name="form-name" value="spotlight" />
                 <label
-                  >Don’t fill this out if you’re human: <input name="some-info"
+                  >Don’t fill this out if you are human:
+                  <input name="some-info"
                 /></label>
               </div>
               <div>
