@@ -173,7 +173,7 @@
               And Now Introducing:
               <a
                 class="text-purple"
-                href="https://www.nexmo.com/blog/2019/09/04/nexmo-launches-spotlight-for-donations-program-dr"
+                href="https://www.nexmo.com/legacy-blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr"
                 >Spotlight for Donations</a
               >
             </p>
