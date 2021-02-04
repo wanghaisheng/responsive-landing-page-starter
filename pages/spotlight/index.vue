@@ -264,6 +264,7 @@
                     name="background"
                     rows="3"
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    required
                   ></textarea>
                 </div>
               </div>
@@ -286,16 +287,16 @@
                     name="outline"
                     rows="10"
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
-                  >
-example:
+                    required
+                    placeholder="example:
 - Title
 - Reader installs the Vonage Node SDK
 - Create a new server with webhook endpoints
 - Add data storage to the server
 - Create a form where user can submit their phone number
 - Etc.
-- Conclusion
-                  </textarea>
+- Conclusion"
+                  ></textarea>
                 </div>
               </div>
               <div>
@@ -303,7 +304,7 @@ example:
                   for="product"
                   class="block text-sm font-medium text-gray-700"
                 >
-                  Please select which Vonage product/s you are going to use in
+                  Please select the main Vonage product you are going to use in
                   your tutorial
                 </label>
                 <div class="mt-1">
@@ -311,8 +312,9 @@ example:
                     id="product"
                     name="product"
                     class="block w-full pl-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm rounded-md"
-                    multiple
+                    required
                   >
+                    <option></option>
                     <option>SMS API</option>
                     <option>Account API</option>
                     <option>Alerts API - Subscription</option>
