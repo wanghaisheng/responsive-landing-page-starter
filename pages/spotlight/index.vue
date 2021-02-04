@@ -55,6 +55,47 @@
                 class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
               >
                 <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              What's in it for You?
+            </h2>
+            <p class="mb-2">
+              We pay $500 USD per post. Your tutorial will be published on our
+              blog, and may be shared in our newsletter or showcased as part of
+              our "Tutorial Tuesday" weekly feature.
+            </p>
+            <p class="text-sm mb-2">
+              We make every effort to amplify the reach of each and every blog
+              post on our site, and yours will be no exception; you'll have the
+              Vonage marketing and social media teams behind you getting the
+              word out about your work. Your success is our success.
+            </p>
+            <p class="mb-2">
+              And Now Introducing:
+              <a
+                class="text-purple"
+                href="https://www.nexmo.com/legacy-blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr"
+                >Spotlight for Donations</a
+              >
+            </p>
+            <p class="text-sm mb-2">
+              Authors can now choose to pay it forward and donate their $500 to
+              a charity making a difference in the technology industry.
+            </p>
+
+            <h2 class="text-lg font-bold mb-2 mt-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
+              >
+                <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
                   strokeWidth="{2}"
@@ -141,47 +182,7 @@
           <article
             class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-white p-6"
           >
-            <h2 class="text-lg font-bold mb-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="{2}"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-                />
-              </svg>
-              What's in it for You?
-            </h2>
-            <p class="mb-2">
-              We pay $500 USD per post. Your tutorial will be published on our
-              blog, and may be shared in our newsletter or showcased as part of
-              our "Tutorial Tuesday" weekly feature.
-            </p>
-            <p class="text-sm mb-2">
-              We make every effort to amplify the reach of each and every blog
-              post on our site, and yours will be no exception; you'll have the
-              Vonage marketing and social media teams behind you getting the
-              word out about your work. Your success is our success.
-            </p>
-            <p class="mb-2">
-              And Now Introducing:
-              <a
-                class="text-purple"
-                href="https://www.nexmo.com/legacy-blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr"
-                >Spotlight for Donations</a
-              >
-            </p>
-            <p class="text-sm mb-2">
-              Authors can now choose to pay it forward and donate their $500 to
-              a charity making a difference in the technology industry.
-            </p>
-            <h2 class="text-lg font-bold mt-4">
+            <h2 class="text-lg font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -272,14 +273,68 @@
                   class="block text-sm font-medium text-gray-700"
                 >
                   The outline of your blog post idea
+                  <br />
+                  <small
+                    >Please be as specific as possible in your outline. If your
+                    draft doesn't match what we expected from your outline, we
+                    may not be able to publish it</small
+                  >
                 </label>
                 <div class="mt-1">
                   <textarea
                     id="outline"
                     name="outline"
-                    rows="3"
+                    rows="10"
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
-                  ></textarea>
+                  >
+example:
+- Title
+- Reader installs the Vonage Node SDK
+- Create a new server with webhook endpoints
+- Add data storage to the server
+- Create a form where user can submit their phone number
+- Etc.
+- Conclusion
+                  </textarea>
+                </div>
+              </div>
+              <div>
+                <label
+                  for="product"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  Please select which Vonage product/s you are going to use in
+                  your tutorial
+                </label>
+                <div class="mt-1">
+                  <select
+                    id="product"
+                    name="product"
+                    class="block w-full pl-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm rounded-md"
+                    multiple
+                  >
+                    <option>SMS API</option>
+                    <option>Account API</option>
+                    <option>Alerts API - Subscription</option>
+                    <option>Alerts API - Sending</option>
+                    <option>Application API</option>
+                    <option>Audit API</option>
+                    <option>Conversation API</option>
+                    <option>Dispatch API</option>
+                    <option>External Accounts API</option>
+                    <option>Media API</option>
+                    <option>Messages API</option>
+                    <option>Number Insight API</option>
+                    <option>Number Management API</option>
+                    <option>NCCO</option>
+                    <option>Pricing API</option>
+                    <option>Redact API</option>
+                    <option>Reports API</option>
+                    <option>Verify API</option>
+                    <option>Voice API</option>
+                    <option>Voice Webhooks</option>
+                    <option>2FA</option>
+                  </select>
                 </div>
               </div>
               <div>
@@ -295,7 +350,40 @@
                     name="previous_content"
                     type="previous_content"
                     autocomplete="previous_content"
-                    required
+                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="twitter"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  Twitter profile name
+                </label>
+                <div class="mt-1">
+                  <input
+                    id="twitter"
+                    name="twitter"
+                    type="twitter"
+                    autocomplete="twitter"
+                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  for="github"
+                  class="block text-sm font-medium text-gray-700"
+                >
+                  GitHub profile name
+                </label>
+                <div class="mt-1">
+                  <input
+                    id="github"
+                    name="github"
+                    type="github"
+                    autocomplete="github"
                     class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                   />
                 </div>
