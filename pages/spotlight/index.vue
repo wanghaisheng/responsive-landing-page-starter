@@ -9,9 +9,9 @@
       <section class="index-section">
         <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <article
-            class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-white p-6"
+            class="flex flex-col p-6 overflow-hidden bg-white rounded-lg shadow-lg"
           >
-            <h2 class="text-lg font-bold mb-2">
+            <h2 class="mb-2 text-lg font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -29,24 +29,43 @@
               What We're Looking For
             </h2>
             <p class="mb-2">
-              We're interested in both technical tutorials and general pieces on
-              programming. Successful submissions will be:
+              Our goal is simple: we want to see what you're doing with Vonage’s
+              products, and we want you to share your story with the community.
             </p>
-            <p class="text-sm mb-2">
+            <p class="mb-2">
+              We're interested in technical tutorials on something original you
+              have built, an innovative use case, or some interesting
+              third-party integrations that use Vonage products.
+            </p>
+            <p class="mb-2">Successful submissions will be:</p>
+            <p class="mb-2 text-sm">
               <strong>Original.</strong> Literally, we want original work
               (nothing that has been published elsewhere). And more
               figuratively, we want to see original thought and interesting
               points of view we can't find anywhere else.
             </p>
-            <p class="text-sm mb-2">
+            <p class="mb-2 text-sm">
               <strong>Well-written.</strong> Our standards are high, and we want
               everything published on our blog to meet those standards. That
               said, you don't have to be a professional writer to submit! If the
               post is original, helpful and interesting, our editorial team is
-              happy to work with you to get it publication ready.
+              happy to work with you to get it publication-ready.
             </p>
-
-            <h2 class="text-lg font-bold mb-2 mt-4">
+            <p class="mb-2 text-sm">
+              <strong>Code-driven. </strong> The result of your post should be
+              something a reader can build upon. The code should be clearly
+              explained and helpfully split up.
+            </p>
+            <p class="mb-2">
+              To get a better understanding of the sort of articles that we are
+              looking for, please take a look at the ones that have been
+              <a
+                href="https://learn.vonage.com/blog/spotlight/"
+                class="text-purple-dark"
+                >successfully published</a
+              >
+            </p>
+            <h2 class="mt-4 mb-2 text-lg font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -57,37 +76,39 @@
                 <path
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  stroke-width="{2}"
-                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                  stroke-width="2"
+                  d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
                 />
               </svg>
-              What's in it for You?
-            </h2>
-            <p class="mb-2">
-              We pay $500 USD per post. Your tutorial will be published on our
-              blog, and may be shared in our newsletter or showcased as part of
-              our "Tutorial Tuesday" weekly feature.
-            </p>
-            <p class="text-sm mb-2">
-              We make every effort to amplify the reach of each and every blog
-              post on our site, and yours will be no exception; you'll have the
-              Vonage marketing and social media teams behind you getting the
-              word out about your work. Your success is our success.
-            </p>
-            <p class="mb-2">
-              And Now Introducing:
-              <a
-                class="text-purple"
-                href="https://www.nexmo.com/legacy-blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr"
-                >Spotlight for Donations</a
-              >
-            </p>
-            <p class="text-sm mb-2">
-              Authors can now choose to pay it forward and donate their $500 to
-              a charity making a difference in the technology industry.
-            </p>
 
-            <h2 class="text-lg font-bold mb-2 mt-4">
+              What We're Not Looking For
+            </h2>
+
+            <ul class="pl-6 mb-2 list-disc">
+              <li>Beginner-level tutorials on how to use Vonage APIs</li>
+              <li>Thought leadership articles</li>
+              <li>
+                Introduction to different frameworks, programming languages, and
+                modern development techniques
+              </li>
+              <li>
+                Articles on a broad topic such as trends in development or
+                anything that is not a step-by-step tutorial
+              </li>
+              <li>Articles about blogging or writing technical content</li>
+              <li>
+                Articles that have already been published on other platforms
+              </li>
+              <li>
+                Tutorials on topics that we have already covered. You can check
+                what we have already published on our
+                <a class="text-purple-dark" href="https://learn.vonage.com/"
+                  >learning platform
+                </a>
+              </li>
+            </ul>
+
+            <h2 class="mt-4 mb-2 text-lg font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -104,13 +125,12 @@
               </svg>
               Does my post have to be about Vonage products?
             </h2>
-            <p class="mb-2">Your posts should involve Vonage products.</p>
-            <p class="text-sm mb-2">
-              It can be any of them: SMS, Voice, Video, Verify, Conversation
-              APIs, or one of the other tools of our communication suite.
+            <p class="mb-2">
+              Your posts must involve Vonage products. It can be any of them:
+              SMS, Voice, Video, Verify, Conversation APIs, or one of the other
+              tools of our communication suite.
             </p>
-
-            <h2 class="text-lg font-bold mb-2 mt-4">
+            <h2 class="mt-4 mb-2 text-lg font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -134,24 +154,50 @@
               The Process
             </h2>
             <p class="mb-2">
-              When we receive your submission, our editorial team will evaluate
-              it to see if it's a good fit for the Vonage blog.
-            </p>
-            <p class="text-sm mb-2">
-              Submission is not a guarantee that your work will be published; we
-              reserve the right to decline submissions that aren't right for our
-              platform. But we really want to help you get published so if you
-              take the time to submit, we will review your work and provide
-              feedback. Our goal is simple: we want to see what you're doing
-              with Vonages's products, and we want you to share your story with
-              the community.
-            </p>
-            <p class="text-sm mb-2">
-              We'll be in touch to let you know if we want to publish your post
-              and tell you what the next steps are.
+              When you send your idea via the submission form below, our
+              Developer Education Team will evaluate it to see if it's a good
+              fit for the Vonage blog.
             </p>
 
-            <h2 class="text-lg font-bold mb-2 mt-4">
+            <p class="mb-2">
+              If we think your idea is in line with our needs, we'll be in touch
+              to let you know we want to publish your post and tell you what the
+              next steps are.
+            </p>
+
+            <p class="mb-2">
+              Submission is not a guarantee that your work will be published; we
+              reserve the right to decline submissions that aren't right for our
+              platform.
+              <span class="text-red"
+                >We may also be unable to publish your work if your draft isn’t
+                what we expected from your submission, so please be as specific
+                as possible!</span
+              >
+            </p>
+
+            <p class="mb-2">
+              All the submissions will be reviewed and will receive feedback.
+            </p>
+
+            <p class="mb-2">
+              From the day of acceptance, we expect to receive your complete
+              draft within 3 weeks, but we are not strict on the deadline. If
+              you need more time to write, that’s totally fine.
+            </p>
+
+            <p class="mb-2">
+              Before you begin working on your article, we recommend that you
+              read our
+              <a
+                class="text-purple-dark"
+                href="https://learn.vonage.com/contributing/#writing-style-guide
+"
+                >Style Guide</a
+              >.
+            </p>
+
+            <h2 class="mt-4 mb-2 text-lg font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -172,7 +218,7 @@
               You do! You grant Vonage an unlimited license to publish and
               promote your post, but you retain full ownership.
             </p>
-            <p class="text-sm mb-2">
+            <p class="mb-2 text-sm">
               This means you are free to re-publish elsewhere (on your own
               Medium page, for example). All we require is that you add a
               <code>rel=canonical</code> tag to your post wherever possible,
@@ -180,9 +226,68 @@
             </p>
           </article>
           <article
-            class="flex flex-col overflow-hidden rounded-lg shadow-lg bg-white p-6"
+            class="flex flex-col p-6 overflow-hidden bg-white rounded-lg shadow-lg"
           >
-            <h2 class="text-lg font-bold">
+            <h2 class="mb-2 text-lg font-bold">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="{2}"
+                  d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+                />
+              </svg>
+              What's in it for You?
+            </h2>
+            <p class="mb-2">
+              We pay $500 USD per post. Your tutorial will be published on our
+              <a
+                class="text-purple-dark"
+                href="https://learn.vonage.com/
+"
+                >learning platform</a
+              >
+              and may be shared in our newsletter or showcased during
+              <a
+                class="text-purple-dark"
+                href="https://www.youtube.com/playlist?list=PLWYngsniPr_nK-YY-YsUBNrD74adnsSnE
+
+"
+                >The Dev Lounge</a
+              >
+              stream.
+            </p>
+            <p class="mb-2 text-sm">
+              We make every effort to amplify the reach of each and every blog
+              post on our site, and yours will be no exception; you'll have the
+              Vonage marketing and social media teams behind you getting the
+              word out about your work. Your success is our success.
+            </p>
+            <p class="mb-2 text-sm">
+              You can also choose to donate the $500 to a charity, making a
+              difference in the technology industry.
+            </p>
+
+            <p class="mb-2">
+              And Now Introducing:
+              <a
+                class="text-purple"
+                href="https://www.nexmo.com/legacy-blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr"
+                >Spotlight for Donations</a
+              >
+            </p>
+            <p class="mb-2 text-sm">
+              Authors can now choose to pay it forward and donate their $500 to
+              a charity making a difference in the technology industry.
+            </p>
+
+            <h2 class="mt-4 text-lg font-bold">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -228,7 +333,7 @@
                     type="name"
                     autocomplete="name"
                     required
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                   />
                 </div>
               </div>
@@ -246,7 +351,7 @@
                     type="email_address"
                     autocomplete="email_address"
                     required
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                   />
                 </div>
               </div>
@@ -263,7 +368,7 @@
                     id="background"
                     name="background"
                     rows="3"
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                     required
                   ></textarea>
                 </div>
@@ -286,7 +391,7 @@
                     id="outline"
                     name="outline"
                     rows="10"
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                     required
                     placeholder="example:
 - Title
@@ -311,7 +416,7 @@
                   <select
                     id="product"
                     name="product"
-                    class="block w-full pl-3 py-2 border border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm rounded-md"
+                    class="block w-full py-2 pl-3 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                     required
                   >
                     <option></option>
@@ -352,7 +457,7 @@
                     name="previous_content"
                     type="previous_content"
                     autocomplete="previous_content"
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                   />
                 </div>
               </div>
@@ -369,7 +474,7 @@
                     name="twitter"
                     type="twitter"
                     autocomplete="twitter"
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                   />
                 </div>
               </div>
@@ -386,7 +491,7 @@
                     name="github"
                     type="github"
                     autocomplete="github"
-                    class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
+                    class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
                   />
                 </div>
               </div>
@@ -405,7 +510,7 @@
                 <button
                   type="submit"
                   name="commit"
-                  class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm text-white bg-black border-black hover:bg-white hover:text-black active:bg-purple-dark active:text-white active:border-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-dark font-bold"
+                  class="flex justify-center w-full px-4 py-2 text-sm font-bold text-white bg-black border border-transparent border-black rounded-md shadow-sm hover:bg-white hover:text-black active:bg-purple-dark active:text-white active:border-purple-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-dark"
                 >
                   Submit my idea
                 </button>
