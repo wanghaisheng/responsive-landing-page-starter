@@ -37,21 +37,21 @@
               have built, an innovative use case, or some interesting
               third-party integrations that use Vonage products.
             </p>
-            <p class="mb-2">Successful submissions will be:</p>
-            <p class="mb-2 text-sm">
+            <p class="mb-1">Successful submissions will be:</p>
+            <p class="mb-2">
               <strong>Original.</strong> Literally, we want original work
               (nothing that has been published elsewhere). And more
               figuratively, we want to see original thought and interesting
               points of view we can't find anywhere else.
             </p>
-            <p class="mb-2 text-sm">
+            <p class="mb-2">
               <strong>Well-written.</strong> Our standards are high, and we want
               everything published on our blog to meet those standards. That
               said, you don't have to be a professional writer to submit! If the
               post is original, helpful and interesting, our editorial team is
               happy to work with you to get it publication-ready.
             </p>
-            <p class="mb-2 text-sm">
+            <p class="mb-2">
               <strong>Code-driven. </strong> The result of your post should be
               something a reader can build upon. The code should be clearly
               explained and helpfully split up.
@@ -168,12 +168,9 @@
             <p class="mb-2">
               Submission is not a guarantee that your work will be published; we
               reserve the right to decline submissions that aren't right for our
-              platform.
-              <span class="text-red"
-                >We may also be unable to publish your work if your draft isn’t
-                what we expected from your submission, so please be as specific
-                as possible!</span
-              >
+              platform. We may also be unable to publish your work if your draft
+              isn’t what we expected from your submission, so please be as
+              specific as possible!
             </p>
 
             <p class="mb-2">
@@ -218,7 +215,7 @@
               You do! You grant Vonage an unlimited license to publish and
               promote your post, but you retain full ownership.
             </p>
-            <p class="mb-2 text-sm">
+            <p class="mb-2">
               This means you are free to re-publish elsewhere (on your own
               Medium page, for example). All we require is that you add a
               <code>rel=canonical</code> tag to your post wherever possible,
@@ -263,13 +260,13 @@
               >
               stream.
             </p>
-            <p class="mb-2 text-sm">
+            <p class="mb-2">
               We make every effort to amplify the reach of each and every blog
               post on our site, and yours will be no exception; you'll have the
               Vonage marketing and social media teams behind you getting the
               word out about your work. Your success is our success.
             </p>
-            <p class="mb-2 text-sm">
+            <p class="mb-2">
               You can also choose to donate the $500 to a charity, making a
               difference in the technology industry.
             </p>
@@ -282,7 +279,7 @@
                 >Spotlight for Donations</a
               >
             </p>
-            <p class="mb-2 text-sm">
+            <p class="mb-2">
               Authors can now choose to pay it forward and donate their $500 to
               a charity making a difference in the technology industry.
             </p>
