@@ -2,6 +2,7 @@
   <div>
     <Twitch />
     <HeroSearch />
+    <TeamSites />
     <main class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
       <section class="index-section">
         <h2>
