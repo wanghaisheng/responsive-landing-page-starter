@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-screen-xl px-4 mx-auto -mt-6 sm:px-6 lg:px-8">
+  <div class="max-w-screen-xl px-4 mx-auto mt-6 md:-mt-6 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
       <CardTeamSite
         title="Vonage Developer"

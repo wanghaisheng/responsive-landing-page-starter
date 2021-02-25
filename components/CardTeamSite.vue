@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex p-px align-top rounded-lg shadow-lg bg-gradient-to-b"
+    class="flex flex-col p-px align-top rounded-lg shadow-lg bg-gradient-to-b"
     :class="gradient"
   >
     <component
@@ -8,7 +8,7 @@
       :to="internal ? localePath(link) : ''"
       :href="!internal ? link : ''"
       :target="!internal ? '_blank' : ''"
-      class="flex flex-col overflow-hidden rounded-lg"
+      class="flex flex-col flex-1 overflow-hidden rounded-lg"
     >
       <section class="flex flex-col items-start flex-1 p-6 bg-white">
         <h2 class="mb-4 text-lg">
