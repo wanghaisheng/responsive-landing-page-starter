@@ -36,7 +36,7 @@ Clone this [repository](https://github.com/themmyloluwaa/nextjs-graphql-prisma-s
 -   Prisma CLI
 -   A Vonage Account
 
-<signup></signup>
+<sign-up></sign-up>
 
 Now, let’s understand the project directory.
 
