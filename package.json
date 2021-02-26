@@ -15,7 +15,8 @@
     "release": "release-it",
     "blog": "node bin/blog",
     "opengraph": "node bin/opengraph",
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "heroku-postbuild": "nuxt build"
   },
   "dependencies": {
     "@nuxt/content": "^1.10.0",
