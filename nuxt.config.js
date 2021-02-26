@@ -33,7 +33,7 @@ const previewRoute = () => {
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
-  target: 'static',
+  target: 'server',
 
   // Env (https://nuxtjs.org/api/configuration-env/)
   env: {
