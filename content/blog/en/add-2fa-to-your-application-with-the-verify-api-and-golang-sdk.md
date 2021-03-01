@@ -123,7 +123,7 @@ func main() {
 
 To understand what pages our web app has to present to users, consider the workflow we are going to implement:
 
-![The verification process](/content/blog/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk/go-verify-flowchart.png "The verification process")
+![The verification process](/content/blog/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk/go-2fa-workflow.png "The verification process")
 
 From this, you can see that we need the following pages:
 
@@ -554,18 +554,14 @@ You're all done! Now it's time to test your application.
 2. Visit http://localhost:5000 in your browser
 3. Enter your name and phone number, including the dialing code but omitting any leading zeroes. For example, the UK mobile phone number `07700900001` should be entered as `447700900001`:
 
-
    ![Enter your name and phone number](/content/blog/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk/go-verify-screen-1.png "Registration page")
 4. You'll receive an SMS containing a six-digit code:
-
 
    ![SMS containing PIN code](/content/blog/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk/go-verify-sms.jpeg "The verification code, sent by SMS")
 5. Enter that code into the app:
 
-
    ![Enter the code into the app](/content/blog/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk/go-verify-screen-2.png "Entering the verificaiton code")
 6. You are registered and sent to the home page:
-
 
    ![Signed in at the home page]( "Signed in at the home page")
 
