@@ -135,7 +135,7 @@ We'll create these pages using [Go templates](https://golang.org/pkg/html/templa
 
 First, add the `html/template` module to the list of imports in `main.go`. Then, create the following templates in the `tmpl` directory:
 
-### The base page
+### The base page template
 
 This is the base layout that all our templates will use. The `{{template "main" .}}` directive lets us populate the page body with content from the other templates:
 
@@ -161,7 +161,7 @@ This is the base layout that all our templates will use. The `{{template "main" 
 {{end}}
 ```
 
-### The home page
+### The home page template
 
 When the user has successfully registered for the service, this page will display their name and phone number:
 
@@ -175,7 +175,7 @@ When the user has successfully registered for the service, this page will displa
 {{end}} 
 ```
 
-### The registration page
+### The registration page template
 
 This template includes a form where the user can enter their name and phone number to register for the service:
 
@@ -198,7 +198,7 @@ This template includes a form where the user can enter their name and phone numb
 {{end}} 
 ```
 
-### The enter code page
+### The enter code page template
 
 This page displays a form where the user enters the code they received from the Verify API:
 
