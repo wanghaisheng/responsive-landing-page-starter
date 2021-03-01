@@ -34,7 +34,7 @@ The [Vonage Verify API](https://developer.nexmo.com/verify/overview) makes it re
 
 And, to make things more exciting, we're going to be building this in our [brand new (beta) Go SDK](https://pkg.go.dev/github.com/vonage/vonage-go-sdk). This should please all you hardened Gophers out there and perhaps even encourage others to have their first experience of Go development? (Spoiler alert: I think you'll *love* Go!)
 
-Let's get to it!
+Let's get to it! (If you don't have time to code along, you can find [the source code on GitHub](https://github.com/nexmo-community/go-verify-example/)). 
 
 ## Register for a Vonage API account
 
@@ -567,13 +567,14 @@ You're all done! Now it's time to test your application.
 
 ## What next?
 
-Hopefully you've seen how easy it is to use the Verify API and Go SDK to enable two-factor authentication in your apps. In fact, the whole verification process only required a few lines of code! The bulk of the work here was creating and managing the UI.
+Hopefully, you've seen how easy it is to use the Verify API and Go SDK to enable two-factor authentication in your apps. In fact, the whole verification process only required a few lines of code! The bulk of the work here was creating and managing the UI.
 
-If you want to improve this demo, a couple of ideas occur to me.
+**Note**: If you didn't manage to follow along, you can find the [full source code for this tutorial](https://github.com/nexmo-community/go-verify-example/) on GitHub.
 
-My first concern is the not-so-graceful exit when the user enters the wrong code. You could redirect the user to the enter code page and simultaneously [check the progress of the request](https://developer.nexmo.com/api/verify#verifySearch), maybe even [cancelling an in-progress request](https://developer.nexmo.com/api/verify#verifyControl) after two many failed attempts.
+Think this demo could use some improvements? I agree! These are the ones that occur to me:
 
-Secondly, you could make the format in which users are required to enter their phone numbers a lot easier. The Vonage APIs expect phone numbers to be in [E.164 format](https://developer.nexmo.com/concepts/guides/glossary#e-164-format), but there's no reason why you should inflict that on your users! You could have them enter their local number and country from a drop-down list and use the [Vonage Number Insight API](https://developer.nexmo.com/number-insight/code-snippets/number-insight-basic) to convert it into the right format. That would also provide a handy check that the number the user entered is a legitimate one.
+* **The not-so-graceful exit when the user enters the wrong code**. Instead, you could redirect the user to the enter code page and simultaneously [check the progress of the request](https://developer.nexmo.com/api/verify#verifySearch), maybe even [cancelling an in-progress request](https://developer.nexmo.com/api/verify#verifyControl) after two many failed attempts.
+* **The format in which users are required to enter their phone numbers**. The Vonage APIs expect phone numbers to be in [E.164 format](https://developer.nexmo.com/concepts/guides/glossary#e-164-format), but there's no reason why you should inflict that on your users! You could have them enter their local number and country from a drop-down list and use the [Vonage Number Insight API](https://developer.nexmo.com/number-insight/code-snippets/number-insight-basic) to convert it into the right format. That would also provide a handy check that the number the user entered is a legitimate one.
 
 We hope you're as excited about our new Go SDK as we are. To find out more about it, and the Verify API, check out the following resources:
 
