@@ -481,8 +481,6 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
             var arguments = 'SdkState.${methodCall.arguments}';
             _sdkState = SdkState.values.firstWhere((v) {return v.toString() == arguments;}
             );
-
-            print(_sdkState);
           });
         }
         break;
@@ -491,5 +489,32 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
     }
   }
 ```
+Now update `` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
 
-No Hot reload
+```
+Widget _updateView() {
+    if (_sdkState == SdkState.LOGGED_OUT) {
+      return ElevatedButton(
+          onPressed: () { _loginUser(); },
+          child: Text("LOGIN AS ALICE")
+      );
+    }  else if (_sdkState == SdkState.WAIT) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    } else if (_sdkState == SdkState.LOGGED_IN) {
+      return ElevatedButton(
+          onPressed: () { _makeCall(); },
+          child: Text("MAKE PHONE CALL")
+      );
+    }
+  }
+```
+
+During `SdkState.WAIT` progress bar will be displayed. Aftre sucessfull login application will show `MAKE PHONE CALL` button.
+
+> NOTE: While modyfying Android native code Flutter hot reload will not work. You have to stop the application and run it again.
+
+Run the app now and click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (another state of the Flutter app).   
+
+### Make a call
