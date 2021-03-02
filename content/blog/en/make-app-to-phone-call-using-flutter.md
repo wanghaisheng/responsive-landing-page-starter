@@ -292,9 +292,7 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI.
-
-The above code will call `loginUser` method defined in `MainActivity` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` the field at the top of `_CallWidgetState` class:
+Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token`. The `loginUser` method defined in `MainActivity` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` the field at the top of `_CallWidgetState` class:
 
 ```
 class _CallWidgetState extends State<CallWidget> {
@@ -302,8 +300,64 @@ class _CallWidgetState extends State<CallWidget> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 ```
 
-Now you need to handle this method on the native Android side. Open `MainActivity` class and 
+Now you need to handle this method on the native Android side. Open `MainActivity` class. Not that Futter plugin displays a hint to open this Andrid project in the separate instance of Androdid Studio (another window). Do so to have better code completion:
+
+![](/content/blog/make-app-to-phone-call-using-flutter/openinas.png)
+
+> NOTE: This happens because the Fluter project consists of the Android project and the iOS project
+
+To listen for method calls originating from Flutter add `addFlutterChannelListener` method call inside `configureFlutterEngine` method:
+
+```
+override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
+
+        addFlutterChannelListener()
+    }
+```
+
+Now add `addFlutterChannelListener` and `login` methods inside `MainActivity` class (same level as above `configureFlutterEngine` method):
+
+```
+private fun addFlutterChannelListener() {
+        MethodChannel(flutterEngine?.dartExecutor?.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
+
+            when (call.method) {
+                "loginUser" -> {
+                    val token = requireNotNull(call.argument<String>("token"))
+                    login(token)
+                    result.success("")
+                }
+            }
+        }
+    }
+
+private fun login(token: String) {
+        Log.d("TAG" "login with token: $token")
+}
+```
+
+After running the application you should see `login with token...` message at Logcat. Now it's time to create missing `client`. 
+
+### Add Nexmo SDK dependency
+
+Add a custom Maven URL repository to your Gradle configuration. Add the following maven block inside the `allprojects` block within the project-level `build.gradle.kts` file:
+
+```
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        maven {
+            url "https://artifactory.ess-dev.com/artifactory/gradle-dev-local"
+        }
+    }
+}
+```
 
 
 
-![]()
+
+
+
