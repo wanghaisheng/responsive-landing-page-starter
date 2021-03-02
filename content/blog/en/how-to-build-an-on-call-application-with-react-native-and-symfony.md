@@ -1,5 +1,5 @@
 ---
-title: How To Build an on-Call Application With React Native and Symfony
+title: How To Build an On-Call Application With React Native and Symfony
 description: Learn how to build an on call application using React Native and Symfony
 author: greg-holmes
 published: true
