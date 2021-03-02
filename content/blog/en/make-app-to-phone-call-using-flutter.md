@@ -158,7 +158,7 @@ Connect Android device or emulator and run the app to verify that everything wor
 
 ## Two-way Flutter/Android communication
 
-Currently, Client SDK is not available as a Flutter package, so you have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using methodChannel (https://api.flutter.dev/flutter/services/MethodChannel-class.html). Flutter will call methods defined in ANdroid code (MainActivity.kt) and Android will invoke `updateState` method to notify Flutter about SDK state updates. 
+Currently, Client SDK is not available as a Flutter package, so you have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using methodChannel (https://api.flutter.dev/flutter/services/MethodChannel-class.html). Flutter will call various methods defined in Android code (`MainActivity` class) and Android will invoke `updateState` method to notify Flutter about SDK state updates. 
 
 ## Building the Flutter part
 
@@ -208,6 +208,18 @@ class _CallWidgetState extends State<CallWidget> {
         ),
       ),
     );
+  }
+
+  Future<void> _loginUser() async {
+      // Login user
+  }
+
+  Future<void> _makeCall() async {
+      // Make call
+  }
+
+  Future<void> _endCall() async {
+      // End call
   }
 }
 
@@ -278,7 +290,7 @@ Widget _updateView() {
   }
 ```
 
-Add `_loginUser` method inside `_CallWidgetState` class:
+Update body of `_loginUser` method:
 
 ```
 Future<void> _loginUser() async {
@@ -300,7 +312,7 @@ class _CallWidgetState extends State<CallWidget> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 ```
 
-Now you need to handle this method on the native Android side. Open `MainActivity` class. Not that Futter plugin displays a hint to open this Andrid project in the separate instance of Androdid Studio (another window). Do so to have better code completion:
+The `com.vonage` string is a unique channel id that we will also use on the native Android code (`MainActivity` class). Now you need to handle this method on the native Android side. Open `MainActivity` class. Not that Futter plugin displays a hint to open this Andrid project in the separate instance of Androdid Studio (another window). Do so to have better code completion:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/openinas.png)
 
@@ -333,13 +345,13 @@ private fun addFlutterChannelListener() {
     }
 
 private fun login(token: String) {
-        Log.d("TAG" "login with token: $token")
+        Log.d("TAG", "login with token: $token")
 }
 ```
 
 After running the application you should see `login with token...` message at Logcat. Now it's time to create missing `client`. 
 
-### Add Nexmo SDK dependency
+### Add Client SDK dependency
 
 Add a custom Maven URL repository to your Gradle configuration. Add the following maven block inside the `allprojects` block within the project-level `build.gradle.kts` file:
 
@@ -356,8 +368,128 @@ allprojects {
 }
 ```
 
+Now add the Client SDK dependency to the project in the `app\build.gradle` file:
 
+```
+dependencies {
+    // ...
 
+    implementation 'com.nexmo.android:client-sdk:2.8.1'
+}
+```
 
+In the smae file set min Android SDK version to `23`:
 
+`minSdkVersion 23`
 
+Run `sync project wit Gradle` command in Androis Studio.
+
+### Initialize Client
+
+Open `MainActivity` class and `client` property
+
+`private lateinit var client: NexmoClient`
+
+Now add `initClient` method:
+
+```
+private fun initClient() {
+        client = NexmoClient.Builder().build(this)
+    }
+```
+
+Call `initClient` method from existing `configureFlutterEngine` method:
+
+```
+override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+     super.configureFlutterEngine(flutterEngine)
+
+    initClient()
+    addFlutterChannelListener()
+}
+```
+
+### Login the user
+
+Modify `login` method body to call `login` on the client instance:
+
+```
+private fun login(token: String) {
+        client.login(token)
+    }
+```
+
+This will allow us to login the user (`Alice`) using Client SDK.
+
+### Notify flutter about SDK state change
+
+You will add enum to represent states of the client SDK (you already added equivalent `SdkState` enum in the `main.dart` file). Add `SdkState` enum at the bottom of the `MainActivity.kt` file:
+
+```
+enum class SdkState {
+    LOGGED_OUT,
+    LOGGED_IN,
+    WAIT,
+    ON_CALL,
+    ERROR
+}
+```
+
+You will now add the conection listener and map some of the SDK states to `SdkState` enum. Modify body of `initClient` method:
+```
+private fun initClient() {
+        client = NexmoClient.Builder().build(this)
+
+        client.setConnectionListener { connectionStatus, _ ->
+            when (connectionStatus) {
+                ConnectionStatus.CONNECTED -> notifyFlutter(SdkState.LOGGED_IN)
+                ConnectionStatus.DISCONNECTED -> notifyFlutter(SdkState.LOGGED_OUT)
+                ConnectionStatus.CONNECTING -> notifyFlutter(SdkState.WAIT)
+                ConnectionStatus.UNKNOWN -> notifyFlutter(SdkState.ERROR)
+            }
+        }
+    }
+```
+
+To send these states to flutter you need to add `notifyFlutter` method in the `MainActivity` class:
+
+```
+private fun notifyFlutter(state: SdkState) {
+        Handler(Looper.getMainLooper()).post {
+            MethodChannel(flutterEngine?.dartExecutor?.binaryMessenger, "com.vonage")
+                .invokeMethod("updateState", state.toString())
+        }
+    }
+```
+
+Communication with Flutter happens on the main thread, so you need to use `Handler`. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
+
+### Retrieve SDK state by Flutter
+
+Add these two methods inside `_CallWidgetState` class:
+
+```
+_CallWidgetState() {
+    platformMethodChannel.setMethodCallHandler(methodCallHandler);
+  }
+
+Future<dynamic> methodCallHandler(MethodCall methodCall) async {
+    switch (methodCall.method) {
+      case 'updateState':
+        {
+          setState(() {
+            var arguments = 'SdkState.${methodCall.arguments}';
+            _sdkState = SdkState.values.firstWhere((v) {return v.toString() == arguments;}
+            );
+
+            print(_sdkState);
+          });
+        }
+        break;
+      default:
+        throw MissingPluginException('notImplemented');
+    }
+  }
+```
+
+No Hot reload
