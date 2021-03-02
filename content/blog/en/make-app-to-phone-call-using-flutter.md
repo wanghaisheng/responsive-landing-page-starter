@@ -158,7 +158,7 @@ Connect Android device or emulator and run the app to verify that everything wor
 
 ## Two-way Flutter/Android communication
 
-Currently, Client SDK is not available as a Flutter package, so we have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using methodChannel (https://api.flutter.dev/flutter/services/MethodChannel-class.html). Flutter will call methods defined in ANdroid code (MainActivity.kt) and Android will invoke `updateState` method to notify Flutter about SDK state updates. 
+Currently, Client SDK is not available as a Flutter package, so you have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using methodChannel (https://api.flutter.dev/flutter/services/MethodChannel-class.html). Flutter will call methods defined in ANdroid code (MainActivity.kt) and Android will invoke `updateState` method to notify Flutter about SDK state updates. 
 
 ## Building the Flutter part
 
@@ -222,7 +222,7 @@ enum SdkState {
 
 The above code contains our custom `CallWidget` a widget that will be responsible for logging the user and managing the call. Code also contains `SdkState` enum that represents possible states of Vonage Client SDK. The initial state is `SdkState.LOGGED_OUT`. 
 
-The code does not compile yet, because we still have to add a few missing pieces.
+The code does not compile yet, because you still have to add a few missing pieces.
 
 ### Logged out state
 
@@ -261,3 +261,49 @@ class _CallWidgetState extends State<CallWidget> {
 }
 ```
 
+Run the application you should see `Login Alice` button:
+
+![](/content/blog/make-app-to-phone-call-using-flutter/loggedout.png)
+
+Now you need to add `onPressed` handler to the `ElevatedButton` to allow logging in:
+
+```
+Widget _updateView() {
+    if (_sdkState == SdkState.LOGGED_OUT) {
+      return ElevatedButton(
+          onPressed: () { _loginUser(); },
+          child: Text("LOGIN AS ALICE")
+      );
+    }
+  }
+```
+
+Add `_loginUser` method inside `_CallWidgetState` class:
+
+```
+Future<void> _loginUser() async {
+    String token = "ALICE_TOKEN";
+
+    try {
+      await platformMethodChannel.invokeMethod('loginUser', <String, dynamic>{'token': token});
+    } on PlatformException catch (e) {
+      print(e);
+    }
+  }
+```
+
+Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI.
+
+The above code will call `loginUser` method defined in `MainActivity` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` the field at the top of `_CallWidgetState` class:
+
+```
+class _CallWidgetState extends State<CallWidget> {
+  SdkState _sdkState = SdkState.LOGGED_OUT;
+  static const platformMethodChannel = const MethodChannel('com.vonage');
+```
+
+Now you need to handle this method on the native Android side. Open `MainActivity` class and 
+
+
+
+![]()
