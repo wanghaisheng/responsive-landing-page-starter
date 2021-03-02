@@ -132,7 +132,7 @@ Make a note of the JWT you generated for `Alice`.
 
 Download and install flutter SDK.
 
-This step will vary on MacOS, Win and Linux, but in general it boils down to downloading flutter SDK to a given OS, extracting it and adding the `sdk\bin` folder to system PATH variable. Detailed instruction can be found here: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
+This step will vary on MacOS, Win, and Linux, but in general it boils down to downloading flutter SDK to a given OS, extracting it, and adding the `sdk\bin` folder to system PATH variable. Detailed instruction can be found here: [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
 
 Fortunately flutter comes with tool that allows us to verify if SDK and all required "components" are present and configured correctly. Run this command:
 
@@ -161,7 +161,7 @@ Connect Android device or emulator and run the app to verify that everything wor
 
 ## Two way Flutter/Android communication
 
-Currently Client SDK is not available as a Flutter package, so we have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using methodChannel (https://api.flutter.dev/flutter/services/MethodChannel-class.html).
+Currently Client SDK is not available as a Flutter package, so we have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using methodChannel (https://api.flutter.dev/flutter/services/MethodChannel-class.html). Flutter will call methods defined in ANdroid code (MainActivity.kt) and Android will invoke `updateState` method to notify Flutter about SDK state updates. 
 
 
 ## Building the Flutter part
@@ -196,7 +196,23 @@ class CallWidget extends StatefulWidget {
 }
 
 class _CallWidgetState extends State<CallWidget> {
-
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(height: 64),
+            _buildConnectionButtons()
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 enum SdkState {
@@ -208,18 +224,46 @@ enum SdkState {
 }
 ```
 
-Above code contains our custom `CallWidget` widget that will be responsible for logging the user and managing the call. The code does not compile yet, because we still have to add a few missing pieces.
+Above code contains our custom `CallWidget` widget that will be responsible for logging the user and managing the call. Code also contains `SdkState` enum that represents possible states of Vonage Client SDK.
+
+The code does not compile yet, because we still have to add a few missing pieces.
+
+### Logged out state
+
+Update body of the `_CallWidgetState` class:
 
 ```
-enum SdkState {
-  LOGGED_OUT,
-  LOGGED_IN,
-  WAIT,
-  ON_CALL,
-  ERROR
+class _CallWidgetState extends State<CallWidget> {
+  SdkState _sdkState = SdkState.LOGGED_OUT;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            SizedBox(height: 64),
+            _updateView()
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _updateView() {
+    if (_sdkState == SdkState.LOGGED_OUT) {
+      return ElevatedButton(
+          onPressed: () {  },
+          child: Text("LOGIN AS ALICE")
+      );
+    }
+  }
 }
 ```
-
 
 
 
