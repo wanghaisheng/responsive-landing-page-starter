@@ -220,7 +220,7 @@ enum SdkState {
 }
 ```
 
-The above code contains our custom `CallWidget` a widget that will be responsible for logging the user and managing the call. Code also contains `SdkState` enum that represents possible states of Vonage Client SDK.
+The above code contains our custom `CallWidget` a widget that will be responsible for logging the user and managing the call. Code also contains `SdkState` enum that represents possible states of Vonage Client SDK. initial state is \`SdkState.LOGGED_OUT\` 
 
 The code does not compile yet, because we still have to add a few missing pieces.
 
