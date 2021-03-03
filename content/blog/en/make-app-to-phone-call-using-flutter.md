@@ -19,7 +19,9 @@ replacement_url: ""
 ---
 Today you will build an Android application using Flutter and utilize Vonage Client SDK to make a call from a mobile application to the phone. 
 
-First, you need to deal with few prerequisites:
+The source code is available on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
+
+Firstly, you need to deal with few prerequisites:
 
 * Crete NCCO
 * Install Nexmo CLI
@@ -124,7 +126,7 @@ Make a note of the JWT you generated for `Alice`.
 
 > NOTE: In a production environment, your application should expose an endpoint that generates a JWT for each client request.
 
-## Flutter
+## Flutter setup
 
 ### Install Flutter SDK
 
@@ -767,7 +769,9 @@ onGoingCall = null
 
 # Summary
 
-You have learned ho to make a phone call from mobile appliation to the phone using Vonage Client SDK. To familiarize yourself with other use cases please check [other tutorial](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
+You have learned ho to make a phone call from mobile appliation to the phone using Vonage Client SDK. For the complete version please see the project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
+
+To familiarize yourself with other use cases please check [other tutorial](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
 
 # References
 - [Vonage developer center](https://developer.vonage.com/)
