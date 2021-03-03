@@ -565,6 +565,12 @@ private fun addFlutterChannelListener() {
     }
 ```
 
+Now in the same file add `onGoingCall` property:
+
+`private var onGoingCall: NexmoCall? = null`
+
+> NOTE: Currently Client SDK does not store ongoing call reference, so you have to store it in `MainActivity` class, so it will be possible to end this call later.
+
 Now in the same file add `makeCall` method:
 
 ```
@@ -621,8 +627,29 @@ Before making a call the application needs specific permission.
 
 ### Request permissions
 
-The application needs to be able to access microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`).
+The application needs to be able to access microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
 
+First you need to add the \[permission_handler](https://pub.dev/packages/permission_handler package. Open `pubspec.yaml` file and add `permission_handler: ^5.1.0+2` dependency under `sdk: flutter`:
+
+```
+dependencies:
+  flutter:
+    sdk: flutter
+
+  permission_handler: ^5.1.0+2
+```
+
+> NOTICE: Intention matters in `yaml` files, so make sure it is at the same indention level as the `flutter:` item.
+
+Run the below command in the terminal to download the newly added package:
+
+`flutter pub get`
+
+Add package import at the top ot the `main.dart` file:
+
+`import 'package:permission_handler/permission_handler.dart';`
+
+Finally this method inside `_CallWidgetState` class defined in the `main.dart` file:
 
 ```
 Future<void> requestPermissions() async {
@@ -632,4 +659,14 @@ Future<void> requestPermissions() async {
   }
 ```
 
+Run the all and click `MAKE PHONE CALL` to start a call. 
 
+The Call to the phone number defined earlier in NCCO will start and your phone will ring and state of the application will be updated to `SdkState.ON_CALL`:
+
+![](/content/blog/make-app-to-phone-call-using-flutter/oncall.png)
+
+### End call
+
+There are two ways to end the call. One is to disconnect 
+
+Disconnect from phone, how flutter s notifed?
