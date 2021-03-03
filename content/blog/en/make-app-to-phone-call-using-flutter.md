@@ -592,7 +592,7 @@ Now in the same file add `makeCall` method:
     }
 ```
 
-The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDk response (error or success). Now you will add support for both new states (`SdkState.ON_CALL` and `SdkState.ERROR`)  inside `main.dart` file. Update body of the `_updateView` method:
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Now you will add support for both new states (`SdkState.ON_CALL` and `SdkState.ERROR`)  inside `main.dart` file. Update body of the `_updateView` method:
 
 ```
 Widget _updateView() {
@@ -729,12 +729,50 @@ private fun endCall() {
     }
 ```
 
-The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDk response (error or success). Both UI states are already supported in the Flutter application.
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Both UI states are already supported in the Flutter application.
 
+You have handled ending the call by pressing `END CALL` button in the application UI, however, the call can also end outside of the app e.g. the call will be rejected or answeared and later ended by the callee. 
 
+To support this cases you have to add `NexmoCallEventListener` listener to the call instance. Define `callEventListener` property at the top of the `MainActivity` class:
 
+```
+private val callEventListener = object : NexmoCallEventListener {
+        override fun onMemberStatusUpdated(nexmoCallStatus: NexmoCallMemberStatus, callMember: NexmoCallMember) {
+            if (nexmoCallStatus == NexmoCallMemberStatus.COMPLETED || nexmoCallStatus == NexmoCallMemberStatus.CANCELLED) {
+                onGoingCall = null
+            }
+        }
 
+        override fun onMuteChanged(nexmoMediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
 
+        override fun onEarmuffChanged(nexmoMediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
+
+        override fun onDTMF(dtmf: String, callMember: NexmoCallMember) {}
+    }
+```
+
+Inside the same file modify `makeCall` method and register above listener inside `onSuccess` callback:
+
+```
+onGoingCall = call
+onGoingCall?.addCallEventListener(callEventListener)
+`
+
+Finally modify `endCall` method and unregister the `callEventListener` listener inside `onSuccess` callback:
+
+```
+onGoingCall?.removeCallEventListener(callEventListener)
+onGoingCall = null
+```
+
+# Summary
+
+You have learned ho to make a phone call from mobile appliation to the phone using Vonage Client SDK. To familiarize yourself with other use cases please check [other tutorial](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
+
+# References
+- [Vonage developer center](https://developer.vonage.com/)
+- [Write your first flutter app](https://flutter.dev/docs/get-started/codelab)
+- [Flutter Plaftorm chanels](https://flutter.dev/docs/development/platform-integration/platform-channels)
 
 
 
