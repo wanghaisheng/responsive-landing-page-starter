@@ -627,7 +627,7 @@ Before making a call the application needs specific permission.
 
 ### Request permissions
 
-The application needs to be able to access microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
+The application needs to be able to access the microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
 
 First you need to add the \[permission_handler](https://pub.dev/packages/permission_handler package. Open `pubspec.yaml` file and add `permission_handler: ^5.1.0+2` dependency under `sdk: flutter`:
 
@@ -659,14 +659,85 @@ Future<void> requestPermissions() async {
   }
 ```
 
+You also need to add two permissions inside `app/src/main/AndroidManifest.xml` file, over the `application` tag:
+
+```
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+<application
+...
+```
+
+> NOTE: `android.permission.INTERNET` permission is granted implicitly by the Android
+
 Run the all and click `MAKE PHONE CALL` to start a call. 
 
-The Call to the phone number defined earlier in NCCO will start and your phone will ring and state of the application will be updated to `SdkState.ON_CALL`:
+The Call to the phone number defined earlier in NCCO will start and your phone will ring and the state of the application will be updated to `SdkState.ON_CALL`:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/oncall.png)
 
 ### End call
 
+Update body of the `_endCall` method inside 
+
+```
+Future<void> _endCall() async {
+    try {
+      await platformMethodChannel.invokeMethod('endCall');
+    } on PlatformException catch (e) {}
+  }
+```
+
+The above method will call communicate with Android so you have to update code in `MainActivity` class. Add `endCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+
+```
+when (call.method) {
+                "loginUser" -> {
+                    val token = requireNotNull(call.argument<String>("token"))
+                    login(token)
+                    result.success("")
+                }
+                "makeCall" -> {
+                    makeCall()
+                    result.success("")
+                }
+                "endCall" -> {
+                    endCall()
+                    result.success("")
+                }
+                else -> {
+                    result.notImplemented()
+                }
+            }
+```
+
+Now in the same file add `endCall` method:
+
+```
+private fun endCall() {
+        onGoingCall?.hangup(object : NexmoRequestListener<NexmoCall> {
+            override fun onSuccess(call: NexmoCall?) {
+                onGoingCall = null
+                notifyFlutter(SdkState.LOGGED_IN)
+            }
+
+            override fun onError(apiError: NexmoApiError) {
+                notifyFlutter(SdkState.ERROR)
+            }
+        })
+    }
+```
+
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDk response (error or success). Both UI states are already supported in the Flutter application.
+
+
+
+
+
+
+
+
 There are two ways to end the call. One is to disconnect 
 
-Disconnect from phone, how flutter s notifed?
+Disconnect from the phone, how flutter s notifed?
