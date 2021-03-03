@@ -17,7 +17,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Today you will build an Android application using Flutter and utilize Vonage Client SDK to make a call from a mobile application to the phone. 
+Today you will build an Android application using Flutter and utilise Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screen (3 UI states):
+
+![](/content/blog/make-app-to-phone-call-using-flutter/ui-states.png)
 
 The source code is available on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
@@ -761,12 +763,12 @@ onGoingCall?.addCallEventListener(callEventListener)
 `
 
 Finally modify `endCall` method and unregister the `callEventListener` listener inside `onSuccess` callback:
-
 ```
+
 onGoingCall?.removeCallEventListener(callEventListener)
 onGoingCall = null
-```
 
+```
 # Summary
 
 You have learned ho to make a phone call from mobile appliation to the phone using Vonage Client SDK. For the complete version please see the project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
@@ -783,3 +785,4 @@ To familiarize yourself with other use cases please check [other tutorial](https
 There are two ways to end the call. One is to disconnect 
 
 Disconnect from the phone, how flutter s notifed?
+```
