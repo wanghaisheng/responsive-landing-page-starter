@@ -462,11 +462,11 @@ private fun notifyFlutter(state: SdkState) {
     }
 ```
 
-Communication with Flutter happens on the main thread, so you need to use `Handler`. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
+On the Android side communication with Flutter happens on the main thread, so you need to use `Handler`. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
 
 ### Retrieve SDK state by Flutter
 
-Add these two methods inside `_CallWidgetState` class:
+To retrieve state updates in Flutter you have to listen for method channel updates.  Add these two methods inside `_CallWidgetState` class:
 
 ```
 _CallWidgetState() {
@@ -489,7 +489,9 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
     }
   }
 ```
-Now update `` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
+
+
+Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
 
 ```
 Widget _updateView() {
@@ -515,6 +517,9 @@ During `SdkState.WAIT` progress bar will be displayed. Aftre sucessfull login ap
 
 > NOTE: While modyfying Android native code Flutter hot reload will not work. You have to stop the application and run it again.
 
-Run the app now and click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (another state of the Flutter app).   
+Run the app now and click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (another state of the Flutter app):
+
+
+
 
 ### Make a call
