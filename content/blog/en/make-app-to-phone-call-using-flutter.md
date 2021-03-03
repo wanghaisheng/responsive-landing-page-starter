@@ -340,6 +340,9 @@ private fun addFlutterChannelListener() {
                     login(token)
                     result.success("")
                 }
+                else -> {
+                    result.notImplemented()
+                }
             }
         }
     }
@@ -436,6 +439,7 @@ enum class SdkState {
 ```
 
 You will now add the conection listener and map some of the SDK states to `SdkState` enum. Modify body of `initClient` method:
+
 ```
 private fun initClient() {
         client = NexmoClient.Builder().build(this)
@@ -490,7 +494,6 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
   }
 ```
 
-
 Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
 
 ```
@@ -519,7 +522,114 @@ During `SdkState.WAIT` progress bar will be displayed. Aftre sucessfull login ap
 
 Run the app now and click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (another state of the Flutter app):
 
-
-
+![](/content/blog/make-app-to-phone-call-using-flutter/makeaphonecall.png)
 
 ### Make a call
+
+To make a phone call open `main.dart` file and update body of `_makeCall` method:
+
+```
+Future<void> _makeCall() async {
+    try {
+      await requestPermissions();
+
+      await platformMethodChannel
+          .invokeMethod('makeCall');
+    } on PlatformException catch (e) {
+      print(e);
+    }
+  }
+```
+
+The above method will call communicate with Android so you have to update code in `MainActivity` class. Add `makeCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+
+```
+private fun addFlutterChannelListener() {
+        MethodChannel(flutterEngine?.dartExecutor?.binaryMessenger, "com.vonage").setMethodCallHandler { call, result ->
+
+            when (call.method) {
+                "loginUser" -> {
+                    val token = requireNotNull(call.argument<String>("token"))
+                    login(token)
+                    result.success("")
+                }
+                "makeCall" -> {
+                    makeCall()
+                    result.success("")
+                }
+                else -> {
+                    result.notImplemented()
+                }
+            }
+        }
+    }
+```
+
+Now in the same file add `makeCall` method:
+
+```
+@SuppressLint("MissingPermission")
+    private fun makeCall() {
+        notifyFlutter(SdkState.WAIT)
+
+        // Callee number is ignored because it is specified in NCCO config
+        client.call("IGNORED_NUMBER", NexmoCallHandler.SERVER, object : NexmoRequestListener<NexmoCall> {
+            override fun onSuccess(call: NexmoCall?) {
+                onGoingCall = call
+                notifyFlutter(SdkState.ON_CALL)
+            }
+
+            override fun onError(apiError: NexmoApiError) {
+                notifyFlutter(SdkState.ERROR)
+            }
+        })
+    }
+```
+
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDk response (error or success). Now you will add support for both new states (`SdkState.ON_CALL` and `SdkState.ERROR`)  inside `main.dart` file. Update body of the `_updateView` method:
+
+```
+Widget _updateView() {
+    if (_sdkState == SdkState.LOGGED_OUT) {
+      return ElevatedButton(
+          onPressed: () { _loginUser(); },
+          child: Text("LOGIN AS ALICE")
+      );
+    } else if (_sdkState == SdkState.WAIT) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    } else if (_sdkState == SdkState.LOGGED_IN) {
+      return ElevatedButton(
+          onPressed: () { _makeCall(); },
+          child: Text("MAKE PHONE CALL")
+      );
+    } else if (_sdkState == SdkState.ON_CALL) {
+      return ElevatedButton(
+          onPressed: () { _endCall(); },
+          child: Text("END CALL")
+      );
+    } else {
+      return Center(
+        child: Text("ERROR")
+      );
+    }
+  }
+```
+
+Before making a call the application needs specific permission.
+
+### Request permissions
+
+The application needs to be able to access microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`).
+
+
+```
+Future<void> requestPermissions() async {
+    Map<Permission, PermissionStatus> statuses = await [
+      Permission.microphone
+    ].request();
+  }
+```
+
+
