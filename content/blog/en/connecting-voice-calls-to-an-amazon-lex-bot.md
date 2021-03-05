@@ -58,5 +58,53 @@ Next, you can set up the bot.
 
 * You may keep the pre-set Bot name or enter a different one
 * Make note of the bot name (e.g. ScheduleAppointment), you will need it later
+
+![The Lex bot setup screen from Amazon Web Services](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-03a.png "The Lex bot setup screen from Amazon Web Services")
+
 * Select the desired language
-* Select Yes for Sentiment Analysis.
+* Select *Yes* for Sentiment Analysis
+* For this specific bot example, you may select *No* for COPPA
+
+Once the settings are completed, click on **Create**.
+
+![Final steps in the bot setup process](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-03b.png "Final steps in the bot setup process")
+
+When the bot creation process has completed you will see a screen similar to the one shown below.
+
+![The bot has been created successfully](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-04.png "The bot has been created successfully")
+
+Next, in order to use your bot, you need to publish it by clicking **Publish**. You will then be asked to choose an alias for the bot. Aliases are good for naming different versions of your bot such as the one you use for development, or the one you use for production.
+
+Make note of the alias name you have entered (e.g. staging). You will need it later.
+
+![Adding an alias name to your Amazon Lex Bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-05b.png "Adding an alias name to your Amazon Lex Bot")
+
+Clicking **Publish** once more will finalize the setup of your sample bot.
+
+![Notification that the bot has been published](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-05c.png "Notification that the bot has been published")
+
+## Set up the Lex Reference Connection
+
+* Go to <https://github.com/><public-repo-org>/lex-reference-connection,
+* Follow instructions as described in this repository.
+* Select one of the deployment types as explained in the Running Lex reference connection code section.
+* Make note of the `LEX_REFERENCE_CONNECTION` argument (e.g. xxxx.ngrok.io, or myserver.mycompany.com:40000), as it will be needed later.
+
+## Set up the Lex sample Voice API Application
+
+* Go to <https://github.com/><public-repo-org>/lex-sample-voice-application and follow the instructions as described in this repository.
+* Select one of the deployment types as explained in the Running Lex sample Voice API application section,
+* Make note of the phone number linked to your Voice API application as explained in the Set up your Vonage Voice API application credentials and phone number section as it will be needed for the next section Interact via voice with the Lex bot.
+
+## Interact Via Voice With the Lex Bot
+
+* Call the phone number linked to your Voice API application to interact with the Lex bot.
+* You will see on the Lex reference connection application console as well as the Lex sample voice API application console, the transcriptions, and sentiment analysis results.
+
+## Improving the Lex Bot
+
+When calling the Lex bot using the linked phone number, you may have noticed that the bot does not play a greeting, so any caller would be unsure when to start to speak once connected to the bot. Additionally, the bot does not play a confirmation message after you verbally confirmed that you want the appointment.
+
+Let’s improve our example Lex bot by addressing both of those issues.
+
+### Get the Lex Bot to Play a Greeting
