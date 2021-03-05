@@ -34,10 +34,29 @@ After that, we will set up a sample application using [Vonage Voice API](https:/
 
 The diagram below shows an overview of this sample integration architecture.
 
-![](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/lex.png)
+![A diagram that outlines how Amazon Lex and the Vonage Voice API work together to create a voice bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/lex.png "A diagram that outlines how Amazon Lex and the Vonage Voice API work together to create a voice bot")
 
 ## Prerequisites
 
 To perform the actions outlined in the following steps you will need an Amazon Web Services account. If you don't have one, you can [create one](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct&src=header_signup) before getting started.
 
 <sign-up number></sign-up>
+
+## Set up an Example Amazon Lex Bot
+
+[Log in to your AWS Management Console](https://console.aws.amazon.com) or [create an AWS account](https://portal.aws.amazon.com/gp/aws/developer/registration/index.html?nc2=h_ct&src=header_signup) if you do not yet have one.
+
+Search for and then go to Amazon Lex service, click on **Create** to launch the bot setup process.
+
+![The Amazon Lex service dashboard](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-01.png "The Amazon Lex service dashboard")
+
+As part of the setup process, you will be presented with the option to **Create Your Own** bot, or to **Try a Sample.** You'll need a sample bot for this example, so click on **ScheduleAppointment**.
+
+![The Amazon Lex Bot Creation Dashboard](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-02.png "The Amazon Lex Bot Creation Dashboard")
+
+Next, you can set up the bot.
+
+* You may keep the pre-set Bot name or enter a different one
+* Make note of the bot name (e.g. ScheduleAppointment), you will need it later
+* Select the desired language
+* Select Yes for Sentiment Analysis.
