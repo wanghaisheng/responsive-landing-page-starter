@@ -160,3 +160,31 @@ The Lex bot plays one of the response messages (of the Greeting intent), you hea
 You may then ask to set up an appointment (with this example Lex bot).
 
 ## Play an Appointment Confirmation Message
+
+On your AWS console, go to Amazon Lex, then your Lex bot. Click on**Edit.**
+
+![Editing the Lex bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-2-a.png "Editing the Lex bot")
+
+Under **Response**, click on **Add Message**.
+
+![Adding a new message to the Lex bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-2-b.png "Adding a new message to the Lex bot")
+
+Enter one or more response messages, for example:
+
+*Your appointment for {AppointmentType} on {Date} at {Time} has been confirmed. Good bye!*
+
+Words inside the curly braces correspond to slots related to this intent.
+
+Then click on the \[+] icon to add your new response.
+
+![Adding a new message to the Lex bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-2-c.png "Adding a new message to the Lex bot")
+
+To finalize your new message, click on **Save Intent**.
+
+Finally, to commit these changes, click **Build** to rebuild the bot with the new changes. Once this is done you will need to, once again, publish a new version. You can keep the same alias as previous steps.
+
+![A successfully published bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-2-i.png "A successfully published bot")
+
+## Testing the Updated Lex Bot
+
+To test out these new changes, call the phone number linked to your account and interact with the Lex bot to set up an appointment. This time you will hear the confirmation message that you just set up read back to you by the Lex bot.
