@@ -108,3 +108,55 @@ When calling the Lex bot using the linked phone number, you may have noticed tha
 Let’s improve our example Lex bot by addressing both of those issues.
 
 ### Get the Lex Bot to Play a Greeting
+
+On your AWS console, go to Amazon Lex, then your Lex bot. Click on the \[+] icon next to Intents.
+
+![The Lex Dashboard](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-a.png "The Lex Dashboard")
+
+Next, click on **Create Intent**.
+
+![Creating an intent for a Lex bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-b.png "Creating an intent for a Lex bot")
+
+You'll be prompted to enter a name for your new intent. Once you've chosen one you can click on **Add** to proceed to the next step.
+
+![Entering a name for the intent](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-c.png "Entering a name for the intent")
+
+Under **Sample utterances**:
+
+Enter exactly `Good morning`, as that is what is currently coded in the Lex sample Voice API application as TTS played to Lex bot when the WebSocket is established,
+
+Then click on the \[+] icon to add the new utterance.
+
+![Adding new utterances to a Lex bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-d.png "Adding new utterances to a Lex bot")
+
+Next, under **Response** click on **Add Message**.
+
+![Adding a new message to the bot responder](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-f.png "Adding a new message to the bot responder")
+
+Enter one or more greeting messages. The content of the message, and how many you add, are completely up to you e.g. *Hi, how may I help you?*, or *Hello, what is the reason you are calling?*
+
+Do not forget to click on the \[+] icon for each entered message.
+
+![Adding a message response to a Lex bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-g.png "Adding a message response to a Lex bot")
+
+After adding all the messages you want to add, click on **Save Intent**.
+
+![Listing message responses](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-h.png "Listing message responses")
+
+Next, you will need to rebuild the bot. You can do this by clicking on **Build**. After the build completes, go ahead and **Publish** your bot one more time as you did before.
+
+You will be asked to enter an alias once again, you can use the same alias as you did earlier for the sample bot.
+
+![Entering 'staging' as the alias for the Lex bot](/content/blog/connecting-voice-calls-to-an-amazon-lex-bot/screen-1-n.png "Entering 'staging' as the alias for the Lex bot")
+
+## Testing the Update to the Lex Bot
+
+Call the phone number you have linked to the application from the previous steps and you will hear “Please wait”, that TTS from the Vonage API platform is played as soon as your call is answered by the platform.
+
+Once the WebSocket is set up, the Vonage API platform plays the TTS “Good morning” to the Lex bot (you as the caller will not hear that).
+
+The Lex bot plays one of the response messages (of the Greeting intent), you hear it over the phone, confirming the connection with the Lex bot.
+
+You may then ask to set up an appointment (with this example Lex bot).
+
+## Play an Appointment Confirmation Message
