@@ -1,5 +1,5 @@
 ---
-title: Open Source Video Conferencing with OpenTokRTC
+title: Open Source Video Conferencing
 description: Introducing Open Source Video Conferencing with OpenTokRTC.
   Enabling you to host your own web-based video conferencing solution.
 author: greg-holmes
