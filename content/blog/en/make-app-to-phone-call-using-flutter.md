@@ -368,7 +368,7 @@ private fun addFlutterChannelListener() {
             when (call.method) {
                 "loginUser" -> {
                     val token = requireNotNull(call.argument<String>("token"))
-                    login(token)
+                    loginUser(token)
                     result.success("")
                 }
                 else -> {
@@ -378,7 +378,7 @@ private fun addFlutterChannelListener() {
         }
     }
 
-private fun login(token: String) {
+private fun loginUser(token: String) {
         Log.d("TAG", "login with token: $token")
 }
 ```
