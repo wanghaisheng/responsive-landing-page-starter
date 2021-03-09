@@ -1,7 +1,8 @@
 ---
 title: Open Source Video Conferencing
-description: Introducing Open Source Video Conferencing with OpenTokRTC.
-  Enabling you to host your own web-based video conferencing solution.
+description: Introducing Open Source Video Conferencing with WebRTC and Vonage
+  Video APIs. Enabling you to host your own web-based video conferencing
+  solution.
 author: greg-holmes
 published: true
 published_at: 2021-03-08T11:17:15.389Z
@@ -19,17 +20,19 @@ replacement_url: ""
 ---
 ## What is Vonage Video (Formerly OpenTok / TokBox)?
 
-Vonage Video (Formerly TokBox / OpenTok) is an API that allows businesses to build a custom video experience within any mobile, web, or desktop application.
+[Vonage Video (Formerly TokBox / OpenTok)](https://www.vonage.co.uk/communications-apis/video/) is an API that allows businesses to build a custom video experience within any mobile, web, or desktop application.
 
-This API supports all video use-cases, such as 1:1 video consultations, group video chat, or large scale broadcasts to thousands of people. You're able to record any session with control over how to compose and securely deliver these files to your chosen method of storage. Analytics allow you to see project-by-project summaries in the dashboards or see session-specific analytics through the Advanced Insights API. The Video API enables you to build on our standard always-on encryption and GDPR-compliance capabilities to offer an extensive range of advanced security, firewall-control, regional isolation and compliance certificate options. There are many more features and services provided within the Vonage Video service. For more information on these, please head over to the landing page.
+This API supports all video use-cases, such as 1:1 video consultations, group video chat, or large scale broadcasts to thousands of people. You're able to record any session with control over how to compose and securely deliver these files to your chosen method of storage. Analytics allow you to see project-by-project summaries in the dashboards or see session-specific analytics through the [Advanced Insights API](https://www.vonage.com/communications-apis/video/features/advanced-insights/). The Video API enables you to build on our standard always-on encryption and GDPR-compliance capabilities to offer an extensive range of advanced security, firewall-control, regional isolation and compliance certificate options. There are many more features and services provided within the Vonage Video service. For more information on these, please head over to the landing page.
 
 ## What is WebRTC?
 
 Web Real-Time Communication (WebRTC) is a free and open-source project that provides web browsers and mobile applications to have real-time communication with APIs. WebRTC allows audio and video communication to function within your web browser by allowing communication to happen directly between peer-to-peer, which removes the requirement to install plugins or download any native applications.
 
-## What is OpenTokRTC?
+## What is Vonage Open Source Conferencing and Recording?
 
-OpenTokRTC is your private web-based video conferencing solution. It is based on the OpenTok platform (now the Vonage Video API) and uses the OpenTok SDKs and APIs. You can deploy the app on your servers to get your video conferencing app running on WebRTC.
+Vonage Open Source Conferencing and Recording is your private web-based video conferencing solution. It is based on the Vonage Video API Platform (formerly OpenTok API) and uses the Vonage Video SDKs and APIs. You can deploy the app on your servers to get your video conferencing app running on WebRTC.
+
+If you wish to test this service out without hosting your own servers, you're welcome to head over to our [Demo webpage](https://opentokdemo.tokbox.com/). This demo page is hosted by a default version of the Open Source Conferencing and Recording package, which can be found on our [Github Repository](https://github.com/opentok/opentok-rtc).
 
 ## How Can I Host My Own Video Conferencing Software?
 
@@ -138,7 +141,7 @@ There are many other options available for configuration to suit your needs. The
 
 ### Customising the UI
 
-For information on how to customise the OpenTokRTC UI, see [CUSTOMIZING-UI](https://github.com/opentok/opentok-rtc/blob/master/CUSTOMIZING-UI.md).
+For information on how to customise the Vonage Open Source Conferencing and Recording UI, see [CUSTOMIZING-UI](https://github.com/opentok/opentok-rtc/blob/master/CUSTOMIZING-UI.md).
 
 ### How Is My Service Running?
 
@@ -171,7 +174,7 @@ An example of a failing health check will be similar to the following:
 ## More Reading
 
 * [Vonage Video (Formerly OpenTok / Tokbox)](https://www.vonage.com/communications-apis/video/)
-* [OpenTokRTC Github Repository](https://github.com/opentok/opentok-rtc)
+* [Vonage Open Source Conferencing and Recording Github Repository](https://github.com/opentok/opentok-rtc)
 * [Broadcast Video Chat with Javascript and Vonage](https://learn.vonage.com/blog/2020/05/14/broadcast-video-chat-with-javascript-and-vonage-dr/)
 * [Add Video Capabilities to Zendesk With Vonage Video API](https://learn.vonage.com/blog/2020/09/08/add-video-capabilities-to-zendesk-with-vonage-video-api/)
 
