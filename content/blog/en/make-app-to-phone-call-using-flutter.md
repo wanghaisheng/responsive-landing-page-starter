@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Today you will build an Android application using [Flutter](https://flutter.dev/) and utilise Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screen (3 UI states):
+Today you will build an Android application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/ui-states.png)
 
@@ -102,7 +102,7 @@ mkdir vonage-tutorial
 cd vonage-tutorial
 ```
 
-3. Create a Vonage application by copying and pasting the command below into terminal Make sure to change the value of `--voice-answer-url` argument by replacing `GIST-URL` with the gist URL from the previous step.
+3. Create a Vonage application by copying and pasting the command below into the terminal Make sure to change the value of `--voice-answer-url` argument by replacing `GIST-URL` with the gist URL from the previous step.
 
 ```
 nexmo app:create "App to Phone Tutorial" --capabilities=voice --keyfile=private.key --voice-event-url=https://example.com/ --voice-answer-url=GIST-URL
@@ -162,7 +162,7 @@ Flutter Doctor will verify if Flutter SDK is installed and other components are 
 
 Open [Android Studio](https://developer.android.com/studio), go to `Preferences | plugins` and Install Flutter and Dart plugins from the marketplace. 
 
-Flutter plugin will add new toolbar that allows to run and debug Flutter application:
+Flutter plugin will add a new toolbar that allows to run and debug Flutter application:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
 
@@ -191,7 +191,7 @@ Flutter code will be stored in the `main.dart` file, while Android native code w
 
 ## Building the Flutter part
 
-Flutter applications are build with [Dart programming language](https://dart.dev/).
+Flutter applications are built with [Dart programming language](https://dart.dev/).
 
 Open `lib\main.dart` file, remove its content, and paste bellow snippet:
 
@@ -261,7 +261,7 @@ enum SdkState {
 }
 ```
 
-The above code contains custom `CallWidget` which will be responsible for managing application state (logging the user and managing the call). The `SdkState` enum that represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for Android using Kotlin.
+The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for Android using Kotlin.
 
 Update body of the `_CallWidgetState` class:
 
@@ -383,7 +383,7 @@ private fun loginUser(token: String) {
 }
 ```
 
-After running the application you should see `login with token...` message at Android Logcat. Now it's time to create missing `client`. 
+After running the application you should see `login with token...` message at Android Logcat. Now it's time to create a missing `client`. 
 
 ### Add Client SDK dependency
 
@@ -503,7 +503,7 @@ private fun notifyFlutter(state: SdkState) {
     }
 ```
 
-Notice that we store state in enum, but we are sending it as a string. Communication with Flutter happens on the `main` thread, so you need to use `Handler` to switch threads. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
+Notice that we store the state in the enum, but we are sending it as a string. Communication with Flutter happens on the `main` thread, so you need to use `Handler` to switch threads. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
 
 ### Retrieve SDK state by Flutter
 
@@ -779,7 +779,7 @@ The above method sets the state of the Flutter app to `SdkState.WAIT` and waits 
 
 You have handled ending the call by pressing `END CALL` button in the Flutter application UI, however, the call can also end outside of the Flutter app e.g. the call will be rejected or answered and later ended by the callee (on the real phone). 
 
-To support this cases you have to add `NexmoCallEventListener` listener to the call instance and listen for call specific events. 
+To support these cases you have to add `NexmoCallEventListener` listener to the call instance and listen for call-specific events. 
 
 Define `callEventListener` property at the top of the `MainActivity` class:
 
@@ -819,9 +819,9 @@ Run the app and test if everything is working as expected.
 
 # Summary
 
-You have successfully build the application. By doing so you have learned how to make a phone call from mobile application to the phone using Vonage Client SDK. For the complete version please see this project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
+You have successfully built the application. By doing so you have learned how to make a phone call from a mobile application to the phone using Vonage Client SDK. For the complete version please see this project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
-To familiarize yourself with other use cases please check [other tutorial](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
+To familiarize yourself with other use cases please check [other tutorials](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
 
 # References
 
