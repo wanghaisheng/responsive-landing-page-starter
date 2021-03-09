@@ -4,7 +4,7 @@ description: "This tutorial will help you to start with an example Amazon Lex
   bot and interact with it from Voice Calls using provided sample reference
   codes using Vonage Voice API. "
 thumbnail: /content/blog/connecting-voice-calls-to-an-amazon-lex-bot/amazonlex_voiceapi_1200x627.png
-author: martyn
+author: tony-chan
 published: true
 published_at: 2021-03-05T14:16:40.166Z
 updated_at: ""
@@ -85,15 +85,14 @@ Clicking **Publish** once more will finalize the setup of your sample bot.
 
 ## Set up the Lex Reference Connection
 
-* Go to <https://github.com/><public-repo-org>/lex-reference-connection,
-* Follow instructions as described in this repository.
+* Clone the [lex-reference-connection](https://github.com/nexmo-community/lex-reference-connection) repository from GitHub and follow instructions as described in the readme.
 * Select one of the deployment types as explained in the Running Lex reference connection code section.
 * Make note of the `LEX_REFERENCE_CONNECTION` argument (e.g. xxxx.ngrok.io, or myserver.mycompany.com:40000), as it will be needed later.
 
 ## Set up the Lex sample Voice API Application
 
-* Go to <https://github.com/><public-repo-org>/lex-sample-voice-application and follow the instructions as described in this repository.
-* Select one of the deployment types as explained in the Running Lex sample Voice API application section,
+* Clone the [lex-sample-voice-application](https://github.com/nexmo-community/lex-sample-voice-application) repository on GitHub and follow the instructions as described in this repository.
+* Select one of the deployment types as explained in the Running Lex sample Voice API application section.
 * Make note of the phone number linked to your Voice API application as explained in the Set up your Vonage Voice API application credentials and phone number section as it will be needed for the next section Interact via voice with the Lex bot.
 
 ## Interact Via Voice With the Lex Bot
