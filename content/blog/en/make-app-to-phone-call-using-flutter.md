@@ -785,15 +785,15 @@ Define `callEventListener` property at the top of the `MainActivity` class:
 
 ```kotlin
 private val callEventListener = object : NexmoCallEventListener {
-        override fun onMemberStatusUpdated(nexmoCallStatus: NexmoCallMemberStatus, callMember: NexmoCallMember) {
-            if (nexmoCallStatus == NexmoCallMemberStatus.COMPLETED || nexmoCallStatus == NexmoCallMemberStatus.CANCELLED) {
+        override fun onMemberStatusUpdated(callMemberStatus: NexmoCallMemberStatus, callMember: NexmoCallMember) {
+            if (callMemberStatus == NexmoCallMemberStatus.COMPLETED || callMemberStatus == NexmoCallMemberStatus.CANCELLED) {
                 onGoingCall = null
             }
         }
 
-        override fun onMuteChanged(nexmoMediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
+        override fun onMuteChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
 
-        override fun onEarmuffChanged(nexmoMediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
+        override fun onEarmuffChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
 
         override fun onDTMF(dtmf: String, callMember: NexmoCallMember) {}
     }
