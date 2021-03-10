@@ -333,7 +333,7 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as argument. The `loginUser` method defined in `MainActivity` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` the field at the top of `_CallWidgetState` class:
+Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as argument. The `loginUser` method defined in `MainActivity` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
 ```dart
 class _CallWidgetState extends State<CallWidget> {
