@@ -166,8 +166,6 @@ Flutter plugin will add a new toolbar that allows to run and debug Flutter appli
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
 
-# Building the Android app
-
 ## Create Flutter project
 
 You will create a Flutter project using Android Studio. 
