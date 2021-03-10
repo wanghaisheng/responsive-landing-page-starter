@@ -181,6 +181,8 @@ You will create a Flutter project using Android Studio.
 * Enter `app_to_phone_flutter` as project name, enter `Flutter SDK path` and click `Next`
 * Select `Include Kotlin support for Android code` and click `Finish`
 
+> Notice that `app_to_phone_flutter` folder (flutter project) contains`ios` folder containing the OS project and `ios` folder containing the iOS project.
+
 Connect Android device or emulator and run the app to verify that everything works as expected.
 
 ## Two-way Flutter/Android communication
