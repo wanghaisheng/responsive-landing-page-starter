@@ -507,7 +507,7 @@ Notice that you store the state in the enum, but you are sending it as a string.
 
 ### Retrieve SDK state by Flutter
 
-To retrieve state updates in Flutter you have to listen for method channel updates. Open `main.dart` and add these two methods inside `_CallWidgetState` class:
+To retrieve state updates in Flutter you have to listen for method channel updates. Open `main.dart` file and add these two methods inside `_CallWidgetState` class:
 
 ```dart
 _CallWidgetState() {
