@@ -687,9 +687,7 @@ The application needs to be able to access the microphone, so you have to reques
 
 You already added the [permission_handler](https://pub.dev/packages/permission_handler) package to Flutter. Open `ios/Runner/info.plist` file and add `Privacy - Microphone Usage Description` hey with `Make a call` value:
 
-![](/content/blog/make-app-to-phone-call-using-ios-and-flutter/microphone-permission.png)
-
-Add this method inside `_CallWidgetState` class defined in the `main.dart` file to request permission:
+Add this method inside `_CallWidgetState` the class defined in the `main.dart` file to request permission:
 
 ```dart
 Future<void> requestPermissions() async {
