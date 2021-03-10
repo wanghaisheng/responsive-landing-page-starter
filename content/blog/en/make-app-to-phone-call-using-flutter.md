@@ -424,7 +424,7 @@ Run `Sync project with Gradle` command in Android Studio:
 
 ### Initialize Client
 
-Open `MainActivity` class and add `client` property that will hold the reference to the Nexmo client.
+Open `MainActivity` class and add `client` property that will hold the reference to the Nexmo client:
 
 ```kotlin
 private lateinit var client: NexmoClient
