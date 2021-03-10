@@ -193,7 +193,7 @@ Flutter code will be stored in the `libm/ain.dart` file, while Android native co
 
 Flutter applications are built with [Dart](https://dart.dev/) programming language.
 
-Open `lib\main.dart` file, remove its content, and paste bellow snippet:
+Open `lib/main.dart` file, remove its content, and paste bellow snippet:
 
 ```dart
 import 'package:flutter/material.dart';
