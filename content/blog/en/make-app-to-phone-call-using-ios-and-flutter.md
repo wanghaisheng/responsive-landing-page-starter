@@ -140,7 +140,7 @@ Make a note of the JWT you generated for `Alice`.
 
 ## Install Xcode
 
-Open appstore and install [Xcode](https://developer.apple.com/xcode/).
+Open AppStore and install [Xcode](https://developer.apple.com/xcode/).
 
 ## Flutter setup
 
@@ -167,7 +167,29 @@ You will create a Flutter project using the terminal:
 ```cmd
 flutter create app_to_phone_flutter
 ```
-> Notice that `app_to_phone_flutter` folder (Flutter projects) contains`ios` folder containing th e OS project and `iOS` folder containing the iOS project.
+> Notice that `app_to_phone_flutter` folder (flutter project) contains`ios` folder containing the OS project and `ios` folder containing the iOS project.
+
+Enter the `app_to_phone_flutter`, open `pubspec.yaml` and add `permission_handler` dependency (just below `sdk: flutter`):
+
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  permission_handler: ^6.0.1+1
+```
+
+Now run this command to download the above dependency:
+
+```cmd
+flutter pub get
+```
+
+The above command will also create `Podfile` in `ios` subfolder. Open `app_to_phone_flutter/ios` folder in the termnal and run:
+
+```cmd
+pod install
+```
 
 Connect iOS device or simulator and run the app to verify that everything works as expected.
 
