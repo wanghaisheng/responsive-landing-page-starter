@@ -158,8 +158,6 @@ flutter doctor
 
 Flutter Doctor will verify if Flutter SDK is installed and other components are installed and configured correctly.
 
-# Building the iOS app
-
 ## Create Flutter project
 
 You will create a Flutter project using the terminal:
@@ -185,13 +183,28 @@ Now run this command to download the above dependency:
 flutter pub get
 ```
 
-The above command will also create `Podfile` in `ios` subfolder. Open `app_to_phone_flutter/ios` folder in the termnal and run:
+The above command will also create `Podfile` in `ios` subfolder. Open `ios\Podfile` uncomment `platform` line and update the platform version to `11`:
+
+```
+platform :ios, '11.0'
+```
+
+At the end of the same file add `pod 'NexmoClient'`:
+
+```
+target 'Runner' do
+  use_frameworks!
+  use_modular_headers!
+  pod 'NexmoClient'
+```
+
+Open `app_to_phone_flutter/ios` folder in the termnal and run:
 
 ```cmd
 pod install
 ```
 
-Connect iOS device or simulator and run the app to verify that everything works as expected.
+Open `Runner.xcworkspace` in Xcode and run the app to verify that everything works as expected.
 
 ## Two-way Flutter/iOS communication
 
@@ -343,7 +356,7 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as argument. The `loginUser` method defined in `MainActivity` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` the field at the top of `_CallWidgetState` class:
+Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as argument. The `loginUser` method defined in `AppDelegate` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
 ```dart
 class _CallWidgetState extends State<CallWidget> {
@@ -351,17 +364,13 @@ class _CallWidgetState extends State<CallWidget> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 ```
 
-The `com.vonage` string represents the unique channel id that you will also refer on the native iOS code (`MainActivity` class). Now you need to handle this method call on the native iOS side. 
+The `com.vonage` string represents the unique channel id that you will also refer on the native iOS code (`AppDelegate` class). Now you need to handle this method call on the native iOS side. 
 
-Open `MainActivity` class. Note that the Flutter plugin displays a hint to open this iOS project in the separate instance of Xcode (another window). Do so to have better code completion for the iOS project:
+Open `AppDelegate` class. 
 
-![](/content/blog/make-app-to-phone-call-using-flutter/openinas.png)
+To listen for method calls originating from Flutter add `addFlutterChannelListener` method call inside `application` method:
 
-> NOTE: This happens because the Flutter project consists of the iOS project and the iOS project.
-
-To listen for method calls originating from Flutter add `addFlutterChannelListener` method call inside `configureFlutterEngine` method:
-
-```kotlin
+```swift
 override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
         super.configureFlutterEngine(flutterEngine)
 
@@ -369,9 +378,9 @@ override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
     }
 ```
 
-Now add `addFlutterChannelListener` and `login` methods inside `MainActivity` class (same level as above `configureFlutterEngine` method):
+Now add `addFlutterChannelListener` and `login` methods inside `AppDelegate` class (same level as above `configureFlutterEngine` method):
 
-```kotlin
+```swift
 private fun addFlutterChannelListener() {
         MethodChannel(flutterEngine?.dartExecutor?.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
 
@@ -434,15 +443,15 @@ Run `Sync project with Gradle` command in Xcode:
 
 ### Initialize Client
 
-Open `MainActivity` class and `client` property that will hold reference to Nexmo client.
+Open `AppDelegate` class and `client` property that will hold reference to Nexmo client.
 
-```kotlin
+```swift
 private lateinit var client: NexmoClient
 ```
 
 Now add `initClient` method:
 
-```kotlin
+```swift
 private fun initClient() {
         client = NexmoClient.Builder().build(this)
     }
@@ -450,7 +459,7 @@ private fun initClient() {
 
 Add code to call `initClient` method from existing `configureFlutterEngine` method:
 
-```kotlin
+```swift
 override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
      super.configureFlutterEngine(flutterEngine)
 
@@ -463,7 +472,7 @@ override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
 
 Modify `login` method body to call `login` on the client instance:
 
-```kotlin
+```swift
 private fun login(token: String) {
         client.login(token)
     }
@@ -473,9 +482,9 @@ This will allow us to login the user (`Alice`) using Client SDK.
 
 ### Notify flutter about SDK state change
 
-You will add enum to represent states of the client SDK (you have already added equivalent `SdkState` enum in the `main.dart` file). Add `SdkState` enum at the bottom of the `MainActivity.kt` file:
+You will add enum to represent states of the client SDK (you have already added equivalent `SdkState` enum in the `main.dart` file). Add `SdkState` enum at the bottom of the `AppDelegate.kt` file:
 
-```kotlin
+```swift
 enum class SdkState {
     LOGGED_OUT,
     LOGGED_IN,
@@ -487,7 +496,7 @@ enum class SdkState {
 
 You will now add the connection listener and map some of the SDK states to `SdkState` enum. Modify body of `initClient` method:
 
-```kotlin
+```swift
 private fun initClient() {
         client = NexmoClient.Builder().build(this)
 
@@ -502,9 +511,9 @@ private fun initClient() {
     }
 ```
 
-To send these states to flutter you need to add `notifyFlutter` method in the `MainActivity` class:
+To send these states to flutter you need to add `notifyFlutter` method in the `AppDelegate` class:
 
-```kotlin
+```swift
 private fun notifyFlutter(state: SdkState) {
         Handler(Looper.getMainLooper()).post {
             MethodChannel(flutterEngine?.dartExecutor?.binaryMessenger, "com.vonage")
@@ -589,9 +598,9 @@ Future<void> _makeCall() async {
   }
 ```
 
-The above method will communicate with iOS so you have to update code in `MainActivity` class as well. Add `makeCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+The above method will communicate with iOS so you have to update code in `AppDelegate` class as well. Add `makeCall` clausule to `when` statement inside `addFlutterChannelListener` method:
 
-```kotlin
+```swift
 private fun addFlutterChannelListener() {
         MethodChannel(flutterEngine?.dartExecutor?.binaryMessenger, "com.vonage").setMethodCallHandler { call, result ->
 
@@ -615,15 +624,15 @@ private fun addFlutterChannelListener() {
 
 Now in the same file add `onGoingCall` property:
 
-```kotlin
+```swift
 private var onGoingCall: NexmoCall? = null
 ```
 
-> NOTE: Currently Client SDK does not store ongoing call reference, so you have to store it in `MainActivity` class. You will use it later to end the call.
+> NOTE: Currently Client SDK does not store ongoing call reference, so you have to store it in `AppDelegate` class. You will use it later to end the call.
 
 Now in the same file add `makeCall` method:
 
-```kotlin
+```swift
 @SuppressLint("MissingPermission")
     private fun makeCall() {
         notifyFlutter(SdkState.WAIT)
@@ -745,9 +754,9 @@ Future<void> _endCall() async {
   }
 ```
 
-The above method will call communicate with iOS so you have to update code in `MainActivity` class. Add `endCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+The above method will call communicate with iOS so you have to update code in `AppDelegate` class. Add `endCall` clausule to `when` statement inside `addFlutterChannelListener` method:
 
-```kotlin
+```swift
 when (call.method) {
                 "loginUser" -> {
                     val token = requireNotNull(call.argument<String>("token"))
@@ -770,7 +779,7 @@ when (call.method) {
 
 Now in the same file add `endCall` method:
 
-```kotlin
+```swift
 private fun endCall() {
         onGoingCall?.hangup(object : NexmoRequestListener<NexmoCall> {
             override fun onSuccess(call: NexmoCall?) {
@@ -791,9 +800,9 @@ You have handled ending the call by pressing `END CALL` button in the Flutter ap
 
 To support these cases you have to add `NexmoCallEventListener` listener to the call instance and listen for call-specific events. 
 
-Define `callEventListener` property at the top of the `MainActivity` class:
+Define `callEventListener` property at the top of the `AppDelegate` class:
 
-```kotlin
+```swift
 private val callEventListener = object : NexmoCallEventListener {
         override fun onMemberStatusUpdated(callMemberStatus: NexmoCallMemberStatus, callMember: NexmoCallMember) {
             if (callMemberStatus == NexmoCallMemberStatus.COMPLETED || callMemberStatus == NexmoCallMemberStatus.CANCELLED) {
@@ -813,14 +822,14 @@ The `onMemberStatusUpdated` callback informs you about call end.
 
 To register above listener modify `onSuccess` callback inside `makeCall` method: 
 
-```kotlin
+```swift
 onGoingCall = call
 onGoingCall?.addCallEventListener(callEventListener)
 ```
 
 Finally modify `endCall` method to unregister the `callEventListener` listener inside `onSuccess` callback:
 
-```kotlin
+```swift
 onGoingCall?.removeCallEventListener(callEventListener)
 onGoingCall = null
 ```
