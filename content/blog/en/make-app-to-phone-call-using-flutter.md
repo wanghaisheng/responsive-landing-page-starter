@@ -669,7 +669,7 @@ Each state change will result in UI modification. Before making a call the appli
 
 The application needs to be able to access the microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
 
-First you need to add the [permission_handler](https://pub.dev/packages/permission_handler) package. Open `pubspec.yaml` file and add `permission_handler: ^5.1.0+2` dependency under `sdk: flutter`:
+First you need to add the [permission_handler](https://pub.dev/packages/permission_handler) package. Open `pubspec.yaml` file and add `permission_handler: ^6.0.1+1` dependency under `sdk: flutter`:
 
 ```yaml
 dependencies:
