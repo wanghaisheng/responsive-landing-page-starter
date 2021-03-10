@@ -643,31 +643,9 @@ func makeCall() {
             }
             
             self.onGoingCall = call
-            self.onGoingCall?.setDelegate(self)
             self.notifyFlutter(state: .onCall)
         }
     }
-```
-
-In the `AppDelegares.swift` file add `NXMCallDelegate`:
-
-```
-extension AppDelegate: NXMCallDelegate {
-    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, with status: NXMCallMemberStatus) {
-        if (status == .completed || status == .cancelled) {
-            onGoingCall = nil
-            notifyFlutter(state: .loggedIn)
-        }
-    }
-    
-    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, isMuted muted: Bool) {
-        
-    }
-    
-    func call(_ call: NXMCall, didReceive error: Error) {
-        notifyFlutter(state: .error)
-    }
-}
 ```
 
 The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Now you need to add support for both states (`SdkState.ON_CALL` and `SdkState.ERROR`) inside `main.dart` file (Fluttter). Update body of the `_updateView` method:
@@ -711,18 +689,6 @@ You already added the [permission_handler](https://pub.dev/packages/permission_h
 
 ![](/content/blog/make-app-to-phone-call-using-ios-and-flutter/microphone-permission.png)
 
-Run the below command in the terminal to download the newly added Flutter package:
-
-```cmd
-flutter pub get
-```
-
-Add package import at the top of the `main.dart` file:
-
-```dart
-import 'package:permission_handler/permission_handler.dart';
-```
-
 Add this method inside `_CallWidgetState` class defined in the `main.dart` file to request permission:
 
 ```dart
@@ -732,18 +698,6 @@ Future<void> requestPermissions() async {
     ].request();
   }
 ```
-
-Finally you need add two permissions (`uses-permission` tags) inside `app/src/main/iOSManifest.xml` file, over the `application` tag:
-
-```xml
-<uses-permission iOS:name="iOS.permission.INTERNET" />
-<uses-permission iOS:name="iOS.permission.RECORD_AUDIO" />
-
-<application
-...
-```
-
-> NOTE: `iOS.permission.INTERNET` permission is granted implicitly by the iOS, so we don't have to request it in Flutter explicitly.
 
 Run the app and click `MAKE PHONE CALL` to start a call. Permissions dialog will appear and after granting the permissions the Call will start.
 
@@ -768,40 +722,42 @@ Future<void> _endCall() async {
 The above method will call communicate with iOS so you have to update code in `AppDelegate` class. Add `endCall` clausule to `when` statement inside `addFlutterChannelListener` method:
 
 ```swift
-when (call.method) {
-                "loginUser" -> {
-                    val token = requireNotNull(call.argument<String>("token"))
-                    login(token)
-                    result.success("")
+func addFlutterChannelListener() {
+        let controller = window?.rootViewController as! FlutterViewController
+        
+        vonageChannel = FlutterMethodChannel(name: "com.vonage",
+                                             binaryMessenger: controller.binaryMessenger)
+        vonageChannel?.setMethodCallHandler({ [weak self]
+            (call: FlutterMethodCall, result: @escaping FlutterResult) -> Void in
+            guard let self = self else { return }
+            
+            switch(call.method) {
+            case "loginUser":
+                if let arguments = call.arguments as? [String: String],
+                   let token = arguments["token"] {
+                    self.loginUser(token: token)
                 }
-                "makeCall" -> {
-                    makeCall()
-                    result.success("")
-                }
-                "endCall" -> {
-                    endCall()
-                    result.success("")
-                }
-                else -> {
-                    result.notImplemented()
-                }
+                result("")
+            case "makeCall":
+                self.makeCall()
+                result("")
+            case "endCall":
+                self.endCall()
+                result("")
+            default:
+                result(FlutterMethodNotImplemented)
             }
+        })
+    }
 ```
 
 Now in the same file add `endCall` method:
 
 ```swift
-private fun endCall() {
-        onGoingCall?.hangup(object : NexmoRequestListener<NexmoCall> {
-            override fun onSuccess(call: NexmoCall?) {
-                onGoingCall = null
-                notifyFlutter(SdkState.LOGGED_IN)
-            }
-
-            override fun onError(apiError: NexmoApiError) {
-                notifyFlutter(SdkState.ERROR)
-            }
-        })
+func endCall() {
+        onGoingCall?.hangup()
+        onGoingCall = nil
+        notifyFlutter(state: .loggedIn)
     }
 ```
 
@@ -811,38 +767,33 @@ You have handled ending the call by pressing `END CALL` button in the Flutter ap
 
 To support these cases you have to add `NexmoCallEventListener` listener to the call instance and listen for call-specific events. 
 
-Define `callEventListener` property at the top of the `AppDelegate` class:
+In the `AppDelegares.swift` file add `NXMCallDelegate`:
 
 ```swift
-private val callEventListener = object : NexmoCallEventListener {
-        override fun onMemberStatusUpdated(callMemberStatus: NexmoCallMemberStatus, callMember: NexmoCallMember) {
-            if (callMemberStatus == NexmoCallMemberStatus.COMPLETED || callMemberStatus == NexmoCallMemberStatus.CANCELLED) {
-                onGoingCall = null
-            }
+extension AppDelegate: NXMCallDelegate {
+    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, with status: NXMCallMemberStatus) {
+        if (status == .completed || status == .cancelled) {
+            onGoingCall = nil
+            notifyFlutter(state: .loggedIn)
         }
-
-        override fun onMuteChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
-
-        override fun onEarmuffChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoCallMember) {}
-
-        override fun onDTMF(dtmf: String, callMember: NexmoCallMember) {}
     }
+    
+    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, isMuted muted: Bool) {
+        
+    }
+    
+    func call(_ call: NXMCall, didReceive error: Error) {
+        notifyFlutter(state: .error)
+    }
+}
 ```
-
-The `onMemberStatusUpdated` callback informs you about call end.
 
 To register above listener modify `onSuccess` callback inside `makeCall` method: 
 
 ```swift
-onGoingCall = call
-onGoingCall?.addCallEventListener(callEventListener)
-```
-
-Finally modify `endCall` method to unregister the `callEventListener` listener inside `onSuccess` callback:
-
-```swift
-onGoingCall?.removeCallEventListener(callEventListener)
-onGoingCall = null
+self.onGoingCall = call
+self.onGoingCall?.setDelegate(self)
+self.notifyFlutter(state: .onCall)
 ```
 
 Run the app and test if everything is working as expected.
