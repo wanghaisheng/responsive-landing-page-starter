@@ -503,7 +503,7 @@ private fun notifyFlutter(state: SdkState) {
     }
 ```
 
-Notice that we store the state in the enum, but we are sending it as a string. Communication with Flutter happens on the `main` thread, so you need to use `Handler` to switch threads. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
+Notice that you store the state in the enum, but you are sending it as a string. Communication with Flutter happens on the `main` thread, so you need to use `Handler` to switch threads. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
 
 ### Retrieve SDK state by Flutter
 
@@ -711,7 +711,7 @@ Finally you need add two permissions (`uses-permission` tags) inside `app/src/ma
 ...
 ```
 
-> NOTE: `android.permission.INTERNET` permission is granted implicitly by the Android, so we don't have to request it in Flutter explicitly.
+> NOTE: `android.permission.INTERNET` permission is granted implicitly by the Android, so you don't have to request it in Flutter explicitly.
 
 Run the app and click `MAKE PHONE CALL` to start a call. Permissions dialog will appear and after granting the permissions the Call will start.
 
