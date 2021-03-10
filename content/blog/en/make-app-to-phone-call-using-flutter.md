@@ -191,7 +191,7 @@ Flutter code will be stored in the `main.dart` file, while Android native code w
 
 ## Init Flutter application
 
-Flutter applications are built with [Dart programming language](https://dart.dev/).
+Flutter applications are built with [Dart](https://dart.dev/)  programming language.
 
 Open `lib\main.dart` file, remove its content, and paste bellow snippet:
 
