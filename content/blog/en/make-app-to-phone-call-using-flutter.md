@@ -343,7 +343,7 @@ class _CallWidgetState extends State<CallWidget> {
 
 The `com.vonage` string represents the unique channel id that you will also refer on the native Android code (`MainActivity` class). Now you need to handle this method call on the native Android side. 
 
-Open `MainActivity` class. Note that Flutter plugin displays a hint to open this Android project in the separate instance of Android Studio (another window). Do so to have better code completion for Android project:
+Open `MainActivity` class. Note that the Flutter plugin displays a hint to open this Android project in the separate instance of Android Studio (another window). Do so to have better code completion for the Android project:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/openinas.png)
 
