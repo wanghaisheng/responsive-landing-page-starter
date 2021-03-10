@@ -6,7 +6,7 @@ description: "This tutorial will help you to start with an example Amazon Lex
 thumbnail: /content/blog/connecting-voice-calls-to-an-amazon-lex-bot/amazonlex_voiceapi_1200x627.png
 author: tony-chan
 published: true
-published_at: 2021-03-05T14:16:40.166Z
+published_at: 2021-03-10T19:58:02.213Z
 updated_at: ""
 category: tutorial
 tags:
