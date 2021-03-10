@@ -173,7 +173,7 @@ You will create a Flutter project using Android Studio.
 * Run Android Studio
 * On the Android Studio welcome screen select `Create New Flutter project`
 
-![](/content/blog/make-app-to-phone-call-using-flutter/create-new-flutter-project.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/create-new-flutter-project.png)
 
 * Select `Flutter Application` and click `Next`
 * Enter `app_to_phone_flutter` as project name, enter `Flutter SDK path` and click `Next`
@@ -530,6 +530,7 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
     }
   }
 ```
+
 Method receives "signal" from Android and converts it to an emum. Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
 
 ```dart
