@@ -697,9 +697,7 @@ Add this method inside `_CallWidgetState` class defined in the `main.dart` file 
 
 ```dart
 Future<void> requestPermissions() async {
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.microphone
-    ].request();
+    await [ Permission.microphone] .request();
   }
 ```
 
