@@ -189,7 +189,7 @@ Currently, Client SDK is not available as a Flutter package, so you have to use 
 
 Flutter code will be stored in the `main.dart` file, while Android native code will be stored in the `MainActivity.kt` file.
 
-## Building the Flutter part
+## Init Flutter application
 
 Flutter applications are built with [Dart programming language](https://dart.dev/).
 
