@@ -127,7 +127,7 @@ export default {
     },
   },
 
-  feed: async () => {
+  feed: () => {
     const { $content } = require('@nuxt/content')
 
     const baseFeedPath = '/feeds'
@@ -170,57 +170,61 @@ export default {
       }))
     }
 
-    const getAuthorFeed = (author) => {
-      const createFeedArticles = async function (feed) {
-        feed.options = {
-          title: `${author.name} » ${config.baseTitle}`,
-          link: `${config.baseUrl}/authors/${author.username}`,
-          description: author.bio,
-        }
+    // const getAuthorFeed = (author) => {
+    //   const createFeedArticles = async function (feed) {
+    //     feed.options = {
+    //       title: `${author.name} » ${config.baseTitle}`,
+    //       link: `${config.baseUrl}/authors/${author.username}`,
+    //       description: author.bio,
+    //     }
 
-        const posts = await $content('blog/en')
-          .where({
-            $and: [
-              { author: { $eq: author.username } },
-              { published: { $ne: false } },
-            ],
-          })
-          .sortBy('published_at', 'desc')
-          .limit(5)
-          .fetch()
+    //     try {
+    //       const posts = await $content('blog/en')
+    //         .where({
+    //           $and: [
+    //             { author: { $eq: author.username } },
+    //             { published: { $ne: false } },
+    //           ],
+    //         })
+    //         .sortBy('published_at', 'desc')
+    //         .limit(5)
+    //         .fetch()
 
-        posts.forEach((post) => {
-          feed.addItem({
-            title: post.title,
-            id: post.slug,
-            date: new Date(post.updated_at || post.published_at),
-            link: `${config.baseUrl}${post.route}`,
-            description: post.description,
-            content: post.description,
-          })
-        })
-      }
+    //       posts.forEach((post) => {
+    //         feed.addItem({
+    //           title: post.title,
+    //           id: post.slug,
+    //           date: new Date(post.updated_at || post.published_at),
+    //           link: `${config.baseUrl}${post.route}`,
+    //           description: post.description,
+    //           content: post.description,
+    //         })
+    //       })
+    //     } catch (error) {
+    //       console.log(error, author)
+    //     }
+    //   }
+    //
+    //   return Object.values(feedFormats).map(({ file, type }) => ({
+    //     path: `${baseFeedPath}/authors/${author.username}/${file}`,
+    //     type,
+    //     create: createFeedArticles,
+    //   }))
+    // }
 
-      return Object.values(feedFormats).map(({ file, type }) => ({
-        path: `${baseFeedPath}/authors/${author.username}/${file}`,
-        type,
-        create: createFeedArticles,
-      }))
-    }
+    // const getAuthorFeeds = async () => {
+    //   const authors = await $content('authors')
+    //     .where({ hidden: { $ne: true } })
+    //     .fetch()
 
-    const getAuthorFeeds = async () => {
-      const authors = await $content('authors')
-        .where({ hidden: { $ne: true } })
-        .fetch()
-
-      return Object.values(authors).map((author) => {
-        return [...getAuthorFeed(author)]
-      })
-    }
+    //   return Object.values(authors).map((author) => {
+    //     return [...getAuthorFeed(author)]
+    //   })
+    // }
 
     return [
       ...getMainFeeds(),
-      ...(await getAuthorFeeds()).flat(),
+      // ...(await getAuthorFeeds()).flat(),
       // (await getAuthorFeeds($content)).flat(),
     ]
   },
