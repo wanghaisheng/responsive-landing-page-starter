@@ -298,7 +298,7 @@ class _CallWidgetState extends State<CallWidget> {
 }
 ```
 
-The initial state of Flutter application is `SdkState.LOGGED_OUT`. 
+The initial state of the Flutter application is `SdkState.LOGGED_OUT`. 
 
 Run the application you should see `Login Alice` button:
 
