@@ -156,7 +156,7 @@ Fortunately, flutter comes with a tool that allows us to verify if SDK and all r
 flutter doctor
 ```
 
-Flutter Doctor will verify if Flutter SDK is installed and other components are installed and configured correctly.
+Flutter Doctor will verify if Flutter SDK is installed and other components are installed and configured correctly. If problems will be detected you will see the description and hint regarding the fix.
 
 ### Install Flutter Plugin
 
