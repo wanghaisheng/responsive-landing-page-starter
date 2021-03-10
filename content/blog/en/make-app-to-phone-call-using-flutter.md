@@ -187,11 +187,11 @@ Connect Android device or emulator and run the app to verify that everything wor
 
 Currently, Client SDK is not available as a Flutter package, so you have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html) - Flutter will call android methods, Android will call Flutter methods. 
 
-Flutter code will be stored in the `main.dart` file, while Android native code will be stored in the `MainActivity.kt` file.
+Flutter code will be stored in the `libm/ain.dart` file, while Android native code will be stored in the `android/app/src/main/kotlin/com/example/app_to_phone_flutter/MainActivity.kt` file.
 
 ## Init Flutter application
 
-Flutter applications are built with [Dart](https://dart.dev/)  programming language.
+Flutter applications are built with [Dart](https://dart.dev/) programming language.
 
 Open `lib\main.dart` file, remove its content, and paste bellow snippet:
 
