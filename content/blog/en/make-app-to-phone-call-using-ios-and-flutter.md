@@ -138,9 +138,9 @@ Make a note of the JWT you generated for `Alice`.
 
 > NOTE: In a production environment, your application should expose an endpoint that generates a JWT for each client request.
 
-## Install Android Studio
+## Install Xcode
 
-Download and install [XCode](https://developer.apple.com/xcode/).
+Open appstore and install [Xcode](https://developer.apple.com/xcode/).
 
 ## Flutter setup
 
@@ -167,11 +167,11 @@ You will create a Flutter project using the terminal:
 ```cmd
 flutter create app_to_phone_flutter
 ```
-> Notice that `app_to_phone_flutter` folder (Flutter projects) contains`ios` folder containing th e OS project and `android` folder containing the Android project.
+> Notice that `app_to_phone_flutter` folder (Flutter projects) contains`ios` folder containing th e OS project and `iOS` folder containing the iOS project.
 
 Connect iOS device or simulator and run the app to verify that everything works as expected.
 
-## Two-way Flutter/Android communication
+## Two-way Flutter/iOS communication
 
 Currently, Client SDK is not available as a Flutter package, so you have to use [iOS native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/ios) and communicate between iOS and Flutter using [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html) - Flutter will call iOS methods, iOS will call Flutter methods. 
 
@@ -249,7 +249,7 @@ enum SdkState {
 }
 ```
 
-The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for Android using Kotlin.
+The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for iOS using Kotlin.
 
 Update body of the `_CallWidgetState` class:
 
@@ -286,7 +286,7 @@ class _CallWidgetState extends State<CallWidget> {
 }
 ```
 
-The initial state of Flutter application is `SdkState.LOGGED_OUT`. 
+The initial state of the Flutter application is `SdkState.LOGGED_OUT`. 
 
 Run the application you should see `Login Alice` button:
 
@@ -329,13 +329,13 @@ class _CallWidgetState extends State<CallWidget> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 ```
 
-The `com.vonage` string represents the unique channel id that you will also refer on the native Android code (`MainActivity` class). Now you need to handle this method call on the native Android side. 
+The `com.vonage` string represents the unique channel id that you will also refer on the native iOS code (`MainActivity` class). Now you need to handle this method call on the native iOS side. 
 
-Open `MainActivity` class. Note that Flutter plugin displays a hint to open this Android project in the separate instance of Android Studio (another window). Do so to have better code completion for Android project:
+Open `MainActivity` class. Note that the Flutter plugin displays a hint to open this iOS project in the separate instance of Xcode (another window). Do so to have better code completion for the iOS project:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/openinas.png)
 
-> NOTE: This happens because the Flutter project consists of the Android project and the iOS project.
+> NOTE: This happens because the Flutter project consists of the iOS project and the iOS project.
 
 To listen for method calls originating from Flutter add `addFlutterChannelListener` method call inside `configureFlutterEngine` method:
 
@@ -371,7 +371,7 @@ private fun loginUser(token: String) {
 }
 ```
 
-After running the application you should see `login with token...` message at Android Logcat. Now it's time to create a missing `client`. 
+After running the application you should see `login with token...` message at iOS Logcat. Now it's time to create a missing `client`. 
 
 ### Add Client SDK dependency
 
@@ -396,17 +396,17 @@ Now add the Client SDK dependency to the project in the `app\build.gradle` file:
 dependencies {
     // ...
 
-    implementation 'com.nexmo.android:client-sdk:2.8.1'
+    implementation 'com.nexmo.iOS:client-sdk:2.8.1'
 }
 ```
 
-In the same file set min Android SDK version to `23`:
+In the same file set min iOS SDK version to `23`:
 
 ```groovy
 minSdkVersion 23
 ```
 
-Run `Sync project with Gradle` command in Android Studio:
+Run `Sync project with Gradle` command in Xcode:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/sync-projct-with-gradle.png)
 
@@ -518,7 +518,7 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
     }
   }
 ```
-Method receives "signal" from Android and converts it to an emum. Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
+Method receives "signal" from iOS and converts it to an emum. Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
 
 ```dart
 Widget _updateView() {
@@ -542,7 +542,7 @@ Widget _updateView() {
 
 During `SdkState.WAIT` progress bar will be displayed. After succesfull login application will show `MAKE PHONE CALL` button.
 
-> NOTE: While modyfying Android native code Flutter hot reload will not work. You have to stop the application and run it again.
+> NOTE: While modyfying iOS native code Flutter hot reload will not work. You have to stop the application and run it again.
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
 
@@ -567,7 +567,7 @@ Future<void> _makeCall() async {
   }
 ```
 
-The above method will communicate with Android so you have to update code in `MainActivity` class as well. Add `makeCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+The above method will communicate with iOS so you have to update code in `MainActivity` class as well. Add `makeCall` clausule to `when` statement inside `addFlutterChannelListener` method:
 
 ```kotlin
 private fun addFlutterChannelListener() {
@@ -655,7 +655,7 @@ Each state change will result in UI modification. Before making a call the appli
 
 ### Request permissions
 
-The application needs to be able to access the microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
+The application needs to be able to access the microphone, so you have to request iOS `iOS.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
 
 First you need to add the [permission_handler](https://pub.dev/packages/permission_handler) package. Open `pubspec.yaml` file and add `permission_handler: ^5.1.0+2` dependency under `sdk: flutter`:
 
@@ -691,17 +691,17 @@ Future<void> requestPermissions() async {
   }
 ```
 
-Finally you need add two permissions (`uses-permission` tags) inside `app/src/main/AndroidManifest.xml` file, over the `application` tag:
+Finally you need add two permissions (`uses-permission` tags) inside `app/src/main/iOSManifest.xml` file, over the `application` tag:
 
 ```xml
-<uses-permission android:name="android.permission.INTERNET" />
-<uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission iOS:name="iOS.permission.INTERNET" />
+<uses-permission iOS:name="iOS.permission.RECORD_AUDIO" />
 
 <application
 ...
 ```
 
-> NOTE: `android.permission.INTERNET` permission is granted implicitly by the Android, so we don't have to request it in Flutter explicitly.
+> NOTE: `iOS.permission.INTERNET` permission is granted implicitly by the iOS, so we don't have to request it in Flutter explicitly.
 
 Run the app and click `MAKE PHONE CALL` to start a call. Permissions dialog will appear and after granting the permissions the Call will start.
 
@@ -723,7 +723,7 @@ Future<void> _endCall() async {
   }
 ```
 
-The above method will call communicate with Android so you have to update code in `MainActivity` class. Add `endCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+The above method will call communicate with iOS so you have to update code in `MainActivity` class. Add `endCall` clausule to `when` statement inside `addFlutterChannelListener` method:
 
 ```kotlin
 when (call.method) {
