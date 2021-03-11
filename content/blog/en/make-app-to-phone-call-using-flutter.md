@@ -724,7 +724,8 @@ The state of the application will be updated to `SdkState.ON_CALL` and UI will b
 
 ### End call
 
-Update body of the `_endCall` method inside 
+To end the call you need to trigger the method on the native Android application using `platformMethodChannel`. Inside `main.dart` file update body of the `_endCall` method:
+
 
 ```dart
 Future<void> _endCall() async {
