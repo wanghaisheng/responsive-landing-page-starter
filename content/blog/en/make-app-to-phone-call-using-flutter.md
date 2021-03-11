@@ -146,8 +146,6 @@ Download and install [Android Studio](https://developer.android.com/studio).
 
 ### Install Flutter SDK
 
-Download and install flutter SDK.
-
 This step will vary on MacOS, Win, and Linux, but in general, it boils down to downloading flutter SDK for a given OS, extracting the SDK file, and adding the `sdk\bin` folder to the system PATH variable. Detailed instruction can be found [here](https://flutter.dev/docs/get-started/install).
 
 Fortunately, flutter comes with a tool that allows us to verify if SDK and all required "components" are present and configured correctly. Run this command:
@@ -206,7 +204,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'app-to-phone-flutter',
       home: CallWidget(title: 'app-to-phone-flutter'),
     );
   }
