@@ -358,7 +358,7 @@ override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
     }
 ```
 
-Now add `addFlutterChannelListener` and `login` methods inside `MainActivity` class (same level as above `configureFlutterEngine` method):
+Now add `addFlutterChannelListener` and `loginUser` methods inside `MainActivity` class (same level as above `configureFlutterEngine` method):
 
 ```kotlin
 private fun addFlutterChannelListener() {
