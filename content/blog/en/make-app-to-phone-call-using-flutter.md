@@ -35,7 +35,7 @@ Firstly, you need to deal with few prerequisites:
 
 ## Vonage application
 
-### Create NCCO
+### Create an NCCO
 
 A Call Control Object (NCCO) is a JSON array that you use to control the flow of a Voice API call. More information on NCCO can be found here [here](https://developer.nexmo.com/voice/voice-api/ncco-reference).
 
