@@ -2,6 +2,7 @@
 title: Share Screens Together With Your Friends and Co-workers
 description: Learn how to enhance Vonage Video's Basic Video Chat App with
   screen-sharing capabilities using HTML and javascript
+thumbnail: /content/blog/share-screens-together-with-your-friends-and-co-workers/sharescreens_1200x600.png
 author: misha-behei
 published: true
 published_at: 2021-02-24T17:01:04.986Z
