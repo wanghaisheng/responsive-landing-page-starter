@@ -579,7 +579,7 @@ Future<void> _makeCall() async {
   }
 ```
 
-The above method will communicate with Android so you have to update code in `MainActivity` class as well. Add `makeCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+The above method will communicate with Android so you have to update code in `MainActivity` class as well. Add `makeCall` clauses to `when` statement inside `addFlutterChannelListener` method:
 
 ```kotlin
 private fun addFlutterChannelListener() {
@@ -734,7 +734,7 @@ Future<void> _endCall() async {
   }
 ```
 
-The above method will communicate with Android so you have to update code in the `MainActivity` class. Add `endCall` clausule to `when` statement inside the `addFlutterChannelListener` method:
+The above method will communicate with Android so you have to update code in the `MainActivity` class. Add `endCall` clauses to `when` statement inside the `addFlutterChannelListener` method:
 
 ```kotlin
 when (call.method) {
