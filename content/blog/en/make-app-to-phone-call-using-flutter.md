@@ -31,7 +31,7 @@ Firstly, you need to deal with few prerequisites:
 * Install Flutter SDK
 * Create Flutter project
 
-# Prerequisites
+## Prerequisites
 
 ## Vonage application
 
