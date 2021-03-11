@@ -415,6 +415,7 @@ The code is in place - after pressing `Login Aa Alice` button the Flutter app wi
 Run the application from the Xcode to make sure it is compiling.
 
 Before you will be able to actually login the ser you need to initialize SDK Client.
+
 ### Initialize Client
 
 Open `AppDelegate` class and add NexmoClient import at the top of the file:
@@ -687,6 +688,8 @@ The application needs to be able to access the microphone, so you have to reques
 
 Open `ios/Runner/info.plist` file and add `Privacy - Microphone Usage Description` key with `Make a call` value:
 
+![](/content/blog/make-app-to-phone-call-using-ios-and-flutter/microphone-permission.png)
+
 You already added the [permission_handler](https://pub.dev/packages/permission_handler) package to the Flutter project, so now you have to import it. dd import at the tp of the `main.dart` file:
 
 ```dart
@@ -735,7 +738,6 @@ Future<void> _endCall() async {
 ```
 
 The above method will communicate with iOS so you have to update code in the `AppDelegate` class as well. Add `endCall` clauses to `switch` statement inside the `addFlutterChannelListener` method:
-
 
 ```swift
 func addFlutterChannelListener() {
