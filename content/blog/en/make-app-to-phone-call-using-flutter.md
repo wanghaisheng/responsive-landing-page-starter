@@ -305,7 +305,7 @@ Run the application you should see `Login Alice` button:
 
 ### Login the user
 
-Button is disabled so now add `onPressed` handler to the `ElevatedButton` to allow logging in:
+The `Login as Aice` button is disabled so now add `onPressed` handler to the `ElevatedButton` to allow logging in:
 
 ```dart
 Widget _updateView() {
