@@ -757,7 +757,7 @@ when (call.method) {
             }
 ```
 
-Now in the same file add `endCall` method:
+Now in the same file add the `endCall` method:
 
 ```kotlin
 private fun endCall() {
