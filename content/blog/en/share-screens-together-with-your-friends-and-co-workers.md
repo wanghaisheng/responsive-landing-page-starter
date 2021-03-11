@@ -5,8 +5,8 @@ description: Learn how to enhance Vonage Video's Basic Video Chat App with
 thumbnail: /content/blog/share-screens-together-with-your-friends-and-co-workers/sharescreens_1200x600.png
 author: misha-behei
 published: true
-published_at: 2021-02-24T17:01:04.986Z
-updated_at: 2021-02-24T17:01:05.007Z
+published_at: 2021-03-11T10:40:16.115Z
+updated_at: ""
 category: tutorial
 tags:
   - video-api
