@@ -23,7 +23,7 @@ Today you will build an Android application using [Flutter](https://flutter.dev/
 
 The source code is available on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
-Firstly, you need to deal with few prerequisites:
+Before we begin building the application for our Android device, you'll need to prepare with the following prerequisites:
 
 * Create a Call Control Object ([NCCO](https://developer.nexmo.com/voice/voice-api/guides/ncco))
 * Install Nexmo CLI
