@@ -23,21 +23,21 @@ Today you will build an iOS application using [Flutter](https://flutter.dev/) an
 
 The source code is available on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
-Firstly, you need to deal with few prerequisites:
+efore we begin building the application for our iOS device, you'll need to prepare with the following prerequisites:
 
-* Crete NCCO
+* Create a Call Control Object ([NCCO](https://developer.nexmo.com/voice/voice-api/guides/ncco))
 * Install Nexmo CLI
 * Setup Vonage application
 * Install Flutter SDK
 * Create Flutter project
 
-# Prerequisites
+## Prerequisites
 
 ## Vonage application
 
-### Create NCCO
+### Create an NCCO
 
-A Nexmo Call Control Object (NCCO) is a JSON array that you use to control the flow of a Voice API call. More information on NCCO can be found here [here](https://developer.nexmo.com/voice/voice-api/ncco-reference).
+A Call Control Object (NCCO) is a JSON array that you use to control the flow of a Voice API call. More information on NCCO can be found here [here](https://developer.nexmo.com/voice/voice-api/ncco-reference).
 
 The NCCO must be public and accessible by the internet. To accomplish that, you will be using [GitHub Gist](https://gist.github.com/) which provides a convenient way to host the configuration. Let's add a new configuration:
 
@@ -707,7 +707,7 @@ The state of the application will be updated to `SdkState.ON_CALL` and UI will b
 
 ### End call
 
-Update body of the `_endCall` method inside 
+To end the call you need to trigger the method on the native iOS application using `platformMethodChannel`. Inside `main.dart` file update body of the `_endCall` method:
 
 ```dart
 Future<void> _endCall() async {
@@ -717,7 +717,8 @@ Future<void> _endCall() async {
   }
 ```
 
-The above method will call communicate with iOS so you have to update code in `AppDelegate` class. Add `endCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+The above method will communicate with iOS so you have to update code in the `AppDelegate` class s well. Add `endCall` clausule to `switch` statement inside the `addFlutterChannelListener` method:
+
 
 ```swift
 func addFlutterChannelListener() {
@@ -749,7 +750,7 @@ func addFlutterChannelListener() {
     }
 ```
 
-Now in the same file add `endCall` method:
+Now in the same file add the `endCall` method:
 
 ```swift
 func endCall() {
@@ -759,7 +760,7 @@ func endCall() {
     }
 ```
 
-The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Both UI states are already supported in the Flutter application.
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the response from the Client SDK, which can be either error or success. Both UI states are already supported in the Flutter application.
 
 You have handled ending the call by pressing `END CALL` button in the Flutter application UI, however, the call can also end outside of the Flutter app e.g. the call will be rejected or answered and later ended by the callee (on the real phone). 
 
@@ -794,7 +795,7 @@ self.onGoingCall?.setDelegate(self)
 self.notifyFlutter(state: .onCall)
 ```
 
-Run the app and test if everything is working as expected.
+Run the app and if you've followed through this tutorial step by step, you'll be able to make a phone call from your mobile application to a physical phone number.
 
 # Summary
 
