@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 Today you will build an Android application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
 
-![](/content/blog/make-app-to-phone-call-using-flutter/ui-states.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/ui-states.png)
 
 The source code is available on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
@@ -162,7 +162,7 @@ Open [Android Studio](https://developer.android.com/studio), go to `Preferences 
 
 Flutter plugin will add a new toolbar that allows to run and debug Flutter application:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
 
 ## Create Flutter project
 
@@ -299,7 +299,7 @@ The initial state of the Flutter application is `SdkState.LOGGED_OUT`.
 
 Run the application you should see `Login Alice` button:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/loggedout.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/loggedout.png)
 
 ### Login the user
 
@@ -342,7 +342,7 @@ The `com.vonage` string represents the unique channel id that you will also refe
 
 Open `MainActivity` class. Note that the Flutter plugin displays a hint to open this Android project in the separate instance of Android Studio (another window). Do so to have better code completion for the Android project:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/openinas.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/openinas.png)
 
 > NOTE: This happens because the Flutter project consists of the Android project and the iOS project.
 
@@ -417,7 +417,7 @@ minSdkVersion 23
 
 Run `Sync project with Gradle` command in Android Studio:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/sync-projct-with-gradle.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/sync-projct-with-gradle.png)
 
 ### Initialize Client
 
@@ -554,11 +554,11 @@ During `SdkState.WAIT` progress bar will be displayed. After succesfull login ap
 
 > NOTE: While modyfying Android native code Flutter hot reload will not work. You have to stop the application and run it again.
 
-![](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
 
 Run the app. Click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (another state of the Flutter app based on the `SdkState` enum`):
 
-![](/content/blog/make-app-to-phone-call-using-flutter/makeaphonecall.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/makeaphonecall.png)
 
 ### Make a call
 
@@ -717,7 +717,7 @@ Run the app and click `MAKE PHONE CALL` to start a call. Permissions dialog will
 
 The state of the application will be updated to `SdkState.ON_CALL` and UI will be updated:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/oncall.png)
+![](/content/blog/make-app-to-phone-call-using-android-and-flutter/oncall.png)
 
 ### End call
 
