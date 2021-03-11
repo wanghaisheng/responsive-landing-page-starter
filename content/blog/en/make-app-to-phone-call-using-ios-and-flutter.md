@@ -166,9 +166,11 @@ You will create a Flutter project using the terminal:
 flutter create app_to_phone_flutter
 ```
 
-> Notice that `app_to_phone_flutter` folder (flutter project) contains`ios` folder containing the OS project and `ios` folder containing the iOS project.
+Above command reates `app_to_phone_flutter` folder containing the Flutter project.
 
-Enter the `app_to_phone_flutter`, open `pubspec.yaml` and add `permission_handler` dependency (just below `sdk: flutter`):
+> Flutter project contains `ios` folder contains the iOS project, `android` folder containing the Android project and `web` folder contaning web project.
+
+Open the `pubspec.yaml` file, and add `permission_handler` dependency (just below `sdk: flutter`):
 
 ```yaml
 dependencies:
@@ -178,9 +180,9 @@ dependencies:
   permission_handler: ^6.0.1+1
 ```
 
-> NOTICE: Intention matters in `yaml` files, so make sure `permission_handler` is at the same indention level as the `flutter:` item.
+> Indention matters in `yaml` files, so make sure `permission_handler` is at the same indention level as the `flutter:` item.
 
-Now run this command to download the above dependency:
+Now run this command (path is the root of the flutter project) to download the above dependency:
 
 ```cmd
 flutter pub get
@@ -201,13 +203,15 @@ target 'Runner' do
   pod 'NexmoClient'
 ```
 
-Open `app_to_phone_flutter/ios` folder in the termnal and instal pods:
+Open `app_to_phone_flutter/ios` folder in the termnal and install pods:
 
 ```cmd
 pod install
 ```
 
-Open `Runner.xcworkspace` in Xcode and run the app to verify that everything works as expected.
+The above command will download all required dependencies including, flutter, permissions handler and client SDK.
+
+Open `Runner.xcworkspace` in Xcode and run the app to verify that above setup was performed correctly.
 
 ## Two-way Flutter/iOS communication
 
@@ -247,6 +251,8 @@ class CallWidget extends StatefulWidget {
 }
 
 class _CallWidgetState extends State<CallWidget> {
+  SdkState _sdkState = SdkState.LOGGED_OUT;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -258,11 +264,19 @@ class _CallWidgetState extends State<CallWidget> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             SizedBox(height: 64),
-            _buildConnectionButtons()
+            _updateView()
           ],
         ),
       ),
     );
+  }
+
+  Widget _updateView() {
+    if (_sdkState == SdkState.LOGGED_OUT) {
+      return ElevatedButton(
+          child: Text("LOGIN AS ALICE")
+      );
+    }
   }
 
   Future<void> _loginUser() async {
@@ -287,52 +301,17 @@ enum SdkState {
 }
 ```
 
-The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for iOS using Kotlin.
-
-Update body of the `_CallWidgetState` class:
-
-```dart
-class _CallWidgetState extends State<CallWidget> {
-  SdkState _sdkState = SdkState.LOGGED_OUT;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(height: 64),
-            _updateView()
-          ],
-        ),
-      ),
-    );
-  }
-
-  Widget _updateView() {
-    if (_sdkState == SdkState.LOGGED_OUT) {
-      return ElevatedButton(
-          onPressed: () {  },
-          child: Text("LOGIN AS ALICE")
-      );
-    }
-  }
-}
-```
+The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for the Flutter using Dart and one for iOS using Swift.
 
 The initial state of the Flutter application is `SdkState.LOGGED_OUT`. 
 
-Run the application you should see `Login Alice` button:
+Run the application from the Xcode - you should see `Login Alice` button:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/loggedout.png)
 
 ### Login the user
 
-Button is disable so now add `onPressed` handler to the `ElevatedButton` to allow logging in:
+The `Login as Aice` button is disabled so now add `onPressed` handler to the `ElevatedButton` to allow logging in:
 
 ```dart
 Widget _updateView() {
@@ -345,7 +324,7 @@ Widget _updateView() {
   }
 ```
 
-Update body of `_loginUser` method:
+Update body of `_loginUser` method to communicate with native code and login the user:
 
 ```dart
 Future<void> _loginUser() async {
@@ -359,7 +338,9 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as argument. The `loginUser` method defined in `AppDelegate` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
+Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as argument. The `loginUser` method defined in `AppDelegate` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. 
+
+Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
 ```dart
 class _CallWidgetState extends State<CallWidget> {
@@ -369,27 +350,17 @@ class _CallWidgetState extends State<CallWidget> {
 
 The `com.vonage` string represents the unique channel id that you will also refer on the native iOS code (`AppDelegate` class). Now you need to handle this method call on the native iOS side. 
 
-Open `AppDelegate` class. To listen for method calls originating from Flutter add `addFlutterChannelListener` method call inside `application` method:
+Open `ios/Runner/AppDelegate` class and `vonageChannel` property that will hold the reference to the `FlutterMethodChannel`:
 
 ```swift
-override func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-    ) -> Bool {
-        addFlutterChannelListener()
-        
-        GeneratedPluginRegistrant.register(with: self)
-        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-    }
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+  var vonageChannel: FlutterMethodChannel?
+    
+...
 ```
 
-Open `AppDelegate` class and `vonageChannel` property that will hold the reference to the `FlutterMethodChannel`:
-
-```swift
-var vonageChannel: FlutterMethodChannel?
-```
-
-Now add `addFlutterChannelListener` and `login` methods inside `AppDelegate` class (same level as above `application` method):
+To listen for method calls originating from Flutter add `addFlutterChannelListener` method inside `AppDelegate` class (same level as above `application` method):
 
 ```swift
 func addFlutterChannelListener() {
@@ -413,12 +384,37 @@ func addFlutterChannelListener() {
             }
         })
     }
-    
-    func loginUser(token: String) {
+```
+
+The above method "translates" flutter metho calls to methods defined in `AppDelegate` class (`loginUser` for now).
+
+And missing `loginUser` methods inside he same class (you will fill the body soon):
+
+```swift
+func loginUser(token: String) {
+
+}
+```
+
+Add `addFlutterChannelListener` method call inside `application` method:
+
+```swift
+override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        addFlutterChannelListener()
         
+        GeneratedPluginRegistrant.register(with: self)
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
 ```
 
+The code is in place - after pressing `Login Aa Alice` button the Flutter app will call `_loginUser` method that through Flutter platform channel will call `loginUser` method defined in the `AppDelegate` class.
+
+Run the application from the Xcode to make sure it is compiling.
+
+Before you will be able to actually login the ser you need to initialize SDK Client.
 ### Initialize Client
 
 Open `AppDelegate` class and add NexmoClient import at the top of the file:
@@ -430,7 +426,12 @@ import NexmoClient
 In the same file add `client` property that will hold reference to Nexmo client.
 
 ```swift
-let client = NXMClient.shared
+@UIApplicationMain
+@objc class AppDelegate: FlutterAppDelegate {
+    var vonageChannel: FlutterMethodChannel?
+    let client = NXMClient.shared
+
+...
 ```
 
 Now add `initClient` method:
@@ -456,7 +457,7 @@ override func application(
     }
 ```
 
-IN the `AppDelegate` file add delegate to listen for Client SDK connection state changes:
+In the `AppDelegate` file add delegate to listen for Client SDK connection state changes:
 
 ```swift
 extension AppDelegate: NXMClientDelegate {
@@ -489,9 +490,9 @@ func loginUser(token: String) {
     }
 ```
 
-This will allow us to login the user (`Alice`) using Client SDK.
+This method will allow us to login the user (`Alice`) using the Client SDK.
 
-### Notify flutter about SDK state change
+### Notify Flutter about SDK state change
 
 You will add enum to represent states of the client SDK (you have already added equivalent `SdkState` enum in the `main.dart` file). Add `SdkState` enum inside `AppDelegate` class (at the top):
 
@@ -515,15 +516,19 @@ func notifyFlutter(state: SdkState) {
 
 Notice that you store the state in the enum, but you are sending it as a string.
 
-### Retrieve SDK state by Flutter
+### Retrieve SDK state update by Flutter
 
-To retrieve state updates in Flutter you have to listen for method channel updates. Open `main.dart` file and add these two methods inside `_CallWidgetState` class:
+To retrieve state updates in Flutter you have to listen for method channel updates. Open `main.dart` file and add `_CallWidgetState` constructor with custom handler:
 
 ```dart
 _CallWidgetState() {
     platformMethodChannel.setMethodCallHandler(methodCallHandler);
   }
+```
 
+Inside the same class (`_CallWidgetState`) add the handler method:
+
+```dart
 Future<dynamic> methodCallHandler(MethodCall methodCall) async {
     switch (methodCall.method) {
       case 'updateState':
@@ -541,7 +546,7 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
   }
 ```
 
-Method receives "signal" from iOS and converts it to an emum. Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
+The above method receives "signal" from iOS and converts it to an emum. Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
 
 ```dart
 Widget _updateView() {
@@ -563,13 +568,13 @@ Widget _updateView() {
   }
 ```
 
-During `SdkState.WAIT` progress bar will be displayed. After succesfull login application will show `MAKE PHONE CALL` button.
+During `SdkState.WAIT` progress bar will be displayed. After a succesfull login stae will be updated to `SdkState.LOGGED_IN` and application will show `MAKE PHONE CALL` button.
 
 > NOTE: While modyfying iOS native code Flutter hot reload will not work. You have to stop the application and run it again.
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
 
-Run the app. Click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (another state of the Flutter app based on the `SdkState` enum`):
+Run the app from Xcode. Click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (this is another state of the Flutter app based on the `SdkState` enum`):
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/makeaphonecall.png)
 
@@ -580,8 +585,6 @@ To make a phone call open `main.dart` file and update body of `_makeCall` method
 ```dart
 Future<void> _makeCall() async {
     try {
-      await requestPermissions();
-
       await platformMethodChannel
           .invokeMethod('makeCall');
     } on PlatformException catch (e) {
@@ -590,7 +593,7 @@ Future<void> _makeCall() async {
   }
 ```
 
-The above method will communicate with iOS so you have to update code in `AppDelegate` class as well. Add `makeCall` clausule to `when` statement inside `addFlutterChannelListener` method:
+The above method will communicate with iOS so you have to update code in `AppDelegate` class as well. Add `makeCall` clauses to `switch` statement inside `addFlutterChannelListener` method:
 
 ```swift
 func addFlutterChannelListener() {
@@ -612,9 +615,6 @@ func addFlutterChannelListener() {
             case "makeCall":
                 self.makeCall()
                 result("")
-            case "endCall":
-                self.endCall()
-                result("")
             default:
                 result(FlutterMethodNotImplemented)
             }
@@ -622,7 +622,7 @@ func addFlutterChannelListener() {
     }
 ```
 
-Now in the same file add `onGoingCall` property:
+Now in the same class add `onGoingCall` property:
 
 ```swift
 var onGoingCall: NXMCall?
@@ -630,7 +630,7 @@ var onGoingCall: NXMCall?
 
 > NOTE: Currently Client SDK does not store ongoing call reference, so you have to store it in `AppDelegate` class. You will use it later to end the call.
 
-Now in the same file add `makeCall` method:
+Now in the same class add `makeCall` method:
 
 ```swift
 func makeCall() {
@@ -648,7 +648,7 @@ func makeCall() {
     }
 ```
 
-The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Now you need to add support for both states (`SdkState.ON_CALL` and `SdkState.ERROR`) inside `main.dart` file (Fluttter). Update body of the `_updateView` method:
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Now you need to add support for both states (`SdkState.ON_CALL` and `SdkState.ERROR`) inside `main.dart` file. Update body of the `_updateView` method:
 
 ```dart
 Widget _updateView() {
@@ -685,19 +685,36 @@ Each state change will result in UI modification. Before making a call the appli
 
 The application needs to be able to access the microphone, so you have to request access to the microphone (Flutter calls it `Permission.microphone`). 
 
-You already added the [permission_handler](https://pub.dev/packages/permission_handler) package to Flutter. Open `ios/Runner/info.plist` file and add `Privacy - Microphone Usage Description` hey with `Make a call` value:
+Open `ios/Runner/info.plist` file and add `Privacy - Microphone Usage Description` key with `Make a call` value:
 
-Add this method inside `_CallWidgetState` the class defined in the `main.dart` file to request permission:
+You already added the [permission_handler](https://pub.dev/packages/permission_handler) package to the Flutter project, so now you have to import it. dd import at the tp of the `main.dart` file:
+
+```dart
+import 'package:permission_handler/permission_handler.dart';
+```
+
+Now in the same file `requestPermissions` method inside `_CallWidgetState` the class defined in the `main.dart` file to request permission:
 
 ```dart
 Future<void> requestPermissions() async {
-    Map<Permission, PermissionStatus> statuses = await [
-      Permission.microphone
-    ].request();
+    Map<Permission, PermissionStatus> statuses = await [ Permission.microphone ].request();
   }
 ```
 
-Run the app and click `MAKE PHONE CALL` to start a call. Permissions dialog will appear and after granting the permissions the Call will start.
+The above method will request permissions using `permission_handler`.
+
+In the same class modify the body of the `_makeCall` class to request permissions before calling method via method channel.
+
+```dart
+Future<void> _makeCall() async {
+    try {
+      await requestPermissions();
+ 
+      ...
+  }
+```
+
+Run the app using Xcode and click `MAKE PHONE CALL` to start a call. Permissions dialog will appear and after granting the permissions the Call will start.
 
 > Remainder: You define the phone number earlier in NCCO 
 
@@ -717,7 +734,7 @@ Future<void> _endCall() async {
   }
 ```
 
-The above method will communicate with iOS so you have to update code in the `AppDelegate` class s well. Add `endCall` clausule to `switch` statement inside the `addFlutterChannelListener` method:
+The above method will communicate with iOS so you have to update code in the `AppDelegate` class as well. Add `endCall` clauses to `switch` statement inside the `addFlutterChannelListener` method:
 
 
 ```swift
@@ -750,7 +767,7 @@ func addFlutterChannelListener() {
     }
 ```
 
-Now in the same file add the `endCall` method:
+Now in the same class add the `endCall` method:
 
 ```swift
 func endCall() {
@@ -760,7 +777,7 @@ func endCall() {
     }
 ```
 
-The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the response from the Client SDK, which can be either error or success. Both UI states are already supported in the Flutter application.
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the response from the Client SDK, which can be either error or success. Both UI states are already supported in the Flutter application (`_updateView` method).
 
 You have handled ending the call by pressing `END CALL` button in the Flutter application UI, however, the call can also end outside of the Flutter app e.g. the call will be rejected or answered and later ended by the callee (on the real phone). 
 
@@ -790,9 +807,20 @@ extension AppDelegate: NXMCallDelegate {
 To register above listener modify `onSuccess` callback inside `makeCall` method: 
 
 ```swift
-self.onGoingCall = call
-self.onGoingCall?.setDelegate(self)
-self.notifyFlutter(state: .onCall)
+func makeCall() {
+        client.call("IGNORED_NUMBER", callHandler: .server) { [weak self] (error, call) in
+            guard let self = self else { return }
+            
+            if error != nil {
+                self.notifyFlutter(state: .error)
+                return
+            }
+            
+            self.onGoingCall = call
+            self.onGoingCall?.setDelegate(self)
+            self.notifyFlutter(state: .onCall)
+        }
+    }
 ```
 
 Run the app and if you've followed through this tutorial step by step, you'll be able to make a phone call from your mobile application to a physical phone number.
