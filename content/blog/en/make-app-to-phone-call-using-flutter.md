@@ -774,7 +774,7 @@ private fun endCall() {
     }
 ```
 
-The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Both UI states are already supported in the Flutter application.
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the response from the Client SDK, which can be either error or success. Both UI states are already supported in the Flutter application.
 
 You have handled ending the call by pressing `END CALL` button in the Flutter application UI, however, the call can also end outside of the Flutter app e.g. the call will be rejected or answered and later ended by the callee (on the real phone). 
 
