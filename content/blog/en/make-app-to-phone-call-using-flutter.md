@@ -318,7 +318,7 @@ Widget _updateView() {
   }
 ```
 
-Update body of `_loginUser` method:
+Update body of `_loginUser` method to communicate with native code and login the user:
 
 ```dart
 Future<void> _loginUser() async {
