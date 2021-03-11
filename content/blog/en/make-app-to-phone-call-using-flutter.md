@@ -231,8 +231,7 @@ class _CallWidgetState extends State<CallWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            SizedBox(height: 64),
-            _buildConnectionButtons()
+            SizedBox(height: 64)
           ],
         ),
       ),
