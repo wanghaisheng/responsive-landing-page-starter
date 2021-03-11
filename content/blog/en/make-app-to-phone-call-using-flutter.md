@@ -814,7 +814,7 @@ onGoingCall?.removeCallEventListener(callEventListener)
 onGoingCall = null
 ```
 
-Run the app and test if everything is working as expected.
+Run the app and if you've followed through this tutorial step by step, you'll be able to make a phone call from your mobile application to a physical phone number.
 
 # Summary
 
