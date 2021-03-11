@@ -25,7 +25,7 @@ The source code is available on [GitHub](https://github.com/nexmo-community/clie
 
 Firstly, you need to deal with few prerequisites:
 
-* Crete NCCO
+* Create a Call Control Object ([NCCO](https://developer.nexmo.com/voice/voice-api/guides/ncco))
 * Install Nexmo CLI
 * Setup Vonage application
 * Install Flutter SDK
