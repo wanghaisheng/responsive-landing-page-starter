@@ -723,7 +723,7 @@ Run the app and click `MAKE PHONE CALL` to start a call. The permissions dialogu
 
 The state of the application will be updated to `SdkState.ON_CALL` and the UI will be updated:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/oncall.png)
+![On call](/content/blog/make-app-to-phone-call-using-ios-and-flutter/oncall.png)
 
 ### End Call
 
