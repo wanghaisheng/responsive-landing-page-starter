@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 Today we will build an Android application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/ui-states.png)
+![UI states](/content/blog/make-app-to-phone-call-using-android-and-flutter/ui-states.png)
 
 ## Prerequisites
 
@@ -163,7 +163,7 @@ Open [Android Studio](https://developer.android.com/studio), go to `Preferences 
 
 Flutter plugin will add a new toolbar that allows to run and debug Flutter application:
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
+![flutter-plugin-ui](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
 
 ## Create Flutter Project
 
@@ -172,7 +172,7 @@ You will create a Flutter project using Android Studio.
 * Run Android Studio
 * On the Android Studio welcome screen select `Create New Flutter project`
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/create-new-flutter-project.png)
+![create-new-flutter-project](/content/blog/make-app-to-phone-call-using-android-and-flutter/create-new-flutter-project.png)
 
 * Select `Flutter Application` and click `Next`
 * Enter `app_to_phone_flutter` as project name, enter `Flutter SDK path` and click `Next`
@@ -274,7 +274,7 @@ The above code contains custom `CallWidget` which will be responsible for managi
 
 Run the application we should see `Login Alice` button:
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/loggedout.png)
+![loggedout](/content/blog/make-app-to-phone-call-using-android-and-flutter/loggedout.png)
 
 ### Login Screen
 
@@ -317,7 +317,7 @@ The `com.vonage` string represents the unique channel id that we will also refer
 
 Open `MainActivity` class. Note that the Flutter plugin displays a hint to open this Android project in the separate instance of Android Studio (another window). Do so to have better code completion for the Android project:
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/openinas.png)
+![Open In Android Studio](/content/blog/make-app-to-phone-call-using-android-and-flutter/openinas.png)
 
 > NOTE: This happens because the Flutter project consists of the Android project and the iOS project.
 
@@ -392,7 +392,7 @@ minSdkVersion 23
 
 Run `Sync project with Gradle` command in Android Studio, as shown in the example below:
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/sync-projct-with-gradle.png)
+![Sync project with Gradle](/content/blog/make-app-to-phone-call-using-android-and-flutter/sync-projct-with-gradle.png)
 
 ### Initialize Client
 
@@ -529,11 +529,11 @@ During `SdkState.WAIT` the progress bar will be displayed. After successful logi
 
 > NOTE: While modyfying Android native code Flutter hot reload will not work. we have to stop the application and run it again.
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
+![Flutter plugin UI](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
 
 Run the app and click the button labelled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the Flutter app based on the `SdkState` enum`). An example of this is shown in the image below:
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/makeaphonecall.png)
+![Make a phone call](/content/blog/make-app-to-phone-call-using-android-and-flutter/makeaphonecall.png)
 
 ### Make A Call
 
@@ -692,12 +692,11 @@ Run the app and click `MAKE PHONE CALL` to start a call. The permissions dialogu
 
 The state of the application will be updated to `SdkState.ON_CALL` and the UI will be updated:
 
-![](/content/blog/make-app-to-phone-call-using-android-and-flutter/oncall.png)
+![On call UI](/content/blog/make-app-to-phone-call-using-android-and-flutter/oncall.png)
 
 ### End Call
 
 To end the call we need to trigger the method on the native Android application using `platformMethodChannel`. Inside `main.dart` file update body of the `_endCall` method:
-
 
 ```dart
 Future<void> _endCall() async {
