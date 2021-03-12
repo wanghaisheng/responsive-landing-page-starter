@@ -688,7 +688,7 @@ The application needs to be able to access the microphone, so we have to request
 
 Open `ios/Runner/info.plist` file and add `Privacy - Microphone Usage Description` key with `Make a call` value:
 
-![](/content/blog/make-app-to-phone-call-using-ios-and-flutter/microphone-permission.png)
+![Add microphone permission](/content/blog/make-app-to-phone-call-using-ios-and-flutter/microphone-permission.png)
 
 You already added the [permission_handler](https://pub.dev/packages/permission_handler) package to the Flutter project. Now at the top of the `main.dart` file, you'll need to import the `permission_handler` package as shown in the example below:
 
