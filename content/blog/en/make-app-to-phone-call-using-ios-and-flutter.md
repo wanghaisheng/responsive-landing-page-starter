@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 Today we will build an iOS application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
 
-![](/content/blog/make-app-to-phone-call-using-flutter/ui-states.png)
+![](/content/blog/make-app-to-phone-call-using-ios-and-flutter/ui-states.png)
 
 ## Prerequisites
 
@@ -475,7 +475,6 @@ extension AppDelegate: NXMClientDelegate {
     }
 }
 ```
-
 
 Finally, the `notifyFlutter` method needs to be added to the same class:
 
