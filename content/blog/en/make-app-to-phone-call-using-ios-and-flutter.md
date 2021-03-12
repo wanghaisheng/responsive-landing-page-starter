@@ -575,13 +575,9 @@ Widget _updateView() {
 
 During `SdkState.WAIT` the progress bar will be displayed. After successful login application will show the `MAKE PHONE CALL` button.
 
-> NOTE: While modifying iOS native code Flutter hot reload will not work. we have to stop the application and run it again.
-
-![Flutter plugin](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
-
 Run the app and click the button labeled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the Flutter app based on the `SdkState` enum`). An example of this is shown in the image below:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/makeaphonecall.png)
+![Make a phone call](/content/blog/make-app-to-phone-call-using-ios-and-flutter/makeaphonecall.png)
 
 ### Make A Call
 
