@@ -304,7 +304,11 @@ enum SdkState {
 
 The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for the Flutter using Dart and one for iOS using Swift. The widget contains `_updateView` method that will chanage the UI based on `SdkState` value.
 
-Run the application from the Xcode - we should see `Login Alice` button:
+Run the application from the Xcode
+
+![Run from xcode](/content/blog/make-app-to-phone-call-using-ios-and-flutter/run-xcode.png)
+
+The `Login Alicee ` button should displayed:
 
 ![Logged out](/content/blog/make-app-to-phone-call-using-ios-and-flutter/loggedout.png)
 
