@@ -272,7 +272,11 @@ enum SdkState {
 
 The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for Android using Kotlin. The widget contains `_updateView` method that will chanage the UI based on `SdkState` value.
 
-Run the application we should see `Login Alice` button:
+Run the application using the green arrow button on the Flutter toolbar: 
+
+![Run the app](/content/blog/make-app-to-phone-call-using-android-and-flutter/run-the-app.png)
+
+We should see `Login Alice` button:
 
 ![loggedout](/content/blog/make-app-to-phone-call-using-android-and-flutter/loggedout.png)
 
@@ -529,11 +533,7 @@ During `SdkState.WAIT` the progress bar will be displayed. After successful logi
 
 > NOTE: While modifying Android native code Flutter hot reload will not work. we have to stop the application and run it again.
 
-Run the app using the green arrow on Flutter toolbar
-
-![Flutter plugin UI](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
-
-Click the button labelled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the Flutter app based on the `SdkState` enum`). An example of this is shown in the image below:
+Run the app and click the button labelled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the Flutter app based on the `SdkState` enum`). An example of this is shown in the image below:
 
 ![Make a phone call](/content/blog/make-app-to-phone-call-using-android-and-flutter/makeaphonecall.png)
 
