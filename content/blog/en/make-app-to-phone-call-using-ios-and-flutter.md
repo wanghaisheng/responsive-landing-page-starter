@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 Today we will build an iOS application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
 
-![ui-states](/content/blog/make-app-to-phone-call-using-ios-and-flutter/ui-states.png)
+![UI states](/content/blog/make-app-to-phone-call-using-ios-and-flutter/ui-states.png)
 
 ## Prerequisites
 
@@ -306,7 +306,7 @@ The above code contains custom `CallWidget` which will be responsible for managi
 
 Run the application from the Xcode - we should see `Login Alice` button:
 
-![](/content/blog/make-app-to-phone-call-using-flutter/loggedout.png)
+![Logged out](/content/blog/make-app-to-phone-call-using-ios-and-flutter/loggedout.png)
 
 ### Login Screen
 
@@ -575,11 +575,11 @@ Widget _updateView() {
 
 During `SdkState.WAIT` the progress bar will be displayed. After successful login application will show the `MAKE PHONE CALL` button.
 
-> NOTE: While modyfying iOS native code Flutter hot reload will not work. we have to stop the application and run it again.
+> NOTE: While modifying iOS native code Flutter hot reload will not work. we have to stop the application and run it again.
 
-![](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
+![Flutter plugin](/content/blog/make-app-to-phone-call-using-flutter/flutter-plugin-ui.png)
 
-Run the app and click the button labelled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the Flutter app based on the `SdkState` enum`). An example of this is shown in the image below:
+Run the app and click the button labeled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the Flutter app based on the `SdkState` enum`). An example of this is shown in the image below:
 
 ![](/content/blog/make-app-to-phone-call-using-flutter/makeaphonecall.png)
 
