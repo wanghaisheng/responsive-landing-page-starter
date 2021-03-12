@@ -8,8 +8,9 @@ published_at: 2021-03-02T13:08:11.401Z
 updated_at: 2021-03-02T13:08:11.447Z
 category: tutorial
 tags:
-  - Android
-  - Flutter
+  - android
+  - flutter
+  - conversation-api
 comments: true
 spotlight: false
 redirect: ""
@@ -17,9 +18,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Today you will build an Android application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
+Today we will build an Android application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
 
 ![](/content/blog/make-app-to-phone-call-using-android-and-flutter/ui-states.png)
+
+## Prerequisites
 
 The source code is available on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
@@ -31,20 +34,17 @@ Before we begin building the application for our Android device, you'll need to 
 * Install Flutter SDK
 * Create Flutter project
 
-## Prerequisites
+## Vonage Application
 
-## Vonage application
+### Create An NCCO
 
-### Create an NCCO
+A Call Control Object (NCCO) is a JSON array that we use to control the flow of a Voice API call. More information on NCCO can be found here [here](https://developer.nexmo.com/voice/voice-api/ncco-reference).
 
-A Call Control Object (NCCO) is a JSON array that you use to control the flow of a Voice API call. More information on NCCO can be found here [here](https://developer.nexmo.com/voice/voice-api/ncco-reference).
-
-The NCCO must be public and accessible by the internet. To accomplish that, you will be using [GitHub Gist](https://gist.github.com/) which provides a convenient way to host the configuration. Let's add a new configuration:
+The NCCO needs to be public and accessible by the internet. To accomplish this, in this tutorial you'll be using [GitHub Gist](https://gist.github.com/) which provides a convenient way to host the configuration. Let's add a new gist:
 
 1. Go to <https://gist.github.com/> (you have to be logged in into Github)
-2. Create a new gist with `ncco.json` the filename
+2. Create a new gist with `ncco.json` the as filename
 3. Copy and paste the following JSON object into the gist:
-4. Replace `PHONE_NUMBER` with your phone number (Vonage numbers are in E.164 format <https://developer.nexmo.com/concepts/guides/glossary#e-164-format>, '+' and '-' are not valid. Make sure you specify your country code when entering your number, for example, US: 14155550100 and UK: 447700900001)
 
 ```json
 [
@@ -64,15 +64,16 @@ The NCCO must be public and accessible by the internet. To accomplish that, you 
 ]
 ```
 
+4. Replace `PHONE_NUMBER` with our phone number (Vonage numbers are in E.164 format <https://developer.nexmo.com/concepts/guides/glossary#e-164-format>, '+' and '-' are not valid. Make sure we specify our country code when entering our number, for example, US: 14155550100 and UK: 447700900001)
 5. Click the `Create secret gist` button
 6. Click the `Raw` button
-7. Take note of the URL shown in your browser, you will be using it in the next step
+7. Take note of the URL shown in our browser, we will be using it in the next step
 
 ### Install Nexmo CLI
 
-The Nexmo CLI allows you to carry out many operations on the command line. If you want to carry out tasks such as creating applications, purchasing Vonage numbers and so on, you will need to install the Nexmo CLI. 
+The [Nexmo CLI](https://developer.nexmo.com/application/nexmo-cli) allows we to carry out many operations on the command line. If we want to carry out tasks such as creating applications, purchasing Vonage numbers and so on, we will need to install the Nexmo CLI.
 
-Nexmo CLI requires `node.js`, so you will need to install node.js first using [these instructions](https://nodejs.org/en/download/).
+Nexmo CLI requires `node.js`, so we will need to install node.js first using [these instructions](https://nodejs.org/en/download/).
 
 To install the Beta version of the CLI with NPM run this command:
 
@@ -80,17 +81,17 @@ To install the Beta version of the CLI with NPM run this command:
 npm install nexmo-cli@beta -g
 ```
 
-Set up the Nexmo CLI to use your Vonage API Key and API Secret. You can get these from the [settings page](https://dashboard.nexmo.com/settings) in the Dashboard.
+Set up the Nexmo CLI to use our Vonage API Key and API Secret. we can get these from the [settings page](https://dashboard.nexmo.com/settings) in the Dashboard.
 
-Run the following command in a terminal, while replacing api_key and api_secret with your own:
+Run the following command in a terminal, while replacing api_key and api_secret with our own:
 
 ```cmd
 nexmo setup api_key api_secret
 ```
 
-### Setup Vonage application
+### Setup Vonage Application
 
-1. Create your project directory if you've not already done so:
+1. Create our project directory if you've not already done so, run the following command in our terminal:
 
 ```cmd
 mkdir vonage-tutorial
@@ -108,13 +109,13 @@ cd vonage-tutorial
 nexmo app:create "App to Phone Tutorial" --capabilities=voice --keyfile=private.key --voice-event-url=https://example.com/ --voice-answer-url=GIST-URL
 ```
 
-Make a note of the Application ID.
+Make a note of the Application ID that is echoed in our terminal when our application is created.
 
-> NOTE: A hidden file named `.nexmo-app` is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named `private.key` is also created.
+> NOTE: A hidden file named `.nexmo-app` is created in our project directory and contains the newly created Vonage Application ID and the private key. A private key file named `private.key` is also created.
 
 ### Create User
 
-Each participant is represented by a [User](https://developer.nexmo.com/conversation/concepts/user) object and must be authenticated by the Client SDK. In a production application, you would typically store this user information in a database.
+Each participant is represented by a [User](https://developer.nexmo.com/conversation/concepts/user) object and must be authenticated by the Client SDK. In a production application, we would typically store this user information in a database.
 
 Execute the following command to create a user called `Alice`
 
@@ -126,7 +127,7 @@ nexmo user:create name="Alice"
 
 The JWT is used to authenticate the user. Execute the following command in the terminal to generate a JWT for the user `Alice`.
 
-In the following command replace the `APPLICATION_ID` with the ID of your application:
+In the following command replace the `APPLICATION_ID` with the ID of our application:
 
 ```
 nexmo jwt:generate sub=Alice exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
@@ -134,15 +135,15 @@ nexmo jwt:generate sub=Alice exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users
 
 The command above sets the expiry of the JWT to one day from now, which is the maximum.
 
-Make a note of the JWT you generated for `Alice`.
+Make a note of the JWT we generated for `Alice`.
 
-> NOTE: In a production environment, your application should expose an endpoint that generates a JWT for each client request.
+> NOTE: In a production environment, our application should expose an endpoint that generates a JWT for each client request.
 
 ## Install Android Studio
 
 Download and install [Android Studio](https://developer.android.com/studio).
 
-## Flutter setup
+## Flutter Setup
 
 ### Install Flutter SDK
 
@@ -154,7 +155,7 @@ Fortunately, flutter comes with a tool that allows us to verify if SDK and all r
 flutter doctor
 ```
 
-Flutter Doctor will verify if Flutter SDK is installed and other components are installed and configured correctly. If problems will be detected you will see the description and hint regarding the fix.
+Flutter Doctor will verify if Flutter SDK is installed and other components are installed and configured correctly. If problems will be detected we will see the description and hint regarding the fix.
 
 ### Install Flutter Plugin
 
@@ -164,7 +165,7 @@ Flutter plugin will add a new toolbar that allows to run and debug Flutter appli
 
 ![](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
 
-## Create Flutter project
+## Create Flutter Project
 
 You will create a Flutter project using Android Studio. 
 
@@ -181,17 +182,17 @@ You will create a Flutter project using Android Studio.
 
 Connect Android device or emulator and run the app to verify that everything works as expected.
 
-## Two-way Flutter/Android communication
+## Two-way Flutter/Android Communication
 
-Currently, Client SDK is not available as a Flutter package, so you have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html) - Flutter will call android methods, Android will call Flutter methods. 
+Currently, Client SDK is not available as a Flutter package, so we will have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and communicate between Android and Flutter using [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html) - this way, Flutter will call Android methods, Android will call Flutter methods. 
 
-Flutter code will be stored in the `libm/ain.dart` file, while Android native code will be stored in the `android/app/src/main/kotlin/com/example/app_to_phone_flutter/MainActivity.kt` file.
+Flutter code will be stored in the `lib/ain.dart` file, while Android native code will be stored in the `android/app/src/main/kotlin/com/example/app_to_phone_flutter/MainActivity.kt` file.
 
-## Init Flutter application
+## Init Flutter Application
 
-Flutter applications are built with [Dart](https://dart.dev/) programming language.
+Flutter applications are built using a programming language called [Dart](https://dart.dev/).
 
-Open `lib/main.dart` file, remove its content, and paste bellow snippet:
+Open `lib/main.dart` file, and replace all of the contents with the following code:
 
 ```dart
 import 'package:flutter/material.dart';
@@ -204,7 +205,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'app-to-phone-flutter',
+      title: 'Flutter Demo',
       home: CallWidget(title: 'app-to-phone-flutter'),
     );
   }
@@ -218,51 +219,6 @@ class CallWidget extends StatefulWidget {
   _CallWidgetState createState() => _CallWidgetState();
 }
 
-class _CallWidgetState extends State<CallWidget> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            SizedBox(height: 64)
-          ],
-        ),
-      ),
-    );
-  }
-
-  Future<void> _loginUser() async {
-      // Login user
-  }
-
-  Future<void> _makeCall() async {
-      // Make call
-  }
-
-  Future<void> _endCall() async {
-      // End call
-  }
-}
-
-enum SdkState {
-  LOGGED_OUT,
-  LOGGED_IN,
-  WAIT,
-  ON_CALL,
-  ERROR
-}
-```
-
-The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for Android using Kotlin.
-
-Update body of the `_CallWidgetState` class:
-
-```dart
 class _CallWidgetState extends State<CallWidget> {
   SdkState _sdkState = SdkState.LOGGED_OUT;
 
@@ -287,21 +243,40 @@ class _CallWidgetState extends State<CallWidget> {
   Widget _updateView() {
     if (_sdkState == SdkState.LOGGED_OUT) {
       return ElevatedButton(
-          onPressed: () {  },
           child: Text("LOGIN AS ALICE")
       );
     }
   }
+
+  Future<void> _loginUser() async {
+      // Login user
+  }
+
+  Future<void> _makeCall() async {
+      // Make call
+  }
+
+  Future<void> _endCall() async {
+      // End call
+  }
+}
+
+enum SdkState {
+  LOGGED_OUT,
+  LOGGED_IN,
+  WAIT,
+  ON_CALL,
+  ERROR
 }
 ```
 
-The initial state of the Flutter application is `SdkState.LOGGED_OUT`. 
+The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for Flutter using Dart and one for Android using Kotlin. The widget contains `_updateView` method that will chanage the UI based on `SdkState` value.
 
-Run the application you should see `Login Alice` button:
+Run the application we should see `Login Alice` button:
 
 ![](/content/blog/make-app-to-phone-call-using-android-and-flutter/loggedout.png)
 
-### Login the user
+### Login Screen
 
 The `Login as Aice` button is disabled so now add `onPressed` handler to the `ElevatedButton` to allow logging in:
 
@@ -330,7 +305,7 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the token, you obtained previously from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as argument. The `loginUser` method defined in `MainActivity` class (you will get there in a moment). To call this method from Flutter you have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
+Replace the `ALICE_TOKEN` with the JWT token, we obtained previously, to authenticate the user `Alice` from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as an argument. The `loginUser` method defined in the `MainActivity` class (you will get there in a moment). To call this method from Flutter we have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
 ```dart
 class _CallWidgetState extends State<CallWidget> {
@@ -338,7 +313,7 @@ class _CallWidgetState extends State<CallWidget> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 ```
 
-The `com.vonage` string represents the unique channel id that you will also refer on the native Android code (`MainActivity` class). Now you need to handle this method call on the native Android side. 
+The `com.vonage` string represents the unique channel id that we will also refer on the native Android code (`MainActivity` class). Now we need to handle this method call on the native Android side. 
 
 Open `MainActivity` class. Note that the Flutter plugin displays a hint to open this Android project in the separate instance of Android Studio (another window). Do so to have better code completion for the Android project:
 
@@ -356,7 +331,7 @@ override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
     }
 ```
 
-Now add `addFlutterChannelListener` and `loginUser` methods inside `MainActivity` class (same level as above `configureFlutterEngine` method):
+Now add `addFlutterChannelListener` and `loginUser` methods inside the `MainActivity` class (same level as the above `configureFlutterEngine` method):
 
 ```kotlin
 private fun addFlutterChannelListener() {
@@ -380,11 +355,11 @@ private fun loginUser(token: String) {
 }
 ```
 
-After running the application you should see `login with token...` message at Android Logcat. Now it's time to create a missing `client`. 
+After running the application we should see `login with token...` message at Android Logcat. Now it's time to create a missing `client`. 
 
-### Add Client SDK dependency
+### Add Client SDK Dependency
 
-Add a custom Maven URL repository to your Gradle configuration. Add the following maven block inside the `allprojects` block within the project-level `build.gradle.kts` file:
+Add a custom Maven URL repository to our Gradle configuration. Add the following maven block inside the `allprojects` block within the project-level `build.gradle.kts` file:
 
 ```groovy
 allprojects {
@@ -415,19 +390,19 @@ In the same file set min Android SDK version to `23`:
 minSdkVersion 23
 ```
 
-Run `Sync project with Gradle` command in Android Studio:
+Run `Sync project with Gradle` command in Android Studio, as shown in the example below:
 
 ![](/content/blog/make-app-to-phone-call-using-android-and-flutter/sync-projct-with-gradle.png)
 
 ### Initialize Client
 
-Open `MainActivity` class and add `client` property that will hold the reference to the Nexmo client:
+Open `MainActivity` class and add the `client` property which will hold the reference to the Nexmo client:
 
 ```kotlin
 private lateinit var client: NexmoClient
 ```
 
-Now add `initClient` method:
+Now add `initClient` method to initialise the client:
 
 ```kotlin
 private fun initClient() {
@@ -435,7 +410,7 @@ private fun initClient() {
     }
 ```
 
-Add code to call `initClient` method from existing `configureFlutterEngine` method:
+To call the `initClient` method from the existing `configureFlutterEngine` method, we're going to need to add the `initClient()` line as shown in the example below:
 
 ```kotlin
 override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
@@ -446,21 +421,21 @@ override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
 }
 ```
 
-### Login the user
+### Login The User
 
 Modify `login` method body to call `login` on the client instance:
 
 ```kotlin
 private fun login(token: String) {
-        client.login(token)
-    }
+    client.login(token)
+}
 ```
 
 This will allow us to login the user (`Alice`) using Client SDK.
 
-### Notify flutter about SDK state change
+### Notify Flutter About Client SDK State Change
 
-You will add enum to represent states of the client SDK (you have already added equivalent `SdkState` enum in the `main.dart` file). Add `SdkState` enum at the bottom of the `MainActivity.kt` file:
+To notify Flutter of any changes to the state in the SDK, you'll need to add `enum` to represents the states of the client SDK. You've already added the equivalent `SdkState` enum in the `main.dart` file). Add the following`SdkState` enum, at the bottom of the `MainActivity.kt` file:
 
 ```kotlin
 enum class SdkState {
@@ -472,7 +447,7 @@ enum class SdkState {
 }
 ```
 
-You will now add the connection listener and map some of the SDK states to `SdkState` enum. Modify body of `initClient` method:
+Next, we need to add the connection listener and map some of the SDK states to `SdkState` enum. Modify the body of `initClient` method as shown in the example below:
 
 ```kotlin
 private fun initClient() {
@@ -489,7 +464,7 @@ private fun initClient() {
     }
 ```
 
-To send these states to flutter you need to add `notifyFlutter` method in the `MainActivity` class:
+Finally, the `notifyFlutter` method needs to be added to the `MainActivity` class:
 
 ```kotlin
 private fun notifyFlutter(state: SdkState) {
@@ -500,11 +475,11 @@ private fun notifyFlutter(state: SdkState) {
     }
 ```
 
-Notice that you store the state in the enum, but you are sending it as a string. Communication with Flutter happens on the `main` thread, so you need to use `Handler` to switch threads. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
+Notice that we store the state in the enum, but we are sending it as a string. Communication with Flutter happens on the `main` thread, so we need to use `Handler` to switch threads. The `MethodChannel` will call `updateState` method defined in the `main.dart` file. 
 
-### Retrieve SDK state by Flutter
+### Retrieve SDK State By Flutter
 
-To retrieve state updates in Flutter you have to listen for method channel updates. Open `main.dart` file and add these two methods inside `_CallWidgetState` class:
+To retrieve state updates in Flutter we have to listen for method channel updates. Open `main.dart` file and add these two methods inside `_CallWidgetState` class:
 
 ```dart
 _CallWidgetState() {
@@ -528,7 +503,7 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
   }
 ```
 
-Method receives "signal" from Android and converts it to an emum. Now update body of `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states:
+These methods receive the "signal" from Android and converts it to an enum. Now update the contents of the `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states, as shown in the example below:
 
 ```dart
 Widget _updateView() {
@@ -550,19 +525,19 @@ Widget _updateView() {
   }
 ```
 
-During `SdkState.WAIT` progress bar will be displayed. After succesfull login application will show `MAKE PHONE CALL` button.
+During `SdkState.WAIT` the progress bar will be displayed. After successful login application will show the `MAKE PHONE CALL` button.
 
-> NOTE: While modyfying Android native code Flutter hot reload will not work. You have to stop the application and run it again.
+> NOTE: While modyfying Android native code Flutter hot reload will not work. we have to stop the application and run it again.
 
 ![](/content/blog/make-app-to-phone-call-using-android-and-flutter/flutter-plugin-ui.png)
 
-Run the app. Click `LOGIN AS ALICE` button. You should see `MAKE PHONE CALL` button (another state of the Flutter app based on the `SdkState` enum`):
+Run the app and click the button labelled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the Flutter app based on the `SdkState` enum`). An example of this is shown in the image below:
 
 ![](/content/blog/make-app-to-phone-call-using-android-and-flutter/makeaphonecall.png)
 
-### Make a call
+### Make A Call
 
-To make a phone call open `main.dart` file and update body of `_makeCall` method:
+We now need to add functionality to make a phone call. Open the `main.dart` file and update the body of `_makeCall` method as shown below:
 
 ```dart
 Future<void> _makeCall() async {
@@ -577,7 +552,7 @@ Future<void> _makeCall() async {
   }
 ```
 
-The above method will communicate with Android so you have to update code in `MainActivity` class as well. Add `makeCall` clauses to `when` statement inside `addFlutterChannelListener` method:
+The above method will communicate with Android so we have to update code in `MainActivity` class as well. Add `makeCall` clauses to `when` statement inside `addFlutterChannelListener` method:
 
 ```kotlin
 private fun addFlutterChannelListener() {
@@ -601,13 +576,13 @@ private fun addFlutterChannelListener() {
     }
 ```
 
-Now in the same file add `onGoingCall` property:
+Now in the same file add the `onGoingCall` property, which defines if and when a call is ongoing:
 
 ```kotlin
 private var onGoingCall: NexmoCall? = null
 ```
 
-> NOTE: Currently Client SDK does not store ongoing call reference, so you have to store it in `MainActivity` class. You will use it later to end the call.
+> NOTE: Currently the Client SDK does not store ongoing call reference, so we have to store it in `MainActivity` class. we will use it later to end the call.
 
 Now in the same file add `makeCall` method:
 
@@ -630,7 +605,7 @@ Now in the same file add `makeCall` method:
     }
 ```
 
-The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Now you need to add support for both states (`SdkState.ON_CALL` and `SdkState.ERROR`) inside `main.dart` file (Fluttter). Update body of the `_updateView` method:
+The above method sets the state of the Flutter app to `SdkState.WAIT` and waits for the Client SDK response (error or success). Now we need to add support for both states (`SdkState.ON_CALL` and `SdkState.ERROR`) inside `main.dart` file (Fluttter). Update body of the `_updateView` method to show the same as below:
 
 ```dart
 Widget _updateView() {
@@ -661,23 +636,23 @@ Widget _updateView() {
   }
 ```
 
-Each state change will result in UI modification. Before making a call the application needs specific permission.
+Each state change will result in UI modification. Before making a call the application needs specific permissions to use the microphone. In the next step, we're going to add the functionality in our project to request these permissions.
 
-### Request permissions
+### Request Permissions
 
-The application needs to be able to access the microphone, so you have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
+The application needs to be able to access the microphone, so we have to request Android `android.permission.RECORD_AUDIO` permission (Flutter calls it `Permission.microphone`). 
 
-First you need to add the [permission_handler](https://pub.dev/packages/permission_handler) package. Open `pubspec.yaml` file and add `permission_handler: ^6.0.1+1` dependency under `sdk: flutter`:
+First we need to add the [permission_handler](https://pub.dev/packages/permission_handler) package. Open `pubspec.yaml` file and add `permission_handler: ^6.0.1+1` dependency under `sdk: flutter`:
 
 ```yaml
 dependencies:
   flutter:
     sdk: flutter
 
-  permission_handler: ^5.1.0+2
+  permission_handler: ^6.0.1+1
 ```
 
-> NOTICE: Intention matters in `yaml` files, so make sure `permission_handler` is at the same indention level as the `flutter:` item.
+> Indentation matters in `yaml` files, so make sure `permission_handler` is at the same indentation level as the `flutter:` item.
 
 Run the below command in the terminal to download the newly added Flutter package:
 
@@ -685,21 +660,21 @@ Run the below command in the terminal to download the newly added Flutter packag
 flutter pub get
 ```
 
-Add package import at the top of the `main.dart` file:
+At the top of the `main.dart` file, you'll need to import the `permission_handler` package as shown in the example below:
 
 ```dart
 import 'package:permission_handler/permission_handler.dart';
 ```
 
-Add this method inside `_CallWidgetState` class defined in the `main.dart` file to request permission:
+To trigger the request for certain permissions, you'll need to add the `requestPermissions()` method within the `_CallWidgetState` class inside the `main.dart` file. So add this new method inside the class:
 
 ```dart
 Future<void> requestPermissions() async {
-    await [ Permission.microphone] .request();
+    await [ Permission.microphone].request();
   }
 ```
 
-Finally you need add two permissions (`uses-permission` tags) inside `app/src/main/AndroidManifest.xml` file, over the `application` tag:
+Finally, we need to add two permissions (`uses-permission` tags) inside `app/src/main/AndroidManifest.xml` file, above the `application` tag:
 
 ```xml
 <uses-permission android:name="android.permission.INTERNET" />
@@ -709,19 +684,19 @@ Finally you need add two permissions (`uses-permission` tags) inside `app/src/ma
 ...
 ```
 
-> NOTE: `android.permission.INTERNET` permission is granted implicitly by the Android, so you don't have to request it in Flutter explicitly.
+> NOTE: `android.permission.INTERNET` permission is granted implicitly by the Android, so we don't have to request it in Flutter explicitly.
 
-Run the app and click `MAKE PHONE CALL` to start a call. Permissions dialog will appear and after granting the permissions the Call will start.
+Run the app and click `MAKE PHONE CALL` to start a call. The permissions dialogue will appear and after granting the permissions the call will start.
 
-> Remainder: You define the phone number earlier in NCCO 
+> Remainder: we defined the phone number earlier in NCCO 
 
-The state of the application will be updated to `SdkState.ON_CALL` and UI will be updated:
+The state of the application will be updated to `SdkState.ON_CALL` and the UI will be updated:
 
 ![](/content/blog/make-app-to-phone-call-using-android-and-flutter/oncall.png)
 
-### End call
+### End Call
 
-To end the call you need to trigger the method on the native Android application using `platformMethodChannel`. Inside `main.dart` file update body of the `_endCall` method:
+To end the call we need to trigger the method on the native Android application using `platformMethodChannel`. Inside `main.dart` file update body of the `_endCall` method:
 
 
 ```dart
@@ -732,7 +707,7 @@ Future<void> _endCall() async {
   }
 ```
 
-The above method will communicate with Android so you have to update code in the `MainActivity` class. Add `endCall` clauses to `when` statement inside the `addFlutterChannelListener` method:
+The above method will communicate with Android so we have to update code in the `MainActivity` class. Add `endCall` clauses to `when` statement inside the `addFlutterChannelListener` method:
 
 ```kotlin
 when (call.method) {
@@ -776,7 +751,7 @@ The above method sets the state of the Flutter app to `SdkState.WAIT` and waits 
 
 You have handled ending the call by pressing `END CALL` button in the Flutter application UI, however, the call can also end outside of the Flutter app e.g. the call will be rejected or answered and later ended by the callee (on the real phone). 
 
-To support these cases you have to add `NexmoCallEventListener` listener to the call instance and listen for call-specific events. 
+To support these cases we have to add `NexmoCallEventListener` listener to the call instance and listen for call-specific events. 
 
 Define `callEventListener` property at the top of the `MainActivity` class:
 
@@ -796,7 +771,7 @@ private val callEventListener = object : NexmoCallEventListener {
     }
 ```
 
-The `onMemberStatusUpdated` callback informs you about call end.
+The `onMemberStatusUpdated` callback informs we about call end.
 
 To register above listener modify `onSuccess` callback inside `makeCall` method: 
 
@@ -812,16 +787,16 @@ onGoingCall?.removeCallEventListener(callEventListener)
 onGoingCall = null
 ```
 
-Run the app and if you've followed through this tutorial step by step, you'll be able to make a phone call from your mobile application to a physical phone number.
+Run the app and if you've followed through this tutorial step by step, you'll be able to make a phone call from our mobile application to a physical phone number.
 
 # Summary
 
-You have successfully built the application. By doing so you have learned how to make a phone call from a mobile application to the phone using Vonage Client SDK. For the complete version please see this project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
+You have successfully built the application. By doing so we have learned how to make a phone call from a mobile application to the phone using Vonage Client SDK. For the complete version please see this project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
 To familiarize yourself with other use cases please check [other tutorials](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
 
 # References
 
 * [Vonage developer center](https://developer.vonage.com/)
-* [Write your first flutter app](https://flutter.dev/docs/get-started/codelab)
+* [Write our first flutter app](https://flutter.dev/docs/get-started/codelab)
 * [Flutter Plaftorm chanels](https://flutter.dev/docs/development/platform-integration/platform-channels)
