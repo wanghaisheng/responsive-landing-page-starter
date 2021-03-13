@@ -18,14 +18,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-
-
 We're always working to make building with our APIs easier for all developers.
 With our new Vonage for Visual Studio Code extension, we're bringing our APIs
 closer to your development experience. Vonage for VS Code gives you full
 control of your Vonage applications &amp; numbers and provides code snippets to
 make building your app faster than ever.
-
 
 Let's review what you can do.
 
@@ -47,38 +44,20 @@ under the Assets section of the release.
 
 With the extension installed, click the Vonage logo in the activity bar. Then
 you'll be prompted to authenticate the extension with your account. Click the
-`Provide API key &amp; secret` button to authenticate your account. Once you've
+`Provide API key & secret` button to authenticate your account. Once you've
 logged in, your account information will begin to populate in the window.
 
 ![Example of logging into the extension](/content/blog/introducing-vonage-for-visual-studio-code/login.gif)
 
-## Applications
-
-// View
-
-// Create
-
-// Edit
-
-// Link
-
 ## Numbers
 
-// View
+The Unassigned Numbers view contains, as you might expect, a listing of
+your numbers that aren't assigned to applications. You can right-click any
+numbers in the view to see additional options for that number, including
+copying the number to the clipboard or assigning it to an application.
 
-// Purchase
+You can also purchase a new number by pressing the button in the title bar
+of the view. This will allow you to select the country, type, and pattern
+(i.e. starts with 12) for your new number.
 
-// Cancel
-
-## Account
-
-// View
-
-
-## What's Next?
-
-Is there a killer feature that we're missing? Perhaps something small that
-would improve the user experience? The extension is in public beta and we
-are eager to hear your [feedback]. We can't wait to see what you build!
-
-[feedback]:https://docs.google.com/forms/d/e/1FAIpQLSffDoFTsYla2wMKk83x2TECXTYkixrIHVnoPTnIE7ft-hyu5A/viewform
+![Quick view of some of the features for managing numbers](/content/blog/introducing-vonage-for-visual-studio-code/numbers.gif)
