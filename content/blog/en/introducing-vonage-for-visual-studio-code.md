@@ -18,13 +18,14 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Introducing Vonage for Visual Studio Code
+
 
 We're always working to make building with our APIs easier for all developers.
 With our new Vonage for Visual Studio Code extension, we're bringing our APIs
 closer to your development experience. Vonage for VS Code gives you full
 control of your Vonage applications &amp; numbers and provides code snippets to
 make building your app faster than ever.
+
 
 Let's review what you can do.
 
