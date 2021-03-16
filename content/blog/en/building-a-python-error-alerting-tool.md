@@ -1,7 +1,8 @@
 ---
 title: Building a Python Error Alerting Tool
-description: Learn how to build a simple and flexible Python error alerting tool
-  that can be plugged into any project.
+description: Monitoring logs to keep track of application health are essential.
+  In this tutorial, learn how to build a simple and flexible Python error
+  alerting tool that can be plugged into any project.
 author: nahrinjalal
 published: true
 published_at: 2021-03-16T13:46:13.225Z
