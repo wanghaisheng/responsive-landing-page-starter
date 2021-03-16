@@ -47,7 +47,7 @@ Create a directory for the project:
 ~$ cd vonage-alerts
 ```
 
-**Creating a [virtual environment](https://docs.python.org/3/tutorial/venv.html) is often good practice, so let’s get this done first:**
+Creating a [virtual environment](https://docs.python.org/3/tutorial/venv.html) is often good practice, so let’s get this done first:
 
 ```bash
 ~/vonage-alerts$ python3.9 -m venv .env
@@ -60,7 +60,7 @@ On a Windows computer, replace the `source` command in the last line above with:
 ~/vonage-alerts$ .venv\Scripts\activate
 ```
 
-**Make sure the environment is working as expected:**
+Make sure the environment is working as expected:
 
 ```bash
 (.env) ~/vonage-alerts$ python --version
