@@ -3,10 +3,11 @@ title: Add 2FA to your Application with the Verify API and Golang SDK
 description: This post shows you how to implement 2FA in your Go web
   applications using the Verify API by building a sample site which requires you
   to register with your mobile number.
+thumbnail: /content/blog/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk/go_verify-apis_1200x600.png
 author: marklewin
 published: true
-published_at: 2021-02-25T18:22:14.993Z
-updated_at: 2021-02-25T18:22:15.032Z
+published_at: 2021-03-16T12:48:08.584Z
+updated_at: ""
 category: tutorial
 tags:
   - go
