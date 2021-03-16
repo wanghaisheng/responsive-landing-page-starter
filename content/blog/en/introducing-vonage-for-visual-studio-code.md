@@ -26,7 +26,7 @@ building your app faster than ever.
 
 Let's review what you can do.
 
-## Installing the Extension 
+## Installing the Extension
 
 You can find the Vonage for VS Code extension in the
 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=Vonage.vscode).
@@ -35,10 +35,10 @@ Click **install** to add the extension to your editor.
 Alternatively, you can manually install the plugin:
 
 1. See the latest [Releases](https://github.com/Vonage/vscode/releases) for
-the Vonage/vscode GitHub project.
-1. Download the release.vsix file from the latest release. The link is listed
-under the Assets section of the release.
-1. Run `code --install-extension <path to release.vsix>` from your terminal.
+   the Vonage/vscode GitHub project.
+2. Download the release.vsix file from the latest release. The link is listed
+   under the Assets section of the release.
+3. Run `code --install-extension <path to release.vsix>` from your terminal.
 
 ## Authenticate Your Account
 
@@ -86,7 +86,7 @@ and manage the number as you would in the numbers view.
 
 Currently, the Account view provides a quick way to view your account balance.
 In the future, we hope to provide some additional capabilities here, including
-the ability to top-off your account. Giving a presentation, screen-sharing,
+the ability to top-off your account. Are you giving a presentation, screen-sharing,
 live-streaming? For privacy, click your current balance to toggle its visibility.
 
 ![Animated gif of the Account view](/content/blog/introducing-vonage-for-visual-studio-code/account.gif)
@@ -97,6 +97,4 @@ We've included a few snippets in the initial release, but our next major focus
 will be adding code snippets for several popular languages. Is there a killer
 feature that we're missing? Perhaps something small that would improve the
 user experience? The extension is in public beta, and we are eager to hear
-your [feedback]. We can't wait to see what you build!
-
-[feedback]:https://docs.google.com/forms/d/e/1FAIpQLSffDoFTsYla2wMKk83x2TECXTYkixrIHVnoPTnIE7ft-hyu5A/viewform
+your [feedback](https://docs.google.com/forms/d/e/1FAIpQLSffDoFTsYla2wMKk83x2TECXTYkixrIHVnoPTnIE7ft-hyu5A/viewform). We can't wait to see what you build!
