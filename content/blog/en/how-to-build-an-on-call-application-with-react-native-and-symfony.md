@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Are you a developer? Have you ever been on call and had to install one of those pesky apps that notify you whenever something is a bit off? The threshold for errors has exceeded, or the server is taking too long to give responses, for example? If so, have you ever thought "I'd like to build myself one of those services?" Well, with this tutorial you're about to start the basics of building one of these applications and using Vonage to perform the communications.
+Are you a developer? Have you ever been on call and had to install one of those pesky apps that notify you whenever something is a bit off? The threshold for errors has exceeded, or the server is taking too long to give responses, for example? If so, have you ever thought, "I'd like to build myself one of those services?" Well, with this tutorial, you're about to start the basics of building one of these applications and using Vonage to perform the communications.
 
 This tutorial will help you build the beginning of an API in PHP using [Symfony](https://symfony.com/) and the mobile application using [React Native](https://reactnative.dev/).
 
@@ -44,7 +44,9 @@ cd on-call-application-api
 
 ### Generate JWT keypair
 
-This project will be using a mobile app built in React Native, to authenticate the user between the mobile application and the API, authentication is required. This project uses JWT to handle authentication. So certificates need to be generated in other to make the JWT tokens. In the root of your project, run the following three commands:
+This project will be using a mobile app built in React Native.  
+You'll need to authenticate the user between the mobile application and the API. This project uses JWT to handle authentication, so certificates need to be generated to make the JWT tokens.  
+In the root of your project, run the following three commands:
 
 ```bash
 mkdir -p API/var/jwt # Creates a directory to store your private and public key files.
@@ -54,19 +56,20 @@ openssl pkey -in API/var/jwt/private.pem -out API/var/jwt/public.pem -pubout # G
 
 ### Exposing your application to the Internet
 
-Making a phone call with Vonage requires a virtual phone number with a webhook to log the events that happen when either a phone call is made, answered, rejected, or ended. For the tutorial, ngrok is the service of choice to expose the application to the Internet. Install ngrok, and run the following command in a new Terminal window:
+Making a phone call with Vonage requires a virtual phone number. You'll also want to set up a webhook to log the events that happen whenever a phone call is made, answered, rejected, or ended.  
+For this tutorial, [ngrok](https://ngrok.com/download) is the service of choice to expose the application to the Internet. Install ngrok, and run the following command in a new Terminal window:
 
 ```bash
 ngrok http 8080 # Creates an http tunnel to the Internet from your computer on port 8080
 ```
 
-Make sure to copy your ngrok HTTPS URL as you'll need this later when configuring the project.
+Make sure to copy your ngrok HTTPS URL, as you'll need this later when configuring the project.
 
 ### Environment Variables
 
-Inside the `Docker` directory is a file called `.env.dist` copy or rename this file to `.env`.
+Inside the `Docker` directory is a file called `.env.dist`; copy or rename this file to `.env`.
 
-The first fields to update are your database credentials. The example below shows the credentials I've used for this tutorial, but please use more secure credentials. 
+The first fields to update are your database credentials. The example below shows the credentials I've used for this tutorial, but please use more secure ones. 
 
 ```env
 DATABASE_URL=mysql://db_user:db_password@mysql:3306/on_call?serverVersion=8.0
@@ -77,9 +80,9 @@ MYSQL_PASSWORD=db_password
 MYSQL_ROOT_PASSWORD=root_password
 ```
 
-Update the values for both `VONAGE_API_KEY=` and `VONAGE_API_SECRET=` which you can find inside the [Vonage Developer Dashboard](https://dashboard.nexmo.com/sign-in).
+Update the values for both `VONAGE_API_KEY=` and `VONAGE_API_SECRET=`, which you can find inside the [Vonage Developer Dashboard](https://dashboard.nexmo.com/sign-in).
 
-Then, in the dashboard, navigate to "Your Applications". Create a new application, making sure to download the `private.key` file to the projects root directory, and ensuring your application has voice capabilities.
+Then, in the dashboard, navigate to "Your Applications". Create a new application, making sure to download the `private.key` file to the project's root directory, and ensuring your application has voice capabilities.
 
 You need to set the Event webhook URL when using the Voice API. Set this to the ngrok HTTPS URL you copied in the last section.
 
@@ -99,11 +102,11 @@ VONAGE_NUMBER=<Your Vonage Virtual Number>
 JWT_PASSPHRASE=<Your JWT Passphrase>
 ```
 
-Finally, in the same file find `ON_CALL_NUMBER=` and add your phone number to this value. It will need to be a real number and able to receive SMS and voice calls.
+Finally, find `ON_CALL_NUMBER=` in the same file, and add your phone number to this value. It will need to be a real number and able to receive SMS messages and voice calls.
 
 ### Start Docker
 
-Run the following five commands, the comments to the right of each describe what they do:
+Run the following five commands—the comments to the right of each describe what they do:
 
 ```bash
 cd Docker
@@ -113,11 +116,12 @@ composer install # Installing all third-party libraries used in this project
 php bin/console doctrine:migrations:migrate # Creates the user table already defined in `/API/migrations`
 ```
 
-### Time to build the API!
+### Time to Build the API!
 
 #### Make Database Entities
 
-There are three new database tables for this project. `Alerts`, `OnCall`, and a table to link Alerts and Users together `UserAlerts`. To start, run the command below and follow the instructions for input below:
+There are three new database tables for this project. `Alerts`, `OnCall`, and a table to link Alerts and Users together, `UserAlerts`.  
+To start, run the command below and follow the instructions for input below:
 
 ```bash
 php bin/console make:entity
@@ -140,7 +144,7 @@ use Doctrine\Common\Collections\Collection;
 use Gedmo\Timestampable\Traits\TimestampableEntity;
 ```
 
-One of these new classes is the TimestampableEntity, which adds `created_at` and `updated_at` fields to the database, add `use TimestampableEntity;` at the top of the class as shown below:
+One of these new classes is the TimestampableEntity, which adds `created_at` and `updated_at` fields to the database. Add `use TimestampableEntity;` at the top of the class, as shown below:
 
 ```php
 class Alert
@@ -159,7 +163,8 @@ We need to add some default values within the class, so create a new construct a
     }
 ```
 
-While we're in this class, add the two functions below. The `getUserAssigned()` function, determines which user is the current user responsible for the alert. While the second function, `toArray()`, converts the values of the class into an array, ready for the API responses. 
+While we're in this class, add the two functions below.  
+The `getUserAssigned()` function determines which user is the current user responsible for the alert. The second function, `toArray()`, converts the values of the class into an array, ready for the API responses. 
 
 ```php
     public function getUserAssigned(): ?User
@@ -188,7 +193,7 @@ While we're in this class, add the two functions below. The `getUserAssigned()` 
     }
 ```
 
-To make the `OnCall` entity, which we're using to store which person is on call each week run the command below and follow the instructions for input as listed:
+To make the `OnCall` entity, which we're using to store which person is on call each week, run the command below and follow the instructions for input as listed:
 
 ```bash
 php bin/console make:entity
@@ -227,7 +232,7 @@ We need to add some default values within the class, so create a new construct a
     }
 ```
 
-To link your User and Alert entities together, we're going to create a new Entity called `UserAlert`, so similar to the previous two instructions to create an entity follow the instructions below:
+To link your User and Alert entities together, you need to create a new Entity called `UserAlert`. Follow the instructions below:
 
 ```bash
 php bin/console make:entity
@@ -323,7 +328,7 @@ class OnCallFixtures extends Fixture implements DependentFixtureInterface
 }
 ```
 
-Let's run your fixtures so we have a user and an on-call record! In your terminal run:
+Let's run your fixtures so that we have a user and an on-call record! In your terminal run:
 
 ```bash
 php bin/console doctrine:fixtures:load
@@ -388,13 +393,13 @@ class AlertType extends AbstractType
 }
 ```
 
-The new code you've added to the `AlertType` class adds further constraints and requirements on the two fields in this form, `title` and `description` to ensure they have a minimum length and are not blank.
+The new code you've added to the `AlertType` class adds further constraints and requirements on the two fields in this form, `title` and `description`, to ensure they have a minimum length and are not blank.
 
 #### Build a Vonage Util
 
 A Utility class is needed to handle Vonage API requests when sending SMS messages and making voice calls.
 
-In `API/src` create a new directory called `Util`, along with a new file within this new directory called `VonageUtil.php`
+In `API/src`, create a new directory called `Util`, along with a new file within this new directory called `VonageUtil.php`
 
 You've already stored your Vonage credentials in the `.env` file earlier in this tutorial, and you'll be making use of these in this new PHP class.
 
@@ -428,7 +433,7 @@ class VonageUtil
 
 Right now, this code initialises a new PHP Class and creates a new client for Vonage API, using the Vonage Symfony wrapper for the PHP SDK.
 
-Next, within this class, you're going to want to add two new functions, which will handle making the request to the API to send an SMS or make a voice call, add the following two:
+Next, within this class, you're going to want to add two new functions, which will handle making the request to the API to send an SMS or make a voice call. Add the following two:
 
 ```php
     public function sendSms(string $to, string $from, string $text): bool
@@ -483,7 +488,7 @@ We've created the functionality to pull the data, create the controller to handl
 php bin/console make:controller
 ```
 
-When asked for the name of your controller input `WebhookController`.
+When asked for the name of your controller, input `WebhookController`.
 
 Open the newly created file: `API/src/Controller/WebhookController.php`.
 
@@ -503,7 +508,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 ```
 
-Your class needs here is the construct for Symfony to inject the EntityManager and the VonageUtil classes. So at the top of your class add:
+Your class needs here is the construct for Symfony to inject the EntityManager and the VonageUtil classes. So at the top of your class, add:
 
 ```php
     /** @var VonageUtil */
@@ -722,7 +727,7 @@ This controller will use the `$workflowRegistry` and `$entityManager` in several
     }
 ```
 
-When the controller was created, a function named `index()` was automatically added, we're not going to need this for the project so delete that function.
+When the controller was created, a function named `index()` was automatically added. We're not going to need this for the project, so delete that function.
 
 Now we'll create our `listAction()` which will retrieve all alerts from the database and return them as a JSON response. Add the `listAction()` to your controller as shown below:
 
@@ -865,13 +870,13 @@ Now we'll create our `cancelAction()` which will find an alert by ID from the da
     }
 ```
 
-To summarise what we've just added to our project. We've added a configuration to our project to add control of our alert's flow through its lifecycle. We've then created an API controller that will allow us to retrieve a list of our alerts, retrieve a specific alert, accept, decline, cancel or complete the alerts depending on their status.
+To summarise, we've added a configuration to our project that controls our alert's flow through its lifecycle. We've then created an API controller that will allow us to retrieve a list of our alerts, retrieve a specific alert, accept, decline, cancel or complete the alerts depending on their status.
 
 #### Create the Escalation Command
 
-Have you wondered what about if the SMS isn't received if you've got to this point? Or is ignored?! Well, worry not! The next step is to implement a Symfony Command, which will run as a time-based job scheduler (Cron job) at a time interval you set. 
+What if the SMS hasn't been received? Or is it ignored?! Well, worry not! The next step is to implement a Symfony Command that will run as a time-based job scheduler (Cron job) and escalate all alerts older than 10 minutes. 
 
-Before creating this command, we'll need to add a repository method, to retrieve alerts requiring escalating to a phone call. Open your `UserAlertRepository.php` file within `API/src/Repository/`.
+Before creating this command, we'll need to add a repository method to retrieve alerts requiring escalation. Open your `UserAlertRepository.php` file within `API/src/Repository/`.
 
 At the top of this file, add some more third party libraries for importing:
 
@@ -881,7 +886,7 @@ use App\Entity\UserAlert;
 use Carbon\Carbon;
 ```
 
-Now add the repository method to retrieve all alerts that have had an SMS sent over 10 minutes ago, but are still in the status of `raised`:
+Next, add the repository method to retrieve all alerts that have had an SMS sent over 10 minutes ago but are still in the status of `raised`:
 
 ```php
     public function findRaisedUserAlerts()
@@ -904,13 +909,13 @@ Now add the repository method to retrieve all alerts that have had an SMS sent o
     }
 ```
 
-This new Symfony Command will escalate alerts with an SMS sent over 10 minutes ago but have not changed state. So to create this new command, run the following command in your Terminal:
+This new Symfony Command will escalate all retrieved alerts. To create it, run the following command in your Terminal:
 
 ```bash
 php bin/console make:command
 ```
 
-When asked for the command name enter `app:escalate-alert`, which creates a new file called `EscalateAlertCommand.php` within `API/src/Command`. Open this new file.
+When asked for the command name, enter `app:escalate-alert`, which creates a new file called `EscalateAlertCommand.php` within `API/src/Command`. Open this new file.
 
 We will be using all of the following classes, so let's make sure we include them from the beginning. At the top of the file, just below `namespace App\Command;` add the following:
 
@@ -941,7 +946,7 @@ The class needs two objects injecting into it, the `VonageUtil` and `EntityManag
     }
 ```
 
-Now it's time to write the functionality for this command. This command will retrieve all Alerts with an SMS sent 10 minutes ago, but are still in `raised` status. If there are any of these, it will retrieve the user assigned to this alert, and send them a Text-To-Speech voice call notifying them of this alert. Replace current functionality within `protected function execute()` with:
+Now it's time to write the functionality for this command. It will retrieve all Alerts with an SMS sent over 10 minutes ago, but still with `raised` status. If there are any of these, it will retrieve the user assigned to the alert and send them a Text-To-Speech voice call notification. Replace current functionality within `protected function execute()` with:
 
 ```php
         $io = new SymfonyStyle($input, $output);
@@ -970,15 +975,15 @@ Now it's time to write the functionality for this command. This command will ret
 
 ### Test the API
 
-Your user needs authenticating to test these new endpoints. So first make sure you get your JWT token by sending a `POST` request to the `http://localhost:8080/api/login_check` with your fixtured users credentials.
+Your user needs authenticating to test these new endpoints. So first, make sure you get your JWT token by sending a `POST` request to `http://localhost:8080/api/login_check` with your fixtured users credentials.
 
-Once you've copied your JWT, update the type to be a `GET` request, and the URL to be `http://localhost:8080/api/alerts`. You need to provide a header with the key `Authorisation` and the value as `Bearer <JWT>` replacing `<JWT>` with your token.
+Once you've copied your JWT, update the type to be a `GET` request and the URL to be `http://localhost:8080/api/alerts`. You need to provide a header with the key `Authorisation` and the value as `Bearer <JWT>` replacing `<JWT>` with your token.
 
 The list Alerts endpoint returns a JSON array, which you can see in the Postman example below:
 
 ![An example of listing alerts through Postman](/content/blog/how-to-build-an-on-call-application-with-react-native-and-symfony/list-alerts.png)
 
-Let's keep that alert in the state it is currently using it later when testing the mobile application.
+Let's keep that alert in its current state and use it later when testing the mobile application.
 
 You've built an API; it's now time to create the mobile application.
 
@@ -994,7 +999,7 @@ npm install
 expo start
 ```
 
-After a little while, a web browser should open. On the left-hand side, there are multiple options to run the application through, whether on your mobile device, iOS simulator or Android simulator. Choose the option that suits you, and when the application boots up, the Login Screen will be the first screen you see. 
+After a little while, a web browser opens. On the left-hand side, there are multiple options to run the application through, whether on your mobile device, iOS simulator or Android simulator. Choose the option that suits you, and when the application boots up, the Login Screen will be the first screen you see. 
 
 The fixtured user's credentials in the database are:
 
@@ -1007,14 +1012,15 @@ As shown in the image below:
 
 ![Example of a login screen on a mobile phone](/content/blog/how-to-build-an-on-call-application-with-react-native-and-symfony/login-screen.jpg)
 
-A successful log in won't currently do anything! We need to implement more screens first. But to double-check your login was correct, check your Terminal where you ran `expo start`. You should see the line: `You Successfully logged in!`.
+A successful log in won't currently do anything! We need to implement more screens first, but to double-check your login was correct, check your Terminal where you ran `expo start`. You should see the line: `You Successfully logged in!`.
 
 ### Alerts API
 
 ### Showing a list of alerts
 
-Inside the `API` directory, create a new file called `alerts.js`. 
-Add the example below, which imports the `client.js` file to use the functionality from `getClient()`. This new function called `getAlerts()` makes a request to the API on the endpoint `/api/alerts`. We might add the other API calls, accept, complete, and cancel alerts while we're here.
+Inside the `API` directory, create a new file called `alerts.js`.   
+Add the example below, which imports the `client.js` file to use the functionality from `getClient()`.  
+This new function called `getAlerts()` makes a request to the API on the endpoint `/api/alerts`. We can add the other API calls, accept, complete, and cancel alerts while we're here.
 
 ```js
 import { getClient } from "./client.js";
@@ -1339,14 +1345,14 @@ const styles = StyleSheet.create({
 export default AlertScreen;
 ```
 
-Your application currently has no instruction on how to show these two new screens you've created. In `navigation/MainStackNavigator.js` below `import Login` add the following two lines:
+Your application currently has no instruction on how to show these two new screens you've created. In `navigation/MainStackNavigator.js` below `import Login`, add the following two lines:
 
 ```js
 import Alert from '../components/AlertScreen';
 import Alerts from '../components/AlertsScreen';
 ```
 
-And then below the Login `Stack.Screen` add two new Screens:
+Then below the Login `Stack.Screen`, add two new Screens:
 
 ```js
         <Stack.Screen 
@@ -1365,7 +1371,7 @@ And then below the Login `Stack.Screen` add two new Screens:
         />
 ```
 
-Back in your `LoginScreen.js` file find the line showing: `console.log('You Successfully logged in!');` and add the below to redirect the user on a successful login.
+Back in your `LoginScreen.js` file, find the line showing: `console.log('You Successfully logged in!');` and add the snippet below to redirect the user on a successful login.
 
 ```js
   return this.props.navigation.navigate('Alerts');
@@ -1388,13 +1394,13 @@ username: dev+1@company.com
 password: test_pass
 ```
 
-On successful login, the next screen you see is the Alerts screen. However, this will be empty right now because, in the database, there aren't any alerts!
+On successful login, the next screen you see is the Alerts screen. However, this will be empty right now because, in the database, there aren't any alerts.
 
 ![An example of raising an alert with Postman](raise-alert.png)
 
-Now, retry logging into your mobile application. You'll see the new alert, and you'll also be able to press/click on this alert to be taken to a screen that shows more information. 
+Now, retry logging into your mobile application. You'll see the new alert, and you'll also be able to click on this alert to be taken to a screen that shows more information. 
 
-You can also transition this alert, whether it to be to accept or cancel.
+You can also transition this alert, whether it is to be accepted or cancelled.
 
 ## Conclusion
 
@@ -1406,4 +1412,4 @@ Below are a few other tutorials we've written implementing the Vonage Voice API 
 * [Text-To-Speech: Let Your Application Speak, Now in 50 Languages!](hhttps://learn.vonage.com/blog/2020/12/01/text-to-speech-let-your-application-speak-now-in-50-languages/)
 * [AWS Transcribe With Nexmo Voice Using PHP](https://learn.vonage.com/blog/2020/02/14/aws-transcribe-with-nexmo-voice-using-php-dr/)
 
-Don’t forget, if you have any questions, advice or ideas you’d like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack). I'd love to hear back from anyone that has implemented this tutorial and how your project works.
+As always, if you have any questions, advice or ideas you’d like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack). I'd love to hear how you've gotten on with this tutorial and how your project works.
