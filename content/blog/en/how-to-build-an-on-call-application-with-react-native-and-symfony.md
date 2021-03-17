@@ -336,7 +336,7 @@ php bin/console doctrine:fixtures:load
 
 #### Make Form
 
-When handling an API request for raising an alert, we need to handle the input to ensure it's what we expect. With Symfony, the easiest way to do this is with a Form. With a Form, we can define what values we expect and any constraints on these values. So, do so by running the command below:
+When handling an API request for raising an alert, we need to validate the input to ensure it's what we expect. With Symfony, the easiest way to do this is by using a Form. With a Form, we can define what values we expect and any constraints on these values. Start by running the command below:
 
 ```bash
 php bin/console make:form
@@ -466,9 +466,9 @@ Next, within this class, you're going to want to add two new functions, which wi
     }
 ```
 
-#### Building the webhook controller
+#### Building the Webhook Controller
 
-Before making the controller, we're going to need a Repository function to pull specific data from the database. So open the `OnCallRepository.php` found within `src/Repository`. Inside the class below the `__construct()` function, add the new function `findCurrentOnCall` which will find the current user on call.
+Before making the controller, we're going to need a Repository function to pull specific data from the database. Open the `OnCallRepository.php` found within `src/Repository`. Inside the class below the `__construct()` function, add the new function `findCurrentOnCall` which will find the current user on call.
 
 ```php
     public function findCurrentOnCall(\Carbon\Carbon $date)
@@ -482,7 +482,8 @@ Before making the controller, we're going to need a Repository function to pull 
     }
 ```
 
-We've created the functionality to pull the data, create the controller to handle any requests and pull the data. First, in your Terminal, run the following:
+We've created the functionality to pull the data. Next, let's create a controller to handle any requests and pull the data.  
+First, in your Terminal, run the following:
 
 ```bash
 php bin/console make:controller
@@ -508,7 +509,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 ```
 
-Your class needs here is the construct for Symfony to inject the EntityManager and the VonageUtil classes. So at the top of your class, add:
+Your class needs a construct for Symfony to inject the EntityManager and the VonageUtil classes. At the top of your class, add:
 
 ```php
     /** @var VonageUtil */
@@ -526,7 +527,7 @@ Your class needs here is the construct for Symfony to inject the EntityManager a
     }
 ```
 
-Now replace the `index()` function with the code below, which will create new alerts. This new function handles the POST request body, creates this data as a new `Alert`, passes that alert into the Form to validate the values. If all is as expected, it will create a new `UserAlert`, with the person currently on call as the person receiving the alert.
+Now replace the `index()` function with the code below to create new alerts. This new function handles the POST request body, creates this data as a new `Alert`, and passes that alert into the Form to validate the values. If all is as expected, it will then create a new `UserAlert`, with the person currently on call as the person receiving the alert.
 
 ```php
     /**
@@ -582,7 +583,7 @@ Now replace the `index()` function with the code below, which will create new al
     }
 ```
 
-You may have noticed that the function `$this->getErrorMessages()` is called at the bottom, but your class doesn't have this function? You'll need to add this function. The function will retrieve all the form errors found when the endpoint is triggered, but some data is missing. Below your `index()` method, add the following:
+You may have noticed that the function `$this->getErrorMessages()` is called at the bottom, but your class doesn't have it yet. You'll need to add this function next. It will retrieve all the form errors found when the endpoint is triggered, but some data is missing. Below your `index()` method, add the following:
 
 ```php
     private function getErrorMessages(Form $form): array
@@ -628,7 +629,7 @@ The image below shows an example of doing this with Postman:
 
 #### Testing raising an alert
 
-You don't need to be authenticated in this example to raise an alert, so no need to use the JWT in the previous example. 
+You don't need to be authenticated in this example to raise an alert, so no need to use the JWT from the previous example. 
 
 To raise an alert, update the URL field: `http://localhost:8080/webhooks/raise_alert`, keep the method as a `POST` request, and the JSON body of:
 
@@ -727,7 +728,7 @@ This controller will use the `$workflowRegistry` and `$entityManager` in several
     }
 ```
 
-When the controller was created, a function named `index()` was automatically added. We're not going to need this for the project, so delete that function.
+When the controller was created, a function named `index()` was automatically added. We're not going to need it for this project, so delete that function.
 
 Now we'll create our `listAction()` which will retrieve all alerts from the database and return them as a JSON response. Add the `listAction()` to your controller as shown below:
 
@@ -754,7 +755,7 @@ Now we'll create our `listAction()` which will retrieve all alerts from the data
     }
 ```
 
-Now we'll create our `readAction()` which will retrieve one alert by ID from the database and return it as a JSON response. Add the `readAction()` to your controller as shown below:
+Next, we'll create `readAction()` to retrieve one alert by ID from the database and return it as a JSON response. Add `readAction()` to your controller as shown below:
 
 ```php
     /**
@@ -780,7 +781,8 @@ Now we'll create our `readAction()` which will retrieve one alert by ID from the
     }
 ```
 
-Now we'll create our `acceptAction()` which will find an alert by ID from the database, if one is found, it will try to transition the status of this alert from `pending` to `accepted`. The response will be an empty JSON response with the HTTP status code of 200. Add the `acceptAction()` to your controller as shown below:
+We'll create our `acceptAction()`, which will find an alert by ID from the database; if one is found, it will try to transition the status of this alert from `pending` to `accepted`. The response will be an empty JSON response with the HTTP status code of 200.  
+Add the `acceptAction()` to your controller as shown below:
 
 ```php
     /**
@@ -810,7 +812,8 @@ Now we'll create our `acceptAction()` which will find an alert by ID from the da
     }
 ```
 
-Now we'll create our `completeAction()` which will find an alert by ID from the database, if one is found, it will try to transition the status of this alert from `accepted` to `completed`. The response will be an empty JSON response with the HTTP status code of 200. Add the `completeAction()` to your controller as shown below:
+Next, we'll create our `completeAction()`, which will find an alert by ID from the database; if one is found, it will try to transition the status of this alert from `accepted` to `completed`. The response will be an empty JSON response with the HTTP status code of 200.  
+Add the `completeAction()` to your controller as shown below:
 
 ```php
     /**
@@ -840,7 +843,8 @@ Now we'll create our `completeAction()` which will find an alert by ID from the 
     }
 ```
 
-Now we'll create our `cancelAction()` which will find an alert by ID from the database, if one is found, it will try to transition the status of this alert from `accepted` or `pending` to `cancelled`. The response will be an empty JSON response with the HTTP status code of 200. Add the `cancelAction()` to your controller as shown below:
+Finally, we'll create our `cancelAction()`, which will find an alert by ID from the database; if one is found, it will try to transition the status of this alert from `accepted` or `pending` to `cancelled`. The response will be an empty JSON response with the HTTP status code of 200.  
+Add the `cancelAction()` to your controller as shown below:
 
 ```php
     /**
