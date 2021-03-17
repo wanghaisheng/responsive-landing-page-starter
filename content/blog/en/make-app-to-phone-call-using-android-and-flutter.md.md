@@ -2,6 +2,7 @@
 title: Building an App-To-Phone Call Using Android and Flutter
 description: "Build Android application using Flutter and utilise Vonage Client
   SDK to make a call from mobile application to the phone. "
+thumbnail: /content/blog/building-an-app-to-phone-call-using-android-and-flutter/flutter_inapp-call_1200x600.png
 author: igor-wojda
 published: false
 published_at: 2021-03-02T13:08:11.401Z
