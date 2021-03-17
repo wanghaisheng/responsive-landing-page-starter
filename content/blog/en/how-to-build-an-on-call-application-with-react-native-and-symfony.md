@@ -4,7 +4,7 @@ description: Learn how to build an on call application using React Native and Sy
 thumbnail: /content/blog/how-to-build-an-on-call-application-with-react-native-and-symfony/symfony-native_oncall_1200x600.png
 author: greg-holmes
 published: true
-published_at: 2021-03-02T15:19:51.059Z
+published_at: 2021-03-17T13:32:06.397Z
 updated_at: 2021-03-02T15:19:51.088Z
 category: tutorial
 tags:
