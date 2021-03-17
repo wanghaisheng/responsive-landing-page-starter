@@ -1,6 +1,7 @@
 ---
 title: Announcing Vonage Ruby SDK Version 7.4.0
 description: Introducing a new NCCO builder in the Vonage Ruby SDK
+thumbnail: /content/blog/announcing-vonage-ruby-sdk-version-7-4-0/blog_ruby-sdk-update_1200x600.png
 author: ben-greenberg
 published: true
 published_at: 2021-03-15T07:33:53.344Z
