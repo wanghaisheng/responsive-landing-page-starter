@@ -42,7 +42,7 @@ cd on-call-application-api
 
 ## Building The API
 
-### Generate JWT keypair
+### Generate JWT Keypair
 
 This project will be using a mobile app built in React Native.  
 You'll need to authenticate the user between the mobile application and the API. This project uses JWT to handle authentication, so certificates need to be generated to make the JWT tokens.  
@@ -54,7 +54,7 @@ openssl genpkey -out API/var/jwt/private.pem -aes256 -algorithm rsa -pkeyopt rsa
 openssl pkey -in API/var/jwt/private.pem -out API/var/jwt/public.pem -pubout # Generates the public key file
 ```
 
-### Exposing your application to the Internet
+### Exposing Your Application to the Internet
 
 Making a phone call with Vonage requires a virtual phone number. You'll also want to set up a webhook to log the events that happen whenever a phone call is made, answered, rejected, or ended.  
 For this tutorial, [ngrok](https://ngrok.com/download) is the service of choice to expose the application to the Internet. Install ngrok, and run the following command in a new Terminal window:
@@ -270,7 +270,7 @@ We need to add some default values within the class, so create a new construct a
     }
 ```
 
-#### Run the migrations!
+#### Run the Migrations!
 
 It's now time to make and run the migrations, creating new tables and columns in your database to reflect these newly created entities.
 
@@ -466,7 +466,7 @@ Next, within this class, you're going to want to add two new functions, which wi
     }
 ```
 
-#### Building the Webhook Controller
+#### Build the Webhook Controller
 
 Before making the controller, we're going to need a Repository function to pull specific data from the database. Open the `OnCallRepository.php` found within `src/Repository`. Inside the class below the `__construct()` function, add the new function `findCurrentOnCall` which will find the current user on call.
 
@@ -610,7 +610,7 @@ You may have noticed that the function `$this->getErrorMessages()` is called at 
 
 We're at a point where we can test this now!
 
-#### Testing the Authentication
+#### Test the Authentication
 
 There are two endpoints at this part of the tutorial that we can test with our API, so with Docker still running in the background, make a `POST` request to `http://localhost:8080/api/login_check` with the JSON body of:
 
@@ -627,7 +627,7 @@ The image below shows an example of doing this with Postman:
 
 ![An example of authenticating with Postman](/content/blog/how-to-build-an-on-call-application-with-react-native-and-symfony/login.png)
 
-#### Testing raising an alert
+#### Test Raising an Alert
 
 You don't need to be authenticated in this example to raise an alert, so no need to use the JWT from the previous example. 
 
@@ -644,7 +644,7 @@ The response will be an empty array and the HTTP status code of 201 (created). Y
 
 ![An example of raising an alert with Postman](/content/blog/how-to-build-an-on-call-application-with-react-native-and-symfony/raise-alert.png)
 
-#### How to handle an alert
+#### How to Handle an Alert
 
 Symfony's Workflow component allows you to define a life cycle your object can go through with its statuses. Each step your object can go through is called a place, with the transitions defining the action the object needs to take to get from one place to another.
 
@@ -991,7 +991,7 @@ Let's keep that alert in its current state and use it later when testing the mob
 
 You've built an API; it's now time to create the mobile application.
 
-## Building the Mobile App
+## Build the Mobile App
 
 Update `config.json` where the value of the `APIURL` is the ngrok URL you saved previously.
 
@@ -1020,7 +1020,7 @@ A successful log in won't currently do anything! We need to implement more scree
 
 ### Alerts API
 
-### Showing a list of alerts
+### Showing a List of Alerts
 
 Inside the `API` directory, create a new file called `alerts.js`.   
 Add the example below, which imports the `client.js` file to use the functionality from `getClient()`.  
