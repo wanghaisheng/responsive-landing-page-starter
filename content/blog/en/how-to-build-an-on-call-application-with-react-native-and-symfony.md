@@ -979,7 +979,8 @@ Now it's time to write the functionality for this command. It will retrieve all 
 
 ### Test the API
 
-Your user needs authenticating to test these new endpoints. So first, make sure you get your JWT token by sending a `POST` request to `http://localhost:8080/api/login_check` with your fixtured users credentials.
+Your user needs authenticating to test these new endpoints.  
+First, make sure you get your JWT token by sending a `POST` request to `http://localhost:8080/api/login_check` with your fixtured users credentials.
 
 Once you've copied your JWT, update the type to be a `GET` request and the URL to be `http://localhost:8080/api/alerts`. You need to provide a header with the key `Authorisation` and the value as `Bearer <JWT>` replacing `<JWT>` with your token.
 
