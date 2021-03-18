@@ -3,8 +3,8 @@ title: Make app-to-phone call using iOS and Flutter
 description: "Build iOS application using Flutter and utilise Vonage Client SDK
   to make a call from mobile application to the phone. "
 author: igor-wojda
-published: false
-published_at: 2021-03-10T06:59:40.028Z
+published: true
+published_at: 2021-03-18T20:35:14.407Z
 updated_at: 2021-03-10T06:59:40.058Z
 category: tutorial
 tags:
