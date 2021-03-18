@@ -5,7 +5,7 @@ description: "Build iOS application using Flutter and utilise Vonage Client SDK
 author: igor-wojda
 published: true
 published_at: 2021-03-18T20:35:14.407Z
-updated_at: 2021-03-10T06:59:40.058Z
+updated_at: 2021-03-18T20:36:07.611Z
 category: tutorial
 tags:
   - ios
