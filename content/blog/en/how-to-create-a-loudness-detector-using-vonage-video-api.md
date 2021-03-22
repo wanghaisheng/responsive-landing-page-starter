@@ -2,10 +2,11 @@
 title: How to Create a Loudness Detector Using Vonage Video API
 description: Walkthrough on how to create a loudness detector and integrate it
   in your video platform.
+thumbnail: /content/blog/how-to-create-a-loudness-detector-using-vonage-video-api/videoapi_sounddetector_1200x600.png
 author: enrico-portolan
-published: false
-published_at: 2021-03-19T12:50:38.079Z
-updated_at: 2021-03-19T12:50:38.108Z
+published: true
+published_at: 2021-03-22T12:27:08.892Z
+updated_at: 2021-03-22T12:27:09.651Z
 category: tutorial
 tags:
   - javascript
