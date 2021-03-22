@@ -6,7 +6,7 @@ thumbnail: /content/blog/building-an-app-to-phone-call-using-android-and-flutter
 author: igor-wojda
 published: true
 published_at: 2021-03-18T16:30:55.886Z
-updated_at: 2021-03-02T13:08:11.447Z
+updated_at: 2021-03-18T13:08:11.447Z
 category: tutorial
 tags:
   - android
