@@ -3,7 +3,8 @@ title: "Minimizing Production Headaches with Log Tracing "
 description: "How we used a node async wrapper to implement log tracing for the
   requests in our system, and how it substantially improved error
   investigations. "
-author: avital-tzubelivonage-com
+thumbnail: /content/blog/minimizing-production-headaches-with-log-tracing/screen-shot-2021-03-23-at-13.16.56.png
+author: tech-lead
 published: true
 published_at: 2021-03-22T13:52:47.403Z
 updated_at: 2021-03-22T13:52:47.443Z
