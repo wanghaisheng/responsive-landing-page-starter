@@ -2,10 +2,11 @@
 title: Build Social Media Style Stories with Android and Python
 description: Learn how to build a social media style stories feature using
   Kotlin (Android) And Django (Python)
-author: greg-holmes
+thumbnail: /content/blog/build-social-media-style-stories-with-android-and-python/stories_videoapi_1200x600.png
+author: arjuna-sky-kok
 published: true
-published_at: 2021-03-04T09:43:26.195Z
-updated_at: 2021-03-04T09:43:26.224Z
+published_at: 2021-03-23T12:15:31.456Z
+updated_at: 2021-03-23T12:15:33.056Z
 category: tutorial
 tags:
   - video-api
