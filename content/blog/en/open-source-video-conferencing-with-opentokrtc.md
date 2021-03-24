@@ -3,10 +3,11 @@ title: Open Source Video Conferencing
 description: Introducing Open Source Video Conferencing with WebRTC and Vonage
   Video APIs. Enabling you to host your own web-based video conferencing
   solution.
+thumbnail: /content/blog/open-source-video-conferencing/videoapi_opensource_1200x600.png
 author: greg-holmes
 published: true
-published_at: 2021-03-08T11:17:15.389Z
-updated_at: 2021-03-08T11:17:15.418Z
+published_at: 2021-03-24T12:21:37.852Z
+updated_at: 2021-03-24T12:21:39.210Z
 category: tutorial
 tags:
   - video-api
