@@ -1,14 +1,14 @@
 <template>
   <article class="flex flex-col overflow-hidden rounded-lg shadow-lg">
     <figure class="flex-shrink-0">
-      <nuxt-link :to="item.path" class="card-figure" :title="item.title">
+      <nuxt-link :to="link" class="card-figure" :title="item.title">
         <img :src="item.image" :alt="item.title" />
       </nuxt-link>
     </figure>
     <section class="flex flex-col justify-between flex-1 p-6 bg-white">
       <header class="flex-1">
         <h3 class="block mt-2 text-lg">
-          <nuxt-link :to="item.path.replace(/\/?$/, '/')" :title="item.title">
+          <nuxt-link :to="link" :title="item.title">
             {{ item.title }}
           </nuxt-link>
         </h3>
@@ -35,6 +35,10 @@ export default {
   },
 
   computed: {
+    link() {
+      return this.item.path.replace(/\/?$/, '/')
+    },
+
     title() {
       return this.item.title.replace(
         `${config.baseSplitter}${config.baseTitle}`,
