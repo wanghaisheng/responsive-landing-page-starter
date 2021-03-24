@@ -37,7 +37,7 @@ It’s an overwhelming journey that is inundated with hundreds of logs that are 
 
 ### What do you mean, log tracing?
 
-Before we jump into how to implement these concepts, let's quickly understand what we are talking about when we say we want to trace our logs. Tracing usually means adding some identifier so we can aggregate our data by this identifier. As to what each id stands for is a matter of taste. We can have one trace ID that is added to all the data we have on a single request. We can also have another set of span ids which will be used in the context of one service.
+Before we jump into implementing these concepts, let's understand what we mean when we say we want to trace logs. Tracing usually means adding some identifier that can be used to aggregate data. The meaning of each ID is then a matter of taste. We can have one trace ID that is added to all the data in a single request. Or we can have a set of span IDs which will be used in the context of one service. The basic idea looks like this: 
 
 ![diagram-1](/content/blog/minimizing-production-headaches-with-log-tracing/first-diagram.jpeg "basic log tracing flow ")
 
@@ -56,13 +56,15 @@ This concept is pretty straightforward. We need to follow two very simple rules:
 * If two services communicate on the same request via a messages bus, we will add to the message added to the bus the trace ID. 
   If two services communicate via http requests, we will add the trace ID to the headers of the request. This way, we can follow a single request through its entire flow without any noise of other requests or logs occurring in parallel.
 
-### Separating business logic and infrastructure
+### Separating business logic and infrastructure 
 
-Making sure we keep track of our tracing through every single pipe we receive or send data can require some good amount of coding. We always attempt to keep infrastructure concepts such as this as far away from our business logic as possible. Luckily, in our case, we can separate the tracing management almost entirely from our business logic. 
+Ensuring that we can keep track of tracing through all sent or received data can require a good amount of coding. We always want to separate infrastructure concepts like this from the business logic as much as possible. Luckily, in our case, it is easy to split out the tracing management almost entirely. 
 
-In our code, we write logs for various events and errors while adding data to these logs. We want to keep these flows untouched and at the same time add our tracing to all of these logs. Most of the tools we use today allow us to add interceptors to each request they receive. If we make sure to add interceptors to any IO tool we use and to our logging tool, we are in the right way of making sure we will trace all of our logs without touching any of the existing code we have. 
+In our code, we write logs for various events and errors while adding data to these logs. We want to keep these flows untouched while adding our tracing to all the logs in parallel. Most of the tools we use today allow us to add interceptors to each request they receive. If we make sure to add interceptors to our IO tool and our logging tool, we are on the path to ensuring that all logs will be traced without touching any of the existing code. 
 
-The easiest way I can explain it is by showing an actual example from our own services. This example is from our nodejs services but can be implemented in any language.
+The easiest way to explain is by showing an actual example from our own services. 
+
+This code below from the nodejs service that receives http requests, writes several logs and then makes an http request to the next service. It is one of three places where we've placed interceptors: inbound request, logging and outbound request.
 
 ```javascript
 function tracingMiddleware(req,res,next) {
@@ -80,13 +82,11 @@ function tracingMiddleware(req,res,next) {
 }
 ```
 
-This is code from the service that receives http requests, writes several logs and then makes an http request to the next service. We can see here three places where we need to add interceptors to our tools: inbound request, logging and outbound request.
-
-Notice the `ns.set`. This is using [cls-hooked](https://www.npmjs.com/package/cls-hooked), a continuation local storage package that wraps node async hooks. It allows us to locally store the trace ID for every session. But if you're using Node 14, this functionality is already built in with [async local storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage). 
-
 We use Express as our API infrastructure to implement express [middlewares](https://expressjs.com/en/guide/using-middleware.html) that intercept each request. We extract the trace ID from the request or create a new one if we are the first service in the chain. We then set the trace ID in a session storage tool so we can fetch each in every step of the way.
 
-We then add an interceptor to our logging tool to add to every log line the race id from our session storage: 
+Notice the `ns.set`. This is using [cls-hooked](https://www.npmjs.com/package/cls-hooked), a continuation local storage package that wraps node async hooks. It allows us to locally store the trace ID for every session. But if you're using Node 14, this functionality is already built in with [async local storage](https://nodejs.org/api/async_hooks.html#async_hooks_class_asynclocalstorage). What's cool about this method, though, is that it can be implemented in any language. 
+
+We then add an interceptor to the logging tool that grabs the trace ID from the session storage and adds it to every log line:
 
 ```javascript
 function createBunyanStreamMiddleware(streams) {
@@ -108,7 +108,7 @@ function createBunyanStreamMiddleware(streams) {
 }
 ```
 
-Finally, we add an interceptor to our http tool to add the trace ID to the headers of the request before it is fired out.
+Finally, we add an interceptor to the http tool that adds the trace ID to the request headers before the request is fired out:
 
 ```javascript
 function insertTracingHeaders(config = {}){
