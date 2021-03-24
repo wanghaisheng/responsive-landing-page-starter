@@ -1,7 +1,8 @@
 {
-  "team": true,
+  "team": false,
   "name": "Tony Bedford",
-  "image_url": "https://secure.gravatar.com/avatar/45f920dd2922a7a4bd3c10c1e4763f3d?s=384&d=mm&r=g",
+  "image_url": "/content/images/profile-150x150.jpg",
   "bio": "",
-  "website_url": ""
+  "website_url": "",
+  "alumni": true
 }
