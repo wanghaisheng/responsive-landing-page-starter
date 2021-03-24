@@ -64,7 +64,7 @@ In our code, we write logs for various events and errors while adding data to th
 
 The easiest way to explain is by showing an actual example from our own services. 
 
-This code below from the nodejs service that receives http requests, writes several logs and then makes an http request to the next service. It is one of three places where we've placed interceptors: inbound request, logging and outbound request.
+This code below from the nodejs service that receives http requests, writes several logs and then makes an http request to the next service. It is one of three places where we've placed interceptors: inbound request, logging, and outbound request.
 
 ```javascript
 function tracingMiddleware(req,res,next) {
