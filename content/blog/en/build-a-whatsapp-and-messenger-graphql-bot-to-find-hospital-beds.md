@@ -120,13 +120,13 @@ Now that we have ngrok installed and configured let's start our dev server by ru
 
 Login to the Vonage Dashboard and head over to the *Sandbox* section under *Messages and Dispatch*.
 
-![Vonage Dashboard Menu Bar with the Sandbox section highlighted](/content/blog/u9452okqq3z1slmggjo1.png)
+![Vonage Dashboard Menu Bar with the Sandbox section highlighted](/content/blog/build-a-whatsapp-and-messenger-graphql-bot-to-find-hospital-beds/u9452okqq3z1slmggjo1.png)
 
 To create the WhatsApp sandbox, click on *Add to sandbox* in the WhatsApp section. The Vonage Sandbox needs to verify your identity and to do so you can follow the steps given in the dashboard. You can follow similar steps to create the Sandbox for Facebook Messenger.
 
 You've now successfully activated the WhatsApp sandbox! But wait, we're not done yet. We still need to provide Vonage with the URL where our webhooks are present. If you scroll down on the Sandbox page, you should see the Webhooks section that looks something like below:
 
-![Webhooks section on the Sandbox page of the Vonage Dashboard](/content/blog/gv6y4wot8q4igujt6ix0.png)
+![Webhooks section on the Sandbox page of the Vonage Dashboard](/content/blog/build-a-whatsapp-and-messenger-graphql-bot-to-find-hospital-beds/gv6y4wot8q4igujt6ix0.png)
 
 The first is the `inbound` webhook which will be on the route `webhooks/inbound`, so set that field to `https://<your-ngrok-https-url>/webhooks/inbound`. Similarly, set the URL of the `status` webhook to `https://<your-ngrok-https-url>/webhooks/status`. And we are now done setting up our sandbox and test environment!
 
@@ -659,7 +659,7 @@ const handleDirections = async (message, to) => {
 
 And that's it, we're done! You can try out all the commands yourself in the Sandbox and it should look something like below!
 
-![Final Example](/content/blog/106190716-0c286d80-61d0-11eb-9ca1-ff3efa65b77d.gif)
+![Final Example](/content/blog/build-a-whatsapp-and-messenger-graphql-bot-to-find-hospital-beds/106190716-0c286d80-61d0-11eb-9ca1-ff3efa65b77d.gif)
 
 ## What's Next
 
