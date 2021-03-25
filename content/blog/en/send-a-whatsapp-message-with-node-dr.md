@@ -2,7 +2,7 @@
 title: How to Send a WhatsApp Message with Node.js
 description: Find out how to send WhatsApp messages from your Node.js
   application quickly by making use of the Vonage Messages API Sandbox.
-thumbnail: /content/blog/send-a-whatsapp-message-with-node-dr/Blog_WhatsApp_Node-js_1200x600.png
+thumbnail: /content/blog/how-to-send-a-whatsapp-message-with-node-js/node-js_whatsapp.png
 author: garann-means
 published: true
 published_at: 2020-04-15T12:06:53.000Z
