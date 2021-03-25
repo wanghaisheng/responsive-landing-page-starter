@@ -4,9 +4,10 @@ description: Using the Bedav API and the Vonage Messages API, build a chatbot
   that works with WhatsApp and Facebook Messenger using JavaScript to help users
   search for hospitals in a city, find a hospital with available beds, and
   provide additional info about the hospital.
+thumbnail: /content/blog/build-a-whatsapp-and-messenger-graphql-bot-to-find-hospital-beds/whatsapp_messenger_graphql_1200x600.png
 author: shreyas-sreenivas
-published: false
-published_at: 2021-03-03T22:27:19.499Z
+published: true
+published_at: 2021-03-25T14:33:06.329Z
 updated_at: 2021-03-03T22:27:19.527Z
 category: tutorial
 tags:
@@ -14,7 +15,7 @@ tags:
   - nodejs
   - graphql
 comments: true
-spotlight: false
+spotlight: true
 redirect: ""
 canonical: ""
 outdated: false
