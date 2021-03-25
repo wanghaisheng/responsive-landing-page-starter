@@ -2,7 +2,7 @@
 title: Build a Chat Application with Angular Material and Vonage
 description: Learn how to enable chat in an Angular web application using the
   Vonage Client SDK for JavaScript so that users can communicate in your app.
-thumbnail: /content/blog/build-chat-app-angular-material-stitch-javascript-dr/35853363_1715911285158216_7856756448775110656_n.png
+thumbnail: /content/blog/build-a-chat-application-with-angular-material-and-vonage/angular_chat-app.png
 author: laka
 published: true
 published_at: 2018-03-29T00:05:14.000Z
