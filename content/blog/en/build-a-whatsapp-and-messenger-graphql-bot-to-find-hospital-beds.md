@@ -8,7 +8,7 @@ thumbnail: /content/blog/build-a-whatsapp-and-messenger-graphql-bot-to-find-hosp
 author: shreyas-sreenivas
 published: true
 published_at: 2021-03-25T14:33:06.329Z
-updated_at: 2021-03-03T22:27:19.527Z
+updated_at: ""
 category: tutorial
 tags:
   - messages-api
