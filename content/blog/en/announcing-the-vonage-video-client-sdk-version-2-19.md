@@ -3,9 +3,10 @@ title: Announcing the Vonage Video Client SDK Version 2.19
 description: The Vonage Video API team recently released a new version of the
   Vonage Video Client SDK  - v2.19 (formerly TokBox OpenTok). Checkout what's
   new.
+thumbnail: /content/blog/announcing-the-vonage-video-client-sdk-version-2-19/videoapi_sdk-release_1200x600.png
 author: product-manager-video-api
 published: true
-published_at: 2021-03-26T14:16:55.923Z
+published_at: 2021-03-26T14:43:14.650Z
 updated_at: 2021-03-26T14:16:55.972Z
 category: release
 tags:
