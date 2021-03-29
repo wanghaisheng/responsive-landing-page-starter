@@ -34,7 +34,9 @@ To follow and fully understand this tutorial, you'll need to have:
 
 Below are the results of the final interface you’ll build:
 
-![Spacial mapping of WhatsApp Group Contacts](/content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/overview-1.gif "Spacial mapping of WhatsApp Group Contacts")
+![Spatial mapping of WhatsApp Group Contacts](/content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/overview-1.gif "Spatial mapping of WhatsApp Group Contacts")
+
+![Distribution of WhatsApp Group Contacts](/content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/overview-2.gif "Distribution of WhatsApp Group Contacts")
 
 ## File Structure
 
@@ -162,7 +164,7 @@ An environment file can easily be set up by creating a new file and naming it `.
 (whatsapp-spatial-mapping) $ nano .env    # open the .env file 
 ```
 
-The environment file consists of  key-value pair variables. For example:
+The environment file consists of key-value pair variables. For example:
 
 ```
    user=Brain
@@ -171,12 +173,11 @@ The environment file consists of  key-value pair variables. For example:
 
 You can access these environment variables in the source code using the [Python Decouple](https://pypi.org/project/python-decouple/) built-in module.
 
-**Note:** It's also good practice to add the `.env` file to the [gitignore](https://git-scm.com/docs/gitignore) file. Doing so prevents sensitive information such as API credentials to become public.
+>It's also good practice to add the `.env` file to the [gitignore](https://git-scm.com/docs/gitignore) file. Doing so prevents sensitive information such as API credentials to become public.
 
 The scripts follow the Object-Oriented Programming paradigm. The following are high-level explanations for each script.
 
 ### automate.py
-
 The first step to this project workflow is WhatsApp automation using [Selenium](https://selenium-python.readthedocs.io/).\
 Selenium is an open-source web-based automation tool that requires a driver to control the browser. Different drivers exist due to various browser configurations; some of the popular browsers' drivers are listed below:
 
@@ -185,7 +186,7 @@ Selenium is an open-source web-based automation tool that requires a driver to c
 * [Safari](https://webkit.org/blog/6900/webdriver-support-in-safari-10/).
 * [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/).
 
-**Note:**  This tutorial uses the Chrome driver. To make it quick and easy to access, move the downloaded driver file to the same directory as the script utilizing it. See the file structure above.
+>This tutorial uses the Chrome driver. To make it quick and easy to access, move the downloaded driver file to the same directory as the script utilizing it. See the file structure above.
 
 This script comprises a `WhatsappAutomation` class that loads the web driver via its path, maximizes the browser window, and loads the Whatsapp Web application. The 30 seconds delay initiated is to provide the time to scan the QR code to access your Whatsapp account on the web.
 
@@ -196,13 +197,13 @@ The  `WhatsappAutomation` class has two classes
 * `get_contacts()`
 * `quit()`
 
-**Note:** The browser will notify you that "*Chrome is being controlled by automated test software*" to indicate that Selenium will have been activated for automation in the browser.
+>The browser will notify you that "*Chrome is being controlled by automated test software*" to indicate that Selenium will have been activated for automation in the browser.
 
 Next, you need to access the desired group and contacts, as shown below.
 
 The automation step involves locating the WhatsApp web page element that contains the phone numbers as seen in the image above. There are numerous ways to select these elements, as highlighted in the [Selenium documentation](https://selenium-python.readthedocs.io/locating-elements.html). For this project, use `xpath`.
 
-**Note:** To access these element selectors, you need to inspect the Whatsapp web page.
+>To access these element selectors, you need to inspect the Whatsapp web page.
 
 Next, the contact entries obtained via the Xpath need to be cleaned up and saved as a CSV file. You'll use [regular expressions](https://github.com/AISaturdaysLagos/Cohort3/blob/master/Beginner/Week3/Notebook/regular-expressions.ipynb) to remove the '+' character and any whitespaces from the phone numbers.\
 To promote efficient memory management, quit the selenium-powered browser upon completion of a session.
@@ -255,7 +256,6 @@ class WhatsappAutomation:
 ```
 
 ### analytics.py
-
 Next, you'll use the [Vonage Number Insights API](https://developer.nexmo.com/number-insight/overview) to generate insights from the saved CSV file. This API provides information about the validity, reachability and roaming status of a phone number.
 
 The script is made up of a `WhatsappAnalytics` class that first loads the Vonage credentials stored in the `.env` file using the Python `decouple` module. Next, it has a `get_insight()` method that takes the contact list and initiates an Advanced Number Insight to get the countries associated with the phone numbers. Finally, the list of countries is saved as a CSV file.
