@@ -18,6 +18,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+![]()
+
 WhatsApp groups have served as an environment to establish collective conversations with others around the world.  
 
 In this tutorial, we'll generate and plot analytics based on the participants of a WhatsApp Group. We'll geocode the users' location and generate a country-level distribution. This interface will be built with Python using Selenium, Plotly, Vonage Number Insight API, Google Maps API, and Mapbox API.
@@ -429,7 +431,9 @@ This will import the various scripts and execute the `main()` function to yield 
 
 ## Results
 
-- - -
+![Spatial mapping of WhatsApp Group Contacts](/content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/overview-1.gif "Spatial mapping of WhatsApp Group Contacts")
+
+![Distribution of WhatsApp Group Contacts](/content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/overview-2.gif "Distribution of WhatsApp Group Contacts")
 
 I’m sure you can already think of all the possibilities and use cases for this new piece of knowledge. The possibilities are endless.
 
