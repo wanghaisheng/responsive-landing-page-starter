@@ -23,23 +23,23 @@ WhatsApp groups have served as an environment to establish collective conversati
 In this tutorial, we'll generate and plot analytics based on the participants of a WhatsApp Group. We'll geocode the users' location and generate a country-level distribution. This interface will be built with Python using Selenium, Plotly, Vonage Number Insight API, Google Maps API, and Mapbox API.
 
 ## Prerequisites
+
 To follow and fully understand this tutorial, you'll need to have:
-- [Python 3.6](https://www.python.org/) or newer.
-- Basic knowledge of automation with [Selenium](https://selenium-python.readthedocs.io/index.html).
-- Set up [Vonage API](https://www.vonage.com/) account.
-- Set up [Google Maps API](https://developers.google.com/maps/documentation).
-- Set up [Plotly](https://plotly.com/) and [Mapbox](https://www.mapbox.com/) credentials.
+
+* [Python 3.6](https://www.python.org/) or newer.
+* Basic knowledge of automation with [Selenium](https://selenium-python.readthedocs.io/index.html).
+* Set up [Vonage API](https://www.vonage.com/) account.
+* Set up [Google Maps API](https://developers.google.com/maps/documentation).
+* Set up [Plotly](https://plotly.com/) and [Mapbox](https://www.mapbox.com/) credentials.
 
 Below are the results of the final interface you’ll build:
 
-***
-
-
-
-
+![Spacial mapping of WhatsApp Group Contacts](/content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/overview-1.gif "Spacial mapping of WhatsApp Group Contacts")
 
 ## File Structure
+
 See an overview of the file directory for this project below:
+
 ```
 ├── README.md
 ├── analytics.py
@@ -62,11 +62,13 @@ First, create a new development folder. In your terminal, run:
 ```
 $ mkdir whatsapp-spatial-mapping
 ```
+
 Next, create a new Python virtual environment. If you are using Anaconda, you can run the following command:
 
 ```
 $ conda create -n env python=3.6
 ```
+
 Then you can activate the environment using:
 
 ```
@@ -98,6 +100,7 @@ Regardless of the method you used to create and activate the virtual environment
 ```
 
 ### Requirement file
+
 Next with the virtual environment active, install the project dependencies and their specific versions as outlined shown below:
 
 ```
@@ -116,26 +119,31 @@ These packages with the specific versions can be installed via the requirement f
 
 Optionally, you can install all the packages as follows:
 
-- Using Pip:
+* Using Pip:
+
   ```
     pip install chart-studio googlemaps nexmo numpy pandas plotly plotly-express python-decouple selenium
   ```
-- Using Conda:
+* Using Conda:
+
   ```
     conda install -c conda-forge chart-studio googlemaps nexmo numpy pandas plotly plotly-express python-decouple selenium
   ```
 
 ## Setting up APIs and Credentials
+
 Next, you'll need to set up some accounts and get the required API credentials. 
 
 <sign-up></sign-up>
 
-### Google Maps API 
-The Google Maps API will enable the geocoding function, which is crucial to this project. The API is readily available on [Google Cloud Console](https://console.cloud.google.com/).  
-First, you need to set up a [Google Cloud free tier account](https://cloud.google.com/free), where you get $300 free credits to explore the Google Cloud Platform and products.  Next, with your Google Cloud Console all set up, you need to [create an API key](https://developers.google.com/maps/documentation/javascript/get-api-key) to connect the [Google Maps Platform](https://cloud.google.com/maps-platform) to the application.  
+### Google Maps API
+
+The Google Maps API will enable the geocoding function, which is crucial to this project. The API is readily available on [Google Cloud Console](https://console.cloud.google.com/).\
+First, you need to set up a [Google Cloud free tier account](https://cloud.google.com/free), where you get $300 free credits to explore the Google Cloud Platform and products.  Next, with your Google Cloud Console all set up, you need to [create an API key](https://developers.google.com/maps/documentation/javascript/get-api-key) to connect the [Google Maps Platform](https://cloud.google.com/maps-platform) to the application.\
 Finally, [activate the Google Maps Geocoding API](https://console.cloud.google.com/apis/library/geocoding-backend.googleapis.com?filter=category:maps&id=42fea2de-420b-4bd7-bd89-225be3b8b7b0&project=maps-article-review) to enable it for the project.
 
 ### Plotly API and Mapbox Credentials
+
 To create beautiful data visualizations, [Plotly](https://plotly.com/) on Python will be utilized, and the aesthetics enhanced using  [Mapbox](https://www.mapbox.com/).  
 
 The Plotly plots are hosted online on Chart Studio (part of Plotly Enterprise); you need to [sign up](https://chart-studio.plotly.com/Auth/login/#/), generate and save your custom [Plotly API key](https://plotly.com/python/getting-started-with-chart-studio/).  
@@ -143,19 +151,23 @@ The Plotly plots are hosted online on Chart Studio (part of Plotly Enterprise); 
 To achieve the desired plot enhancement, you also need to sign up for [Mapbox](https://account.mapbox.com/auth/signup/) and create a [Mapbox authorization token](https://docs.mapbox.com/help/tutorials/get-started-tokens-api/).
 
 ## Separation of Settings Parameters and Source Code
-In the previous section, you've generated various API credentials.  
+
+In the previous section, you've generated various API credentials.\
 It is best practice to store these credentials as environment variables instead of having them in your source code. 
 
 An environment file can easily be set up by creating a new file and naming it `.env`, or via the terminal as follow:
+
 ```
 (whatsapp-spatial-mapping) $ touch .env   # create a new .env file
 (whatsapp-spatial-mapping) $ nano .env    # open the .env file 
 ```
+
 The environment file consists of  key-value pair variables. For example:
- ```
-    user=Brain
-    secret=xxxxxxxxxxxxxxxxxxxxxxxxxx
- ```
+
+```
+   user=Brain
+   secret=xxxxxxxxxxxxxxxxxxxxxxxxxx
+```
 
 You can access these environment variables in the source code using the [Python Decouple](https://pypi.org/project/python-decouple/) built-in module.
 
@@ -164,13 +176,15 @@ You can access these environment variables in the source code using the [Python 
 The scripts follow the Object-Oriented Programming paradigm. The following are high-level explanations for each script.
 
 ### automate.py
-The first step to this project workflow is WhatsApp automation using [Selenium](https://selenium-python.readthedocs.io/).  
+
+The first step to this project workflow is WhatsApp automation using [Selenium](https://selenium-python.readthedocs.io/).\
 Selenium is an open-source web-based automation tool that requires a driver to control the browser. Different drivers exist due to various browser configurations; some of the popular browsers' drivers are listed below:
-   - [Chrome](https://sites.google.com/a/chromium.org/chromedriver/downloads).
-   - [Firefox](https://github.com/mozilla/geckodriver/releases).
-   - [Safari](https://webkit.org/blog/6900/webdriver-support-in-safari-10/).
-   - [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/).
-   
+
+* [Chrome](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+* [Firefox](https://github.com/mozilla/geckodriver/releases).
+* [Safari](https://webkit.org/blog/6900/webdriver-support-in-safari-10/).
+* [Edge](https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/).
+
 **Note:**  This tutorial uses the Chrome driver. To make it quick and easy to access, move the downloaded driver file to the same directory as the script utilizing it. See the file structure above.
 
 This script comprises a `WhatsappAutomation` class that loads the web driver via its path, maximizes the browser window, and loads the Whatsapp Web application. The 30 seconds delay initiated is to provide the time to scan the QR code to access your Whatsapp account on the web.
@@ -178,28 +192,20 @@ This script comprises a `WhatsappAutomation` class that loads the web driver via
 Upon scanning your QR code with your phone, your Whatsapp account opens on the web. 
 
 The  `WhatsappAutomation` class has two classes
-- `get_contacts()`
-- `quit()`
+
+* `get_contacts()`
+* `quit()`
 
 **Note:** The browser will notify you that "*Chrome is being controlled by automated test software*" to indicate that Selenium will have been activated for automation in the browser.
 
-
-
 Next, you need to access the desired group and contacts, as shown below.
-
-
-
-
-
 
 The automation step involves locating the WhatsApp web page element that contains the phone numbers as seen in the image above. There are numerous ways to select these elements, as highlighted in the [Selenium documentation](https://selenium-python.readthedocs.io/locating-elements.html). For this project, use `xpath`.
 
 **Note:** To access these element selectors, you need to inspect the Whatsapp web page.
 
-
-Next, the contact entries obtained via the Xpath need to be cleaned up and saved as a CSV file. You'll use [regular expressions](https://github.com/AISaturdaysLagos/Cohort3/blob/master/Beginner/Week3/Notebook/regular-expressions.ipynb) to remove the '+' character and any whitespaces from the phone numbers.  
+Next, the contact entries obtained via the Xpath need to be cleaned up and saved as a CSV file. You'll use [regular expressions](https://github.com/AISaturdaysLagos/Cohort3/blob/master/Beginner/Week3/Notebook/regular-expressions.ipynb) to remove the '+' character and any whitespaces from the phone numbers.\
 To promote efficient memory management, quit the selenium-powered browser upon completion of a session.
-
 
 ```
 import time
@@ -248,12 +254,11 @@ class WhatsappAutomation:
         self.chrome_browser.quit()
 ```
 
-
 ### analytics.py
+
 Next, you'll use the [Vonage Number Insights API](https://developer.nexmo.com/number-insight/overview) to generate insights from the saved CSV file. This API provides information about the validity, reachability and roaming status of a phone number.
 
 The script is made up of a `WhatsappAnalytics` class that first loads the Vonage credentials stored in the `.env` file using the Python `decouple` module. Next, it has a `get_insight()` method that takes the contact list and initiates an Advanced Number Insight to get the countries associated with the phone numbers. Finally, the list of countries is saved as a CSV file.
-
 
 ```
 from decouple import config
@@ -290,11 +295,10 @@ class WhatsappAnalytics:
 
         dataframe = pd.read_csv('country_data.csv')
         return dataframe
-
 ```
 
+### geocoding.py
 
-### geocoding.py  
 Next, the string description of the various locations (country names) will be geocoded to create the respective geographic coordinates (latitude/longitude pairs). 
 
 This script is made of a `GoogleGeocoding` class that first loads the Google Maps API keys. This class has a `geocode_df` method with a `dataframe` argument—the phone numbers and countries previously saved. This method also aggregates the dataframe by countries and returns the respective latitude and longitude pairs. 
@@ -322,11 +326,11 @@ class GoogleGeocoding:
 ```
 
 ### plotting.py
-Next, you will need to map the geospatial data created (latitude and longitude pairs).  
+
+Next, you will need to map the geospatial data created (latitude and longitude pairs).\
 Mapmaking is an art; to make the project results aesthetically pleasing, use the Plotly library and Mapbox maps. 
 
 This script comprises the `SpatialMapping` class that loads the Mapbox token and chart_studio credentials. This class has two methods, `plot_map` and `plot_bar`, that plot the distribution of the Whatsapp group's users as a map and a bar chart.
-
 
 ```
 from decouple import config
@@ -375,7 +379,8 @@ class SpatialMapping:
         fig.show()
 ```
 
-### main.py 
+### main.py
+
 main.py is the point of execution of the program. Here, all the script classes and imported, and the various required parameters are inputted in the `main()` function.
 
 ```
@@ -407,18 +412,18 @@ main()
 ```
 
 ## Try it out
+
 In your terminal, run the main script file as follows:
 
 ```
 $ python3 main.py
 ```
+
 This will import the various scripts and execute the `main()` function to yield the desired results.
 
-## Results 
+## Results
 
-***
-
-
+- - -
 
 I’m sure you can already think of all the possibilities and use cases for this new piece of knowledge. The possibilities are endless.
 
@@ -427,4 +432,5 @@ Thanks for taking the time to read this article!
 Happy Learning!
 
 ## References
+
 [Vonage Number Insight API](https://developer.vonage.com/number-insight/code-snippets/number-insight-standard/python)
