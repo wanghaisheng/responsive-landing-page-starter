@@ -204,6 +204,8 @@ The  `WhatsappAutomation` class has two classes
 
 Next, you need to access the desired group and contacts, as shown below.
 
+![Message in WhatsApp Group](/content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/whatsapp_group.png "Message in WhatsApp Group")
+
 The automation step involves locating the WhatsApp web page element that contains the phone numbers as seen in the image above. There are numerous ways to select these elements, as highlighted in the [Selenium documentation](https://selenium-python.readthedocs.io/locating-elements.html). For this project, use `xpath`.
 
 > To access these element selectors, you need to inspect the Whatsapp web page.
