@@ -3,7 +3,7 @@ title: Create a Simple Messaging UI with Bootstrap
 description: The design-web is awash with all sorts of examples of messaging
   UIs, but developers lack choice on frameworks. You can use basic Bootstrap
   components to create a simple messaging UI.
-thumbnail: /content/blog/create-a-simple-messaging-ui-with-bootstrap-dr/E_Simple-Messaging-UI_1200x600.jpg
+thumbnail: /content/blog/create-a-simple-messaging-ui-with-bootstrap/bootstrap_messaging.png
 author: lukeoliff
 published: true
 published_at: 2019-12-18T13:42:52.000Z

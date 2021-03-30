@@ -2,7 +2,7 @@
 title: Real-Time Face Detection in .NET with OpenCV and Vonage Video API
 description: Learn how to build real time face detection functionality into your
   Windows Presentation Framework (WPF) apps with OpenCV and Vonage Video API.
-thumbnail: /content/blog/real-time-face-detection-in-net-with-opentok-and-opencv-dr/E_Face-Detection_1200x600.png
+thumbnail: /content/blog/real-time-face-detection-in-net-with-opencv-and-vonage-video-api/face-detection.png
 author: stevelorello
 published: true
 published_at: 2020-03-18T16:56:50.000Z

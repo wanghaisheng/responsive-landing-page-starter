@@ -2,7 +2,7 @@
 title: Creating a WebSocket Server with Spring Boot
 description: In this tutorial, you will learn how to create a WebSocket server
   using  using Spring Boot which can receive both binary and text messages.
-thumbnail: /content/blog/create-websocket-server-spring-boot-dr/websocket-server-spring-boot.png
+thumbnail: /content/blog/creating-a-websocket-server-with-spring-boot/springboot_websocket.png
 author: cr0wst
 published: true
 published_at: 2018-10-08T15:19:15.000Z

@@ -2,7 +2,7 @@
 title: Using Apollo to Query GraphQL from Node.js
 description: In this tutorial, we will use the apollo-client NPM package within
   Node.js to query and mutate third-party GraphQL endpoints.
-thumbnail: /content/blog/using-apollo-to-query-graphql-from-node-js-dr/E_Apollo_GraphQL_1200x600.png
+thumbnail: /content/blog/using-apollo-to-query-graphql-from-node-js/apollo_graphql.png
 author: michaeljolley
 published: true
 published_at: 2020-03-12T13:26:08.000Z
