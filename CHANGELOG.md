@@ -1,3 +1,10 @@
+## [2.8.3](https://github.com/Nexmo/deved-platform/compare/v2.8.2...v2.8.3) (2021-03-30)
+
+
+### Bug Fixes
+
+* **search:** links not getting trailing slashes ([#872](https://github.com/Nexmo/deved-platform/issues/872)) ([eed8513](https://github.com/Nexmo/deved-platform/commit/eed85132e6b3e35217736e612bc0b0c23cde1a06)), closes [#831](https://github.com/Nexmo/deved-platform/issues/831)
+
 ## [2.8.2](https://github.com/Nexmo/deved-platform/compare/v2.8.1...v2.8.2) (2021-03-10)
 
 
