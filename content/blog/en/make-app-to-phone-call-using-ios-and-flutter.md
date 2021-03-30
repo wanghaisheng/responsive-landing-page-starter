@@ -98,7 +98,7 @@ nexmo setup api_key api_secret
 mkdir vonage-tutorial
 ```
 
-2. Change into the project directory:
+2. Change into the project directory:
 
 ```cmd
 cd vonage-tutorial
@@ -116,9 +116,9 @@ Make a note of the Application ID that is echoed in our terminal when our applic
 
 ### Create User
 
-Each participant is represented by a [User](https://developer.nexmo.com/conversation/concepts/user) object and must be authenticated by the Client SDK. In a production application, we would typically store this user information in a database.
+Each participant is represented by a [User](https://developer.nexmo.com/conversation/concepts/user) object and must be authenticated by the Client SDK. In a production application, we would typically store this user information in a database.
 
-Execute the following command to create a user called `Alice`
+Execute the following command to create a user called `Alice`
 
 ```cmd
 nexmo user:create name="Alice"
@@ -126,9 +126,9 @@ nexmo user:create name="Alice"
 
 ### Generate JWT
 
-The JWT is used to authenticate the user. Execute the following command in the terminal to generate a JWT for the user `Alice`.
+The JWT is used to authenticate the user. Execute the following command in the terminal to generate a JWT for the user `Alice`.
 
-In the following command replace the `APPLICATION_ID` with the ID of our application:
+In the following command replace the `APPLICATION_ID` with the ID of our application:
 
 ```
 nexmo jwt:generate sub=Alice exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
@@ -168,9 +168,9 @@ You will create a Flutter project using the terminal:
 flutter create app_to_phone_flutter
 ```
 
-Above command reates `app_to_phone_flutter` folder containing the Flutter project.
+The above command creates `app_to_phone_flutter` folder containing the Flutter project.
 
-> Flutter project contains `ios` folder contains the iOS project, `android` folder containing the Android project and `web` folder contaning web project.
+> Flutter project contains `ios` folder contains the iOS project, `android` folder containing the Android project, and `web` folder containing web project.
 
 Open the `pubspec.yaml` file, and add `permission_handler` dependency (just below `sdk: flutter`):
 
@@ -211,9 +211,9 @@ Open `app_to_phone_flutter/ios` folder in the termnal and install pods:
 pod install
 ```
 
-The above command will download all required dependencies including, flutter, permissions handler and client SDK.
+The above command will download all required dependencies including, flutter, permissions handler, and client SDK.
 
-Open `Runner.xcworkspace` in Xcode and run the app to verify that above setup was performed correctly.
+Open `Runner.xcworkspace` in Xcode and run the app to verify that the above setup was performed correctly.
 
 ## Two-way Flutter/iOS Communication
 
@@ -303,13 +303,13 @@ enum SdkState {
 }
 ```
 
-The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for the Flutter using Dart and one for iOS using Swift. The widget contains `_updateView` method that will chanage the UI based on `SdkState` value.
+The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage Client SDK. This enum will be defined twice - one for the Flutter using Dart and one for iOS using Swift. The widget contains `_updateView` method that will change the UI based on `SdkState` value.
 
 Run the application from the Xcode
 
 ![Run from xcode](/content/blog/make-app-to-phone-call-using-ios-and-flutter/run-xcode.png)
 
-The `Login Alicee` button should displayed:
+The `Login Alicee` button should be displayed:
 
 ![Logged out](/content/blog/make-app-to-phone-call-using-ios-and-flutter/loggedout.png)
 
@@ -342,7 +342,7 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the JWT token, we obtained previously, to authenticate the user `Alice` from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as an argument. The `loginUser` method defined in the `MainActivity` class (you will get there in a moment). To call this method from Flutter we have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
+Replace the `ALICE_TOKEN` with the JWT token, we obtained previously, to authenticate the user `Alice` from Vonage CLI. Flutter will call `loginUser` method and pass the `token` as an argument. The `loginUser` method is defined in the `MainActivity` class (you will get there in a moment). To call this method from Flutter we have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
 Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
@@ -352,7 +352,7 @@ class _CallWidgetState extends State<CallWidget> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 ```
 
-The `com.vonage` string represents the unique channel id that we will also refer on the native iOS code (`AppDelegate` class). Now we need to handle this method call on the native iOS side. 
+The `com.vonage` string represents the unique channel id that we will also refer to the native iOS code (`AppDelegate` class). Now we need to handle this method call on the native iOS side. 
 
 Open `ios/Runner/AppDelegate` class and `vonageChannel` property that will hold the reference to the `FlutterMethodChannel`:
 
@@ -390,9 +390,9 @@ func addFlutterChannelListener() {
     }
 ```
 
-The above method "translates" flutter metho calls to methods defined in `AppDelegate` class (`loginUser` for now).
+The above method "translates" flutter method calls to methods defined in `AppDelegate` class (`loginUser` for now).
 
-And missing `loginUser` methods inside he same class (you will fill the body soon):
+And missing `loginUser` methods inside the same class (you will fill the body soon):
 
 ```swift
 func loginUser(token: String) {
@@ -414,11 +414,11 @@ override func application(
     }
 ```
 
-The code is in place - after pressing `Login Aa Alice` button the Flutter app will call `_loginUser` method that through Flutter platform channel will call `loginUser` method defined in the `AppDelegate` class.
+The code is in place - after pressing `Login Aa Alice` button the Flutter app will call `_loginUser` method that through the Flutter platform channel will call `loginUser` method defined in the `AppDelegate` class.
 
 Run the application from the Xcode to make sure it is compiling.
 
-Before we will be able to actually login the ser we need to initialize SDK Client.
+Before we will be able to login the user we need to initialize SDK Client.
 
 ### Initialize Client
 
@@ -428,7 +428,7 @@ Open `AppDelegate` class and add the `NexmoClient` import at the top of the file
 import NexmoClient
 ```
 
-In the same file add `client` property that will hold reference to Nexmo client.
+In the same file add `client` property that will hold a reference to Nexmo client.
 
 ```swift
 @UIApplicationMain
@@ -711,7 +711,7 @@ Future<void> requestPermissions() async {
 
 The above method will request permissions using `permission_handler`.
 
-In the same class modify the body of the `_makeCall` class to request permissions before calling method via method channel.
+In the same class modify the body of the `_makeCall` class to request permissions before calling the method via the method channel.
 
 ```dart
 Future<void> _makeCall() async {
@@ -834,7 +834,7 @@ Run the app and if you've followed through this tutorial step by step, you'll be
 
 # Summary
 
-You have successfully built the application. By doing so we have learned how to make a phone call from a mobile application to the phone using Vonage Client SDK. For the complete project please see this project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter). This project additionally contains the Android native code (`android` folder) allowing we to run this app on Android as well.
+You have successfully built the application. By doing so we have learned how to make a phone call from a mobile application to the phone using Vonage Client SDK. For the complete project please see this project on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter). This project additionally contains the Android native code (`android` folder) allowing you to run this app on Android as well.
 
 To familiarize yourself with other use causes please check [other tutorials](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
 
