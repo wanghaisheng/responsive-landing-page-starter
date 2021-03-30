@@ -1,5 +1,5 @@
 ---
-title: Make app-to-phone call using iOS and Flutter
+title: Make App-To-Phone Call Using iOS and Flutter
 description: "Build iOS application using Flutter and utilise Vonage Client SDK
   to make a call from mobile application to the phone. "
 thumbnail: /content/blog/make-app-to-phone-call-using-ios-and-flutter/flutter_inapp-call_1200x600.png
@@ -21,13 +21,13 @@ replacement_url: ""
 ---
 Today we will build an iOS application using [Flutter](https://flutter.dev/) and utilize Vonage Client SDK to make a call from a mobile application to the phone.  The application will have 3 screens (3 UI states):
 
-![UI states](/content/blog/make-app-to-phone-call-using-ios-and-flutter/ui-states.png)
+![UI states: logon, make call, and end call](/content/blog/make-app-to-phone-call-using-ios-and-flutter/ui-states.png)
 
 ## Prerequisites
 
 The source code is available on [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter).
 
-efore we begin building the application for our iOS device, you'll need to prepare with the following prerequisites:
+Before we begin building the application for our iOS device, we'll need to prepare with the following prerequisites:
 
 * Create a Call Control Object ([NCCO](https://developer.nexmo.com/voice/voice-api/guides/ncco))
 * Install Nexmo CLI
@@ -39,7 +39,7 @@ efore we begin building the application for our iOS device, you'll need to prepa
 
 ### Create An NCCO
 
-A Call Control Object (NCCO) is a JSON array that we use to control the flow of a Voice API call. More information on NCCO can be found here [here](https://developer.nexmo.com/voice/voice-api/ncco-reference).
+A Call Control Object (NCCO) is a JSON array that we use to control the flow of a Voice API call. More information on NCCO can be found [on the Vonage API Developer site](https://developer.nexmo.com/voice/voice-api/ncco-reference).
 
 The NCCO needs to be public and accessible by the internet. To accomplish this, in this tutorial you'll be using [GitHub Gist](https://gist.github.com/) which provides a convenient way to host the configuration. Let's add a new gist:
 
@@ -65,24 +65,24 @@ The NCCO needs to be public and accessible by the internet. To accomplish this, 
 ]
 ```
 
-4. Replace `PHONE_NUMBER` with our phone number (Vonage numbers are in E.164 format <https://developer.nexmo.com/concepts/guides/glossary#e-164-format>, '+' and '-' are not valid. Make sure we specify our country code when entering our number, for example, US: 14155550100 and UK: 447700900001)
+4. Replace `PHONE_NUMBER` with our phone number ([Vonage numbers are in E.164 format](https://developer.nexmo.com/concepts/guides/glossary#e-164-format), '+' and '-' are not valid. Make sure we specify our country code when entering our number, for example, US: 14155550100 and UK: 447700900001)
 5. Click the `Create secret gist` button
 6. Click the `Raw` button
 7. Take note of the URL shown in our browser, we will be using it in the next step
 
 ### Install Nexmo CLI
 
-The [Nexmo CLI](https://developer.nexmo.com/application/nexmo-cli) allows we to carry out many operations on the command line. If we want to carry out tasks such as creating applications, purchasing Vonage numbers and so on, we will need to install the Nexmo CLI. 
+The [Nexmo CLI](https://developer.nexmo.com/application/nexmo-cli) allows us to carry out many operations on the command line. If we want to carry out tasks such as creating applications, purchasing Vonage numbers and so on, we will need to install the Nexmo CLI. 
 
-Nexmo CLI requires `node.js`, so we will need to install node.js first using [these instructions](https://nodejs.org/en/download/).
+Nexmo CLI requires Node.js, so we will need to [install Node.js first](https://nodejs.org/en/download/).
 
-To install the Beta version of the CLI with NPM run this command:
+To install the Beta version of the CLI with npm run this command:
 
 ```cmd
 npm install nexmo-cli@beta -g
 ```
 
-Set up the Nexmo CLI to use our Vonage API Key and API Secret. we can get these from the [settings page](https://dashboard.nexmo.com/settings) in the Dashboard.
+Set up the Nexmo CLI to use our Vonage API Key and API Secret. We can get these from the [settings page](https://dashboard.nexmo.com/settings) in the Dashboard.
 
 Run the following command in a terminal, while replacing api_key and api_secret with our own:
 
@@ -92,7 +92,7 @@ nexmo setup api_key api_secret
 
 ### Setup Vonage Application
 
-1. Create our project directory if you've not already done so, run the following command in our terminal:
+1. Create our project directory if we've not already done so, run the following command in our terminal:
 
 ```cmd
 mkdir vonage-tutorial
@@ -104,7 +104,7 @@ mkdir vonage-tutorial
 cd vonage-tutorial
 ```
 
-3. Create a Vonage application by copying and pasting the command below into the terminal Make sure to change the value of `--voice-answer-url` argument by replacing `GIST-URL` with the gist URL from the previous step.
+3. Create a Vonage application by copying and pasting the command below into the terminal. Make sure to change the value of `--voice-answer-url` argument by replacing `GIST-URL` with the gist URL from the previous step.
 
 ```
 nexmo app:create "App to Phone Tutorial" --capabilities=voice --keyfile=private.key --voice-event-url=https://example.com/ --voice-answer-url=GIST-URL
@@ -309,7 +309,7 @@ Run the application from the Xcode
 
 ![Run from xcode](/content/blog/make-app-to-phone-call-using-ios-and-flutter/run-xcode.png)
 
-The `Login Alicee ` button should displayed:
+The `Login Alicee` button should displayed:
 
 ![Logged out](/content/blog/make-app-to-phone-call-using-ios-and-flutter/loggedout.png)
 
