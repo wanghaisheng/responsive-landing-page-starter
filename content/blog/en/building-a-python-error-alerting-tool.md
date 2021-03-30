@@ -3,10 +3,11 @@ title: Building a Python Error Alerting Tool
 description: Monitoring logs to keep track of application health are essential.
   In this tutorial, learn how to build a simple and flexible Python error
   alerting tool that can be plugged into any project.
-author: nahrinjalal
+thumbnail: /content/blog/building-a-python-error-alerting-tool/python_error-alert_1200x600.png
+author: renato-byrro
 published: true
-published_at: 2021-03-16T13:46:13.225Z
-updated_at: 2021-03-16T13:46:13.258Z
+published_at: 2021-03-30T13:38:15.178Z
+updated_at: 2021-03-30T13:38:16.830Z
 category: tutorial
 tags:
   - sms-api
