@@ -340,7 +340,7 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the `JWT` token, we obtained previously from `Vonage CLI`, to authenticate the user `Alice` for conversation access. `Flutter` will call `loginUser` method and pass the `token` as an argument. The `loginUser` method is defined in the `MainActivity` class (we will get there in a moment). To call this method from `Flutter` we have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
+Replace the `ALICE_TOKEN` with the `JWT` token, we obtained previously from `Vonage CLI`, to authenticate the user `Alice` for the conversation access. `Flutter` will call `loginUser` method and pass the `token` as an argument. The `loginUser` method is defined in the `MainActivity` class (we will get there in a moment). To call this method from `Flutter` we have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
 Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
 
