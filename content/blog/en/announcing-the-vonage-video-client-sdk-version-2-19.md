@@ -82,7 +82,7 @@ OT.initPublisher('publisher', {
 
 When requesting to share a user’s screen, many browsers provide a dialogue that allows the user to specify what they would like to share. 
 
-Electron is a popular platform to build cross-platform web-based applications with, and many of our developers choose Electron to deploy their desktop applications. In fact, Electron is used by many desktop applications you already use such as Slack, WhatsApp, and Dischord. 
+Electron is a popular platform to build cross-platform web-based applications with, and many of our developers choose Electron to deploy their desktop applications. In fact, Electron is used by many desktop applications you already use such as Slack, WhatsApp, and Discord. 
 
 We noticed the ability to select a specific window or tab missing from Electron, so we built it for you! Developers may now take advantage of the SDK’s built-in source picker when requesting screen sharing without any additional code.
 
