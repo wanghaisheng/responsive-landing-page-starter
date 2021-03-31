@@ -3,10 +3,11 @@ title: Introducing Vonage for Visual Studio Code
 description: Announcing the new Vonage for Visual Studio Code extension,
   allowing developers to manage their Vonage applications, numbers and more from
   within their favorite IDE.
+thumbnail: /content/blog/introducing-vonage-for-visual-studio-code/visual-studio-code_1200x600.png
 author: michaeljolley
 published: true
-published_at: 2021-03-13T20:52:57.077Z
-updated_at: 2021-03-13T20:52:57.085Z
+published_at: 2021-03-31T11:31:12.062Z
+updated_at: 2021-03-31T11:31:14.157Z
 category: announcement
 tags:
   - opensource
