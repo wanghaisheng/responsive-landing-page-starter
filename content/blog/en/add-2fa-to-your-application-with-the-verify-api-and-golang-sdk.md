@@ -37,10 +37,6 @@ And, to make things more exciting, we're going to be building this in our [brand
 
 Let's get to it! (If you don't have time to code along, you can find [the source code on GitHub](https://github.com/nexmo-community/go-verify-example/)). 
 
-## Register for a Vonage API account
-
-To use the Verify API you need an API key and secret. If you don't already have a Vonage account, now would be a good time to [create one](https://dashboard.nexmo.com/sign-up). You'll get a small credit balance to start making API requests with, which will be ample for what we're doing here.
-
 <sign-up></sign-up>
 
 ## Create your project
