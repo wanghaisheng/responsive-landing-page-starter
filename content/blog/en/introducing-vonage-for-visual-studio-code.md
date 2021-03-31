@@ -48,7 +48,7 @@ you'll be prompted to authorize the extension with your account. Click the
 `Provide API key & secret` button to authenticate. Once you've
 logged in, your account information will begin to populate in the window.
 
-![Example of logging into the extension](/content/blog/introducing-vonage-for-visual-studio-code/login.gif)
+![Example of logging into the extension](/content/blog/introducing-vonage-for-visual-studio-code/authorization.gif)
 
 ## Numbers
 
@@ -63,7 +63,7 @@ of the view, you'll be prompted to select the country, type, and pattern
 (i.e., starts with 12) for your new number. Then choose the number you want,
 and the extension will handle purchasing it.
 
-![Quick view of some of the features for managing numbers](/content/blog/introducing-vonage-for-visual-studio-code/number.gif)
+![Quick view of some of the features for managing numbers](/content/blog/introducing-vonage-for-visual-studio-code/numbers.gif)
 
 ## Applications
 
@@ -81,7 +81,7 @@ Each application is a tree item that can be expanded to show all the numbers
 assigned to the application. Here you can remove the number from the application
 and manage the number as you would in the numbers view. 
 
-![Quick view of some of the features for applications](/content/blog/introducing-vonage-for-visual-studio-code/app.gif)
+![Quick view of some of the features for applications](/content/blog/introducing-vonage-for-visual-studio-code/applications.gif)
 
 ## Account
 
