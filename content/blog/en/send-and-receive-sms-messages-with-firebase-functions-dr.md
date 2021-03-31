@@ -1,10 +1,7 @@
 ---
 title: Send and Receive SMS Messages with Firebase Functions
-description: The Firebase platform allows developers to build an application
-  backend rapidly. It’s also enjoyable to use as well. For this tutorial, I
-  wanted to start using it for some SMS messaging with Nexmo. After this
-  walk-through, you will be able to create an SMS message log, and a response to
-  the sender using Firebase Functions […]
+description: Learn how to create an SMS message log and a response to the sender
+  using Firebase Functions and Firestore alongside the Vonage SMS API.
 thumbnail: /content/blog/send-and-receive-sms-messages-with-firebase-functions/firebase_sms_1200x600.png
 author: kellyjandrews
 published: true
