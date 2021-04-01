@@ -5,8 +5,8 @@ description: "Build iOS application using Flutter and utilise Vonage Client SDK
 thumbnail: /content/blog/make-app-to-phone-call-using-ios-and-flutter/flutter_inapp-call_1200x600.png
 author: igor-wojda
 published: true
-published_at: 2021-03-18T20:35:14.407Z
-updated_at: 2021-03-18T20:36:07.611Z
+published_at: 2021-04-01T10:52:47.957Z
+updated_at: 2021-04-01T10:52:49.721Z
 category: tutorial
 tags:
   - ios
