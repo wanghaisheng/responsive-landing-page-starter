@@ -1,3 +1,10 @@
+## [2.8.4](https://github.com/Nexmo/deved-platform/compare/v2.8.3...v2.8.4) (2021-04-04)
+
+
+### Bug Fixes
+
+* fix authors not having identifier for saving ([#908](https://github.com/Nexmo/deved-platform/issues/908)) ([a35924c](https://github.com/Nexmo/deved-platform/commit/a35924c91ba2d00f14143534005fbf162b2c9a80))
+
 ## [2.8.3](https://github.com/Nexmo/deved-platform/compare/v2.8.2...v2.8.3) (2021-03-30)
 
 
