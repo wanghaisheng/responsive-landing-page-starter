@@ -5,7 +5,7 @@ description: Learn how to generate and plot analytics based on the participants
 thumbnail: /content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/whatsapp-analytics_1200x600.png
 author: aboze-brain-john
 published: true
-published_at: 2021-03-29T09:56:51.344Z
+published_at: 2021-04-06T12:44:47.035Z
 updated_at: 2021-03-29T09:56:51.382Z
 category: tutorial
 tags:
@@ -23,13 +23,14 @@ WhatsApp groups have served as an environment to establish collective conversati
 
 In this tutorial, we'll generate and plot analytics based on the participants of a WhatsApp Group. We'll geocode the users' location and generate a country-level distribution. This interface will be built with Python using Selenium, Plotly, Vonage Number Insight API, Google Maps API, and Mapbox API.
 
+<sign-up></sign-up>
+
 ## Prerequisites
 
-To follow and fully understand this tutorial, you'll need to have:
+To follow and fully understand this tutorial, you'll also need to have:
 
 * [Python 3.6](https://www.python.org/) or newer.
 * Basic knowledge of automation with [Selenium](https://selenium-python.readthedocs.io/index.html).
-* Set up [Vonage API](https://www.vonage.com/) account.
 * Set up [Google Maps API](https://developers.google.com/maps/documentation).
 * Set up [Plotly](https://plotly.com/) and [Mapbox](https://www.mapbox.com/) credentials.
 
@@ -136,8 +137,6 @@ Optionally, you can install all the packages as follows:
 ## Setting up APIs and Credentials
 
 Next, you'll need to set up some accounts and get the required API credentials. 
-
-<sign-up></sign-up>
 
 ### Google Maps API
 
