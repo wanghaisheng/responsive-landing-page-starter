@@ -133,7 +133,7 @@ serverless deploy
 
 When the deployment is successful, you'll see an output similar to the example shown in the image below. The output may be slightly different depending on the values in your `serverless.yml` file, though. Make sure to keep note of the URL found in the `endpoints:` section.
 
-![Output showing a serverless deployment](serverless-deployment-success.png)
+![Output showing a serverless deployment](/content/blog/random-fact-voice-call-with-php-uselessfacts-and-aws-lambda/serverless-deployment-success.png)
 
 ### Create an Application
 
