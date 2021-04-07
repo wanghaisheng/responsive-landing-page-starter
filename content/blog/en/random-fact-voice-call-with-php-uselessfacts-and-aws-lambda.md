@@ -11,7 +11,7 @@ category: tutorial
 tags:
   - voice-api
   - php
-  - aws-lambda
+  - aws
 comments: true
 spotlight: false
 redirect: ""
