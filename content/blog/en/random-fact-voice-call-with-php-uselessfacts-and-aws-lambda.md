@@ -30,6 +30,8 @@ In this tutorial, we will create a PHP application and host it on AWS Lambda, li
 * [PHP](https://www.php.net/docs.php) installed locally
 * [Composer](https://getcomposer.org/) installed locally
 
+<sign-up number></sign-up>
+
 ## Getting Started
 
 ### Install the Dependencies
