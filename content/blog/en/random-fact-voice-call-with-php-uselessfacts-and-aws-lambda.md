@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 Have you wanted to run a service without needing to create and maintain a server? Whether this to be a function triggered at set intervals or a specific action triggers this function?
 
-In this tutorial, you'll create a PHP application and host it on AWS Lambda, listening for a specific webhook URL to be triggered when the callee answers the voice call. The application will then confirm the caller's number and then convert a random fact from text to speech for the person on the other end of the phone line. Random facts get retrieved from an API called [Random Useless Facts](uselessfacts.jsph.pl).
+In this tutorial, we will create a PHP application and host it on AWS Lambda, listening for a specific webhook URL to be triggered when the someone calls a specific phone number. The application will then confirm the caller's number and convert a random fact from text to speech for the caller to hear. The random facts get retrieved from an API called [Random Useless Facts](uselessfacts.jsph.pl).
 
 ## Prerequisites
 
@@ -40,7 +40,13 @@ First, you'll need to create a directory for your project, then, in your Termina
 composer init
 ```
 
-Once you've finished with that step, run the command below to install the required third-party libraries:
+Once you've finished with that step, run the command below to install the required third-party libraries. These libraries are:
+
+* the Slim PHP Framework, 
+* Slim's PSR-7 which contains Response and Request interfaces we'll need, 
+* GuzzleHttp to make API requests in retrieving random facts,
+* Bref to bring support for PHP on AWS Lambda,
+* Vonage's PHP client to correctly handle incoming webhook requests for a voice call.
 
 ```bash
 composer require slim/slim:"4.*" slim/psr7 guzzlehttp/guzzle:"^7.0" bref/bref vonage/client
@@ -54,12 +60,12 @@ vendor/bin/bref init
 
 This will create two new files:
 
-* `index.php`, which will contain the code for the application
-* `serverless.yml`, which will contain the configuration requirements for deploying the application to AWS
+* `index.php` will contain the code for the application
+* `serverless.yml` will contain the configuration requirements for deploying the application to AWS
 
 ### Write the Code
 
-In your code editor, open the newly created `index.php` file. Remove the contents of this file as we're going to be rewriting this file.
+In your code editor, open the newly created `index.php` file. Remove the contents of this file as we're going to be rewriting everything.
 
 The first thing to add to the file is the imports for the classes used from the third-party libraries we installed in the previous step. Copy the following into your `index.php` file:
 
@@ -79,7 +85,7 @@ use Vonage\Voice\Webhook\Factory;
 require __DIR__ . '/vendor/autoload.php';
 ```
 
-We now need to create the Slim application and an empty GET endpoint with the URI being `/webhooks/answer` and finally running the application. To do this, add the following to the file:
+We need to create the Slim application in our `index.php` file and an empty GET endpoint with the URI being `/webhooks/answer`. To do this, add the following to the file:
 
 ```php
 $app = AppFactory::create();
@@ -91,7 +97,9 @@ $app->get('/webhooks/answer', function (Request $request, Response $response, ar
 $app->run();
 ```
 
-Next, we need to create the functionality that will allow us to receive the data transmitted to the webhook, parse the `from` phone number, make a GET request to the [random fact generator](https://uselessfacts.jsph.pl/random.json?language=en), create and return a call control object (NCCO) to the caller. Add the code example below into your `$app->get('/webhooks/answer'` function:
+The `/webhooks/answer` endpoint will be configured in your Vonage dashboard later as a way for your virtual phone number to get instructions on what to do when a call is made.
+
+Next, we need to create the functionality that will allow us to receive the data transmitted to the webhook, parse the `from` phone number, make a GET request to the [random fact generator](https://uselessfacts.jsph.pl/random.json?language=en), create and return a call control object (NCCO) to the caller. The code below carries out all of this functionality described, so add this into your `$app->get('/webhooks/answer'` function:
 
 ```php
 // Convert the contents of the `$request` sent in the `GET` request into a Voice Webhook Object.
@@ -125,7 +133,7 @@ return new JsonResponse($ncco);
 
 ### Deploy the Code
 
-To deploy the code to Lambda, run the following command:
+To deploy the code to AWS Lambda, in your Terminal, run the following command:
 
 ```bash
 serverless deploy
@@ -137,7 +145,7 @@ When the deployment is successful, you'll see an output similar to the example s
 
 ### Create an Application
 
-Create an application in your [Dashboard](https://dashboard.nexmo.com/) under "Your Applications". Give your new application a name.
+We now need an application in with Vonage in order to enable our virtual phone number to know which endpoint it needs to request when a call is made. Create an application in your [Dashboard](https://dashboard.nexmo.com/) under "Your Applications" and give your new application a name.
 
 Add Voice capabilities to the application and configure the URLs using the Lambda URL you copied earlier in the previous step. For the Answer URL, use `[paste lambda url]/webhooks/answer` and for the Event URL `[paste lambda url]/webhooks/event`.
 
@@ -147,6 +155,7 @@ You've purchased a Vonage virtual number, created a Vonage Application, and writ
 
 ## Test It
 
-The only way to test your project once you've deployed it to AWS Lambda is to call your virtual number and hear the voice reading back your phone number followed by a random fact.
+To test your project once you've deployed it to AWS Lambda call your virtual number and hear the voice reading back your phone number followed by a random fact.
 
 ## What Now?
+
