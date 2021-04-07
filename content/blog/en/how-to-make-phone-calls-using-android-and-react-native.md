@@ -93,7 +93,7 @@ Go to https://gist.github.com/ and enter `call.json` into the "Filename includin
 
 Create the gist, then click the "Raw" button to get a URL for your NCCO. Keep note of it for the next step.
 
-![ncco raw button]()
+![ncco raw button](/content/blog/how-to-make-phone-calls-using-android-and-react-native/gist1.png)
 
 ### Create a Vonage Application
 
