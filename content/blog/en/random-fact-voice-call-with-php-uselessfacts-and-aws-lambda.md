@@ -161,3 +161,12 @@ To test your project once you've deployed it to AWS Lambda call your virtual num
 
 ## What Now?
 
+You've now successfully created and deployed a PHP application to AWS Lambda which listens to a webhook waiting for your virtual number to receive a phone call.
+
+Here are some links to other tutorials we've using serverless functions:
+
+* [Build a Basic Video Call Platform with Netlify Functions](https://learn.vonage.com/blog/2020/05/22/build-a-basic-video-call-platform-with-netlify-functions/)
+* [Build a Serverless Eurovision Voting System with Node.js and Vonage](https://learn.vonage.com/blog/2020/06/17/build-a-serverless-eurovision-voting-system-with-node-js-and-vonage/)
+* [Multi-Channel Tone Analysis in PHP with Amazon Comprehend](https://learn.vonage.com/blog/2020/07/02/multi-channel-tone-analysis-in-php-with-amazon-comprehend/)
+
+As always, if you have any questions, advice or ideas you’d like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack), or you can contact me directly on [Twitter](https://www.twitter.com/greg__holmes). I'd love to hear how you've gotten on with this tutorial and how your project works.
