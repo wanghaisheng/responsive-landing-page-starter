@@ -23,15 +23,15 @@ This tutorial will show you how to use the [Vonage Client SDK](https://developer
 
 ## Prerequisites
 
-* Xcode 12, to build and run the app on an iOS simulator.
-* A GitHub account.
+* [Xcode 12](https://developer.apple.com/xcode/), to build and run the app on an iOS simulator.
+* A [GitHub](https://github.com/) account.
 * [Cocoapods](https://cocoapods.org) to install the Vonage Client SDK for iOS.
-* Our Command Line Interface. It can be installed with `npm install nexmo-cli@beta -g`.
-* \[Homebrew] to install the React Native dependencies.
+* [Our Command Line Interface](https://developer.nexmo.com/application/nexmo-cli). It can be installed with `npm install nexmo-cli@beta -g`.
+* [Homebrew](https://brew.sh/) to install the React Native dependencies.
 
 ## Set Up React Native
 
-To build and run a React Native app, you first need to install the dependencies, Node and Watchman. You can do so using Homebrew. In your terminal run:
+To build and run a React Native app, first you need to install two dependencies, Node and Watchman. You can do so using Homebrew by running the following in your terminal:
 
 ```sh
 brew install node
