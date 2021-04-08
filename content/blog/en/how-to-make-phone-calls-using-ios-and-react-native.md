@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This blog post will take you through a project, which will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) iOS app that will call a phone number. If you would like to explore using the Client SDK with Android, check out this [blog post](LINKHERE).
+This tutorial will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) iOS app with functionality to call a phone number.
 
 ## Prerequisites
 
