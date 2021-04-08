@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This tutorial will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) iOS app with functionality to call a phone number.
+This tutorial will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) iOS app with the functionality to call a phone number.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ This tutorial will show you how to use the [Vonage Client SDK](https://developer
 
 ## Set Up React Native
 
-To build and run a React Native app, first you need to install two dependencies, Node and Watchman. You can do so using Homebrew by running the following in your terminal:
+To build and run a React Native app, first, you need to install two dependencies, Node and Watchman. You can do so using Homebrew by running the following in your terminal:
 
 ```sh
 brew install node
@@ -48,19 +48,23 @@ You can clone the project to your local machine by running the following command
 git clone git@github.com:nexmo-community/react-native-app-to-phone.git
 ```
 
-Then change directory into the new folder `cd react-native-app-to-phone`.
+Then, in your Terminal, change directory into the new folder with the following command:
 
-Now that the project has been clone, you can install the project dependencies. You can install the React Native specific dependencies by running `npm install`. This command will install the dependencies listed in the `package.json` file. A dependency you should note is [`react-native-permissions`](https://github.com/zoontek/react-native-permissions), an open-source project that provides a unified way to request permissions on both iOS and Android. You can inspect the iOS dependencies by looking at the `Podfile`. It includes the Client SDK and the required pod for microphone permissions from `react-native-permissions`.
+```sh
+cd react-native-app-to-phone
+```
+
+Now that the project has been cloned, you can install the project dependencies. You can install the React Native specific dependencies by running `npm install`. This command will install the dependencies listed in the `package.json` file. A dependency you should note is [`react-native-permissions`](https://github.com/zoontek/react-native-permissions), an open-source project that provides a unified way to request permissions on both iOS and Android. You can inspect the iOS dependencies by looking at the `Podfile`. It includes the Client SDK and the required pod for microphone permissions from `react-native-permissions`.
 
 ## The Vonage Application
 
-To create the application, we will be using our command-line interface. If you have not set up the CLI yet, do so by running the command nexmo setup API_KEY API_SECRET in your terminal, where the API Key and Secret are the API key and secret found on your [account’s settings](https://dashboard.nexmo.com/settings) page.
+To create the application, we will be using our command-line interface. If you have not set up the CLI yet, do so by running the command nexmo setup API_KEY API_SECRET in your terminal, where the API key and secret are the API key and secret found on your [account’s settings](https://dashboard.nexmo.com/settings) page.
 
 ### Create an NCCO
 
-A [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference) is a JSON array that you use to control the flow of a Voice API call. The NCCO must be public and accessible by the internet. To accomplish that, you will be using a GitHub Gist that provides a convenient way to host the configuration.
+A [Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference) is a JSON array that you use to control the flow of a Voice API call. The NCCO must be public and accessible to the internet. To accomplish this, you will be using a GitHub Gist which provides a convenient way to host the configuration.
 
-Go to https://gist.github.com/ and enter `call.json` into the "Filename including extension" box. The contents of the gist will be the following JSON:
+Go to [https://gist.github.com](https://gist.github.com/) and enter `call.json` into the "Filename including extension" box. Copy the JSON example below into the contents of the gist:
 
 ```json
 [
@@ -80,7 +84,7 @@ Go to https://gist.github.com/ and enter `call.json` into the "Filename includin
 ]
 ```
 
-Create the gist, then click the "Raw" button to get a URL for your NCCO. Keep note of it for the next step.
+Create the gist, then click the "Raw" button to get a URL for your NCCO. Keep note of this URL, which is required in the next step.
 
 ![ncco raw button](/content/blog/how-to-make-phone-calls-using-ios-and-react-native/gist.png)
 
@@ -92,11 +96,11 @@ You now need to create a Vonage Application. An application contains the securit
 nexmo app:create "Phone To App Tutorial" --capabilities=voice --keyfile=private.key  --voice-event-url=https://example.com/ --voice-answer-url=GIST_URL 
 ```
 
-A file named .nexmo-app is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named private.key is also created. 
+A file named `.nexmo-app` is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named `private.key` is also created. 
 
 ### Create a JWT
 
-The Client SDK uses JWTs for authentication. The JWT identifies the user name, the associated application ID and the permissions granted to the user. It is signed using your private key to prove that it is a valid token. Create a user for your application, you can do so by running `nexmo user:create name="Alice"` to create a user called Alice. Then create a JWT for the Alice user by running the following command replacing `APP_ID` with your application ID from earlier: 
+The Client SDK uses JWTs for authentication. The JWT identifies the user name, the associated application ID, and the permissions granted to the user. It is signed using your private key to prove that it is a valid token. Create a user for your application, you can do so in your Terminal by running the following command: `nexmo user:create name="Alice"` to create a user called Alice. Then create a JWT for the Alice user by running the following command replacing `APP_ID` with your application ID from earlier: 
 
 ```sh
 nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{}}}' sub=Alice application_id=APP_ID
