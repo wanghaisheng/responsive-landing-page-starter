@@ -169,7 +169,7 @@ eventEmitter.addListener('onCallStateChange', (data) => {
 });
 ```
 
-![diagram showing the flow between javascript code and native code](arch.png)
+![diagram showing the flow between javascript code and native code](/content/blog/how-to-make-phone-calls-using-ios-and-react-native/arch.png)
 
 If you open the `ios` directory of the project, you will see a class called `EventEmitter` (*ios/RNAppToPhone/EventEmitter.m*). The `EventEmitter` class exports the supported events and has two functions that send signals to the JavaScript code. 
 
