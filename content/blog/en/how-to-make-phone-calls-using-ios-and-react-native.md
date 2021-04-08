@@ -19,11 +19,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This blog post will take you through a project, which will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) iOS app which will call a phone number. If you would like to explore using the Client SDK with Android, check out this [blog post](LINKHERE).
+This blog post will take you through a project, which will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) iOS app that will call a phone number. If you would like to explore using the Client SDK with Android, check out this [blog post](LINKHERE).
 
 ## Prerequisites
 
-* Xcode 12.
+* Xcode 12, to build and run the app on an iOS simulator.
 * A GitHub account.
 * [Cocoapods](https://cocoapods.org) to install the Vonage Client SDK for iOS.
 * Our Command Line Interface. It can be installed with `npm install nexmo-cli@beta -g`.
