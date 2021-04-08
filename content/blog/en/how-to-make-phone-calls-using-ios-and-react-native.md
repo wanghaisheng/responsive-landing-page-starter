@@ -211,4 +211,12 @@ ClientManager.login("ALICE_JWT")
 
 ## What Next?
 
-You can find the Android version of this blog on [learn.vonage.com](LINKHERE). You can do a lot more with the Client SDK, learn more on [developer.vonage.com](LINKHERE).
+In this tutorial, we've learned how to build an iOS app with the React Native framework. We've also added functionality to make a phone call to a physical phone number.
+
+Below are a few other tutorials or documentation referencing the Voice API:
+
+* [NCCO reference](https://developer.nexmo.com/voice/voice-api/ncco-reference)
+* [Client SDK](https://developer.nexmo.com/client-sdk/overview)
+* [Building a Drop-in Audio App With SwiftUI and Vapor - Part 1](https://learn.vonage.com/blog/2021/03/02/building-a-drop-in-audio-app-with-swiftui-vapor-and-vonage-part-1/)
+
+As always, if you have any questions, advice or ideas you’d like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack). I'd love to hear how you've gotten on with this tutorial and how your project works.
