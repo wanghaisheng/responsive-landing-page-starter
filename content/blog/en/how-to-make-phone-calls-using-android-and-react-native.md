@@ -23,7 +23,7 @@ This blog post will take you through a project, which will show you how to use t
 
 ## Prerequisites
 
-* Android Studio, with JDK 8 or newer
+* Android Studio, with JDK 8 or newer to build and run the app on an emulator.
 * A GitHub account.
 * Our Command Line Interface. It can be installed with `npm install nexmo-cli@beta -g`.
 * \[Homebrew] to install the React Native dependencies.
