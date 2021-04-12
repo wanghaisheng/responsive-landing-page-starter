@@ -8,7 +8,7 @@ published_at: 2021-04-12T15:01:23.692Z
 updated_at: 2021-04-12T15:01:23.727Z
 category: community
 tags:
-  - spotlight
+  - startups
 comments: true
 spotlight: false
 redirect: ""
