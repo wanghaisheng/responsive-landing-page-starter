@@ -3,10 +3,11 @@ title: Random Facts Voice Call With PHP, Uselessfacts and AWS Lambda
 description: Learn how to use PHP and AWS Lambda thanks to Bref, by using
   Vonage's API to handle outgoing voice calls and returning a random fact to the
   caller
+thumbnail: /content/blog/random-facts-voice-call-with-php-uselessfacts-and-aws-lambda/useless-facts_php_1200x600.png
 author: greg-holmes
 published: true
-published_at: 2021-04-06T15:25:55.832Z
-updated_at: 2021-04-06T15:25:55.860Z
+published_at: 2021-04-13T12:47:47.755Z
+updated_at: 2021-04-13T12:47:48.391Z
 category: tutorial
 tags:
   - voice-api
