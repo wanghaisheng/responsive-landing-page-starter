@@ -31,7 +31,7 @@ This tutorial will cover how to implement a verification token system with the V
 * [Vapor 4.0](https://vapor.codes) installed on your machine.
 * [ngrok](https://ngrok.com) for exposing your local machine to the internet.
 
-<sign-up></sign-up> 
+<sign-up></sign-up>
 
 ## Create a Vapor Project
 
@@ -176,7 +176,7 @@ Now that your server is available on the internet, you can make calls to it, to 
 
 Once downloaded, open the project in Xcode. In the `VerifyModel.swift` file, replace the `BASE_URL` string with the forwarding URL from ngrok, then build and run (CMD + R). You can enter your phone number, and it will receive a text which you can enter to verify your phone number!
 
-![Test app screenshots](/content/blog/how-to-add-two-factor-authentication-with-swift-and-vapor/testapp.png)
+![Test app screenshots](/content/blog/how-to-add-two-factor-authentication-with-swift-and-vapor/testappnew.png)
 
 ## What Next?
 
