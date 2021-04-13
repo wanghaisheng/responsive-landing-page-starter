@@ -652,11 +652,11 @@ extension AppDelegate: PKPushRegistryDelegate {
 
 ## Try it out
 
-Build and Run (CMD + R) the project onto your iOS device, accept the microphone permissions, and lock the device. Then call the number linked to your Vonage Application from earlier. You will see the incoming call directly on your lock screen; then once you pick up it will go into the familiar iOS call screen: 
+Build and Run (CMD + R) the project onto your iOS device, accept the microphone permissions, and lock the device. Then call the number linked to your Vonage Application from earlier. You will see the incoming call directly on your lock screen; then once you pick up it will go into the familiar iOS call screen:
 
-![Incoming call on a locked screen](/content/blog/handling-voip-push-notifications-with-callkit/lockedcall.png)
+![Incoming call on a locked screen](/content/blog/handling-voip-push-notifications-with-callkit/loackedcallsm.png)
 
-![An active call in progress](/content/blog/handling-voip-push-notifications-with-callkit/activecall.png)
+![An active call in progress](/content/blog/handling-voip-push-notifications-with-callkit/activecallsm.png)
 
 If you check the call logs on the device, you will also see the call listed there.
 
