@@ -1,8 +1,8 @@
 ---
-title: "Startup Spotlight Series: Billseye"
+title: "Startup Spotlight: Let's Meet Billseye"
 description: An introduction into the first Startup Spotlight at Vonage, a
   company called Billseye.
-thumbnail: /content/blog/startup-spotlight-series-billseye/startups_billseye_1200x600.png
+thumbnail: /content/blog/startup-spotlight-lets-meet-billseye/startups_billseye_1200x600.png
 author: filippos-kyprianou
 published: true
 published_at: 2021-04-15T12:38:37.613Z
