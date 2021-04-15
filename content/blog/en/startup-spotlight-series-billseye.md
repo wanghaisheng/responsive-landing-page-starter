@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 At Vonage, we launched our first Startup Program in February to empower the global startup community. We want to enable startups worldwide to build their products faster and better, using Communications APIs. At the same time helping them scale more efficiently using multiple channels and building great customer experiences. Through the Startup Spotlight series, we will celebrate and showcase the amazing startups that we work with and give you an inside look into their product, progress, and learnings.
 
-For the first Startup Spotlight, we caught up with Alcide Honoré, CEO & Co-founder of Billseye and early-stage startup with HQ in Atlanta, GA. Alcide talks to us about the problem they are solving, their biggest challenges, their vision, and so much more. Enjoy!
+For the first Startup Spotlight, we caught up with Alcide Honoré, CEO & Co-founder of Billseye an early-stage startup with HQ in Atlanta, GA. Alcide talks to us about the problem they are solving, their biggest challenges, their vision, and so much more. Enjoy!
 
 * **Startup Name:** Billseye
 * **Industry:** FinTech/Legaltech
