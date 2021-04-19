@@ -59,7 +59,7 @@ If you then open your file, you'll see the text `This is the README file for my 
 
 At this point, your Git repository is still technically empty. You've created the file but, if you type `git status` you'll see something similar to the image below:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/09/git-status.png" alt="Git status" class="alignnone size-full wp-image-33473" />
+![An image showing the output of a command line request for git status](/content/blog/an-introduction-to-git/git-status.png)
 
 As shown in the image above, the first line tells you which branch you're in, and the second line explains whether you have any unpushed commits. Following this, you'll see any untracked files which list the files you've yet to commit; in this instance, it's the `README.md` file.
 
@@ -124,11 +124,11 @@ Now it's time to have a look at GitHub and hosting your repository remotely.
 
 Head over to [GitHub](https://github.com/new) to create a new repository. You will be presented with a screen similar to what you see below. Make sure to add the `Repository name` and then click on `Create repository`.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/09/create-github-repo.png" alt="Create GitHub Repository" class="alignnone size-full wp-image-33472" />
+![An image showing the page when creating a GitHub Repository](/content/blog/an-introduction-to-git/create-github-repo.png)
 
 Once created, some options are provided with how to get set up with your repository. As you already have the repository locally, choose the third option below where it says `...or push an existing repository from the command line`.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/09/github-repo-created.png" alt="GitHub Repository Created" class="alignnone size-full wp-image-33475" />
+![Image showing the output on the page when a GtiHub repository is created.](/content/blog/an-introduction-to-git/github-repo-created.png)
 
 ### Create a Pull Request
 
