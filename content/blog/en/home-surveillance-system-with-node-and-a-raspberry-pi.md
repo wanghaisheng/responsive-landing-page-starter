@@ -35,9 +35,10 @@ Here are some of the things you'll learn in this tutorial:
 * Raspberry Pi 4
 * Raspberry Pi Camera module
 * Motion Sensor (HC-SR501 PIR)
-* [Vonage account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=blog&utm_campaign=home-surveillance-system-with-node-and-a-raspberry-pi)
 * [TokBox Account](https://tokbox.com/account/user/signup?utm_source=DEV_REL&utm_medium=blog&utm_campaign=home-surveillance-system-with-node-and-a-raspberry-pi)
 * Node & NPM installed on the Raspberry Pi
+
+<sign-up number></sign-up>
 
 ## Raspberry Pi Installation and Setup
 
@@ -1020,8 +1021,8 @@ The finished code for this tutorial can be found on the [GitHub repository](http
 
 Below are a few other tutorials we've written implementing the Vonage Video API into projects:
 
-* [Stream a Video Chat With Vonage Video API](https://www.nexmo.com/blog/2020/04/28/stream-a-video-chat-with-vonage-video-api-dr)
-* [Add Texting Functionality to a Video Chat With Vonage Video API](https://www.nexmo.com/blog/2020/04/21/video-with-text-chat)
-* \[Real-Time Face Detection in .NET with OpenTok and OpenCV](Real-Time Face Detection in .NET with OpenTok and OpenCV)
+* [Stream a Video Chat With Vonage Video API](https://learn.vonage.com/blog/2020/04/28/stream-a-video-chat-with-vonage-video-api-dr/)
+* [Add Texting Functionality to a Video Chat With Vonage Video API](https://learn.vonage.com/blog/2020/04/21/video-with-text-chat)
+* [Real-Time Face Detection in .NET with OpenTok and OpenCV](https://learn.vonage.com/blog/2020/03/18/real-time-face-detection-in-net-with-opentok-and-opencv-dr/)
 
-Don’t forget, if you have any questions, advice or ideas you’d like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack) or pop a reply below 👇. I'd love to hear back from anyone that has implemented this tutorial and how your project works.
+Don’t forget, if you have any questions, advice or ideas you’d like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack). I'd love to hear back from anyone that has implemented this tutorial and how your project works.
