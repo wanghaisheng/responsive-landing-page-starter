@@ -11,6 +11,7 @@ category: tutorial
 tags:
   - github
   - git
+  - hacktoberfest
 comments: true
 redirect: ""
 canonical: ""
