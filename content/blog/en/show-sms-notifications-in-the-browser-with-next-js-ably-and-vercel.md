@@ -24,6 +24,7 @@ The [Vonage SMS API](https://developer.vonage.com/messaging/sms/overview) allows
 In this tutorial, you'll use the Vonage SMS API, the Ably realtime messaging platform, Next.js and Vercel to receive SMS messages in the browser in realtime as they are received.
 
 Follow along to learn how to:
+
 * [Create a brand new Next.js application](#newnextjsapp)
 * [Create an Ably account and get an API key](#ablycreds)
 * [Create a Next.js Vercel Serverless API](#ablyandvercel)
@@ -34,7 +35,10 @@ Follow along to learn how to:
 
 ### Dependencies
 
+<sign-up number></sign-up>
+
 To build this app, you will also need:
+
 * **An Ably account** for sending messages: [Create an account with Ably for free](https://www.ably.io/signup).
 * **A Vercel Account** for hosting on production: [Create an account with Vercel for free](https://vercel.com/signup).
 * **Node 12** (LTS) or greater: [Install Node](https://nodejs.org/en/).
@@ -42,6 +46,7 @@ To build this app, you will also need:
 ### <a name="ablycreds">Local Dev Pre-requirements</a>
 
 You'll need an API key from Ably to authenticate with the Ably service. To get an API key, once you have [created an Ably account](https://www.ably.io/signup):
+
 1. Visit your [app dashboard](https://www.ably.io/accounts/any) and click on "Create New App".
 2. Give the new app a name
 3. Copy the Private API key once the app has been created. Keep it safe, as this is how you will authenticate with the Ably service.
@@ -52,20 +57,23 @@ Vercel provides some Next.js command-line tools to help us. They don't need to b
 
 ![Vercel and Websockets](https://cdn.glitch.com/0cb30add-c9ef-4c00-983c-e12deb0d4080%2Fvercel-websockets.png?v=1610475709091)
 
-Vercel is a hosting platform built from the ground up to host Next.js apps and Serverless Functions. It allows users to deploy [Serverless Functions](https://vercel.com/docs/serverless-functions/introduction), which are essentially just blocks of code that respond to an HTTP request.  
+Vercel is a hosting platform built from the ground up to host Next.js apps and Serverless Functions. It allows users to deploy [Serverless Functions](https://vercel.com/docs/serverless-functions/introduction), which are essentially just blocks of code that respond to an HTTP request.\
 However, these functions have a maximum execution timeout, which means that it is impossible to maintain a WebSocket connection this way. 
 
 This is where Ably comes in. The client can connect to an [Ably Channel](https://www.ably.io/documentation/realtime/channels) and send and receive messages on it to add Realtime functionality to your app by managing your WebSocket connections for you. We'll go over how to build an app that uses realtime functionality in this walkthrough. If preferred, you can [jump straight to how to use Ably with Vercel](#ablyandvercel).
 
 ## Building the Realtime Sms App
+
 #### <a name="newnextjsapp">To Create the Starter App:</a>
 
 1. In your terminal, type `npx create-next-app` to create an empty Next.js app.
 2. Create a file called `.env` in the root of the directory; this is where we'll put the project's environment variables.
 3. Add your Ably API key to the .env file:
+
 ```
 ABLY_API_KEY=your-ably-api-key:goes-here
 ```
+
 4. Navigate to your Next.js application directory and type into the console:
 
 ```bash
@@ -106,7 +114,7 @@ export default async function handler(req, res) {
 };
 ```
 
-This serverless function uses the Ably SDK to create a `tokenRequest` with your API key. You will use this token later - it allows you to keep your "real" API key safe while using it in the Next.js app.  
+This serverless function uses the Ably SDK to create a `tokenRequest` with your API key. You will use this token later - it allows you to keep your "real" API key safe while using it in the Next.js app.\
 By default, this API is configured to be available on `http://localhost:3000/api/createTokenRequest`.
 You're going to provide this URL to the Ably SDK in your client to authenticate with Ably.
 
@@ -247,6 +255,7 @@ One of the trickier parts of using Ably with React Functional Components is know
 To make sure that the app handles component redrawing, mounting and unmounting correctly - `AblyReactEffect` exports a [React Hook](https://reactjs.org/docs/hooks-intro.html) to interact with the Ably SDK.
 
 React hooks can seem a little unusual the first time you use them. A hook is a function which:
+
 * Executes the functionality that you'd expect `componentDidMount` to run
 * Returns *another* function that will be executed by the framework where `componentDidUnmount` would be called
 * Performs any other behaviour it needs to
@@ -327,7 +336,7 @@ and the accompanying CSS would look like this:
 We're using `Vercel` as our development server and build pipeline.
 
 > The easiest way to deploy Next.js to production is to use the Vercel platform from the creators of Next.js. Vercel is an all-in-one platform with Global CDN supporting static & Jamstack deployment and Serverless Functions.
-<cite>-- [The Next.js documentation](https://nextjs.org/docs/deployment)</cite>
+> <cite>-- [The Next.js documentation](https://nextjs.org/docs/deployment)</cite>
 
 To deploy your new sms-in-the-browser app to Vercel, you'll need to:
 
@@ -359,6 +368,7 @@ If your Vercel app is called `your-vercel-app`, the webhook URL would be `https:
 [This demo](https://github.com/ably-labs/sms-in-the-browser) is open-source, fork it and make it your own. Don't forget to show us what you build [@ablyRealtime](https://twitter.com/ablyrealtime).
 
 If you're looking for ways to extend this project, you could consider:
+
 * Building a televoting app
 * Adding a database to store messages
 * Adding the ability to send a response text.
