@@ -19,14 +19,16 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This blog post will take you through a project, which will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) Android app which will call a phone number. If you would like to explore using the Client SDK with iOS, check out this [blog post](LINKHERE).
+This blog post will take you through a project, which will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build a [React Native](https://reactnative.dev) Android app which will call a phone number. If you would like to explore using the Client SDK with iOS, check out this [blog post](https://learn.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native/).
 
 ## Prerequisites
 
-* Android Studio, with JDK 8 or newer to build and run the app on an emulator.
-* A GitHub account.
-* Our Command Line Interface. It can be installed with `npm install nexmo-cli@beta -g`.
-* \[Homebrew] to install the React Native dependencies.
+* [Android Studio](https://developer.android.com/studio), with JDK 8 or newer to build and run the app on an emulator.
+* A [GitHub](https://github.com/) account.
+* Our [Command Line Interface](https://developer.nexmo.com/application/nexmo-cli). It can be installed with `npm install nexmo-cli@beta -g`.
+* [Homebrew](https://brew.sh/) to install the React Native dependencies.
+
+<sign-up number></sign-up>
 
 ## Set Up React Native
 
@@ -69,9 +71,9 @@ To create the application, we will be using our command-line interface. If you h
 
 ### Create an NCCO
 
-A [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference) is a JSON array that you use to control the flow of a Voice API call. The NCCO must be public and accessible by the internet. To accomplish that, you will be using a GitHub Gist that provides a convenient way to host the configuration.
+A [Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference) is a JSON array that you use to control the flow of a Voice API call. The NCCO must be public and accessible by the internet. To accomplish that, you will be using a GitHub Gist that provides a convenient way to host the configuration.
 
-Go to https://gist.github.com/ and enter `call.json` into the "Filename including extension" box. The contents of the gist will be the following JSON:
+Go to [https://gist.github.com](https://gist.github.com/) and enter `call.json` into the "Filename including extension" box. The contents of the gist will be the following JSON:
 
 ```json
 [
@@ -103,7 +105,7 @@ You now need to create a Vonage Application. An application contains the securit
 nexmo app:create "Phone To App Tutorial" --capabilities=voice --keyfile=private.key  --voice-event-url=https://example.com/ --voice-answer-url=GIST_URL 
 ```
 
-A file named .nexmo-app is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named private.key is also created. 
+A file named `.nexmo-app` is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named `private.key` is also created. 
 
 ### Create a JWT
 
@@ -214,4 +216,4 @@ ClientManager.login("ALICE_JWT")
 
 ## What Next?
 
-You can find the iOS version of this blog on [learn.vonage.com](LINKHERE). You can do a lot more with the Client SDK, learn more on [developer.vonage.com](LINKHERE).
+You can find the iOS version of this blog on [learn.vonage.com](https://learn.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native/). You can do a lot more with the Client SDK, learn more on [developer.vonage.com](https://developer.nexmo.com/client-sdk/overview).
