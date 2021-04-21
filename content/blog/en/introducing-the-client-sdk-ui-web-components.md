@@ -26,7 +26,7 @@ We are building Web Components that are integrated with the Vonage Client SDK th
 
 ## Why?
 
-The goal of the Vonage Client SDK UI Web Components is to abstract or at least lessen the work a developer needs to integrate our Client SDK into their application. Image creating a fully functional chat application by placing UI components in the layout you choose. Just pass in the Conversation and each Web Component handles its responsibilities. Can’t picture it, no worries, here’s an actual image:
+The goal of the Vonage Client SDK UI Web Components is to abstract or at least lessen the work a developer needs to integrate our Client SDK into their application. Imagine creating a fully functional chat application by placing UI components in the layout you choose. Just pass in the Conversation and each Web Component handles its responsibilities. Can’t picture it, no worries, here’s an actual image:
 
 ![Screenshot of a chat application built with the Vonage Client SDK UI Web Components with the sections highlighted and labeled with the components.](/content/blog/introducing-the-client-sdk-ui-web-components/wc-chat-layout-highlight.jpg "Sample Chat Application built with the Vonage Client SDK UI Web Components")
 
