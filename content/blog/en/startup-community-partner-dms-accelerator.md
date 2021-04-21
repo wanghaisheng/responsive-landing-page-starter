@@ -68,3 +68,8 @@ At the moment, there are various trends in various industries. Artificial intell
 ## 8. What are the most important factors startup founders should consider when considering an accelerator?
 
 When selecting an accelerator, the startup founders should consider the time they need to invest in such a program. So before joining a program, they need to check if there is a fit between the program’s services and their current challenges. Also, they need to check if there are costs associated with the accelerator, in terms of a fee or equity the accelerator takes from the startup. If everything is right and as needed, they should apply for the accelerator.
+
+### Let's work together - Vonage for Startups
+At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
+
+Partner with us here.
