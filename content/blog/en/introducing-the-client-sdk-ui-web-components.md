@@ -18,12 +18,14 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-For a little while, there have been a lot of [Web Component-related posts](https://learn.vonage.com/authors/dwanehemmings/) created on this site.  From building a Web Component to using that same component in different frameworks and libraries. All of that has lead to the announcement of the [Vonage Client SDK UI Web Components](https://github.com/nexmo-community/clientsdk-ui-js)!
+For a little while, there have been a lot of [Web Component-related posts](https://learn.vonage.com/authors/dwanehemmings/) created on this site, from building a Web Component to using that same component in different frameworks and libraries. All of that has lead to the announcement of the [Vonage Client SDK UI Web Components](https://github.com/nexmo-community/clientsdk-ui-js)!
 
 ## What?
+
 We are building Web Components that are integrated with the Vonage Client SDK that can be used with or without JavaScript frameworks or libraries. The growing list of components can be found in the [GitHub repository](https://github.com/nexmo-community/clientsdk-ui-js).
 
 ## Why?
+
 The goal of the Vonage Client SDK UI Web Components is to abstract or at least lessen the work a developer needs to integrate our Client SDK into their application. Image creating a fully functional chat application by placing UI components in the layout you choose. Just pass in the Conversation and each Web Component handles its responsibilities. Can’t picture it, no worries, here’s an actual image:
 
 ![Screenshot of a chat application built with the Vonage Client SDK UI Web Components with the sections highlighted and labeled with the components.](/content/blog/introducing-the-client-sdk-ui-web-components/wc-chat-layout-highlight.jpg "Sample Chat Application built with the Vonage Client SDK UI Web Components")
@@ -31,6 +33,7 @@ The goal of the Vonage Client SDK UI Web Components is to abstract or at least l
 To create your own sample chat app, use this [Glitch project](https://glitch.com/edit/#!/remix/boggy-luminous-fish?path=README.md).
 
 ## How?
+
 To also celebrate the (Vonage Voice API)\[https://developer.nexmo.com/voice/voice-api/overview] going General Availability, here is how to integrate the Keypad Web Component into the [Making an in-app voice call tutorial](https://developer.nexmo.com/client-sdk/tutorials/app-to-phone/introduction/javascript).
 The only change comes in the [Create a client side application step](https://developer.nexmo.com/client-sdk/tutorials/app-to-phone/client-sdk/app-to-phone/main-screen/javascript). Replace the code for the client_js.html file with this:
 
@@ -96,4 +99,5 @@ It should look something like this:
 If you want to see the keypad implemented in a React application, here is that [blog post](https://learn.vonage.com/blog/2020/10/07/using-web-components-in-a-react-application-dr/).
 
 ## When?
+
 A super early working version is now available in the [Vonage Community GitHub repository](https://github.com/nexmo-community/clientsdk-ui-js). We welcome contributions, ideas, and feedback so, please take a look.
