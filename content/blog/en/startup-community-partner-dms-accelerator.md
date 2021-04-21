@@ -1,9 +1,10 @@
 ---
 title: "Startup Community Partner: DMS Accelerator"
 description: An introduction to one of Vonage's Startup Community Partners. DMS Accelerator
+thumbnail: /content/blog/startup-community-partner-dms-accelerator/startups_dms_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-04-19T12:14:08.141Z
+published_at: 2021-04-21T08:05:49.499Z
 updated_at: 2021-04-19T12:14:08.158Z
 category: community
 tags:
