@@ -37,7 +37,7 @@ To create your own sample chat app, use this [Glitch project](https://glitch.com
 To also celebrate the (Vonage Voice API)\[https://developer.nexmo.com/voice/voice-api/overview] going General Availability, here is how to integrate the Keypad Web Component into the [Making an in-app voice call tutorial](https://developer.nexmo.com/client-sdk/tutorials/app-to-phone/introduction/javascript).
 The only change comes in the [Create a client side application step](https://developer.nexmo.com/client-sdk/tutorials/app-to-phone/client-sdk/app-to-phone/main-screen/javascript). Replace the code for the client_js.html file with this:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
