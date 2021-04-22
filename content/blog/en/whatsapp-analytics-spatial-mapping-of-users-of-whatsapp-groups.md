@@ -1,5 +1,5 @@
 ---
-title: "Whatsapp Analytics: Spatial Mapping of Users of Whatsapp Groups "
+title: "WhatsApp Analytics: Spatial Mapping of Users of WhatsApp Groups "
 description: Learn how to generate and plot analytics based on the participants
   of a WhatsApp Group.
 thumbnail: /content/blog/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups/whatsapp-analytics_1200x600.png
