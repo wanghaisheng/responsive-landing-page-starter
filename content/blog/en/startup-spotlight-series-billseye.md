@@ -66,7 +66,7 @@ Gates created software products that work across multiple platforms. We think th
 
 ## What Progress Have You Made Since Launching?
 
-We have achieved over a thousand downloads of our Android software, and we are well on our way to introducing our iOS solution. We have been officially recognised by the American Bar Association, Google for Startups, and now Vonage as a solution provider that has designed an innovative solution to a known problem.
+We have achieved over ten thousand downloads of our Android software, and we are well on our way to introducing our iOS solution. We have been officially recognised by the American Bar Association, Google for Startups, and now Vonage as a solution provider that has designed an innovative solution to a known problem.
 
 ## What’s Next For Billseye? Where Do You Want To Be In 3 Years?
 
