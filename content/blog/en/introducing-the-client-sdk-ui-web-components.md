@@ -2,6 +2,7 @@
 title: Introducing the Client SDK UI Web Components
 description: Introduction of a set of Web Components built to integrate and make
   it easier to work with the Client SDK with some sample examples.
+thumbnail: /content/blog/introducing-the-client-sdk-ui-web-components/client-sdk-ui-web-components_1200x627.png
 author: dwanehemmings
 published: true
 published_at: 2021-04-16T18:12:30.001Z
