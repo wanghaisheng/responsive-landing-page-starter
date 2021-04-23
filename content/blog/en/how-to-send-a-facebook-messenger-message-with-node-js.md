@@ -38,10 +38,28 @@ Create a new `server.js` file in your working directory. Your server will look a
 The purpose of the server here is to provide endpoints for your webhooks. You can add those, too: one for incoming messages and one for statuses. For now, they can just respond with a confirmation that the request reached its destination:
 
 ```javascript
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+const axios = require('axios');
 
+app.use(bodyParser.json());
+
+// when someone messages the number linked to this app, this endpoint "answers"
+app.post('/answer', function(req, res) {
+  res.status(204).end();
+});
+
+// this endpoint receives information about events in the app
+app.post('/event', function(req, res) {
+  res.status(204).end();
+});
+
+app.listen(3000);
 ```
 
-**\*Note:** Don't forget to set your webhook endpoints in your dashboard. You can set both in the [Messages API Sandbox](https://dashboard.nexmo.com/messages/sandbox). For this example they should be POST requests that look like `https://YOUR-SERVER/answer` and `https://YOUR-SERVER/event`.*
+_**Note:** Don't forget to set your webhook endpoints in your dashboard. You can set both in the [Messages API Sandbox](https://dashboard.nexmo.com/messages/sandbox). For this example they should be POST requests that look like `https://YOUR-SERVER/answer` and `https://YOUR-SERVER/event`._
+
 
 ## Add Some Data
 
@@ -50,7 +68,18 @@ To send messages, you'll need your API credentials and the sandbox Messenger ID 
 You won't see your end user's Messenger ID until they've messaged you. Once your `/answer` endpoint receives a request you can get the `from_id` from the request body. You can save that to use as the "to" ID in your message:
 
 ```javascript
+var user = '12ab3456';
+var password = '123AbcdefghIJklM';
+var my_id = '123456789012345';
 
+var lunches = ['bbq','teriyaki','salad','a bagel','curry','dumplings','tacos','a sub','bibimbap','pizza'];
+
+// when someone messages the number linked to this app, this endpoint "answers"
+app.post('/answer', function(req, res) {
+  var from_id = req.body.from.id;
+  
+  res.status(204).end();
+});
 ```
 
 ## Answer Incoming Messages
@@ -60,7 +89,36 @@ Now you have all the pieces in place to build a reply to your user. For this one
 After sending the request you can wait for a response or any errors. Under ideal circumstances, you won't see anything there aside from confirmation of what you sent:
 
 ```javascript
-
+// when someone messages the number linked to this app, this endpoint "answers"
+app.post('/answer', function(req, res) {
+  var from_id = req.body.from.id;
+  
+  axios.post('https://messages-sandbox.nexmo.com/v0.1/messages',{
+    "from": { "type": 'messenger', "id": my_id },
+    "to": { "type": 'messenger', "id": from_id },
+    "message": {
+      "content": {
+        "type": 'text',
+        "text": 'You should have ' + 
+          lunches[Math.floor(Math.random() * 10)] + ' for lunch.'
+      }
+    }
+  },{
+    auth: {
+      username: user,
+      password: password
+    }
+  })
+  .then(function (response) {
+    console.log('Status: ' + response.status);
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
+  
+  res.status(204).end();
+});
 ```
 
 ## Try It Out
