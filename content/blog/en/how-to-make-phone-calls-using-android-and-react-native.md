@@ -217,4 +217,4 @@ ClientManager.login("ALICE_JWT")
 
 ## What Next?
 
-You can find the iOS version of this blog on [learn.vonage.com](https://learn.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native/). You can do a lot more with the Client SDK, learn more on [developer.vonage.com](https://developer.nexmo.com/client-sdk/overview).
+ You can find the complete project on [GitHub](https://github.com/nexmo-community/react-native-app-to-phone), and the  iOS version of this blog on [learn.vonage.com](https://learn.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native/). You can do a lot more with the Client SDK, learn more on [developer.vonage.com](https://developer.nexmo.com/client-sdk/overview).
