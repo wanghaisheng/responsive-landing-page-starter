@@ -120,15 +120,15 @@ nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/u
 
 First, you will need to prepare an Android device for the project to run on. Open the project's `android` directory in Android Studio. The project will start loading and download the dependencies, including the Client SDK, via the Gradle Sync. You can view the dependencies on the Android app's `build.gradle` file (*android/app/build.gradle*). In the toolbar at the top, look for the AVD Manager button:
 
-![avd manager button](avd.png)
+![avd manager button](/content/blog/how-to-make-phone-calls-using-android-and-react-native/avd.png)
 
 If you already have an emulator setup, run it. If not, click the *Create Virtual Device* button and go through the wizard. Make sure to create a device with API level 29 or newer as required by React Native.
 
-![emulator](emulator.png)
+![emulator](/content/blog/how-to-make-phone-calls-using-android-and-react-native/emulator.png)
 
 With all the dependencies installed and the emulator running, you can now run the project. Start [Metro](https://facebook.github.io/metro) with `npx react-native start`. With that running, open a new terminal window in the same directory and run `npx react-native run-android`. This command will build and run the android project for the emulator you prepared. The app consists of a label showing the connection status, a label to show the call status and an action button.
 
-![android app UI](ui.png)
+![android app UI](/content/blog/how-to-make-phone-calls-using-android-and-react-native/ui.png)
 
 If you open the `App.tsx` folder you can take a look at how this is built in the `render` function:
 
@@ -159,7 +159,7 @@ render() {
 
 If you are have used React before, this syntax will be familiar to you.  A `Text` component is used for the labels, a `Pressable` component for the button, along with the styling CSS at the top. All three components make use of [state](https://reactnative.dev/docs/state). State data is parameters for components that will change over time. The state is initialized at the top of the `App` class in the constructor with default information. You can paste the JWT you created in the previous step and save the file (CMD + S). The simulator will reload, and now when you press the login button, the Client SDK will connect. You now will be able to place a phone call. 
 
-![android app UI logged in](login.png)
+![android app UI logged in](/content/blog/how-to-make-phone-calls-using-android-and-react-native/login.png)
 
 ## How to Communicate With Native Code
 
@@ -190,7 +190,7 @@ eventEmitter.addListener('onCallStateChange', (data) => {
 });
 ```
 
-![diagram showing the flow between javascript code and native code](arch.png)
+![diagram showing the flow between javascript code and native code](/content/blog/how-to-make-phone-calls-using-android-and-react-native/arch.png)
 
 If you open the `android` directory of the project you will see a class called `EventEmitter` (*android/app/src/main/java/com/rnapptophone/EventEmitter.java*). The `EventEmitter` class has a function that sends the signals to the JavaScript code. 
 
