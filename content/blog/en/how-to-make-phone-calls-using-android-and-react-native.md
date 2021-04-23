@@ -1,6 +1,6 @@
 ---
 title: How to Make Phone Calls Using Android and React Native
-description: his blog post will take you through a project, which will show you
+description: This blog post will take you through a project, which will show you
   how to use the Vonage Client SDK to build a React Native Android app which
   will call a phone number.
 thumbnail: /content/blog/how-to-make-phone-calls-using-android-and-react-native/react_inapp-call_android_1200x600.png
@@ -217,4 +217,4 @@ ClientManager.login("ALICE_JWT")
 
 ## What Next?
 
-You can find the iOS version of this blog on [learn.vonage.com](https://learn.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native/). You can do a lot more with the Client SDK, learn more on [developer.vonage.com](https://developer.nexmo.com/client-sdk/overview).
+ You can find the complete project on [GitHub](https://github.com/nexmo-community/react-native-app-to-phone), and the  iOS version of this blog on [learn.vonage.com](https://learn.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native/). You can do a lot more with the Client SDK, learn more on [developer.vonage.com](https://developer.nexmo.com/client-sdk/overview).
