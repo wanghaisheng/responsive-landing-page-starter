@@ -214,9 +214,9 @@ ClientManager.login("ALICE_JWT")
 
 ## What Next?
 
-In this tutorial, we've learned how to build an iOS app with the React Native framework. We've also added functionality to make a phone call to a physical phone number.
+In this tutorial, we've learned how to build an iOS app with the React Native framework. We've also added functionality to make a phone call to a physical phone number. You can find the complete project on [GitHub](https://github.com/nexmo-community/react-native-app-to-phone), and the Android version of this blog on [learn.vonage.com](https://learn.vonage.com/blog/2021/04/22/how-to-make-phone-calls-using-android-and-react-native/).
 
-Below are a few other tutorials or documentation referencing the Voice API:
+Below are a few other tutorials or documentation referencing the Conversation API:
 
 * [NCCO reference](https://developer.nexmo.com/voice/voice-api/ncco-reference)
 * [Client SDK](https://developer.nexmo.com/client-sdk/overview)
