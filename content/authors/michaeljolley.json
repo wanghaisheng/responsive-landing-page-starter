@@ -8,5 +8,6 @@
   "github_url": "https://github.com/MichaelJolley",
   "title": "Video API Developer Advocate",
   "email": "michael.jolley@vonage.com",
-  "team": true
+  "team": false,
+  "alumni": true
 }
