@@ -5,7 +5,7 @@ description: Introduction of a set of Web Components built to integrate and make
 thumbnail: /content/blog/introducing-the-client-sdk-ui-web-components/client-sdk-ui-web-components_1200x627.png
 author: dwanehemmings
 published: true
-published_at: 2021-04-16T18:12:30.001Z
+published_at: 2021-04-23T09:53:11.739Z
 updated_at: 2021-04-16T18:12:30.034Z
 category: announcement
 tags:
