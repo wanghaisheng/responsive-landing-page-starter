@@ -3,6 +3,7 @@ title: Show SMS Notifications in the Browser with Next.JS, Ably, and Vercel
 description: Use the Vonage SMS API, the Ably realtime messaging platform,
   Next.js and Vercel to receive SMS messages in the browser in realtime as they
   are received.
+thumbnail: /content/blog/show-sms-notifications-in-the-browser-with-next-js-ably-and-vercel/ably_vonage_1200x600.png
 author: julia
 published: true
 published_at: 2021-04-20T09:44:29.976Z
