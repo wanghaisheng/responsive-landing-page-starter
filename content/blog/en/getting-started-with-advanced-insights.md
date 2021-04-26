@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - video-api
 comments: true
-redirect: https://www.nexmo.com/legacy-blog/2020/04/07/getting-started-with-advanced-insights
-canonical: https://www.nexmo.com/legacy-blog/2020/04/07/getting-started-with-advanced-insights
+redirect: ""
+canonical: ""
 ---
 ## Get Started Accessing Your Session-Level Video Data with GraphQL and Advanced Insights
 
