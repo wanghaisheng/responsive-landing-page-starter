@@ -20,7 +20,7 @@ If you've been getting your feet wet in the world of Nexmo APIs, chances are tha
 
 ## What Is Ngrok and Why Would You Use It?
 
-ngrok is a cross-platform application that exposes your local server to a unique *ngrok.io* subdomain over secure tunnels. By default, it creates both HTTP and HTTPS endpoints, making it useful for testing integrations with third-party services or APIs that require valid SSL/TLS domains. 
+Ngrok is a cross-platform application that exposes your local server to a unique *ngrok.io* subdomain over secure tunnels. By default, it creates both HTTP and HTTPS endpoints, making it useful for testing integrations with third-party services or APIs that require valid SSL/TLS domains. 
 
 Another option would be deploying your code to a remote server. Although using these kinds of services is getting easier all the time, there's usually some cost and time commitment involved. Also, re-deploying your code every couple of minutes while debugging might get slightly frustrating.
 
