@@ -26,9 +26,10 @@ In this walkthrough, we will build a small Rails application that will host a si
 
 You will need the following to follow along in this tutorial:
 
-* A [Nexmo account](https://dashboard.nexmo.com/sign-up)
 * [Ruby on Rails](https://rubyonrails.org/)
 * [ngrok](https://ngrok.io) so Nexmo can access the service running locally on your machine
+
+<sign-up></sign-up> 
 
 ## Getting Started
 
