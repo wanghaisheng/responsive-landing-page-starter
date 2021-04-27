@@ -30,9 +30,7 @@ So I thought I’d create a React app that uses the [Twitter API](https://develo
 
 ## Check it out:
 
-<youtube id="https://youtu.be/9yIXimO-t3A"></youtube>
-
-
+<youtube id="https://www.youtube.com/watch?v=9yIXimO-t3A"></youtube>
 
 ## Prerequisites
 
@@ -45,7 +43,7 @@ In addition, you will also need:
 
 <!--StartFragment-->
 
-<sign-up></sign-up> 
+<sign-up></sign-up>
 
 ## How to Discover Your Twitter’s Positivity Score with React
 
@@ -598,7 +596,6 @@ It then sends the report as an SMS from your Nexmo number to whatever number the
 ### Run your app
 
 Here's what the structure of my final app looks like: 
-
 
 ![Structure of folders and files](/content/blog/discover-your-twitter’s-positivity-score-with-react/architecture.png "Structure of folders and files")
 
