@@ -22,7 +22,7 @@ replacement_url: ""
 ---
 Have you wanted to run a service without needing to create and maintain a server? Whether this to be a function triggered at set intervals or a specific action triggers this function?
 
-In this tutorial, we will create a PHP application and host it on AWS Lambda, listening for a specific webhook URL to be triggered when the someone calls a specific phone number. The application will then confirm the caller's number and convert a random fact from text to speech for the caller to hear. The random facts get retrieved from an API called [Random Useless Facts](uselessfacts.jsph.pl).
+In this tutorial, we will create a PHP application and host it on AWS Lambda, listening for a specific webhook URL to be triggered when the someone calls a specific phone number. The application will then confirm the caller's number and convert a random fact from text to speech for the caller to hear. The random facts get retrieved from an API called [Random Useless Facts](https://uselessfacts.jsph.pl/).
 
 ## Prerequisites
 
