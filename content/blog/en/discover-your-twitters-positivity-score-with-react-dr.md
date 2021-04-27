@@ -30,7 +30,7 @@ So I thought I’d create a React app that uses the [Twitter API](https://develo
 
 ## Check it out:
 
-<youtube id="https://www.youtube.com/watch?v=9yIXimO-t3A"></youtube>
+<youtube id="9yIXimO-t3A"></youtube>
 
 ## Prerequisites
 
