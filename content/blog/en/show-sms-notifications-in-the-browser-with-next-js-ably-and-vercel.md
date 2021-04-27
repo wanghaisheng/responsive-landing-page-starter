@@ -61,7 +61,7 @@ Vercel provides some Next.js command-line tools to help us. They don't need to b
 Vercel is a hosting platform built from the ground up to host Next.js apps and Serverless Functions. It allows users to deploy [Serverless Functions](https://vercel.com/docs/serverless-functions/introduction), which are essentially just blocks of code that respond to an HTTP request.\
 However, these functions have a maximum execution timeout, which means that it is impossible to maintain a WebSocket connection this way. 
 
-This is where Ably comes in. The client can connect to an [Ably Channel](https://www.ably.io/documentation/realtime/channels) and send and receive messages on it to add Realtime functionality to your app by managing your WebSocket connections for you. We'll go over how to build an app that uses realtime functionality in this walkthrough. If preferred, you can [jump straight to how to use Ably with Vercel](https://ably.com/blog/realtime-chat-app-nextjs-vercel).
+This is where Ably comes in. The client can connect to an [Ably Channel](https://www.ably.io/documentation/realtime/channels) and send and receive messages on it to add Realtime functionality to your app by managing your WebSocket connections for you. We'll go over how to build an app that uses realtime functionality in this walkthrough. If you want to learn more about WebSockets in Next.js and Vercel, check "[Building a realtime chat app with Next.js and Vercel](https://ably.com/blog/realtime-chat-app-nextjs-vercel)".
 
 ## Building the Realtime Sms App
 
