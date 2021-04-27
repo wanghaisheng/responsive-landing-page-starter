@@ -1,9 +1,7 @@
 ---
 title: SMS Language Understanding with LUIS and .NET
-description: How do you go about getting your user inputs? I bet if you’re
-  building a web app or GUI, you’re probably going to be using some form that
-  your user can fill out and submit. If you’re writing a console app, you’re
-  going to have some coded series of inputs and flags that your user […]
+description: Build a .NET app to Extract meaningful information from SMS
+  messages using Microsoft's Language Understanding LUIS and the Vonage SMS API
 thumbnail: /content/blog/sms-language-understanding-with-luis-and-net-dr/Blog_SMS-Language_1200x600.png
 author: stevelorello
 published: true
