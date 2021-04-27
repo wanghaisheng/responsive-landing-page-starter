@@ -1,10 +1,7 @@
 ---
 title: How to Build a Simple IVR with Ruby on Rails
-description: Have you ever dialed a company and been prompted to follow along
-  with menu prompts? If you have then you have interacted with an Interactive
-  Voice Response (IVR). The IVR acts on input provided by the caller, usually in
-  the form of numeric keypad choices. You can build your own IVR using Ruby on
-  Rails […]
+description: Build an Interactive Voice Response (IVR) Ruby on Rails application
+  powered by the Nexmo Voice API with this step-by-step walkthrough.
 thumbnail: /content/blog/build-an-ivr-with-ruby-on-rails-dr/ivr-ruby.png
 author: ben-greenberg
 published: true
