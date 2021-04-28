@@ -12,8 +12,8 @@ tags:
   - asp.net
   - voice-api
 comments: true
-redirect: https://www.nexmo.com/legacy-blog/2019/07/08/how-to-build-a-voicemail-with-asp-net-core-and-nancyfx-dr
-canonical: https://www.nexmo.com/legacy-blog/2019/07/08/how-to-build-a-voicemail-with-asp-net-core-and-nancyfx-dr
+redirect: ""
+canonical: ""
 ---
 Have you ever wondered if Meg Ryan would rather listen to Tom Hanks voice instead of simply reading messages?
 
