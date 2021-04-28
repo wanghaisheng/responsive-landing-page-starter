@@ -20,18 +20,18 @@ Last month, I showed you how to build an [SMS-based queue management application
 
 Along the way, we'll talk a little bit about:
 
-- Best practices for managing secrets
-- Containers and why they are useful
-- Working with an application server that can handle production traffic
+* Best practices for managing secrets
+* Containers and why they are useful
+* Working with an application server that can handle production traffic
 
 ## Prerequisites
 
-- [Docker](https://www.docker.com/)
-- A [Heroku](https://www.heroku.com/) account
-- The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
-- [ngrok](https://ngrok.com/) (for testing locally)
+* [Docker](https://www.docker.com/)
+* A [Heroku](https://www.heroku.com/) account
+* The [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+* [ngrok](https://ngrok.com/) (for testing locally)
 
-<sign-up></sign-up>
+<sign-up number></sign-up>
 
 ## Choose a starting point
 
@@ -252,7 +252,7 @@ heroku addons:create heroku-postgresql:hobby-dev -a <your application name>
 
 With your application and database initialized on Heroku, there are only a few more steps necessary to get your Dockerized app deployed. First, you'll want to set your Nexmo credentials as Heroku Config Vars, which is done on the Heroku dashboard under "Settings":
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/02/heroku-config-vars.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/02/heroku-config-vars.png" alt="" width="1157" height="724" class="alignnone size-full wp-image-31249" /></a>
+![Config Vars interface in Heroku](/content/blog/dockerize-python-queue-manager-project-for-easy-deployment/heroku-config-vars.png "Config Vars interface in Heroku")
 
 Next, you'll want to rebuild your Docker container to make sure you pick up recent changes:
 
