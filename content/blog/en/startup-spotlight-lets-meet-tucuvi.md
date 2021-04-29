@@ -4,12 +4,11 @@ description: Meet Madrid-based startup Tucuvi as a part of our Startup Spotlight
 thumbnail: /content/blog/startup-spotlight-lets-meet-tucuvi/startups_tucuvi_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-04-28T15:38:52.371Z
+published_at: 2021-04-29T09:25:16.297Z
 updated_at: 2021-04-28T15:38:52.412Z
 category: community
 tags:
   - startups
-  - ""
 comments: true
 spotlight: false
 redirect: ""
