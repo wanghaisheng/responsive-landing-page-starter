@@ -1,6 +1,7 @@
 ---
 title: "Startup Spotlight: Let's Meet Tucuvi"
 description: Meet Madrid-based startup Tucuvi as a part of our Startup Spotlight series.
+thumbnail: /content/blog/startup-spotlight-lets-meet-tucuvi/startups_tucuvi_1200x600.png
 author: filippos-kyprianou
 published: true
 published_at: 2021-04-28T15:38:52.371Z
