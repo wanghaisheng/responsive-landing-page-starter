@@ -22,7 +22,7 @@ As this application will require some server-side code, we will use [Glitch](htt
 
 We will not be using any front-end frameworks for this series, just vanilla Javascript to keep the focus on the Video API itself. At the end of this tutorial, you should be able to have an audio-video chat application with text chat functionality. Text chat is implemented using the [signaling API](https://tokbox.com/developer/guides/signaling/).
 
-![Screenshot of video chat with text chat](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_final.jpg)
+![Screenshot of video chat with text chat](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_final.jpg "Screenshot of video chat with text chat")
 
 The **final code** for this application can be found in this [GitHub repository](https://github.com/nexmo-community/video-with-text-chat) or [remixed on Glitch](https://glitch.com/edit/#!/remix/video-with-text-chat).
 
@@ -57,7 +57,7 @@ As we are building onto a basic video chat, start off by remixing the project fo
 
 Your folder structure should resemble something like this:
 
-![Folder structure of the project](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_glitch-02.png)
+![Folder structure of the project](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_glitch-02.png "Folder structure of the project")
 
 As mentioned at the start, TokBox OpenTok is now Vonage Video API. We haven’t made any changes to our package names, so you will still reference OpenTok in your code.
 
@@ -164,7 +164,7 @@ The page will have a simple form element with two input fields for users to subm
 
 We also need to add a chatbox to the `index.html` page. Let's add the markup for a chat window with a header, an area to display messages, and an input at the bottom to type and send messages. To maximise screen space, the chat window will be off-screen by default and only triggered when you click the chat button at the bottom right corner of the page.
 
-![Chat button to trigger chat window](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_button.png)
+![Chat button to trigger chat window](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_button.png "Chat button to trigger chat window")
 
 Add the following markup to your page, we will add the styles to make the button look like the above design in the next section.
 
@@ -185,7 +185,7 @@ Add the following markup to your page, we will add the styles to make the button
 
 We also want to add the markup for the chat window to the `index.html` file.
 
-![Bare bones chat window which will slide in from the right](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_chat-window.png)
+![Bare bones chat window which will slide in from the right](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_chat-window.png "Bare bones chat window which will slide in from the right")
 
 ```html
 <aside id="chatWindow">
@@ -522,7 +522,7 @@ Install `pouchdb-node` with the following command (note that using `pnpm` is a G
 pnpm install pouchdb-node --save
 ```
 
-![pouchdb-node installation on Glitch](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_glitch-01.jpg)
+![pouchdb-node installation on Glitch](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_glitch-01.jpg "pouchdb-node installation on Glitch")
 
 Let's check that things are running as expected.
 
@@ -535,7 +535,7 @@ sessionDb.info().then(info => console.log(info));
 
 You should see the following in the Glitch logs.
 
-![Database information printed to console](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_pouchdb.jpg)
+![Database information printed to console](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_pouchdb.jpg "Database information printed to console")
 
 PouchDB provides a fully asynchronous API, although it also includes the option for users to choose between the callback format or the promise format. We will be using the promise format for this tutorial, and the code will reflect as such.
 
@@ -647,7 +647,7 @@ function initializeSession(apiKey, sessionId, token, streamName) {
 }
 ```
 
-![Hover over a video stream to see the stream name](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_stream-name.jpg)
+![Hover over a video stream to see the stream name](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_stream-name.jpg "Hover over a video stream to see the stream name")
 
 ## Save Messages Into the Database
 
