@@ -18,70 +18,50 @@ canonical: ""
 ---
 This series of tutorials will explore the [Vonage Video API (formerly TokBox OpenTok)](https://tokbox.com/developer/) and what you can build with it. The Video API is very robust and highly customizable, and in each post we’ll show how to implement a specific feature using the API. This time we will look at how to add texting to a basic audio-video chat.
 
-
 As this application will require some server-side code, we will use [Glitch](https://glitch.com/) for ease of setup. You can also download the code from this Glitch project and deploy it on your own server or hosting platform of choice (may probably require some configuration tweaking based on the requirements of your platform).
-
 
 We will not be using any front-end frameworks for this series, just vanilla Javascript to keep the focus on the Video API itself. At the end of this tutorial, you should be able to have an audio-video chat application with text chat functionality. Text chat is implemented using the [signaling API](https://tokbox.com/developer/guides/signaling/).
 
-
-![Screenshot of video chat with text chat](https://cdn.glitch.com/0d17c722-4359-4e32-b770-32fcae5a3653%2Ffinal.jpg?v=1585204769455)
-
+![Screenshot of video chat with text chat](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_final.jpg)
 
 The **final code** for this application can be found in this [GitHub repository](https://github.com/nexmo-community/video-with-text-chat) or [remixed on Glitch](https://glitch.com/edit/#!/remix/video-with-text-chat).
 
-
 ## Prerequisites
-
 
 Before we get started, you will need a Vonage Video API account, which you can create for free [here](https://tokbox.com/account/user/signup). You will also need [Node.js](https://nodejs.org/en/) installed (if you are not using Glitch).
 
-
 This tutorial builds on the first introductory post in the series: [Building a Basic Video Chat](https://learn.vonage.com/blog/2020/03/30/basic-video-chat). If this is your first time using the Video API, we highly suggest you go through that because it covers the following basic setup:
 
-
-- Create a Vonage Video API project
-- Setting up on Glitch
-- Basic project structure
-- Initializing a session
-- Connecting to the session, subscribing and publishing
-- Basic layout styles for a video chat
-
+* Create a Vonage Video API project
+* Setting up on Glitch
+* Basic project structure
+* Initializing a session
+* Connecting to the session, subscribing and publishing
+* Basic layout styles for a video chat
 
 ## Basics of Text Chat With Vonage Video API
 
-
 Implementing text chat with the Video API is done via the [signalling API](https://tokbox.com/developer/guides/signaling/js/). This signalling mechanism allows clients connected to a session to send text and data to each other. We will only focus on text for now.
 
+The Video API Client SDK will dispatch an event when the client receives a signal. For a basic text chat where messages are visible to all connected clients, we will use the `signal()` method of the *Session* object. Participating clients will receive that signal by listening to the signal event dispatched by the *Session* object.
 
-The Video API Client SDK will dispatch an event when the client receives a signal. For a basic text chat where messages are visible to all connected clients, we will use the `signal()` method of the _Session_ object. Participating clients will receive that signal by listening to the signal event dispatched by the _Session_ object.
-
-
-For an in-depth look at what is accessible via the _Session_ object, its properties, methods and events, please refer to [SDK reference for the Session object](https://tokbox.com/developer/sdks/js/reference/Session.html).
-
+For an in-depth look at what is accessible via the *Session* object, its properties, methods and events, please refer to [SDK reference for the Session object](https://tokbox.com/developer/sdks/js/reference/Session.html).
 
 ## Initial Setup
 
-
 As we are building onto a basic video chat, start off by remixing the project for the basic video chat built in the previous tutorial. Click the big Remix button below to do that. 👇
-
 
 <a href="https://glitch.com/edit/?utm_content=project_basic-video-chat&utm_source=remix_this&utm_medium=button&utm_campaign=glitchButton#!/remix/basic-video-chat">
   <img src="https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix%402x.png?1513093958726" alt="remix this" height="33">
 </a>
 
-
 Your folder structure should resemble something like this:
 
-
-![Folder structure of the project](https://cdn.glitch.com/0d17c722-4359-4e32-b770-32fcae5a3653%2Fglitch-02.png?v=1585276027254)
-
+![Folder structure of the project](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_glitch-02.png)
 
 As mentioned at the start, TokBox OpenTok is now Vonage Video API. We haven’t made any changes to our package names, so you will still reference OpenTok in your code.
 
-
 If you had remixed the Glitch project, your `server.js` file should already look like this:
-
 
 ```javascript
 const express = require("express");
@@ -148,18 +128,13 @@ const listener = app.listen(process.env.PORT, () => {
 });
 ```
 
-
 To get the video chat up and running, go to the `.env` file and fill in your API key and secret for your project, which you can find from the dashboard. Once that's done, we will be working on the client-side code to get the text chat working before revisiting the `server.js` file again.
-
 
 ## Add the Required Markup
 
-
 Our application will be made up of 2 pages. A landing page with two text inputs. One for users to create a session, which we will call a "Room" so subsequent participants can join that same "Room". The other text input is for users to enter a display name they can use to identify themselves.
 
-
 The page will have a simple form element with two input fields for users to submit their room name and user name. Let's add the user name field to the form.
-
 
 ```html
 <form class="registration" id="registration">
@@ -187,15 +162,11 @@ The page will have a simple form element with two input fields for users to subm
 </form>
 ```
 
-
 We also need to add a chatbox to the `index.html` page. Let's add the markup for a chat window with a header, an area to display messages, and an input at the bottom to type and send messages. To maximise screen space, the chat window will be off-screen by default and only triggered when you click the chat button at the bottom right corner of the page.
 
-
-![Chat button to trigger chat window](https://cdn.glitch.com/0d17c722-4359-4e32-b770-32fcae5a3653%2Fbutton.png?v=1585282749502)
-
+![Chat button to trigger chat window](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_button.png)
 
 Add the following markup to your page, we will add the styles to make the button look like the above design in the next section.
-
 
 ```html
 <button class="btn-chat" id="showChat" aria-label="Show chat">
@@ -212,12 +183,9 @@ Add the following markup to your page, we will add the styles to make the button
 </button>
 ```
 
-
 We also want to add the markup for the chat window to the `index.html` file.
 
-
-![Bare bones chat window which will slide in from the right](https://cdn.glitch.com/0d17c722-4359-4e32-b770-32fcae5a3653%2Fchat-window.png?v=1585283081379)
-
+![Bare bones chat window which will slide in from the right](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_chat-window.png)
 
 ```html
 <aside id="chatWindow">
@@ -241,12 +209,9 @@ We also want to add the markup for the chat window to the `index.html` file.
 </aside>
 ```
 
-
 ## Style the Chat-Related Elements
 
-
 Our chat interface will be hidden away from view until needed, since the main feature of this application is the video chat. To toggle the chat interface, users will click the chat button on the bottom right corner of the page. This button has an SVG icon to indicate it triggers the chat.
-
 
 ```css
 .btn-chat {
@@ -266,9 +231,7 @@ Our chat interface will be hidden away from view until needed, since the main fe
 }
 ```
 
-
 We are using CSS to transform the chat window outside the viewport by default. When someone clicks on the chat icon, it will toggle a CSS class that changes the `translateX` value such that the window slides into view from the right side of the screen.
-
 
 ```css
 aside {
@@ -290,9 +253,7 @@ aside.active {
 }
 ```
 
-
 Let's add some styles for the header, messages area and message input form as well.
-
 
 ```css
 .chat-header {
@@ -349,12 +310,9 @@ Let's add some styles for the header, messages area and message input form as we
 }
 ```
 
-
 With these styles, you should be able to see a chat icon in the bottom-right corner of the `index.html` file after you have entered the room. But clicking on it does not do anything yet.
 
-
 Let's add an event handler to toggle a CSS class to slide the chat window into view in the `client.js` file. As well as one on the close icon of the chat window to slide it back out.
-
 
 ```javascript
 const showChatBtn = document.getElementById("showChat");
@@ -378,17 +336,13 @@ closeChatBtn.addEventListener(
 );
 ```
 
-
 This is not the only way to style a chat interface, so feel free to change things up to suit your needs.
 
-
 ## Using the Signal API for Text Chat
-
 
 Let's make a few more tweaks to the base project and get the most basic text chat working.
 
 We'll move the `session` variable out of the `initializeSession` function and declare it globally at the top of the `client.js` file.
-
 
 ```javascript
 let session;
@@ -401,9 +355,7 @@ function initializeSession(apiKey, sessionId, token) {
 }
 ```
 
-
 Add an event listener to the chat form, which will send a signal to all clients connected to the Session when the form is submitted.
-
 
 ```javascript
 const chat = document.getElementById("chatForm");
@@ -426,9 +378,7 @@ chat.addEventListener(
 );
 ```
 
-
 We also need another event listener to receive that message by listening to the `signal` event dispatched by the Session object. The data payload from that event will be used to print the message into the message area of the chat window.
-
 
 ```javascript
 function initializeSession(apiKey, sessionId, token) {
@@ -456,17 +406,13 @@ function updateChat(content) {
 }
 ```
 
-
 This is the basic mechanism of text chat with the Video API. If you type something in the chat window and submit, it should display on the screen.
 
-
 ## Identify Participants in the Chat
-
 
 However, to make the chat more user-friendly, we also want to add a means of identifying who said what in the chat. We will make use of the user name input on the landing page to get that information, passing it on to the server as a query string in the URL.
 
 The following script on the `landing.html` page passes the room name and user name entered to the `index.html` page.
-
 
 ```javascript
 const form = document.getElementById("registration");
@@ -476,9 +422,7 @@ form.addEventListener("submit", event => {
 });
 ```
 
-
 When the `index.html` page loads, it will trigger a `POST` request to the `session/:name` route, extracting the submitted user name from the URL and passing it onto the server.
-
 
 ```javascript
 const url = new URL(window.location.href);
@@ -503,9 +447,7 @@ fetch(location.pathname, {
   .catch(handleCallback);
 ```
 
-
 Now we will need to modify that route in the `server.js` file so it will handle the room name and user name and return the required information for the `initializeSession` function. We also need to include a middleware to handle the request payload.
-
 
 ```javascript
 // Middleware to read the body of the request
@@ -552,9 +494,7 @@ function generateToken(roomName, streamName, response) {
 }
 ```
 
-
 On the `client.js`, we can now display the user name for the participant who typed the message by modifying the `data` property of the `session.signal()` method.
-
 
 ```javascript
 session.signal(
@@ -568,31 +508,23 @@ session.signal(
 );
 ```
 
-
 Now when you submit a text message, it will be prepended with the user name you used when you entered the room.
-
 
 ## Set up PouchDB as a Data Store
 
-
 If you refresh the page, however, all previous chat messages are gone. This is because we have not stored the messages but merely displayed them on the screen. Let's introduce some sort of data store for the messages.
-
 
 We'll be using [PouchDB](https://www.npmjs.com/package/pouchdb-node) on the server in this tutorial, but you are free to replace this with any data store of your choice.
 
 Install `pouchdb-node` with the following command (note that using `pnpm` is a Glitch thing):
 
-
 ```bash
 pnpm install pouchdb-node --save
 ```
 
-
-![pouchdb-node installation on Glitch](https://cdn.glitch.com/0d17c722-4359-4e32-b770-32fcae5a3653%2Fglitch-01.jpg?v=1585204771168)
-
+![pouchdb-node installation on Glitch](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_glitch-01.jpg)
 
 Let's check that things are running as expected.
-
 
 ```javascript
 const PouchDB = require("pouchdb-node");
@@ -601,27 +533,20 @@ const sessionDb = new PouchDB("sessionDb");
 sessionDb.info().then(info => console.log(info));
 ```
 
-
 You should see the following in the Glitch logs.
 
-
-![Database information printed to console](https://cdn.glitch.com/0d17c722-4359-4e32-b770-32fcae5a3653%2Fpouchdb.jpg?v=1586233650120)
-
+![Database information printed to console](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_pouchdb.jpg)
 
 PouchDB provides a fully asynchronous API, although it also includes the option for users to choose between the callback format or the promise format. We will be using the promise format for this tutorial, and the code will reflect as such.
 
-
 Instead of storing session information in an object variable, we will store it in our new database. Remove the following line from the `server.js` file.
-
 
 ```javascript
 // We no longer need this object
 let sessions = {};
 ```
 
-
 Let's make more tweaks to the `/session/:name` route. We first check the database to verify if a session exists, if it does, we retrieve the associated information and generate the token from it. If the session does not exist, we will create a new session, store it in the database, then generate the token accordingly.
-
 
 ```javascript
 app.post("/session/:room", (request, response) => {
@@ -684,12 +609,9 @@ function generateToken(roomName, streamName, sessionInfo, response) {
 }
 ```
 
-
 ## Add Stream Names to the UI
 
-
 We can make use of the stream name in the response to label streams so participants can hover over each participant's video stream to see a name. Both the `initPublisher()` method and the `subscribe()` method accepts an optional `properties` argument, which allows us to pass in customisation options for the stream.
-
 
 ```javascript
 function initializeSession(apiKey, sessionId, token, streamName) {
@@ -725,15 +647,11 @@ function initializeSession(apiKey, sessionId, token, streamName) {
 }
 ```
 
-
-![Hover over a video stream to see the stream name](https://cdn.glitch.com/0d17c722-4359-4e32-b770-32fcae5a3653%2Fstream-name.jpg?v=1586248801337)
-
+![Hover over a video stream to see the stream name](/content/blog/add-texting-functionality-to-a-video-chat-with-vonage-video-api/0d17c722-4359-4e32-b770-32fcae5a3653_stream-name.jpg)
 
 ## Save Messages Into the Database
 
-
 When participants send text messages, we want to POST them to the server to be stored in the database. Let's create a `saveMessage()` function to do that.
-
 
 ```javascript
 function saveMessage(content) {
@@ -752,9 +670,7 @@ function saveMessage(content) {
 }
 ```
 
-
 Modify the event listener on the chat form to trigger this function whenever a participant submits a text message.
-
 
 ```javascript
 chat.addEventListener(
@@ -776,9 +692,7 @@ chat.addEventListener(
 );
 ```
 
-
 On the `server.js` file, we need to add a handler for this `POST` request as well.
-
 
 ```javascript
 app.post("/message", (request, response) => {
@@ -807,10 +721,8 @@ app.post("/message", (request, response) => {
 });
 ```
 
-
 Now that our messages are being stored, we want to display them whenever the page loads. We 
 will add a `getChatHistory()` function on the client-side which triggers a `GET` request to retrieve all the stored messages for that session and display them in the chat window.
-
 
 ```javascript
 function getChatHistory() {
@@ -834,9 +746,7 @@ function getChatHistory() {
 }
 ```
 
-
 And the corresponding route on the server side to pass the messages as an array back over to the client.
-
 
 ```javascript
 app.get("/messages/:room", (request, response) => {
@@ -853,14 +763,10 @@ app.get("/messages/:room", (request, response) => {
 });
 ```
 
-
 So now even if you refresh the page while the session is still going on, the messages will still be there. Also, if you enter the same room name as a previous session with stored chat history, that chat history will be displayed.
-
 
 ## What’s Next?
 
-
 The final code on [Glitch](https://glitch.com/edit/#!/video-with-text-chat) and [GitHub](https://github.com/nexmo-community/video-with-text-chat) contains everything we covered in this fairly lengthy post but re-organised so the code is cleaner and more maintainable. Feel free to remix or clone the code and play around with it yourself.
-
 
 There are additional functionalities we can build with the Vonage Video API which will be covered in future tutorials, but in the meantime, you can find out more at our [comprehensive documentation site](https://tokbox.com/developer/guides/). If you run into any issues or have questions, reach out to us on our [Community Slack](https://developer.nexmo.com/community/slack). Thanks for reading!
