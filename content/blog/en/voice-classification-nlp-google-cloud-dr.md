@@ -11,7 +11,6 @@ category: tutorial
 tags:
   - python
   - voice-api
-  - ""
 comments: true
 redirect: ""
 canonical: ""
@@ -29,6 +28,8 @@ pipenv install
 ```
 
 We're going to be using the Nexmo Voice API, specifically the `record`  action. Before continuing with this tutorial, you should read through our voice building blocks as well as some of our previous tutorials on creating Voice Applications.
+
+<sign-up number></sign-up> 
 
 * [Voice building blocks](https://developer.nexmo.com/voice/voice-api/building-blocks/before-you-begin)
 * [Voice API Reference](https://developer.nexmo.com/api/voice)
