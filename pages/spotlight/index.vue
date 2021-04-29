@@ -148,7 +148,6 @@
           </ul>
           <p class="mb-2">
             The more details you provide, the better feedback we can give you.
-            The final draft should be around 2000 words
           </p>
           <p class="mb-2">The final draft should be around 2000 words</p>
 
