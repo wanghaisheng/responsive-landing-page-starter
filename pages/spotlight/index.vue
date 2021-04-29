@@ -8,7 +8,7 @@
       <Breadcrumbs />
       <section class="index-section">
         <article
-          class="flex flex-col p-6 overflow-hidden bg-white rounded-lg shadow-lg xl:w-1/2 lg:w-2/3 sm:w-full mx-auto"
+          class="flex flex-col p-6 overflow-hidden bg-white rounded-lg shadow-lg xl:w-3/5 lg:w-2/3 sm:w-full mx-auto"
         >
           <h2 class="mb-2 text-lg font-bold">
             <svg
