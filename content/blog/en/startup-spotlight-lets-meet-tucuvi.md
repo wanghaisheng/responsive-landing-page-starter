@@ -9,7 +9,6 @@ updated_at: 2021-04-28T15:38:52.412Z
 category: community
 tags:
   - startups
-  - ""
 comments: true
 spotlight: false
 redirect: ""
