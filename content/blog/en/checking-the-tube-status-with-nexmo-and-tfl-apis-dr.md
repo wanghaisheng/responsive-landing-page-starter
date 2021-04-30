@@ -27,11 +27,11 @@ This tutorial will walk you through all the steps to create this application fro
 
 ## Prerequisites
 
+<sign-up number></sign-up>
+
 For the first part of the tutorial, we will need:
 
 * Some basic Javascript/node.js Knowledge.
-* Sign up for a [Nexmo account](https://dashboard.nexmo.com/sign-up) if you haven't already. 
-* Rent an SMS enabled Nexmo virtual number. You can do so by using our [Numbers API](https://developer.nexmo.com/api/numbers) or via the [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers).
 * You will need to use [ngrok](https://ngrok.com/) to expose your local server to the internet so Nexmo can reach it. We have a [detailed tutorial](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) on this.
 
 If you want to get your application deployed to Heroku, you will also need:
