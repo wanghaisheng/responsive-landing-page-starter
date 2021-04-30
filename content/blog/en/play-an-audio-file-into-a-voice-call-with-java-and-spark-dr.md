@@ -33,7 +33,7 @@ To answer an incoming call, you must create a publicly-accessible [webhook](http
 
 ## Purchasing a Nexmo Number
 
-You need a Nexmo virtual number you can use to receive incoming calls. You can purchase one directly in the [developer dashboard](https://dashboard.nexmo.com), but in this tutorial, you will use the [Nexmo CLI tool](https://github.com/Nexmo/nexmo-cli) instead.
+You need a Nexmo virtual number you can use to receive incoming calls. You can purchase one directly in the developer dashboard, but in this tutorial, you will use the [Nexmo CLI tool](https://github.com/Nexmo/nexmo-cli) instead.
 
 Install the Nexmo CLI:
 
@@ -41,7 +41,7 @@ Install the Nexmo CLI:
 npm install -g nexmo-cli
 ```
 
-Then, configure it with your `NEXMO_API_KEY` and `NEXMO_API_SECRET` from the [developer dashboard](https://dashboard.nexmo.com/getting-started-guide):
+Then, configure it with your `NEXMO_API_KEY` and `NEXMO_API_SECRET` from the developer dashboard:
 
 ```sh
 nexmo setup NEXMO_API_KEY NEXMO_API_SECRET
