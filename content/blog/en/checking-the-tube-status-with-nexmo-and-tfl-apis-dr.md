@@ -565,7 +565,7 @@ Taking this into account, we can simulate the behavior of an inbound message by 
 
 In this case, the `to` parameter is not relevant so I set it to a random value. It is important to add the `Content-Type` header and set it to `application/json` so that our application knows how to handle this data. As you can see at the bottom-right-hand side, our application returns an HTTP 204 as defined in our `/inbound` route via the res.status(204).send()
 
-## What's Next? -&gt; Let's Deploy To Heroku
+## What's Next? Let's Deploy To Heroku
 
 Heroku is a platform intended to easily deploy your Web application and scale your services according to your needs. They also offer some useful add-ons to simplify some daily tasks.
 We are going to leverage Heroku due to the fact that it's pretty easy to use, and the documentation is great on the [Heroku site](https://www.heroku.com/what). By using Heroku we can avoid the hassle of renting, and configuring our server. 
