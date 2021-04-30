@@ -9,11 +9,14 @@ thumbnail: /content/blog/checking-the-tube-status-with-nexmo-and-tfl-apis-dr/Ele
 author: javier-molina-sanz
 published: true
 published_at: 2019-07-31T22:42:36.000Z
-comments: true
+updated_at: 2021-04-30T08:44:43.781Z
 category: tutorial
-tags: []
-canonical: https://www.nexmo.com/legacy-blog/2019/07/31/checking-the-tube-status-with-nexmo-and-tfl-apis-dr
-redirect: https://www.nexmo.com/legacy-blog/2019/07/31/checking-the-tube-status-with-nexmo-and-tfl-apis-dr
+tags:
+  - javascript
+  - sms-api
+comments: true
+redirect: ""
+canonical: ""
 ---
 
 Content to be migrated...
