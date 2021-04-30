@@ -561,7 +561,7 @@ If for some reason you don't have the chance to use your handset or you don't wa
 
 Taking this into account, we can simulate the behavior of an inbound message by manually hitting our local server exposed with ngrok to see if the application works as it should. I'll be using [POSTMAN](https://www.getpostman.com/) but feel free to use any other service of your choice. We're going to make a POST request to our inbound webhook defining a generic raw JSON body (as the one that Nexmo would send for an inbound message). However, do remember to change the `msisdn` so that our application knows where to reply. Also, replace the `text` parameter to play around with different line name values, you can purposely type down an invalid value so that you receive a message containing the permitted values. My API request looks something like this: 
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/07/mock.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/mock.png" alt="view in postman" width="2498" height="1832" class="alignnone size-full wp-image-29799" /></a>
+![](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/mock.png)
 
 In this case, the `to` parameter is not relevant so I set it to a random value. It is important to add the `Content-Type` header and set it to `application/json` so that our application knows how to handle this data. As you can see at the bottom-right-hand side, our application returns an HTTP 204 as defined in our `/inbound` route via the res.status(204).send()
 
