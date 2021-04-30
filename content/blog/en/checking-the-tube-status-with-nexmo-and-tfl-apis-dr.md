@@ -1,10 +1,7 @@
 ---
 title: Checking the London Tube Status with Nexmo’s SMS API
-description: Today we’ll be building an application that will allow us to check
-  the status of a given line of the London Underground using the Nexmo SMS API.
-  We are going to leverage the Transport for London (TFL API) to retrieve
-  real-time data about the status of a tube line chosen by the user. The trigger
-  […]
+description: How to build an application that allows you to check the status of
+  a given line of the London Underground using the Nexmo SMS API.
 thumbnail: /content/blog/checking-the-tube-status-with-nexmo-and-tfl-apis-dr/Elevate-Tube-Status.png
 author: javier-molina-sanz
 published: true
@@ -19,4 +16,656 @@ redirect: ""
 canonical: ""
 ---
 
-Content to be migrated...
+Today we'll be building an application that will allow us to check the status of a given line of the London Underground using the Nexmo [SMS API](https://developer.nexmo.com/messaging/sms/overview). We are going to leverage the Transport for London  ([TFL API](https://api-portal.tfl.gov.uk/)) to retrieve real-time data about the status of a tube line chosen by the user. The trigger will be an inbound SMS to our Virtual number. Does it sound like a plan? Follow through this tutorial then.  We will get the same status as in [their website](https://tfl.gov.uk/tube-dlr-overground/status/) straight into our handset via SMS. This is especially handy if for some reason you don't have internet access to check Google Maps/Citymapper or if you've exceeded your monthly data allowance.
+
+Our application workflow will be something like the following diagram:
+
+ 
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/workflow.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/workflow.png" alt="sketch diagram of workflow " width="800" class="alignnone size-full wp-image-29796" /></a>
+
+ 
+I know 😌 chances are you don't live in London, and you may think this tutorial is not relevant for you. However, I truly believe that this is a very illustrative example of what you can build on top of Nexmo. 
+
+
+This tutorial will walk you through all the steps to create this application from scratch. However, if you prefer to get a hold of the [finished repository](https://github.com/nexmo-community/tube-status-checker), please go check it out!
+
+## Prerequisites
+
+For the first part of the tutorial, we will need:
+
+- Some basic Javascript/node.js Knowledge.
+
+- Sign up for a [Nexmo account](https://dashboard.nexmo.com/sign-up) if you haven't already. 
+
+
+- Rent an SMS enabled Nexmo virtual number. You can do so by using our [Numbers API](https://developer.nexmo.com/api/numbers) or via the [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers).
+
+
+- You will need to use [ngrok](https://ngrok.com/) to expose your local server to the internet so Nexmo can reach it. We have a [detailed tutorial](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) on this.
+
+If you want to get your application deployed to Heroku, you will also need:
+
+- A [Heroku account](https://signup.heroku.com/) (we will only be using the Free-tier).
+
+- Some basic [git](https://git-scm.com/) commands to deploy our application to Heroku.
+
+
+
+## Setting up our Project
+
+
+Create a project folder named Nexmotubestatus on your local machine and change to it.
+
+
+```console
+mkdir Nexmotubestatus && cd Nexmotubestatus
+```
+Let's create our main file where we'll store our code. We will also create our `.env` file where we'll be storing our Nexmo and TLF credentials as well as some other variables.
+
+```bash
+touch server.js .env
+```
+
+The next step is to create the `package.json` file.
+
+```bash
+npm init -y 
+```
+
+Let's install and save the necessary dependencies.
+
+```bash
+npm install --s express dotenv nexmo body-parser request
+```
+We will fill in the `.env` file with the Nexmo `apikey` and `apiSecret` and the TFL `app_id` ID and `app_key`. We will also include here our previously purchased Virtual number. 
+
+```bash
+apiKey = 
+apiSecret = 
+app_id = 
+app_key = 
+Nexmo_LVN =
+```
+
+
+## Let's Start With The Fun Stuff
+
+As always, let’s require all the dependencies at the beginning of our project. We will use the `express` framework to build our application. We’re going to use the `dotenv` library so that we work with environment variables. We'll be using `body-parser` so we can parse the incoming requests coming from Nexmo’s server. 
+For the API requests to the TFL API, I chose the [`request` library](https://github.com/request/request) as I find it quite straightforward but you can use any other such as [axios](https://www.npmjs.com/package/axios). Lastly and most importantly, 😊 we require the `Nexmo` library to send the line status back to the user. 
+
+Paste the following code into your newly created file. We import all the dependencies installed, and we've defined a variable that contains all the accepted line names provided by the TFL API. We don't want to send a request to the TFL API if the user doesn't provide a valid line name (I will explain in a bit why all the values are capitalized).
+ The variable called status will contain any relevant status in relation to the status of the said line. Also, add in the different credentials you’ll need to utilize the Nexmo and TFL APIs respectively. These will be retreived from the `.env` file:
+
+```javascript
+const Nexmo = require('nexmo');
+const express = require('express');
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000;
+const request = require('request');
+const dotenv = require('dotenv');
+
+let status = []
+
+dotenv.config();
+
+const lines =['CENTRAL','BAKERLOO', 'DISTRICT', 'VICTORIA', 'NORTHERN', 'CIRCULAR', 'HAMMERSMITH-CITY', 'JUBILEE', 'METROPOLITAN', 'PICCADILLY', 'WATERLOO-CITY' ];
+
+const nexmo = new Nexmo({
+  apiKey: process.env.apiKey,
+  apiSecret: process.env.apiSecret
+}, {debug: true});
+
+const app_id = process.env.app_id;
+const app_key = process.env.app_key;
+const NexmoNumber = process.env.Nexmo_LVN;
+```
+
+
+In the following lines, we're initiating our application and defining some basic middleware. Note that we have defined the port 3000 for our server to be listening in, but you can choose other. Take into account that there's some space in between (commented out) that will be filled out with our route for incoming requests:
+
+```javascript
+const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:true}));
+
+//We will define our route here
+
+app.listen(port, ()=>{console.log('App listening in port ', port)});
+
+```
+
+Let's define two functions to tidy-up a little bit the code. The first function `sendSms()` is going to take in two parameters: the phone number of the user and the text to be sent back to the user. We’ll be reusing a little bit of the code. 
+
+```javascript
+function sendMessage(to, message) {
+    nexmo.message.sendSms(process.env.Nexmo_LVN, to, message,
+        (err, responseData) => {
+            if (err) {
+                console.log(err);
+            } else {
+
+                console.dir(responseData.messages);
+
+            }
+        })
+}
+```
+
+
+The second function `checkLineStatus()` will take in two parameters: the line name and the user's phone number as we will be sending a message back to the user with the requested information. 
+
+```javascript
+function checkLineStatus(Line, number) {
+
+    var options = {
+        json: true,
+        url: 'https://api.tfl.gov.uk/Line/' + Line + '/status?app_id=' + app_id + '&app_key=' + app_key,
+    }
+
+    request(options, function (err, res, body) {
+        if (err) {
+            console.log(err)
+
+        }
+        else {
+            if (body[0].lineStatuses[0].statusSeverityDescription === 'Good Service') {
+                sendMessage(number, 'There is a ' + body[0].lineStatuses[0].statusSeverityDescription + ' operating on ' + body[0].name + ' line')
+
+            }
+            else {
+                for (let i = 0; i < body.length; i++) {
+                    for (let j = 0; j < body[i].lineStatuses.length; j++) {
+                        status.push(body[i].lineStatuses[j].reason)
+                    }
+                }
+                sendMessage(number, status)
+                console.log(status)
+            }
+        }
+    })
+}
+```
+
+If the status of the given line is Good Service (Note that the TFL API will always return this when normal service is running) send this back to the user. Otherwise, It's important to take into account that when there's a line disruption, the TFL API will provide a `reason` within the `lineStatus` object. That's what we're pushing into our array for every disruption occurred (Hopefully none for commuters' sake 😂). Don't forget that within this function, we’re also calling the `sendSms()` function to return the line status to the user in both scenarios. 
+
+Lastly, we're going to fill in our inbound route to listen to incoming messages from the users. Let's have a look at what [an inbound message from Nexmo](https://developer.nexmo.com/api/sms#inbound-sms) looks like. 
+
+
+```bash
+{
+  "msisdn": "447700900001",
+  "to": "447700900000",
+  "messageId": "0A0000000123ABCD1",
+  "text": "Hello world",
+  "type": "text",
+  "keyword": "Hello",
+  "message-timestamp": "2020-01-01T12:00:00.000+00:00",
+  "timestamp": "1578787200",
+  "nonce": "aaaaaaaa-bbbb-cccc-dddd-0123456789ab",
+  "concat": "true",
+  "concat-ref": "1",
+  "concat-total": "3",
+  "concat-part": "2",
+  "data": "abc123",
+  "udh": "abc123"
+}
+```
+
+ To accomplish our goal, we're going to need to store two of the above parameters; The text sent by the user (line name) and the user's number. These will be stored in our new variables (`Tube_line` and `Number_msisdn` respectively) as soon as our `/inbound` route gets hit. 
+ 
+ It is important to note that we're capitalizing the tube line.   The reason behind this is that we want to compare a specified String to another String ignoring case considerations (the user can send us *Central*, *CENTRAL* or *central*). By capitalizing the input from the user and comparing it with our `lines` array (already capitalized) we work around this. Add in the following code in the space we got reserved for our route.
+
+```javascript
+app.post('/inbound', (req, res) => {
+    let Tube_Line = req.body.text.toUpperCase()
+    let Number_msisdn = req.body.msisdn
+
+    if ((lines.indexOf(Tube_Line) > -1)) {
+        checkLineStatus(Tube_Line, Number_msisdn)
+    }
+    else {
+        sendMessage(Number_msisdn, 'Valid values are ' + lines)
+
+    }
+
+    res.status(204).send()
+})
+```
+
+The `(lines.indexOf(Tube_Line) &gt; -1)` bit will allow us to check if the value stored in `Tube_line` matches any of the values in the `lines` array. This method returns a first index at which the given item can be found in an array, or -1 if it is not present in an array. We'll want only to check the status of a given line if the input matches any of the valid values. Otherwise, we will receive a beautiful HTTP 404  back from the TFL API. Presuming we're gentle enough to let the user know that they've introduced a wrong value, we'll send them back a message providing them with the valid values. This is done when the indexOf method is equal to -1 as explained above.
+
+Let's run ngrok in the same port where our local server is listening in my case 3000 or the one specified in the `.env` file.
+
+![ngrok](https://raw.githubusercontent.com/javiermolsanz/Blog_Nexmo_TFL/master/Screen%20Shot%202019-07-22%20at%2009.06.27.png) 
+
+Now we can configure our virtual number to point to our Inbound SMS webhook URL. Let's do it via our [Numbers API](https://developer.nexmo.com/api/numbers#updateANumber). As per the docs, we can see that we'll need to make a POST request, authenticating with API key and secret as query parameters. The Content-type must be set to `x-www-form-urlencoded` and the request body will be formed by three parameters, the `moHttpUrl` which is the webhook for inbound messages, `country` is the [two character country code in ISO 3166-1 alpha-2 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) and `msisdn` is the number to be updated. Note: Don't forget to replace it with your own credentials and append `/inbound` at the end of our ngrok URL as otherwise, it wouldn't match our express route.
+
+```bash
+curl -X POST \
+  'https://rest.nexmo.com/number/update?api_key=xxxxx&api_secret=xxxx@' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'moHttpUrl=http://3126bbcb.ngrok.io/inbound&country=xx&msisdn=xxxxxxxx'
+```
+If all went as it should, we have received an HTTP 200 response back from the API. Something like:
+```bash
+{"error-code":"200","error-code-label":"success"}
+```
+You could also update the Inbound SMS settings for your virtual number via [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers) or using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#numbers) but I wanted to look fancier 😜
+
+Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Nexmo number we've just configured. As an example, I will query the name of the line that gets me to work every day.
+
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif" alt="demo of app performance on phone" height="800" class="alignnone size-full wp-image-29798" /></a>
+
+💃💃 As you can see, shortly after we send a message to our previously configured virtual number, we are receiving an SMS with the status of the requested line. Well done and thanks for following through that far! 
+
+
+## Mocking Inbound Messages
+
+If for some reason you don't have the chance to use your handset or you don't want to manually send SMS in order to test the application, we've got you covered as well. An inbound message is simply represented as a GET or POST request to your webhook. You can define which method you want Nexmo to use to deliver your inbound messages in your [Nexmo Dashboard Settings](https://dashboard.nexmo.com/settings). I'm using POST for this tutorial.
+
+Taking this into account, we can simulate the behavior of an inbound message by manually hitting our local server exposed with ngrok to see if the application works as it should. I'll be using [POSTMAN](https://www.getpostman.com/) but feel free to use any other service of your choice. We're going to make a POST request to our inbound webhook defining a generic raw JSON body (as the one that Nexmo would send for an inbound message). However, do remember to change the `msisdn` so that our application knows where to reply. Also, replace the `text` parameter to play around with different line name values, you can purposely type down an invalid value so that you receive a message containing the permitted values. My API request looks something like this: 
+
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/mock.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/mock.png" alt="view in postman" width="2498" height="1832" class="alignnone size-full wp-image-29799" /></a>
+
+
+In this case, the `to` parameter is not relevant so I set it to a random value. It is important to add the `Content-Type` header and set it to `application/json` so that our application knows how to handle this data. As you can see at the bottom-right-hand side, our application returns an HTTP 204 as defined in our `/inbound` route via the res.status(204).send()
+
+
+## What's Next? -&gt; Let's Deploy To Heroku
+
+Heroku is a platform intended to easily deploy your Web application and scale your services according to your needs. They also offer some useful add-ons to simplify some daily tasks.
+We are going to leverage Heroku due to the fact that it's pretty easy to use, and the documentation is great on the [Heroku site](https://www.heroku.com/what). By using Heroku we can avoid the hassle of renting, and configuring our server. 
+
+The concept of [dynos](https://www.heroku.com/dynos) exists within Heroku's platform. This is nothing but a container where your application will be deployed. Your application usage will consume dyno hours (only when it's running) but don't worry as they offer 550 free hours a month out-of-the-box or 1000 hours in case you agree to verify your account by providing a credit card. You can easily scale up or down your application taking into account the traffic demand, but this is out of the scope of this tutorial.
+
+ If you've never deployed a Heroku application, it may be worth to go through their docs, or at least read the bit where they explain [how to deploy a node.js application](https://devcenter.heroku.com/articles/deploying-nodejs). To determine how to start your app, Heroku first looks for a [*Procfile*](https://devcenter.heroku.com/articles/procfile). This is a file that specifies the commands that are executed by the app on startup. If no *Procfile* exists for a Node.js app, Heroku will attempt to start a default web process via the start script in your package.json. 
+
+Let's edit our `package.json`, so the part that contains the *scripts* property has this bit included:
+
+```javascript
+"scripts": {
+    "start": "node server.js"
+  },
+```
+
+Then, we're going to create  a `.gitignore` file  to ensure that local environment variables, build related output and modules are not committed to the git repository
+
+```javascript 
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
+```
+
+The only downside of using the free-tier is that once your application idles after 30 minutes of inactivity, it can take a little bit until it awakes (when receiving a new request). Pragmatically, this means that we may see a slight delay when receiving the message back from Nexmo if the application has been inactive for a while. This is because the request to the TFL API will be handled once the application is restarted again. This is acceptable as this application is not time-critical. However, if you don't find this sufficient, you can move to the paid service and have a dedicated dyno running for your application.
+
+To determine how to start your app, Heroku first looks for a Procfile. If no Procfile exists for a Node.js app, Heroku will attempt to start a default web process via the start script in your package.json. The command in a web process type must bind to the port number specified in the PORT environment variable. If it does not, the dyno will not start.
+
+Double-check that you have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and then run the following commands within your project folder, one at a time:
+
+```bash
+git init
+git add .
+git commit -m "First commit."
+```
+
+At this point, we've created a new git repository, added all of the changes to our repository and submitted our first commit. Let's now create our application and deploy it to Heroku:
+
+```bash
+heroku create tubestatus
+git push heroku master
+```
+In these few lines, we've created our Heroku app and pushed the changes to Heroku. If everything went as expected, you should have your own application created. They will also provide you with the URL where your app can be found once it has been deployed. Well done!
+
+Lastly, we have to tell our app where to find the environment variables given that we didn't provide any `.env file`. Run this command to set the required config variables
+
+```bash
+heroku config:set apiKey=xxxxx
+heroku config:set apiSecret=xxxxxx
+heroku config:set app_key=xxxxxxxxxxxxxxxxxx
+heroku config:set app_id=xxxxxxx
+heroku config:set Nexmo_LVN=xxxxxxxxxxx
+```
+
+You can double-check that these variables were added fine by taking a look at your application settings under [Heroku Dashboard](https://dashboard.heroku.com/). This is what our application looks like in the Heroku dashboard. If we hit on *Reveal Config Vars*, we'll see the environment variables configured via the Heroku CLI. <a href="https://www.nexmo.com/wp-content/uploads/2019/07/herokudashboard.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/herokudashboard.png" alt="dashboard view in heroku" width="800" class="alignnone size-full wp-image-29802" /></a>
+
+
+In conclusion, this process was relatively simple! I was able to get this up and running in a matter of a few minutes, which is excellent. All that is left now is to update our number to point to our new webhook, you can simply replicate the steps above (when we configured our number via the Numbers API). As a reminder, don't forget to include the `/inbound` at the end of the URL matching the route in our script.
+
+Hopefully, if we send an SMS once we have updated the Inbound Webhook URL for our number, this will work as expected. This is what a disruption status looks like. It seems that it would have been necessary to reschedule our journey if we were traveling to Heathrow via the District Line at the time I was testing this.
+
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/sms.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/sms.png" alt="sms view of final working app" width="800" class="alignnone size-full wp-image-29800" /></a>
+
+That's all for today but if you are willing to continue playing around with our APIs, you may find helpful the following links:
+
+- [Documentation](https://developer.nexmo.com/) for the different APIs on the developer portal
+- Series of [tutorials](https://www.nexmo.com/blog/category/developer/tutorial/) for various Nexmo APIs
+- If you need us, try the [Nexmo Community Slack channel](https://developer.nexmo.com/community/slack)
+- Let us know what you think by tweeting at [@NexmoDev](https://twitter.com/nexmodev)Today we'll be building an application that will allow us to check the status of a given line of the London Underground using the Nexmo [SMS API](https://developer.nexmo.com/messaging/sms/overview). We are going to leverage the Transport for London  ([TFL API](https://api-portal.tfl.gov.uk/)) to retrieve real-time data about the status of a tube line chosen by the user. The trigger will be an inbound SMS to our Virtual number. Does it sound like a plan? Follow through this tutorial then.  We will get the same status as in [their website](https://tfl.gov.uk/tube-dlr-overground/status/) straight into our handset via SMS. This is especially handy if for some reason you don't have internet access to check Google Maps/Citymapper or if you've exceeded your monthly data allowance.
+
+Our application workflow will be something like the following diagram:
+
+ 
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/workflow.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/workflow.png" alt="sketch diagram of workflow " width="800" class="alignnone size-full wp-image-29796" /></a>
+
+ 
+I know 😌 chances are you don't live in London, and you may think this tutorial is not relevant for you. However, I truly believe that this is a very illustrative example of what you can build on top of Nexmo. 
+
+
+This tutorial will walk you through all the steps to create this application from scratch. However, if you prefer to get a hold of the [finished repository](https://github.com/nexmo-community/tube-status-checker), please go check it out!
+
+## Prerequisites
+
+For the first part of the tutorial, we will need:
+
+- Some basic Javascript/node.js Knowledge.
+
+- Sign up for a [Nexmo account](https://dashboard.nexmo.com/sign-up) if you haven't already. 
+
+
+- Rent an SMS enabled Nexmo virtual number. You can do so by using our [Numbers API](https://developer.nexmo.com/api/numbers) or via the [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers).
+
+
+- You will need to use [ngrok](https://ngrok.com/) to expose your local server to the internet so Nexmo can reach it. We have a [detailed tutorial](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) on this.
+
+If you want to get your application deployed to Heroku, you will also need:
+
+- A [Heroku account](https://signup.heroku.com/) (we will only be using the Free-tier).
+
+- Some basic [git](https://git-scm.com/) commands to deploy our application to Heroku.
+
+
+
+## Setting up our Project
+
+
+Create a project folder named Nexmotubestatus on your local machine and change to it.
+
+
+```console
+mkdir Nexmotubestatus && cd Nexmotubestatus
+```
+Let's create our main file where we'll store our code. We will also create our `.env` file where we'll be storing our Nexmo and TLF credentials as well as some other variables.
+
+```bash
+touch server.js .env
+```
+
+The next step is to create the `package.json` file.
+
+```bash
+npm init -y 
+```
+
+Let's install and save the necessary dependencies.
+
+```bash
+npm install --s express dotenv nexmo body-parser request
+```
+We will fill in the `.env` file with the Nexmo `apikey` and `apiSecret` and the TFL `app_id` ID and `app_key`. We will also include here our previously purchased Virtual number. 
+
+```bash
+apiKey = 
+apiSecret = 
+app_id = 
+app_key = 
+Nexmo_LVN =
+```
+
+
+## Let's Start With The Fun Stuff
+
+As always, let’s require all the dependencies at the beginning of our project. We will use the `express` framework to build our application. We’re going to use the `dotenv` library so that we work with environment variables. We'll be using `body-parser` so we can parse the incoming requests coming from Nexmo’s server. 
+For the API requests to the TFL API, I chose the [`request` library](https://github.com/request/request) as I find it quite straightforward but you can use any other such as [axios](https://www.npmjs.com/package/axios). Lastly and most importantly, 😊 we require the `Nexmo` library to send the line status back to the user. 
+
+Paste the following code into your newly created file. We import all the dependencies installed, and we've defined a variable that contains all the accepted line names provided by the TFL API. We don't want to send a request to the TFL API if the user doesn't provide a valid line name (I will explain in a bit why all the values are capitalized).
+ The variable called status will contain any relevant status in relation to the status of the said line. Also, add in the different credentials you’ll need to utilize the Nexmo and TFL APIs respectively. These will be retreived from the `.env` file:
+
+```javascript
+const Nexmo = require('nexmo');
+const express = require('express');
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000;
+const request = require('request');
+const dotenv = require('dotenv');
+
+let status = []
+
+dotenv.config();
+
+const lines =['CENTRAL','BAKERLOO', 'DISTRICT', 'VICTORIA', 'NORTHERN', 'CIRCULAR', 'HAMMERSMITH-CITY', 'JUBILEE', 'METROPOLITAN', 'PICCADILLY', 'WATERLOO-CITY' ];
+
+const nexmo = new Nexmo({
+  apiKey: process.env.apiKey,
+  apiSecret: process.env.apiSecret
+}, {debug: true});
+
+const app_id = process.env.app_id;
+const app_key = process.env.app_key;
+const NexmoNumber = process.env.Nexmo_LVN;
+```
+
+
+In the following lines, we're initiating our application and defining some basic middleware. Note that we have defined the port 3000 for our server to be listening in, but you can choose other. Take into account that there's some space in between (commented out) that will be filled out with our route for incoming requests:
+
+```javascript
+const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:true}));
+
+//We will define our route here
+
+app.listen(port, ()=>{console.log('App listening in port ', port)});
+
+```
+
+Let's define two functions to tidy-up a little bit the code. The first function `sendSms()` is going to take in two parameters: the phone number of the user and the text to be sent back to the user. We’ll be reusing a little bit of the code. 
+
+```javascript
+function sendMessage(to, message) {
+    nexmo.message.sendSms(process.env.Nexmo_LVN, to, message,
+        (err, responseData) => {
+            if (err) {
+                console.log(err);
+            } else {
+
+                console.dir(responseData.messages);
+
+            }
+        })
+}
+```
+
+
+The second function `checkLineStatus()` will take in two parameters: the line name and the user's phone number as we will be sending a message back to the user with the requested information. 
+
+```javascript
+function checkLineStatus(Line, number) {
+
+    var options = {
+        json: true,
+        url: 'https://api.tfl.gov.uk/Line/' + Line + '/status?app_id=' + app_id + '&app_key=' + app_key,
+    }
+
+    request(options, function (err, res, body) {
+        if (err) {
+            console.log(err)
+
+        }
+        else {
+            if (body[0].lineStatuses[0].statusSeverityDescription === 'Good Service') {
+                sendMessage(number, 'There is a ' + body[0].lineStatuses[0].statusSeverityDescription + ' operating on ' + body[0].name + ' line')
+
+            }
+            else {
+                for (let i = 0; i < body.length; i++) {
+                    for (let j = 0; j < body[i].lineStatuses.length; j++) {
+                        status.push(body[i].lineStatuses[j].reason)
+                    }
+                }
+                sendMessage(number, status)
+                console.log(status)
+            }
+        }
+    })
+}
+```
+
+If the status of the given line is Good Service (Note that the TFL API will always return this when normal service is running) send this back to the user. Otherwise, It's important to take into account that when there's a line disruption, the TFL API will provide a `reason` within the `lineStatus` object. That's what we're pushing into our array for every disruption occurred (Hopefully none for commuters' sake 😂). Don't forget that within this function, we’re also calling the `sendSms()` function to return the line status to the user in both scenarios. 
+
+Lastly, we're going to fill in our inbound route to listen to incoming messages from the users. Let's have a look at what [an inbound message from Nexmo](https://developer.nexmo.com/api/sms#inbound-sms) looks like. 
+
+
+```bash
+{
+  "msisdn": "447700900001",
+  "to": "447700900000",
+  "messageId": "0A0000000123ABCD1",
+  "text": "Hello world",
+  "type": "text",
+  "keyword": "Hello",
+  "message-timestamp": "2020-01-01T12:00:00.000+00:00",
+  "timestamp": "1578787200",
+  "nonce": "aaaaaaaa-bbbb-cccc-dddd-0123456789ab",
+  "concat": "true",
+  "concat-ref": "1",
+  "concat-total": "3",
+  "concat-part": "2",
+  "data": "abc123",
+  "udh": "abc123"
+}
+```
+
+ To accomplish our goal, we're going to need to store two of the above parameters; The text sent by the user (line name) and the user's number. These will be stored in our new variables (`Tube_line` and `Number_msisdn` respectively) as soon as our `/inbound` route gets hit. 
+ 
+ It is important to note that we're capitalizing the tube line.   The reason behind this is that we want to compare a specified String to another String ignoring case considerations (the user can send us *Central*, *CENTRAL* or *central*). By capitalizing the input from the user and comparing it with our `lines` array (already capitalized) we work around this. Add in the following code in the space we got reserved for our route.
+
+```javascript
+app.post('/inbound', (req, res) => {
+    let Tube_Line = req.body.text.toUpperCase()
+    let Number_msisdn = req.body.msisdn
+
+    if ((lines.indexOf(Tube_Line) > -1)) {
+        checkLineStatus(Tube_Line, Number_msisdn)
+    }
+    else {
+        sendMessage(Number_msisdn, 'Valid values are ' + lines)
+
+    }
+
+    res.status(204).send()
+})
+```
+
+The `(lines.indexOf(Tube_Line) &gt; -1)` bit will allow us to check if the value stored in `Tube_line` matches any of the values in the `lines` array. This method returns a first index at which the given item can be found in an array, or -1 if it is not present in an array. We'll want only to check the status of a given line if the input matches any of the valid values. Otherwise, we will receive a beautiful HTTP 404  back from the TFL API. Presuming we're gentle enough to let the user know that they've introduced a wrong value, we'll send them back a message providing them with the valid values. This is done when the indexOf method is equal to -1 as explained above.
+
+Let's run ngrok in the same port where our local server is listening in my case 3000 or the one specified in the `.env` file.
+
+![ngrok](https://raw.githubusercontent.com/javiermolsanz/Blog_Nexmo_TFL/master/Screen%20Shot%202019-07-22%20at%2009.06.27.png) 
+
+Now we can configure our virtual number to point to our Inbound SMS webhook URL. Let's do it via our [Numbers API](https://developer.nexmo.com/api/numbers#updateANumber). As per the docs, we can see that we'll need to make a POST request, authenticating with API key and secret as query parameters. The Content-type must be set to `x-www-form-urlencoded` and the request body will be formed by three parameters, the `moHttpUrl` which is the webhook for inbound messages, `country` is the [two character country code in ISO 3166-1 alpha-2 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) and `msisdn` is the number to be updated. Note: Don't forget to replace it with your own credentials and append `/inbound` at the end of our ngrok URL as otherwise, it wouldn't match our express route.
+
+```bash
+curl -X POST \
+  'https://rest.nexmo.com/number/update?api_key=xxxxx&api_secret=xxxx@' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'moHttpUrl=http://3126bbcb.ngrok.io/inbound&country=xx&msisdn=xxxxxxxx'
+```
+If all went as it should, we have received an HTTP 200 response back from the API. Something like:
+```bash
+{"error-code":"200","error-code-label":"success"}
+```
+You could also update the Inbound SMS settings for your virtual number via [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers) or using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#numbers) but I wanted to look fancier 😜
+
+Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Nexmo number we've just configured. As an example, I will query the name of the line that gets me to work every day.
+
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif" alt="demo of app performance on phone" height="800" class="alignnone size-full wp-image-29798" /></a>
+
+💃💃 As you can see, shortly after we send a message to our previously configured virtual number, we are receiving an SMS with the status of the requested line. Well done and thanks for following through that far! 
+
+
+## Mocking Inbound Messages
+
+If for some reason you don't have the chance to use your handset or you don't want to manually send SMS in order to test the application, we've got you covered as well. An inbound message is simply represented as a GET or POST request to your webhook. You can define which method you want Nexmo to use to deliver your inbound messages in your [Nexmo Dashboard Settings](https://dashboard.nexmo.com/settings). I'm using POST for this tutorial.
+
+Taking this into account, we can simulate the behavior of an inbound message by manually hitting our local server exposed with ngrok to see if the application works as it should. I'll be using [POSTMAN](https://www.getpostman.com/) but feel free to use any other service of your choice. We're going to make a POST request to our inbound webhook defining a generic raw JSON body (as the one that Nexmo would send for an inbound message). However, do remember to change the `msisdn` so that our application knows where to reply. Also, replace the `text` parameter to play around with different line name values, you can purposely type down an invalid value so that you receive a message containing the permitted values. My API request looks something like this: 
+
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/mock.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/mock.png" alt="view in postman" width="2498" height="1832" class="alignnone size-full wp-image-29799" /></a>
+
+
+In this case, the `to` parameter is not relevant so I set it to a random value. It is important to add the `Content-Type` header and set it to `application/json` so that our application knows how to handle this data. As you can see at the bottom-right-hand side, our application returns an HTTP 204 as defined in our `/inbound` route via the res.status(204).send()
+
+
+## What's Next? -&gt; Let's Deploy To Heroku
+
+Heroku is a platform intended to easily deploy your Web application and scale your services according to your needs. They also offer some useful add-ons to simplify some daily tasks.
+We are going to leverage Heroku due to the fact that it's pretty easy to use, and the documentation is great on the [Heroku site](https://www.heroku.com/what). By using Heroku we can avoid the hassle of renting, and configuring our server. 
+
+The concept of [dynos](https://www.heroku.com/dynos) exists within Heroku's platform. This is nothing but a container where your application will be deployed. Your application usage will consume dyno hours (only when it's running) but don't worry as they offer 550 free hours a month out-of-the-box or 1000 hours in case you agree to verify your account by providing a credit card. You can easily scale up or down your application taking into account the traffic demand, but this is out of the scope of this tutorial.
+
+ If you've never deployed a Heroku application, it may be worth to go through their docs, or at least read the bit where they explain [how to deploy a node.js application](https://devcenter.heroku.com/articles/deploying-nodejs). To determine how to start your app, Heroku first looks for a [*Procfile*](https://devcenter.heroku.com/articles/procfile). This is a file that specifies the commands that are executed by the app on startup. If no *Procfile* exists for a Node.js app, Heroku will attempt to start a default web process via the start script in your package.json. 
+
+Let's edit our `package.json`, so the part that contains the *scripts* property has this bit included:
+
+```javascript
+"scripts": {
+    "start": "node server.js"
+  },
+```
+
+Then, we're going to create  a `.gitignore` file  to ensure that local environment variables, build related output and modules are not committed to the git repository
+
+```javascript 
+/node_modules
+npm-debug.log
+.DS_Store
+/*.env
+```
+
+The only downside of using the free-tier is that once your application idles after 30 minutes of inactivity, it can take a little bit until it awakes (when receiving a new request). Pragmatically, this means that we may see a slight delay when receiving the message back from Nexmo if the application has been inactive for a while. This is because the request to the TFL API will be handled once the application is restarted again. This is acceptable as this application is not time-critical. However, if you don't find this sufficient, you can move to the paid service and have a dedicated dyno running for your application.
+
+To determine how to start your app, Heroku first looks for a Procfile. If no Procfile exists for a Node.js app, Heroku will attempt to start a default web process via the start script in your package.json. The command in a web process type must bind to the port number specified in the PORT environment variable. If it does not, the dyno will not start.
+
+Double-check that you have the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed and then run the following commands within your project folder, one at a time:
+
+```bash
+git init
+git add .
+git commit -m "First commit."
+```
+
+At this point, we've created a new git repository, added all of the changes to our repository and submitted our first commit. Let's now create our application and deploy it to Heroku:
+
+```bash
+heroku create tubestatus
+git push heroku master
+```
+In these few lines, we've created our Heroku app and pushed the changes to Heroku. If everything went as expected, you should have your own application created. They will also provide you with the URL where your app can be found once it has been deployed. Well done!
+
+Lastly, we have to tell our app where to find the environment variables given that we didn't provide any `.env file`. Run this command to set the required config variables
+
+```bash
+heroku config:set apiKey=xxxxx
+heroku config:set apiSecret=xxxxxx
+heroku config:set app_key=xxxxxxxxxxxxxxxxxx
+heroku config:set app_id=xxxxxxx
+heroku config:set Nexmo_LVN=xxxxxxxxxxx
+```
+
+You can double-check that these variables were added fine by taking a look at your application settings under [Heroku Dashboard](https://dashboard.heroku.com/). This is what our application looks like in the Heroku dashboard. If we hit on *Reveal Config Vars*, we'll see the environment variables configured via the Heroku CLI. <a href="https://www.nexmo.com/wp-content/uploads/2019/07/herokudashboard.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/herokudashboard.png" alt="dashboard view in heroku" width="800" class="alignnone size-full wp-image-29802" /></a>
+
+
+In conclusion, this process was relatively simple! I was able to get this up and running in a matter of a few minutes, which is excellent. All that is left now is to update our number to point to our new webhook, you can simply replicate the steps above (when we configured our number via the Numbers API). As a reminder, don't forget to include the `/inbound` at the end of the URL matching the route in our script.
+
+Hopefully, if we send an SMS once we have updated the Inbound Webhook URL for our number, this will work as expected. This is what a disruption status looks like. It seems that it would have been necessary to reschedule our journey if we were traveling to Heathrow via the District Line at the time I was testing this.
+
+<a href="https://www.nexmo.com/wp-content/uploads/2019/07/sms.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/sms.png" alt="sms view of final working app" width="800" class="alignnone size-full wp-image-29800" /></a>
+
+That's all for today but if you are willing to continue playing around with our APIs, you may find helpful the following links:
+
+- [Documentation](https://developer.nexmo.com/) for the different APIs on the developer portal
+- Series of [tutorials](https://www.nexmo.com/blog/category/developer/tutorial/) for various Nexmo APIs
+- If you need us, try the [Nexmo Community Slack channel](https://developer.nexmo.com/community/slack)
+- Let us know what you think by tweeting at [@NexmoDev](https://twitter.com/nexmodev)
