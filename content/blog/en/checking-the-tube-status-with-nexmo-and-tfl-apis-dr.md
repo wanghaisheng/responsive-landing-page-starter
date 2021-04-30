@@ -241,7 +241,7 @@ You could also update the Inbound SMS settings for your virtual number via [Nexm
 
 Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Nexmo number we've just configured. As an example, I will query the name of the line that gets me to work every day.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif" alt="demo of app performance on phone" height="800" class="alignnone size-full wp-image-29798" /></a>
+![demo of app performance on phone](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/demo.gif "demo of app performance on phone")
 
 💃💃 As you can see, shortly after we send a message to our previously configured virtual number, we are receiving an SMS with the status of the requested line. Well done and thanks for following through that far! 
 
@@ -262,7 +262,7 @@ We are going to leverage Heroku due to the fact that it's pretty easy to use, an
 
 The concept of [dynos](https://www.heroku.com/dynos) exists within Heroku's platform. This is nothing but a container where your application will be deployed. Your application usage will consume dyno hours (only when it's running) but don't worry as they offer 550 free hours a month out-of-the-box or 1000 hours in case you agree to verify your account by providing a credit card. You can easily scale up or down your application taking into account the traffic demand, but this is out of the scope of this tutorial.
 
- If you've never deployed a Heroku application, it may be worth to go through their docs, or at least read the bit where they explain [how to deploy a node.js application](https://devcenter.heroku.com/articles/deploying-nodejs). To determine how to start your app, Heroku first looks for a *[Procfile](https://devcenter.heroku.com/articles/procfile)*. This is a file that specifies the commands that are executed by the app on startup. If no *Procfile* exists for a Node.js app, Heroku will attempt to start a default web process via the start script in your package.json. 
+If you've never deployed a Heroku application, it may be worth to go through their docs, or at least read the bit where they explain [how to deploy a node.js application](https://devcenter.heroku.com/articles/deploying-nodejs). To determine how to start your app, Heroku first looks for a *[Procfile](https://devcenter.heroku.com/articles/procfile)*. This is a file that specifies the commands that are executed by the app on startup. If no *Procfile* exists for a Node.js app, Heroku will attempt to start a default web process via the start script in your package.json. 
 
 Let's edit our `package.json`, so the part that contains the *scripts* property has this bit included:
 
