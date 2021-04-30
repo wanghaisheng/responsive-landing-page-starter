@@ -331,7 +331,7 @@ That's all for today but if you are willing to continue playing around with our 
 
 Our application workflow will be something like the following diagram:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/07/workflow.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/workflow.png" alt="sketch diagram of workflow " width="800" class="alignnone size-full wp-image-29796" /></a>
+![](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/workflow.png)
 
 I know 😌 chances are you don't live in London, and you may think this tutorial is not relevant for you. However, I truly believe that this is a very illustrative example of what you can build on top of Nexmo. 
 
@@ -553,7 +553,7 @@ You could also update the Inbound SMS settings for your virtual number via [Nexm
 
 Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Nexmo number we've just configured. As an example, I will query the name of the line that gets me to work every day.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/demo.gif" alt="demo of app performance on phone" height="800" class="alignnone size-full wp-image-29798" /></a>
+![](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/demo.gif)
 
 💃💃 As you can see, shortly after we send a message to our previously configured virtual number, we are receiving an SMS with the status of the requested line. Well done and thanks for following through that far! 
 
