@@ -622,7 +622,9 @@ heroku config:set app_id=xxxxxxx
 heroku config:set Nexmo_LVN=xxxxxxxxxxx
 ```
 
-You can double-check that these variables were added fine by taking a look at your application settings under [Heroku Dashboard](https://dashboard.heroku.com/). This is what our application looks like in the Heroku dashboard. If we hit on *Reveal Config Vars*, we'll see the environment variables configured via the Heroku CLI. <a href="https://www.nexmo.com/wp-content/uploads/2019/07/herokudashboard.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/herokudashboard.png" alt="dashboard view in heroku" width="800" class="alignnone size-full wp-image-29802" /></a>
+You can double-check that these variables were added fine by taking a look at your application settings under [Heroku Dashboard](https://dashboard.heroku.com/). This is what our application looks like in the Heroku dashboard. If we hit on *Reveal Config Vars*, we'll see the environment variables configured via the Heroku CLI. 
+
+![dashboard view in heroku](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/herokudashboard.png)
 
 In conclusion, this process was relatively simple! I was able to get this up and running in a matter of a few minutes, which is excellent. All that is left now is to update our number to point to our new webhook, you can simply replicate the steps above (when we configured our number via the Numbers API). As a reminder, don't forget to include the `/inbound` at the end of the URL matching the route in our script.
 
