@@ -630,7 +630,7 @@ In conclusion, this process was relatively simple! I was able to get this up and
 
 Hopefully, if we send an SMS once we have updated the Inbound Webhook URL for our number, this will work as expected. This is what a disruption status looks like. It seems that it would have been necessary to reschedule our journey if we were traveling to Heathrow via the District Line at the time I was testing this.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/07/sms.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/07/sms.png" alt="sms view of final working app" width="800" class="alignnone size-full wp-image-29800" /></a>
+![SMS view of final working app](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/sms.png)
 
 That's all for today but if you are willing to continue playing around with our APIs, you may find helpful the following links:
 
