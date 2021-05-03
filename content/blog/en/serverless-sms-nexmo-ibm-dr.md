@@ -25,7 +25,8 @@ There are some pre-requisites that you will need before you follow this tutorial
 
 * An [IBM Cloud account](https://www.ibm.com/cloud/) so we can deploy our serverless function (it's free)
 * The `bx` command line tool for IBM Cloud and `wsk` Cloud Functions plugin - use the [setup instructions](https://console.bluemix.net/openwhisk/learn/cli). Log in and set your [target workspace](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#bluemix_target) before you move on.
-* <sign-up number></sign-up>
+
+<sign-up></sign-up>
 
 ## Step 1: Create and deploy a serverless function
 
