@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Communicating with users via SMS is an excellent way of interacting with people informally. Whether you are automating response to your most-asked questions, running a competition, or connecting with your users over something completely different, SMS is an excellent choice. In this post, we'll look at a fun and trivial example while we look at the detail of how to achieve these tasks. We'll build a system that responds to an incoming SMS with a "fortune cookie". These are the greetings used in the "message of the day" feature on old \*nix workstations, think of it as a geekier version of the adorable loading messages you see on Slack.
+Communicating with users via SMS is an excellent way of interacting with people informally. Whether you are automating response to your most-asked questions, running a competition, or connecting with your users over something completely different, SMS is an excellent choice. In this post, we'll look at a fun and trivial example while we look at the detail of how to achieve these tasks. We'll build a system that responds to an incoming SMS with a "fortune cookie". These are the greetings used in the "message of the day" feature on old *nix workstations, think of it as a geekier version of the adorable loading messages you see on Slack.
 
 Serverless is an ideal choice for a task like this where each incoming message is independent of all the others. Serverless platforms like [IBM Cloud Functions](https://www.ibm.com/cloud/functions) (used in this example), [Amazon Lambda](https://aws.amazon.com/lambda/) or [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) all scale horizontally when under load. The big benefit is in the pricing model; Serverless platforms only charge for the time your function is running, so there is no need to pay a fixed fee for a running server. As a bonus, there are fewer steps involved to deploy a function than to set up a server, making it quicker to get started.
 
@@ -23,9 +23,9 @@ Serverless is an ideal choice for a task like this where each incoming message i
 
 There are some pre-requisites that you will need before you follow this tutorial:
 
-- An [IBM Cloud account](https://www.ibm.com/cloud/) so we can deploy our serverless function (it's free)
-- The `bx` command line tool for IBM Cloud and `wsk` Cloud Functions plugin - use the [setup instructions](https://console.bluemix.net/openwhisk/learn/cli). Log in and set your [target workspace](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#bluemix_target) before you move on.
-- <sign-up number></sign-up> 
+* An [IBM Cloud account](https://www.ibm.com/cloud/) so we can deploy our serverless function (it's free)
+* The `bx` command line tool for IBM Cloud and `wsk` Cloud Functions plugin - use the [setup instructions](https://console.bluemix.net/openwhisk/learn/cli). Log in and set your [target workspace](https://console.bluemix.net/docs/cli/reference/bluemix_cli/bx_cli.html#bluemix_target) before you move on.
+* <sign-up number></sign-up>
 
 ## Step 1: Create and deploy a serverless function
 
@@ -60,7 +60,7 @@ Save the content in `index.js` and take a little look at the `main()` function a
 
 > In serverless programming, "functions" are usually referred to as "actions".
 
-To get that action into the cloud, we'll first create a _package_ to put it in. A package helps to keep actions together and allows them to share parameters.
+To get that action into the cloud, we'll first create a *package* to put it in. A package helps to keep actions together and allows them to share parameters.
 
 Using the `bx` command you set up earlier, create the package using this command:
 
@@ -261,7 +261,7 @@ SMS is easy for users, and hopefully, from this example, you've seen that for de
 
 If this has piqued your interest in doing more with SMS, here are some ideas for things to try next:
 
-- A discussion of different messaging types and bots: <a href="https://www.nexmo.com/blog/2017/09/14/ai-bot-messaging-push-notifications-sms-dr/">https://www.nexmo.com/blog/2017/09/14/ai-bot-messaging-push-notifications-sms-dr/</a>
-- This excellent introduction to both SMS and Voice calling <a href="https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/">https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/</a>
-- An SMS group chat example application (in PHP) <a href="https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/">https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/</a>
-- A higher-level post about how SMS can help you to engage with your users: <a href="https://www.nexmo.com/blog/2016/07/22/top-5-ways-to-use-sms-to-increase-mobile-user-acquisition-and-engagement/">https://www.nexmo.com/blog/2016/07/22/top-5-ways-to-use-sms-to-increase-mobile-user-acquisition-and-engagement/</a>
+* A discussion of different messaging types and bots: <a href="https://www.nexmo.com/blog/2017/09/14/ai-bot-messaging-push-notifications-sms-dr/">https://www.nexmo.com/blog/2017/09/14/ai-bot-messaging-push-notifications-sms-dr/</a>
+* This excellent introduction to both SMS and Voice calling <a href="https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/">https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/</a>
+* An SMS group chat example application (in PHP) <a href="https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/">https://www.nexmo.com/blog/2017/03/03/sms-voice-programmable-communications-dr/</a>
+* A higher-level post about how SMS can help you to engage with your users: <a href="https://www.nexmo.com/blog/2016/07/22/top-5-ways-to-use-sms-to-increase-mobile-user-acquisition-and-engagement/">https://www.nexmo.com/blog/2016/07/22/top-5-ways-to-use-sms-to-increase-mobile-user-acquisition-and-engagement/</a>
