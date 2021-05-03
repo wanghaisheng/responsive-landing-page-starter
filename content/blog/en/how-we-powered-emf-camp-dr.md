@@ -11,6 +11,8 @@ updated_at: 2021-05-03T21:12:05.937Z
 category: event
 tags:
   - emfcamp
+  - developer
+  - event
 comments: true
 redirect: ""
 canonical: ""
