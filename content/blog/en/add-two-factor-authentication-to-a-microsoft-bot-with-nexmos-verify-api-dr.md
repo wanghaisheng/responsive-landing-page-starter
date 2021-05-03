@@ -42,7 +42,7 @@ The next step is to collect the PIN and check it.
 The first thing to do in order to set up 2FA with a bot, is to create a bot. It makes sense, doesn't it?
 In Visual Studio, create a new project of the type "Bot Application": *File--> New--> Project--> Bot application*
 
-![screenshot showing set up and saving bot project](/content/blog/add-two-factor-authentication-to-a-microsoft-bot-with-nexmo’s-verify-api/create_bot_project.png "Creating and Saving new project")
+![screenshot showing set up and saving bot project](/content/blog/add-2fa-to-a-microsoft-bot-with-nexmo’s-verify-api/create_bot_project.png "Creating and Saving new project")
 
 <h2>Using Nexmo with the bot</h2>
 
@@ -59,7 +59,7 @@ In order to verify the user's phone number on sign up, we are going to collect a
 
 With the Microsoft Bot Framework, there are few ways to manage the conversation flow and build dialogs. In this case, we are going to use [FormFlow](https://docs.microsoft.com/en-us/bot-framework/dotnet/bot-builder-dotnet-formflow) as it simplifies the process of managing a guided conversation like ours.
 
-![typing a message and getting alert to verify identity](/content/blog/add-two-factor-authentication-to-a-microsoft-bot-with-nexmo’s-verify-api/create-profile.gif "2fa Typing message")
+![typing a message and getting alert to verify identity](/content/blog/add-2fa-to-a-microsoft-bot-with-nexmo’s-verify-api/create-profile.gif "2fa Typing message")
 
 Add a 'UserProfile' class to the project, this class defines the form. The class includes some properties to help us build the profile and a 'BuildForm()' method that uses 'FormBuilder' to create the form and define a simple welcome message.
 
@@ -167,7 +167,7 @@ await Conversation.SendAsync(activity, () => MakeRootDialog());
 
 Now that the code is sent, the next step is to verify it once the user provides it to the bot.
 
-![verify setup with user provided input to the bot](/content/blog/add-two-factor-authentication-to-a-microsoft-bot-with-nexmo’s-verify-api/verify-code.gif "Verify Code")
+![verify setup with user provided input to the bot](/content/blog/add-2fa-to-a-microsoft-bot-with-nexmo’s-verify-api/verify-code.gif "Verify Code")
 
 This is done via the 'CheckVerificationCode' method in 'VerifyHelper.cs'.
 
