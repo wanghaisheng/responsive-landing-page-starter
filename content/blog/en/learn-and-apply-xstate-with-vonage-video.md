@@ -22,7 +22,7 @@ Over the last few months, I have heard more about [state machines](https://en.wi
 
 The concept of state machines and statecharts is not new, and it isn't rooted in front-end development, either.  It's a mathematical model, and one used in many things around us. As an example, a light can be `OFF` or `ON`. You can describe anything with a state machine, even though this is a simple example.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/06/lightbulb.png" alt="" width="480" height="366" class="aligncenter size-full wp-image-32797" />
+![On and off states of lightbulb](/content/blog/learn-and-apply-xstate-with-vonage-video/lightbulb.png "On and off states of lightbulb")
 
 ## Introduction to XState
 
@@ -235,18 +235,17 @@ Using actions and services, our Vonage Video state machine now looks like the fo
 
 Don't forget to click around, and click the `code` tab to see what the state machine looks like as a configuration. 
 
-
 ## Resources and Wrap-up
 
 Ok - so you've made it this far.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/06/proudofyou.gif" alt="" width="498" height="280" class="aligncenter size-full wp-image-32798" />
+![I'm proud of you!](/content/blog/learn-and-apply-xstate-with-vonage-video/proudofyou.gif "I'm proud of you!")
 
 If this is your first time looking at XState, it's a lot to take in all at once.  I'm still exploring and learning new ways to do things. This post is just a small portion of what's out there. As you are learning - here are a few great resources you will want to check out
 
-+ [Kyle Shevlin's Intro to State Machines Using XState videos](https://egghead.io/courses/introduction-to-state-machines-using-xstate)
-+ [XState Docs](https://xstate.js.org/docs/guides/start.html)
-+ [Introduction to XState at flaviocopes.com](https://flaviocopes.com/xstate/)
-+ [The Rist of State Machines - Smashing Magazine](https://www.smashingmagazine.com/2018/01/rise-state-machines/)
+* [Kyle Shevlin's Intro to State Machines Using XState videos](https://egghead.io/courses/introduction-to-state-machines-using-xstate)
+* [XState Docs](https://xstate.js.org/docs/guides/start.html)
+* [Introduction to XState at flaviocopes.com](https://flaviocopes.com/xstate/)
+* [The Rist of State Machines - Smashing Magazine](https://www.smashingmagazine.com/2018/01/rise-state-machines/)
 
 Feel free to reach out if you have questions about XState, and we can learn something new together!
