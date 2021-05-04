@@ -1,5 +1,5 @@
 ---
-title: cURL, HTTPS and the Nexmo SMS API
+title: cURL, HTTPS and the Nexmo SMS API - Behind the Scenes
 description: In this tutorial we'll look behind the scenes at what happens when
   you issue a cURL request to Nexmo. What does your computer do? What does the
   server do?
