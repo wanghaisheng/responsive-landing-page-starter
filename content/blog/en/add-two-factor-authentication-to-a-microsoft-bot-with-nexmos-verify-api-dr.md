@@ -29,6 +29,8 @@ The Bot Builder SDK for .NET currently supports C#. Visual Studio for Mac is not
 
 To set up 2FA, we are using [Nexmo Verify API](https://developer.nexmo.com/verify/overview) and the [Nexmo C# Client Library](https://github.com/Nexmo/nexmo-dotnet)
 
+<sign-up></sign-up>
+
 <h2>How does it work?</h2>
 
 In our scenario, we are going to add two-factor authentication to a bot on sign-up.
