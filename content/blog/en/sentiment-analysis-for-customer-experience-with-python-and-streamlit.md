@@ -2,9 +2,10 @@
 title: Sentiment Analysis for Customer Experience With Python and Streamlit
 description: Learn how to use Sentiment Analysis to improve your customer
   experience on Facebook with Python and Streamlit
+thumbnail: /content/blog/sentiment-analysis-for-customer-experience-with-python-and-streamlit/sentiment-analysis_streamlit_1200x600.png
 author: solomon-soh
 published: true
-published_at: 2021-04-19T09:07:41.707Z
+published_at: 2021-05-04T09:43:23.529Z
 updated_at: 2021-04-19T09:07:41.740Z
 category: tutorial
 tags:
@@ -12,7 +13,7 @@ tags:
   - node
   - python
 comments: true
-spotlight: false
+spotlight: true
 redirect: ""
 canonical: ""
 outdated: false
