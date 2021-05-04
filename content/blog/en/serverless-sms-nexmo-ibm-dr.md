@@ -10,7 +10,6 @@ updated_at: 2021-05-03T18:01:37.117Z
 category: tutorial
 tags:
   - sms-api
-  - ""
 comments: true
 redirect: ""
 canonical: ""
