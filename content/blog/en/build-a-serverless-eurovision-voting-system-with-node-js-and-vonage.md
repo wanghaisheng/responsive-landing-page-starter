@@ -412,7 +412,7 @@ Delete your existing documents, and then run this script 5 or 6 times. Your Mong
 
 There are a few moving parts in our front-end—we need an endpoint to return countries to populate the dropdown, and an endpoint to return a given country's scores.
 
-![](/content/blog/build-a-serverless-eurovision-voting-system-with-node-js-and-vonage/client.png)
+![Completed dashboard](/content/blog/build-a-serverless-eurovision-voting-system-with-node-js-and-vonage/client.png "Completed dashboard")
 
 ### Get the Country List
 
