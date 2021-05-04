@@ -27,9 +27,7 @@ In this post, you'll create a voice transcription pipeline. The objective is to 
 * [Serverless Framework](https://serverless.com/framework/docs/getting-started/)
 * [AWS account](https://aws.amazon.com/)
 
-## Vonage API Account
-
-To complete this tutorial, you will need a [Vonage API account](http://developer.nexmo.com/ed?c=blog_text&ct=2020-06-19-voice-transcription-pipeline-in-php-with-vonage-dr). If you don’t have one already, you can [sign up today](http://developer.nexmo.com/ed?c=blog_text&ct=2020-06-19-voice-transcription-pipeline-in-php-with-vonage-dr) and start building with free credit. Once you have an account, you can find your API Key and API Secret at the top of the [Vonage API Dashboard](http://developer.nexmo.com/ed?c=blog_text&ct=2020-06-19-voice-transcription-pipeline-in-php-with-vonage-dr).
+<sign-up number></sign-up>
 
 ## Setup Instructions
 
@@ -61,11 +59,12 @@ Install the CLI by following [these instructions](https://github.com/Nexmo/nexmo
 nexmo app:create aws-transcribe https://<your_hostname>/webhooks/answer https://<your_hostname>/webhooks/event
 ```
 
-_*NOTE:* You'll be using `<your_hostname>` as a placeholder in this command. Later, after you know the URLs provided by deploying to AWS Lambda, you'll need to update these pieces of the URLs via the [Vonage API Dashboard](https://dashboard.nexmo.com/applications/) settings for your application._
+*NOTE: You'll be using `<your_hostname>` as a placeholder in this command. Later, after you know the URLs provided by deploying to AWS Lambda, you'll need to update these pieces of the URLs via the [Vonage API Dashboard](https://dashboard.nexmo.com/applications/) settings for your application.*
 
 IMPORTANT: This will return an application ID and a private key. The application ID will be needed for the `nexmo link:app` command as well as the `.env` file later. A file named `private.key` will be created in the same location/level as `server.js`, by default.
 
 ### Obtain a New Virtual Number
+
 If you don't have a number already in place, obtain one from Vonage. This can also be achieved using the CLI by running this command:
 
 ```
@@ -73,6 +72,7 @@ nexmo number:buy
 ```
 
 ### Link the Virtual Number to the Application
+
 Finally, link the new number to the created application by running:
 
 ```
@@ -95,7 +95,7 @@ NEXMO_APPLICATION_PRIVATE_KEY_PATH='./private.key'
 NEXMO_APPLICATION_ID=<application_id>
 ```
 
-_*NOTE:* All placeholders noted by `<>` need to be updated._
+*NOTE: All placeholders noted by `<>` need to be updated.*
 
 ### Serverless Plugin
 
@@ -113,7 +113,7 @@ With all the above updated successfully, you can now use `Serverless` to deploy 
 serverless deploy
 ```
 
-_*Note:*_ Make sure to visit the [Vonage API Dashboard](https://dashboard.nexmo.com/applications/) and update the `answer` and `event` URLs for your application with what is provided by the deployment.
+*Note:* Make sure to visit the [Vonage API Dashboard](https://dashboard.nexmo.com/applications/) and update the `answer` and `event` URLs for your application with what is provided by the deployment.
 
 ## Migrate Transcription to a Database
 
@@ -131,9 +131,9 @@ Set the Rule as follows:
 * Event Type = Transcribe Job State Change
 * Specific status(es) = COMPLETED
 * As the Target select the Lambda function #2 created above
-* Scroll down and click _Configure Details_.
+* Scroll down and click *Configure Details*.
 * Give the rule a meaningful name and description, and enable it.
-* Click _Create rule_ to complete it.
+* Click *Create rule* to complete it.
 
 Now you're ready to test.
 
