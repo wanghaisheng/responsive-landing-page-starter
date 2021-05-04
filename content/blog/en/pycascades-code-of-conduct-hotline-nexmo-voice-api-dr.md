@@ -469,7 +469,7 @@ Thanks to Nexmo and Zapier, I'm able to enhance the PyCascades Code of Conduct h
 
 However, I believe the new enhancements like auto-recording, auto-logging in Google Spreadsheets are useful to all of our staff members, so I'm willing to spend the extra time to set this up for PyCascades. In addition, by using Zapier instead of hardcoding it, we can be more flexible in case we want to add additional integrations.
 
-Thanks for reading! If you have further questions, regarding the hotline, PyCascades, or Zapier, please do not hesitate to email me at mariatta.wijaya@zapier.com
+Thanks for reading! If you have further questions, regarding the hotline, PyCascades, or Zapier, please do not hesitate to email me at mariatta.wijaya@zapier.com 
 
 - - -
 
