@@ -18,8 +18,6 @@ spotlight: true
 redirect: ""
 canonical: ""
 ---
-<a href="https://developer.nexmo.com/spotlight" target="_blank" rel="noopener noreferrer"><img src="https://www.nexmo.com/wp-content/uploads/2020/05/Developer-Spotlight_Banner.png" alt="blog spotlight banner" width="2400" height="467" class="alignnone size-full wp-image-32523"/></a>
-
 I've worked in education technology for several years now, and one challenge that I often hear from teachers is that students don't check their email accounts. There are whole businesses, like [Remind](https://www.remind.com/), built around this communication problem.
 
 In this walk-through, we're going to build an SMS reminder app that allows teachers to remind their students about upcoming assignments in Google Classroom. We'll use the [Google Classroom API](https://developers.google.com/classroom/reference/rest) to enforce authentication and get course and assignment data, and [the Vonage Messages API](https://developer.nexmo.com/messages/overview) to power the text messages that teachers send to their students.
@@ -28,31 +26,30 @@ In this walk-through, we're going to build an SMS reminder app that allows teach
 
 Before we get started, let's understand the core functionality and architecture of our application. In this tutorial, we'll address three user stories:
 
-- Teachers can log in to our application using their Google account.
-- Teachers can see a list of their most recent assignments and select the one they want to remind students about.
-- Teachers can remind each student via SMS about the upcoming assignment.
+* Teachers can log in to our application using their Google account.
+* Teachers can see a list of their most recent assignments and select the one they want to remind students about.
+* Teachers can remind each student via SMS about the upcoming assignment.
 
 Let's look at the flow of data between our application and the two supporting APIs (Google Classroom and Vonage Messages):
 
-![Planning an SMS reminder tool for teachers using Google Classroom](https://www.nexmo.com/wp-content/uploads/2020/06/nexmo-2020-05-28-a.png)
+![Planning an SMS reminder tool for teachers using Google Classroom](/content/blog/build-an-sms-reminder-tool-for-teachers-using-google-classroom/nexmo-2020-05-28-a.png)
 
 We'll use [Node](https://nodejs.org/en/) and [Express](https://expressjs.com/) for this demo, but Google and Vonage both offer API clients in most major programming languages. If you'd like to skip ahead, you can [download the code on Github](https://github.com/karllhughes/classroom-reminders) and follow the "Quick Start" section in the Readme to get the app up and running.
 
 ## Prerequisites
 
-- A [Google APIs Account](https://console.developers.google.com/) and Project with [OAuth 2.0 Client credentials](https://developers.google.com/identity/protocols/oauth2#1.-obtain-oauth-2.0-credentials-from-the-dynamic_data.setvar.console_name-.)
-- A [Google Classroom account](https://classroom.google.com/) with a class having several students in it and at least one assignment
-- [Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) (I'm using Node v10 and npm v6)
+* A [Google APIs Account](https://console.developers.google.com/) and Project with [OAuth 2.0 Client credentials](https://developers.google.com/identity/protocols/oauth2#1.-obtain-oauth-2.0-credentials-from-the-dynamic_data.setvar.console_name-.)
+* A [Google Classroom account](https://classroom.google.com/) with a class having several students in it and at least one assignment
+* [Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com/) (I'm using Node v10 and npm v6)
 
-## Vonage API Account
+<sign-up></sign-up>
 
-To complete this tutorial, you will need a [Vonage API account](http://developer.nexmo.com/ed?c=blog_text&ct=2020-06-04-build-an-sms-reminder-tool-for-teachers-using-google-classroom-dr). If you don’t have one already, you can [sign up today](http://developer.nexmo.com/ed?c=blog_text&ct=2020-06-04-build-an-sms-reminder-tool-for-teachers-using-google-classroom-dr) and start building with free credit. Once you have an account, you can find your API Key and API Secret at the top of the [Vonage API Dashboard](http://developer.nexmo.com/ed?c=blog_text&ct=2020-06-04-build-an-sms-reminder-tool-for-teachers-using-google-classroom-dr)
 
-<a href="http://developer.nexmo.com/ed?c=blog_banner&ct=2020-06-04-build-an-sms-reminder-tool-for-teachers-using-google-classroom-dr"><img src="https://www.nexmo.com/wp-content/uploads/2020/05/StartBuilding_Footer.png" alt="Start building with Vonage" width="1200" height="369" class="aligncenter size-full wp-image-32500" /></a>
 
 ## Building the Application
 
 ### Step 1: Creating a New Express Application
+
 First, let's create a new Express application that uses [Handlebars](https://handlebarsjs.com/) for templating and [express-session](https://www.npmjs.com/package/express-session) for session storage. We'll use the [Express application generator](https://expressjs.com/en/starter/generator.html) to make this easier:
 
 ```
@@ -85,11 +82,12 @@ app.use(session({
 If you want to make sure everything is working so far, run `SESSION_SECRET=<A SECURE STRING FOR PROTECTING SESSIONS> npm start` and visit `localhost:3000` in your browser. You should see the default Express welcome page.
 
 ### Step 2: Adding Google Authentication
+
 Now that we've got a new Express application let's add authentication using Google's OAuth client.
 
 If you haven't already, create a new Project in the Google API portal and [add OAuth 2.0 credentials to it](https://developers.google.com/identity/protocols/oauth2). Be sure to set your OAuth callback URL to `localhost:3000` for this tutorial, but if you deploy this application to a production environment, you'll want to change the callback URL.
 
-![Creating a Client ID in the Google Developer Console](https://www.nexmo.com/wp-content/uploads/2020/06/nexmo-2020-05-28-b.png)
+![Creating a Client ID in the Google Developer Console](/content/blog/build-an-sms-reminder-tool-for-teachers-using-google-classroom/nexmo-2020-05-28-b.png "Creating a Client ID in the Google Developer Console")
 
 Google will generate a Client ID and Client Secret that we'll use throughout this tutorial.
 
@@ -226,11 +224,11 @@ npm start
 
 This time when we navigate to `localhost:3000`, we'll see a login link:
 
-![Login screen for Google Classroom Reminders application](https://www.nexmo.com/wp-content/uploads/2020/06/nexmo-2020-05-28-c.png)
+![Login screen for Google Classroom Reminders application](/content/blog/build-an-sms-reminder-tool-for-teachers-using-google-classroom/nexmo-2020-05-28-c.png "Login screen for Google Classroom Reminders application")
 
 After you click login, Google will take us through the approval process for our new app:
 
-![Permissions approval for Google Classroom Reminders application](https://www.nexmo.com/wp-content/uploads/2020/06/nexmo-2020-05-28-d.png)
+![Permissions approval for Google Classroom Reminders application](/content/blog/build-an-sms-reminder-tool-for-teachers-using-google-classroom/nexmo-2020-05-28-d.png "Permissions approval for Google Classroom Reminders application")
 
 After you approve our application, you'll be taken to `localhost:3000/assignments`, but that URL doesn't exist yet. We'll create it in the next section.
 
@@ -330,11 +328,12 @@ Finally, we'll create a new view file (`views/assignments.hbs`) to display all o
 
 If you start the application as you did in the previous step and login to it again, you should see a list of your Google Classroom courses and assignments:
 
-![Viewing Google Classroom courses and assignments](https://www.nexmo.com/wp-content/uploads/2020/06/nexmo-2020-05-28-e.png)
+![Viewing Google Classroom courses and assignments](/content/blog/build-an-sms-reminder-tool-for-teachers-using-google-classroom/nexmo-2020-05-28-e.png "Viewing Google Classroom courses and assignments")
 
 At this point, users can log in to our application using their Google account and see a list of the most recent assignments from their Google Classroom courses. Next, we'll let users drill down and view the students in each course and whether they've turned a particular assignment in or not.
 
 ### Step 4: Displaying a Teacher's Roster and Student Work for a Particular Google Classroom Assignment
+
 To show a list of students enrolled in a course and check whether they've turned in that particular assignment, we'll need to access a few new endpoints in the Google Classroom API.
 
 Let's add these new functions the the `google-api.js` helper file:
@@ -395,10 +394,10 @@ module.exports.getStudentSubmissions = async (
 
 Next, let's create a new route in the `routes/assignments.js` file to get the following:
 
-- A single Course
-- The roster of students for that Course
-- A single Course Work object
-- Student Submissions for that Course Work
+* A single Course
+* The roster of students for that Course
+* A single Course Work object
+* Student Submissions for that Course Work
 
 Interestingly, the Google Classroom API won't let us get a single Course Work without both a Course ID and Course Work ID. In order to pass both IDs in as a single route parameter, we concatenated them with a `:` in the previous step. Hence this line in the `views/assignments.hbs` file:
 
@@ -489,6 +488,7 @@ Now, if we start the application and log in again, we can drill down into a part
 In the final step, we'll allow users to send SMS messages to students using the Vonage Messages API.
 
 ### Step 5: Adding Text Message Reminders Using the Vonage Messages API
+
 The Vonage Messages API can send and receive messages across several channels, but for this application, we'll only use SMS text messages.
 
 Assuming you've already [created a Vonage API application](https://developer.nexmo.com/messages/code-snippets/create-an-application), the next step is to install the JavaScript client. In addition to this client, we'll also add the [google-libphonenumber](https://www.npmjs.com/package/google-libphonenumber) package to help format phone numbers:
@@ -624,17 +624,17 @@ npm start
 
 This time when you log in and view a single assignment, you'll be able to enter a phone number for each of your students and customize a message to send them. When you're ready, click "Send Reminders" to test the whole thing out.
 
-![Sending SMS Reminders using Google Classroom and the Vonage Messages API](https://www.nexmo.com/wp-content/uploads/2020/06/nexmo-2020-05-28-f.png)
+![Sending SMS Reminders using Google Classroom and the Vonage Messages API](/content/blog/build-an-sms-reminder-tool-for-teachers-using-google-classroom/nexmo-2020-05-28-f.png "Sending SMS Reminders using Google Classroom and the Vonage Messages API")
 
 ## Next Steps
 
 While this demo application covers a relatively simple use-case, it's easy to see how powerful the Vonage Messages API can be when coupled with an LMS like Google Classroom. There are several ways you could continue to enhance the user experience with an application like this:
 
-- Storing phone numbers in a database so that teachers don't have to enter them every time
-- Allowing users to change the default reminder message
-- Adding support for other messaging channels like Facebook, What's App, or Viber
-- Caching Google Classroom data to improve performance and avoid rate limits
-- User-friendly error and success messages
-- Custom design and styling
+* Storing phone numbers in a database so that teachers don't have to enter them every time
+* Allowing users to change the default reminder message
+* Adding support for other messaging channels like Facebook, What's App, or Viber
+* Caching Google Classroom data to improve performance and avoid rate limits
+* User-friendly error and success messages
+* Custom design and styling
 
 If you have questions or other ideas for implementing a reminder system using Vonage and Google Classroom, reach out to us on [Twitter](https://twitter.com/VonageDev) or the [Vonage Developer Community Slack](http://vonage-community.slack.com/)!
