@@ -27,11 +27,11 @@ That's why Vonage created the [Insights and Advanced Insights APIs](https://tokb
 
 The Insights API allows you to explore your sessions' metadata at the project level. This metadata includes metrics like:
 
-- **Usage:** Information on stream published minutes, stream subscribed minutes, archive usage, broadcast usage, and SIP usage
-- **Quality:** Information about video quality
-- **Errors:** The failure rates for connecting to sessions, publishing, and subscribing
+* **Usage:** Information on stream published minutes, stream subscribed minutes, archive usage, broadcast usage, and SIP usage
+* **Quality:** Information about video quality
+* **Errors:** The failure rates for connecting to sessions, publishing, and subscribing
 
-![Example GraphQL code used with the Insights API](https://www.nexmo.com/wp-content/uploads/2020/06/insights-example.png)
+![Example GraphQL code used with the Insights API](/content/blog/integrate-advanced-insights-to-monitor-video-quality/insights-example.png "Example GraphQL code used with the Insights API")
 
 The API allows you to filter and group the data by the SDK type, SDK version, country, region, browser, browser version, and additionally, segment the data at daily, weekly or monthly intervals.
 
@@ -39,7 +39,7 @@ The API allows you to filter and group the data by the SDK type, SDK version, co
 
 Insights data is aggregated daily at the project level. Because of this, it is not available in real-time. **Insights API data has an expected availability latency of 36 - 48 hours.**
 
-![Timeline displaying retention spans of the Insights API](https://www.nexmo.com/wp-content/uploads/2020/06/insights-retention.png)
+![Timeline displaying retention spans of the Insights API](/content/blog/integrate-advanced-insights-to-monitor-video-quality/insights-retention.png "Timeline displaying retention spans of the Insights API")
 
 For 60 days, Insights data is available in daily aggregated segments. Beyond that, and for up to 12 months, it is available in monthly aggregates. After 12 months, the data is not retained by the Insights API.
 
@@ -49,14 +49,15 @@ The Advanced Insights API provides data at the session and stream level. Session
 
 The session data includes:
 
-- **Metadata:** Media mode, published minutes, and subscribed minutes
-- **Meetings:** An array of any meetings that occurred during the time-frame specified for this session. It includes:
-  - **Connections:** An array of connections defining each client that joined the session during the meeting. It includes SDK used, browser used, information about publishers/subscribers and more
-  - **Metadata:** Published minutes, subscribed minutes, and when the meeting was created and destroyed
-  - **Publishers:** An array of publishers that were present during the meeting. It includes data about their streams, subscribers, and stream statistics
-  - **Subscribers:** An array of subscribers that were present during the meeting. It includes information about the subscriber's stream and stream statistics
+* **Metadata:** Media mode, published minutes, and subscribed minutes
+* **Meetings:** An array of any meetings that occurred during the time-frame specified for this session. It includes:
 
-![Example GraphQL query for the Advanced Insights API](https://www.nexmo.com/wp-content/uploads/2020/06/adv-insights-example.png)
+  * **Connections:** An array of connections defining each client that joined the session during the meeting. It includes SDK used, browser used, information about publishers/subscribers and more
+  * **Metadata:** Published minutes, subscribed minutes, and when the meeting was created and destroyed
+  * **Publishers:** An array of publishers that were present during the meeting. It includes data about their streams, subscribers, and stream statistics
+  * **Subscribers:** An array of subscribers that were present during the meeting. It includes information about the subscriber's stream and stream statistics
+
+![Example GraphQL query for the Advanced Insights API](/content/blog/integrate-advanced-insights-to-monitor-video-quality/adv-insights-example.png "Example GraphQL query for the Advanced Insights API")
 
 ### Stream Statistics
 
@@ -68,7 +69,7 @@ Using this information you can review the entire experience of the user in terms
 
 Advanced Insights data is available for 21 days. The retention period is based on the created-at time of a meeting within a session. **The data has an expected availability latency of 5 minutes from meeting end.**
 
-![Timeline displaying retention spans of the Advanced Insights API](https://www.nexmo.com/wp-content/uploads/2020/06/adv-insights-retention.png)
+![Timeline displaying retention spans of the Advanced Insights API](/content/blog/integrate-advanced-insights-to-monitor-video-quality/adv-insights-retention.png "Timeline displaying retention spans of the Advanced Insights API")
 
 During our regular database maintenance windows, Advanced Insights data may not be accessible. All data will be backfilled shortly after the specified maintenance period.
 
@@ -83,7 +84,7 @@ In many cases, you'll want to retain access to your Insights and Advanced Insigh
 
 > Remember, data in both APIs are aggregated using Pacific Time so be sure to include any timezone offsets when determining the time of day to run your queries.
 
-### Insights API Query Frequency 
+### Insights API Query Frequency
 
 Since the Insights API is aggregated daily, you shouldn't query it more than once daily. Querying and storing this data each day or even every few days would be sufficient.
 
@@ -95,9 +96,9 @@ Advanced Insights data for a meeting is available 5 minutes after the meeting ha
 
 With the Insights &amp; Advanced Insights data at your fingertips, you'll be able to identify trends in client platforms, browsers and empower your team to identify issues with packet loss, user bitrates, and latency within minutes. To learn more about the Insights &amp; Advanced Insights APIs and how they can empower you to make more informed decisions, check out the links below:
 
-- [Request a Free Trial of Advanced Insights](https://www.vonage.com/communications-apis/campaigns/advanced-insights/)
-- [Get In-Depth Data to Transform Your Users' Live Video Experiences](https://www.vonage.com/resources/articles/get-in-depth-data-to-transform-your-video-application-experience/)
-- [Insights Dashboard &amp; API](https://tokbox.com/developer/guides/insights/)
-- [Insights Data Retention and Latency](https://tokbox.com/developer/guides/insights/#data-retention-and-latency)
-- [Getting Started with Advanced Insights](https://www.nexmo.com/blog/2020/04/07/getting-started-with-advanced-insights)
-- [Using Apollo to Query GraphQL from Node.js ](https://www.nexmo.com/blog/2020/03/12/using-apollo-to-query-graphql-from-node-js-dr)
+* [Request a Free Trial of Advanced Insights](https://www.vonage.com/communications-apis/campaigns/advanced-insights/)
+* [Get In-Depth Data to Transform Your Users' Live Video Experiences](https://www.vonage.com/resources/articles/get-in-depth-data-to-transform-your-video-application-experience/)
+* [Insights Dashboard &amp; API](https://tokbox.com/developer/guides/insights/)
+* [Insights Data Retention and Latency](https://tokbox.com/developer/guides/insights/#data-retention-and-latency)
+* [Getting Started with Advanced Insights](https://www.nexmo.com/blog/2020/04/07/getting-started-with-advanced-insights)
+* [Using Apollo to Query GraphQL from Node.js ](https://www.nexmo.com/blog/2020/03/12/using-apollo-to-query-graphql-from-node-js-dr)
