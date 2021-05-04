@@ -1,5 +1,5 @@
 ---
-title: SMS when Typeform Is Submitted Using Node.js and Messages API
+title: Send SMS when Typeform Is Submitted Using Node.js and Messages API
 description: Join us to learn how to send a SMS when your Typeform is submitted
   using the Messages API and the Node.js framework Hapi.
 thumbnail: /content/blog/send-sms-typeform-submitted-using-node-hapi-messages-api-dr/nexmo-typeform-sms.png
