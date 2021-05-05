@@ -149,20 +149,23 @@ Once you're happy with your filter conditions, click the **+** button to move on
 
 ### Action 3: Create Call with Vonage Voice
 
-Start by searching for and selecting **Vonage Voice API** as the app for the third action.\
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/pick-vonage-voice.png" alt="Select Vonage Voice" class="alignnone size-full wp-image-32866" />
+Start by searching for and selecting **Vonage Voice API** as the app for the third action.
+
+![Select Vonage Voice](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/pick-vonage-voice.png "Select Vonage Voice")
 
 Next, select an *Action Event* to determine how the call progresses. 
 
 For this example, we'll choose **Create Text to Speech Call** to have a templated message read out to us once the call comes through.
 
 Alternatively, you could go with **Create Stream Call** to have your favorite tunes streamed into your wake-up call, **Create Two Way Call** to have the Zap call both you and a second person, placing the two of you into the same conversation.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/pick-tts-vonage.png" alt="Action events for Vonage Voice. Pick text-to-speech" class="alignnone size-full wp-image-32865" />
+
+![Action events for Vonage Voice. Pick text-to-speech](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/pick-tts-vonage.png "Action events for Vonage Voice. Pick text-to-speech")
 
 Some of Vonage's APIs, including the Voice API, use Vonage Applications to hold security and config information needed to connect to Vonage endpoints.
 
 When prompted to provide your credentials, fill in your API key and secret found in your [dashboard](https://dashboard.nexmo.com/), then pick a name for your Vonage Application. Zapier will create this application for you, and you'll be able to find it in your Vonage account under *[Your applications](https://dashboard.nexmo.com/applications)* going forward.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/vonage-credentials-zapier.png" alt="Vonage credentials pop-up in Zapier" class="alignnone size-full wp-image-32875" />
+
+![Vonage credentials pop-up in Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/vonage-credentials-zapier.png "Vonage credentials pop-up in Zapier")
 
 Finally, you'll have to set a couple of parameters for the text-to-speech call.
 
@@ -172,10 +175,12 @@ Finally, you'll have to set a couple of parameters for the text-to-speech call.
 4. Choose a `Voice` name from the drop-down menu to give your message some personality. I'll go for `Nicole, en-AU, female`.
 
 When you're ready, click *Continue* and test your Zap.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/customize-tts-vonage-all.png" alt="Customize Vonage text-to-speech fields in Zapier action" class="alignnone size-full wp-image-32857" />
+
+![Customize Vonage text-to-speech fields in Zapier action](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/customize-tts-vonage-all.png "Customize Vonage text-to-speech fields in Zapier action")
 
 Congratulations! Your Zap is ready to go, turn it on and rest assured that you won't miss a beautiful morning walk again!
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/vonage-test-zapier.png" alt="Create Vonage text to speech call final test in Zapier" class="alignnone size-full wp-image-32877" />
+
+![Create Vonage text to speech call final test in Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/vonage-test-zapier.png "Create Vonage text to speech call final test in Zapier")
 
 ## Extra Credit
 
@@ -189,23 +194,25 @@ Click on the **+** button to add another action and search for **Vonage SMS API*
 
 Next, select **Send SMS** as the *Action Event* and continue. 
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/send-sms-vonage-zapier.png" alt="Vonage SMS API integration in Zapier. Select Send SMS from action event drop-down" class="alignnone size-full wp-image-32872" />
+![Vonage SMS API integration in Zapier. Select Send SMS from action event drop-down](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/send-sms-vonage-zapier.png "Vonage SMS API integration in Zapier. Select Send SMS from action event drop-down")
 
 Provide tour *API KEY* and *API SECRET* in the pop-up window to authenticate with the SMS API. Find these credentials in your [Vonage API dashboard](https://dashboard.nexmo.com/).
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/vonage-sms-auth-zapier.png" alt="Vonage SMS credentials in Zapier" class="alignnone size-full wp-image-32876" />
+![Vonage SMS credentials in Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/vonage-sms-auth-zapier.png "Vonage SMS credentials in Zapier")
 
 Next, you'll have to fill in a couple of details:
 
 1. `From`: the number or text shown on a handset when it displays your message. You can set it to a custom alphanumeric value like "Weather Zap" if this feature is [supported in your country](https://help.nexmo.com/hc/en-us/articles/115011781468). 
 2. `To`: the number you are sending the SMS to in E.164 format. For example 447401234567.
 3. `Text`: the content of your SMS message. Feel free to use templating just like in the text-to-speech call action. For example, I was interested in a weather summary and the apparent temperature---see image below.
-   <img src="https://www.nexmo.com/wp-content/uploads/2020/07/customize-send-sms.png" alt="Vonage Send SMS fields" class="alignnone size-full wp-image-32856" />
 
-When you're done, test your Zap and turn it on!
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/send-sms-test-data.png" alt="Zapier test data for sending SMS messages vith Vonage SMS" class="alignnone size-full wp-image-32871" />
+   ![Vonage Send SMS fields](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/customize-send-sms.png "Vonage Send SMS fields")
 
-## What's Next?
+   When you're done, test your Zap and turn it on!
+
+   ![Zapier test data for sending SMS messages vith Vonage SMS](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/send-sms-test-data.png "Zapier test data for sending SMS messages vith Vonage SMS")
+
+   ## What's Next?
 
 Fancy trying another tutorial?
 
