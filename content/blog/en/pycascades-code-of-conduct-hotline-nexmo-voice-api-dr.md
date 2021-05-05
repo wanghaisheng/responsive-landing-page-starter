@@ -15,8 +15,6 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-<a href="https://developer.nexmo.com/spotlight?utm_campaign=dev_spotlight&amp;utm_content=pycascades_coc_hotline_mariatta"><img src="https://www.nexmo.com/wp-content/uploads/2018/11/blog-top-banner.png" alt="This is a guest post written as part of Nexmo Developer Spotlight" width="810" height="150" class="alignnone size-full wp-image-25078" /></a>
-
 Hello, my name is [Mariatta](https://mariatta.ca). I work as a Platform Engineer at [Zapier](https://zapier.com). I am a Python Core Developer, and I also help organize the [PyCascades](https://www.pycascades.com) conference.
 
 At PyCascades, [diversity](https://2019.pycascades.com/diversity-and-inclusion/) in our community is a priority, not an afterthought. One of the ways we try to achieve this is by having a strong code of conduct and enforcement. To facilitate the reporting of code of conduct issues, Alan Vezina, one of our organizers, created a [code of conduct (CoC) hotline](https://github.com/cache-rules/coc-hotline). The hotline has since been adopted by PyCon US 2018 and DjangoCon 2018.
