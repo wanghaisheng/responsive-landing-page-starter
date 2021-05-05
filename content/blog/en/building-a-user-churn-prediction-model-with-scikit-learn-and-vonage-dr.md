@@ -28,7 +28,8 @@ A contact center is one place where customers interact directly with the busines
 
 In this post, we'll go over how to build an application that simulates a conversation between a customer and agent and can predict the likelihood of churn, using the Vonage Conversation API.
 
-\[video width="1280" height="720" mp4="https://www.nexmo.com/wp-content/uploads/2020/04/ChurnDemo.mp4"]
+[![Video showing demo of churn](https://img.youtube.com/vi/G7pbkex7bQU/0.jpg)](https://www.youtube.com/watch?v=G7pbkex7bQU)
+
 
 ## Overview
 
