@@ -12,13 +12,12 @@ category: tutorial
 tags:
   - php
   - laravel
+  - sms-api
 comments: true
 spotlight: true
 redirect: ""
 canonical: ""
 ---
-<a href="https://developer.nexmo.com/spotlight?utm_campaign=dev_spotlight&amp;utm_content=wait_time_laravel_taylorotwell"><img src="https://www.nexmo.com/wp-content/uploads/2018/11/blog-top-banner.png" alt="This is a guest post written as part of Nexmo Developer Spotlight" width="810" height="150" class="alignnone size-full wp-image-25078" /></a>
-
 Web applications need to perform computationally-expensive, time-consuming tasks like sending emails, processing uploaded files, or calling APIs. Performing these tasks during a user's web request can make your web application feel slow and clunky, which is frustrating for users.
 
 So, instead of performing these tasks during a web request, they can be added to a job queue that is processed later by queue "workers". Out of the box, the Laravel framework includes support for queued jobs and starting workers to process those jobs. In addition, the [Laravel Horizon](https://laravel.com/docs/horizon) package augments the Laravel queue system by adding a user interface for queue monitoring, worker load balancing, and more. Horizon utilizes [Redis](https://redis.io), a powerful open-source datastore, to track pending, processed, and failed jobs, as well as metrics such as average job processing time and queue wait time.
@@ -31,11 +30,13 @@ Nexmo to the rescue! By leveraging events and notification services built-in to 
 
 First, let's configure the Nexmo service for our application. Laravel's notification services already have built-in support for sending SMS messages using Nexmo. However, we need to add a few lines of configuration to our `config/services.php` configuration file:
 
-    'nexmo' => [
-        'key' => env('NEXMO_KEY'),
-        'secret' => env('NEXMO_SECRET'),
-        'sms_from' => 'virtual-phone-number',
-    ],
+```
+'nexmo' => [
+    'key' => env('NEXMO_KEY'),
+    'secret' => env('NEXMO_SECRET'),
+    'sms_from' => 'virtual-phone-number',
+],
+```
 
 Once these configuration options have been added to your `config/services.php` configuration file, you should ensure that the `NEXMO_KEY` and `NEXMO_SECRET` environment variables are added to your application's `.env` file. These configuration values can be retrieved from your [Nexmo account settings](https://dashboard.nexmo.com/settings?utm_campaign=dev_spotlight&utm_content=wait_time_laravel_taylorotwell).
 
@@ -43,7 +44,9 @@ In addition, the `sms_from` configuration value should be changed to match the n
 
 Next, we need to install the `nexmo/client` package into our application using Composer. We can do this using the "composer require" command in our terminal:
 
-    composer require nexmo/client
+```
+composer require nexmo/client
+```
 
 Great! We've installed and configured the Nexmo client. Next, let's install Horizon.
 
@@ -51,11 +54,15 @@ Great! We've installed and configured the Nexmo client. Next, let's install Hori
 
 To install Laravel Horizon, we'll use Composer to install the `laravel/horizon` package:
 
-    composer require laravel/horizon
+```
+composer require laravel/horizon
+```
 
 After Composer is finished installing Horizon, we need to publish Horizon's configuration files. We can do this using Laravel's `vendor:publish` Artisan CLI command:
 
-    php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"
+```
+php artisan vendor:publish --provider="Laravel\Horizon\HorizonServiceProvider"
+```
 
 Horizon is now installed! But, before moving on, you should ensure that the `default` driver configuration in your `config/queue.php` configuration file is set to `redis`.
 
@@ -63,17 +70,21 @@ Horizon is now installed! But, before moving on, you should ensure that the `def
 
 Next, we're ready to configure our queue wait time threshold. If our queue wait time exceeds this threshold, we want to receive an SMS message alerting us of the situation. The `wait` configuration option within the `config/horizon.php` configuration file allows us to specify our maximum queue wait time threshold in seconds. By default, this threshold is set to 60 seconds; however, you are free to modify this value based on the needs of your application.
 
-    'waits' => [
-        'redis:default' => 60,
-    ],
+```
+'waits' => [
+    'redis:default' => 60,
+],
+```
 
 ## Configuring The Nexmo SMS Notification
 
 Finally, we're ready to instruct Horizon to actually send the SMS message when the queue wait time threshold is exceeded. Within the `boot` method of our application's `AppServiceProvider` class, let's add the following line of code:
 
-    \Laravel\Horizon\Horizon::routeSmsNotificationsTo(
-        'your-phone-number'
-    );
+```
+\Laravel\Horizon\Horizon::routeSmsNotificationsTo(
+    'your-phone-number'
+);
+```
 
 Of course, `your-phone-number` should be replaced with the phone number that the wait time SMS notification should be sent to.
 
