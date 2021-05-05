@@ -10,8 +10,8 @@ updated_at: 2021-05-04T15:49:50.456Z
 category: tutorial
 tags:
   - azure
-  - photobooth
   - video-api
+  - photoboot
 comments: true
 redirect: ""
 canonical: ""
