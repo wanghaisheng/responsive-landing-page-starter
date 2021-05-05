@@ -25,7 +25,7 @@ Nowadays, there are many messaging services and visualization platforms that mak
 
 In this tutorial, I'm going to share detailed steps to build this system using the **[Vonage Messages API](https://www.vonage.com/communications-apis/messages/)** as a messaging service and **[Ubidots](https://ubidots.com/)** as an IoT Platform. As a starting point, let's understand the architecture to be implemented:
 
-![](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593305340/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/vonage-nexmo-ubidots.png)
+![illustration of architecture](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/vonage-nexmo-ubidots.png "illustration of architecture")
 
 The integration of these services is made through an [UbiFunction](http://help.ubidots.com/en/articles/2132086-analytics-ubifunctions-user-guide), a Serverless Computing Environment which will allow us to receive the message sent to our virtual number over an HTTP request. We're then able to analyze it to identify the devices and the variables requested in order to send the last value received for each requested variable as a reply.
 
@@ -48,7 +48,7 @@ For this project, I used a [Pycon SiPy](https://pycom.io/product/sipy/) and [PyS
 
 The Pycom team is adding additional features every week on their products, so before you start developing, make sure your board is running under the [last firmware update](https://docs.pycom.io/pytrackpysense/installation/firmware/). In addition, if you're using Windows as an OS, you must [install the required drivers](https://docs.pycom.io/pytrackpysense/installation/drivers/).
 
-***NOTE**: If this is your first time developing with Pycom boards, I highly recommend you check out the [getting started guide](https://docs.pycom.io/gettingstarted/) to familiarize yourself with all the details.*
+**\*NOTE**: If this is your first time developing with Pycom boards, I highly recommend you check out the [getting started guide](https://docs.pycom.io/gettingstarted/) to familiarize yourself with all the details.*
 
 Install the [Pymakr](<>), a plug-in available for [Atom](https://atom.io/packages/pymakr) and [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=pycom.Pymakr), to run and sync projects on any Pycom board. Pymakr also adds a REPL console to the terminal that connects to the board.
 
@@ -431,7 +431,7 @@ Once you have the code in Pymakr, you can upload the code into the board by pres
 
 From the Ubidots account, go to *Devices > Devices* section and see how a `weather-station` device was automatically created once the sensor data was received:
 
-![Ubidots New Device](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593280565/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/Ubidots%20New%20Device.png)
+![Ubidots New Device](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/ubidots-new-device.png "Ubidots New Device")
 
 **OPTIONAL** Ubidots allow us to customize devices and variables with friendly names, colors, icons, and descriptions. Just be aware that the devices and variables labels can not be changed since the label is the one that handles the communication between the devices and the platform.
 
@@ -439,11 +439,11 @@ In my case, I customized the variable [names](https://help.ubidots.com/en/articl
 
 Before customization:
 
-![Ubidots Generic Device](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593280721/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/Ubidots%20Generic%20Device.png)
+![Ubidots Generic Device](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/ubidots-generic-device.png "Ubidots Generic Device")
 
 After customization:
 
-![Ubidots Custom Device](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593279822/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/Ubidots%20Custom%20Device.png)
+![Ubidots Custom Device](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/ubidots-custom-device.png "Ubidots Custom Device")
 
 ### Dashboard setup
 
@@ -455,7 +455,7 @@ To add new widgets, just click on the blue plus icon, select the widget type, se
 
 Here's what my dashboard looks like!
 
-![Ubidots Dashboard](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593280563/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/Ubidots%20Dashboard.png)
+![Ubidots Dashboard](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/ubidots-dashboard.png "Ubidots Dashboard")
 
 For more info on dashboards and widget settings, I highly recommend you check out the following guides:
 
@@ -474,7 +474,7 @@ Let's look at the steps below to set up our Vonage account:
 4. To receive inbound messages, you'll need to rent a [virtual number](https://developer.nexmo.com/numbers/overview). The number can be rented using the [developer dashboard](https://developer.nexmo.com/numbers/guides/number-management), [Nexmo CLI](https://developer.nexmo.com/numbers/guides/numbers-cli), or [API](https://developer.nexmo.com/api/numbers).
 5. Link the rented number to the application previously created by clicking on the *link* button in the application's number section.
 
-![Vonage Virtual Number](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593389704/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/Nexmo%20Virtual%20Number.png)
+![Vonage Virtual Number](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/nexmo-virtual-number.png "Vonage Virtual Number")
 
 ## Vonage and Ubidots Integration
 
@@ -484,7 +484,7 @@ On the Ubidots account, go to the *Device > Functions* section and click the plu
 * **HTTP Method**: `POST`
 * **Runtime**: `NodeJs 10`
 
-***NOTE**: The UbiFunction can also be programmed in Python, but the code provided in this guide is in NodeJS.*
+**\*NOTE**: The UbiFunction can also be programmed in Python, but the code provided in this guide is in NodeJS.*
 
 Once configured, press the *Make it live* button. At this point, we'll see the `HTTPS Endpoint URL` field auto-complete with the endpoint that will receive the messages from Vonage.
 
@@ -790,7 +790,7 @@ Variable: {variable_label_2} = 246
 Variable: {variable_label_n} = 85
 ```
 
-***IMPORTANT NOTE**: Multiple device requests will be supported only for devices containing the same variables.*
+**\*IMPORTANT NOTE**: Multiple device requests will be supported only for devices containing the same variables.*
 
 To check that everything is working as it should, let's send two messages to the rented number, one with the device created (`weather-station`), and another with a device that does not exist to differentiate the replies:
 
@@ -811,6 +811,10 @@ Variables: dew_point, lux_blue, amb_hum, temp_mpl
 ```
 
 The replies received were:
+
+![SMS Success Reply](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/sms-success-reply.jpg "Satisfactory reply")
+
+![SMS Fail Reply](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/sms-fail-reply.jpg "Device not found")
 
 | Satisfactory reply                                                                                                                                                                     | Device not found                                                                                                                                                                 |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
