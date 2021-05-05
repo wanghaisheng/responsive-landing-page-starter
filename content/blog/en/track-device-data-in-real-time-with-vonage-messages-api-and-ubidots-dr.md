@@ -816,10 +816,6 @@ The replies received were:
 
 ![SMS Fail Reply](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/sms-fail-reply.jpg "Device not found")
 
-| Satisfactory reply                                                                                                                                                                     | Device not found                                                                                                                                                                 |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <img src="https://res.cloudinary.com/dv6imp5ps/image/upload/v1593399330/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/SMS%20success%20reply.jpg" alt="SMS Success Reply" width="400"/> | <img src="https://res.cloudinary.com/dv6imp5ps/image/upload/v1593399310/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/sms%20fail%20reply.jpg" alt="SMS Fail Reply" width="400"/> |
-
 As expected, it works correctly! Now if we compare the received values with the values of our dashboard we can see that they are the same:
 
 ![](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593450826/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/Ubidots%20Final%20Dasboard.png)
