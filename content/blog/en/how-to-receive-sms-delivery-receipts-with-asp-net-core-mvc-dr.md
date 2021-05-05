@@ -10,7 +10,6 @@ updated_at: 2021-05-05T10:59:00.081Z
 category: tutorial
 tags:
   - asp.net
-  - delivery-receipts
   - sms-api
 comments: true
 redirect: ""
