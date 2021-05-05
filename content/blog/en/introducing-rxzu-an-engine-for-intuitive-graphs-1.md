@@ -1,7 +1,7 @@
 ---
 title: Introducing RxZu, an Engine for Intuitive Graphs
 description: "All about the Vonage Graphs Library "
-thumbnail: /content/blog/introducing-rxzu-an-engine-for-intuitive-graphs/graphs-engine-1-.png
+thumbnail: /content/blog/introducing-rxzu-an-engine-for-intuitive-graphs/graphs-engine-3-.png
 author: daniel-netzer
 published: true
 published_at: 2021-05-05T10:57:13.995Z
