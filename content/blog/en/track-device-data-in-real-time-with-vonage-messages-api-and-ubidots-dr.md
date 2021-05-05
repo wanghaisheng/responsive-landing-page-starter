@@ -818,7 +818,7 @@ The replies received were:
 
 As expected, it works correctly! Now if we compare the received values with the values of our dashboard we can see that they are the same:
 
-![](https://res.cloudinary.com/dv6imp5ps/image/upload/v1593450826/Articles/PyCom%20%2B%20Vonage%20%2B%20Ubidots/Ubidots%20Final%20Dasboard.png)
+![Ubidots Final Dashboard](/content/blog/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots/ubidots-final-dasboard.png "Ubidots Final Dashboard")
 
 ## Wrap Up and Next Steps
 
