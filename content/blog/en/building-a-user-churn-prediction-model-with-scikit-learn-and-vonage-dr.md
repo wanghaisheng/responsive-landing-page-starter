@@ -317,8 +317,6 @@ python server.py
 
 Now, our model server is running, and we can now test it by making a GET request to the `/predict` endpoint.
 
-
-
 ![An image showing the Model Server in Postman](/content/blog/building-a-user-churn-prediction-model-with-scikit-learn-and-vonage/model_server_postman.png)
 
 The server returns a JSON response that shows the percentage of the likelihood of a random user churning.
@@ -378,4 +376,4 @@ Now, whenever we have new users speak with our agent, we'll be able to see that 
 
 Overall, we have shown that building a machine learning model isn't magic, and anyone can build something that is useful and can be used in a production environment. We have shown that our model is able to predict the probability of churn with 89% accuracy. Which is great for our first model. But there's a lot more that we can do in order to build an even better model. One of the best ways to learn is by doing, so let's see if you can build a model that beats this one!
 
-You can use the supplied [Google Colab Notebook](https://colab.research.google.com/drive/1f8tgH3Xov3XdEZWgquYc4OuKNh8WNaK-) as a starter project. As always, we are happy to help with any questions in our [community slack](https://developer.nexmo.com/community/slack) or pop a reply below 👇
+You can use the supplied [Google Colab Notebook](https://colab.research.google.com/drive/1f8tgH3Xov3XdEZWgquYc4OuKNh8WNaK-) as a starter project. As always, we are happy to help with any questions in our [community slack](https://developer.nexmo.com/community/slack).
