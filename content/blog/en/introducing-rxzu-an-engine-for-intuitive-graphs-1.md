@@ -1,7 +1,7 @@
 ---
 title: Introducing RxZu, an Engine for Intuitive Graphs
 description: "All about the Vonage Graphs Library "
-thumbnail: /content/blog/introducing-rxzu-an-engine-for-intuitive-graphs/graphs-engine.png
+thumbnail: /content/blog/introducing-rxzu-an-engine-for-intuitive-graphs/graphs-engine-1-.png
 author: daniel-netzer
 published: true
 published_at: 2021-05-05T10:57:13.995Z
@@ -57,11 +57,11 @@ These entities are made up of:
 ![Alt Text](https://github.com/Vonage/rxzu/raw/main/assets/draganddropexample.gif)
 
 ## Let's See the Code
-> RxZu currently only implements Angular as a rendering engine, which means all code examples are for Angular
+** Note that RxZu currently only implements Angular as a rendering engine, which means all code examples are for Angular**
 
 We'll begin by creating a new Angular application that will display a graph with a drag and drop interface to add more nodes:
-
-```bash
+```
+bash
 ng new rxzu-angular
 # wait for angular installation to finish
 cd rxzu-angular
