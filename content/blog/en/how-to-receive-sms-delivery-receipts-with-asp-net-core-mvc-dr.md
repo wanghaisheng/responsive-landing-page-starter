@@ -88,7 +88,7 @@ ngrok http --host-header="localhost:5000" 5000
 
 This will pop up a screen that looks like:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/07/ngrok-3.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/07/ngrok-3.png" alt="ngrok" width="959" height="508" class="aligncenter size-full wp-image-33012" /></a>
+![ngrok](/content/blog/how-to-receive-sms-delivery-receipts-with-asp-net-core-mvc/ngrok-3.png "ngrok")
 
 If you navigate to the forwarding address for HTTP (in my case `http://2ad8b960630f.ngrok.io`, but the `2ad8b960630f` part will vary on the ngrok free plan), you will see the generic welcome page for an ASP.NET Core app. We didn't change any of the views, so that means your app is up and accessible!.
 
@@ -96,7 +96,7 @@ If you navigate to the forwarding address for HTTP (in my case `http://2ad8b9606
 
 The last thing we need to do before we're ready to receive webhooks is to tell Vonage where to send the webhooks—in my case, I want them sent to the endpoint accessible at `http://2ad8b960630f.ngrok.io/webhooks/dlr`. To do this, navigate to the [settings page of the dashboard](https://dashboard.nexmo.com/settings) and set the `Delivery receipts` setting to the your own endpoint address. Also, set the `HTTP Method` to `POST-JSON`, as we're assuming it's a POST request with a JSON payload.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/07/dashboardSettings.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/07/dashboardSettings.png" alt="Dashboard settings" width="573" height="614" class="aligncenter size-full wp-image-33010" /></a>
+![Dashboard settings](/content/blog/how-to-receive-sms-delivery-receipts-with-asp-net-core-mvc/dashboardsettings.png "Dashboard settings")
 
 Click the save button, and you're all configured to receive SMS delivery receipts!
 
@@ -110,7 +110,7 @@ nexmo sms -f VONAGE_NUMBER YOUR_CELLPHONE_NUMBER "Testing DLR"
 
 Enter `confirm` to send, and in the console where your app is running you'll see something along the lines of:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/07/dlr-example.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/07/dlr-example.png" alt="Delivery receipt example" width="350" height="154" class="aligncenter size-full wp-image-33011" /></a>
+![Delivery receipt example](/content/blog/how-to-receive-sms-delivery-receipts-with-asp-net-core-mvc/dlr-example.png "Delivery receipt example")
 
 ## Resources
 
