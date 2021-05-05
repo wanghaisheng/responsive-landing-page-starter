@@ -293,7 +293,7 @@ In my case, it's pointing to `http://09c1cd61e26e.ngrok.io/`. By navigating to t
 
 The route for inbound sms webhooks is `/api/sms/inboundsms` with our ngrok URL as the base path. This means that the full route is going to be something along the lines of `http://09c1cd61e26e.ngrok.io/api/sms/inboundsms`. All we need to do now is navigate to our [settings page](https://dashboard.nexmo.com/settings) and set the inbound messages URL to our route, and set the HTTP method to `POST-JSON`. Click the `Save Changes` button at the bottom, and we're good to go.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/07/settings.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/07/settings.png" alt="" width="556" height="385" class="alignnone size-full wp-image-32910" /></a>
+![SMS settings](/content/blog/how-to-receive-an-sms-with-blazor-and-signalr/settings.png "SMS settings")
 
 ## Test
 
