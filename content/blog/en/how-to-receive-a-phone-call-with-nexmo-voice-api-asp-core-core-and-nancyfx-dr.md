@@ -99,7 +99,7 @@ namespace NexmoVoiceASPNetCoreQuickStarts
 
 I'm using Postman to test, and as you can see our `/webhook/answer` route is returning exactly what's expected. 
 
-![asp postman screenshot](/content/blog/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-net-core-and-nancyfx/asp-post-webhook-answer.png "asp-post")
+![asp postman screenshot](/content/blog/receive-a-phone-call-with-nexmo-voice-api-asp-net-core-and-nancyfx/asp-post-webhook-answer-1-.png "asp-post")
 
 This is a great start, but Nexmo doesn't know what to do with that string. To properly respond to the call, we need to return an NCCO. 
 
@@ -137,8 +137,7 @@ namespace NexmoVoiceASPNetCoreQuickStarts
 
 We are accessing the phone number via the `from` param in the request.
 
-![webhook answer screenshot](/content/blog/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-net-core-and-nancyfx/webhook-answer_li.jpeg "webhook answer")
-
+![webhook answer screenshot](/content/blog/receive-a-phone-call-with-nexmo-voice-api-asp-net-core-and-nancyfx/webhook-answer_li.jpeg "webhook answer")
 
 That's all the code we need. To test this properly, some more configuration steps are required. 
 
