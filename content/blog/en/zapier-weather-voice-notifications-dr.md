@@ -113,15 +113,19 @@ Click *Continue* to move on to the next step.
 The first action is getting weather data, and we'll be using [Weather by Zapier](https://zapier.com/apps/weather) powered by [Dark Sky](https://darksky.net/) to accomplish that. Head over to the [Dark Sky docs](https://darksky.net/dev/docs) to find out more about all the data that is being returned by their API.
 
 To configure this action, first select **Get Current Weather** as an *Action Event*.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/get-current-weather.png" alt="Get current weather with Weather by Zapier" class="alignnone size-full wp-image-32861" />
+
+![Get current weather with Weather by Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/get-current-weather.png "Get current weather with Weather by Zapier")
 
 In the *Customize Current Weather* section you'll have to fill in the coordinates of your location as *Latitude* and *Longitude* as well as whether you prefer the temperature data to be sent in Celsius or Fahrenheit.\
-[LatLong.net](https://www.latlong.net/) is a handy website that returns latitude and longitude for any location of your choice.\
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/customize-current-weather.png" alt="Customize fields for Weather by Zapier" class="alignnone size-full wp-image-32855" />
+[LatLong.net](https://www.latlong.net/) is a handy website that returns latitude and longitude for any location of your choice.
+
+![Customize fields for Weather by Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/customize-current-weather.png "Customize fields for Weather by Zapier")
 
 Next, press *Test & Continue*.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/weather-test-buttons.png" alt="Press Test&Continue" class="alignnone size-full wp-image-32878" />
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/get-weather-test-data.png" alt="Test data for Weather by Zapier" class="alignnone size-full wp-image-32862" />
+
+![Press Test&Continue](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/weather-test-buttons.png "Press Test&Continue")
+
+![Test data for Weather by Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/get-weather-test-data.png "Test data for Weather by Zapier")
 
 Have a look at the test data and think about what parameters you could use to set your wake-up conditions. Would you like to be woken up only if the temperature is over a certain level? Maybe you have an issue with rain but love snowfall. Can't stand the wind blowing in your face and it pouring down at the same time? Me neither!
 Shop around and see what matters to you the most. When you're ready, click the **+** sign to get started on the next action.
@@ -138,7 +142,8 @@ In this example, I picked `Precip Probability` (the chance it will rain) being l
 Go ahead and have a play with it, create a couple of *Only continue if...* rules. To add a new condition, click either the **+ AND** or the **+ OR** button, depending on whether you'd like both (or all) conditions met for the Zap to continue running, or you'd be happy to wake up in case any of your conditions evaluate as true.   
 
 If at any point you're unsure of the type of the weather properties or their format, check out the [Dark Sky docs](https://darksky.net/dev/docs) where each of the parameters is described in detail.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/filter-rules-zapier.png" alt="Adding rules to Filter by Zapier" class="alignnone size-full wp-image-32859" />
+
+![Adding rules to Filter by Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/filter-rules-zapier.png "Adding rules to Filter by Zapier")
 
 Once you're happy with your filter conditions, click the **+** button to move on to the next action.
 
