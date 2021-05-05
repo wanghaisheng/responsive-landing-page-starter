@@ -41,7 +41,7 @@ Before we get started, you'll need a couple of things:
 
 ## A Word about Zapier
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/zapier-dashboard.png" alt="Zapier Dashboard" class="alignnone size-full wp-image-32879"/>
+![Zapier Dashboard](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/zapier-dashboard.png "Zapier Dashboard")
 
 ### What is Zapier?
 
@@ -51,7 +51,7 @@ To find out more about Zapier, visit their [Getting Started with Zapier](https:/
 
 ### Common Terms: Learn to Speak Zapier
 
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/zapier-weather-notifications.png" alt="Zapier workflow for weather notifications using Zapier's built-in Apps and the Vonage APIs" class="alignnone size-full wp-image-32880" />
+![Zapier workflow for weather notifications using Zapier's built-in Apps and the Vonage APIs](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/zapier-weather-notifications.png "Zapier workflow for weather notifications using Zapier's built-in Apps and the Vonage APIs")
 
 #### Zap
 
@@ -88,21 +88,25 @@ To get started, click the **Make a ZAP** button on the top left corner of your [
 ### The Trigger: Schedule by Zapier
 
 First, select [Schedule by Zapier](https://zapier.com/apps/schedule) from the list of available built-in apps.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/select-schedule-zapier.png" alt="Select Schedule by Zapier from the list of built-in apps" class="alignnone size-full wp-image-32870" />
+
+![Select Schedule by Zapier from the list of built-in apps](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/select-schedule-zapier.png "Select Schedule by Zapier from the list of built-in apps")
 
 This app offers three trigger events, based on how frequently you'd like your Zap to be run. In this case, select **Every Day** for a daily reminder.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/schedule-trigger-event.png" alt="Events drop-down menu for Schedule by Zapier" class="alignnone size-full wp-image-32869" />
+
+![Events drop-down menu for Schedule by Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/schedule-trigger-event.png "Events drop-down menu for Schedule by Zapier")
 
 Next, you'll be prompted to customize the time of the day you'd like your Zap to be triggered.\
 Specify whether you prefer it to run on weekends or not, by selecting *yes* or *no* from the drop-down menu.
 
 As for the *Time of Day*, either select a value from the drop-down menu or click **Custom** and type the desired value. For example, `6:32am`.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/schedule-customize-day.png" alt="Set frequency for Schedule by Zapier" class="alignnone size-full wp-image-32867" />
+
+![Set frequency for Schedule by Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/schedule-customize-day.png "Set frequency for Schedule by Zapier")
 
 Finally, Zapier will try to find test data for this event and you'll be presented with a set of test data. Have a look at these fields and make a note if you find any of the parameters interesting, you'll be able to pull them in dynamically in later steps! 
 
 Click *Continue* to move on to the next step.
-<img src="https://www.nexmo.com/wp-content/uploads/2020/07/schedule-test-data.png" alt="Test data for Schedule by Zapier" class="alignnone size-full wp-image-32868" />
+
+![Test data for Schedule by Zapier](/content/blog/get-a-“beautiful-morning-weather”-alert-with-zapier-and-vonage/schedule-test-data.png "Test data for Schedule by Zapier")
 
 ### Action 1: Get Weather Data with Weather by Zapier
 
