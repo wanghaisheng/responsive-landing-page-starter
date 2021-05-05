@@ -7,9 +7,9 @@ author: alyssa-mazzina
 published: true
 published_at: 2018-11-28T17:00:14.000Z
 updated_at: 2021-05-04T15:46:13.789Z
-category: announcement
+category: community
 tags:
-  - awards
+  - devrel-awards
 comments: true
 redirect: ""
 canonical: ""
@@ -22,7 +22,7 @@ Nexmo is the proud recipient of “Best Developer Relations Program Overall” a
 
 The [DevRel Awards](https://2018.devrelawards.com/) took place on November 7 in London. Developer Relations teams were judged on a number of categories; the categories were opened to the public for nominations, and the top nominees were judged by a jury of Developer Relations experts including Red Hat's Developer Strategist Leslie Hawthorn, Digital Ocean's Director of Developer Relations Tim Falls and developer relations consultant Matthew Revell. 
 
-![two individuals celebrating receiving an awards](/content/blog/all-your-devrel-award-are-belong-to-us/awards1.jpeg "awards")
+![Olia celebrating receiving an awards](/content/blog/all-your-devrel-award-are-belong-to-us/awards1.jpeg "awards")
 
 "Nexmo have done an amazing job of not only spreading awareness of [their APIs](https://developer.nexmo.com/) but also of making genuinely useful contributions to [the communities](https://developer.nexmo.com/community) with which they interact,” said Revell. 
 
@@ -38,10 +38,10 @@ The [DevPortal Awards](https://devportalawards.org/), held on November 9 also in
 
 [](https://www.nexmo.com/wp-content/uploads/2018/11/20181109_205532.jpg)
 
-![two individuals accepting the award for best onboarding winner: Nexmo Developer](/content/blog/all-your-devrel-award-are-belong-to-us/awards2.jpeg "best onboarding winner")
+![Martyn and Lorna accepting the award for best onboarding winner: Nexmo Developer](/content/blog/all-your-devrel-award-are-belong-to-us/awards2.jpeg "best onboarding winner")
 
 The DevPortal Awards were also open to nominations from the public, with the nominees then being judged by a [jury of experts](https://devportalawards.org/jury). 
 
 “It's fantastic to be recognized by our peers. We are where we are today thanks to our fellow developer relations professionals and the developer communities we've been welcomed into and that we've had the honor to support over the years,” said Phil Leggetter, Director of Developer Relations for Nexmo. “Thank you to the developer relations community and to everybody at Vonage for the continued support we see every day.” 
 
-![Group photo of individuals from Nexmo](/content/blog/all-your-devrel-award-are-belong-to-us/awards3.jpeg "group photo")
+![Group photo of Nexmo Devrel Team](/content/blog/all-your-devrel-award-are-belong-to-us/awards3.jpeg "Nexmo Devrel Team")
