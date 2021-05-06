@@ -17,6 +17,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+# Introducing Distribution Ledger Technology - SMS Indian Regulation
+
 ## What Is Distribution Ledger Technology (DLT)?
 
 Distributed Ledger Technology (also known as DLT) is a digital method allowing users and systems to record transactions related to their assets. Traditional databases have a central location to store their information; however, DLT stores the data at multiple locations to provide better security, transparency and trust amongst the parties utilizing the service.
@@ -36,29 +38,14 @@ If you are an enterprise in India or are sending A2P SMS to domestic phone numbe
 
 ## How Can I Use DLT With Vonage?
 
-There are two methods to being compliant with DLT when using Vonage's SMS API, which are listed below:
+### Update Your Project and Submit DLT Required Parameters at Every Request
 
-### Update Your Project and Submit DLT Required Parameters at Every Request (Preferred)
+You need to make changes to your application to use your Entity ID, Sender ID/Header and Templates as shown in the DLT portal. You will need to use the additional parameters for every API request or SMPP request when you submit your SMS messages.
 
-The preferred method is to make changes to your application to maintain your Entity ID, Sender ID/Header and Templates as shown in the DLT portal. You will need to use the additional parameters for every API/SMPP request when you submit your SMS messages. Below is an example of the API endpoints:
 
-### Allow Vonage To Detect Your Template With No Change to Your Project
+ 
 
-The second option is for you to create a CSV file containing your DLT approved `PEID`, `SenderID` and `Template` and email <support@nexmo.com> with this file attached. The email will need to contain the following bits of information:
-
-PEID- (Entity unique ID received from DLT after Entity registration Approved) :
-
-Entity name - (Company name under which registered on DLT) :
-
-Sender Name - (6 Alpha/Num Sender/Header which is registered in DLT and approved)
-
-Registered on - (The DLT platform information) :
-
-Template file  - (as downloaded from the DLT portal template section) and saved as CSV format with the entityID as the file name. <entityid.csv>
-
-### I've Chosen Option 1, How Can I Be Complaint When Sending an SMS?
-
-### Sending an SMS With the API
+### Sending an SMS with the API
 
 If you are using our API without one of our SDKs, then you'd need to update your POST request when making a request to send an SMS. You would need to add two parameters to the request, as shown below:
 
@@ -67,7 +54,7 @@ If you are using our API without one of our SDKs, then you'd need to update your
 
 More information on this request with the API when sending an SMS can be found on the [API Docs](https://developer.nexmo.com/api/sms#send-an-sms).
 
-### Sending an SMS With Our Sdks
+### Sending an SMS With Our SDKs
 
 The example below uses the Node SDK, however we have other SDKS as listed in the [developer docs code snippets](https://developer.nexmo.com/messaging/sms/code-snippets/send-an-sms).
 
@@ -161,3 +148,12 @@ A successful SMS message being sent will show as similar to the example below:
 ```
 
 However, if there is an issue, `err_code` will not be 0, and the `status` will be `rejected`.
+
+### Sending SMS with SMPP
+
+To send an SMS message with SMPP, you’ll need to add extra parameters to your request. For more information on what these extra parameters are please refer to the [knowledgebase under “Complying with DLT and Vonage”](https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions)
+
+### Letting Vonage manage DLT for you
+
+Vonage is providing a temporary solution, where you let Vonage detect your template with zero change at your end. Please check the [knowledgebase, section 2, option 2] (https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions) for more information. While this method is not suggested by Vonage, we recommend updating your project and using the new API parameters to send DLT compliant SMS. 
+
