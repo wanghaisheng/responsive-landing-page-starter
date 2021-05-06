@@ -6,7 +6,7 @@ description: As part of our Startup program we have partnered Accelerators,
 thumbnail: /content/blog/startup-community-partner-aurelia-ventures/startups_aurelia-ventures_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-05-06T13:57:51.814Z
+published_at: 2021-05-06T09:59:53.415Z
 updated_at: 2021-05-06T13:57:51.840Z
 category: community
 tags:
