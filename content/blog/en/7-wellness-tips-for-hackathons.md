@@ -14,8 +14,8 @@ tags:
   - health
   - wellness
 comments: true
-redirect: https://www.nexmo.com/legacy-blog/2018/11/29/7-wellness-tips-for-hackathons
-canonical: https://www.nexmo.com/legacy-blog/2018/11/29/7-wellness-tips-for-hackathons
+redirect: ""
+canonical: ""
 ---
 <small>*Note from the editor:* The timing of this article is especially apt as we're fortunate enough to have [Myrsini](https://twitter.com/myrsiningos) put these tips and many more into practice at our internal [#onehack Hackathon](https://twitter.com/search?q=%23OneHack) today in London. If you'd like to take part in our next #onehack or learn more about life at Nexmo check out [our careers page](https://www.nexmo.com/careers).</small>
 
