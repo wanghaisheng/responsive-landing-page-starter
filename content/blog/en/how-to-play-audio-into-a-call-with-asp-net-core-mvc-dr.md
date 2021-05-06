@@ -11,7 +11,6 @@ category: tutorial
 tags:
   - asp.net
   - voice-api
-  - play-audio
 comments: true
 redirect: ""
 canonical: ""
