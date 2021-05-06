@@ -13,8 +13,6 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-![Julia eating a cookie](/content/blog/julia-joins-the-nexmo-developer-relations-team/cookie.jpeg "Julia")
-
 Oh, hey! I’m Julia and I’m super excited to start my Developer Relations career at Nexmo!
 
 I’m a people person, passionate about education and a reformed designer turned coder. I'm trying to learn new things as I go - and by that I mean as I fly, preferably halfway across the world.
