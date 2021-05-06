@@ -34,31 +34,31 @@ Industries: AI, Blockchain, FinTech, SaaS, Deep Tech
 
 Typical Startup Profile: Either pre-MVP/MVP stage with the goal to raise a Seed round or Seed stage company with traction who plans to raise a Series A in the next 12 months
 
-1. ## In three sentences or less, tell us about your accelerator program, its focus, benefits and goals.
+## In three sentences or less, tell us about your accelerator program, its focus, benefits and goals.
 
 Our equity-free program helps startups to raise capital, prepares them for the fundraising process, provides them with $1.25M in perks and benefits to extend their runway and connects them with industry experts and mentors. We work with each startup on a personal basis to help them make the most out of the 12 months program and they learn from experienced entrepreneurs how to raise funds and how to build successful technology companies. In addition to that, they will join a community of experienced (serial-)entrepreneurs.
 
-2. ### What does being part of your program mean for founders? What can they expect?
+## What does being part of your program mean for founders? What can they expect?
 
 We work with each startup on a personal level and in that way, our program looks different for each company. The personal approach helps our founders to remove roadblocks quickly, have a sounding board when they need it and get connected to other global entrepreneurs who are on the same mission as they are. Ultimately we support them in their personal goals and growth of the company on a holistic level.
 
-3. ## What is the most challenging part of working with startups?
+## What is the most challenging part of working with startups?
 
 We work with each startup on a personal level and therefore solve the problems a founder might have together with them. Their problems are our problems. Each company is different and that makes it so interesting and challenging.
 
-4. ## What do you find most satisfying about working with startups?
+## What do you find most satisfying about working with startups?
 
 Working every day with energetic, experienced entrepreneurs who are going to change the world is one of the most rewarding things we can do. By helping startups in the early days where many things are flexible and agile, we see a huge improvement in their companies over the course of our 12-month program which is very rewarding to us.
 
-5. ## What are some things that you repeatedly see early-stage companies and founders struggle with?
+## What are some things that you repeatedly see early-stage companies and founders struggle with?
 
 We see many founders struggle with the fundraising process due to wrong assumptions and perceptions of how these things work. We have a network of 50+ individual business angels and 80+ VCs in our core regions who we speak to regularly, to give our startups the most recent update on new developments in the VC industry and what it takes to raise successfully from a VC. Our goal is to bridge the gap, so that both parties, the investor and the startup, have a seamless fundraising experience.
 
-6. ## What’s the biggest trend that gets your team excited in the tech market today?
+## What’s the biggest trend that gets your team excited in the tech market today?
 
 Recent developments in AI (e.g. NLP, computer vision) and DeFi (decentralized finance). 
 
-7. ## Time for some success stories! Which are the 3 (or more) most interesting companies to have joined your program?
+## Time for some success stories! Which are the 3 (or more) most interesting companies to have joined your program?
 
 Very difficult, all of our companies are great. We need to be very selective during the application process and only work with founders where we believe we have the most impact and who develop technology that will have a big long-term influence on how people live, work and do things. 
 
@@ -72,7 +72,7 @@ Hummingbirds AI ([hummingbirds.ai](http://hummingbirds.ai/)) is a startup that i
 
 Their proprietary algorithms provide continuous real-time human detection, pose estimation, path tracking and complex behavioral analysis to detect anomalies & potential threats. Additionally, by creating computationally-efficient AI algorithms combined with a fast processing hardware design (Do&Bushi), their platform performs the entire required signal processing at their clients’ properties without the need to transfer any data to the cloud -- thus ensuring total PRIVACY. All this allows Hummingbirds AI to provide customized operational/safety solutions beyond what is achievable in any existing products.
 
-8. ## What are the most important factors startup founders should consider when considering an accelerator?
+## What are the most important factors startup founders should consider when considering an accelerator?
 
 Look for a program that is aligned with your vision and what you have set out to do. If you find a program that has deep expertise in your technology even better because that means they might be able to connect you to your first customers. Ask critical questions during the interview to probe the accelerator because they need to fit you as much as you need to fit them. Also, many times it’s easier (and at a better valuation) to raise the first $50k - $200k from business angels or together with an accelerator that has close ties to business angels.
 
