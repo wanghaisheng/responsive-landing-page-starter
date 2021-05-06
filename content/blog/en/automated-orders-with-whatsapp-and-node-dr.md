@@ -11,8 +11,7 @@ updated_at: 2021-05-05T12:39:48.096Z
 category: tutorial
 tags:
   - messages-api
-  - node
-  - messages-api-sandbox
+  - nodejs
 comments: true
 redirect: ""
 canonical: ""
@@ -28,7 +27,7 @@ An advantage of using Vonage's Messages API Sandbox is that you don't need your 
 - Node and npm
 - Express and the body-parser middleware
 - The [Vonage Node.js beta SDK](https://www.npmjs.com/package/nexmo)
-- A device with WhatsApp, whitelisted in the [Messages API Sandbox](https://dashboard.nexmo.com/messages/sandbox)
+- A device with WhatsApp, whitelisted in the [Messages API Sandbox]
 
 <sign-up></sign-up>
 
