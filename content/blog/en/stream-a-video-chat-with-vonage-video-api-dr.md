@@ -10,7 +10,7 @@ updated_at: 2021-05-05T11:20:50.954Z
 category: tutorial
 tags:
   - video-api
-  - node
+  - nodejs
 comments: true
 redirect: ""
 canonical: ""
