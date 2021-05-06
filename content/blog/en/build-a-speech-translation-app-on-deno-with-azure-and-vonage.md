@@ -10,8 +10,7 @@ updated_at: 2021-05-04T13:36:12.414Z
 category: tutorial
 tags:
   - deno
-  - azure
-  - asr
+  - voice-api
 comments: true
 redirect: ""
 canonical: ""
@@ -39,7 +38,7 @@ Let's get started!
 
 To build this application, you will need several items before we can start implementing it:
 
-* A [Vonage Account](https://dashboard.nexmo.com)
+* A Vonage Account
 * A Vonage provisioned phone number
 * A [Microsoft Azure Account](https://portal.azure.com)
 * [Deno](https://deno.land) installed on your local machine
