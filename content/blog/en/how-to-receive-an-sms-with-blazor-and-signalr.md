@@ -24,7 +24,7 @@ If you just want to jump right to the code, just visit this demo's repository in
 
 ## Prerequisites
 
-* You'll need a Vonage API account. You can [sign up here](https://dashboard.nexmo.com/sign-up)
+* You'll need a Vonage API account
 * You'll need the latest version of the [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 * You'll need either Visual Studio 2019, Visual Studio for Mac, or Visual Studio Code, I will be using VS Code for this demo
 
