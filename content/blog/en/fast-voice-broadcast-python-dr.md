@@ -29,9 +29,9 @@ And often this is fine. Not every notification is time sensitive or requires urg
 
 There are a few things you will need before we get started. 
 
-- Python 3.5 or better, we're going to be using some of the newer [async features of Python](https://docs.python.org/3/library/asyncio.html), so we'll need a pretty modern version. I'd also recommend virtualenv as we're going to need to install a few dependencies.
-- [MongoDB](https://www.mongodb.com/) installed locally
-- ngrok or a similar way of [exposing your application to the internet](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
+* Python 3.5 or better, we're going to be using some of the newer [async features of Python](https://docs.python.org/3/library/asyncio.html), so we'll need a pretty modern version. I'd also recommend virtualenv as we're going to need to install a few dependencies.
+* [MongoDB](https://www.mongodb.com/) installed locally
+* ngrok or a similar way of [exposing your application to the internet](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
 
 <sign-up number></sign-up>
 
@@ -86,7 +86,7 @@ The Nexmo API will make a GET request to the Answer URL you provided when creati
 
 ## Gotta go fast! Creating an async Python Sanic server
 
-<a href="https://github.com/channelcat/sanic"><img src="https://www.nexmo.com/wp-content/uploads/2017/10/python-sanic-server.png" alt="Sanic running in a Terminal" class="alignnone size-full wp-image-16384" /></a>
+![Sanic running in a Terminal](/content/blog/super-fast-voice-broadcast-with-asynchronous-python-and-sanic/python-sanic-server.png "Sanic running in a Terminal")
 
 You can find the code for the server in the `server.py` file, but let's concentrate on the `answer` route for now.
 
@@ -149,7 +149,7 @@ The process is simple; we connect to our data store, grab a telephone number to 
 
 Using the Python client is the most straightforward way of making an outbound call. But it is also synchronous. Under the hood our Python client uses the pretty incredible requests library. But unfortunately, requests is not an asynchronous library, [although that is coming!](https://github.com/Nexmo/nexmo-python/issues/39#issuecomment-305659007)
 
-<img src="https://www.nexmo.com/wp-content/uploads/2017/10/making-outbound-voice-call-terminal.png" alt="Screenshot of the Nexmo Python client running in Terminal" class="alignnone size-full wp-image-16387" />
+![Screenshot of the Nexmo Python client running in Terminal" class](/content/blog/super-fast-voice-broadcast-with-asynchronous-python-and-sanic/making-outbound-voice-call-terminal.png "Screenshot of the Nexmo Python client running in Terminal\" class")
 
 If you have a small number of notifications to send this is probably good enough. The Nexmo API is fast, but you still have to connect to it online. There is going to be some latency. From my office in Glasgow, Scotland it takes approximately 1 second for the request and response from the Nexmo API. So sending a few notifications this way would probably be fine, but if I wanted to send thousands of notifications, or even hundreds of thousands of notifications synchronously is probably not the best way.
 
@@ -196,7 +196,7 @@ async def broadcast(future, loop):
 
 The first thing to notice is this is a coroutine, and we're using the `async def` syntax, which means we will need a Python version >= 3.5
 
-<a href="https://motor.readthedocs.io/en/stable/"><img src="https://www.nexmo.com/wp-content/uploads/2017/10/python-motor-mascot.png" alt="Python Motor Mascot" class="alignnone size-full wp-image-16390" /></a>
+![Python Motor Mascot](/content/blog/super-fast-voice-broadcast-with-asynchronous-python-and-sanic/python-motor-mascot.png "Python Motor Mascot")
 
 Our MongoDB client code has changed somewhat as well. We're now [using motor rather than the pymongo library](https://motor.readthedocs.io/en/stable/). We have made this switch as pymongo is not asynchronous. To prevent our Mongo calls from being blocking we have to use motor instead.
 
@@ -326,11 +326,11 @@ We have two decorators each waiting for a different sort of error from the API. 
 
 #### Calls with exponential backoff and no jitter
 
-<a href="https://www.awsarchitectureblog.com/2015/03/backoff.html"><img src="https://www.nexmo.com/wp-content/uploads/2017/10/exponential-backoff-no-jitter.png" alt="Graph showing clustering with no jitter" class="alignnone size-full wp-image-16393" /></a>
+![Graph showing clustering with no jitter](/content/blog/super-fast-voice-broadcast-with-asynchronous-python-and-sanic/exponential-backoff-no-jitter.png "Graph showing clustering with no jitter")
 
 #### Calls with exponential backoff and full jitter
 
-<a href="https://www.awsarchitectureblog.com/2015/03/backoff.html"><img src="https://www.nexmo.com/wp-content/uploads/2017/10/exponential-backoff-with-jitter.png" alt="Graph with no clustering as jitter is applied" class="alignnone size-full wp-image-16396" /></a>
+![Graph with no clustering as jitter is applied](/content/blog/super-fast-voice-broadcast-with-asynchronous-python-and-sanic/exponential-backoff-with-jitter.png "Graph with no clustering as jitter is applied")
 
 *Graphs from "[Exponential Backoff And Jitter](https://www.awsarchitectureblog.com/2015/03/backoff.html)" by [AWS Architecture blog](https://www.awsarchitectureblog.com)*
 
@@ -352,7 +352,7 @@ def fibo(max_value=None):
 
 If the exponential or Fibonacci generators do not suit your use case, it's straightforward to write your own. As per [xkcd 221](https://xkcd.com/221/) here is a generator that always yields a random wait duration.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2017/10/xkcd-221-random-number-generator.png" alt="XKCD 221 - Random number generator" class="alignnone size-full wp-image-16399" />
+![XKCD 221 - Random number generator](/content/blog/super-fast-voice-broadcast-with-asynchronous-python-and-sanic/xkcd-221-random-number-generator.png "XKCD 221 - Random number generator")
 
 ```
 def xkcd():
@@ -364,7 +364,7 @@ Our `create_call` coroutine will return a `Falsey` value any time the JSON respo
 
 ## Trying it all out
 
-<img src="https://www.nexmo.com/wp-content/uploads/2017/10/voice-broadcast-terminal-screencast.gif" alt="Screencast showing multiple async tasks making outbound voice calls" class="alignnone size-full wp-image-16402" />
+![Screencast showing multiple async tasks making outbound voice calls](/content/blog/super-fast-voice-broadcast-with-asynchronous-python-and-sanic/voice-broadcast-terminal-screencast.gif "Screencast showing multiple async tasks making outbound voice calls")
 
 Before you try running either script remember you will need to have [Sanic](https://github.com/channelcat/sanic) and [ngrok](https://ngrok.com) running so Nexmo can fetch your NCCO file!
 
