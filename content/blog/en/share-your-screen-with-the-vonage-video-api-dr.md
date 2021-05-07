@@ -9,7 +9,7 @@ published_at: 2020-04-29T13:35:20.000Z
 updated_at: 2021-05-05T11:28:14.480Z
 category: tutorial
 tags:
-  - node
+  - nodejs
   - video-api
 comments: true
 redirect: ""
