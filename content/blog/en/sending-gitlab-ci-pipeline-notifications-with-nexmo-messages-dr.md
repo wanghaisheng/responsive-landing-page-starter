@@ -1,7 +1,7 @@
 ---
 title: Sending GitLab CI Pipeline Notifications with Nexmo Messages
-description: " see how to improve the CI / CD process by including SMS
-  notifications powered by Nexmo in the event of a failure"
+description: See how to improve the CI / CD process by including SMS
+  notifications powered by Nexmo in the event of a failure
 thumbnail: /content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages-dr/E_GitLab-CI-Pipeline_1200x600.jpg
 author: nraboy
 published: true
@@ -9,7 +9,8 @@ published_at: 2019-09-30T08:00:36.000Z
 updated_at: 2021-05-07T13:25:41.260Z
 category: tutorial
 tags:
-  - spotlight
+  - sms-api
+  - messages-api
 comments: true
 spotlight: true
 redirect: ""
