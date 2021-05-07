@@ -9,8 +9,7 @@ published_at: 2020-07-02T13:30:32.000Z
 updated_at: 2021-05-04T17:18:22.857Z
 category: tutorial
 tags:
-  - amazon-comprehend
-  - tone-analysis
+  - php
   - voice-api
 comments: true
 redirect: https://www.nexmo.com/legacy-blog/2020/07/02/multi-channel-tone-analysis-in-php-with-amazon-comprehend
