@@ -11,7 +11,6 @@ updated_at: 2021-05-04T17:05:23.379Z
 category: tutorial
 tags:
   - graphql
-  - video
   - insights-api
 comments: true
 redirect: ""
