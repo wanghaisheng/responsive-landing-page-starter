@@ -1,9 +1,8 @@
 ---
 title: Learn and Apply XState with Vonage Video
-description: Over the last few months, I have heard more about state machines
-  used for front-end development. The idea of a state machine is that it has
-  only a finite number of states and can only be in one state at any given time.
-  Conceptually this makes perfect sense for app development – there are only […]
+description: XState is a new way of representing state in front-end JavaScript
+  applications. In this post, we introduce the concepts behind it to help you
+  learn more.
 thumbnail: /content/blog/learn-and-apply-xstate-with-vonage-video/Blog_XState_VideoAPI_1200x600.png
 author: kellyjandrews
 published: true
