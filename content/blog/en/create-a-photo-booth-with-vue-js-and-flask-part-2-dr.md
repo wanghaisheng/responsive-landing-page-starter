@@ -11,7 +11,7 @@ category: tutorial
 tags:
   - flask
   - vuejs
-  - sms
+  - sms-api
 comments: true
 redirect: ""
 canonical: ""
