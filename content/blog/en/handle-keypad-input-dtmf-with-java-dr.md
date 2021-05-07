@@ -9,7 +9,6 @@ published_at: 2018-08-15T18:54:33.000Z
 updated_at: 2021-05-03T20:43:13.588Z
 category: tutorial
 tags:
-  - dtmf
   - java
   - voice-api
 comments: true
@@ -22,7 +21,7 @@ In a previous tutorial, we showed you how to create an application that can [Rec
 
 ## Prerequisites
 
-To work through this tutorial, you will need a [Nexmo account](https://dashboard.nexmo.com/sign-up). Sign up now if you don't already have an account.
+To work through this tutorial, you will need a Vonage account. Sign up now if you don't already have an account.
 
 You will be using [Gradle](https://gradle.org) to manage your dependencies and run your application. Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 8 in this tutorial.
 
