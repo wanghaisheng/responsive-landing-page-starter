@@ -29,10 +29,11 @@ And often this is fine. Not every notification is time sensitive or requires urg
 
 There are a few things you will need before we get started. 
 
-1. <sign-up number></sign-up>
-2. Python 3.5 or better, we're going to be using some of the newer [async features of Python](https://docs.python.org/3/library/asyncio.html), so we'll need a pretty modern version. I'd also recommend virtualenv as we're going to need to install a few dependencies.
-3. [MongoDB](https://www.mongodb.com/) installed locally
-3. ngrok or a similar way of [exposing your application to the internet](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
+- Python 3.5 or better, we're going to be using some of the newer [async features of Python](https://docs.python.org/3/library/asyncio.html), so we'll need a pretty modern version. I'd also recommend virtualenv as we're going to need to install a few dependencies.
+- [MongoDB](https://www.mongodb.com/) installed locally
+- ngrok or a similar way of [exposing your application to the internet](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
+
+<sign-up number></sign-up>
 
 We'll also need to [rent a Nexmo virtual number](https://dashboard.nexmo.com/your-numbers) and associate it with a [Nexmo application](https://dashboard.nexmo.com/voice/your-applications). If you read my previous post on [becoming a text-to-speech Superhero](https://www.nexmo.com/blog/2017/08/14/text-to-speech-phone-call-with-django-dr/), you will have already come across Nexmo voice applications. They are easy to create via the dashboard or the using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
 
