@@ -42,11 +42,13 @@ IFTTT reacts to new email, sending a webhook to the serverless function. That fu
 
 You will need:
 
-* A Nexmo account. You can [sign up here](https://nexmo.com) if you don't already have one.
+* A Vonage account
 * An IBM Cloud account (or another installation of Apache OpenWhisk)
 * The [`ibmcloud` tool with `cloud-functions` plugin](https://console.bluemix.net/docs/openwhisk/bluemix_cli.html#cloudfunctions_cli) (or `wsk` tool for an alternative Apache OpenWhisk installation)
 
 With all those in place, we can begin!
+
+<sign-up></sign-up>
 
 ### Get the code
 
