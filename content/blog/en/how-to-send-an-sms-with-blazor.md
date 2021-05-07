@@ -9,9 +9,8 @@ published_at: 2020-07-08T07:15:14.000Z
 updated_at: 2021-05-05T09:28:13.059Z
 category: tutorial
 tags:
-  - .net
-  - blazor
-  - sms
+  - dotnet
+  - sms-api
 comments: true
 redirect: ""
 canonical: ""
