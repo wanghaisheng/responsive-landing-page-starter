@@ -1,11 +1,9 @@
 ---
 title: How to Add Video to Your React Chat App with Nexmo
-description: At Nexmo, we’re really excited about the ability to create customer
-  journeys through conversations with our new Conversation API. It allows users
-  to not only deploy an omnichannel experience leveraging voice, messaging, and
-  video all within one experience but also maintains the context of those
-  conversations to deliver a superior customer experience. The possibilities of
-  […]
+description: Today, we’ll build something off of the chat application that was
+  built in this introductory tutorial. That original app uses Nexmo’s Client SDK
+  and connects to the Conversation API. And today, we are going to add video
+  chat to that React application using the TokBox API.
 thumbnail: /content/blog/how-to-add-video-to-react-chat-app-with-nexmo-dr/Elevate_AddVideotoChat-1.png
 author: laurenlee
 published: true
