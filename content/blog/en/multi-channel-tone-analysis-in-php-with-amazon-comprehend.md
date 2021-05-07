@@ -12,8 +12,8 @@ tags:
   - php
   - voice-api
 comments: true
-redirect: https://www.nexmo.com/legacy-blog/2020/07/02/multi-channel-tone-analysis-in-php-with-amazon-comprehend
-canonical: https://www.nexmo.com/legacy-blog/2020/07/02/multi-channel-tone-analysis-in-php-with-amazon-comprehend
+redirect: ""
+canonical: ""
 ---
 In this post, you'll update an [AWS Lambda](https://aws.amazon.com/lambda/) function introduced in a previous post where the results of a voice transcription get stored in [RDS](https://aws.amazon.com/rds/). The objective for this example is to use [Amazon Comprehend](https://aws.amazon.com/comprehend/) to retrieve the tone analysis for an entire conversation, by channels, and then add the results to an [RDS](https://aws.amazon.com/rds/) MySQL database instance.
 
