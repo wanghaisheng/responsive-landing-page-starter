@@ -3,10 +3,10 @@ title: Build a “Google Authenticator” from a Landline with Vonage
 description: Learn how to build a Google Authenticator from a landline and
   access your 2FA passcode as a remote service with Vonage Voice API.
 thumbnail: /content/blog/build-a-google-authenticator-from-a-landline-with-vonage/Social_Google-Authenticator_1200x627.png
-author: russ-williams
+author: stevelorello
 published: true
-published_at: 2020-05-01T13:30:25.000Z
-updated_at: 2021-05-05T11:52:28.866Z
+published_at: 2020-05-01T13:20:49.145Z
+updated_at: 2021-05-07T13:20:49.223Z
 category: tutorial
 tags:
   - node
