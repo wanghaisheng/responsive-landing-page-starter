@@ -101,7 +101,7 @@ Set up a new Messages & Dispatch application via the [Nexmo Dashboard](https://d
 
 You don't need an inbound or status webhook for the purpose of this blog post, so you can use `http://example.com` in those fields.
 
-![Create an application](https://www.nexmo.com/wp-content/uploads/2018/10/create-messages-application.png)
+![Create an application](/content/blog/send-sms-when-typeform-is-submitted-using-node-js-and-messages-api/create-messages-application.png "Create Application")
 
 Remember to also click the *Generate public/private key pair* link. This will download a file called `private.key`.
 
@@ -166,7 +166,7 @@ The app will launch on port `3000`.
 
 Use Ngrok to open up this port to the world and make note of the URLs it produces for you.
 
-![Ngrok output](/content/blog/send-sms-when-your-typeform-is-submitted-using-node-js-hapi-and-the-messages-api/start-ngrok.png "ngrok output")
+![Ngrok output](/content/blog/send-sms-when-typeform-is-submitted-using-node-js-and-messages-api/start-ngrok-1-.png "ngrok output")
 
 [Here is a handy guide to working with Ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) if you haven't used it before.
 
@@ -182,7 +182,7 @@ We've finished our webhook, so now it's time to connect it to a Typeform. If you
 
 As soon as you click `Test Webhook` to see it's working, you'll receive an SMS message with the details.
 
-![typeform webhook](/content/blog/send-sms-when-your-typeform-is-submitted-using-node-js-hapi-and-the-messages-api/webhook-typeform.png "Webhook")
+![typeform webhook](/content/blog/send-sms-when-typeform-is-submitted-using-node-js-and-messages-api/webhook-typeform-1-.png "Webhook")
 
 ## Conclusion
 
