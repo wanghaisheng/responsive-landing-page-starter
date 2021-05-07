@@ -35,8 +35,6 @@ There are a few things you will need before we get started.
 
 <sign-up number></sign-up>
 
-We'll also need to [rent a Nexmo virtual number](https://dashboard.nexmo.com/your-numbers) and associate it with a [Nexmo application](https://dashboard.nexmo.com/voice/your-applications). If you read my previous post on [becoming a text-to-speech Superhero](https://www.nexmo.com/blog/2017/08/14/text-to-speech-phone-call-with-django-dr/), you will have already come across Nexmo voice applications. They are easy to create via the dashboard or the using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
-
 ## Setting up our database
 
 We're going to be using MongoDB to store the numbers of the people we need to call. Our documents are going to be especially simple:
