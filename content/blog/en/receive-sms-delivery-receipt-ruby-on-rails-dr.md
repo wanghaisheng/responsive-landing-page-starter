@@ -10,8 +10,7 @@ updated_at: 2021-05-07T15:30:19.506Z
 category: tutorial
 tags:
   - ruby
-  - sms-api
-  - ""
+  - sms-ap
 comments: true
 redirect: ""
 canonical: ""
