@@ -152,6 +152,7 @@ However, if there is an issue, `err_code` will not be 0, and the `status` will b
 ### Sending SMS with SMPP
 
 To send an SMS message with SMPP, you’ll need to add extra parameters to your request. For more information on what these extra parameters are please refer to the [knowledgebase under “Complying with DLT and Vonage”](https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions)
+
 ### Letting Vonage manage DLT for you
-Vonage is providing a temporary solution, where you let Vonage detect your template with zero change at your end. Please check the [knowledgebase, section 2, option 2] (https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions) for more information. While this method is not suggested by Vonage, we recommend to update your project and to use the new API parameters to send DLT compliant SMS. 
+Vonage is providing a temporary solution, where you let Vonage detect your template with zero change at your end. Please check the [knowledgebase, section 2, option 2] (https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions) for more information. While this method is not suggested by Vonage, we recommend updating your project and using the new API parameters to send DLT compliant SMS. 
 
