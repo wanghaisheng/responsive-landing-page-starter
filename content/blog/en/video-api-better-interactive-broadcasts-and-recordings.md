@@ -65,7 +65,7 @@ In our recent platform update, we increased the maximum number of video and audi
 
 For example, our Best Fit layout type will automatically increase to a 4x4 grid layout, and customers have the option of customizing it to display up to 16 video streams. For audio, the first 50 audio streams published to the session will be included in the recordings and broadcasts. 
 
-//Developer Guide: Learn the best practices of [broadcasting interactive sessions via HLS and/or RTMP streams](https://www.nexmo.com/legacy-blog/2020/09/22/dynamic-layouts-in-hls-rmtp-broadcasts-with-the-video-api-dr).
+> Developer Guide: Learn the best practices of [broadcasting interactive sessions via HLS and/or RTMP streams](https://www.nexmo.com/legacy-blog/2020/09/22/dynamic-layouts-in-hls-rmtp-broadcasts-with-the-video-api-dr).
 
 ### Longer recordings with better sound quality
 
