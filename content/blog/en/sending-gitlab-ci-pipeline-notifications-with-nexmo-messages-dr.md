@@ -100,7 +100,9 @@ This is where Nexmo and the SMS service is valuable.
 
 When our pipeline fails, we can make use of the SMS service from Nexmo to send us a text message which might include pipeline information, commit information, or really anything that might be valuable to us or the team responsible for the project.
 
-To use the Nexmo SMS API, [you'll need an account](https://developer.nexmo.com?utm_campaign=dev_spotlight&utm_content=gitlab_pipeline_raboy). Within the **Settings** section of your account, take note of the API key and the API secret.
+<sign-up></sign-up>
+
+To use the Nexmo SMS API, you'll need an account. Within the **Settings** section of your account, take note of the API key and the API secret.
 
 ![N/A](/content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages/nexmo-settings.jpeg "Settings")
 
