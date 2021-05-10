@@ -12,7 +12,6 @@ category: tutorial
 tags:
   - ruby
   - voice-api
-  - ""
 comments: true
 redirect: ""
 canonical: ""
