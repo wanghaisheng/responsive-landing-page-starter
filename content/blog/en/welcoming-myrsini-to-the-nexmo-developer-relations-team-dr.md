@@ -20,8 +20,6 @@ As a Community Manager, I will be helping our team support and engage with devel
 
 My background spans from events to content and everything in between. I’ve worked for an NGO, a tech company, a startup, a communications agency and as a freelancer. 
 
-[![](https://www.nexmo.com/wp-content/uploads/2018/08/068.jpg)](https://www.nexmo.com/wp-content/uploads/2018/08/068.jpg) 
-
 I first got into Dev Rel in 2014 when I joined PayPal and Braintree, where our mission was to empower developers and startups. Our most notable initiative was the global hackathon series [BattleHack](https://www.youtube.com/watch?v=FbwHgfE9iZw&index=24&list=UUAevX_Hrd_Avrz1DRhGyLrQ), during which, teams had to develop an app that solved a local problem. Amongst the winners’ spoils was an *axe*. Yes, you read that right, an axe that I was responsible for getting through customs in every country we visited. I will only discuss this time of my life over wine. 
 
 In 2016 I was fortunate to spend some time with [MLH](https://mlh.io/), the official student hackathon league. I got the chance to meet amazing next-gen developers and help them learn, build and share at MLH first party events. 
