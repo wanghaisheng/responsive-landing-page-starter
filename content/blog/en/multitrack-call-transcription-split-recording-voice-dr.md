@@ -35,7 +35,9 @@ npm init -y
 npm install express body-parser dotenv nexmo @google-cloud/speech --save
 ```
 
-Once you've installed all of your dependencies, you’ll need to create an application and rent a number that people can call. If you don’t already have a Nexmo account, you can [create an account](https://dashboard.nexmo.com/sign-up) via our dashboard.
+Once you've installed all of your dependencies, you’ll need to create an application and rent a number that people can call. 
+
+<sign-up number></sign-up>
 
 Nexmo sends HTTP requests to your application whenever an event occurs within your application. This could be when a call starts ringing, when it’s answered or when a call recording is available, just to name a few. To do this Nexmo needs to be able to reach your application, which is difficult when the application is running locally on your laptop. To expose your local application via the internet, you can use a tool called [ngrok](https://ngrok.com/). For more information you can read our [introduction to ngrok](/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) blog post.
 
