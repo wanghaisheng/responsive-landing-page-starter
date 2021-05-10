@@ -71,31 +71,19 @@ For example, our Best Fit layout type will automatically increase to a 4x4 grid 
 
 The [Vonage Video Recording API](https://tokbox.com/developer/guides/archiving/) has been updated to double the maximum video recording time to 240min so users can record longer meetings and video sessions. Automatic recording sessions will restart recording at 4hr length files. Additionally, audio in the recorded files and broadcasts is now recorded at a higher bitrate, MP4 files encoded with AAC at 128kbps, allowing higher fidelity audio to benefit application use cases.  
 
+![ Picture-in-Picture, Vertical Presentation and Horizontal Presentation Layouts](/content/blog/video-api-better-interactive-broadcasts-and-recordings/screenshot-2021-05-10-at-22.33.29.png " Picture-in-Picture, Vertical Presentation and Horizontal Presentation Layouts")
+
 ### Enhanced screen share layouts and stream prioritization
 
 Our new [Screen Share Layouts](https://tokbox.com/developer/guides/archive-broadcast-layout/#screen-sharing-layouts) prioritize screenshare streams so that the user’s presentation or content share always takes precedence in the recording or broadcast. Customers can use this feature and [Layout Stream Prioritization Rules](https://tokbox.com/developer/guides/archive-broadcast-layout/#stream-prioritization-rules) to make sure presentations, screen shares, and selected streams get priority in recordings and broadcasts. 
-
-| **Picture-in-Picture**   | **Vertical Presentation** | **Horizontal Presentation** |
-| ------------------------ | ------------------------- | --------------------------- |
-| ![](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image6.png "Picture-in-Picture") | ![](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image4.png "Vertical Presentation") | ![](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image5.png "Horizontal Presentation")   |
-
-**Picture-in-Picture**
-
-![Picture-in-Picture](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image6.png "Picture-in-Picture")
-
-**Vertical Presentation**
-
-![Vertical Presentation](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image4.png "Vertical Presentation")
-
-**Horizontal Presentation**
-
-![Horizontal Presentation](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image5.png "Horizontal Presentation")
 
 > Developer Guide: Learn how to build a [JS application for multiple screen share streams](https://learn.vonage.com/blog/2021/03/11/share-screens-together-with-your-friends-and-co-workers/).
 
 ## Portrait layout 
 
 As people adapt to their remote environments, we also saw the need to support vertical compositions suitable for mobile devices in portrait orientation. To that end, we added support for portrait layout resolutions, portrait SD (480x640) and portrait HD (720x1280) for both recording and interactive broadcasting. Our predefined layouts have been optimized for these portrait orientations to adapt automatically for mobile orientation views. 
+
+![Portrait Layout](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image1.png "Portrait Layout")
 
 ## Cloud recording and broadcast quality 
 
