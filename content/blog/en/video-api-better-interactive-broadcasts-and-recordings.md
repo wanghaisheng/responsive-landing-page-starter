@@ -75,13 +75,23 @@ The [Vonage Video Recording API](https://tokbox.com/developer/guides/archiving/
 
 Our new [Screen Share Layouts](https://tokbox.com/developer/guides/archive-broadcast-layout/#screen-sharing-layouts) prioritize screenshare streams so that the user’s presentation or content share always takes precedence in the recording or broadcast. Customers can use this feature and [Layout Stream Prioritization Rules](https://tokbox.com/developer/guides/archive-broadcast-layout/#stream-prioritization-rules) to make sure presentations, screen shares, and selected streams get priority in recordings and broadcasts. 
 
+| **Picture-in-Picture**   | **Vertical Presentation** | **Horizontal Presentation** |
+| ------------------------ | ------------------------- | --------------------------- |
+| ![](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image6.png "Picture-in-Picture") | ![](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image4.png "Vertical Presentation") | ![](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image5.png "Horizontal Presentation")   |
+
 **Picture-in-Picture**
+
+![Picture-in-Picture](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image6.png "Picture-in-Picture")
 
 **Vertical Presentation**
 
+![Vertical Presentation](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image4.png "Vertical Presentation")
+
 **Horizontal Presentation**
 
-//Developer Guide: Learn how to build a [JS application for multiple screen share streams](https://learn.vonage.com/blog/2021/03/11/share-screens-together-with-your-friends-and-co-workers/).
+![Horizontal Presentation](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image5.png "Horizontal Presentation")
+
+> Developer Guide: Learn how to build a [JS application for multiple screen share streams](https://learn.vonage.com/blog/2021/03/11/share-screens-together-with-your-friends-and-co-workers/).
 
 ## Portrait layout 
 
