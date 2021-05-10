@@ -11,8 +11,8 @@ updated_at: 2021-05-10T21:03:38.670Z
 category: release
 tags:
   - video-api
-  - broadcasting
-  - recording
+  - release
+  - ""
 comments: true
 spotlight: false
 redirect: ""
