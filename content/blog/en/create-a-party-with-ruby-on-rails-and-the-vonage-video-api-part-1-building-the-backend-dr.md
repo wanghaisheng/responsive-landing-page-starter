@@ -502,7 +502,7 @@ In the `_chat.html.erb` partial you will also see another empty tag, this time a
 
 The landing page will be the place that the participants will first encounter when they come to the application. Its purpose is to ask the participants for their name, and the party password to enter the site. 
 
-![Landing Page View](/content/blog/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-–-part-1/landing_page.png)
+![Landing Page View](/content/blog/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1/landing_page.png)
 
 Create a new file inside `/app/views/video` called `landing_html.erb` and add the following:
 
@@ -529,7 +529,7 @@ Similar to the partials, the landing page view leverages the instance variables 
 
 The video chat view will be the place that the participants will chat with each other with their video cameras and microphones. This view, in addition to the screenshare view, is the two essential parts of the application. 
 
-![Video Chat Page View](/content/blog/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-–-part-1/video_chat_view.png)
+![Video Chat Page View](/content/blog/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1/video_chat_view.png)
 
 To make this view, create another new file in the same directory called `index.html.erb` with the following inside of it:
 
@@ -579,7 +579,7 @@ The other area we will mention is you will notice that most of the view consists
 
 The final view we need to create for the application is the one for the video screenshare. In this view, the participants can continue chatting via the text chat box, while all watching the same screen together.
 
-![Screenshare View](/content/blog/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-–-part-1/screenshare_view.png)
+![Screenshare View](/content/blog/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1/screenshare_view.png)
 
 This view will only need to provide the `<div>` elements for the API to provide one publisher, namely the screenshare video, and one audio feed. A screenshare by itself does not include audio, which would make it difficult to watch a video together. That is why we will also publish an audio feed from the moderator's computer to accompany the screenshare. 
 
