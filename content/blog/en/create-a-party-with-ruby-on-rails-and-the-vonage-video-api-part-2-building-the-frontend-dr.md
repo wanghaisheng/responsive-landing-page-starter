@@ -866,6 +866,6 @@ Running your application locally is great for testing with yourself, but you pro
 
 You can create an externally accessible link to your application running locally using a tool like ngrok. It gives an external URL for your local environment. The Nexmo Developer Platform has a guide on [getting up and running with ngrok](https://developer.nexmo.com/tools/ngrok) that you can follow.
 
-If you would like to just get up and running, you can also deploy with one click this application from [GitHub](https://github.com/nexmo-community/rails-video-watch-party-app) directly to Heroku. Click on the <img style="display:inline" src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku"> button and within moments you will have a watch party app ready to be used and enjoyed.
+If you would like to just get up and running, you can also deploy with one click this application from [GitHub](https://github.com/nexmo-community/rails-video-watch-party-app) directly to Heroku.
 
 I would love to hear what you built using the Vonage Video API! Please join the conversation on our [Community Slack](https://developer.nexmo.com/community/slack) and share your story!
