@@ -10,6 +10,7 @@ updated_at: 2021-05-10T22:27:25.103Z
 category: tutorial
 tags:
   - number-insights
+  - python
 comments: true
 spotlight: true
 redirect: ""
