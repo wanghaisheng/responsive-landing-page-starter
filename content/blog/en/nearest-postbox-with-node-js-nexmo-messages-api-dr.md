@@ -132,7 +132,9 @@ Execute `echo $JWT` to view the generated JWT, then copy it to the clipboard.
 
 Visit [this page](https://static.nexmo.com/messenger). Select your Facebook page from the "Select Page" drop-down list, paste your JWT into the "Provide a Valid JWT token" text box, and then click "Subscribe":
 
-\[caption id="attachment_25789" align="alignnone" width="640"]<a href="https://www.nexmo.com/wp-content/uploads/2018/12/link-facebook-page.png"><img class="wp-image-25789 size-large" src="https://www.nexmo.com/wp-content/uploads/2018/12/link-facebook-page-1200x600.png" alt="Link your Facebook page to your Nexmo account" width="640" height="320" /></a> Link your Facebook page to your Nexmo account\[/caption]
+![Link your Facebook page to your Nexmo account](/content/blog/locate-your-nearest-postbox-with-node-js-and-the-messages-api/link-facebook-page-1200x600.png "Link your Facebook page to your Nexmo account")
+
+
 
 Your Facebook page and Nexmo account are now linked and you are almost ready to geek the heck out of this posting Christmas cards thing! However, you need to configure the Node.js application with all this information first.
 
