@@ -37,7 +37,7 @@ Still, we continue to look to provide more recording and broadcast capability an
 * improving the audio fidelity of the composed streams, and 
 * expanding the length of recordings.
 
-## Broadcast Interactive 
+## Broadcast Interactive
 
 Virtual events companies grew like mushrooms last year as organizations needed smart ways to securely connect people with events and enable them to take part, whether in person or virtually. A virtual event typically combines a live stream with audience participation. This interactive element helps maximize opportunities for member engagement and meeting attendance, whether members are attending in person or online.
 
@@ -55,7 +55,7 @@ That is our practice here at Vonage, and we are not alone. Nearly 11% of  [Von
 
 ![Vonage Video API Archive Minutes](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image3.png "Vonage Video API Archive Minutes")
 
-## These Times... They Call for *More* 
+## These Times... They Call for *More*
 
 As with the rest of our lives, the global pandemic impacted our use of video, be it broadcasting or recording. As more of your customers are joining video sessions, these sessions got longer with more participants and with various devices - the recordings and broadcasts needed to keep up, too! The world our platform was initially designed for has changed, and we threw ourselves into identifying the features most needed to keep up. 
 
@@ -83,9 +83,9 @@ Our new [Screen Share Layouts](https://tokbox.com/developer/guides/archive-broa
 
 As people adapt to their remote environments, we also saw the need to support vertical compositions suitable for mobile devices in portrait orientation. To that end, we added support for portrait layout resolutions, portrait SD (480x640) and portrait HD (720x1280) for both recording and interactive broadcasting. Our predefined layouts have been optimized for these portrait orientations to adapt automatically for mobile orientation views. 
 
-![Portrait Layout](/content/blog/video-api-better-interactive-broadcasts-and-recordings/image1.png "Portrait Layout")
+![Portrait Layout](/content/blog/video-api-better-interactive-broadcasts-and-recordings/vertical-composing.png "Portrait Layout")
 
-## Cloud Recording and Broadcast Quality 
+## Cloud Recording and Broadcast Quality
 
 Lastly, we also updated our video platform with a number of optimizations at our real-time cloud composition servers to improve video synchronization and resilience of real-time composed recordings and broadcasts under poor network conditions. These improvements ensure that sessions are recorded or live streamed properly, even when publishers find themselves in adverse network conditions.
 
