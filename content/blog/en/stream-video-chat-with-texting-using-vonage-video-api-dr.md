@@ -46,9 +46,8 @@ If this is your first time using the Video API, we highly suggest going through 
 
 As we are building onto a basic video chat with texting capabilities, start by remixing the project built in the previous tutorial. Click the big Remix button below to do that. 👇
 
-<a href="https://glitch.com/edit/?utm_content=project_video-with-text-chat&utm_source=remix_this&utm_medium=button&utm_campaign=glitchButton#!/remix/video-with-text-chat">
-  <img src="https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix%402x.png?1513093958726" alt="remix this" height="33">
-</a>
+[![Remix this](https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix%402x.png?1513093958726)](https://glitch.com/edit/?utm_content=project_video-with-text-chat&utm_source=remix_this&utm_medium=button&utm_campaign=glitchButton#!/remix/video-with-text-chat)
+
 
 Your folder structure should resemble something like this:
 
