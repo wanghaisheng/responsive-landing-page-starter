@@ -32,10 +32,10 @@ For this tutorial I assume you will have:
 * [Rails](http://rubyonrails.org/) installed on your machine
 * [NPM](https://www.npmjs.com/) installed for the purpose of our CLI
 
-## Get your API keys
-
-
 <sign-up number></sign-up> 
+
+
+## Get your API keys
 
 In this tutorial, we will use this as our main way of preparing our application.
 
