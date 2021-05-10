@@ -1,8 +1,7 @@
 ---
 title: Christmas Poetry Reading Using Text-To-Speech and SSML
 description: Make your text-so-speech sound more natural using Speech Synthesis
-  Markup Language. We explain how to modify prosody and pronounciation with
-  SSML.
+  Markup Language. We explain how to modify prosody and pronunciation with SSML.
 thumbnail: /content/blog/christmas-poetry-reading-using-text-to-speech-dr/Christmas-Poetry-Reading-Using-Text-To-Speech.png
 author: lornajane
 published: true
