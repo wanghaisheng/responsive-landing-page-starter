@@ -4,15 +4,14 @@ description: Accommodate larger and longer sessions than ever before! Our
   archiving capabilities have just increased with more participants streams,
   better layouts and longer recordings.
 thumbnail: /content/blog/video-api-better-interactive-broadcasts-and-recordings/videoapi_updates_1200x600-1-.png
-author: julia
+author: jon-montana
 published: true
-published_at: 2021-05-10T21:03:38.644Z
+published_at: 2021-05-11T08:11:10.597Z
 updated_at: 2021-05-10T21:03:38.670Z
 category: release
 tags:
   - video-api
   - release
-  - ""
 comments: true
 spotlight: false
 redirect: ""
