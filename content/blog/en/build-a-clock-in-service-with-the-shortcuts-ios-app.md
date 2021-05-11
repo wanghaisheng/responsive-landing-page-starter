@@ -33,7 +33,7 @@ In this tutorial, we're going to use the [Shortcuts](https://apps.apple.com/us/a
 
 * [Shortcuts](https://apps.apple.com/us/app/shortcuts/id915249334) app installed on an iPhone or an iPad running iOS 12 or later
 
-<sign-up></sign-up>
+<sign-up number></sign-up>
 
 ## What Is Shortcuts?
 
@@ -106,8 +106,6 @@ Next, click on *Show More*, select *POST* as a *Method* and *Form* for *Request 
 | msisdn             | Your Vonage virtual number in E.164 format. For example, 447401234567.                                                |
 | voiceCallbackType  | Type `tel` to indicate that you're forwarding calls to a telephone number.                                            |
 | voiceCallbackValue | Select `Provided Input` from the suggested *Variables* list. This will be the personal number captured in *Action 1*. |
-
-
 
 ![Image of Get contents of URL config fields in Shortcut](/content/blog/build-a-‘clock-in’-service-with-the-shortcuts-ios-app/update-vonage-number.png)
 
