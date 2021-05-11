@@ -226,13 +226,13 @@ Using the phone number and the application ID you were given above, run the foll
 nexmo link:app NEXMO_NUMBER APPLICATION_ID
 ```
 
-# Testing Your Service
+## Testing Your Service
 
 Now, if you call the Nexmo number from your cellphone, Nexmo should pick up, and you should hear the message "Welcome to my Nexmo IVR!" and then the call will hang up.
 
 If this doesn't work, check the Ngrok console in your browser at http://localhost:4040/ and make sure that the call was received by Ngrok and successfully passed through to the Java service running on your development machine.
 
-# Make it an IVR
+## Make it an IVR
 
 Your IVR isn't really very useful yet! I'll show you how to allow the user to enter input from their keypad (this is called a DTMF, which stands for Dual Tone Modulated Frequency, but that's not really important).
 
@@ -276,7 +276,7 @@ The code above is very similar to your existing `/inbound` handler, but in this 
 
 Test your application by calling your Nexmo number and entering a code on the keypad when asked!
 
-# Conclusion
+## Conclusion
 
 This is a very simple example of responding to a DTMF code, but you can extend it to suit your application. Maybe you could look up a record in a database with an ID entered by the user, or you could build a switchboard to forward to someone in your organisation. There are lots of possibilities!
 
