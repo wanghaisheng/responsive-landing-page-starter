@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-# Building a Slack-like Vue.js Chat Application
+## Building a Slack-like Vue.js Chat Application
 
 Have you ever wanted to create a chat application, but get stuck on features to add, or just how to make it generally? In this post, you get to build a clone of everyone's favourite chat software, Slack. Using Vue.js, everyone's favourite framework. And, Vonage Conversation API, everyone's favourite conversation service.
 
