@@ -1,10 +1,7 @@
 ---
 title: Verify Phone Numbers with Node-RED
-description: In previous tutorials you’ve learnt about the Nexmo SMS and Voice
-  APIs, you’ve gotten comfortable with sending and receiving messages and calls,
-  and hopefully, you’ve also had a chance to experiment and play around with
-  customizing these experiences in Node-RED. In this tutorial, we’ll look at the
-  Verify API and explore a handy way of […]
+description: In this tutorial we'll have a look at the Nexmo Verify API with
+  Node-RED and explore a handy way of validating your users' phone numbers.
 thumbnail: /content/blog/verify-phone-numbers-with-node-red-dr/verify-featured-image.png
 author: julia
 published: true
@@ -253,7 +250,9 @@ Speed up the process by *Importing from Clipboard* the snippet below, or experim
 ```
 
 When you're ready, your editor should look similar to this:
-<img src="https://www.nexmo.com/wp-content/uploads/2019/09/verify-ui-template.png" alt="" width="" height="" class="alignnone size-full wp-image-30211" />
+
+
+![verify UI template](/content/blog/verify-phone-numbers-with-node-red/verify-ui-template.png "verify UI template")
 
 To see your UI, navigate to `http://127.0.0.1:1880/ui`. 
 <img src="https://www.nexmo.com/wp-content/uploads/2019/09/verify-ui.png" alt="" width="" height="" class="alignnone size-full wp-image-30212" />
