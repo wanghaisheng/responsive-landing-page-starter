@@ -44,7 +44,7 @@ The code for this tutorial can be found on [GitHub][repo].
 Before I get started, you should have the following set up:
 
 
-* The [Nexmo CLI](https://developer.nexmo.com/tools). (You can get by without this by using the [Nexmo Dashboard](https://dashboard.nexmo.com/), but it makes life _much_ easier!)
+* The [Nexmo CLI](https://developer.nexmo.com/tools). (You can get by without this by using the Nexmo Dashboard, but it makes life _much_ easier!)
 * A [JDK](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) installed (I built this with JDK 8).
 * [Maven](https://maven.apache.org/index.html) to build your Java code.
 * [Ngrok](https://ngrok.com/) so Nexmo can reach the service running on your development machine
