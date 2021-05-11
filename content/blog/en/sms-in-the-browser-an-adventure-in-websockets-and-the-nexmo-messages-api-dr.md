@@ -241,17 +241,17 @@ To send and receive SMS via the Messages API, you will need a [virtual phone num
 
 You can buy a virtual number from the *Numbers* section on the sidebar by selecting *Buy numbers*. You can choose a number local to a country of your choice, features supported and type of number, be it mobile, land-line or toll-free.
 
-![](https://cdn.glitch.com/df802ecc-0da6-4e3b-adb3-740a4b639b86%2F07.jpg?1543289564135)
+![Buy numbers](/content/blog/sms-in-the-browser-an-adventure-in-websockets/df802ecc-0da6-4e3b-adb3-740a4b639b86_07-1-.jpg "Buy numbers")
 
 Once you have your number, it will show up in the *Your numbers* section. Click on the Pencil icon under the rightmost *Manage* column to configure your inbound webhook URL. This is required for receiving SMS. When an SMS is sent to your number, a `POST` request is sent to this URL with the message payload.
 
-![](https://cdn.glitch.com/df802ecc-0da6-4e3b-adb3-740a4b639b86%2F08.jpg?1543290832091)
+![Inbound webhook URL](/content/blog/sms-in-the-browser-an-adventure-in-websockets/df802ecc-0da6-4e3b-adb3-740a4b639b86_08-1-.jpg "Inbound webhook URL")
 
 If you're using Glitch, your webhook URL would look something like *https://boom-meal.glitch.me/inbound-sms*. I suggest using `inbound-sms` as the route, but you can use anything you like, as long as that route is valid in your application. Adjust the webhook URL accordingly depending on where your application is hosted.
 
 One more thing to check is that the default SMS setting on your acccount is set to `POST` under HTTP method.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fsettings.png?1545664156069)
+![Settings](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_settings.png "Settings")
 
 ### Receiving an Inbound SMS
 
@@ -283,7 +283,7 @@ app.use(router.routes()).use(router.allowedMethods());
 
 If you followed the setup instructions earlier in this tutorial, `koa-bodyparser` should have already been installed. A body parser is needed to handle the request body. To check that everything is hooked up correctly, send an SMS to your virtual number. The message payload should be logged to the console.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fsms-payload.png?1545665264026)
+![SMS payload](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_sms-payload.png "SMS payload")
 
 ### Creating a WebSocket Server
 
@@ -426,7 +426,7 @@ There are 2 functions here, `start()` to establish a new WebSocket connection an
 
 Now, if you open the browser console on your application and leave it alone for a while, you should see a series of `open` and `close` being logged to the console.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fcheck.png?1545670192708)
+![Check](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_check.png "Check")
 
 Replace the default markup of the  element the `index.html` file with the following instead:
 
@@ -468,7 +468,7 @@ socket.onmessage = function(evt) {
 }
 ```
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Ffirst-inbound.png?1545705618197)
+![First Inbound](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_first-inbound.png "First Inbound")
 
 ## Sending SMS From the Browser With Nexmo's Messages API
 
@@ -476,21 +476,21 @@ socket.onmessage = function(evt) {
 
 Next, go back to your Nexmo dashboard and navigate to the *Create an application* page under the *Messages and Dispatch* section on the sidebar. Fill in your application name, and the webhook URLs with your Glitch app URL as the host. You will also need to generate a public/private key pair, which will prompt you to download the `private.key` file.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fgenerate-key.png?1545658727093)
+![Generate key](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_generate-key-1-.png "Generate key")
 
 It is important that both the webhook URLs are configured, and your application has routes set up for both these endpoints to accept `POST` requests in order to prevent an unwanted message queue build-up.
 
 Then, click on the orange *Create application* button. The next screen will allow you to link your virtual number to your application by clicking the *Link* button under the *Manage* column.
 
-![](https://cdn.glitch.com/df802ecc-0da6-4e3b-adb3-740a4b639b86%2F12.jpg?1543306036765)
+![Create a message application](/content/blog/sms-in-the-browser-an-adventure-in-websockets/df802ecc-0da6-4e3b-adb3-740a4b639b86_12-1-.jpg "Create a message application")
 
 Finally, you will be asked if you would like to link any external accounts, but you can leave this for now.
 
-![](https://cdn.glitch.com/df802ecc-0da6-4e3b-adb3-740a4b639b86%2F13.jpg?1543306033533)
+![External accounts](/content/blog/sms-in-the-browser-an-adventure-in-websockets/df802ecc-0da6-4e3b-adb3-740a4b639b86_13-1-.jpg "External accounts")
 
 To upload the `private.key` file to Glitch and keep it secret, you can create the file in a `.data` folder. The contents of this folder will only be visible to you and any trusted collaborators you add to the project. Copy the contents of the `private.key` you downloaded earlier into this new file.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fprivate-key.gif?1545657133495)
+![Private key](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_private-key.gif "Private key")
 
 ### Credentials Setup
 
@@ -498,7 +498,7 @@ Glitch supports [environment variables](http://help-center.glitch.me/help/env/) 
 
 Be sure to enclose them in quotes as each value needs to be a string. We will be referencing them for initialising a new Nexmo instance, which we use to send SMS messages.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fenv.png?1545657287095)
+![env file](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_env.png "env file")
 
 Add your API credentials to the `server.js` file and initialise a new Nexmo instance.
 
@@ -529,7 +529,7 @@ We'll need some way for users to enter the recipient's phone number and the mess
 <button id="send" type="button">Send</button>
 ```
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Finputs.png?1545720614585)
+![Inputs](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_inputs.png "Inputs")
 
 To handle user inputs, add the following to your `client.js` file:
 
@@ -634,17 +634,17 @@ function forwardSms(payload) {
 
 To test that everything works as expected, enter the phone number of a mobile phone which you have access to and send a test message. Your target recipient should receive the SMS within a few seconds.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fforward-sms.jpg?1545723715931)
+![Forward SMS](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_forward-sms.jpg "Forward SMS")
 
 If your target recipient replies to the SMS thread, then the message will be sent back through to the browser.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Freply.jpg?1545724011673)
+![Reply](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_reply.jpg "Reply")
 
 Now that the underlying system is up and running, there are several things you can do if you want to continue this project, like making the interface prettier, adding stronger validation checks on both the client and server, edge case handling, etc.
 
 My version of this project is called V-mobile and you can [check it out on Glitch](https://v-mobile.glitch.me/). If you like how it looks, feel free to remix my project and make it your own.
 
-![](https://cdn.glitch.com/03f552cb-b122-492c-94c5-0802f09a5185%2Fend-result.jpg?1545709825668)
+![End result](/content/blog/sms-in-the-browser-an-adventure-in-websockets/03f552cb-b122-492c-94c5-0802f09a5185_end-result.jpg "End result")
 
 ## Where Next?
 
