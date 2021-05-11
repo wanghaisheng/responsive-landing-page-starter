@@ -64,9 +64,3 @@ Open source isn't always a welcoming place, and we operate in public, so bystand
 On that note of thanking contributors, I'd like to close by thanking you, the maintainer. It's a common misconception that open source projects are maintained by some amazing, distant, heroic figure. In fact, those of us who give our time and energy in this way are real people with real lives.
 
 Thank you for all that you do, open source changes the world, and in your own way, you're making that happen.
-
-<style>
-img.alignnone {
-  border-width: 0px !important;
-}
-</style>
