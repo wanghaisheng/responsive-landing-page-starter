@@ -255,7 +255,9 @@ When you're ready, your editor should look similar to this:
 ![verify UI template](/content/blog/verify-phone-numbers-with-node-red/verify-ui-template.png "verify UI template")
 
 To see your UI, navigate to `http://127.0.0.1:1880/ui`. 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/09/verify-ui.png" alt="" width="" height="" class="alignnone size-full wp-image-30212" />
+
+
+![verify UI](/content/blog/verify-phone-numbers-with-node-red/verify-ui.png "verify UI")
 
 ## Verifying your user
 
