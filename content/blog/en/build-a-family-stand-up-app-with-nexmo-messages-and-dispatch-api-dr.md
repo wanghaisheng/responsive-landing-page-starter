@@ -39,8 +39,11 @@ I could use Vonage’s Messages & Dispatch APIs and have everyone report their w
 
 ## Prerequisites
 
-To work through this tutorial, you will need a [Vonage account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=glitch&utm_campaign=https://glitch.com/~family-standup-app). You can sign up now for *free* and receive free credit to get started if you don't already have an account.\
+To work through this tutorial, you will need a Vonage account.
+You can sign up now for *free* and receive free credit to get started if you don't already have an account.
 In addition, if you want to skip to a working project you can remix the [Family Stand Up App](https://glitch.com/~family-standup-app) right away in Glitch. Otherwise, in just a few steps you can create your own from scratch!
+
+<sign-up></sign-up>
 
 ## How to Build the App
 
