@@ -159,7 +159,7 @@ pickle.dump(model, open(filename, 'wb'))
 ## Building the Application
 
 The last part is to now integrate our model into a VAPI application.
-[Source](https://github.com/nexmo-community/AnsweringMachineDetection/blob/master/websocket-demo.py)
+[](https://github.com/nexmo-community/AnsweringMachineDetection/blob/master/websocket-demo.py)
 
 <sign-up number></sign-up>
 
