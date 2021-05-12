@@ -1,6 +1,6 @@
 ---
-title: Getting Started with the Nexmo Number Insight API and Rails
-description: Use the Nexmo Number Insight API and Rails to quickly check
+title: Getting Started with the Vonage Number Insight API and Rails
+description: Use the Vonage Number Insight API and Rails to quickly check
   valuable information on phone numbers globally in real time.
 thumbnail: /content/blog/getting-started-with-the-nexmo-number-insight-api-and-rails-dr/NI-w-Rails.png
 author: ben-greenberg
