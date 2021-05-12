@@ -11,6 +11,7 @@ updated_at: 2021-05-12T03:13:35.939Z
 category: release
 tags:
   - javascript
+  - node-red
 comments: true
 redirect: ""
 canonical: ""
@@ -44,8 +45,6 @@ If you’d like to get started with Node-RED you’ll need to install the runtim
 If you're new to Node-RED but have some experience with programming you'll find some helpful examples of how to solve common problems in the [Cookbook](https://cookbook.nodered.org/).
 
 Finally, this 5-minute video shows you how to get started with the Nexmo Node-RED package and walks through creating your first voice application.
-
-<youtube id="https://www.youtube.com/embed/cfdNm1xII2A"></youtube>
 
 <center><iframe width="560" height="315" src="https://www.youtube.com/embed/cfdNm1xII2A" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></center>
 
