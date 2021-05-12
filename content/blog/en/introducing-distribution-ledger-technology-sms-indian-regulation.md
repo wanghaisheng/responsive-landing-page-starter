@@ -2,9 +2,10 @@
 title: Introducing Distribution Ledger Technology - SMS Indian Regulation
 description: A brief introduction into a new SMS regulation in India called DLT,
   as well as how to make use of this using Vonage APIs or Vonage SDKs.
+thumbnail: /content/blog/introducing-distribution-ledger-technology-sms-indian-regulation/dlt_sms_1200x600.png
 author: greg-holmes
 published: true
-published_at: 2021-04-27T11:19:18.661Z
+published_at: 2021-05-12T08:21:33.729Z
 updated_at: 2021-04-27T11:19:18.678Z
 category: tutorial
 tags:
