@@ -22,7 +22,7 @@ The startup ecosystem in Lisbon is built around three core values: Innovation, C
 
 For this edition of our Startup Community Partner series, we caught up with João Pereira to find out more about Build Up labs and how they are boosting Lisbon's startup ecosystem. Enjoy our Q&A below!
 
-## Our startup community partner at a glance
+## Our Startup Community Partner at a Glance
 
 * **Name of Incubator**:  Build Up Labs
 * **Location**:  Lisbon, Portugal (with virtual incubation)
@@ -30,13 +30,13 @@ For this edition of our Startup Community Partner series, we caught up with Joã
 * **Industries**: Digital and Mobile, Consumer, Impact and Sustainability, Fintech
 * **Typical Startup Profile**: Early-stage companies with an MVP, from outside the EU leveraging Lisbon as a starting point for Europe
 
-## In three sentences or less, tell us about your startup studio, its focus, benefits and goals.
+## In Three Sentences or Less, Tell Us About Your Startup Studio, Its Focus, Benefits and Goals
 
 As a startup studio, we’ve been optimizing the process of venture building with our resident team, from Ideation to Market Validation, MVP creation, soft-launch and growth. In the Studio, we also partner with great entrepreneurs to run those startups.
 
 We’ve also decided to build an Incubator alongside the Studio to leverage the resources we already have and support other startups.
 
-## What does being part of your incubator mean for founders? What can they expect?
+## What Does Being Part of Your Incubator Mean for Founders? What Can They Expect?
 
 Our incubator is managed by serial entrepreneurs, contrary to most other Incubators in Portugal that are usually run by academics from universities or government employees from Municipalities.
 
@@ -44,24 +44,24 @@ This structure creates a higher level of empathy between the founders and us.
 
 Then we’ve been building a great network of mentors, investors and partners and connecting the founders with this network allows them to grow faster and firmly.
 
-## What is the most challenging part of working with startups?
+## What Is the Most Challenging Part of Working With Startups?
 
 We've been building digital companies for the past 10 years and made every mistake possible, meaning we can help founders avoid those mistakes and have them find new ones. But that's sometimes very hard since being an entrepreneur entails a high level of optimism that things will be different for them.
 
-## What do you find most satisfying about working with startups?
+## What Do You Find Most Satisfying About Working With Startups?
 
 We feel really privileged to have the opportunity to work with bright and driven entrepreneurs, wanting to solve world problems and watch their ventures go from idea to market. Everyday. Repeatedly. 
 
-## What are some things that you repeatedly see early-stage companies and founders struggle with?
+## What Are Some Things That You Repeatedly See Early-Stage Companies and Founders Struggle With?
 
 Focus. Focus, it’s probably one of the most difficult things for founders and their teams to keep. The pace is always fast; experiments are always ongoing, feedback keeps coming in, so losing focus on the end goal is a common struggle.
 
-## What’s the biggest trend that gets your team excited in the tech market today?
+## What’s the Biggest Trend That Gets Your Team Excited in the Tech Market Today?
 
 Hard to choose. Personally, I just got access to GPT-3 so that’s exciting.
 We have high expectations on No-code platforms because that would allow teams to prototype faster and test with real users, saving time to focus on more deep tech developments.
 
-## Time for some success stories! Which are the 3 (or more) most interesting companies to have joined your program?
+## Time for Some Success Stories! Which Are the 3 (or More) Most Interesting Companies To Have Joined Your Program?
 
 Many are still in stealth mode. I’ll just name a few that are already on the market, in no particular:
 
@@ -74,6 +74,6 @@ Many are still in stealth mode. I’ll just name a few that are already on the m
 * [Tech Labs](https://techlabs.studio/) - Building profitable internet products
 * [Raiz](https://www.raiz.farm/) - Urban vertical farming
 
-## What are the most important factors startup founders should consider when considering an incubator/accelerator program?
+## What Are the Most Important Factors Startup Founders Should Consider When Considering an Incubator/Accelerator Program?
 
 Validate how well you and the incubator fit together. It’s not that there are bad incubators (those usually don’t survive long), so the important factor to validate for fit can be, culture and mindset, resources and network provided, access to markets, specific expertise, right for your stage of development.
