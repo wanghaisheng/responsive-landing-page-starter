@@ -34,13 +34,14 @@ The first thought was to build a machine learning model that detects when the `b
 
 Before we can start building a machine learning model, we need to have some data. For this problem, we need to have a bunch of audio files with the answering machine `beep` sounds, like this:
 
-\[audio wav="https://www.nexmo.com/wp-content/uploads/2019/02/75ea624b-8ab9-4e17-9000-70e96166642a-1.wav"]
+<https://www.nexmo.com/wp-content/uploads/2019/02/75ea624b-8ab9-4e17-9000-70e96166642a-1.wav>[](https://www.nexmo.com/wp-content/uploads/2019/02/75ea624b-8ab9-4e17-9000-70e96166642a-1.wav)
 or this:
-\[audio wav="https://www.nexmo.com/wp-content/uploads/2019/02/7eaeb600-0202-11e9-bb68-51880c8718e4.wav"]
 
-We also need to include samples that don't include the beep sound:
-\[audio wav="https://www.nexmo.com/wp-content/uploads/2019/02/26b25bb7-6825-43e7-b8bd-03a3884ed694.wav"]
-\[audio wav="https://www.nexmo.com/wp-content/uploads/2019/02/5c082690-02f2-11e9-aa3d-ad1a095d8d72.wav"]
+<https://www.nexmo.com/wp-content/uploads/2019/02/7eaeb600-0202-11e9-bb68-51880c8718e4.wav>
+
+[](https://www.nexmo.com/wp-content/uploads/2019/02/7eaeb600-0202-11e9-bb68-51880c8718e4.wav)We also need to include samples that don't include the beep sound:
+
+<https://www.nexmo.com/wp-content/uploads/2019/02/26b25bb7-6825-43e7-b8bd-03a3884ed694.wav>
 
 Since this kind of data doesn't seem to exist on the internet, we needed to gather as many samples as possible of beeps and other sounds from calls, in order to train our model. To do this, I built a webpage that allows anyone to record their voicemail greeting message.
 
