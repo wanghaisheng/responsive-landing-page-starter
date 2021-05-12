@@ -47,21 +47,21 @@ The sample application in this article handles a conference call with two partie
 
 ![Example overview of a simple integration architecture](/content/blog/processing-voice-calls-with-amazon-transcribe-comprehend/transcribe-comprehend.png)
 
-## Set up the Amazon Transcribe & Amazon Comprehend reference connection
+## Set Up the Amazon Transcribe & Amazon Comprehend Reference Connection
 
 * Go to <https://github.com/nexmo-community/transcribe-comprehend-multi-sub>,
 * Follow instructions as described in this repository,
 * Select one of the deployment types as explained in the **Running Transcribe and Comprehend reference connection** section,
 * Make note of the server public hostname and port (e.g. *xxxx.ngrok.io*, *myserver.mycompany.com:40000*, or *`<docker_host_name>:<proxy_port>`*), as it will be needed for the next section "Set up the sample Vonage Voice API application" (as argument of the parameter **TRANSCRIBE_COMPREHEND_REFERENCE_CONNECTION**).
 
-## Set up the sample Vonage Voice API application
+## Set Up the Sample Vonage Voice API Application
 
 * Go to <https://github.com/nexmo-community/transcribe-comprehend-client>, 
 * Follow instructions as described in this repository,
 * Select one of the deployment types as explained in the **Running Transcribe & Comprehend client application** section,
 * Make note of the ***phone number linked*** to your Voice API application and the ***CALLEE_NUMBER*** as explained in the **Set up your Vonage Voice API application credentials and phone number section** as they will be referred to for the next section "Test drive the sample application".
 
-\## Test drive the sample application
+## Test Drive the Sample Application
 
 * Call the **phone number linked** to your Voice API application, you will hear “Please wait, we are connecting your call”,
 * Party with phone number ***CALLEE_NUMBER*** will get called, answer that call, you will hear “We are connecting you to the caller”,
