@@ -25,7 +25,7 @@ In this tutorial, you will create an application that can make outgoing text-to-
 
 ## Prerequisites
 
-<sign-up number></sign-up> 
+<sign-up number></sign-up>
 
 You will be using [Gradle](https://gradle.org/) to manage your dependencies and run your application. Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 11, which is the current LTS, in this tutorial.
 
@@ -57,8 +57,6 @@ nexmo app:create "Send TTS Call" http://example.com/webhooks/answer http://examp
 This command will also create a file called `private.key` which you will need to authenticate with the Vonage Voice API to make calls. This file will be saved to the directory you run the command inside of. Also make a note of the Application ID that is returned, as you will need it later.
 
 ![App create](/content/blog/make-text-to-speech-phone-call-with-java/app-create.png)
-
-
 
 ### Using Gradle to Set Up a New Java Project
 
@@ -138,17 +136,17 @@ The following NCCO will instruct the Nexmo Voice API to speak to the recipient w
 [
     {
         "action": "talk",
-        "text": "This is a text-to-speech call from Nexmo"
+        "text": "This is a text-to-speech call from Vonage"
     }
 ]
 ```
 
-The Nexmo Java Client Library provides classes that allow you to construct an NCCO. You will use the `Ncco` and `TalkAction` classes to build the NCCO.
+The Vonage Java Client Library provides classes that allow you to construct an NCCO. You will use the `Ncco` and `TalkAction` classes to build the NCCO.
 
 Add the following to the `main` method, resolving any imports:
 
 ```java
-TalkAction intro = TalkAction.builder("This is a text-to-speech call from Nexmo").build();
+TalkAction intro = TalkAction.builder("This is a text-to-speech call from Vonage").build();
 Ncco ncco = new Ncco(intro);
 ```
 
@@ -165,11 +163,11 @@ voiceClient.createCall(call);
 
 ### Test Your Application
 
-Start your application with the `gradle run` command inside of your `make-tts-call` directory. You should receive a phone call from your Nexmo number.
+Start your application with the `gradle run` command inside of your `make-tts-call` directory. You should receive a phone call from your Vonage number.
 
 ![Phone ringing](/content/blog/make-text-to-speech-phone-call-with-java/phone-ringing.jpeg)
 
-Once you answer this call, the Nexmo Voice API will speak the message, "This is a text-to-speech call from Nexmo."
+Once you answer this call, the Vonage Voice API will speak the message, "This is a text-to-speech call from Vonage."
 
 ## Conclusion
 
