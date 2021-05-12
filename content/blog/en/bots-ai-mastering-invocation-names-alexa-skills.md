@@ -1,10 +1,8 @@
 ---
 title: "Bots and AI: Mastering Invocation Names for Alexa Skills"
-description: The invocation name you choose for an Alexa skill can have a huge
-  impact on the usability of your voice app. In this video, CEO of The Bot
-  Platform Syd Lawrence shares his own frustrations with the naming convention
-  for Alexa apps. Opearlo Co-Founder Oscar Merry then offers one naming
-  technique that will make your […]
+description: "[Video] The invocation name you give an Alexa skill has a huge
+  impact on your voice app's usability. Learn a naming trick that will make your
+  app engaging."
 thumbnail: /content/blog/bots-ai-mastering-invocation-names-alexa-skills/Bots-Clip10_800x300.jpg
 author: sammachin
 published: true
