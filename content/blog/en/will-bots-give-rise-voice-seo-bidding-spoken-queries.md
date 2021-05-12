@@ -1,10 +1,8 @@
 ---
 title: Will Bots Give Rise to Voice SEO and Bidding on Spoken Queries?
-description: As users increasingly rely on voice bots and personal assistants
-  for recommendations on their buying decisions, businesses will do all they can
-  to have their products and services listed among the suggested options.
-  Opearlo Co-Founder/CTO Oscar Merry and I speculated on what that experience
-  might be like for users. Watch the video of our conversation […]
+description: As voice bots increasingly make recommendations on buying
+  decisions, businesses will do all they can to get their products and services
+  suggested to users.
 thumbnail: /content/blog/will-bots-give-rise-voice-seo-bidding-spoken-queries/Bots-Clip11_800x300.jpg
 author: sammachin
 published: true
