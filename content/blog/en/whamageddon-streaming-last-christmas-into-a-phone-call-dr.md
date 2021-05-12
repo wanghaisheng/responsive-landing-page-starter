@@ -53,8 +53,7 @@ You'll need a bit of experience with Python to get this running, and at least ve
 
 1. The [source code from GitHub](https://github.com/nexmo-community/PVPWham)
 2. A Spotify account and your own [Spotify application](https://developer.spotify.com/my-applications/#!/applications). Make a note of your client id and secret as you'll need to add those to your `.env` later
-3. A [Nexmo account](https://nexmo.com) which you've topped up with some credit
-4. [Ngrok](https://ngrok.com/); if you're not sure what this is for you should [read our ngrok tutorial first](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
+3. [Ngrok](https://ngrok.com/); if you're not sure what this is for you should [read our ngrok tutorial first](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
 
 <sign-up></sign-up>
 
