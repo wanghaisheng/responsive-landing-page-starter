@@ -47,10 +47,15 @@ Here's the SSML I ended up with:
 ```
 
 By including this XML as the `text` field in the `talk` action of my NCCO, and adding a `record` action too, I was able to capture the poetry of the robot:
+<figure>
+    <audio
+        controls
+        src="https://www.nexmo.com/wp-content/uploads/2018/12/recording-expressive.mp3">
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+</figure>
 
-[audio mp3="https://www.nexmo.com/wp-content/uploads/2018/12/recording-expressive.mp3"][/audio]
-
----
+- - -
 
 You could consider adding some more expression to your spoken interaction with your users by adding SSML - and poetry is a great way to practice. Let us know if you build something poetic this Christmas!
-
