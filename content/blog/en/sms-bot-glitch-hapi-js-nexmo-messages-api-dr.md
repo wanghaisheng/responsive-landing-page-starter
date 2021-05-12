@@ -153,7 +153,7 @@ Now, instead of *hello world*, your app should be serving the default Glitch `in
 
 ### Getting started with Nexmo APIs
 
-You will also need to [sign up for a Nexmo account](https://dashboard.nexmo.com/sign-up) to get access to your API key and secret, which are required to use the Nexmo REST API client. Once you sign in to your account, you will be able to see your API credentials right on the dashboard.
+<sign-up number></sign-up>
 
 ![API credentials on the dashboard](/content/blog/build-an-sms-bot-on-glitch-with-hapi-js-and-the-nexmo-messages-api/df802ecc-0da6-4e3b-adb3-740a4b639b86_01.jpg "API credentials on the dashboard")
 
@@ -175,7 +175,7 @@ Now you're ready to start building a bot of your own. This tutorial describes ho
 
 To send and receive SMS via the Messages API, you will also need a [virtual phone number](https://www.nexmo.com/products/phone-numbers), which is like any standard phone number, except they are not tied down to any physical phone line or device.
 
-You can buy a virtual number from the *Numbers* section on the sidebar by selecting *Buy numbers*. You can choose a number local to a country of your choice, features supported and type of number, be it mobile, land-line or toll-free.
+You can choose a number local to a country of your choice, features supported and type of number, be it mobile, land-line or toll-free.
 
 ![Buy numbers](/content/blog/build-an-sms-bot-on-glitch-with-hapi-js-and-the-nexmo-messages-api/df802ecc-0da6-4e3b-adb3-740a4b639b86_07.jpg "Buy numbers")
 
