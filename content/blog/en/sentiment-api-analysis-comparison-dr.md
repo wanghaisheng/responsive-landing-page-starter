@@ -275,7 +275,7 @@ Given that, the easiest way to normalize the different costs is to use a 1000 ch
 |[Google Natural Language API](https://cloud.google.com/natural-language/pricing)|5,000 Units/Month|5K+ -1M $1.00/1000 units|$500|
 |[Watson Tone Analyzer](https://www.ibm.com/cloud/watson-tone-analyzer/pricing)|2,500 API Calls/Month|1-250K @ $0.0088<br>250K-500K @ $0.0013|$2437|
 
-<small><em>* Costs based on 500,000,000 characters sent per month - as of 10/11/19 - subject to change</em></small>
+<small>_* Costs based on 500,000,000 characters sent per month - as of 10/11/19 - subject to change_</small>
 
 
 ## Recap
