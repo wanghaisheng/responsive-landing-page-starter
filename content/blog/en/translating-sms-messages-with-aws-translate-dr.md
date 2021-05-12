@@ -23,8 +23,9 @@ In this post, I show you how to create an [inbound Nexmo SMS](https://developer.
 In order to get started, you will need the following items setup:
 
 + [AWS Account](https://aws.amazon.com/)
-+ [Nexmo Account](https://dashboard.nexmo.com/sign-up)
 + [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+
+<sign-up></sign-up>
 
 ## Create Your Project
 
