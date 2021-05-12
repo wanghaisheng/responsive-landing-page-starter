@@ -101,7 +101,7 @@ Before we train our model, we will take all the recordings that we have for both
 
 To compute the data, we'll use the [mel-frequency cepstral coefficients (MFCCs)](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum) of each sample. Then, we'll save this value into a csv so that we do not have to re-compute the MFCC's over again.
 
-For each audio sample, the csv will contain the path to the audio sample, the label of audio sample(`beep`, or `speech`), the MFCC, and the duration of the audio sample (using the [`get_duration` function in librosa](https://librosa.org/doc/0.7.0/generated/librosa.core.get_duration.html)). We also tried a few other audio characteristics including chroma, [contrast](https://librosa.org/doc/main/generated/librosa.feature.spectral_contrast.html) and [tonnetz](https://librosa.github.io/librosa/generated/librosa.feature.tonnetz.html)). However, these features were not used in the latest version of the model.
+For each audio sample, the csv will contain the path to the audio sample, the label of audio sample(`beep`, or `speech`), the MFCC, and the duration of the audio sample (using the [`get_duration` function in librosa](https://librosa.org/doc/0.7.0/generated/librosa.core.get_duration.html)). We also tried a few other audio characteristics including chroma, [contrast](https://librosa.org/doc/main/generated/librosa.feature.spectral_contrast.html) and tonnetz). However, these features were not used in the latest version of the model.
 
 Let's now take a look at the first 5 rows of the csv, just to see what the data looks like.
 
