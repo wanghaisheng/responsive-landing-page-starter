@@ -18,8 +18,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Introducing Distribution Ledger Technology - SMS Indian Regulation
-
 ## What Is Distribution Ledger Technology (DLT)?
 
 Distributed Ledger Technology (also known as DLT) is a digital method allowing users and systems to record transactions related to their assets. Traditional databases have a central location to store their information; however, DLT stores the data at multiple locations to provide better security, transparency and trust amongst the parties utilizing the service.
@@ -42,9 +40,6 @@ If you are an enterprise in India or are sending A2P SMS to domestic phone numbe
 ### Update Your Project and Submit DLT Required Parameters at Every Request
 
 You need to make changes to your application to use your Entity ID, Sender ID/Header and Templates as shown in the DLT portal. You will need to use the additional parameters for every API request or SMPP request when you submit your SMS messages.
-
-
- 
 
 ### Sending an SMS with the API
 
@@ -98,12 +93,12 @@ vonage.message.sendSms(from, to, text, opts, (err, responseData) => {
 
 There may be various reasons why sending an SMS that needs to be DLT compliant does not successfully get sent. To check for the error, you'll need to create a webhook to listen for a specific pre-configured URL that you create in your application. For a full list of the errors that are returned in a delivery receipt, please check the [Developer Docs](https://developer.nexmo.com/messaging/sms/guides/delivery-receipts#dlr-error-codes). The table below shows the errors that are relevant to sending DLT SMS messages.
 
-| Error Code        | Meaning        | Description                                                                            |
-| ----------------- |:---------------| :--------------------------------------------------------------------------------------|
-| 50                | Entity Filter  | The message failed due to entity-id being incorrect or not provided.                   |
-| 51                | Header Filter  | The message failed because the header ID (from phone number) was incorrect or missing. |
-| 52                | Content Filter | The message failed due to content-id being incorrect or not provided.                  |
-| 53                | Consent Filter | The message failed due to consent not being authorized.                                |
+| Error Code | Meaning        | Description                                                                            |
+| ---------- | -------------- | -------------------------------------------------------------------------------------- |
+| 50         | Entity Filter  | The message failed due to entity-id being incorrect or not provided.                   |
+| 51         | Header Filter  | The message failed because the header ID (from phone number) was incorrect or missing. |
+| 52         | Content Filter | The message failed due to content-id being incorrect or not provided.                  |
+| 53         | Consent Filter | The message failed due to consent not being authorized.                                |
 
 An example of a webhook to receive SMS Delivery Receipts with Node is shown below:
 
@@ -155,5 +150,5 @@ However, if there is an issue, `err_code` will not be 0, and the `status` will b
 To send an SMS message with SMPP, you’ll need to add extra parameters to your request. For more information on what these extra parameters are please refer to the [knowledgebase under “Complying with DLT and Vonage”](https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions)
 
 ### Letting Vonage manage DLT for you
-Vonage is providing a temporary solution, where you let Vonage detect your template with zero change at your end. Please check the [knowledgebase, section 2, option 2] (https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions) for more information. While this method is not suggested by Vonage, we recommend updating your project and using the new API parameters to send DLT compliant SMS. 
 
+Vonage is providing a temporary solution, where you let Vonage detect your template with zero change at your end. Please check the [knowledgebase, section 2, option 2](https://help.nexmo.com/hc/en-us/articles/204017423-India-SMS-Features-Restrictions) for more information. While this method is not suggested by Vonage, we recommend updating your project and using the new API parameters to send DLT compliant SMS.
