@@ -29,9 +29,7 @@ Anyone who has ever set foot outside, or turned on the radio during Christmas ca
 
 ## The Principles of War
 
-![Santa driving a tank](/content/blog/send-your-friends-to-whamhalla-by-streaming-last-christmas-into-a-phone-call/santa-tank.png "Santa driving a tank")
-
-
+![Santa driving a tank](/content/blog/stream-last-christmas-into-a-phone-call-with-python/santa-tank.png "Santa driving a tank")
 
 > Seize, retain, and exploit the initiative. Offensive action is the most effective and decisive way to attain a clearly defined common objective. Offensive operations are the means by which a military force seizes and holds the initiative while maintaining freedom of action and achieving decisive results. This is fundamentally true across all levels of war.
 
@@ -47,9 +45,7 @@ As much as *Last Christmas* permeates everything this time of year I don't think
 
 We're going to use two APIs to accomplish this, [the Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview) to make the outbound call and to play the mp3 to our friends, and [the Spotify API](https://developer.spotify.com/my-applications/#!/applications) to provide a short sample of Last Christmas. Both APIs have Python wrappers to make them easier to work with, and we're going to wrap it all up in a nice CLI so we can eliminate our friends with a single command. When we're finished it is going to look just like this:
 
-![Screencast of our Voice Application CL](/content/blog/send-your-friends-to-whamhalla-by-streaming-last-christmas-into-a-phone-call/pvpwham-screencast.gif "Screencast of our Voice Application CL")
-
-
+![Screencast of our Voice Application CL](/content/blog/stream-last-christmas-into-a-phone-call-with-python/pvpwham-screencast.gif "Screencast of our Voice Application CL")
 
 ## Getting Started
 
