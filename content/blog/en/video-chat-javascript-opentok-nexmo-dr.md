@@ -194,10 +194,6 @@ Using the code above, we’ll create the following each time someone visits the 
 * OpenTok Token for the corresponding session ID
 * JWT Token for our Nexmo application with the appropriate ACLs
 
-You can see this in action by visiting `localhost:3000` in the browser:
-
-![](https://duaw26jehqd4r.cloudfront.net/items/1d3N301L1e0o0c450J1M/Image%202018-11-18%20at%207.12.44%20PM.png?v=25996930)
-
 Now that we’ve created a mechanism to get the credentials let’s go ahead and work on the client side of the application.
 
 Open up the `index.js` file located in the `js` directory.
