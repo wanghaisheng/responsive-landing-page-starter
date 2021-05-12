@@ -47,9 +47,7 @@ What we advise right now is don't worry too much about it. If you want to build 
 
 **Sam:** I mean, do you find it then...presumably, you manage them as separate. Once you...although you may be doing the same thing, they're actually separate apps, packages, skills, whatever you wanna call them and they have to have their own...and you may not have...so you may get a different version if you like. ‘Oh, that feature is live on Alexa but not live in Cortana yet or…’
 
-**Oscar:** Yes, so we always try and share as much as of the, kind of, backend logic as we can because a lot of it can be reused. But yeah, definitely the kind of...however you define the voice model inputs that you give over to Alexa or Google or Microsoft, those things we keep separate. _**[Editor’s Note:** Watch the [full one-hour discussion](https://youtu.be/InJe29Yz5UM) on the state of AI bot technology.**]**_
+**Oscar:** Yes, so we always try and share as much as of the, kind of, backend logic as we can because a lot of it can be reused. But yeah, definitely the kind of...however you define the voice model inputs that you give over to Alexa or Google or Microsoft, those things we keep separate. _
 
-<b>Oscar: </b>Yes, so we always try and share as much as of the, kind of, backend logic as we can because a lot of it can be reused. But yeah, definitely the kind of...however you define the voice model inputs that you give over to Alexa or Google or Microsoft, those things we keep separate.
-
-<i><b>[Editor’s Note:</b> Watch the <a href="https://youtu.be/InJe29Yz5UM">full one-hour discussion</a> on the state of AI bot technology.<b>]</b></i>
+**[Editor’s Note:** Watch the [full one-hour discussion](https://youtu.be/InJe29Yz5UM) on the state of AI bot technology.**]**
 
