@@ -116,8 +116,6 @@ Now, instead of *hello world*, your app should be serving the default Glitch `in
 
 ### Getting started with Nexmo APIs
 
-If you are new to Nexmo, start off by signing up for [a Nexmo account](https://dashboard.nexmo.com/sign-up) to get access to your API key and secret, which are required to use the Nexmo REST API client. Once you sign in to your account, you will be able to see your API credentials right on the dashboard.
-
 <sign-up number></sign-up>
 
 ![Dashboard](/content/blog/sms-in-the-browser-an-adventure-in-websockets/df802ecc-0da6-4e3b-adb3-740a4b639b86_01-1-.jpg "Dashboard")
