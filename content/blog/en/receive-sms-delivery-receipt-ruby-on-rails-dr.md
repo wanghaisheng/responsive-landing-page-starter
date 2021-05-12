@@ -29,6 +29,8 @@ For this tutorial I assume you will:
 * Have [Rails](http://rubyonrails.org/) installed on your machine
 * Have followed our previous tutorial on [Sending an SMS with Ruby on Rails](https://www.nexmo.com/blog/2017/10/16/send-sms-ruby-on-rails-dr/)
 
+<sign-up></sign-up>
+
 ## What Does "Delivered" Mean?
 
 When you make a successful SMS request to Nexmo, the API returns an array of `message` objects, ideally with a status of `0` for "Success". At this moment the SMS has not been delivered yet, rather it's been queued for delivery with Nexmo.
@@ -37,7 +39,7 @@ In the next step, Nexmo find the best carrier to deliver your SMS to the recipie
 
 To receive this DLR in your application, you will need to set up a webhook endpoint, telling Nexmo where to forward these receipts to.
 
-![DLR diagram](/content/blog/how-to-receive-an-sms-delivery-receipt-from-a-mobile-carrier-with-ruby-on-rails/diagram-dlr.png "DLR diagram")
+![DLR diagram](/content/blog/receive-an-sms-delivery-receipt-with-ruby-on-rails/diagram-dlr.png "DLR diagram")
 
 ## Set the Webhook Endpoint with Nexmo
 
@@ -79,7 +81,7 @@ With this in place, you can set up this URL as your webhook address on your Nexm
 * Set the **Webook URL for Delivery Receipts** to the ngrok URL, e.g. `http://abc123.ngrok.io/sms_delivery_receipts`
 * Ensure the **HTTP Method** is set to `POST` for this tutorial
 
-![Webhook Endpoint Configuration](/content/blog/how-to-receive-an-sms-delivery-receipt-from-a-mobile-carrier-with-ruby-on-rails/endpoint.png "Webhook Endpoint Configuration")
+![Webhook Endpoint Configuration](/content/blog/receive-an-sms-delivery-receipt-with-ruby-on-rails/endpoint-1-.png "Webhook Endpoint Configuration")
 
 Finally, save the form. You might see an error appear after a few seconds if your server can not be reached, or the endpoint did not return a HTTP 200 response. In this case head over to the [ngrok Web Interface](http://127.0.0.1:4040) to inspect the request and response made.
 
