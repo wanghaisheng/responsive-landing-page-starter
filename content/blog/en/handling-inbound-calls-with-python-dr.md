@@ -17,11 +17,11 @@ tags:
   - inbound-calls
 comments: true
 redirect: ""
-canonical: https://www.nexmo.com/legacy-blog/2019/03/28/handling-inbound-calls-with-python-dr
+canonical: ""
 ---
-This blog post shows you, step-by-step, how to create a Nexmo application that can handle an inbound phone call using Python.
+This blog post shows you, step-by-step, how to create a Vonage application that can handle an inbound phone call using Python.
 
-If you are new to Nexmo, your account will be given some initial free credit to help get you started.
+If you are new to Vonage, your account will be given some initial free credit to help get you started.
 
 ## Prerequisites
 
@@ -32,11 +32,11 @@ Assumes you have:
 
 ## Source Code Repository
 
-The source code for this project is available on the [Nexmo Community GitHub](https://github.com/nexmo-community/handling-inbound-call-python).
+The source code for this project is available on the [Vonage Community GitHub](https://github.com/nexmo-community/handling-inbound-call-python).
 
 ## Overview
 
-In a Nexmo application an inbound call can be handled in various ways depending on the requirement. Here are three simple scenarios:
+In a Vonage application an inbound call can be handled in various ways depending on the requirement. Here are three simple scenarios:
 
 1. Message - call is out of hours so you simply play a text-to-speech message.
 2. Forward call - in this case the call is forwarded to an agent so that the customer can be helped.
@@ -60,25 +60,25 @@ It is possible to do many other things when you handle an inbound call, includin
 
 A summary of the procedure you will carry out in this article is as follows:
 
-1. Create a Nexmo account
+1. Create a Vonage account
 2. Install Ngrok
 3. Run Ngrok
 4. Install Flask
 5. Install the CLI
 6. Install the Python client library
-7. Create a Nexmo voice application
+7. Create a Vonage voice application
 8. Purchase a number (if you do not have a spare one)
 9. Assign your number to your application
 10. Write your Python code to implement the scenario
 11. Run your application
-12. Phone your Nexmo number
+12. Phone your Vonage number
 13. Listen to the Text to Speech message
 
-## Create a Nexmo Account
+## Create a Vonage Account
 
-Go to the [Nexmo website](https://www.nexmo.com/) and create an account.
+<sign-up number></sign-up>
 
-Make sure you make a note of your `API_KEY` and `API_SECRET`, which you can find in the Nexmo Dashboard.
+Make sure you make a note of your `API_KEY` and `API_SECRET`, which you can find in the Vonage Dashboard.
 
 ## Install Ngrok
 
@@ -111,7 +111,7 @@ nexmo setup <api_key> <api_secret>
 
 ## Install the Python Client Library
 
-The client library is a useful tool to have installed if you are working with Nexmo and Python. The client library simplifies the job of making Nexmo API calls.
+The client library is a useful tool to have installed if you are working with Vonage and Python. The client library simplifies the job of making Vonage API calls.
 
 In this article it is used to make a single REST API call - "Update Call".
 
@@ -123,11 +123,11 @@ pip install nexmo
 
 Please [read the documentation](https://github.com/Nexmo/nexmo-python#installation) for more details.
 
-## Create a Nexmo Voice Application
+## Create a Vonage Voice Application
 
 Create a directory for your project and change into that new directory.
 
-Although you can create a Nexmo application in the Dashboard, you can also create one on the command line if you have Nexmo CLI installed:
+Although you can create a Vonage application in the Dashboard, you can also create one on the command line if you have Nexmo CLI installed:
 
 ```
 nexmo app:create "Blog Voice App" https://1234abcd.ngrok.io/webhooks/answer https://1234abcd.ngrok.io/webhooks/event --keyfile=private.key
@@ -137,13 +137,13 @@ Make a note of the generated `APPLICATION_ID`, as you will need this later.
 
 A private key is also created in your current directory.
 
-The Answer URL is the URL that Nexmo will call back on when a call to a Nexmo number is answered. 
+The Answer URL is the URL that Vonage will call back on when a call to a Vonage number is answered. 
 
 Nexmo posts event information that helps you monitor your call to the Event URL. In this article the sample code shown just acknowledges the POST, but the event data is not used.
 
 ## Purchase a Number
 
-If you do not already have a Nexmo Number you will need to purchase one.
+If you do not already have a Vonage Number you will need to purchase one.
 
 First search for a suitable number:
 
@@ -167,7 +167,7 @@ nexmo number:buy 442039051952
 
 ## Assign Your Number To Your Application
 
-You now need to associate your Nexmo Number with your Nexmo Application:
+You now need to associate your Vonage Number with your Vonage Application:
 
 ```
 nexmo link:app YOUR_NEXMO_NUMBER APPLICATION_ID
@@ -217,16 +217,16 @@ python3 scenario-1.py
 
 Here's the outline of what happens:
 
-1. You will dial your Nexmo Number.
+1. You will dial your Vonage Number.
 2. Nexmo receives the call.
 3. A callback is generated on the Answer webhook URL you specified.
 4. Your application receives the callback and responds with an NCCO.
-5. At the end of the message the call is terminated by Nexmo.
+5. At the end of the message the call is terminated by Vonage.
 6. The NCCO controls the call, in this the action plays a text-to-speech message into the call.
 
 #### Try It Out
 
-Try it out by calling your Nexmo number - you should hear the message!
+Try it out by calling your Vonage number - you should hear the message!
 
 ### Scenario 2
 
@@ -282,8 +282,8 @@ python3 scenario-2.py
 
 Here's the outline of what happens:
 
-1. You will dial the Nexmo Number.
-2. Nexmo receives the call.
+1. You will dial the Vonage Number.
+2. Vonage receives the call.
 3. A callback is generated on the Answer webhook URL you specified.
 4. Your application receives the callback and responds with an NCCO.
 5. The NCCO controls the call. This first action here plays a text-to-speech message into the call.
@@ -292,7 +292,7 @@ Here's the outline of what happens:
 
 #### Try It Out
 
-Try it out by calling your Nexmo number - you should hear the message - then your call will be transferred to the second phone you specified (a spare mobile is always handy for testing when working with Nexmo)!
+Try it out by calling your Vonage number - you should hear the message - then your call will be transferred to the second phone you specified (a spare mobile is always handy for testing when working with Vonage)!
 
 ### Scenario 3
 
@@ -403,7 +403,7 @@ python3 scenario-3.py
 
 To test it out:
 
-1. Call your Nexmo number.
+1. Call your Vonage number.
 2. You will hear a message and then music.
 3. After a short delay you will hear a message saying you will be connected to the agent. You are then connected to the agent in a call.
 
