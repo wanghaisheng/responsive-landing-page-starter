@@ -19,12 +19,13 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-
 At Nexmo, we recently announced [SIP Connect](https://www.nexmo.com/blog/2019/04/23/introducing-sip-connect-beta/) which allows you to connect WebRTC endpoints with the Nexmo Voice API. This feature makes it possible for PSTN users to dial into an OpenTok video session.
 
 In this post, we’re going to build a real-time video web application using OpenTok and connect PSTN users with it using SIP Connect and the Voice API.
 
 ## Prerequisites
+
+<sign-up></sign-up>
 
 Before we get started, please make sure that you have the following:
 
@@ -41,7 +42,7 @@ Don't worry about what they are right now because we'll explain them as we work 
 
 ## Overview
 
-<img class="aligncenter size-full wp-image-29057" src="https://www.nexmo.com/wp-content/uploads/2019/04/architecture.png" alt="Application Architecture" width="1129" height="875" />
+![architecture](/content/blog/connecting-webrtc-and-pstn-with-opentok-and-nexmo/architecture.png)
 
 ## Sample Code
 
@@ -53,6 +54,7 @@ In the project directory, you'll see a `config.example.js` file. Please go ahead
 > Make sure to add the TokBox and Nexmo credentials that you generated earlier to the `config.js` file because we'll be using them for the app.
 
 ## Client Side Code
+
 In this case, we're using JavaScript for the web, but you can use the same concepts with the OpenTok [iOS](https://tokbox.com/developer/sdks/ios/), [Android](https://tokbox.com/developer/sdks/android/), and [Windows](https://tokbox.com/developer/sdks/windows/) SDKs.
 
 As you can see below, in the `opentok.js` file, located in the `public/js` folder, we initialize a session by calling the `initSession` method on the `OT` object. We then create a [Publisher object](https://tokbox.com/developer/sdks/js/reference/Publisher.html) using the `initPublisher` method.
@@ -100,6 +102,7 @@ In addition to this code, we also create a couple of buttons that trigger API re
 In this app, this view is being rendered by our server, but you can choose to render it however you’d like. To see the code where this view is being rendered, please check out the following [link](https://github.com/opentok/opentok-nexmo-sip/blob/master/Dial-In-Conference/server.js#L49).
 
 ## Server Side Code
+
 Now that we have our client set up, let’s check out the [server code](https://github.com/opentok/opentok-nexmo-sip/blob/master/Dial-In-Conference/server.js).
 
 You’ll notice that we’re importing `express`, `opentok`, and `body-parser` packages. We’re using [Express.js](https://expressjs.com/) for our server, the [OpenTok Node SDK](https://www.npmjs.com/package/opentok), and [body parser](https://www.npmjs.com/package/body-parser) library which will be used to parse the body of incoming requests.
@@ -152,6 +155,7 @@ app.get('/room/:roomId', (req, res) => {
 ```
 
 ### Dialing Out
+
 To dial out to the SIP endpoint, the browser will make a request to the `/dial-out` endpoint and the server will generate a token and use our Nexmo credentials (API Key and API Secret) along with the SIP uri (`sip:lvn@sip.nexmo.com`) to make a request to OpenTok to dial out for the session. If this succeeds, we get connection information via the callback for the SIP participants.
 
 ```javascript
@@ -270,10 +274,12 @@ app.get('/hang-up', (req, res) => {
 ```
 
 Lastly, we specify a port and run the express server:
+
 ```javascript
 const port = process.env.PORT || '3000';
 app.listen(port, () => console.log(`listening on port ${port}`));
 ```
 
 ## Conclusion
+
 In this post, we’ve covered bridging an OpenTok Session with PSTN users using SIP Connect and the Nexmo Voice API. To see the full code with other SIP samples, please check out the [opentok-nexmo-sip](https://github.com/opentok/opentok-nexmo-sip) repo.
