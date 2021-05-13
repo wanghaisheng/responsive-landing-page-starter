@@ -104,7 +104,7 @@ When our pipeline fails, we can make use of the SMS service from Nexmo to send u
 
 To use the Nexmo SMS API, you'll need an account. Within the **Settings** section of your account, take note of the API key and the API secret.
 
-![N/A](/content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages/nexmo-settings.jpeg "Settings")
+![Settings](/content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages/nexmo-settings.jpeg "Settings")
 
 The API information will be required when sending SMS messages automatically.
 
