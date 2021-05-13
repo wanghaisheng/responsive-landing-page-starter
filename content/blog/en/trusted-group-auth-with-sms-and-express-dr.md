@@ -25,6 +25,8 @@ If you know all your friends' phone numbers, though, you can use the [Nexmo Veri
 
 ## Setting Up Your Project on Glitch
 
+<sign-up number></sign-up> 
+
 For this example, let's assume your project is hosted on [Glitch](https://glitch.com/). Glitch makes it easy to start a new project with a SQLite data store, which will be handy for keeping track of your logged-in users' sessions. You can create a brand new project using the `hello-sqlite` template from the New Project button in Glitch, or skip to the end and [remix the code for the final project](https://glitch.com/edit/#!/trusted-group-auth). You'll also need to have a Nexmo Developer account and a virtual phone number you can assign to this app.
 
 Since your application will be built on [Express](https://expressjs.com/), you'll need to install some middleware to get all the functionality it will require. Open the Glitch console and install several additional packages: 
