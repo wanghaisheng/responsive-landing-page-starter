@@ -58,7 +58,7 @@ If you'd rather just follow along with my existing code, you can find that [here
 
 The structure of our project folder looks like this:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/04/initial_structure.png" alt="Initial project structure" width="684" height="490" class="aligncenter size-full wp-image-28811" />
+![Folder structure](/content/blog/how-to-build-a-voicemail-dead-drop-with-python-and-flask/initial_structure.png)
 
 Because this is a small project, all your Python code will go in `answerphone/__init__.py`, but if it was larger, you could split it out into separate modules under the `answerphone` package.
 
@@ -353,7 +353,9 @@ Create a file at `answerphone/templates/index.html.j2` and put something like th
 
 Now, if you visit your `https://localhost:5000/` you should see something like the following:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/04/recording_list.png" alt="Your handler&#039;s dead-drop page" width="686" height="948" class="aligncenter size-full wp-image-28812" />
+
+
+![Recording list](/content/blog/how-to-build-a-voicemail-dead-drop-with-python-and-flask/recording_list.png)
 
 You're now a master spymaster!
 
