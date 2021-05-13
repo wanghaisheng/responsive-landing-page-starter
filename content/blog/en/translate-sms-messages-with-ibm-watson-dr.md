@@ -15,6 +15,8 @@ comments: true
 redirect: ""
 canonical: ""
 ---
+<sign-up></sign-up>
+
 In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://www.nexmo.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr) and [AWS Translate](https://www.nexmo.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr).
 
 ## Overview
@@ -225,5 +227,4 @@ The example above is just a small introduction to translation using the IBM Wats
 You can find a completed version of this tutorial on the [Vonage Community GitHub](https://github.com/nexmo-community/sms-translate-ibm-js).
 
 If you want to learn more about the Extend projects we have, you can visit <https://developer.nexmo.com/extend>.
-
-<sign-up></sign-up> 
+ 
