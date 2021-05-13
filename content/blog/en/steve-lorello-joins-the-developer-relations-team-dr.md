@@ -9,12 +9,13 @@ thumbnail: /content/blog/steve-lorello-joins-the-developer-relations-team-dr/IMG
 author: stevelorello
 published: true
 published_at: 2019-11-13T14:09:23.000Z
-comments: true
+updated_at: 2021-05-13T13:23:51.073Z
 category: team
 tags:
   - careers
-canonical: https://www.nexmo.com/legacy-blog/2019/11/13/steve-lorello-joins-the-developer-relations-team-dr
+comments: true
 redirect: https://www.nexmo.com/legacy-blog/2019/11/13/steve-lorello-joins-the-developer-relations-team-dr
+canonical: https://www.nexmo.com/legacy-blog/2019/11/13/steve-lorello-joins-the-developer-relations-team-dr
 ---
 
 Content to be migrated...
