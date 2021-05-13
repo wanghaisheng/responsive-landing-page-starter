@@ -15,7 +15,6 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-
 Back at RailsConf 2016, we adopted the community-driven Nexmo Ruby gem and [made it an officially supported client library](https://www.nexmo.com/blog/2016/05/04/ruby-gem/). Since then, Ruby developers have been able to integrate Nexmo into their applications with more ease. Whether you were looking to create a [Voice app](https://www.nexmo.com/blog/2017/11/02/outbound-text-to-speech-voice-call-ruby-on-rails-dr/), [send](https://www.nexmo.com/blog/2017/10/16/send-sms-ruby-on-rails-dr/) or [receive](https://www.nexmo.com/blog/2017/10/23/receive-sms-messages-ruby-on-rails-dr/) an SMS, obtain [insights on numbers](https://www.nexmo.com/blog/2019/03/25/getting-started-with-the-nexmo-number-insight-api-and-rails-dr/) around the world, or more, you could do it with the Nexmo Ruby gem. 
 
 We are excited to share at [RailsConf 2019](https://nexmo.dev/railsconf/) that we have taken another step to make it even easier for Ruby on Rails developers to use the full suite of Nexmo APIs in their Rails applications with the new [Nexmo Rails gem](https://github.com/Nexmo/nexmo-rails). The Nexmo Rails gem performs another integration step for you by initializing a Nexmo client instance and making it available throughout your application.
@@ -37,6 +36,8 @@ gem 'nexmo-rails'
 Then run `bundle install` from your command line to install the dependency.
 
 ### Nexmo API Credentials
+
+<sign-up number></sign-up>
 
 You need to provide the gem with your Nexmo API credentials to access the functionality of our APIs. [Sign up for a free Nexmo account](https://dashboard.nexmo.com/sign-up), if you have not done so already. Once you have created your Nexmo account, navigate to your dashboard and add your API key and API secret to the `.env` file in the root folder of your application:
 
@@ -95,7 +96,7 @@ More information on all the available functionality within the Nexmo Ruby client
 
 ## Let's Talk at RailsConf
 
-<a href="https://nexmo.dev/railsconf"><img src="https://www.nexmo.com/wp-content/uploads/2019/04/railsconf.png" alt="RailsConf 2019" width="1200" height="675" class="alignnone size-full wp-image-29051" /></a>
+![Rails Conf](/content/blog/announcing-the-nexmo-rails-gem/railsconf.png)
 
 We are so thrilled to share this during <a href="https://nexmo.dev/railsconf">RailsConf 2019</a> in Minneapolis. As mentioned earlier, it was during RailsConf 2016 in Kansas City that we unveiled the Nexmo Ruby gem, and it is really meaningful to continue the tradition of new and exciting developments at this year's conference. 
 
