@@ -1,10 +1,8 @@
 ---
 title: Adding Sentiment Analysis to SMS with IBM Watson
-description: When it comes to communications via SMS, I think we all can agree
-  that sometimes the sender’s intent can be misinterpreted. I know that,
-  personally, meaning and context around words can easily be misunderstood. In
-  whatever way technology contributes to this ongoing difficulty, technology
-  also helps bail us out with sentiment analysis tools. In this […]
+description: Understanding sentiment of incoming SMS messages is incredibly
+  powerful, check out our one-click deploy IBM Watson Sentiment Analysis
+  connector for your app
 thumbnail: /content/blog/adding-sentiment-analysis-to-sms-ibm-watson-dr/Sentiment-Analysis-with-Watson.jpg
 author: kellyjandrews
 published: true
