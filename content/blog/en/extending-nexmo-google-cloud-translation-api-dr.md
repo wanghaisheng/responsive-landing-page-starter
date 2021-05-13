@@ -1,7 +1,7 @@
 ---
 title: Translating SMS Messages Using Google Cloud’s Translation API
-description: how to create an inbound Nexmo SMS webhook and translate the
-  message into English using the Google Cloud Translation API
+description: Find out how to create an inbound Nexmo SMS webhook and translate
+  the message into English using the Google Cloud Translation API
 thumbnail: /content/blog/extending-nexmo-google-cloud-translation-api-dr/E_EN_Translate-SMS_1200x600.png
 author: kellyjandrews
 published: true
