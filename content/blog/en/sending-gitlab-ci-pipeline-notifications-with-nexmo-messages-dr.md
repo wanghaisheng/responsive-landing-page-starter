@@ -112,10 +112,7 @@ If we really wanted to, and we shouldn't, we could create a cURL statement and h
 
 In the **CI / CD -> Settings** tab of your GitLab project, expand the **Variables** section.
 
-![](/content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages/gitlab-env-variables.jpeg)
-
-
-
+![Gitlab env variables](/content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages/gitlab-env-variables.jpeg "Gitlab env variables")
 
 This is where you're going to want to add your sensitive information so it isn't exposed to everyone working on your project. Add the API key and API secret information as well as the destination phone number for the SMS. To protect it from the pipeline log output, make sure these variables are **Masked**, so they don't show up.
 
@@ -234,7 +231,7 @@ As of now, you should already have the `apiKey` and `apiSecret` values from the 
 
 Within the Nexmo Dashboard, click on **Messages and Dispatch** and proceed to creating a new application.
 
-![](/content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages/nexmo-messages-application.png)
+![Nexmo Messages Application](/content/blog/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages/nexmo-messages-application.png "Create messages application")
 
 Give the application a name and provide the URL to each of the webhooks that you just created. If you're still testing locally, consider using ngrok to tunnel into localhost so that you can continue to test without deploying your application. Choose to generate a new private and public key pair and move the private key that downloads into your Node.js project directory.
 
