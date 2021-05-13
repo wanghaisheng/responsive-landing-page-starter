@@ -10,6 +10,7 @@ updated_at: 2021-05-13T21:18:42.196Z
 category: tutorial
 tags:
   - developer-spotlight
+  - javascript
 comments: true
 redirect: ""
 canonical: ""
