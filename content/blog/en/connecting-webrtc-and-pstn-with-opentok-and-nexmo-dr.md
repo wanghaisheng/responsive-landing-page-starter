@@ -9,11 +9,15 @@ thumbnail: /content/blog/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr/op
 author: manik
 published: true
 published_at: 2019-04-23T16:01:14.000Z
-comments: true
+updated_at: 2021-05-13T19:52:10.043Z
 category: tutorial
-tags: []
-canonical: https://www.nexmo.com/legacy-blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr
+tags:
+  - voice-api
+  - javascript
+  - SIP
+comments: true
 redirect: https://www.nexmo.com/legacy-blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr
+canonical: https://www.nexmo.com/legacy-blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr
 ---
 
 Content to be migrated...
