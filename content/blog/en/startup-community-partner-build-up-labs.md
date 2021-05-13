@@ -2,6 +2,7 @@
 title: "Startup Community Partner: Build Up Labs"
 description: Introducing Build Up Labs, a Start up community partner with
   Vonage. Providing a service to get start ups on their feet
+thumbnail: /content/blog/startup-community-partner-build-up-labs/builduplabs_1200x600.png
 author: filippos-kyprianou
 published: true
 published_at: 2021-05-12T14:26:00.906Z
