@@ -1,9 +1,8 @@
 ---
 title: How to Build a Voicemail Dead-Drop with Python and Flask
-description: I picked up the grubby handset of the public payphone and dialled
-  the number, like I had a hundred times before. “This is Oleg’s Pizza. Leave a
-  message after the beep.” That was all it ever said – there was never a real
-  person at the other end of the line – just a robotic […]
+description: In this tutorial we take inspiration from the greatest of spy
+  thrillers and show you how to build a custom voicemail service using Python &
+  Flask.
 thumbnail: /content/blog/how-to-build-a-voicemail-with-python-flask-dr/python-dead-drop.png
 author: judy2k
 published: true
