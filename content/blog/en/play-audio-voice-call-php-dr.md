@@ -1,6 +1,8 @@
 ---
 title: Play an Audio File Into a Voice Call With PHP
-description: Learn how to play an MP3 audio file into a voice call with PHP
+description: Create a more human sounding voice menus, or add quality hold music
+  to voice calls by playing an audio file with Nexmo, PHP and this tutorial as
+  your guide
 thumbnail: /content/blog/play-an-audio-file-into-a-voice-call-with-php/blog_php_audiofile_1200x600.png
 author: mheap
 published: true
@@ -20,6 +22,8 @@ In addition to making [text-to-speech calls](https://learn.vonage.com/blog/2017/
 > **Note:** All of the code for this post is available [on Github](https://github.com/nexmo-community/stream-audio-into-call-php)
 
 ### Prerequisites
+
+<sign-up number></sign-up> 
 
 You’ll need PHP installed before working through this post. I’m running PHP 7.4, but the code here should work on PHP 7.2 and above. You’ll also need [Composer](https://getcomposer.org/) available to install the Vonage PHP client.
 
