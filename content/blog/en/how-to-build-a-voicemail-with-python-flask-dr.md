@@ -1,6 +1,6 @@
 ---
 title: How to Build a Voicemail Dead-Drop with Python and Flask
-description: In this tutorial, we take inspiration from the greatest of spy
+description: In this tutorial we take inspiration from the greatest of spy
   thrillers and show you how to build a custom voicemail service using Python &
   Flask.
 thumbnail: /content/blog/how-to-build-a-voicemail-with-python-flask-dr/python-dead-drop.png
@@ -23,7 +23,7 @@ canonical: ""
 
 That was all it ever said - there was never a real person at the other end of the line - just a robotic voice from an unlikely business.
 
-**\[BEEP\]** - *somewhere a tape started recording. I left my message.*
+**\[BEEP]** - *somewhere a tape started recording. I left my message.*
 
 "Hi, this is Chuck. I'd like a pepperoni and mushroom pizza please."
 
@@ -32,11 +32,13 @@ I dropped the handset and walked away.
 My name's not Chuck, and I don't like pepperoni, but this would get the message across:
 my cover was blown, and by Monday I'd be gone, just a fading memory in the minds of those who knew me.
 
-----
+- - -
 
 I love a good spy thriller, and it seems like one of the hardest parts of being a spy is finding a dead-drop to leave messages for your handler. Fortunately, in this post, I'm going to make life easier for all you spooks out there by showing you how to make a dead-drop phone number where you can leave messages for someone to pick up later on the Web.
 
 ## Prerequisites
+
+<sign-up number></sign-up> 
 
 I'm going to assume you've read Aaron's awesome post describing how to use [Ngrok for developing webooks](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/). If you haven't go read it now - it's worth it.
 
@@ -54,11 +56,11 @@ The recorded message will be copied to your server, and you'll build a simple we
 
 ## Starting Your Project
 
-If you'd rather just follow along with my existing code, you can find that [here][github-repo], but I recommend you follow along with this post and build it yourself!
+If you'd rather just follow along with my existing code, you can find that [here](https://github.com/nexmo-community/python-voicemail-dead-drop), but I recommend you follow along with this post and build it yourself!
 
 The structure of our project folder looks like this:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/04/initial_structure.png" alt="Initial project structure" width="684" height="490" class="aligncenter size-full wp-image-28811" />
+![Initial project structure](/content/blog/how-to-build-a-voicemail-dead-drop-with-python-and-flask/initial_structure.png)
 
 Because this is a small project, all your Python code will go in `answerphone/__init__.py`, but if it was larger, you could split it out into separate modules under the `answerphone` package.
 
@@ -228,7 +230,7 @@ Now, when you call your Nexmo number and leave a message, you should find an MP3
 If you wanted to, you could stop now - you've learned all the basics about how to get Nexmo to record a message,
 and then how to download that message to your server (Nexmo only stores the recording for you for a few hours).
 
-_But_ it would be a good idea to store some metadata along with the audio, so you know who the caller was, and when they called. That way, you can add a page listing all the calls to your answerphone dead-drop.
+*But* it would be a good idea to store some metadata along with the audio, so you know who the caller was, and when they called. That way, you can add a page listing all the calls to your answerphone dead-drop.
 
 I chose [TinyDB](https://tinydb.readthedocs.io/en/latest/) to do this - it's a really simple little data-store that dumps your data to a JSON file. It's not very fast, and it won't store lots of data very well, but it's fine for this project!
 
@@ -353,7 +355,7 @@ Create a file at `answerphone/templates/index.html.j2` and put something like th
 
 Now, if you visit your `https://localhost:5000/` you should see something like the following:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/04/recording_list.png" alt="Your handler&#039;s dead-drop page" width="686" height="948" class="aligncenter size-full wp-image-28812" />
+![Recording list](/content/blog/how-to-build-a-voicemail-dead-drop-with-python-and-flask/recording_list.png)
 
 You're now a master spymaster!
 
@@ -372,9 +374,7 @@ If you want to dig a bit deeper into what you just learned, the following may be
 * [TinyDB Documentation](https://tinydb.readthedocs.io/en/latest/)
 * [Python-DotEnv Documentation](https://github.com/theskumar/python-dotenv)
 
-Also, check out the [GitHub Repo][github-repo] for this project, as I've documented the code and improved the list view.
-
-[github-repo]: https://github.com/nexmo-community/python-voicemail-dead-drop
+Also, check out the [GitHub Repo](https://github.com/nexmo-community/python-voicemail-dead-drop) for this project, as I've documented the code and improved the list view.
 
 ## Next Steps
 
