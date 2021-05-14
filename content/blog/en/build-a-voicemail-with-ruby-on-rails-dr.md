@@ -23,6 +23,8 @@ Let's get started!
 
 ## Prerequisites
 
+<sign-up number></sign-up>
+
 In order to work through this tutorial you will need the following:
 
 * Rails 5.2+
@@ -109,11 +111,11 @@ Make sure to copy the `ngrok.io` URL down somewhere safe. We will be using it in
 
 In order for our voice application to work, we need a Nexmo account, a Nexmo provisioned phone number, a Nexmo application, and, lastly, we need to link our application to our phone number.
 
-You can create a Nexmo account for free, and as an added bonus, your account will be credited with 2 euros to begin using your new application. Navigate to [https://dashboard.nexmo.com/sign-up](https://dashboard.nexmo.com/sign-up) in your web browser and go through the sign up steps. Once you have finished you will be in your Nexmo dashboard.
+You can create a Nexmo account for free, and as an added bonus, your account will be credited with 2 euros to begin using your new application. Navigate to <https://dashboard.nexmo.com/sign-up> in your web browser and go through the sign up steps. Once you have finished you will be in your Nexmo dashboard.
 
 From the left-hand menu, click on the `Voice menu` item. You will see the following four options under `APPLICATIONS`:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/05/create-voice-app.png" alt="" width="532" height="454" class="alignnone size-full wp-image-29347" />
+![Create voice app](/content/blog/build-a-voicemail-with-ruby-on-rails/create-voice-app.png)
 
 Click on the `Create an application` option and you will be directed to a page where you can set up a new Nexmo application.
 
@@ -133,11 +135,11 @@ You now have created a Nexmo Voice application. Our next step is to purchase a N
 
 From the Nexmo Dashboard, click on the `Numbers` menu item on the left-hand menu. You will see three options appear:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/05/numbers.png" alt="" width="532" height="296" class="alignnone size-full wp-image-29350" />
+![buy numers](/content/blog/build-a-voicemail-with-ruby-on-rails/numbers.png)
 
 Click on the `Buy numbers` option and you will be directed to a page where you can choose a country, features, type, and four digits you would like the number to have.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/05/buy-numbers.png" alt="" width="1838" height="372" class="alignnone size-full wp-image-29345" />
+![numbers](/content/blog/build-a-voicemail-with-ruby-on-rails/buy-numbers.png)
 
 For our purposes: pick the country that you are currently in, so that the call will be a local call for you; pick `Voice` for features and either mobile or land line for type. You do not need to enter anything for the `Number` text field. When you click `Search`, you will see a list of phone numbers available.
 
@@ -145,7 +147,7 @@ Pick one by clicking the orange `Buy` button, and clicking the orange `Buy` butt
 
 Once you own the number, you can now link it to your `nexmo-rails-voicemail-demo` Voice application. To do so, click on the gear icon next to the phone number and you will see the following menu:
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/06/Screen-Shot-2019-06-14-at-15.12.52.png" alt="" width="1256" height="630" class="alignnone size-full wp-image-29520" />
+![webhook dashboard](/content/blog/build-a-voicemail-with-ruby-on-rails/screen-shot-2019-06-14-at-15.12.52.png)
 
 Select the `nexmo-rails-voicemail-demo` Application from the drop down list and click on the blue `Ok` button. Your Nexmo phone number is now linked to your Voice application and ready to accept and forward inbound phone calls via voice proxy.
 
@@ -190,7 +192,7 @@ $ rails generate controller Voicemail
 This will create a file in `/app/controllers` called `voicemail_controller.rb`. We need to create an action for each of the routes. These actions will contain the logic behind the route and direct the traffic to the appropriate view, when appropriate. The actions are the following:
 
 * `#index`: Contains an instance variable called `@recordings` that contains all the voicemail records. 
-* `#answer`: Renders a Nexmo Call Control Object (NCCO) [JSON object containing the instructions for the Nexmo API] to the Nexmo API. 
+* `#answer`: Renders a Nexmo Call Control Object (NCCO) \[JSON object containing the instructions for the Nexmo API] to the Nexmo API. 
 * `#event`: Receives updates from the Nexmo API. When the application receives a status of `answered`, the method creates a new entry in the `Recordings` table. 
 * `#new`: Accessed by the API when a recording has been made and updates a recording entry with the `recording_uuid`, the unique ID for the recording audio.
 
@@ -243,6 +245,7 @@ class VoicemailController < ApplicationController
     end
 end
 ```
+
 #### Define Our Model
 
 In our app we only need to create one model that we will use to interact with our `Recordings` table in the database. Go ahead and create a file called `recording.rb` in `/app/models/` and all you need to do inside of it is simply define that it is a model that inherits from `ActiveRecord::Base`:
@@ -314,5 +317,4 @@ $ rails generate nexmo_initializer
 
 That's it! You now have a fully functioning application. 
 
-Start your Rails server, and making sure ngrok is running, go ahead and give it a call and leave yourself a message! 
-
+Start your Rails server, and making sure ngrok is running, go ahead and give it a call and leave yourself a message!
