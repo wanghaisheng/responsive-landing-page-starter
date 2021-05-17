@@ -36,9 +36,9 @@ Other options include Picture-in-Picture (`pip`), Vertical Presentation (`vertic
 
 **Update May 2021: New vertical layouts have been added to allow recording or broadcasting in portrait SD and HD resolutions, ideal for mobile devices:**
 
-![Vertical Layout](/content/blog/using-dynamic-layouts-in-hls-rmtp-broadcasts/hpres.gif "Vertical layout to allow recording or broadcasting in portrait resolutions")
+![Vertical layout to allow recording or broadcasting in portrait resolutions](/content/blog/using-dynamic-layouts-in-hls-rmtp-broadcasts/hpres.gif)
 
-![Vertical Layout](/content/blog/using-dynamic-layouts-in-hls-rmtp-broadcasts/vpres.gif "Vertical layout to allow recording or broadcasting in portrait resolutions")
+![Vertical layout to allow recording or broadcasting in portrait resolutions](/content/blog/using-dynamic-layouts-in-hls-rmtp-broadcasts/vpres.gif)
 
 ### New Screen share layout types
 
