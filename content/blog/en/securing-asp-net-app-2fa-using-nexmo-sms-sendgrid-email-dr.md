@@ -269,8 +269,6 @@ In the `Views/Account/Login.cshtml` delete the `<div class="form-group">` contai
 
 With that, you have a web app using ASP .NET Identity that is 2 Factor Authentication (2FA) enabled using Nexmo SMS and SendGrid Email as the different methods of verification.  
 
-<a name="video"></a>[video width="1152" height="720" mp4="https://www.nexmo.com/wp-content/uploads/2016/08/2fa-dotnet-optimised.mp4"][/video]
-
 SMS and email provide additional layers of security to correctly identify users and further protect sensitive user information. Using the Nexmo C# Client Library and SendGrid's C# Client, you can add both SMS and email verification with ease.
 
 <a name="code"></a>Please [grab the code](https://github.com/nexmo-community/sms-email-2fa-dotnet-example) and try it for yourself.
