@@ -34,6 +34,21 @@ Other options include Picture-in-Picture (`pip`), Vertical Presentation (`vertic
 
 ![Alternative layout options](/content/blog/using-dynamic-layouts-in-hls-rmtp-broadcasts/layout-options.png)
 
+**Update May 2021: New vertical layouts have been added to allow recording or broadcasting in portrait SD and HD resolutions, ideal for mobile devices:**
+
+![Vertical Layout](/content/blog/using-dynamic-layouts-in-hls-rmtp-broadcasts/hpres.gif "Vertical layout to allow recording or broadcasting in portrait resolutions")
+
+![Vertical Layout](/content/blog/using-dynamic-layouts-in-hls-rmtp-broadcasts/vpres.gif "Vertical layout to allow recording or broadcasting in portrait resolutions")
+
+### New Screen share layout types
+
+[New layout types](https://www.tokbox.com/developer/guides/archive-broadcast-layout/#screen-sharing-layouts) were introduced in May 2021:
+
+* bestFit
+* horizontalPresentation
+* verticalPresentation
+* pip
+
 ### Initializing &amp; Changing Layouts
 
 You can specify an initial layout when you start a broadcast. To do so, add a `layout` property containing a `type` property to the request body. This `type` property should correspond to the pre-defined layout you wish to use.
@@ -78,7 +93,7 @@ The layout for a broadcast is created in a virtual DOM with the following struct
 
 You'll want to keep this structure in mind as you use the pre-defined layouts or create your custom layouts. By default, the broadcast video is 640x480 pixels, but you can specify the use of 1280x720 when you start the broadcast. In this case, the predefined layouts are adjusted to use a 16:9 aspect ratio.
 
-> Important: Only 9 streams can ever be displayed in a broadcast at one time.
+> Important: Only 16 streams can ever be displayed in a broadcast at one time.
 
 ### Changing Styles
 
