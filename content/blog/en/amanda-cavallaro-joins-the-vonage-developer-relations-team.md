@@ -26,11 +26,11 @@ I am passionate about cloud technologies, JavaScript, human-computer interaction
 
 I am thoroughly interested and invested in conversational technologies through different communication channels. I have developed a deep interest in these interactions can improve our lives and make technology more inclusive for people from different backgrounds.
 
-I am a volunteer community builder at [Bots Brasil](https://medium.com/botsbrasil) and [GDG Cloud London](https://www.meetup.com/gdgcloud/). I am a [Women Techmakers](https://www.womentechmakers.com/) ambassador and a [Google Developers Expert](https://developers.google.com/community/experts).
+The developer community should be an inclusive environment where everyone from beginner to experienced professionals is welcome to join. I owe a lot to the community and I volunteer as a community builder at [Bots Brasil](https://medium.com/botsbrasil) and [GDG Cloud London](https://www.meetup.com/gdgcloud/). I am a [Women Techmakers](https://www.womentechmakers.com/) ambassador and a [Google Developers Expert](https://developers.google.com/community/experts).
 
-Having worked as a developer for the past six years, I understand developers' pain points. In addition to that, I have the passion and empathy to communicate and help empower people to reach their goals and achievements.  
+Having worked as a developer for the past six years, I understand developers' pain points as I have been in their shoes. In addition to that, I have the passion and empathy to communicate and help empower people to reach their goals and achievements.  
 
-I feel humbled to choose a profession where I can make a difference in developers' careers and learning journeys. I love to connect and collaborate with others. I will share what I learn through public speaking, talks, workshops, videos, blog posts and overall creating content that brings value. 
+I feel humbled to choose a profession where I can make a difference in developers' careers and learning journeys. I love to connect and collaborate with others. I will share what I learn through public speaking, talks, workshops, videos, blog posts and overall creating content that brings value.
 
 Feel free to follow me on Twitter and ask me questions.
 
