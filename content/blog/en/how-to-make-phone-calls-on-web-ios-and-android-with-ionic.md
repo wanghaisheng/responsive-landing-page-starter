@@ -1,8 +1,7 @@
 ---
 title: How to Make Phone Calls on Web, iOS and Android with Ionic
-description: This blog post will take you through a project that will show you
-  how to use the Vonage Client SDK to build an Ionic app that lets you call a
-  phone number.
+description: Learn how to use the Vonage Client SDK to build an Ionic app that
+  lets you call a phone number.
 author: abdul-ajetunmobi
 published: true
 published_at: 2021-05-10T09:57:11.723Z
@@ -19,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This blog post will take you through a project that will show you how to use the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview) to build an [Ionic](https://ionicframework.com) app that lets you call a phone number across three platforms. The project for this blog post uses [React](https://reactjs.org).
+This blog post takes you through a project that showcases how to build an [Ionic](https://ionicframework.com) app that lets you make a call across three platforms using the [Vonage Client SDK](https://developer.nexmo.com/client-sdk/overview). The project for this blog post uses [React](https://reactjs.org).
 
 ## Prerequisites
 
@@ -44,7 +43,7 @@ You can clone the project to your local machine by running the following command
 
 Then change directory into the new folder `cd ionic-app-to-phone`.
 
-Now that you have cloned the project, you can install the project dependencies by running `npm install`. This command will install the dependencies listed in the `package.json` file. Note the `nexmo-client` dependency that is listed; this is the Client SDK. 
+Now that you have cloned the project, you can install the project dependencies by running `npm install`. This command will install the dependencies listed in the `package.json` file. Note the `nexmo-client` listed; this is the Client SDK. 
 
 Ionic also needs some environment variables to be set up for Android development. Edit your `PATH` with:
 
@@ -109,7 +108,7 @@ nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/u
 
 ## Run the Project
 
-Now that you have set up the Vonage application, you can now make some calls.
+Now that you have set up the Vonage application, you can make some calls.
 
 ### Web
 
@@ -121,17 +120,18 @@ Once done, run the project from your terminal using `ionic serve`. This command 
 
 ### iOS
 
-Ionic uses [Capacitor](https://capacitorjs.com) to build the web app you just used for native platforms. Keep the Ionic development server running in your terminal and open a new terminal window in the same directory. The iOS and Android apps require the development server to be served via HTTPS, so you can use [localtunnel](https://github.com/localtunnel/localtunnel) to create an HTTPS URL. Enter the following command into your terminal, replacing `SUBDOMAIN` with a unique string: 
+Ionic uses [Capacitor](https://capacitorjs.com) to build the web app you just used for native platforms. Keep the Ionic development server running in your terminal and open a new terminal window in the same directory. The iOS and Android apps require the development server to be available via HTTPS, so you can use [localtunnel](https://github.com/localtunnel/localtunnel) to create an HTTPS URL. Enter the following command into your terminal, replacing `SUBDOMAIN` with a unique string: 
 
 `npx localtunnel --port 8100 --subdomain=SUBDOMAIN`
 
 This command will open a tunnel to your machine's port 8100. 
 
-Building a native project with Capacitor happens in 3 stages. First, the web code is built. Next, the code is copied to each platform then platform-specific tools are used to build the app. Open in a new terminal window in the same directory. You can do the first stage and second stage with `ionic capacitor sync ios`. Then run the iOS project using capacitor, replacing `SUBDOMAIN` with your unique string:
+Building a native project with Capacitor happens in 3 stages. First, the web code is built. Next, the code is copied to each platform then platform-specific tools are used to build the app.  
+Open a new terminal window in the same directory. You can do the first stage and second stage with `ionic capacitor sync ios`. Then run the iOS project using Capacitor, replacing `SUBDOMAIN` with your unique string:
 
 `ionic capacitor run ios -l --external --livereload-url=https://SUBDOMAIN.loca.lt`
 
-This command and opens Xcode for you and enables live reload of the code. Build and Run (CMD + R) in Xcode, and when the app is running on the simulator/device you pick, you can log in and make a call, the same as on the web. 
+This command opens Xcode for you and enables live reload of the code. Build and Run (CMD + R) in Xcode, and when the app is running on the simulator/device you pick, you can log in and make a call, the same as on the web. 
 
 ![ios idle interface](/content/blog/how-to-make-phone-calls-on-web-ios-and-android-with-ionic/ios.png)
 
@@ -139,7 +139,7 @@ Since Ionic is web-based, the iOS app can use the same Client SDK JavaScript dep
 
 ### Android
 
-The process for android is very similar to iOS. In your terminal window running the iOS project, quit the process with Ctrl+C, then run `ionic capacitor sync android`. Then run the Android project using capacitor, replacing `SUBDOMAIN` with your unique string:
+The process for android is very similar to iOS. In your terminal window running the iOS project, quit the process with Ctrl+C, then run `ionic capacitor sync android`. Then run the Android project using Capacitor, replacing `SUBDOMAIN` with your unique string:
 
 `ionic capacitor run android -l --external --livereload-url=https://SUBDOMAIN.loca.lt`
 
