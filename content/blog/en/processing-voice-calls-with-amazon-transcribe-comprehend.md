@@ -2,9 +2,10 @@
 title: Processing Voice Calls With Amazon Transcribe & Comprehend
 description: Learn how to set up an Amazon Transcribe and Comprehend reference
   with Vonage's Voice API
+thumbnail: /content/blog/processing-voice-calls-with-amazon-transcribe-comprehend/voiceapi_amazon-comprehend_1200x600.png
 author: tony-chan
 published: true
-published_at: 2021-05-12T08:13:22.636Z
+published_at: 2021-05-17T16:34:22.405Z
 updated_at: 2021-05-12T08:13:22.649Z
 category: tutorial
 tags:
