@@ -18,7 +18,7 @@ replacement_url: ""
 ---
 Oi! Ciao! 
 
-I am Amanda, an Italo-Brazilian developer advocate at Vonage based in London. 
+I am Amanda, an Italo-Brazilian developer advocate at Vonage based in the United Kingdom. 
 
 During my free time, I practise aikido, read books, study Japanese and listen to power metal. My favourite band is Sonata Arctica. 
 
