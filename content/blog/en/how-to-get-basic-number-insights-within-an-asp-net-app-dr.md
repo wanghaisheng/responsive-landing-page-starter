@@ -25,8 +25,8 @@ In this article, we will continue from where we left off in the first article fo
 
 Number Insight Basic API is a free synchronous, easy-to-use RESTful web service. For any phone number you can:
 
-<ul><li>Retrieve the international and local format.</li>
-<li>Know the country where the number is registered.</li></ul>
+* Retrieve the international and local format.
+* Know the country where the number is registered.
 
 ## Hands-on code
 
