@@ -100,4 +100,4 @@ Feel free to reach out via [e-mail](mailto:sidharth.sharma@nexmo.com) or [Twitte
 
 * [Nexmo SMS REST API](https://docs.nexmo.com/messaging/sms-api)
 * [Nexmo C# Client Library](https://github.com/Nexmo/nexmo-dotnet)
-* \[Nexmo ASP.NET MVC Quickstart](https://github.com/nexmo-community/nexmo-dotnet-quickstart/
+* [Nexmo ASP.NET MVC Quickstart](https://github.com/nexmo-community/nexmo-dotnet-quickstart)
