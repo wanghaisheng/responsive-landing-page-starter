@@ -32,9 +32,6 @@ In this tutorial, you’ll *create a Magic 8-Ball voice app with Ruby*. This app
 
 <sign-up number></sign-up>
 
-To work through this tutorial, you'll need a [Nexmo account](https://dashboard.nexmo.com/sign-up).\
-You can sign up now for *free* if you don't already have an account.    
-
 In addition, you'll need:  
 
 * [Ruby on Rails](https://rubyonrails.org/)
@@ -178,7 +175,7 @@ So let’s create that now, shall we?
 The goal now is to expose your app externally so that Nexmo can communicate with it. Because the app is just running locally, it isn’t available on anyone else’s machine. That means that we need to somehow externally expose our local server so that Nexmo can reach it.\
 There are a ton of different ways to do this, but one of the simplest is with ngrok. You can check out [this article](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) for a deeper look into how it all works.     
 
-<!-- But, for our purposes right now, you can get it up and running and copy/paste the URL into your \`responses_controller.rb\` file.      -->
+<!-- But, for our purposes right now, you can get it up and running and copy/paste the URL into your \\`responses_controller.rb\\` file.      -->
 
 But here’s the gist of it:    
 
@@ -211,7 +208,6 @@ Next, in order for your voice app to work, you must link your Nexmo account, a p
 * From the Nexmo Dashboard, click on the `Numbers` menu item on the left-hand side.   
 * Click the `Buy Numbers` option and you’ll be directed to a page where you can choose a country, features, type, and four digits you would like the number to have.
 
-
   ![buy numbers](/content/blog/how-to-build-a-magic-8-ball-voice-app-with-ruby/buy-numbers.png)
 * Select the country that you are currently in so the call is local. For features, select `Voice` and for type, either mobile or landline will work just fine.      
 * Click `Search` to see a list of phone numbers available.     
@@ -241,7 +237,6 @@ You now have a Nexmo voice number and an application, and all that is left to do
 * Press the blue `Ok` button.
 
   ![](/content/blog/how-to-build-a-magic-8-ball-voice-app-with-ruby/connect-number-to-app.png)
-
 
   Your new Nexmo voice number is now linked to your new Nexmo application, and with that last step, you are ready to try it out!  
 
