@@ -18,8 +18,9 @@ canonical: ""
 ---
 The world-wide-web is a wondrous thing. We can create and share information easier than at any point before in human history.
 
-<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">Writing a tutorial for the <a href="https://twitter.com/NexmoDev?ref_src=twsrc%5Etfw">@NexmoDev</a> blog while 35,000 feet above the Atlantic <a href="https://twitter.com/hashtag/devrellife?src=hash&amp;ref_src=twsrc%5Etfw">#devrellife</a> <a href="https://t.co/mvxGDuEDky">pic.twitter.com/mvxGDuEDky</a></p>&mdash; Aaron Bassett - what timezone is it? (@aaronbassett) <a href="https://twitter.com/aaronbassett/status/996214436946788352?ref_src=twsrc%5Etfw">May 15, 2018</a></blockquote>
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> Writing a tutorial for the [@NexmoDev](https://twitter.com/NexmoDev?ref_src=twsrc%5Etfw) blog while 35,000 feet above the Atlantic [\#devrellife](https://twitter.com/hashtag/devrellife?src=hash&ref_src=twsrc%5Etfw) [pic.twitter.com/mvxGDuEDky](https://t.co/mvxGDuEDky)
+>
+> — Aaron Bassett - what timezone is it? (@aaronbassett) [May 15, 2018](https://twitter.com/aaronbassett/status/996214436946788352?ref_src=twsrc%5Etfw)
 
 However, much of what we create lives within walled gardens; this is the antithesis to the original idea of the www. Breaking down these walled gardens has been something Tim Berners Lee has been talking about since at least 2009!
 
@@ -70,7 +71,7 @@ In the code above I'm using [Hug to create a JSON endpoint](http://www.hug.rest/
 
 I also explain more about Nexmo Voice Applications in my live coding webinars; it's about 20 minutes in:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pHf9Df3Ns2U?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<youtube id="pHf9Df3Ns2U"></youtube>
 
 ## Saving the Recording
 
