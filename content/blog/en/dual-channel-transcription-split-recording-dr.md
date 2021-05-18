@@ -16,7 +16,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-As part of our <a href="https://developer.nexmo.com/voice/voice-api/overview">Voice API</a> offering, Nexmo allows you to record parts (or all) of a call and fetch the audio once the call has completed. Today, we're happy to announce a new enhancement to this functionality: split recording. Split recording makes common tasks such as call transcription even easier.
+As part of our [Voice API](https://developer.nexmo.com/voice/voice-api/overview) offering, Nexmo allows you to record parts (or all) of a call and fetch the audio once the call has completed. Today, we're happy to announce a new enhancement to this functionality: split recording. Split recording makes common tasks such as call transcription even easier.
 
 When split recording is enabled, the downloaded recording will contain participant A (let's call her Alice) in the left channel, and participant B (let's call him Bob) in the right channel. This allows you to work with the audio from a single participant easily.
 
@@ -134,11 +134,10 @@ This will give us two JSON files that look similar to the following:
 
 As we requested timestamps, we can rebuild a timeline of the conversation as it happened. Once again, you can use your favourite language for this (I'll be using PHP). The steps we have to follow are:
 
-<ol>
-<li>Loop through JSON and merge all of the entries into a single list.</li>
-<li>Order the entries based on the start timestamp.</li>
-<li>Output the conversation in order, with the timestamp, name, and text shown.</li>
-</ol>
+
+* Loop through JSON and merge all of the entries into a single list.</li>
+* Order the entries based on the start timestamp.</li>
+* Output the conversation in order, with the timestamp, name, and text shown.</li>
 
 The PHP code to do this looks like the following:
 
