@@ -34,7 +34,6 @@ Ready? Let's begin!
 To get started you need the following:
 
 * [Ruby on Rails](https://rubyonrails.org/)
-* [Nexmo Account](https://dashboard.nexmo.com/sign-up)
 * [Google Cloud Platform Account](https://cloud.google.com/free/)
 * [ngrok](https://ngrok.io)
 
@@ -55,8 +54,6 @@ Make sure to copy the `ngrok.io` URL down somewhere safe. We will be using it in
 ## Setting Up a Nexmo Account
 
 In order for our voice application to work, we need a Nexmo account, a Nexmo provisioned phone number, a Nexmo application, and, lastly, we need to link our application to our phone number.
-
-You can create a Nexmo account for free, and as an added bonus, your account will be credited with 2 euros to begin using your new application. Navigate to <https://dashboard.nexmo.com/sign-up> in your web browser and go through the sign up steps. Once you have finished you will be in your Nexmo dashboard.
 
 From the left-hand menu, click on the `Voice menu` item. You will see the following four options under `APPLICATIONS`:
 
