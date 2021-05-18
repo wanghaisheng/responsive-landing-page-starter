@@ -27,28 +27,28 @@ After reading the blog post about [how to set up a server to use Nexmo Verify](h
 This app will have only two dependencies: [Retrofit](http://square.github.io/retrofit/) for making network calls and [Moshi](https://github.com/square/moshi) for serializing and deserializing JSON.
 
 The app will need to do a few things. Store a `requestId` so that a verification request can be canceled or completed. As well as make a network call to three endpoints: 
-<ol>
-<li>Start a verification</li>
-<li>check a verification code</li>
-<li>cancel a verification request</li>
-</ol>
+
+* Start a verification
+* Check a verification code
+* Cancel a verification request
+
 
 To get started, I've set up a [simple demo app](https://github.com/nexmo-community/verify-android-example) with a login screen asking for the user's email address, password, and phone number for <a href="https://developer.nexmo.com/tutorials/two-factor-authentication">two-factor authentication</a> (2FA). Clone the following repo and navigate to the getting started branch:
 
-<pre class="lang:default highlight:0 decode:true " >
+``` 
 git clone git@github.com:nexmo-community/verify-android-example.git
 cd verify-android-example
 git checkout getting-started
-</pre> 
+```
 
 ## Integrating with Proxy Server
 
 In the blog post about how to set up a proxy server for the Verify API, we covered three endpoints:
-<ul>
-<li>Make a verification request.</li>
-<li>Check a verification code.</li>
-<li>Cancel a verification request.</li>
-</ul>
+
+* Make a verification request.
+* Check a verification code.
+* Cancel a verification request.
+
 
 So we're going to need to have our app send `POST`s to those three endpoints. To do this we're going to use Retrofit and Moshi.
 
