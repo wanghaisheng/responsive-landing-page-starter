@@ -8,7 +8,7 @@ published_at: 2019-11-19T09:50:22.000Z
 updated_at: 2021-05-13T13:35:48.482Z
 category: release
 tags:
-  - net
+  - dotnet
 comments: true
 redirect: ""
 canonical: ""
