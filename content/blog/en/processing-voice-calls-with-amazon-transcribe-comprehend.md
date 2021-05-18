@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-In this tutorial, we will guide you through setting up an Amazon Transcribe & Comprehend reference connection. We will also guide you by setting up a sample application using Vonage Voice API that will allow a caller to connect with another party through the Vonage platform. The caller will then get separate real-time transcription with sentiment analysis for each party’s speech by connecting WebSockets to the reference connection.
+In this tutorial, we will guide you through setting up an Amazon Transcribe & Comprehend reference connection. We will also guide you by setting up a sample application using Vonage Voice API that will allow a caller to connect with another party through the Vonage platform. The call will then get separate real-time transcription with sentiment analysis for each party’s speech by connecting WebSockets to the reference connection.
 
 AWS AI platforms offer advanced capabilities that include the transcription engine Amazon Transcribe and the sentiment analysis engine Amazon Comprehend.
 
