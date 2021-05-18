@@ -17,7 +17,7 @@ canonical: ""
 ---
 Have you ever wanted to be able to provide customers with a phone number they can call and just leave you a message? You can create your own voicemail application powered by the Nexmo Voice API and Ruby on Rails. In this tutorial we will walk through the steps to get up and running. Your application will be able to receive phone calls, record voicemail messages and have a web interface to display all messages and play them.
 
-If you prefer, you can also clone a complete working copy of this application on <a href="https://github.com/Nexmo/nexmo-rails-voicemail-demo" rel="noopener noreferrer" target="_blank">GitHub</a>. 
+If you prefer, you can also clone a complete working copy of this application on [GutHub](https://github.com/Nexmo/nexmo-rails-voicemail-demo)
 
 Let's get started!
 
