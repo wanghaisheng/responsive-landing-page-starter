@@ -22,13 +22,16 @@ This release adds coverage for the Nexmo [Voice API](https://docs.nexmo.com/voic
 The library already works with most of the [Verification API](https://docs.nexmo.com/verify/api-reference) and some of the [SMS API](https://docs.nexmo.com/messaging/sms-api). As we continue to work on the Nexmo Java client we’ll be sure to add more functionality. In the coming weeks and months, you should expect more frequent releases and additional functionality.
 
 It’s also great timing because [Mark (@judy2k)](https://twitter.com/judy2k) and I are headed off to [Jfokus](https://www.jfokus.se) where Nexmo is proud to be a sponsor. You can find us at the Nexmo booth chatting with attendees about the newest version of the library and capturing feedback.
-<h2>We’d Love Your Feedback</h2>
+
+## We’d Love Your Feedback
+
 While the current beta covers only a few of the Nexmo APIs, it does cover all of those concepts and we really want to know what you think about them. Please [create an issue](https://github.com/Nexmo/nexmo-java/issues/new?labels=Question) if you have any thoughts or questions.
 
-Please play around with the snapshot and let us know what you think. You can contact us on [Twitter](https://twitter.com/nexmo), send us an [email](mailto:devrel@nexmo.com?subject=nexmo-java question), or join our [community slack](https://nexmo-community-invite.herokuapp.com/)
+Please play around with the snapshot and let us know what you think. You can contact us on [Twitter](https://twitter.com/nexmo) or join our [community slack](https://nexmo-community-invite.herokuapp.com/)
 
 If you’re at **Jfokus**, please stop by our booth at **stand #23**. We’ll be giving out swag, Nexmo credit, and an Amazon Echo Dot for the best piece of feedback we receive about the new release.
-<h2>Include nexmo-java in Your Project</h2>
+
+## Include nexmo-java in Your Project
 To install the Java client library using Gradle, add the following to `build.gradle`:
 
 ```groovy
