@@ -295,13 +295,13 @@ Next, we will separate the different routes based on the `{{msg.call.dtmf}}` val
 
 To do so, add a *`switch`* node to your canvas, in its node editor set `Property` to `{{msg.call.dtmf}}`, then define rules for the five cases mentioned above. 
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-switch.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-switch.png" alt="" width="" height="" class="alignnone size-full wp-image-30928" />
+![Building an IVR switch](/content/blog/how-to-build-an-ivr-using-node-red-and-the-nexmo-apis/ivr-switch.png)
 
 ### Route 1 & 2: Invalid Input
 
 Connect the first two outputs of the *`switch`* node into the *`talk`* node's input. This way if the caller gives an invalid input (not 1, 2 or 3), the initial TTS message will be repeated, listing the available options.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-switch-invalid.png" alt="" width="" height="" class="alignnone size-full wp-image-30930" />
+![Defining an invalid IVR input](/content/blog/how-to-build-an-ivr-using-node-red-and-the-nexmo-apis/ivr-switch-invalid.png)
 
 ### Route 3: Connect Caller
 
@@ -315,7 +315,7 @@ Next, open up the *`connect`* node editor, select `Phone` as an `Endpoint` and t
 
 Leave the `From {}` field empty for the Caller ID to appear as unknown, or fill it in with one of your Nexmo virtual numbers.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-switch-connect.png" alt="" width="" height="" class="alignnone size-full wp-image-30929" />
+![Defining an IVR switch when connected](/content/blog/how-to-build-an-ivr-using-node-red-and-the-nexmo-apis/ivr-switch-connect.png)
 
 If you'd like to have a sneak peek of the finished product, call your Nexmo number and try it out! Just make sure you don't press *2* or *3*, as we haven't implemented those routes yet.
 
@@ -505,7 +505,7 @@ There are a couple of things you'll need to do for this to work.
 
 Hit *Deploy*, then your voicemail should be up and running. Give it a try!
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-voicemail.png" alt="" width="" height="" class="alignnone size-full wp-image-30932" />
+![Defining an IVR voicemail](/content/blog/how-to-build-an-ivr-using-node-red-and-the-nexmo-apis/ivr-voicemail.png)
 
 ### Route 5: Link via SMS
 
@@ -579,7 +579,7 @@ First, let's *Import from Clipboard* the snippet below:
 
 After adding it to your workspace, connect the *`switch`* node's last output into the *`talk`* node's input.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-sms-path.png" alt="" width="300" height="191" class="alignnone size-medium wp-image-30927" />
+![defining the path for the IVR sms ](/content/blog/how-to-build-an-ivr-using-node-red-and-the-nexmo-apis/ivr-sms-path.png)
 
 Next, let's have a closer look at the individual nodes in this path.
 
@@ -604,7 +604,9 @@ You can set up this node by double clicking on it and filling in the parameters 
 | `FROM`       | The number or text shown on a handset when it displays your message. You can set a custom alphanumeric FROM to better represent your brand, if this feature is \[supported in your country](https://help.nexmo.com/hc/en-us/articles/115011781468). Otherwise, add one of your Nexmo numbers. |
 | `TEXT`       | The content of your message. Time to get creative :)                                                                                                                                                                                                                                          |
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-sms-node.png" alt="" width="" height="" class="alignnone size-full wp-image-30926" />
+
+
+![An IVR sms  node](/content/blog/how-to-build-an-ivr-using-node-red-and-the-nexmo-apis/ivr-sms-node.png)
 
 The *`debug`* node is completely optional, but it does come in handy when you want to see a bit more details in the debug sidebar.
 
@@ -614,7 +616,7 @@ You might want to glance over at our \[How to Send SMS Messages with Node-RED gu
 
 Congratulations! You've just built yourself a fully functional Interactive Voice Response Menu! It's finally time to try it out, so enjoy! 
 
-<img src="https://www.nexmo.com/wp-content/uploads/2019/12/ivr-final.png" alt="" width="" height="" class="alignnone size-full wp-image-30925" />
+![Wha tthe final IVR looks like](/content/blog/how-to-build-an-ivr-using-node-red-and-the-nexmo-apis/ivr-final.png)
 
 ## Where Next?
 
