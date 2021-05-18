@@ -12,8 +12,8 @@ tags:
   - phone-numbers
   - numbers-api
 comments: true
-redirect: https://www.nexmo.com/legacy-blog/2016/06/22/phone-numbers-fact-or-fiction
-canonical: https://www.nexmo.com/legacy-blog/2016/06/22/phone-numbers-fact-or-fiction
+redirect: ""
+canonical: ""
 ---
 I'm a phone number geek, I always have been. As a child I used to read the front section of the phone directory where all the area codes and special numbers were listed! So, it's not really surprising that I ended up with a career in telecoms. There's something fascinating about the structure of phone numbers to me. Its like a map all laid out in a (mostly) logical structure.
 
@@ -21,7 +21,7 @@ Most people don't even think about phone numbers. These days we probably rarely 
 
 ### Why Do Developers Need to Care?
 
-When we're documenting things or capturing screenshots we tend to put in dummy data. Things like `Joe Bloggs` as a name and `joe@example.com` as an email. But when it comes the phone number we put in something easy like `01234 567890`. However that _could_ be someones real phone number! 
+When we're documenting things or capturing screenshots we tend to put in dummy data. Things like `Joe Bloggs` as a name and `joe@example.com` as an email. But when it comes the phone number we put in something easy like `01234 567890`. However that *could* be someones real phone number! 
 
 In this case if we are looking at the UK that area code (`01234`) is for Bedford and the `567890` number has not been allocated. Would you really want it!? Think of all the wrong numbers and prank calls you'd probably receive!
 
@@ -33,7 +33,7 @@ Did you know that many countries have specifically allocated a part of their num
 
 The main use case is for things like TV and Films. If a character on TV gives another character their mobile number you can be sure a small percentage of the viewers will try calling it. If you're a show with 10m viewers then 0.1% would be 10,000 calls. Rather annoying if the script writers randomly pick your number to use on screen. US movies are full of [examples](https://www.youtube.com/watch?v=XuP4cTRrWz8) of people quoting these numbers.
 
-<center><iframe width="640" height="360" src="https://www.youtube.com/embed/XuP4cTRrWz8" frameborder="0" allowfullscreen></iframe></center>
+<youtube id="XuP4cTRrWz8"></youtube>
 
 ### What Phone Number Ranges Can I Use?
 
