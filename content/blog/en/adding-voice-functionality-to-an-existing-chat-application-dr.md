@@ -21,7 +21,7 @@ The [demo application](https://github.com/nexmo-community/enable-audio-in-chat) 
 
 ## Prerequisites
 
-### Node &amp; NPM
+### Node & NPM
 
 To get started you're going to need Node and NPM installed. This guide uses Node 8 and NPM 6. Check they're installed and up-to-date.
 
@@ -40,7 +40,7 @@ To set up your application, you'll need to install the Nexmo CLI. Install it usi
 npm install -g nexmo-cli@beta
 ```
 
-[Sign up for a free Nexmo account](https://dashboard.nexmo.com/sign-up) and set up the Nexmo CLI with the API key and secret which can be found on the dashboard.
+Set up the Nexmo CLI with the API key and secret which can be found on the dashboard.
 
 ```bash
 nexmo setup <your_api_key> <your_api_secret>
@@ -53,6 +53,8 @@ You can use git to clone our demo application from GitHub.
 > For those not comfortable with git commands, don’t worry, I’ve you covered. This guide contains instructions on downloading the project as a ZIP file.
 
 Follow this [guide to install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+
+<sign-up></sign-up>
 
 ## The Demo Application
 
