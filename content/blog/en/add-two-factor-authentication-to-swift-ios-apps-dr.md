@@ -29,7 +29,6 @@ The app will need to do a few things. Store a `request_id` as a `responseId` so 
 * Check a verification code.
 * Cancel a verification request.
 
-
 ## Nexmo Setup
 
 After reading the blog post about [how to set up a server to use Nexmo Verify](https://www.nexmo.com/blog/2018/05/09/nexmo-verify-api-implementation-guide-dr) you're now ready to set up an iOS app to network with the server.
@@ -38,10 +37,7 @@ After reading the blog post about [how to set up a server to use Nexmo Verify](h
 
 1. Download the starter project, a single view application:
 
- 
-<pre class="lang:default highlight:0 decode:true " >
-git clone https://github.com/nexmo-community/verify-ios-demo/
-</pre> 
+   git clone https://github.com/nexmo-community/verify-ios-demo/
 
 2. Add a CocoaPods file to its root directory, and install the pod after modifying its podfile to include the following:
 
@@ -50,27 +46,19 @@ pod 'Alamofire'
 ```
 
 3. Make sure to have an iPhone with a SIM card handy.
-
 4. To correctly configure the environment we need to simulate a server as in the [Glitch server app.](https://glitch.com/edit/#!/nexmo-verify) To configure, go to the .env file and set the values as required for `API_KEY` &amp; `API_SECRET`
 
 # Review the UI
 
 With the setup out of the way let's review the user interface for verification and confirmation.
 
-1. A CocoaTouch file called `VerificationViewController` that is a subclass of UIViewController; this class is assigned to a scene in `Main.storyboard` so that it takes `VerificationViewController ` as its custom class.
-
+1. A CocoaTouch file called `VerificationViewController` that is a subclass of UIViewController; this class is assigned to a scene in `Main.storyboard` so that it takes `VerificationViewController` as its custom class.
 2. Three TextFields in `VerificationViewController`, outlets called `inputEmailAddress`, `inputPassword`, `inputTelephoneNumber` respectively.
-
 3. A Button in `VerificationViewController` called `loginBtn`.
-
 4. A Button in `VerificationViewController`, an action called `cancelVerification`.
-
 5. A segue called `authenticateWith2FACode`, connecting `VerificationViewController` to `ConfirmationViewController`.
-
 6. A CocoaTouch file called `ConfirmationViewController` that is a subclass of UIViewController; assigned to a scene in `Main.storyboard` so that it takes `ConfirmationViewController` as its custom class.
-
 7. A TextField, `ConfirmationViewController`, `inputEmailAddress`.
-
 8. A Button in `VerificationViewController`, an action called `cancelVerification`.
 
 <strong>Note:</strong> You are free to set the constraints for the TextFields, Buttons, or Labels however you would like!
@@ -90,13 +78,11 @@ The first step to setting up the Glitch server is to remix the [Glitch server](h
 With the Glitch server set up, the next step is to program the app's UI to request or respond to requests with the server.
 
 1. At the top of `VerificationViewController` include the line `import Alamofire`.
-
 2. Within the scope of `VerificationViewController`'s class declaration add the line `var responseId = String()`. We are initializing an empty string where we will hold a reference to our `responseId`.
 
 <strong>Note: You may want to use NSUserDefaults or one of the many different classes for local storage. Since it is a matter of preference we leave it to you as a developer to decide how to store the `responseId`.</strong>
 
 3. In the `@IBAction` for `verifyTelephoneNumber` add the following line: `self.verifyViaAPI()`, which is a function we will program to hit the first link.
-
 4. Create a function called `verifyViaAPI()` with the following code:
 
 ```swift
@@ -132,7 +118,6 @@ As we pass the `responseId` from one view controller to the next, we land on the
 ### Second Link : SMS
 
 1. In the `@IBAction` for `verifyPin` add the line `self.verifyPinViaAPI()`, which is a function we will program to hit the second link.
-
 2. Create a function called `verifyPinViaAPI()` with the following code:
 
 ```swift
@@ -173,7 +158,6 @@ The code is similar to the first request. In this code snippet, we parse the res
 ### Cancellation
 
 Last but not least is cancellation. Cancellation is programmed in a similar manner:
-
 
 ```swift
     func cancelRequest() {
