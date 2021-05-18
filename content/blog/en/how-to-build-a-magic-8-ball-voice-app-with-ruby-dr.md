@@ -11,7 +11,6 @@ category: tutorial
 tags:
   - voice-api
   - ruby
-  - receive-calls
 comments: true
 redirect: ""
 canonical: ""
