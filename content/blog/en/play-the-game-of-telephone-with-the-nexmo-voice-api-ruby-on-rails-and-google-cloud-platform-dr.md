@@ -11,7 +11,6 @@ category: tutorial
 tags:
   - voice-api
   - ruby
-  - google-cloud-platform
 comments: true
 redirect: ""
 canonical: ""
