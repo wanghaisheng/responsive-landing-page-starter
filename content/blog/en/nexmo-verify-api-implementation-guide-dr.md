@@ -33,7 +33,7 @@ The source code for the app is documented with comments, but we'll go over the i
 
 This Node.js app is a simple [express](https://expressjs.com/) app with [`body-parser`](https://github.com/expressjs/body-parser) to parse JSON responses. The app also uses [`nexmo-node`](https://github.com/Nexmo/nexmo-node), the Nexmo REST API client for Node.js.
 
-To get started you'll need to add your Nexmo API key and secret to the `.env` file. See the `.env.example` file as a guide. If you don't have a Nexmo API key yet, now's the perfect time to sign up! Visit the [Nexmo Dashboard](https://dashboard.nexmo.com/sign-up) and sign up for 2€ worth of credit to use Nexmo APIs.
+<sign-up></sign-up>
 
 After you have your API key and secret you can navigate to `server.js` to initiate the Nexmo client:
 
