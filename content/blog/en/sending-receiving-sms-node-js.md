@@ -12,7 +12,6 @@ category: tutorial
 tags:
   - node
   - sms-api
-  - ""
 comments: true
 redirect: ""
 canonical: ""
