@@ -21,9 +21,9 @@ How do you decide whether your AI bot should be a chatbot or a voice bot? The co
 
 Watch the video of our conversation here, or scroll below the video to read the full transcript.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/EG3fOTWlSDs" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<youtube id="EG3fOTWlSDs"></youtube>
 
-**Sam Machin ** *(Nexmo Developer Advocate & Alexa Champion):* Voice versus text. So we've just been talking about some of the advantages of text for chatbots and there was something for voice bots. Do we need both? What's the pros and cons of each? Is it a case of the right one for the right situation? And should things be available on both channels? Are there some things where I might want to be able to let the user have exactly the same experience on voice and text or not?
+**Sam Machin**  *(Nexmo Developer Advocate & Alexa Champion):* Voice versus text. So we've just been talking about some of the advantages of text for chatbots and there was something for voice bots. Do we need both? What's the pros and cons of each? Is it a case of the right one for the right situation? And should things be available on both channels? Are there some things where I might want to be able to let the user have exactly the same experience on voice and text or not?
 
 **Syd Lawrence** *(CEO/Co-Founder of [The Bot Platform](https://thebotplatform.com/)*): I think some of the examples that Oscar was saying earlier like recipes or you're walking in from your car, like your hands are filled with shopping bags. I mean, that by far needs to be voice. Like, without a shadow of a doubt. I think there are certainly other contexts. Well, sometimes when you need a screen for feedback or screen for information where voice has issues. But yeah, context is definitely important.
 
@@ -35,7 +35,7 @@ One thing that we talk a lot about is the driving use case. So Ford, BMW, and VW
 
 > "I think driving is actually gonna be, like a really, really big use case for voice going forward."
 
-**Martin Beeby ** *(Technical Evangelist at [Microsoft](https://blogs.msdn.microsoft.com/thebeebs/)):* One of the challenges I think with voice at the moment is if you get into the weeds of actually designing a system in voice, sometimes there are unexpected problems and hurdles that are very difficult to overcome with the current technology.
+**Martin Beeby**  *(Technical Evangelist at [Microsoft](https://blogs.msdn.microsoft.com/thebeebs/)):* One of the challenges I think with voice at the moment is if you get into the weeds of actually designing a system in voice, sometimes there are unexpected problems and hurdles that are very difficult to overcome with the current technology.
 
 So, for example, we built very recently an application with a company called [Beezy](https://www.beezy.net/). And they are an organization which tries to extract information from companies about their business. And so the use case is that the user's in their car and they're using their iPhone and they're using the Beezy application. And they record or they activate with Siri and they say, "Have we ever worked with Shell before?" As in the oil company or whatever.
 
@@ -55,7 +55,7 @@ And I think all of these scenarios around in car or...I'm not going to say Alexa
 
 And that kind of idea that we say I wanna talk to this one and then that puts us into a domain. Just like we open our work email or we open our personal email, or... people have different personas, different hats, don't they?
 
-** Martin:** I think one of the challenges maybe with the Amazon one at the moment is that if you speak to that, as the developer, you don't get access to actually what they said, the WAV file. And the same with our Cortana implementation is that you don't get access to where the WAV file is. So you have to rely on their speech to text.
+ **Martin:** I think one of the challenges maybe with the Amazon one at the moment is that if you speak to that, as the developer, you don't get access to actually what they said, the WAV file. And the same with our Cortana implementation is that you don't get access to where the WAV file is. So you have to rely on their speech to text.
 
 So most of where we're doing more advanced speech to text systems, we're having to actually build that into apps ourselves rather than using these voice assistants. And I think that's a challenge which these large voice assistants or personal assistants are gonna have to overcome somehow. We're gonna have to give developers access to the WAV files, to the actual audio.
 
