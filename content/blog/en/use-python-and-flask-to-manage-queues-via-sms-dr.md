@@ -20,16 +20,16 @@ While many human experiences can be improved with the application of technology,
 
 In this tutorial, I’ll be showing you how to use [Python](https://www.python.org/) and the [Flask](http://flask.palletsprojects.com/en/1.1.x/) framework to build a simple SMS queue management system. There are three main components:
 
-- A backend to respond to text messages and take appropriate action
-- A status page that can be accessed via the web or displayed at a kiosk
-- A management page that lists those in line and allows them to be notified or removed
+* A backend to respond to text messages and take appropriate action
+* A status page that can be accessed via the web or displayed at a kiosk
+* A management page that lists those in line and allows them to be notified or removed
 
 To keep things simple, this application will only handle the most basic functions, but the skeleton it provides should make it easy to build out a robust system to fit your needs.
 
 ## Prerequisites
 
-- [Python](https://www.python.org/) (this code was tested with v3.8)
-- [ngrok](https://ngrok.com/)
+* [Python](https://www.python.org/) (this code was tested with v3.8)
+* [ngrok](https://ngrok.com/)
 
 <sign-up number></sign-up>
 
@@ -40,7 +40,7 @@ To get started, create and navigate to a new directory for the project:
 ```sh
 mkdir sms-queue-notify
 cd sms-queue-notify
-``` 
+```
 
 If you’d prefer to start with the final code, you can clone the [sample project](https://github.com/nexmo-community/sms-queue-notify) from the Nexmo Community GitHub: 
 
@@ -121,11 +121,11 @@ ngrok http 5000
 
 When ngrok is running, you'll be presented with a URL to use for forwarding to your local server. Make a note of this URL, as you will use it soon:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/01/ngrok.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/01/ngrok.png" alt="" width="600" height="auto" class="alignnone size-full wp-image-30994" /></a>
+![An example of an ngrok instance running](/content/blog/use-python-and-flask-to-manage-queues-via-sms/ngrok.png)
 
 On the main page of your Nexmo Dashboard, locate your Key and Secret:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/01/dashboard-main.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/01/dashboard-main.png" alt="" width="1588" height="888" class="alignnone size-full wp-image-30993" /></a>
+![Screenshot of the Nexmo dashboard](/content/blog/use-python-and-flask-to-manage-queues-via-sms/dashboard-main.png)
 
 Copy these and put them near the top of your `main.py` file as follows:
 
@@ -148,7 +148,7 @@ NEXMO_NUMBER = "<Your Nexmo Number>"
 
 While you're here,  click on the gear icon under the *Manage* column:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/01/your-numbers.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/01/your-numbers.png" alt="" width="1588" height="888" class="alignnone size-full wp-image-30996" /></a>
+![A screenshot of a page showing your rented numbers](/content/blog/use-python-and-flask-to-manage-queues-via-sms/your-numbers.png)
 
 In the *Inbound Webhook URL* field, enter the following, using the ngrok URL you gathered earlier:
 
@@ -156,7 +156,7 @@ In the *Inbound Webhook URL* field, enter the following, using the ngrok URL you
 <Your ngrok URL>/webhooks/inbound-sms
 ```
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/01/webhook-url.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/01/webhook-url.png" alt="" width="1588" height="888" class="alignnone size-full wp-image-30995" /></a>
+![Defining webhook urls](/content/blog/use-python-and-flask-to-manage-queues-via-sms/webhook-url.png)
 
 Save this setting.
 
@@ -262,11 +262,10 @@ def send(num, text):
 
 These helper functions perform as follows:
 
-- `phone_format`: Split the configured phone number with hyphens for display purposes.
-- `query_length`: Query the database to see how many people are waiting in line.
-- `query_users`: Query the database for all users, and format the result such that those waiting in line and those that have already been notified are grouped separately.
-- `send`: Send an SMS message with the number and text provided.
-
+* `phone_format`: Split the configured phone number with hyphens for display purposes.
+* `query_length`: Query the database to see how many people are waiting in line.
+* `query_users`: Query the database for all users, and format the result such that those waiting in line and those that have already been notified are grouped separately.
+* `send`: Send an SMS message with the number and text provided.
 
 Next, add these action functions:
 
@@ -330,11 +329,11 @@ def help(num):
 
 To summarize:
 
-- `add`: Adds a new user when 'Hi' is sent. Will also return the user's status if they are already in line. 
-- `remove`: Removes a user from the list. Can be triggered from a button on the management page or if the user texts 'cancel'.
-- `notify`: Lets the user know it is their turn. Triggered from a button on the management page. Also calculates the total wait time for that user and stores in the database.
-- `status`: Tells the user what place they are in line.
-- `help`: Provides basic information about commands the user can send.
+* `add`: Adds a new user when 'Hi' is sent. Will also return the user's status if they are already in line. 
+* `remove`: Removes a user from the list. Can be triggered from a button on the management page or if the user texts 'cancel'.
+* `notify`: Lets the user know it is their turn. Triggered from a button on the management page. Also calculates the total wait time for that user and stores in the database.
+* `status`: Tells the user what place they are in line.
+* `help`: Provides basic information about commands the user can send.
 
 With those routes and functions defined, you have almost everything you need for a complete backend. The fourth and final route gives us a way to dynamically update the views based on messages from the server, which is useful when people are added and removed from the list via SMS:
 
@@ -475,11 +474,11 @@ python main.py
 
 In a browser, navigate to your ngrok URL to see the status view:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/01/status-view.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/01/status-view.png" alt="" width="2734" height="1736" class="alignnone size-full wp-image-31006" /></a>
+![A screenshot of the status](/content/blog/use-python-and-flask-to-manage-queues-via-sms/status-view.png)
 
 Go to `<ngrok url>/list` to see the management view. Then text 'Hi' to the number you've configured to add yourself to the list!
 
-<a href="https://www.nexmo.com/wp-content/uploads/2020/01/list-view.png"><img src="https://www.nexmo.com/wp-content/uploads/2020/01/list-view.png" alt="" width="2734" height="1736" class="alignnone size-full wp-image-31005" /></a>
+![A screenshot of the list view](/content/blog/use-python-and-flask-to-manage-queues-via-sms/list-view.png)
 
 ## Next Steps
 
