@@ -20,17 +20,17 @@ In my college days, I had serious doubts about voice ever becoming a viable comp
 
 Watch the clip of our conversation here, or scroll below the video to read the transcript.
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<youtube id="1sInGSJRfdM"></youtube>
 
-<div class="embed-container"><iframe src="https://www.youtube.com/embed/1sInGSJRfdM" frameborder="0" allowfullscreen=""></iframe></div>
+
 
 ## Voice as the Primary Computer Interface (Full Transcript)
 
-**Martin Beeby** _(Technical Evangelist at Microsoft)_: No, I suspect the only thing about this whole bot space is that I've only been involved really in building stuff for about six to seven months. And from the beginning of that time to now, things have massively changed about how we build bots, how we recommend it to customers to build bots. And I suspect that this is a really fast moving industry.
+**Martin Beeby** *(Technical Evangelist at Microsoft)*: No, I suspect the only thing about this whole bot space is that I've only been involved really in building stuff for about six to seven months. And from the beginning of that time to now, things have massively changed about how we build bots, how we recommend it to customers to build bots. And I suspect that this is a really fast moving industry.
 
 There's lots of different channels coming up all the time, there's lots of different capabilities. I think we're really on the cusp of what's gonna come next. And I suspect in six months time or maybe a year's time, things will look very, very different to what they look right now.
 
-**Sam Machin** _(Nexmo Developer Advocate & Alexa Champion)_: It's definitely moving very fast. What always surprises me is for years I've always thought speech was certainly never going to be an interface. I mean, how long have we had things like DragonDictate or that kind of idea that you could talk to your computer to...I remember when I was at school, I mean, that's 15 years ago or something, the idea that I wouldn't have to type out my essay. I could just read my essay to the computer and it would do the typing. And it never worked and things. And now…
+**Sam Machin** *(Nexmo Developer Advocate & Alexa Champion)*: It's definitely moving very fast. What always surprises me is for years I've always thought speech was certainly never going to be an interface. I mean, how long have we had things like DragonDictate or that kind of idea that you could talk to your computer to...I remember when I was at school, I mean, that's 15 years ago or something, the idea that I wouldn't have to type out my essay. I could just read my essay to the computer and it would do the typing. And it never worked and things. And now…
 
 **Martin:** That's exactly how, like that touch metaphor I was using about 2004, that's exactly how touch interfaces were. Lots of people would say you could never use touch as the main input for your system. You always have to have mouse and keyboard, it's just the way it is. And then that proved not to be true.
 
@@ -60,4 +60,4 @@ Like, if you don't need devices anymore with screens, then there's lots of diffe
 
 **Oscar:** Yeah. And right now a lot of people don't realize or don't believe that that will happen because the reality is that the technology still isn't quite there yet. And people are still having these frustrated experiences that we've been talking about. So a lot of people are saying, "No, that technology’s rubbish." But there will be that moment where the technology suddenly gets good enough that the majority of people's experiences are really good. And that will be it.
 
-_**[Editor’s Note:** Watch the [full one-hour discussion](https://youtu.be/InJe29Yz5UM) on the state of AI bot technology.**]**_
+***[Editor’s Note:** Watch the [full one-hour discussion](https://youtu.be/InJe29Yz5UM) on the state of AI bot technology.**]***
