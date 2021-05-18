@@ -26,7 +26,7 @@ If you just want to see the result you can take a look at [the video](#video) or
 
 Open Visual Studio and create a new ASP .NET MVC application. For this demo, we'll delete the Contact &amp; About sections from the default generated website. 
 
-#### Install the Nexmo Client to your app via NuGet Package Manager 
+#### Install the Nexmo Client to your app via NuGet Package Manager
 
 Add the Nexmo Client to your application via the NuGet Package Console. 
 
@@ -34,7 +34,7 @@ Add the Nexmo Client to your application via the NuGet Package Console.
 PM> Install-Package Nexmo.Csharp.Client
 ```
 
-#### Install the SendGrid client via NuGet Package Manager 
+#### Install the SendGrid client via NuGet Package Manager
 
 ```bash
 PM> Install-Package SendGrid -Version 8.0.3
@@ -42,7 +42,7 @@ PM> Install-Package SendGrid -Version 8.0.3
 
 #### Add Nexmo and SendGrid credentials
 
-For the purpose of the demo we'll put the Nexmo and SendGrid credentials in the &lt;appSettings&gt; section of the `Web.config` file. If we were developing this application for distribution we may chose to enter these credentials in our Azure portal.
+For the purpose of the demo we'll put the Nexmo and SendGrid credentials in the <appSettings> section of the `Web.config` file. If we were developing this application for distribution we may chose to enter these credentials in our Azure portal.
 
 ```xml
 <add key="Nexmo.Url.Rest" value="https://rest.nexmo.com"/>
@@ -95,7 +95,6 @@ public class SmsService : IIdentityMessageService
         return Task.FromResult(0);
     }
 }
-
 ```
 
 #### Add 'SendEmailConfirmationTokenAsync()' method to 'AccountController'
@@ -195,7 +194,7 @@ public async Task<ActionResult> VerifyPhoneNumber(string phoneNumber)
 ```
 
 Replace `User.Identity.GetUserId()` with `Session["UserID"]` in the method as shown below. If the user successfully enters the pin code, they are directed to the Index view of the `ManageController`. The User's boolean property `PhoneNumberConfirmed` is then set to `true`.           
- 
+
 ```cs
 [AllowAnonymous]
 [HttpPost]
