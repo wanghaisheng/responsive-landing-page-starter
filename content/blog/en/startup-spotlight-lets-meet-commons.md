@@ -2,7 +2,7 @@
 title: "Startup Spotlight: Let's Meet Commons"
 description: Meet Los Angeles-based startup Commons as a part of Vonage Startup
   Spotlight series.
-thumbnail: /content/blog/startup-spotlight-lets-meet-commons/startups_commons_1200x600.png
+thumbnail: /content/blog/startup-spotlight-lets-meet-commons/untitled.png
 author: filippos-kyprianou
 published: true
 published_at: 2021-05-18T13:27:45.529Z
