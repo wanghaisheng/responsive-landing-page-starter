@@ -112,8 +112,6 @@ Once you have created/configured your voice application don't forget to link a t
 
 ## Give it a try
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xl5FA66FKy4" frameborder="0" allowfullscreen></iframe>
-
 To try it out simply call the Nexmo virtual number you linked to your new voice application. You should hear the introductory message with your different options. Try entering different numbers or even a number which is not recognised and listen for the different messages you get back.
 
 ## Using your own data sources
