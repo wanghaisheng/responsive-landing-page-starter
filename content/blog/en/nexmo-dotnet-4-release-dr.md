@@ -10,7 +10,7 @@ updated_at: 2021-05-13T21:05:44.489Z
 category: release
 tags:
   - csharp
-  - .net
+  - dotnet
 comments: true
 redirect: ""
 canonical: ""
