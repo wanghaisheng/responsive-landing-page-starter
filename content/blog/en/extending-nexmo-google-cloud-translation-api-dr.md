@@ -20,22 +20,24 @@ Text messaging has become a part of our daily lives.  We integrate it into multi
 As a part of the Extend team here, integrating text messages with translation API's makes perfect sense. Translating incoming text messages can help break down communication barriers and help you reach a broader audience.
 
 ## Overview
+
 In this post, I show you how to create an [inbound Nexmo SMS](https://developer.nexmo.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [Google Cloud Translation API](https://cloud.google.com/translate/).  
 
 In order to get started, you will need the following items setup:
 
-+ [Google Cloud Account](https://console.cloud.google.com)
-+ [Nexmo Account](https://dashboard.nexmo.com/sign-up)
-+ [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+* [Google Cloud Account](https://console.cloud.google.com)
+* [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+
+<sign-up></sign-up> 
 
 ## Create Your Project
 
 The setup for this example is minimal, and you only need a couple of packages to get going.
 
-+ [`@google-cloud/translate`](https://www.npmjs.com/package/@google-cloud/translate) - this is the official Cloud Translation SDK
-+ [`express`](https://www.npmjs.com/package/express) - web framework to serve the webhook
-+ [`dotenv`](https://www.npmjs.com/package/dotenv) - a package to load environment variables
-+ [`body-parser`](https://www.npmjs.com/package/body-parser) - middleware for Express to handle the incoming webhook object
+* [`@google-cloud/translate`](https://www.npmjs.com/package/@google-cloud/translate) - this is the official Cloud Translation SDK
+* [`express`](https://www.npmjs.com/package/express) - web framework to serve the webhook
+* [`dotenv`](https://www.npmjs.com/package/dotenv) - a package to load environment variables
+* [`body-parser`](https://www.npmjs.com/package/body-parser) - middleware for Express to handle the incoming webhook object
 
 Initialize the project and then install the above requirements using `npm` or `yarn`.
 
@@ -225,11 +227,10 @@ Translation: Hello
 
 The Google Cloud Translation API does an amazing job at detecting the incoming language and processing the translation quickly. Have fun and try it out.
 
-
 ## Recap
 
 The example above is just a small introduction to translation, but should be a good start to get you going. From here you can translate the inbound message, and then translate the outbound message into the correct language as well (future blog post, for sure).
 
-For a completed version of this tutorial you can find it at [https://github.com/nexmo-community/sms-translate-google-js](https://github.com/nexmo-community/sms-translate-google-js).
+For a completed version of this tutorial you can find it at <https://github.com/nexmo-community/sms-translate-google-js>.
 
-If you want to learn more about the Extend projects we have, you can visit [https://developer.nexmo.com/extend](https://developer.nexmo.com/extend) to learn more.  
+If you want to learn more about the Extend projects we have, you can visit <https://developer.nexmo.com/extend> to learn more.
