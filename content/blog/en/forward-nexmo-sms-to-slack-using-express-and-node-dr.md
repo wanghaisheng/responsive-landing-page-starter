@@ -58,7 +58,7 @@ touch index.js
 
 Add the following code to the file we just created: 
 
-```javascript 
+```javascript
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser')
@@ -85,7 +85,7 @@ In the `package.json` file, add the following code to the `scripts` section:
 
 We can now run the app by using the following command
 
-```bash 
+```bash
 npm run start
 ```
 
@@ -93,15 +93,15 @@ npm run start
 
 To be able to send messages to Slack, we need to create an incoming webhook URL. To get started, head over to [Slack](https://api.slack.com/apps?new_app=1) and create an app if you don’t already have one. 
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/createslackapp.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/createslackapp.png" alt="createslackapp" width="1536" height="1110" class="alignnone size-full wp-image-30807" /></a>
+![Creating a Slack App](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/createslackapp.png)
 
 Select a name for your app and associate it with the workspace you’d like to send notifications to. Once you’ve created the app, you’ll be presented with a screen similar to the one below:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/buildingappsforslack.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/buildingappsforslack.png" alt="buildingappsforslack" width="1384" height="1568" class="alignnone size-full wp-image-30808" /></a>
+![Build an App for Slack](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/buildingappsforslack.png)
 
 Select the incoming webhooks tab and click the `Activate incoming webhooks` toggle to switch it on. Next, click the `Add New Webhook to Workspace` button. Select the channel you’d like to post notifications to and then click `allow` to authorize the app. You’ll be redirected back to the settings page with a new Webhook URL created for you.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/webhookurl.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/webhookurl.png" alt="webhookurl" width="512" height="154" class="alignnone size-full wp-image-30809" /></a>
+![Defining the Webhook URL](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/webhookurl.png)
 
 Take note of the Webhook URL as we’ll be needing it shortly. 
 
@@ -118,13 +118,13 @@ const slack = require('slack-notify')(webhookUrl)
 
 Replace `webhookUrl` with the Webhook URL that Slack generated for you in the previous section. 
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/console.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/console.png" alt="console" width="698" height="246" class="alignnone size-full wp-image-30810" /></a>
+![Console output showing the webhook response](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/console.png)
 
 Whenever we receive an inbound message, Nexmo will send a payload that looks like the screenshot above. The `text` key contains the content of the message that was received. 
 
 Let’s add the route now. Edit the `index.js` file with the following code:
 
-```javascript 
+```javascript
 app.post("/webhooks/inbound-message", (req, res) => {
     const { text } = req.body
     slack.alert({
@@ -180,7 +180,7 @@ ngrok http 3000
 
 You should see a screen similar to the one below:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/ngrokscreenshot.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/ngrokscreenshot.png" alt="ngrokscreenshot" width="1168" height="604" class="alignnone size-full wp-image-30811" /></a>
+![Screenshot showing example of Ngrok running](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/ngrokscreenshot.png)
 
 Copy the first Forwarding URL as we’ll be making use of it shortly in our Nexmo account. 
 
@@ -188,22 +188,23 @@ Copy the first Forwarding URL as we’ll be making use of it shortly in our Nexm
 
 Under the `Numbers` section in your Nexmo Dashboard, click the gear icon for the number you’d like to receive Slack notifications. If you don’t have any virtual numbers, you will have to purchase one. 
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/yournumbers.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/yournumbers.png" alt="yournumbers" width="1600" height="741" class="alignnone size-full wp-image-30812" /></a>
+![Screenshot showing the Nexmo dashboard with a list of your numbers](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/yournumbers.png)
 
 You’ll be prompted with a modal similar to the one below:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/configurewebhook.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/configurewebhook.png" alt="configurewebhook" width="1598" height="1104" class="alignnone size-full wp-image-30813" /></a>
+![Screenshot showing how to configure your Webhook URLS](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/configurewebhook.png)
 
 Configure the Inbound Webhook URL with the `ngrok` URL we noted earlier. (http://1e389185.ngrok.io/webhooks/inbound-message)
 
-## Testing 
+## Testing
+
 To test that our application works as expected, restart your node server and send a message from your phone to your Nexmo Number. 
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/textmessage.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/textmessage.png" alt="textmessage" width="1125" height="281" class="alignnone size-full wp-image-30814" /></a>
+![Screenshot showing an example text message received](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/textmessage.png)
 
 Check your Slack Channel, and you should see the notification.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/11/slackmessage.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/11/slackmessage.png" alt="slackmessage" width="1600" height="194" class="alignnone size-full wp-image-30815" /></a>
+![Screenshot showing Slack bot receiving the SMS](/content/blog/forward-nexmo-sms-to-slack-using-express-and-node/slackmessage.png)
 
 ## Conclusion
 
