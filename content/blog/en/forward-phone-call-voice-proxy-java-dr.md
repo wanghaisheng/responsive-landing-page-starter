@@ -17,10 +17,9 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-
 ## Introduction
 
-Making phone calls is a necessity for some of us. But every time you put your phone number out there, you're exposing it to _strangers_. The balance between security and convenience is a fine line. What if you could mask your phone number by giving them a different phone number to call?
+Making phone calls is a necessity for some of us. But every time you put your phone number out there, you're exposing it to *strangers*. The balance between security and convenience is a fine line. What if you could mask your phone number by giving them a different phone number to call?
 
 A voice proxy is a technique that allows you to protect private information between callers by masking each other's phone number behind an intermediary phone number.
 
@@ -28,9 +27,7 @@ In this tutorial, you will learn how to protect both caller and callee phone num
 
 ## Prerequisites
 
-<sign-up number></sign-up> 
-
-To work through this tutorial, you will need a [Nexmo account](https://dashboard.nexmo.com/sign-up). Sign up now if you don't already have an account.
+<sign-up number></sign-up>
 
 You will be using [Gradle](https://gradle.org/) to manage your dependencies and run your application. Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 11 in this tutorial, but anything JDK 8 and higher should work.
 
@@ -41,8 +38,8 @@ Finally, you'll need the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) install
 This tutorial will walk you through the following steps:
 
 1. Using Gradle to set up a new Java project.
-1. Using the [Spark](http://sparkjava.com/) framework for controlling the call.
-1. Purchasing a number and configuring your Nexmo account to use that number with your application.
+2. Using the [Spark](http://sparkjava.com/) framework for controlling the call.
+3. Purchasing a number and configuring your Nexmo account to use that number with your application.
 
 ### Using Gradle to Setup a New Java Project
 
