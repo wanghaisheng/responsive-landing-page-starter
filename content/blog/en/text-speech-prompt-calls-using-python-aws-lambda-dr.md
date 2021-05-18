@@ -34,9 +34,9 @@ Once the call has ended, you will receive a callback to your webhook with the tr
 
 For this tutorial, you will:
 
-- Need an AWS Account (you can run this on the Lambda free tier)
-- Have the [AWS CLI tool](https://aws.amazon.com/cli/) and [Chalice](http://chalice.readthedocs.io/en/latest/) installed and configured on your machine
-- Create a Nexmo Voice Application and save the private key to a local file named `private.key`, along with a note of the Application ID
+* Need an AWS Account (you can run this on the Lambda free tier)
+* Have the [AWS CLI tool](https://aws.amazon.com/cli/) and [Chalice](http://chalice.readthedocs.io/en/latest/) installed and configured on your machine
+* Create a Nexmo Voice Application and save the private key to a local file named `private.key`, along with a note of the Application ID
 
 <sign-up number></sign-up>
 
@@ -90,24 +90,25 @@ You do this with an HTTP GET request to the `/setup` URL of your function.
 You can now invoke your new function with a single HTTP POST request to your base URL with `/call` on the end.
 You need to pass in the following parameters
 
-| Parameter | Value | Example |
-| :-------------: |---------- | :----------: |
-| to |The number to be called in e.164 format | 14155550100 |
-| from |The Nexmo number on your account to use for CallerID | 14155550101 |
-| text |The initial message played to the called party | "Enter your pin" |
-| pin_code |The PIN that the user should enter | 1234 |
-| callback |The URL on your server where the result should be sent | http://example.com/callback |
-| callback_method |The HTTP method used for your callback webhook | GET or POST |
-| bye_text |The message to be played on a successful pin entry | "Thank you, goodbye" |
-| failed_text |The message to be played on an incorrect pin with retry | "Incorrect, try again" |
+| Parameter       | Value                                                   | Example                     |
+| --------------- | ------------------------------------------------------- | --------------------------- |
+| to              | The number to be called in e.164 format                 | 14155550100                 |
+| from            | The Nexmo number on your account to use for CallerID    | 14155550101                 |
+| text            | The initial message played to the called party          | "Enter your pin"            |
+| pin_code        | The PIN that the user should enter                      | 1234                        |
+| callback        | The URL on your server where the result should be sent  | http://example.com/callback |
+| callback_method | The HTTP method used for your callback webhook          | GET or POST                 |
+| bye_text        | The message to be played on a successful pin entry      | "Thank you, goodbye"        |
+| failed_text     | The message to be played on an incorrect pin with retry | "Incorrect, try again"      |
 
-### Authenticaion
+### Authentication
 
 The Lambda application does not hold any of your Nexmo credentials instead these are passed in at the time you invoke the function and are only used for that request.
 
 There are two ways you can do this, either by generating a Nexmo JWT with our libraries and putting that in the request headers or by just posting the private key and applicationID as part of a cURL request. It is recommended that you use the JWT method of authentication.
 
 ### cURL (Private key auth)
+
 Edit the URL to match the one you were given when you deployed your function
 
 ```
@@ -122,7 +123,6 @@ curl -X "POST" "https://910e9mcan2.execute-api.us-east-1.amazonaws.com/api/call"
 -d "callback_method=post" \
 -d "bye_text='Thank You'" \
 -d "failed_text='Try again'"
-
 ```
 
 ### Python (JWT)
@@ -154,21 +154,19 @@ response = requests.post("https://910e9mcan2.execute-api.us-east-1.amazonaws.com
 For either method, the response will be a JSON object containing a transaction ID ('tid') this is the reference for the call and will be used in the callback with the result.
 
 Example Response:
-`
-{
+`{
 "tid": "6a2827c9-4c68-46fc-b179-115f055dc0eb"
-}
-`
+}`
 
 ## Callbacks
 
 When the call has been completed the Lambda function will make a callback request to a webhook you specify when you invoked it—this will contain details of the call and the result:
 
-| Parameter | Value | Example |
-| :-------------: |---------- | :----------: |
-| to |The number called in e.164 format | 14155550100 |
-| tid |The transaction ID | 6a2827c9-4c68-46fc-b179-115f055dc0eb |
-| status |The result | ok |
+| Parameter | Value                             | Example                              |
+| --------- | --------------------------------- | ------------------------------------ |
+| to        | The number called in e.164 format | 14155550100                          |
+| tid       | The transaction ID                | 6a2827c9-4c68-46fc-b179-115f055dc0eb |
+| status    | The result                        | ok                                   |
 
 The following possible status values could be returned:
 
