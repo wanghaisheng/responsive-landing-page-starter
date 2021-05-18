@@ -270,6 +270,6 @@ With that, you have a web app using ASP .NET Identity that is 2 Factor Authentic
 
 SMS and email provide additional layers of security to correctly identify users and further protect sensitive user information. Using the Nexmo C# Client Library and SendGrid's C# Client, you can add both SMS and email verification with ease.
 
-<a name="code"></a>Please [grab the code](https://github.com/nexmo-community/sms-email-2fa-dotnet-example) and try it for yourself.
+Please [grab the code](https://github.com/nexmo-community/sms-email-2fa-dotnet-example) and try it for yourself.
 
 Feel free to send me any thoughts/questions on Twitter [@sidsharma_27](https://twitter.com/sidsharma_27) or email me at [sidharth.sharma@nexmo.com](mailto:sidharth.sharma@nexmo.com)!
