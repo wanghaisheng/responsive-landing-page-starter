@@ -24,11 +24,11 @@ While there are multiple modes of authenticating with something you know, are, o
 After reading the blog post about [how to set up a server to use Nexmo Verify](https://www.nexmo.com/blog/2018/05/10/nexmo-verify-api-implementation-guide-dr/) you're now ready to set up an iOS app to network with the server.
 
 The app will need to do a few things. Store a `request_id` as a `responseId` so that a verification request can be canceled or completed. As well as make a network call to three endpoints:
-<ol>
- 	<li>Start a verification.</li>
- 	<li>Check a verification code.</li>
- 	<li>Cancel a verification request.</li>
-</ol>
+
+* Start a verification.
+* Check a verification code.
+* Cancel a verification request.
+
 
 ## Nexmo Setup
 
