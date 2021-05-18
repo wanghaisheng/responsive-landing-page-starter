@@ -28,10 +28,10 @@ After searching Amazon for a product that could solve my problem it occurred to 
 
 So the first step was getting an AWS button, putting it on my WiFi network and setting up a hello world app. If you [browse the documentation](http://docs.aws.amazon.com/iot/latest/developerguide/what-is-aws-iot.html) you’ll find there are a few steps to follow. I got the device all wired together and I could see the event appearing in my AWS console each time I clicked the button.
 
-![Amazon Dash, AWS IoT](/content/blog/using-aws-iot-button-and-nexmo-to-make-a-phone-call/amazon-dash-aws-iot-image.png)
- 
+![﻿Amazon Dash, AWS IoT](/content/blog/using-aws-iot-button-and-nexmo-to-make-a-phone-call/amazon-dash-aws-iot-image.png "﻿Amazon Dash, AWS IoT")
+
 Okay, now to try to connect that with some code. I used a Lambda function, which is the AWS way to get code running in the cloud without concerning yourself with any server setup. [This part was much easier](http://docs.aws.amazon.com/lambda/latest/dg/get-started-create-function.html) as they already had an IoT Button blueprint available. It automatically set up Node.js code that sent me an email when the button was hit. [You can see the code for that here](https://github.com/MickeyPickles/phone-call-dash/blob/master/lambda_example_index.js).
- 
+
 ```javascript
 exports.handler = (event, context, callback) => {
     console.log('Received event:', event.clickType);
@@ -53,7 +53,7 @@ exports.handler = (event, context, callback) => {
     });
 };
 ```
- 
+
 <sign-up number></sign-up>
 
 The next step was to find a service that would allow me to make an automated phone call, which is how I found the Nexmo API. Unlike the initial Dash setup, getting going on Nexmo was very easy. [They have clear documentation](https://docs.nexmo.com/voice/voice-api#getting-started)</a>, which stepped through exactly how to get a Node.js app going. Within a few minutes, I had something I could run locally via the terminal that sent a Robo call to my phone number. [See the code for that here](https://github.com/MickeyPickles/phone-call-dash/blob/master/test.js). After browsing the Nexmo docs I then figured out how to [record my own voice and use that instead of the text-to-speech](https://docs.nexmo.com/voice/voice-api/ncco-reference#stream) from their example.
