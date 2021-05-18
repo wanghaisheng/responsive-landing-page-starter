@@ -138,9 +138,7 @@ Run the script and call your Nexmo phone number to record your message! After th
 
 ![Nexmo Voice API - audio file download](/content/blog/how-to-record-audio-from-incoming-calls-with-node-js/audio-downloaded.png)
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-
-<div class="embed-container"><iframe width="300" height="150" src="https://www.youtube.com/embed/ahPkl3kmcjU" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<youtube id="ahPkl3kmcjU"></youtube>
 
 ## Learn More
 
