@@ -11,20 +11,21 @@ updated_at: 2021-05-12T18:40:24.784Z
 category: tutorial
 tags:
   - bots
+  - ai
 comments: true
 redirect: ""
 canonical: ""
 ---
 Will AI-powered personal assistants know users well enough to make relevant, personalized recommendations? WIll they then become a channel for advertisers? Microsoft Technical Evangelist Martin Beeby and I discuss. Watch the clip of our conversation here, or scroll below the video to read the transcript. <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 
-<div class="embed-container"><iframe width="300" height="150" src="https://www.youtube.com/embed/Ukz2faMdEvI" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<youtube id="Ukz2faMdEvI"></youtube>
 
 ## How Personal Will Personal Assistants Be?
 
-**Martin Beeby** _(Technical Evangelist at Microsoft)_: That's one of the things where a personal assistant, the idea of these personal assistants, they need to be personal. They need to start understanding that I don't like Pizza Hut pizza and that Syd doesn't like Domino's. And that you like to order things from restaurants that only have one image on their Facebook page. I mean, it needs to get to know us, I guess, before they can suggest the right place to buy things from. 
+**Martin Beeby** *(Technical Evangelist at Microsoft)*: That's one of the things where a personal assistant, the idea of these personal assistants, they need to be personal. They need to start understanding that I don't like Pizza Hut pizza and that Syd doesn't like Domino's. And that you like to order things from restaurants that only have one image on their Facebook page. I mean, it needs to get to know us, I guess, before they can suggest the right place to buy things from. 
 
-**Sam Machin** _(Nexmo Developer Advocate & Alexa Champion)_: Yeah, it's interesting, isn't it? Is it gonna be personal? How personal is it gonna be versus how sold, how corporate, how advertised is it gonna be, you know? 
+**Sam Machin** *(Nexmo Developer Advocate & Alexa Champion)*: Yeah, it's interesting, isn't it? Is it gonna be personal? How personal is it gonna be versus how sold, how corporate, how advertised is it gonna be, you know? 
 
 **Martin:** I guess that'll end up being who pays for the system. If you're a user paying some kind of membership to that system, then you'll probably get your choices. And if you're not and if the system's provided free, then you're probably gonna be advertised to. 
 
-_**[Editor’s Note:** Watch the [full one-hour discussion](”https://youtu.be/InJe29Yz5UM”) on the state of AI bot technology.**]**_
+***[Editor’s Note:** Watch the [full one-hour discussion](”https://youtu.be/InJe29Yz5UM”) on the state of AI bot technology.**]***
