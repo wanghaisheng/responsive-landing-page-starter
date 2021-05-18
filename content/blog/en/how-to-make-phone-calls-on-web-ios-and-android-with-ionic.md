@@ -10,7 +10,6 @@ category: tutorial
 tags:
   - ionic
   - conversation-api
-  - cross-platform
 comments: true
 spotlight: false
 redirect: ""
