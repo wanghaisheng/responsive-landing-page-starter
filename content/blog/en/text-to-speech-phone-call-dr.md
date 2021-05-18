@@ -31,7 +31,7 @@ The Nexmo Voice API makes it so easy to make a call. You send an authenticated c
 ## Prerequisites
 
 * Visual Studio 2017
-* A project set up for this tutorial series which you can find on \[Github.](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoDotNetQuickStarts" target="_blank)
+* A project set up for this tutorial series which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoDotNetQuickStarts)
 * Optional: [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
 
 <sign-up number></sign-up>
