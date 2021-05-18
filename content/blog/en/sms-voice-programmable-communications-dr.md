@@ -24,7 +24,7 @@ We recently ran a webinar with [David Leary](https://twitter.com/davidleary) fro
 
 This section of the webinar covers how to send an outbound SMS. It covers using alphanumeric senders and using a number that has been purchased from Nexmo as the `from` number.
 
-<center><iframe width="640" height="360" src="https://www.youtube.com/embed/Z0DAXW_rHPM?start=738" frameborder="0" allowfullscreen="allowfullscreen"></iframe></center>
+<youtube id="Z0DAXW_rHPM"></youtube>
 
 ```js
 const Nexmo = require('nexmo');
@@ -53,7 +53,7 @@ For more information on sending an SMS check out our post on [sending an SMS wit
 
 In this part of the webinar we cover receiving an inbound webhook containing the inbound SMS information.
 
-<center><iframe width="640" height="360" src="https://www.youtube.com/embed/Z0DAXW_rHPM?start=1041" frameborder="0" allowfullscreen="allowfullscreen"></iframe></center>
+<youtube id="Z0DAXW_rHPM"></youtube>
 
 ```js
 const Nexmo = require('nexmo');
@@ -79,7 +79,7 @@ You can find more info on receiving an SMS in our post on [receiving an SMS with
 
 Here's how to make an outbound phone call using the Nexmo Voice API.
 
-<center><iframe width="640" height="360" src="https://www.youtube.com/embed/Z0DAXW_rHPM?start=1443" frameborder="0" allowfullscreen="allowfullscreen"></iframe></center>
+<youtube id="Z0DAXW_rHPM"></youtube>
 
 ```js
 const Nexmo = require('nexmo');
@@ -113,7 +113,7 @@ We have a blog post that covers [ making an outbound phone call with Node.JS](ht
 
 Finally, here's how to receive and control an inbound phone call. This introduces the concept of [Nexmo Conversation Control Objects (NCCOs)](https://docs.nexmo.com/voice/voice-api/ncco-reference).
 
-<center><iframe width="640" height="360" src="https://www.youtube.com/embed/Z0DAXW_rHPM?start=1766" frameborder="0" allowfullscreen="allowfullscreen"></iframe></center>
+<youtube id="Z0DAXW_rHPM"></youtube>
 
 ```js
 const Nexmo = require('nexmo');
