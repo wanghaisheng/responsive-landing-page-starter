@@ -133,9 +133,9 @@ Let's make a phone call to see if your application works! Call your virtual numb
 
 Also, see your terminal to check the status of your call.
 
-<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<youtube id="vuI82175gzo"></youtube>
 
-<div class="embed-container"><iframe width="300" height="150" src="https://www.youtube.com/embed/vuI82175gzo" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+
 In the next tutorial, you will learn how to record calls as audio files, so stay tuned!
 
 ## Learn More
