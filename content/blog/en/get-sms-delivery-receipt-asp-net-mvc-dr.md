@@ -22,7 +22,7 @@ Now that you have successfully [sent an SMS](https://learn.vonage.com/blog/2017/
 
 * A Visual Studio project
 * A project set up as described in the previous [blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) in this tutorial series which you can find on [GitHub.](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/SMSRecieveStarterProject)
-* Optional: [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)</li>
+* Optional: [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
 
 <sign-up number></sign-up>
 
@@ -35,8 +35,6 @@ The Nexmo SMS API uses webhooks to inform the ASP.NET app of the status of the s
 Go back to Visual Studio and run your program, then head over to the [Nexmo Dashboard](https://dashboard.nexmo.com/). On the **Settings** page, towards the bottom, you will see **Callback for Delivery Receipt** under the **API Settings**. Paste the ngrok URL inside the textbox and add **/SMS/DLR** to the end of it. This will route the message to the Receive action in the SMS controller.
 
 ![Configuring Nexmo webhooks](/content/blog/how-to-get-an-sms-delivery-receipt-in-asp-net-mvc/image_1.png)
-
-
 
 ## Diving into code
 
