@@ -64,11 +64,8 @@ Once you run the above command, your terminal should look similar to the screens
 
 ![Screenshot of ngrok running in a terminal and displaying a forwarding URL of the form “http://016a0331.ngrok.io”.](https://www.nexmo.com/wp-content/uploads/2018/03/ngrok.png)
 
-### Acquire a Nexmo Number
+<sign-up number></sign-up>
 
-For our translation service, we need to acquire a Nexmo number. Sign up for a developer account at [dashboard.nexmo.com/sign-up](https://dashboard.nexmo.com/sign-up) if you haven’t yet. Next, head over to [dashboard.nexmo.com/buy-numbers](https://dashboard.nexmo.com/buy-numbers) to purchase a number with voice capability.
-
-![Screen capture of a user buying a number using the Nexmo buy numbers menu. A user selects their country, Voice as the feature, and mobile as the type and clicks on the search button. The user then clicks on buy for the first number that comes up and confirms the purchase.](https://www.nexmo.com/wp-content/uploads/2018/03/buy-nexmo-number.gif)
 
 ### Create a Nexmo Application
 
