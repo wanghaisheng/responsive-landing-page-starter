@@ -25,20 +25,21 @@ In addition, we will also cover the styling and layout part of things, including
 
 ## Prerequisites
 
+<sign-up></sign-up> 
+
 You will need to have the following prequisites in place before you begin this tutorial:
 
-* Have [Node.js](https://nodejs.org/en/) installed on your machine
-* Register for a free Nexmo account ([sign up](https://dashboard.nexmo.com/sign-up))
-* Install the beta version of the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
+- Have [Node.js](https://nodejs.org/en/) installed on your machine
 
-  ```bash
-  npm install -g nexmo-cli@beta
-  ```
-* Setup the CLI to use your Nexmo API key and secret, which is available from the setting page in the Nexmo Dashboard
+- Install the beta version of the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
+    ```bash
+    npm install -g nexmo-cli@beta
+    ```
+- Setup the CLI to use your Nexmo API key and secret, which is available from the setting page in the Nexmo Dashboard
+    ```bash
+    nexmo setup YOUR_API_KEY YOUR_API_SECRET
+    ```
 
-  ```bash
-  nexmo setup YOUR_API_KEY YOUR_API_SECRET
-  ```
 
     The above command will create a `.nexmorc` file in your home directory and will be used for some of the other command line operations
 
