@@ -38,15 +38,14 @@ I love a good spy thriller, and it seems like one of the hardest parts of being 
 
 ## Prerequisites
 
-<sign-up number></sign-up> 
 
 I'm going to assume you've read Aaron's awesome post describing how to use [Ngrok for developing webooks](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/). If you haven't go read it now - it's worth it.
 
 I'm also going to assume you have a basic knowledge of Python and Flask.
 
-You'll need a [Nexmo account](https://dashboard.nexmo.com/sign-up) and some credit (don't worry, we give you some credit to get started when you sign up!)
-
 I recommend installing the [Nexmo CLI tool](https://github.com/Nexmo/nexmo-cli) - some of the instructions below will use it, although you can complete these actions in the [Nexmo Dashboard](https://dashboard.nexmo.com/) if you prefer.
+
+<sign-up number></sign-up>
 
 ## What You're Going To Build
 
