@@ -10,13 +10,12 @@ updated_at: 2021-05-13T17:39:11.629Z
 category: tutorial
 tags:
   - voice-api
-  - javasxript
+  - javascript
   - PBX
 comments: true
 redirect: ""
 canonical: ""
 ---
-
 We're going to build an interactive voice response menu, going through everything you need to know to set up a Node.js application that can receive inbound calls and capture user input entered via the keypad.
 
 By following this tutorial you will end up with a simple application that can be extended to include more complex, interactive elements and give you a head start building interactive menus for your callers.
@@ -27,18 +26,17 @@ The code for this tutorial can be found on [GitHub](https://github.com/Nexmo/nex
 
 <sign-up number></sign-up>
 
-- A [Nexmo account](https://dashboard.nexmo.com/sign-up)
-- [Node.js](https://nodejs.org/en/download/) installed on your machine
-- [ngrok](https://ngrok.com/) in order to make the code on our local machine accessible to the outside world
-- The [Nexmo CLI](https://developer.nexmo.com/tools): `npm install -g nexmo-cli`
+* [Node.js](https://nodejs.org/en/download/) installed on your machine
+* [ngrok](https://ngrok.com/) in order to make the code on our local machine accessible to the outside world
+* The [Nexmo CLI](https://developer.nexmo.com/tools): `npm install -g nexmo-cli`
 
 ## Setup
 
-When Nexmo receives a call on a number you have rented, an HTTP request is made to a URL (a 'webhook', that you specify) that contains all of the information needed to receive and respond to the call. This is commonly called the _answer URL_.
+When Nexmo receives a call on a number you have rented, an HTTP request is made to a URL (a 'webhook', that you specify) that contains all of the information needed to receive and respond to the call. This is commonly called the *answer URL*.
 
-Nexmo sends all the information about the call progress to a webhook URL you'll specify when you create a Nexmo Application, called the _event URL_.
+Nexmo sends all the information about the call progress to a webhook URL you'll specify when you create a Nexmo Application, called the *event URL*.
 
-When a user presses a number on their keypad, you can collect it via DTMF (_Dual Tone Multifrequency_). Whenever a DTMF input is collected from the user, this is sent to a different webhook URL in your app which you'll also have to specify.
+When a user presses a number on their keypad, you can collect it via DTMF (*Dual Tone Multifrequency*). Whenever a DTMF input is collected from the user, this is sent to a different webhook URL in your app which you'll also have to specify.
 
 So let's start writing this webhook server already! I'll use [express](https://expressjs.com/) as a web application framework, so I need to install it. I'll need to deal with JSON bodies, so I'll install `body-parser` as well. Run the following command inside the project folder in your terminal:
 
@@ -59,7 +57,7 @@ app.listen(3000)
 
 ## Receiving a Phone Call
 
-I need to create the _answer URL_, that is where Nexmo is going to make a `GET` request and it expects to receive a [Nexmo Call Control Object](https://developer.nexmo.com/api/voice/ncco), or NCCO for short. It's nothing really fancy, a JSON object with a set of pre-defined action objects.
+I need to create the *answer URL*, that is where Nexmo is going to make a `GET` request and it expects to receive a [Nexmo Call Control Object](https://developer.nexmo.com/api/voice/ncco), or NCCO for short. It's nothing really fancy, a JSON object with a set of pre-defined action objects.
 
 We'll use the `talk` action to greet the caller and ask them to press a digit, setting the `bargeIn` option to `true` so that the user can enter a digit without waiting for the spoken message to finish.
 
@@ -139,7 +137,7 @@ nexmo number:buy  --country_code US
 
 You can use a different country code if you want to. Make a note of the number you purchase, as we'll need it for the next step.
 
-We now need to create a [Nexmo application](https://developer.nexmo.com/concepts/guides/applications), which is a container for all the settings required for your application. We need to specify the _answer URL_ and the _event URL_ so Nexmo can interact with the server we created.
+We now need to create a [Nexmo application](https://developer.nexmo.com/concepts/guides/applications), which is a container for all the settings required for your application. We need to specify the *answer URL* and the *event URL* so Nexmo can interact with the server we created.
 
 Use the Nexmo CLI to create your application making sure you substitute `YOUR_NGROK_URL` with your own generated URL that ngrok gave you earlier:
 
@@ -167,4 +165,4 @@ In about thirty lines of JavaScript, you now have an application that has an int
 
 If you want to learn more about what is possible with inbound voice calls, and how you can make them more complex by adding features such as recording audio or connecting callers to your mobile phone, you can learn more about these actions in the [NCCO reference](https://developer.nexmo.com/api/voice/ncco).
 
-As always, if you have any questions about this post feel free to DM me on Twitter, I'm [@lakatos88](https://twitter.com/lakatos88). You can also email the Developer Relations team at Nexmo, <devrel@nexmo.com>, or [join the Nexmo community Slack channel](https://developer.nexmo.com/community/slack), where we’re waiting and ready to help.
+As always, if you have any questions about this post feel free to DM me on Twitter, I'm [@lakatos88](https://twitter.com/lakatos88). You can also email the Developer Relations team at Nexmo, [devrel@nexmo.com](mailto:devrel@nexmo.com), or [join the Nexmo community Slack channel](https://developer.nexmo.com/community/slack), where we’re waiting and ready to help.
