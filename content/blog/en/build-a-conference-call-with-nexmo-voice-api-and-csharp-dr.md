@@ -16,12 +16,9 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-<em>This is the sixth tutorial on how to use Voice APIs with ASP.NET series.</em>
-In the previous tutorial, we learnt [how to forward a call via voice proxy with ASP.NET Core](https://www.nexmo.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr/).
+This is the sixth tutorial on how to use Voice APIs with ASP.NET series._ In the previous tutorial, we learnt [how to forward a call via voice proxy with ASP.NET Core](https://www.nexmo.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr/). In today's tutorial, we will learn how to setup a conference call so multiple people can join the same call.
 
-In today's tutorial, we will learn how to setup a conference call so multiple people can join the same call.
-
-<h2>Learning objectives</h2>
+## Learning objectives
 
 In this tutorial, we will:
 
@@ -35,9 +32,7 @@ In this tutorial, we will:
 
 * Run and test the code using Ngrok.
 
-<h2>Prerequisites</h2>
-
-<sign-up></sign-up>
+## Prerequisites
 
 
 * Visual Studio 2017 or higher.
@@ -48,7 +43,9 @@ In this tutorial, we will:
 
 * Optional: [The Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
 
-<h2>Configuration</h2>
+<sign-up></sign-up>
+
+## Configuration
 
 To use [The Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview), we need to create [a voice application](https://developer.nexmo.com/concepts/guides/applications).
 
@@ -56,7 +53,7 @@ The configuration steps are detailed in the [Nexmo Voice API with ASP.NET: Befor
 
 Once the configuration is done successfully, we can move on to setting up a conference call.
 
-<h2>Building a Conference Call</h2>
+## Building a Conference Call
 
 When a user calls the Nexmo number, the Nexmo Voice API will make a request to the application to figure out how to respond using a [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference).
 
@@ -164,9 +161,9 @@ We now have a new url (mine is http://<SUBDOMAIN>.ngrok.io) that can be used as 
 
 Update your application with your new `answer_url`. It should look like `http://subdomain.ngrok.io/webhook/answer`. Run the app and give it a go by calling the TO_NUMBER.
 
-<h2>Learn more</h2>
+## Learn more
 
-<h3>API References and Tools</h3>
+### API References and Tools
 
 * [Application API](https://developer.nexmo.com/concepts/guides/applications).
 
