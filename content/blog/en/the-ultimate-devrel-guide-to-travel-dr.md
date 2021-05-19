@@ -14,7 +14,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-It’s fair to say that we travel a lot in the <a href="https://www.nexmo.com/blog/2018/11/28/all-your-devrel-award-belong-to-us-dr">Developer Relations team at Nexmo</a>. With the number of [events we attend, sponsor, or speak at](https://developer.nexmo.com/community/past-events) always going up, as well as our [seemingly constant recruitment drive](https://developer.nexmo.com/team#join), this isn’t going to change anytime soon.
+It’s fair to say that we travel a lot in the [Developer Relations team at Nexmo](https://www.nexmo.com/blog/2018/11/28/all-your-devrel-award-belong-to-us-dr). With the number of [events we attend, sponsor, or speak at](https://developer.nexmo.com/community/past-events) always going up, as well as our [seemingly constant recruitment drive](https://developer.nexmo.com/team#join), this isn’t going to change anytime soon.
 
 My time in developer relations has been relatively short, and already my recent travel history looks like this:
 
@@ -64,7 +64,7 @@ If you travel regularly and, like me, you feel guilty leaving tiny pillows and b
 
 As Head of Community, our own Olia Dukova finds herself on the move a lot. She’s recently spoken at DevXcon about using your time in other cities to explore the culture and enjoy yourself.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/TJQC0ZAfXUA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<youtube id="TJQC0ZAfXUA"></youtube>
 
 ### Use Your Jet Lag
 
@@ -84,7 +84,9 @@ When you say you travel for work, familiar and friends, or even colleagues, migh
 
 Travel may seem like a never-ending story and super repetitive, so here are some general tips to making it a smoother experience.
 
-<center><blockquote class="twitter-tweet"><p lang="en" dir="ltr">Goal for next year is to keep the streak to a minimum of 2 weeks in a row <a href="https://twitter.com/hashtag/devrellife?src=hash&amp;ref_src=twsrc%5Etfw">#devrellife</a> <a href="https://twitter.com/hashtag/DevRelCon?src=hash&amp;ref_src=twsrc%5Etfw">#DevRelCon</a> <a href="https://t.co/bPjOzW0EHf">pic.twitter.com/bPjOzW0EHf</a></p>&mdash; Phil Leggetter (@leggetter) <a href="https://twitter.com/leggetter/status/806015499268145152?ref_src=twsrc%5Etfw">December 6, 2016</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+> Goal for next year is to keep the streak to a minimum of 2 weeks in a row [#devrellife](https://twitter.com/hashtag/devrellife?src=hash&ref_src=twsrc%5Etfw) [#DevRelCon](https://twitter.com/hashtag/DevRelCon?src=hash&ref_src=twsrc%5Etfw) [pic.twitter.com/bPjOzW0EHf](https://t.co/bPjOzW0EHf)
+> 
+> — Phil Leggetter (@leggetter) [December 6, 2016](https://twitter.com/leggetter/status/806015499268145152?ref_src=twsrc%5Etfw)
 
 ### Global Entry is a Big Deal
 
@@ -216,7 +218,17 @@ Miami International Airport is definitely one of those airports you’ll be grat
 
 Are airports mostly a social experiment on how long you can queue before you snap and buy an upgrade? Probably.
 
-<center><blockquote class="twitter-tweet"><p lang="en" dir="ltr">🗺️This past month I flew literally around the world, with a fun little detour to Honolulu in the middle.<br><br>SIN🛩️PVG🛩️SFO🛩️HNL🛩️SFO🛩️LGW🛩️SIN🛩️NRT<br><br>😴And if you&#39;re not in <a href="https://twitter.com/hashtag/devrelLife?src=hash&amp;ref_src=twsrc%5Etfw">#devrelLife</a> you&#39;d think that&#39;s everyone&#39;s dream. I guess y&#39;all dream of being jetlagged every day for a month? <a href="https://t.co/LskSz9MUBf">pic.twitter.com/LskSz9MUBf</a></p>&mdash; Alex Lakatos 🥑🇬🇧 (@lakatos88) <a href="https://twitter.com/lakatos88/status/1197492397673811968?ref_src=twsrc%5Etfw">November 21, 2019</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
+<center>
+
+> 🗺️This past month I flew literally around the world, with a fun little detour to Honolulu in the middle.  
+>   
+> SIN🛩️PVG🛩️SFO🛩️HNL🛩️SFO🛩️LGW🛩️SIN🛩️NRT  
+>   
+> 😴And if you're not in [#devrelLife](https://twitter.com/hashtag/devrelLife?src=hash&ref_src=twsrc%5Etfw) you'd think that's everyone's dream. I guess y'all dream of being jetlagged every day for a month? [pic.twitter.com/LskSz9MUBf](https://t.co/LskSz9MUBf)
+> 
+> — Alex Lakatos 🥑🇬🇧 (@lakatos88) [November 21, 2019](https://twitter.com/lakatos88/status/1197492397673811968?ref_src=twsrc%5Etfw)
+
+</center>
 
 There is lots of info here, hopefully, you’ll find it useful when picking your connections, or planning your trip. But to summarise everything:
 
