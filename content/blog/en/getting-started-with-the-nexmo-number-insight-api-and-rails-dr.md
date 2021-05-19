@@ -9,9 +9,8 @@ published_at: 2019-03-25T15:37:11.000Z
 updated_at: 2021-05-12T22:45:55.525Z
 category: tutorial
 tags:
-  - number-api
+  - number-insight-api
   - ruby
-  - x-with-y
 comments: true
 redirect: ""
 canonical: ""
@@ -162,7 +161,7 @@ In order for our application to communicate with the Vonage Number Insight API, 
 
 To obtain your Vonage API key and API secret, navigate to the [Vonage Dashboard](https://dashboard.nexmo.com) and once you log in you will see your credentials near the top of the page. All you need to do is click on the eye icon to reveal the API secret. You can also click on the copy icon of each item to automatically copy them to the clipboard.
 
-![](/content/blog/getting-started-with-the-nexmo-number-insight-api-and-rails/api_credentials.png)
+![api credentials](/content/blog/getting-started-with-the-vonage-number-insight-api-and-rails/api_credentials.png "api credentials")
 
 You are going to want to take advantage of the functionality of the `dotenv` gem you installed earlier, so create a file called `.env` in the root folder of your project. This is where we will store our Vonage API credentials. Also, it is a good idea to add `.env` to a `.gitignore` file, if you have not done so already, to ensure that it is not committed to your version control history.
 
