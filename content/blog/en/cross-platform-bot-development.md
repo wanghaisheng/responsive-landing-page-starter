@@ -17,15 +17,15 @@ canonical: ""
 ---
 Building a text or voice bot that can be deployed across all the major bot platforms is not unlike trying to build a mobile app for iOS and Android a decade ago. I spoke with Opearlo Co-Founder / CTO Oscar Merry and Microsoft Technical Evangelist Martin Beeby about how developers should approach cross-platform bot development today and what it might look like in the future. 
 
-Watch the video of our conversation here, or scroll below the video to read the full transcript. <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+Watch the video of our conversation here, or scroll below the video to read the full transcript. 
 
-<div class="embed-container"><iframe width="300" height="150" src="https://www.youtube.com/embed/WUA7njFwuS8" frameborder="0" allowfullscreen="allowfullscreen"></iframe></div>
+<youtube id="WUA7njFwuS8"></youtube>
 
 ## The Promise and Challenge of Cross-platform Bot Development (Full Transcript)
 
-**Sam Machin** _(Nexmo Developer Advocate & Alexa Champion):_ Cool. Yeah, Oscar, what are you guys finding with, particularly around with platforms? I mean, you're predominantly building on Alexa and Google Home. So very much the consumer vertical platforms. But how are you finding the platform tooling environments for that? 
+**Sam Machin** *(Nexmo Developer Advocate & Alexa Champion):* Cool. Yeah, Oscar, what are you guys finding with, particularly around with platforms? I mean, you're predominantly building on Alexa and Google Home. So very much the consumer vertical platforms. But how are you finding the platform tooling environments for that? 
 
-**Oscar Merry** _(Co-Founder & CTO at Opearlo)_**:** So I think one big challenge is that, as cross-platform on voice becomes more important, it is a little bit of a challenge to actually build for cross-platform voice. And I think we will start to see additional tools and additional platforms and SDKs that actually help developers build for cross-platform.
+**Oscar Merry** *(Co-Founder & CTO at Opearlo)***:** So I think one big challenge is that, as cross-platform on voice becomes more important, it is a little bit of a challenge to actually build for cross-platform voice. And I think we will start to see additional tools and additional platforms and SDKs that actually help developers build for cross-platform.
 
 > it is a little bit of a challenge to actually build for cross-platform voice
 
@@ -35,7 +35,7 @@ What we advise right now is don't worry too much about it. If you want to build 
 
 **Oscar:** There is a lot of stuff you can reuse across the different platforms. Like the things I've talked about so far are around making sure your content is voice ready so that the content the digital assistant responds with makes sense over voice. All of that stuff you can reuse from platform to platform. And all of those learnings you get you can get from just one platform. But yeah, I definitely think there's an opportunity for those types of tools. 
 
-**Martin Beeby** _(Technical Evangelist at Microsoft)_**:** I don't know if it's as bad as you described there, Sam. It's not really like iOS and Android were, in my opinion, because they have very deep-rooted things into the operating system, which are very difficult to make cross-platform. And it's a huge developer effort to make cross-platform. Most of the differences between, say, Google Home, Alexa, and say Cortana, they're usually not that deep embedded into the operating system. I know for at least porting Alexa to Cortana skills, it's actually your...they've tried to make it as simple as possible and as easy as possible. So whilst there probably is an opportunity for someone to make it even simpler, I don't think we're really in the problem space that we were with mobile apps, with iOS and Android. It's not that different, they're not that different. 
+**Martin Beeby** *(Technical Evangelist at Microsoft)***:** I don't know if it's as bad as you described there, Sam. It's not really like iOS and Android were, in my opinion, because they have very deep-rooted things into the operating system, which are very difficult to make cross-platform. And it's a huge developer effort to make cross-platform. Most of the differences between, say, Google Home, Alexa, and say Cortana, they're usually not that deep embedded into the operating system. I know for at least porting Alexa to Cortana skills, it's actually your...they've tried to make it as simple as possible and as easy as possible. So whilst there probably is an opportunity for someone to make it even simpler, I don't think we're really in the problem space that we were with mobile apps, with iOS and Android. It's not that different, they're not that different. 
 
 **Sam:** It’s still an interface, isn't it? It's what you just pass back and forward. Kind of, you're still putting in some text, you're getting a structured request and you're structuring a response. It's always request-response and you're not sort of dealing with low-level stuff in the same way, I guess. 
 
@@ -50,4 +50,3 @@ What we advise right now is don't worry too much about it. If you want to build 
 **Oscar:** Yes, so we always try and share as much as of the, kind of, backend logic as we can because a lot of it can be reused. But yeah, definitely the kind of...however you define the voice model inputs that you give over to Alexa or Google or Microsoft, those things we keep separate. _
 
 **[Editor’s Note:** Watch the [full one-hour discussion](https://youtu.be/InJe29Yz5UM) on the state of AI bot technology.**]**
-
