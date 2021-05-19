@@ -1,10 +1,8 @@
 ---
 title: Connecting WebRTC and PSTN with OpenTok and Nexmo
-description: At Nexmo, we recently announced SIP Connect which allows you to
-  connect WebRTC endpoints with the Nexmo Voice API. This feature makes it
-  possible for PSTN users to dial into an OpenTok video session. In this post,
-  we’re going to build a real-time video web application using OpenTok and
-  connect PSTN users with it using […]
+description: In this tutorial you'll see how to add the ability to dial in voice
+  calls (PSTN) to your video stream by using OpenTok, Nexmo, JavaScript and
+  Node.js
 thumbnail: /content/blog/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr/opentok-sip.png
 author: manik
 published: true
@@ -25,14 +23,13 @@ In this post, we’re going to build a real-time video web application using Ope
 
 ## Prerequisites
 
-<sign-up></sign-up>
-
 Before we get started, please make sure that you have the following:
 
-* [A Nexmo account](https://dashboard.nexmo.com/sign-in)
 * [A TokBox account](https://tokbox.com/account)
 * [Node.js](https://nodejs.org/en/)
 * [NPM](https://www.npmjs.com/)
+
+<sign-up></sign-up>
 
 ## Getting Started
 
