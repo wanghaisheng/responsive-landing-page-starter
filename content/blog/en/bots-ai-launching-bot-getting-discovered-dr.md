@@ -21,11 +21,11 @@ Launching a mobile app on the Apple App Store or on Google Play is a pretty well
 
 Watch the video of our conversation here, or scroll below the video to read the full transcript.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/V8ru6T9X2hQ" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<youtube id="V8ru6T9X2hQ"></youtube>
 
 ## How Does a Developer Launch a Bot and Get It Discovered? (Full Transcript)
 
-**Sam Machin ** *(Nexmo Developer Advocate & Alexa Champion)*: That leads me on actually to the next point I was thinking about, which is the discovery. So, we know within the app world, we have the app stores and we can add things. And then we have an icon to launch it and orchestration. But one of the things I think is still not quite worked out for bots specifically—and maybe it's more of a problem with voice or even chatbots—is how do we launch one? How do we get to them? What's the discovery phase?
+**Sam Machin**  *(Nexmo Developer Advocate & Alexa Champion)*: That leads me on actually to the next point I was thinking about, which is the discovery. So, we know within the app world, we have the app stores and we can add things. And then we have an icon to launch it and orchestration. But one of the things I think is still not quite worked out for bots specifically—and maybe it's more of a problem with voice or even chatbots—is how do we launch one? How do we get to them? What's the discovery phase?
 
 **Oscar Merry** *(Co-Founder &amp; CTO at [Opearlo](http://www.opearlo.com/))*: I think, actually, whilst a discovery of bots and specifically voice bots is a massive problem, I actually think the biggest issue is getting the use case right and making sure that you actually deliver on the promise of your voice app. Because a lot of the marketing that big tech companies put out there actually showcase these voice systems as, in a lot of cases, better than they actually are. And so when users come to the experience, they've got these really high expectations of what the particular voice app can actually do. And quite often on their first experience, they'll end up feeling very, very frustrated.
 
@@ -35,7 +35,7 @@ So I think whilst there is a bit of a discovery problem with voice bots, I think
 
 **Syd Lawrence** *(CEO & Co-Founder of [The Bot Platform](https://thebotplatform.com/)*): It's all about designing it correctly, right? I mean, it's the same with everything. Technology is there to solve a problem. It's not just there to be used for the sake of being used. And you've got to make sure that it's clear what you can and can't do. And on the voice discovery, so we do a lot of stuff in the music space. And one of the big ongoing discussions at the moment is when you walk into a room and you just say, "Alexa, play me some music."
 
-***[Syd inadvertently invokes Alexa!]***
+***\[Syd inadvertently invokes Alexa!]***
 
 **Alexa**: I can't find anything from Sam's library.
 
@@ -43,7 +43,7 @@ So I think whilst there is a bit of a discovery problem with voice bots, I think
 
 **Martin Beeby** *(Technical Evangelist at [Microsoft](https://blogs.msdn.microsoft.com/thebeebs/): I knew that was gonna happen.
 
-**Syd:** So when you do that and you aren't specifying what artist or what anything, how do even the musicians get discovered? So is it then purely gatekeeper-based on who puts them into different playlists? It will be interesting to see how it all pans out from a discovery [standpoint], in general, when there's no screen or anything.
+**Syd:** So when you do that and you aren't specifying what artist or what anything, how do even the musicians get discovered? So is it then purely gatekeeper-based on who puts them into different playlists? It will be interesting to see how it all pans out from a discovery \[standpoint], in general, when there's no screen or anything.
 
 > Technology is there to solve a problem. It's not just there to be used for the sake of being used.
 
