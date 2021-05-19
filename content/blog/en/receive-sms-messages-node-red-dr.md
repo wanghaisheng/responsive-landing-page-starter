@@ -11,7 +11,7 @@ category: tutorial
 tags:
   - sms-api
   - javascript
-  - node
+  - node-red
 comments: true
 redirect: ""
 canonical: ""
@@ -24,18 +24,12 @@ Get this flow from the [Node-RED Library](https://flows.nodered.org/flow/0d45231
 
 ## Prerequisites
 
-<sign-up number></sign-up>
-
 Before getting started, you’ll need a few things:
 
 * [Node.js](https://nodejs.org/en/) and [Node-RED](https://nodered.org/docs/getting-started/installation) installed on your machine
 * Optional: [ngrok](https://ngrok.com/download)—get up to speed with [Aaron's blog post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
 
-## Vonage API Account
-
-To complete this tutorial, you will need a [Vonage API account](http://developer.nexmo.com/ed?c=blog_text&ct=2019-04-24-receive-sms-messages-node-red-dr). If you don’t have one already, you can [sign up today](http://developer.nexmo.com/ed?c=blog_text&ct=2019-04-24-receive-sms-messages-node-red-dr) and start building with free credit. Once you have an account, you can find your API Key and API Secret at the top of the [Vonage API Dashboard](http://developer.nexmo.com/ed?c=blog_text&ct=2019-04-24-receive-sms-messages-node-red-dr).
-
-This tutorial also uses a virtual phone number. To purchase one, go to *Numbers* > *Buy Numbers* and search for one that meets your needs. If you’ve just signed up, the initial cost of a number will be easily covered by your available credit.
+<sign-up number></sign-up>
 
 ## Defining a Webhook Endpoint
 
@@ -87,7 +81,7 @@ Find out more about these parameters in the [Vonage API Reference for Inbound SM
 
 ## Next Steps
 
-At this point, we're only logging the inbound messages in the debug area, but possibilities are endless. Store them in a database, forward, translate, post them—or why not set up an autoresponder?
+At this point, we're only logging the inbound messages in the debug area, but the possibilities are endless. Store them in a database, forward, translate, post them—or why not set up an autoresponder?
 
 Ready to take it one step further? Have a look at [Sam](https://twitter.com/sammachin)'s flow for [Receiving Concatenated SMS Messages from Nexmo](https://flows.nodered.org/flow/525d526e7e6cd006a97ae522b0c670b6).
 
@@ -110,27 +104,3 @@ Ready to take it one step further? Have a look at [Sam](https://twitter.com/samm
 * [How to Stream Audio into a Call with Node-RED](https://www.nexmo.com/blog/2019/07/15/stream-audio-node-red-dr)
 * [How to Make Text-to-Speech Phone Calls with Node-RED](https://www.nexmo.com/blog/2019/06/14/make-text-to-speech-phone-calls-node-red-dr/)
 * [How to Receive Phone Calls with Node-RED](https://www.nexmo.com/blog/2019/05/09/receive-phone-calls-node-red-dr/)
-
-<script>
-window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll(".gif-player").forEach(image => {
-        image.src = image.src.replace(/\.gif$/g, ".png")
-        image.addEventListener("click", (event) => {
-            if (event.target.src.indexOf(".gif") > 0) {
-                image.src = image.src.replace(/\.gif$/g, ".png")
-            } else {
-                image.src = image.src.replace(/\.png$/g, ".gif")
-            }
-        })
-    })
-});
-</script>
-
-<style>
-.gif-player {
-  cursor: pointer;
-}
-img.alignnone {
-  border-width: 0px !important;
-}
-</style>
