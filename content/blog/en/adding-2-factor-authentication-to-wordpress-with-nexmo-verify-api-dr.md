@@ -32,7 +32,9 @@ I particularly like Nexmo Verify because of something called workflows. With wor
 ## What You Need to Get Started:
 
 * Self-hosted [WordPress](https://wordpress.com) website 
-* [Nexmo account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=github&utm_campaign=https://github.com/Kendysond/two-factor-auth-nexmo). You can sign up now for free if you don’t already have an account.
+
+<sign-up></sign-up>
+
 
 ## Creating Your WordPress Plugin
 
@@ -248,7 +250,7 @@ private function verify_user( $user, $redirect_to, $remember_me, $errors = array
     }
 ```
 
-<strong>NB</strong>: I have my HTML in the Class method here, but you can always put yours in a separate file and include it.
+**NB**: I have my HTML in the Class method here, but you can always put yours in a separate file and include it.
 
 With the above code, you should have a page that looks like this when you try to log in to an account enabled for 2FA.
 
@@ -267,7 +269,7 @@ The form’s parameters are:
 * `redirect_to`: Redirect to URL if the user was trying to access a particular page before the login form
           
 
-<strong>Important note:</strong> The form’s action URL is still the WordPress login URL route
+**Important note:** The form’s action URL is still the WordPress login URL route
 `<?php echo esc_url( site_url( 'wp-login.php', 'login_post' ) ) ?>`, What’s interesting is, because our intercept function is hooked to the authenticate action, when you click the verify button on the verify code form, your intercept function still runs, and that’s where you add the code snippet to validate the code the user entered. 
 
 ```php
