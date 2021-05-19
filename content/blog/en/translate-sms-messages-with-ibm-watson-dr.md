@@ -15,8 +15,6 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-<sign-up></sign-up>
-
 In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://www.nexmo.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr) and [AWS Translate](https://www.nexmo.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr).
 
 ## Overview
@@ -26,8 +24,9 @@ In this post, I show you how to create an [inbound Vonage SMS](https://developer
 In order to get started, you will need the following items setup:
 
 * [IBM Cloud](https://cloud.ibm.com/login)
-* [Vonage Account](https://dashboard.nexmo.com/sign-up)
 * [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+
+<sign-up></sign-up>
 
 ## Create Your Project
 
@@ -92,8 +91,6 @@ Make a note of the `ngrok` address, as you will need that in a later step.
 Once you have the initial items set up, you can add IBM Watson Language Translator to your account and get the credentials required to run the example. Follow [this link](https://cloud.ibm.com/catalog/services/language-translator) to enable the Language Translator API. Select a project, and then click the `Enable` button to activate the API on that project.
 
 ![Create Language Translator Service](/content/blog/translate-sms-messages-with-ibm-watson-and-vonage/create_language_translator_service.png "Create Language Translator Service")
-
-
 
 Once created you will be presented with a Getting Started tutorial. In the left nav, click `Manage` to locate following screen:
 
@@ -227,4 +224,3 @@ The example above is just a small introduction to translation using the IBM Wats
 You can find a completed version of this tutorial on the [Vonage Community GitHub](https://github.com/nexmo-community/sms-translate-ibm-js).
 
 If you want to learn more about the Extend projects we have, you can visit <https://developer.nexmo.com/extend>.
- 
