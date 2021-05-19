@@ -20,7 +20,7 @@ The major providers in the AI bot space—IBM Watson, Microsoft Cognitive Servic
 
 Watch the video of our conversation here, or scroll below the video to read the full transcript.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/pcxBc9xjrzw" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<youtube id="pcxBc9xjrzw"></youtube>
 
 ## Bots and AI: What Is a Bot Platform, Exactly? (Full Transcript)
 
@@ -50,11 +50,11 @@ And I suppose in some of the more closely coupled systems, like Alexa perhaps, i
 
 So Martin, what is your framework? What does your framework do at a generic kind of level? What are the features that make that up?
 
-**Martin:** Roughly, it's a framework, a development kit, an SDK which works in either Node or C#. And you build this bot and it...both of those different languages slightly work slightly differently. But roughly speaking, we have a pattern for getting a message coming in and then passing messages back. We span all of the platforms.So yo would build one bot using either either node or C#...
+**Martin:** Roughly, it's a framework, a development kit, an SDK which works in either Node or C#. And you build this bot and it...both of those different languages slightly work slightly differently. But roughly speaking, we have a pattern for getting a message coming in and then passing messages back. We span all of the platforms. So yo would build one bot using either either node or C#...
 
 **Syd:** It span all the *channels*.
 
-**Martin:** Did I say platforms? Great. I span all the channels. And the idea being is you build one of the these things and then we sort of stand there as an intermediary making sure it's available on all the different channels for you. But you build one bot.
+**Martin:** Did I say platforms? Great. I span all the channels. And the idea being is you build one of these things and then we sort of stand there as an intermediary making sure it's available on all the different channels for you. But you build one bot.
 
 More recently as well, you can respond with different responses depending on the channel that you're speaking on. So if I'm building a Facebook Messenger bot, for example, I probably wanna be heavy on the UI. Like, because Facebook Messenger guidelines talk about buttons and carousels and things like that. Well on some of the channels, they're much more restrictive about what the interface looks like. And maybe you're just delivering text in those instances or buttons or whatnot. So we build one bot but you can respond differently depending on the channel and the way that the message comes into you.
 
@@ -74,7 +74,7 @@ So that's the concept that we're trying to deliver or help with to make develope
 
 **Martin:** Absolutely. Absolutely. You could write, you could basically have your bot intelligence could all be based on Regex if you're really wanting to do that. But generally speaking, we would recommend—in most instances at least—to have some kind of language understanding service rather than trying to figure out what the user is trying to do in your bot. And most of the examples we generate include that.
 
-But yeah, there's lots of different services we offer. We offer a Q&A service, for example. So you load up all of your questions and answers and we can serve that up as a bot for you very quickly and simply. You can do that almost with no code, using Azure functions as well. Which if you're familiar with AWS, they have this stack called Lambda which is like a serverless stack. We also have that same thing, it's called Azure Functions. And you can just, with a couple of clicks, deploy a bot to that, upload a questions and answer sort of Excel spreadsheet. And it will then, your bot will be able to answer questions on a, like a frequently-asked question bot sort of thing. And so you're using machine learning to figure out the right thing.
+But yeah, there's lots of different services we offer. We offer a Q&A service, for example. So you load up all of your questions and answers and we can serve that up as a bot for you very quickly and simply. You can do that almost with no code, using Azure functions as well. Which if you're familiar with AWS, they have this stack called Lambda which is like a serverless stack. We also have that same thing, it's called Azure Functions. And you can just, with a couple of clicks, deploy a bot to that, upload a question and answer sort of Excel spreadsheet. And it will then, your bot will be able to answer questions on a, like a frequently-asked question bot sort of thing. And so you're using machine learning to figure out the right thing.
 
 **Sam:** I had a little play with that, actually. Yes, it's a rather cool way to get to your first bot. I think it took a Word document, even for me. I wanted just a key question and answer.
 
