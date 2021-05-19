@@ -21,7 +21,7 @@ In October, we were at [APItheDocs](https://apithedocs.org/amsterdam-2019) in Am
 
 If you're really keen you can watch the video of the talk:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/4mHIokNJ_sY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<youtube id="4mHIokNJ_sY"></youtube>
 
 Anthony's talk covered a series of points (eight in total) that he felt were important to the success of an API as a product. We felt that some of them really resonated with the work we're already doing and others gave us some food for thought on things we'd love to improve on. All in all, it was a great mix of points.
 
@@ -60,8 +60,6 @@ If only all APIs were created with this in mind!
 This was very nicely done and I enjoyed the emphasis on having open-source and executable code samples available.
 
 We hold collections of executable code samples and then pull them into our developer documentation as we need them - with a link back to the "real" code on GitHub. This helps us to maintain the code samples collection and also allows developers to go and see the context of the code if they need it.
-
-<img src="https://www.nexmo.com/wp-content/uploads/2019/11/code-snippets.png" alt="Screenshot of code snippets on the Nexmo Developer Portal" width="1549" height="724" class="aligncenter size-full wp-image-30845" />
 
 ![Screenshot of code snippets on the Nexmo Developer Portal](/content/blog/what-makes-an-api-product-successful/code-snippets.png)
 
