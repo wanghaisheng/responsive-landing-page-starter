@@ -12,7 +12,6 @@ category: tutorial
 tags:
   - php
   - voice-api
-  - slimphp
 comments: true
 redirect: ""
 canonical: ""
