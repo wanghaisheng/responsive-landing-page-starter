@@ -2,9 +2,10 @@
 title: How to Make Phone Calls on Web, iOS and Android with Ionic
 description: Learn how to use the Vonage Client SDK to build an Ionic app that
   lets you call a phone number.
+thumbnail: /content/blog/how-to-make-phone-calls-on-web-ios-and-android-with-ionic/voice-calls_ionic_1200x600.png
 author: abdul-ajetunmobi
 published: true
-published_at: 2021-05-10T09:57:11.723Z
+published_at: 2021-05-19T10:36:11.665Z
 updated_at: 2021-05-10T09:57:11.749Z
 category: tutorial
 tags:
