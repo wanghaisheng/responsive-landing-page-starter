@@ -22,12 +22,10 @@ You can find the full working code for this sample on [GitHub](https://github.co
 
 ## Prerequisites
 
-To work through this tutorial, you will need a [Nexmo account](https://dashboard.nexmo.com/sign-up). Sign up now if you don't already have one.
-
-In addition, you will also need:
-
 * [Ruby on Rails](https://rubyonrails.org/)
 * [ngrok](https://ngrok.io) to expose our Rails application to the outside
+
+<sign-up number></sign-up>
 
 ## Create a Conference Call with Ruby on Rails
 
@@ -71,8 +69,6 @@ Make sure to copy the `ngrok.io` URL down somewhere safe. We will be using it in
 <sign-up number></sign-up>
 
 In order for our voice application to work, we need a Nexmo account, a Nexmo provisioned phone number, a Nexmo application, and, lastly, we need to link our application to our phone number.
-
-You can create a Nexmo account for free, and as an added bonus, your account will be credited with 2 euros to begin using your new application. Navigate to <https://dashboard.nexmo.com/sign-up> in your web browser and go through the sign up steps. Once you have finished you will be in your Nexmo dashboard.
 
 From the left-hand menu, click on the `Voice menu` item. You will see the following four options under `APPLICATIONS`:
 
