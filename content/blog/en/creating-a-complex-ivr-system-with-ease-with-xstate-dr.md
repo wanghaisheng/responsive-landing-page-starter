@@ -9,13 +9,13 @@ published_at: 2019-06-20T18:33:17.000Z
 updated_at: 2021-05-13T21:18:42.196Z
 category: tutorial
 tags:
-  - developer-spotlight
   - javascript
 comments: true
+spotlight: true
 redirect: ""
 canonical: ""
 ---
-![community spotlight](/content/blog/creating-a-complex-ivr-system-with-ease-with-xstate/blog-top-banner.png)
+
 
 Even if you didn't know that's what they're called, you probably use IVR systems all the time. An <a href="https://www.nexmo.com/use-cases/interactive-voice-response" target="_blank" rel="noopener noreferrer">IVR system</a> lets you call a phone number, listen the audio-cues, and navigate your way through the call to get the info you need. Nexmo makes creating a full-fledged IVR system as simple as spinning up a Web server. In this post we'll see how to create very complex and elaborate IVR systems while keeping the code simple and easy to maintain. In order to accomplish this, we'll use <a href="https://xstate.js.org/" target="_blank" rel="noopener noreferrer">XState</a> which is a popular State Machine library for Javascript.
 
