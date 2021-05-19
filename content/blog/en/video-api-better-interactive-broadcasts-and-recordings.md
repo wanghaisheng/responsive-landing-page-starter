@@ -78,13 +78,13 @@ Our new [Screen Share Layouts](https://tokbox.com/developer/guides/archive-broa
 
 > Developer Guide: Learn how to build a [JS application for multiple screen share streams](https://learn.vonage.com/blog/2021/03/11/share-screens-together-with-your-friends-and-co-workers/).
 
-## Portrait Layout 
+### Portrait Layout 
 
 As people adapt to their remote environments, we also saw the need to support vertical compositions suitable for mobile devices in portrait orientation. To that end, we added support for portrait layout resolutions, portrait SD (480x640) and portrait HD (720x1280) for both recording and interactive broadcasting. Our predefined layouts have been optimized for these portrait orientations to adapt automatically for mobile orientation views. 
 
 ![Portrait Layout](/content/blog/video-api-better-interactive-broadcasts-and-recordings/vertical-composing.png "Portrait Layout")
 
-## Cloud Recording and Broadcast Quality
+### Cloud Recording and Broadcast Quality
 
 Lastly, we also updated our video platform with a number of optimizations at our real-time cloud composition servers to improve video synchronization and resilience of real-time composed recordings and broadcasts under poor network conditions. These improvements ensure that sessions are recorded or live streamed properly, even when publishers find themselves in adverse network conditions.
 
