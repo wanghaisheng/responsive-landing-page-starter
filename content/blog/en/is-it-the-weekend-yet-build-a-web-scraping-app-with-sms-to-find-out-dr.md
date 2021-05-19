@@ -34,10 +34,10 @@ Let's get started!
 
 ## Prerequisites
 
-<sign-up number></sign-up>
-
 * [Ruby on Rails](https://rubyonrails.org/)
 * [ngrok](https://ngrok.io)
+
+<sign-up number></sign-up>
 
 ## Generate the Rails Application
 
