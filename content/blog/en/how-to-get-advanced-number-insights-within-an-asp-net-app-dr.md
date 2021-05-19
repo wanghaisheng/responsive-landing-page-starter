@@ -34,7 +34,7 @@ Number Insight Advanced API is an easy-to-use RESTful web service. For any phone
 * Identify network when roaming.
 * Confirm user's IP address is in same location as their mobile phone.
 
-<h2>Hands on code</h2>
+## Hands on code
 
 In [NumberInsightController.cs](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoDotNetQuickStarts/Controllers/NumberInsightController.cs), let's start by creating the method that would allow the navigation to the advanced insights view.
 
@@ -167,11 +167,11 @@ You can use [one of the Nexmo numbers](https://developer.nexmo.com/contribute/gu
 ![Advanced Number Insight GIF](/content/blog/how-to-get-advanced-number-insights-within-an-asp-net-app/advancedni.gif "Advanced Number Insight GIF")
 
 
-<h2>Recap</h2>
+## Recap
 
 In this article, we learnt how to use Nexmo’s Number Insight Advanced API to retrieve advanced insights about a phone number. Then we showed this information on a view within an ASP.NET application.
 
-<h2>Nexmo Number Insight getting started guide for ASP.NET</h2>
+## Nexmo Number Insight getting started guide for ASP.NET
 
 * [How to Get Number Insights within an ASP.NET app](https://www.nexmo.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
 * [How to Get Basic Number Insights within an ASP.NET app](https://www.nexmo.com/blog/2018/05/22/how-to-get-basic-number-insights-within-an-asp-net-app-dr/).
