@@ -23,24 +23,15 @@ This is the sixth tutorial on how to use Voice APIs with ASP.NET series._ In the
 In this tutorial, we will:
 
 * Create an ASP.NET Core app.
-
 * Use NancyFX with ASP.NET Core.
-
 * Create a Nexmo voice application.
-
 * Create and return NCCOs.
-
 * Run and test the code using Ngrok.
 
 ## Prerequisites
 
-
 * Visual Studio 2017 or higher.
-
-* A Nexmo account, which you can [sign up for here](https://dashboard.nexmo.com/sign-up).
-
 * A project setup for this tutorial series, which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoDotNetQuickStarts).
-
 * Optional: [The Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
 
 <sign-up></sign-up>
@@ -149,7 +140,7 @@ Similarly to link the number, you can [use the dashboard](https://dashboard.nexm
 nexmo link:app NEXMO_PHONE_NUMBER NEXMO_APP_ID
 ```
 
-We need to tell Nexmo which URL to make a request to when a call is received - this is called the `answer_url`. For me, this url is [http://localhost:63286/webhook/answer](http://localhost:63286/webhook/answer) and that's only running locally.
+We need to tell Nexmo which URL to make a request to when a call is received - this is called the `answer_url`. For me, this url is <http://localhost:63286/webhook/answer> and that's only running locally.
 
 To expose our webhook answer url, we will use [Ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/).
 
@@ -166,27 +157,17 @@ Update your application with your new `answer_url`. It should look like `http://
 ### API References and Tools
 
 * [Application API](https://developer.nexmo.com/concepts/guides/applications).
-
 * [Voice API](https://developer.nexmo.com/voice/voice-api/overview).
-
 * [Nexmo REST client for .NET](https://github.com/Nexmo/nexmo-dotnet).
 
 <h3>Nexmo Getting Started Guides for ASP.NET</h3>
 
 * [How to Send SMS Messages with ASP.NET](https://www.nexmo.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/).
-
 * [How to Receive SMS Messages with ASP.NET](https://www.nexmo.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/).
-
 * [How to Get an SMS Delivery Receipt in ASP.NET](https://www.nexmo.com/blog/2017/07/21/get-sms-delivery-receipt-asp-net-mvc-dr/).
-
 * [How to make a Text-to-Speech phone call with ASP.NET](https://www.nexmo.com/blog/2017/07/28/text-to-speech-phone-call-dr/).
-
 * [How to play Audio to a Caller in ASP.NET](https://www.nexmo.com/blog/2017/11/29/how-to-play-audio-to-a-caller-in-asp-net-core-dr/).
-
 * [How to Receive a Phone Call with Nexmo Voice API, ASP.NET Core and NancyFX](https://www.nexmo.com/blog/2018/11/21/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-core-core-and-nancyfx-dr/).
-
 * [how to handle user input with ASP.NET Core](https://www.nexmo.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr/)
-
 * [how to forward a call via voice proxy with ASP.NET Core](https://www.nexmo.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr/)
-
 * [Getting Started with Nexmo Number Insight APIs and ASP.NET](https://www.nexmo.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
