@@ -16,12 +16,11 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-
 With so many channels available to deliver messages to users these days—SMS, email, push notifications, and so on—where does bot messaging fit in? And how different from the other channels is it really from a tech standpoint? CEO/Co-Founder of The Bot Platform Syd Lawrence and Microsoft Technical Evangelist Martin Beeby shared their viewpoints in a discussion that also touched on the influence of marketing interests in new channels.
 
 Watch the video of our conversation here, or scroll below the video to read the full transcript.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/wuKsfiNnzg4" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+<youtube id="wuKsfiNnzg4"></youtube>
 
 ## Bot Messages vs. Push Notifications vs. SMS (Full Transcript)
 
@@ -31,11 +30,11 @@ And so we did a big thing for the BBC last week for the general election where p
 
 I mean, Sam, you know text, [SMS](https://www.nexmo.com/products/sms). I mean, Nexmo are great at SMS. And what's the beautiful thing about SMS? Being able to send messages to people and they read them. Like, that is the thing for us is the most interesting part about these messaging bots. I mean, people don't actually want to use them to chat with. They want to use them to complete specific tasks or find specific information.
 
-> people don't actually want to use [messaging bots] to chat with. They want to use them to complete specific tasks or find specific information.
+> people don't actually want to use \[messaging bots] to chat with. They want to use them to complete specific tasks or find specific information.
 
 So I have to admit I hate the word chatbot with kind of a bit of a passion. I get why people use it because there's so many different types of bots. But ultimately, people don't want to chat with these things, they want to use them to either access information or, yeah, be told various bits and pieces.
 
-**Sam Machin ** *(Nexmo Developer Advocate & Alexa Champion): Yeah, they maybe converse with them.
+**Sam Machin**  *(Nexmo Developer Advocate & Alexa Champion): Yeah, they maybe converse with them.
 
 **Martin Beeby** *(Technical Evangelist at [Microsoft](https://blogs.msdn.microsoft.com/thebeebs/))*: One of the things I really like about a messaging platform, which is not as easy to do in other platforms, is the ability to send sort of proactive messages or messages after-the-fact depending on the settings that they've agreed to with the bot. And so on things like Facebook you can—when you have some new information—send them a message like as you were describing there, Syd, about election results. That's something they've opted into and then at a later date, you can send them information about that. And what's really cool about the user experience there is that if they're using Facebook Messenger on their phone or whatever, they're gonna get notified of that just like they would a regular message coming in from one of their friends as well.
 
@@ -67,13 +66,13 @@ So, there is no other way to get instant gratification unless you go down the ro
 
 **Sam:** Yeah, yeah. It's down to the the gatekeepers of each of these platforms, these environments. I think it's one of the things where I always thought SMS has still maintained its value. I mean, Syd said it costs money. And actually, that's a feature. Because it costs money, it's kept...organically, it's helped to keep down the spam and the noise problem. Because this company's only gonna send me a message, they're only going to spend a couple of cents sending me a message if it's got some value. So we can't just block them out for every little thing. There's a certain aspect of control there. I mean, the other one is, yeah, you have to bring in some sort of control obviously with Facebook or with any of the platforms.
 
-> Because [SMS] costs money, ...organically, it's helped to keep down the spam and the noise problem.
+> Because \[SMS] costs money, ...organically, it's helped to keep down the spam and the noise problem.
 
 **Syd:** There's a couple of features that are all about designing, which is quite key on this. So I haven't seen many people do this on Facebook Messenger yet. But when you send out your notification, there are actually three types of notifications you can do.
 
 * So you can get one which is sound and vibration, which is like a pure push notification.
 * Then there's one which is a silent push notification.
-* And then there is third which is actually a no-push notification. It just appears in Messenger. So you can then send out messages that are totally non-interruptive, but when the user next logs into Messenger they see it.
+* And then there is third, which is actually a no-push notification. It just appears in Messenger. So you can then send out messages that are totally non-interruptive, but when the user next logs into Messenger they see it.
 
 **Sam:** And that’s a feature of Facebook Messenger, is it?
 
