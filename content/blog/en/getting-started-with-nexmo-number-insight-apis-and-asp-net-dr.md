@@ -20,15 +20,9 @@ You can use also the Number Insight API to validate that a phone number is forma
 
 Number insight is available with three levels:
 
-<ul>
-
-```
-    <li><a href="https://developer.nexmo.com/number-insight/building-blocks/number-insight-basic" target="_blank" rel="noopener noreferrer">Basic</a>: used to format numbers and display them in international and local representations.</li>
-    <li><a href="https://developer.nexmo.com/number-insight/building-blocks/number-insight-standard" target="_blank" rel="noopener noreferrer">Standard</a>:  best used to identify number type to decide between SMS and Voice; block virtual numbers.</li>
-<li><a href="https://developer.nexmo.com/number-insight/building-blocks/number-insight-advanced" target="_blank" rel="noopener noreferrer">Advanced</a>: best used to determine risk based on numbers.</li>
-```
-
-</ul>
+* [Basic](https://developer.nexmo.com/number-insight/building-blocks/number-insight-basic): used to format numbers and display them in international and local representations.
+* [Standard](https://developer.nexmo.com/number-insight/building-blocks/number-insight-standard): best used to identify number type to decide between SMS and Voice; block virtual numbers.
+* [Advanced](https://developer.nexmo.com/number-insight/building-blocks/number-insight-advanced): best used to determine risk based on numbers.
 
 The advanced API is also available [asynchronously](https://developer.nexmo.com/number-insight/building-blocks/number-insight-advanced-async) as well as synchronously.
 
@@ -36,37 +30,27 @@ You can check the full list of what's available on each level on [the Number Ins
 
 For the sake of readability and getting straight to the point, I'm going to post this tutorial as a series of step-by-step articles instead of one long post. In each article, we will see how to use one of the three levels of the Number Insight API with an ASP.NET app. So let's get started!
 
-<h2>Prerequisites</h2>
+## Prerequisites
 
-<ul>
-	<li> Visual Studio 2017.</li>
-	<li> Nexmo Account. You can sign up <a href="https://dashboard.nexmo.com/sign-in" target="_blank" rel="noopener noreferrer">here</a></li>
-	<li> A project set up for this tutorial series which you can find on <a href="https://github.com/nexmo-community/nexmo-dotnet-quickstart" target="_blank" rel="noopener noreferrer">Github</a>.</li>
-	<li> Optional: <a href="https://github.com/Nexmo/nexmo-cli" target="_blank" rel="noopener noreferrer">Nexmo CLI</a>.</li>
+* Visual Studio 2017.
+* A project set up for this tutorial series which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart).
+* Optional: [Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
 
-</ul>
+<sign-up></sign-up>
 
-<h2>Configuration</h2>
+## Configuration
 
-We will be showcasing how to use Number Insight API with an ASP.NET Web Application. So the first step is to create an ASP.NET project.
+We will be showcasing how to use Number Insight API with an ASP.NET Web Application. So the first step is to create an ASP.NET project. 
 
-<ul>
-
-```
-<li>Launch Visual Studio and create a new ASP.NET Web Application (.NET Framework) project.</li>
-```
-
-
+* Launch Visual Studio and create a new ASP.NET Web Application (.NET Framework) project. 
 
 ![ASP.NET Gif](/content/blog/getting-started-with-nexmo-number-insight-apis-and-asp-net/asp.net-project.png "ASP.NET Gif")
 
- 	<li>Select the MVC Template and ensure the Authentication type is set to No Authentication. Click OK to create the project.</li>
+* Select the MVC Template and ensure the Authentication type is set to No Authentication. Click OK to create the project
 
-![MVC Template](/content/blog/getting-started-with-nexmo-number-insight-apis-and-asp-net/mvc-template.png "MVC Template")
+  ![MVC template](/content/blog/getting-started-with-nexmo-number-insight-apis-and-asp-net/mvc-template.png "MVC template")
 
- 	<li>Install the Nexmo C# Client Library via the NuGet Package Manager Console.</li>
-
-</ul>
+* Install the Nexmo C# Client Library via the NuGet Package Manager Console.
 
 ```csharp
 Install-Package Nexmo.Csharp.Client
@@ -76,7 +60,7 @@ Voila, we now have the template for the ASP.NET web app project and we are ready
 
 ![ASP.NET Project Template](/content/blog/getting-started-with-nexmo-number-insight-apis-and-asp-net/asp.net-project-template.png "ASP.NET Project Template")
 
-<h2>Getting some number insights</h2>
+## Getting some number insights
 
 Now that we set up the project, let's see how to get some insights.
 Under the Controllers folder, create [a new controller called NumberInsightController.cs](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoDotNetQuickStarts/Controllers/NumberInsightController.cs). In the constructor,  instantiate a Nexmo Client and authenticate with the API using your API key and secret. Those can be found on [your Nexmo dashboard](https://dashboard.nexmo.com/getting-started-guide).
@@ -107,17 +91,12 @@ We will need an [Index.cshtml](https://github.com/nexmo-community/nexmo-dotnet-q
 </div>
 ```
 
-<h2>Recap</h2>
+## Recap
 
 In this first article of the guideline, we:
 
-<ul>
-	<li>setup the ASP.NET project.</li>
- 
- 	<li>installed the Nexmo C# Client Library.</li>
-
- 	<li>prepared the main skeleton of our project.</li>
-
-</ul>
+*   setup the ASP.NET project.
+*   installed the Nexmo C# Client Library.
+*   prepared the main skeleton of our project.
 
 In the second article, we will learn how to get [Basic Insights](https://www.nexmo.com/blog/2018/05/22/how-to-get-basic-number-insights-within-an-asp-net-app-dr/).
