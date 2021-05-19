@@ -11,12 +11,10 @@ category: tutorial
 tags:
   - python
   - sms-api
-  - ""
 comments: true
 redirect: ""
 canonical: ""
 ---
-
 You've already learned how to [send an SMS with Python](https://www.nexmo.com/blog/2017/06/22/send-sms-messages-python-flask-dr/). But unless you have access to the device you've sent it to, how can you be sure that your SMS arrived?
 
 Many networks provide Nexmo with delivery receipts. However, not all networks are created equal. Some will just send you an acknowledgement that they have received your message, but no confirmation that it was actually delivered. Others won't send you anything or even generate fake receipts. So be aware that depending on which countries you are sending SMS to, it can be a bit of a minefield. The [Nexmo Knowledge Base](https://help.nexmo.com/hc/en-us/articles/204014863-What-will-I-receive-if-a-network-country-does-not-support-Delivery-Receipts-) has more information.
@@ -25,9 +23,7 @@ To request a delivery receipt you need to create a publicly-accessible [webhook]
 
 ## Prerequisites
 
-<sign-up number></sign-up> 
-
-You need a Nexmo account. If you don't already have one you can sign up [here](https://dashboard.nexmo.com/sign-up). It's free to get started.
+<sign-up number></sign-up>
 
 This tutorial uses [Python 3](https://www.python.org/downloads/) and [Flask](http://flask.pocoo.org/) to code the webhook. You can install `flask` with the [pip3](https://pypi.org/project/pip/) package manager:
 
@@ -38,7 +34,6 @@ pip3 install flask
 Lastly, you'll need to install the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli). You will use this to send a test SMS.
 
 Once you have all those things you are good to go!
-
 
 ## Create the Delivery Receipt Webhook
 
@@ -114,7 +109,6 @@ python3 receipt.py
 
 Use the Nexmo CLI to send a test SMS to your personal mobile phone. Include the international code in the number but remove any leading zeros. For example, a `GB` number might look like this: `447700900001`.
 
-
 ```
 nexmo sms -f DLRTEST YOUR_PERSONAL_NUMBER "This is a test message"
 ```
@@ -152,15 +146,7 @@ That's all there is to it!
 
 If you want to learn more about the SMS API, check out the following resources:
 
-- [SMS API overview](https://developer.nexmo.com/messaging/sms/overview)
-- [Delivery receipts guide](https://developer.nexmo.com/messaging/sms/guides/delivery-receipts)
-- [SMS API reference](https://developer.nexmo.com/api/sms)
-- [Delivery receipt restrictions](https://help.nexmo.com/hc/en-us/articles/204014863-What-will-I-receive-if-a-network-country-does-not-support-Delivery-Receipts-)
-
-
-
-
-
-
-
-
+* [SMS API overview](https://developer.nexmo.com/messaging/sms/overview)
+* [Delivery receipts guide](https://developer.nexmo.com/messaging/sms/guides/delivery-receipts)
+* [SMS API reference](https://developer.nexmo.com/api/sms)
+* [Delivery receipt restrictions](https://help.nexmo.com/hc/en-us/articles/204014863-What-will-I-receive-if-a-network-country-does-not-support-Delivery-Receipts-)
