@@ -72,10 +72,13 @@ The pricing for the additional functionality varies by the provider as well, so 
 
 The languages supported vary between services quite a bit. Watson Tone Analyzer supports the least amount, supporting only English and French.  All of the other services provide at least these with many additional languages, as well. The common languages between them are German, French, Italian, Spanish, English, and Portuguese.
 
-*[Amazon Comprehend Language Support](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
-*[Azure Text Analytics Language Support](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/language-support)
-*[Google Natural Language API Language Support](https://cloud.google.com/natural-language/docs/languages)
-*[Watson Tone Analyzer Language Support](https://cloud.ibm.com/docs/services/tone-analyzer?topic=tone-analyzer-utgpe)
+* [Amazon Comprehend Language Support](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
+
+* [Azure Text Analytics Language Support](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/language-support)
+
+* [Google Natural Language API Language Support](https://cloud.google.com/natural-language/docs/languages)
+
+* [Watson Tone Analyzer Language Support](https://cloud.ibm.com/docs/services/tone-analyzer?topic=tone-analyzer-utgpe)
 
 
 ## Ease of Use
