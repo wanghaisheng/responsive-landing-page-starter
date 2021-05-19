@@ -26,13 +26,12 @@ By the end of this article, you'll have handled your first inbound call with Nod
 
 ## Prerequisites
 
-<sign-up number></sign-up> 
-
 Before getting started, you’ll need a few things:
 
 * [Node.js](https://nodejs.org/en/) and [Node-RED](https://nodered.org/docs/getting-started/installation) installed on your machine
-* A Nexmo account—[create one for free](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=nexmoblog&utm_campaign=receive-calls-nodered) if you haven't already
 * Optional: [ngrok](https://ngrok.com/download)—get up to speed with [Aaron's blog post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
+
+<sign-up number></sign-up>
 
 ### Getting Your Credentials
 
@@ -147,27 +146,3 @@ In this tutorial, you've learnt how to play a text-to-speech message to a caller
 * [How to Send SMS Messages with Node-RED](https://www.nexmo.com/blog/2019/04/17/send-sms-messages-node-red-dr/)
 * [How to Receive SMS Messages with Node-RED](https://www.nexmo.com/blog/2019/04/24/receive-sms-messages-node-red-dr/)
 * Have a closer look at [Node-RED](https://nodered.org/docs/)
-
-<script>
-window.addEventListener('DOMContentLoaded', (event) => {
-    document.querySelectorAll(".gif-player").forEach(image => {
-        image.src = image.src.replace(/\.gif$/g, ".png")
-        image.addEventListener("click", (event) => {
-            if (event.target.src.indexOf(".gif") > 0) {
-                image.src = image.src.replace(/\.gif$/g, ".png")
-            } else {
-                image.src = image.src.replace(/\.png$/g, ".gif")
-            }
-        })
-    })
-});
-</script>
-
-<style>
-.gif-player {
-  cursor: pointer;
-}
-img.alignnone {
-  border-width: 0px !important;
-}
-</style>
