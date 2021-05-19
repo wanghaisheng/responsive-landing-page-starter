@@ -1,10 +1,6 @@
 ---
 title: How to Get Standard Number Insights Within an ASP.NET App
-description: This is the third article in a step-by-step series on how to use
-  Nexmo’s Number Insight API within an ASP.NET web application. In the first
-  article, we walked through everything we need to know about Number Insight
-  API, setting up the ASP.NET application and getting ready to explore how to
-  get insights about a phone […]
+description: Learn how to use Nexmo's Number Insight API within an ASP.NET web application.
 thumbnail: /content/blog/how-to-get-standard-number-insights-within-an-asp-net-app-dr/Number-Insight-Nexmo-03.png
 author: bibi
 published: true
@@ -153,11 +149,11 @@ You can use [one of the Nexmo numbers](https://developer.nexmo.com/contribute/gu
 
 ![Standard Number Insights Gif](/content/blog/how-to-get-standard-number-insights-within-an-asp-net-app/standardni.gif "Standard Number Insights Gif")
 
-<h2>Recap</h2>
+## Recap
 In this article, we learnt how to use Nexmo’s Number Insight Standard API to retrieve the international and national formats of a phone number, the country where the number is registered and information about its portability and reachability. Then we showed this information on a view within an ASP.NET application.
 If you'd like to learn how to get Advanced Number Insights, then tune in to the next article in this series. 
 
-<h2>Nexmo Number Insight getting started guide for ASP.NET</h2>
+## Nexmo Number Insight getting started guide for ASP.NET
 
 * [How to Get Number Insights within an ASP.NET app](https://www.nexmo.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
 * [How to Get Basic Number Insights within an ASP.NET app](https://www.nexmo.com/blog/2018/05/22/how-to-get-basic-number-insights-within-an-asp-net-app-dr/).
