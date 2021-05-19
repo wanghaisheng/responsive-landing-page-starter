@@ -11,7 +11,6 @@ category: tutorial
 tags:
   - php
   - voice-api
-  - conference-call
 comments: true
 redirect: ""
 canonical: ""
@@ -23,9 +22,6 @@ Today's post will show you how to set up a conference call using Nexmo, so you c
 
 
 <sign-up number></sign-up>
-
-
-First you will need a Nexmo account. If you don't already have one, you can [sign up here](https://dashboard.nexmo.com/sign-up) and you'll receive a little credit to your new account which should be enough to try this example.
 
 Start a new PHP project and add the [Nexmo PHP library](https://github.com/nexmo/nexmo-php) as a dependency.
 
