@@ -23,27 +23,17 @@ The [Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview) allo
 
 In this post, we'll learn how to forward an incoming phone call from a Nexmo phone number to a Stitch user by implementing a Webhook and linking that to a Nexmo Voice application.
 
-## Before you begin
-
 Before we begin you’ll need a few things:
 
-- [Node.js](https://nodejs.org/en/) installed on your machine</li>
-
-<sign-up></sign-up>
-
-</li>
-- Install the Nexmo Beta CLI:
-<pre>
-    $ npm install -g nexmo-cli@beta
-</pre>
-
-- Setup the CLI to use your Nexmo API Key and API Secret. You can get these from the <a href="https://dashboard.nexmo.com/settings">setting page</a> in the Nexmo Dashboard:
+* [Node.js](https://nodejs.org/en/) installed on your machine</li>
+* Install the Nexmo Beta CLI:
+* Setup the CLI to use your Nexmo API Key and API Secret. You can get these from the <a href="https://dashboard.nexmo.com/settings">setting page</a> in the Nexmo Dashboard:
 
 <pre>
 $ nexmo setup api_key api_secret
 </pre>
 
-    
+<sign-up></sign-up>
 
 ## Forwarding a call to a Stitch user
 
@@ -146,5 +136,4 @@ Now that you've linked your number to your application, whenever someone calls y
 
 ## What's next?
 
-If you'd like to continue learning how to use the Nexmo Stitch SDK for JavaScript, check out our In-App Messaging quickstarts where we show you how to [create a simple conversation](https://developer.nexmo.com/stitch/in-app-messaging/guides/1-simple-conversation?platform=javascript), [invite & chat with another user](https://developer.nexmo.com/stitch/in-app-messaging/guides/2-inviting-members?platform=javascript) and [use more event listeners](https://developer.nexmo.com/stitch/in-app-messaging/guides/3-utilizing-events?platform=javascript) to show chat history and when a user is typing. If you have more questions about using Stitch we encourage you to join the [Nexmo community slack](https://developer.nexmo.com/community/slack/) and check out our [#stitch](https://nexmo-community.slack.com/messages/C9H152ATW) channel or email us directly at [ea-support@nexmo.com](mailto:ea-support@nexmo.com).
-
+If you'd like to continue learning how to use the Nexmo Stitch SDK for JavaScript, check out our In-App Messaging quickstarts where we show you how to [create a simple conversation](https://developer.nexmo.com/stitch/in-app-messaging/guides/1-simple-conversation?platform=javascript), [invite & chat with another user](https://developer.nexmo.com/stitch/in-app-messaging/guides/2-inviting-members?platform=javascript) and [use more event listeners](https://developer.nexmo.com/stitch/in-app-messaging/guides/3-utilizing-events?platform=javascript) to show chat history and when a user is typing. If you have more questions about using Stitch we encourage you to join the [Nexmo community slack](https://developer.nexmo.com/community/slack/) and check out our [\#stitch](https://nexmo-community.slack.com/messages/C9H152ATW) channel or email us directly at [ea-support@nexmo.com](mailto:ea-support@nexmo.com).
