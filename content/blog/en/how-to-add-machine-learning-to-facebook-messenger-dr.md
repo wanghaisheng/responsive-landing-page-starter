@@ -10,7 +10,7 @@ published_at: 2019-10-31T14:39:44.000Z
 updated_at: 2021-05-13T12:56:24.303Z
 category: tutorial
 tags:
-  - .net
+  - dotnet
   - messages-api
 comments: true
 redirect: ""
@@ -24,11 +24,9 @@ What if I told you that with just a couple hundred lines of C# code and a little
 
 With training as simple as:</br>
 
-
 ![Training Image](https://www.nexmo.com/wp-content/uploads/2019/10/sampleTrain.jpg "Training Image")
 
 And a classification request as simple as:</br>
-
 
 ![Classification Request](https://www.nexmo.com/wp-content/uploads/2019/10/sampleClassify.jpg "Classification Request")
 
@@ -46,9 +44,10 @@ In this tutorial, we will:
 ## Prerequisites
 
 * Visual Studio 2019 version 16.3 or higher
-* A Nexmo account <a href="https://dashboard.nexmo.com/sign-up">Sign up here</a>
-* A linked Facebook Page to your Nexmo account <a href="https://developer.nexmo.com/messages/concepts/facebook">See here for setup</a>
-* Optional: <a href="https://ngrok.com/">Ngrok</a> for test deployment
+* A linked Facebook Page to your Nexmo account [See here for setup](https://developer.nexmo.com/messages/concepts/facebook) 
+* Optional: [Ngrok](https://ngrok.com/) for test deployment
+
+<sign-up></sign-up>
 
 ## Project Setup
 
@@ -70,9 +69,6 @@ Also, under assets, create a folder called train and predict. Under each of thos
 ![Directory structure](https://www.nexmo.com/wp-content/uploads/2019/10/assetsStruct-1.png "Directory structure")
 
 Now go to each file and in the advanced properties section set the Copy to Output Directory to Copy if newer</br>
-
-
-
 
 ## Creating the Learner
 
@@ -263,9 +259,11 @@ public string AddTrainingImage(string imageUrl, string label)
 
 Next we're going to add some POCOs to hold our messaging data as it comes in and goes out to the Messages API - these objects are fairly verbose and don't do anything particularly interesting aside from allowing the serialization / deserialization of JSON so, for the sake of brevity feel free to simply use the following structures:
 
-* <a href="https://github.com/slorello89/MessagesTensorFlow/blob/master/MessagesTensorFlow/StatusMessage.cs">StatusMessage.cs</a>
-* <a href="https://github.com/slorello89/MessagesTensorFlow/blob/master/MessagesTensorFlow/InboundMessage.cs">InboundMessage.cs</a>
-* <a href="https://github.com/slorello89/MessagesTensorFlow/blob/master/MessagesTensorFlow/MessageRequest.cs">MessageRequest.cs</a>
+* [StatusMessage.cs](https://github.com/slorello89/MessagesTensorFlow/blob/master/MessagesTensorFlow/StatusMessage.cs) 
+
+* [InboundMessage.cs](https://github.com/slorello89/MessagesTensorFlow/blob/master/MessagesTensorFlow/InboundMessage.cs)
+
+*  [MessageRequest.cs](https://github.com/slorello89/MessagesTensorFlow/blob/master/MessagesTensorFlow/MessageRequest.cs)
 
 ### Interacting With the API
 
@@ -594,7 +592,7 @@ Then launch the site from visual studio using IIS Express - you'll see the port 
 
 ### Using Ngrok to Expose the Port to the Internet
 
-For the Messages API to forward the messages we'll need to expose the site to the internet - for testing purposes, we'll use <a href="https://ngrok.com">ngrok</a> to expose our IIS express port. Open up your command line and use this command, replace  with your port number.
+For the Messages API to forward the messages we'll need to expose the site to the internet - for testing purposes, we'll use [ngrok](https://ngrok.com) to expose our IIS express port. Open up your command line and use this command, replace with your port number.
 
 `ngrok http --host-header="localhost:" http://localhost:`
 
@@ -606,9 +604,7 @@ This command produces an output like this:
 
 Using the http link we just got from ngrok you can create the url that the webhook will be calling back on - you can see in the Route of the controllers we just made what the route will look like:
 
-
 ![Route](https://www.nexmo.com/wp-content/uploads/2019/10/controllerExample.png "Route")
-
 
 It's going to work out to be
 `http://dc0feb1d.ngrok.io/api/Status` for status messages
