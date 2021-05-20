@@ -16,7 +16,6 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-
 In this tutorial, we'll show how you can capture SMS Messages sent to your own Nexmo number and log those into a Google spreadsheet using an AWS Lambda written in Python. This can be used for capturing feedback, registration for further information, recording votes, or any form of data collection. What's great about this is that you don't need your own dedicated server, just a small chunk of code hosted on AWS Lambda and a Nexmo account.
 
 <sign-up number></sign-up>
@@ -37,8 +36,9 @@ Serverless technologies are a rapidly emerging trend. Closely related to the con
 One challenge of building these microservices is that the overhead of running a full server stack (OS, Web Server, Database, Application etc) can add a large amount of work and costs. This is where we are seeing a new trend in cloud computing towards serverless technologies, one of the most interesting of these is [AWS Lambda](http://aws.amazon.com/documentation/lambda/) from Amazon. You can now write a simple function in either Python, Java or Javascript and have that invoked by either an external API call or another part of AWS like a file being uploaded to S3.
 
 As well as removing the requirements to run your own servers you can also keep the costs down; you are only charged for the time your code is executing, in 100ms intervals. This means that for simple functions that handle small amounts of data with very bursty traffic it can work out quite affordable while still having the capacity to handle spikes in traffic. This model makes Lambda an ideal platform to build an application for receiving SMS messages.
+
 <h3><a name="sms-lambda"></a>Logging Incoming SMS with AWS Lambda</h3>
-For our demo, we will be writing the application in Python. Lambda allows you to use whatever third-party libraries you wish as part of your application bundle. For the first version, we are simply going to receive an SMS sent to a Nexmo number and log that message in the Lambda logs. The video below will walk you through creating your first Lambda application and setting it up to receive [webhooks](https://docs.nexmo.com/messaging/setup-callbacks) from the Nexmo API. You will also need a [Nexmo account](https://dashboard.nexmo.com/sign-up) and you will need to buy a number for this.
+For our demo, we will be writing the application in Python. Lambda allows you to use whatever third-party libraries you wish as part of your application bundle. For the first version, we are simply going to receive an SMS sent to a Nexmo number and log that message in the Lambda logs. The video below will walk you through creating your first Lambda application and setting it up to receive \[webhooks](https://docs.nexmo.com/messaging/setup-callbacks) from the Nexmo API. You will also need a \[Nexmo account](https://dashboard.nexmo.com/sign-up) and you will need to buy a number for this.
 
 <iframe width="640" height="447" src="https://player.vimeo.com/video/161185498" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe>
 
@@ -71,9 +71,7 @@ Lambda is configured to call a function named `lambda_handler` and passes it an 
 
 The `lambda_handler` will simply take that event data and print it to the log as a JSON object, then it will return an `OK` string which will pass through the API gateway and be returned to Nexmo.
 
-<a name="google-sheets"></a>
-<h3>Setting Up Google Sheets</h3>
-&nbsp;
+### Setting Up Google Sheets
 
 The example above is pretty basic, all we are doing is logging the message to the Lambda logfiles, for a real world example we need to do something a bit more useful.
 
@@ -88,7 +86,6 @@ Once that service account key is created you will be provided with a set of cred
 Login to your [Google Drive](https://www.google.co.uk/drive/) and create a new spreadsheet called `nexmosms`. You need to share it with the address related to the Service Account Key and give edit permissions. Now Lambda is acting like another user that is collaborating on the doc with you.
 
 ## Adding SMS Messages to a Google Sheet
-
 
 Now that we are working with some external API’s our Lambda code needs to be little more complex. We'll now be using some 3rd party libraries which means that we can no longer just write our code in the browser. Instead we need to [create a zipped bundle](http://docs.aws.amazon.com/lambda/latest/dg/lambda-python-how-to-create-deployment-package.html) of our code and the additional libraries we are using.
 
@@ -133,7 +130,7 @@ The first part imports the libraries we need, but you’ll also notice that ther
 Next we need to set up access to Google Sheets and also put our Nexmo API Key and API Secret into the file. In the code below replace the X's with your details in the example below.
 
 ```py
-#Setup access to Google sheets
+# Setup access to Google sheets
 scopes = ['https://spreadsheets.google.com/feeds']
 credentials = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scopes=scopes)
 #Nexmo Credentials
@@ -174,7 +171,6 @@ That's it! You can now send an SMS to a Nexmo registered number, and have that t
 The following video shows uploading the bundle and a demonstration of the code in action:
 
 <iframe width="640" height="451" src="https://player.vimeo.com/video/164285957" frameborder="0" webkitallowfullscreen="webkitallowfullscreen" mozallowfullscreen="mozallowfullscreen" allowfullscreen="allowfullscreen"></iframe>
-
 
 ## Grab the Code!
 
