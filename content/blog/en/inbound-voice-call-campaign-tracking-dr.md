@@ -18,7 +18,7 @@ canonical: ""
 ---
 Campaign tracking is a “must have” for any marketing or advertising campaign. Without the ability to accurately track the number of users engaging with each advertisement you can’t work out your cost per acquisition (CPA), so ultimately you can’t determine which campaigns are successful and which are losing your business money; CPA greater than ARPU (Average Revenue Per User).
 
-![Could he be any more asleep?](/content/blog/inbound-voice-call-campaign-tracking-with-nexmo-virtual-numbers-and-mixpanel/chandlerbing.gif)
+![Could he be any more asleep?](/content/blog/inbound-voice-call-campaign-tracking-with-mixpanel/chandlerbing.gif)
 
 *(Business Intelligence uses even worse acronyms and jargon than tech!)*
 
@@ -45,7 +45,7 @@ Some [knowledge of Python/Flask](http://flask.pocoo.org/docs/0.12/quickstart/) w
 
 ## What do we want to track?
 
-![Mindmap showing what elements we want to track](/content/blog/inbound-voice-call-campaign-tracking-with-nexmo-virtual-numbers-and-mixpanel/call-tracking.png)
+![Mindmap showing what elements we want to track](/content/blog/inbound-voice-call-campaign-tracking-with-mixpanel/call-tracking.png)
 
 ### The inbound campaign
 
@@ -63,7 +63,7 @@ In this example, we're only going to track completed calls, but we could track [
 
 ## Inbound voice campaign tracking, the entire process
 
-![process diagram showing the complete call tracking flow](/content/blog/inbound-voice-call-campaign-tracking-with-nexmo-virtual-numbers-and-mixpanel/call-tracking-1-.png)
+![process diagram showing the complete call tracking flow](/content/blog/inbound-voice-call-campaign-tracking-with-mixpanel/call-tracking-1-.png)
 
 The sequence diagram above might look quite daunting, but let's take it one piece at a time.
 
@@ -210,7 +210,7 @@ This completed event, however, will not contain information about the user who p
 
 After we have all the information we need; which campaign they called about, who it was who called, and information about the call itself, we will store this information in Mixpanel.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2uNhae_bwWo" frameborder="0" allowfullscreen></iframe>
+<youtube id="2uNhae_bwWo"></youtube>
 
 We're using Mixpanel in this example, but that does not mean you can only use Mixpanel. Send the data to any tool you wish, or to multiple applications at the same time using a tool such as Segment. It does not matter if you are using Mixpanel, KISSmetrics, Periscope, Chartio, Salesforce, or even a bespoke built BI or CRM system. If it can receive data, you will be able to use this same approach to track your inbound calls.
 
@@ -307,7 +307,7 @@ All the [code for this article is available on Github](https://github.com/nexmo-
 
 There is also an example `campaigns.json`, this is the file which is used by tinydb. You will need to update it with the correct values. See the [tinydb documentation](http://tinydb.readthedocs.io/en/latest/getting-started.html#basic-usage) for how to add additional rows to your database if you wish to add more than one campaign.
 
-![Nexmo application creation screen](/content/blog/inbound-voice-call-campaign-tracking-with-nexmo-virtual-numbers-and-mixpanel/voice-your-applications-2017-08-01-12-33-26.png)
+![Nexmo application creation screen](/content/blog/inbound-voice-call-campaign-tracking-with-mixpanel/voice-your-applications-2017-08-01-12-33-26.png)
 
 You will also need a [Nexmo virtual number](https://dashboard.nexmo.com/your-numbers) and a configured voice application. We've recently launched our [voice application dashboard](https://dashboard.nexmo.com/voice/your-applications); you can [read more about it and how to create a new voice application](https://learn.vonage.com/blog/2017/06/29/voice-application-management-easier/) on our blog.
 
