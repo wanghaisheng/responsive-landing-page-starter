@@ -339,14 +339,3 @@ That's it, you should now have full 2-way SMS to Rails messaging in place with t
 Obviously we skipped a lot of cool things both in Action Cable and the [Nexmo SMS API](https://docs.nexmo.com/messaging/sms-api). We haven't authenticated the customer service agent, and we didn't provide a web UI for the customer - which would be interesting to build on top of the [Nexmo Verify API](https://docs.nexmo.com/verify/api-reference) as we did with the post on [Two Factor Authentication (2FA) in Ruby on Rails with Devise and Nexmo Verify](https://learn.vonage.com/blog/2016/06/07/two-factor-authentication-2fa-ruby-rails-devise-nexmo-verify/).
 
 I'll be playing with [Turbolinks 5](https://github.com/turbolinks/turbolinks/) next to see if I can build this into a native mobile experience. I'd love to know what you'd add next? Please drop me a tweet (I'm [@cbetta](https://twitter.com/cbetta)) with your thoughts and ideas.
-
-<script>
-window.addEventListener('load', function() {
-  var codeEls = document.querySelectorAll('code');
-  [].forEach.call(codeEls, function(el) {
-    el.setAttribute('style', 'font: normal 10pt Consolas, Monaco, monospace; color: #a31515;');
-  });
-});
-</script>
-
-<center><img src="https://www.nexmo.com/wp-content/uploads/2016/04/Nexmo_O.png" alt="Nexmo Logo" width="100" style="margin: auto;"></center>
