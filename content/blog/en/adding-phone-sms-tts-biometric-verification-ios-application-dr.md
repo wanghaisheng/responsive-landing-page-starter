@@ -36,7 +36,7 @@ We will be using a starter app (Swift 3) that uses a [Back4App](https://www.back
 
 Back{4}App is a backend that lets you build and host Parse apps (which is handy since Parse closed down). If you do not have an existing Back{4}App account, sign up and create an application.
 
-![Creating a new app in Back{4}App](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/1.png)
+![Creating a new app in Back{4}App](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/1.png)
 
 Once your app is created, click the ‘server’ button inside the ‘Core Settings’ section. You will then directed to a page with your new application credentials. Once you have taken note of your Application ID and Client Key, click the back button and go to the ‘Dashboard’ located inside the ‘Core Settings’ section. Once you are redirected to the dashboard, head over to the ‘Core’ section, press ‘Edit’ (located on the top right corner) and add the following columns to the ‘User’ class:
 
@@ -46,7 +46,7 @@ Once your app is created, click the ‘server’ button inside the ‘Core Setti
 * phoneNumber (string)
 * ‘smsVerification’ (Boolean value - allow users to enable SMS verification on login)
 
-![Adding a new column to the 'User' class](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/screen-shot-2016-10-05-at-10.04.01-pm.png)
+![Adding a new column to the 'User' class](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/screen-shot-2016-10-05-at-10.04.01-pm.png)
 
 Now that Back{4} apps is set up, we can look at getting our starter application in place.
 
@@ -111,7 +111,7 @@ print("User signed up.")
 
 Run the app. The PFUser will be created and will populate the Back4App dashboard. To avoid creating another user when you start the app again, you should comment out the 'signUpDemoAccount()' function call in the 'viewDidLoad()' method after you run the app the first time.
 
-![User is created and stored in Back{4}Apps](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/screen-shot-2016-07-06-at-1.04.13-pm.png)
+![User is created and stored in Back{4}Apps](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/screen-shot-2016-07-06-at-1.04.13-pm.png)
 
 Go ahead and run the app again. You will be able to access the user's account information by entering the credentials of the newly created user.
 
@@ -121,7 +121,7 @@ Okay, now let's beef up the security in the app by adding 2FA.
 
 Sign up for a Nexmo account and go to your customer dashboard. Click on the Verify tab and add a new application under 'Your Apps'. Set up your app with a name, idle time of Instant (maximum length of time the user will stay verified; in this case, users will expire immediately), and PIN code length.
 
-![Add a new Nexmo App in the dashboard](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/screen-shot-2016-05-25-at-12.01.55-am.png)
+![Add a new Nexmo App in the dashboard](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/3.png)
 
 Next, let's add the Nexmo Verify SDK. The Verify SDK can be easily added to your project using Cocoapods. Create a Podfile in your project directory, add the ‘NexmoVerify’ pod inside the file, and install the pod via Terminal. (If the pod cannot be found, run pod update to update Cocoapods.)
 
@@ -230,9 +230,7 @@ self.performSegue(withIdentifier: "showAccount", sender: self)
 }
 ```
 
-
-
-![Touch ID requested](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/screen-shot-2016-05-30-at-11.35.24-pm.png)
+![Touch ID requested](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/4.png)
 
 ### Add View Controller for Verification and Add 2FA Logic to the VC
 
@@ -267,7 +265,7 @@ present(alert, animated: true, completion: nil)
 }
 ```
 
-![Link Class in IB](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/2.png)
+![Link Class in IB](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/5.png)
 
 Grab the user’s phone number from the Back4Apps database and trigger a verification request using the getVerifiedUser() method. Create a segue ('pinVerified') that is connected from 'VerifyPinController' to 'StatementViewController'.
 
@@ -375,13 +373,13 @@ print("switch off")
 }
 ```
 
-![User Accounts Summary](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/screen-shot-2016-05-30-at-9.04.42-pm.png)
+![User Accounts Summary](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/6.png)
 
 ### Perform 2FA on Verified User on Specific Action
 
-![Verify Pin Screen](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/screen-shot-2016-05-30-at-9.04.11-pm.png)
+![Verify Pin Screen](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/7.png)
 
-![Transfer Funds](/content/blog/adding-phone-sms-tts-and-biometric-verification-to-your-ios-application/screen-shot-2016-05-30-at-9.04.54-pm.png)
+![Transfer Funds](/content/blog/adding-phone-and-biometric-verification-to-your-ios-application/8.png)
 
 For more secure transactions, such as a user transferring funds from one account to another, you can trigger a verification request to confirm the user request action.
 
