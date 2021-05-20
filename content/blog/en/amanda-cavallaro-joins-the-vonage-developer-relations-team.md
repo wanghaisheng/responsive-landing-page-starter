@@ -1,7 +1,7 @@
 ---
 title: Amanda Cavallaro Joins the Vonage Developer Relations Team
 description: Amanda Cavallaro is a developer advocate at Vonage based in London, UK.
-thumbnail: /content/blog/amanda-cavallaro-joins-the-vonage-developer-relations-team/amanda-avatar-picture.jpeg
+thumbnail: /content/blog/amanda-cavallaro-joins-the-vonage-developer-relations-team/amanda-cavallaro.png
 author: amanda-cavallaro
 published: true
 published_at: 2021-05-14T12:41:47.004Z
