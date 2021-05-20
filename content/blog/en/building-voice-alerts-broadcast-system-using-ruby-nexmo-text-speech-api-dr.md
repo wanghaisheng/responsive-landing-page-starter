@@ -24,7 +24,7 @@ Similarly a service provider or (local) authority dealing with an emergency will
 
 For this tutorial we'll add a **Voice Alerts Broadcast System** to an existing app using the [Nexmo Text-To-Speech API (TTS)](https://docs.nexmo.com/voice/text-to-speech). For this purpose we have built the **Nexmo Flood Alerts** app that allows people to subscribe to voice alerts for their postcode.
 
-![Nexmo Flood Alerts](/content/blog/building-a-voice-alerts-broadcast-system-using-ruby-and-the-nexmo-text-to-speech-api/voice-alerts-broadcast-registration-1.png)
+![Nexmo Flood Alerts](/content/blog/building-a-voice-alerts-broadcast-system-using-ruby/voice-alerts-broadcast-registration-1.png)
 
 This app serves as our starting point for this tutorial. It is a basic [Sinatra](http://www.sinatrarb.com/) app, written in Ruby with a few extra gems to make things easier. We've added **SQLite3** and **ActiveRecord** for persisting our **Subscribers**. We also added **Bootstrap** to make our UI look a bit more attractive. Finally, for this tutorial we've left the fetching of the flood data as an implementation detail and instead we'll be manually sending the notifications through the admin panel.
 
@@ -84,7 +84,7 @@ Now that we've loaded these 2 gems we can simply call `Nexmo::Client.new` anywhe
 
 ## Select a Number or Postcode
 
-![Alert Form](/content/blog/building-a-voice-alerts-broadcast-system-using-ruby-and-the-nexmo-text-to-speech-api/voice-alert-broadcast-send-screen.png)
+![Alert Form](/content/blog/building-a-voice-alerts-broadcast-system-using-ruby/voice-alert-broadcast-send-screen.png)
 
 Before we start sending alerts to everyone we should probably give the admin a way to select who to send a message to. Let's start by adding a form to the admin panel.
 
@@ -190,8 +190,6 @@ get '/alert' do
   erb :alert
 end
 ```
-
-
 
 ```html
 <!-- views/alert.erb  -->
