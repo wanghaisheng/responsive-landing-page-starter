@@ -16,7 +16,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-<em>Welcome to the second tutorial in our </em>how to use Voice APIs with ASP.NET<em> series. To check out other tutorials, please go to the </em>Learn more<em> section at the end of this post.</em>
+*Welcome to the second tutorial in our* how to use Voice APIs with ASP.NET *series. To check out other tutorials, please go to the* Learn more *section at the end of this post.*
 
 In the previous post, we learnt how to [make a text-to-speech phone call in an ASP.NET web application](https://www.nexmo.com/blog/2017/07/28/text-to-speech-phone-call-dr/). In this post, we will learn how to play audio to a caller. Sounds like fun, right? But that’s not all. We will also discover how to dynamically create Nexmo Call Control Objects (NCCOs) in code and use them within our app. Bonus: We will be using an ASP.NET Core project for this demo.
 
@@ -24,17 +24,16 @@ Let’s get started!
 
 ![are you ready gif](/content/blog/how-to-play-audio-to-a-caller-in-asp-net-core/are-you-ready.gif "are you ready gif")
 
-<h2>Prerequisites for using Nexmo Voice API with ASP.NET</h2>
-<ul>
-<li>Visual Studio 2017</li>
+## Prerequisites for using Nexmo Voice API with ASP.NET
+
+* Visual Studio 2017
+* A project setup for this tutorial series, which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoVoiceASPNetCoreQuickStarts)
+* Optional: [The Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
 
 <sign-up number></sign-up>
 
-<li>A project setup for this tutorial series, which you can find on <a href="https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoVoiceASPNetCoreQuickStarts" target="_blank">Github</a></li>
-<li>Optional: <a href="https://github.com/Nexmo/nexmo-cli" target="_blank">The Nexmo CLI</a></li>
-</ul>
+## Configuration
 
-<h2>Configuration</h2>
 Since you may or may not have read the first tutorial in this series—which you should, btw—let’s go through what we need before diving into the code. 
 
 To be able to use [The Nexmo Voice API](https://developer.nexmo.com/voice/overview), you'll need a voice application to store configuration data and generate a public/private key pair. 
@@ -47,8 +46,9 @@ Now, let’s write some code!
 
 ![wonder woman gif](/content/blog/how-to-play-audio-to-a-caller-in-asp-net-core/lets-write-code.gif "wonder woman gif")
 
-<h2>Creating a stream NCCO</h2>
-As mentioned at the beginning of this post, when the user answers the call, we want to play an audio file to them. The NCCO file available at our answer_url contains this information. To execute this action, the NCCO must be valid and have the right action. \[The action required to send the audio file to a call or conversation is stream](https://developer.nexmo.com/api/voice/ncco#stream).
+## Creating a stream NCCO
+
+As mentioned at the beginning of this post, when the user answers the call, we want to play an audio file to them. The NCCO file available at our answer_url contains this information. To execute this action, the NCCO must be valid and have the right action. [The action required to send the audio file to a call or conversation is stream](https://developer.nexmo.com/api/voice/ncco#stream).
 
 For this demo, we will only need to specify streamUrl, which is the array containing the audio file. The latter must be an mp3 or wav. We do provide a sample [stream NCCO](https://raw.githubusercontent.com/nexmo-community/ncco-examples/4f29c8f50a8cdc5bf1b34116b699000339498e9f/first_call_speech.json); you can use it to try this demo. But for real-life scenarios, you may want to create your own. 
 
@@ -97,8 +97,9 @@ private void SaveFile(string rootpath, string filename, dynamic StreamNCCO)
 
 Later on, we will be using CreateStreamNCCO to allow users to create their own stream NCCO via the website. 
 
-<h2>Playing audio in the call</h2>
-Under NexmoVoiceAspNetCoreQuickstarts, we created \[a controller called VoiceController.cs](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Controllers/VoiceController.cs) in which we will create \[an action method called PlayAudioToCaller](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Controllers/VoiceController.cs).
+## Playing audio in the call
+
+Under NexmoVoiceAspNetCoreQuickstarts, we created [a controller called VoiceController.cs](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Controllers/VoiceController.cs) in which we will create [an action method called PlayAudioToCaller](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Controllers/VoiceController.cs).
 
 Above the method, add a HttpGetAttribute to allow the user to navigate to the corresponding view.
 
@@ -112,10 +113,10 @@ public ActionResult PlayAudioToCaller()
 
 Under the Voice Views folder, create a new view `PlayAudioToCaller.cshtml`. Within [this view](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Views/Voice/PlayAudioToCaller.cshtml), we will add two forms:
 
-<ol>
-<li>The first will allow us to create a stream NCCO.</li>
-<li>The second will be used to make the phone call.</li>
-</ol>
+1. The first will allow us to create a stream NCCO. 
+
+2. The second will be used to make the phone call.
+
 Back to the VoiceController. Make sure you have the following \`using\` statement on the top of the file.
 \`\`\`
 using Nexmo.Api
@@ -131,17 +132,15 @@ public VoiceController(IHostingEnvironment hostingEnvironment)
   _nccohelper = new NCCOHelpers(); 
 }
 
-```
-Add an [action method named CreateStreamNCCO](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Controllers/VoiceController.cs#L112-L119) with the following parameters: 
-<ul>
-   <li>string[] streamUrl : an array containing a single url to the audio file to stream. </li>
-   <li>int level=0 : the audio level. This is defaulted to zero.</li>
-   <li>bool bargeIN defaulted to false.</li>
-   <li>int loop =1 so the audio is only repeated once.</li>
-</ul>
-Inside this method, we will call the CreateStreamNCCO method from the NCCO helpers class. 
-```
 
+Add an [action method named CreateStreamNCCO](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Controllers/VoiceController.cs#L112-L119) with the following parameters: 
+*   string[] streamUrl : an array containing a single url to the audio file to stream.
+*   int level=0 : the audio level. This is defaulted to zero.
+*   bool bargeIN defaulted to false.
+*   int loop =1 so the audio is only repeated once.
+Inside this method, we will call the CreateStreamNCCO method from the NCCO helpers class. 
+
+```
 \[HttpPost]
 public ActionResult CreateStreamNCCO(string\[] streamUrl, int level=0, bool bargeIN = false, int loop =1)
 {
@@ -149,11 +148,11 @@ public ActionResult CreateStreamNCCO(string\[] streamUrl, int level=0, bool barg
    ViewData\["NCCOButtonText"] = "NCCO Created";
   return View("PlayAudioToCaller");
 }
-
 ```
+
 Add another [action method named PlayAudioToCaller](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/ASPNET/NexmoVoiceASPNetCoreQuickStarts/Controllers/VoiceController.cs#L73-L101) with a string parameter: `to`. Within this method, you will make a call using the parameter as the `to`. The `from` number is your Nexmo virtual number (retrieved from the appsettings.json), the answer_url is the stream NCCO whether you choose to use Nexmo’s community NCCO example mentioned above or the NCCO you created and made reachable via ngrok. 
-```
 
+```
 public ActionResult PlayAudioToCaller(string to)
 {
    var NEXMO_FROM_NUMBER = Configuration.Instance.Settings\["appsettings:NEXMO_FROM_NUMBER"];
@@ -191,19 +190,16 @@ Now, let's run the app and make a phone call.
 When it is successful, it retrieves the [NCCO](https://developer.nexmo.com/voice/guides/ncco-reference) from your webhook, the audio will be played, and then the call is terminated.
 <img class="alignnone size-full wp-image-12934" src="https://www.nexmo.com/wp-content/uploads/2017/08/done.gif" alt="" width="80%"/>
 
-<h2>Learn more</h2>
+## Learn more
 
-<strong>API references and tools</strong>
-<ul>
-	<li><a href="https://developer.nexmo.com/concepts/guides/applications" target="_blank">Application API</a></li>
-	<li><a href="https://developer.nexmo.com/voice/overview/" target="_blank">Voice API</a></li>
-	<li><a href="https://github.com/Nexmo/nexmo-dotnet" target="_blank">Nexmo REST client for .NET</a></li>
-</ul>
+**API references and tools**
 
-<strong>Nexmo Getting Started Guide for ASP.NET</strong>
-<ul>
-	<li><a href="https://www.nexmo.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/" target="_blank">How to Send SMS Messages with ASP.NET MVC Framework</a></li>
-	<li><a href="https://www.nexmo.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/" target="_blank">How to Receive SMS Messages with ASP.NET MVC Framework</a></li>
-	<li><a href="https://www.nexmo.com/blog/2017/07/28/text-to-speech-phone-call-dr/" target="_blank">How to Make a Text-to-speech Phone Call in ASP.NET</a></li>
-</ul>
-```
+*   [Application API](https://developer.nexmo.com/concepts/guides/applications)
+*   [Voice API](https://developer.nexmo.com/voice/overview/)
+*   [Nexmo REST client for .NET](https://github.com/Nexmo/nexmo-dotnet)
+
+**Nexmo Getting Started Guide for ASP.NET**
+
+*   [How to Send SMS Messages with ASP.NET MVC Framework](https://www.nexmo.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)
+*   [How to Receive SMS Messages with ASP.NET MVC Framework](https://www.nexmo.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/)
+*   [How to Make a Text-to-speech Phone Call in ASP.NET](https://www.nexmo.com/blog/2017/07/28/text-to-speech-phone-call-dr/)
