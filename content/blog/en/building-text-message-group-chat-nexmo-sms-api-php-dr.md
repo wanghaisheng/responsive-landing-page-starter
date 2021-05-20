@@ -20,8 +20,6 @@ To exercise the new PHP client library a bit, we're going to build a simple SMS 
 
 I won't judge if you just clone the repo, really, I won't. Much.
 
-<sign-up number></sign-up>
-
 ### What We're Building
 
 We're going to put together a simple script that:
@@ -34,7 +32,7 @@ In a follow-up post we'll also put together a simple web interface where they ca
 
 ### Set Up
 
-<sign-up number><sign-up>
+<sign-up number></sign-up> 
 
 We'll start with the [Nexmo client library](https://github.com/Nexmo/nexmo-php), and a Mongo database. Setting up the database is beyond the scope of this tutorial, but there are a few Mongo hosts with free tiers, and setting up a database on one of them should be pretty straightforward. You'll also need the [Mongo driver for PHP](http://php.net/manual/en/set.mongodb.php) installed.
 
