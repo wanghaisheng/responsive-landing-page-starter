@@ -1,10 +1,6 @@
 ---
 title: Handle an Inbound Phone Call with Python
-description: "This blog post shows you, step-by-step, how to create a Nexmo
-  application that can handle an inbound phone call using Python. If you are new
-  to Nexmo, your account will be given some initial free credit to help get you
-  started. Prerequisites Assumes you have: Python 3 installed Access to two
-  phones Source Code Repository […]"
+description: Learn how to handle inbound phone calls with Python.
 thumbnail: /content/blog/handling-inbound-calls-with-python-dr/handle-inbound-phone-call.png
 author: abedford
 published: true
@@ -29,6 +25,8 @@ Assumes you have:
 
 * Python 3 installed
 * Access to two phones
+
+<sign-up number></sign-up>
 
 ## Source Code Repository
 
@@ -74,12 +72,6 @@ A summary of the procedure you will carry out in this article is as follows:
 12. Phone your Vonage number
 13. Listen to the Text to Speech message
 
-## Create a Vonage Account
-
-<sign-up number></sign-up>
-
-Make sure you make a note of your `API_KEY` and `API_SECRET`, which you can find in the Vonage Dashboard.
-
 ## Install Ngrok
 
 Go to [Ngrok](https://ngrok.com) and follow the instructions on getting set up.
@@ -88,7 +80,7 @@ Go to [Ngrok](https://ngrok.com) and follow the instructions on getting set up.
 
 Run Ngrok:
 
-```
+```sh
 ngrok http 9000
 ```
 
@@ -98,13 +90,13 @@ Make a note of the URL that Ngrok is running on. Such as `https://1234abcd.ngrok
 
 The example code uses the Flask framework to create a web app that can handle inbound requests.
 
-```
+```sh
 pip install flask
 ```
 
 ## Install the Nexmo CLI
 
-```
+```sh
 npm install nexmo-cli -g
 nexmo setup <api_key> <api_secret>
 ```
@@ -117,7 +109,7 @@ In this article it is used to make a single REST API call - "Update Call".
 
 You can learn how to install the Python Client [in its repo](https://github.com/Nexmo/nexmo-python). The simple process is to use PIP:
 
-```
+```sh
 pip install nexmo
 ```
 
@@ -129,7 +121,7 @@ Create a directory for your project and change into that new directory.
 
 Although you can create a Vonage application in the Dashboard, you can also create one on the command line if you have Nexmo CLI installed:
 
-```
+```sh
 nexmo app:create "Blog Voice App" https://1234abcd.ngrok.io/webhooks/answer https://1234abcd.ngrok.io/webhooks/event --keyfile=private.key
 ```
 
@@ -147,19 +139,19 @@ If you do not already have a Vonage Number you will need to purchase one.
 
 First search for a suitable number:
 
-```
+```sh
 nexmo number:search GB
 ```
 
 > NOTE: You can change the country code to suit your requirements. For example if you are in the US you could use:
 
-```
+```sh
 nexmo number:search US
 ```
 
 Choose a suitable number and then buy it using a command similar to:
 
-```
+```sh
 nexmo number:buy 442039051952
 ```
 
@@ -169,7 +161,7 @@ nexmo number:buy 442039051952
 
 You now need to associate your Vonage Number with your Vonage Application:
 
-```
+```sh
 nexmo link:app YOUR_NEXMO_NUMBER APPLICATION_ID
 ```
 
