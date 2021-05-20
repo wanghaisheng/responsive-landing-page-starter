@@ -110,14 +110,17 @@ OK, now start your server, ensure you have something like [ngrok](http://ngrok.i
 ## To Sum Things Up
 
 That's it for this tutorial. We've completed all the steps for receiving an inbound call in Ruby on Rails:
-<ol>
-<li>set up our Rails application to receive an inbound voice call webhook</li>
-<li>informed Nexmo of where to find our server</li>
-<li>processed an incoming webhook</li>
-<li>provided instructions to Nexmo to play back a message</li>
-</ol>
+1\. set up our Rails application to receive an inbound voice call webhook 
+
+2\. informed Nexmo of where to find our server 
+
+3\. processed an incoming webhook 
+
+4\. provided instructions to Nexmo to play back a message
+
 
 You can view the [code used in this tutorial](https://github.com/Nexmo/nexmo-rails-quickstart/blob/master/app/controllers/inbound_calls_controller.rb) on GitHub.
+
 
 ## Next Steps
 
