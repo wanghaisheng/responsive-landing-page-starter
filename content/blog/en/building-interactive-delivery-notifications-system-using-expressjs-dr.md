@@ -21,7 +21,7 @@ One of the amazing things about SMS is how ubiquitous it is. Whether you have a 
 
 For this tutorial we'll create an **interactive notifications system** for a package delivery company. For this purpose we've created a simple **"Nexmo Mail"** app that allows an employee of the delivery company to type in a phone number and notify the recipient of a package that will be delivered.
 
-![Delivery System](/content/blog/building-an-interactive-sms-delivery-notifications-system-using-expressjs/form.png)
+![Delivery System](/content/blog/build-an-interactive-sms-delivery-notifications-system-using-expressjs/form.png)
 
 This app serves as our starting point for this tutorial. It is a basic [Express](https://www.npmjs.com/package/express) app, written in Javascript with a few extra modules to make things easier. We've added the [`body-parser`](https://www.npmjs.com/package/body-parser) module to parse our form submissions, and we added [Bootstrap](http://getbootstrap.com) to make our UI look a bit more attractive. Finally, we added some [`babel`](https://www.npmjs.com/package/babel-cli) modules so that we can write modern [ES2015](https://babeljs.io/docs/learn-es2015/)-flavored Javascript.
 
