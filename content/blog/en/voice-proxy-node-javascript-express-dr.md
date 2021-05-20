@@ -18,7 +18,7 @@ canonical: ""
 ---
 We've all been there: you've gotten out of your cab and a few minutes later you realise you've left your umbrella behind. Alternatively, you're starving, staring out the window whenever you hear a car drive by, wondering where the food delivery you ordered an hour ago is.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2018/05/waiting-on-delivery.gif" alt="Girl waiting on a delivery" width="480" height="270" class="alignnone size-full wp-image-20893" />
+![Girl waiting on delivery](/content/blog/proxy-voice-calls-anonymously-with-express/waiting-on-delivery.gif)
 
 Perhaps it's the other way around. Maybe you're making a delivery and you need some directions to the address.
 
@@ -39,7 +39,7 @@ At the time of writing, you can rent virtual numbers in 85 different countries. 
 
 At the moment if you attempt to call the virtual number we just rented, nothing happens.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2018/05/on-the-phone.gif" alt="Man on the phone" width="500" height="322" class="alignnone size-full wp-image-20896" />
+![Man on the phone](/content/blog/proxy-voice-calls-anonymously-with-express/on-the-phone.gif)
 
 We have to associate the virtual number with an application. You can link multiple numbers to the same voice application, allowing you to have multiple numbers—even in different countries—all powered by a single backend.
 
