@@ -27,6 +27,8 @@ The basic difference is going from two rectangles to one. Whereas the `topLayout
 
 Let's build out the basic conversational interface now.
 
+<sign-up number></sign-up>
+
 ## Basic Conversational User Interface
 
 Let's create an .xcodeproj with the deployment target set to iOS 11 or higher. Inside of the `.xcodeproj` program find the `ViewController.Swift`.
@@ -39,20 +41,15 @@ Switch from `ViewController.Swift` to `Main.storyboard` with Shift + Option + Co
 
 *Note*: If you would like a quick breakdown of what the constraints ought to be in the document outline, scroll down to the bottom of this section.
 
-<ol>
- 	<li style="list-style-type: none">
-<ol>
- 	<li>Control drag from the top of the text view to the top of the safe area with a constant at zero. Control drag from the text view's trailing space to the safe area's trailing space with a constant at zero. Control drag from the text view's leading space to the safe area's leading space with a constant at zero.</li>
- 	<li>Control drag an instance of UIButton to the lower right-hand corner of the content view below the text view. Control drag from the button to the trailing space of the Safe Area Layout. Control drag from the button to the bottom of the Safe Area Layout. Fix the constant for these constraints to 15.</li>
- 	<li>Control drag an instance of UITextField to the lower left-hand corner of the content view below the text view. Control drag from the text field to the leading space of the Safe Area Layout. Control drag from the text field to the bottom of the Safe Area Layout. Fix the constant for these constraints to 15.</li>
-</ol>
-</li>
-</ol>
-<em>Note</em>: Optionally you can set these two sets of constraints simultaneously by shift clicking in the document outline from the instance to the view.
-<ol>
- 	<li>Control drag from the text field to the button. Click on horizontal spacing and last baseline. To resolve the fatal warning regarding these two instances competing for horizontal spacing, select a content hugging priority for the button that is higher than for the text field, say 251. Accordingly, the text field's horizontal spacing shall thereafter fluctuate in response to the device size's screen size without the space between the button and the text or the size of the button changing at all.</li>
- 	<li>Finally, control drag from the bottom of the text view to the top of the text field selecting vertical spacing with a constant at 15.</li>
-</ol>
+* Control drag from the top of the text view to the top of the safe area with a constant at zero. Control drag from the text view's trailing space to the safe area's trailing space with a constant at zero. Control drag from the text view's leading space to the safe area's leading space with a constant at zero.
+* Control drag an instance of UIButton to the lower right-hand corner of the content view below the text view. Control drag from the button to the trailing space of the Safe Area Layout. Control drag from the button to the bottom of the Safe Area Layout. Fix the constant for these constraints to 15.
+* Control drag an instance of UITextField to the lower left-hand corner of the content view below the text view. Control drag from the text field to the leading space of the Safe Area Layout. Control drag from the text field to the bottom of the Safe Area Layout. Fix the constant for these constraints to 15.
+
+> *Note*: Optionally you can set these two sets of constraints simultaneously by shift clicking in the document outline from the instance to the view.
+
+* Control drag from the text field to the button. Click on horizontal spacing and last baseline. To resolve the fatal warning regarding these two instances competing for horizontal spacing, select a content hugging priority for the button that is higher than for the text field, say 251. Accordingly, the text field's horizontal spacing shall thereafter fluctuate in response to the device size's screen size without the space between the button and the text or the size of the button changing at all.
+* Finally, control drag from the bottom of the text view to the top of the text field selecting vertical spacing with a constant at 15.
+
 Here is a quick breakdown of what the constraints ought to be in the document outline:
 
 ![Safe Layout Guide Constraints](/content/blog/build-a-conversational-ui-with-nexmo-in-app-messaging/safelayoutguideconstraints.png "Safe Layout Guide Constraints")
@@ -61,17 +58,16 @@ With our basic conversational interface laid out with the Safe Area Layout we wi
 
 ## Nexmo In-App Messaging
 
-<a href="https://www.nexmo.com/blog/2017/12/04/introducing-nexmo-app-messaging/" target="_blank" rel="noopener">**Nexmo In-App Messaging** is now in developer preview</a> and you're invited to be among the first to use this technology to create branded chat experiences on your mobile or web applications.
+[**Nexmo In-App Messaging** is now in developer preview](https://www.nexmo.com/blog/2017/12/04/introducing-nexmo-app-messaging/) and you're invited to be among the first to use this technology to create branded chat experiences on your mobile or web applications.
 
 Extend your user communication channels in environments such as contact centers or online marketplaces. With Nexmo In-App Messaging, you can easily build these messaging experiences—and any others you can conceptualize—to provide your users with an intuitive and familiar messaging interface.
 
 Nexmo In-App Messaging includes:
 
-<ul>
- 	<li><strong>Cross-platform SDKs</strong>: Integrate iOS, Android, and JavaScript SDKs so users can seamlessly chat on any device.</li>
- 	<li><strong>Feature-rich chat</strong>: Build an experience that showcases typing indicators and when messages were sent, delivered and read.</li>
- 	<li><strong>Offline sync</strong>: With built-in caching, messages are saved when a device goes offline and sent or received once the device is back online.</li>
-</ul>
+* **Cross-platform SDKs**: Integrate iOS, Android, and JavaScript SDKs so users can seamlessly chat on any device.
+* **Feature-rich chat**: Build an experience that showcases typing indicators and when messages were sent, delivered and read.
+* **Offline sync**: With built-in caching, messages are saved when a device goes offline and sent or received once the device is back online.</li>
+
 ## Sign up
 
 Try out Nexmo In-App Messaging by [signing up for a Nexmo Account](https://info.nexmo.com/EA-In-App-Sign-Up.html). After signing up, we can begin to integrate the iOS SDK into our .xcodeproj.
@@ -82,19 +78,19 @@ Extensive detail on the process of creating Nexmo conversation is listed in an i
 
 `$ nexmo app:create "Conversation iOS App" http://example.com/answer http://example.com/event --type=rtc --keyfile=private.key`
 
-`&gt; Application created: aaaaaaaa-bbbb-cccc-dddd-0123456789ab`
+`> Application created: aaaaaaaa-bbbb-cccc-dddd-0123456789ab`
 
 Take note of the application ID. We'll refer to this as `YOUR_APP_ID` later.
 
 `$ nexmo conversation:create display_name="Nexmo Chat"`
 
-`&gt; Conversation created: CON-aaaaaaaa-bbbb-cccc-dddd-0123456789ab`
+`> Conversation created: CON-aaaaaaaa-bbbb-cccc-dddd-0123456789ab`
 
 Take note of the conversation ID. We'll refer to this as `YOUR_CONVERSATION_ID` later.
 
 `$ nexmo user:create name="jamie"`
 
-`&gt; User created: USR-aaaaaaaa-bbbb-cccc-dddd-0123456789ab`
+`> User created: USR-aaaaaaaa-bbbb-cccc-dddd-0123456789ab`
 
 Take note of the user ID. We'll refer to this as `YOUR_USER_ID` later.
 
