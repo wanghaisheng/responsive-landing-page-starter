@@ -1,10 +1,7 @@
 ---
 title: How to Send SMS Messages with Node.js and Express
-description: This article is now out of date and will soon be removed. Please
-  check out the updated version instead. The Nexmo SMS API allows you to send
-  and receive a high volume of SMS anywhere in the world. Once you get your
-  virtual phone number, you can use the API to manage outbound messages
-  (“sending”) […]
+description: A step-by-step tutorial on how to send SMS messages with Node.js
+  and Express using the Nexmo SMS API and Node.js client library.
 thumbnail: /content/blog/how-to-send-sms-messages-with-node-js-and-express-dr/sms-send-node.png
 author: tomomi
 published: true
