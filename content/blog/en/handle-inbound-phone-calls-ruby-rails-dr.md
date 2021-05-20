@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-_This is the third article in a series of "[Getting Started with Nexmo Voice APIs and Ruby on Rails](https://www.nexmo.com/blog/2017/11/02/outbound-text-to-speech-voice-call-ruby-on-rails-dr/)" tutorials. It continues the "[Getting Started with Nexmo and Ruby on Rails](https://www.nexmo.com/blog/2017/10/16/send-sms-ruby-on-rails-dr/)" series._
+*This is the third article in a series of "[Getting Started with Nexmo Voice APIs and Ruby on Rails](https://www.nexmo.com/blog/2017/11/02/outbound-text-to-speech-voice-call-ruby-on-rails-dr/)" tutorials. It continues the "[Getting Started with Nexmo and Ruby on Rails](https://www.nexmo.com/blog/2017/10/16/send-sms-ruby-on-rails-dr/)" series.*
 
 In the [previous article](https://www.nexmo.com/blog/2017/12/19/receive-voice-call-events-call-progress-ruby-rails-dr/), you learned how to set up a Rails application to be publicly accessible by Nexmo and then receive a **Call Event Update** for a call in progress. In this article, you will learn how to receive an inbound call by implementing a similar webhook endpoint in Ruby on Rails.
 
@@ -25,14 +25,12 @@ In the [previous article](https://www.nexmo.com/blog/2017/12/19/receive-voice-ca
 
 To follow this tutorial, you need to have:
 
-- A basic understanding of Ruby and Rails
-- [Rails](http://rubyonrails.org/) installed on your machine
-- [NPM](https://www.npmjs.com/) installed for the purpose of our CLI
-- Followed our [previous tutorial on receiving call event updates with Ruby on Rails](https://www.nexmo.com/blog/2017/12/19/receive-voice-call-events-call-progress-ruby-rails-dr/)
+* A basic understanding of Ruby and Rails
+* [Rails](http://rubyonrails.org/) installed on your machine
+* [NPM](https://www.npmjs.com/) installed for the purpose of our CLI
+* Followed our [previous tutorial on receiving call event updates with Ruby on Rails](https://www.nexmo.com/blog/2017/12/19/receive-voice-call-events-call-progress-ruby-rails-dr/)
 
 <sign-up></sign-up>
-
-
 
 ## What Is an "Inbound Call"?
 
@@ -44,13 +42,10 @@ To receive this webhook, you will need to set up a webhook endpoint and tell Nex
 
 The first step is to use the [Nexmo CLI tool](https://github.com/nexmo/nexmo-cli) to link the Nexmo Application created in the previous tutorial to the purchased Nexmo number. We pass in the phone number and the application's UUID.
 
-
- 
 <pre class="lang:default highlight:0 decode:true " >
 $ nexmo link:app 14155550102 aaaaaaaa-bbbb-cccc-dddd-0123456789ab
 Number updated
 </pre> 
-
 
 This command tells Nexmo to make an HTTP call to the `answer_url` of the Nexmo Application every time the Nexmo Number receives an inbound call. We already set the `answer_url` in the first tutorial of this series, but if you need to update it you can do so as follows:
 
@@ -110,17 +105,17 @@ OK, now start your server, ensure you have something like [ngrok](http://ngrok.i
 ## To Sum Things Up
 
 That's it for this tutorial. We've completed all the steps for receiving an inbound call in Ruby on Rails:
-1\. set up our Rails application to receive an inbound voice call webhook 
 
-2\. informed Nexmo of where to find our server 
 
-3\. processed an incoming webhook 
+1. set up our Rails application to receive an inbound voice call webhook 
 
-4\. provided instructions to Nexmo to play back a message
+2. informed Nexmo of where to find our server 
 
+3. processed an incoming webhook 
+
+4. provided instructions to Nexmo to play back a message
 
 You can view the [code used in this tutorial](https://github.com/Nexmo/nexmo-rails-quickstart/blob/master/app/controllers/inbound_calls_controller.rb) on GitHub.
-
 
 ## Next Steps
 
