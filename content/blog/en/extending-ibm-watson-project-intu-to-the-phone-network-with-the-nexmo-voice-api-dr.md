@@ -42,17 +42,17 @@ This tutorial is also available as a video screencast.<a href="https://vimeo.com
 
 First, go to the [Intu Gateway](https://rg-gateway.mybluemix.net/) and create an account or log in with your [IBM Bluemix](https://www.ibm.com/cloud-computing/bluemix/) account if you already have one.
 
-![IBM Watson Intu - Gateway](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-gateway-login.png)
+![IBM Watson Intu - Gateway](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-gateway-login.png)
 
 When you've logged in, you will be asked to create an **Organization Name**. For this demo, use "Nexmo".
 
-![IBM Watson Intu - Registration](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-gateway-org.png)
+![IBM Watson Intu - Registration](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-gateway-org.png)
 
 ### Downloading Intu
 
 After you've created an organization, you should automatically be taken to the Download page. If not, manually navigate to **DOWNLOADS** and then click "Download Intu Tooling" to download the application to your desktop.
 
-![IBM Watson Intu - Download](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-download.png)
+![IBM Watson Intu - Download](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-download.png)
 
 Next, extract the Intu-Tooling-OSX64 or Intu-Tooling-Win64 directory, and copy the entire directory into your home directory:
 
@@ -64,7 +64,7 @@ Now, if you're on Windows, double-click to launch **Intu Manager**. For security
 
 You should see a dialog box.
 
-![IBM Watson Intu - app-dialog](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-app-dialog.png)
+![IBM Watson Intu - app-dialog](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-app-dialog.png)
 
 Select **Windowed** checkbox and click **Play!**
 
@@ -72,7 +72,7 @@ Select **Windowed** checkbox and click **Play!**
 
 Now, you should see the Into Manager screen.
 
-![IBM Watson Intu - app-install](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-app-install.png)
+![IBM Watson Intu - app-install](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-app-install.png)
 
 Click **Install Intu**. Intu Tooling will start to install, and a new page will open in your browser for you to log in.
 
@@ -82,13 +82,13 @@ When you are asked where you want to install Intu, choose on **Local Machine** f
 
 The Intu Manager window will display and prompt you to select your Group. Select your organization and then click **Next**. Turn the device on if it is not automatically turned on (shown in green).
 
-![IBM Watson Intu - App launch](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-app.png)
+![IBM Watson Intu - App launch](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-app.png)
 
 When finished installing, you can start talking to Intu. Try "Hi, “How are you doing?” You will hear the Intu greeting.
 
 If you click the button above the device, a wireframe of a brain appears. You will also see a Menu on the bottom left of the window.
 
-![IBM Watson Intu - app brain](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-app-brain.png)
+![IBM Watson Intu - app brain](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-app-brain.png)
 
 Intu is now installed successfully and you’ve connected the Intu Manager to your running instance!
 
@@ -108,7 +108,7 @@ After you get a coupon from us, activate the coupon code on your Dashboard by cl
 
 Go back to **Intu Gateway** at [rg-gateway.mybluemix.net ](https://rg-gateway.mybluemix.net)and navigate to **Manage** > **Services**, then select your organization and a group:
 
-![IBM Watson Intu - manage](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network-with-the-nexmo-voice-api/ibm-watson-intu-manage.png)
+![IBM Watson Intu - manage](/content/blog/extending-ibm-watson-project-intu-to-the-phone-network/ibm-watson-intu-manage.png)
 
 Click **+ Add Service**. You will see the modal dialog box. Fill out each field with these values:
 
