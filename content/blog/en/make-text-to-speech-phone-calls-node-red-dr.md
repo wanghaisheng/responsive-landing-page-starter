@@ -26,10 +26,11 @@ Next, you'll be learning about outbound calls, and by the end of this article, y
 
 Before getting started, you’ll need a few things:
 
-<sign-up number></sign-up>
-
 * [Node.js](https://nodejs.org/en/) and [Node-RED](https://nodered.org/docs/getting-started/installation) installed on your machine
 * Optional: [ngrok](https://ngrok.com/download) - get up to speed with [Aaron's blog post](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/)
+
+
+<sign-up number></sign-up>
 
 ### Getting Your Credentials
 
