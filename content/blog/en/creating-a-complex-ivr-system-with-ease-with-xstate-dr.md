@@ -306,6 +306,7 @@ module.exports = Machine({
     broadwayHours: { /* ... */ }
   }
 });
+```
 
 ## More XState Goodness
 
