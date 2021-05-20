@@ -21,7 +21,7 @@ In this tutorial we will review the brand new feature Apple released at WWDC 201
 
 What is the Safe Area Layout? With iOS 7, Apple introduced the `topLayoutGuide` and the `bottomLayoutGuide` as properties of UIViewController to enable flexibility in layouts whose outermost edges touch upon areas designated for UIKit bars like status, navigation, and tab. Apple, however, deprecated these guides with a replacement called the Safe Area Layout Guide, which is detailed in [WWDC 2017 Session 412, Auto Layout Techniques in Interface Builder](https://developer.apple.com/videos/play/wwdc2017/412/). Here is a visual breakdown:
 
-![Auto Layout Guides](/content/blog/build-a-conversational-ui-with-nexmo-in-app-messaging-and-safe-layout-for-ios-11/autolayoutguides.png "Auto Layout Guides")
+![Auto Layout Guides](/content/blog/build-a-conversational-ui-with-nexmo-in-app-messaging/autolayoutguides.png "Auto Layout Guides")
 
 The basic difference is going from two rectangles to one. Whereas the `topLayoutGuide` referred to the lower edge of an upper rectangle or the `bottomLayoutGuide` referred to the upper edge of a lower rectangle, the new Safe Area is the area surrounded by these rectangles (i.e., a simplified reduction). It is a minor difference that makes for a major change in the way Auto Layout maps its constraints to views. If either of the UIKit bars were to disappear, the Safe Area Layout would adjust accordingly.
 
@@ -55,7 +55,7 @@ Switch from `ViewController.Swift` to `Main.storyboard` with Shift + Option + Co
 </ol>
 Here is a quick breakdown of what the constraints ought to be in the document outline:
 
-![Safe Layout Guide Constraints](/content/blog/build-a-conversational-ui-with-nexmo-in-app-messaging-and-safe-layout-for-ios-11/safelayoutguideconstraints.png "Safe Layout Guide Constraints")
+![Safe Layout Guide Constraints](/content/blog/build-a-conversational-ui-with-nexmo-in-app-messaging/safelayoutguideconstraints.png "Safe Layout Guide Constraints")
 
 With our basic conversational interface laid out with the Safe Area Layout we will implement conversational functionality with Nexmo In-App Messaging.
 
@@ -182,7 +182,7 @@ self.textView.insertText(" (text) n")
 
 After integrating the Nexmo In-App Messaging iOS SDK into your project, your instances of `TextEvent` should appear in the Safe Area Layout. Try it out in either your iPhone or the iOS Simulator! The finished product will look like this:
 
-![iPhone X](/content/blog/build-a-conversational-ui-with-nexmo-in-app-messaging-and-safe-layout-for-ios-11/iphonex.png "iPhone X")
+![iPhone X](/content/blog/build-a-conversational-ui-with-nexmo-in-app-messaging/iphonex.png "iPhone X")
 
 # Conclusion
 
