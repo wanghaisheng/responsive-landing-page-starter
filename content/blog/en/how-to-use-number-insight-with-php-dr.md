@@ -55,7 +55,7 @@ php -S localhost:8080
 
 If you visit http://localhost:8080/ in your browser, you will see a form to input the number you are interested in and what level of insight to go for.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/03/screenshot-form.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/03/screenshot-form.png" alt="" width="640" height="320" class="alignnone size-large wp-image-28745" /></a>
+![Screenshot of number insights form](/content/blog/how-to-use-the-number-insight-api-with-php/screenshot-form-1200x600.png)
 
 ## Number Insights API with PHP
 
@@ -92,7 +92,7 @@ Next, there's a switch statement so that the correct Number Insights API endpoin
 
 The response gets stored in `$insight` and the action passes it through to the template for display. The `$insight` value is an object, but its data fields are accessible via array notation, for example `$insight['status']` or `$insight['country_code'`. In the template, the fields are displayed in a tabular layout, showing the fields that were returned for this level of Number Insight, as shown below:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/03/screenshot-with-results.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/03/screenshot-with-results.png" alt="" class="alignnone size-medium wp-image-28845" /></a>
+![Screenshot of the number insights output](/content/blog/how-to-use-the-number-insight-api-with-php/screenshot-with-results.png)
 
 There is also handling for an error outcome: if `status` is non-zero, that indicates an error and the status code and message are passed through to the template and displayed there above the form. You can test this by entering an invalid phone number.
 
@@ -104,4 +104,3 @@ Here are some places you might like to go next:
 * [Code Snippets](https://developer.nexmo.com/number-insight/overview#code-snippets) are available on the developer portal in other programming languages.
 * For one-off number lookups, you could [use Number Insights API from the CLI](https://developer.nexmo.com/number-insight/guides/number-insight-via-cli).
 * There's a tutorial on [Fraud Scoring and Phone Number Verification](https://developer.nexmo.com/tutorials/fraud-scoring-and-phone-number-verification) (warning, contains Ruby).
-
