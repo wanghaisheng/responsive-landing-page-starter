@@ -3,7 +3,7 @@ title: Build an Interactive SMS Delivery Notifications System Using ExpressJS
 description: Building an Interactive Delivery Notifications System using
   Node.JS, ExpressJS, ES2015 and the Nexmo SMS API
 thumbnail: /content/blog/building-interactive-delivery-notifications-system-using-expressjs-dr/mobile.png
-author: sidharth-sharma
+author: cristiano-betta
 published: true
 published_at: 2016-09-29T20:00:31.000Z
 updated_at: 2021-05-17T12:44:35.565Z
