@@ -312,13 +312,9 @@ class Command(BaseCommand):
 
 This code is essentially the same as what we did before on the REPL, but now we've wrapped it in a Django management command. The new `marvel` command takes two arguments; the number we want to call, and the Nexmo virtual number from which the call should originate.
 
-<img src="https://www.nexmo.com/wp-content/uploads/2017/08/marvel-command.gif" alt="screencast of the Marvel command making a call" class="alignnone size-full wp-image-15403" />
-
 ![Screencast of the Marvel command making a call](/content/blog/making-a-text-to-speech-phone-call-with-django/marvel-command.gif)
 
 ## What’s next?
-
-<img src="https://www.nexmo.com/wp-content/uploads/2017/08/avengers-waiting.gif" alt="What&#039;s next?" class="alignnone size-full wp-image-15406" />
 
 ![What's next?](/content/blog/making-a-text-to-speech-phone-call-with-django/avengers-waiting.gif)
 
