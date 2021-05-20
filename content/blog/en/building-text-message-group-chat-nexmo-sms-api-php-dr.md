@@ -20,6 +20,8 @@ To exercise the new PHP client library a bit, we're going to build a simple SMS 
 
 I won't judge if you just clone the repo, really, I won't. Much.
 
+<sign-up number></sign-up>
+
 ### What We're Building
 
 We're going to put together a simple script that:
