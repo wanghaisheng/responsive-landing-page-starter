@@ -33,7 +33,7 @@ git clone https://github.com/nexmo-community/quickstart-android.git
 
 [Login to Firebase](https://firebase.google.com/) with your Google account and go to the console. Create a new project by giving it a name and updating the country you reside in. Once created, click the option 'Add Firebase to your Android app". Enter your package name (default for demo app is: com.google.firebase.quickstart.auth) and the [debug signing certificate SHA-1](https://developers.google.com/android/guides/client-auth). Disregard the ‘google-services.json’ file that is download as you will need to download a new version once we add the OAuth login methods to the app. You don’t need to edit the build.gradle files, because this has already been done for you in the sample project.
 
-![Add Firebase to Android App](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/1-2.png)
+![Add Firebase to Android App](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/1-2.png)
 
 ## Set up login methods
 
@@ -43,9 +43,7 @@ The sample app comes with the following login methods: Email/Password login, Ano
 * Google: Google Sign In should be set up for your Android app after you add the debug SHA-1 signing certificate in the Firebase console. Enable the Google OAuth method in the Authentication section of the console.
 * Twitter: In the Firebase console, enable Twitter for authentication. Next, create a new application in the [Twitter Developer Portal.](https://apps.twitter.com/app/new) Copy the callback URL (available in the Twitter Authentication section of the Firebase console) and enter it in the corresponding field to finish creating the Twitter app. Lastly, go to the Twitter Application Settings and click on ‘Manage Keys and Access Tokens’. Copy the consumer key (API Key) and consumer secret (API Secret) into the Firebase console and 'ids.xml'.
 
-
-
-![Create New Twitter Application](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/2-2.png)
+![Create New Twitter Application](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/2-2.png)
 
 ## Open and update project
 
@@ -55,7 +53,7 @@ In Android Studio, choose the option to open an existing project. Navigate to wh
 
 After [creating a Nexmo account](https://dashboard.nexmo.com/sign-up), you will be redirected to the Nexmo dashboard. Click the 'Verify' tab and under 'SDK', click the 'Your apps' link. Create a new application (with the max Idle time set to Instant) and note down the Application ID and Shared Secret. The max idle time is a setting that dictates how long the user will stay verified for.
 
-![Create Nexmo Application](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/3-1.png)
+![Create Nexmo Application](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/3-1.png)
 
 Add the Nexmo credentials (as well as the OAuth if you didn't in the step above) to 'ids.xml'.
 
@@ -347,14 +345,14 @@ updateUI(null);
 
 Now all the OAuth providers along with the email/password and anonymous login methods have a flow that ensures the user completes the second factor of authentication to access the account. The 2FA enabled version of this tutorial is available in the ['final' branch of the repo](https://github.com/nexmo-community/quickstart-android/tree/final).
 
-![Chooser Activity](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/4-1.png)
+![Chooser Activity](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/4-1.png)
 
-![Google Sign In Screen](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/5-1.png)
+![Google Sign In Screen](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/5-1.png)
 
-![Twitter Login Screen](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/6-1.png)
+![Twitter Login Screen](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/6-1.png)
 
-![Email Login Screen](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/7-1.png)
+![Email Login Screen](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/7-1.png)
 
-![Anonymous Login Screen](/content/blog/add-two-factor-authentication-2fa-to-an-android-app-with-nexmo-and-firebase-login/8-1.png)
+![Anonymous Login Screen](/content/blog/add-2fa-to-an-android-app-with-nexmo-and-firebase-login/8-1.png)
 
 The Verify SDK allows you to allocate more time to developing your app by providing a managed UI solution that enables you to make verification requests securely and with ease. I'd love to hear from you if there are questions or thoughts. Tweet me [https://twitter.com/sidsharma_27](@sidsharma_27) or [email me](mailto:sidharth.sharma@nexmo.com) directly.
