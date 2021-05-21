@@ -175,71 +175,67 @@ Important note on Safari browser when using archive - To include video from stre
 
 # Quality, Performance and Compatibility
 
-* Devices - for multi party sessions, try to limit the number of participants as more participants require more processing power. 
+* **Devices** - for multi party sessions, try to limit the number of participants as more participants require more processing power. \
+  See below the number of participants that we recommend:
 
-See below the number of participants that we recommend:
+  * Mobile = 4 (Engineering official statement supported up to 8 MAX)
+  * Laptop = 10
+  * Desktop = 15
+* For **bandwidth requirements** please see: [What is the minimum bandwidth requirement to use OpenTok?](https://support.tokbox.com/hc/en-us/articles/360029732311-What-is-the-minimum-bandwidth-requirement-to-use-OpenTok-)
+* **Proxy** - if users can only access the internet through a proxy, make sure that it is a “transparent” proxy or it must be configured in the browser for HTTPS connection as webRTC does not work well on proxies requiring authentication. Check out [our network check flow](https://tokbox.com/developer/guides/restricted-networks/).
+* **Firewall** - at minimum, below are the ports and domains that need to be included on firewalls’ rules:
 
-* Mobile = 4 (Engineering official statement supported up to 8 MAX)
-* Laptop = 10
-* Desktop = 15
-* Bandwidth requirements see link - [What is the minimum bandwidth requirement to use OpenTok?](https://support.tokbox.com/hc/en-us/articles/360029732311-What-is-the-minimum-bandwidth-requirement-to-use-OpenTok-)
-* Proxy - if users can only access the internet through a proxy, make sure that it is a “transparent” proxy or it must be configured in the browser for HTTPS connection as 
+  * TCP 443
+  * FQDN: tokbox.com
+  * FQDN: opentok.com
+  * STUN/TURN: 3478
 
-webRTC does not work well on proxies requiring authentication. Check out our network check flow - <https://tokbox.com/developer/guides/restricted-networks/>
+If allowed, try opening the following range: UDP 1025 - 65535. This range covers port ranges that will provide users the best experience possible. This will also eliminate the need for TURN; not relaying media through such network elements decreases latency.
 
-* Firewall - at minimum, below are the ports and domains that need to be included on firewalls’ rules:
-* TCP 443
-* FQDN: tokbox.com
-* FQDN: opentok.com
-* STUN/TURN: 3478
+* **Codec** - link to codec compatibility <https://tokbox.com/developer/guides/codecs/>. Vonage supports VP9, VP8 and H.264 codecs; however, VP9 is only available on relayed media mode on sessions where ALL participants are using Chrome.\
+  Difference between VP8 and H.264:
 
-If allowed, try opening the following range: UDP 1025 - 65535. This range covers port 
+  * VP8 is a software codec, more mature and can handle lower bitrates. Additionally, it supports scalable/simulcast video.
+  * H.264 is available as a software or hardware depending on the device. It does not support scalable video or simulcast.
 
-            ranges that will provide users the best experience possible. This will also eliminate the
+By default, codec is set to VP8. If you need to change the assigned codec for a particular project key, login to your portal to make the change.
 
-need for TURN; not relaying media through such network elements decreases latency.
-
-* Codec - link to codec compatibility <https://tokbox.com/developer/guides/codecs/>. Vonage supports VP9, VP8 and H.264 codecs; however, VP9 is only available on relayed media mode on sessions where ALL participants are using Chrome.
-
-Difference between VP8 and H.264:
-
-* VP8 is a software codec, more mature and can handle lower bitrates. Additionally, it supports scalable/simulcast video.
-* H.264 is available as a software or hardware depending on the device. It does not support scalable video or simulcast.
-
-By default, codec is set to VP8. If you need to change the assigned codec for a particular 
-
-project key, login to your portal to make the change.
-
-Session Monitoring
+# Session Monitoring
 
 * Visit our dev page - <https://tokbox.com/developer/guides/session-monitoring/>
 * Session monitoring allows you to register a webhook URL.
 * Use this feature to monitor sessions and streams - an example of this is limiting the number of participants in a session, this is often used alongside forceDisconnect function for JS - <https://tokbox.com/developer/guides/moderation/js/#force_disconnect>. Moderator can also call an action to the server and have it do a REST call to force disconnect - <https://tokbox.com/developer/guides/moderation/rest/>
 * Can be used to track usage (for better usage tracking, use Advance Insights - <https://tokbox.com/developer/guides/insights/#obtaining-session-data-advanced-insights->).
 
-Addons
+# Addons
 
 It is possible now for Enterprise customers to purchase (or remove) add-ons with a single click. Refer to [this presentation](https://docs.google.com/presentation/d/16Q9XRznFLs5rl2DZFYt5Nwl1ibKj_j_y-9XQZ5C3VSc/edit#slide=id.gafa078777f_0_18) slide for the list of add-ons that can be configured via the self-service tool.
 
 * SIP Interconnect
-* * Get Started: <https://tokbox.com/developer/guides/sip/>
+
+  * Get Started: <https://tokbox.com/developer/guides/sip/>
   * How to build a Phone Dial in via SIP Interconnect: <https://www.nexmo.com/blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr>
 * Configurable TURN
-* * Get Started: <https://tokbox.com/developer/guides/configurable-turn-servers/>
+
+  * Get Started: <https://tokbox.com/developer/guides/configurable-turn-servers/>
 * IP Proxy
-* * Get Started: https://tokbox.com/developer/guides/ip-proxy/
+
+  * Get Started: https://tokbox.com/developer/guides/ip-proxy/
   * How to host on AWS: <link aws hosting setup doc from enrico>
 * Regional Media Zones
-* * Datasheet: <https://tokbox.com/pdf/datasheet-regional_media_zones.pdf>
+
+  * Datasheet: <https://tokbox.com/pdf/datasheet-regional_media_zones.pdf>
 * China Relay
-* * What is it?: <https://support.tokbox.com/hc/en-us/articles/360029413612-What-is-China-Relay->
+
+  * What is it?: <https://support.tokbox.com/hc/en-us/articles/360029413612-What-is-China-Relay->
   * How does it work: <https://support.tokbox.com/hc/en-us/articles/360029732451-How-does-China-relay-work->
   * Why is it necessary?: <https://support.tokbox.com/hc/en-us/articles/360029411992-Why-is-China-relay-necessary->
 * IP Whitelisting
-* * <https://support.tokbox.com/hc/en-us/articles/360029732031-Can-I-get-a-list-of-the-IP-ranges-of-TokBox-servers->
+
+  * <https://support.tokbox.com/hc/en-us/articles/360029732031-Can-I-get-a-list-of-the-IP-ranges-of-TokBox-servers->
 * AES-256 Encryption
 
-Security and Privacy
+# Security and Privacy
 
 Vonage Video API can be customized to meet the highest security standards. Our platform is GDPR compliant and we are HIPAA compliant. For European customers, we are offering extended addons that make it possible to comply with additional local certifications and standards, such as KBV certification (Germany) or other privacy laws that aim for better data ownership & protection (Europe-wide).
 
