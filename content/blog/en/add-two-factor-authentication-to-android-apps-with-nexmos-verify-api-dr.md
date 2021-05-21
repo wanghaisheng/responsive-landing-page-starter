@@ -24,6 +24,8 @@ After reading the blog post about [how to set up a server to use Nexmo Verify](h
 
 ## Prequisites
 
+<sign-up></sign-up>
+
 This app will have only two dependencies: [Retrofit](http://square.github.io/retrofit/) for making network calls and [Moshi](https://github.com/square/moshi) for serializing and deserializing JSON.
 
 The app will need to do a few things. Store a `requestId` so that a verification request can be canceled or completed. As well as make a network call to three endpoints: 
@@ -32,10 +34,9 @@ The app will need to do a few things. Store a `requestId` so that a verification
 * Check a verification code
 * Cancel a verification request
 
+To get started, I've set up a [simple demo app](https://github.com/nexmo-community/verify-android-example) with a login screen asking for the user's email address, password, and phone number for [two-factor authentication](https://developer.nexmo.com/tutorials/two-factor-authentication) (2FA). Clone the following repo and navigate to the getting started branch:
 
-To get started, I've set up a [simple demo app](https://github.com/nexmo-community/verify-android-example) with a login screen asking for the user's email address, password, and phone number for <a href="https://developer.nexmo.com/tutorials/two-factor-authentication">two-factor authentication</a> (2FA). Clone the following repo and navigate to the getting started branch:
-
-``` 
+```
 git clone git@github.com:nexmo-community/verify-android-example.git
 cd verify-android-example
 git checkout getting-started
@@ -48,7 +49,6 @@ In the blog post about how to set up a proxy server for the Verify API, we cover
 * Make a verification request.
 * Check a verification code.
 * Cancel a verification request.
-
 
 So we're going to need to have our app send `POST`s to those three endpoints. To do this we're going to use Retrofit and Moshi.
 
@@ -234,6 +234,7 @@ private void confirmCode(String code) {
   });
 }
 ```
+
 The network request to confirm the PIN code is similar to the request made earlier to start the verification process. If all goes well the server will respond with a `200` OK and we can let the user know they are authenticated. If the server responds with a `400` or `500` then we can check the `errorText` of the response and alert the user of the issue either with a toast or by displaying the error in the `verifyTxt` `TextView` I've created.
 
 There may be times when users want to cancel a verification request. This may be because they entered the wrong phone number, want to log in with another account, or just don't want to verify themselves at this time. The app needs to handle this scenario so we can add a "Cancel" button to our activity and wire it up to send a cancellation network request. I've already added the "Cancel" button and added an `OnClickListener` with a callback of `cancelRequest()`, now we can just add the networking code to that method.
