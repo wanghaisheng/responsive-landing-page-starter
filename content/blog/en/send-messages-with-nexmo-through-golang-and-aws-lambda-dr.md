@@ -1,6 +1,6 @@
 ---
 title: Send Messages with Nexmo through Golang and AWS Lambda
-description: create an API using AWS Lambda and AWS API Gateway that sends an
+description: Create an API using AWS Lambda and AWS API Gateway that sends an
   SMS message with the Nexmo Messaging API, but with the Go programming language
 thumbnail: /content/blog/send-messages-with-nexmo-through-golang-and-aws-lambda-dr/AWS_SMS_1200x675.jpg
 author: nraboy
@@ -11,7 +11,7 @@ category: tutorial
 tags:
   - golang
   - aws
-  - ""
+  - sms-api
 comments: true
 spotlight: true
 redirect: ""
