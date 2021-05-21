@@ -54,3 +54,22 @@ You must choose a username wisely because the username will serve as your websit
 Once you log in to your account, you will have a dashboard with different sections. Click on the "consoles" section and choose your preferred console, between python and bash console; this tutorial will be using the bash console. Click on the "$ bash", and a bash console will open up in your browser window.
 
 ![An example of the PythonAnywhere Bash Console](/content/blog/deploying-pythonanywhere-with-the-messages-api/console.png)
+
+For this tutorial, we will be deploying a Whatsapp bot using the Vonage API. We will be creating a simple bot to send WhatsApp messages using the `Flask framework`. This bot will take the user's WhatsApp number and the Vonage number provided. We will be creating a flask file for this and making some imports but before we begin, I will briefly show you how to set up your Vonage account and add your number to the sandbox.
+
+* [Flask](https://palletsprojects.com/p/flask/) is a lightweight python web application framework. Which we could be using to create our application
+* [Vonage](https://www.vonage.com/) is an API library which offers flexible voice, messaging, video and Communication APIs
+
+## Vonage Messages API - WhatsApp Channel
+
+Vonage Messages API allows users to send messages to a WhatsApp number via the WhatsApp channel. Firstly, to access Vonage API, create a Vonage API account on the Vonage Developer dashboard. Afterwards, you'll get free credits to use the API and an API Key and API Secret at the top of the Vonage Dashboard. Lastly, to use the WhatsApp Channel, you need to set up a sandbox.
+
+## Setting up Vonage Sandbox
+
+To set up Vonage Message API sandbox, click on Messages and Dispatch, followed by Sandbox. The image below shows an example of the screen you'll see:
+
+![A screenshot of the Vonage dashboard showing various social channels available for the Messages API](/content/blog/deploying-pythonanywhere-with-the-messages-api/sandbox.png)
+
+Under the WhatsApp section, add WhatsApp to the sandbox.  Afterwards, this will be displayed on the screen.
+
+![An example of the sandbox dashboard page with WhatsApp enabled](/content/blog/deploying-pythonanywhere-with-the-messages-api/sandbox_2.png)
