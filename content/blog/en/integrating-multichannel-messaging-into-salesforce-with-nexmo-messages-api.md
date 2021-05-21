@@ -23,17 +23,17 @@ But before we dive into the details, let’s address the *big* question: Why wou
 
 Another great value-add of the [Messages API](https://www.nexmo.com/salesforce) is that it allows you to integrate with various AI services. For example, we've used the Messages API to build a chatbot experience with AI platforms such as IBM Watson or Google Dialogflow.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image-graphic1.png"><img class="alignnone wp-image-28985 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image-graphic1.png" alt="Nexmo Messaging API Flow" width="600" height="533" /></a>
+![Nexmo Messaging API Flow](/content/blog/integrating-multichannel-messaging-into-salesforce/image-graphic1.png "Nexmo Messaging API Flow")
 
 ## One-click Install of Nexmo Messages API for Salesforce
 
 So let's walk through the installation process, exploring the Messages API for Salesforce package and what's going on under the hood. To demonstrate its capability, I'll showcase what it looks like to fire off an anonymous function. Watch the video below to see my full installation demo.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S3S670xPgko" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+<youtube id="S3S670xPgko"></youtube>
 
 To begin, visit the Nexmo community page on GitHub where we host some open source code. The Nexmo Messages API for Salesforce package is hosted here at [nexmo-salesforce](https://github.com/nexmo-community/nexmo-salesforce). We have some documentation if you are going to do any sort of quick start or if you would like to install with Ant. Otherwise, the *Deploy to Salesforce* tool embedded at the top of the documentation enables that one-click integration I referenced earlier. Click that button to start the installation process and then we'll get into invoking the send message function within our Salesforce apps.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image8.png"><img class="alignnone wp-image-28992 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image8.png" alt="Nexmo for Salesforce" width="1200" height="798" /></a>
+![Nexmo for Salesforce](/content/blog/integrating-multichannel-messaging-into-salesforce/image8.png "Nexmo for Salesforce")
 
 The first thing you'll do is log into Salesforce, as this is the environment in which you want the package embedded. Just make sure that your production environment is checked when you're actually doing the installation.
 
@@ -41,7 +41,7 @@ After you've provided Salesforce with the authorization, you’ll see the page w
 
 So just that simply you've now integrated the Messages API for Salesforce package into your Salesforce environment. You can actually prove that it’s installed by returning to your Salesforce environment, opening the developer console, and then opening up the Nexmo Apex class. You’ll see that the global Nexmo class is available within your Salesforce environment on Apex.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image10.png"><img class="alignnone wp-image-28994 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image10.png" alt="Code example" width="1200" height="630" /></a>
+![code example](/content/blog/integrating-multichannel-messaging-into-salesforce/image10.png "code example")
 
 This code is open source for your consumption; the endpoint—*https://api.nexmo.com*—will not change. The version may change in the future, but we won't be deprecating this version anytime soon. We very simply removed the necessity to specify the channel or to make multiple requests in order to send messages across various channels.
 
@@ -53,51 +53,49 @@ The Nexmo Apex class is available within our environment. And you can obviously 
 
 Now, I'll walk us through the Process Builder and creating a really common use case: support notifications. When a customer support agent closes a case in Service Cloud, Process Builder will trigger a flow that sends out an SMS or WhatsApp message to the customer. I'm going to show you how you can create the listener in Process Builder that will send an alert notification to your customers every time an agent services a customer request and closes the case. Watch the video below to see my full Process Builder demo.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/410GaQvLJgA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+<youtube id="410GaQvLJgA"></youtube>
 
 To begin, open a new process in Process Builder and enter a unique Process Name, something like *Nexmo_Case_Close*. For the description, you can enter "Send a message to customer confirming their issue has been resolved." From the *The process starts when* dropdown menu, choose *a record changes* as that's the trigger that will kick off the process.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image4.png"><img class="alignnone wp-image-28989 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image4.png" alt="Process builder" width="1200" height="685" /></a>
+![Process builder](/content/blog/integrating-multichannel-messaging-into-salesforce/image4.png "Process builder")
 
 The process will open in the Process Builder interface, a simple visual builder tool that you don't need any development experience to use. With the Messages API for Salesforce package installed, the Nexmo Apex class is available within Process Builder.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image5.png"><img class="alignnone wp-image-28990 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image5.png" alt="Process builder deep dive" width="1200" height="618" /></a>
+![process builder deep dive](/content/blog/integrating-multichannel-messaging-into-salesforce/image5.png "process builder deep dive")
 
 Click *Add Object*. Choose *Case* as the object. We already have a process (Nexmo_Case_Close) that's monitoring cases, so go ahead and select it.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image12.png"><img class="alignnone wp-image-28996 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image12.png" alt="Process builder" width="1200" height="620" /></a>
+![process builder](/content/blog/integrating-multichannel-messaging-into-salesforce/image12.png "process builder")
 
 To make sure the process allows us to monitor cases as expected, choose to start the process *when a record is created or edited*, rather than only when it's created. Under the Advanced options, leave the Recursion option ("Allow process to evaluate a record multiple times in a single transaction?") unchecked for now. Save the Object.
 
 Next, click *Add Criteria* in the process. The Criteria Name can be something like *Case_Closed*, because we just want to send a notification to the end customer when an agent has closed the case. The *Criteria for Executing Actions* selection is where we will determine our business logic, so again, you don't need any coding experience to build the process. This is actually building the logic that is going to determine whether or not the functions in your flow will be executed. So let's set it for when all conditions are met.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image13.png"><img class="alignnone wp-image-28997 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image13.png" alt="Process builder" width="1200" height="620" /></a>
+![Process builder](/content/blog/integrating-multichannel-messaging-into-salesforce/image13.png "Process builder")
 
 Next, we're gonna set conditions. The only condition is that the case is closed, so for the *Field*, scroll through the list and select Closed, which will be of type Boolean (true or false) and the API Name will be *IsClosed*. So the way our selected conditions would read is: if the case is closed, then the process would do something. The Advanced option is "Do you want to execute the actions only when the specified changes are made to the record?" Go ahead and check Yes, because you probably don't want updates every time the case is edited, there's any sort of internal message, or the status goes from open to working or open to escalated. You want it to execute only when the case is closed. Click *Save*.
-
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image13.png"><img class="alignnone wp-image-28997 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image13.png" alt="Process builder" width="1200" height="620" /></a>
 
 Now we have a record that we're monitoring. We have logic that we've built in for when a case is actually closed.
 
 Next, let's add an action. We can select Apex as the Action Type. The Action Name can be “Send Update Message.” For Apex Class, "Send Nexmo Message" will come up and because you've installed that package, it should be available directly.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image9.png"><img class="alignnone wp-image-28993 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image9.png" alt="Process builder" width="1200" height="618" /></a>
+![process builder](/content/blog/integrating-multichannel-messaging-into-salesforce/image9.png "process builder")
 
 What comes up next are the Apex variables, the variables you're gonna be passing in to your request as part of that payload. You can specify the channel, which in this case is WhatsApp. The *fromId* would be a Nexmo-enabled WhatsApp number. The text would be something to the effect of "Hi, thank you for your inquiry. Your issue has been resolved. We sent you a refund of the amount xyz." This could be a dynamic value, but for this exercise, let's keep it static. The toId is going to be your phone number. With all the strings correctly set, you can save the variables. All you have to do now is to activate the process.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image1.png"><img class="alignnone wp-image-28986 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image1.png" alt="Process builder" width="1200" height="618" /></a>
+![process builder](/content/blog/integrating-multichannel-messaging-into-salesforce/image1.png "process builder")
 
 To test the process, you can assume the role of an agent and see if it behaves as expected. Go to your App Launcher and open the Service Console. Pretend you’re an agent sitting in your contact center reviewing the open cases that are building up in your queue.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image11.png"><img class="alignnone wp-image-28995 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image11.png" alt="My open cases" width="1200" height="600" /></a>
+![process builder](/content/blog/integrating-multichannel-messaging-into-salesforce/image11.png "process builder")
 
 Choose a case by its case number and suppose its description is something like, "Hi, I saw your ad. Interested." You can respond to the customer by typing a message saying, "Great, we are going to reach out directly. Thanks for your support!" and sharing it.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image2.png"><img class="alignnone wp-image-28987 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image2.png" alt="Case details" width="1200" height="584" /></a>
+![salesforce](/content/blog/integrating-multichannel-messaging-into-salesforce/image2.png)
 
 The key step here is to update the case’s status, because we have the trigger set for when the case is closed. So go ahead and close the case and see if the process picks up on it.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/04/image6.png"><img class="alignnone wp-image-28991 size-full" src="https://www.nexmo.com/wp-content/uploads/2019/04/image6.png" alt="Case details" width="1200" height="585" /></a>
+![case details](/content/blog/integrating-multichannel-messaging-into-salesforce/image6.png "case details")
 
 Closing the case should’ve fired the trigger when this event was ingested by our Process Builder flow. You should receive a message from Process Builder to your WhatsApp account saying, "Hi, thank you for your inquiry. Your issue has been resolved. We sent you a refund amount of xyz."
 
@@ -111,4 +109,4 @@ If you want to access the code and use the package itself, go to our [GitHub com
 
 To see how our partners are using the package, watch this demo of SMS Magic's multichannel messaging solution powered by the Nexmo Messages API for Salesforce.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/0yGtNWcQSeU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="allowfullscreen"></iframe>
+<youtube id="0yGtNWcQSeU"></youtube>
