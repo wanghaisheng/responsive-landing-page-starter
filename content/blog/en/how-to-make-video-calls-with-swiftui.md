@@ -37,7 +37,11 @@ The next step is to get the iOS application set up. Once you have created the ap
 
 ### Create an Xcode Project
 
-To get started, open Xcode and create a new project by going to File > New > Project. Next, select an App template and give it a name. Select SwiftUI for the interface, SwiftUI App for the life cycle, and Swift for the language. Finally, a location to save your project.
+To get started, open Xcode and create a new project by going to File > New > Project. Select iOS as the platform and App for the template and give it a name. 
+
+![Xcode platform screen](/content/blog/how-to-make-video-calls-with-swiftui/xcode-platform-screen.png)
+
+Select SwiftUI for the interface, SwiftUI App for the life cycle, and Swift for the language. Finally, a location to save your project.
 
 ![Xcode project creation screen](/content/blog/how-to-make-video-calls-with-swiftui/xcode.png)
 
