@@ -50,7 +50,7 @@ For Step 2, set the following:
 * The QnA service we're going to use (this will match the Service Name we just created in the Azure Portal)
 * The language of our bot
 
-![Build QnAMaker gif](/content/blog/santa’s-nexmo-helper-–-c-advent-series/qnamakerdemo.gif)
+![Build QnAMaker gif](/content/blog/santa’s-nexmo-helper-c-advent-series/image-graphic1.png)
 
 For Step 3 we're going to name our knowledge base "Santa's Nexmo Helper."
 
@@ -62,7 +62,7 @@ With all this set, click Create Knowledge Base.
 
 This will ingest the FAQ's that we pointed QnA Maker at and will bring us to a page that looks like this:
 
-![QnA Maker Knowledgebase edit screen](/content/blog/santa’s-nexmo-helper-–-c-advent-series/qnamaker_kb_edit_screen.png)
+![QnA Maker Knowledgebase edit screen](/content/blog/santa’s-nexmo-helper-c-advent-series/qnamaker_kb_edit_screen.png)
 
 ### Editing, Publishing, and Testing Our Knowledgebase
 
@@ -72,11 +72,11 @@ After editing the Knowledge Base sufficiently, clicking `Save and Train` will sa
 
 To test, click the `Test` button in the upper right-hand corner. This will open the testing dialog, you can send id a question e.g. `how do reindeer fly?` and the bot will respond!
 
-![Test Question](/content/blog/santa’s-nexmo-helper-–-c-advent-series/testquestion.png)
+![Test Question](/content/blog/santa’s-nexmo-helper-c-advent-series/testquestion.png)
 
 It's even possible to inspect how the bot made its determination. Click the inspect link and the inspection dialog will pop out. This will show the bot's confidence in its answer and some alternatives it came up with.
 
-![Inspect Drill down](/content/blog/santa’s-nexmo-helper-–-c-advent-series/inspect_drill_down.png)
+![Inspect Drill down](/content/blog/santa’s-nexmo-helper-c-advent-series/inspect_drill_down.png)
 
 When the bot's ready to go, click publish on the top of the page, then click publish inside the dialog that shows up. When this completes there will be a screen that pops up with some helpful request structures that can be used to generate an answer from the bot. It'll look something like:
 
@@ -389,7 +389,7 @@ The last thing needed is to fire up the service, expose it to the internet, and 
 
 For simplicity this demo uses IIS. To make setting up ngrok easier disable SSL for IIS Express by going into the project Debug properties and unchecking the "Enable SSL" setting:
 
-![Debug settings](/content/blog/santa’s-nexmo-helper-–-c-advent-series/iis_config.png)
+![Debug settings](/content/blog/santa’s-nexmo-helper-c-advent-series/iis_config.png)
 
 Take note of the port number in the app URL field, it will be used in the next step.
 
@@ -403,7 +403,7 @@ ngrok http --host-header="localhost:PORT_NUMBER" http://localhost:PORT_NUMBER
 
 To set up the tunnel, replace 'PORT_NUMBER' with the IIS Express port number noted earlier. This will create an output that looks something like this:
 
-![ngrok output](/content/blog/santa’s-nexmo-helper-–-c-advent-series/ngrok-1.png)
+![ngrok output](/content/blog/santa’s-nexmo-helper-c-advent-series/ngrok-1.png)
 
 Take note of the http base url here—in the image above the base url is http<span></span>://dc0feb1d<span></span>.ngrok<span></span>.io.
 
@@ -425,7 +425,7 @@ In the [Nexmo Dashboard](https://dashboard.nexmo.com/) open Messages and Dispatc
 
 Per the example ngrok tunnel it will look something like:
 
-![messages urls](/content/blog/santa’s-nexmo-helper-–-c-advent-series/messages_urls.png)
+![messages urls](/content/blog/santa’s-nexmo-helper-c-advent-series/messages_urls.png)
 
 > NOTE: The 8 characters preceding ngrok<span></span>.io are not fixed on the free tier. This means every time the ngrok command is run it will be necessary to change where the webhooks are aiming. It's possible to create a static hostname by upgrading to a paid ngrok tier.
 
@@ -435,11 +435,11 @@ And that's it! Santa's Nexmo Helper is ready to deploy. Fire up IIS Express and 
 
 Here's an example from Facebook:
 
-![Facebook Example](/content/blog/santa’s-nexmo-helper-–-c-advent-series/facebook_sample.jpeg)
+![Facebook Example](/content/blog/santa’s-nexmo-helper-c-advent-series/facebook_sample.jpg)
 
 And one from SMS:
 
-![SMS Example](/content/blog/santa’s-nexmo-helper-–-c-advent-series/sms_sample.jpeg)
+![SMS Example](/content/blog/santa’s-nexmo-helper-c-advent-series/sms_sample.jpg)
 
 Well, there it is, Santa's Nexmo Helper is up and operational.
 
