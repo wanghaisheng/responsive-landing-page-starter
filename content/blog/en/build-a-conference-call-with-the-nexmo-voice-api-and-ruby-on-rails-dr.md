@@ -25,8 +25,6 @@ You can find the full working code for this sample on [GitHub](https://github.co
 * [Ruby on Rails](https://rubyonrails.org/)
 * [ngrok](https://ngrok.io) to expose our Rails application to the outside
 
-<sign-up number></sign-up>
-
 ## Create a Conference Call with Ruby on Rails
 
 We are going to accomplish the following tasks to create a conference call ("conversation") with the Nexmo Voice API:
