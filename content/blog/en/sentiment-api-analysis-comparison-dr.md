@@ -24,6 +24,7 @@ Having the ability to analyze text and route people to the appropriate channel p
 Any business that utilizes text communication, whether on social media or in support channels,  greatly benefits from this analysis for learning purposes both after the fact or in real time. As a developer, we can provide this functionality to the organization with ease.
 
 ## Overview
+
 This post serves as a comparison of four sentiment analysis cloud services: [Amazon Comprehend](https://aws.amazon.com/comprehend/), [Azure Text Analytics](https://azure.microsoft.com/en-us/services/cognitive-services/text-analytics/), [Google Natural Language](https://cloud.google.com/natural-language/), and [IBM Watson Tone Analyzer](https://www.ibm.com/cloud/watson-tone-analyzer).
 
 As text input, I used the [Nexmo Incoming Messages webhook](https://developer.nexmo.com/concepts/guides/webhooks) to allow for instant feedback from the service with each text message.  During the process, I made sure to capture some notes and organized them here to help you evaluate a provider.
@@ -34,33 +35,32 @@ Each service uses a slightly different scoring system. However, each tends to us
 
 As discovered find in the testing below, accuracy for sentiment is easy when phrasing and intent are straightforward.  However, the human context in speech can drastically change a sentiment with the usage of language like sarcasm.  Sarcasm and other language devices make sentiment analysis more difficult to be accurate 100% of the time and generally text communications as a whole.
 
-
 ### "I am happy!"
 
 Every service got this as a positive/joyful response without too much trouble.
 
-+ Amazon Comprehend - `Positive - 0.9970158338546753`
-+ Azure Text Analytics API - `0.9928278923034668`
-+ Google Natural Language API - `0.800000011920929`
-+ Watson Tone Analyzer: `1 - Joy`
+* Amazon Comprehend - `Positive - 0.9970158338546753`
+* Azure Text Analytics API - `0.9928278923034668`
+* Google Natural Language API - `0.800000011920929`
+* Watson Tone Analyzer: `1 - Joy`
 
 ### "I am sad."
 
 Another easy test that came back with a negative sentiment.  Notice here that Google uses negative numbers for negative sentiment.
 
-+ Amazon Comprehend - `Negative - 0.9563825130462646`
-+ Azure Text Analytics API - `0.0036676526069641113`
-+ Google Natural Language API - `-0.20000000298023224`
-+ Watson Tone Analyzer: `1 - Sadness`
+* Amazon Comprehend - `Negative - 0.9563825130462646`
+* Azure Text Analytics API - `0.0036676526069641113`
+* Google Natural Language API - `-0.20000000298023224`
+* Watson Tone Analyzer: `1 - Sadness`
 
 ### "So happy there was a pop quiz today."
 
 In the third test, I used purposefully misleading text.  This phrase would most likely be sarcasm, and the sentiment would be the opposite of happy.  Every service was less confident that the positive sentiment was accurate, but Google went along with it.  
 
-+ Amazon Comprehend - `Positive - 0.978675365447998`
-+ Azure Text Analytics API - `0.887139081954956`
-+ Google Natural Language API - `0.800000011920929`
-+ Watson Tone Analyzer: `0.899749 - Joy`
+* Amazon Comprehend - `Positive - 0.978675365447998`
+* Azure Text Analytics API - `0.887139081954956`
+* Google Natural Language API - `0.800000011920929`
+* Watson Tone Analyzer: `0.899749 - Joy`
 
 ## Features
 
@@ -73,10 +73,12 @@ The pricing for the additional functionality varies by the provider as well, so 
 The languages supported vary between services quite a bit. Watson Tone Analyzer supports the least amount, supporting only English and French.  All of the other services provide at least these with many additional languages, as well. The common languages between them are German, French, Italian, Spanish, English, and Portuguese.
 
 [Amazon Comprehend Language Support](https://docs.aws.amazon.com/comprehend/latest/dg/supported-languages.html)
-[Azure Text Analytics Language Support](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/language-support)
-[Google Natural Language API Language Support](https://cloud.google.com/natural-language/docs/languages)
-[Watson Tone Analyzer Language Support](https://cloud.ibm.com/docs/services/tone-analyzer?topic=tone-analyzer-utgpe)
 
+[Azure Text Analytics Language Support](https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/language-support)
+
+[Google Natural Language API Language Support](https://cloud.google.com/natural-language/docs/languages)
+
+[Watson Tone Analyzer Language Support](https://cloud.ibm.com/docs/services/tone-analyzer?topic=tone-analyzer-utgpe)
 
 ## Ease of Use
 
@@ -89,6 +91,7 @@ All of the services provide an SDK with the built-in functionality to make setup
 The Amazon Comprehend request uses an array to pass in multiple phrases at once and responds with an index referenced object that uses `Positive`,  `Negative`, `Neutral`, and `Mixed` scores.  Using multiple scores like this could prove useful in times when the phrase is more complex and doesn't merely fall into one score category.
 
 #### Request
+
 ```js
 function analyzeTone(params) {
   var obj = {
@@ -195,6 +198,7 @@ function analyzeTone(params) {
       });
 }
 ```
+
 #### Response
 
 ```js
@@ -247,6 +251,7 @@ function analyzeTone(params) {
       });
 }
 ```
+
 #### Response
 
 ```js
@@ -267,16 +272,14 @@ Amazon and Google both charge in a measure of `units`.  Amazon's unit is 100 cha
 
 Given that, the easiest way to normalize the different costs is to use a 1000 character message as an example with a volume of 500,000 per month on a standard system (higher compute power available at higher costs).  Volume pricing may help your specific case if you have a significantly higher amount.
 
+| Provider                                                                                                         | Free Tier                | Cost                                    | Normalized Cost* |
+| ---------------------------------------------------------------------------------------------------------------- | ------------------------ | --------------------------------------- | ---------------- |
+| [Amazon Comprehend](https://aws.amazon.com/comprehend/pricing/)                                                  | N/A                      | Up to 10M Units - $0.0001               | $500             |
+| [Azure Text Analytics API](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/) | 5,000 Text Records/Month | 0-500K - $2 per 1,000 text records      | $1000            |
+| [Google Natural Language API](https://cloud.google.com/natural-language/pricing)                                 | 5,000 Units/Month        | 5K+ -1M $1.00/1000 units                | $500             |
+| [Watson Tone Analyzer](https://www.ibm.com/cloud/watson-tone-analyzer/pricing)                                   | 2,500 API Calls/Month    | 1-250K @ $0.0088<br>250K-500K @ $0.0013 | $2437            |
 
-|Provider|Free Tier|Cost|Normalized Cost*|
-|---|---|---|---|
-|[Amazon Comprehend](https://aws.amazon.com/comprehend/pricing/)|N/A|Up to 10M Units - $0.0001|$500|
-|[Azure Text Analytics API](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/text-analytics/)|5,000 Text Records/Month|0-500K - $2 per 1,000 text records|$1000|
-|[Google Natural Language API](https://cloud.google.com/natural-language/pricing)|5,000 Units/Month|5K+ -1M $1.00/1000 units|$500|
-|[Watson Tone Analyzer](https://www.ibm.com/cloud/watson-tone-analyzer/pricing)|2,500 API Calls/Month|1-250K @ $0.0088<br>250K-500K @ $0.0013|$2437|
-
-<small>_* Costs based on 500,000,000 characters sent per month - as of 10/11/19 - subject to change_</small>
-
+<small>*\* Costs based on 500,000,000 characters sent per month - as of 10/11/19 - subject to change*</small>
 
 ## Recap
 
@@ -286,7 +289,7 @@ Amazon Comprehend, with its additional features, low cost, and basic language su
 
 If you would like to try out any or all of these services, the [Nexmo Extend](https://developer.nexmo.com/extend) team has created some example code to help you get started.
 
-+ [Amazon Comprehend](https://nexmo.dev/aws-nexmo-sms-analysis-js)
-+ [Azure Text Analytics](https://nexmo.dev/azure-nexmo-sms-analysis-js)
-+ [Google Natural Language API](https://nexmo.dev/google-nexmo-sms-analysis)
-+ [IBM Watson Tone Analyzer](https://nexmo.dev/ibm-nexmo-sms-analysis-repo)
+* [Amazon Comprehend](https://nexmo.dev/aws-nexmo-sms-analysis-js)
+* [Azure Text Analytics](https://nexmo.dev/azure-nexmo-sms-analysis-js)
+* [Google Natural Language API](https://nexmo.dev/google-nexmo-sms-analysis)
+* [IBM Watson Tone Analyzer](https://nexmo.dev/ibm-nexmo-sms-analysis-repo)
