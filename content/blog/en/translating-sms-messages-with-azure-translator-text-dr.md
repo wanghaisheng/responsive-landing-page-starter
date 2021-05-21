@@ -18,23 +18,25 @@ canonical: ""
 In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://www.nexmo.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr), [AWS Translate](https://www.nexmo.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr). and [IBM Watson Language Translator](https://www.nexmo.com/blog/2019/11/12/translate-sms-messages-with-ibm-watson-dr).
 
 ## Overview
+
 In this post, I show you how to create an [inbound Nexmo SMS](https://developer.nexmo.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [Azure Translator Text](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/).  
 
 In order to get started, you will need the following items set up:
 
-+ [Azure](https://azure.microsoft.com/en-us/)
-+ [Nexmo Account](https://dashboard.nexmo.com/sign-up)
-+ [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+* [Azure](https://azure.microsoft.com/en-us/)
+* [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+
+  <sign-up></sign-up>
 
 ## Create Your Project
 
 You will only need a couple of packages to get things going.
 
-+ [`@azure/ms-rest-js`](https://www.npmjs.com/package/@azure/ms-rest-js)—this is the Azure SDK and will assist with the credentials
-+ [`@azure/cognitiveservices-translatortext`](https://www.npmjs.com/package/@azure/cognitiveservices-translatortext)—this is the Azure Translator Text SDK
-+ [`express`](https://www.npmjs.com/package/express)—web framework to serve the webhook
-+ [`dotenv`](https://www.npmjs.com/package/dotenv)—a package to load environment variables
-+ [`body-parser`](https://www.npmjs.com/package/body-parser)—middleware for Express to handle the incoming webhook object
+* [`@azure/ms-rest-js`](https://www.npmjs.com/package/@azure/ms-rest-js)—this is the Azure SDK and will assist with the credentials
+* [`@azure/cognitiveservices-translatortext`](https://www.npmjs.com/package/@azure/cognitiveservices-translatortext)—this is the Azure Translator Text SDK
+* [`express`](https://www.npmjs.com/package/express)—web framework to serve the webhook
+* [`dotenv`](https://www.npmjs.com/package/dotenv)—a package to load environment variables
+* [`body-parser`](https://www.npmjs.com/package/body-parser)—middleware for Express to handle the incoming webhook object
 
 Initialize the project and then install the above requirements using `npm` or `yarn`.
 
@@ -85,7 +87,6 @@ ngrok http 3000
 
 Make a note of the `ngrok` address, as you will need that in a later step.
 
-
 ## Setting Up Azure Translator Text
 
 Next you can set up the Azure Translator Text service in the Azure portal. Start by opening the portal and clicking `Create New Resource`.
@@ -114,8 +115,6 @@ Grab the key and endpoint from the quick start page and update the `.env` file w
 During my trials, I attempted to use the services endpoint presented in the dashboard, but didn't have any luck getting it to work correctly.  The URL above is the global endpoint that will work if you run into the same troubles.
 
 ![Translator Text Resource Quickstart](https://www.nexmo.com/wp-content/uploads/2019/11/translate_quickstart.png "Translator Text Resource Quickstart")
-
-
 
 ## Setting Up Nexmo Inbound SMS Messages
 
@@ -146,7 +145,6 @@ The only step now is to create the Express route and functions to handle the inc
 We can set up the route handler first.  Nexmo allows the  setting of a default SMS webhook behavior.  [In the settings panel](https://dashboard.nexmo.com/settings) you can change the default `HTTP` method used. Mine is set to `POST-JSON`, and I recommend using this setting. If you are unable to modify your setting, the code used here will handle all three options.
 
 ![Default Nexmo SMS HTTP Method](https://www.nexmo.com/wp-content/uploads/2019/10/default-sms-settings.png "Default Nexmo SMS HTTP Method")
-
 
 Open up the `index.js` file, and at the bottom, paste the following code:
 
@@ -223,11 +221,10 @@ Translation: Hello
 
 The Azure Translator Text full response object has a lot of details as well, so you can change the response to include `console.dir(translationResult, {depth: null})` to see the full payload.  
 
-
 ## Recap
 
 Azure Translator Text is a great tool to translate your inbound messages from Nexmo. This example only scratches the surface, but should be a good start. You can venture off in several directions from here using this as a jumping point. Let me know what ideas you have for using these two services together.
 
-You can find a completed version of this tutorial at [https://github.com/nexmo-community/sms-azure-translate-js](https://github.com/nexmo-community/sms-azure-translate-js).
+You can find a completed version of this tutorial at <https://github.com/nexmo-community/sms-azure-translate-js>.
 
-If you want to learn more about the Extend projects we have, you can visit [https://developer.nexmo.com/extend](https://developer.nexmo.com/extend) to learn more.
+If you want to learn more about the Extend projects we have, you can visit <https://developer.nexmo.com/extend> to learn more.
