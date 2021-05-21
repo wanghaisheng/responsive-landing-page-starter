@@ -323,4 +323,4 @@ If you build and run the project, you should now be able to start a video chat! 
 
 ## What Next?
 
-The completed project is available on on [GitHub](https://github.com/opentok/BasicVideoChat-SwiftUI), and you can read more about the Vonage Video API through our [documentation](https://tokbox.com/developer/guides/).
+The completed project is available on on [GitHub](https://github.com/opentok/opentok-swiftui-basic-video-chat), and you can read more about the Vonage Video API through our [documentation](https://tokbox.com/developer/guides/).
