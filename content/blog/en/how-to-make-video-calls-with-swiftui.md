@@ -1,7 +1,7 @@
 ---
 title: How to Make Video Calls With SwiftUI
-description: "In this tutorial, you will use the Vonage Video Client SDK for iOS
-  to build a one-to-one video chat in SwiftUI. "
+description: Learn how to build a one-to-one video chat in SwiftUI using the
+  Vonage Video Client SDK for iOS.
 author: abdul-ajetunmobi
 published: true
 published_at: 2021-05-13T14:24:44.140Z
@@ -29,11 +29,11 @@ In this tutorial, you will use the Vonage [Video Client SDK](https://tokbox.com/
 
 ## Create a Vonage Video API Project
 
-Open your [Vonage Video API dashboard](https://tokbox.com/account/#/) and create a new API project. You can call it anything and leave the codec as VP8. Under the project tools section, create a routed [session](https://tokbox.com/developer/guides/create-session/) ID. You can think of a session as a room in which participants meet and chat. Just below, use the session ID to create a [token](https://tokbox.com/developer/guides/create-token/), you can leave the rest of the fields as their default. Tokens are used to authenticate users. Keep a note of your session ID, token and project API key for a future step.
+Open your [Vonage Video API dashboard](https://tokbox.com/account/#/) and create a new API project. You can call it anything you wish, but leave the codec as VP8. Under the project tools section, create a routed [session](https://tokbox.com/developer/guides/create-session/) ID. You can think of a session as a room in which participants meet and chat. Just below, use the session ID to create a [token](https://tokbox.com/developer/guides/create-token/); you can leave the rest of the fields as their default. Tokens are a method used to authenticate users. Keep a note of your session ID, token and project API key for a future step.
 
 ## Creating the iOS Application
 
-The next step is to get the iOS application set up. Once the application is created, you will install the Video Client SDK and ask for microphone and camera permissions.
+The next step is to get the iOS application set up. Once you have created the application, you need to install the Video Client SDK and ask for microphone and camera permissions.
 
 ### Create an Xcode Project
 
@@ -76,7 +76,7 @@ The Video Client SDK uses the credentials you created in the Video API dashboard
 
 ### Connecting the Client SDK
 
-Create a new file called `OpenTokManager.swift` by going to *File > New File (CMD + N)*. An empty swift file will be created where you can add the following, replacing the empty strings with your credentials:
+Create a new file called `OpenTokManager.swift` by going to *File > New File (CMD + N)* and add the following, replacing the empty strings with your credentials:
 
 ```swift
 import OpenTok
@@ -107,7 +107,7 @@ final class OpenTokManager: NSObject, ObservableObject {
 }
 ```
 
-In addition to the credentials there are variables for a [session](https://tokbox.com/developer/guides/basics/#session), [publisher](https://tokbox.com/developer/guides/basics/#publish) and [subscriber](https://tokbox.com/developer/guides/basics/#subscribe). As mentioned earlier, you can think of a session as a room that the clients connect to; the SDK has the `OTSession` class for this. Publishers,  `OTPublisher`, allow the client to publish audio and video when connected to a session. Subscribers, `OTSubscriber`, allow for the client to subscribe to audio and video from other clients in the session. There are also variables using the `@Published` property wrapper, which is how the `OpenTokManager` class will communicate with the view code later on.
+In addition to the credentials, there are variables for a [session](https://tokbox.com/developer/guides/basics/#session), [publisher](https://tokbox.com/developer/guides/basics/#publish) and [subscriber](https://tokbox.com/developer/guides/basics/#subscribe). As mentioned earlier, you can think of a session as a room that the clients connect to; the SDK has the `OTSession` class for this. Publishers,  `OTPublisher`, allow the client to publish audio and video when connected to a session. Subscribers, `OTSubscriber`, allow for the client to subscribe to audio and video from other clients in the session. There are also variables using the `@Published` property wrapper, which is how the `OpenTokManager` class will communicate with the view code later on.
 
 Now that the properties are in place, add the following functions to the `OpenTokManager` class:
 
@@ -262,7 +262,7 @@ Similarly to when to publish to a session, if subscribing is successful, you are
 
 ## Building the Video Chat UI
 
-With the `OpenTokManager` class complete, you can now build the UI. The Video Client SDK gives you `UIView` objects for the publisher and subscriber views which cannot be used directly in SwiftUI. The [`UIViewRepresentable`](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) protocol allows for bridging to a `UIView` object to a `View` object for SwiftUI. In the `ContentView.swift` file, add the following structs:
+With the `OpenTokManager` class complete, you can now build the UI. The Video Client SDK gives you `UIView` objects for the publisher and subscriber views which cannot be directly used in SwiftUI. The [`UIViewRepresentable`](https://developer.apple.com/documentation/swiftui/uiviewrepresentable) protocol allows for bridging from a `UIView` object to a `View` object for SwiftUI. In the `ContentView.swift` file, add the following structs:
 
 ```swift
 struct OTErrorWrapper: Identifiable {
