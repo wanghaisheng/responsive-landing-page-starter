@@ -28,7 +28,6 @@ Let's get started!
 In order to work through this tutorial you will need the following:
 
 * Rails 5.2+
-* A Nexmo Account
 * ngrok
 
 ## Create a Voicemail Application
