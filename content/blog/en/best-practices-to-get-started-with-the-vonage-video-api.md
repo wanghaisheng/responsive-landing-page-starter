@@ -107,3 +107,205 @@ More information about media modes can be found at: <https://tokbox.com/develope
 * HLS/RTMP stream automatically stops sixty seconds after the last client disconnects from the session
 
 To learn more about live streaming such as layouts, max duration and how to start/stop live stream, visit <https://tokbox.com/developer/guides/broadcast/live-streaming/>.
+
+# User Interface/Experience
+
+* **Precall Test** - add a precall test where users’ device and connection will be subject to network and hardware test prior to joining a session. Remember to generate new sessionIDs for every test and let the test run for at least 30 seconds for more accurate results.
+
+  * Publishing/Subscribing video streams - include handlers
+  * Javascript - <https://tokbox.com/developer/guides/exception-handling/js/> and <https://tokbox.com/developer/sdks/js/reference/ExceptionEvent.html>
+  * IOS - <https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSessionDelegate.html>
+  * Android - <https://tokbox.com/developer/sdks/android/reference/>
+* **Audio Fallback** - our media server constantly checks network conditions and if it detects an issue with end users’ connection, it will automatically drop the video and continue with audio only, if packet loss is greater than 15%; and, an event gets sent when this happens. It is recommended that such event is displayed on the UI alerting impacted users that the quality of their connection dropped, switching to audio only. The threshold to switch to audio-only is not configurable, more information can be found [here](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#event:videoDisableWarning).[](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#event:videoDisableWarning) \
+  \
+  *“audioFallbackEnabled (Boolean) — Whether the stream will use the audio-fallback feature (true) or not (false). The audio-fallback feature is available in sessions that use the OpenTok Media Router. With the audio-fallback feature enabled (the default), when the server determines that a stream's quality has degraded significantly for a specific subscriber, it disables the video in that subscriber in order to preserve audio quality. “ --<https://tokbox.com/developer/sdks/js/reference/OT.html>*
+* **Reconnecting to session** - when a participant suddenly drops from a session due to network-related issues, it will attempt to reconnect back to the session. For better user’s experience, it is recommended that such events are captured and properly displayed to the UI letting the user know that it is attempting to reconnect back to the session. More information can be found [here](https://tokbox.com/developer/guides/connect-session/js/).
+* **Active speaker** - for audio only session, try adding an audio level meter so that participants can have a visual of who the current active speaker/s is/are. For video, try changing the layout where the active speaker gets more screen real estate. You can use the audioLevelUpdated event that gets sent periodically to make UI adjustments, more information can be found [here](https://tokbox.com/developer/guides/customize-ui/js/).
+* **Loudness detector** - It is good practice to implement a loudness detector to identify when a given user who is muted is trying to speak. In this case, the [audioLevelUpdated](https://tokbox.com/developer/sdks/js/reference/AudioLevelUpdatedEvent.html) event will fire with audioLevel set to 0. Therefore, it’s necessary to use an AudioContext to avoid this situation.For reference, follow this [blog post](https://vonagedev.medium.com/how-to-create-a-loudness-detector-using-vonage-video-api-8dbcf93595a8).
+* **Report Issue API** - <https://tokbox.com/developer/guides/debugging/js/#report-issue>. This allows the end consumer of the application to trigger a unique issue ID from the client side. Our customer can store this issue ID and that can be used when raising a ticket with support. The issue Id will help to identify the unique connection ID that reported the problem and focus the investigation from support.
+
+# Features
+
+* **Chat (text messaging)** - you can send messages using Vonage’s signaling, <https://tokbox.com/developer/sdks/js/reference/Session.html#signal>, but note that messages are not persistent on Vonage’s video platform. When adding text messaging functionality , keep in mind that some users may arrive/join a session after text messages were sent; latecomers will be unable to view messages that were sent. Additionally, should you decide to record a session, text messages will not be saved. To solve this problem, we recommend using the Nexmo Client SDK (see the sample code, Nexmo in-app messaging, at the end of this document).
+* **Archiving** - there are two types of offerings when it comes to recording, composed and individual stream. Below talks about the difference between the two and things to consider
+
+  * Composed
+
+    * Can record up to 16 streams. Alternatively, we allow up to 50 audio-only streams
+    * Single MP4 file containing all media streams
+    * Customizable layout - <https://tokbox.com/developer/guides/archiving/layout-control.html>
+    * Can be started automatically (240 minutes max. If recording is not stopped, it will start archiving to a new file)
+    * It is possible to prioritize certain streams to be included in the recording by assigning different layout classes. For example, screen-share streams  - <https://tokbox.com/developer/guides/archive-broadcast-layout/#stream-prioritization-rules>
+  * Individual Stream
+
+    * Can record up to 50 streams
+    * Multiple individual streams/files saved in a zip folder
+    * Intended for use with a post-processing tool to produce customized content
+    * Cannot be started automatically
+
+<!---->
+
+* **Screen-share** - hide the publisher that sharing its screen to avoid the hallway-mirror effect.
+
+  * ContentHint: motion, detail, etc: This flag can and should be set after 2.20.
+
+## Storing archives 
+
+Vonage will keep copies of archives for 72 hours if uploading fails, if cloud storage has not been configured or if the disable option for storage fallback is not selected. Keep in mind that should you decide to not enable upload fallback and uploading fails for whatever reason, that archives will be not recoverable.
+
+* AWS S3: Visit this site <https://tokbox.com/developer/guides/archiving/using-s3.html> for instructions on how to upload archive files to AWS.
+* Azure: Visit this site <https://tokbox.com/developer/guides/archiving/using-azure.html> for instructions on how to upload archive files to Azure.
+
+## Archiving FAQs:
+
+* Are archives encrypted? 
+
+  * No. But one can add an encryption feature for archives. To learn more, visit <https://tokbox.com/developer/guides/archiving/opentok-encryption.html>
+* Can you record just the audio or just the video?
+
+  * Yes. Using REST, set the hasVideo/hasAudio to true or false - <https://tokbox.com/developer/rest/#start_archive>
+* Can I name the archive so that I can identify them by name?
+
+  * Yes. Using REST, set the name to the desired identifier <String> - <https://tokbox.com/developer/rest/#start_archive>
+* How can I check archives’ status?
+
+  * Use the archive inspector. A great article written by one our support engineers can be found here <https://support.tokbox.com/hc/en-us/articles/360029733871-Archiving-FAQ>
+* Can I record certain streams from a session? 
+
+  * No. All streams will be recorded and one will not have the ability to pick which streams he/she wants to be archived.
+
+Important note on Safari browser when using archive - To include video from streams published from Safari clients, you must use a [Safari OpenTok project](https://tokbox.com/developer/sdks/js/safari/). Otherwise, streams published from Safari show up as audio-only
+
+# Quality, Performance and Compatibility
+
+* Devices - for multi party sessions, try to limit the number of participants as more participants require more processing power. 
+
+See below the number of participants that we recommend:
+
+* Mobile = 4 (Engineering official statement supported up to 8 MAX)
+* Laptop = 10
+* Desktop = 15
+* Bandwidth requirements see link - [What is the minimum bandwidth requirement to use OpenTok?](https://support.tokbox.com/hc/en-us/articles/360029732311-What-is-the-minimum-bandwidth-requirement-to-use-OpenTok-)
+* Proxy - if users can only access the internet through a proxy, make sure that it is a “transparent” proxy or it must be configured in the browser for HTTPS connection as 
+
+webRTC does not work well on proxies requiring authentication. Check out our network check flow - <https://tokbox.com/developer/guides/restricted-networks/>
+
+* Firewall - at minimum, below are the ports and domains that need to be included on firewalls’ rules:
+
+
+
+* TCP 443
+* FQDN: tokbox.com
+* FQDN: opentok.com
+* STUN/TURN: 3478
+
+
+
+If allowed, try opening the following range: UDP 1025 - 65535. This range covers port 
+
+            ranges that will provide users the best experience possible. This will also eliminate the
+
+need for TURN; not relaying media through such network elements decreases latency.
+
+
+
+* Codec - link to codec compatibility <https://tokbox.com/developer/guides/codecs/>. Vonage supports VP9, VP8 and H.264 codecs; however, VP9 is only available on relayed media mode on sessions where ALL participants are using Chrome.
+
+
+
+Difference between VP8 and H.264:
+
+
+
+* VP8 is a software codec, more mature and can handle lower bitrates. Additionally, it supports scalable/simulcast video.
+* H.264 is available as a software or hardware depending on the device. It does not support scalable video or simulcast.
+
+By default, codec is set to VP8. If you need to change the assigned codec for a particular 
+
+project key, login to your portal to make the change.
+
+
+
+Session Monitoring
+
+* Visit our dev page - <https://tokbox.com/developer/guides/session-monitoring/>
+* Session monitoring allows you to register a webhook URL.
+* Use this feature to monitor sessions and streams - an example of this is limiting the number of participants in a session, this is often used alongside forceDisconnect function for JS - <https://tokbox.com/developer/guides/moderation/js/#force_disconnect>. Moderator can also call an action to the server and have it do a REST call to force disconnect - <https://tokbox.com/developer/guides/moderation/rest/>
+* Can be used to track usage (for better usage tracking, use Advance Insights - <https://tokbox.com/developer/guides/insights/#obtaining-session-data-advanced-insights->).
+
+
+
+Addons
+
+It is possible now for Enterprise customers to purchase (or remove) add-ons with a single click. Refer to [this presentation](https://docs.google.com/presentation/d/16Q9XRznFLs5rl2DZFYt5Nwl1ibKj_j_y-9XQZ5C3VSc/edit#slide=id.gafa078777f_0_18) slide for the list of add-ons that can be configured via the self-service tool.
+
+* SIP Interconnect
+* * Get Started: <https://tokbox.com/developer/guides/sip/>
+  * How to build a Phone Dial in via SIP Interconnect: <https://www.nexmo.com/blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr>
+* Configurable TURN
+* * Get Started: <https://tokbox.com/developer/guides/configurable-turn-servers/>
+* IP Proxy
+* * Get Started: https://tokbox.com/developer/guides/ip-proxy/
+  * How to host on AWS: <link aws hosting setup doc from enrico>
+* Regional Media Zones
+* * Datasheet: <https://tokbox.com/pdf/datasheet-regional_media_zones.pdf>
+* China Relay
+* * What is it?: <https://support.tokbox.com/hc/en-us/articles/360029413612-What-is-China-Relay->
+  * How does it work: <https://support.tokbox.com/hc/en-us/articles/360029732451-How-does-China-relay-work->
+  * Why is it necessary?: <https://support.tokbox.com/hc/en-us/articles/360029411992-Why-is-China-relay-necessary->
+* IP Whitelisting
+* * <https://support.tokbox.com/hc/en-us/articles/360029732031-Can-I-get-a-list-of-the-IP-ranges-of-TokBox-servers->
+* AES-256 Encryption
+
+
+
+Security and Privacy
+
+
+
+Vonage Video API can be customized to meet the highest security standards. Our platform is GDPR compliant and we are HIPAA compliant. For European customers, we are offering extended addons that make it possible to comply with additional local certifications and standards, such as KBV certification (Germany) or other privacy laws that aim for better data ownership & protection (Europe-wide).
+
+
+
+You can find more about GDPR here: 
+
+<https://www.vonage.com/communications-apis/platform/gdpr/>
+
+The Vonage Privacy Policy can be found here: 
+
+<https://www.vonage.com/legal/privacy-policy/>
+
+We are also listing all our sub processors here: <https://www.vonage.com/communications-apis/platform/gdpr/sub-processors/>
+
+In addition, a Data Processing Addendum (DPA) can be found and self-signed on the GDPR page.
+
+
+
+On request and under NDA, we can provide further reports such as SOC2 and External Pen Tests that prove the high security standards of our Video platform.
+
+
+
+Links to sample codes:
+
+
+
+* Precall test
+* * Vonage Precall Test Site: <https://tokbox.com/developer/tools/precall/>
+  * Git Repository: 
+  * * IOS and Android:<https://github.com/opentok/opentok-network-test>
+    * Javascript: <https://github.com/opentok/opentok-network-test-js>
+* Session Monitoring
+* * Call Queuing: <https://github.com/opentok/opentok-video-call-center>
+* Vonage text chat - <https://github.com/opentok/accelerator-textchat-js>, <https://github.com/nexmo-community/stream-video-with-textchat>
+* Vonage In-app Messaging - <https://github.com/nexmo-community/video-messaging-app>
+* Interactive/Live Streaming Broadcast - <https://github.com/opentok/broadcast-sample-app/>
+* Post-processing tool sample code for processing individual stream archive - <https://github.com/opentok/archiving-composer>
+* Tutoring / Proctoring E-Learning Samples: <https://github.com/opentok/opentok-elearning-samples>
+* Advanced Insights Dashboard Sample: <https://github.com/opentok/insights-dashboard-sample>
+
+
+
+Calculating monthly usage / Video API tiered pricing -  
+
+* [How do I estimate my OpenTok monthly usage](https://support.tokbox.com/hc/en-us/articles/360029732691-How-do-I-estimate-my-OpenTok-monthly-usage-)
+* [Video API Pricing](https://www.vonage.com/communications-apis/video/pricing/?icmp=l3nav_pricing_novalue)
