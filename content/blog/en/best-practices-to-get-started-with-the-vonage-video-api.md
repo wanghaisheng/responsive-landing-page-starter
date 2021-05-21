@@ -239,13 +239,9 @@ It is possible now for Enterprise customers to purchase (or remove) add-ons with
 
 Vonage Video API can be customized to meet the highest security standards. Our platform is GDPR compliant and we are HIPAA compliant. For European customers, we are offering extended addons that make it possible to comply with additional local certifications and standards, such as KBV certification (Germany) or other privacy laws that aim for better data ownership & protection (Europe-wide).
 
-You can find more about GDPR here: 
+You can find more about GDPR here: <https://www.vonage.com/communications-apis/platform/gdpr/>
 
-<https://www.vonage.com/communications-apis/platform/gdpr/>
-
-The Vonage Privacy Policy can be found here: 
-
-<https://www.vonage.com/legal/privacy-policy/>
+The Vonage Privacy Policy can be found here: <https://www.vonage.com/legal/privacy-policy/>
 
 We are also listing all our sub processors here: <https://www.vonage.com/communications-apis/platform/gdpr/sub-processors/>
 
@@ -253,15 +249,18 @@ In addition, a Data Processing Addendum (DPA) can be found and self-signed on th
 
 On request and under NDA, we can provide further reports such as SOC2 and External Pen Tests that prove the high security standards of our Video platform.
 
-Links to sample codes:
+# Links to sample codes:
 
 * Precall test
-* * Vonage Precall Test Site: <https://tokbox.com/developer/tools/precall/>
+
+  * Vonage Precall Test Site: <https://tokbox.com/developer/tools/precall/>
   * Git Repository: 
-  * * IOS and Android:<https://github.com/opentok/opentok-network-test>
+
+    * iOS and Android:<https://github.com/opentok/opentok-network-test>
     * Javascript: <https://github.com/opentok/opentok-network-test-js>
 * Session Monitoring
-* * Call Queuing: <https://github.com/opentok/opentok-video-call-center>
+
+  * Call Queuing: <https://github.com/opentok/opentok-video-call-center>
 * Vonage text chat - <https://github.com/opentok/accelerator-textchat-js>, <https://github.com/nexmo-community/stream-video-with-textchat>
 * Vonage In-app Messaging - <https://github.com/nexmo-community/video-messaging-app>
 * Interactive/Live Streaming Broadcast - <https://github.com/opentok/broadcast-sample-app/>
@@ -269,7 +268,7 @@ Links to sample codes:
 * Tutoring / Proctoring E-Learning Samples: <https://github.com/opentok/opentok-elearning-samples>
 * Advanced Insights Dashboard Sample: <https://github.com/opentok/insights-dashboard-sample>
 
-Calculating monthly usage / Video API tiered pricing -  
+# Calculating monthly usage / Video API tiered pricing -  
 
 * [How do I estimate my OpenTok monthly usage](https://support.tokbox.com/hc/en-us/articles/360029732691-How-do-I-estimate-my-OpenTok-monthly-usage-)
 * [Video API Pricing](https://www.vonage.com/communications-apis/video/pricing/?icmp=l3nav_pricing_novalue)
