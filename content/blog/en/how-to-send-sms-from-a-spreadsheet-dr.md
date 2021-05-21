@@ -12,20 +12,21 @@ category: tutorial
 tags:
   - javascript
 comments: true
+spotlight: true
 redirect: ""
 canonical: ""
 ---
-![This is a guest post written as part of Nexmo Developer Spotlight](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/blog-top-banner.png "This is a guest post written as part of Nexmo Developer Spotlight")
+
 
 A song that reached #1 in the charts around the world back in the day had a slightly confusing use of technology, where it looks like a text message is being sent or received on a Nokia phone using a spreadsheet application. In an interview on Australian television a few years ago, [Nelly was asked precisely this question](https://youtu.be/mr63bjj5fSg?t=189), and responded with: "It was new technology at the time. It looks a little dated now; I can see that". [An article from The Independent](https://www.independent.co.uk/arts-entertainment/music/news/nelly-kelly-rowland-dilemma-music-video-spreadhsheet-phone-a7442351.html) at the time laments that "Humanity still hasn’t got as advanced as being able to type ‘TEXT NELLY’ in an Excel cell and it work as a command".
 
-![2002 was weird. Kelly Rowland texted her bf via Microsoft excel and got mad cuz he didn&#039;t text back.](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/xfmgoob.png "2002 was weird. Kelly Rowland texted her bf via Microsoft excel and got mad cuz he didn&#039;t text back.")
+![2002 was weird. Kelly Rowland texted her bf via Microsoft excel and got mad cuz he didn't text back.](/content/blog/send-sms-from-a-spreadsheet/xfmgoob.png "2002 was weird. Kelly Rowland texted her bf via Microsoft excel and got mad cuz he didn't text back.")
 
 However, it's now 2019, and this functionality exists, thanks to Nexmo. 
 
 Based on the information provided in the music video, we can see that Kelly Rowland (a third of the late ‘90s hit group Destiny's Child) has a spreadsheet loaded on her Nokia 9290 Communicator showing the text "WHERE YOU AT? HOLLA WHEN YOU GET THIS".
 
-![A clip from the music video for Nelly's Dilemma, picturing the message "WHERE YOU AT? HOLLA WHEN [YOU GET THIS.]" in cell A1 of an excel spreadsheet, loaded on a Nokia 9290 Communicator](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/bqrigbh.gif "A clip from the music video for Nelly's Dilemma, picturing the message \\\"WHERE YOU AT? HOLLA WHEN [YOU GET THIS.]\\\" in cell A1 of an excel spreadsheet, loaded on a Nokia 9290 Communicator")
+![A clip from the music video for Nelly's Dilemma, picturing the message "WHERE YOU AT? HOLLA WHEN [YOU GET THIS.]" in cell A1 of an excel spreadsheet, loaded on a Nokia 9290 Communicator](/content/blog/send-sms-from-a-spreadsheet/bqrigbh.gif "A clip from the music video for Nelly's Dilemma, picturing the message \\\\"WHERE YOU AT? HOLLA WHEN [YOU GET THIS.]\\\\" in cell A1 of an excel spreadsheet, loaded on a Nokia 9290 Communicator")
 
 The question is: was this her last sent message? A received message? Moreover, who was it sent to?
 
@@ -77,11 +78,11 @@ function smsNelly() {
 
 Now, to link this into something executable into our spreadsheet is going to take some doing. For this, we're going to leverage Google Apps Script.
 
-![Spreadsheet script editor screenshot](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/qnbymds.png "Spreadsheet script editor screenshot")
+![Spreadsheet script editor screenshot](/content/blog/send-sms-from-a-spreadsheet/qnbymds.png "Spreadsheet script editor screenshot")
 
 To navigate to the Script Editor, there's a handy link from the Tools > Script editor menu. From here, we can create a new project with our function. 
 
-![Script editor with function](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/pasted-image-0.png "Script editor with function")
+![Script editor with function](/content/blog/send-sms-from-a-spreadsheet/pasted-image-0.png "Script editor with function")
 
 For now, we've hardcoded all the values, just to keep this example simple. 
 
@@ -89,27 +90,27 @@ Next, we need to link this into our spreadsheet. We can create a mock 'button' b
 
 For the image, I'll be using the word 'Send' in the classic Nokia font. It's what Nelly would have wanted. 
 
-![Assign script to image](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/pasted-image-0-1.png "Assign script to image")
+![Assign script to image](/content/blog/send-sms-from-a-spreadsheet/pasted-image-0-1.png "Assign script to image")
 
 With my image imported, if I right-click on the image to select it, and then click the "•••" menu, I can assign my script. 
 
 **Super important note:** in this spreadsheet, always right-click images to highlight them. Once we assign the script, a left-click will execute the script. And we don't want to be texting Nelly any more than we already are, seeing as though he's not replying to just one SMS. That would be rude. 
 
-![Assign script dialog](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/pasted-image-0-2.png "Assign script dialog")
+![Assign script dialog](/content/blog/send-sms-from-a-spreadsheet/pasted-image-0-2.png "Assign script dialog")
 
 From here, save our changes, and then we can click the button and tada! Executed script!
 
 Except it's not that simple. We're executing functionality that can be malicious (we're calling out to random endpoints, for goodness sake), so Google is going to get us to authorise our application and get our explicit okay before we can use it. 
 
-![Authorisation required dialog](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/pasted-image-0-3.png "Authorisation required dialog")
+![Authorisation required dialog](/content/blog/send-sms-from-a-spreadsheet/pasted-image-0-3.png "Authorisation required dialog")
 
-![Grant permission](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/unnamed-1.png "Grant permission")
+![Grant permission](/content/blog/send-sms-from-a-spreadsheet/unnamed-1.png "Grant permission")
 
 These dialogs will only appear the first time we try and run the script; subsequent executions will Just Work™.
 
 Assuming that Nelly ever actually checks his phone, he'll get the message: 
 
-![Phone with SMS sent from spreadsheet](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/m0kztbc.jpg "Phone with SMS sent from spreadsheet")
+![Phone with SMS sent from spreadsheet](/content/blog/send-sms-from-a-spreadsheet/m0kztbc.jpg "Phone with SMS sent from spreadsheet")
 
 *Maybe if he didn't have his phone on silent, he might have seen the message earlier?*
 
@@ -140,9 +141,9 @@ One thing we haven't yet included in the spreadsheet is the concept of Contacts;
 
 If we create a new sheet in our spreadsheet, called Contacts, and list NELLY with 'his' number, we can change our script to pull from NELLY rather than the phone number. 
 
-![Creating contacts](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/unnamed-2.png "Creating contacts")
+![Creating contacts](/content/blog/send-sms-from-a-spreadsheet/unnamed-2.png "Creating contacts")
 
-![Contacts](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/unnamed-3.png "Contacts")
+![Contacts](/content/blog/send-sms-from-a-spreadsheet/unnamed-3.png "Contacts")
 
 Noting here that we're prefacing our mobile numbers with a single quote mark. This ensures the digits are treated as strings, and not numbers, as Sheets likes to add the scientific notation to larger numbers. 
 
@@ -185,6 +186,6 @@ This is left as an exercise for the reader. (It wouldn't be too hard using basic
 
 If you plan to take this concept further than just a proof of concept, do make sure you go through the steps to validate yourself as a Google Developer. Otherwise, you'll get a worried email from Google about your use of your unverified app. 
 
-![Permissions screen](/content/blog/solving-kelly’s-dilemma-–-how-to-send-sms-from-a-spreadsheet/unnamed-4.png "Permissions screen")
+![Permissions screen](/content/blog/send-sms-from-a-spreadsheet/unnamed-4.png "Permissions screen")
 
 [Ready for your moment in the spotlight? Apply to be a guest writer now.](https://developer.nexmo.com/spotlight?utm_campaign=dev_spotlight&utm_content=SMS_excel_McLaughlin)
