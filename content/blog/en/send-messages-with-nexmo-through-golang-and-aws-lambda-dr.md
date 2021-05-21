@@ -11,7 +11,7 @@ category: tutorial
 tags:
   - golang
   - aws
-  - sms-api
+  - messages-api
 comments: true
 spotlight: true
 redirect: ""
