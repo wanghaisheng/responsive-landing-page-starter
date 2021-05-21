@@ -16,7 +16,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Will AI-powered personal assistants know users well enough to make relevant, personalized recommendations? WIll they then become a channel for advertisers? Microsoft Technical Evangelist Martin Beeby and I discuss. Watch the clip of our conversation here, or scroll below the video to read the transcript. <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+Will AI-powered personal assistants know users well enough to make relevant, personalized recommendations? WIll they then become a channel for advertisers? Microsoft Technical Evangelist Martin Beeby and I discuss. Watch the clip of our conversation here, or scroll below the video to read the transcript. 
 
 <youtube id="Ukz2faMdEvI"></youtube>
 
@@ -28,4 +28,4 @@ Will AI-powered personal assistants know users well enough to make relevant, per
 
 **Martin:** I guess that'll end up being who pays for the system. If you're a user paying some kind of membership to that system, then you'll probably get your choices. And if you're not and if the system's provided free, then you're probably gonna be advertised to. 
 
-***[Editor’s Note:** Watch the [full one-hour discussion](”https://youtu.be/InJe29Yz5UM”) on the state of AI bot technology.**]***
+**[Editor’s Note:** Watch the [full one-hour discussion](”https://youtu.be/InJe29Yz5UM”) on the state of AI bot technology.**]**
