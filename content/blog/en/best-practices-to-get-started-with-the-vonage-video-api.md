@@ -47,7 +47,7 @@ For Enterprise server customers, it is important to note that newly added API ke
 
 The Enterprise JS SDK is available at <https://enterprise.opentok.com/v2/js/opentok.min.js>. For more info, visit <https://tokbox.com/developer/enterprise/content/enterprise-overview.html>.
 
-# API key/secret, Tokens and Session IDs
+## API key/secret, Tokens and Session IDs
 
 * API Key and secret
 
@@ -142,14 +142,11 @@ To learn more about live streaming such as layouts, max duration and how to star
     * Multiple individual streams/files saved in a zip folder
     * Intended for use with a post-processing tool to produce customized content
     * Cannot be started automatically
-
-<!---->
-
 * **Screen-share** - hide the publisher that sharing its screen to avoid the hallway-mirror effect.
 
   * ContentHint: motion, detail, etc: This flag can and should be set after 2.20.
 
-## Storing archives 
+## Storing archives
 
 Vonage will keep copies of archives for 72 hours if uploading fails, if cloud storage has not been configured or if the disable option for storage fallback is not selected. Keep in mind that should you decide to not enable upload fallback and uploading fails for whatever reason, that archives will be not recoverable.
 
@@ -191,15 +188,10 @@ See below the number of participants that we recommend:
 webRTC does not work well on proxies requiring authentication. Check out our network check flow - <https://tokbox.com/developer/guides/restricted-networks/>
 
 * Firewall - at minimum, below are the ports and domains that need to be included on firewalls’ rules:
-
-
-
 * TCP 443
 * FQDN: tokbox.com
 * FQDN: opentok.com
 * STUN/TURN: 3478
-
-
 
 If allowed, try opening the following range: UDP 1025 - 65535. This range covers port 
 
@@ -207,15 +199,9 @@ If allowed, try opening the following range: UDP 1025 - 65535. This range covers
 
 need for TURN; not relaying media through such network elements decreases latency.
 
-
-
 * Codec - link to codec compatibility <https://tokbox.com/developer/guides/codecs/>. Vonage supports VP9, VP8 and H.264 codecs; however, VP9 is only available on relayed media mode on sessions where ALL participants are using Chrome.
 
-
-
 Difference between VP8 and H.264:
-
-
 
 * VP8 is a software codec, more mature and can handle lower bitrates. Additionally, it supports scalable/simulcast video.
 * H.264 is available as a software or hardware depending on the device. It does not support scalable video or simulcast.
@@ -224,16 +210,12 @@ By default, codec is set to VP8. If you need to change the assigned codec for a 
 
 project key, login to your portal to make the change.
 
-
-
 Session Monitoring
 
 * Visit our dev page - <https://tokbox.com/developer/guides/session-monitoring/>
 * Session monitoring allows you to register a webhook URL.
 * Use this feature to monitor sessions and streams - an example of this is limiting the number of participants in a session, this is often used alongside forceDisconnect function for JS - <https://tokbox.com/developer/guides/moderation/js/#force_disconnect>. Moderator can also call an action to the server and have it do a REST call to force disconnect - <https://tokbox.com/developer/guides/moderation/rest/>
 * Can be used to track usage (for better usage tracking, use Advance Insights - <https://tokbox.com/developer/guides/insights/#obtaining-session-data-advanced-insights->).
-
-
 
 Addons
 
@@ -257,15 +239,9 @@ It is possible now for Enterprise customers to purchase (or remove) add-ons with
 * * <https://support.tokbox.com/hc/en-us/articles/360029732031-Can-I-get-a-list-of-the-IP-ranges-of-TokBox-servers->
 * AES-256 Encryption
 
-
-
 Security and Privacy
 
-
-
 Vonage Video API can be customized to meet the highest security standards. Our platform is GDPR compliant and we are HIPAA compliant. For European customers, we are offering extended addons that make it possible to comply with additional local certifications and standards, such as KBV certification (Germany) or other privacy laws that aim for better data ownership & protection (Europe-wide).
-
-
 
 You can find more about GDPR here: 
 
@@ -279,15 +255,9 @@ We are also listing all our sub processors here: <https://www.vonage.com/communi
 
 In addition, a Data Processing Addendum (DPA) can be found and self-signed on the GDPR page.
 
-
-
 On request and under NDA, we can provide further reports such as SOC2 and External Pen Tests that prove the high security standards of our Video platform.
 
-
-
 Links to sample codes:
-
-
 
 * Precall test
 * * Vonage Precall Test Site: <https://tokbox.com/developer/tools/precall/>
@@ -302,8 +272,6 @@ Links to sample codes:
 * Post-processing tool sample code for processing individual stream archive - <https://github.com/opentok/archiving-composer>
 * Tutoring / Proctoring E-Learning Samples: <https://github.com/opentok/opentok-elearning-samples>
 * Advanced Insights Dashboard Sample: <https://github.com/opentok/insights-dashboard-sample>
-
-
 
 Calculating monthly usage / Video API tiered pricing -  
 
