@@ -5,7 +5,7 @@ description: "Best practices we recommend for consideration, before you start
 thumbnail: /content/blog/best-practices-to-get-started-with-the-vonage-video-apis/videoapi_sdk-release_1200x600.png
 author: tony-chan
 published: false
-published_at: 2021-05-24T09:00:13.510Z
+published_at: 2021-05-21T09:00:13.510Z
 updated_at: 2021-05-21T12:57:13.538Z
 category: tutorial
 tags:
