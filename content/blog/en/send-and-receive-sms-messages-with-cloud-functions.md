@@ -16,7 +16,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-The Firebase platform allows developers to build an application backend rapidly. It's also enjoyable to use as well. For this tutorial, I wanted to start using it for some SMS messaging with [Vonage](https://www.vonage.com/). After this walk-through, you will be able to create an SMS message log, and a response to the sender using [Firebase Cloud Functions](https://firebase.google.com/docs/functions/get-started) and Firestore alongside the Vonage SMS API.
+The Firebase platform allows developers to build an application backend rapidly. It's also enjoyable to use as well. For this tutorial, I wanted to start using it for some SMS messaging with [Vonage](https://www.vonage.com/). After this walk-through, you will be able to create an SMS message log, and a response to the sender using [Firebase Cloud Functions](https://firebase.google.com/docs/functions/get-started) and the Real Time Database alongside the Vonage SMS API.
 
 ## Before You Get Started
 
@@ -60,7 +60,7 @@ Most everything you will need to do with Firebase can be done directly from the 
 1. Install the Firebase tools with npm 
 
 ```shell
-npm install -g firebase-tools
+npm install -g @vonage/server-sdk
 ```
 
 1. Log in to Firebase using `firebase login`. The login process will open your browser for authentication.
@@ -180,7 +180,7 @@ So far, you have created a Firebase Function linked to a Vonage phone number for
 Start by adding Vonage to the dependency list - make sure you do this in the `functions` directory:
 
 ```shell
-npm i vonage --save
+npm i @vonage/server-sdk --save
 ```
 
 Add the following environment variables to the Firebase config
@@ -189,12 +189,12 @@ Add the following environment variables to the Firebase config
 firebase functions:config:set vonage.api_key="YOUR_KEY" vonage.api_secret="YOUR_SECRET"
 ```
 
-Next, open `index.js` add `vonage` to the requirements at the top, and import the environment variables to initialize Vonage:
+Next, open `index.js` add `@vonage/server-sdk` to the requirements at the top, and import the environment variables to initialize Vonage:
 
 ```javascript
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
-const Vonage = require('vonage');
+const Vonage = require('@vonage/server-sdk');
 
 // Initialize Firebase app for database access
 admin.initializeApp();
