@@ -34,14 +34,14 @@ Vonage video uses webRTC for audio-video communications and consists of client l
 Key Terms:
 
 * Session:  a logical group of connections and streams. Connections within the same session can exchange messages. Think of a session as the “room” where participants can interact with each other.
-* Connection: an endpoint that participates in a session and is capable of sending and receiving messages. A connection has presence, it is either connected and can receive messages, or it’s disconnected. 
+* Connection: an endpoint that participates in a session and is capable of sending and receiving messages. A connection has a presence, it is either connected and can receive messages, or it’s disconnected. 
 * Stream: media stream between two connections. This means that actual bytes containing media are being exchanged. 
 * Publisher: clients publishing stream.
 * Subscriber: clients receiving stream.
 
 # Environment
 
-When designing a video application, consider having two environments; one for testing and one for production. To test simple items, you can also use [our playground](https://tokbox.com/developer/tools/playground_doc/) or you can use the [OpenTok command line interface](https://www.npmjs.com/package/opentok-cli).
+When designing a video application, consider having two environments; one for testing and one for production. To test simple items, you can also use [our playground](https://tokbox.com/developer/tools/playground_doc/) or you can use the [OpenTok command-line interface](https://www.npmjs.com/package/opentok-cli).
 
 For Enterprise server customers, it is important to note that newly added API keys will be using the Standard environment by default. If you need to switch an API key’s environment from Standard to Enterprise, you can do so on our account portal. 
 
@@ -51,13 +51,13 @@ The Enterprise JS SDK is available at <https://enterprise.opentok.com/v2/js/open
 
 * API Key and secret
 
-  * Keep secret/key private by NOT exposing them to public repos.
+  * Keep secret/key private by NOT exposing them to public repositories.
   * Do NOT save secret/key in client libraries/compiled mobile SDKs.
   * Use HTTPS only to make REST calls.
 * Session ID
 
   * Always generate a new sessionId for every new session created.  
-  * Sessions’ quality scores and data are indexed by sessionId. If there are multiple conversations per sessionId, it will be difficult to debug using Vonage’s inspector tool as reused sessionIds tend to report lower aggregate quality scores than the actual call quality experienced by end users.
+  * Sessions’ quality scores and data are indexed by sessionId. If there are multiple conversations per sessionId, it will be difficult to debug using Vonage’s inspector tool as reused sessionIds tend to report lower aggregate quality scores than the actual call quality experienced by end-users.
 * Tokens
 
   * Server that generates tokens must be placed behind a secured/authenticated endpoint
@@ -76,7 +76,7 @@ The Enterprise JS SDK is available at <https://enterprise.opentok.com/v2/js/open
   * One-to-one session ONLY
   * End-to-end media encryption is required
 
-Note that media quality will not be managed on relayed mode since media is exchanged  between clients. Therefore, setting subscriber’s frame rate and/or resolution will not work. See <https://tokbox.com/developer/guides/scalable-video/> for more information.
+Note that media quality will not be managed on relayed mode since media is exchanged between clients. Therefore, setting the subscriber's frame rate and/or resolution will not work. See <https://tokbox.com/developer/guides/scalable-video/> for more information.
 
 * **Routed** - this media mode uses Vonage media servers. Before deciding whether to use routed mode or not, be sure to check the following:
 
@@ -92,41 +92,40 @@ More information about media modes can be found at: <https://tokbox.com/develope
 
 * **Interactive** - this type of broadcast allows clients to interact with each other by subscribing to each other's stream. Important to note that this type of broadcast can only support up to 3,000 subscribers; anything above that will generate an error message. Below are things to consider when using this broadcast:
 
-  * Contact support and have them enable simulcast. Visit <https://support.tokbox.com/hc/en-us/articles/360029733831-TokBox-Scalable-Video-Simulcast-FAQ> to learn more about Simulcast. By default Simulcast is set to heuristic in all API keys, this means that Simulcast will only kick in after the third connection joins the call (this is done to avoid Siimulcast in one-to-one calls). Important to note that the first two connections won’t use Simulcast if it is set to heuristic.
-  * Allow no more than five publishers. Keep in mind that the maximum number of subscribers will be impacted when streams increase. To get the max subscribers based on the number of publishers, divide the max participants (3,000) by the number of publishers. Example: two publishers can have 1,500 subscribers (3,000 divided by 2).
+  * Contact support and have them enable simulcast. Visit <https://support.tokbox.com/hc/en-us/articles/360029733831-TokBox-Scalable-Video-Simulcast-FAQ> to learn more about Simulcast. By default Simulcast is set to heuristic in all API keys, this means that Simulcast will only kick in after the third connection joins the call (this is done to avoid Simulcast in one-to-one calls). Important to note that the first two connections won’t use Simulcast if it is set to the heuristic.
+  * Allow no more than five publishers. Keep in mind that the maximum number of subscribers will be impacted when streams increase. To get the max subscribers based on the number of publishers, divide the max participants (3,000) by the number of publishers. For example: two publishers can have 1,500 subscribers (3,000 divided by 2).
   * Suppress connection events. 
   * See <https://tokbox.com/developer/guides/broadcast/live-interactive-video/>for more information
-* **Live Streaming** - this type of broadcast allows for more than 3,000 subscribers to subscribe to streams. There are two types of protocols available to broadcast video, RTMP (Real Time Messaging Protocol) and HLS (HTTP Live Streaming). Regardless of which one you choose, limit the number of publishers to five for better experience.
+* **Live Streaming** - this type of broadcast allows for more than 3,000 subscribers to subscribe to streams. There are two types of protocols available to broadcast video, RTMP (Real Time Messaging Protocol) and HLS (HTTP Live Streaming). Regardless of which one you choose, limit the number of publishers to five for a better experience.
 
 ## HLS vs RTMP
 
-* HLS supports unlimited number of subscribers where RTMP is limited by the RTMP delivery platform
-* HLS is delayed by 15-20 seconds where RTMP, from Vonage’s platform, is delayed by five seconds; this does not include the delay from RTMP delivery platform however as they too will induce delay based on how they process video.
+* HLS supports an unlimited number of subscribers where RTMP is limited by the RTMP delivery platform
+* HLS is delayed by 15-20 seconds where RTMP, from Vonage’s platform, is delayed by five seconds; this does not include the delay from the RTMP delivery platform however as they too will induce delay based on how they process video.
 * HLS playback is not supported on all browsers but there are plugins that you can use such as flowplayer. Playback allows users to go back, video scrubbing (rewind/fast forward) if you will, from the beginning of the livestream then back to the current live stream.
-* HLS/RTMP has a max duration of two hours. If broadcast needs to go longer, change the max duration property (max is 10 hours).
+* HLS/RTMP has a max duration of two hours. If the broadcast needs to go longer, change the max duration property (max is 10 hours).
 * HLS/RTMP stream automatically stops sixty seconds after the last client disconnects from the session
 
-To learn more about live streaming such as layouts, max duration and how to start/stop live stream, visit <https://tokbox.com/developer/guides/broadcast/live-streaming/>.
+To learn more about live streaming such as layouts, max duration and how to start/stop the live stream, visit <https://tokbox.com/developer/guides/broadcast/live-streaming/>.
 
 # User Interface/Experience
 
-* **Precall Test** - add a precall test where users’ device and connection will be subject to network and hardware test prior to joining a session. Remember to generate new sessionIDs for every test and let the test run for at least 30 seconds for more accurate results.
+* **Pre-call Test** - add a pre-call test where users’ device and connection will be subject to network and hardware test prior to joining a session. Remember to generate new sessionIDs for every test and let the test run for at least 30 seconds for more accurate results.
 
   * Publishing/Subscribing video streams - include handlers
   * Javascript - <https://tokbox.com/developer/guides/exception-handling/js/> and <https://tokbox.com/developer/sdks/js/reference/ExceptionEvent.html>
   * IOS - <https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSessionDelegate.html>
   * Android - <https://tokbox.com/developer/sdks/android/reference/>
-* **Audio Fallback** - our media server constantly checks network conditions and if it detects an issue with end users’ connection, it will automatically drop the video and continue with audio only, if packet loss is greater than 15%; and, an event gets sent when this happens. It is recommended that such event is displayed on the UI alerting impacted users that the quality of their connection dropped, switching to audio only. The threshold to switch to audio-only is not configurable, more information can be found [here](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#event:videoDisableWarning).[](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#event:videoDisableWarning) \
-  \
+* **Audio Fallback** - our media server constantly checks network conditions and if it detects an issue with end users’ connection, it will automatically drop the video and continue with audio-only, if packet loss is greater than 15%; and, an event gets sent when this happens. It is recommended that such an event is displayed on the UI alerting impacted users that the quality of their connection dropped, switching to audio-only. The threshold to switch to audio-only is not configurable, more information can be found [here](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#event:videoDisableWarning).
   *“audioFallbackEnabled (Boolean) — Whether the stream will use the audio-fallback feature (true) or not (false). The audio-fallback feature is available in sessions that use the OpenTok Media Router. With the audio-fallback feature enabled (the default), when the server determines that a stream's quality has degraded significantly for a specific subscriber, it disables the video in that subscriber in order to preserve audio quality. “ --<https://tokbox.com/developer/sdks/js/reference/OT.html>*
-* **Reconnecting to session** - when a participant suddenly drops from a session due to network-related issues, it will attempt to reconnect back to the session. For better user’s experience, it is recommended that such events are captured and properly displayed to the UI letting the user know that it is attempting to reconnect back to the session. More information can be found [here](https://tokbox.com/developer/guides/connect-session/js/).
-* **Active speaker** - for audio only session, try adding an audio level meter so that participants can have a visual of who the current active speaker/s is/are. For video, try changing the layout where the active speaker gets more screen real estate. You can use the audioLevelUpdated event that gets sent periodically to make UI adjustments, more information can be found [here](https://tokbox.com/developer/guides/customize-ui/js/).
+* **Reconnecting to session** - when a participant suddenly drops from a session due to network-related issues, it will attempt to reconnect back to the session. For a better user’s experience, it is recommended that such events are captured and properly displayed to the UI letting the user know that it is attempting to reconnect back to the session. More information can be found [here](https://tokbox.com/developer/guides/connect-session/js/).
+* **Active speaker** - for audio-only session, try adding an audio level meter so that participants can have a visual of who the current active speaker/s is/are. For video, try changing the layout where the active speaker gets more screen real estate. You can use the audioLevelUpdated event that gets sent periodically to make UI adjustments, more information can be found [here](https://tokbox.com/developer/guides/customize-ui/js/).
 * **Loudness detector** - It is good practice to implement a loudness detector to identify when a given user who is muted is trying to speak. In this case, the [audioLevelUpdated](https://tokbox.com/developer/sdks/js/reference/AudioLevelUpdatedEvent.html) event will fire with audioLevel set to 0. Therefore, it’s necessary to use an AudioContext to avoid this situation.For reference, follow this [blog post](https://vonagedev.medium.com/how-to-create-a-loudness-detector-using-vonage-video-api-8dbcf93595a8).
-* **Report Issue API** - <https://tokbox.com/developer/guides/debugging/js/#report-issue>. This allows the end consumer of the application to trigger a unique issue ID from the client side. Our customer can store this issue ID and that can be used when raising a ticket with support. The issue Id will help to identify the unique connection ID that reported the problem and focus the investigation from support.
+* **Report Issue API** - <https://tokbox.com/developer/guides/debugging/js/#report-issue>. This allows the end consumer of the application to trigger a unique issue ID from the client-side. Our customer can store this issue ID and that can be used when raising a ticket with support. The issue Id will help to identify the unique connection ID that reported the problem and focus the investigation from support.
 
 # Features
 
-* **Chat (text messaging)** - you can send messages using Vonage’s signaling, <https://tokbox.com/developer/sdks/js/reference/Session.html#signal>, but note that messages are not persistent on Vonage’s video platform. When adding text messaging functionality , keep in mind that some users may arrive/join a session after text messages were sent; latecomers will be unable to view messages that were sent. Additionally, should you decide to record a session, text messages will not be saved. To solve this problem, we recommend using the Nexmo Client SDK (see the sample code, Nexmo in-app messaging, at the end of this document).
+* **Chat (text messaging)** - you can send messages using Vonage’s signaling <https://tokbox.com/developer/sdks/js/reference/Session.html#signal>, but note that messages are not persistent on Vonage’s video platform. When adding text messaging functionality, keep in mind that some users may arrive/join a session after text messages were sent; latecomers will be unable to view messages that were sent. Additionally, should you decide to record a session, text messages will not be saved. To solve this problem, we recommend using the Nexmo Client SDK (see the sample code, Nexmo in-app messaging, at the end of this document).
 * **Archiving** - there are two types of offerings when it comes to recording, composed and individual stream. Below talks about the difference between the two and things to consider
 
   * Composed
@@ -134,7 +133,7 @@ To learn more about live streaming such as layouts, max duration and how to star
     * Can record up to 16 streams. Alternatively, we allow up to 50 audio-only streams
     * Single MP4 file containing all media streams
     * Customizable layout - <https://tokbox.com/developer/guides/archiving/layout-control.html>
-    * Can be started automatically (240 minutes max. If recording is not stopped, it will start archiving to a new file)
+    * Can be started automatically (240 minutes max. If the recording is not stopped, it will start archiving to a new file)
     * It is possible to prioritize certain streams to be included in the recording by assigning different layout classes. For example, screen-share streams  - <https://tokbox.com/developer/guides/archive-broadcast-layout/#stream-prioritization-rules>
   * Individual Stream
 
@@ -247,13 +246,13 @@ We are also listing all our sub processors here: <https://www.vonage.com/communi
 
 In addition, a Data Processing Addendum (DPA) can be found and self-signed on the GDPR page.
 
-On request and under NDA, we can provide further reports such as SOC2 and External Pen Tests that prove the high security standards of our Video platform.
+On request and under NDA, we can provide further reports such as SOC2 and External Pen Tests that prove the high-security standards of our Video platform.
 
 # Links to sample codes:
 
-* Precall test
+* Pre call test
 
-  * Vonage Precall Test Site: <https://tokbox.com/developer/tools/precall/>
+  * Vonage Pre call Test Site: <https://tokbox.com/developer/tools/precall/>
   * Git Repository: 
 
     * iOS and Android:<https://github.com/opentok/opentok-network-test>
