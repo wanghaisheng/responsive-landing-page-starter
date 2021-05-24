@@ -7,7 +7,7 @@ author: tony-chan
 published: true
 published_at: 2021-05-24T15:41:01.908Z
 updated_at: 2021-05-25T09:00:00.000Z
-category: tutorial
+category: inspiration
 tags:
   - video-api
 comments: true
@@ -21,13 +21,13 @@ This document describes some of the best practices we recommend for consideratio
 
 [Visit our website](https://www.vonage.com/communications-apis/video) to set up your new account; it’s free and your account will automatically be credited ten US dollars ($10).
 
-# Where to get more help?
+## Where to get more help?
 
 Very detailed developer documentation on the Vonage Video API is publicly available on our [Video API Developer Site](https://tokbox.com/developer) - here you will find all the details you need for basically any question you might have, sample codes, release notes. There is also a great section called “[Get answers to your Video API questions](https://support.tokbox.com/hc/en-us)”.
 
 To help us better assist you, please send us your feedback via email at: [video.api.support@vonage.com](video.api.support@vonage.com).
 
-# Video Platform
+## Video Platform
 
 Vonage video uses webRTC for audio-video communications and consists of client libraries for web, IOS and Android, as well as server SDKs and REST API. More information can be found here <https://tokbox.com/developer/guides/basics/#opentok-platform>.
 
@@ -39,7 +39,7 @@ Key Terms:
 * Publisher: clients publishing stream.
 * Subscriber: clients receiving stream.
 
-# Environment
+## Environment
 
 When designing a video application, consider having two environments; one for testing and one for production. To test simple items, you can also use [our playground](https://tokbox.com/developer/tools/playground_doc/) or you can use the [OpenTok command-line interface](https://www.npmjs.com/package/opentok-cli).
 
@@ -47,7 +47,7 @@ For Enterprise server customers, it is important to note that newly added API ke
 
 The Enterprise JS SDK is available at <https://enterprise.opentok.com/v2/js/opentok.min.js>. For more info, visit <https://tokbox.com/developer/enterprise/content/enterprise-overview.html>.
 
-## API key/secret, Tokens and Session IDs
+### API key/secret, Tokens and Session IDs
 
 * API Key and secret
 
@@ -68,7 +68,7 @@ The Enterprise JS SDK is available at <https://enterprise.opentok.com/v2/js/open
   * Set roles when applicable such as moderator, publisher and subscriber.
   * More information about tokens can be found at <https://tokbox.com/developer/guides/create-token/>.
 
-# Media Modes
+## Media Modes
 
 * **Relayed** - this media mode does not use Vonage media servers. Before deciding whether to use relayed mode or not, be sure to check the following:
 
@@ -88,7 +88,7 @@ Note that media quality will not be managed on relayed mode since media is excha
 
 More information about media modes can be found at: <https://tokbox.com/developer/guides/create-session/>.
 
-# Broadcast
+## Broadcast
 
 * **Interactive** - this type of broadcast allows clients to interact with each other by subscribing to each other's stream. Important to note that this type of broadcast can only support up to 3,000 subscribers; anything above that will generate an error message. Below are things to consider when using this broadcast:
 
@@ -98,7 +98,7 @@ More information about media modes can be found at: <https://tokbox.com/develope
   * See <https://tokbox.com/developer/guides/broadcast/live-interactive-video/>for more information
 * **Live Streaming** - this type of broadcast allows for more than 3,000 subscribers to subscribe to streams. There are two types of protocols available to broadcast video, RTMP (Real Time Messaging Protocol) and HLS (HTTP Live Streaming). Regardless of which one you choose, limit the number of publishers to five for a better experience.
 
-## HLS vs RTMP
+### HLS vs RTMP
 
 * HLS supports an unlimited number of subscribers where RTMP is limited by the RTMP delivery platform
 * HLS is delayed by 15-20 seconds where RTMP, from Vonage’s platform, is delayed by five seconds; this does not include the delay from the RTMP delivery platform however as they too will induce delay based on how they process video.
@@ -108,7 +108,7 @@ More information about media modes can be found at: <https://tokbox.com/develope
 
 To learn more about live streaming such as layouts, max duration and how to start/stop the live stream, visit <https://tokbox.com/developer/guides/broadcast/live-streaming/>.
 
-# User Interface/Experience
+## User Interface/Experience
 
 * **Pre-call Test** - add a pre-call test where users’ device and connection will be subject to network and hardware test prior to joining a session. Remember to generate new sessionIDs for every test and let the test run for at least 30 seconds for more accurate results.
 
@@ -123,7 +123,7 @@ To learn more about live streaming such as layouts, max duration and how to star
 * **Loudness detector** - It is good practice to implement a loudness detector to identify when a given user who is muted is trying to speak. In this case, the [audioLevelUpdated](https://tokbox.com/developer/sdks/js/reference/AudioLevelUpdatedEvent.html) event will fire with audioLevel set to 0. Therefore, it’s necessary to use an AudioContext to avoid this situation.For reference, follow this [blog post](https://vonagedev.medium.com/how-to-create-a-loudness-detector-using-vonage-video-api-8dbcf93595a8).
 * **Report Issue API** - <https://tokbox.com/developer/guides/debugging/js/#report-issue>. This allows the end consumer of the application to trigger a unique issue ID from the client-side. Our customer can store this issue ID and that can be used when raising a ticket with support. The issue Id will help to identify the unique connection ID that reported the problem and focus the investigation from support.
 
-# Features
+## Features
 
 * **Chat (text messaging)** - you can send messages using Vonage’s signaling <https://tokbox.com/developer/sdks/js/reference/Session.html#signal>, but note that messages are not persistent on Vonage’s video platform. When adding text messaging functionality, keep in mind that some users may arrive/join a session after text messages were sent; latecomers will be unable to view messages that were sent. Additionally, should you decide to record a session, text messages will not be saved. To solve this problem, we recommend using the Nexmo Client SDK (see the sample code, Nexmo in-app messaging, at the end of this document).
 * **Archiving** - there are two types of offerings when it comes to recording, composed and individual stream. Below talks about the difference between the two and things to consider
@@ -145,14 +145,14 @@ To learn more about live streaming such as layouts, max duration and how to star
 
   * ContentHint: motion, detail, etc: This flag can and should be set after 2.20.
 
-## Storing archives
+### Storing archives
 
 Vonage will keep copies of archives for 72 hours if uploading fails, if cloud storage has not been configured or if the disable option for storage fallback is not selected. Keep in mind that should you decide to not enable upload fallback and uploading fails for whatever reason, that archives will be not recoverable.
 
 * AWS S3: Visit this site <https://tokbox.com/developer/guides/archiving/using-s3.html> for instructions on how to upload archive files to AWS.
 * Azure: Visit this site <https://tokbox.com/developer/guides/archiving/using-azure.html> for instructions on how to upload archive files to Azure.
 
-## Archiving FAQs:
+### Archiving FAQs:
 
 * Are archives encrypted? 
 
@@ -172,7 +172,7 @@ Vonage will keep copies of archives for 72 hours if uploading fails, if cloud s
 
 Important note on Safari browser when using archive - To include video from streams published from Safari clients, you must use a [Safari OpenTok project](https://tokbox.com/developer/sdks/js/safari/). Otherwise, streams published from Safari show up as audio-only
 
-# Quality, Performance and Compatibility
+## Quality, Performance and Compatibility
 
 * **Devices** - for multi party sessions, try to limit the number of participants as more participants require more processing power. \
   See below the number of participants that we recommend:
@@ -199,14 +199,14 @@ If allowed, try opening the following range: UDP 1025 - 65535. This range covers
 
 By default, codec is set to VP8. If you need to change the assigned codec for a particular project key, login to your portal to make the change.
 
-# Session Monitoring
+## Session Monitoring
 
 * Visit our dev page - <https://tokbox.com/developer/guides/session-monitoring/>
 * Session monitoring allows you to register a webhook URL.
 * Use this feature to monitor sessions and streams - an example of this is limiting the number of participants in a session, this is often used alongside forceDisconnect function for JS - <https://tokbox.com/developer/guides/moderation/js/#force_disconnect>. Moderator can also call an action to the server and have it do a REST call to force disconnect - <https://tokbox.com/developer/guides/moderation/rest/>
 * Can be used to track usage (for better usage tracking, use Advance Insights - <https://tokbox.com/developer/guides/insights/#obtaining-session-data-advanced-insights->).
 
-# Addons
+## Addons
 
 It is possible now for Enterprise customers to purchase (or remove) add-ons with a single click. Refer to [this presentation](https://docs.google.com/presentation/d/16Q9XRznFLs5rl2DZFYt5Nwl1ibKj_j_y-9XQZ5C3VSc/edit#slide=id.gafa078777f_0_18) slide for the list of add-ons that can be configured via the self-service tool.
 
@@ -234,7 +234,7 @@ It is possible now for Enterprise customers to purchase (or remove) add-ons with
   * <https://support.tokbox.com/hc/en-us/articles/360029732031-Can-I-get-a-list-of-the-IP-ranges-of-TokBox-servers->
 * AES-256 Encryption
 
-# Security and Privacy
+## Security and Privacy
 
 Vonage Video API can be customized to meet the highest security standards. Our platform is GDPR compliant and we are HIPAA compliant. For European customers, we are offering extended addons that make it possible to comply with additional local certifications and standards, such as KBV certification (Germany) or other privacy laws that aim for better data ownership & protection (Europe-wide).
 
@@ -248,7 +248,7 @@ In addition, a Data Processing Addendum (DPA) can be found and self-signed on th
 
 On request and under NDA, we can provide further reports such as SOC2 and External Pen Tests that prove the high-security standards of our Video platform.
 
-# Links to sample codes:
+## Links to sample codes:
 
 * Pre call test
 
@@ -267,7 +267,7 @@ On request and under NDA, we can provide further reports such as SOC2 and Extern
 * Tutoring / Proctoring E-Learning Samples: <https://github.com/opentok/opentok-elearning-samples>
 * Advanced Insights Dashboard Sample: <https://github.com/opentok/insights-dashboard-sample>
 
-# Calculating monthly usage / Video API tiered pricing -  
+## Calculating monthly usage / Video API tiered pricing 
 
 * [How do I estimate my OpenTok monthly usage](https://support.tokbox.com/hc/en-us/articles/360029732691-How-do-I-estimate-my-OpenTok-monthly-usage-)
 * [Video API Pricing](https://www.vonage.com/communications-apis/video/pricing/?icmp=l3nav_pricing_novalue)
