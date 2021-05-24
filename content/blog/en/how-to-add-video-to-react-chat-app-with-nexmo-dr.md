@@ -12,6 +12,7 @@ updated_at: 2021-05-07T14:20:02.799Z
 category: tutorial
 tags:
   - conversation-api
+  - react
 comments: true
 redirect: ""
 canonical: ""
@@ -30,7 +31,7 @@ The possibilities of what this API will unveil feel endless and thus I’ve had 
 
 Today, we’ll build something off of the chat application that was built in [this introductory tutorial](https://www.nexmo.com/blog/2019/08/30/chat-app-with-react-and-nexmo-dr). That original app uses Nexmo’s Client SDK and connects to the Conversation API. And today, we are going to add video chat to that React application using the TokBox API.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/demo.gif"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/demo.gif" alt="demo of app" width="600" height="388" class="alignnone size-full wp-image-30388" /></a>
+![demo of app](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/demo.gif "demo of app")
 
 ### Our Application’s Use Case
 
@@ -38,8 +39,10 @@ Imagine that you are chatting with a customer on your website. Maybe they’re r
 
 ### Prequisites
 
-To keep things short, let’s assume you have followed the [React and Express tutorial](https://www.nexmo.com/blog/2019/08/30/chat-app-with-react-and-nexmo-dr). To start, you’ll again need a [Nexmo Developer](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=glitch&utm_campaign=https://remixed-nexmo-videochat.glitch.me/) account and Node installed in your development environment. If you’d like to skip to a working project, you can remix the code [here](https://remixed-nexmo-videochat.glitch.me) in Glitch.
+To keep things short, let’s assume you have followed the [React and Express tutorial](https://www.nexmo.com/blog/2019/08/30/chat-app-with-react-and-nexmo-dr). To start, you’ll again need a [](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=glitch&utm_campaign=https://remixed-nexmo-videochat.glitch.me/)Vonage account and Node installed in your development environment. If you’d like to skip to a working project, you can remix the code [here](https://remixed-nexmo-videochat.glitch.me) in Glitch.
 Otherwise, in just a few steps you can create your own video chat app from scratch!
+
+<sign-up></sign-up>
 
 ### Create an Application
 
@@ -75,12 +78,12 @@ The output is the User ID. Again, save this id as this is the unique identifier 
 
 Once signed in to your TokBox account, in the left-hand corner of your page, select `Projects` and, from the dropdown, click `Create New Project`.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/newproject-tokbox.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/newproject-tokbox.png" alt="newproject-tokbox" width="1920" height="1190" class="alignnone size-full wp-image-30381" /></a>
+![New project tok-box](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/newproject-tokbox.png "New project tok-box")
 
 From there, select `Create Custom Project` and name it whatever you like. Once you’ve created the project, click `View Project` and save the API key up at the top.
 Next, scroll down to the section titled `Project Tools` and click the blue button to `Create Session ID`.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/sessionID.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/sessionID.png" alt="sessionID" width="2028" height="910" class="alignnone size-full wp-image-30382" /></a>
+![session ID](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/sessionid.png "session ID")
 
 Copy and paste that sessionID into the section below `Generate Token`. Feel free to prolong the expiration time beyond the default 1 hour if you’d like.
 Next, click the blue `Generate Token` button and save the generated token.
@@ -89,7 +92,7 @@ Next, click the blue `Generate Token` button and save the generated token.
 
 Picking up where the last tutorial left off, let’s move all of the chat components into a `ChatComponents` folder and create a new `VideoComponents` folder for our new files.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/directorystructure.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/directorystructure.png" alt="directorystructure" width="456" height="516" class="alignnone size-full wp-image-30383" /></a>
+![Directory structure](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/directorystructure.png "Directory structure")
 
 In the `NexmoApp.js` file, swap one of the conversation IDs out with `YOUR_CONVERSATION_ID` that we just generated in the terminal.
 
@@ -243,7 +246,7 @@ Notice that within the `<OTPublisher />` we’re passing in `publishAudio`, `pub
 
 Now the `Publisher` component will show an avatar until the user gives OpenTok permission to access the computer's camera.  
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/publisher.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/publisher.png" alt="publisher" width="652" height="584" class="alignnone size-full wp-image-30411" /></a>
+![publisher](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/publisher.png)
 
 ### Build the Subscriber Component
 
@@ -333,7 +336,7 @@ export default ConnectionStatus;
 
 Creating this helps your user understand if the video has successfully connected or not:
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/connectionstatus.png"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/connectionstatus.png" alt="connectionstatus" width="496" height="178" class="alignnone size-full wp-image-30410" /></a>
+![Connection status](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/connectionstatus.png "Connection status")
 
 ### Build the CheckBox Component
 
@@ -388,9 +391,8 @@ export default CheckBox;
 ```
 
 Adding the `CheckBox` component helps make the UI of the app function the way users might expect:
- 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/Large-GIF-358x148.gif"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/Large-GIF-358x148.gif" alt="checkbox gif" width="358" height="148" class="alignnone size-full wp-image-30399" /></a>
 
+![checkbox gif](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/large-gif-358x148.gif "checkbox gif")
 
 ### Test Your Video Chat App
 
@@ -402,9 +404,9 @@ You now have created all 5 React components:
 * ConnectionStatus
 * CheckBox
 
-Running `npm start` from the root of your project should get your app up and running. When you select the drop-down next to `User Name`, you _should_ see the name `lauren` prepopulated.
+Running `npm start` from the root of your project should get your app up and running. When you select the drop-down next to `User Name`, you *should* see the name `lauren` prepopulated.
 
-Try adding in _your_ name into the text box and click the `Create user` button. Select the synced chat from the drop-down.
+Try adding in *your* name into the text box and click the `Create user` button. Select the synced chat from the drop-down.
 
 You can now verify that the app is synced to your conversation correctly by running this request in your terminal:
 
@@ -423,10 +425,9 @@ MEM-vvvvvvvv-eeee-ffff-eeee-3456789ab012 | USR-bbbbbbbb-cccc-dddd-eeee-3456789ab
 
 Allow the browser permission to access your camera and microphone and you should now see the video component on the screen! If you open up another browser with the same code and join the chat as a different user, you will see another video component added as well.
 
-<a href="https://www.nexmo.com/wp-content/uploads/2019/10/demoapp.gif"><img src="https://www.nexmo.com/wp-content/uploads/2019/10/demoapp.gif" alt="demo of app" width="640" height="468" class="alignnone size-full wp-image-30395" /></a>
+![demo of app](/content/blog/how-to-add-video-to-your-react-chat-app-with-nexmo/demoapp.gif "demo of app")
 
-### To see the app up and running, check it out on 👉 **_[Glitch](https://remixed-nexmo-videochat.glitch.me)_**! To make it your own, remix it and add your own Nexmo and TokBox credentials into the `.env` file. 
-
+### To see the app up and running, check it out on 👉 ***[Glitch](https://remixed-nexmo-videochat.glitch.me)***! To make it your own, remix it and add your own Nexmo and TokBox credentials into the `.env` file.
 
 ## 🌟Let’s Collaborate!🌟
 
