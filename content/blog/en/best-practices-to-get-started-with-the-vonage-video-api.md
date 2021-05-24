@@ -1,5 +1,5 @@
 ---
-title: Best practices to get started with Vonage Video
+title: Best Practices to Get Started With Vonage Video
 description: "Best practices we recommend for consideration, before you start
   building your feature-rich video application powered by Vonage Video API. "
 thumbnail: /content/blog/best-practices-to-get-started-with-vonage-video/best-practices-videoapi_1200x627.png
