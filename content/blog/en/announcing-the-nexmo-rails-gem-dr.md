@@ -35,11 +35,11 @@ gem 'nexmo-rails'
 
 Then run `bundle install` from your command line to install the dependency.
 
+<sign-up></sign-up>
+
 ### Nexmo API Credentials
 
-<sign-up number></sign-up>
-
-You need to provide the gem with your Nexmo API credentials to access the functionality of our APIs. [Sign up for a free Nexmo account](https://dashboard.nexmo.com/sign-up), if you have not done so already. Once you have created your Nexmo account, navigate to your dashboard and add your API key and API secret to the `.env` file in the root folder of your application:
+You need to provide the gem with your Nexmo API credentials to access the functionality of our APIs. Once you have created your Nexmo account, navigate to your dashboard and add your API key and API secret to the `.env` file in the root folder of your application:
 
 ```ruby
 # .env
