@@ -119,7 +119,7 @@ data= {
 }
 
 url = "https://messages-sandbox.nexmo.com/v0.1/messages"
-resp = requests.post(url, json=data, auth=('f9950599', 'GYwrY3gCuMpJhRMD'))
+resp = requests.post(url, json=data, auth=(os.getenv("VONAGE_API_KEY"), os.getenv("VONAGE_API_SECRET")))
 
 print (resp)
 
