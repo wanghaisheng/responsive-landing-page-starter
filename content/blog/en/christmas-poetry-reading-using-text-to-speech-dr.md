@@ -48,14 +48,7 @@ Here's the SSML I ended up with:
 
 By including this XML as the `text` field in the `talk` action of my NCCO, and adding a `record` action too, I was able to capture the poetry of the robot:
 
-<figure>
-    <audio
-        controls
-        src="https://soundcloud.com/user-872225766-984610678/conference-31696a4f-983f-40ea-b81a-ab942fc33782">
-            Your browser does not support the
-            <code>audio</code> element.
-    </audio>
-</figure>
+https://soundcloud.com/user-872225766-984610678/conference-31696a4f-983f-40ea-b81a-ab942fc33782
 
 - - -
 
