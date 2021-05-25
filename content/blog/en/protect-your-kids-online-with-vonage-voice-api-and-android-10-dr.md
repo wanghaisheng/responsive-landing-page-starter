@@ -14,7 +14,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-# Build a Proxy App to Mask Sensitive Phone Numbers
+## Build a Proxy App to Mask Sensitive Phone Numbers
 
 We live in an increasingly digital world, and kids are often the first to use new technologies and applications. They may be competent at using digital technologies, but they don’t always understand online security, including which data they can share with strangers, and which they must not.
 
