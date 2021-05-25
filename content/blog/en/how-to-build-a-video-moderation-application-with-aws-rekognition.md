@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 In education and events spaces particularly, adding an active moderation on participants' videos can be very useful, as it makes it possible to block inappropriate content from others. The application we build with this tutorial will also enable you to save data during the call and run post-call analysis on detection performances. 
 
-In this blog post, we will implement a Video Moderation application using [Vonage Video API](https://www.vonage.com/communications-apis/video/) and [AWS Rekognition]|(https://aws.amazon.com/rekognition/). The application will moderate the video published by Camera and Screen sharing for each of the publishers into the session. If the application detects inappropriate content, it will mute the video from the offending publisher and send a notification to all the participants. 
+In this blog post, we will implement a Video Moderation application using [Vonage Video API](https://www.vonage.com/communications-apis/video/) and [AWS Rekognition](https://aws.amazon.com/rekognition/). The application will moderate the video published by Camera and Screen sharing for each of the publishers into the session. If the application detects inappropriate content, it will mute the video from the offending publisher and send a notification to all the participants. 
 
 Want to jump ahead? You can find the code for this tutorial on [GitHub](https://github.com/nexmo-se/video-api-aws-moderation).
 
@@ -78,8 +78,9 @@ The routes are defined in the App.js file. The code uses the react-router-dom mo
 Waiting Room: The user can set up their microphone and camera settings and run a pre-call test on this page. Then, they can join the video call.
 Video Room: The user can connect to the session, publish their stream, and subscribe to each stream inside the room.
 
-The key thing to note on the Video Room page is the custom hook: useModeration (hooks/useModeration). The useModeration hook sends every second a screenshot of the camera (or the screen) to the moderation API function. 
-For live streaming, it’s ideal to have a process to periodically extract frames and use image-based Rekognition API for analysis. This allows you to get the detection response asynchronously and also allows you to extend your AI/ML process in the future (most of the machine learning models are based on image).
+The key thing to note on the Video Room page is the custom hook: useModeration (hooks/useModeration). The useModeration hook sends every second a screenshot of the camera (or the screen) to the moderation API function.  
+
+For live streaming, it’s ideal to have a process to periodically extract frames and use image-based Rekognition API for analysis. This allows you to get the detection response asynchronously and also allows you to extend your AI/ML process in the future (most of the machine learning models are based on image).  
 Hence, sending a screenshot every second is a good compromise between live content detection and CPU/Bandwidth usage of the client using the video application. To get the screenshot of the stream, the application uses the [getImgData](https://tokbox.com/developer/sdks/js/reference/Publisher.html#getImgData) function provided by the Video SDK. 
 
 
@@ -115,4 +116,4 @@ If the moderation function detects inappropriate content, the useModeration hook
 
 This post demonstrates how to integrate a content moderation API, AWS Rekognition, into the Vonage Video API. How the application reacts to inappropriate content is completely customizable based on your use case— it can mute the audio/video of the Publisher, or even forcefully disconnect the user and ban them from joining the session again. For more details on how you can moderate content using Vonage Video API, have a look at this [article](https://learn.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api/). 
 
-Resources: https://github.com/nexmo-se/video-api-aws-moderation
+Resources: [https://github.com/nexmo-se/video-api-aws-moderation](https://github.com/nexmo-se/video-api-aws-moderation)
