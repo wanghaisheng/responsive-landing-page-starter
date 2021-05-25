@@ -2,7 +2,7 @@
 title: Deploying PythonAnywhere With the Messages API
 description: Learn how to deploy a Python application using Vonage's Messages
   API to PythonAnywhere.
-author: greg-holmes
+author: anita-achu
 published: true
 published_at: 2021-05-21T15:36:36.119Z
 updated_at: 2021-05-21T15:36:36.145Z
