@@ -38,11 +38,10 @@ Want to jump ahead? You can find the code for this tutorial on [GitHub](https://
 The application backend is implemented using AWS Serverless components such as AWS Lambda, AWS API Gateway, AWS DynamoDB and AWS Rekognition service.
 
 The backend is contained in the src/functions folder. There are two main functions:
+- `api/room.js`: handles the room creation in DynamoDB and assigns Vonage Video API sessionId to the specific room name  
+- `api/moderation.js`: receives the base64 image from the client, sends the image to the AWS Rekognition service and sends back the result to the client
 
-`api/room.js`: handles the room creation in DynamoDB and assigns Vonage Video API sessionId to the specific room name  
-`api/moderation.js`: receives the base64 image from the client, sends the image to the AWS Rekognition service and sends back the result to the client
-
-The room function receives a parameter called roomName. Based on the roomName, it checks if the room exists. If so, it sends back the sessionId related to the existing room and the token to join the room. If not, it creates a new sessionId, saves it in DynamoDB and sends back the credentials (sessionId and token).
+The room function receives a parameter called `roomName`. Based on the `roomName`, it checks if the room exists. If so, it sends back the `sessionId` related to the existing room and the token to join the room. If not, it creates a new `sessionId`, saves it in DynamoDB and sends back the credentials (sessionId and token).
 
 The moderation function receives the images from the client-side camera or screen share. Before sending the image to the AWS Rekognition server, the function decodes them into base64 format. 
 
@@ -64,22 +63,22 @@ function detectModerationLabels(imageBuffer) {
 
 ```
 
-Then, it calls the detectModerationLabels function. The detectModerationLabels function gives back the objects detected and the confidence. If no objects are identified, the function returns an empty array. Otherwise, the function returns an array with the identified object to the client-side. 
+Then, it calls the `detectModerationLabels` function. The `detectModerationLabels` function gives back the objects detected and the confidence. If no objects are identified, the function returns an empty array. Otherwise, the function returns an array with the identified object to the client-side. 
 
 
 
 ### Client Side
 
-The client-side application is a React Single Page Application. The entry point of the project is the src/client/index.js file. The index file imports the App file, which contains the Routes and Component definition.
+The client-side application is a React Single Page Application. The entry point of the project is the `src/client/index.js` file. The index file imports the App file, which contains the Routes and Component definition.
 
 ### Pages
 
-The routes are defined in the App.js file. The code uses the react-router-dom module to declare the routes. There are two main routes:
+The routes are defined in the App.js file. The code uses the `react-router-dom` module to declare the routes. There are two main routes:
 
-Waiting Room: The user can set up their microphone and camera settings and run a pre-call test on this page. Then, they can join the video call.
-Video Room: The user can connect to the session, publish their stream, and subscribe to each stream inside the room.
+- Waiting Room: The user can set up their microphone and camera settings and run a pre-call test on this page. Then, they can join the video call.
+- Video Room: The user can connect to the session, publish their stream, and subscribe to each stream inside the room.
 
-The key thing to note on the Video Room page is the custom hook: useModeration (hooks/useModeration). The useModeration hook sends every second a screenshot of the camera (or the screen) to the moderation API function.  
+The key thing to note on the Video Room page is the custom hook: `useModeration` (hooks/useModeration). The `useModeration` hook sends every second a screenshot of the camera (or the screen) to the moderation API function.  
 
 For live streaming, it’s ideal to have a process to periodically extract frames and use image-based Rekognition API for analysis. This allows you to get the detection response asynchronously and also allows you to extend your AI/ML process in the future (most of the machine learning models are based on image).  
 Hence, sending a screenshot every second is a good compromise between live content detection and CPU/Bandwidth usage of the client using the video application. To get the screenshot of the stream, the application uses the [getImgData](https://tokbox.com/developer/sdks/js/reference/Publisher.html#getImgData) function provided by the Video SDK. 
@@ -111,10 +110,13 @@ useInterval(
   );
 ```
 
-If the moderation function detects inappropriate content, the useModeration hook shows a warning snackbar to the current publisher and disables their webcam or screen for a defined period of time (for example, 10 seconds). The hook also sends a signal to the other participants telling them that the publisher's video has been disabled because of inappropriate content. 
+If the moderation function detects inappropriate content, the `useModeration` hook shows a warning snackbar to the current publisher and disables their webcam or screen for a defined period of time (for example, 10 seconds). The hook also sends a signal to the other participants telling them that the publisher's video has been disabled because of inappropriate content. 
 
 ## Conclusion
 
-This post demonstrates how to integrate a content moderation API, AWS Rekognition, into the Vonage Video API. How the application reacts to inappropriate content is completely customizable based on your use case— it can mute the audio/video of the Publisher, or even forcefully disconnect the user and ban them from joining the session again. For more details on how you can moderate content using Vonage Video API, have a look at this [article](https://learn.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api/). 
+This post demonstrates how to integrate a content moderation API, AWS Rekognition, into the Vonage Video API.  
+How the application reacts to inappropriate content is completely customizable based on your use case—it can mute the audio/video of the Publisher, or even forcefully disconnect the user and ban them from joining the session again.  
+
+For more details on how you can moderate content using Vonage Video API, have a look at this [article](https://learn.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api/). 
 
 Resources: [https://github.com/nexmo-se/video-api-aws-moderation](https://github.com/nexmo-se/video-api-aws-moderation)
