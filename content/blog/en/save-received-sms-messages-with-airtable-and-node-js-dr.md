@@ -24,7 +24,6 @@ The code for this tutorial is on [GitHub](https://github.com/nexmo-community/sav
 
 ## Prerequisites
 
-* A Nexmo account
 * An [Airtable account](https://airtable.com/signup)
 * [Node.js](https://nodejs.org/en/download/) installed on your machine
 * [ngrok](https://ngrok.com/) to make the code on your local machine accessible to the outside world
