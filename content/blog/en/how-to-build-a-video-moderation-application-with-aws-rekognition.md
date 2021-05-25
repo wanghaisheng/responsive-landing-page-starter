@@ -20,15 +20,16 @@ replacement_url: ""
 ---
 In education and events spaces particularly, adding an active moderation on participants' videos can be very useful, as it makes it possible to block inappropriate content from others. The application we build with this tutorial will also enable you to save data during the call and run post-call analysis on detection performances. 
 
-In this blog post, we will implement a Video Moderation application using [Vonage Video API](https://www.vonage.com/communications-apis/video/) and [AWS Rekognition](https://aws.amazon.com/rekognition/). The application will moderate the video published by Camera and Screen sharing for each of the publishers into the session. If the application detects inappropriate content, it will mute the video from the offending publisher and send a notification to all the participants. 
+In this blog post, we will implement a Video Moderation application using [Vonage Video API](https://www.vonage.com/communications-apis/video/) and [AWS Rekognition](https://aws.amazon.com/rekognition/).  
+The application will moderate the video published by Camera and Screen sharing for each of the publishers into the session. If the application detects inappropriate content, it will mute the video from the offending publisher and send a notification to all the participants. 
 
 Want to jump ahead? You can find the code for this tutorial on [GitHub](https://github.com/nexmo-se/video-api-aws-moderation).
 
 
 ## Prerequisites
 
-1. A Vonage Video API account. If you don't have one already, you can create an account in the [Video Dashboard](https://tokbox.com/account/#/).
-2. An AWS account: https://aws.amazon.com
+1. A Vonage Video API account. If you don't have one already, you can create an account in the [Video Dashboard](https://tokbox.com/account/#/)
+2. An [AWS account](https://aws.amazon.com)
 
 
 ## Project Architecture
@@ -38,8 +39,8 @@ The application backend is implemented using AWS Serverless components such as A
 
 The backend is contained in the src/functions folder. There are two main functions:
 
-api/room.js: handles the room creation in DynamoDB and assigns Vonage Video API sessionId to the specific room name
-api/moderation.js: receives the base64 image from the client, sends the image to the AWS Rekognition service and sends back the result to the client
+`api/room.js`: handles the room creation in DynamoDB and assigns Vonage Video API sessionId to the specific room name  
+`api/moderation.js`: receives the base64 image from the client, sends the image to the AWS Rekognition service and sends back the result to the client
 
 The room function receives a parameter called roomName. Based on the roomName, it checks if the room exists. If so, it sends back the sessionId related to the existing room and the token to join the room. If not, it creates a new sessionId, saves it in DynamoDB and sends back the credentials (sessionId and token).
 
