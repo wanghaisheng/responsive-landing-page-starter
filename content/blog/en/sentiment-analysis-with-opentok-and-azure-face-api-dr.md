@@ -20,8 +20,8 @@ canonical: ""
 You know that person. It could be your significant other, a child, a co-worker, or a friend. The person that says one thing, but you can tell by their face, they mean something completely different. You probably just pictured them in your head. Maybe you remember the exact conversation. Perhaps it went like this:
 
 > **You:** Okay?
-> >
-> **Them:** Fine.
+>
+> > **Them:** Fine.
 
 *Spoiler Alert:* It wasn't fine.
 
@@ -192,7 +192,7 @@ We'll get the `OPENTOK_API_KEY`, `OPENTOK_SESSION_ID` and `OPENTOK_TOKEN` variab
 
 In your Vonage Video API Account, click the 'Projects' menu and 'Create New Project.` Then click the 'Create Custom Project' button. Give your new project a name and press the 'Create' button. You can leave the preferred codec as 'VP8'.
 
-![Screenshot of the "project created" dialog within a Vonage Video API account.](/content/blog/i-see-what-you’re-saying-sentiment-analysis-with-azure-face-api-and-vonage/tb-project-created.png "Screenshot of the \"project created\" dialog within a Vonage Video API account.")
+![Screenshot of the "project created" dialog within a Vonage Video API account.](/content/blog/sentiment-analysis-with-azure-face-api-and-vonage/tb-project-created.png "Screenshot of the \\"project created\\" dialog within a Vonage Video API account.")
 
 You can then copy your API Key and paste it as the value for the `OPENTOK_API_KEY` setting.
 
@@ -200,13 +200,13 @@ Next, click on "View Project". At the bottom of the project detail page, you'll 
 
 Finally, paste the generated session ID into the Session ID field of the Generate Token form and press the "Generate Token" button. Copy the generated Token as the value of the `OPENTOK_TOKEN` setting.
 
-![Project Tools area of a specific project in a Vonage Video API account.](/content/blog/i-see-what-you’re-saying-sentiment-analysis-with-azure-face-api-and-vonage/tb-project-tools.png "Project Tools area of a specific project in a Vonage Video API account.")
+![Project Tools area of a specific project in a Vonage Video API account.](/content/blog/sentiment-analysis-with-azure-face-api-and-vonage/tb-project-tools.png "Project Tools area of a specific project in a Vonage Video API account.")
 
 ### Azure Face API Settings
 
 Log into your Azure account and create a new Face API Cognitive Service. Once created, click on the service and go to the "Quick start" blade. There you'll find your `Key` and `Endpoint`. Copy these two values to the `AZURE_FACE_API_SUBSCRIPTION_KEY` and `AZURE_FACE_API_ENDPOINT` settings, respectively.
 
-![Screenshot of the Quick start blade within Azure for the Face API service.](/content/blog/i-see-what-you’re-saying-sentiment-analysis-with-azure-face-api-and-vonage/azure-face-quickstart.png "Screenshot of the Quick start blade within Azure for the Face API service.")
+![Screenshot of the Quick start blade within Azure for the Face API service.](/content/blog/sentiment-analysis-with-azure-face-api-and-vonage/azure-face-quickstart.png "Screenshot of the Quick start blade within Azure for the Face API service.")
 
 ## I Feel Seen
 
@@ -507,7 +507,7 @@ Now when we open the `index.html` page in our browsers we can press the "Analyze
 
 Also, I'm not certain, but it may not work for teenagers. I made my teenage daughter test it dozens of times but it only returned "disgust" and "contempt" as the emotions. Maybe this wasn't such a good idea. Maybe it's better to not know what they really think. 😂
 
-![Four video frames of Michael showing different sentiments returned from Azure&#039;s Face API](/content/blog/i-see-what-you’re-saying-sentiment-analysis-with-azure-face-api-and-vonage/sentiment.png "Four video frames of Michael showing different sentiments returned from Azure&#039;s Face API")
+![Four video frames of Michael showing different sentiments returned from Azure&#039;s Face API](/content/blog/sentiment-analysis-with-azure-face-api-and-vonage/sentiment.png "Four video frames of Michael showing different sentiments returned from Azure&#039;s Face API")
 
 ## Further Reading
 
