@@ -27,7 +27,7 @@ Want to jump ahead? You can find the code for this tutorial on [GitHub](https://
 
 ## Prerequisites
 
-1. A Vonage Video API account. If you don't have one already, you can create an account in the Video Dashboard (https://tokbox.com/account/#/).
+1. A Vonage Video API account. If you don't have one already, you can create an account in the [Video Dashboard](https://tokbox.com/account/#/).
 2. An AWS account: https://aws.amazon.com
 
 
