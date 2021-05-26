@@ -16,7 +16,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-The Firebase platform allows developers to build an application backend rapidly. It's also enjoyable to use as well. For this tutorial, I wanted to start using it for some SMS messaging with [Vonage](https://www.vonage.com/). After this walk-through, you will be able to create an SMS message log, and a response to the sender using [Firebase Cloud Functions](https://firebase.google.com/docs/functions/get-started) and the Real Time Database alongside the Vonage SMS API.
+The Firebase platform allows developers to build an application backend rapidly. It's enjoyable to use as well. For this tutorial, I wanted to start using it for some SMS messaging with [Vonage](https://www.vonage.com/). After this walk-through, you will be able to create an SMS message log and a response to the sender using [Firebase Cloud Functions](https://firebase.google.com/docs/functions/get-started) and the Real Time Database alongside the Vonage SMS API.
 
 ## Before You Get Started
 
@@ -57,22 +57,22 @@ The first step is to set up a Firebase project. The following will walk you thro
 
 Most everything you will need to do with Firebase can be done directly from the command line with the toolset they provide.
 
-1. Install the Firebase tools with npm 
+1. Install the Firebase tools with npm. 
 
 ```shell
 npm install -g @vonage/server-sdk
 ```
 
-1. Log in to Firebase using `firebase login`. The login process will open your browser for authentication.
+2. Log in to Firebase using `firebase login`. The login process will open your browser for authentication.
 
 ### Setup Local Environment
 
-Writing Firebase functions requires some initialization work to get started, but it's mostly done for you using Firebase Tools commands.
+Writing Cloud Functions for Firebase requires some initialization work to get started, but it's mostly done for you using Firebase Tools commands.
 
 1. Create a project folder `mkdir vonage-project && cd vonage-project`
-2. Initialize Firebase Functions `firebase init functions`
+2. Initialize Cloud Functions for Firebase `firebase init functions`
 
-```shell
+```html
      ######## #### ########  ######## ########     ###     ######  ########
      ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
      ######    ##  ########  ######   ########  #########  ######  ######
@@ -126,8 +126,9 @@ Calling `admin.initializeApp();` allows the functions to read and write to the F
 // This function will serve as the webhook for incoming SMS messages,
 // and will log the message into the Firebase Realtime Database
 exports.inboundSMS = functions.https.onRequest(async (req, res) => {
-  await admin.database().ref('/msgq').push(req.body);
-  res.send(200);
+  const params = Object.assign(req.query, req.body)
+  await admin.database().ref('/msgq').push(params);
+  res.sendStatus(200);
 });
 ```
 
@@ -137,7 +138,7 @@ Since we are using `req.body`, the webhook will need to be a `POST Method`. If y
 
 Now that you have some code written be sure to save your file an deploy the function to Firebase:
 
-```shell
+```html
 firebase deploy --only functions
 
 === Deploying to 'vonage-project'...
@@ -218,21 +219,24 @@ Now you can create the new function for Firebase to send the response:
 // This function listens for updates to the Firebase Realtime Database
 // and sends a message back to the original sender
 exports.sendSMS = functions.database.ref('/msgq/{pushId}')
-  .onCreate((message) => {
-    const { msisdn, text, to } = message.val();
-    // the incoming object - 'msisdn' is the your phone number, and 'to' is the Vonage number
-    // vonage.message.sendSms(to, msisdn, text);
-    return vonage.message.sendSms(to, msisdn, `You sent the following text: ${text}`, (err, res) => {
-      if (err) {
-        console.log(err);
-      } else {
-        if (res.messages[0]['status'] === "0") {
-          console.log("Message sent successfully.");
+  .onCreate(async (snapshot, context) => {
+    const result = await new Promise((resolve, reject) => {
+      vonage.message.sendSms(from, to, text, (err, responseData) => {
+        if (err) {
+          console.log(err);
+          return reject(err);
         } else {
-          console.log(`Message failed with error: ${res.messages[0]['error-text']}`);
+          if (responseData.messages[0]['status'] === "0") {
+            console.log("Message sent successfully.");
+            return resolve(`Message sent successfully: ${responseData.messages[0]['message-id']}`);
+          } else {
+            console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+            return reject(`Message failed with error: ${responseData.messages[0]['error-text']}`)
+          }
         }
-      }
-    })
+      });
+    });
+    return snapshot.ref.parent.child('result').set(result);
   });
 ```
 
@@ -242,7 +246,7 @@ exports.sendSMS = functions.database.ref('/msgq/{pushId}')
 
  Deploy the Firebase Functions again from the command line:
 
-```shell
+```html
 firebase deploy --only functions
 ```
 
@@ -250,7 +254,7 @@ Grab your phone, send another message, and then you should get a response back t
 
 ## Wrap Up
 
-You have now completed all the steps for this tutorial. You can see the full code on Github.
+You have now completed all the steps for this tutorial. You can see the full code [on Github](https://github.com/nexmo-community/firebase-functions-sms-example).
 
 Now that the initial steps to send and receive messages are complete, my next few posts will take this concept and expand it into controlling some of my home automation via text messages. I would love to hear what you plan to do as well so send me a message on Twitter and let me know.
 
