@@ -19,7 +19,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# How to Make Video Calls With SwiftUI
 
 In this tutorial, you will use the Vonage [Video Client SDK](https://tokbox.com/developer/sdks/ios/) for iOS to build a one-to-one video chat in SwiftUI. 
 
