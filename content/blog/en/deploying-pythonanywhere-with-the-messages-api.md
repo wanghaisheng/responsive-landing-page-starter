@@ -197,7 +197,7 @@ wsgi-request-logger==0.4.6
 zappa==0.52.0
 ```
 
-For a bash console, we will be using the `nano` text editor. The next step is adding the `whatsapp.py` and `requirements.txt` to our PythonAnywhere account; the best step is to copy and paste the code to the clipboard. Then open the bash console using your text editor:
+In your PythonAnywhere bash console, we will be using the `nano` text editor. The next step is adding the `whatsapp.py` and `requirements.txt` to our PythonAnywhere account; the best step is to copy and paste the code to the clipboard. Then open the bash console using your text editor:
 
 ```bash
 nano whatsapp.py
