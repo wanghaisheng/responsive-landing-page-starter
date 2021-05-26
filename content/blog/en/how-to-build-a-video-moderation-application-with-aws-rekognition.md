@@ -2,9 +2,10 @@
 title: How to Build a Video Moderation Application with AWS Rekognition
 description: Learn how to implement a Video Moderation application using Vonage
   Video API and AWS Rekognition
+thumbnail: /content/blog/how-to-build-a-video-moderation-application-with-aws-rekognition/blog_video-api_moderation_1200x600.png
 author: enrico-portolan
 published: true
-published_at: 2021-05-25T15:34:21.346Z
+published_at: 2021-05-26T08:06:30.340Z
 updated_at: 2021-05-25T15:34:21.374Z
 category: tutorial
 tags:
