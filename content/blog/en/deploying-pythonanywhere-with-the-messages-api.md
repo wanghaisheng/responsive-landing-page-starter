@@ -133,7 +133,13 @@ In the code above, we imported Vonage, our API library. It has already been inst
 
 Once this is done successfully, run `python whatsapp.py` on your terminal. You will receive a `202` response.
 
-## Adding a requirements.txt file
+For the purpose of this tutorial, we are running this project using `python3`. To ensure your using this version of python run the following command to check the version of python you are running on:
+
+```python
+python --version
+```
+
+## Adding a Requirements.txt File
 
 A `requirements.txt` which contains all the python packages is required to install the application on PythonAnywhere. Here is our `requirements.txt`
 
@@ -210,6 +216,8 @@ Repeat the same process for your `requirements.txt`
 ```bash
 nano requirements.txt
 ```
+
+With the above steps, you have moved the code from your local machine to PythonAnywhere for it to be hosted.
 
 ### Creating a virtual environment
 
