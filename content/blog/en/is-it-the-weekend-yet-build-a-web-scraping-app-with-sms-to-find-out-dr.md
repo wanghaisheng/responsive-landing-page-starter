@@ -404,9 +404,7 @@ The code for our application is all set. The only thing that is missing now is c
 
 ## Nexmo API Credentials and Phone Number
 
-To create an account navigate to the [Nexmo Dashboard](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=github&utm_campaign=weekend-checker-sms-app) and complete the registration steps. Once you have finished registering, you will enter your Dashboard, which will look similar to this:
-
-![](dashboard_screenshot.png)
+To create an account navigate to the [Nexmo Dashboard](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=github&utm_campaign=weekend-checker-sms-app) and complete the registration steps. Once you have finished registering, you will enter your Dashboard.
 
 If you have not done so previously, create a `.env` file in the top-level directory of your application and add your `NEXMO_API_KEY` and `NEXMO_API_SECRET` to it. The values for those are found at the top of the dashboard page under the `Your API credentials` header.
 
@@ -415,9 +413,7 @@ NEXMO_API_KEY=
 NEXMO_API_SECRET=
 ```
 
-The next task we need to do inside the dashboard is to provision a phone number. After you click on the `Numbers` link on the sidebar navigation, a drop-down menu will appear. Once you select the `Buy numbers` option and then click the `Search` button you will see a list of possible numbers to acquire:
-
-![](buy_numbers.png)
+The next task we need to do inside the dashboard is to provision a phone number. After you click on the `Numbers` link on the sidebar navigation, a drop-down menu will appear. Once you select the `Buy numbers` option and then click the `Search` button you will see a list of possible numbers to acquire.
 
 When searching for numbers by feature, country, and type, it is recommended to select the country that your users will be based in, `SMS` for features and `Mobile` for type.
 
@@ -431,9 +427,7 @@ FROM_NUMBER=
 
 The last item we need to do inside our dashboard is to provide an externally accessible URL as the event webhook for the phone number. For development purposes, [ngrok](https://ngrok.io) is a good tool to use, and you can follow [this guide](https://developer.nexmo.com/concepts/guides/testing-with-ngrok) on how to get up and running with it.
 
-From the dashboard `Numbers` sidebar navigation drop-down, once you select `Your numbers` you will see your newly provisioned phone number in a list presentation. After clicking on the gear icon to manage its properties, a settings dialog menu will be shown to you:
-
-![](number_settings.png)
+From the dashboard `Numbers` sidebar navigation drop-down, once you select `Your numbers` you will see your newly provisioned phone number in a list presentation. After clicking on the gear icon to manage its properties, a settings dialog menu will be shown to you.
 
 In the above screenshot example, you would replace the `Inbound Webhook URL` text field with your own URL ending with `/webhooks/event`.
 
@@ -462,4 +456,3 @@ For further exploration of other SMS possibilities check out the following resou
 * [Send SMS Reminders of Google Calendar Events with Zapier](https://learn.vonage.com/blog/2020/03/04/how-to-send-sms-reminders-of-google-calendar-events-with-zapier-dr)
 * [Create an Interactive Scavenger Hunt with Nexmo's SMS and Voice API](https://learn.vonage.com/blog/2019/08/14/how-to-create-an-interactive-scavenger-hunt-with-nexmos-sms-and-voice-api-dr)
 * [Shipping Notifications on WordPress WooCommerce with SMS](https://learn.vonage.com/blog/2020/01/11/shipping-notifications-on-wordpress-woocommerce-with-nexmo-sms-dr)
-
