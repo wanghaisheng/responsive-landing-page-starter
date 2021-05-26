@@ -1,10 +1,11 @@
 ---
-title: How to Make Video Calls With SwiftUI
+title: How to Make Video Calls with SwiftUI
 description: Learn how to build a one-to-one video chat in SwiftUI using the
   Vonage Video Client SDK for iOS.
+thumbnail: /content/blog/how-to-make-video-calls-with-swiftui/video-call_swiftui_1200x600.png
 author: abdul-ajetunmobi
 published: true
-published_at: 2021-05-13T14:24:44.140Z
+published_at: 2021-05-26T09:40:37.097Z
 updated_at: 2021-05-13T14:24:44.173Z
 category: tutorial
 tags:
