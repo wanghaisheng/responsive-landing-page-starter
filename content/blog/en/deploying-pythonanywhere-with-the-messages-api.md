@@ -139,6 +139,8 @@ For the purpose of this tutorial, we are running this project using `python3`. T
 python --version
 ```
 
+If your version output is Python 2. Please update any commands you run with `python3`.
+
 ## Adding a Requirements.txt File
 
 A `requirements.txt` which contains all the python packages is required to install the application on PythonAnywhere. Here is our `requirements.txt`
@@ -303,7 +305,7 @@ Once you've made these changes, save the WSGI configuration file. Then, return t
 
 ## Connecting URL
 
-On the Vonage "*Message API sandbox*" page, scroll down to "*Webhooks".* In this section, enter the webhook's URL. This URL consists of the PythonAnywhere URL followed by the /whatsapp route to the webhook. The URL will be in the format http://your-username>.pythonanywhere.com/bot in general. As shown below:
+On the Vonage "*Message API sandbox*" page, scroll down to "*Webhooks".* In this section, enter the webhook's URL. This URL consists of the PythonAnywhere URL followed by the /whatsapp route to the webhook. The URL will be in the format http://<your-username>.pythonanywhere.com/bot in general. As shown below:
 
 ![Creating the webhooks to handle WhatsApp messages](/content/blog/deploying-pythonanywhere-with-the-messages-api/url_li_-3-.jpeg)
 
