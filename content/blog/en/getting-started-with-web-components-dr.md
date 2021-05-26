@@ -58,7 +58,7 @@ You. Have you ever wondered how is it possible that you can just set the â€˜srcâ
 [source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video#Examples)
 
 <audio controls src="https://interactive-examples.mdn.mozilla.net/media/examples/t-rex-roar.mp3">Your browser does not support the audio element. </audio>
-[source](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio)
+[source](https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3)
 
 ## An Example
 
