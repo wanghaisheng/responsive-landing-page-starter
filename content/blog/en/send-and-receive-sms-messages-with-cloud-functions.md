@@ -38,12 +38,12 @@ The first step is to set up a Firebase project. The following will walk you thro
 
 1. Add a name and click continue
 
-![Naming your project](/content/blog/send-and-receive-sms-messages-with-firebase-functions/name-project.png "Name Project")
+![Naming your project](/content/blog/send-and-receive-sms-messages-with-firebase-functions/console.png "Name Project")
 
 1. Leave Google Analytics on and click continue (not required)
 2. Select a Google Analytics account and then click Create Project (if added)
 
-![Configuring Google Analytics](/content/blog/send-and-receive-sms-messages-with-firebase-functions/add-analytics.png "Add analytics")
+![Configuring Google Analytics](/content/blog/send-and-receive-sms-messages-with-firebase-functions/analytics.png "Add analytics")
 
 1. Wait a bit for the project to be created - takes less than a minute
 2. Set the Billing type under *⚙️ -> Usage and Billing -> Details & Settings* to Blaze. The Pay-as-you-go plan is required to use a third-party API. For more details regarding billing with Google, go [here](https://cloud.google.com/billing/docs/how-to/payment-methods).
@@ -126,7 +126,7 @@ Calling `admin.initializeApp();` allows the functions to read and write to the F
 // This function will serve as the webhook for incoming SMS messages,
 // and will log the message into the Firebase Realtime Database
 exports.inboundSMS = functions.https.onRequest(async (req, res) => {
-  const params = Object.assign(req.query, req.body)
+  const params = Object.assign(req.query, req.body);
   await admin.database().ref('/msgq').push(params);
   res.sendStatus(200);
 });
@@ -184,33 +184,46 @@ Start by adding Vonage to the dependency list - make sure you do this in the `fu
 npm i @vonage/server-sdk --save
 ```
 
-Add the following environment variables to the Firebase config
+Next add dotenv to the dependency list - make sure you do this in the `functions` directory:
+
+```shell
+npm i dotenv --save
+```
+
+Add the following environment variables to the Firebase config:
 
 ```shell
 firebase functions:config:set vonage.api_key="YOUR_KEY" vonage.api_secret="YOUR_SECRET"
 ```
 
+Create a `.env` file and add the environment variables in the `functions` directory:
+
+```shell
+VONAGE_API_KEY=
+VONAGE_API_SECRET=
+VONAGE_FROM_NUMBER=
+VONAGE_TO_NUMBER=
+```
+
 Next, open `index.js` add `@vonage/server-sdk` to the requirements at the top, and import the environment variables to initialize Vonage:
 
 ```javascript
+require('dotenv').config();
+
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 const Vonage = require('@vonage/server-sdk');
 
-// Initialize Firebase app for database access
 admin.initializeApp();
 
-// get Firebase environment variables for Vonage
-const {
-  api_key,
-  api_secret
-} = functions.config().vonage;
-
-// Initialize Vonage with application credentials
 const vonage = new Vonage({
-  apiKey: api_key,
-  apiSecret: api_secret
+  apiKey: process.env.VONAGE_API_KEY,
+  apiSecret: process.env.VONAGE_API_SECRET
 });
+
+const from = process.env.VONAGE_FROM_NUMBER;
+const to = process.env.VONAGE_TO_NUMBER;
+const text = 'A text message sent using the Vonage SMS API';
 ```
 
 Now you can create the new function for Firebase to send the response:
@@ -219,19 +232,16 @@ Now you can create the new function for Firebase to send the response:
 // This function listens for updates to the Firebase Realtime Database
 // and sends a message back to the original sender
 exports.sendSMS = functions.database.ref('/msgq/{pushId}')
-  .onCreate(async (snapshot, context) => {
+  .onCreate(async (snapshot) => {
     const result = await new Promise((resolve, reject) => {
       vonage.message.sendSms(from, to, text, (err, responseData) => {
         if (err) {
-          console.log(err);
           return reject(err);
         } else {
           if (responseData.messages[0]['status'] === "0") {
-            console.log("Message sent successfully.");
             return resolve(`Message sent successfully: ${responseData.messages[0]['message-id']}`);
           } else {
-            console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
-            return reject(`Message failed with error: ${responseData.messages[0]['error-text']}`)
+            return reject(`Message failed with error: ${responseData.messages[0]['error-text']}`);
           }
         }
       });
@@ -250,7 +260,7 @@ exports.sendSMS = functions.database.ref('/msgq/{pushId}')
 firebase deploy --only functions
 ```
 
-Grab your phone, send another message, and then you should get a response back that looks something like `You sent the following text: Test message`.
+Grab your phone, send another message, and then you should get a response back that looks something like `A text message sent using the Vonage SMS API`.
 
 ## Wrap Up
 
