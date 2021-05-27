@@ -24,7 +24,7 @@ In education and events spaces particularly, adding an active moderation on part
 In this blog post, we will implement a Video Moderation application using [Vonage Video API](https://www.vonage.com/communications-apis/video/) and [AWS Rekognition](https://aws.amazon.com/rekognition/).\
 The application will moderate the video published by Camera and Screen sharing for each of the publishers into the session. If the application detects inappropriate content, it will mute the video from the offending publisher and send a notification to all the participants. 
 
-Want to jump ahead? You can find the code for this tutorial on [GitHub](https://github.com/nexmo-se/video-api-aws-moderation).
+Want to jump ahead? You can find the code for this tutorial on [GitHub](https://github.com/nexmo-se/video-api-aws-moderation) and the video tutorial and demo on [Youtube](https://www.youtube.com/watch?v=TfORVVbC2-U)
 
 ## Prerequisites
 
