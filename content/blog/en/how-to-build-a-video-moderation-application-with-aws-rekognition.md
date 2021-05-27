@@ -26,6 +26,8 @@ The application will moderate the video published by Camera and Screen sharing f
 
 Want to jump ahead? You can find the code for this tutorial on [GitHub](https://github.com/nexmo-se/video-api-aws-moderation) and the video tutorial and demo on [Youtube](https://www.youtube.com/watch?v=TfORVVbC2-U)
 
+<youtube id="TfORVVbC2-U"></youtube>
+
 ## Prerequisites
 
 1. A Vonage Video API account. If you don't have one already, you can create an account in the [Video Dashboard](https://tokbox.com/account/#/)
