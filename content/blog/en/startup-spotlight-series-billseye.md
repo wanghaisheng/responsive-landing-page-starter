@@ -10,6 +10,8 @@ updated_at: 2021-04-15T12:38:38.521Z
 category: community
 tags:
   - startups
+  - in-app-voice
+  - client-sdk
 comments: true
 spotlight: false
 redirect: ""
@@ -21,11 +23,14 @@ At Vonage, we launched our first Startup Program in February to empower the glob
 
 For the first Startup Spotlight, we caught up with Alcide Honoré, CEO & Co-founder of Billseye an early-stage startup with HQ in Atlanta, GA. Alcide talks to us about the problem they are solving, their biggest challenges, their vision, and so much more. Enjoy!
 
+## The startup at a glance
+
 * **Startup Name:** Billseye
 * **Industry:** FinTech/Legaltech
 * **HQ:** Atlanta, GA
 * **Date founded:** 7/07/2017
-* **Number of employees:** 6
+* **Number of employees:** 6 
+* **Vonage Product used**: [In-app Voice/Client SDK](https://developer.nexmo.com/client-sdk/overview)
 * **LinkedIn/Twitter:** 
 
   * [www.linkedin.com/company/billseye-llc](www.linkedin.com/company/billseye-llc) 
