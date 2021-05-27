@@ -76,7 +76,7 @@ Replace your set of credentials in the above script and run the `fetchBalance` f
 
 When we run a function for the first time, we will be asked to authorize the script execution.
 
-![Review Permissions request for Google Apps Script](/content/blog/create-a-balance-reminder-with-vonage-account-api-and-google-apps/3.png)
+![Review Permissions request for Google Apps Script](/content/blog/create-a-balance-reminder-with-vonage-account-api-and-google-apps/5.png)
 
 We will be provided with a list of all the permissions required to execute the script.
 
@@ -98,7 +98,7 @@ Logger.log(currentBalance)
 
 Let us re-run the function. We will see that this time we are not prompted for permissions and our function will be executed directly.
 
-![Vonage Account Balance from API response](images/4.png)
+![Vonage Account Balance from API response](/content/blog/create-a-balance-reminder-with-vonage-account-api-and-google-apps/4.png)
 
 Alright, now we have successfully got our Vonage Account balance.
 
