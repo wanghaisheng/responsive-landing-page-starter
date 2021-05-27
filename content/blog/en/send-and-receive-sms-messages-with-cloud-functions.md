@@ -45,11 +45,11 @@ The first step is to set up a Firebase project. The following will walk you thro
 
 ![Configuring Google Analytics](/content/blog/send-and-receive-sms-messages-with-firebase-functions/analytics.png "Add analytics")
 
-1. Wait a bit for the project to be created - takes less than a minute
+1. Wait a bit for the project to be created - takes less than a minute.
 2. Set the Billing type under *⚙️ -> Usage and Billing -> Details & Settings* to Blaze. The Pay-as-you-go plan is required to use a third-party API. For more details regarding billing with Google, go [here](https://cloud.google.com/billing/docs/how-to/payment-methods).
 
-   ![Dialog to select a Firebase Pricing Plan](/content/blog/send-and-receive-sms-messages-with-firebase-functions/update-billing.png "Change Billing")
-3. Set the `Google Cloud Platform (GCP) resource location` in `⚙️ -> Project Settings`
+   ![Dialog to select a Firebase Pricing Plan](/content/blog/send-and-receive-sms-messages-with-firebase-functions/modifyplan.png "Change Billing")
+3. Set the `Google Cloud Platform (GCP) resource location` in `⚙️ -> Project Settings`.
 
    ![Setting a resource location in the resource location dialog](/content/blog/send-and-receive-sms-messages-with-firebase-functions/update-location.png "Update Location")
 
@@ -60,7 +60,7 @@ Most everything you will need to do with Firebase can be done directly from the 
 1. Install the Firebase tools with npm. 
 
 ```shell
-npm install -g @vonage/server-sdk
+npm install -g firebase-tools
 ```
 
 2. Log in to Firebase using `firebase login`. The login process will open your browser for authentication.
@@ -69,8 +69,8 @@ npm install -g @vonage/server-sdk
 
 Writing Cloud Functions for Firebase requires some initialization work to get started, but it's mostly done for you using Firebase Tools commands.
 
-1. Create a project folder `mkdir vonage-project && cd vonage-project`
-2. Initialize Cloud Functions for Firebase `firebase init functions`
+1. Create a project folder `mkdir vonage-project && cd vonage-project`.
+2. Initialize Cloud Functions for Firebase `firebase init functions`.
 
 ```html
      ######## #### ########  ######## ########     ###     ######  ########
@@ -99,10 +99,10 @@ but for now, we'll just set up a default project.
 
 Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. If you haven't done this, use `Create a new project` and give it a unique name to create one. You would still need to go to the console to update the location and billing, but it is another option to create Firebase projects. 
 
-1. Select the project name you created
-2. Select JavaScript
-3. Choose Y for ESLint if you desire (I recommend it)
-4. Install all dependencies now
+1. Select the project name you created.
+2. Select JavaScript.
+3. Choose Y for ESLint if you desire (I recommend it).
+4. Install all dependencies now.
 
 These steps will create the folders and files required to build Firebase Functions and installs all dependencies. Once NPM completes, switch to the `functions` directory and open `index.js` in your favorite editor to start adding code.
 
@@ -170,7 +170,7 @@ The vital piece from the output is `Function URL (inboundSMS)`. This URL is requ
 
 Grab your phone and send a message to the phone number. Open up the Firebase console and navigate to `database` page, and you should see something like this:
 
-![Making a Vonage database entry in real-time](/content/blog/send-and-receive-sms-messages-with-firebase-functions/database-nexmo-object.png "Real-time Database Vonage Message Entry")
+![Making a Vonage database entry in real-time](/content/blog/send-and-receive-sms-messages-with-firebase-functions/realtimedatabase.png "Real-time Database Vonage Message Entry")
 
 Now that there is a way to log incoming messages, you can write a function to do something with the incoming message.
 
@@ -184,7 +184,7 @@ Start by adding Vonage to the dependency list - make sure you do this in the `fu
 npm i @vonage/server-sdk --save
 ```
 
-Next add dotenv to the dependency list - make sure you do this in the `functions` directory:
+Next add dotenv to the dependency list.
 
 ```shell
 npm i dotenv --save
@@ -193,7 +193,7 @@ npm i dotenv --save
 Add the following environment variables to the Firebase config:
 
 ```shell
-firebase functions:config:set vonage.api_key="YOUR_KEY" vonage.api_secret="YOUR_SECRET"
+firebase functions:config:set vonage.apiKey="YOUR_KEY" vonage.apiSecret="YOUR_SECRET"
 ```
 
 Create a `.env` file and add the environment variables in the `functions` directory:
@@ -250,9 +250,9 @@ exports.sendSMS = functions.database.ref('/msgq/{pushId}')
   });
 ```
 
- The new function will watch for new messages added to the `/msgq` database object. When triggered, the full Vonage object gets passed as `message` .  This object includes `msisdn`,  which is the originating phone number - yours in this case, and the `to` number, which is the Vonage virtual number you purchased. 
+The new function will watch for new messages added to the `/msgq` database object. When triggered, the full Vonage object gets passed as `message`.  This object includes `msisdn`,  which is the originating phone number - yours in this case, and the `to` number, which is the Vonage virtual number you purchased. 
 
- With the phone numbers in hand, as well as the text message, you can now do any number of things. You can create a lookup table to respond with specific data based on the keyword, forward to another system, or in our case, send the original message.
+With the phone numbers in hand, as well as the text message, you can now do any number of things. You can create a lookup table to respond with specific data based on the keyword, forward to another system, or in our case, send the original message.
 
  Deploy the Firebase Functions again from the command line:
 
@@ -270,6 +270,6 @@ Now that the initial steps to send and receive messages are complete, my next fe
 
 ## Further Reading
 
-* Check out the Developer Documentation at <https://developer.vonage.com>
-* Details about Vonage SMS Functionality <https://developer.vonage.com/messaging/sms/overview>
-* Getting started with Firebase Functions <https://firebase.google.com/docs/functions/get-started>
+* Check out the Developer Documentation at <https://developer.vonage.com>.
+* Details about Vonage SMS Functionality <https://developer.vonage.com/messaging/sms/overview>.
+* Getting started with Firebase Functions <https://firebase.google.com/docs/functions/get-started>.
