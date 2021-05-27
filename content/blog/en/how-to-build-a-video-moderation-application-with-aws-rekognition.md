@@ -5,7 +5,7 @@ description: Learn how to implement a Video Moderation application using Vonage
 thumbnail: /content/blog/how-to-build-a-video-moderation-application-with-aws-rekognition/blog_video-api_moderation_1200x600.png
 author: enrico-portolan
 published: true
-published_at: 2021-05-26T08:06:30.340Z
+published_at: 2021-05-27T09:37:54.007Z
 updated_at: 2021-05-25T15:34:21.374Z
 category: tutorial
 tags:
