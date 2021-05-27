@@ -10,6 +10,7 @@ updated_at: 2021-05-18T13:27:45.551Z
 category: community
 tags:
   - startups
+  - video-api
 comments: true
 spotlight: false
 redirect: ""
@@ -33,7 +34,8 @@ Enjoy the Q&A with Patrick below.
 * **Location**: Los Angeles, CA
 * **Date founded**: July 2020
 * **Number of employees**: 5
-* **LinkedIn**:https://www.linkedin.com/company/thecommons 
+* **LinkedIn**: https://www.linkedin.com/company/thecommons 
+* **Vonage API used**: [Video API](https://www.vonage.com/communications-apis/video/)
 
 ## In one sentence, what does Commons do?
 
