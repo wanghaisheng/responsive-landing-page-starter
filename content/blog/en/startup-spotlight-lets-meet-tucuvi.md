@@ -9,6 +9,8 @@ updated_at: 2021-04-28T15:38:52.412Z
 category: community
 tags:
   - startups
+  - voice-api
+  - websockets
 comments: true
 spotlight: false
 redirect: ""
@@ -28,8 +30,7 @@ One of these startups is Madrid-based [Tucuvi](https://tucuvi.com/). In the seco
 * **Date founded**: September 2019
 * **Number of employees**: 8
 * **LinkedIn**: <https://www.linkedin.com/company/tucuvi/>
-
-
+* **Vonage API used**: Voice API/[WebSockets](https://developer.vonage.com/voice/voice-api/guides/websockets)
 
 ### In one sentence, what does Tucuvi do?
 
