@@ -399,7 +399,7 @@ func client(_ client: NXMClient, didChange status: NXMConnectionStatus, reason: 
 
 ## Handle Incoming Push Notifications
 
-With the device registered, it can now receive push notifications from Vonage. The Client SDK has functions for checking is a push notification payload is the expected payload and for processing the payload. You can view the JSON Vonage sends in the push payload on \[GitHub]https://github.com/nexmo-community/client-sdk-push-payload). When `processNexmoPushPayload` is called, it converts the payload into an NXMCall which is received on the `didReceive` function of the `NXMClientDelegate`.  Implement the functions on the `ClientManager` class alongside a local variable to store an incoming push: 
+With the device registered, it can now receive push notifications from Vonage. The Client SDK has functions for checking is a push notification payload is the expected payload and for processing the payload. You can view the JSON Vonage sends in the [push payload documentation](https://developer.nexmo.com/client-sdk/in-app-voice/guides/push-notification-payload.md). When `processNexmoPushPayload` is called, it converts the payload into an NXMCall which is received on the `didReceive` function of the `NXMClientDelegate`.  Implement the functions on the `ClientManager` class alongside a local variable to store an incoming push: 
 
 ```swift
 typealias PushInfo = (payload: PKPushPayload, completion: () -> Void)
