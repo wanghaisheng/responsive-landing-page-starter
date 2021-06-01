@@ -25,7 +25,9 @@ This document describes some of the best practices we recommend for consideratio
 
 Very detailed developer documentation on the Vonage Video API is publicly available on our [Video API Developer Site](https://tokbox.com/developer) - here you will find all the details you need for basically any question you might have, sample codes, release notes. There is also a great section called “[Get answers to your Video API questions](https://support.tokbox.com/hc/en-us)”.
 
-To help us better assist you, please send us your feedback via email at: [video.api.support@vonage.com](video.api.support@vonage.com).
+To help us better assist you, please send us your feedback via email at: [support@tokbox.com](mailto:support@tokbox.com)
+
+
 
 ## Video Platform
 
@@ -267,7 +269,7 @@ On request and under NDA, we can provide further reports such as SOC2 and Extern
 * Tutoring / Proctoring E-Learning Samples: <https://github.com/opentok/opentok-elearning-samples>
 * Advanced Insights Dashboard Sample: <https://github.com/opentok/insights-dashboard-sample>
 
-## Calculating monthly usage / Video API tiered pricing 
+## Calculating monthly usage / Video API tiered pricing
 
 * [How do I estimate my OpenTok monthly usage](https://support.tokbox.com/hc/en-us/articles/360029732691-How-do-I-estimate-my-OpenTok-monthly-usage-)
 * [Video API Pricing](https://www.vonage.com/communications-apis/video/pricing/?icmp=l3nav_pricing_novalue)
