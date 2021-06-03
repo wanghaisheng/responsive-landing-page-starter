@@ -12,7 +12,7 @@ tags:
   - ruby
   - voice-api
 comments: true
-spotlight: true
+spotlight: false
 redirect: ""
 canonical: ""
 ---
