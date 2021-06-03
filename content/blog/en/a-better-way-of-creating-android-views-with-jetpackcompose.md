@@ -17,7 +17,6 @@ replacement_url: ""
 ---
 # A Bit Of History
 
-
 Users are interacting with the application via various screens usually composed of multiple Views. The way developers deal with these user interactions has been changing a lot during the Android platform lifetime by using multiple patterns. In the early days, developers were using Model-View-Controller then Model-View-Presenter (or Model-View-Intent), and finally, we moved to the Model-View-ViewModel pattern recommended by Google. The “view manager” has evolved (Controller/Presenter/ViewModel), but the “View” part itself hasn’t changed that much. The biggest change was the usage of Fragment as building blocks for UI instead of Activities like in the early days.
 
 Through all this time we were mostly using XML to define layouts for the application views. We could define these views using code-only, but this approach has its downsides. Usually, applications may have few complex, dynamic views defined in code, but most of the application layouts are still defined in XML files nowadays.
@@ -35,3 +34,13 @@ We have a little bit of background, so now let’s take a quick look at how we c
 * Use Android Studio Arctic Fox 2020.3.1 or newer
 * Create a new Android project
 * In the *Select a Project Template* window, select *Empty Compose Activity* and click *Next*.
+
+
+
+![](/content/blog/a-better-way-of-creating-android-views-with-jetpackcompose/preview1.png)
+
+
+
+![](/content/blog/a-better-way-of-creating-android-views-with-jetpackcompose/preview2.png)
+
+![](/content/blog/a-better-way-of-creating-android-views-with-jetpackcompose/preview3.png)
