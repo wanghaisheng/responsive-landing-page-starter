@@ -29,7 +29,7 @@ Some time ago Google decided to unify the way we develop Android applications. A
 
 ## JetPack Compose In Practice
 
-We have a little bit of background, so now let’s take a quick look at how we can use JetPack Compose and what we can do with this toolkit. First of all we have to use Android Studio Arctic Fox 2020.3.1 (or newer). Then we have to create a new Android project (in the *Select a Project Template* window, select *Empty Compose Activity* and click *Next*).
+We have a little bit of background, so now let’s take a quick look at how we can use JetPack Compose and what we can do with this toolkit. First of all, we have to use Android Studio Arctic Fox 2020.3.1 (or newer). Then we have to create a new Android project (in the *Select a Project Template* window, select *Empty Compose Activity* and click *Next*).
 
 > Detailed instruction can below found [here](https://developer.android.com/jetpack/compose/setup).
 
@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
             Column {
                 Text("Alfred Sisley")
                 Text("3 minutes ago")
-        	    }
+              }
         }
     }
 
@@ -86,7 +86,7 @@ The above code creates a single column with “two rows” (each row contains a 
 
 ![](/content/blog/a-better-way-of-creating-android-views-with-jetpackcompose/preview1.png)
 
-We will learn how to generate preview in a while. 
+We will learn how to generate the preview in a while. 
 
 Each component can define its view hierarchy to allow the straightforward creation of more complex views. Our view code can be extracted into Comosable "components" by creating a method annotated with Composable annotation:
 
@@ -234,6 +234,6 @@ fun SampleViewPreview() {
 JetPack Compose is easy to use and has great potential. It can be easily used to build modern, interactive, and dynamic UIs.  It can even be used to build desktop UI for the apps (still alpha). The only downside is JetPack Compose is not stable yet (as of Jun 2021) but this will change soon and it will most likely become a new standard for the Android UI. Learning JetPack compose requires a bit of mind shift, but with UI becoming more and more dynamic this state drive approach will make the life of every developer easier.
 
 Links
--	https://developer.android.com/jetpack/compose
--	https://github.com/android/compose-samples
--	https://www.jetbrains.com/lp/compose/
+- https://developer.android.com/jetpack/compose
+- https://github.com/android/compose-samples
+- https://www.jetbrains.com/lp/compose/
