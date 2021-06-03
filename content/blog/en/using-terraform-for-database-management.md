@@ -2,9 +2,10 @@
 title: Using Terraform for Database Management
 description: Learn how Vonage's Site Reliability Engineers (SREs) are using Toil
   to improve the infrastructure of the APIs provided.
+thumbnail: /content/blog/using-terraform-for-database-management/terraform_database-management_1200x600.png
 author: greg-holmes
 published: true
-published_at: 2021-05-26T10:23:28.046Z
+published_at: 2021-06-03T11:42:38.420Z
 updated_at: 2021-05-26T10:23:28.078Z
 category: engineering
 tags:
