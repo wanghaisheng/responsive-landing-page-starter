@@ -5,7 +5,7 @@ description: An interview with the founders of AgServer, an agricultural
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-agserver/startups_agserver_1200x600-1-.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-06-03T10:51:31.290Z
+published_at: 2021-06-04T07:40:21.780Z
 updated_at: 2021-06-03T10:51:31.316Z
 category: community
 tags:
@@ -82,7 +82,7 @@ We are working to fully build out our SMS/USSD/Voice offering which will cater t
 
 In the next 3 years, our goal is to become the premium digital agricultural extension services provider in West and Central Africa.
 
-## Let's Work Together - Vonage for Startups
+### Let's Work Together - Vonage for Startups
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
