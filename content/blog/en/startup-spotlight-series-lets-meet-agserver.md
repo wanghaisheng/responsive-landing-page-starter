@@ -2,6 +2,7 @@
 title: "Startup Spotlight Series: Let's meet AgServer"
 description: An interview with the founders of AgServer, an agricultural
   technology company focused on improving the process of food production.
+thumbnail: /content/blog/startup-spotlight-series-lets-meet-agserver/startups_agserver_1200x600-1-.png
 author: filippos-kyprianou
 published: true
 published_at: 2021-06-03T10:51:31.290Z
