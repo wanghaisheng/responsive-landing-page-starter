@@ -832,9 +832,9 @@ Run the app and make a phone call from the mobile application to a physical phon
 
 # Summary
 
-We have successfully built the application. By doing so we have learned how to make a phone call from a mobile application to the phone using Vonage `Client SDK`. For the complete project please check [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter). This project additionally contains the Android native code (`android` folder) allowing us to run this app on Android as well.
+We have successfully built the application. By doing so we have learned how to make a phone call from a mobile application to the phone using Vonage `Client SDK`. For the complete project please check [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter). This project additionally contains the Android native code (`android` folder) allowing us to run this app on Android as well. Check out the [Android equivalent](https://learn.vonage.com/blog/2021/03/18/make-app-to-phone-call-using-android-and-flutter/) of this blogpost.
 
-To familiarize yourself with other functionalities please check [other tutorials](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
+To familiarize yourself with other functionalities, have a look at [other tutorials](https://developer.vonage.com/client-sdk/tutorials) and the [Vonage developer center](https://developer.vonage.com/).
 
 # References
 
