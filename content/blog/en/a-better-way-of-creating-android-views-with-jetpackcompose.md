@@ -17,11 +17,11 @@ replacement_url: ""
 ---
 # A Bit Of History
 
-Users are interacting with the application via various screens, usually composed of multiple Views. The way developers deal with these user interactions has changed a lot during the Android platform lifetime by using multiple patterns. In the early days, developers were using Model-View-Controller then Model-View-Presenter (or Model-View-Intent). Finally, we moved to the Model-View-ViewModel pattern recommended by Google. The “view manager” has evolved (Controller/Presenter/ViewModel), but the “View” part itself hasn’t changed that much. The most significant change was the usage of Fragment as building blocks for UI instead of Activities like in the early days.
+Users are interacting with mobile applications via various screens, usually composed of multiple Views. The way developers deal with these user interactions has changed a lot during the Android platform lifetime by using multiple patterns. In the early days, developers were using the Model-View-Controller pattern then the Model-View-Presenter pattern (or Model-View-Intent). Finally, we moved to the Model-View-ViewModel pattern recommended by Google. The “view manager” has evolved (Controller/Presenter/ViewModel), but the “View” part itself hasn’t changed that much. The most significant change was the usage of Fragment as building blocks for UI instead of Activities like in the early days.
 
 Through all this time, we were primarily using XML to define layouts for the application views. Of course, we could define these views using code-only, but this approach has its downsides. Usually, applications may have few complex, dynamic views defined in code, but most application layouts are still defined in XML files nowadays.
 
-In the meantime, Kotin language was introduced and had this cool feature that allowed to define views using custom Kotln DSL. This feature was a cool concept, but it has never gained enough attention from the Android developer community. It had its issues, but the biggest ones were not supporting advanced use cases and lacked official support from Android Studio.
+In the meantime, Kotin language was introduced and had this cool feature that allowed to define views using custom Kotln DSL. This feature was an interesting concept, but it has never gained enough attention from the Android developer community. It had its issues, but the biggest ones were not supporting advanced use cases and lacked official support from Android Studio.
 
 ## Why JetPack Compose
 
