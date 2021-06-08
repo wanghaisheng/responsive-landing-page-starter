@@ -3,9 +3,9 @@ title: Create a Balance Reminder with Vonage Account API and Google Apps
 description: Learn to create a Vonage Account Balance reminder by integrating
   Vonage Account API with Google Apps Script.
 thumbnail: /content/blog/create-a-balance-reminder-with-vonage-account-api-and-google-apps/balance-reminder_1200x600.png
-author: garann-means
-published: false
-published_at: 2021-06-08T08:51:36.762Z
+author: ravgeet-dhillon
+published: true
+published_at: 2021-06-08T09:01:24.926Z
 updated_at: 2021-05-26T13:58:26.999Z
 category: tutorial
 tags:
