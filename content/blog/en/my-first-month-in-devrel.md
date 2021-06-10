@@ -44,7 +44,7 @@ During this first month:
   * Participating in developer communities and forums
   * Giving talks and workshops
   * Updating blog posts and documentation
-  * Creating content in different formats
+  * Creating content in different formats. One example of what I've created:  [Send and Receive SMS Messages with Firebase Functions | One Dev Minute](https://www.youtube.com/watch?v=c8gHy_KvQAE) 
   * Giving and receiving code and content review 💖
 
 **Working Remotely**
@@ -59,7 +59,7 @@ I have gathered some resources that have personally helped me understand better 
 
 * [Developer, Advocate!](https://www.goodreads.com/book/show/48574066-developer-advocate) - Geertjan Wielenga
 * [The Business Value of Developer Relations How and Why Technical Communities Are Key to Your Success](https://www.goodreads.com/book/show/40167835-the-business-value-of-developer-relations) - Mary Thengvall 
-* [Guide to Tiny Experiments: Book & Audio](https://learn.samjulien.com/guide-to-tiny-experiments) - Sam Julien 
+* [Guide to Tiny Experiments](https://learn.samjulien.com/guide-to-tiny-experiments) - Sam Julien 
 * [Getting Started in Developer Relations](https://learn.samjulien.com/getting-started-in-developer-relations) - Sam Julien
 
 **Newsletters**
@@ -81,4 +81,4 @@ I am a curious and avid learner. It has been an absolute joy to work as a develo
 \
 If you have recently started a Developer Relations position or are interested in doing so, please feel free to [reach out](https://twitter.com/amdcavallaro)!
 
-If this post has been useful to you, feel free to <a href="https://twitter.com/intent/tweet?text=Just read this post by @amdcavallaro from @VonageDev about her first month in devrel. https://learn.vonage.com/tags/devrel/" class="btn" id="b"><i></i><span class="label" id="l">tweet it</span></a>
+If this post has been useful to you, feel free to <a href="https://twitter.com/intent/tweet?text=Just read this post by @amdcavallaro from @VonageDev about her first month in devrel. https://learn.vonage.com/tags/devrel/" class="btn" id="b"><i></i><span class="label" id="l">tweet it</span></a>.
