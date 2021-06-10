@@ -24,6 +24,8 @@ I am a software developer turned developer advocate. Every day when I wake up, i
 
 I'm completing one month working as a Developer Advocate at Vonage. I thought I would share some resources and insights on what the journey has been like so far.
 
+![Welcome note from the Vonage Team](/content/blog/my-first-month-in-devrel/pxl_20210610_121009759.jpg "welcome note")
+
 **What I have been up to in this first month**
 
 During this first month:
@@ -43,7 +45,7 @@ During this first month:
   * Giving talks and workshops
   * Updating blog posts and documentation
   * Creating content in different formats
-  * 💖 Receiving code and content review
+  * Giving and receiving code and content review 💖
 
 **Working Remotely**
 
@@ -79,4 +81,4 @@ I am a curious and avid learner. It has been an absolute joy to work as a develo
 \
 If you have recently started a Developer Relations position or are interested in doing so, please feel free to [reach out](https://twitter.com/amdcavallaro)!
 
-If this post has been useful to you, feel free to <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">tweet it</a>.
+If this post has been useful to you, feel free to <a href="https://twitter.com/intent/tweet?text=Just read this post by @amdcavallaro from @VonageDev about her first month in devrel. https://learn.vonage.com/tags/devrel/" class="btn" id="b"><i></i><span class="label" id="l">tweet it</span></a>
