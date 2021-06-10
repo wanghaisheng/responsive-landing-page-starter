@@ -1,12 +1,12 @@
 ---
-title: Vonage and Freshworks join forces to support exceptional founders
+title: Vonage and Freshworks Join Forces to Support Exceptional Founders
 description: Announcing our partnership with Freshworks for Startups
 thumbnail: /content/blog/vonage-and-freshworks-join-forces-to-support-exceptional-founders/vonage_freshworks-startups_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-06-10T12:19:55.645Z
+published_at: 2021-06-10T14:03:14.140Z
 updated_at: 2021-06-10T12:19:55.671Z
-category: announcement
+category: community
 tags:
   - startups
   - partners
