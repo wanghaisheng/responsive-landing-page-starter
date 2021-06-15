@@ -1,5 +1,5 @@
 ---
-title: A Better Way Of Creating Android Views with JetPackCompose
+title: A Better Way of Creating Android Views with JetPackCompose
 description: Modern way of building Android Views
 thumbnail: /content/blog/a-better-way-of-creating-android-views-with-jetpackcompose/andriod_jetpack-compose_1200x600.png
 author: igor-wojda
@@ -16,7 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# A Bit Of History
+## A Bit Of History
 
 Users are interacting with mobile applications via various screens, usually composed of multiple Views. The way developers deal with these user interactions has changed a lot during the Android platform lifetime by using multiple patterns. In the early days, developers were using the Model-View-Controller pattern then the Model-View-Presenter pattern (or Model-View-Intent). Finally, we moved to the Model-View-ViewModel pattern recommended by Google. The “view manager” has evolved (Controller/Presenter/ViewModel), but the “View” part itself hasn’t changed that much. The most significant change was the usage of Fragment as building blocks for UI instead of Activities like in the early days.
 
