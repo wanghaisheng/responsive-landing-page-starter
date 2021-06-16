@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 Finding a place to live in most European capitals is no easy task, and the Paris rental market is one that is notoriously difficult. Lengthy manual processes, absurd paperwork, lack of apartments are just some of the reasons why finding a flat in the capital can be a horrendous experience.
 
-Plato.immo aims to make this experience as frictionless as possible to enable agents to reduce their administrative time and help prospects find their new property with greater ease. Since its launch the startup has gained great traction and is also part of one of the most reputable startup campuses globally, Station F.
+Plato.immo aims to make this experience as frictionless as possible to enable agents to reduce their administrative time and help prospects find their new property with greater ease. Since its launch, the startup has gained great traction and is also part of one of the most reputable startup campuses globally, Station F.
 
 For this week’s startup spotlight we caught up with Fabien Patou the co-founder of Plato.immo to find out more about their plans to digitalize the real estate market. Enjoy!
 
