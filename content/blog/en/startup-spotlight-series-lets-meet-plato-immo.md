@@ -1,11 +1,11 @@
 ---
-title: "Startup Spotlight Series: Let's meet Plato.immo!"
-description: Interview series of startup founders that are part of the Vonage
-  for startups program.
-thumbnail: /content/blog/startup-spotlight-series-lets-meet-plato-immo/startups_plato_1200x600.png
+title: "Startup Spotlight: Let's meet Plato.immo!"
+description: Meet Paris-based startup Plato.immo as a part of Vonage Startup
+  Spotlight series.
+thumbnail: /content/blog/startup-spotlight-lets-meet-plato-immo/startups_plato_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-06-15T15:15:39.311Z
+published_at: 2021-06-16T08:36:11.116Z
 updated_at: 2021-06-15T15:15:39.342Z
 category: community
 tags:
