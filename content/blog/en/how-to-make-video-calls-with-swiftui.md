@@ -289,7 +289,7 @@ struct OTView: UIViewRepresentable {
 }
 ```
 
-The `OTView` struct, which conforms to `UIViewRepresentable` has a `UIView` object as a property. This view is returned when the system calls ' makeUIView`. Since the lifecycle of views in SwiftUI is controlled by the system, you also need to implement`updateUIView`to handle that. The`OTErrorWrapper`struct allows error to conform to`Identifiable`, which is needed to use the SwiftUI alerts.
+The `OTView` struct, which conforms to `UIViewRepresentable` has a `UIView` object as a property. This view is returned when the system calls `makeUIView`. Since the lifecycle of views in SwiftUI is controlled by the system, you also need to implement`updateUIView`to handle that. The`OTErrorWrapper`struct allows error to conform to`Identifiable`, which is needed to use the SwiftUI alerts.
 
 Next, replace the `ContentView` struct with the following:
 
