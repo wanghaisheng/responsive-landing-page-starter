@@ -3,9 +3,10 @@ title: Voice Security Improvements
 description: Learn about the improvements of security being implemented to
   Vonage's Voice APIs. Covering Secure Real-Time Transfer, Signed Callbacks, and
   HTTPS Caching
+thumbnail: /content/blog/voice-security-improvements/voice-security_1200x600.png
 author: victorshisterov
 published: true
-published_at: 2021-06-11T08:47:46.127Z
+published_at: 2021-06-17T09:28:22.669Z
 updated_at: 2021-06-11T08:47:46.154Z
 category: announcement
 tags:
