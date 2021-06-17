@@ -13,6 +13,12 @@
       "color": "#b779ff"
     },
     {
+      "name": "Startup",
+      "plural": "Startups",
+      "slug": "startup",
+      "color": "#fa7454"
+    },
+    {
       "name": "Team",
       "plural": "Team Posts",
       "slug": "team",
