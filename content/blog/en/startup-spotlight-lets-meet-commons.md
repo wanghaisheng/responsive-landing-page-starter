@@ -39,7 +39,7 @@ Enjoy the Q&A with Patrick below.
 
 ## In one sentence, what does Commons do?
 
-Commons is a private ‘Clubhouse’ for your team to collaborate and connect.
+Common is a voice-first collaboration platform designed to recreate an office-like environment where you can jump in and out of conversations with your team.
 
 ## What is the problem you are solving? Was this the initial problem, or did you pivot?
 
