@@ -7,7 +7,7 @@ author: filippos-kyprianou
 published: true
 published_at: 2021-06-16T08:36:11.116Z
 updated_at: 2021-06-15T15:15:39.342Z
-category: community
+category: startup
 tags:
   - startups
   - sms-api
