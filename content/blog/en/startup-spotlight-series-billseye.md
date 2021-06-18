@@ -7,7 +7,7 @@ author: filippos-kyprianou
 published: true
 published_at: 2021-04-15T12:38:37.613Z
 updated_at: 2021-04-15T12:38:38.521Z
-category: community
+category: startup
 tags:
   - startups
   - in-app-voice
