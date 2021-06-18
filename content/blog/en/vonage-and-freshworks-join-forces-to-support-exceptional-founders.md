@@ -6,7 +6,7 @@ author: filippos-kyprianou
 published: true
 published_at: 2021-06-10T14:03:14.140Z
 updated_at: 2021-06-10T12:19:55.671Z
-category: community
+category: startup
 tags:
   - startups
   - partners
