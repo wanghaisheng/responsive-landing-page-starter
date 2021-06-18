@@ -2,10 +2,10 @@
 title: Tonya Sims Joins the Vonage Developer Relations Team
 description: "Let's Welcome Tonya Sims to Our Vonage Team as the New Python
   Developer Advocate "
-thumbnail: /content/blog/tonya-sims-joins-the-vonage-developer-relations-team/me.png
+thumbnail: /content/blog/tonya-sims-joins-the-vonage-developer-relations-team/tonya-sims.png
 author: tonya-sims-1
 published: true
-published_at: 2021-06-14T20:32:36.859Z
+published_at: 2021-06-18T09:22:43.572Z
 updated_at: 2021-06-14T20:32:36.884Z
 category: announcement
 tags:
