@@ -7,7 +7,7 @@ author: filippos-kyprianou
 published: true
 published_at: 2021-05-18T13:27:45.529Z
 updated_at: 2021-05-18T13:27:45.551Z
-category: community
+category: startup
 tags:
   - startups
   - video-api
