@@ -477,7 +477,7 @@ import AVFoundation
 struct PushCall {
     var call: NXMCall?
     var uuid: UUID?
-    var answerBlock: (() -> Void)?
+    var answerAction: CXAnswerCallAction?
 }
 
 final class ProviderDelegate: NSObject {
@@ -517,18 +517,15 @@ extension ProviderDelegate: CXProviderDelegate {
     
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         NotificationCenter.default.post(name: .handledCallCallKit, object: nil)
+        configureAudioSession()
+        activeCall?.answerAction = action
+        
         if activeCall?.call != nil {
-            answerCall(with: action)
-        } else {
-            activeCall?.answerBlock = { [weak self] in
-                guard let self = self, self.activeCall != nil else { return }
-                self.answerCall(with: action)
-            }
+            action.fulfill()
         }
     }
     
     private func answerCall(with action: CXAnswerCallAction) {
-        configureAudioSession()
         activeCall?.call?.answer(nil)
         activeCall?.call?.setDelegate(self)
         activeCall?.uuid = action.callUUID
@@ -536,6 +533,17 @@ extension ProviderDelegate: CXProviderDelegate {
     }
     
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+        hangup()
+        action.fulfill()
+    }
+
+    func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
+        assert(activeCall?.answerAction != nil, "Call not ready - see provider(_:perform:CXAnswerCallAction)")
+        assert(activeCall?.call != nil, "Call not ready - see callReceived")
+        answerCall(with: activeCall!.answerAction!)
+    }
+
+    func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
         hangup()
     }
 
@@ -564,7 +572,7 @@ extension ProviderDelegate: CXProviderDelegate {
     @objc private func callReceived(_ notification: NSNotification) {
         if let call = notification.object as? NXMCall {
             activeCall?.call = call
-            activeCall?.answerBlock?()
+            activeCall?.answerAction?.fulfill()
         }
     }
 
@@ -581,11 +589,11 @@ extension ProviderDelegate: CXProviderDelegate {
 }
 ```
 
-When the CallKit UI answers the call, it calls the `CXAnswerCallAction` delegate function. If the device is locked, the Client SDK needs time to reinitialize, so the `answerCall` actions are stored in a closure. If the app is in the foreground, the call object is not nil; the call is ready to be answered. The `reportCall` function will be called from the `AppDelegate` class when an incoming push notification is received to tell the system to display the CallKit UI with the option to either pick up or reject the call. 
+When the CallKit UI answers the call, it calls the `CXAnswerCallAction` delegate function. If the device is locked, the Client SDK needs time to reinitialize, so the `CXAnswerCallAction` action is stored to be fulfilled later. Fulfilling a `CXAnswerCallAction` will notify CallKit that the device is ready to start the call and will activate the audio session and call the `didActivate` audio session function on the `CXProviderDelegate`. If the app is in the foreground, the call object is not nil; the call is ready to be answered so the `CXAnswerCallAction` is fulfilled.
 
-The `callReceived` function would be called after the push payload is processed so you will store it and call the `answerBlock` function if it is not nil. It will not be nil if the device has picked up the call before the Client SDK has not had enough time to set up and process the push notification payload.
+The `reportCall` function will be called from the `AppDelegate` class when an incoming push notification is received to tell the system to display the CallKit UI with the option to either pick up or reject the call. 
 
-The `handledCallCallKit` notification is sent so that the `ViewController` class knows that the call has been handled by CallKit UI and can dismiss the alert shown to pick up a call. Add an extension to keep track of the status of the ongoing call using the `NXMCallDelegate`:
+The `callReceived` function would be called after the push payload is processed so you will store it and fulfil the `CXAnswerCallAction`. The `handledCallCallKit` notification is sent so that the `ViewController` class knows that the call has been handled by CallKit UI and can dismiss the alert shown to pick up a call. Add an extension to keep track of the status of the ongoing call using the `NXMCallDelegate`:
 
 ```swift
 extension ProviderDelegate: NXMCallDelegate {
@@ -596,7 +604,7 @@ extension ProviderDelegate: NXMCallDelegate {
     
     func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, with status: NXMCallMemberStatus) {
         switch status {
-        case .canceled, .failed, .timeout, .rejected, .completed:
+        case .cancelled, .failed, .timeout, .rejected, .completed:
             hangup()
         default:
             break
