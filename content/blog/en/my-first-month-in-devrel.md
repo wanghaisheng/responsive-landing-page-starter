@@ -28,14 +28,14 @@ I'm completing one month working as a Developer Advocate at Vonage. I thought I 
 
 ## **What I have been up to in this first month**
 
-During this first month:
+### During this first month:
 
 * Onboarding
 * Talked to HR
 * Chose Benefits
 * Met the team (virtually)
 * Set up hardware & software
-* I have been:
+* #### I have been:
 
   * Learning the internal processes and the APIs
   * Learning how to use new pieces of software
@@ -78,7 +78,6 @@ My goal is to bring awareness and create relationships with the developer commun
 
 I am a curious and avid learner. It has been an absolute joy to work as a developer advocate. When I learn something, I think to myself: how can this turn into a nice demo?
 
-\
 If you have recently started a Developer Relations position or are interested in doing so, please feel free to [reach out](https://twitter.com/amdcavallaro)!
 
 If this post has been useful to you, feel free to <a href="https://twitter.com/intent/tweet?text=Just read this post by @amdcavallaro from @VonageDev about her first month in devrel. https://learn.vonage.com/tags/devrel/" class="btn" id="b"><i></i><span class="label" id="l">tweet it</span></a>.
