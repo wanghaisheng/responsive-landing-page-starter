@@ -9,8 +9,8 @@ published_at: 2021-06-10T09:46:20.408Z
 updated_at: 2021-06-10T09:46:20.420Z
 category: devlife
 tags:
-  - "#lifeAtVonage"
-  - "#devrel"
+  - life-at-vonage
+  - devrel
 comments: true
 spotlight: false
 redirect: ""
