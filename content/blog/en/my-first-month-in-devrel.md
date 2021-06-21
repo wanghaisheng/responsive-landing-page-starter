@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-## **Overview**
+# **Overview**
 
 I am a software developer turned developer advocate. Every day when I wake up, it seems like a dream to me. I am a lifelong learner. Having the opportunity to share what I learn with the community is truly important to me.
 
@@ -26,7 +26,7 @@ I'm completing one month working as a Developer Advocate at Vonage. I thought I 
 
 ![Welcome note from the Vonage Team](/content/blog/my-first-month-in-devrel/pxl_20210610_121009759.jpg "welcome note")
 
-# **What I have been up to in this first month**
+## **What I have been up to in this first month**
 
 During this first month:
 
