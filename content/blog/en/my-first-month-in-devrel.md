@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-**Overview**
+## **Overview**
 
 I am a software developer turned developer advocate. Every day when I wake up, it seems like a dream to me. I am a lifelong learner. Having the opportunity to share what I learn with the community is truly important to me.
 
@@ -26,7 +26,7 @@ I'm completing one month working as a Developer Advocate at Vonage. I thought I 
 
 ![Welcome note from the Vonage Team](/content/blog/my-first-month-in-devrel/pxl_20210610_121009759.jpg "welcome note")
 
-**What I have been up to in this first month**
+# **What I have been up to in this first month**
 
 During this first month:
 
@@ -47,34 +47,34 @@ During this first month:
   * Creating content in different formats. One example of what I've created:  [Send and Receive SMS Messages with Firebase Functions | One Dev Minute](https://www.youtube.com/watch?v=c8gHy_KvQAE) 
   * Giving and receiving code and content review 💖
 
-**Working Remotely**
+## **Working Remotely**
 
-Working remotely with people with different timezones works indeed. To me, the secret is making the best use of everyone's time. To make sure that the discussed topics are available, may it be via notes or recorded meetings. Whilst everyone is online and talking synchronously, the calls should have an agenda.
+Working remotely with people with different timezones works indeed. To me, the secret is making the best use of everyone's time; to make sure that the discussed topics are available, may it be via notes or recorded meetings. Whilst everyone is online and talking synchronously, the calls should have an agenda.
 
-**Resources to share**
+## **Resources to share**
 
 I have gathered some resources that have personally helped me understand better what Developer Relations are. Let me share them with you:
 
-**Books**
+## **Books**
 
 * [Developer, Advocate!](https://www.goodreads.com/book/show/48574066-developer-advocate) - Geertjan Wielenga
 * [The Business Value of Developer Relations How and Why Technical Communities Are Key to Your Success](https://www.goodreads.com/book/show/40167835-the-business-value-of-developer-relations) - Mary Thengvall 
 * [Guide to Tiny Experiments](https://learn.samjulien.com/guide-to-tiny-experiments) - Sam Julien 
 * [Getting Started in Developer Relations](https://learn.samjulien.com/getting-started-in-developer-relations) - Sam Julien
 
-**Newsletters**
+## **Newsletters**
 
 * [DevRel Weekly](https://devrelweekly.com/)
 * [Developer Avocados 🥑 Weekly](https://developeravocados.net/)
 
-**Other resources**
+## **Other resources**
 
 * [Devrel Meet](https://devrel.meetsy.io/)
 * [Devrel Collective](https://devrelcollective.fun/)
 
-**Conclusion**
+## **Conclusion**
 
-My goal is to bring awareness and create relationships with the developer community. I would love to have constructive conversations, communicate and get feedback from you to improve our APIs and the way we generate content.
+My goal is to bring awareness and create relationships with the developer community. I would love to have constructive conversations, communicate and get feedback from the community.
 
 I am a curious and avid learner. It has been an absolute joy to work as a developer advocate. When I learn something, I think to myself: how can this turn into a nice demo?
 
