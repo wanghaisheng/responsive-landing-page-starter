@@ -19,15 +19,17 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Building a Birthday Time Capsule With Go
-
 ## Intro
 
-With the pandemic, we've at times been forced into virtual interactions with our family and friends. But even with a pandemic going on, our lives have continued. Please are still getting married; birthdays still come around once a year for everyone. So when my birthday came around, it also reminded me of something my grandmother used to do every year. She'd call me first thing in the morning and sing happy birthday down the phone to me. This memory triggered an idea in my head to create a birthday time capsule where all of your friends and family call a number. When they call, they could leave their well-wishes as a voice recording, which, when a predetermined date and time comes around, the birthday person will receive a call and hear all of the well-wishes recordings.
+With the pandemic, we've at times been forced into virtual interactions with our family and friends. But even with a pandemic going on, our lives have continued. People are still getting married; birthdays still come around once a year for everyone.  
+
+So when my birthday came around, it also reminded me of something my grandmother used to do every year. She'd call me first thing in the morning and sing happy birthday down the phone to me.  
+
+This memory triggered an idea in my head to create a birthday time capsule where all of your friends and family call a number. When they call, they can leave their well-wishes as a voice recording. Then, you would receive a call and hear all of the well-wishing recordings at a predetermined date and time.
 
 ## Prerequisites
 
-In order to complete this tutorial you will need:
+To complete this tutorial you will need:
 
 * [Go](https://golang.org/)
 * [Ngrok](https://ngrok.com/)
@@ -35,7 +37,7 @@ In order to complete this tutorial you will need:
 
 <sign-up number></sign-up>
 
-## Create Ngrok tunnel
+## Create Ngrok Tunnel
 
 When making or receiving voice calls, Vonage will send an HTTP request to your preconfigured webhook URLs. Your application should be accessible to the internet to receive it, so we recommend [using Ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
 
@@ -47,13 +49,11 @@ ngrok http 8080 # Creates an http tunnel to the Internet from your computer on p
 
 Make sure to copy your ngrok HTTPS URL, as you'll need this later when configuring the project.
 
-> **Note** This URL will be different every time you run the command if you're using the free plan. So you will have to update your application in the Dashboard each time you run the command.
-
 ## Create Vonage Application with Webhooks
 
-This project will rely on listening to the inbound webhook requests made by the Vonage APIs, so we'll need to create a new application. Go ahead and create a new [application](https://dashboard.nexmo.com/applications/new). With the following input:
+This project will rely on listening to the inbound webhook requests made by the Vonage APIs, so we'll need to create a new application. Go ahead and create a new [application](https://dashboard.nexmo.com/applications/new) with the following input:
 
-* Name - this can be anything you wish, it's a name only you will see,
+* Name - this can be anything you wish; it's a name only you will see
 * Capabilities
 
   * Voice
@@ -63,10 +63,12 @@ This project will rely on listening to the inbound webhook requests made by the 
   * RTC (In-app voice & messaging)
 
     * Under `Event URL` add: `<your ngrok url>/webhooks/event`
-* Click "Generate public & private key" And move the `private.key` file into your project directory.
+* Click "Generate public & private key" and move the `private.key` file into your project directory.
 * Click "Save changes"
 
 Your application is now ready to send you any predefined webhooks!
+
+> **Note** If you're using ngrok without an account, `<your ngrok url>` will be different every time you run ngrok. Remember to update your webhook URLs every time you run the command. Alternatively, sign up for a free account to make the URL persist.
 
 ## Collect Voice Recordings
 
@@ -74,13 +76,13 @@ The first half of this project is to receive the voice recordings from the well-
 
 ### Install Required Packages
 
-We will need several third party Go libraries to successfully run this project. These include the following:
+We will need several third-party Go libraries to successfully run this project. These include the following:
 
 * `joho/godotenv` - to securely store our Vonage credentials
 * `vonage/vonage-go-sdk` - to make our API requests at Vonage
-* `gorm` and `sqlite` to store the voice message file names and whether they've been played into an sqlite database
+* `gorm` and `sqlite` to store the voice message file names and whether they've been played into an SQLite database
 
-To install these third party libraries run the following four commands:
+To install these third-party libraries, run the following four commands:
 
 ```go
 go get github.com/joho/godotenv
@@ -100,16 +102,16 @@ PERSON_NAME=
 NGROK_URL=
 ```
 
-Be sure to populate these variables with the correct values you've gathered in previous steps. Below is a list of how to gain all of the values required:
+Be sure to populate these variables with the correct values you've gathered in previous steps. Below is a list of how to gain all of the required values:
 
-* `VONAGE_APPLICATION_ID` - Your application ID is the ID given when you created an application in Vonage's dashboard
+* `VONAGE_APPLICATION_ID` - Your application ID is the ID given when you created an application in Vonage's [dashboard](https://dashboard.nexmo.com/applications)
 * `VONAGE_PRIVATE_KEY` - The location of the `private.key` file relevant to the project directory
-* `VONAGE_NUMBER` - Your Vonage number is the virtual phone number you purchased in the Vonage Dashboard
+* `VONAGE_NUMBER` - Your Vonage number is the virtual phone number you purchased in the [Vonage Dashboard](https://dashboard.nexmo.com/your-numbers)
 * `TO_NUMBER` - The number that will be receiving the call with all the voice recordings at your predetermined date and time
 * `PERSON_NAME` - The name of the person who will be receiving these well wishes
 * `NGROK_URL` - The ngrok URL you received and stored in a previous step
 
-Structs are typed collections of fields that we'll be using to group data from webhook requests throughout this tutorial. Create a new file called `structs.go` and add the following:
+Structs are typed collections of fields that we'll use to group data from webhook requests throughout this tutorial. Create a new file called `structs.go` and add the following:
 
 ```go
 package main
@@ -155,7 +157,7 @@ type Response struct {
 }
 ```
 
-Now we've created some of the boring bits to get started, let's create the project's main file, the `main.go` file in your project directory and add the following code to this file:
+Now we've created some of the boring bits to get started, let's create the project's main file, `main.go`, in your project directory and add the following code to it:
 
 ```go
 package main
@@ -219,7 +221,7 @@ func connectDb() {
 }
 ```
 
-### Handling the Answering of a call
+### Handling the Answering of a Call
 
 There will be multiple steps to the recording process of a voice message. The first one will answer the initial call and instruct the Vonage APIs on what to do next. So, create a new file in your project directory called `recording.go` and add the following:
 
@@ -262,7 +264,7 @@ The above functionality will create a new Call Control Object (NCCO) with two ac
 
 These actions are then converted into a JSON object and returned in the request.
 
-This function is currently unused! So let's make it used.
+This function is currently unused, so let's change that!
 Back in `main.go` within the `main()` function, add the following line of code, which tells the webserver to listen for the URL `webhooks/answer`, and when triggered, call the `answer()` function:
 
 ```go
@@ -272,7 +274,9 @@ http.HandleFunc("/webhooks/answer", answer)
 
 ### Recording the Call
 
-When in a voice call, the RecordAction in the NCCO is triggered, which starts recording anything your microphone will pick up. When you trigger the RecordAction, you need to define the webhook URL to provide you with the details of the recorded file upon completion of the call. To trigger a recording, you'll first need to register two new routes in your webserver. In your `main.go` file below your call to the `answer` function, add the following two lines:
+When in a voice call, the `RecordAction` in the NCCO is triggered and starts recording anything your microphone will pick up. When you trigger the `RecordAction`, you need to define the webhook URL to provide you with the details of the recorded file upon completion of the call.  
+
+To trigger a recording, you'll first need to register two new routes in your webserver. In your `main.go` file below your call to the `answer` function, add the following two lines:
 
 ```go
 // Second Step - Take Voice Recording
@@ -281,7 +285,9 @@ http.HandleFunc("/webhooks/record", recordUsersMessage)
 http.HandleFunc("/webhooks/recording-file", getFileRecording)
 ```
 
-In your `recording.go` file, one of the functions you defined in the step above is the `recordUsersMessage()` function triggered when the user inputs their DTMF response in the call (Pressing 1, for example). This function will create a new NCCO, which will first convert some text to speech, thanking them, then requesting you leave a message after the tone. The second action is a RecordAction, which tells the API to record whatever is said after the tone. Add this new function to your file:
+In your `recording.go` file, one of the functions you defined in the step above is the `recordUsersMessage()` function, triggered when the user inputs their DTMF response into the call (Pressing 1, for example). This function will create a new NCCO, which will first convert some text to speech, thanking them, then requesting they leave a message after the tone. 
+
+The second action is a `RecordAction`, which tells the API to record whatever is said after the tone. Add this new function to your file:
 
 ```go
 func recordUsersMessage(w http.ResponseWriter, req *http.Request) {
@@ -305,7 +311,7 @@ func recordUsersMessage(w http.ResponseWriter, req *http.Request) {
 
 ### Saving the Audio File
 
-When a voice recording is completed, a call to the path `/webhooks/recording-file` is triggered with JSON similar to the example below:
+Once a voice recording is completed, a call to the `/webhooks/recording-file` path is triggered with JSON, similar to the example below:
 
 ```json
 {
@@ -319,7 +325,9 @@ When a voice recording is completed, a call to the path `/webhooks/recording-fil
 }
 ```
 
-In this JSON example, we can see the `recording_url`, which is important for our tutorial to work. This recording URL is protected; you need to generate a JSON Web Token (JWT) and provide it with the `GET` request when pulling that recording file. The first step is to create a new row in the database for this file, create the file name (Unix timestamp) and call the `downloadFile()` function. Then, in your `recordings.go` file, add the following function:
+In this JSON example, we can see the `recording_url`, which is vital for our tutorial to work. This recording URL is protected; you need to generate a JSON Web Token (JWT) and provide it with the `GET` request when pulling that recording file.   
+
+The first step is to create a new row in the database for this file, create the file name (Unix timestamp) and call the `downloadFile()` function. Then, in your `recordings.go` file, add the following function:
 
 ```go
 func getFileRecording(w http.ResponseWriter, req *http.Request) {
@@ -345,9 +353,10 @@ func getFileRecording(w http.ResponseWriter, req *http.Request) {
 }
 ```
 
-#### Downloading the file
+#### Downloading the File
 
-You may have noticed that we don't yet have the `downloadFile()` function called in the example above. Our next step is to add this as well as a function to generate our JWT. The JWT needs passing as a header in the request. Add the following to your `recordings.go` file. This action will download the audio file from Vonage servers and save it as a file in the `recordings` directory with the predetermined file name.
+You may have noticed that we don't yet have the `downloadFile()` function called in the example above. Our next step is to add this as well as another function to generate our JWT. The JWT needs passing as a header in the request.  
+Add the following to your `recordings.go` file. This action will download the audio file from Vonage servers and save it as a file in the `recordings` directory with the predetermined file name.
 
 ```go
 func downloadFile(audioUrl string, fileName string) error {
@@ -408,13 +417,13 @@ func generateJWT() string {
 
 That's it for the part of the system that collects the voice calls; before we move on to the second half of the tutorial, we're going to want to test this half from start to finish.
 
-First, make sure your project is running, in your Terminal, inside your project directory, run the command:
+First, make sure your project is running. In your Terminal, inside your project directory, run the command:
 
 ```bash
 go run .
 ```
 
-You should still have ngrok running, so, on your phone, call your Vonage virtual number.
+You should still have ngrok running, so go ahead and call your Vonage virtual number using your phone.
 
 The first response is the following voice message: "Thank you for calling the birthday congratulations hotline for <insert name here>.. If you would like to leave a message, please press 1. Otherwise end the call. Thank you".
 
@@ -426,15 +435,18 @@ It's time to build the part of the system for the birthday person!
 
 ## Calling the Birthday Person
 
-### Create a Cronjob and congratulate
+### Create a Cronjob and Congratulate
 
-This project needs a method to run one of the functions at a specific date and time. The cron job is a time scheduler in Unix operating systems. This project will use a cron library for Go to define a specific date and time on running a specific function. In your Terminal, run the command below to install this cron library:
+This project needs a method to run one of the functions at a specific date and time.  
+The cron job is a time scheduler in Unix operating systems. This project will use a cron library for Go to define a particular date and time on running a specific function.  
+
+In your Terminal, run the command below to install this cron library:
 
 ```bash
 go get github.com/robfig/cron
 ```
 
-Inside your the `main()` function within your `main.go` we're going to call a function yet created, `runCongratulateCron()`, so add this below the part where you call `connectDb()`:
+Inside your the `main()` function within your `main.go` we're going to call a function yet to be created, `runCongratulateCron()`, so add this below the part where you call `connectDb()`:
 
 ```go
 runCongratulateCron()
@@ -489,15 +501,17 @@ func congratulate(w http.ResponseWriter, req *http.Request) {
 }
 ```
 
-The above code has two functions: the `runCongratulateCron()` function, which defines a new cronjob and adds the specified time for the birthday person to receive their phone call. If you're unsure how to set up the times with a cronjob, please check the [Crontab Guru](https://crontab.guru/) to build your custom time set.
+The above code has two functions.  
+First, the `runCongratulateCron()` function defines a new cronjob and adds the specified time for the birthday person to receive their phone call. If you're unsure how to set up the times with a cronjob, please check the [Crontab Guru](https://crontab.guru/) to build your custom time set.
 
-The second function gets called from the first one, and this makes the outbound Text-To-Speech voice call to the birthday person, then asks them for an InputAction ("Press 1 to continue"). To keep the call active for the receiver, a ConversationAction is needed. We'll learn how to play the audio into the call in the next step, but this needs to be done in an active conversation.
+The second function gets called from the first one, and this makes the outbound Text-To-Speech voice call to the birthday person, then asks them for an InputAction ("Press 1 to continue"). 
+To keep the call active for the receiver, a `ConversationAction` is needed. We'll learn how to play the audio into the call in the next step, but this needs to be done in an active conversation.
 
-### Play Audio into a call
+### Play Audio Into a Call
 
-Now we can make the phone call; we now need to add the code to play the audio files into the voice call. To do this, we need to grab the UUID of the call, then pass it into a request calling the SDK's function `PlayAudioStream` with the URL of the file you wish to play first.
+Now that we have a call, we need to add the code to play the audio files into the voice call. To do this, you'll need to grab the UUID and pass it into a request calling the `PlayAudioStream` function, alongside the URL of the file you wish to play first.
 
-> **Note** you cannot queue the audio files. This is because if you loop through playing each audio file into the call, it will interrupt each audio file with the latest one. To avoid this, we need to play the file and then wait for an event to come in on completion. We then find the next unplayed one in the database and play that on completion of the audio file.
+> **Note** you cannot queue the audio files. If you loop through playing each audio file into the call, it will interrupt each audio file with the latest one. To avoid this, we need to play the file and then wait for an event to come in on completion. We then find the next unplayed one in the database and play that one on completion of the previous audio file.
 
 So, in `congratulate.go` add the following code:
 
@@ -544,9 +558,9 @@ http.HandleFunc("/congratulate", congratulate)
 http.HandleFunc("/webhooks/play-audio", congratulatePlayAudio)
 ```
 
-### Trigger request to play next audio file
+### Trigger Request to Play Next Audio File
 
-As previously discussed, we need a way to play the next audio file into the call upon completing the previous one. Using the previously defined webhook URL under: `RTC (In-app voice & messaging)` in the dashboard, we'll listen for a specific event that contains a specific key in the request. By listening to the `event.type` part of the request, we'll be able to check if the value is: `audio:play:done`, and then call the function `playAudio` to find the next unplayed audio file.
+As previously discussed, we need to play the next audio file into the call upon completing the previous one. Using the previously defined webhook URL under: `RTC (In-app voice & messaging)` in the dashboard, we'll listen for a specific event that contains a particular key in the request. By listening to the `event.type` part of the request, we'll be able to check if the value is: `audio:play:done`, and then call the function `playAudio` to find the following unplayed audio file.
 
 Inside `congratulate.go` add this new `event` function:
 
@@ -572,9 +586,9 @@ Then, in `main.go`, under the line `http.HandleFunc("/webhooks/play-audio", cong
 	http.HandleFunc("/webhooks/event", event)
 ```
 
-That's it! We've now created our birthday celebrations time capsule with Go! Below we'll run through the step by step process to test the functionality.
+That's it! We've now created our birthday celebrations time capsule with Go! Below we'll run through the step-by-step process to test the functionality.
 
-## Test it!
+## Test It!
 
 Now that we've built this project, let's outline the process from start to finish:
 
@@ -604,4 +618,4 @@ If this tutorial has piqued your interest in our Voice API, but Go isn't the lan
 * [Introducing the Vonage Voice API on Zapier](https://learn.vonage.com/blog/2021/01/21/introducing-the-vonage-voice-api-on-zapier/)
 * [Build an Interactive Voice Response with Go](https://learn.vonage.com/blog/2021/02/11/build-an-interactive-voice-response-with-go/)
 
-If you have any questions, advice or ideas you'd like to share with the community, please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack), or contact me on [Twitter](https://www.twitter.com/greg__holmes). I'd love to hear back from anyone that has implemented this tutorial and how your project works.
+If you have any questions, advice, or ideas you'd like to share with the community, please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack), or contact me on [Twitter](https://www.twitter.com/greg__holmes). I'd love to hear back from anyone that has implemented this tutorial and how your project works.
