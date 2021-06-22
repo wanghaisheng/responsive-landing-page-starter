@@ -1,6 +1,7 @@
 ---
-title: The functions that aren't pure
-description: Explore pure functions concept from the functional programming paradigm.
+title: The Functions That Aren't Pure
+description: "Learn about the functional programming paradigm, pure functions vs
+  impure functions, obvious and sneaky side effects of impure functions.. "
 author: igor-wojda
 published: true
 published_at: 2021-06-18T07:37:41.506Z
@@ -16,15 +17,17 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Every day more developers become aware of the functional programming paradigm. This paradigm promises bug-free, efficient code because pure functions are easier to test and parallelize. 
+More developers become aware of the functional programming paradigm by the day. This paradigm promises bug-free, efficient code because pure functions are easier to test and parallelize. 
 
-In practice full fledge functional applications are still an abstract thing, however, certain concepts from the functional programming paradigm become more and more often applied to non-functional languages. Also, this "partially functional" approach helps to solve many common "problems" in a better way. Today we will take a closer look at one of such functional concepts - pure/impure functions.
+In practice, fully-fledged functional applications are still an abstract thing. However, certain concepts from the functional programming paradigm are more and more often applied to non-functional languages. Also, this "partially functional" approach helps solve many common "problems" in a better way.  
 
-> NOTE: We will use Kotlin based pseudo code to define our functions, but this code is basic, so it will be easily understood.
+Today we will take a closer look at one of such functional concepts - pure/impure functions.
+
+> NOTE: We will use Kotlin based pseudo code to define our functions, keeping the examples basic so that they are more straightforward to follow.
 
 ## Pure Functions
 
-The `pure function` is a function that does not have any side effects - in other words, this function should not retrieve and modify any values other than values passed as params.  This means that each function call with the same arguments will always result in the same output (returned value). Let's start by defining a pure function first:
+The **pure function** is a function that does not have any side effects - in other words, this function should not retrieve and modify any values other than values passed as params.  This way, each function call with the same arguments will always result in the same output (returned value). Let's start by defining a pure function first:
 
 ```
 fun max(a: Int, b: Int) {
@@ -35,17 +38,17 @@ else
 }
 ```
 
-The `max` function takes two arguments, two numbers, and returns larger of them. Notice that this function does not access or modifies any values from outside function scope, so it is a `pure function`.  We can be sure that calling this function with arguments `2` and `7` will ALWAYS return `7`.
+The `max` function takes two arguments, two numbers, and returns the largest of them. Notice that this function does not access or modify any values from outside function scope, so it is a _pure function_.  We can be sure that calling this function with arguments `2` and `7` will ALWAYS return `7`.
 
-To better understand this concept let's take a closer look a closer look at the other side of the same coin - the various ways of breaking function purity.
+To better understand this concept, let's take a closer look at the other side of the coin - the various ways of breaking function purity.
 
 ## Impure Functions
 
-The `impure function` is the function that has side effects - it is modifying or accessing values from outside function scope (outside of function body). 
+An **impure function** is a function that has side effects - it is modifying or accessing values from outside function scope (outside of function body). 
 
-### Quite obvious side effects
+### Quite Obvious Side Effects
 
-The simplest example is the function that modifies the external property to store a state.
+The simplest example is a function that modifies an external property to store a state.
 
 ```
 val loalScore = 0
@@ -64,7 +67,7 @@ getScore(6) // returns 6
 getScore(3) // returns 3
 ```
 
-This function modifies external value but still returns the same value on each invocation, because of the value assignment. However, this is not always the case. Let's consider another impure function:
+This function modifies an external value but still returns the same value on each invocation because of the value assignment. However, this is not always the case. Let's consider another impure function:
 
 ```
 val addScore = 0
@@ -75,7 +78,7 @@ val addScore(score: Int): Int {
 }
 ```
 
-This time function has "stronger impurity" because it modifies external value and returns the different result on each invocation - the state is stored in the variable, outside the function scope:
+This function has "stronger impurity" because it modifies an external value and returns a different result on each invocation - the state is stored in the variable, outside the function scope:
 
 ```
 addScore(12) // returns 12
@@ -83,9 +86,9 @@ addScore(6) // returns 18
 addScore(3) // returns 21
 ```
 
-The downside of keeping the state is that sometimes testing is more complex, however, in many applications, this cannot be avoided. 
+The downside of keeping the state is that sometimes testing is more complex; however, we cannot avoid this in many applications. 
 
-The next function is accessing the value from outside the function scope and this makes it impure:
+The following function is accessing a value from outside the function scope, and doing so makes it impure:
 
 ```
 fun getString(length: Int): String {
@@ -101,9 +104,9 @@ getString(2) // returns "hh"
 getString(2) // returns "zk"
 ```
 
-Presented side effects are quite a clear example, however side effects can be also more subtle:
+While the previously presented side effects are pretty easy to spot, side effects can often be more subtle:
 
-### Not so obvious side effects
+### Not So Obvious Side Effects
 
 An interesting side-effecting scenario is a modification of the object passed as a function argument:
 
@@ -113,9 +116,9 @@ fun increaseHeight(person: Person) {
 }
 ```
 
-Calling this function multiple times with the same Person instance will lead to different output because the value outside the function (stored in Person instance) is modified. 
+Calling this function multiple times with the same `Person` instance will lead to different output because the value outside the function (stored in Person instance) is modified. 
 
-Exception thrown by a function is a great example of the side effects that are hard to spot:
+Exception thrown by a function is an excellent example of the side effects that are harder to spot:
 
 ```
 fun addDistance (a:Int, b:Int): Int {
@@ -143,7 +146,7 @@ fun addDistance (a:Int, b:Int): Int {
 }
 ```
 
-Another not so obvious side effect is logging. Let's take a look at this real-life sample from our sample [Base Video Chat](https://github.com/opentok/opentok-android-sdk-samples/blob/main/Basic-Video-Chat/app/src/main/java/com/tokbox/sample/basicvideochat/MainActivity.java) application:
+Another not-so-obvious side effect is logging. Let's take a look at this real-life sample from our [Base Video Chat](https://github.com/opentok/opentok-android-sdk-samples/blob/main/Basic-Video-Chat/app/src/main/java/com/tokbox/sample/basicvideochat/MainActivity.java) sample application:
 
 ```
 private PublisherKit.PublisherListener publisherListener = new PublisherKit.PublisherListener() {
@@ -164,33 +167,37 @@ private PublisherKit.PublisherListener publisherListener = new PublisherKit.Publ
 };
 ```
 
-In the above code, logging as a side-effects does not impact application logic but they are used to helps us to understand what's going on in the application. Latter most likley developer will use data returned by callbacks to indroduce more side-effects.
+In the above code, logging as a side-effect does not impact application logic, but it helps us understand what's going on in the application. Later, it's easy for the developer to use data returned by callbacks and introduce more side effects.
 
 ## Determine If Function Is Pure\Impure
 
-There are two clues that a function may be impure - the function does not take any arguments or does not return any value.  Let's look at the first case:
+There are two clues that a function may be impure—it doesn't take any arguments or return any value.  Let's look at the first case:
 
 ```
 list.getItem(): String
 ```
 
-In the above example, the function does not take, aby params but it returns the value. This means that most likely the value is retrieved from the class state. Let's consider what happens when a function does not return any value:
+In the above example, the function does not take any params, but it returns the value. This means that, most likely, the value is retrieved from the class state. Let's consider what happens when a function does not return any value:
 
 ```
 list.setItem("item")
 ```
 
-Just looking at the function name we cal tell that param will be most likely used to modify class state. 
+Looking at the function name, we cal tell that the param will be most likely used to modify class state. 
 
 And finally, we can have a combo where there is no argument and no value returned:
 
 `list.sort()`
 
-These are only clues. This does not always have to be the case but often these clues are a good purity indicator.
+These are only clues. It's not always the case, but these clues often are good purity indicators.
 
 
 ## Summary 
 
-In the functional programming paradigm ideally, all functions are pure. However, in many real-world applications, the usage of impure functions cannot be avoided, especially if an application requires external resources like persistence, user input, or network data access. This breaks the purity of the function and whole application. This is not a bad thing, but it is good to be aware of this fact when working with the application code. Typically we will have a mix of pure and impure functions in a single application. It is always good to be aware of purity/impurity because this facilitates application testing and helps to avoid bugs.
+In the functional programming paradigm, ideally, all functions are pure.  
+
+However, in many real-world applications, things aren't quite as binary. Sometimes impure functions cannot be avoided, especially if an application requires external resources like persistence, user input, or network data access. Having these breaks the purity of the function and the whole application, which isn't bad.  
+
+Typically we will have a mix of pure and impure functions in a single application. It is good practice to be aware of purity/impurity as it facilitates application testing and helps us avoid bugs.
 
 
