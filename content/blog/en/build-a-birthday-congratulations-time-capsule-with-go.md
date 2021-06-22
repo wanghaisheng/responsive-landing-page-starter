@@ -1,12 +1,13 @@
 ---
 title: Build a Birthday Congratulations Time Capsule with Go
-description: IN this tutorial we're going to learn how to build a birthday time
+description: In this tutorial we're going to learn how to build a birthday time
   capsule with Go. The pandemic has taught us that even though we're not at time
   physically able to visit friends and family. Life does still go on! So
   creating virtual methods for these events is needed.
+thumbnail: /content/blog/build-a-birthday-congratulations-time-capsule-with-go/go_birthday_voiceapi_1200x600.png
 author: greg-holmes
 published: true
-published_at: 2021-06-10T11:59:01.921Z
+published_at: 2021-06-22T11:59:14.531Z
 updated_at: 2021-06-10T11:59:01.939Z
 category: tutorial
 tags:
