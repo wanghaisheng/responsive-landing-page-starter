@@ -27,11 +27,17 @@ For this week’s startup spotlight we caught up with Fabien Patou the co-founde
 ## The startup at a glance
 
 * **Startup Name**: Plato.immo
+
 * **Industry**: Proptech
+
 * **Location**: Paris, France
+
 * **Date founded**: 01/05/2020
+
 * **Number of employees**: The 3 Co-Founders
+
 * **LinkedIn**: <https://www.linkedin.com/company/platoimmo>
+
 * **Vonage API used**: [SMS API](https://developer.vonage.com/messaging/sms/overview)
 
 ## In one sentence, what does Plato.immo do?
