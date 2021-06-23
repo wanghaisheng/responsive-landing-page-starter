@@ -7,9 +7,9 @@ author: tonya-sims-1
 published: true
 published_at: 2021-06-18T09:22:43.572Z
 updated_at: 2021-06-14T20:32:36.884Z
-category: announcement
+category: team
 tags:
-  - python
+  - careers
 comments: true
 spotlight: false
 redirect: ""
