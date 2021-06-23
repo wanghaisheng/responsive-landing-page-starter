@@ -1,10 +1,10 @@
 ---
-title: "Startup Spotlight Series: Let's meet Oeto"
+title: "Startup Spotlight: Let's meet Oeto"
 description: Meet Tallinn-based startup Oeto as a part of Vonage Startup Spotlight series.
-thumbnail: /content/blog/startup-spotlight-series-lets-meet-oeto/startups_oeto_1200x600.png
+thumbnail: /content/blog/startup-spotlight-lets-meet-oeto/startups_oeto_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-06-17T12:26:36.493Z
+published_at: 2021-06-23T09:53:24.555Z
 updated_at: 2021-06-17T12:26:36.521Z
 category: startup
 tags:
@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The internet is overflowing with information, but information is not knowledge. Expert marketplaces bring together the right people at the right time – patients and doctors, marketers or engineers and startup founders, tutors and students – the list can go on and on. Event though expert networks were not immune from the effects of Covid-19 the market continued to grow double-digits in 2020, bringing the total industry size to over $1.5 billion, according to analysis released by Integrity Research and Inex One.
+The internet is overflowing with information, but information is not knowledge. Expert marketplaces bring together the right people at the right time – patients and doctors, marketers or engineers and startup founders, tutors and students – the list can go on and on. Event though expert networks were not immune from the effects of Covid-19, the market continued to grow double-digits in 2020, bringing the total industry size to over $1.5 billion, according to an analysis released by Integrity Research and Inex One.
 
 As expert marketplaces are popping up right and left, Oeto wants to inspire and help businesses launch their own marketplaces for various niches and local ecosystems. This week we caught up with Piia Sander, the CEO of Oeto, to find out more about how the expert network industry is the next big thing and what's her vision for Oeto.
 
@@ -25,19 +25,19 @@ Enjoy the interview!
 
 ## The startup at a glance
 
-**Startup Name**: Oeto
+* **Startup Name**: Oeto
 
-**Industry**: SaaS
+* **Industry**: SaaS
 
-**Location**: Tallinn, Estonia
+* **Location**: Tallinn, Estonia
 
-**Date founded**: 06.08.2020
+* **Date founded**: 06.08.2020
 
-**Number of employees**: 3
+* **Number of employees**: 3
 
-**LinkedIn**: <https://www.linkedin.com/company/oeto/>
+* **LinkedIn**: <https://www.linkedin.com/company/oeto/>
 
-**Vonage API used**: [Video API](https://tokbox.com/developer/guides/basics/)
+* **Vonage API used**: [Video API](https://tokbox.com/developer/guides/basics/)
 
 ## In one sentence, what does Oeto do?
 
