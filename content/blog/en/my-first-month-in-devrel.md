@@ -1,11 +1,12 @@
 ---
 title: My First Month in DevRel
-description: I'm completing one month working as a developer advocate at Vonage
-  and thought I'd share some insights on what the journey has been like so far
-  and some resources that have truly been helping me out.
+description: Amanda is completing one month working as a developer advocate at
+  Vonage. She shares some insights on what the journey has been like so far and
+  some resources that have truly been helping her out.
+thumbnail: /content/blog/my-first-month-in-devrel/first-month_1200x600.png
 author: amanda-cavallaro
 published: true
-published_at: 2021-06-10T09:46:20.408Z
+published_at: 2021-06-24T13:20:36.003Z
 updated_at: 2021-06-10T09:46:20.420Z
 category: devlife
 tags:
