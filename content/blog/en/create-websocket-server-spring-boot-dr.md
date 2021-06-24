@@ -6,11 +6,12 @@ thumbnail: /content/blog/creating-a-websocket-server-with-spring-boot/springboot
 author: cr0wst
 published: true
 published_at: 2018-10-08T15:19:15.000Z
-updated_at: 2020-10-27T13:58:34.137Z
+updated_at: 2021-06-24T21:41:41.711Z
 category: tutorial
 tags:
   - java
   - websockets
+  - springboot
 comments: true
 redirect: ""
 canonical: ""
@@ -44,7 +45,7 @@ Clicking the Generate Project button will download a zip file. Unzip this in a d
 
 WebSocket messages can be both text and binary. You're going to create a handler that can handle both of these messages.
 
-Create a new class called `WebSocketHandler` which extends `AbstractWebSocketHandler` in the `com.example.demo` package. `AbstractWebSocketHandler` requires you to implement two methods, `handleTextMessage` and `handleBinaryMessage` which are called when a new text or binary message are received.
+Create a new class called `WebSocketHandler` which extends `AbstractWebSocketHandler` in the `com.example.websocketdemo` package. `AbstractWebSocketHandler` requires you to implement two methods, `handleTextMessage` and `handleBinaryMessage` which are called when a new text or binary message are received.
 
 For demonstration purposes, you're going to create an echo server which will echo the message received back to the sender.
 
