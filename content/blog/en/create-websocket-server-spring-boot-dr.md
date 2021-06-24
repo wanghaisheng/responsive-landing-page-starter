@@ -16,7 +16,6 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-
 [WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a protocol which enables communication between the server and the browser. It has an advantage over RESTful HTTP because communications are both bi-directional and real-time. This allows for the server to notify the client at any time instead of the client polling on a regular interval for updates.
 
 In this series of posts, I'm going to show you three different ways to create a WebSocket server in Java using [Spring Boot](http://spring.io/projects/spring-boot), the [Spark Framework](http://sparkjava.com/),  and the [Java API for WebSockets](https://www.oracle.com/technetwork/articles/java/jsr356-1937161.html).
@@ -195,13 +194,13 @@ Your WebSocket server is now complete. Start your application using the `gradle 
 
 You can access your application at <http://localhost:8080> where you will be greeted with the following page:
 
-![Sample JavaScript-enabled client for testing the WebSocket server](/content/blog/creating-a-websocket-server-with-spring-boot/2018-10-01-13-38-05-1-.png "Sample JavaScript-enabled client for testing the WebSocket server")
+![Sample JavaScript-enabled client for testing the WebSocket server](/content/blog/creating-a-websocket-server-with-spring-boot/screenshot-2021-06-24-at-22.33.33.png "Sample JavaScript-enabled client for testing the WebSocket server")
 
 The "connected" message indicates that the JavaScript client was able to make a connection.
 
 Try sending a text message by typing into the input field and clicking on the send button. Also try uploading an image. In both instances, you should see the same message and image echoed back.
 
-![Sample JavaScript-enabled client showing a text and binary message echoed back](/content/blog/creating-a-websocket-server-with-spring-boot/2018-10-01-14-23-40-1-.png "Sample JavaScript-enabled client showing a text and binary message echoed back")
+![Sample JavaScript-enabled client showing a text and binary message echoed back](/content/blog/creating-a-websocket-server-with-spring-boot/screenshot-2021-06-24-at-22.52.15.png "Sample JavaScript-enabled client showing a text and binary message echoed back")
 
 ## Conclusion
 
@@ -210,5 +209,3 @@ In this tutorial you learned how to create a WebSocket server using Spring Boot 
 Have you tried out the Spark Framework? You might want to see how to [Create a WebSocket server using the Spark Framework](https://www.nexmo.com/blog/2018/10/15/create-websocket-server-spark-framework-dr/).
 
 Did you know that you can use WebSocket as an endpoint in a [Call Control Object](https://developer.nexmo.com/voice/voice-api/ncco-reference#websocket-the-websocket-to-connect-to)? Look at this example on [Streaming Calls to a Browser with Voice WebSockets](https://www.nexmo.com/blog/2016/12/19/streaming-calls-to-a-browser-with-voice-websockets-dr/).
-
-Interested in reading more about WebSockets? Check out this post on [What are WebSockets? How Can They Enhance Digital Solutions?](https://www.nexmo.com/blog/2018/09/05/websockets-enhance-digital-solutions/)
