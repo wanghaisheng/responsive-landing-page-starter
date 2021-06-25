@@ -1,7 +1,7 @@
 ---
-title: Nick Anderson has Joined the Technical Writer Team
-description: I'm a very experienced Technical Writer and Trainer looking forward
-  to upcoming challenges
+title: Nick Anderson Joins the Vonage Technical Writing Team
+description: Nick Anderson is a technical writer at Vonage based in Sussex, UK.
+  Here he introduces himself, his interests, and his background.
 thumbnail: /content/blog/nick-anderson-has-joined-the-technical-writer-team/nickcwa_bio.jpg
 author: nick-anderson-1
 published: true
@@ -9,7 +9,7 @@ published_at: 2021-06-15T10:06:40.633Z
 updated_at: 2021-06-15T10:06:40.642Z
 category: team
 tags:
-  - netlify
+  - careers
 comments: true
 spotlight: false
 redirect: ""
