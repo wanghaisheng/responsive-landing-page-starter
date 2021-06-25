@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Hi, I'm Nick, and I have been in the Writing team since mid-May 2021. I am looking forward to getting through the onboarding and being able to contribute. I've been doing much learning about the Vonage agile-based Docs as Code pipeline, with more to come!
+Hi, I'm Nick, and I have been in the Writing Team at Vonage since mid-May 2021. I am looking forward to getting through the onboarding and being able to contribute. I've been doing much learning about the Vonage agile-based Docs as Code pipeline, with more to come!
 
 I was born in the county of Yorkshire in the United Kingdom and currently live in a village in Sussex. My dad was in the Royal Air Force, so we did a lot of moving between RAF bases in the UK and several countries.
 
