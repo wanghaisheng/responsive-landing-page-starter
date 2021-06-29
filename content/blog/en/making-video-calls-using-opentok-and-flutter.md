@@ -1,6 +1,6 @@
 ---
 title: "Making Video Calls Using OpenTok And Flutter "
-description: Let's tate a coser look as the OpenTok Flutter app that allows to
+description: Let's take a closer look as the OpenTok Flutter app that allows to
   make a video calls
 author: igor-wojda
 published: false
