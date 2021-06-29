@@ -1,6 +1,6 @@
 ---
 title: A Better Way of Creating Android Views with JetPackCompose
-description: Modern way of building Android Views
+description: An introduction to JetPackCompose, a modern way of building Android Views
 thumbnail: /content/blog/a-better-way-of-creating-android-views-with-jetpackcompose/andriod_jetpack-compose_1200x600.png
 author: igor-wojda
 published: true
