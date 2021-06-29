@@ -1,7 +1,7 @@
 ---
-title: How to Send SMS Messages with Java
-description: Send SMS messages with Java and the Vonage client library. It's
-  part of a series of getting started guides for the Vonage APIs!
+title: How to Send SMS Messages With Java
+description: Send SMS messages with Java and the Vonage Java SDK. This tutorial
+  uses JDK 16 and Gradle 7.1
 thumbnail: /content/blog/send-sms-messages-with-java-dr/sms-send-java.png
 author: judy2k
 published: true
@@ -104,7 +104,7 @@ public class SendSMS {
 
 All this does is import the necessary parts of the Vonage SDK and create a method to contain our code. It's worth running `gradle run` now, which should run your main method. It won't do anything yet, but this is where we get to the exciting bit. 
 
-## Send SMS Messages with Java
+## Send SMS Messages With Java
 
 Put the following in your `main` method:
 
