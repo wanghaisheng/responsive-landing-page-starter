@@ -6,7 +6,7 @@ thumbnail: /content/blog/send-sms-messages-with-java-dr/sms-send-java.png
 author: judy2k
 published: true
 published_at: 2017-05-03T13:00:27.000Z
-updated_at: 2020-11-05T16:02:29.164Z
+updated_at: 2021-06-29T11:15:41.135Z
 category: tutorial
 tags:
   - java
@@ -134,7 +134,7 @@ TextMessage message = new TextMessage(VONAGE_BRAND_NAME,
 
 Again, you'll want to replace `VONAGE_BRAND_NAME` and `TO_NUMBER` with strings containing the virtual number you bought and your own mobile phone number. Once you've done that, save and run `gradle run` again. You should see something like this printed to the screen:
 
-`SMS-SUBMIT-RESULT -- STATUS:0 ERR:null DEST:4412341234 MSG-ID:0C0000002D9C9A89 CLIENT-REF:null PRICE:0.0333000`
+`Message sent successfully.[com.vonage.client.sms.SmsSubmissionResponseMessage@f0f0675[to=447401234567,id=13000001CA6CCC59,status=OK,remainingBalance=27.16903818,messagePrice=0.03330000,network=23420,errorText=<null>,clientRef=<null>]]`
 
 ... and you should receive a text message! If it didn't work, check out if something was printed after `ERR:` in the line above, and maybe wait a few more seconds for the message to appear.
 
