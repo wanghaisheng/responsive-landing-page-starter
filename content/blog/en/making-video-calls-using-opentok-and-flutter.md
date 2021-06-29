@@ -32,11 +32,11 @@ Flutter is the main technology here. It is a foundation used to build a mobile a
 
 Under the hood, this Flutter application will use [Android OpenTok SDK](https://tokbox.com/developer/sdks/android/) and iOS [OpenTok SDK](https://tokbox.com/developer/sdks/ios/) (Android/iOS native projects) that allows to log in the user and set up the video session to make a video call.  
 
-![](/content/blog/making-video-calls-using-opentok-and-flutter/flutter-application.png)
+![Flutter application under the hood](/content/blog/making-video-calls-using-opentok-and-flutter/method-channel.png)
 
 Platform (Android, iOS) native code communicates with Flutter by using Flutter [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html) that uses method calls. MethodChannel serves as a bridge to send messages between Flutter and native code:
 
-![](/content/blog/making-video-calls-using-opentok-and-flutter/flutter-application.png)
+![Flutter application flow](/content/blog/making-video-calls-using-opentok-and-flutter/flutter-application.png)
 
 Flutter can send messages to the native (Android / iOS) part of the app and the native part of the app can send a message back to Flutter eg. Flutter calls `initSession` method and passes the `apiKey`, `sessionId`, and `token` to native code to start OpenTok session. If the response natve code will inform Flutter part of the app about successful login (or error) and Flutter-sie code will update the UI.
 
