@@ -2,9 +2,10 @@
 title: The Functions That Aren't Pure
 description: "Learn about the functional programming paradigm, pure functions vs
   impure functions, obvious and sneaky side effects of impure functions.. "
+thumbnail: /content/blog/the-functions-that-arent-pure/functional-programing_1200x600.png
 author: igor-wojda
 published: true
-published_at: 2021-06-18T07:37:41.506Z
+published_at: 2021-06-29T11:31:08.524Z
 updated_at: 2021-06-18T07:37:41.532Z
 category: inspiration
 tags:
