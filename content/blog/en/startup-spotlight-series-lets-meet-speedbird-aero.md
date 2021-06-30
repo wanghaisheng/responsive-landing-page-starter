@@ -1,5 +1,5 @@
 ---
-title: "Startup Spotlight Series: Let's meet Speedbird Aero"
+title: "Startup Spotlight: Let's meet Speedbird Aero"
 description: Meet Brazil-based startup Speedbird Aero as a part of Vonage
   Startup Spotlight series.
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-speedbird-aero/startups_speedbird_1200x600.png
