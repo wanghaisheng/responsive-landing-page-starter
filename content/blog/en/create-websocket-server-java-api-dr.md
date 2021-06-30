@@ -18,15 +18,19 @@ canonical: ""
 outdated: false
 ---
 
-[WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a protocol which enables communication between the server and the browser. It has an advantage over RESTful HTTP because communications are both bi-directional and real-time. This allows for the server to notify the client at any time instead of the client polling on a regular interval for updates.
+[WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a protocol which enables communication between the server and the client (usually the browser or mobile application). It has an advantage over RESTful HTTP because communications are both bi-directional and real-time. This allows for the server to notify the client at any time instead of the client polling on a regular interval for updates.
 
 In this series of posts, I'm going to show you three different ways to create a WebSocket server in Java using [Spring Boot](http://spring.io/projects/spring-boot), the [Spark Framework](http://sparkjava.com/),  and the [Java API for WebSockets](https://www.oracle.com/technetwork/articles/java/jsr356-1937161.html).
 
 ## Prerequisites
 
-You will be using [Gradle](https://gradle.org/) to manage your dependencies and run your application.
+You will be using [Gradle](https://gradle.org/) to manage your dependencies and run your application. 
 
-Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 8 in this tutorial.
+> To install gradle run `brew install gradle` or `sdk install gradle` or follow [Gradle Installation guide](https://docs.gradle.org/current/userguide/installation.html).
+
+Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 15 in this tutorial.
+
+> NOTE: Currently Java 16 is not supported by Gradle.
 
 ## The Java API for WebSockets
 
@@ -41,15 +45,22 @@ You will use Gradle to initialize a new Java application. You can use the follow
 ```bash
 mkdir websocket-java-api
 cd websocket-java-api
-gradle init --type=java-application
 ```
+
+Create a new Gradle project: 
+
+1. Run `gradle init --type=java-application` command
+2. Select `Groovy` as script language
+3. Select `JUnit Jupiter` as a testing framework 
+4. Leave default `Project name`
+5. Leave default `Source package`
 
 ### Add the Java WebSocket API Dependency
 
-Add the following dependency to the `dependencies` block of `build.gradle`:
+Add the following dependency to the `dependencies` block of `app/build.gradle` file:
 
 ```groovy
-compile 'javax.websocket:javax.websocket-api:1.1'
+implementation 'javax.websocket:javax.websocket-api:1.1'
 ```
 
 ### Create the WebSocket Endpoint
@@ -58,7 +69,7 @@ WebSocket messages can be both text and binary. You're going to create an endpoi
 
 The `@ServerEndpoint` annotation is used to decorate a class and declare it as a WebSocket endpoint. You can provide it with a parameter which represents the path that the endpoint is published on.
 
-Create a new class called `WebSocketEndpoint` and annotate it with `@ServerEndpoint("/socket")`:
+Create a new class called `WebSocketEndpoint` and annotate it with `@ServerEndpoint("/socket")` in the `app/src/java/websocket/java/api` folder:
 
 ```java
 import javax.websocket.server.ServerEndpoint;
@@ -69,7 +80,7 @@ public class WebSocketEndpoint {
 }
 ```
 
-Each event that the `WebSocketEndpoint` handles is defined by an annotation. You can use the `@OnMessage` annotation to tag methods for receiving binary or text events.
+The `@OnMessage` annotation links Java methods with binary or text events (annotated method will be called when event is received).
 
 For demonstration purposes, you're going to create an echo server which will echo the message received back to the sender.
 
@@ -78,16 +89,19 @@ In order to test binary messages, you will be sending images to the WebSocket se
 Add the following methods:
 
 ```java
-@OnMessage
-public String handleTextMessage(String message) {
-    System.out.println("New Text Message Received");
-    return message;
-}
+@ServerEndpoint("/socket")
+public class WebSocketEndpoint {
+    @OnMessage
+    public String handleTextMessage(String message) {
+        System.out.println("New Text Message Received");
+        return message;
+    }
 
-@OnMessage(maxMessageSize = 1024000)
-public byte[] handleBinaryMessage(byte[] buffer) {
-    System.out.println("New Binary Message Received");
-    return buffer;
+    @OnMessage(maxMessageSize = 1024000)
+    public byte[] handleBinaryMessage(byte[] buffer) {
+        System.out.println("New Binary Message Received");
+        return buffer;
+    }
 }
 ```
 
@@ -95,7 +109,7 @@ Note that the method signature determines which type of message the method will 
 
 ### Create a Client to Test Your Application
 
-You will need to create a client to test your WebSocket server. You will want to test sending both text and binary messages. This can be accomplished with JavaScript.
+You will need to create a client to test your WebSocket server. You will want to test sending both text and binary messages. This can be accomplished with simple appliation written in HTML and JavaScript.
 
 Create the `webapp` folder inside of the `src/main` folder.
 
@@ -191,7 +205,7 @@ The [Gretty](http://akhikhl.github.io/gretty-doc/Getting-started.html) plugin fo
 First, apply the Gretty plugin to `build.gradle` file by adding this to your `plugins` block:
 
 ```groovy
-id "org.gretty" version "2.2.0"
+id "org.gretty" version "3.0.5"
 ```
 
 Second, you will need to configure Gretty to use Tomcat as the servlet container, and set the context path to `/` for the sake of simplicity.
@@ -200,7 +214,7 @@ Add the following block to `build.gradle`:
 
 ```groovy
 gretty {
-    servletContainer = 'tomcat8'
+    servletContainer = 'tomcat9'
     contextPath = '/'
 }
 ```
@@ -209,9 +223,9 @@ Note that, by default, Gretty will use Jetty as the servlet container. This same
 
 ### Start the Application
 
-Your WebSocket server is now complete. Start your application using the `gradle appRun` command inside of the application's directory.
+Your WebSocket server is now complete. Start your application using the `gradle appRun` command inside of the application's directory. Leave the terminal window open and open. 
 
-You can access your application at <http://localhost:8080> where you will be greeted with the following page:
+You can access your application by opening [http://localhost:8080](http://localhost:8080) URL in the browser.You will be greeted with the following page:
 
 ![Sample JavaScript-enabled client for testing the WebSocket server](/content/blog/creating-a-websocket-server-with-the-java-api-for-websockets/2018-10-01-13-38-05.png "Sample JavaScript-enabled client for testing the WebSocket server")
 
@@ -223,7 +237,7 @@ Try sending a text message by typing into the input field and clicking on the se
 
 ## Conclusion
 
-In this tutorial you learned how to create a WebSocket server using JSR 356 which can receive both binary and text messages and run on any JSR 356 compliant container. Try removing the `servletContainer` setting and running in Jetty, or use the [Gradle WAR plugin](https://docs.gradle.org/current/userguide/war_plugin.html) to generate a WAR file and deploy it on a different container.
+In this tutorial you learned how to create a WebSocket server using JSR 356 which can receive both binary and text messages and run on any JSR 356 compliant container. Try removing the `servletContainer` setting and running in Tomcat, or use the [Gradle WAR plugin](https://docs.gradle.org/current/userguide/war_plugin.html) to generate a WAR file and deploy it on a different container.
 
 The finished code for this tutorial can be found in the [websocket-java-api](https://github.com/nexmo-community/websocket-java-api) repository.
 
