@@ -147,4 +147,4 @@ You can either stop here or, for bonus points, learn how to [build a Web service
 
 * [Vonage SMS API Reference](https://developer.vonage.com/api/sms?theme=dark)
 * [Vonage Java SDK](https://github.com/Vonage/vonage-java-sdk)
-*[Country Specific SMS Features](https://developer.vonage.com/messaging/sms/guides/country-specific-features)
+* [Country Specific SMS Features](https://developer.vonage.com/messaging/sms/guides/country-specific-features)
