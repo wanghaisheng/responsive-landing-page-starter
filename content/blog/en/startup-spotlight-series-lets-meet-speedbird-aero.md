@@ -5,7 +5,7 @@ description: Meet Brazil-based startup Speedbird Aero as a part of Vonage
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-speedbird-aero/startups_speedbird_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-06-30T08:47:27.769Z
+published_at: 2021-06-30T09:59:09.783Z
 updated_at: 2021-06-30T08:47:27.795Z
 category: startup
 tags:
@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Unmanned Aerial Vehicles aka drones have been rapidly growing in popularity over the past 5 years with a number of industry leaders such as Amazon investing heavily in assessing the benefits of utilizing drone technology. However, drones are still in the infancy stage in terms of adoption and there is a lot of concern around their feasibility and legality.
+Unmanned Aerial Vehicles - aka "drones" - have been rapidly growing in popularity over the past 5 years; with a number of industry leaders, such as Amazon, investing heavily in assessing the benefits of utilizing drone technology. However, drones are still in the infancy stage in terms of adoption and there is a lot of concern around their feasibility and legality.
 
 Their potential benefit is clear: when you need something shipped immediately, with the shortest transit time possible, or in cases where surface transportation is limited, drones have the potential to be the most efficient way of delivering goods, including emergency healthcare.
 
