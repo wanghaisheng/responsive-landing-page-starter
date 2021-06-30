@@ -18,11 +18,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Unmanned Aerial Vehicles - aka "drones" - have been rapidly growing in popularity over the past 5 years; with a number of industry leaders, such as Amazon, investing heavily in assessing the benefits of utilizing drone technology. However, drones are still in the infancy stage in terms of adoption and there is a lot of concern around their feasibility and legality.
+Unmanned Aerial Vehicles - aka "drones" - have been rapidly growing in popularity over the past five years, with many industry leaders, such as Amazon, investing heavily in assessing the benefits of utilizing drone technology. However, drones are still in the infancy stage in terms of adoption. There is a lot of concern around their feasibility and legality.
 
 Their potential benefit is clear: when you need something shipped immediately, with the shortest transit time possible, or in cases where surface transportation is limited, drones have the potential to be the most efficient way of delivering goods, including emergency healthcare.
 
-A startup in Brazil is committed to driving the drone industry forward and improving the functionality of drone technology. Speedbird Aero is making drone delivery possible for companies, logistics services, and healthcare facilities and today we caught up with the Founder, Samuel Salomão, to find out more about the challenges of becoming a leader in drone delivery.
+A startup in Brazil is committed to driving the drone industry forward and improving the functionality of drone technology. Speedbird Aero is making drone delivery possible for companies, logistics services, and healthcare facilities. Today, we caught up with the Founder, Samuel Salomão, to learn more about the challenges of becoming a leader in drone delivery.
 
 ## The startup at a glance
 
