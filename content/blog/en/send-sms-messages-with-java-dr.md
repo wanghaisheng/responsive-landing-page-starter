@@ -17,6 +17,7 @@ redirect: ""
 canonical: ""
 outdated: true
 ---
+*We've built this example using JDK 16, Gradle 7.1 and the Vonage Server SDK for Java v.6.4.0*  
 *This is the first in a series of "Getting Started with Vonage and Java" tutorials.*
 
 The [Vonage SMS API](https://developer.vonage.com/messaging/sms/overview) is a service that allows you to send and receive SMS messages anywhere in the world. Vonage provides REST APIs, but it's much easier to use the Java SDK we've written for you.
@@ -28,8 +29,6 @@ In this tutorial, we'll cover how to send SMS messages with Java! View [the sour
 Hopefully, you already have a basic understanding of Java programming - we're not going to be doing any highly complicated programming, but it'll help you get up and running. As well as a basic understanding of Java, you'll also need the following installed on your development machine:
 * [Java Development Kit (JDK)](https://www.oracle.com/java/technologies/javase-downloads.html)
 * [Gradle](https://gradle.org/) for building your project
-
-*We've built this example using JDK 16 and Gradle 7.1*
 
 <sign-up number></sign-up>
 
