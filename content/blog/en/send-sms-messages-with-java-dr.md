@@ -132,7 +132,8 @@ TextMessage message = new TextMessage(VONAGE_BRAND_NAME,
         }
 ```
 
-Again, you'll want to replace `VONAGE_BRAND_NAME` and `TO_NUMBER` with strings containing the virtual number you bought and your own mobile phone number. Once you've done that, save and run `gradle run` again. You should see something like this printed to the screen:
+Again, you'll want to replace `VONAGE_BRAND_NAME` and `TO_NUMBER` with strings containing the virtual number you bought and your own mobile phone number. Make sure to provide the `TO_NUMBER` in [E.164 format](https://developer.vonage.com/voice/voice-api/guides/numbers)—for example, 447401234567.  
+Once you've done that, save and run `gradle run` again. You should see something like this printed to the screen:
 
 `Message sent successfully.[com.vonage.client.sms.SmsSubmissionResponseMessage@f0f0675[to=447401234567,id=13000001CA6CCC59,status=OK,remainingBalance=27.16903818,messagePrice=0.03330000,network=23420,errorText=<null>,clientRef=<null>]]`
 
