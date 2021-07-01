@@ -15,7 +15,7 @@ tags:
 comments: true
 redirect: ""
 canonical: ""
-outdated: true
+outdated: false
 ---
 > *We've built this example using JDK 16, Gradle 7.1 and the Vonage Server SDK for Java v.6.4.0*  
 
