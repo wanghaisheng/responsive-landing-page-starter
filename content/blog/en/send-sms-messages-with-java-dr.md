@@ -139,6 +139,8 @@ Once you've done that, save and run `gradle run` again. You should see something
 
 > Note: In some countries (US), `VONAGE_BRAND_NAME` has to be one of your Vonage virtual numbers. In other countries (UK), you're free to pick an alphanumeric string value—for example, your brand name like AcmeInc. Read about country-specific SMS features on the [dev portal](https://developer.vonage.com/messaging/sms/guides/country-specific-features).
 
+You've just learned how to send an SMS message with Vonage! 
+<!--- You can either stop here or, for bonus points, learn how to [build a Web service around it](ADD_LINK_HERE)!-->
 
 ## References
 
