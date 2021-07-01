@@ -1,7 +1,6 @@
 ---
-title: "Making Video Calls Using OpenTok And Flutter "
-description: Let's take a closer look as the OpenTok Flutter app that allows to
-  make a video calls
+title: "Making Video Calls Using Vonage Video And Flutter "
+description: Let's take a closer look at a Vonage Video Flutter app that allows us to make video calls
 author: igor-wojda
 published: false
 published_at: 2021-06-17T11:32:37.509Z
@@ -9,7 +8,7 @@ updated_at: 2021-06-17T11:32:37.550Z
 category: announcement
 tags:
   - Flutter
-  - OpenTok
+  - video-api
 comments: true
 spotlight: false
 redirect: ""
@@ -17,14 +16,14 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Flutter is gaining more and more popularity, so we decided to build a simple application that allows making video calls between two devices. Two technologies used to build the app are Flutter and OpenTok SDKs. Let's recap quickly these technologies:
+Flutter is gaining more and more popularity, so we decided to build a simple application that allows making video calls between two devices. Two technologies used to build the app are Flutter and Vonage Video SDKs. Let's recap quickly these technologies:
 
 * [Flutter](https://flutter.dev/) - open-source UI software development kit used to develop cross-platform applications for Android, iOS, Linux, Mac. The main programming language is [Dart](https://dart.dev/)
-* [OpenTok](https://tokbox.com/developer/sdks/android/) - used to build video calls between various devices. The programming languages used are [Kotlin](https://kotlinlang.org/) for the Android platform and [Switf](https://www.swift.com/) for the iOS platform.
+* [Vonage Video](https://tokbox.com/developer/sdks/android/) - used to build video calls between various devices. The programming languages used are [Kotlin](https://kotlinlang.org/) for the Android platform and [Switf](https://www.swift.com/) for the iOS platform.
 
 This application is a Flutter equivalent of the Basic-Video-Chat application ([](https://github.com/opentok/opentok-android-sdk-samples/tree/main/Basic-Video-Chat)\[Basic-Video-Chat iOS](opentok-ios-sdk-samples/Basic-Video-Chat at main · opentok/opentok-ios-sdk-samples · GitHub)). Here are the main features of the application:
 
-* Connect to an OpenTok session
+* Connect to an Vonage Video session
 * Publish an audio-video stream to the session
 * Subscribe to another client's audio-video stream
 
@@ -32,7 +31,7 @@ This application is a Flutter equivalent of the Basic-Video-Chat application ([]
 
 Flutter is the main technology here. It is a foundation used to build a mobile application thats runs on Android and iOS. It will be responsible for managing and displaying UI, and it will contain the application logic. This way application logic is only written once for both platforms.
 
-Under the hood, this Flutter application will use [Android OpenTok SDK](https://tokbox.com/developer/sdks/android/) and iOS [OpenTok SDK](https://tokbox.com/developer/sdks/ios/) (via Android/iOS native projects):
+Under the hood, this Flutter application will use [Android Vonage Video SDK](https://tokbox.com/developer/sdks/android/) and iOS [Vonage Video SDK](https://tokbox.com/developer/sdks/ios/) (via Android/iOS native projects):
 
 ![Flutter application under the hood](/content/blog/making-video-calls-using-opentok-and-flutter/method-channel.png)
 
@@ -40,15 +39,16 @@ Platform (Android, iOS) native code communicates with Flutter by using Flutter [
 
 ![Flutter application flow](/content/blog/making-video-calls-using-opentok-and-flutter/flutter-application.png)
 
-Flutter can send messages to the native (Android / iOS) part of the app and the native part of the app can send a message back to Flutter eg. Flutter calls `initSession` method and passes the `apiKey`, `sessionId`, and `token` to native code to start OpenTok session. If the response native code will inform Flutter part of the app about successful login (or error) and Flutter-sie code will update the UI.
+Flutter can send messages to the native (Android / iOS) part of the app and the native part of the app can send a message back to Flutter. Flutter calls `initSession` method and passes the `apiKey`, `sessionId`, and `token` to native code to start Vonage Video session. The native code will inform Flutter part of the app about successful login (or error) and Flutter-sie code will update the UI.
 
-> NOTE: Flutter app can be packaged as Android or iOS application, but never both at the same time. When the target platform is set to Android then MethodChannel communicates with Android native app code and when the target platform is set to iOS then MethodChannel communicates with iOS native app code.
+> NOTE: Flutter app can be packaged as Android or iOS application, but never both at the same time. When the target platform is set to Android then MethodChannel communicates with Android native app code. When the target platform is set to iOS then MethodChannel communicates with iOS native app code.
 
-To run the [application](https://github.com/opentok/opentok-flutter-basic-video-chat) you will have to install Flutter. This varies from platform to platform. Detailed instructions can be found [here](https://flutter.dev/docs/get-started/install).
+To run the [application](https://github.com/opentok/opentok-flutter-basic-video-chat) you will have to install Flutter. 
+This varies from platform to platform, as you can see in the [detailed instructions](https://flutter.dev/docs/get-started/install)?
 
 > NOTE: Make sure to run `flutter doctor` to verify your local flutter setup.
 
-To login into the OpenTok session, you will need an [TokBox account](https://tokbox.com/account/#/) and generate `initSession`, `apiKey`, and `sessionId`. You can get these values in the [OpenTok Dashboard](https://tokbox.com/account/#/). Now open the `main.dart` file and fill retrieved values:
+To login into the Vonage Video session, you will need an [Vonage Video account](https://tokbox.com/account/#/) and generate `initSession`, `apiKey`, and `sessionId`. You can get these values in the [Vonage Video Dashboard](https://tokbox.com/account/#/). Now open the `main.dart` file and use those values in the corresponding variables:
 
 ```
 static String API_KEY = "";
@@ -62,4 +62,4 @@ Launch the mobile app to start the video call.
 
 ## Summary
 
-There are still a few [drawbacks](https://github.com/opentok/opentok-flutter-basic-video-chat#known-issues), but the overall Integration of Flutter and OpenTok is quite smooth. Even without a native Flutter package, it is possible to easily create build a fully-fledged Flutter app that utilizes OpenTok mobiles SDKs under the hood and runs on Android and iOS devices.
+There are still a few [drawbacks](https://github.com/opentok/opentok-flutter-basic-video-chat#known-issues), but the overall Integration of Flutter and Vonage Video is quite smooth. Even without a native Flutter package, it is possible to quickly create build a fully-fledged Flutter app that utilizes Vonage Video mobile SDKs under the hood and runs on Android and iOS devices.
