@@ -3,7 +3,7 @@ title: Nick Anderson Joins the Vonage Technical Writing Team
 description: Nick Anderson is a technical writer at Vonage based in Sussex, UK.
   Here he introduces himself, his interests, and his background.
 thumbnail: /content/blog/nick-anderson-joins-the-vonage-technical-writing-team/nick-anderson.png
-author: julia
+author: nick-anderson
 published: true
 published_at: 2021-06-25T09:56:33.132Z
 updated_at: 2021-06-15T10:06:40.642Z
