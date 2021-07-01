@@ -2,7 +2,7 @@
 title: How to Send SMS Messages With Java
 description: Send SMS messages with Java and the Vonage Java SDK. This tutorial
   uses JDK 16 and Gradle 7.1
-thumbnail: /content/blog/send-sms-messages-with-java-dr/sms-send-java.png
+thumbnail: /content/blog/how-to-send-sms-messages-with-java/java_sms.png
 author: judy2k
 published: true
 published_at: 2017-05-03T13:00:27.000Z
@@ -139,8 +139,6 @@ Once you've done that, save and run `gradle run` again. You should see something
 
 > Note: In some countries (US), `VONAGE_BRAND_NAME` has to be one of your Vonage virtual numbers. In other countries (UK), you're free to pick an alphanumeric string value—for example, your brand name like AcmeInc. Read about country-specific SMS features on the [dev portal](https://developer.vonage.com/messaging/sms/guides/country-specific-features).
 
-You've just learned how to send an SMS message with Vonage! 
-You can either stop here or, for bonus points, learn how to [build a Web service around it](ADD_LINK_HERE)!
 
 ## References
 
