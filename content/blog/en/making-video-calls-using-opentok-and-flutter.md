@@ -39,7 +39,7 @@ Under the hood, this Flutter application will use [Android Vonage Video SDK](htt
 
 Platform (Android, iOS) native code communicates with Flutter by using Flutter [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html), that uses method calls. MethodChannel serves as a bridge to send messages between Flutter and native code (added to the native Android project and native iOS project). This allows us to log-in the user and set up the video session to make a video call:  
 
-![Flutter application flow](/content/blog/making-video-calls-using-opentok-and-flutter/flutter-application.png)
+![Flutter application flow](/content/blog/making-video-calls-using-vonage-video-and-flutter/flutter-application.png)
 
 Flutter can send messages to the native (Android / iOS) part of the app and the native part of the app can send a message back to Flutter. Flutter calls the `initSession` method and passes the `apiKey`, `sessionId`, and `token` to native code to start a Vonage Video session. The native code will inform the Flutter part of the app about a successful login (or error) and the Flutter-side code will update the UI.
 
