@@ -19,7 +19,7 @@ canonical: ""
 
 In the previous articles, you have learned [how to send SMS messages](https://www.nexmo.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/), also [how to consume a webhook for incoming SMS](https://www.nexmo.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr/) with Node.js. In this article, you will learn how to find out if the SMS messages sent from your virtual number has been delivered.
 
-<img style="width: 32px;height: 32px" src="https://www.nexmo.com/wp-content/uploads/2016/10/GitHub-Mark-64px.png" alt="GitHub icon" /> **View** **[the source code on GitHub](https://github.com/nexmo-community/nexmo-node-quickstart/blob/4c6f00d0e4a50f7e2c68f38f132996829d792bbe/sms/dlr-express.js)**
+**View** **[the source code on GitHub](https://github.com/nexmo-community/nexmo-node-quickstart/blob/4c6f00d0e4a50f7e2c68f38f132996829d792bbe/sms/dlr-express.js)**
 
 ## How Do You Know When Your SMS Message is Delivered?
 
@@ -27,7 +27,7 @@ When you send a message to a mobile phone number using Nexmo API from your virtu
 
 If you have set a webhook endpoint, Nexmo forwards this delivery receipt to it when the recipient’s mobile phone carrier returns a **Delivery Receipt (DLR)** to Nexmo to explain the delivery status of your message.
 
-![How Delivery Receipt (DLR) works - Nexmo](https://www.nexmo.com/wp-content/uploads/2016/11/diagram-dlr.png)
+![How Delivery Receipt (DLR) works](https://www.nexmo.com/wp-content/uploads/2016/11/diagram-dlr.png)
 
 ### Setting the Endpoint with Nexmo
 
@@ -35,8 +35,7 @@ When you are developing, I recommend you should use a service like [ngrok](https
 
 Once you set up with ngrok and get a forwarding URL, sign in to your Nexmo account, and go to [Settings](https://dashboard.nexmo.com/settings). Scroll all way down to "API Settings" and fill out the **Callback URL for Delivery Receipt** with the ngrok URL with a route, let’s call it receipt, and save.
 
-
-![Nexmo Setting for ngrok Webhook endpoints](https://www.nexmo.com/wp-content/uploads/2016/11/webhook-delivery-endpoint.png)
+![Setting for ngrok Webhook endpoints](https://www.nexmo.com/wp-content/uploads/2016/11/webhook-delivery-endpoint.png)
 
 Now, every time you send a message from your virtual number, the delivery receipt webhook call will be made that URL. Now, let’s write some code with Node.js and Express!
 
@@ -97,8 +96,7 @@ You can find out more about the info on the [API Reference](https://docs-ea.nexm
 
 ## References
 
-* Nexmo SMS REST API [https://docs.nexmo.com/messaging/sms-api](https://docs.nexmo.com/messaging/sms-api)
-* Nexmo Webhooks [https://docs.nexmo.com/messaging/setup-callbacks](https://docs.nexmo.com/messaging/setup-callbacks)
+* Nexmo SMS REST API <https://docs.nexmo.com/messaging/sms-api>
+* Nexmo Webhooks <https://docs.nexmo.com/messaging/setup-callbacks>
 * Nexmo API Reference - [Delivery Receipt (DLR) ](https://docs-ea.nexmo.com/messaging/sms-api/api-reference#delivery_receipt)
-* Ngrok [https://ngrok.com/](https://ngrok.com/) 
-
+* Ngrok <https://ngrok.com/>
