@@ -109,7 +109,7 @@ Note that the method signature determines which type of message the method will 
 
 ### Create a Client to Test Your Application
 
-You will need to create a client to test your WebSocket server. You will want to test sending both text and binary messages. This can be accomplished with simple appliation written in HTML and JavaScript.
+You will need to create a client to test your WebSocket server. You will want to test sending both text and binary messages. This can be accomplished with a simple application written in HTML and JavaScript.
 
 Create the `webapp` folder inside of the `src/main` folder.
 
@@ -223,7 +223,7 @@ Note that, by default, Gretty will use Jetty as the servlet container. This same
 
 ### Start the Application
 
-Your WebSocket server is now complete. Start your application using the `gradle appRun` command inside of the application's directory. Leave the terminal window open and open. 
+Your WebSocket server is now complete. Start your application using the `gradle appRun` command inside of the application's directory. Leave the terminal window open. 
 
 You can access your application by opening [http://localhost:8080](http://localhost:8080) URL in the browser.You will be greeted with the following page:
 
