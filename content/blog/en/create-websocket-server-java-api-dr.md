@@ -199,7 +199,7 @@ Add the following to `index.html` inside of the `src/main/webapp` folder:
 
 Unlike [Creating a WebSocket Server with Spring Boot](https://www.nexmo.com/blog/2018/10/08/create-websocket-server-spring-boot-dr/), or [Creating a WebSocket Server with the Spark Framework](https://www.nexmo.com/blog/2018/10/15/create-websocket-server-spark-framework-dr), there is initially no embedded server to run your application.
 
-The [Gretty](http://akhikhl.github.io/gretty-doc/Getting-started.html) plugin for Gradle can be used to embed a variety of containers.
+The [Gretty](https://gretty-gradle-plugin.github.io/gretty-doc/Getting-started.html) plugin for Gradle can be used to embed a variety of containers.
 
 First, apply the Gretty plugin to `build.gradle` file by adding this to your `plugins` block:
 
