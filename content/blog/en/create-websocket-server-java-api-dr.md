@@ -1,17 +1,17 @@
 ---
-title: Creating a WebSocket Server with the Java API for WebSockets
-description: In this tutorial, you will learn how to create a WebSocket server
-  using the Java API for WebSockets and the Spark Framework, which can receive
-  both binary and text messages.
+title: Creating a Websocket Server With the Java API for Websockets
+description: Learn how to create a WebSocket server using the Java API for
+  WebSockets, which can receive both binary and text messages.
 thumbnail: /content/blog/create-websocket-server-java-api-dr/websocket-server-java-api.png
 author: cr0wst
 published: true
 published_at: 2018-10-22T14:54:57.000Z
-updated_at: 2020-10-27T08:53:09.102Z
+updated_at: 2021-07-05T10:41:20.014Z
 category: tutorial
 tags:
   - java
   - websockets
+  - tomcat
 comments: true
 redirect: ""
 canonical: ""
