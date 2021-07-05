@@ -1,7 +1,8 @@
 ---
 title: Creating a Websocket Server With the Java API for Websockets
-description: Learn how to create a WebSocket server using the Java API for
-  WebSockets, which can receive both binary and text messages.
+description: Learn how to create a WebSocket server that can receive both binary
+  and text messages, using the Java API for WebSockets, Gradle, Gretty and
+  Tomcat.
 thumbnail: /content/blog/creating-a-websocket-server-with-the-java-api-for-websockets/websocket-server_1200x600.png
 author: cr0wst
 published: true
