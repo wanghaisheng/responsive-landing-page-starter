@@ -29,13 +29,13 @@ You will be using [Gradle](https://gradle.org/) to manage your dependencies and 
 
 Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 15 in this tutorial.
 
-> NOTE: Currently Java 16 is not supported by Gradle.
+> NOTE: Currently Java 16 is not supported by the Gretty plug-in we're about to use.
 
 ## The Java API for WebSockets
 
 Introduced in Java EE 7, the [Java API for WebSockets](https://www.oracle.com/technetwork/articles/java/jsr356-1937161.html), or JSR 356 is a specification that Java developers can use in order to integrate WebSockets into their applications.
 
-It allows developers to write their WebSocket-based application completely independent of their container's implementation. For this guide you will be using [Tomcat](http://tomcat.apache.org/). However, because you will be using JSR 356, any other [web container](https://en.wikipedia.org/wiki/Web_container) which supports Java EE 7 should work.
+It allows developers to write their WebSocket-based application completely independent of their container's implementation. For this guide you will be using [Tomcat](http://tomcat.apache.org/). However, because you will be using JSR 356, any other [web container](https://en.wikipedia.org/wiki/Web_container) which supports Java EE 7 or later should work.
 
 ### Create the Project
 
@@ -197,7 +197,7 @@ Add the following to `index.html` inside of the `src/main/webapp` folder:
 
 ### Embed and Configure Tomcat
 
-Unlike [Creating a WebSocket Server with Spring Boot](https://www.nexmo.com/blog/2018/10/08/create-websocket-server-spring-boot-dr/), or [Creating a WebSocket Server with the Spark Framework](https://www.nexmo.com/blog/2018/10/15/create-websocket-server-spark-framework-dr), there is initially no embedded server to run your application.
+Unlike [Creating a WebSocket Server with Spring Boot](https://learn.vonage.com/blog/2018/10/08/create-websocket-server-spring-boot-dr/), or [Creating a WebSocket Server with the Spark Framework](https://learn.vonage.com/blog/2018/10/15/create-websocket-server-spark-framework-dr/), there is initially no embedded server to run your application.
 
 The [Gretty](https://gretty-gradle-plugin.github.io/gretty-doc/Getting-started.html) plugin for Gradle can be used to embed a variety of containers.
 
