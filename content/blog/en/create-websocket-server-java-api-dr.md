@@ -2,7 +2,7 @@
 title: Creating a Websocket Server With the Java API for Websockets
 description: Learn how to create a WebSocket server using the Java API for
   WebSockets, which can receive both binary and text messages.
-thumbnail: /content/blog/create-websocket-server-java-api-dr/websocket-server-java-api.png
+thumbnail: /content/blog/creating-a-websocket-server-with-the-java-api-for-websockets/websocket-server_1200x600.png
 author: cr0wst
 published: true
 published_at: 2018-10-22T14:54:57.000Z
@@ -17,7 +17,6 @@ redirect: ""
 canonical: ""
 outdated: false
 ---
-
 [WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a protocol which enables communication between the server and the client (usually the browser or mobile application). It has an advantage over RESTful HTTP because communications are both bi-directional and real-time. This allows for the server to notify the client at any time instead of the client polling on a regular interval for updates.
 
 In this series of posts, I'm going to show you three different ways to create a WebSocket server in Java using [Spring Boot](http://spring.io/projects/spring-boot), the [Spark Framework](http://sparkjava.com/),  and the [Java API for WebSockets](https://www.oracle.com/technetwork/articles/java/jsr356-1937161.html).
@@ -225,15 +224,15 @@ Note that, by default, Gretty will use Jetty as the servlet container. This same
 
 Your WebSocket server is now complete. Start your application using the `gradle appRun` command inside of the application's directory. Leave the terminal window open. 
 
-You can access your application by opening [http://localhost:8080](http://localhost:8080) URL in the browser.You will be greeted with the following page:
+You can access your application by opening <http://localhost:8080> URL in the browser.You will be greeted with the following page:
 
-![Sample JavaScript-enabled client for testing the WebSocket server](/content/blog/creating-a-websocket-server-with-the-java-api-for-websockets/2018-10-01-13-38-05.png "Sample JavaScript-enabled client for testing the WebSocket server")
+![Sample JavaScript-enabled client for testing the WebSocket server](/content/blog/creating-a-websocket-server-with-the-java-api-for-websockets/screenshot-2021-06-24-at-22.33.33.png "Sample JavaScript-enabled client for testing the WebSocket server")
 
 The "connected" message indicates that the JavaScript client was able to make a connection.
 
 Try sending a text message by typing into the input field and clicking on the send button. Also try uploading an image. In both instances, you should see the same message and image echoed back.
 
-![Sample JavaScript-enabled client showing a text and binary message echoed back.](/content/blog/creating-a-websocket-server-with-the-java-api-for-websockets/2018-10-01-14-23-40.png "Sample JavaScript-enabled client showing a text and binary message echoed back.")
+![Sample JavaScript-enabled client showing a text and binary message echoed back.](/content/blog/creating-a-websocket-server-with-the-java-api-for-websockets/screenshot-2021-06-24-at-22.52.15.png "Sample JavaScript-enabled client showing a text and binary message echoed back.")
 
 ## Conclusion
 
