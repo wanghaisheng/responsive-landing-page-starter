@@ -2,6 +2,7 @@
 title: "Making Video Calls Using Vonage Video and Flutter "
 description: Let's take a closer look at a Vonage Video Flutter app that allows
   us to make video calls
+thumbnail: /content/blog/making-video-calls-using-vonage-video-and-flutter/flutter_videocall_1200x600.png
 author: igor-wojda
 published: true
 published_at: 2021-07-06T15:06:53.931Z
