@@ -27,6 +27,8 @@ In this tutorial, you will use [ShazamKit](https://developer.apple.com/documenta
 * Cocoapods to install the Vonage Client SDK for iOS.
 * Our Command Line Interface. You can install it with npm install nexmo-cli@beta -g.
 
+<sign-up></sign-up>
+
 ## The Starter Project
 
 This tutorial will be building on top of the ["Creating a chat app"](https://developer.nexmo.com/client-sdk/tutorials/in-app-messaging/introduction/swift) project from the Vonage developer portal. This tutorial will start from cloning the finished project from GitHub, but if you are not familiar with using the Vonage Client SDK for iOS to build a chat app, you can start with the tutorial. If you follow the tutorial, you can skip ahead to the enable ShazamKit section.
