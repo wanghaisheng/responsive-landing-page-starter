@@ -109,14 +109,14 @@ Next, visit the [identifiers section](http://developer.apple.com/account/resourc
 
 ## Microphone Permissions
 
-To detect the music being played, you will need to access the device's microphone, which requires permission to do so. Your project contains an Info.plist file containing metadata for the app - you will find the file inside the AppToAppChat group.
+To detect the music being played, you will need to access the device's microphone, which requires your permission. Your project contains an `Info.plist` file containing metadata for the app–you will find the file inside the AppToAppChat group.
 
-A new entry in the Info.plist file is required:
+A new entry in the `Info.plist` file is required:
 
 1. Hover your mouse over the last entry in the list and click the little + button that appears.
 2. From the dropdown list, pick `Privacy - Microphone Usage Description` and add `To detect music with Shazam` for its value.
 
-Your Info.plist should look like this:
+Your `Info.plist` should look like this:
 
 ![Info.plist after adding microphone permissions](/content/blog/detecting-music-with-shazamkit/permissions.png)
 
@@ -176,9 +176,9 @@ func startAnalysingAudio() {
 }
 ```
 
-This function uses [`AVAudioEngine`](https://developer.apple.com/documentation/avfaudio/avaudioengine) to access the input of the microphone. `AVAudioEngine` is a robust framework that allows you to manipulate audio by plugging in/chaining node objects. You are only interested in the output, bus 0, of the `inputNode` for this app. The `installTap` function allows you to observe the output and gives you access to an `AVAudioNodeTapBlock`, which is a typealias for an `AVAudioPCMBuffer` and `AVAudioTime` tuple. Both the buffer and time are then passed along to the `matchStreamingBuffer` function on the `SHSession`, which then tries to match any music playing to the Shazam Catalogue. 
+This function uses [`AVAudioEngine`](https://developer.apple.com/documentation/avfaudio/avaudioengine) to access the input of the microphone. `AVAudioEngine` is a robust framework that allows you to manipulate audio by plugging in/chaining node objects. You are only interested in the output, `bus 0`, of the `inputNode` for this app. The `installTap` function allows you to observe the output and gives you access to an `AVAudioNodeTapBlock`, which is a typealias for an `AVAudioPCMBuffer` and `AVAudioTime` tuple. Both the buffer and time are then passed along to the `matchStreamingBuffer` function on the `SHSession`, which then tries to match any music playing to the Shazam Catalogue. 
 
-Inversely, you need to add a function called `stopAnalysingAudio` which will safely stop observing the input:
+To end the process, you need to add a function called `stopAnalysingAudio` which will safely stop observing the input:
 
 ```swift
 func stopAnalysingAudio() {
@@ -242,10 +242,10 @@ The matches come back as an array with varying confidence levels, but you will t
 
 ## Try it out
 
-Build and Run (CMD + R) the project onto your iOS device and also in the simulator. Log into a different user on each device. If you play some music in the background, the physical iOS device will pass the audio buffer to ShazamKit. If a song matches the Shazam catalogue, a message will be sent to the chat. 
+Build and Run (CMD + R) the project on your iOS device and also in the simulator. Log in with a different user on each device. If you play some music in the background, the physical iOS device will pass the audio buffer to ShazamKit. If a song matches the Shazam catalogue, a message will be sent to the chat. 
 
 ![Chat showing a song being matched](/content/blog/detecting-music-with-shazamkit/chat.png)
 
 ## What Next?
 
-You can find the completed project on [GitHub](https://github.com/nexmo-community/swift-app-to-app-shazamkit). You can do a lot more with the Client SDK, learn more about the Client SDK on [developer.nexmo.com](https://developer.nexmo.com/client-sdk/overview) and ShazamKit on [developer.apple.com](https://developer.apple.com/documentation/shazamkit)
+You can find the completed project on [GitHub](https://github.com/nexmo-community/swift-app-to-app-shazamkit). You can do a lot more with the Client SDK. Learn more about the Client SDK on [developer.nexmo.com](https://developer.nexmo.com/client-sdk/overview) and ShazamKit on [developer.apple.com](https://developer.apple.com/documentation/shazamkit)
