@@ -107,7 +107,7 @@ Next, visit the [identifiers section](http://developer.apple.com/account/resourc
 
 ## Detect Music
 
-## Microphone Permissions
+### Microphone Permissions
 
 To detect the music being played, you will need to access the device's microphone, which requires your permission. Your project contains an `Info.plist` file containing metadata for the app–you will find the file inside the AppToAppChat group.
 
