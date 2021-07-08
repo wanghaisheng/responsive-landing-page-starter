@@ -2,9 +2,10 @@
 title: Detecting Music With ShazamKit
 description: In this tutorial, you will use ShazamKit to detect music playing
   and send it as a message to a chat with the Vonage Client SDK for iOS.
+thumbnail: /content/blog/detecting-music-with-shazamkit/shazamkit_musicdetection_1200x600.png
 author: abdul-ajetunmobi
 published: true
-published_at: 2021-07-01T16:35:11.080Z
+published_at: 2021-07-08T09:49:47.601Z
 updated_at: 2021-07-01T16:35:11.108Z
 category: tutorial
 tags:
