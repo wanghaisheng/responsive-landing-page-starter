@@ -61,7 +61,7 @@ conversation.getMember("MEM-id").then((member) => {
 });
 ```
 
-To retrieve your own Member information in the Conversation, there is now `getMyMember()`.
+In version 8, you can easily get the local user's Member information in the Conversation from the new `getMyMember()`.
 
 ```
 conversation.getMyMember().then((member) => {
