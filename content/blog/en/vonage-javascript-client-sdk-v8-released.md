@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The Vonage JavaScript Client SDK recently published version 8.0. With the [release](https://developer.nexmo.com/client-sdk/sdk-documentation/javascript/release-notes), there are a few changes and additions that will be covered in this blog post.
+The Vonage JavaScript Client SDK recently published version 8.0. The [release](https://developer.nexmo.com/client-sdk/sdk-documentation/javascript/release-notes) has a few changes and additions that will be covered in this blog post.
 
 ## Breaking Changes
 
@@ -27,37 +27,37 @@ There are a couple of changes in what and how data is retrieved. Emitted events 
 conversation.on("any:event", ({memberId, userId, userName, displayName, imageUrl, customData}, event) => {});
 ```
 
-The `Conversation.members` Map is being deprecated, but don’t worry, the following new functions will be able to get the same data. 
+The `Conversation.members` Map is being deprecated, but don’t worry; the following new functions will be able to get the same data. 
 
 ## New functions
 
 Version 8 sees the addition of some new [functions](https://developer.nexmo.com/client-sdk/in-app-messaging/guides/get-member-s-information/javascript).
 
-To get a paginated list of Members of the Conversation, there is `getMembers()`. Just like with other paginated lists (Events and Conversations), parameters can be set to query the service and get the list of Members.
+There is `getMembers()` to get a paginated list of Members of the Conversation. Like with other paginated lists (Events and Conversations), parameters can be set to query the service and get the list of Members.
 
 ```
 const params = {
-    order: "desc", // default "asc"
-    page_size: 100 // default 10
+    order: "desc", // default "asc"
+    page_size: 100 // default 10
 }
 conversation.getMembers(params).then((members_page) => {
-    members_page.items.forEach(member => {
-        console.log("Member: ", member);
-    })
+    members_page.items.forEach(member => {
+        console.log("Member: ", member);
+    })
 }).catch((error) => {
-    console.error("error getting the members ", error);
+    console.error("error getting the members ", error);
 });
 ```
 
 Previously, `Conversation.members.forEach` would have been used to get a list of Members.
 
-To get the information for a particular Member `conversation.members.get("MEM-id")` would have been used. In the JavaScript Client SDK version 8 and going forward, there is the `getMember("MEM-id")` function. Pass in the id of the Member and their Member Object will be returned.
+To get the information for a particular Member `conversation.members.get("MEM-id")` would have been used. In the JavaScript Client SDK version 8 and from now on, the `getMember("MEM-id")` function takes its place. Pass in the id of the Member, and their Member Object will be returned.
 
 ```
 conversation.getMember("MEM-id").then((member) => {
-    console.log("Member: ", member);
+    console.log("Member: ", member);
 }).catch((error) => {
-    console.error("error getting member", error);
+    console.error("error getting member", error);
 });
 ```
 
@@ -65,9 +65,9 @@ In version 8, you can easily get the local user's Member information in the Conv
 
 ```
 conversation.getMyMember().then((member) => {
-    console.log("Member: ", member);
+    console.log("Member: ", member);
 }).catch((error) => {
-    console.error("error getting my member", error);
+    console.error("error getting my member", error);
 });
 ```
 
