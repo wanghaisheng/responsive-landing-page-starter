@@ -23,7 +23,7 @@ replacement_url: ""
 
 Wait no more! We’ve been working hard on improving interactive broadcasts with more participant streams (up to 5,000 REAL TIME participants!), as well as improvements to on screen layouts and overall video quality of interactive broadcasts and recordings. 
 
-The Vonage Video API has long offered the ability to compose video layouts for broadcasting and recording in real-time as the video conversation occurs, rather than relaying the stream to a post-processing service with a much higher latency and lacking interactivity.. 
+The Vonage Video API has long offered the ability to compose video layouts for broadcasting and recording in real-time as the video conversation occurs, rather than relaying the stream to a post-processing service with a much higher latency and lacking interactivity.
 
 The real-time [interactive broadcasts](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) combined with composed cloud [recordings](https://tokbox.com/developer/guides/archiving/) has been a favorite use case on virtual events and education platforms last year.
 
