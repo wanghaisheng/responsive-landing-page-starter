@@ -83,7 +83,7 @@ nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/u
 
 ### Clone the iOS Project
 
-To get a local copy of the iOS project your terminal, enter `git clone git@github.com:nexmo-community/client-sdk-swift-voice-phone-to-app.git` in your terminal. Change directory into the `client-sdk-swift-voice-phone-to-app` folder by using `cd client-sdk-swift-voice-phone-to-app`. Then make sure that the dependencies of the project are up to date. You can do so by running `pod install`. Once complete, you can open the Xcode project by running using `open PhoneToApp.xcworkspace`.
+To get a local copy of the iOS project your terminal, enter `git clone git@github.com:nexmo-community/client-sdk-tutorials.git` in your terminal. Change directory into the `PhoneToApp` folder by using `cd client-sdk-tutorials/phone-to-app-swift/PhoneToApp`. Then make sure that the dependencies of the project are installed and up to date. You can do so by running `pod install`. Once complete, you can open the Xcode project by running using `open PhoneToApp.xcworkspace`.
 
 ## Set up Push Certificates
 
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
     
     func displayIncomingCallAlert(call: NXMCall) {
         var from = "Unknown"
-        if let otherParty = call.otherCallMembers.firstObject as? NXMCallMember {
+        if let otherParty = call.allMembers.first {
             from = otherParty.channel?.from.data ?? "Unknown"
         }
         let alert = UIAlertController(title: "Incoming call from", message: from, preferredStyle: .alert)
@@ -602,7 +602,7 @@ extension ProviderDelegate: NXMCallDelegate {
         hangup()
     }
     
-    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, with status: NXMCallMemberStatus) {
+    func call(_ call: NXMCall, didUpdate callMember: NXMMember, with status: NXMCallMemberStatus) {
         switch status {
         case .cancelled, .failed, .timeout, .rejected, .completed:
             hangup()
@@ -611,7 +611,7 @@ extension ProviderDelegate: NXMCallDelegate {
         }
     }
     
-    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, isMuted muted: Bool) {}
+    func call(_ call: NXMCall, didUpdate callMember: NXMMember, isMuted muted: Bool) {}
 
     private func hangup() {
         if let uuid = activeCall?.uuid {
