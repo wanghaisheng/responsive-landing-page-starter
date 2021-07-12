@@ -1,8 +1,7 @@
 ---
-title: "Video API: Better Interactive Broadcasts and Recordings"
-description: Accommodate larger and longer sessions than ever before! Our
-  archiving capabilities have just increased with more participants streams,
-  better layouts and longer recordings.
+title: "Video API: Making Interactive Broadcasts and Recordings Better for You"
+description: Vonage multiparty video reaches 5,000 live interactive
+  participants, improving interactive broadcast quality, layouts and recording
 thumbnail: /content/blog/video-api-better-interactive-broadcasts-and-recordings/videoapi_updates_1200x600-1-.png
 author: jon-montana
 published: true
@@ -12,6 +11,7 @@ category: release
 tags:
   - video-api
   - release
+  - multiparty
 comments: true
 spotlight: false
 redirect: ""
@@ -19,28 +19,19 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-## Improving Interactive Broadcast With More Participants Streams, Better Layouts and Longer Recordings
+## Vonage multiparty video reaches 5,000 live interactive participants, improving interactive broadcast quality, layouts and recording
 
-At Vonage, our Video API has long offered the ability to compose video layouts for broadcasting and recording in real-time as the video conversation occurs, rather than a post-processing service that attempts to recreate the conversation later. The two go together - broadcasting lets you share live video sessions with many viewers while recording (aka archiving) preserves the valuable video content for future replay. 
+Wait no more! We’ve been working hard on improving interactive broadcasts with more participant streams (up to 5,000 REAL TIME participants!), as well as improvements to on screen layouts and overall video quality of interactive broadcasts and recordings. 
 
-Our technology offers real-time [interactive broadcasts](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) and composed cloud [recordings](https://tokbox.com/developer/guides/archiving/) of video sessions with video layouts that adaptively change based on published streams rather than requiring post-processing. Our APIs allow users to [customize the video layout](https://tokbox.com/developer/guides/archiving/layout-control.html) and even dynamically adjust the video layout [while recording](https://tokbox.com/developer/guides/archiving/layout-control.html#changing-layout-type) or [broadcasting](https://tokbox.com/developer/guides/broadcast/live-streaming/#changing-layout-type).    
+The Vonage Video API has long offered the ability to compose video layouts for broadcasting and recording in real-time as the video conversation occurs, rather than relaying the stream to a post-processing service with a much higher latency and lacking interactivity.
 
-When it comes to privacy and security concerns related to recording, we also offer [encryption features](https://tokbox.com/developer/guides/archiving/opentok-encryption.html) to ensure that your recorded data can be stored securely, maintain privacy and comply with regulations like GDPR. 
-
-Still, we continue to look to provide more recording and broadcast capability and flexibility to our developers. With this latest update, we have enhanced our broadcasting and recording capabilities by 
-
-* expanding the number of participants in composed broadcasts and recordings, 
-* increasing the number of video streams in the layout,
-* adapting layouts for mobile device orientations,
-* providing additional layouts that prioritize screenshare streams for presentations, 
-* improving the audio fidelity of the composed streams, and 
-* expanding the length of recordings.
+The real-time [interactive broadcasts](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) combined with composed cloud [recordings](https://tokbox.com/developer/guides/archiving/) has been a favorite use case on virtual events and education platforms last year.
 
 ## Broadcast Interactive
 
 Virtual events companies grew like mushrooms last year as organizations needed smart ways to securely connect people with events and enable them to take part, whether in person or virtually. A virtual event typically combines a live stream with audience participation. This interactive element helps maximize opportunities for member engagement and meeting attendance, whether members are attending in person or online.
 
-Last year demonstrated that anyone could benefit from attending a virtual event. Remote events, when done thoughtfully, can be very effective. The purpose-built experience allows for specialized stage environments with text-based audience interactions like Q&A and voting, while the breakout rooms allow for networking and open exchange of ideas.  
+2020 demonstrated that anyone could benefit from attending a virtual event. Remote events, when done thoughtfully, can be very effective. The purpose-built experience allows for specialized stage environments with text-based audience interactions like Q&A and voting, while the breakout rooms allow for networking and open exchange of ideas.  
 
 The move to virtual services during the last year has necessitated rapid digital transformation. Virtual town halls became one of the trademark features of corporate and civic organizations attempting to stay in touch with their people.
 
@@ -54,13 +45,22 @@ That is our practice here at Vonage, and we are not alone. Nearly 11% of  [Von
 
 ![Vonage Video API Archive Minutes](/content/blog/video-api-better-interactive-broadcasts-and-recordings/vonage_video_recording_minutes.png "Vonage Video API Archive Minutes")
 
-## These Times... They Call for *More*
+## These Times, They Call for... *More*
 
 As with the rest of our lives, the global pandemic impacted our use of video, be it broadcasting or recording. As more of your customers are joining video sessions, these sessions got longer with more participants and with various devices - the recordings and broadcasts needed to keep up, too! The world our platform was initially designed for has changed, and we threw ourselves into identifying the features most needed to keep up. 
 
-### More Video and Audio Participant Streams
+### More Interactive Participants
 
-In our recent platform update, we increased the maximum number of video and audio streams in [a composed recording](https://tokbox.com/developer/guides/archiving/#individual-stream-and-composed-archives) or [live interactive broadcast](https://tokbox.com/developer/guides/broadcast/live-streaming/) for all customers. To accommodate more video participants and video streams in the composed layout, we increased the maximum number of supported video streams from 9 to 16. Similarly, we increased the number of audio-only participants from 9 to 50 total participants in recordings and broadcasts.
+In a [live interactive video broadcast](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The recent platform update increased the number of live interactive participants supported in a video broadcast session, up to 5,000 - depending on the number of active publishers in the session.
+
+For example, when there are 1 or 2 published streams in the session, up to 5,000 participants can view both of these published streams with real-time latency as live broadcast participants. Similarly, when there are 3 or 4 published streams in the session, up to 4,000 participants can view all 3 or 4 published streams.
+
+Learn more about the new limits and how to build your app to support interactive broadcasts in our [Live interactive broadcasts developer guide](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/).
+
+
+### More Video and Audio Participant in Composed Views
+
+In a recent platform update, we increased the maximum number of video and audio streams viewable in [a composed recording](https://tokbox.com/developer/guides/archiving/#individual-stream-and-composed-archives) or a [composed live streaming broadcast](https://tokbox.com/developer/guides/broadcast/live-streaming/) for all customers. To accommodate more video participants and video streams in the composed layout, we increased the maximum number of supported video streams from 9 to 16. Similarly, we increased the number of audio-only participants from 9 to 50 total participants in recordings and broadcasts.
 
 For example, our Best Fit layout type will automatically increase to a 4x4 grid layout, and customers have the option of customizing it to display up to 16 video streams. For audio, the first 50 audio streams published to the session will be included in the recordings and broadcasts. 
 
@@ -70,11 +70,13 @@ For example, our Best Fit layout type will automatically increase to a 4x4 grid 
 
 The [Vonage Video Recording API](https://tokbox.com/developer/guides/archiving/) has been updated to double the maximum video recording time to 240min so users can record longer meetings and video sessions. Automatic recording sessions will restart recording at 4hr length files. Additionally, audio in the recorded files and broadcasts is now recorded at a higher bitrate, MP4 files encoded with AAC at 128kbps, allowing higher fidelity audio to benefit application use cases.  
 
-![ Picture-in-Picture, Vertical Presentation and Horizontal Presentation Layouts](/content/blog/video-api-better-interactive-broadcasts-and-recordings/screenshot-2021-05-10-at-22.33.29.png " Picture-in-Picture, Vertical Presentation and Horizontal Presentation Layouts")
-
 ### Enhanced Screen Share Layouts and Stream Prioritization
 
-Our new [Screen Share Layouts](https://tokbox.com/developer/guides/archive-broadcast-layout/#screen-sharing-layouts) prioritize screenshare streams so that the user’s presentation or content share always takes precedence in the recording or broadcast. Customers can use this feature and [Layout Stream Prioritization Rules](https://tokbox.com/developer/guides/archive-broadcast-layout/#stream-prioritization-rules) to make sure presentations, screen shares, and selected streams get priority in recordings and broadcasts. 
+The Video API allows users the flexibility to [customize the video layout](https://tokbox.com/developer/guides/archiving/layout-control.html) and even dynamically change the video layout while [recording](https://tokbox.com/developer/guides/archiving/layout-control.html#changing-layout-type) or [broadcasting](https://tokbox.com/developer/guides/broadcast/live-streaming/#changing-layout-type).  
+
+The new [Screen Share Layouts](https://tokbox.com/developer/guides/archive-broadcast-layout/#screen-sharing-layouts) prioritize screenshare streams so that the user’s presentation or content share always takes precedence in the recording or broadcast. Customers can use this feature and [Layout Stream Prioritization Rules](https://tokbox.com/developer/guides/archive-broadcast-layout/#stream-prioritization-rules) to make sure presentations, screen shares, and selected streams get priority in recordings and broadcasts. 
+
+![ Picture-in-Picture, Vertical Presentation and Horizontal Presentation Layouts](/content/blog/video-api-better-interactive-broadcasts-and-recordings/screenshot-2021-05-10-at-22.33.29.png " Picture-in-Picture, Vertical Presentation and Horizontal Presentation Layouts")
 
 > Developer Guide: Learn how to build a [JS application for multiple screen share streams](https://learn.vonage.com/blog/2021/03/11/share-screens-together-with-your-friends-and-co-workers/).
 
@@ -86,10 +88,14 @@ As people adapt to their remote environments, we also saw the need to support ve
 
 ### Cloud Recording and Broadcast Quality
 
-Lastly, we also updated our video platform with a number of optimizations at our real-time cloud composition servers to improve video synchronization and resilience of real-time composed recordings and broadcasts under poor network conditions. These improvements ensure that sessions are recorded or live streamed properly, even when publishers find themselves in adverse network conditions.
+Lastly, we also updated our video platform with a number of optimizations at our real-time cloud composition servers to improve video synchronization and resilience of real-time composed recordings and broadcasts under poor network conditions. These improvements ensure that sessions are recorded or live streamed properly, even when publishers find themselves in adverse network conditions. (Learn more about our work on quality improvements and a [comparative benchmark VS our top competitors](https://www.vonage.com/about-us/vonage-stories/video-quality-webrtc-live-interactions-post-covid1/)).
+
+## Privacy, Please
+
+When it comes to video broadcasts and recordings, privacy and security related features may be required. Vonage Video API already comes with always-on encryption and other features designed to protect users' information. With [encryption](https://tokbox.com/developer/guides/archiving/opentok-encryption.html), customers can ensure that their recorded data can be stored securely to maintain user privacy and comply with regulations, like GDPR. Learn more about Vonage [Video API privacy architecture](https://www.vonage.com/communications-apis/video/video-api-privacy-architecture/) and how it protects your users and your content.
 
 ## Getting Started
 
-We are very excited to put the power of improved recording and broadcasting into the hands of our customers to ensure they can keep up with today’s communications demands. The features are already available in the [Vonage Video API](https://tokbox.com/account/) Standard and Enterprise environments so customers can gain immediate access to these improved capabilities. 
+We are very excited to put the power of improved broadcasting and recording into the hands of our customers to ensure they can keep up with today’s communications demands. The features are already available in the [Vonage Video API](https://tokbox.com/account/) Standard and Enterprise environments so customers can gain immediate access to these improved capabilities. 
 
-If you liked this Video API update, check out the latest in our [Client SDK 2.19 release](https://learn.vonage.com/blog/2021/03/26/announcing-the-vonage-video-client-sdk-version-2-19/), including specifying a video source, more audio processing controls, and much more!
+If you liked this Video API update, check out our [Client SDK 2.19 release](https://learn.vonage.com/blog/2021/03/26/announcing-the-vonage-video-client-sdk-version-2-19/), including specifying a video source, more audio processing controls, and much more!
