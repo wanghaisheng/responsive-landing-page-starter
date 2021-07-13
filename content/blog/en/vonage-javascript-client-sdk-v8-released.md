@@ -1,9 +1,10 @@
 ---
 title: Vonage JavaScript Client SDK v8 Released
 description: Vonage JavaScript Client SDK version 8 release updates and changes.
+thumbnail: /content/blog/vonage-javascript-client-sdk-v8-released/blog_sdk-updates_1200x600.png
 author: dwanehemmings
 published: true
-published_at: 2021-07-02T16:24:27.101Z
+published_at: 2021-07-13T09:10:46.769Z
 updated_at: 2021-07-02T16:24:27.131Z
 category: release
 tags:
