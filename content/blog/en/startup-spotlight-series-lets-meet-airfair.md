@@ -1,10 +1,10 @@
 ---
 title: "Startup Spotlight: Let's meet Airfair"
 description: Meet Paris-based startup Airfair as a part of Vonage Startup Spotlight series.
-thumbnail: /content/blog/startup-spotlight-series-lets-meet-airfair/startups_airfair_1200x600.png
+thumbnail: /content/blog/startup-spotlight-lets-meet-airfair/startups_airfair_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-07-13T12:14:30.595Z
+published_at: 2021-07-14T08:11:54.188Z
 updated_at: 2021-07-13T12:14:30.636Z
 category: startup
 tags:
@@ -17,11 +17,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Throughout the pandemic digital connectivity has played an increasingly important role in how we stay connected, which, for many, has increased the importance of online communities and events. 
+Throughout the pandemic, digital connectivity has played an increasingly important role in how we stay connected, which, for many, has increased the importance of online communities and events. 
 
 
 
-The global virtual events market size was valued by Grand View Research at $77.98 billion in 2019 and is now expected to grow at a compound annual growth rate (CAGR) of 23.2% from 2020 to 2027. While, recent research by the GovLab indicated that 3 out of 4 people believe that the most important community they're a part of operates online.
+The global virtual events market size was valued by Grand View Research at $77.98 billion in 2019 and is now expected to grow at a compound annual growth rate (CAGR) of 23.2% from 2020 to 2027. While recent research by the GovLab indicated that 3 out of 4 people believe that the most important community they're a part of operates online.
 
 
 
