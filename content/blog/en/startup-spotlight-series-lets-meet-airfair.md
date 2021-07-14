@@ -1,5 +1,5 @@
 ---
-title: "Startup Spotlight Series: Let's meet Airfair"
+title: "Startup Spotlight: Let's meet Airfair"
 description: Meet Paris-based startup Airfair as a part of Vonage Startup Spotlight series.
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-airfair/startups_airfair_1200x600.png
 author: filippos-kyprianou
