@@ -4,7 +4,7 @@ description: Meet Paris-based startup Airfair as a part of Vonage Startup Spotli
 thumbnail: /content/blog/startup-spotlight-lets-meet-airfair/startups_airfair_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-07-14T08:11:54.188Z
+published_at: 2021-07-14T11:48:54.773Z
 updated_at: 2021-07-13T12:14:30.636Z
 category: startup
 tags:
