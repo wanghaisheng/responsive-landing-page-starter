@@ -1,11 +1,12 @@
 ---
 title: Waiting Room and Pre-Call Best Practices With Vonage Video API
-description: This tutorial  will show you how to implement a waiting room (wait
+description: This tutorial will show you how to implement a waiting room (wait
   for the host to join). It also showcases best practices to improve the
   pre-call user experience.
+thumbnail: /content/blog/waiting-room-and-pre-call-best-practices-with-vonage-video-api/waitingroom_videoapi_1200x600.png
 author: javier-molina-sanz
 published: true
-published_at: 2021-07-13T08:36:45.054Z
+published_at: 2021-07-15T09:34:56.768Z
 updated_at: 2021-07-13T08:36:45.070Z
 category: tutorial
 tags:
