@@ -5,7 +5,7 @@ description: Learn how to build an SMS Web Service using JDK 11, Gradle 7.1,
 thumbnail: /content/blog/build-an-sms-web-service-with-java/sms-web_java_1200x600.png
 author: julia
 published: true
-published_at: 2021-07-08T20:43:27.831Z
+published_at: 2021-07-20T11:38:08.080Z
 updated_at: 2021-07-08T20:43:27.868Z
 category: tutorial
 tags:
