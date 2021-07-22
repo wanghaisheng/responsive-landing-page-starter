@@ -5,7 +5,7 @@ description: Learn how the Vonage Contact Center team moved to a self-service
 thumbnail: /content/blog/self-service-datastores/self-service-datastores_1200x600.png
 author: david-barham
 published: true
-published_at: 2021-07-14T16:11:54.086Z
+published_at: 2021-07-22T11:44:45.552Z
 updated_at: 2021-07-14T16:11:54.125Z
 category: engineering
 tags:
