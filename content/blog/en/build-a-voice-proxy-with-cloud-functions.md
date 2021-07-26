@@ -293,7 +293,7 @@ Congratulations! You've just built a proxy-calling service with one small Google
 
 Ready to take it further? Do you have a use case that requires call recording? Allow multiple numbers to use the service? Accept both speech and DTMF input?
 
-Have a look at the resources below and think about how you can expand on it. Let us know how you get on, and we'd love to hear your ideas!
+Have a look at the resources below and think about how you can expand on it. Let us know how you get on, and we'd love to hear your thoughts!
 
 ### Resources
 
