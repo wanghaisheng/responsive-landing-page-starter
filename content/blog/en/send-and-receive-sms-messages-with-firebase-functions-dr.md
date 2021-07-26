@@ -126,15 +126,18 @@ Calling `admin.initializeApp();` allows the functions to read and write to the F
 // This function will serve as the webhook for incoming SMS messages,
 // and will log the message into the Firebase Realtime Database
 exports.inboundSMS = functions.https.onRequest(async (req, res) => {
-  const params = Object.assign(req.query, req.body);
+  let params;
+  if (Object.keys(req.query).length === 0) {
+    params = req.body;
+  } else {
+    params = req.query;
+  }
   await admin.database().ref('/msgq').push(params);
   res.sendStatus(200);
 });
 ```
 
-The `inboundSMS` method listens for HTTPS requests - which is precisely what Vonage webhook needs. The Firebase Function will capture the `req.body` and send it to the `/msgq` object in the Real-Time Database as a log. 
-
-Since we are using `req.body`, the webhook will need to be a `POST Method`. If you'd prefer to (or you have to) use the `GET` method for Vonage webhooks, just replace it with `req.query`, and the GET method will work the same way.
+The `inboundSMS` method listens for HTTPS requests - which is precisely what Vonage webhook needs. The Firebase Function will capture the `req.body` in case it's a `POST Method` or the `req.query` in case it's a `GET Method`. It then send it to the `/msgq` object in the Real-Time Database as a log. 
 
 Now that you have some code written be sure to save your file an deploy the function to Firebase:
 
@@ -155,7 +158,7 @@ i functions: ensuring necessary APIs are enabled...
 i functions: preparing functions directory for uploading...
 i functions: packaged functions (38.78 KB) for uploading
 ✔ functions: functions folder uploaded successfully
-i functions: creating Node.js 8 function inboundSMS(us-central1)...
+i functions: creating Node.js 14 function inboundSMS(us-central1)...
 ✔ functions[inboundSMS(us-central1)]: Successful create operation.
 Function URL (inboundSMS): https://us-central1-vonage-project.cloudfunctions.net/inboundSMS
 
@@ -167,6 +170,10 @@ Project Console: https://console.firebase.google.com/project/vonage-project/over
 The vital piece from the output is `Function URL (inboundSMS)`. This URL is required to set up the webhook in Vonage, which you will do next.
 
 <sign-up number></sign-up>
+
+From the [Vonage dashboard settings](https://dashboard.nexmo.com/settings), make sure you are using the SMS API, choose `post` and and copy the output Function URL(inbound SMS) from the terminal console and paste it in the webhook on Vonage.
+
+![Settings](/content/blog/send-and-receive-sms-messages-with-firebase-functions/settings.png "Vonage Dashboard Settings")
 
 Grab your phone and send a message to the phone number. Open up the Firebase console and navigate to `database` page, and you should see something like this:
 
@@ -190,19 +197,17 @@ Next add dotenv to the dependency list.
 npm i dotenv --save
 ```
 
-Add the following environment variables to the Firebase config:
-
-```shell
-firebase functions:config:set vonage.apiKey="YOUR_KEY" vonage.apiSecret="YOUR_SECRET"
-```
-
 Create a `.env` file and add the environment variables in the `functions` directory:
 
 ```shell
 VONAGE_API_KEY=
 VONAGE_API_SECRET=
-VONAGE_FROM_NUMBER=
-VONAGE_TO_NUMBER=
+```
+
+You can either use dot env or add the following environment variables to the Firebase config:
+
+```shell
+firebase functions:config:set vonage.api_key="YOUR_KEY" vonage.api_secret="YOUR_SECRET"
 ```
 
 Next, open `index.js` add `@vonage/server-sdk` to the requirements at the top, and import the environment variables to initialize Vonage:
@@ -216,14 +221,17 @@ const Vonage = require('@vonage/server-sdk');
 
 admin.initializeApp();
 
+// If you are using .env
 const vonage = new Vonage({
   apiKey: process.env.VONAGE_API_KEY,
-  apiSecret: process.env.VONAGE_API_SECRET
+  apiSecret: process.env.VONAGE_API_SECRET,
 });
 
-const from = process.env.VONAGE_FROM_NUMBER;
-const to = process.env.VONAGE_TO_NUMBER;
-const text = 'A text message sent using the Vonage SMS API';
+// If you are using the Firebase Environment Variables
+const {
+  api_key,
+  api_secret
+} = functions.config().vonage;
 ```
 
 Now you can create the new function for Firebase to send the response:
@@ -231,26 +239,34 @@ Now you can create the new function for Firebase to send the response:
 ```javascript
 // This function listens for updates to the Firebase Realtime Database
 // and sends a message back to the original sender
-exports.sendSMS = functions.database.ref('/msgq/{pushId}')
-  .onCreate(async (snapshot) => {
+exports.sendSMS = functions.database
+  .ref('/msgq/{pushId}')
+  .onCreate(async (message) => {
+    const { msisdn, text, to } = message.val();
     const result = await new Promise((resolve, reject) => {
-      vonage.message.sendSms(from, to, text, (err, responseData) => {
+      vonage.message.sendSms(msisdn, to, `You sent the following text: ${text}`, (err, responseData) => {
         if (err) {
-          return reject(err);
+          return reject(new Error(err));
         } else {
-          if (responseData.messages[0]['status'] === "0") {
-            return resolve(`Message sent successfully: ${responseData.messages[0]['message-id']}`);
+          if (responseData.messages[0].status === '0') {
+            return resolve(
+              `Message sent successfully: ${responseData.messages[0]['message-id']}`
+            );
           } else {
-            return reject(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+            return reject(
+              new Error(
+                `Message failed with error: ${responseData.messages[0]['error-text']}`
+              )
+            );
           }
         }
       });
     });
-    return snapshot.ref.parent.child('result').set(result);
+    return message.ref.parent.child('result').set(result);
   });
 ```
 
-The new function will watch for new messages added to the `/msgq` database object. When triggered, the full Vonage object gets passed as `message`.  This object includes `msisdn`,  which is the originating phone number - yours in this case, and the `to` number, which is the Vonage virtual number you purchased. 
+The new function will watch for new messages added to the `/msgq` database object. When triggered, the full Vonage object gets passed as `message`. This object includes `msisdn`,  which is the originating phone number - yours in this case, and the `to` number, which is the Vonage virtual number you purchased. 
 
 With the phone numbers in hand, as well as the text message, you can now do any number of things. You can create a lookup table to respond with specific data based on the keyword, forward to another system, or in our case, send the original message.
 
@@ -260,7 +276,7 @@ With the phone numbers in hand, as well as the text message, you can now do any 
 firebase deploy --only functions
 ```
 
-Grab your phone, send another message, and then you should get a response back that looks something like `A text message sent using the Vonage SMS API`.
+Grab your phone, send another message, and then you should get a response back that looks something like `You sent the following text: A text message sent using the Vonage SMS API`.
 
 ## Wrap Up
 
