@@ -24,10 +24,10 @@ Voice Proxy—or masked calling—protects users' private details by providing a
 It's common practice with delivery and ridesharing services like Deliveroo and Uber, but it comes in handy in a variety of small business scenarios as well. 
 
 In this tutorial, we're going to build one of my favourite use cases: a virtual business phone.\
-We'll cover two scenarios:
+We'll cover two call directions:
 
 1. You're calling a client through your Vonage number: capture destination number via DTMF and connect.
-2. Someone else is calling: connect them to your personal number.  
+2. Someone else is calling your Vonage number: connect them to your personal number.  
 
 All we need to make it work is a virtual Vonage number and a small serverless function handling webhooks.
 
@@ -42,15 +42,16 @@ In this example, we're writing an HTTP function that gets triggered by HTTP requ
 ## Prerequisites
 
 * [Google Cloud Platform](https://console.cloud.google.com/) account—Sign up or log in with Google; you'll get $300 worth of credit to start with. This is a generous amount that should last you a while for testing and learning purposes.
-* Basic understanding of Node.js and Express.
-  <sign-up number></sign-up>
+* Basic understanding of [Node.js](https://nodejs.org/en/) and [Express](https://expressjs.com/).
+
+<sign-up number></sign-up>
 
 ## Set Up Google Cloud Functions
 
 ### Create a New Google Cloud Project
 
 First, create a new Project if you haven't already. These projects form the basis for creating, enabling, and using all Google Cloud services.\
-Go to the **[Manage Resources](https://console.cloud.google.com/cloud-resource-manager)**page of the Cloud Console and click *Create Project*. Find more details about creating and managing resources in the [Google Cloud guide](https://cloud.google.com/resource-manager/docs/creating-managing-projects#console).
+Go to the **[Manage Resources](https://console.cloud.google.com/cloud-resource-manager)** page of the Cloud Console and click *Create Project*. Find more details about creating and managing resources in the [Google Cloud guide](https://cloud.google.com/resource-manager/docs/creating-managing-projects#console).
 
 ### Create a Cloud Function
 
@@ -79,7 +80,7 @@ The inline code editor shows a generated boilerplate function using Express.js r
 
 A [Vonage API application](https://developer.vonage.com/application/overview) holds the security and config information needed to connect to Vonage endpoints and use the Vonage APIs. Each Vonage application created can support multiple capabilities; however, we only need Voice functionality for now. 
 
-Let's create one using the [Vonage Dashboard](https://dashboard.nexmo.com/applications/new). Navigate to *Your applications -> [*Create a new application*](https://dashboard.nexmo.com/applications/new)*.
+Let's create one using the [Vonage Dashboard](https://dashboard.nexmo.com/applications/new). Navigate to *Your applications -> [Create a new application](https://dashboard.nexmo.com/applications/new)*.
 
 Switch on Voice capabilities, then provide your generated Cloud Functions URL in the `Answer URL` field. Mine looks like this: `https://europe-west2-my-proxy-calling-project.cloudfunctions.net/proxy-call`.\
 We won't be implementing an event webhook, for now, so feel free to use `http://example.com/event` in that field.
