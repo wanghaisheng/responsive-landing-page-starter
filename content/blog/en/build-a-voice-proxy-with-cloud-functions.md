@@ -6,7 +6,7 @@ description: Leverage the the event-driven architecture of Google Cloud
 thumbnail: /content/blog/build-a-voice-proxy-with-cloud-functions/voice-proxy_1200x600.png
 author: julia
 published: true
-published_at: 2021-07-26T18:14:03.697Z
+published_at: 2021-07-27T09:47:47.641Z
 updated_at: 2021-07-26T18:14:03.739Z
 category: tutorial
 tags:
