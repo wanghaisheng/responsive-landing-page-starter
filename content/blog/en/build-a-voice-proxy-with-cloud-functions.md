@@ -23,7 +23,7 @@ replacement_url: ""
 Voice Proxy—or masked calling—protects users' private details by providing an intermediary phone number. This way, neither the caller nor the callee see each other's real phone numbers. 
 It's common practice with delivery and ridesharing services like Deliveroo and Uber, but it comes in handy in a variety of small business scenarios as well. 
 
-In this tutorial, we're going to build one of my favourite use cases: a virtual business phone.\
+In this tutorial, we're going to build one of my favourite use cases: a virtual business phone.
 We'll cover two call directions:
 
 1. You're calling a client through your Vonage number: capture destination number via DTMF and connect.
