@@ -60,8 +60,11 @@ Next, select **[Cloud Functions](https://console.cloud.google.com/functions)** f
 There are a couple of fields to be configured:
 
 1. Give your function a *name*.
+
 2. Select a *Region*. I went with `europe-west-2` because I'm close to London. If you're unsure which one works best for you, check out the [list of available regions](https://cloud.google.com/compute/docs/regions-zones#available).
+
 3. Set the *trigger type* to `HTTP`, as we're writing an HTTP function.
+
 4. Check "Allow unauthenticated invocations" and "Require HTTPS".
 
 Once you're done, copy the generated URL and click *Save*, then *Next*.
@@ -111,8 +114,9 @@ We need to cover three cases:
 1. Someone else is calling your Vonage number -> connect them to your phone number
 2. You are calling your Vonage number:
 
-   1. You haven't yet provided DTMF payload -> capture DTMF input
-   2. DTMF payload is available -> connect call to DTMF payload (destination phone number) 
+   2.1. You haven't yet provided DTMF payload -> capture DTMF input
+
+   2.2. DTMF payload is available -> connect call to DTMF payload (destination phone number) 
 
 Return to the Google Cloud Console and replace the boilerplate code with the function below.
 
@@ -282,7 +286,7 @@ exports.helloWorld = (req, res) => {
 
 Make sure you've replaced `YOUR_VONAGE_NUMBER` with the virtual number linked to your Vonage Application and `YOUR_PHONE_NUMBER` with your actual phone number, both in international E. 164 international format. For example, 447700900123 (UK) or 14155550101 (US).
 
-When you're ready, click *DEPLOY*. It might take a minute or so for the deployment to happen, be patient. :)Once a green checkmark appeared next to your function, you're ready to test it out! 
+When you're ready, click *DEPLOY*. It might take a minute or so for the deployment to happen, be patient. :) Once a green checkmark appeared next to your function, you're ready to test it out! 
 
 ![Function deployed](/content/blog/build-a-voice-proxy-with-cloud-functions/function-delpoyed.png "Function deployed")
 
@@ -305,3 +309,5 @@ Have a look at the resources below and think about how you can expand on it. Let
 * [Automatic Speech Recognition](https://developer.vonage.com/voice/voice-api/guides/asr)
 * [DTMF Signals](https://developer.vonage.com/voice/voice-api/guides/dtmf)
 * [Google Cloud Functions](https://cloud.google.com/functions)
+
+In the future, you might want to develop and test your functions locally. Check out the Cloud Functions [Local Development guide](https://cloud.google.com/functions/docs/running/overview) to find out how to get started.
