@@ -108,7 +108,7 @@ An NCCO is presented as a valid JSON array containing one or more actions. In th
 
 ## Building the Cloud Function
 
-As we're going to have three scenarios, we also need to return three different NCCOs accordingly. 
+As we're going to have three cases, we also need to return three different NCCOs accordingly. 
 We need to cover three cases:
 
 1. Someone else is calling your Vonage number -> connect them to your phone number
@@ -290,7 +290,7 @@ When you're ready, click *DEPLOY*. It might take a minute or so for the deployme
 
 ![Function deployed](/content/blog/build-a-voice-proxy-with-cloud-functions/function-delpoyed.png "Function deployed")
 
-Your call forwarding service is live, so give it a call! Even better, have a friend call your virtual number—this way, you can test both scenarios.
+Your call forwarding service is live, so give it a call! Even better, have a friend ring your virtual number—this way, you can test both call directions.
 
 ## Where Next?
 
