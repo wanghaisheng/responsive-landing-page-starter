@@ -23,7 +23,7 @@ replacement_url: ""
 Voice Proxy—or masked calling—protects users' private details by providing an intermediary phone number. This way, neither the caller nor the callee see each other's real phone numbers. 
 It's common practice with delivery and ridesharing services like Deliveroo and Uber, but it comes in handy in a variety of small business scenarios as well. 
 
-In this tutorial, we're going to build one of my favourite use cases: a virtual business phone.
+In this tutorial, we're going to build one of my favourite use cases: a virtual business phone.\
 We'll cover two call directions:
 
 1. You're calling a client through your Vonage number: capture destination number via DTMF and connect.
@@ -60,18 +60,22 @@ Next, select **[Cloud Functions](https://console.cloud.google.com/functions)** f
 There are a couple of fields to be configured:
 
 1. Give your function a *name*.
-
 2. Select a *Region*. I went with `europe-west-2` because I'm close to London. If you're unsure which one works best for you, check out the [list of available regions](https://cloud.google.com/compute/docs/regions-zones#available).
-
 3. Set the *trigger type* to `HTTP`, as we're writing an HTTP function.
-
 4. Check "Allow unauthenticated invocations" and "Require HTTPS".
 
-Once you're done, copy the generated URL and click *Save*, then *Next*.
+Once you're done, copy the generated URL and click *Save*.
 
 ![Create function config page](/content/blog/build-a-voice-proxy-with-cloud-functions/create-function-first-page.png "Create function config page")
 
-That's the config done; now on to the code!
+Next, expand the *RUNTIME, BUILD AND CONNCETIONS SETTINGS* and scroll down to the *Runtime environment variables*. We'll need to set two phone numbers as environment variables, both in E. 164 international format. For example, 447700900123 (UK) or 14155550101 (US).
+
+* `YOUR_VONAGE_NUMBER`: one of your Vonage virtual numbers. Find one in your [Vonage Dashboard](https://dashboard.nexmo.com/your-numbers) or [buy one](https://dashboard.nexmo.com/buy-numbers).
+* `YOUR_PHONE_NUMBER`: your personal phone number that you'll use for testing.
+
+![Set environment variables](/content/blog/build-a-voice-proxy-with-cloud-functions/environment-variables.png "Set environment variables")
+
+Click *Next*, and that's the config done; now on to the code!
 
 Make sure you select **Inline Editor** as *Source Code*, the latest Node.js as *Runtime*, and enable any APIs the platform may warn you about.
 
@@ -92,9 +96,11 @@ When finished, click on *Generate new application.*
 
 ![Create Voice-enabled Vonage Application](/content/blog/build-a-voice-proxy-with-cloud-functions/create-vonage-application.png "Create Voice-enabled Vonage Application")
 
-On the next page, you'll see a list of the virtual numbers you have available in your account. Click the *Link* button next to any that you'd like to attach to this application. You'll be calling this number to test your application, so start with a local one. Alternatively, if no list shows up or you can't see any suitable ones, you can also [buy more numbers](https://dashboard.nexmo.com/buy-numbers).
+On the next page, you'll see a list of the virtual numbers you have available in your account. Click the *Link* button next to any that you'd like to attach to this application. You'll be calling this number to test your application, so start with a local one. Alternatively, if no list shows up or you can't see any suitable ones, you can also [buy more numbers](https://dashboard.nexmo.com/buy-numbers). 
 
 ![Link virtual Vonage number to Vonage Application](/content/blog/build-a-voice-proxy-with-cloud-functions/vonage-link-number.png "Link virtual Vonage number to Vonage Application")
+
+If you link a different number than the one you set in the runtime environment, make sure you update the value of `YOUR_VONAGE_NUMBER` in the Cloud Console UI.
 
 ## Controlling the Call Flow
 
@@ -118,9 +124,14 @@ We need to cover three cases:
 
    2.2. DTMF payload is available -> connect call to DTMF payload (destination phone number) 
 
-Return to the Google Cloud Console and replace the boilerplate code with the function below.
+Return to the Google Cloud Console and replace the boilerplate code with the following.
 
 ```js
+// Get environment variables
+const YOUR_VONAGE_NUMBER = process.env.YOUR_VONAGE_NUMBER;
+const YOUR_PHONE_NUMBER = process.env.YOUR_PHONE_NUMBER;
+
+
 exports.helloWorld = (req, res) => {
     // Check if there's DTMF payload in the request body
     if (req.body.dtmf) {
@@ -128,7 +139,7 @@ exports.helloWorld = (req, res) => {
     ])
     } else {
         // Check if you're the caller
-        if (req.query.from === 'YOUR_PHONE_NUMBER') {
+        if (req.query.from === YOUR_PHONE_NUMBER) {
             // (2.1) Capture destination number via DTMF input
         } else {
             // (1) Connect caller to your phone number
@@ -152,10 +163,10 @@ res.json([{
     },
     {
         action: 'connect',
-        from: 'YOUR_VONAGE_NUMBER',
+        from: YOUR_VONAGE_NUMBER,
         endpoint: [{
             type: 'phone',
-            number: 'YOUR_PHONE_NUMBER'
+            number: YOUR_PHONE_NUMBER
         }]
     }
 ])
@@ -212,7 +223,7 @@ res.json([{
     },
     {
         action: 'connect',
-        from: 'YOUR_VONAGE_NUMBER',
+        from: YOUR_VONAGE_NUMBER,
         endpoint: [{
             type: 'phone',
             number: req.body.dtmf.digits
@@ -228,6 +239,10 @@ This Call Control Object is similar to the first one, except we're setting the d
 Finally, let's bring all moving parts together! Slotting the three snippets we've discussed into the initial function results in the following code:
 
 ```javascript
+// Get environment variables
+const YOUR_VONAGE_NUMBER = process.env.YOUR_VONAGE_NUMBER;
+const YOUR_PHONE_NUMBER = process.env.YOUR_PHONE_NUMBER;
+
 exports.helloWorld = (req, res) => {
     // Check if there's DTMF payload in the request body
     if (req.body.dtmf) {
@@ -238,7 +253,7 @@ exports.helloWorld = (req, res) => {
             },
             {
                 action: 'connect',
-                from: 'YOUR_VONAGE_NUMBER',
+                from: YOUR_VONAGE_NUMBER,
                 endpoint: [{
                     type: 'phone',
                     number: req.body.dtmf.digits
@@ -247,7 +262,7 @@ exports.helloWorld = (req, res) => {
         ])
     } else {
         // Check if you're the caller
-        if (req.query.from === 'YOUR_PHONE_NUMBER') {
+        if (req.query.from === YOUR_PHONE_NUMBER) {
             // (2.1) Capture destination number via DTMF input
             res.json([{
                     action: 'talk',
@@ -272,10 +287,10 @@ exports.helloWorld = (req, res) => {
                 },
                 {
                     action: 'connect',
-                    from: 'YOUR_VONAGE_NUMBER',
+                    from: YOUR_VONAGE_NUMBER,
                     endpoint: [{
                         type: 'phone',
-                        number: 'YOUR_PHONE_NUMBER'
+                        number: YOUR_PHONE_NUMBER
                     }]
                 }
             ])
@@ -283,8 +298,6 @@ exports.helloWorld = (req, res) => {
     }
 };
 ```
-
-Make sure you've replaced `YOUR_VONAGE_NUMBER` with the virtual number linked to your Vonage Application and `YOUR_PHONE_NUMBER` with your actual phone number, both in international E. 164 international format. For example, 447700900123 (UK) or 14155550101 (US).
 
 When you're ready, click *DEPLOY*. It might take a minute or so for the deployment to happen, be patient. :) Once a green checkmark appeared next to your function, you're ready to test it out! 
 
@@ -309,5 +322,6 @@ Have a look at the resources below and think about how you can expand on it. Let
 * [Automatic Speech Recognition](https://developer.vonage.com/voice/voice-api/guides/asr)
 * [DTMF Signals](https://developer.vonage.com/voice/voice-api/guides/dtmf)
 * [Google Cloud Functions](https://cloud.google.com/functions)
+* [Using Environment Variables](https://cloud.google.com/functions/docs/configuring/env-var#cloud-console-ui)
 
 In the future, you might want to develop and test your functions locally. Check out the Cloud Functions [Local Development guide](https://cloud.google.com/functions/docs/running/overview) to find out how to get started.
