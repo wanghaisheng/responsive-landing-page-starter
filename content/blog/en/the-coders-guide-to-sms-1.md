@@ -40,7 +40,7 @@ Another use case for SMS messages is alerts and reminders. For example, hair sal
 
 ### The SMS Standard
 
-
+![](/content/blog/the-coders-guide-to-sms/screen-shot-2021-07-28-at-3.36.51-pm.png)
 
 SMS lets you send 160 characters of text or 70 characters in Unicode. But, of course, you’ve probably sent an SMS message longer than 160 characters before, so how is that possible? When you send an SMS message longer than 160 characters, your phone carrier breaks the messages up and sends multiple messages. However, your phone carrier makes sure they arrive in order, which is why you’ve probably never noticed the 160 character limit.
 
@@ -50,9 +50,13 @@ When you send an SMS message, it does not go directly to the recipient's phone. 
 
 Here is a diagram that shows how it works:
 
+![](/content/blog/the-coders-guide-to-sms/screen-shot-2021-07-27-at-5.18.39-pm.png)
+
 The MS at the bottom left and right stands for mobile station: the mobile phones sending and receiving the SMS message. When you send a message, your phone first sends it to a BSS or base station sub-system. The BSS is essentially the radio network: the towers, controllers, etc., that make up the radio network. The BSS then sends your message to an MSC or mobile switching center. The MSC is the phone exchange serving your area (your city, for example). Your text message then travels from the MSC to the SMCS or short message service center. Your phone has an SMCS address that looks like a phone number configured in it, sometimes on your SIM (although iPhones do it slightly differently). Your SMSC then uses an HLR or Home Location Register to find where the recipient is. It gets back an SMSC address for the recipient and sends it to their MSC, which forwards it to the BSS and finally to the recipient's phone.
 
 ### SMS VS. MMS
+
+![](/content/blog/the-coders-guide-to-sms/video-conference-5167472_640.jpg)
 
 As you learned earlier, when people say the word text message, they are referring to SMS and MMS. MMS stands for multimedia messaging service and allows you to send messages that include multimedia content over wireless networks.
 
@@ -64,6 +68,8 @@ MMS messages do have some advantages, though. Because MMS messages can include v
 
 ### Do iMessage and WhatsApp Use SMS?
 
+![](/content/blog/the-coders-guide-to-sms/whatsapp-892926_640.jpg)
+
 Apple's iMessage, WhatsApp, WeChat, and Facebook Messenger are examples of "Over the Top" or OTT applications. Unlike SMS, OTT applications like WhatsApp do not require the user to connect to a cellular network.
 
 OTT applications like iMessage and WhatsApp do not use SMS. However, that does not mean iPhones do not send SMS messages: they do. You can only send an iMessage if you and the recipient both have an iPhone. If you send a text message on your iPhone to another Apple user, Apple will send the text using iMessage, and your iPhone will highlight the message in blue. If you send a text message (without multimedia) to another device (like Android), Apple will send it using SMS, and the message will be green. Android devices, on the other hand, send SMS messages by default.
@@ -74,11 +80,15 @@ SMS has several advantages over OTT, however. OTT applications are "walled garde
 
 ### SMS can do what?
 
+![](/content/blog/the-coders-guide-to-sms/snowboard-688504_640.png)
+
 SMS has many cool less-known features. For instance, did you know you can edit an SMS message after you've sent it? Well, you can! You can "overwrite" an SMS message you previously sent.
 
 You can also use SMS to send a flash message, also called a class zero message. A flash message is a message that pops up on your phone but, by default, doesn't save to your inbox. The point of a flash message is to enable you to send something that the receiver won't save by default. In other words, a flash message is a precursor to Snapchat pioneering ephemeral messages. However, just like how with Snapchat, it is possible to screenshot a message, it is also possible to download a class zero message (or screenshot it), so you cannot entirely rely on it for secrecy. Another use case for a flash message is sending a message you want the recipient to read immediately. 
 
 ### Sending an SMS message Programmatically
+
+![](/content/blog/the-coders-guide-to-sms/work-731198_640.jpg)
 
 You can easily send an SMS message programmatically using an API like the one we have at Vonage. 
 
