@@ -4,8 +4,8 @@ description: " In this guide, you will learn what SMS is, how companies are
   using it, the difference between SMS, MMS, and OTT, and more!"
 author: cory-althoff
 published: true
-published_at: 2021-07-28T22:24:57.598Z
-updated_at: 2021-07-28T22:24:57.621Z
+published_at: 2021-07-28T22:29:00.943Z
+updated_at: 2021-07-28T22:29:00.959Z
 category: inspiration
 tags:
   - python
@@ -18,8 +18,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# The Coder's Guide to SMS
-
 As a programmer, you may have come across SMS (short message service), but you may not know much about it. However, it is essential to understand how SMS messages work since so many companies use them. SMS is a service for sending short messages over wireless networks using standardized communication protocols. Neil Papworth sent the first SMS message on December 3, 1992. He wrote Merry Christmas to his co-worker Richard Jarvis, despite Christmas being almost a month away. An SMS message is one of two technologies for sending a text message: the other is called MMS.
 
 Today, over[ four billion people send text messages a year](https://www.smseagle.eu/2017/03/06/daily-sms-mobile-statistics/) using technologies like SMS and MMS. Companies are increasingly using SMS messages to reach their customers on their mobile phones because they are convenient, and customers prefer them. SMS messages also have a 98% open rate, which is significantly higher than other forms of communication like email.
