@@ -26,6 +26,8 @@ In this guide, you will learn everything you need to know about SMS as a program
 
 ### How Do Companies Use SMS?
 
+![](/content/blog/the-coders-guide-to-sms/digital-marketing-1433427_640.jpg)
+
 More and more companies are using SMS to communicate with their customers because customers prefer SMS over other forms of communication.
 
 Some companies use SMS for two-factor authentication, which is a popular way to help confirm a customer possesses the phone number they signed up for a service with.
@@ -37,6 +39,8 @@ Some companies also use SMS for customer service. For example, many hotels are a
 Another use case for SMS messages is alerts and reminders. For example, hair salons often remind customers about their upcoming appointments using SMS messages, and banks send alerts via SMS when they think a customer’s card might be compromised.
 
 ### The SMS Standard
+
+
 
 SMS lets you send 160 characters of text or 70 characters in Unicode. But, of course, you’ve probably sent an SMS message longer than 160 characters before, so how is that possible? When you send an SMS message longer than 160 characters, your phone carrier breaks the messages up and sends multiple messages. However, your phone carrier makes sure they arrive in order, which is why you’ve probably never noticed the 160 character limit.
 
