@@ -6,7 +6,7 @@ thumbnail: /content/blog/send-and-receive-sms-messages-with-firebase-functions/f
 author: kellyjandrews
 published: true
 published_at: 2020-01-24T13:03:31.000Z
-updated_at: 2020-11-03T10:37:34.067Z
+updated_at: 2021-07-29T08:31:35.602Z
 category: tutorial
 tags:
   - devrel
