@@ -82,7 +82,7 @@ SMS has several advantages over OTT, however. OTT applications are "walled garde
 
 SMS has many cool less-known features. For instance, did you know you can edit an SMS message after you've sent it? Well, you can! You can "overwrite" an SMS message you previously sent. However, you must set this up in advance. You cannot edit the text you already sent someone last night!
 
-You can also use SMS to send a flash message, also called a class zero message. A flash message is a message that pops up on your phone but, by default, doesn't save to your inbox. The point of a flash message is to enable you to send something that the receiver won't save by default. In other words, a flash message is a precursor to Snapchat pioneering ephemeral messages. However, just like how with Snapchat, it is possible to screenshot a message, it is also possible to download a class zero message (or screenshot it), so you cannot entirely rely on it for secrecy. Another use case for a flash message is sending a message you want the recipient to read immediately. 
+You can also use SMS to send a flash message, also called a class zero message. A flash message is a message that pops up on your phone but, by default, doesn't save to your inbox. The point of a flash message is to enable you to send something that the receiver won't save by default. In other words, a flash message is a precursor to Snapchat's famous ephemeral messages. However, just like how with Snapchat, it is possible to screenshot a message, it is also possible to download a class zero message (or screenshot it), so you cannot entirely rely on it for secrecy. Another use case for a flash message is sending a message you want the recipient to read immediately. 
 
 ### Sending an SMS message Programmatically
 
@@ -94,9 +94,9 @@ Sending an SMS programmatically using our API is simple: you can send one in jus
 
 You can learn how to send an SMS message with our API by [reading our SMS API documentation](https://developer.nexmo.com/messaging/sms/overview).
 
-We also have many blog posts that walk you through sending SMS messages with various technologies. For example, this article shows you h[ow to send an SMS message using Python and Flask](https://learn.vonage.com/blog/2017/06/22/send-sms-messages-python-flask-dr/), and this article [teaches you how to send an SMS message using Node Red.](https://learn.vonage.com/blog/2019/04/24/receive-sms-messages-node-red-dr/)
+We also have many blog posts that walk you through sending SMS messages with various technologies. For example, this article shows you [how to send an SMS message using Python and Flask](https://learn.vonage.com/blog/2017/06/22/send-sms-messages-python-flask-dr/), and this article [teaches you how to send an SMS message using Node Red.](https://learn.vonage.com/blog/2019/04/24/receive-sms-messages-node-red-dr/)
 
-You can also [browse through the entire list of SMS articles and tutorials here.](https://learn.vonage.com/tags/sms-api/)
+You can also [browse through our entire list of SMS articles and tutorials here.](https://learn.vonage.com/tags/sms-api/)
 
 ### Final Thoughts
 
@@ -104,6 +104,6 @@ With its convenience, ubiquity, and high open rates, SMS is a cornerstone of bus
 
 Now that you've read this guide, I hope you have a basic understanding of SMS and are ready to continue learning more about this communication method that is only growing more important.
 
-If you want to send SMS messages programmatically, the Vonage SMS API documentation is the best place to start. 
+If you want to send SMS messages programmatically, the [Vonage SMS API documentation](https://www.vonage.com/communications-apis/sms/) is the best place to start. 
 
 I hope you enjoyed this guide, and [please reach out to us on Twitter](https://twitter.com/VonageDev) if you have any questions!
