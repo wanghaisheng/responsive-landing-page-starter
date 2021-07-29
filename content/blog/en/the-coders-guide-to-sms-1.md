@@ -80,7 +80,7 @@ SMS has several advantages over OTT, however. OTT applications are "walled garde
 
 ![](/content/blog/the-coders-guide-to-sms/snowboard-688504_640.png)
 
-SMS has many cool less-known features. For instance, did you know you can edit an SMS message after you've sent it? Well, you can! You can "overwrite" an SMS message you previously sent. However, you must set this up in advance. 
+SMS has many cool less-known features. For instance, did you know you can edit an SMS message after you've sent it? Well, you can! You can "overwrite" an SMS message you previously sent. However, you must set this up in advance. You cannot edit the text you already sent someone last night if that is what you are thinking!
 
 You can also use SMS to send a flash message, also called a class zero message. A flash message is a message that pops up on your phone but, by default, doesn't save to your inbox. The point of a flash message is to enable you to send something that the receiver won't save by default. In other words, a flash message is a precursor to Snapchat pioneering ephemeral messages. However, just like how with Snapchat, it is possible to screenshot a message, it is also possible to download a class zero message (or screenshot it), so you cannot entirely rely on it for secrecy. Another use case for a flash message is sending a message you want the recipient to read immediately. 
 
