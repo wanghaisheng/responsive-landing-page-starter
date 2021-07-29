@@ -1,8 +1,8 @@
 ---
-title: "Startup Spotlight Series: Let's meet Callspot"
+title: "Startup Spotlight: Let's meet Callspot"
 description: Meet Athens-based startup Callspot as a part of Vonage Startup
   Spotlight series.
-thumbnail: /content/blog/startup-spotlight-series-lets-meet-callspot/callspot.png
+thumbnail: /content/blog/startup-spotlight-lets-meet-callspot/callspot.png
 author: filippos-kyprianou
 published: true
 published_at: 2021-07-29T12:10:58.020Z
@@ -18,7 +18,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Back in 2008, Roman Ray wrote, “The Best Salesperson: Your Website” explaining how a company’s best sales person is actually their website. Fast forward to over a decade later, websites are the main source of truth and play a central role in customer acquisition. We live in an era where information is available freely on the internet, therefore companies need to do everything to serve their potential customers as efficiently and quickly as possible.
+Back in 2008, Roman Ray wrote “The Best Salesperson: Your Website”, explaining how a company’s best sales person is actually their website. 
+
+Fast forward to over a decade later, websites are the main source of truth and play a central role in customer acquisition. We live in an era where information is available freely on the internet; therefore, companies need to do everything to serve their potential customers as efficiently and quickly as possible.
 
 To enable companies to sell faster and help customers make more informed purchase decisions, Callspot was founded in 2020. A call analytics SaaS platform that helps businesses convert their web visitors into warm sales calls in less than 28 seconds. 
 
@@ -61,17 +63,17 @@ However, as we are now entering the fourth quarter since we officially launched,
 
 ## What’s the biggest challenge you faced and how did you overcome it?
 
-The time. When you work full-time, in senior positions and in internationally competitive environments, as the day goes on both mental clarity and endurance are decreased. So in order to succeed, and at the same time, to create and build your own company, you need to activate the deepest reserves of resilience and will in order to fight the mental and physical fatigue.\
+The time. When you work full-time, in senior positions and in internationally competitive environments, as the day goes on both mental clarity and endurance are decreased. So in order to succeed, and at the same time, to create and build your own company, you need to activate the deepest reserves of resilience and will in order to fight mental and physical fatigue.\
 \
 To achieve this you need one basic thing - desire. Desire to see your vision come true. The greater the desire, the more likely it is to overcome fatigue.\
 \
-Also, Covid-19 slowed us down. While e-commerce has skyrocketed all over the world, many companies with which we were in final stages of discussions chose to freeze the process in order to first see how things will turn out, adjust their strategies and then to act.
+Also, Covid-19 slowed us down. While e-commerce has skyrocketed all over the world, many companies with which we were in the final stages of discussions chose to freeze the process in order to first see how things will turn out, adjust their strategies and then act.
 
 ## The biggest mistake Callspot has made so far and what did you learn from it?
 
-Initially we targeted the public sector, and especially the local authorities, prompted by the hard truth that the waiting time in most public services is insane. Our Call-scheduling feature prompts visitors to automatically schedule callbacks for  the next day instead of leaving a missed call. Also, no more overnight shifts are needed as Callspot runs on the website 24/7. So there was a need that we could cover.\
+Initially, we targeted the public sector, and especially the local authorities, prompted by the hard truth that the waiting time in most public services is insane. Our Call-scheduling feature prompts visitors to automatically schedule callbacks for  the next day instead of leaving a missed call. Also, no more overnight shifts are needed as Callspot runs on the website 24/7. So there was a need that we could cover.\
 \
-Eventually it turned out that the insane waiting time is not stopped in the services, it applies to most of the decision making processes as well. We roughly lost around 4-5 months, being in discussions with many municipalities around possible synergies that were never really meant to happen, or that they would require many rounds of discussions with governing councils without any assurance that our efforts will be successful. 
+Eventually it turned out that the insane waiting time is not stopped in the services; it applies to most of the decision making processes as well. We roughly lost around 4-5 months, being in discussions with many municipalities around possible synergies that were never really meant to happen, or that they would require many rounds of discussions with governing councils without any assurance that our efforts will be successful. 
 
 
 
@@ -90,9 +92,9 @@ We have 3 main features.
 
 1# Call-me-now: Driving relevant traffic to your website is hard work and getting those visitors to convert is even harder. With the Call-me-now feature, visitors can request a callback. The widget seamlessly connects your visitors to your sales team in 25 seconds via intelligent callback technology.
 
-\#2 Call-scheduling: With the Call-scheduling feature visitors can schedule a callback for the date and time they like. Our widget detects after-business hours and prompts customers to automatically schedule callbacks for the next day instead of leaving a missed call. Also, no more overnight shifts are needed as Callspot runs on your website 24/7.
+\#2 Call-scheduling: With the Call-scheduling feature, visitors can schedule a callback for the date and time they like. Our widget detects after-business hours and prompts customers to automatically schedule callbacks for the next day instead of leaving a missed call. Also, no more overnight shifts are needed as Callspot runs on your website 24/7.
 
-\#3 Call-Analytics: When your agents are connected to a potential client they will see where the caller came from, the pages they have visited, the page they are currently on, the keywords they used to find you, which country, and city they are in.
+\#3 Call-Analytics: When your agents are connected to a potential client they will see where the caller came from, the pages they have visited, the page they are currently on, the keywords they used to find you, which country and city they are in.
 
 Callspot can be used for:
 
@@ -106,7 +108,7 @@ Callspot can be used for:
 
 ## What’s next for Callspot? Where do you want to be in 3 years?
 
-We aim for new markets, more clients, more features. We want to grow our customer base both in Greece and abroad, create more lead generation features, provide integrations with business tools, and develop an omnichannel infrastructure in order to unify the synchronization of all customer contact points on our platform.
+We aim for new markets, more clients, more features. We want to grow our customer base both in Greece and abroad, create more lead generation features, provide integrations with business tools, and develop an omnichannel infrastructure in order to unify the synchronisation of all customer contact points on our platform.
 
 
 
