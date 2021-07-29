@@ -32,7 +32,7 @@ Before you begin, make  sure you have:
 
 * [Node.js](https://nodejs.org/en/download/) installed on your machine
 * [ngrok](https://ngrok.com/) to make the code on our local machine accessible to the outside world
-* The [Vonage CLI](https://www.npmjs.com/package/@vonage/cli): `npm install -g @vonage/cli@beta`
+* The [Vonage CLI Beta](https://www.npmjs.com/package/@vonage/cli): `npm install -g @vonage/cli@beta`
 
 <sign-up number></sign-up>
 
