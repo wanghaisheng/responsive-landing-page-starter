@@ -75,8 +75,6 @@ Initially, we targeted the public sector, and especially the local authorities, 
 \
 Eventually it turned out that the insane waiting time is not stopped in the services; it applies to most of the decision making processes as well. We roughly lost around 4-5 months, being in discussions with many municipalities around possible synergies that were never really meant to happen, or that they would require many rounds of discussions with governing councils without any assurance that our efforts will be successful. 
 
-
-
 Lesson learned: Be willing to let it go.
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos and Bill Gates. Who do you choose and why? 
@@ -90,27 +88,23 @@ Our intelligent algorithms pre-qualify the most prospective visitors and engage 
 
 We have 3 main features.
 
-1# Call-me-now: Driving relevant traffic to your website is hard work and getting those visitors to convert is even harder. With the Call-me-now feature, visitors can request a callback. The widget seamlessly connects your visitors to your sales team in 25 seconds via intelligent callback technology.
+1. Call-me-now: Driving relevant traffic to your website is hard work and getting those visitors to convert is even harder. With the Call-me-now feature, visitors can request a callback. The widget seamlessly connects your visitors to your sales team in 25 seconds via intelligent callback technology.
 
-\#2 Call-scheduling: With the Call-scheduling feature, visitors can schedule a callback for the date and time they like. Our widget detects after-business hours and prompts customers to automatically schedule callbacks for the next day instead of leaving a missed call. Also, no more overnight shifts are needed as Callspot runs on your website 24/7.
+2.  Call-scheduling: With the Call-scheduling feature, visitors can schedule a callback for the date and time they like. Our widget detects after-business hours and prompts customers to automatically schedule callbacks for the next day instead of leaving a missed call. Also, no more overnight shifts are needed as Callspot runs on your website 24/7.
 
-\#3 Call-Analytics: When your agents are connected to a potential client they will see where the caller came from, the pages they have visited, the page they are currently on, the keywords they used to find you, which country and city they are in.
+3.  Call-Analytics: When your agents are connected to a potential client they will see where the caller came from, the pages they have visited, the page they are currently on, the keywords they used to find you, which country and city they are in.
 
 Callspot can be used for:
 
-\- Sales: The widget seamlessly connects your site visitor to your sales team in less than a minute and makes customers 10-15 times more likely to buy again in the future.
+- Sales: The widget seamlessly connects your site visitor to your sales team in less than a minute and makes customers 10-15 times more likely to buy again in the future.
 
-\- Marketing: When it comes to responding to your leads, every minute matters. Making them wait longer than 5 minutes means an 80% decrease both in lead qualification and ROI of marketing campaigns.
+- Marketing: When it comes to responding to your leads, every minute matters. Making them wait longer than 5 minutes means an 80% decrease both in lead qualification and ROI of marketing campaigns.
 
-\- Customer support: No more overnight shifts as Callspot will run on your website 24/7. It detects after-business hours and helps to automatically schedule callbacks for your sales team the next day instead of leaving a missed call.
-
-
+- Customer support: No more overnight shifts as Callspot will run on your website 24/7. It detects after-business hours and helps to automatically schedule callbacks for your sales team the next day instead of leaving a missed call.
 
 ## What’s next for Callspot? Where do you want to be in 3 years?
 
 We aim for new markets, more clients, more features. We want to grow our customer base both in Greece and abroad, create more lead generation features, provide integrations with business tools, and develop an omnichannel infrastructure in order to unify the synchronisation of all customer contact points on our platform.
-
-
 
 ### Let's work together - Vonage for Startups
 
