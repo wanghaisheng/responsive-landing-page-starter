@@ -121,7 +121,7 @@ vonage.channel.send(
 );
 ```
 
-You can run the code and receive the SMS message with:
+Replace `TO_NUMBER` with the destination phone number as a string, then run the code with:
 
 ```
 node index.js
