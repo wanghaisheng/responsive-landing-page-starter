@@ -7,7 +7,7 @@ thumbnail: /content/blog/how-to-send-and-receive-sms-messages-with-node-js-and-e
 author: laka
 published: true
 published_at: 2019-09-16T08:00:45.000Z
-updated_at: 2020-10-22T12:21:32.917Z
+updated_at: 2021-07-29T22:16:33.119Z
 category: tutorial
 tags:
   - javascript
