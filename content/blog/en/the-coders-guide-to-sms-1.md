@@ -44,7 +44,7 @@ Another use case for SMS messages is alerts and reminders. For example, hair sal
 
 SMS lets you send 160 characters of text or 70 characters in Unicode. But, of course, you’ve probably sent an SMS message longer than 160 characters before, so how is that possible? When you send an SMS message longer than 160 characters, your phone carrier breaks the messages up and sends multiple messages. However, your phone carrier makes sure they arrive in order, which is why you’ve probably never noticed the 160 character limit.
 
-When you send an SMS message, it does not go directly to the recipient's phone. Instead, your message first gets sent to a Short Message Service Centre (SMSC), which looks up the recipient and sends the message to them: similar to SMTP.
+When you send an SMS message, it does not go directly to the recipient's phone. Instead, your message first gets sent to a Short Message Service Center (SMSC), which looks up the recipient and sends the message to them: similar to SMTP.
 
 Here is a diagram that shows how it works:
 
