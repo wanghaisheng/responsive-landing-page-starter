@@ -192,6 +192,19 @@ node server.js
 
 Now send an SMS message from your phone to your Vonage number. You should see the message being logged in the terminal window where you ran the code. It looks similar to this:
 
-![Terminal output](/content/blog/how-to-send-and-receive-sms-messages-with-node-js-and-express/terminal-vonage.png "Terminal output")
+```bash
+{
+  message_uuid: 'ecb3f7ab-5f70-4de1-9003-1e59a7270782',
+  to: { type: 'sms', number: '447401234567' },
+  from: { type: 'sms', number: '447312277109' },
+  timestamp: '2021-07-07T15:30:26.706Z',
+  usage: { price: '0.0057', currency: 'EUR' },
+  message: {
+    content: { type: 'text', text: 'Chuck Norris can hear text messages.' },
+    sms: { num_messages: '1' }
+  },
+  direction: 'inbound'
+}
+```
 
 I hope it worked, and you've just learned how to send and receive SMS messages with the Vonage Messages API and Node.js.
