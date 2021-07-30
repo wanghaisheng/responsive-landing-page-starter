@@ -24,7 +24,7 @@ We'll then build a Webhook that can receive SMS messages using Express. We'll fo
 
 You can extend the application we're building here to reply to incoming SMS messages or include more complex, interactive elements and give you a head start building autoresponders for your SMS needs.
 
-The code for this tutorial can be found on [GitHub](https://github.com/nexmo-community/nexmo-sms-autoresponder-node/) & [Glitch](https://glitch.com/edit/#!/vonage-sms-autoresponder).
+The code for this tutorial can be found on [GitHub](https://github.com/nexmo-community/nexmo-sms-autoresponder-node/) & [Glitch](https://glitch.com/edit/#!/whispering-rebel-ixia).
 
 ## Prerequisites
 
