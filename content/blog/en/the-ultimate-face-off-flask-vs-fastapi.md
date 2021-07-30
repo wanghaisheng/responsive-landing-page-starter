@@ -80,9 +80,7 @@ from flask import Flask
 app = Flask(\_\_name\_\_)
 
 @app.route("/", methods=\[“GET”])
-
 def home():
-
     return {"Hello": "World"}
 
 if \_\_name\_\_ == "\_\_main\_\_":
@@ -98,9 +96,7 @@ from flask import Flask
 app = Flask(\_\_name\_\_)
 
 @app.get("/")
-
 def home():
-
     return {"Hello": "World"}
 
 if \_\_name\_\_ == "\_\_main\_\_":
@@ -120,9 +116,7 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @app.get("/")
-
 def home():
-
     return {"Hello": "World"}
 
 if \_\_name\_\_ == "\_\_main\_\_":
@@ -157,7 +151,7 @@ $ flask run
 
 #### FastAPI
 
-```
+```python
 $ uvicorn main:app --reload
 ```
 
@@ -173,19 +167,15 @@ In the Hello World example we saw what a GET looks like in Flask and FastAPI, so
 
 ```python
 @app.route("/teams", methods=\["POST"])
-
 def create_team():
-
     team = {
 
         "team_name": "Phoenix Suns",
-
         "players": [
 
             {
 
                   "name": "Chris Paul",
-
                   "age": 36
 
             }
@@ -195,7 +185,6 @@ def create_team():
     }
 
     teams.append(team)
-
     return (jsonify(teams))
 ```
 
@@ -209,13 +198,11 @@ def create_team():
     team = {
 
         "team_name": "Phoenix Suns",
-
         "players": [
 
             {
 
                   "name": "Chris Paul",
-
                   "age": 36
 
             }
@@ -238,13 +225,11 @@ def create_team():
     team = {
 
         "team_name": "Phoenix Suns",
-
         "players": [
 
             {
 
                   "name": "Chris Paul",
-
                   "age": 36
 
             }
