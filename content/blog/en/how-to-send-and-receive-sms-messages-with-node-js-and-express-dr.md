@@ -68,7 +68,7 @@ You'll be prompted to save a keyfile to disk—the private key. It's usually a g
 Applications work on a public / private key system, so when you create an application, a public key is generated and kept with Vonage, and a private key is generated, not kept with Vonage, and returned to you via the creation of the application. We'll use the private key to authenticate our library calls later on.
 
 Next, you need to enable the *Messages* capability and provide an inbound URL and a status URL.\
-Use the ngrok URL you got in the previous step and fill in the fields, appending `/webhooks/status` and `/webhooks/inbound`, for the respective fields. When a message reaches the Messages API, the data about it is sent to the *inbound URL*. When you send a message using the API, the data about the message status gets sent to the *status URL*.
+Use the ngrok URL you got in the previous step and fill in the fields, appending `/webhooks/inbound` and `/webhooks/status`, for the respective fields. When a message reaches the Messages API, the data about it is sent to the *inbound URL*. When you send a message using the API, the data about the message status gets sent to the *status URL*.
 
 ![Create Messages enabled Vonage Application](/content/blog/how-to-send-and-receive-sms-messages-with-node-js-and-express/tutorial.gif "Create Messages enabled Vonage Application")
 
