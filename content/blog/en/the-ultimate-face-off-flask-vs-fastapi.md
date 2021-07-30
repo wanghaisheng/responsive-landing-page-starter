@@ -293,60 +293,57 @@ Your interactive documentation will also generate a curl command for you, so you
 
 ![](https://lh5.googleusercontent.com/2AJ3gnhujq1HwdLHHR4LulHOXlSV_sqkKPM8PW5d6hR60ggedoKx19S3Zy0BmgFdcflLXk4rIotZ3aaFgT8MORV0pzVf8TOH6kdOGywan2mYMixkGgb8eS937PiVttBI6qoln9NV)
 
-Conclusion: Since Automatic Documentation comes out of the box with FastAPI along with Pydantic and Swagger UI, these features will definitely speed up your development time because you don’t have to install any external tools to test your requests. 
+**Conclusion**: Since Automatic Documentation comes out of the box with FastAPI along with Pydantic and Swagger UI, these features will definitely speed up your development time because you don’t have to install any external tools to test your requests. 
 
-Data Validation
+# Data Validation
 
 Since our lovely friend Pydantic comes with FastAPI upon installation, it will give you some pretty friendly error messages when you run into problems with you code.
 
-FastAPI
+#### FastAPI
 
+```python
 from pydantic import BaseModel
 
 from typing import Optional
 
 class Login(BaseModel):
-
     username: str
-
     password: str
-
     agree_to_terms: Optional\[bool]
 
 @app.post("/login")
-
 def login(request: Login):
-
     if request.username == "janedoe" and   request.password == "password12345":
-
         return {"message": "Success"}
-
     return {"message": "Authentication Failed"}
+```
 
-Here we’re once more creating a class Login that inherits from the pydantic BaseModel with type hinted variables inside of it. In our function we are checking if the username is janedoe and the password is passworld12345 then it should return a success message otherwise a failure message will appear. 
+
+
+Here we’re once more creating a class Login that inherits from the Pydantic BaseModel with type hinted variables inside of it. In our function we are checking if the username is janedoe and the password is passworld12345 then it should return a success message otherwise a failure message will appear. 
 
 We turn to automatic documentation and test our request body by passing in None to the username:
 
 ![](https://lh6.googleusercontent.com/KzV7vaKxI1fVMjzMnPTduBWhE6CXIrEwDQjXtaX7eUOtuPULKMf6DOWpr2CYjFujrspQ9OYI3cXM0nVQ4MC9v5hFQ8990CdoSsWbRdlQsXuPi2odFrhi_X0RG6q7neoyDw4_thy4)
 
-Pydantic will work it’s magic and you’lll get a friendly message telling you exactly what the error is. In this case, it returns error Expecting Value, which is right on the money because we passed in None to username.
+Pydantic will work it’s magic and you’lll get a friendly message telling you exactly what the error is. In this case, it returns error *Expecting Value*, which is right on the money because we passed in None to the username.
 
 ![](https://lh6.googleusercontent.com/9biK0m7fzVbqdvTtw64PfK6cQRqK-HrQMVbW7gd0-3rDiYz69qD_35JtuUol7qt1ME3MFkJ9SH_fo3rR3R8XETkHhmYTpCuQ2-Vsq1J7ykC4f8Ex_85TNvz2YCWnt1WsmCCxiY53)
 
-Conclusion: Flask does not have any inhouse data validation support. You can use the powerful Pydantic package for data validation by installing it with Flask-Pydantic.
+**Conclusion**: Flask does not have any inhouse data validation support. You can use the powerful Pydantic package for data validation by installing it with *Flask-Pydantic*.
 
-URL or Path Parameters
+# URL or Path Parameters
 
-A path or url parameter fetches one single item. Let’s say we want to get a single player. Whichever player has an id of what we pass into the url, will get returned to the user. 
+A path or URL parameter fetches one single item. Let’s say we want to get a single player. Whichever player has an id of what we pass into the URL, will get returned to the user. 
 
 Let’s say we have a list of dictionaries and we want to get one player from this JSON file:
 
+```python
 players = [
 
     {
 
         "player_id": 1,
-
         "name": "Giannis"
 
     },
@@ -354,52 +351,52 @@ players = [
     {
 
         "player_id": 2,
-
         "name": "Luka"
 
     }
 
 ]
+```
 
-Flask
+#### Flask
 
+```python
 @app.get('/players/<int:player_id>')
 
 def get_player_details(player_id):
-
     for player in players:
-
         if player\["player_id"] == player_id:
-
             return jsonify(player)
+```
 
-Here we pass in our route to localhost on port 5000 with an id of 2 and we we get back the player with id of 2.
+
+
+Here we pass in our route to localhost on port 5000 with an id of 2 and we we get back the player with an id of 2.
 
 ![](https://lh4.googleusercontent.com/MMQ37ZRuC40c3ZnIvqv9XuN98ji0J0vAGlG4UtFE_JroLK9z1ZBG7vYBuqHCh7QFW7FqD5fsJSdSyMWRtF7kayerX-AG1M38bG3cRTm3KkctJ8EciBwwbcf3IzAucZ6EoY8B1QmE)
 
-FastAPI
+#### FastAPI
 
+```python
 @app.get("/player/{player_id}")
 
 def get_player_details(player_id: int):
-
     for player in players:
-
         if player\['player_id'] == player_id:
-
             return {'player':player\['name']}
+```
 
-Here we pass in our route to localhost on port 8000 with an id of 1 and we we get back the player with id of 1.
+Here we pass in our route to localhost on port 8000 with an id of 1 and we get back the player with an id of 1.
 
 ![](https://lh3.googleusercontent.com/sdlIDlSJyDGCQt5Ps8sFfWNpny1uc5BEASoLFdOtOdnks6IqF0NGeEMbuc9NgUAPwUPbcUw2WgEjKPrfIVQO50i-H8PcT4IJSSpPFD_JRcip95bGKds8eD3C0OKusU2LVV0Xe9xA)
 
-Conclusion: With FastAPi since it’s using Python type hinting you can port your code to other frameworks, like Django. With Flask it’s not portable because we’re using framework specific type hinting, not Python hinting.
+Conclusion: With FastAPi since it’s using Python type hinting you can port your code to other frameworks, like Django. With Flask it’s not portable because we’re using framework-specific type hinting, not Python hinting.
 
 Templates Folder
 
-The Templates Folder stores the your HTML files when you’re building a web application in Flask or FastAPI and you have to use Jinja to display your variables in HTML. Jinja is a templating engine that allows you to write code similar to Python to display HTML. 
+The Templates Folder stores your HTML files when you’re building a web application in Flask or FastAPI and you have to use Jinja to display your variables in HTML. Jinja is a templating engine that allows you to write code similar to Python to display HTML. 
 
-Flask
+#### Flask
 
 By default, Flask looks for templates in a "templates" folder so you’ll just create one in your file structure. 
 
@@ -409,6 +406,7 @@ By default, Flask looks for templates in a "templates" folder so you’ll just c
 
 Then you can use Jinja to display your variables by surrounding them with double curly braces:
 
+```html
 <!DOCTYPE html>
 
 <html lang="en">
@@ -436,22 +434,23 @@ Then you can use Jinja to display your variables by surrounding them with double
 </body>
 
 </html>
+```
 
-Conclusion: Jijnja comes with Flask when it’s installed which is a huge plus. In FastAPi, you have to install Jinja and define the templates folder in your code.
+**Conclusion**: Jijnja comes with Flask when it’s installed which is a huge plus. In FastAPi, you have to install Jinja and define the templates folder in your code.
 
-Production Server
+# Production Server
 
-At some point you’ll want to deploy your application and show it to the world.
+At some point, you’ll want to deploy your application and show it to the world.
 
-Flask
+#### Flask
 
-Flask uses a web server called WSGI, which stands for Web Sever Gateway Interface and has been the Python standard for many years. The drawback is that it’s synchronous. Which means if you have a bunch of requests, they have to wait in line for the others before it to complete.
+Flask uses a web server called WSGI, which stands for Web Server Gateway Interface and has been the Python standard for many years. The drawback is that it’s synchronous. This means if you have a bunch of requests, they have to wait in line for the others before it to complete.
 
-FastAPI
+#### FastAPI
 
 FastAPI uses a web server called ASGI or Asynchronous Server Gateway Interface, which is lighting fast because it’s well, you guessed it Asynchronous. This means if you have a bunch of requests coming in, they don’t have to wait for the other ones to complete or finish before they start processing. 
 
-Conclusion: ASGI makes for faster performance in your web applications because of they way they process requests asynchronously
+Conclusion: ASGI makes for faster performance in your web applications because of the way they process requests asynchronously
 
 Drumroll please.
 
@@ -459,16 +458,16 @@ The winner is...
 
 This is how you can choose.
 
-Use Flask if you want:
+**Use Flask if you want:**
 
-* A battletested framework, as it’s been around for a long time
+* A battle tested framework, as it’s been around for a long time
 * To develop a quick prototype
 * To do web application development
 
-Use FastAPI if you want:
+**Use FastAPI if you want:**
 
 * Speed as in development time and performance
-* To decrease the amount of bugs and errors in your code
+* To decrease the number of bugs and errors in your code
 * To build APIs from scratch
 
 Ok, so you’ve seen both Flask and FastAPI in action and now you have a better understanding of both and which one you’ll choose in your next project. You’ve chosen your outfit for the wedding and no longer care about making your ex jealous. 
