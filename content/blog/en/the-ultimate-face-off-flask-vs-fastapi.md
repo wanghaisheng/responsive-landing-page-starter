@@ -130,39 +130,48 @@ if \_\_name\_\_ == "\_\_main\_\_":
     uvicorn.run("main:app")
 ```
 
-Conclusion: In the newer versions of Flask you can use the @app.get() and @app.post() decorators as shortcuts for routing. The previous way using @app.route() you had to pass in your HTTP verbs to a methods list like so: methods=\[“GET”, “POST”]. Note in Flask it does a GET by default so you don’t need to specify it in the methods list. These methods also come with FastAPI with support for the following decorated routes for each HTTP method including:
+**Conclusion**: In the newer versions of Flask you can use the @app.get() and @app.post() decorators as shortcuts for routing. The previous way using @app.route() you had to pass in your HTTP verbs to a methods list like so: methods=\[“GET”, “POST”]. Note in Flask it does a GET by default so you don’t need to specify it in the methods list. These methods also come with FastAPI with support for the following decorated routes for each HTTP method including:
 
 * @app.get()
 * @app.post()
 * @app.put()
 * @app.delete()
 
-Running in Development
+# Running in Development
 
 Once you have your Hello World app written you’ll want to run it in development, or locally on your machine first before putting it out in production for the whole world to see. If your application doesn’t work as expected, people will definitely freak out. You want to minimize the freakout.
 
 So from your terminal run in Flask and FastAPI run these commands:
 
-Flask
+#### Flask
 
-export FLASK_APP=app.py
+```python
+$ export FLASK_APP=app.py
 
-export FLASK_ENV=development
+$ export FLASK_ENV=development
 
-flask run
+$ flask run
+```
 
-FastAPI
 
-uvicorn main:app --reload
 
-Conclusion: FastAPI uses Hot Reloading, which keeps the app running when you’re making code changes so you don’t have to keep restarting the development server. With Flask you have an extra terminal command export FLASK_ENV=development which allows you to make code changes without restarting your development server. 
+#### FastAPI
 
-HTTP Methods
+```
+$ uvicorn main:app --reload
+```
+
+
+
+**Conclusion**: FastAPI uses Hot Reloading, which keeps the app running when you’re making code changes so you don’t have to keep restarting the development server. With Flask you have an extra terminal command export FLASK_ENV=development which allows you to make code changes without restarting your development server. 
+
+# HTTP Methods
 
 In the Hello World example we saw what a GET looks like in Flask and FastAPI, so now let’s take a closer look at a POST method.
 
-Flask < 2.0
+#### Flask < 2.0
 
+```python
 @app.route("/teams", methods=\["POST"])
 
 def create_team():
@@ -188,13 +197,15 @@ def create_team():
     teams.append(team)
 
     return (jsonify(teams))
+```
 
-Flask 2.0
 
+
+#### Flask 2.0
+
+```python
 @app.post("/teams")
-
 def create_team():
-
     team = {
 
         "team_name": "Phoenix Suns",
@@ -214,15 +225,16 @@ def create_team():
     }
 
     teams.append(team)
-
     return (jsonify(teams))
+```
 
-FastAPI
 
+
+#### FastAPI
+
+```python
 @app.post("/teams")
-
 def create_team():
-
     team = {
 
         "team_name": "Phoenix Suns",
@@ -242,10 +254,10 @@ def create_team():
     }
 
     teams.append(team)
-
     return {'teams':teams}
+```
 
-Conclusion: Flask 2.0 and FastAPI look really similar when doing a POST method. The trick is seeing how you new data is created. With Flask you’ll have to use a tool called Postman which acts as a client so you can see your POST requests and the data you’ve created in json format. FastAPI come out of the box with something called Pydantic and SwaggerUI which allows you to use automatic documentation to interact with your requests from the browser including POST requests. Flask can also use automatic documentation but you’ll have to install it using flask-swagger and to make it work there’s lots of configuration. Let’s look at how to see your POST requests in FastAPI in the next section.
+**Conclusion**: Flask 2.0 and FastAPI look really similar when doing a POST method. The trick is seeing how you new data is created. With Flask you’ll have to use a tool called Postman which acts as a client so you can see your POST requests and the data you’ve created in json format. FastAPI come out of the box with something called Pydantic and SwaggerUI which allows you to use automatic documentation to interact with your requests from the browser including POST requests. Flask can also use automatic documentation but you’ll have to install it using flask-swagger and to make it work there’s lots of configuration. Let’s look at how to see your POST requests in FastAPI in the next section.
 
 Automatic Documentation
 
