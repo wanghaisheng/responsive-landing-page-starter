@@ -259,9 +259,11 @@ def create_team():
 
 **Conclusion**: Flask 2.0 and FastAPI look really similar when doing a POST method. The trick is seeing how you new data is created. With Flask you’ll have to use a tool called Postman which acts as a client so you can see your POST requests and the data you’ve created in json format. FastAPI come out of the box with something called Pydantic and SwaggerUI which allows you to use automatic documentation to interact with your requests from the browser including POST requests. Flask can also use automatic documentation but you’ll have to install it using flask-swagger and to make it work there’s lots of configuration. Let’s look at how to see your POST requests in FastAPI in the next section.
 
-Automatic Documentation
+# Automatic Documentation
 
-If you believe in magic you’ll most definitely love Automatic Documenation. FastAP is based on Pydantic which comes out of the box so there’s no need to install it. Pydantic is a framework for easily modeling and validating objects. With Pydantic it takes the pain away because you don’t have to write constructors and you get all the magic methods. Pydantic also does Data validation which displays friendlier errors reducing debuggin time and uses python type hints. To access your automatic documentation make sure your development server is running and go to your localhost and the port in which your application is running on:     http://127.0.0.1:8000/docs
+If you believe in magic you’ll most definitely love Automatic Documenation. FastAPI is based on Pydantic which comes out of the box so there’s no need to install it. Pydantic is a framework for easily modeling and validating objects. With Pydantic it takes the pain away because you don’t have to write constructors and you get all the magic methods. Pydantic also does Data validation which displays friendlier errors reducing debuggin time and uses python type hints. To access your automatic documentation make sure your development server is running and go to your localhost and the port in which your application is running:
+
+    ` http://127.0.0.1:8000/docs`
 
 You’ll see your POST request like the below example, but if you’re using other HTTP methods like GET, PUT, DELETE they’ll be visible as well.
 
@@ -269,25 +271,24 @@ You’ll see your POST request like the below example, but if you’re using oth
 
 Let’s do something much more cooler so we can see the beauty of automatic documentation. Let’s say we have this code in FastAPI:
 
-FastAPI
+#### FastAPI
 
+```python
 from pydantic import BaseModel
 
 app = FastAPI()
 
 class Player(BaseModel):
-
     player_name: str
-
     player_team: str
-
     player_age: int
 
 @app.post("/teams")
-
 def create_team(request: Player):
-
     return {'teams':request}
+```
+
+
 
 Notice that in order to use Pydantic you have to import the BaseModel in which our Player class will inherit. We’re also declaring variables as type hints inside of our class and returning a dictionary in our POST request.
 
