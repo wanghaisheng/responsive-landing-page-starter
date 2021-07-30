@@ -5,12 +5,12 @@ description: " The Vonage Video API team recently released a new version of the
 thumbnail: /content/blog/announcing-the-vonage-video-client-sdk-version-2-20/videoapi_sdk-release_1200x600.png
 author: product-manager-video-api
 published: true
-published_at: 2021-07-29T11:58:45.081Z
+published_at: 2021-07-30T11:48:44.145Z
 updated_at: 2021-07-29T11:58:45.124Z
 category: release
 tags:
   - video-api
-comments: true
+comments: false
 spotlight: false
 redirect: ""
 canonical: ""
