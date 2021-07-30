@@ -58,20 +58,21 @@ $ pip install flask
 $ pip install fastapi uvicorn
 ```
 
-Conclusion: Notice with FastAPI you install it with Uvicorn. Think of Uvicorn as a lightning-fast server that allows your applications to perform faster. 
+**Conclusion**: Notice with FastAPI you install it with Uvicorn. Think of Uvicorn as a lightning-fast server that allows your applications to perform faster. 
 
-Hello World Application
+# Hello World Application
 
 If you’ve only written one line of code in your entire life, I bet it was something like this:
 
-print(“Hello World”)
+`print(“Hello World”)`
 
 It’s kind of like if you were learning another language, let’s say Mandarin. There’s a system called Pinyin which transcribes Chinese characters to English so people can pronounce them. It’s designed to get you up and running quickly, just like a Hello World application. 
 
 Let’s see what a hello world application looks like in both Flask and FastAPI.
 
-Flask < 2.0
+#### Flask < 2.0
 
+```python
 \# inside of a Python .py file
 
 from flask import Flask
@@ -87,9 +88,11 @@ def home():
 if \_\_name\_\_ == "\_\_main\_\_":
 
     app.run()
+```
 
-Flask 2.0
+#### Flask 2.0
 
+```python
 from flask import Flask
 
 app = Flask(\_\_name\_\_)
@@ -103,9 +106,11 @@ def home():
 if \_\_name\_\_ == "\_\_main\_\_":
 
     app.run()
+```
 
-FastAPI
+#### **FastAPI**
 
+```python
 \# inside of a Python .py file
 
 import uvicorn
@@ -123,6 +128,7 @@ def home():
 if \_\_name\_\_ == "\_\_main\_\_":
 
     uvicorn.run("main:app")
+```
 
 Conclusion: In the newer versions of Flask you can use the @app.get() and @app.post() decorators as shortcuts for routing. The previous way using @app.route() you had to pass in your HTTP verbs to a methods list like so: methods=\[“GET”, “POST”]. Note in Flask it does a GET by default so you don’t need to specify it in the methods list. These methods also come with FastAPI with support for the following decorated routes for each HTTP method including:
 
