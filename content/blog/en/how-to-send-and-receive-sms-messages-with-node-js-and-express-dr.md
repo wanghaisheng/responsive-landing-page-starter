@@ -83,7 +83,7 @@ touch index.js
 ```
 
 ```javascript
-const Vonage = require('vonage')
+import Vonage from '@vonage/server-sdk'
 
 const vonage = new Vonage({
   applicationId: VONAGE_APPLICATION_ID,
