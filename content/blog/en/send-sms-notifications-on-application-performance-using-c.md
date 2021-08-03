@@ -2,6 +2,7 @@
 title: Send SMS Notifications on Application Performance Using C#
 description: You can use notifications that contain a summary of the performance
   stats or details about an error in the production.
+thumbnail: /content/blog/send-sms-notifications-on-application-performance-using-c/send-notifications_app-proformance_1200x600.png
 author: joydip-kanjilal
 published: true
 published_at: 2021-08-02T14:20:18.950Z
