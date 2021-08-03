@@ -5,7 +5,7 @@ description: You can use notifications that contain a summary of the performance
 thumbnail: /content/blog/send-sms-notifications-on-application-performance-using-c/send-notifications_app-proformance_1200x600.png
 author: joydip-kanjilal
 published: true
-published_at: 2021-08-02T14:20:18.950Z
+published_at: 2021-08-03T09:32:21.287Z
 updated_at: 2021-08-02T14:20:18.986Z
 category: tutorial
 tags:
