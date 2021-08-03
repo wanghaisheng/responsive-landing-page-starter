@@ -468,4 +468,4 @@ This is how you can choose.
 
 Ok, so you’ve seen both Flask and FastAPI in action. Now you have a better understanding of both, and you've figured out which one would be a better fit for your next project. 
 
-So which framework did you choose? Tweet us @VonageDev or @tonyasims.
+So which framework did you choose? Tweet us [@VonageDev](https://twitter.com/VonageDev) or [@tonyasims](https://twitter.com/TonyaSims).
