@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 Choosing a framework is not easy, and that’s why I’m here to help you get rid of the headache.
 
-Why should we even compare Flask and FastAPI?
+Why should we even compare [Flask](https://flask.palletsprojects.com/en/2.0.x/) and [FastAPI](https://fastapi.tiangolo.com/)?
 
 They are similar. Both are stripped-down Python microframeworks without the bloated bells and whistles, which means faster development time and more flexibility. Also, both are used for building APIs and web applications.
 
@@ -28,7 +28,7 @@ They are also different. Flask is more battle-tested, therefore slightly more re
 
 Now that you have a better understanding of each framework, let our faceoff begin!
 
-# **Installation**
+# Installation
 
 Sometimes the most challenging part of learning something new is actually getting started. That’s why we’ll start with Installation.
 
@@ -113,8 +113,10 @@ if \_\_name\_\_ == "\_\_main\_\_":
 ```
 
 **Conclusion**: In the newer versions of Flask, you can use the `@app.get()` and `@app.post()` decorators as shortcuts for routing. The previous way of using `@app.route()` required you to pass in your HTTP verbs to a methods list like so: `methods=\[“GET”, “POST”]`.  
->Note: Flask does a `GET` by default, so you don’t need to specify it in the methods list.  
-These methods also come in FastAPI with support for the following decorated routes for each HTTP method:
+
+> Note: Flask does a `GET` by default, so you don’t need to specify it in the methods list.\
+> These methods also come in FastAPI with support for the following decorated routes for each HTTP method:
+
 * `@app.get()`
 * `@app.post()`
 * `@app.put()`
@@ -136,15 +138,11 @@ $ export FLASK_ENV=development
 $ flask run
 ```
 
-
-
 #### FastAPI
 
 ```python
 $ uvicorn main:app --reload
 ```
-
-
 
 **Conclusion**: FastAPI uses Hot Reloading, which keeps the app running while you’re making code changes. Hence, you don’t have to keep restarting the development server. With Flask, you need an extra terminal command: `export FLASK_ENV=development`, which allows you to make code changes without restarting your development server. 
 
@@ -177,8 +175,6 @@ def create_team():
     return (jsonify(teams))
 ```
 
-
-
 #### Flask 2.0
 
 ```python
@@ -203,8 +199,6 @@ def create_team():
     teams.append(team)
     return (jsonify(teams))
 ```
-
-
 
 #### FastAPI
 
@@ -233,7 +227,7 @@ def create_team():
 
 **Conclusion**: Flask 2.0 and FastAPI look very similar when doing a POST method. The trick is seeing how new data is created.  
 
-With Flask, you’ll have to use a tool like Postman acting as a client, so you can see your POST requests and the data you’ve created in JSON format.  
+With Flask, you’ll have to use a tool like Postman acting as a client, so you can see your POST requests and the data you’ve created in JSON format.\
 FastAPI comes with Pydantic and SwaggerUI out of the box, which allows you to use automatic documentation to interact with your requests from the browser, including POST requests.  
 
 Flask can also use automatic documentation, but you’ll have to install it using flask-swagger. There’s also lots of configuration involved to make it work. Let’s look at how to see your POST requests in FastAPI in the next section.
@@ -244,7 +238,9 @@ If you believe in magic, you’ll most definitely love Automatic Documentation.
 
 FastAPI is based on Pydantic, a framework for easily modeling and validating objects. It comes out of the box, so no need to install it. Pydantic takes the pain of writing constructors away, and you get all the magic methods. Pydantic also does Data validation which displays friendlier errors and uses python type hints, reducing debugging time. To access your automatic documentation, make sure your development server is running,  then go to your localhost and the port on which your application is running:
 
-    ` http://127.0.0.1:8000/docs`
+```
+` http://127.0.0.1:8000/docs`
+```
 
 You’ll see your POST request like the example below; if you’re using other HTTP methods, these will be visible as well.
 
@@ -268,8 +264,6 @@ class Player(BaseModel):
 def create_team(request: Player):
     return {'teams':request}
 ```
-
-
 
 Notice that in order to use Pydantic, you have to import the `BaseModel` that the `Player` class will inherit. We’re also declaring variables as type hints inside our class and returning a dictionary in our POST request.
 
@@ -313,8 +307,6 @@ def login(request: Login):
         return {"message": "Success"}
     return {"message": "Authentication Failed"}
 ```
-
-
 
 Here we’re creating a class Login that inherits from the Pydantic BaseModel with type hinted variables inside of it. We are first checking if the `username` is `janedoe` and the `password` is `passworld12345`, then we return a success or a failure message accordingly. 
 
@@ -364,8 +356,6 @@ def get_player_details(player_id):
         if player\["player_id"] == player_id:
             return jsonify(player)
 ```
-
-
 
 Here we pass in our route to localhost on port 5000 with an id of 2, and we get back the player with an id of 2.
 
@@ -454,13 +444,13 @@ The winner is... well, it depends.
 
 This is how you can choose.
 
-**Use Flask if you want:**
+**Use [Flask](https://flask.palletsprojects.com/en/2.0.x/) if you want:**
 
 * A battle-tested framework, as it’s been around for a long time
 * To develop a quick prototype
 * To do web application development
 
-**Use FastAPI if you want:**
+**Use [FastAPI](https://fastapi.tiangolo.com/) if you want:**
 
 * Speed, as in development time and performance
 * To decrease the number of bugs and errors in your code
