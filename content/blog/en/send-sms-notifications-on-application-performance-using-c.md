@@ -26,9 +26,7 @@ This article talks about how you can retrieve performance stats of an ASP.NET Co
 ## Prerequisites
 
 * Visual Studio 2019.
-* Windows OS.
-    
-* A Vonage API Account. If you don't have one, you can sign up and start building your applications with free credit. You can find the API key and API secret from the top of the Vonage API Dashboard.
+* Windows OS
 
 You’ll also need to install the following NuGet packages onto your project:
 
@@ -37,6 +35,8 @@ You’ll also need to install the following NuGet packages onto your project:
 * Vonage
 
 You can install them via the NuGet Package Manager while you’re within Visual Studio. 
+
+<sign-up></sign-up>
 
 ## The Starter Project
 
