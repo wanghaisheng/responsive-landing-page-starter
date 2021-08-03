@@ -7,7 +7,7 @@ author: joydip-kanjilal
 published: true
 published_at: 2021-08-02T14:20:18.950Z
 updated_at: 2021-08-02T14:20:18.986Z
-category: community
+category: tutorial
 tags:
   - sms-api
   - dotnet
