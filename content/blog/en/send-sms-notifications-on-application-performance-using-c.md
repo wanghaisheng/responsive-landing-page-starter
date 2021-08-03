@@ -73,7 +73,7 @@ For this project, here are the classes that you'll be creating in the applicatio
 * `NotificationJob` – This is the job class that takes advantage of the `NotificationManager` class to sends out notifications, as discussed earlier.
 * `CustomJobFactory` – This class is responsible for creating jobs.
 * `CustomJobScheduler` – This class is responsible for scheduling jobs.
-* `QuartzExtensions` - This class contains an extension method called AddQuartz to simplify and organize the code.
+* `QuartzExtensions` - This class contains an extension method called AddQuartz to simplify and organize the code.  
 
 ![project architecture diagram](/content/blog/send-sms-notifications-on-application-performance-using-c/architecture-1-.png "project architecture diagram")
 
