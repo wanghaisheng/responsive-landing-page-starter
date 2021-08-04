@@ -40,7 +40,7 @@ You can install them via the NuGet Package Manager while you’re within Visual 
 
 ## The Starter Project
 
-You can find a starter project on [GitHub](https://github.com/joydipkanjilal/NotificationsUsingVonage) in the starter folder. The starter project contains an ASP.NET Core MVC 5 project with capabilities to read CPU and Memory usage information. In this tutorial, you will add the SMS notification functionality.
+You can find a starter project on [GitHub](https://github.com/nexmo-community/csharp-application-sms-notifications) in the starter folder. The starter project contains an ASP.NET Core MVC 5 project with capabilities to read CPU and Memory usage information. In this tutorial, you will add the SMS notification functionality.
 
 ## Using Quartz.NET for Background Jobs
 
@@ -454,4 +454,4 @@ Once the application is running, wait for the application to generate logs. You 
 
 ## What Next?
 
-You can check out a completed version of the project on [GitHub](https://github.com/joydipkanjilal/NotificationsUsingVonage) under the completed folder.
+You can check out a completed version of the project on [GitHub](https://github.com/nexmo-community/csharp-application-sms-notifications) under the completed folder.
