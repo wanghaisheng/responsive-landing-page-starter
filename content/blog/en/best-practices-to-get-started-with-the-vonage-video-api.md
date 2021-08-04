@@ -27,7 +27,9 @@ Very detailed developer documentation on the Vonage Video API is publicly availa
 
 Here you will find all the details you need for basically any question you might have, sample codes, release notes. There is also a great section called “[Get answers to your Video API questions](https://support.tokbox.com/hc/en-us)”.
 
-To help us better assist you, please send us your feedback via email at: [video.api.support@vonage.com](mailto:video.api.support@vonage.com)
+To help us better assist you, please send us your feedback via email at: [support@tokbox.com](mailto:support@tokbox.com)
+
+
 
 ## Video Platform
 
