@@ -86,7 +86,7 @@ You can also use SMS to send a flash message, also called a class zero message. 
 
 ### Is SMS Secure? 
 
-As a programmer, you know security is important. So you may be wondering how secure SMS is? SMS messages are not encrypted, which means your cellular provider can read them. While your mobile provider may not read your messages, providers like ATT&T, Sprint, and T-Mobile have sold customer's data in the past. Your provider also stores your SMS messages for some time. (https://www.howtogeek.com/402043/can-anyone-really-track-my-phones-precise-location/). Because mobile providers store SMS messages for varying amounts of time, they can and have been used in divorce and criminal proceedings.  
+As a programmer, you know security is important. So you may be wondering how secure SMS is? SMS messages are not encrypted, which means your cellular provider can read them. While your mobile provider may not read your messages, providers like ATT&T, Sprint, and T-Mobile [have sold customer's data in the past.]((https://www.howtogeek.com/402043/can-anyone-really-track-my-phones-precise-location/)) Your provider also stores your SMS messages for some time. Because mobile providers store SMS messages for varying amounts of time, they can and have been used in divorce and criminal proceedings.  
 
 You may be wondering why companies use SMS for two-factor authentication if they are not encrypted? Companies use SMS for two-factor authentification because it helps verify the customer has access to the number they signed up for a service with. However, some security professionals recommend against using SMS for two-factor authentification because of the security risks. 
 
