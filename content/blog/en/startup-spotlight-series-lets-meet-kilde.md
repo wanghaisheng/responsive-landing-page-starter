@@ -18,31 +18,29 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Private debt has become an increasingly popular asset class in recent years. The Covid-19 pandemic has accelerated the growth of the private asset class due to a rise in cash flow needs combined with favourable monetary policies and persistent low interest rates. However, securing a sustainable source of debt funding is still a big challenge for digital lenders, heightened by the fact that digital lending is still not transparent enough for most investors.
+Private debt has become an increasingly popular asset class in recent years. The Covid-19 pandemic has accelerated the growth of private debt due to a rise in cash flow needs combined with favourable monetary policies and persistent low interest rates. However, securing a sustainable source of debt funding is still a big challenge for digital lenders, heightened by the fact that digital lending is still not transparent enough for most investors.
 
-A new type of private debt platforms that fund non-bank lenders has emerged and is gaining more momentum in the race of demystifying the private debt space. A leader in the space is Singapore based Kilde, which was founded with the mission to democratise the private debt market.
+A new type of private debt platforms, that fund non-bank lenders, has emerged and is gaining more momentum in the race of demystifying the private debt space. A leader in the space is Singapore based Kilde, which was founded with the mission to democratise the private debt market.
 
-In this edition of the Startup Spotlight we caught-up with Aleksandra Yurchenko, Head of Investor Relations at Kilde to find out more about their story, how they’ve raised funding and what’s their ambitions to revolutionize the market.
+In this edition of the Startup Spotlight we caught-up with Aleksandra Yurchenko, Head of Investor Relations at Kilde to find out more about their story, how they’ve raised funding and their ambitions to revolutionize the market.
 
 ## The startup at a glance
 
-**Startup Name**:  Kilde
+Startup Name:  Kilde
 
-**Industry**: FinTech
+Industry: FinTech
 
-**Location**: Singapore
+Location: Singapore
 
-**Date founded**: November 2019
+Date founded: November 2019
 
-**LinkedIn**: <https://www.linkedin.com/company/kilde-financial-technologies/>
+LinkedIn: <https://www.linkedin.com/company/kilde-financial-technologies/>
 
-**Number of employees**: 10
+Number of employees: 10
 
-**Vonage API used**: [Verify](https://developer.nexmo.com/verify/overview)
+Vonage API used: [Verify](https://developer.nexmo.com/verify/overview)
 
 ## In one sentence, what does Kilde do?
-
-
 
 Kilde is a regulated investment platform for alternatives, bringing together borrowers and investors.
 
@@ -50,13 +48,11 @@ Kilde is a regulated investment platform for alternatives, bringing together bor
 
 We solve the problem of cumbersome and risky ways to participate in the growth of alternative investments, by allowing investors to buy securities instead of directly investing in alternative assets, which gives them the same upside with the added benefit of speed, trust, and simplicity.
 
-Initially, we focused our problem statement around the needs of the borrowers on our platform and later changed it. We realized that we have a potential to solve a much more scalable problem on the part of the investors on our platform. 
+Initially, we focused around the needs of the borrowers on our platform and later changed it. We realized that we have a potential to solve a much more scalable problem on the part of the investors on our platform. 
 
 ## What differentiates Kilde from your competitors? Is there a secret sauce?
 
 Our secret sauce is our expertise, which allows us to source the best borrowers and arrange unique deals for investors on our platform and actively manage the risks of their investments. 
-
-![The team at Kilde](/content/blog/startup-spotlight-series-lets-meet-kilde/befunky-collage.jpg "The team at Kilde")
 
 ## VC, Angel, Bootstrap or Other?
 
@@ -66,11 +62,11 @@ We raised pre-seed funding from a European VC fund, and will be raising seed fun
 
 Getting the first customers on board has been one of the bigger challenges, enhanced by the lack of track record and COVID-driven environment. In this period of uncertainty, the majority of the institutional investors tend to stick with existing partners. 
 
-Getting out there, relying on our own track record as a team, and taking through each qualified lead helped us score our first institutional customers. 
+Getting out there, relying on our own track record as a team, and talking through each qualified lead helped us score our first institutional customers. 
 
 ## The biggest mistake Kilde has made so far and what did you learn from it?
 
-If we could come back in time, we would start shipping our product and talking to customers earlier before we had our regulatory licensing and technology stack ready. That would allow us to correct the course earlier than we did. 
+If we could go back in time, we would start shipping our product and talking to customers earlier before we had our regulatory licensing and technology stack ready. That would allow us to correct the course earlier than we did. 
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos and Bill Gates. Who do you choose and why? 
 
@@ -102,5 +98,6 @@ Our ambitions for a 3-5 years horizon:
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
-**\
-Apply to join us [here](https://vonage.dev/3d093hA).**
+
+
+Apply to join us [here](https://vonage.dev/3d093hA).
