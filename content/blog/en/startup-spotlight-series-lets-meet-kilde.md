@@ -1,11 +1,11 @@
 ---
 title: "Startup Spotlight Series: Let's meet Kilde"
-description: Meet Singapore-based startup Kildw as a part of Vonage Startup
+description: Meet Singapore-based startup Kilde as a part of Vonage Startup
   Spotlight series.
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-kilde/startups_kilde_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-08-05T11:55:52.503Z
+published_at: 2021-08-05T13:43:11.698Z
 updated_at: 2021-08-05T11:55:52.541Z
 category: startup
 tags:
@@ -54,6 +54,10 @@ Initially, we focused around the needs of the borrowers on our platform and late
 
 Our secret sauce is our expertise, which allows us to source the best borrowers and arrange unique deals for investors on our platform and actively manage the risks of their investments. 
 
+![The Team at Kindle](/content/blog/startup-spotlight-series-lets-meet-kilde/befunky-collage.jpg "The Team at Kindle")
+
+*The Team at Kindle*
+
 ## VC, Angel, Bootstrap or Other?
 
 We raised pre-seed funding from a European VC fund, and will be raising seed funding both, from Angels and VCs, in the next few months. 
@@ -81,7 +85,7 @@ Kilde investment platform went live, we raised pre-seed funding, and have our fi
 * First use case for private debt of Kilde (Singapore): Investment platform launched (Feb 21)
 * 2 deals, $6M+ of debt securities issued (May 21)
 * $3.5M committed by the investors (since Feb 2021);
-* ·    Other alternative assets: sourcing and onboarding of deal providers is ongoing.
+* Other alternative assets: sourcing and onboarding of deal providers is ongoing.
 
 ## What’s next for Kilde? Where do you want to be in 3 years?
 
@@ -97,7 +101,5 @@ Our ambitions for a 3-5 years horizon:
 ### Let's work together - Vonage for Startups
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
-
-
 
 Apply to join us [here](https://vonage.dev/3d093hA).
