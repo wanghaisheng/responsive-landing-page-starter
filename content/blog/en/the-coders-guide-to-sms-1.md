@@ -70,7 +70,7 @@ MMS messages do have some advantages, though. Because MMS messages can include v
 
 Apple's iMessage, WhatsApp, WeChat, and Facebook Messenger are examples of "Over the Top" or OTT applications. Unlike SMS, OTT applications like WhatsApp do not require the user to connect to a cellular network.
 
-OTT applications like iMessage and WhatsApp do not use SMS. However, that does not mean iPhones do not send SMS messages: they do. You can only send an iMessage if you and the recipient both have an iPhone. If you send a text message on your iPhone to another Apple user, Apple will send the text using iMessage, and your iPhone will highlight the message in blue. If you send a text message (without multimedia) to another device (like Android), Apple will send it using SMS, and the message will be green. Android devices, on the other hand, send SMS messages by default.
+OTT applications like iMessage and WhatsApp do not use SMS. However, that does not mean iPhones do not send SMS messages: they do. You can only send an iMessage if you and the recipient both have an iPhone. If you send a text message on your iPhone to another Apple user, Apple will send the text using iMessage, and your iPhone will highlight the message in blue. If you send a text message (without multimedia) to another device (like Android), Apple will send it using SMS, and the message will be green. Android devices, on the other hand, often use a service called Android Messages. 
 
 The advantages of OTT applications are they are free, allow users to send videos and other multimedia, and often have additional features like video chatting.
 
