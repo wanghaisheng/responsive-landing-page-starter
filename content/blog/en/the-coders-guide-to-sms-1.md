@@ -84,6 +84,18 @@ SMS has many cool less-known features. For instance, did you know you can edit a
 
 You can also use SMS to send a flash message, also called a class zero message. A flash message is a message that pops up on your phone but, by default, doesn't save to your inbox. The point of a flash message is to enable you to send something that the receiver won't save by default. In other words, a flash message is a precursor to Snapchat's famous ephemeral messages. However, just like how with Snapchat, it is possible to screenshot a message, it is also possible to download a class zero message (or screenshot it), so you cannot entirely rely on it for secrecy. Another use case for a flash message is sending a message you want the recipient to read immediately. 
 
+### Is SMS Secure? 
+
+As a programmer, you know security is important. So you may be wondering how secure SMS is? SMS messages are not encrypted, which means your cellular provider can read them. While your mobile provider may not read your messages, providers like ATT&T, Sprint, and T-Mobile have sold customer's data in the past. Your provider also stores your SMS messages for some time. (https://www.howtogeek.com/402043/can-anyone-really-track-my-phones-precise-location/). Because mobile providers store SMS messages for varying amounts of time, they can and have been used in divorce and criminal proceedings.  
+
+You may be wondering why companies use SMS for two-factor authentication if they are not encrypted? Companies use SMS for two-factor authentification because it helps verify the customer has access to the number they signed up for a service with. However, some security professionals recommend against using SMS for two-factor authentification because of the security risks. 
+
+For example, hackers can intercept SMS messages. That means a bad actor could access an incoming authentication code without possessing the user's phone. Hackers can also get around SMS two-factor authentication using a SIM swap. A SIM card swap is when a bad actor convinces your mobile provider (by using various lies) to activate a new SIM card linked to your number on a new phone (that they possess). When they use the new SIM card, they then have possession of your phone number. 
+
+Because of these problems, you should not treat SMS messages as private. If you need to communicate sensitive data, you should use a messaging app that provides end-to-end encryption like Signal. Just because the messages are not encrypted also does not mean two-factor authentication with SMS is useless. It still forces bad actors to take additional steps (like a SIM card swap) to hijack the account you are protecting with it. 
+
+Whether or not SMS two-factor authentification provides enough protection depends on the application. If you are providing additional verification steps to a video streaming service, SMS may be OK. However, suppose you are setting up two-factor authentification for a bank. In that case, you may use something more secure like Google Authenticator, which would require a hacker to gain access to your physical device. 
+
 ### Sending an SMS message Programmatically
 
 ![](/content/blog/the-coders-guide-to-sms/work-731198_640.jpg)
