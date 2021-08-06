@@ -64,7 +64,7 @@ Finally, delete the file `Worker.cs` from the project as you won’t be needing 
 
 ## Building The Main Fraud Detection Logic
 
-The small (micro) service you’ll build will simulate interacting with inputs and outputs via an event bus or queue. Exposing functionality directly via a REST API or another RPC method can lead to issues like \[chatty services], less resilient systems, etc.
+The small (micro) service you’ll build will simulate interacting with inputs and outputs via an event bus or queue. Exposing functionality directly via a REST API or another RPC method can lead to issues like [chatty services](https://docs.aws.amazon.com/whitepapers/latest/microservices-on-aws/chattiness.html), less resilient systems, etc.
 
 To keep things simple, this tutorial will store messages/events using the file system.
 
