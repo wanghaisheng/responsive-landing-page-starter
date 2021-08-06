@@ -23,7 +23,7 @@ replacement_url: ""
 ---
 When you sign up for services like insurance policies, financing assets like a mortgage, or even something like a mobile phone plan, the company you’re applying for needs to make sure you are a real person. On top of that, it would be valuable for these companies to have a way to verify if a phone number a prospective client gives them is a real and active number that can be reached in the future.
 
-Vonage has a fantastic [Phone Number Insights API](https://developer.vonage.com/api/number-insight) that can help support these kinds of scenarios. As a developer, you might be asked to build an isolated internal microservice that handles this use case.
+Vonage has a fantastic Phone [Number Insights API](https://developer.vonage.com/api/number-insight) that can help support these kinds of scenarios. As a developer, you might be asked to build an isolated internal microservice that handles this use case.
 
 In this article, you’ll learn how to use the Vonage Number Insights API and .NET to build a small distributed service that can supply this kind of functionality.
 
@@ -35,7 +35,7 @@ If you wish to skip ahead, you can view the [code for this tutorial on GitHub.](
 
 To get started, you’ll need:
 
-* An IDE for .NET development like Visual Studio, Visual Studio Code or JetBrains Rider
+* An IDE for .NET development like Visual Studio, Visual Studio Code, or JetBrains Rider
 * The [latest version of .NET](https://dotnet.microsoft.com/download) installed
 * The [Nexmo CLI installed and setup](https://github.com/nexmo/nexmo-cli)
 
