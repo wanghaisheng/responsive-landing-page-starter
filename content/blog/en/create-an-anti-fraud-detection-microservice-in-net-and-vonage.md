@@ -29,22 +29,21 @@ In this article, you’ll learn how to use the Vonage Number Insights API and .N
 
 ## Code
 
-If you wish to skip ahead, you can view the [code for this tutorial on GitHub.](https://github.com/jamesmh/vonage-api-dotnet-fraud-service)
-
-## Vonage API Account
-
-To complete this tutorial, you will need a [Vonage API account](https://dashboard.nexmo.com/sign-up). If you don’t have one already, you can [sign up today](https://dashboard.nexmo.com/sign-up) and start building with free credit. Once you have an account, you can find your API Key and API Secret at the top of the [Vonage API Dashboard](https://dashboard.nexmo.com/).
+If you wish to skip ahead, you can view the [code for this tutorial on GitHub.](https://github.com/nexmo-community/vonage-api-dotnet-fraud-service)
 
 ## Prerequisites
 
 To get started, you’ll need:
 
-- An IDE for .NET development like Visual Studio, Visual Studio Code or JetBrains Rider
-- The [latest version of .NET](https://dotnet.microsoft.com/download) installed
-- The [Nexmo CLI installed and setup](https://github.com/nexmo/nexmo-cli)
+* An IDE for .NET development like Visual Studio, Visual Studio Code or JetBrains Rider
+* The [latest version of .NET](https://dotnet.microsoft.com/download) installed
+* The [Nexmo CLI installed and setup](https://github.com/nexmo/nexmo-cli)
+
+<sign-up></sign-up>
 
 ## Starting Your .NET Worker Service
-In .NET, a worker service is akin to a background process that will typically be subscribed to a message bus/queue or poll some other service.  
+
+In .NET, a worker service is akin to a background process that will typically be subscribed to a message bus/queue or poll some other service.\
 In this tutorial, you’ll build a microservice that accepts messages from a message queue, process them by calling the Vonage API, and then send a response message back to the queue.
 
 Let’s create a .NET worker service by executing the following in a terminal:
@@ -65,14 +64,14 @@ Finally, delete the file `Worker.cs` from the project as you won’t be needing 
 
 ## Building The Main Fraud Detection Logic
 
-The small (micro) service you’ll build will simulate interacting with inputs and outputs via an event bus or queue. Exposing functionality directly via a REST API or another RPC method can lead to issues like [chatty services], less resilient systems, etc.
+The small (micro) service you’ll build will simulate interacting with inputs and outputs via an event bus or queue. Exposing functionality directly via a REST API or another RPC method can lead to issues like \[chatty services], less resilient systems, etc.
 
 To keep things simple, this tutorial will store messages/events using the file system.
 
 Create a file called `MockEventBus.cs` and replace it with the following code:
 
-csharp
-```
+```csharp
+
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -135,8 +134,8 @@ This class will give us the ability to simulate sending and receiving mock distr
 
 Next, you’ll create a file called `Constants.cs` and fill it with the following:
 
-csharp
-```
+```csharp
+
 namespace FraudService
 {
     public class Constants
@@ -153,8 +152,8 @@ Next, create a file `CheckPhoneNumberInvocable.cs`. This file is where the meat 
 
 Replace the contents of `CheckPhoneNumberInvocable.cs` with the following:
 
-csharp
-```
+```csharp
+
 using System.Threading.Tasks;
 using Coravel.Invocable;
 using Vonage;
@@ -207,15 +206,13 @@ Let's have a closer look at the code! It pulls messages/events from a queue wher
 
 This is common in distributed systems: a microservice will publish its final results to an asynchronous message queue. Other systems can subscribe to this queue and receive these results and do whatever they need to do.
 
-
-
-This approach allows each service to be autonomous and resilient. For example, if a particular service goes down, it can begin processing messages placed in the queue while it was down once it's back up.  
+This approach allows each service to be autonomous and resilient. For example, if a particular service goes down, it can begin processing messages placed in the queue while it was down once it's back up.\
 With the typical REST/RPC approach, when a service is down, it cannot receive messages or requests at all - making the asynchronous message-driven approach more resilient.
 
 Getting back to the code, you’ll need to configure and glue the different pieces of this application together. Replace `Program.cs` with the following:
 
-csharp
-```
+```csharp
+
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Coravel;
@@ -283,8 +280,8 @@ In `Program.cs`, there’s a method called `ConfigureTestPhoneNumbers()` where y
 
 You might replace the contents of `mock_event_bus_phone_numbers_to_validate.json` with the following:
 
-json
-```
+```json
+
 [ { “Data”: “19055555555” } ]
 ```
 
