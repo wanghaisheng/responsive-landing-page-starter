@@ -1,5 +1,5 @@
 ---
-title: Create an Anti-Fraud Detection Microservice in .NET and Vonage
+title: Create a Fraud Detection Microservice in .NET and Vonage
 description: Create a .NET microservice that can verify phone numbers and send
   that information back to multiple consumers/services. Each consumer can make
   their own decision about how they want to use the results. You also understand
