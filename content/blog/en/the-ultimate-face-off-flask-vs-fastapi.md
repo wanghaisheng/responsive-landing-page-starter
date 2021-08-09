@@ -2,7 +2,7 @@
 title: "The Ultimate Face-off: Flask vs. FastAPI"
 description: When you need to choose between web frameworks, our face-off
   between FastAPI and Flask helps lead you to victory.
-thumbnail: /content/blog/the-ultimate-face-off-flask-vs-fastapi/python_sms-throttling_1200x600.png
+thumbnail: /content/blog/the-ultimate-face-off-flask-vs-fastapi/flask-vs-fastapi_1200x600.png
 author: tonya-sims-1
 published: true
 published_at: 2021-07-30T21:31:23.996Z
