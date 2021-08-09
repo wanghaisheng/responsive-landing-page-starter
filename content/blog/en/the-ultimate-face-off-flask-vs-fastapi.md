@@ -245,7 +245,7 @@ FastAPI is based on Pydantic, a framework for easily modeling and validating obj
 
 You’ll see your POST request like the example below; if you’re using other HTTP methods, these will be visible as well.
 
-![](https://lh4.googleusercontent.com/5faKZk_Rcq-dIjGcV6eNgcKRqfa7f5pJ-k2DMH-j0PxhJB_W3TnruP8r9oe30A6h0wyboXC3xNoXMFq-sskbcJ7aDT7rcco0Q4Q4n5b-nlPriI9PpeR4hptDmk5h90kbpSvBhUtI)
+![FastAPI Python automatic documentation POST request using Pydantic](https://lh4.googleusercontent.com/5faKZk_Rcq-dIjGcV6eNgcKRqfa7f5pJ-k2DMH-j0PxhJB_W3TnruP8r9oe30A6h0wyboXC3xNoXMFq-sskbcJ7aDT7rcco0Q4Q4n5b-nlPriI9PpeR4hptDmk5h90kbpSvBhUtI "FastAPI Python automatic documentation POST request using Pydantic")
 
 Let’s do something much cooler so we can see the beauty of automatic documentation. Let’s say we have this code in FastAPI:
 
@@ -270,19 +270,19 @@ Notice that in order to use Pydantic, you have to import the `BaseModel` that th
 
 When you pull up your automatic documentation, you’ll see a Schema. This Schema is a skeleton for your model with variables, where you can see which fields are required and which are optional.
 
-![](https://lh4.googleusercontent.com/Ge-DOMuMRzEAZOiOLmfrNvBylmunW8j6Tq9AznT42sIJbV3LPnHwS8u7a-vF2KWUe0pF-fqpamLKAxRMhsSsipmAcP-gkyXbMxGv1FYT1fZpiC2LdvXkWSjtgppHbGUWRm55DWV4)
+![FastAPI Python automatic documentation with Pydantic POST request and schema](https://lh4.googleusercontent.com/Ge-DOMuMRzEAZOiOLmfrNvBylmunW8j6Tq9AznT42sIJbV3LPnHwS8u7a-vF2KWUe0pF-fqpamLKAxRMhsSsipmAcP-gkyXbMxGv1FYT1fZpiC2LdvXkWSjtgppHbGUWRm55DWV4 "FastAPI Python automatic documentation with Pydantic POST request and schema")
 
 You can also “Try it out” and test your API endpoint by passing in values for the variables. Here, for example, we’re passing in `“Michael Jordan”` for the variable `player_name` of type String.
 
-![](https://lh6.googleusercontent.com/o5zjizYBoPXJTj9UUPA7dkGWc8VQoa9sisspu0nguEhvITJNl03s9j8iEJ9QYt7b6dbOJ79WgrrgCirXUhOEHKDDMdDY7rHyBxr4ouVvvH0_ooOlOEVfym8yME9SEyxSi7mbDKKR)
+![FastAPI Python automatic documentation with Pydantic POST request and request body](https://lh6.googleusercontent.com/o5zjizYBoPXJTj9UUPA7dkGWc8VQoa9sisspu0nguEhvITJNl03s9j8iEJ9QYt7b6dbOJ79WgrrgCirXUhOEHKDDMdDY7rHyBxr4ouVvvH0_ooOlOEVfym8yME9SEyxSi7mbDKKR "FastAPI Python automatic documentation with Pydantic POST request and request body")
 
 Then, when you click Execute, it’ll give you the Response Body. There’s no need to use an extra tool like Postman.
 
-![](https://lh6.googleusercontent.com/khsqTWPxA9jHnQ3hs542QAC37EZ02jtgxRzOkcy-yp-ShsOgSx4rAHk0x61SxTiNsXYECsCWW8EM0JaFYcQVgDrDGWfndZnzp-3P-Ph_Kqsg0pzmNJq6Gglb9H6fFVK-QiL4Ao7S)
+![FastAPI Python automatic documentation with Pydantic POST request and response body](https://lh6.googleusercontent.com/khsqTWPxA9jHnQ3hs542QAC37EZ02jtgxRzOkcy-yp-ShsOgSx4rAHk0x61SxTiNsXYECsCWW8EM0JaFYcQVgDrDGWfndZnzp-3P-Ph_Kqsg0pzmNJq6Gglb9H6fFVK-QiL4Ao7S "FastAPI Python automatic documentation with Pydantic POST request and response body")
 
 Your interactive documentation will also generate a curl command for you, so you don’t have to write one from scratch: 
 
-![](https://lh5.googleusercontent.com/2AJ3gnhujq1HwdLHHR4LulHOXlSV_sqkKPM8PW5d6hR60ggedoKx19S3Zy0BmgFdcflLXk4rIotZ3aaFgT8MORV0pzVf8TOH6kdOGywan2mYMixkGgb8eS937PiVttBI6qoln9NV)
+![FastAPI Python automatic documentation with Pydantic POST request and Curl](https://lh5.googleusercontent.com/2AJ3gnhujq1HwdLHHR4LulHOXlSV_sqkKPM8PW5d6hR60ggedoKx19S3Zy0BmgFdcflLXk4rIotZ3aaFgT8MORV0pzVf8TOH6kdOGywan2mYMixkGgb8eS937PiVttBI6qoln9NV "FastAPI Python automatic documentation with Pydantic POST request and Curl")
 
 **Conclusion**: Since Automatic Documentation comes out of the box with FastAPI along with Pydantic and Swagger UI, these features will definitely speed up your development time. You don’t have to install any external tools to test your requests.
 
@@ -313,11 +313,11 @@ Here we’re creating a class Login that inherits from the Pydantic BaseModel wi
 
 We turn to automatic documentation and test our request body by passing in `None` to the username:
 
-![](https://lh6.googleusercontent.com/KzV7vaKxI1fVMjzMnPTduBWhE6CXIrEwDQjXtaX7eUOtuPULKMf6DOWpr2CYjFujrspQ9OYI3cXM0nVQ4MC9v5hFQ8990CdoSsWbRdlQsXuPi2odFrhi_X0RG6q7neoyDw4_thy4)
+![FastAPI Python automatic documentation with Pydantic POST request and change request body](https://lh6.googleusercontent.com/KzV7vaKxI1fVMjzMnPTduBWhE6CXIrEwDQjXtaX7eUOtuPULKMf6DOWpr2CYjFujrspQ9OYI3cXM0nVQ4MC9v5hFQ8990CdoSsWbRdlQsXuPi2odFrhi_X0RG6q7neoyDw4_thy4 "FastAPI Python automatic documentation with Pydantic POST request and change request body")
 
 Pydantic will work its magic, and you’ll get a friendly message telling you exactly what the error is. In this case, it returns the error `Expecting Value`, which is right on the money because we passed in `None` to the `username`.
 
-![](https://lh6.googleusercontent.com/9biK0m7fzVbqdvTtw64PfK6cQRqK-HrQMVbW7gd0-3rDiYz69qD_35JtuUol7qt1ME3MFkJ9SH_fo3rR3R8XETkHhmYTpCuQ2-Vsq1J7ykC4f8Ex_85TNvz2YCWnt1WsmCCxiY53)
+![FastAPI Python automatic documentation with Pydantic error message](https://lh6.googleusercontent.com/9biK0m7fzVbqdvTtw64PfK6cQRqK-HrQMVbW7gd0-3rDiYz69qD_35JtuUol7qt1ME3MFkJ9SH_fo3rR3R8XETkHhmYTpCuQ2-Vsq1J7ykC4f8Ex_85TNvz2YCWnt1WsmCCxiY53 "FastAPI Python automatic documentation with Pydantic error message")
 
 **Conclusion**: Flask does not have any in-house data validation support. You can use the powerful Pydantic package for data validation by installing it with *Flask-Pydantic*.
 
@@ -360,7 +360,7 @@ def get_player_details(player_id):
 
 Here we pass in our route to localhost on port 5000 with an id of 2, and we get back the player with an id of 2.
 
-![](https://lh4.googleusercontent.com/MMQ37ZRuC40c3ZnIvqv9XuN98ji0J0vAGlG4UtFE_JroLK9z1ZBG7vYBuqHCh7QFW7FqD5fsJSdSyMWRtF7kayerX-AG1M38bG3cRTm3KkctJ8EciBwwbcf3IzAucZ6EoY8B1QmE)
+![Flask Python url or path parameters running on localhost returning JSON as response body](https://lh4.googleusercontent.com/MMQ37ZRuC40c3ZnIvqv9XuN98ji0J0vAGlG4UtFE_JroLK9z1ZBG7vYBuqHCh7QFW7FqD5fsJSdSyMWRtF7kayerX-AG1M38bG3cRTm3KkctJ8EciBwwbcf3IzAucZ6EoY8B1QmE "Flask Python url or path parameters running on localhost returning JSON as response body")
 
 #### FastAPI
 
@@ -375,7 +375,7 @@ def get_player_details(player_id: int):
 
 Here we pass in our route to localhost on port 8000 with an id of 1, and we get back the player with an id of 1.
 
-![](https://lh3.googleusercontent.com/sdlIDlSJyDGCQt5Ps8sFfWNpny1uc5BEASoLFdOtOdnks6IqF0NGeEMbuc9NgUAPwUPbcUw2WgEjKPrfIVQO50i-H8PcT4IJSSpPFD_JRcip95bGKds8eD3C0OKusU2LVV0Xe9xA)
+![FastAPI Python url or path parameters running on localhost returning JSON as response body](https://lh3.googleusercontent.com/sdlIDlSJyDGCQt5Ps8sFfWNpny1uc5BEASoLFdOtOdnks6IqF0NGeEMbuc9NgUAPwUPbcUw2WgEjKPrfIVQO50i-H8PcT4IJSSpPFD_JRcip95bGKds8eD3C0OKusU2LVV0Xe9xA "FastAPI Python url or path parameters running on localhost returning JSON as response body")
 
 **Conclusion**: With FastAPI, since it’s using Python type hinting, you can port your code to other frameworks, like Django. With Flask, it’s not portable because we’re using framework-specific type hinting, not Python hinting.
 
@@ -387,9 +387,9 @@ The Templates Folder stores your HTML files when you’re building a web applica
 
 By default, Flask looks for templates in a "templates" folder. You’ll just need to create one in your file structure. 
 
-![](https://lh6.googleusercontent.com/5x9KJw2aUIxEn8gglrQ88QEFfOj0HwIGhEHJuYSVsudt8HJKfOf42v1UmFlWfYxIif66pAY1su7Zu0EbMRjU-XmT25Ou-F_05NN6oGf9ac0xVmLxxnvYqt632M65fktbEI-GupPU)
+![Flask Python templates folder in file structure to render HTML files](https://lh6.googleusercontent.com/5x9KJw2aUIxEn8gglrQ88QEFfOj0HwIGhEHJuYSVsudt8HJKfOf42v1UmFlWfYxIif66pAY1su7Zu0EbMRjU-XmT25Ou-F_05NN6oGf9ac0xVmLxxnvYqt632M65fktbEI-GupPU "Flask Python templates folder in file structure to render HTML files")
 
-![](https://lh5.googleusercontent.com/IQfD9C2YbAz2rdG6bJVj9N1dLkgAst75jOD2xBGPW9_CKI0bhqTpdGp-j1RPbpd0xKBmLoyP6d2EoHr5tAnPB9Lvn5FJPFsOXTE3ghT9vkg4uB7M8WxbjK7o5xXLTSwwKi_UntP2)
+![Flask Python templates folder in file structure to render HTML files](https://lh5.googleusercontent.com/IQfD9C2YbAz2rdG6bJVj9N1dLkgAst75jOD2xBGPW9_CKI0bhqTpdGp-j1RPbpd0xKBmLoyP6d2EoHr5tAnPB9Lvn5FJPFsOXTE3ghT9vkg4uB7M8WxbjK7o5xXLTSwwKi_UntP2 "Flask Python templates folder in file structure to render HTML files")
 
 Then you can use Jinja to display your variables by surrounding them with double curly braces:
 
