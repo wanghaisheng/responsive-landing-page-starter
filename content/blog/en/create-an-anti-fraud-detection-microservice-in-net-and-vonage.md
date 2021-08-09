@@ -37,7 +37,6 @@ To get started, you’ll need:
 
 * An IDE for .NET development like Visual Studio, Visual Studio Code, or JetBrains Rider
 * The [latest version of .NET](https://dotnet.microsoft.com/download) installed
-* The [Nexmo CLI installed and setup](https://github.com/nexmo/nexmo-cli)
 
 <sign-up></sign-up>
 
@@ -282,10 +281,10 @@ You might replace the contents of `mock_event_bus_phone_numbers_to_validate.json
 
 ```json
 
-[ { “Data”: “19055555555” } ]
+[ { "Data": "19055555555" } ]
 ```
 
-After a few seconds, take a look at `mock_event_bus_phone_numbers_to_validate.json` to see the results of whatever phone number you chose to verify!
+After a few seconds, take a look at `mock_event_bus_validated_phone_numbers.json` to see the results of whatever phone number you chose to verify!
 
 ## Conclusion
 
