@@ -23,7 +23,8 @@ replacement_url: ""
 Voice Proxy—or masked calling—protects users' private details by providing an intermediary phone number. This way, neither the caller nor the callee see each other's real phone numbers. 
 It's common practice with delivery and ridesharing services like Deliveroo and Uber, but it comes in handy in a variety of small business scenarios as well. 
 
-In this tutorial, we're going to build one of my favourite use cases: a virtual business phone.\
+In this tutorial, we're going to build one of my favourite use cases: a virtual business phone.
+
 We'll cover two call directions:
 
 1. You're calling a client through your Vonage number: capture destination number via DTMF and connect.
@@ -50,7 +51,8 @@ In this example, we're writing an HTTP function that gets triggered by HTTP requ
 
 ### Create a New Google Cloud Project
 
-First, create a new Project if you haven't already. These projects form the basis for creating, enabling, and using all Google Cloud services.\
+First, create a new Project if you haven't already. These projects form the basis for creating, enabling, and using all Google Cloud services.
+
 Go to the **[Manage Resources](https://console.cloud.google.com/cloud-resource-manager)** page of the Cloud Console and click *Create Project*. Find more details about creating and managing resources in the [Google Cloud guide](https://cloud.google.com/resource-manager/docs/creating-managing-projects#console).
 
 ### Create a Cloud Function
@@ -89,7 +91,7 @@ A [Vonage API application](https://developer.vonage.com/application/overview) ho
 
 Let's create one using the [Vonage Dashboard](https://dashboard.nexmo.com/applications/new). Navigate to *Your applications -> [Create a new application](https://dashboard.nexmo.com/applications/new)*.
 
-Switch on Voice capabilities, then provide your generated Cloud Functions URL in the `Answer URL` field. Mine looks like this: `https://europe-west2-my-proxy-calling-project.cloudfunctions.net/proxy-call`.\
+Switch on Voice capabilities, then provide your generated Cloud Functions URL in the `Answer URL` field. Mine looks like this: `https://europe-west2-my-proxy-calling-project.cloudfunctions.net/proxy-call`.  
 We won't be implementing an event webhook, for now, so feel free to use `http://example.com/event` in that field.
 
 When finished, click on *Generate new application.*
@@ -115,8 +117,8 @@ An NCCO is presented as a valid JSON array containing one or more actions. In th
 ## Building the Cloud Function
 
 As we're going to have three cases, we also need to return three different NCCOs accordingly. 
-We need to cover three cases:
 
+We need to cover three cases:
 1. Someone else is calling your Vonage number -> connect them to your phone number
 2. You are calling your Vonage number:
 
