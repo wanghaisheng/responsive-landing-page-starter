@@ -22,7 +22,7 @@ As a programmer, you may have come across SMS (short message service), but you m
 
 Today, over[ four billion people send text messages a year](https://www.smseagle.eu/2017/03/06/daily-sms-mobile-statistics/) using technologies like SMS and MMS. Companies are increasingly using SMS messages to reach their customers on their mobile phones because they are convenient, and customers prefer them. SMS messages also have a 98% open rate, which is significantly higher than other forms of communication like email. As a programmer, it is essential to understand how SMS messages work since so many companies use them.
 
-In this guide, you will learn everything you need to know about SMS as a programmer. You will learn what SMS is, how it works, and how companies use SMS messages to communicate with their customers. You will learn the difference between SMS, MMS, and OTT applications, as well as a few cool features SMS has that not many people know about. Finally, I will also point you to resources that will teach you how to send a text message programmatically in just a few lines of code. 
+In this guide, you will learn everything you need to know about SMS as a programmer. You will learn what SMS is, how it works, and how companies use SMS messages to communicate with their customers. You will learn the difference between SMS, MMS, and OTT applications, as well as a few cool features of SMS that not many people know about. Finally, I will also point you to resources that will teach you how to send a text message programmatically in just a few lines of code. 
 
 ### How Do Companies Use SMS?
 
