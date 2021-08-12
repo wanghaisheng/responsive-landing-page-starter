@@ -72,7 +72,7 @@ Apple's iMessage, WhatsApp, WeChat, and Facebook Messenger are examples of "Over
 
 OTT applications like iMessage and WhatsApp do not use SMS. However, that does not mean iPhones do not send SMS messages: they do. You can only send an iMessage if you and the recipient both have an iPhone. If you send a text message on your iPhone to another Apple user, Apple will send the text using iMessage, and your iPhone will highlight the message in blue. If you send a text message (without multimedia) to another device (like Android), Apple will send it using SMS, and the message will be green. On the other hand, Android devices often use a service called Android Messages when two android devices communicate.
 
-The advantages of OTT applications are they are free to customers who have unlimited data plans (and cheap for those who do not), allow users to send videos and other multimedia, and often have additional features like video chatting.
+The advantages of OTT applications are they are free to customers who have unlimited data plans (and inexpensive for those who do not), allow users to send videos and other multimedia, and often have additional features like video chatting.
 
 SMS has several advantages over OTT, however. OTT applications are "walled gardens," which means someone on Facebook messenger cannot message someone on WhatsApp. It also means you cannot send messages to phone numbers with OTT applications: you can only send messages to people who have downloaded that app. With SMS, you can send a message to anyone with a phone number. Plus, SMS does not rely on internet connectivity as OTT applications do. Unlike OTT applications, you can send a message to anyone connected to a cellular network with SMS.
 
