@@ -26,7 +26,7 @@ In this guide, you will learn everything you need to know about SMS as a program
 
 ### How Do Companies Use SMS?
 
-![](/content/blog/the-coders-guide-to-sms/digital-marketing-1433427_640.jpg)
+![A picture of a laptop](/content/blog/the-coders-guide-to-sms/digital-marketing-1433427_640.jpg)
 
 More and more companies are using SMS to communicate with their customers because customers prefer SMS over other forms of communication.
 
@@ -40,7 +40,7 @@ Another use case for SMS messages is alerts and reminders. For example, hair sal
 
 ### The SMS Standard
 
-![](/content/blog/the-coders-guide-to-sms/screen-shot-2021-07-28-at-3.36.51-pm.png)
+![A picture of the earth](/content/blog/the-coders-guide-to-sms/screen-shot-2021-07-28-at-3.36.51-pm.png)
 
 SMS lets you send 160 characters of text or 70 characters in Unicode. But, of course, you’ve probably sent an SMS message longer than 160 characters before, so how is that possible? When you send an SMS message longer than 160 characters, your phone carrier breaks the messages up and sends multiple messages. However, your phone carrier makes sure they arrive in order, which is why you’ve probably never noticed the 160 character limit.
 
@@ -48,13 +48,11 @@ When you send an SMS message, it does not go directly to the recipient's phone. 
 
 Here is a diagram that shows how it works:
 
-![](/content/blog/the-coders-guide-to-sms/screen-shot-2021-07-27-at-5.18.39-pm.png)
+![A diagram explaining how SMS works](/content/blog/the-coders-guide-to-sms/screen-shot-2021-07-27-at-5.18.39-pm.png)
 
 The MS at the bottom left and right stands for mobile station: the mobile phones sending and receiving the SMS message. When you send a message, your phone first sends it to a BSS, which stands for base station sub-system. The BSS manages the radio network. The BSS then sends your message to an MSC or mobile switching center. The MSC is the phone exchange serving your area (your city, for example). Your text message then travels from the MSC to the SMCS (short message service center). Your phone has an SMCS address that looks like a phone number configured in it, sometimes on your SIM (although iPhones do it slightly differently). Your SMSC then uses an HLR (Home Location Register) to find where the recipient is. It gets back an SMSC address for the recipient and sends it to their MSC and back the same path to the recipient's phone.
 
 ### SMS VS. MMS
-
-![](/content/blog/the-coders-guide-to-sms/video-conference-5167472_640.jpg)
 
 As you learned earlier, when people say the word text message, they are referring to SMS and MMS. MMS stands for multimedia messaging service and allows you to send messages that include multimedia content over wireless networks.
 
@@ -66,7 +64,7 @@ MMS messages do have some advantages, though. Because MMS messages can include v
 
 ### Do iMessage and WhatsApp Use SMS?
 
-![](/content/blog/the-coders-guide-to-sms/whatsapp-892926_640.jpg)
+![WhatsApp icon on iPhone](/content/blog/the-coders-guide-to-sms/whatsapp-892926_640.jpg)
 
 Apple's iMessage, WhatsApp, WeChat, and Facebook Messenger are examples of "Over the Top" or OTT applications. Unlike SMS, OTT applications like WhatsApp do not require the user to connect to a cellular network.
 
@@ -96,7 +94,7 @@ Whether or not SMS two-factor authentification provides enough protection depend
 
 ### Sending an SMS Message Programmatically
 
-![](/content/blog/the-coders-guide-to-sms/work-731198_640.jpg)
+![A picture of a laptop](/content/blog/the-coders-guide-to-sms/work-731198_640.jpg)
 
 You can easily send an SMS message programmatically using an API like the one we have at Vonage. 
 
