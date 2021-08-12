@@ -45,27 +45,27 @@ What you can do with Playground:
 
 I’m going to show you how to publish a stream and subscribe to it using Playground.
 
-1. In a desktop browser, go to [Playground](https://tokbox.com/developer/tools/playground/).
+In a desktop browser, go to [Playground](https://tokbox.com/developer/tools/playground/).
 
 ![The user interface for the initial Playground page with "Create new session" tab highlighted](/content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/screenshot-2021-07-30-at-12.07.48.png)
 
-2. Click on **Create** to create a session. 
+Click on **Create** to create a session. 
 
 > Optional: Change account ID or project API key, JS SDK version, Media mode, Token role or expiration time.
 
 ![The user interface for the Playground page with the session information](/content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/screenshot-2021-07-30-at-12.11.23.png)
 
-3. Click on **Connect** to connect to a session.
+Click on **Connect** to connect to a session.
 
 > Optional: You can configure your own TURN server or IP Proxy from the **Advanced Firewall Control** menu.
 
 ![The user interface for the Playground page with the "Publish Stream" icon](/content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/screenshot-2021-07-30-at-12.12.04.png)
 
-4. Click on **Publish Stream**.
+Click on **Publish Stream**.
 
 ![The user interface for the Playground with pop-up menu for publisher options](/content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/screenshot-2021-07-30-at-12.13.05.png)
 
-5. Click on **Publish**.
+Click on **Publish**.
 
 > Optional: Change publisher option. Choose videoSource as ‘screen’ for screen-sharing.
 
@@ -73,16 +73,17 @@ I’m going to show you how to publish a stream and subscribe to it using Playgr
 
 Now you are publishing a stream in the session. You can also use Signaling, Archiving, Broadcasting, and SIP here.
 
-6. Next, let’s join the session from another device. Click on **Session information** and copy the session ID.
+Next, let’s join the session from another device. Click on **Session information** and copy the session ID.
 
 ![The user interface for the Playground with session information](/content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/screenshot-2021-07-30-at-12.17.13.png)
 
-7. From another device, browse to <https://tokbox.com/developer/tools/playground/> 
+From another device, browse to <https://tokbox.com/developer/tools/playground/> 
 
 ![The user interface for the initial Playground page with "Join existing session" tab highlighted](/content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/screenshot-2021-07-30-at-12.23.35.png)
 
-8. Click on **Join existing session** and paste the session ID. Click on **Join Session**. 
-9. Publish a stream from **Publish Stream**. Now you are interactively publishing and subscribing.
+Click on **Join existing session** and paste the session ID. Click on **Join Session**. 
+
+Publish a stream from **Publish Stream**. Now you are interactively publishing and subscribing.
 
 ![The user interface for the Playground page with 2 publishers screens](/content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/screenshot_20210730-122136.png)
 
