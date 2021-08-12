@@ -76,7 +76,7 @@ The advantages of OTT applications are they are free to customers who have unlim
 
 SMS has several advantages over OTT, however. OTT applications are "walled gardens," which means someone on Facebook messenger cannot message someone on WhatsApp. It also means you cannot send messages to phone numbers with OTT applications: you can only send messages to people who have downloaded that app. With SMS, you can send a message to anyone with a phone number. Plus, SMS does not rely on internet connectivity as OTT applications do. Unlike OTT applications, you can send a message to anyone connected to a cellular network with SMS.
 
-### SMS can do what?
+### SMS Can Do what?
 
 SMS has many cool less-known features. For instance, did you know you can edit an SMS message after you've sent it? Well, you can! You can "overwrite" an SMS message you previously sent. However, you must set this up in advance. You cannot edit the text you already sent someone last night!
 
@@ -94,7 +94,7 @@ Because of these problems, you should not treat SMS messages as private. If you 
 
 Whether or not SMS two-factor authentification provides enough protection depends on the application. If you are providing additional verification steps to a video streaming service, SMS may be OK. However, suppose you are setting up two-factor authentification for a bank. In that case, you may use something more secure like Google Authenticator, which would require a hacker to gain access to your physical device. 
 
-### Sending an SMS message Programmatically
+### Sending an SMS Message Programmatically
 
 ![](/content/blog/the-coders-guide-to-sms/work-731198_640.jpg)
 
