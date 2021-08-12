@@ -24,6 +24,14 @@ Today, over[ four billion people send text messages a year](https://www.smseagl
 
 In this guide, you will learn everything you need to know about SMS as a programmer. You will learn what SMS is, how it works, and how companies use SMS messages to communicate with their customers. You will learn the difference between SMS, MMS, and OTT applications, as well as a few cool features of SMS that not many people know about. Finally, I will also point you to resources that will teach you how to send a text message programmatically in just a few lines of code. 
 
+### The History of SMS
+
+Neil Papworth sent the first SMS message in 1992, but the origins of SMS  started nearly a decade earlier. Friedhelm Hillebrand and Bernard Ghillebaert are credited with inventing SMS at the Franco-German GSM corporation in 1984. Matti Makkonen, often called the father of SMS, is often credited for the idea, too, though he credits Hillebrand and Bernard with its invention. 
+
+Text messaging started gaining traction in 1993 when Nokia released phones that supported the new technology. From 1993 to 1994, mobile phones only supported multi-tap texting (you had to tap numbers to get letters). Texting became faster in 1995 when Cliff Kushler invented the predictive text technology T9, but texting became even more convenient in 1997 when Nokia added the QWERTY keyboard to its phones. 
+
+MMS came to mobile phones in 2002, which allowed users to start sending photos and videos to each other. In 2007, Apple launched the iPhone, which helped further popularize the technology. Texting has continued to grow since then, and today the world sends six billion texts a month. 
+
 ### How Do Companies Use SMS?
 
 ![A picture of a laptop](/content/blog/the-coders-guide-to-sms/digital-marketing-1433427_640.jpg)
@@ -79,18 +87,6 @@ SMS has several advantages over OTT, however. OTT applications are "walled garde
 SMS has many cool less-known features. For instance, did you know you can edit an SMS message after you've sent it? Well, you can! You can "overwrite" an SMS message you previously sent. However, you must set this up in advance. You cannot edit the text you already sent someone last night!
 
 You can also use SMS to send a flash message, also called a class zero message. A flash message is a message that pops up on your phone but, by default, doesn't save to your inbox. The point of a flash message is to enable you to send something that the receiver won't save by default. In other words, a flash message is a precursor to Snapchat's famous ephemeral messages. However, just like how with Snapchat, it is possible to screenshot a message, it is also possible to download a class zero message (or screenshot it), so you cannot entirely rely on it for secrecy. Another use case for a flash message is sending a message you want the recipient to read immediately. 
-
-### Is SMS Secure? 
-
-As a programmer, you know security is important. So you may be wondering how secure SMS is? SMS messages are not encrypted, which means your cellular provider can read them. Your provider also stores your SMS messages for some time. Because mobile providers store SMS messages for varying amounts of time, they can and have been used in divorce and criminal proceedings.  
-
-You may be wondering why companies use SMS for two-factor authentication if they are not encrypted? Companies use SMS for two-factor authentification because it helps verify the customer has access to the number they signed up for a service with. However, some security professionals recommend against using SMS for two-factor authentification because of the security risks. 
-
-For example, hackers can intercept SMS messages. That means a bad actor could access an incoming authentication code without possessing the user's phone. Hackers can also get around SMS two-factor authentication using a SIM swap. A SIM card swap is when a bad actor convinces your mobile provider (by using various lies) to activate a new SIM card linked to your number on a new phone (that they possess). When they use the new SIM card, they then have possession of your phone number. 
-
-Because of these problems, you should not treat SMS messages as private. If you need to communicate sensitive data, you should use a messaging app that provides end-to-end encryption like Signal. Just because the messages are not encrypted also does not mean two-factor authentication with SMS is useless. It still forces bad actors to take additional steps (like a SIM card swap) to hijack the account you are protecting with it. 
-
-Whether or not SMS two-factor authentification provides enough protection depends on the application. If you are providing additional verification steps to a video streaming service, SMS may be OK. However, suppose you are setting up two-factor authentification for a bank. In that case, you may use something more secure like Google Authenticator, which would require a hacker to gain access to your physical device. 
 
 ### Sending an SMS Message Programmatically
 
