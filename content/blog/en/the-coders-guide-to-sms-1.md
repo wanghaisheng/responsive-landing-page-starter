@@ -30,7 +30,7 @@ Neil Papworth sent the first SMS message in 1992, but the origins of SMS  starte
 
 Text messaging started gaining traction in 1993 when Nokia released phones that supported the new technology. From 1993 to 1994, mobile phones only supported multi-tap texting (you had to tap numbers to get letters). Texting became faster in 1995 when Cliff Kushler invented the predictive text technology T9, but texting became even more convenient in 1997 when Nokia added the QWERTY keyboard to its phones. 
 
-MMS came to mobile phones in 2002, which allowed users to start sending photos and videos to each other. In 2007, Apple launched the iPhone, which helped further popularize the technology. Texting has continued to grow since then, and today the world sends six billion texts a month. 
+MMS came to mobile phones in 2002, which allowed users to start sending photos and videos to each other. In 2007, Apple launched the iPhone, which helped further popularize text messaging. Texting has continued to grow since then, and today the world sends six billion texts a month. 
 
 ### How Do Companies Use SMS?
 
