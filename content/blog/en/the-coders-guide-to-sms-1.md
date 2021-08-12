@@ -36,7 +36,7 @@ MMS came to mobile phones in 2002, which allowed users to start sending photos a
 
 ![A picture of a laptop](/content/blog/the-coders-guide-to-sms/digital-marketing-1433427_640.jpg)
 
-More and more companies are using SMS to communicate with their customers because customers prefer SMS over other forms of communication.
+More and more companies are using SMS to communicate with their customers because [customers prefer SMS over other forms of communication.](https://www.pcmag.com/news/businesses-take-note-your-customers-prefer-texts)
 
 Some companies use SMS for two-factor authentication, which is a popular way to help confirm a customer possesses the phone number they signed up for a service with.
 
