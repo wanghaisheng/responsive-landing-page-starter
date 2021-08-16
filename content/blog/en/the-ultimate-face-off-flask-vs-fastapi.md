@@ -5,7 +5,7 @@ description: When you need to choose between web frameworks, our face-off
 thumbnail: /content/blog/the-ultimate-face-off-flask-vs-fastapi/flask-vs-fastapi_1200x600.png
 author: tonya-sims-1
 published: true
-published_at: 2021-07-30T21:31:23.996Z
+published_at: 2021-08-16T08:02:18.789Z
 updated_at: 2021-07-30T21:31:24.022Z
 category: tutorial
 tags:
