@@ -5,7 +5,7 @@ description: Learn how to use the Vonage Video API Playground, a demo of a web
 thumbnail: /content/blog/explore-vonage-video-api-capabilities-with-vonage-video-api-playground/videoapi_playground_1200x600.png
 author: yukari-dumburs
 published: true
-published_at: 2021-08-10T13:09:13.499Z
+published_at: 2021-08-12T13:09:13.499Z
 updated_at: 2021-08-10T13:09:13.537Z
 category: tutorial
 tags:
