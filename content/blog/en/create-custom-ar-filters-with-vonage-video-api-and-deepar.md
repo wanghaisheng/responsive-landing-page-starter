@@ -97,7 +97,9 @@ If you run your code, you will notice that there is no 🦁 over your face, and 
 To do so, you need to implement `didInitialize`, a method of the ARViewDelegate, which we will call once the ARView has finished initializing, then we can activate the lion filter.
 
 ```swift
-
+func didInitialize() {
+  deepARView.switchEffect(withSlot: "effect", path: Bundle.main.path(forResource: "lion", ofType: ""))
+}
 ```
 
 For that to work, you need to add a file called "lion" to your project. You can find it in the free filters pack you can get from <https://developer.deepar.ai/downloads>. Once you have it downloaded, you need to drag the file "lion" to the Xcode project root folder and check that it has as target your application, so it is bundled with it.
@@ -134,7 +136,35 @@ After those methods have been implemented, you will need to feed the capturer wi
 Let’s see how an initial implementation could look like,
 
 ```swift
+class DeepARVideoCapturer: NSObject, OTVideoCapture {
+  fileprivate var captureStarted = false
 
+  var videoCaptureConsumer: OTVideoCaptureConsumer?
+
+  func initCapture() {
+  }
+
+  func releaseCapture() {
+  }
+
+  func start() -> Int32 {
+    captureStarted = true
+    return 0
+  }
+
+  func stop() -> Int32 {
+    captureStarted = false
+    return 0
+  }
+
+  func isCaptureStarted() -> Bool {
+    return captureStarted
+  }
+
+  func captureSettings(_ videoFormat: OTVideoFormat) -> Int32 {
+    return 0
+  }
+}
 ```
 
 Above is the necessary code for a custom capturer. As you can see, you need to implement the OTVideoCapture protocol, which has methods that will be called when the video capturer needs to be initialized, started, or stopped. It is very common to have an internal flag to know when the capture has started, and that is what we do in this basic implementation. We will update that flag in the start and stop methods.
@@ -144,7 +174,10 @@ You would have noticed that this class inherits from `NSObject`, since this is n
 Once you have a class like this, the next step is to tell the publisher that, instead of using the default capturer, it needs to use our class. The code for this looks like:
 
 ```swift
-
+let settings = OTPublisherSettings()
+settings.name = UIDevice.current.name
+settings.videoCapture = DeepARVideoCapturer()
+otPublisher = OTPublisher(delegate: self, settings: settings)
 ```
 
 The capturer we build in the code snip above is not yet sending anything, since it just contains initialization code. If you try to use what we have right now, it should work, but you will be publishing only black frames. The next step is knowing how to send frames.
@@ -162,15 +195,27 @@ The first step consists of obtaining an image from the ARView. This can be done 
 If you remember, we already set the delegate of ARView, and in its `didInitialize` method we enabled the lion filter, now we need to tell ARView that we want to get its video frames. This is done using the code below:
 
 ```swift
-
+func didInitialize() {
+    deepARView.switchEffect(withSlot: "effect", path: Bundle.main.path(forResource: "lion", ofType: ""))
+    deepARView.startFrameOutput(withOutputWidth: 640, outputHeight: 0, subframe: CGRect(x: 0, y: 0, width: 1, height: 1))
+}
 ```
 
 The first line is what we have in the first part of the blog post, and with the second line, we are requesting ARView to call another delegate method with the contents of the AR View.
 
 After doing this, we need to implement the `frameAvailable` method, which will be called every time a video frame is ready. In that method, we will send the contents of it to OpenTok capturer.
 
-```swift
 
+```swift
+func frameAvailable(_ sampleBuffer: CMSampleBuffer!) {
+  autoreleasepool {
+    guard let pb = CMSampleBufferGetImageBuffer(sampleBuffer) else {
+      print("Invalid Image buffer")
+      return
+    }
+    deepARCapturer.pushFrame(pb)
+  }
+}
 ```
 
 You may have noticed the `pushFrame` method in the last line, this method is where we bridge DeepAR view and OpenTok video capturer, if you remember, deepARCapturer was the name for the custom video capturer we were using.
@@ -179,8 +224,37 @@ This is probably the most complicated part of the blog post. We are dealing with
 
 In order everything to work, we need to implement the pushFrame in the DeepARVideoCapturer, and it will look like this:
 
-```swift
 
+```swift
+func pushFrame(_ pb: CVPixelBuffer) {
+  // 1
+  if otFrame == nil {
+    let otFormat = OTVideoFormat()
+    otFormat.pixelFormat = .ARGB
+    otFormat.imageWidth = UInt32(CVPixelBufferGetWidth(pb))
+    otFormat.imageHeight = UInt32(CVPixelBufferGetHeight(pb))
+    otFormat.bytesPerRow = [CVPixelBufferGetBytesPerRow(pb)]
+
+    otFrame = OTVideoFrame(format: otFormat)
+  }
+
+  guard let frame = otFrame else {
+    print("Error creating video frame")
+    return
+  }
+
+  // 2
+  CVPixelBufferLockBaseAddress(pb, .readOnly)
+  if let frameData = CVPixelBufferGetBaseAddress(pb) {
+    frame.orientation = .up
+    frame.clearPlanes()
+    frame.planes?.addPointer(frameData)
+
+    // 3
+    videoCaptureConsumer?.consumeFrame(frame)
+  }
+  CVPixelBufferUnlockBaseAddress(pb, .readOnly)
+}
 ```
 
 Let's go step by step to understand this method. As you can see, we have divided it into three sections.
