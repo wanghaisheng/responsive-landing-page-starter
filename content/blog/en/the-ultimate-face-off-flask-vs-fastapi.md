@@ -62,17 +62,17 @@ Let’s see what a hello world application looks like in both Flask and FastAPI.
 #### Flask < 2.0
 
 ```python
-\# inside of a Python .py file
+# inside of a Python .py file
 
 from flask import Flask
 
-app = Flask(\_\_name\_\_)
+app = Flask(__name__)
 
 @app.route("/", methods=\[“GET”])
 def home():
     return {"Hello": "World"}
 
-if \_\_name\_\_ == "\_\_main\_\_":
+if __name__ == "__main__":
 
     app.run()
 ```
@@ -82,13 +82,13 @@ if \_\_name\_\_ == "\_\_main\_\_":
 ```python
 from flask import Flask
 
-app = Flask(\_\_name\_\_)
+app = Flask(__name__)
 
 @app.get("/")
 def home():
     return {"Hello": "World"}
 
-if \_\_name\_\_ == "\_\_main\_\_":
+if __name__ == "__main__":
 
     app.run()
 ```
@@ -96,7 +96,7 @@ if \_\_name\_\_ == "\_\_main\_\_":
 #### FastAPI
 
 ```python
-\# inside of a Python .py file
+# inside of a Python .py file
 
 import uvicorn
 
@@ -108,7 +108,7 @@ app = FastAPI()
 def home():
     return {"Hello": "World"}
 
-if \_\_name\_\_ == "\_\_main\_\_":
+if __name__ == "__main__":
 
     uvicorn.run("main:app")
 ```
@@ -154,7 +154,7 @@ In the Hello World example, we saw what a GET looks like in Flask and FastAPI, s
 #### Flask < 2.0
 
 ```python
-@app.route("/teams", methods=\["POST"])
+@app.route("/teams", methods=["POST"])
 def create_team():
     team = {
 
@@ -240,7 +240,7 @@ If you believe in magic, you’ll most definitely love Automatic Documentation.
 FastAPI is based on Pydantic, a framework for easily modeling and validating objects. It comes out of the box, so no need to install it. Pydantic takes the pain of writing constructors away, and you get all the magic methods. Pydantic also does Data validation which displays friendlier errors and uses python type hints, reducing debugging time. To access your automatic documentation, make sure your development server is running,  then go to your localhost and the port on which your application is running:
 
 ```
-` http://127.0.0.1:8000/docs`
+http://127.0.0.1:8000/docs
 ```
 
 You’ll see your POST request like the example below; if you’re using other HTTP methods, these will be visible as well.
@@ -354,7 +354,7 @@ players = [
 
 def get_player_details(player_id):
     for player in players:
-        if player\["player_id"] == player_id:
+        if player["player_id"] == player_id:
             return jsonify(player)
 ```
 
@@ -369,8 +369,8 @@ Here we pass in our route to localhost on port 5000 with an id of 2, and we get 
 
 def get_player_details(player_id: int):
     for player in players:
-        if player\['player_id'] == player_id:
-            return {'player':player\['name']}
+        if player['player_id'] == player_id:
+            return {'player':player['name']}
 ```
 
 Here we pass in our route to localhost on port 8000 with an id of 1, and we get back the player with an id of 1.
