@@ -5,9 +5,10 @@ description: Create a .NET microservice that can verify phone numbers and send
   their own decision about how they want to use the results. You also understand
   how using an event-driven approach can keep the various parts of your system
   decoupled and autonomous.
+thumbnail: /content/blog/create-a-fraud-detection-microservice-in-net-and-vonage/fraud-detection-microservices.png
 author: james-hickey
 published: true
-published_at: 2021-08-06T18:33:09.167Z
+published_at: 2021-08-17T07:35:26.768Z
 updated_at: 2021-08-06T18:33:09.207Z
 category: tutorial
 tags:
@@ -15,7 +16,7 @@ tags:
   - number-insight-api
   - dotnet
 comments: true
-spotlight: false
+spotlight: true
 redirect: ""
 canonical: ""
 outdated: false
