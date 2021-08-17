@@ -81,7 +81,17 @@ ARView is responsible for showing the contents of the camera with the AR filters
 Knowing this, the code could look like this:
 
 ```swift
+let deepARCameraController = CameraController()
+let deepARView = ARView(frame: UIScreen.main.bounds)
+deepARView.setLicenseKey(deepARLicense)
+deepARView.delegate = self
 
+deepARCameraController.arview = deepARView
+
+parentView.insertSubview(deepARView, at: 0)
+
+deepARView.initialize()
+deepARCameraController?.startCamera()
 ```
 
 In the code above, you first create the CameraController, then you create the ARView instance using it as the frame the fullscreen since we will show it occupying the whole screen.
