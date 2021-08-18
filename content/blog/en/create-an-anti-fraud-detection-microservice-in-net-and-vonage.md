@@ -43,7 +43,7 @@ To get started, you’ll need:
 
 ## Starting Your .NET Worker Service
 
-In .NET, a worker service is akin to a background process that will typically be subscribed to a message bus/queue or poll some other service.\
+In .NET, a worker service is akin to a background process that will typically be subscribed to a message bus/queue or poll some other service.
 In this tutorial, you’ll build a microservice that accepts messages from a message queue, process them by calling the Vonage API, and then send a response message back to the queue.
 
 Let’s create a .NET worker service by executing the following in a terminal:
@@ -130,7 +130,7 @@ namespace FraudService
 }
 ```
 
-This class will give us the ability to simulate sending and receiving mock distributed messages. It has two public methods: one to “send” a message to a specific queue—implemented as a file—, and another to remove all messages from a given queue/file.
+This class will give us the ability to simulate sending and receiving mock distributed messages. It has two public methods: one to “send” a message to a specific queue — implemented as a file — and another to remove all messages from a given queue/file.
 
 Next, you’ll create a file called `Constants.cs` and fill it with the following:
 
@@ -206,7 +206,7 @@ Let's have a closer look at the code! It pulls messages/events from a queue wher
 
 This is common in distributed systems: a microservice will publish its final results to an asynchronous message queue. Other systems can subscribe to this queue and receive these results and do whatever they need to do.
 
-This approach allows each service to be autonomous and resilient. For example, if a particular service goes down, it can begin processing messages placed in the queue while it was down once it's back up.\
+This approach allows each service to be autonomous and resilient. For example, if a particular service goes down, it can begin processing messages placed in the queue while it was down once it's back up.
 With the typical REST/RPC approach, when a service is down, it cannot receive messages or requests at all - making the asynchronous message-driven approach more resilient.
 
 Getting back to the code, you’ll need to configure and glue the different pieces of this application together. Replace `Program.cs` with the following:
