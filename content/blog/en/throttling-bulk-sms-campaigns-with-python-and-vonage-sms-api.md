@@ -141,4 +141,206 @@ def sendMessage(self, request):
     if request.method == 'POST':
         body_unicode = request.body.decode('utf-8')
         body_data = json.loads(body_unicode)
+
+        sender = body_data['sender']
+        recipients = body_data['recipients']
+        message_string = body_data['message_string']
+        batch_size = body_data['batch_size']
+        delay_period = body_data['delay_period']
 ```
+
+In the above code, you specified the view accepts POST requests in the line: 'request.method == 'POST". Then, you decoded the request body in JSON format. After that, you stripped the body of the request to the items it contains. The items are the following inputs received from the user:
+
+1. "sender": a variable that contains the information about the message sender.
+2. "recipients": a list of the phone numbers of the SMS recipients.
+3. "message_string": the text you will send in the bulk SMS campaign. 
+4. "batch_size": stipulates the number of recipients to send an SMS to at once.
+5. "delay_period": the time frame in between sending SMS batches (measured in seconds).
+
+Now, you will create a function to split the list of the recipients' phone numbers into batches. Add the following code outside the `sendMessage` function in the `views.py` file:
+
+```python
+def batch(recipients, batch_size=1):
+    for i in range(0, len(recipients), batch_size):
+        yield recipients\[i:min(i + batch_size, len(recipients))]
+```
+
+
+
+1. You defined a function called "batch." It accepts two parameters: the "recipients" list and the "batch_size" integer that represents how many recipients you want to send a message at once.
+2. A range of phone numbers. You use the yield keyword to return a batch. You repeat this until you've sent a message to all your recipients. 
+
+You can read more about the [range](https://docs.python.org/3/library/stdtypes.html#typesseq-range) and [yield](https://www.geeksforgeeks.org/python-yield-keyword/) keywords.
+
+Now, you will implement the logic to enable sending messages. Modify the `sendMessage` view as shown below:
+
+```python
+def sendMessage(self, request):
+    if request.method == 'POST':
+        body_unicode = request.body.decode('utf-8')
+        body_data = json.loads(body_unicode)
+
+        sender = body_data['sender']
+        recipients = body_data['recipients']
+        message_string = body_data['message_string']
+        batch_size = body_data['batch_size']
+        delay_period = body_data['delay_period']
+
+        for eachBatch in batch(recipients, batch_size):
+            for number in eachBatch:
+                response = requests.post('https://api.nexmo.com/v0.1/messages',
+                     headers={
+                         "Authorization": "Basic %s" % b64value,
+                         "Content-type": "application/json",
+                         "Accept": "application/json"},
+                     json={
+                         "to": {
+                             "type": "sms",
+                             "number": number
+                         },
+                         "from": {
+                             "type": "sms",
+                             "number": sender
+                         },
+                         "message": {
+                             "content": {
+                                 "type": "text",
+                                 "text": message_string
+                             }
+                         }
+                     })
+                print("message sent to ", number)
+            time.sleep(delay_period)
+        try:
+            return JsonResponse("OK", status=200, safe=False)
+
+        except Exception as e:
+            return JsonResponse({'the error is': str(e)}, status=403)
+```
+
+In the code above, the first "for" statement that was added loops through batches of phone numbers using the `batch` function created earlier. 
+
+The inner "for" loop takes each phone number in a batch and makes an HTTP request to the Vonage Messages API. The request header contains the base64 encoded credentials that we derived earlier as a "b64value." It also includes a JSON payload to be delivered to the Messages API. The JSON payload consists of the receiver details in the `to` dictionary, the sender's details in "from," and the message content in 'message.'
+
+
+
+* the `send_message` function takes the `from` as the sender of the SMS campaign and `to` as the SMS receiver. It also takes the `text` as the SMS message. 
+* the value of the `sender` input taken from the user of your application will be shown to the receivers in the text received as the sender of the message.
+* the phone numbers of the recipients that will receive a message at a particular time, based on the `batch_size` are fed into the `to` variable.
+* the `delay_period` delays the execution after each batch of SMS is sent. The delay is executed by the `time.sleep(delay_period)` line. The delay period is in seconds.
+* a `JsonResponse` is returned if the SMS sending is successful or an error statement if it is unsuccessful.
+
+The full `views.py` code is as follows:
+
+
+
+```python
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import parser_classes
+from rest_framework.parsers import JSONParser
+import json
+import requests
+import base64
+import time
+from django.http.response import JsonResponse
+
+
+vonageCredentials = 'API_KEY:API_SECRET'
+encodedData = vonageCredentials.encode("utf-8")
+b64value = base64.b64encode(encodedData).decode("ascii")
+
+
+def batch(recipients, batch_size=1):
+    for i in range(0, len(recipients), batch_size):
+        yield recipients[i:min(i + batch_size, len(recipients))]
+
+
+@ csrf_exempt
+@ parser_classes([JSONParser])
+def sendMessage(request):
+    if request.method == "POST":
+        body_unicode = request.body.decode('utf-8')
+        body_data = json.loads(body_unicode)
+
+        sender = body_data['sender']
+        recipients = body_data['recipients']
+        message_string = body_data['message_string']
+        batch_size = body_data['batch_size']
+        delay_period = body_data['delay_period']
+
+        for eachBatch in batch(recipients, batch_size):
+            for number in eachBatch:
+                requests.post('https://api.nexmo.com/v0.1/messages',
+                     headers={
+                         "Authorization": "Basic %s" % b64value,
+                         "Content-type": "application/json",
+                         "Accept": "application/json"},
+                     json={
+                         "to": {
+                             "type": "sms",
+                             "number": number
+                         },
+                         "from": {
+                             "type": "sms",
+                             "number": sender
+                         },
+                         "message": {
+                             "content": {
+                                 "type": "text",
+                                 "text": message_string
+                             }
+                         }
+                     })
+                print("message sent to ", number)
+            time.sleep(delay_period)
+```
+
+### Define a URL path
+
+Since you have created a view for receiving requests, you will need a corresponding URL for users to access the view to make requests. Therefore, you will add a path to the `urlpatterns` inside the `urls.py` file of the project. Navigate to the project subdirectory and modify the code inside as thus:
+
+```python
+from django.urls import path
+from myapp.views import sendMessage
+
+urlpatterns = [
+   ...
+    path('message/', sendMessage),
+]
+```
+
+As shown above, you imported `path` and the `sendMessage` view. Then, you added a path with the URL `message/` to the list of `urlpatterns`.
+
+## Test Application API
+
+You can test the functionality built above with the [Postman](https://www.postman.com) tool for simulating and documenting APIs. You can [sign up](https://identity.getpostman.com/signup) for a free Postman account.
+
+To run this test, you also need to start Django's test server like this: 
+
+```
+Python manage.py runserver
+```
+
+Let's assume you intend to use the following details for your SMS bulk campaign. 
+
+```json
+{
+    "sender": "Admin Team",
+    "recipients": [2340000000000, 23411111111, 2342222222222, 2343333333333, 2344444444444, 2345555555555, 2346666666666, 2347777777777, 2348888888888, 2349999999999],
+    "message_string": "COVID-19 Vaccine now available in your state",
+    "batch_size": 3,
+    "delay_period": 3600
+}
+```
+
+You can input the above details into the body of a Postman request as JSON as shown in the following image:
+
+![A Postman screenshot]()
+
+Make sure you replace the dummy recipient phone numbers with real numbers before sending the request. Then, the messages will be delivered to the recipients, as shown in a smartphone screenshot below.
+
+!\[A screenshot of the received message on a smartphone]()
+
+## Conclusion
+
+In this article, you implemented bulk SMS throttling using Vonage in a Django REST API. You can now integrate this solution into your projects and build more solutions with Vonage. You can review our \[authentication guide] to better understand authentication with [Vonage APIs](https://developer.nexmo.com/concepts/guides/authentication). If you want to learn more about the new Messages API, you can visit the [developer documentation](<https://www.vonage.com/communications-apis/messages/developer/)>).
