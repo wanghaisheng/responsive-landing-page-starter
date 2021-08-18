@@ -37,7 +37,7 @@ NASA provides a bunch of super exciting APIs for the public. They have an API ca
 
 Speaking of space, did you know Elon Musk’s SpaceX has an API? You can use the SpaceX API to get launch, rocket, core, capsule, Starlink, launchpad, and landing pad data.
 
-[Learn more. ](https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/README.md)
+[Learn more. ](https://github.com/r-spacex/SpaceX-API)
 
 ### 3. REST Countries
 
