@@ -73,30 +73,72 @@ django-admin startproject vonage_project
 
 You need to configure the Django-cors-headers for the application. That way, other origins and frontend applications can make a request to your Django application. Go to the `MIDDLEWARE` in the `settings.py` file and add the following middleware classes:
 
-"`python
-...
-MIDDLEWARE = \[
+```python
+MIDDLEWARE = [
     ...
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     ...
 ]
-...
-
-```
-
 ```
 
 Next, create a Django app called 'myapp' to host our bulk SMS functionality:
 
-"`bash
+```
 cd vonage
 django-admin startapp myapp
-
-```
-
 ```
 
 ## Create Bulk SMS functionality
 
 In this section, you will set up the bulk SMS feature with the Vonage SMS API. You will also implement a throttling feature.
+
+### Initialize the Vonage Library
+
+Usually, you would need to initialize the Vonage library to use the Vonage API for sending messages. However, the new Vonage Messages API is in beta, and Python is not supported yet. However, we can still use the Messages API. Follow along the tutorial to see how.
+
+Firstly, add the following code to the `views.py` file:
+
+```python
+import base64
+
+vonageCredentials = 'API_KEY:API_SECRET'
+encodedData = vonageCredentials.encode("utf-8")
+b64value = b64encode(encodedData).decode("ascii")
+```
+
+In the above code, replace the `API_KEY` and `API_SECRET` values with the values from your Vonage dashboard. The `vonageCredentials` variable takes the Vonage credentials—API key and secret key in the form 'API_KEY: API_SECRET'. It is then encoded and decoded in base64 form to pass them as [ASCII](https://en.wikipedia.org/wiki/ASCII) standard characters.
+
+### Create a View to Send SMS message
+
+Now,  create a view for sending the SMS messages like this:
+
+```python
+from vonage import Sms
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.decorators import parser_classes
+from rest_framework.parsers import JSONParser
+import json
+from django.http.response import JsonResponse
+import time
+
+vonageCredentials = 'API_KEY:API_SECRET'
+encodedData = vonageCredentials.encode("utf-8")
+b64value = base64.b64encode(encodedData).decode("ascii")
+
+@ csrf_exempt
+@ parser_classes(\[JSONParser])
+def sendMessage(self, request):
+    pass
+```
+
+In the above code, you imported the 'csrf_exempt,' 'parser_classes,' and 'JSONParser' class to enable you to define decorators for the view. You also imported the 'json, ' 'JsonResponse,' and 'time' modules. Then, you created the 'sendMessage' function, which will contain the logic for sending the message.
+
+Next, you will add code inside the 'sendMessage' view to accept requests and user inputs. Modify view.py as follows:
+
+```python
+def sendMessage(self, request):
+    if request.method == 'POST':
+        body_unicode = request.body.decode('utf-8')
+        body_data = json.loads(body_unicode)
+```
