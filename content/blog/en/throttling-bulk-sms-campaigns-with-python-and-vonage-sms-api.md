@@ -30,12 +30,73 @@ This article will teach you how to implement bulk SMS throttling in Python using
 
 ## Prerequisites
 
-1. \[Vonage API account](<https://dashboard.nexmo.com/sign-up>) If you don't have a Vonage API account, you may \[create an account](https://dashboard.nexmo.com/sign-up) and get free credit.
+1. If you don't have a [Vonage API account](https://dashboard.nexmo.com/sign-up), you may \[create an account](https://dashboard.nexmo.com/sign-up) and get free credit.
 
-2. Vonage application - you can follow this \[guide](<https://developer.nexmo.com/messages/code-snippets/create-an-application>) to create an application on your Vonage dashboard.
+   <sign-up number></sign-up>
 
-3. \[Python](https://www.python.org/) - Ensure you have installed version 3.6 or a later version of Python on your development machine. You can download Python from the \[official website](https://www.python.org/).
 
-4. \[Pip](https://pip.pypa.io/en/stable/installing/) - Have pip installed and working on your machine. See \[instructions for installing pip here](https://pip.pypa.io/en/stable/installing/). 
+2. Vonage application - you can follow this [guide](<1. <https://developer.nexmo.com/messages/code-snippets/create-an-application>>) to create an application on your Vonage dashboard.
+3. Ensure you have installed version 3.6 or a later version of [](<1. https://www.python.org/>)Python on your development machine. You can download Python from the [official website](https://www.python.org/).
+4. Have pip installed and working on your machine. See [instructions for installing pip here](https://pip.pypa.io/en/stable/installing/).
+5. Virtualenv: Venv is useful for creating isolated [virtual environments for Python projects](https://pypi.org/project/virtualenv/).
 
-5. \[Virtualenv](https://pypi.org/project/virtualenv/) - Venv is useful for creating isolated virtual environments for Python projects.
+
+
+## Setup and Installation
+
+You will start with setting up the project dependencies and installing the modules you need with 'pip.' Next, you will create the Django project for the tutorial.
+
+### Install Dependencies
+
+Firstly, create a new directory and create a virtual environment. Then, activate the newly created virtual environment:
+
+```
+mkdir test_project && cd test_project
+python -m venv env
+source env/bin/activate
+```
+
+The packages installed above are:
+
+1. 'Django': the Django framework package
+2. 'djangorestframework': the Django REST framework for creating APIs in Django
+3. 'django-cors-headers': the Django-cors-headers allow our API to make cross-origin requests to other servers
+4. 'vonage': the Vonage Python server SDK
+
+### Create a Django project
+
+Now, use the `django-admin` utility to create a Django project called `vonage_project`:
+
+```
+django-admin startproject vonage_project
+```
+
+You need to configure the Django-cors-headers for the application. That way, other origins and frontend applications can make a request to your Django application. Go to the `MIDDLEWARE` in the `settings.py` file and add the following middleware classes:
+
+"`python
+...
+MIDDLEWARE = \[
+    ...
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+    ...
+]
+...
+
+```
+
+```
+
+Next, create a Django app called 'myapp' to host our bulk SMS functionality:
+
+"`bash
+cd vonage
+django-admin startapp myapp
+
+```
+
+```
+
+## Create Bulk SMS functionality
+
+In this section, you will set up the bulk SMS feature with the Vonage SMS API. You will also implement a throttling feature.
