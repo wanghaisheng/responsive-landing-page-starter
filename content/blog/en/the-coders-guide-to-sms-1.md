@@ -2,9 +2,10 @@
 title: The Coder's Guide to SMS
 description: " In this guide, you will learn what SMS is, how companies are
   using it, the difference between SMS, MMS, and OTT, and more!"
+thumbnail: /content/blog/the-coders-guide-to-sms/coders_guide_sms_1200x600.png
 author: cory-althoff
 published: true
-published_at: 2021-07-28T22:29:00.943Z
+published_at: 2021-08-19T08:09:02.915Z
 updated_at: 2021-07-28T22:29:00.959Z
 category: inspiration
 tags:
