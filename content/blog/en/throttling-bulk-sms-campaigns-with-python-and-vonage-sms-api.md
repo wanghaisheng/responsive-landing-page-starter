@@ -30,17 +30,13 @@ This article will teach you how to implement bulk SMS throttling in Python using
 
 ## Prerequisites
 
-1. If you don't have a [Vonage API account](https://dashboard.nexmo.com/sign-up), you may \[create an account](https://dashboard.nexmo.com/sign-up) and get free credit.
+1. A free [Vonage API account](https://dashboard.nexmo.com/sign-up).
 
    <sign-up number></sign-up>
-
-
-2. Vonage application - you can follow this [guide](<1. <https://developer.nexmo.com/messages/code-snippets/create-an-application>>) to create an application on your Vonage dashboard.
-3. Ensure you have installed version 3.6 or a later version of [](<1. https://www.python.org/>)Python on your development machine. You can download Python from the [official website](https://www.python.org/).
-4. Have pip installed and working on your machine. See [instructions for installing pip here](https://pip.pypa.io/en/stable/installing/).
-5. Virtualenv: Venv is useful for creating isolated [virtual environments for Python projects](https://pypi.org/project/virtualenv/).
-
-
+2. A Vonage application. You can [follow this guide](https://developer.nexmo.com/messages/code-snippets/create-an-application) to create an application on your Vonage dashboard.
+3. Python (version 3.6 or a later). You can download Python from the [official website](https://www.python.org/).
+4. The Python package manager pip. You can find [instructions for installing pip here](https://pip.pypa.io/en/stable/installing/).
+5. The Python tool virtualenv for creating isolated [virtual environments for Python projects](https://pypi.org/project/virtualenv/).
 
 ## Setup and Installation
 
@@ -48,7 +44,7 @@ You will start with setting up the project dependencies and installing the modul
 
 ### Install Dependencies
 
-Firstly, create a new directory and create a virtual environment. Then, activate the newly created virtual environment:
+First, create a new directory and a virtual environment. Then, activate the newly created virtual environment:
 
 ```
 mkdir test_project && cd test_project
@@ -56,12 +52,12 @@ python -m venv env
 source env/bin/activate
 ```
 
-The packages installed above are:
+The commands above installed the following packages: 
 
-1. 'Django': the Django framework package
-2. 'djangorestframework': the Django REST framework for creating APIs in Django
-3. 'django-cors-headers': the Django-cors-headers allow our API to make cross-origin requests to other servers
-4. 'vonage': the Vonage Python server SDK
+1. `Django`: the Django framework package.
+2. `djangorestframework`: the Django REST framework for creating APIs in Django.
+3. `django-cors-headers`: Allows our API to make cross-origin requests to other servers.
+4. `vonage`: the Vonage Python server SDK.
 
 ### Create a Django project
 
@@ -165,8 +161,6 @@ def batch(recipients, batch_size=1):
         yield recipients\[i:min(i + batch_size, len(recipients))]
 ```
 
-
-
 1. You defined a function called "batch." It accepts two parameters: the "recipients" list and the "batch_size" integer that represents how many recipients you want to send a message at once.
 2. A range of phone numbers. You use the yield keyword to return a batch. You repeat this until you've sent a message to all your recipients. 
 
@@ -222,8 +216,6 @@ In the code above, the first "for" statement that was added loops through batche
 
 The inner "for" loop takes each phone number in a batch and makes an HTTP request to the Vonage Messages API. The request header contains the base64 encoded credentials that we derived earlier as a "b64value." It also includes a JSON payload to be delivered to the Messages API. The JSON payload consists of the receiver details in the `to` dictionary, the sender's details in "from," and the message content in 'message.'
 
-
-
 * the `send_message` function takes the `from` as the sender of the SMS campaign and `to` as the SMS receiver. It also takes the `text` as the SMS message. 
 * the value of the `sender` input taken from the user of your application will be shown to the receivers in the text received as the sender of the message.
 * the phone numbers of the recipients that will receive a message at a particular time, based on the `batch_size` are fed into the `to` variable.
@@ -231,8 +223,6 @@ The inner "for" loop takes each phone number in a batch and makes an HTTP reques
 * a `JsonResponse` is returned if the SMS sending is successful or an error statement if it is unsuccessful.
 
 The full `views.py` code is as follows:
-
-
 
 ```python
 from django.views.decorators.csrf import csrf_exempt
