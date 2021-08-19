@@ -67,7 +67,7 @@ Now, use the `django-admin` utility to create a Django project called `vonage_pr
 django-admin startproject vonage_project
 ```
 
-You need to configure the Django-cors-headers for the application. That way, other origins and frontend applications can make a request to your Django application. Go to the `MIDDLEWARE` in the `settings.py` file and add the following middleware classes:
+Next, you need to configure the `Django-cors-headers` for the application. That way, other origins and frontend applications can make a request to your Django application. Go to the `MIDDLEWARE` in the `settings.py` file and add the following middleware classes:
 
 ```python
 MIDDLEWARE = [
@@ -78,7 +78,7 @@ MIDDLEWARE = [
 ]
 ```
 
-Next, create a Django app called 'myapp' to host our bulk SMS functionality:
+Next, create a Django app called `myapp` to host our bulk SMS functionality:
 
 ```
 cd vonage
@@ -93,7 +93,7 @@ In this section, you will set up the bulk SMS feature with the Vonage SMS API. Y
 
 Usually, you would need to initialize the Vonage library to use the Vonage API for sending messages. However, the new Vonage Messages API is in beta, and Python is not supported yet. However, we can still use the Messages API. Follow along the tutorial to see how.
 
-Firstly, add the following code to the `views.py` file:
+First, add the following code to the `views.py` file:
 
 ```python
 import base64
@@ -103,11 +103,11 @@ encodedData = vonageCredentials.encode("utf-8")
 b64value = b64encode(encodedData).decode("ascii")
 ```
 
-In the above code, replace the `API_KEY` and `API_SECRET` values with the values from your Vonage dashboard. The `vonageCredentials` variable takes the Vonage credentials—API key and secret key in the form 'API_KEY: API_SECRET'. It is then encoded and decoded in base64 form to pass them as [ASCII](https://en.wikipedia.org/wiki/ASCII) standard characters.
+In the above code, replace the `API_KEY` and `API_SECRET` values with the values from your Vonage dashboard. The `vonageCredentials` variable takes your Vonage credentials: your API key and secret key in the form `'API_KEY: API_SECRET'`. You then encode and decode the string with your credentials in base64 form to pass them as [](https://en.wikipedia.org/wiki/ASCII)ASCII standard characters.
 
 ### Create a View to Send SMS message
 
-Now,  create a view for sending the SMS messages like this:
+Now, create a view for sending the SMS messages in `views.py` like this:
 
 ```python
 from vonage import Sms
@@ -128,9 +128,9 @@ def sendMessage(self, request):
     pass
 ```
 
-In the above code, you imported the 'csrf_exempt,' 'parser_classes,' and 'JSONParser' class to enable you to define decorators for the view. You also imported the 'json, ' 'JsonResponse,' and 'time' modules. Then, you created the 'sendMessage' function, which will contain the logic for sending the message.
+In the code above, you imported the `csrf_exempt`, `parser_classes`, and `JSONParser` class to enable you to define decorators for the view. You also imported the `json`,  `JsonResponse`, and `time` modules. Then, you created the `sendMessage` function, where you will put the logic for sending the message.
 
-Next, you will add code inside the 'sendMessage' view to accept requests and user inputs. Modify view.py as follows:
+Next, you will add code inside the `sendMessage` view to accept requests and user inputs. Modify `view.py` as follows:
 
 ```python
 def sendMessage(self, request):
@@ -145,13 +145,13 @@ def sendMessage(self, request):
         delay_period = body_data['delay_period']
 ```
 
-In the above code, you specified the view accepts POST requests in the line: 'request.method == 'POST". Then, you decoded the request body in JSON format. After that, you stripped the body of the request to the items it contains. The items are the following inputs received from the user:
+In the above code, you specified the view accepts POST requests in the line: `request.method == 'POST'`. Then, you decoded the request body in JSON format. After that, you stripped the body of the request to the items it contains. The items are the following inputs received from the user:
 
-1. "sender": a variable that contains the information about the message sender.
-2. "recipients": a list of the phone numbers of the SMS recipients.
-3. "message_string": the text you will send in the bulk SMS campaign. 
-4. "batch_size": stipulates the number of recipients to send an SMS to at once.
-5. "delay_period": the time frame in between sending SMS batches (measured in seconds).
+1. `sender`: a variable that contains the information about the message sender.
+2. `recipients`: a list of the phone numbers of the SMS recipients.
+3. `message_string`: the text you will send in the bulk SMS campaign. 
+4. `batch_size`: stipulates the number of recipients to send an SMS to at once.
+5. `delay_period`: the time frame in between sending SMS batches (measured in seconds).
 
 Now, you will create a function to split the list of the recipients' phone numbers into batches. Add the following code outside the `sendMessage` function in the `views.py` file:
 
@@ -161,10 +161,10 @@ def batch(recipients, batch_size=1):
         yield recipients\[i:min(i + batch_size, len(recipients))]
 ```
 
-1. You defined a function called "batch." It accepts two parameters: the "recipients" list and the "batch_size" integer that represents how many recipients you want to send a message at once.
+1. You defined a function called `batch`. It accepts two parameters: the `recipients` list and the `batch_size` integer that represents how many recipients you want to send a message at once.
 2. A range of phone numbers. You use the yield keyword to return a batch. You repeat this until you've sent a message to all your recipients. 
 
-You can read more about the [range](https://docs.python.org/3/library/stdtypes.html#typesseq-range) and [yield](https://www.geeksforgeeks.org/python-yield-keyword/) keywords.
+You can read more about the [range](https://docs.python.org/3/library/stdtypes.html#typesseq-range) and [yield](https://www.geeksforgeeks.org/python-yield-keyword/) keywords work.
 
 Now, you will implement the logic to enable sending messages. Modify the `sendMessage` view as shown below:
 
@@ -287,7 +287,7 @@ def sendMessage(request):
 
 ### Define a URL path
 
-Since you have created a view for receiving requests, you will need a corresponding URL for users to access the view to make requests. Therefore, you will add a path to the `urlpatterns` inside the `urls.py` file of the project. Navigate to the project subdirectory and modify the code inside as thus:
+Since you have created a view for receiving requests, you will need a corresponding URL for users to access the view to make requests. Therefore, you will add a path to the `urlpatterns` inside the `urls.py` file of the project. Navigate to the project subdirectory and add the following code:
 
 ```python
 from django.urls import path
