@@ -11,7 +11,6 @@ category: inspiration
 tags:
   - python
   - sms-api
-  - ""
 comments: true
 spotlight: false
 redirect: ""
