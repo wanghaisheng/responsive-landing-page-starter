@@ -1,6 +1,7 @@
 ---
 title: " Usando JWT para Autenticação em uma Aplicação Golang"
 description: xxx
+thumbnail: /content/blog/usando-jwt-para-autenticação-em-uma-aplicação-golang/blog_jwt-golang_authentification_1200x600-2.png
 author: victor-steven
 published: true
 published_at: 2021-08-20T12:05:38.345Z
