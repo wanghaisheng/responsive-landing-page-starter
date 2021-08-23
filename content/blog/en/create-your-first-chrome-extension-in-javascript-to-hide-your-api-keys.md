@@ -1,5 +1,5 @@
 ---
-title: Create Your First Chrome Extension in JavaScript to Hide Your API Keys
+title: Create Your First Chrome Extension in Javascript to Hide Your API Keys
 description: In this tutorial, you will learn how to create a chrome extension.
   The example I will show today is to hide your Vonage API keys on the
   dashboard. The knowledge you’ll acquire from following the steps of this
@@ -22,15 +22,15 @@ replacement_url: ""
 ---
 In this tutorial, you will learn how to create a chrome extension. The example I will show today is to hide your Vonage API keys on the dashboard. The knowledge you’ll acquire from following the steps of this tutorial will give you a foundation on how to create your own chrome extensions for different purposes.
 
-## What is a Chrome Extension
+## What Is a Chrome Extension
 
-A Chrome extension is a software program that allows you to extend the chrome functionalities and change your browser experience. An extension can be built with HTML, CSS, JavaScript and a `manifest.json` file. The latter one provides Chrome with the information needed to run the scripts needed for the extension to work.
+A Chrome extension is a software program that allows you to extend the chrome functionalities and change your browser experience. An extension can be built with HTML, CSS, JavaScript and a `manifest.json` file. The latter one provides Chrome with the information required to run the scripts for the extension to work.
 
 ## Create the Chrome Extension Folder
 
 Create a new folder in your computer that will contain the `manifest.json` and the `index.js` files. For my example, I'll name this folder `chrome-extension`.
 
-Create a `manifest.json` file
+## Create the `manifest.json` File
 
 A `manifest.json` file is required when creating a chrome extension, as it tells your program the function to be executed. 
 
@@ -68,7 +68,7 @@ Let me explain each line step by step.
 }
 ```
 
-## Create the `index.js` file
+## Create the `index.js` File
 
 From your terminal create the `index.js` file. On a Unix machine, you can do so by typing `touch index.js`. 
 
@@ -135,14 +135,14 @@ Now it’s time to import these two files you’ve created and add them as a chr
 3. Click on developer mode on the top right to enable it (if it isn’t already).
 4. Click Load unpacked on the top left and a file uploader tool will open.
 5. Search for where you created the folder `chrome-extension` on your computer, click on it and finally click the select button.
-6. You can see a new chrome extension called “API Key Hider” was created as it was specified in the name property of the manifest.json 
+6. You can see a new chrome extension called “API Key Hider” was created as it was specified in the name property of the `manifest.json`.
 7. Make sure this chrome extension is enabled (toggled). If you ever would like to turn it off you can untoggle or remove it from your chrome extensions list.
 
 You can see the above steps in a gif below: 
 
 ![A visual representation on how to import the Chrome Extension onto chrome](https://lh5.googleusercontent.com/V5WM3zlBYxucwFac4i8z9SkHNQ40yl4bdx6kfDZPwc5JwFW5dCgFc8heOp0nmtpcnvRwSODY0zpgaJGyKiTap3cyp8hBey6CLtPxgYcHytyAf33zOcSRbO7602msJPeA_iJYLQFV "A gif showing how to import the Chrome Extension onto chrome")
 
-## Test it out
+## Test It Out
 
 Your chrome extension is now loaded and you can see the functionality of the function you created working in the browser. 
 
