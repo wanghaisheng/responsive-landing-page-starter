@@ -216,11 +216,11 @@ In the code above, the first "for" statement that was added loops through batche
 
 The inner "for" loop takes each phone number in a batch and makes an HTTP request to the Vonage Messages API. The request header contains the base64 encoded credentials that we derived earlier as a "b64value." It also includes a JSON payload to be delivered to the Messages API. The JSON payload consists of the receiver details in the `to` dictionary, the sender's details in "from," and the message content in 'message.'
 
-* the `send_message` function takes the `from` as the sender of the SMS campaign and `to` as the SMS receiver. It also takes the `text` as the SMS message. 
-* the value of the `sender` input taken from the user of your application will be shown to the receivers in the text received as the sender of the message.
-* the phone numbers of the recipients that will receive a message at a particular time, based on the `batch_size` are fed into the `to` variable.
-* the `delay_period` delays the execution after each batch of SMS is sent. The delay is executed by the `time.sleep(delay_period)` line. The delay period is in seconds.
-* a `JsonResponse` is returned if the SMS sending is successful or an error statement if it is unsuccessful.
+* The `send_message` function takes the `from` as the sender of the SMS campaign and `to` as the SMS receiver. It also takes the `text` as the SMS message. 
+* The value of the `sender` input taken from the user of your application will be shown to the receivers in the text received as the sender of the message.
+* The phone numbers of the recipients that will receive a message at a particular time, based on the `batch_size` are fed into the `to` variable.
+* The `delay_period` delays the execution after each batch of SMS is sent. The delay is executed by the `time.sleep(delay_period)` line. The delay period is in seconds.
+* A `JsonResponse` is returned if the SMS sending is successful or an error statement if it is unsuccessful.
 
 The full `views.py` code is as follows:
 
