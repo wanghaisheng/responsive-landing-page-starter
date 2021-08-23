@@ -161,10 +161,7 @@ def batch(recipients, batch_size=1):
         yield recipients\[i:min(i + batch_size, len(recipients))]
 ```
 
-1. You defined a function called `batch`. It accepts two parameters: the `recipients` list and the `batch_size` integer that represents how many recipients you want to send a message at once.
-2. A range of phone numbers. You use the yield keyword to return a batch. You repeat this until you've sent a message to all your recipients. 
-
-You can read more about the [range](https://docs.python.org/3/library/stdtypes.html#typesseq-range) and [yield](https://www.geeksforgeeks.org/python-yield-keyword/) keywords work.
+You defined a function called `batch`. It accepts two parameters: the `recipients` list and the `batch_size` integer that represents how many recipients you want to send a message to at once. You use a for loop and the yield keyword to create a batch of phone numbers. If this is unclear, you can read more about the [range](https://docs.python.org/3/library/stdtypes.html#typesseq-range) and [yield](https://www.geeksforgeeks.org/python-yield-keyword/) keywords work.
 
 Now, you will implement the logic to enable sending messages. Modify the `sendMessage` view as shown below:
 
