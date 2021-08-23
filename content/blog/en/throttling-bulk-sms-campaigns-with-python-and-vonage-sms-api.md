@@ -331,4 +331,4 @@ Make sure you replace the dummy recipient phone numbers with real numbers before
 
 ## Conclusion
 
-In this article, you implemented bulk SMS throttling using Vonage in a Django REST API. You can now integrate this solution into your projects and build more solutions with Vonage. You can review our \[authentication guide] to better understand authentication with [Vonage APIs](https://developer.nexmo.com/concepts/guides/authentication). If you want to learn more about the new Messages API, you can visit the [developer documentation](<https://www.vonage.com/communications-apis/messages/developer/)>).
+In this article, you implemented bulk SMS throttling using Vonage in a Django REST API. You can now integrate this solution into your projects and build more solutions with Vonage. You can review our authentication guide to better understand authentication with [Vonage APIs](https://developer.nexmo.com/concepts/guides/authentication).
