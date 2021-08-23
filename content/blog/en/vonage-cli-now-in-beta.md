@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Throughout a career, specific projects naturally stand out. The [Vonage CLI](https://github.com/Vonage/vonage-cli) is one of those projects for me, and I can now tell you that the CLI is in beta!  The future potential of the CLI and the power of a new plugin architecture has me excited to bring you the news!
+Throughout a career, specific projects naturally stand out. The [Vonage CLI](https://github.com/Vonage/vonage-cli) is one of those projects for me, and I can now tell you that the CLI (Command Line Interface) is in beta! The future potential of the CLI and the power of a new plugin architecture have me excited to bring you the news!
 
 ## How It's Built
 
