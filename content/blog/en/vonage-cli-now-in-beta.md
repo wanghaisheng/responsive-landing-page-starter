@@ -29,7 +29,7 @@ The plugin architecture will help us to build, deliver, and support additional u
 
 Along with being able to create and install plugins, the processes for quickly versioning and deploying them are equally critical. These reasons are why I chose [Lerna](https://lerna.js.org/) to support our multi-package repository. Having the ability to link local packages together made versioning and deploying plugins so much easier. 
 
-The real power, I found, however,  was in deployments. The Lerna CLI prompts you through versioning packages and only releasing new versions of any updated software (or keep versions the same if you want).  In all, I fell in love with Lerna and enjoy this methodology. 
+The real power I found was in deployments. The Lerna CLI steps you through the process of versioning packages and offers the option of only releasing new or keeping the same versions of any updated software. In all, I fell in love with Lerna and enjoy this methodology. 
 
 ## How to Help
 
