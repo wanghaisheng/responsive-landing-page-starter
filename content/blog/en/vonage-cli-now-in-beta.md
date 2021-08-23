@@ -27,7 +27,7 @@ We chose the [oclif CLI framework](https://oclif.io/) written by the team at Her
 
 The plugin architecture will help us to build, deliver, and support additional use cases and functionality that would have been otherwise impossible in our current CLI.
 
-Along with being able to create and install plugins, quickly versioning and deploying them is equally critical.  These reasons are why I chose [Lerna](https://lerna.js.org/) to support our multi-package repository. Having the ability to link local packages together quickly made the actual process so much easier. 
+Along with being able to create and install plugins, the processes for quickly versioning and deploying them are equally critical. These reasons are why I chose [Lerna](https://lerna.js.org/) to support our multi-package repository. Having the ability to link local packages together made versioning and deploying plugins so much easier. 
 
 The real power, I found, however,  was in deployments. The Lerna CLI prompts you through versioning packages and only releasing new versions of any updated software (or keep versions the same if you want).  In all, I fell in love with Lerna and enjoy this methodology. 
 
