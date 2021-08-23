@@ -1,5 +1,5 @@
 ---
-title: Create Your First Chrome Extension in Javascript to Hide Your API Keys
+title: Create Your First Chrome Extension in JavaScript to Hide Your API Keys
 description: In this tutorial, you will learn how to create a chrome extension.
   The example I will show today is to hide your Vonage API keys on the
   dashboard. The knowledge you’ll acquire from following the steps of this
@@ -13,6 +13,7 @@ category: tutorial
 tags:
   - chromeextension
   - javascript
+  - browser
 comments: true
 spotlight: false
 redirect: ""
@@ -28,9 +29,9 @@ A Chrome extension is a software program that allows you to extend the chrome fu
 
 ## Create the Chrome Extension Folder
 
-Create a new folder in your computer that will contain the `manifest.json` and the `index.js` files. For my example, I'll name this folder `chrome-extension`.
+Create a new folder in your computer that will contain the `manifest.json` file and the bootstrap file, in our example we will name it `index.js`. For my example, I'll name this folder `chrome-extension`.
 
-## Create the `manifest.json` File
+## Create the `manifest.json` file
 
 A `manifest.json` file is required when creating a chrome extension, as it tells your program the function to be executed. 
 
@@ -40,19 +41,14 @@ Populate it with the required information as you can see in the code snippet bel
 
 Let me explain each line step by step.
 
-`name` is the extension name that will appear on the chrome extensions list.
+* `name` is the extension name that will appear on the chrome extensions list.
+* `description` is the description of what your chrome API does.
+* `version` is the current version of your extension, if you make changes you can bump it.
+* `author` should contain the name of the chrome extension creator.
+* `manifest_version` refers to the version of the manifest, at the time of writing this blog post the latest one is 3.
+* `content_scripts` are files that can make changes to the DOM and pass information to the extension. You can learn more on the [content script official webpage](https://developer.chrome.com/docs/extensions/mv3/content_scripts/). In this example, we would like our script to match the webpage <https://dashboard.nexmo.com/> and any of its subpages. We state the logic to be followed will be written on the file `index.js`.
 
-`description` is the description of what your chrome API does.
-
-`version` is the current version of your extension, if you make changes you can bump it.
-
-`author` should contain the name of the chrome extension creator.
-
-`manifest_version` refers to the version of the manifest, at the time of writing this blog post the latest one is 3.
-
-`content_scripts` are files that can make changes to the DOM and pass information to the extension. You can learn more on the [content script official webpage](https://developer.chrome.com/docs/extensions/mv3/content_scripts/). In this example, we would like our script to match the webpage <https://dashboard.nexmo.com/> and any of its subpages. We state the logic to be followed will be written on the file `index.js`.
-
-```
+```json
 {
     "name": "API Key Hider",
     "description": "A chrome extension to blur your Vonage API keys",
@@ -68,9 +64,9 @@ Let me explain each line step by step.
 }
 ```
 
-## Create the `index.js` File
+## Create the bootstrap file
 
-From your terminal create the `index.js` file. On a Unix machine, you can do so by typing `touch index.js`. 
+From your terminal create the `index.js` file. On a Unix machine, you can do so by typing `touch index.js`.
 
 In order to have a chrome extension, you can create a simple function and it will be applied to the browser once you import it. 
 
@@ -88,7 +84,7 @@ createAnAlert();
 
 For this tutorial, we will use the code below to blur some API keys. 
 
-Let's create a function called blurApiKeys. We will use `document.querySelector` and `document.querySelectorAll` to find the HTML elements that contain the API Key and the API Secret Key. Finally, we will add a blur of 20 pixels to these elements using CSS styling and setInterval calls it every 10ms.
+Let's create a function called blurApiKeys. We will use `document.querySelector` and `document.querySelectorAll` to find the HTML elements that contain the API Key and the API Secret Key. Finally, we will add a blur of 20 pixels to these elements using CSS styling and setInterval calls the blurApiKeys function every 10 milliseconds.
 
 ```javascript
 function blurApiKeys() {
