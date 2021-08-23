@@ -21,7 +21,7 @@ Throughout a career, specific projects naturally stand out. The [Vonage CLI](htt
 
 ## How It's Built
 
-When first talking about the new CLI architecture, plugins, and modularizing our packages better, two essential critical requirements were on the list.  
+When initially planning the new CLI architecture, there were two essential requirements: plugins and modularizing our packages better.  
 
 We chose the [oclif CLI framework](https://oclif.io/) written by the team at Heroku and used in their tooling. Ultimately the decision came down to ease of use, and the plugin architecture built into the framework satisfied both of the main requirements we were after. 
 
