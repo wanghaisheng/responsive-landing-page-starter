@@ -40,7 +40,7 @@ This article will teach you how to implement bulk SMS throttling in Python using
 
 ## Setup and Installation
 
-You will start with setting up the project dependencies and installing the modules you need with 'pip.' Next, you will create the Django project for the tutorial.
+You will start with setting up the project dependencies and installing the modules you need with pip. Next, you will create the Django project for the tutorial.
 
 ### Install Dependencies
 
