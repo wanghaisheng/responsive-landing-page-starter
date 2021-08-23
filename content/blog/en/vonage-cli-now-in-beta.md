@@ -33,7 +33,7 @@ The real power I found was in deployments. The Lerna CLI steps you through the p
 
 ## How to Help
 
-The beta is currently available for testing.  You can quickly install using [`npm` ](https://www.npmjs.com/):
+The beta is currently available for testing and can be installed using [`npm` ](https://www.npmjs.com/):
 
 ```shell
 npm install -g @vonage/cli@beta
