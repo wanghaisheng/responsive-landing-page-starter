@@ -325,7 +325,7 @@ Let's assume you intend to use the following details for your SMS bulk campaign.
 
 You can input the above details into the body of a Postman request as JSON as shown in the following image:
 
-![A Postman screenshot]()
+![A Postman screenshot](/content/blog/throttling-bulk-sms-campaigns-with-python-and-vonage-sms-api/screen-shot-2021-08-23-at-4.39.05-pm.png)
 
 Make sure you replace the dummy recipient phone numbers with real numbers before sending the request. Then, the messages will be delivered to your recipients.
 
