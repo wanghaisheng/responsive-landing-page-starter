@@ -327,9 +327,7 @@ You can input the above details into the body of a Postman request as JSON as sh
 
 ![A Postman screenshot]()
 
-Make sure you replace the dummy recipient phone numbers with real numbers before sending the request. Then, the messages will be delivered to the recipients, as shown in a smartphone screenshot below.
-
-!\[A screenshot of the received message on a smartphone]()
+Make sure you replace the dummy recipient phone numbers with real numbers before sending the request. Then, the messages will be delivered to your recipients.
 
 ## Conclusion
 
