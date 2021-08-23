@@ -103,7 +103,7 @@ encodedData = vonageCredentials.encode("utf-8")
 b64value = b64encode(encodedData).decode("ascii")
 ```
 
-In the above code, replace the `API_KEY` and `API_SECRET` values with the values from your Vonage dashboard. The `vonageCredentials` variable takes your Vonage credentials: your API key and secret key in the form `'API_KEY: API_SECRET'`. You then encode and decode the string with your credentials in base64 form to pass them as [](https://en.wikipedia.org/wiki/ASCII)ASCII standard characters.
+In the above code, replace the `API_KEY` and `API_SECRET` values with the values from your Vonage dashboard. The `vonageCredentials` variable takes your Vonage credentials: your API key and secret key in the form `'API_KEY: API_SECRET.'` You then encode and decode the string with your credentials in base64 form to pass them as [](https://en.wikipedia.org/wiki/ASCII)ASCII standard characters.
 
 ### Create a View to Send SMS message
 
