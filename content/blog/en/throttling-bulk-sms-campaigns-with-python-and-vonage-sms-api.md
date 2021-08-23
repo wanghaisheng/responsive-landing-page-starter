@@ -56,7 +56,7 @@ The commands above installed the following packages:
 
 1. `Django`: the Django framework package.
 2. `djangorestframework`: the Django REST framework for creating APIs in Django.
-3. `django-cors-headers`: Allows our API to make cross-origin requests to other servers.
+3. `django-cors-headers`: This allows our API to make cross-origin requests to other servers.
 4. `vonage`: the Vonage Python server SDK.
 
 ### Create a Django project
