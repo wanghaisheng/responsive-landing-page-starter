@@ -212,7 +212,7 @@ def sendMessage(self, request):
             return JsonResponse({'the error is': str(e)}, status=403)
 ```
 
-In the code above, the first "for" statement that was added loops through batches of phone numbers using the `batch` function created earlier. 
+In the code above, the first "for" statement loops through batches of phone numbers using the `batch` function created earlier. 
 
 The inner "for" loop takes each phone number in a batch and makes an HTTP request to the Vonage Messages API. The request header contains the base64 encoded credentials that we derived earlier as a "b64value." It also includes a JSON payload to be delivered to the Messages API. The JSON payload consists of the receiver details in the `to` dictionary, the sender's details in "from," and the message content in 'message.'
 
