@@ -1,9 +1,10 @@
 ---
 title: Vonage CLI Now In Beta
 description: The Vonage CLI is now in beta - and here is how you can help out!
+thumbnail: /content/blog/vonage-cli-now-in-beta/social_sdk-updates_1200x627.png
 author: kellyjandrews
-published: false
-published_at: 2021-08-20T12:59:30.323Z
+published: true
+published_at: 2021-08-24T09:27:25.992Z
 updated_at: 2021-08-20T12:59:30.361Z
 category: announcement
 tags:
