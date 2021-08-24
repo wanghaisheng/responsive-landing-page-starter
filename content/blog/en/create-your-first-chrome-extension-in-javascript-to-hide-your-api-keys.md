@@ -21,7 +21,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-In this tutorial, you will learn how to create a chrome extension. The example I will show today is to hide your Vonage API keys on the dashboard. The knowledge you’ll acquire from following the steps of this tutorial will give you a foundation on how to create your own chrome extensions for different purposes.
+In this tutorial, you will learn how to create a chrome extension. The example we will walk through today is to hide your Vonage API keys on the dashboard. The knowledge you’ll acquire from following the steps of this tutorial will give you a foundation on how to create your own chrome extensions for different purposes.
 
 ## What Is a Chrome Extension
 
