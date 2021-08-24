@@ -1,7 +1,7 @@
 ---
 title: How to Build a Simple IVR with Ruby on Rails
 description: Build an Interactive Voice Response (IVR) Ruby on Rails application
-  powered by the Nexmo Voice API with this step-by-step walkthrough.
+  powered by the Vonage Voice API with this step-by-step walkthrough.
 thumbnail: /content/blog/build-an-ivr-with-ruby-on-rails-dr/ivr-ruby.png
 author: ben-greenberg
 published: true
@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-We've built this example using Ruby 3.0.0 and Ruby on Rails 6.1.4.1, and the Vonage Voice API.
+> We've built this example using Ruby 3.0.0 and Ruby on Rails 6.1.4.1, and the Vonage Voice API.
 
 Have you ever dialed a company and been prompted to follow along with menu prompts? If you have then you have interacted with an Interactive Voice Response (IVR). The IVR acts on input provided by the caller, usually in the form of numeric keypad choices. You can build your own IVR using Ruby on Rails and the Vonage Voice API.
 
@@ -28,7 +28,7 @@ You will need the following to follow along in this tutorial:
 * [Ruby on Rails](https://rubyonrails.org/)
 * [ngrok](https://ngrok.io) so Vonage can access the service running locally on your machine
 
-<sign-up></sign-up> 
+<sign-up></sign-up>
 
 ## Getting Started
 
@@ -42,7 +42,7 @@ $ rails new vonage-rails-ivr-demo --skip-activerecord
 
 The above command will create our Rails app in `/vonage-rails-ivr-demo`, and will also skip installing a database. In this tutorial we will not be persisting our data, so we do not need it. 
 
-Change directories into the `vonage-rails-ivr-demo` folder and run `bundle install` from the command line. While Vonage has a robust [Ruby SDK gem](https://github.com/Vonage/vonage-ruby-sdk), and a new [Rails initializer gem](https://github.com/Nexmo/nexmo-rails), we do not need to install either for this application. 
+Change directories into the `vonage-rails-ivr-demo` folder and run `bundle install` from the command line. While Vonage has a robust [Ruby SDK gem](https://github.com/Vonage/vonage-ruby-sdk), and a [Rails initializer gem](https://github.com/Nexmo/nexmo-rails), we do not need to install either for this application. 
 
 ### Create an IVR Controller
 
@@ -54,13 +54,12 @@ To create our Controller run the following from the command line:
 $ rails generate controller IVR
 ```
 
-Once that has completed, open up the application in your preferred code editor and let's edit the newly generated `/app/controllers/ivr_controller.rb`. We are going to add methods for our two routes now. First, let's create the `#answer` method that will pick up the call:
+sttOnce that has completed, open up the application in your preferred code editor and let's edit the newly generated `/app/controllers/ivr_controller.rb`. We are going to add methods for our two routes now. First, let's create the `#answer` method that will pick up the call:
 
 ```ruby
 # ivr_controller.rb
 
 class IvrController < ApplicationController
-  skip_before_action :verify_authenticity_token
     
   BASE_URL = ''
 
@@ -68,21 +67,24 @@ class IvrController < ApplicationController
     render json:
       [
         {
-          :action => 'talk',
-          :text => 'Welcome to the Nexmo Ruby on Rails IVR Demo Application. Please enter a number on your keypad, followed by the hash key.',
-          :voiceName => 'Amy'
+          action: 'talk',
+          text: 'Welcome! This is the Vonage Ruby on Rails IVR Demo Application. Please enter a number on your keypad, followed by the hash key.',
+          language: "en-US",
+          style: 9
         },
         {
-          :action => 'input',
-          :submitOnHash => true,
-          :eventUrl => ["#{BASE_URL}/event"]
+          action: 'input',
+          submitOnHash: true,
+          eventUrl: ["#{BASE_URL}/event"]
         }
       ].to_json
   end
 end
 ```
 
-As shown above, the `#answer` method provides two NCCO instructions. The first is the `talk` action, wherein the caller is greeted by the application. I chose the `Amy` voice for this action, however, there are numerous voice options to choose from in the [text-to-speech guide](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech#voice-names).
+As shown above, the `#answer` method provides two NCCO instructions. The first is the `talk` action, wherein the caller is greeted by the application. I chose the United States locale and style number 9. The Voice API provides a robust selection of language and style options, see more in the [text-to-speech guide.](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech)\
+\
+**Note:** the previous voiceName parameter is now deprecated. [Read more.](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech#supported-languages)
 
 The second action is the `input` action, and we have set the optional parameter `submitOnHash` to `true` so that the input ends when the user presses the hash key on their phone. We also provide the required `eventUrl` parameter with a URL that points to our other route that will respond to the user input.
 
@@ -99,9 +101,10 @@ def event
   render json:
   [
     {
-      :action => 'talk',
-      :text => "You entered #{number}. Thank you for trying the Nexmo Ruby on Rails IVR Demo Application!",
-      :voiceName => 'Joey'
+      action: 'talk',
+      text: "You entered #{number}. Thank you for trying the Vonage Ruby on Rails IVR Demo Application!",
+      language: "en-US",
+      style: 9
     }
   ].to_json
 end
@@ -113,22 +116,22 @@ All together our Controller will look like this:
 # ivr_controller.rb
 
 class IvrController < ApplicationController
-  skip_before_action :verify_authenticity_token
-    
+
   BASE_URL = ''
 
   def answer
     render json:
       [
         {
-          :action => 'talk',
-          :text => 'Welcome to the Nexmo Ruby on Rails IVR Demo Application. Please enter a number on your keypad, followed by the hash key.',
-          :voiceName => 'Amy'
+          action: 'talk',
+          text: 'Welcome! This is the Vonage Ruby on Rails IVR Demo Application. Please enter a number on your keypad, followed by the hash key.',
+          language: "en-US",
+          style: 9
         },
         {
-          :action => 'input',
-          :submitOnHash => true,
-          :eventUrl => ["#{BASE_URL}/event"]
+          action: 'input',
+          submitOnHash: true,
+          eventUrl: ["#{BASE_URL}/event"]
         }
       ].to_json
   end
@@ -139,27 +142,45 @@ class IvrController < ApplicationController
     render json:
     [
       {
-        :action => 'talk',
-        :text => "You entered #{number}. Thank you for trying the Nexmo Ruby on Rails IVR Demo Application!",
-        :voiceName => 'Joey'
+        action: 'talk',
+        text: "You entered #{number}. Thank you for trying the Vonage Ruby on Rails IVR Demo Application!",
+        language: "en-US",
+        style: 9
       }
     ].to_json
   end
+
 end
 ```
 
 ### Define Routes
 
-The last step we need to do in setting up our Rails application, for now, is to define our routes. We do that by editing the `/config/routes.rb` file and adding the two URL paths corresponding to our two Controller actions:
+The next step we need to do is to define our routes. We do that by editing the `/config/routes.rb` file and adding the two URL paths corresponding to our two Controller actions:
 
 ```ruby
 # routes.rb
 
-get '/answer', to: 'ivr#answer'
-post '/event', to: 'ivr#event'
+Rails.application.routes.draw do
+  get '/answer', to: 'ivr#answer'
+  post '/event', to: 'ivr#event'
+end
 ```
 
-At this point, our Rails application is ready to run. Now let's set up our ngrok externally accessible URL. We will need that for the final step, which is creating our Nexmo application and our Nexmo provisioned phone number.
+### Configure ngrok
+
+Starting with Rails 6 you must give your ngrok tunnel URL permission to access your development environment. The NGROK_URL will replaced by your actual ngrok URL in the following step. Add the following to your `development.rb` file. \
+\
+**Note:** you must restart your rails server after editing `development.rb` for changes to take effect
+
+```ruby
+#development.rb
+
+  config.hosts << "NGROK_URL.ngrok.io"
+```
+
+
+
+At this point, our Rails application is ready to run. Now let's set up our ngrok externally accessible URL. We will need that for the final step, which is creating our Vonage application and our Vonage provisioned phone number.
 
 ## Connect to the Outside World
 
@@ -175,55 +196,65 @@ In order to start ngrok, open up a new terminal window and execute the following
 $ ngrok http 3000
 ```
 
-You will now see a ngrok logging interface in your terminal window. Near the top of the interface is a line that begins with `Forwarding` and contains two URLs. The first is the externally accessible ngrok URL, which ends with `ngrok.io` followed by `http://localhost:3000`, that being your local development server. Now, when you or Nexmo contacts the `ngrok.io` URL, it will forward it to your local server.
+You will now see a ngrok logging interface in your terminal window. Near the top of the interface is a line that begins with `Forwarding` and contains two URLs. The first is the externally accessible ngrok URL, which ends with `ngrok.io` followed by `http://localhost:3000`, that being your local development server. Now, when you or Vonage contacts the `ngrok.io` URL, it will forward it to your local server.
 
-Now would be a good time to go back to the `ivr_controller.rb` and replace the empty string with your ngrok URL for the `BASE_URL` constant. We will also be using it in our next step of setting up our Nexmo account, phone number, and Voice application.
+Now would be a good time to go back to the `ivr_controller.rb` and replace the empty string with your ngrok URL for the `BASE_URL` constant. You should also replace your ngrok URL for NGROK_URL in the `development.rb`  file. We will also be using it in our next step of setting up our Vonage account, phone number, and Voice application.
 
-## Get Connected with Nexmo
+## Get Connected with Vonage
 
-### Set Up a Nexmo Account
+### Set Up a Vonage Account
 
-In order for our voice application to work, we need a Nexmo account, a Nexmo provisioned phone number, a Nexmo application, and, lastly, we need to link our application to our phone number.
+In order for our voice application to work, we need a Vonage account, a Vonage provisioned phone number, a Vonage application, and, lastly, we need to link our application to our phone number.
 
-You can create a Nexmo account for free, and as an added bonus, your account will be credited with 2 euros to begin using your new application. Navigate to <https://dashboard.nexmo.com/sign-up> in your web browser and go through the signup steps. Once you have finished you will be in your Nexmo dashboard.
+You can create a Vonage account for free, and as an added bonus, your account will be credited with 2 euros to begin using your new application. Navigate to <https://dashboard.nexmo.com/sign-up> in your web browser and go through the signup steps. Once you have finished you will be in your Vonage dashboard.
 
-From the left-hand menu, click on the `Voice menu` item. You will see the following four options under `APPLICATIONS`:
+From the left-hand menu, click on the `Voice menu` item. You will see the following options:
 
-![voice menu options](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/voice-menu-options.png "voice menu options")
+![voice menu options](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ivr-screenshot3.png "voice menu options")
 
-Click on the `Create an application` option and you will be directed to a page where you can set up a new Nexmo application.
+Click on the `Getting started` option and you will be directed to a page where you can test the text-to-speech functionality or set up a new Vonage application. Find the following `Create an application` form:
+
+![create application form](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ivr-screenshot5.png "create application form")
 
 Complete the form with the following:
 
-* `Application name` text field enter `nexmo-rails-ivr-demo`
-* `Event URL` text field enter your ngrok URL: `https://[ngrok url here]/event`
-* `Answer URL` text field enter your ngrok URL again: `https://[ngrok url here]/webhooks/answer`
+* `Application name` text field enter `vonage-rails-ivr-demo`
 
-Once you have finished, go ahead and click the blue `Create Application` button.
+Once you have finished, go ahead and click the purple `Create Application` button.
 
 After the application has been created you can generate a public/private key pair. We will not be using them for this tutorial, but it is good to know where they are in case you choose to expand upon this application with more functionality.
 
-You now have created a Nexmo Voice application. Our next step is to purchase a Nexmo phone number and link it to this application.
+You now have created a Vonage Voice application. Our next step is to purchase a Vonage phone number and link it to this application. Click on the `Configure application` As seen below:
 
-From the Nexmo Dashboard, click on the `Numbers` menu item on the left-hand menu. You will see three options appear:
+![configure application button](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/screen-shot-2021-08-24-at-20.43.18.png "configure application button")
 
-![numbers menu options](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/numbers-menu-options.png "numbers menu options")
+This will redirect you to the settings page for your application. In the second half of the page you can link your application to Vonage provisioned phone numbers. Click on the black `Buy numbers` button and you will be directed to a page where you can choose a country, features, type, and four digits you would like the number to have.
 
-Click on the `Buy numbers` option and you will be directed to a page where you can choose a country, features, type, and four digits you would like the number to have.
-
-![buy numbers menu](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/buy-numbers-menu.png "buy numbers menu")
+![buy numbers menu](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ivr-screenshot-2.png "buy numbers menu")
 
 For our purposes: pick the country that you are currently in so that the call will be a local call for you; pick `Voice` for features and either mobile or landline for type. You do not need to enter anything for the `Number` text field. When you click `Search`, you will see a list of phone numbers available.
 
-Pick one by clicking the orange `Buy` button, and click the orange `Buy` button once more in the confirmation prompt.
+Pick one by clicking the purple `Buy` button, and click the black `Buy` button once more in the confirmation prompt.
 
-Once you own the number, you can now link it to your `nexmo-rails-ivr-demo` Voice application. To do so, click on the gear icon next to the phone number and you will see the following menu:
+Once you own the number, you can now link it to your `vonage-rails-ivr-demo` Voice application. To do so, click on the `Your applications` option from the left-hand panel. Navigate back to your application page. Now you will see your newly purchased phone number listed in the second half of the page, as seen below:
 
-![edit numbers menu](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/edit-number-menu.png "edit numbers menu")
+![link numbers menu](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/screen-shot-2021-08-24-at-20.52.35.png "link numbers menu")
 
-Select the `nexmo-rails-ivr-demo` Application from the drop-down list and click on the blue `Ok` button. Your Nexmo phone number is now linked to your application and ready to accept phone calls and send them to the IVR Rails app.
+Simply click the white `link` button. The button will turn red and change to `unlink.` Your Vonage phone number is now linked to your application. \
+\
+Our last step is to configure the Vonage application to accept phone calls and send them to the IVR Rails app. Click the black `edit` button in the top section, under your application's name. You will be redirected to a page called `Edit vonage-rails-ivr-demo.` Scroll until you find the following Capabilities section:
 
-With that last step, you have finished! You now have a fully functional simple IVR Rails application powered by Nexmo. You can give it a go by starting your Rails server, and with ngrok also running, give your application a call at the phone number you just purchased.
+![](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ivr-screenshot-1.png)
+
+\
+Complete the form with the following:
+
+* `Answer URL` text field enter your ngrok URL again: `https://[ngrok url here]/answer`
+* `Event URL` text field enter your ngrok URL: `https://[ngrok url here]/event`
+
+Scroll to the bottom of the page and click the black `save-changes` button.
+
+With that last step, you have finished! You now have a fully functional simple IVR Rails application powered by Vonage. You can give it a go by starting your Rails server, and with ngrok also running, give your application a call at the phone number you just purchased.
 
 ## Further Reading
 
