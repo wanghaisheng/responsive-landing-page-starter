@@ -144,19 +144,24 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
 
 * 一般的に、UIカスタマイゼーションドキュメント（Web、iOS、Android、Windows）をご覧いただき、アプリケーションに関連するセクションを、お読みいただくことを推奨しています。
 * **事前コールテスト**：ユーザーのデバイスや接続において、セッションに参加する前にネットワークやハードウェアのテストが必要な場合、事前コールテスト機能を追加してください。テストごとに新規のsessionIDを作成し、より正確な結果を得るために、最低30秒のテスト時間を設けることを忘れないでください。
+
   * Vonage事前コールテストツールを使用して、ユーザーがVideo APIの一般的な接続テストを行うことができます。
   * 自社の事前コールテストの仕組みと連携し、全てのテストデータを集約したい場合、以下を活用することができます：
+
     * [iOS/Android Githubサンプルs](https://github.com/opentok/opentok-network-test)
     * [Javascript Network Test Package](https://github.com/opentok/opentok-network-test-js)
   * また、Vonageのライブミーティングデモでデモの関連ソースコードを調べることにより、事前コールテストをアプリケーションに組み込む方法を確認することができます。
 * ビデオストリームのパブリッシュ/サブスクライブ：Handlersを活用
+
   * Completion Handlersにより、ビデオAPIセッションの接続、パブリッシュ、サブスクライブ、あるいは信号の送信に関するフィードバックを得ることができます。詳細は以下をご覧ください。
+
     * [Javascript例外処理](https://tokbox.com/developer/guides/exception-handling/js/)
     * [iOS例外処理](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSessionDelegate.html)
     * [Android例外処理](https://tokbox.com/developer/sdks/android/reference/)
-
   * OTオブジェクトの例外イベントをリッスンすることもでき、例外イベントで説明されている、より一般的なエラーに対して例外イベントをスローします。
   * 接続が確立されると、通常オーディオとビデオをパブリッシュし、その他の参加者のストリームをサブスクライブします。UIでパブリッシャーとサブスクライバーを管理する場合、パブリッシャーとサブスクライバーのインスタンスのそれぞれのイベントを利用することができ、特定のイベントまたは例外が発生した場合、ユーザーに対して有益な情報を表示することができます。パブリッシャーとサブスクライバーの各種のイベントについては以下をご覧ください：
+
     * [パブリッシャーイベント（JS)](https://tokbox.com/developer/sdks/js/reference/Publisher.html#events)
     * [サブスクライバーイベント（JS)](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#events)
     * AndroidとiOSについては上記の「例外処理」をご覧ください
+* **オーディオフォールバック**：Vonageのメディアサーバでは、常時ネットワークの状態をチェックしており、エンドユーザーの接続に関する問題を検知すると、パケットロスが15%を超える場合、ビデオを自動的に停止してオーディオのみで継続するとともに、これに関するイベントが送信されます（iOSの場合：subscriberVideoDisabled:reason:とsubscriberVideoEnabled:reason:）。このようなイベントをUIに表示し、影響を受けるユーザーに対して、接続品質が低下したためにオーディオのみに切り替えたことを知らせることを推奨します。オーディオのみの切り替えのしきい値を構成することはできません。詳細は以下の例をご覧ください：
