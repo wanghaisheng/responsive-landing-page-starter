@@ -151,3 +151,12 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
   * また、Vonageのライブミーティングデモでデモの関連ソースコードを調べることにより、事前コールテストをアプリケーションに組み込む方法を確認することができます。
 * ビデオストリームのパブリッシュ/サブスクライブ：Handlersを活用
   * Completion Handlersにより、ビデオAPIセッションの接続、パブリッシュ、サブスクライブ、あるいは信号の送信に関するフィードバックを得ることができます。詳細は以下をご覧ください。
+    * [Javascript例外処理](https://tokbox.com/developer/guides/exception-handling/js/)
+    * [iOS例外処理](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSessionDelegate.html)
+    * [Android例外処理](https://tokbox.com/developer/sdks/android/reference/)
+
+  * OTオブジェクトの例外イベントをリッスンすることもでき、例外イベントで説明されている、より一般的なエラーに対して例外イベントをスローします。
+  * 接続が確立されると、通常オーディオとビデオをパブリッシュし、その他の参加者のストリームをサブスクライブします。UIでパブリッシャーとサブスクライバーを管理する場合、パブリッシャーとサブスクライバーのインスタンスのそれぞれのイベントを利用することができ、特定のイベントまたは例外が発生した場合、ユーザーに対して有益な情報を表示することができます。パブリッシャーとサブスクライバーの各種のイベントについては以下をご覧ください：
+    * [パブリッシャーイベント（JS)](https://tokbox.com/developer/sdks/js/reference/Publisher.html#events)
+    * [サブスクライバーイベント（JS)](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#events)
+    * AndroidとiOSについては上記の「例外処理」をご覧ください
