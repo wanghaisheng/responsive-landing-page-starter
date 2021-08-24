@@ -15,7 +15,9 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Have you ever dialed a company and been prompted to follow along with menu prompts? If you have then you have interacted with an Interactive Voice Response (IVR). The IVR acts on input provided by the caller, usually in the form of numeric keypad choices. You can build your own IVR using Ruby on Rails and the Nexmo Voice API.
+We've built this example using Ruby 3.0.0 and Ruby on Rails 6.1.4.1, and the Vonage Voice API.
+
+Have you ever dialed a company and been prompted to follow along with menu prompts? If you have then you have interacted with an Interactive Voice Response (IVR). The IVR acts on input provided by the caller, usually in the form of numeric keypad choices. You can build your own IVR using Ruby on Rails and the Vonage Voice API.
 
 In this walkthrough, we will build a small Rails application that will host a simple IVR service. After we are done, you can expand on this application to build whatever you need. In this tutorial, our application will accept a numeric input (also called a DTMF code) from the caller, and then speak back the input entered to the caller. 
 
@@ -24,7 +26,7 @@ In this walkthrough, we will build a small Rails application that will host a si
 You will need the following to follow along in this tutorial:
 
 * [Ruby on Rails](https://rubyonrails.org/)
-* [ngrok](https://ngrok.io) so Nexmo can access the service running locally on your machine
+* [ngrok](https://ngrok.io) so Vonage can access the service running locally on your machine
 
 <sign-up></sign-up> 
 
@@ -35,12 +37,12 @@ You will need the following to follow along in this tutorial:
 The first thing we need to do is to create a new Rails application. You can do so on your command line with the following:
 
 ```bash
-$ rails new nexmo-rails-ivr-demo --skip-activerecord
+$ rails new vonage-rails-ivr-demo --skip-activerecord
 ```
 
-The above command will create our Rails app in `/nexmo-rails-ivr-demo`, and will also skip installing a database. In this tutorial we will not be persisting our data, so we do not need it. 
+The above command will create our Rails app in `/vonage-rails-ivr-demo`, and will also skip installing a database. In this tutorial we will not be persisting our data, so we do not need it. 
 
-Change directories into the `nexmo-rails-ivr-demo` folder and run `bundle install` from the command line. While Nexmo has a robust [Ruby SDK gem](https://github.com/Nexmo/nexmo-ruby), and a new [Rails initializer gem](https://github.com/Nexmo/nexmo-rails), we do not need to install either for this application. 
+Change directories into the `vonage-rails-ivr-demo` folder and run `bundle install` from the command line. While Vonage has a robust [Ruby SDK gem](https://github.com/Vonage/vonage-ruby-sdk), and a new [Rails initializer gem](https://github.com/Nexmo/nexmo-rails), we do not need to install either for this application. 
 
 ### Create an IVR Controller
 
