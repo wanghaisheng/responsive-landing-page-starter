@@ -39,7 +39,7 @@ Create a `manifest.json` file. From your terminal on Unix, you can type `touch m
 
 Populate it with the required information as you can see in the code snippet below. 
 
-Let me explain each line step by step.
+Let's look at each line step by step together.
 
 * `name` is the extension name that will appear on the chrome extensions list.
 * `description` is the description of what your chrome API does.
