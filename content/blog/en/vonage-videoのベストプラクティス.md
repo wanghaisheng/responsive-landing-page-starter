@@ -140,7 +140,14 @@ https://support.tokbox.com/hc/en-us/articles/360029733831-TokBox-Scalable-Video-
 レイアウト、最大継続時間、ライブストリームの開始/終了方法などのライブストリーミングに関する詳細は、以下をご覧ください。
 https://tokbox.com/developer/guides/broadcast/live-streaming/
 
-
 ## ユーザーインターフェース/エクスペリエンス
 
-
+* 一般的に、UIカスタマイゼーションドキュメント（Web、iOS、Android、Windows）をご覧いただき、アプリケーションに関連するセクションを、お読みいただくことを推奨しています。
+* **事前コールテスト**：ユーザーのデバイスや接続において、セッションに参加する前にネットワークやハードウェアのテストが必要な場合、事前コールテスト機能を追加してください。テストごとに新規のsessionIDを作成し、より正確な結果を得るために、最低30秒のテスト時間を設けることを忘れないでください。
+  * Vonage事前コールテストツールを使用して、ユーザーがVideo APIの一般的な接続テストを行うことができます。
+  * 自社の事前コールテストの仕組みと連携し、全てのテストデータを集約したい場合、以下を活用することができます：
+    * [iOS/Android Githubサンプルs](https://github.com/opentok/opentok-network-test)
+    * [Javascript Network Test Package](https://github.com/opentok/opentok-network-test-js)
+  * また、Vonageのライブミーティングデモでデモの関連ソースコードを調べることにより、事前コールテストをアプリケーションに組み込む方法を確認することができます。
+* ビデオストリームのパブリッシュ/サブスクライブ：Handlersを活用
+  * Completion Handlersにより、ビデオAPIセッションの接続、パブリッシュ、サブスクライブ、あるいは信号の送信に関するフィードバックを得ることができます。詳細は以下をご覧ください。
