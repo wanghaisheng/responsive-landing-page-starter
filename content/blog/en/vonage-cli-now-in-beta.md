@@ -1,9 +1,10 @@
 ---
 title: Vonage CLI Now In Beta
 description: The Vonage CLI is now in beta - and here is how you can help out!
+thumbnail: /content/blog/vonage-cli-now-in-beta/social_sdk-updates_1200x627.png
 author: kellyjandrews
-published: false
-published_at: 2021-08-20T12:59:30.323Z
+published: true
+published_at: 2021-08-24T09:27:25.992Z
 updated_at: 2021-08-20T12:59:30.361Z
 category: announcement
 tags:
@@ -23,7 +24,7 @@ Throughout a career, specific projects naturally stand out. The [Vonage CLI](htt
 
 When initially planning the new CLI architecture, there were two essential requirements: plugins and modularizing our packages better.  
 
-We chose [oclif](https://oclif.io/), a CLI framework written by the team at Heroku and used for internal development. Ultimately, the decision came down to its ease of use, and the plugin architecture built into the framework. Both of which satisfied our requirements. 
+We chose [oclif](https://oclif.io/), a CLI framework written by the team at Heroku and used for their own internal project, including the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli). Ultimately, the decision came down to its ease of use, and the plugin architecture built into the framework. Both of which satisfied our requirements. 
 
 The plugin architecture will help us to build, deliver, and support additional use cases and functionality that would have been otherwise impossible in our current CLI.
 
@@ -37,6 +38,7 @@ The beta is currently available for testing and can be installed using [`npm` ](
 
 ```shell
 npm install -g @vonage/cli@beta
+vonage --help
 ```
 Once installed, you can get around using the `--help` flag on any command to learn more about the arguments and flags available. The first thing you will want to do is get your authentication set up. You can do with the following:
 
