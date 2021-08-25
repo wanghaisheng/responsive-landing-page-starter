@@ -174,7 +174,7 @@ flutter create app_to_phone_flutter
 
 > 「`Flutter`プロジェクトには、`iOS`プロジェクトを含む`ios`フォルダ、`Android`プロジェクトを含む`android`フォルダ、そして`web`プロジェクトを含む`web`フォルダがあります。」
 
-Open the `pubspec.yaml` file, and add `permission_handler` dependency (just below `sdk: flutter`):
+`pubspec.yaml`ファイルを開き、`permission_handler`の依存関係を追加します（`sdk: flutter`のすぐ下）：
 
 ```yaml
 dependencies:
@@ -184,21 +184,22 @@ dependencies:
   permission_handler: ^6.0.1+1
 ```
 
-> Indentation matters in `yaml` files, so make sure `permission_handler` is at the same indentation level as the `flutter:` item.
+> 「`yaml`ファイルではインデントが重要なので、`permission_handlerがflutter`: アイテムと同じインデントレベルであることを確認してください。」
 
-Now run this command (path is the root of the `Flutter` project) to download the above dependency:
+ここで次のコマンドを実行して（パスは`Flutter`プロジェクトのルート）、上記の依存関係をダウンロードします。
 
 ```cmd
 flutter pub get
 ```
 
-The above command will also create `Podfile` in `ios` subfolder. Open `ios\Podfile` uncomment `platform` line and update the platform version to `11`:
+上記のコマンドは`ios`サブフォルダに`Podfile`も作成します。`ios╲Podfile`を開き、`platform`の行をアンコメントして、`platform`のバージョンを11にアップデートします：
 
 ```
 platform :ios, '11.0'
 ```
 
-At the end of the same file add `pod 'NexmoClient'`:
+同じファイルの終わりに`pod 'NexmoClient'`を追加します：
+
 
 ```
 target 'Runner' do
@@ -207,27 +208,27 @@ target 'Runner' do
   pod 'NexmoClient'
 ```
 
-Open `app_to_phone_flutter/ios` folder in the termnal and install pods:
+ターミナルで`app_to_phone_flutter/ios`フォルダを開き、ポッドをインストールします：
 
 ```cmd
 pod install
 ```
 
-The above command will download all required dependencies including `Flutter`, permissions handler, and `Client SDK`.
+上記のコマンドは、`Flutter`、パーミッションハンドラー、`Client SDK`など、必要な全ての依存関係をダウンロードします。
 
-Open `Runner.xcworkspace` in `Xcode` and run the app to verify that the above setup was performed correctly.
+`XcodeでRunner.xcworkspace`を開き、アプリを実行して、上記の設定が正しく行われたことを確認します。
 
-## Two-way Flutter/iOS Communication
+## Flutter/iOSの双方向コミュニケーション
 
-Currently, `Client SDK` is not available as a `Flutter` package, so we will have to use [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-our-app/ios) and communicate between `iOS` and `Flutter` using [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html) - this way, `Flutter` will call Android methods, `iOS` will call `Flutter` methods. 
+現在、`Client SDKはFlutter`のパッケージとしては提供されていないので、`Android`ネイティブのクライアント`SDK`を使用し、`iOS`と`Flutter`の間で[MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html)を使って通信する必要があります。これにより、FlutterはAndroidのメソッドを呼び出し、iOSはFlutterのメソッドを呼び出します。
 
-Flutter code will be stored in the `lib/main.dart` file, while `iOS` native code will be stored in the `ios/Runner/AppDelegate.swift` file.
+`Flutter`のコードはlib/main.dartファイルに格納され、`iOS`のネイティブコードは`ios/Runner/AppDelegate.swift`ファイルに格納されます。
 
-## Init Flutter Application
+## Flutterアプリケーションを起動
 
-Flutter applications are built using a programming language called [Dart](https://dart.dev/).
+Flutterアプリケーションは、[Dart](https://dart.dev/)というプログラミング言語を使って構築されています。
 
-Open `lib/main.dart` file, and replace all of the contents with the following code:
+`lib/main.dart`ファイルを開き、コンテンツを全て以下のコードにリプレースします：
 
 ```dart
 import 'package:flutter/material.dart';
@@ -305,17 +306,17 @@ enum SdkState {
 }
 ```
 
-The above code contains custom `CallWidget` which will be responsible for managing the application state (logging the user and managing the call). The `SdkState` enum represents possible states of Vonage `Client SDK`. This enum will be defined twice - one for the Flutter using `Dart` and one for `iOS` using Swift. The widget contains the `_updateView` method that will change the UI based on the `SdkState` value.
+上記のコードには、アプリケーションの状態を管理する役割(ユーザーのロギングとコールの管理)を担うカスタム`CallWidget`が含まれています。`SdkState`の列挙型は`Vonage Client SDK`の可能な状態を表します。この列挙型は、`Dart`を使用した`Flutter`用と`Swift`を使用した`iOS`用で2回定義されます。ウィジェットには、`SdkState`の値に基づいてUIを変更する`_updateView`メソッドが含まれています。
 
-Run the application from the `Xcode`:
+`Xcode`からアプリケーションを実行します：
 
 ![Running the application from xcode](/content/blog/make-app-to-phone-call-using-ios-and-flutter/run-xcode.png)
 
-The `Login as Alice` button should be displayed:
+`Login as Alice`ボタンが表示されます：
 
 ![Logged out screen showing Login as Alice button](/content/blog/make-app-to-phone-call-using-ios-and-flutter/loggedout.png)
 
-### Login Screen
+### ログイン画面
 
 The `Login as Alice` button is disabled so now add `onPressed` handler to the `ElevatedButton` to allow logging in:
 
@@ -330,7 +331,7 @@ Widget _updateView() {
   }
 ```
 
-Update body of `_loginUser` method to communicate with native code and login the user:
+ネイティブコードと通信し、ユーザーをログインさせるために、`_loginUser`メソッドのボディをアップデートします：
 
 ```dart
 Future<void> _loginUser() async {
@@ -344,9 +345,10 @@ Future<void> _loginUser() async {
   }
 ```
 
-Replace the `ALICE_TOKEN` with the `JWT` token we obtained previously from `Vonage CLI` to authenticate the user `Alice` for the conversation access. `Flutter` will call the `loginUser` method and pass the `token` as an argument. The `loginUser` method is defined in the `MainActivity` class (we will get there in a moment). To call this method from `Flutter` we have to define a `MethodChannel`. Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
+`ALICE_TOKEN`を、先ほど`Vonage CLI`から取得したJWTトークンにリプレースし、会話アクセスのためにユーザー`Alice`を認証します。`Flutter`は`loginUser`メソッドを呼び出し、`token`を引数として渡します。`loginUser`メソッドは`MainActivity`クラスで定義されています（後ほど説明します）。このメソッドを`Flutter`から呼び出すには、`MethodChannel`を定義する必要があります。`_CallWidgetState`クラスの先頭に`platformMethodChannel`フィールドを追加します：
 
-Add `platformMethodChannel` field at the top of `_CallWidgetState` class:
+
+`_CallWidgetState`クラスの先頭に`platformMethodChannel`フィールドを追加します：
 
 ```dart
 class _CallWidgetState extends State<CallWidget> {
@@ -354,9 +356,9 @@ class _CallWidgetState extends State<CallWidget> {
   static const platformMethodChannel = const MethodChannel('com.vonage');
 ```
 
-The `com.vonage` string represents the unique channel id that we will also refer to the native `iOS` code (`AppDelegate` class). Now we need to handle this method call on the native `iOS` side. 
+`com.vonage`の文字列は、`iOS`のネイティブコード（`AppDelegate`クラス）でも参照される、固有のチャンネル`ID`を表しています。次に、このメソッドコールを`iOS`ネイティブ側で処理する必要があります。
 
-Open `ios/Runner/AppDelegate` class and `vonageChannel` property that will hold the reference to the `FlutterMethodChannel`:
+`FlutterMethodChannel`への参照を保持する`ios/Runner/AppDelegate`クラスと`vonageChannel`プロパティを開きます：
 
 ```swift
 @UIApplicationMain
