@@ -1,13 +1,15 @@
 ---
 title: Vonage Videoのベストプラクティス
 description: Vonage Video APIを活用した豊富な機能を備えるビデオアプリケーションの構築を開始する前に、Vonageが推奨するベストプラクティスを説明します。
+thumbnail: /content/blog/vonage-videoのベストプラクティス/best-practices-videoapi_1200x627.png
 author: simon-jones
 published: true
-published_at: 2021-08-24T08:19:19.710Z
+published_at: 2021-05-24T08:19:19.710Z
 updated_at: 2021-08-24T08:19:19.754Z
 category: inspiration
 tags:
   - video-api
+  - ビデオapi
 comments: true
 spotlight: false
 redirect: ""
@@ -15,6 +17,10 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*This is translated from an English blog. In case of any inconsistency between the English version and the Japanese version, the English version shall prevail. 
+本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。*
+https://learn.vonage.com/blog/2021/05/24/best-practices-to-get-started-with-the-vonage-video-api/
+
 *最新更新日：2021年5月25日*
 
 本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。
@@ -192,16 +198,15 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
     * 異なるレイアウトクラスを割り当てることにより、レコーディングに特定のストリームを優先して含めることが可能。例えば、画面共有ストリームを優先する：<https://tokbox.com/developer/guides/archive-broadcast-layout/#stream-prioritization-rules>
   * Individual Stream
 
-    *   ストリーム別
+    * ストリーム別
     * 最大50ストリームまでレコーディング
-    *   複数の個別ストリーム/ファイルをZIPフォルダに保存
-    *   事後処理ツールでカスタマイズされたコンテンツを作成
+    * 複数の個別ストリーム/ファイルをZIPフォルダに保存
+    * 事後処理ツールでカスタマイズされたコンテンツを作成
     * 自動的に開始することは不可
 * **アーカイブの保存：**Vonageでは、アップデートが失敗した場合、クラウドストレージが構成されていない場合、あるいはストレージフォールバックの無効化オプションが選択されていない場合、アーカイブのコピーを72時間保管します。アップロードフォールバックを有効にせずにアップロードが失敗した場合、アーカイブは復元できませんので注意してください
 
-   * AWS S3：AWSにアーカイブファイルをアップロードする方法については以下をご覧ください。
-
-   * Azure：Azureにアーカイブファイルをアップロードする方法については以下をご覧ください。
+  * AWS S3：AWSにアーカイブファイルをアップロードする方法については以下をご覧ください。
+  * Azure：Azureにアーカイブファイルをアップロードする方法については以下をご覧ください。
 
   <https://tokbox.com/developer/guides/archiving/using-azure.html>
 
@@ -210,24 +215,19 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
 * アーカイブは暗号化されていますか？
 
   * いいえ。ただしアーカイブに暗号化機能を追加することができます。詳細は以下をご覧ください。
-https://tokbox.com/developer/guides/archiving/opentok-encryption.html
-
+    https://tokbox.com/developer/guides/archiving/opentok-encryption.html
 * オーディオもしくはビデオのみレコーディングできますか？
 
   * はい。RESTを使用してhasVideo/hasAudioでtrueかfalseを設定してください：
-https://tokbox.com/developer/rest/#start_archive
-
+    https://tokbox.com/developer/rest/#start_archive
 * 識別するためにアーカイブに名前をつけることはできますか？
 
   * はい。RESTを使用して任意の識別子<String>に名前を設定します：
-https://tokbox.com/developer/rest/#start_archive
-
+    https://tokbox.com/developer/rest/#start_archive
 * アーカイブのステータスをどのようにチェックできますか？
 
-
   * アーカイブインスペクターを使用します。Vonageのサポートエンジニアが書いた有益な記事を参考にしてください：
-https://support.tokbox.com/hc/en-us/articles/360029733871-Archiving-FAQ
-
+    https://support.tokbox.com/hc/en-us/articles/360029733871-Archiving-FAQ
 * セッションの特定のストリームのみレコーディングできますか？
 
   * いいえ。全てのストリームがレコーディングされ、一部のストリームを選択してアーカイブすることはできません。
@@ -249,8 +249,7 @@ Vonageが推奨する参加者人数：
 * デスクトップ=15
 * **帯域幅要件**に関しては「OpenTokの使用時における最低限の帯域幅要件とは？」をご覧ください。
 * **プロキシ**：ユーザーがプロキシ経由でしかインターネットにアクセスできない場合、webRTCは認証を要求するプロキシではあまりよく機能しないため、「透過的な」プロキシを使用するか、ブラウザでHTTPS接続を構成する必要があります。Vonageのネットワークチェックフローについては以下をご覧ください。
-https://tokbox.com/developer/guides/restricted-networks/
-
+  https://tokbox.com/developer/guides/restricted-networks/
 * **ファイアウォール**：最低限ファイアウォールのルールに含める必要があるポートやドメイン：
 
   * TCP 443
@@ -261,14 +260,13 @@ https://tokbox.com/developer/guides/restricted-networks/
 可能でしたらUDP 1025 – 65535のレンジの使用を試してください。このレンジでは、ユーザーに最大限のエクスペリエンスを提供するポートレンジをカバーしています。また、これによりTURNの必要性もなくなり、このようなネットワーク要素を介してメディアを中継しなければ、レイテンシが減少します。
 
 * **コーデック**：コーデックの互換性については以下をご覧ください。https://tokbox.com/developer/guides/codecs/
-VonageはVP9、VP8、H.264コーデックをサポートしていますが、VP9は、全ての参加者がChromeを使用しているセッションの中継メディアモードでのみ有効です。
+  VonageはVP9、VP8、H.264コーデックをサポートしていますが、VP9は、全ての参加者がChromeを使用しているセッションの中継メディアモードでのみ有効です。
 
 VP8とH.264の違い：
 
 * VP8はソフトウェアコーデックであり、成熟度が高く、より低いビットレートを扱うことができます。
 
 さらに、スケーラブル/サイマルキャストビデオをサポートしています。
-
 
 * H.264はデバイスによってソフトウェアまたはハードウェアで利用することができますが、スケーラブルビデオやサイマルキャストはサポートしていません。
 
@@ -277,19 +275,15 @@ VP8とH.264の違い：
 ## セッションモニタリング
 
 * Vonageの開発者向けページをご覧ください。
-https://tokbox.com/developer/guides/session-monitoring/
-
+  https://tokbox.com/developer/guides/session-monitoring/
 * セッションモニタリングにより、WebフックURLを登録することができます。
 * この機能を使用してセッションとストリームをモニタリングすることができます。例えば、セッションの参加人数を制限することができ、通常JSのforceDisconnect機能とともに使用します：
-https://tokbox.com/developer/guides/moderation/js/#force_disconnect
-また、モデレーターがサーバにアクションを呼び出し、強制的に接続を切るためのRESTコールを実行させることもできます：https://tokbox.com/developer/guides/moderation/rest/
-
+  https://tokbox.com/developer/guides/moderation/js/#force_disconnect
+  また、モデレーターがサーバにアクションを呼び出し、強制的に接続を切るためのRESTコールを実行させることもできます：https://tokbox.com/developer/guides/moderation/rest/
 * 利用状況の追跡に使用することができます。より優れた利用状況の追跡には、高度なインサイトを活用することができます：
-https://tokbox.com/developer/guides/insights/#obtaining-session-data-advanced-insights-
-
+  https://tokbox.com/developer/guides/insights/#obtaining-session-data-advanced-insights-
 
 ## アドオン
-
 
 企業顧客は簡単にアドオンを購入できるようになりました。本プレゼンテーションのスライドでは、セルフサービスツールで構成できるアドオンリストが掲載されていますので参考にしてください。
 
@@ -297,8 +291,7 @@ https://tokbox.com/developer/guides/insights/#obtaining-session-data-advanced-in
 
   * 使用方法：https://tokbox.com/developer/guides/sip/　
   * SIPの相互接続により、電話のダイヤルインを構築する方法：
-https://learn.vonage.com/blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr
-
+    https://learn.vonage.com/blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr
 * 構成可能なTURN
 
   * 使用方法：https://tokbox.com/developer/guides/configurable-turn-servers/　
@@ -323,7 +316,6 @@ https://learn.vonage.com/blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok
 
 Vonage Video APIは、最高レベルのセキュリティ基準を遵守するようにカスタマイズすることができます。VonageのプラットフォームはGDPRを遵守しており、HIPAAにも準拠しています。ヨーロッパの顧客に対しては拡張アドオンを提供しており、KBV認定（ドイツ）や安全なデータの所有と保護を目的としたその他のプライバシー法（欧州全域）など、ローカルの認証やスタンダードを遵守できるようにしています。
 
-
 GDPRの詳細はこちら：https://www.vonage.com/communications-apis/platform/gdpr/
 
 Vonageのプライバシーポリシーはこちら：https://www.vonage.com/legal/privacy-policy/　
@@ -334,7 +326,6 @@ https://www.vonage.com/communications-apis/platform/gdpr/sub-processors/　
 さらに、データ処理に関する補遺（DPA）はGDPRのページで確認し、自己署名を行うことができます。
 
 NDAの締結を元に、SOC2などのレポートや、Vonageのビデオプラットフォームが満たしている高度なセキュリティ基準を証明する、第三者機関によるペネトレーションテストを提供することができます。
-
 
 ## サンプルコードへのリンク：
 
@@ -350,23 +341,15 @@ NDAの締結を元に、SOC2などのレポートや、Vonageのビデオプラ�
   * コールキューイング：https://github.com/opentok/opentok-video-call-center
 * Vonageテキストチャット：https://github.com/opentok/accelerator-textchat-js、 https://github.com/nexmo-community/stream-video-with-textchat　
 * Vonageアプリ内メッセージング：https://github.com/nexmo-community/video-messaging-app　
-
 * インタラクティブ/ライブストリーミングブロードキャスト：https://github.com/opentok/broadcast-sample-app/
 * 個々のストリームアーカイブを処理するための後処理ツールのサンプルコード：
-https://github.com/opentok/archiving-composer
-
+  https://github.com/opentok/archiving-composer
 * eラーニングのチュートリアル/試験サンプル：
-https://github.com/opentok/opentok-elearning-samples 
-
+  https://github.com/opentok/opentok-elearning-samples 
 * 高度なインサイトのダッシュボードサンプル：
-https://github.com/opentok/insights-dashboard-sample　
-
+  https://github.com/opentok/insights-dashboard-sample　
 
 ## 月間使用量の算出/Video APIの段階的な価格設定
 
 * [OpenTokの月間使用量の見積り方法](https://support.tokbox.com/hc/en-us/articles/360029732691-How-do-I-estimate-my-OpenTok-monthly-usage-)
 * [Video APIの価格設定](https://www.vonage.com/communications-apis/video/pricing/?icmp=l3nav_pricing_novalue)
-
-
-
-
