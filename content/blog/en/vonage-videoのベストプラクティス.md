@@ -21,10 +21,7 @@ replacement_url: ""
 本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。*
 https://learn.vonage.com/blog/2021/05/24/best-practices-to-get-started-with-the-vonage-video-api/
 
-*最新更新日：2021年5月25日*
-
-本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。
-https://learn.vonage.com/blog/2021/05/24/best-practices-to-get-started-with-the-vonage-video-api/
+このドキュメントでは、Vonage Video APIを活用した豊富な機能を備えるビデオアプリケーションの構築を開始する前に、Vonageが推奨する注目すべきベストプラクティスについて説明しています。
 
 VonageのWebサイトで新規アカウントを設定してください。設定は無料で、また新規アカウント登録時に自動的に10ドル付与致します。
 
