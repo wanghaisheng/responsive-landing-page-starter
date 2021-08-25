@@ -1,5 +1,4 @@
 {
-  "team": true,
   "bio": "Greg is a Developer Educator @Vonage. Coming from a PHP background, but not restricted to one language. An avid gamer and a Raspberry pi enthusiast. Often found bouldering at indoor climbing venues.",
   "image_url": "/content/images/greg-holmes.jpg",
   "name": "Greg Holmes",
@@ -7,5 +6,7 @@
   "twitter": "Greg__Holmes",
   "github_url": "",
   "facebook_url": "",
-  "email": ""
+  "email": "",
+  "team": false,
+  "alumni": true
 }
