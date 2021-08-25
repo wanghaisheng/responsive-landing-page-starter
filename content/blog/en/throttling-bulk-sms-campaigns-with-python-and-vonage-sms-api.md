@@ -158,7 +158,7 @@ Now, you will create a function to split the list of the recipients' phone numbe
 ```python
 def batch(recipients, batch_size=1):
     for i in range(0, len(recipients), batch_size):
-        yield recipients\[i:min(i + batch_size, len(recipients))]
+        yield recipients[i:min(i + batch_size, len(recipients))]
 ```
 
 You defined a function called `batch`. It accepts two parameters: the `recipients` list and the `batch_size` integer that represents how many recipients you want to send a message to at once. You use a for loop and the yield keyword to create a batch of phone numbers. If this is unclear, you can read more about the [range](https://docs.python.org/3/library/stdtypes.html#typesseq-range) and [yield](https://www.geeksforgeeks.org/python-yield-keyword/) keywords work.
