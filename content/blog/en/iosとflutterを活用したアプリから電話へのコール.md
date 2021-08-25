@@ -136,43 +136,43 @@ nexmo user:create name="Alice"
 nexmo jwt:generate sub=Alice exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}' application_id=APPLICATION_ID
 ```
 
-The command above sets the expiry of the `JWT` to one day from now, which is the maximum.
+上記のコマンドでは、`JWT`の有効期限を最大の1日後に設定しています。
 
-Make a note of the `JWT` we generated for `Alice`.
+`Alice`用に生成した`JWT`をメモしておきます。
 
-> NOTE: In a production environment, the application should expose an endpoint that generates a `JWT` for each client request.
+> 注：本番環境では、アプリケーションは、クライアントのリクエストごとに`JWT`を生成するエンドポイントを公開する必要があります。
 
-## Install Xcode
+## Xcodeをインストール
 
-Open AppStore and install [Xcode](https://developer.apple.com/xcode/).
+AppStoreを開いて[Xcode](https://developer.apple.com/xcode/)をインストールします。
 
-## Flutter Setup
+## Flutterを設定
 
-### Install Flutter SDK
+### Flutter SDKをインストール
 
-Download and install `Flutter SDK`.
+`Flutter SDK`をダウンロードしてインストールします。
 
-This step will vary on `MacOS`, `Win`, and `Linux`, but in general, it boils down to downloading `Flutter SDK` for a given OS, extracting the `Flutter SDK` file, and adding the `sdk\bin` folder to the system `PATH` variable. Detailed instruction for all platforms can be found [here](https://flutter.dev/docs/get-started/install).
+この手順は、`MacOS`、`Win`、`Linux`で異なりますが、一般的には特定のOS用の`Flutter SDK`をダウンロードし、`Flutter SDK`ファイルを解凍して、sdk╲binフォルダをシステムの`PATH`変数に追加します。プラットフォームごとの詳細な説明は[こちら](https://flutter.dev/docs/get-started/install)をご覧ください。 
 
-Fortunately, `Flutter` comes with a tool that allows us to verify if `SDK` and all required "components" are present and configured correctly. Run this command:
+幸いなことに、`Flutter`には、`SDK`と全ての必要な「コンポーネント」が存在し、正しく構成されているか確認できるツールが付属しています。次のコマンドを実行してください：
 
 ```cmd
 flutter doctor
 ```
 
-`Flutter Doctor` will verify if `Flutter SDK` is installed and other components are installed and configured correctly.
+`Flutter Doctor`が、`Flutter SDK`がインストールされ、その他のコンポーネントもインストールされていて、正しく構成されているかどうか確認します。
 
-## Create Flutter Project
+## Flutterプロジェクトを作成
 
-We will create a `Flutter` project using the terminal:
+ターミナルを使用して`Flutter`プロジェクトを作成します：
 
 ```cmd
 flutter create app_to_phone_flutter
 ```
 
-The above command creates `app_to_phone_flutter` folder containing the `Flutter` project.
+上記のコマンドで、`Flutter`プロジェクトを含む`app_to_phone_flutter`フォルダを作成しま
 
-> `Flutter` project contains `ios` folder, which contains the `iOS` project; `android` folder containing the `Android` project; and `web` folder containing `web` project.
+> 「`Flutter`プロジェクトには、`iOS`プロジェクトを含む`ios`フォルダ、`Android`プロジェクトを含む`android`フォルダ、そして`web`プロジェクトを含む`web`フォルダがあります。」
 
 Open the `pubspec.yaml` file, and add `permission_handler` dependency (just below `sdk: flutter`):
 
