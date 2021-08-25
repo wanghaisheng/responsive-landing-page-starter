@@ -45,9 +45,9 @@ iOSデバイス向けにFlutterアプリケーションを構築する前に、�
 [コールコントロールオブジェクト（NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference)は、Voice API callのフローをコントロールするために使用するJSON配列です。
 NCCOは公開され、インターネットからアクセスできる必要があります。そのためにこのチュートリアルでは、GitHub Gistを使って構成をホストする便利な方法を紹介します。それでは新しいgistを追加しましょう：
 
-1. Go to <https://gist.github.com/> (we have to be logged into Github)
-2. Create a new gist with `ncco.json` as the filename
-3. Copy and paste the following `JSON` object into the gist:
+1. https://gist.github.com/（Githubにログイン）
+2. ncco.jsonをファイル名にして、新しいgistを作成します
+3. 以下のJSONオブジェクトをgistにコピー＆ペーストします：
 
 ```json
 [
@@ -67,14 +67,15 @@ NCCOは公開され、インターネットからアクセスできる必要が�
 ]
 ```
 
-4. Replace `PHONE_NUMBER` with your phone number ([Vonage numbers are in E.164 format](https://developer.nexmo.com/concepts/guides/glossary#e-164-format), `+` and `-` are not valid. Make sure to specify the country code when entering the number, for example, US: 14155550100 and UK: 447700900001)
-5. Click the `Create secret gist` button
-6. Click the `Raw` button
-7. Take note of the URL shown in the browser, we will be using it in the next step
+4. PHONE_NUMBERをあなたの電話番号に置き換えます（Vonageの番号はE.164形式で、+と-は有効ではありません。電話番号を入力する際には、必ず国コードを指定してください。例：US：14155550100、UK：447700900001) [Vonage numbers format](https://developer.nexmo.com/concepts/guides/glossary#e-164-format)  
+5. Create secret gistボタンをクリックします
+6. Rawボタンをクリックします
+7.  次のステップで使用するので、ブラウザに表示されているURLをメモします
 
-### Install Vonage CLI
 
-The [Vonage CLI](https://developer.nexmo.com/application/nexmo-cli) allows us to carry out many operations using the command line. If we want to carry out tasks such as creating applications, creating conversations, purchasing Vonage numbers, and so on, we will need to install the Vonage CLI. 
+### Vonage CLIをインストール
+
+[Vonage CLI](https://developer.nexmo.com/application/nexmo-cli)は、コマンドラインを使用して多くの操作を実行することができます。アプリケーションの作成、会話の作成、Vonage番号の購入などのタスクを実行したい場合は、Vonage CLIをインストールする必要があります。
 
 Vonage CLI requires `Node.js`, so we will need to [install Node.js first](https://nodejs.org/en/download/).
 
