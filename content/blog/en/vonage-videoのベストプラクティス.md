@@ -1,6 +1,6 @@
 ---
 title: Vonage Videoのベストプラクティス
-description: xxx
+description: Vonage Video APIを活用した豊富な機能を備えるビデオアプリケーションの構築を開始する前に、Vonageが推奨するベストプラクティスを説明します。
 author: simon-jones
 published: true
 published_at: 2021-08-24T08:19:19.710Z
@@ -165,3 +165,28 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
     * [サブスクライバーイベント（JS)](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#events)
     * AndroidとiOSについては上記の「例外処理」をご覧ください
 * **オーディオフォールバック**：Vonageのメディアサーバでは、常時ネットワークの状態をチェックしており、エンドユーザーの接続に関する問題を検知すると、パケットロスが15%を超える場合、ビデオを自動的に停止してオーディオのみで継続するとともに、これに関するイベントが送信されます（iOSの場合：subscriberVideoDisabled:reason:とsubscriberVideoEnabled:reason:）。このようなイベントをUIに表示し、影響を受けるユーザーに対して、接続品質が低下したためにオーディオのみに切り替えたことを知らせることを推奨します。オーディオのみの切り替えのしきい値を構成することはできません。詳細は以下の例をご覧ください：
+* [ビデオ無効の警告](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#event:videoDisableWarning)
+
+  * [ビデオ無効の理由](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoDisabled:reason:)
+  * [ビデオ有効の理由](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoEnabled:reason:)
+
+オーディオフォールバックはデフォルトで有効になっていますが、audioFallbackEnabledパラメータで無効にすることができます。詳細はこちら。
+
+* **セッションへの再接続**：参加者がネットワーク関連の問題で突然セッションから脱落した場合、セッションへの再接続を試みます。よりよいユーザーエクスペリエンスを実現するため、こうしたイベントを捕捉し、UIに正しく表示してセッションへの再接続を試みていることをユーザーに知らせることを推奨します。詳細はこちらをご覧ください。
+
+* **アクティブスピーカー**：オーディオのみのセッションでは、オーディオレベルメーターを追加し、参加者が現在のアクティブスピーカーを把握できるように可視化することをお薦めします。また、ビデオでは、アクティブスピーカーの画面を拡大するように設定してみてください。UIの調整は定期的に送信されるaudioLevelUpdatedイベントを活用してください。詳細は以下をご覧ください。
+https://tokbox.com/developer/guides/customize-ui/js/ 
+
+* **Loudness detector（音量検知**：音量検知機能により、ミュートされているユーザーが話そうとしていることを特定することができます。この場合、audioLevelが0に設定された状態で、audioLevelUpdatedイベントが発生します。つまり、この状況を避けるにはAudioContextの使用が必要になります。参考までにブログをご覧ください。
+
+* **Issue API(イシューAPI）のレポート**：https://tokbox.com/developer/guides/debugging/js/#report-issue。これにより、アプリケーションのエンドユーザーは、クライアントサイドより個々のイシュー（問題）IDを生成することができます。顧客はイシューIDを保存し、サポートのチケットを発行する際に使用することができます。イシューIDは、問題が報告された個々の接続IDを特定し、サポート部門による調査に役立てることができます。
+
+## 機能
+
+* **チャット（テキストメッセージジング**：Vonageのシグナリングhttps://tokbox.com/developer/sdks/js/reference/Session.html#signalを使用してメッセージを送信することができますが、メッセージはVonageのビデオプラットフォームに保存されるわけではありません。テキストメッセージング機能を追加する場合、テキストメッセージが送信された後にセッションに参加するユーザーがいることもあり、そのユーザーはメッセージを閲覧できないことを念頭においてください。また、セッションをレコーディングする場合、テキストメッセージは保存されません。この問題を解決するために、NexmoクライアントSDKの使用をお薦めします（このドキュメントの最後に掲載されているサンプルコード、Nexmoアプリ内メッセージングをご覧ください）。
+
+* **アーカイブ**：レコーディングでは、Composed（まとめてレコーディング）とストリーム別のレコーディングといった2つのタイプのサービスがあります。以下にその違いと留意事項を紹介します
+
+
+
+
