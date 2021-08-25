@@ -91,7 +91,7 @@ In this section, you will set up the bulk SMS feature with the Vonage SMS API. Y
 
 ### Initialize the Vonage Library
 
-Usually, you would need to initialize the Vonage library to use the Vonage API for sending messages. However, the new Vonage Messages API is in beta, and Python is not supported yet. However, we can still use the Messages API. Follow along to see how.
+Usually, you would need to initialize the Vonage library to use the Vonage API for sending messages. However, the new Vonage Messages API is in beta, and Python is not supported yet. However, we can still use the Messages API. 
 
 First, add the following code to the `views.py` file:
 
