@@ -340,25 +340,32 @@ NDAの締結を元に、SOC2などのレポートや、Vonageのビデオプラ�
 
 * 事前コールテスト
 
-  * Vonage Precall Test Site: <https://tokbox.com/developer/tools/precall/>
-  * Git Repository: 
+  * Vonage事前コールテストサイト：https://tokbox.com/developer/tools/precall/
+  * Gitレポジトリ：
 
-    * iOS and Android:<https://github.com/opentok/opentok-network-test>
+    * iOSとAndroid：https://github.com/opentok/opentok-network-test
     * Javascript: <https://github.com/opentok/opentok-network-test-js>
-* Session Monitoring
+* セッションモニタリング
 
-  * Call Queuing: <https://github.com/opentok/opentok-video-call-center>
-* Vonage text chat - <https://github.com/opentok/accelerator-textchat-js>, <https://github.com/nexmo-community/stream-video-with-textchat>
-* Vonage In-app Messaging - <https://github.com/nexmo-community/video-messaging-app>
-* Interactive/Live Streaming Broadcast - <https://github.com/opentok/broadcast-sample-app/>
-* Post-processing tool sample code for processing individual stream archive - <https://github.com/opentok/archiving-composer>
-* Tutoring / Proctoring E-Learning Samples: <https://github.com/opentok/opentok-elearning-samples>
-* Advanced Insights Dashboard Sample: <https://github.com/opentok/insights-dashboard-sample>
+  * コールキューイング：https://github.com/opentok/opentok-video-call-center
+* Vonageテキストチャット：https://github.com/opentok/accelerator-textchat-js、 https://github.com/nexmo-community/stream-video-with-textchat　
+* Vonageアプリ内メッセージング：https://github.com/nexmo-community/video-messaging-app　
 
-## Calculating monthly usage / Video API tiered pricing
+* インタラクティブ/ライブストリーミングブロードキャスト：https://github.com/opentok/broadcast-sample-app/
+* 個々のストリームアーカイブを処理するための後処理ツールのサンプルコード：
+https://github.com/opentok/archiving-composer
 
-* [How do I estimate my OpenTok monthly usage](https://support.tokbox.com/hc/en-us/articles/360029732691-How-do-I-estimate-my-OpenTok-monthly-usage-)
-* [Video API Pricing](https://www.vonage.com/communications-apis/video/pricing/?icmp=l3nav_pricing_novalue)
+* eラーニングのチュートリアル/試験サンプル：
+https://github.com/opentok/opentok-elearning-samples 
+
+* 高度なインサイトのダッシュボードサンプル：
+https://github.com/opentok/insights-dashboard-sample　
+
+
+## 月間使用量の算出/Video APIの段階的な価格設定
+
+* [OpenTokの月間使用量の見積り方法](https://support.tokbox.com/hc/en-us/articles/360029732691-How-do-I-estimate-my-OpenTok-monthly-usage-)
+* [Video APIの価格設定](https://www.vonage.com/communications-apis/video/pricing/?icmp=l3nav_pricing_novalue)
 
 
 
