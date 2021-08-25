@@ -77,59 +77,60 @@ NCCOは公開され、インターネットからアクセスできる必要が�
 
 [Vonage CLI](https://developer.nexmo.com/application/nexmo-cli)は、コマンドラインを使用して多くの操作を実行することができます。アプリケーションの作成、会話の作成、Vonage番号の購入などのタスクを実行したい場合は、Vonage CLIをインストールする必要があります。
 
-Vonage CLI requires `Node.js`, so we will need to [install Node.js first](https://nodejs.org/en/download/).
+Vonage CLIはNode.jsが必要ですので、[まずNode.jsをインストール](https://nodejs.org/en/download/)します。
 
-To install the Beta version of the CLI with npm, run this command:
+npmでCLIのベータ版をインストールするには、以下のコマンドを実行します：
 
 ```cmd
 npm install nexmo-cli@beta -g
 ```
 
-Set up the `Vonage CLI` to use the Vonage `API Key` and `API Secret`. We can get these from the [settings page](https://dashboard.nexmo.com/settings) in the Dashboard.
+Vonage API KeyとAPI Secretを使用するためにVonage CLIを設定します。ダッシュボードの[設定ページ](https://dashboard.nexmo.com/settings)から設定できます。
 
-Run the following command in the terminal, while replacing `API_KEY` and `API_SECRET` with values from the [Dashboard](https://dashboard.nexmo.com/settings):
+以下のターミナルのコマンドを実行し、API_KEYとAPI_SECRET[をダッシュボード](https://dashboard.nexmo.com/settings)の値にリプレースします：
 
 ```cmd
 nexmo setup API_KEY API_SECRET
 ```
 
-### Setup Vonage Application
+### Vonageアプリケーションを設定
 
-1. Create the project directory. Run the following command in the terminal:
+1. プロジェクトディレクトリを作成し、次のターミナルのコマンドを実行します：
 
 ```cmd
 mkdir vonage-tutorial
 ```
 
-2. Change into the project directory:
+2. プロジェクトディレクトリに移動します：:
 
 ```cmd
 cd vonage-tutorial
 ```
 
-3. Create a Vonage application by copying and pasting the command below into the terminal. Make sure to change the value of `--voice-answer-url` argument by replacing `GIST-URL` with the gist URL from the previous step.
+3. 下記のコマンドをターミナルにコピー＆ペーストして、Vonageアプリケーションを作成します。GIST-URLを前のステップのgistのURLにリプレースすることで、引数--voice-answer-urlの値を変更します。
 
 ```
 nexmo app:create "App to Phone Tutorial" --capabilities=voice --keyfile=private.key --voice-event-url=https://example.com/ --voice-answer-url=GIST-URL
 ```
 
-Make a note of the `Application ID` that is echoed in the terminal when the application is created.
+アプリケーションの作成時に、ターミナルにエコーされるApplication IDをメモしておきます。
 
-> NOTE: A hidden file named `.nexmo-app` is created in the project directory and contains the newly created `Vonage Application ID` and the private key. A private key file named `private.key` is also created in the current folder.
+> 注：`.nexmo-app`という名前の隠しファイルがプロジェクトディレクトリに作成され、新しく作成された`Vonage Application ID`と秘密鍵が含まれます。また、`private.key`という名前の秘密鍵ファイルが既存フォルダに作成されます。
 
-### Create User
+### ユーザーを作成
 
-Each participant is represented by a [User](https://developer.nexmo.com/conversation/concepts/user) object and must be authenticated by the `Client SDK`. In a production application, we would typically store this user information in a database.
+各参加者は[User](https://developer.nexmo.com/conversation/concepts/user)オブジェクトで表され、Client SDKによって認証される必要があります。本番アプリケーションでは、通常、ユーザー情報をデータベースに保存します。
 
-Execute the following command to create a user called `Alice`:
+次のコマンドを実行して`Alice`というユーザーを作成します：
 
 ```cmd
 nexmo user:create name="Alice"
 ```
 
-### Generate JWT
+### JWTを生成
 
-The `JWT` is used to authenticate the user. Execute the following command in the terminal to generate a `JWT` for the user `Alice`. In the following command replace the `APPLICATION_ID` with the ID of the application:
+`JWT`はユーザーの認証に使用されます。ターミナルで以下のコマンドを実行し、ユーザー`Alice`のJWTを生成します。以下のコマンドでは、`APPLICATION_ID`をアプリケーションのIDにリプレースしてください。
+
 
 ```
 nexmo jwt:generate sub=Alice exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}' application_id=APPLICATION_ID
