@@ -6,7 +6,7 @@ thumbnail: /content/blog/build-an-ivr-with-ruby-on-rails-dr/ivr-ruby.png
 author: ben-greenberg
 published: true
 published_at: 2019-07-04T14:32:23.000Z
-updated_at: 2021-04-27T12:42:17.847Z
+updated_at: 2021-08-25T13:02:19.649Z
 category: tutorial
 tags:
   - ruby-on-rails
@@ -60,7 +60,8 @@ sttOnce that has completed, open up the application in your preferred code edito
 # ivr_controller.rb
 
 class IvrController < ApplicationController
-    
+  skip_before_action :verify_authenticity_token
+  
   BASE_URL = ''
 
   def answer
@@ -116,6 +117,7 @@ All together our Controller will look like this:
 # ivr_controller.rb
 
 class IvrController < ApplicationController
+  skip_before_action :verify_authenticity_token
 
   BASE_URL = ''
 
@@ -177,8 +179,6 @@ Starting with Rails 6 you must give your ngrok tunnel URL permission to access y
 
   config.hosts << "NGROK_URL.ngrok.io"
 ```
-
-
 
 At this point, our Rails application is ready to run. Now let's set up our ngrok externally accessible URL. We will need that for the final step, which is creating our Vonage application and our Vonage provisioned phone number.
 
