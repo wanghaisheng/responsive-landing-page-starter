@@ -57,8 +57,7 @@ To build a complete facial ID application using our Video API, we use methods an
 
 * Opentok JS API
 * Microsoft face API
-
-<sign-up></sign-up>
+* [Vonage Video API Account](https://tokbox.com/account/#/)
 
 ## Uploading Screenshot of Subscriber Image To the Server
 
