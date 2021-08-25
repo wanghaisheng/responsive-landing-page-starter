@@ -1,5 +1,4 @@
 {
-  "team": true,
   "twitch_url": "twitch.tv/lolocoding",
   "bio": "An English teacher turned empathetic software engineer. A curious optimist with a passion for creating accessible content and helping developers level up their skills.",
   "image_url": "/content/images/prof-pic.jpg",
@@ -7,5 +6,7 @@
   "twitter": "lolocoding",
   "spotlight": false,
   "title": "Developer Education Manager",
-  "email": "lauren.lee@vonage.com"
+  "email": "lauren.lee@vonage.com",
+  "team": false,
+  "alumni": true
 }
