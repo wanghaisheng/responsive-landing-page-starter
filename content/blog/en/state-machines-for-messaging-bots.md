@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 In a typical web server, you don't have to think much about state. A user sends you a request and you provide a response. It's not necessary for the application to guide itself through a path of choices and actions; the end user does that. However, a bot works differently.
 
-Although an end user initiates a conversation with a bot, the bot needs to define the path from there, asking questions of the user to inform them of the potential next steps. When the bot is not answering questions so much as walking an end user through a series of steps, that's what's known as a state machine.
+Although an end-user initiates a conversation with a bot, the bot needs to define the path from there, asking questions of the user to inform them of the potential next steps. When the bot is not answering questions so much as walking an end-user through a series of steps, that's what's known as a state machine.
 
 Implementing a state machine as a messaging bot is a little bit tricky because messaging bots don't organically have any concept of state. By default, a message sent to a server you control comes in without a session, state, or any other information about a big picture the individual message might be a part of. But really all that means is you'll need to manually store the last state of a "session" between your server and a given phone number. In actuality, a web application has to do the same thing. Platforms and libraries just routinely do the work for us. 
 
@@ -38,7 +38,7 @@ The code we'll be looking at is part of a larger [WhatsApp bot example project](
 
 ## Server Endpoints
 
-All instructions and requests from end users are routed through just one endpoint on our server. It's up to our server to parse them and determine what to do next. Incoming messages will be POST requests containing the message itself and its metadata. We can use Express to handle them, then forward specific types onto other handlers later. 
+All instructions and requests from end-users are routed through just one endpoint on our server. It's up to our server to parse them and determine what to do next. Incoming messages will be POST requests containing the message itself and its metadata. We can use Express to handle them, then forward specific types onto other handlers later. 
 
 First, we'll set up an Express server in `server.js`, configuring it to parse the body of incoming requests and server static pages. We can also define our states. I've used explanatory property names mapped to integers to avoid having to do string comparisons. There'll be plenty of those later!
 
@@ -175,7 +175,7 @@ app.post('/inbound', function(req, res) {
 
 Assuming we're continuing through the process, the next state will be determined by the current state. Initially, of course, there won't be one. The user has to enter into a stateful process somehow. For most of the states available in the example, that way is by signing up. 
 
-The pattern in the `/signup` endpoint is half of the one most of the other steps of the signup process will follow. It sends a message to the phone number found in the request body (in this case, coming from a web form instead of a message) prompting the user to complete the next step. It then creates a new state database row to mark the user's place in the process. In subsequent steps, that will be an update:
+The pattern in the `/signup` endpoint is half of the one most of the other steps of the signup process will follow. It sends a message to the phone number found in the request body (in this case, coming from a web form instead of a message), prompting the user to complete the next step. It then creates a new state database row to mark the user's place in the process. In subsequent steps, that will be an update:
 
 ```javascript
 app.post('/signup', function(req, res) {
