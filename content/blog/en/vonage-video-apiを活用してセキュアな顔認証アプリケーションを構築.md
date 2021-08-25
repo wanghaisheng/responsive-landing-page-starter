@@ -2,9 +2,10 @@
 title: Vonage Video APIを活用してセキュアな顔認証アプリケーションを構築
 description: このチュートリアルでは、Vonage Video
   APIを活用してセキュアな顔認証アプリケーションを構築し、カスタムソリューションのビルドに属性をパーソナライズし、ワークフローを学習します。
+thumbnail: /content/blog/vonage-video-apiを活用してセキュアな顔認証アプリケーションを構築/blog_facial-id-application_1200x600-1.png
 author: akshita-arun
 published: true
-published_at: 2021-08-25T13:35:10.658Z
+published_at: 2021-08-25T13:58:09.402Z
 updated_at: 2021-08-25T13:35:10.682Z
 category: tutorial
 tags:
@@ -20,47 +21,49 @@ replacement_url: ""
 *本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。
 https://learn.vonage.com/blog/2020/10/21/build-a-secure-facial-id-application-using-the-vonage-video-api/*
 
-In the current global pandemic, many industry verticals have maximized digital adoption to scale productivity and bring effective implementation techniques to serve widespread use cases for their client base. Facial ID has become more prevalent evidencing widespread proliferation of this technology in industry verticals such as:
+現在の世界的なパンデミックの中で、多くの産業分野では生産性を向上させ、効果的な実装技術を提供するために、デジタルの導入に注力し、顧客の広範なユースケースに対応しています。顔認証はより一般的になり、以下のような産業分野で技術が広く普及しています：
 
-1. Hospitality (Airlines and hotel management)
+1.  ホスピタリティ（航空やホテル）
 
-* Payment process at hotel check-ins on mobile phone or camera supplied by their vendors
-* Flight check-ins and boarding process
+* ホテルのチェックイン時に、携帯電話やカメラを使って支払いを行う
+* フライトのチェックインと搭乗手続き
 
-2. Telemedicine
+2. 遠隔医療
 
-* Patient identification where emergency services are needed to help minimize manual paperwork
-* Hospital management services, by screening face of doctors, patients and nurse practitioners to avoid miscommunication and provide consistent information to be passed on
+* 手作業での書類作成を最小限にするために、緊急サービスが必要な患者を識別する
+* 病院管理サービスでは、医師、患者、看護師の顔をスクリーニングすることで、ミスコミュニケーションを防ぎ、一貫した情報を提供している
 
-3. Customer Service
 
-* User identification
-* Fraud prevention
+3. カスタマーサービス
 
-4. Voter registration
+* ユーザー認証
+* 詐欺防止
 
-* Handle voter fraud
+4. 有権者登録
 
-In all the use cases mentioned above, facial ID can be enabled using the [Vonage Video API](https://tokbox.com/account/user/signup) that will drive contactless services while also protecting your user data and personal information while helping you deliver secure and safe custom solutions.
+* 有権者の不正行為への対応
 
-In this blog post, we will walk you through our Video API using Facial ID. It will only take a few methods and functions for your developers to understand the workflow, including subscribe, detect, identify and match facial ID by personalizing these attributes into their custom solution builds. Our goal is to reduce development time by kicking off with a good head start using our sample code base that is ready to use for facial ID using our [opentok platform](https://gist.github.com/rktalusani/3b0bb3c61bc6d5b6020612f189e644fe). 
+上記のすべてのユースケースにおいて、[Vonage Video API](https://tokbox.com/account/user/signupを活用することで顔認証を可能にし、非接触型サービスを推進すると同時に、ユーザーデータや個人情報を保護しつつ、安全で安心なカスタムソリューションの提供を支援します。
 
-## Abstract
+このブログ記事では、顔面認証を使用したVideo APIをご紹介します。開発者は、いくつかの手法や関数を利用するだけで、カスタムソリューションのビルドにこれらの属性をパーソナライズし、顔認証の登録、検出、識別、照合を含むワークフローを理解することができます。私たちの目標は、[opentokプラットフォーム](https://gist.github.com/rktalusani/3b0bb3c61bc6d5b6020612f189e644fe)を使用した顔認証をすぐに使用できるサンプルコードベースを使用して開発時間を短縮することです。
 
-To build a complete facial ID application using our Video API, we use methods and objects as mentioned in our sample code snippet, you can find more information on our [opentok reference code](https://gist.github.com/rktalusani/3b0bb3c61bc6d5b6020612f189e644fe) integrated with Microsoft face API.
+## 概念
 
-## Technologies and Prerequisites
+Video APIを使用して優れた顔認証アプリケーションを構築するために、サンプルコードスニペットに記載されているメソッドとオブジェクトを使用します。詳細は、Microsoft face APIと連携している[opentokのリファレンスコード](https://gist.github.com/rktalusani/3b0bb3c61bc6d5b6020612f189e644fe)をご覧ください。
+
+## テクノロジーと前提条件
 
 * Opentok JS API
 * Microsoft face API
+* [Vonage Video APIアカウント](https://tokbox.com/account/?utm_source=blog&utm_medium=blog&utm_campaign=JP+Translated+Posts&utm_id=JP_translated_post#/)
 
-<sign-up></sign-up>
 
-## Uploading Screenshot of Subscriber Image To the Server
+## サブスクライバー画像のスクリーンショットをサーバにアップロード
 
-In the appropriate use case mentioned, the customer provides their photograph during the sign up process, which is then stored in the backend. When the customer has joined the video call, we can use the Vonage Video API to grab a screenshot of the customer’s video stream and upload it to the server for face detection.
 
-In the code below, we have used `subscriber.getImgData()` to get a screen of the video stream and upload it to the backend.
+前述の適正なユースケースでは、顧客はサインアッププロセス中に自分の写真を提供し、その後写真はバックエンドに保存されます。顧客がビデオ通話に参加すると、Vonage Video APIを使用して顧客のビデオストリームのスクリーンショットを取得し、サーバにアップロードして顔の検出を行います。
+
+以下のコードでは、`subscriber.getImgData()`を使ってビデオストリームの画面を取得し、バックエンドにアップロードしています。
 
 ```js
 function sendScreenShot() {
@@ -97,7 +100,9 @@ function sendScreenShot() {
 
 ![step 1](/content/blog/build-a-secure-facial-id-application-using-the-vonage-video-api/step-1-upload-an-image.png "step 1")
 
-b64toBlob is a helper method called by sendScreenShot function that converts base64 string into a byte array so we can post it as multipart/form-data to the server.
+b64toBlobは、sendScreenShot関数から呼び出されるヘルパーメソッドで、base64文字列をバイト配列に変換し、multipart/form-dataとしてサーバに投稿できるようにします。
+
+
 
 ```js
 function b64toBlob(b64Data, contentType, sliceSize) {
@@ -121,15 +126,15 @@ function b64toBlob(b64Data, contentType, sliceSize) {
 }
 ```
 
-## Identifying FaceID Using Microsoft API To Compare Matched Face ID Results
+## Microsoft APIを使用してFaceIDを識別し、照合結果を比較
 
 ![Identifying FaceID Using Microsoft API To Compare Matched Face ID Results ](/content/blog/build-a-secure-facial-id-application-using-the-vonage-video-api/identify.png "Identifying FaceID Using Microsoft API To Compare Matched Face ID Results ")
 
-## Detecting FaceID in Opentok
+## OpenTokでFaceIDを検出
 
-detectFace method runs on the server side. It detects the facial features from a given image and returns an identifier. We call this method twice: first when the image of the customer has uploaded at the time of sign-up (id1) and then with the screenshot from the video stream (id2).
+detectFaceメソッドは、サーバ側で実行されます。このメソッドは、与えられた画像から顔の特徴を検出して、識別子を返します。このメソッドは、サインアップ時にお客様の画像がアップロードされたとき（id1）と、ビデオストリームのスクリーンショットがアップロードされたとき（id2）の2回、呼び出されます。
 
-Below is the sample code snippet:
+以下はコードスニペットのサンプルになります：
 
 ```js
 function detectFace($img){
@@ -155,9 +160,10 @@ function detectFace($img){
 
 ![Detecting FaceID in Opentok](/content/blog/build-a-secure-facial-id-application-using-the-vonage-video-api/3.png "Detecting FaceID in Opentok")
 
-## Verifying FaceID in OpenTok
+## OpenTokでFaceIDを認証
 
-For the last piece of verification, we use the verifyFace() method and pass image IDs id1 and id2 as the inputs. Here, Microsoft face API compares these two faces(id1 & id2), compares the snapshot with the photograph submitted during the sign up process, and provides a result that includes match/mismatch and a score.
+最後の認証では、verifyFace()メソッドを使用し、インプットとして画像IDのid1とid2を渡します。Microsoft face APIは、この2つの顔(id1 & id2)を比較し、登録時に提出された写真とスナップショットを比較して、一致/不一致とスコアを含む結果を提供します。
+
 
 ```js
 function verifyFace($id1,$id2){
@@ -183,16 +189,16 @@ function verifyFace($id1,$id2){
 
 ![Verifying FaceID in OpenTok](/content/blog/build-a-secure-facial-id-application-using-the-vonage-video-api/4.png "Verifying FaceID in OpenTok")
 
-### Background
+### 背景
 
-The customer solutions team at Vonage API's primary objective is to enable our developers to cross barriers of innovation by extending development, integration, and support services. We work with our global leaders who share a common goal to achieve sustainable business aiming to become profitable customer-centric enterprises by accelerating your global growth rate.
+Vonage APIのカスタマーソリューションチームの主な目的は、開発、統合、およびサポートサービスを拡張することにより、Vonageの開発者がイノベーションの壁を越えられるようにすることです。私たちは、お客様のグローバルでの成長率を加速させることで、収益性の高い顧客中心の企業になることを目指し、持続可能なビジネスを実現するという共通の目標を持つグローバルリーダーと協業しています。
 
-Part of our accelerated service offering is to minimize your development timeline by providing guided implementation, deployment and best-guided adoption that will help optimize, scale your application and get into the market sooner.
+Vonageが提供する高速化サービスの一環として、アプリケーションの最適化、スケールアップ、そして市場への早期参入を支援する実装、導入、採用をガイドすることで、開発期間を最小限に抑えることができます。
 
-## Conclusion
+## 結論
 
-At Vonage, we focus on our core values by placing the customer interest first. With our constant efforts in relentless innovation, we are committed to serving our developer community with the latest and greatest features—enabling you to customize your application to best suit your use case scenarios.
+Vonageでは、顧客の利益を第一に考えたコアバリューを重視しています。絶え間ないイノベーションの努力により、私たちは開発者コミュニティに最新かつ最高の機能を提供することをお約束します。これにより、お客様のユースケースのシナリオに最適なアプリケーションをカスタマイズすることができます。
 
-We consistently see an increased spike in our video usage and with our incremental demand for Video, we are more focused on deploying qualified resources to better help and serve you to achieve successful integrations with our partners and us. It is simple to get started with the Vonage Video API, so [sign up for your free account](https://www.vonage.com/log-in/?icmp=utilitynav_login_novalue) and take full advantage of our offering today!
+Vonageを活用したビデオの利用は増加の一途にあり、ビデオに対する需要の増加に伴い、パートナーとの連携を成功させるために、より良い支援とサービスの提供を実現する高品質のリソースを配置することに集中しています。Vonage Video APIは簡単に始めることができますので、[無料アカウントにサインアップ](https://tokbox.com/account/?utm_source=blog&utm_medium=blog&utm_campaign=JP+Translated+Posts&utm_id=JP_translated_post#/)して、今すぐVonageが提供するサービスを最大限に活用してください。
 
-We would love to hear your feedback on features, developer docs and blog post content. Please leave a comment below, reach out to us on [Twitter](https://twitter.com/VonageDev) or join our [Community Slack Channel](https://developer.nexmo.com/community/slack).
+諸機能や開発者向けドキュメント、ブログ記事の内容について、皆様からのフィードバックをお待ちしています。下記のコメント欄にご記入いただくか、[Twitter](https://twitter.com/VonageDev)でお問い合わせいただくか、コミュニティ[Slack](https://developer.nexmo.com/community/slack)チャネルにご参加ください。
