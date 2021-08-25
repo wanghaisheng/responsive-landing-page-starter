@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 In a typical web server, you don't have to think much about state. A user sends you a request and you provide a response. It's not necessary for the application to guide itself through a path of choices and actions; the end user does that. However, a bot works differently.
 
-Although an end-user initiates a conversation with a bot, the bot needs to define the path from there, asking questions of the user to inform them of the potential next steps. When the bot is not answering questions so much as walking an end-user through a series of steps, that's what's known as a state machine.
+Although an end-user initiates a conversation with a bot, the bot needs to define the path from there, asking questions of the user to inform them of the potential next steps. When the bot is not just answering questions, but instead walking an end-user through a series of steps, that's what's known as a state machine.
 
 Implementing a state machine as a messaging bot is a little bit tricky because messaging bots don't organically have any concept of state. By default, a message sent to a server you control comes in without a session, state, or any other information about a big picture the individual message might be a part of. But really all that means is you'll need to manually store the last state of a "session" between your server and a given phone number. In actuality, a web application has to do the same thing. Platforms and libraries just routinely do the work for us. 
 
