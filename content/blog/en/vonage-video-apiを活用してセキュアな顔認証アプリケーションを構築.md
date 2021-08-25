@@ -5,7 +5,7 @@ description: このチュートリアルでは、Vonage Video
 thumbnail: /content/blog/vonage-video-apiを活用してセキュアな顔認証アプリケーションを構築/blog_facial-id-application_1200x600-1.png
 author: akshita-arun
 published: true
-published_at: 2021-08-25T13:58:09.402Z
+published_at: 2020-10-21T13:58:09.402Z
 updated_at: 2021-08-25T13:35:10.682Z
 category: tutorial
 tags:
