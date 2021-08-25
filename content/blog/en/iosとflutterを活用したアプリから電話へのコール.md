@@ -21,15 +21,15 @@ replacement_url: ""
 本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。
 https://learn.vonage.com/blog/2021/04/01/make-app-to-phone-call-using-ios-and-flutter/*
 
-本日は、Flutterを使用してiOSアプリケーションを構築し、VonageクライアントSDKを用いてVonage Conversation APIにより、モバイルアプリケーションから電話をかけられるようにします。アプリケーションは3つの画面（3つのUIステート）で構成されます。
+本日は、[Flutter](https://flutter.dev/)を使用して`iOS`アプリケーションを構築し、[VonageクライアントSDK](https://developer.nexmo.com/client-sdk/overview)を用いて[Vonage Conversation API](https://www.vonage.com/communications-apis/conversation/)により、モバイルアプリケーションから電話をかけられるようにします。アプリケーションは3つの画面（3つのUIステート）で構成されます。
 
 ![UI states: logon, make a call, and end call](/content/blog/make-app-to-phone-call-using-ios-and-flutter/ui-states.png)
 
 ## 前提条件
 
-Flutter iOSアプリケーションのソースコードは、[GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)で公開されています。
+`Flutter iOS`アプリケーションのソースコードは、[GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)で公開されています。
  
-iOSデバイス向けにFlutterアプリケーションを構築する前に、以下の前提条件を満たす必要があります：
+`iOS`デバイス向けに`Flutter`アプリケーションを構築する前に、以下の前提条件を満たす必要があります：
 
 * コールコントロールオブジェクト（[NCCO](https://developer.nexmo.com/voice/voice-api/guides/ncco)）を作成
 * Vonage CLI（旧Nexmo CLI）をインストール
