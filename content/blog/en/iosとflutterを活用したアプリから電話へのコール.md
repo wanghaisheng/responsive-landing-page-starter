@@ -4,11 +4,11 @@ description: Flutterを使用してiOSアプリケーションを構築し、Von
 thumbnail: /content/blog/iosとflutterを活用したアプリから電話へのコール/flutter_inapp-call-2_1200x600.png
 author: igor-wojda
 published: true
-published_at: 2021-08-25T08:35:09.354Z
+published_at: 2021-04-01T08:35:09.354Z
 updated_at: 2021-08-25T08:35:09.397Z
 category: tutorial
 tags:
-  - conversation-api
+  - 会話api
   - flutter
   - ios
 comments: true
