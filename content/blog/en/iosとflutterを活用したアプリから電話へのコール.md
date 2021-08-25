@@ -368,7 +368,9 @@ class _CallWidgetState extends State<CallWidget> {
 ...
 ```
 
-To listen for method calls originating from `Flutter` add `addFlutterChannelListener` method inside `AppDelegate` class (same level as above `application` method):
+`Flutter`からのメソッドコールをリッスンするには、`AppDelegate`クラス（上記の`application`メソッドと同じレベル）内の`addFlutterChannelListener`メソッドを追加します：
+
+:
 
 ```swift
 func addFlutterChannelListener() {
@@ -394,9 +396,9 @@ func addFlutterChannelListener() {
     }
 ```
 
-The above method "translates" the `Flutter` method calls to methods defined in the `AppDelegate` class (the `loginUser` for now).
+上記のメソッドは、`Flutter`のメソッドコールを`AppDelegate`クラスで定義されたメソッド（今回は`loginUser`）に「変換」します。
 
-And missing the `loginUser` methods inside the same class (we will fill the body soon):
+また、同じクラス内の`loginUser`メソッドがありません（まもなくボディを埋める予定です）：
 
 ```swift
 func loginUser(token: String) {
@@ -404,7 +406,7 @@ func loginUser(token: String) {
 }
 ```
 
-Now add `addFlutterChannelListener` method call inside the `application` method:
+ここで、`application`メソッド内に`addFlutterChannelListener`メソッドコールを追加します：
 
 ```swift
 override func application(
@@ -418,21 +420,24 @@ override func application(
     }
 ```
 
-The code is in place - after pressing the `Login As Alice` button the Flutter app will call the `_loginUser` method. Through the `Flutter` platform channel, the method will call the `loginUser` method defined in the `AppDelegate` class.
+コードが正しく書かれています - `Login As Alice`ボタンを押すと、`Flutter`アプリは`_loginUser`メソッドを呼び出します。`Flutter`プラットフォームのチャネルを通じて、このメソッドが`AppDelegate`クラスで定義された`loginUser`メソッドを呼び出します。
 
-Run the application from `Xcode` to make sure it is compiling.
 
-Before we will be able to log in user we need to initialize the `Vonage SDK Client`.
+`Xcode`からアプリケーションを実行して、コンパイルされていることを確認します。
 
-### Initialize Client
+ユーザーがログインできるようにする前に、`Vonage SDK Client`を初期化する必要があります。
 
-Open `AppDelegate` class and add the `NexmoClient` import at the top of the file:
+
+### クライアントを初期化
+
+`AppDelegate`クラスを開き、ファイルの先頭に`NexmoClient`のインポートを追加します：
 
 ```swift
 import NexmoClient
 ```
 
-In the same file add `client` property that will hold a reference to `Vonage Client`.
+同じファイルに、`Vonage Client`への参照を保持する`client`プロパティを追加します。
+
 
 ```swift
 @UIApplicationMain
@@ -443,7 +448,8 @@ In the same file add `client` property that will hold a reference to `Vonage Cli
 ...
 ```
 
-Now add `initClient` method to initialize the client:
+ここで、クライアントを初期化するために、`initClient`メソッドを追加します：
+
 
 ```swift
 func initClient() {
@@ -451,7 +457,8 @@ func initClient() {
     }
 ```
 
-To call the `initClient` method from the existing `application` method, we're going to need to add the `initClient()` line as shown in the example below:
+既存の`application`メソッドから`initClient`メソッドを呼び出すには、以下の例のように`initClient()`の行を追加する必要があります：
+
 
 ```swift
 override func application(
@@ -466,7 +473,9 @@ override func application(
     }
 ```
 
-Before allowing conversation we need to know that the user has correctly logged in. In the `AppDelegate` file add a delegate to listen for `Vonage Client SDK` connection state changes:
+会話を許可する前に、ユーザーが正しくログインしたことを知る必要があります。`AppDelegate`ファイルで、`Vonage Client SDK`の接続状態の変更をリッスンするデリゲートを追加します：
+
+
 
 ```swift
 extension AppDelegate: NXMClientDelegate {
@@ -485,7 +494,7 @@ extension AppDelegate: NXMClientDelegate {
 }
 ```
 
-Finally, the `notifyFlutter` method needs to be added to the same class:
+最後に、`notifyFlutter`メソッドを同じクラスに追加する必要があります：
 
 ```swift
     func client(_ client: NXMClient, didReceiveError error: Error) {
@@ -494,9 +503,11 @@ Finally, the `notifyFlutter` method needs to be added to the same class:
 }
 ```
 
-### Login the User
+### ユーザーをログイン
 
-Modify `loginUser` method body to call `login` on the client instance:
+
+`loginUser`メソッドのボディを変更して、クライアントインスタンスの`login`を呼び出します：
+
 
 ```swift
 func loginUser(token: String) {
@@ -504,11 +515,11 @@ func loginUser(token: String) {
     }
 ```
 
-This method will allow us to log-in the user (`Alice`) using the `Client SDK` to access the conversation.
+この方法により、`Client SDK`を使ってユーザー（Alice）がログインし、会話にアクセスすることができます。
 
-### Notify Flutter About Client SDK State Change
+### クライアントSDKの状態変更をFlutterに通知
 
-To notify `Flutter` of any changes to the state in the `Client SDK`, we'll need to add an `enum` to represents the states of the `Client SDK`. We've already added the equivalent `SdkState` enum in the `main.dart` file. Add the following `SdkState` enum, at the bottom of the `MainActivity.kt` file:
+`Client SDK`の状態の変更を`Flutter`に通知するためには、`Client SDK`の状態を表すenumを追加する必要があります。すでにこれに相当する`SdkState`列挙型を`main.dart`ファイルに追加しました。`MainActivity.kt`ファイルの下部に、以下の`SdkState`列挙型を追加します：
 
 ```swift
 enum SdkState: String {
@@ -520,7 +531,7 @@ enum SdkState: String {
     }
 ```
 
-To send these states to `Flutter` (from above delegate) we need to add `notifyFlutter` method in the `AppDelegate` class:
+これらの状態を（上のデリゲートから）`Flutter`に送るためには、`AppDelegate`クラスに`notifyFlutter`メソッドを追加する必要があります：
 
 ```swift
 func notifyFlutter(state: SdkState) {
@@ -528,11 +539,11 @@ func notifyFlutter(state: SdkState) {
     }
 ```
 
-Notice that we store the state in the enum, but we are sending it as a string.
+列挙型に状態を保存していますが、それを文字列として送信していることに注目してください。
 
-### Retrieve SDK State Update By Flutter
+### FlutterでSDKの状態の更新を取得
 
-To retrieve state updates in `Flutter` we have to listen for method channel updates. Open `main.dart` file and add `_CallWidgetState` constructor with custom handler:
+`Flutter`で状態の更新を取得するには、メソッドチャネルの更新をリッスンする必要があります。`main.dart`ファイルを開き、カスタムハンドラーで`_CallWidgetState`コンストラクターを追加します：
 
 ```dart
 _CallWidgetState() {
@@ -540,7 +551,8 @@ _CallWidgetState() {
   }
 ```
 
-Inside the same class (`_CallWidgetState`) add the handler method:
+同じクラス`(_CallWidgetState)`の中に、ハンドラーメソッドを追加します：
+
 
 ```dart
 Future<dynamic> methodCallHandler(MethodCall methodCall) async {
@@ -560,7 +572,8 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
   }
 ```
 
-These methods receive the "signal" from Android and convert it to an enum. Now update the contents of the `_updateView` method to support `SdkState.WAIT` and `SdkState.LOGGED_IN` states, as shown in the example below:
+これらのメソッドは、`Android`から「シグナル」を受け取り、それを列挙型に変換します。次に、`SdkState.WAITとSdkState.LOGGED_IN`の状態をサポートするために、`_updateView`メソッドの内容を以下の例のように更新します：
+
 
 ```dart
 Widget _updateView() {
@@ -582,15 +595,16 @@ Widget _updateView() {
   }
 ```
 
-During `SdkState.WAIT` the progress bar will be displayed. After successful login application will show the `MAKE PHONE CALL` button.
+`SdkState.WAIT`の間は、プログレスバーが表示されます。ログインに成功すると、アプリケーションに`MAKE PHONE CALL`ボタンが表示されます。
 
-Run the app and click the button labeled `LOGIN AS ALICE`. The `MAKE PHONE CALL` button should appear, which is another state of the `Flutter` app based on the `SdkState` enum`). An example of this is shown in the image below:
+アプリを実行して、`LOGIN AS ALICE`と書かれたボタンをクリックします。MAKE PHONE CALLボタンが表示され、これは`SdkState enum`）に基づいた`Flutter`アプリの別の状態です。)以下はこの例の画像になります：
 
 ![Make a phone call UI state](/content/blog/make-app-to-phone-call-using-ios-and-flutter/makeaphonecall.png)
 
-### Make A Call
+### コールする
 
-We now need to add functionality to make a phone call. Open the `main.dart` file and update the body of `_makeCall` method as shown below:
+次に、電話をかけるための機能を追加する必要があります。`main.dart`ファイルを開き、`_makeCall`メソッドのボディを以下のように更新します：
+
 
 ```dart
 Future<void> _makeCall() async {
@@ -603,7 +617,9 @@ Future<void> _makeCall() async {
   }
 ```
 
-The above method will communicate with `iOS` so we have to update code in the `AppDelegate` class as well. Add `makeCall` clauses to the `switch` statement inside `addFlutterChannelListener` method:
+上記のメソッドはiOSと通信するため、`AppDelegate`クラスのコードも更新する必要があります。`addFlutterChannelListener`メソッド内の`switch`文に`makeCall`句を追加します：
+
+
 
 ```swift
 func addFlutterChannelListener() {
@@ -632,15 +648,17 @@ func addFlutterChannelListener() {
     }
 ```
 
-Now in the same file add the `onGoingCall` property, which defines if and when a call is ongoing:
+次に、同じファイルに`onGoingCall`プロパティを追加します。これは、コールが進行中であるかどうか、またいつ進行中であるかを定義するものです：
+
 
 ```swift
 var onGoingCall: NXMCall?
 ```
 
-> NOTE: Currently the `Client SDK` does not store ongoing call reference, so we have to store it in the `AppDelegate` class. We will use it later to end the call.
+> 注：現在、`Client SDK`は進行中のコールリファレンスを保存していないため、`AppDelegate`クラスに保存する必要があります。この参照は、後でコールを終了する際に使用します。
 
-Now in the same class add `makeCall` method:
+
+同じクラスに`makeCall`メソッドを追加します：
 
 ```swift
 func makeCall() {
@@ -658,7 +676,9 @@ func makeCall() {
     }
 ```
 
-The above method sets the state of the `Flutter` app to `SdkState.WAIT` and waits for the `Client SDK` response (error or success). Now we need to add support for both states (`SdkState.ON_CALL` and `SdkState.ERROR`) inside `main.dart` file. Update body of the `_updateView` method to show the same as below:
+T上記のメソッドは、`Flutter`アプリの状態を`SdkState.WAIT`に設定し、`Client SDK`のレスポンス(エラーまたは成功)を待ちます。ここで、`main.dart`ファイル内に両方の状態（`SdkState.ON_CALLとSdkState.ERROR`）のサポートを追加する必要があります。以下のように`_updateView`メソッドのボディを更新します：
+
+
 
 ```dart
 Widget _updateView() {
@@ -689,23 +709,26 @@ Widget _updateView() {
   }
 ```
 
-Each state change will result in UI modification. Before making a call the application needs specific permissions to use the microphone. In the next step, we're going to add the functionality in the project to request these permissions.
+状態が変化するたびに、UIが変更されます。コールする前に、アプリケーションはマイクを使用するための特定の許可を必要とします。次のステップでは、これらの許可をリクエストするための機能をプロジェクトに追加します。
 
-### Request Permissions
 
-The application needs to be able to access the microphone, so we have to request access to the microphone (`Permission.microphone` for `Flutter` ). 
+### 許可をリクエスト
 
-Open `ios/Runner/info.plist` file and add `Privacy - Microphone Usage Description` key with `Make a call` value:
+アプリケーションはマイクにアクセスする必要があるので、マイクへのアクセスをリクエストしなければなりません（`Flutter`では`Permission.microphone`）。
+
+`ios/Runner/info.plist`ファイルを開き、`Privacy - Microphone Usage Description`キーに`Make a call`の値を追加します：
 
 ![Setting add microphone permission](/content/blog/make-app-to-phone-call-using-ios-and-flutter/microphone-permission.png)
 
-We already added the [permission_handler](https://pub.dev/packages/permission_handler) package to the `Flutter` project. Now at the top of the `main.dart` file, we'll need to import the `permission_handler` package as shown in the example below:
+すでに`Flutter`プロジェクトに[permission_handler](https://pub.dev/packages/permission_handler)パッケージを追加しました。では、`main.dart`ファイルの先頭で、以下の例のように`permission_handler`パッケージをインポートする必要があります：
+
 
 ```dart
 import 'package:permission_handler/permission_handler.dart';
 ```
 
-To trigger the request for certain permissions, we'll need to add the `requestPermissions()` method within the `_CallWidgetState` class inside the `main.dart` file. So add this new method inside the class:
+特定の許可のリクエストを起動させるためには、`main.dart`ファイル内の`_CallWidgetState`クラスに`requestPermissions()`メソッドを追加する必要があります。そこで、この新しいメソッドをクラス内に追加します：
+
 
 ```dart
 Future<void> requestPermissions() async {
@@ -713,9 +736,9 @@ Future<void> requestPermissions() async {
   }
 ```
 
-The above method will request permissions using `permission_handler`.
+上記のメソッドは、`permission_handler`を使って許可をリクエストします。
 
-In the same class, modify the body of the `_makeCall` class to request permissions before calling the method via the method channel:
+同じクラスで、`_makeCall`クラスのボディを修正して、メソッドチャネル経由でメソッドを呼び出す前に許可をリクエストします：
 
 ```dart
 Future<void> _makeCall() async {
@@ -726,17 +749,21 @@ Future<void> _makeCall() async {
   }
 ```
 
-Run the app and click `MAKE PHONE CALL` to start a call. The permissions dialogue will appear and, after granting the permissions, the call will start.
+Rアプリを起動し、`MAKE PHONE CALL`をクリックしてコールを開始します。許可ダイアログが表示されるので、許可するとコールが開始されます。
 
-> Reminder: we defined the phone number earlier in the `NCCO`
 
-The state of the application will be updated to `SdkState.ON_CALL` and the UI will be updated:
+> リマインダー：`NCCO`では以前に電話番号を定義しました。
+
+
+アプリケーションの状態が`SdkState.ON_CALL`に更新され、UIが更新されます：
+
 
 ![On call UI](/content/blog/make-app-to-phone-call-using-ios-and-flutter/oncall.png)
 
-### End Call
+### コールを終了
 
-To end the call we need to trigger the method on the native `iOS` application using `platformMethodChannel`. Inside `main.dart` file, update the body of the `_endCall` method:
+コールを終了するには、`platformMethodChannel`を使ってネイティブ`iOS`アプリケーション上でメソッドをトリガーする必要があります。`main.dart`ファイル内で、`_endCall`メソッドのボディを更新します：
+
 
 ```dart
 Future<void> _endCall() async {
@@ -746,7 +773,7 @@ Future<void> _endCall() async {
   }
 ```
 
-The above method will communicate with `iOS`, so we have to update code in the `AppDelegate` class as well. Add `endCall` clauses to the `switch` statement inside the `addFlutterChannelListener` method:
+上記のメソッドはiOSと通信するので、`AppDelegate`クラスのコードも更新する必要があります。`addFlutterChannelListener`メソッド内の`switch`文に`endCall`句を追加します：
 
 ```swift
 func addFlutterChannelListener() {
@@ -778,7 +805,7 @@ func addFlutterChannelListener() {
     }
 ```
 
-Now in the same class add the `endCall` method:
+同じクラスに `endCall` メソッドを追加します：
 
 ```swift
 func endCall() {
@@ -788,13 +815,16 @@ func endCall() {
     }
 ```
 
-The above method sets the state of the `Flutter` app to `SdkState.WAIT` and waits for the response from the `Client SDK`, which can be either error or success. Both UI states are already supported in the `Flutter` application (`_updateView` method).
+上記のメソッドは、`Flutter`アプリの状態を`SdkState.WAIT`に設定し、`Client SDK`からのレスポンス（エラーまたは成功）を待ちます。両方のUIの状態は、`Flutter`アプリですでにサポートされています（`_updateView`メソッド）。
 
-We have handled ending the call by pressing the `END CALL` button in the `Flutter` application UI. However, the call can also end outside of the `Flutter` app, e.g. the call will be rejected or answered, and later ended by the callee (on the real phone). 
+コールの終了は、`Flutter`アプリケーションのUIにある`END CALL`ボタンを押すことで処理しました。しかし、コールは`Flutter`アプリ以外でも終了することができます。例えば、（実際の電話で）コールを受ける側が通話を拒否したり、応答した後で終了させることができます。
 
-To support these cases we have to add the `NexmoCallEventListener` listener to the call instance and listen for call-specific events. 
 
-In the `AppDelegares.swift` file add `NXMCallDelegate`:
+
+これらのケースをサポートするためには、`NexmoCallEventListener`リスナーをコールインスタンスに追加し、コール固有のイベントをリッスンする必要があります。
+
+
+`AppDelegares.swift`ファイルに、`NXMCallDelegate`を追加します：
 
 ```swift
 extension AppDelegate: NXMCallDelegate {
@@ -815,7 +845,8 @@ extension AppDelegate: NXMCallDelegate {
 }
 ```
 
-To register above listener modify `onSuccess` callback inside `makeCall` method: 
+上記のリスナーを登録するには、`makeCall`メソッド内の`onSuccess`コールバックを変更します：
+
 
 ```swift
 func makeCall() {
@@ -834,16 +865,17 @@ func makeCall() {
     }
 ```
 
-Run the app and make a phone call from the mobile application to a physical phone number.
+アプリを起動して、モバイルアプリから物理的な電話番号に電話をかけます。
 
-# Summary
+# サマリ
 
-We have successfully built the application. By doing so we have learned how to make a phone call from a mobile application to the phone using Vonage `Client SDK`. For the complete project please check [GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter). This project additionally contains the Android native code (`android` folder) allowing us to run this app on Android as well.
+これでアプリケーションの構築に成功しました。これにより、`Vonage Client SDK`を使用して、モバイルアプリケーションから電話に電話をかける方法を学びました。プロジェクト全体については、[GitHub]https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)をご覧ください。このプロジェクトには、さらに`Android`のネイティブコード（`android`フォルダ）が含まれており、Android上でもこのアプリを実行することができます。
 
-To familiarize yourself with other functionalities please check [other tutorials](https://developer.vonage.com/client-sdk/tutorials) and [Vonage developer center](https://developer.vonage.com/).
+その他の機能については、[他のチュートリアル](https://developer.vonage.com/client-sdk/tutorials) や[Vonage開発者センター](https://developer.vonage.com/)をご覧ください。
 
-# References
 
-* [Vonage developer center](https://developer.vonage.com/)
-* [Write the first Flutter app](https://flutter.dev/docs/get-started/codelab)
-* [Flutter Plaftorm chanels](https://flutter.dev/docs/development/platform-integration/platform-channels)
+# 関連資料
+
+* [Vonage開発者センター](https://developer.vonage.com/)
+* [初めてのFlutterアプリ](https://flutter.dev/docs/get-started/codelab)
+* [Flutterプラットフォームチャネル](https://flutter.dev/docs/development/platform-integration/platform-channels)
