@@ -19,11 +19,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Throughout the COVID-19 pandemic telehealth usage surged as consumers and providers sought ways to safely access and deliver healthcare. According to a report by McKinsey & Company, it was estimated that  in April 2020 overall telehealth utilization for office visits and outpatient care was 78 times higher than in February 2020.
+Throughout the COVID-19 pandemic, telehealth usage surged as consumers and providers sought ways to safely access and deliver healthcare. According to a report by McKinsey & Company, it was estimated that in April 2020 overall telehealth utilization for office visits and outpatient care was 78 times higher than in February 2020.
 
-As the world is slowly transitioning towards normalcy, telehealth is expected to stay past the pandemic as a result of increasing willingness from both consumers and providers to utilise telehealth but also changes in regulation which have enabled the uptake of these digital services. The COVID-19 restrictions have enabled healthcare providers to re-invent archaic care models, and with the growth of telehealth past the pandemic, healthcare access, outcomes, and affordability are going to improve as a result.
+As the world is slowly transitioning towards normalcy, telehealth is expected to stay past the pandemic as a result of increasing willingness from both consumers and providers to utilise telehealth, but also changes in regulation which have enabled the uptake of these digital services. The COVID-19 restrictions have enabled healthcare providers to re-invent archaic care models, and with the growth of telehealth past the pandemic, healthcare access, outcomes, and affordability are going to improve as a result.
 
-TruTriage, has been a pioneer in the telehealth space since 2019, with a first of its kind video-enabled 911 nurse triage solution enabling organizations to deliver nurse triage for low acuity 911 callers regardless of their resource capability. In this week's Startup Spotlight series, we caught up with Brad Lieberman, COO of TruTriage and got insights into the future of telehealth. Enjoy!
+TruTriage has been a pioneer in the telehealth space since 2019, with a first of its kind video-enabled 911 nurse triage solution enabling organizations to deliver nurse triage for low acuity 911 callers regardless of their resource capability. In this week's Startup Spotlight series, we caught up with Brad Lieberman, COO of TruTriage and got insights into the future of telehealth. Enjoy!
 
 ## The startup at a glance
 
@@ -81,8 +81,4 @@ We want to be a change in the healthcare industry and help provide resources all
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
-
-
 Apply to join us [here](https://vonage.dev/3d093hA).
-
-##
