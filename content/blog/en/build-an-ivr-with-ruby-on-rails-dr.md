@@ -54,7 +54,7 @@ To create our Controller run the following from the command line:
 $ rails generate controller IVR
 ```
 
-sttOnce that has completed, open up the application in your preferred code editor and let's edit the newly generated `/app/controllers/ivr_controller.rb`. We are going to add methods for our two routes now. First, let's create the `#answer` method that will pick up the call:
+Once that has completed, open up the application in your preferred code editor and let's edit the newly generated `/app/controllers/ivr_controller.rb`. We are going to add methods for our two routes now. First, let's create the `#answer` method that will pick up the call:
 
 ```ruby
 # ivr_controller.rb
