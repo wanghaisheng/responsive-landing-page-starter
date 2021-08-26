@@ -2,7 +2,7 @@
 title: How to Build a Simple IVR with Ruby on Rails
 description: Build an Interactive Voice Response (IVR) Ruby on Rails application
   powered by the Vonage Voice API with this step-by-step walkthrough.
-thumbnail: /content/blog/build-an-ivr-with-ruby-on-rails-dr/ivr-ruby.png
+thumbnail: /content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ruby_ivr_1200x600.png
 author: ben-greenberg
 published: true
 published_at: 2019-07-04T14:32:23.000Z
