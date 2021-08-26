@@ -172,7 +172,7 @@ end
 
 Starting with Rails 6 you must give your ngrok tunnel URL permission to access your development environment. The NGROK_URL will replaced by your actual ngrok URL in the following step. Add the following to your `development.rb` file. \
 \
-**Note:** you must restart your rails server after editing `development.rb` for changes to take effect
+**Note:** You must restart your rails server after editing `development.rb` for changes to take effect.
 
 ```ruby
 #development.rb
