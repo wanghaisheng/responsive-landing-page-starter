@@ -17,17 +17,16 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-*This is translated from an English blog. In case of any inconsistency between the English version and the Japanese version, the English version shall prevail. 
-本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。*
+*本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。*
 https://learn.vonage.com/blog/2021/05/24/best-practices-to-get-started-with-the-vonage-video-api/
 
 このドキュメントでは、Vonage Video APIを活用した豊富な機能を備えるビデオアプリケーションの構築を開始する前に、Vonageが推奨する注目すべきベストプラクティスについて説明しています。
 
-VonageのWebサイトで新規アカウントを設定してください。設定は無料で、また新規アカウント登録時に自動的に10ドル付与致します。
+[VonageのWebサイト](https://www.vonage.com/communications-apis/video/)で新規アカウントを設定してください。設定は無料で、また新規アカウント登録時に自動的に10ドル付与致します。
 
 ## 関連資料/サポートに関して
 
-Vonage Video APIにおける開発者向けの詳細ドキュメントは、Video API開発者サイトで公開されています。
+Vonage Video APIにおける開発者向けの詳細ドキュメントは、[Video API開発者サイト](https://tokbox.com/developer/)で公開されています。
 このサイトでは、サンプルコードやリリースノートなどをはじめとして、基本的にあらゆる質問に対応しています。また、サイトには「Video APIに関する質問と回答」といった大変役立つセクションも用意されています。
 今後とも皆様によりよい支援をご提供するため、是非メールにてフィードバックをいただけたら幸いです：video.api.support@vonage.com
 
