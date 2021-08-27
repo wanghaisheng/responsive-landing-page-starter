@@ -23,7 +23,7 @@ https://learn.vonage.com/blog/2020/10/21/build-a-secure-facial-id-application-us
 
 現在の世界的なパンデミックの中で、多くの産業分野では生産性を向上させ、効果的な実装技術を提供するために、デジタルの導入に注力し、顧客の広範なユースケースに対応しています。顔認証はより一般的になり、以下のような産業分野で技術が広く普及しています：
 
-1.  ホスピタリティ（航空やホテル）
+1. ホスピタリティ（航空やホテル）
 
 * ホテルのチェックイン時に、携帯電話やカメラを使って支払いを行う
 * フライトのチェックインと搭乗手続き
@@ -32,7 +32,6 @@ https://learn.vonage.com/blog/2020/10/21/build-a-secure-facial-id-application-us
 
 * 手作業での書類作成を最小限にするために、緊急サービスが必要な患者を識別する
 * 病院管理サービスでは、医師、患者、看護師の顔をスクリーニングすることで、ミスコミュニケーションを防ぎ、一貫した情報を提供している
-
 
 3. カスタマーサービス
 
@@ -43,7 +42,7 @@ https://learn.vonage.com/blog/2020/10/21/build-a-secure-facial-id-application-us
 
 * 有権者の不正行為への対応
 
-上記のすべてのユースケースにおいて、[Vonage Video API](https://tokbox.com/account/user/signupを活用することで顔認証を可能にし、非接触型サービスを推進すると同時に、ユーザーデータや個人情報を保護しつつ、安全で安心なカスタムソリューションの提供を支援します。
+上記のすべてのユースケースにおいて、[Vonage Video API](https://tokbox.com/account/user/signup)を活用することで顔認証を可能にし、非接触型サービスを推進すると同時に、ユーザーデータや個人情報を保護しつつ、安全で安心なカスタムソリューションの提供を支援します。
 
 このブログ記事では、顔面認証を使用したVideo APIをご紹介します。開発者は、いくつかの手法や関数を利用するだけで、カスタムソリューションのビルドにこれらの属性をパーソナライズし、顔認証の登録、検出、識別、照合を含むワークフローを理解することができます。私たちの目標は、[opentokプラットフォーム](https://gist.github.com/rktalusani/3b0bb3c61bc6d5b6020612f189e644fe)を使用した顔認証をすぐに使用できるサンプルコードベースを使用して開発時間を短縮することです。
 
@@ -57,9 +56,7 @@ Video APIを使用して優れた顔認証アプリケーションを構築す�
 * Microsoft face API
 * [Vonage Video APIアカウント](https://tokbox.com/account/?utm_source=blog&utm_medium=blog&utm_campaign=JP+Translated+Posts&utm_id=JP_translated_post#/)
 
-
 ## サブスクライバー画像のスクリーンショットをサーバにアップロード
-
 
 前述の適正なユースケースでは、顧客はサインアッププロセス中に自分の写真を提供し、その後写真はバックエンドに保存されます。顧客がビデオ通話に参加すると、Vonage Video APIを使用して顧客のビデオストリームのスクリーンショットを取得し、サーバにアップロードして顔の検出を行います。
 
@@ -101,8 +98,6 @@ function sendScreenShot() {
 ![step 1](/content/blog/build-a-secure-facial-id-application-using-the-vonage-video-api/step-1-upload-an-image.png "step 1")
 
 b64toBlobは、sendScreenShot関数から呼び出されるヘルパーメソッドで、base64文字列をバイト配列に変換し、multipart/form-dataとしてサーバに投稿できるようにします。
-
-
 
 ```js
 function b64toBlob(b64Data, contentType, sliceSize) {
@@ -164,7 +159,6 @@ function detectFace($img){
 
 最後の認証では、verifyFace()メソッドを使用し、インプットとして画像IDのid1とid2を渡します。Microsoft face APIは、この2つの顔(id1 & id2)を比較し、登録時に提出された写真とスナップショットを比較して、一致/不一致とスコアを含む結果を提供します。
 
-
 ```js
 function verifyFace($id1,$id2){
         global $faceid_endpoint, $data_dir_url,$faceid_key;
@@ -201,4 +195,4 @@ Vonageでは、顧客の利益を第一に考えたコアバリューを重視�
 
 Vonageを活用したビデオの利用は増加の一途にあり、ビデオに対する需要の増加に伴い、パートナーとの連携を成功させるために、より良い支援とサービスの提供を実現する高品質のリソースを配置することに集中しています。Vonage Video APIは簡単に始めることができますので、[無料アカウントにサインアップ](https://tokbox.com/account/?utm_source=blog&utm_medium=blog&utm_campaign=JP+Translated+Posts&utm_id=JP_translated_post#/)して、今すぐVonageが提供するサービスを最大限に活用してください。
 
-諸機能や開発者向けドキュメント、ブログ記事の内容について、皆様からのフィードバックをお待ちしています。下記のコメント欄にご記入いただくか、[Twitter](https://twitter.com/VonageDev)でお問い合わせいただくか、コミュニティ[Slack](https://developer.nexmo.com/community/slack)チャネルにご参加ください。
+諸機能や開発者向けドキュメント、ブログ記事の内容について、皆様からのフィードバックをお待ちしています。下記のコメント欄にご記入いただくか、[Twitter](https://twitter.com/VonageDev)でお問い合わせいただくか、[コミュニティSlackチャネル](https://developer.nexmo.com/community/slack)にご参加ください。
