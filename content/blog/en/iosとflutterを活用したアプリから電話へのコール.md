@@ -18,8 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-*This is translated from an English blog. In case of any inconsistency between the English version and the Japanese version, the English version shall prevail. ）
-本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。
+*本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。
 https://learn.vonage.com/blog/2021/04/01/make-app-to-phone-call-using-ios-and-flutter/*
 
 本日は、[Flutter](https://flutter.dev/)を使用して`iOS`アプリケーションを構築し、[VonageクライアントSDK](https://developer.nexmo.com/client-sdk/overview)を用いて[Vonage Conversation API](https://www.vonage.com/communications-apis/conversation/)により、モバイルアプリケーションから電話をかけられるようにします。アプリケーションは3つの画面（3つのUIステート）で構成されます。
@@ -29,7 +28,7 @@ https://learn.vonage.com/blog/2021/04/01/make-app-to-phone-call-using-ios-and-fl
 ## 前提条件
 
 `Flutter iOS`アプリケーションのソースコードは、[GitHub](https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)で公開されています。
- 
+
 `iOS`デバイス向けに`Flutter`アプリケーションを構築する前に、以下の前提条件を満たす必要があります：
 
 * コールコントロールオブジェクト（[NCCO](https://developer.nexmo.com/voice/voice-api/guides/ncco)）を作成
@@ -38,13 +37,12 @@ https://learn.vonage.com/blog/2021/04/01/make-app-to-phone-call-using-ios-and-fl
 * Flutter SDKをインストール
 * Flutterプロジェクトを作成
 
-
 ## Vonageアプリケーション
 
 ### NCCOを作成
 
 [コールコントロールオブジェクト（NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference)は、Voice API callのフローをコントロールするために使用するJSON配列です。
-NCCOは公開され、インターネットからアクセスできる必要があります。そのためにこのチュートリアルでは、GitHub Gistを使って構成をホストする便利な方法を紹介します。それでは新しいgistを追加しましょう：
+NCCOは公開され、インターネットからアクセスできる必要があります。そのためにこのチュートリアルでは、[GitHub Gist](https://gist.github.com/)を使って構成をホストする便利な方法を紹介します。それでは新しいgistを追加しましょう：
 
 1. https://gist.github.com/（Githubにログイン）
 2. ncco.jsonをファイル名にして、新しいgistを作成します
@@ -68,11 +66,10 @@ NCCOは公開され、インターネットからアクセスできる必要が�
 ]
 ```
 
-4. PHONE_NUMBERをあなたの電話番号に置き換えます（Vonageの番号はE.164形式で、+と-は有効ではありません。電話番号を入力する際には、必ず国コードを指定してください。例：US：14155550100、UK：447700900001) [Vonage numbers format](https://developer.nexmo.com/concepts/guides/glossary#e-164-format)  
+4. PHONE_NUMBERをあなたの電話番号に置き換えます（[Vonageの番号はE.164形式](https://developer.nexmo.com/concepts/guides/glossary#e-164-format)で、+と-は有効ではありません。電話番号を入力する際には、必ず国コードを指定してください。例：US：14155550100、UK：447700900001) [](https://developer.nexmo.com/concepts/guides/glossary#e-164-format)
 5. Create secret gistボタンをクリックします
 6. Rawボタンをクリックします
-7.  次のステップで使用するので、ブラウザに表示されているURLをメモします
-
+7. 次のステップで使用するので、ブラウザに表示されているURLをメモします
 
 ### Vonage CLIをインストール
 
@@ -86,7 +83,7 @@ npmでCLIのベータ版をインストールするには、以下のコマン�
 npm install nexmo-cli@beta -g
 ```
 
-Vonage API KeyとAPI Secretを使用するためにVonage CLIを設定します。ダッシュボードの[設定ページ](https://dashboard.nexmo.com/settings)から設定できます。
+Vonage API KeyとAPI Secretを使用するためにVonage CLIを設定します。ダッシュボードの設定ページから設定できます。
 
 以下のターミナルのコマンドを実行し、API_KEYとAPI_SECRET[をダッシュボード](https://dashboard.nexmo.com/settings)の値にリプレースします：
 
@@ -131,7 +128,6 @@ nexmo user:create name="Alice"
 ### JWTを生成
 
 `JWT`はユーザーの認証に使用されます。ターミナルで以下のコマンドを実行し、ユーザー`Alice`のJWTを生成します。以下のコマンドでは、`APPLICATION_ID`をアプリケーションのIDにリプレースしてください。
-
 
 ```
 nexmo jwt:generate sub=Alice exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}' application_id=APPLICATION_ID
@@ -200,7 +196,6 @@ platform :ios, '11.0'
 ```
 
 同じファイルの終わりに`pod 'NexmoClient'`を追加します：
-
 
 ```
 target 'Runner' do
@@ -348,7 +343,6 @@ Future<void> _loginUser() async {
 
 `ALICE_TOKEN`を、先ほど`Vonage CLI`から取得したJWTトークンにリプレースし、会話アクセスのためにユーザー`Alice`を認証します。`Flutter`は`loginUser`メソッドを呼び出し、`token`を引数として渡します。`loginUser`メソッドは`MainActivity`クラスで定義されています（後ほど説明します）。このメソッドを`Flutter`から呼び出すには、`MethodChannel`を定義する必要があります。`_CallWidgetState`クラスの先頭に`platformMethodChannel`フィールドを追加します：
 
-
 `_CallWidgetState`クラスの先頭に`platformMethodChannel`フィールドを追加します：
 
 ```dart
@@ -423,11 +417,9 @@ override func application(
 
 コードが正しく書かれています - `Login As Alice`ボタンを押すと、`Flutter`アプリは`_loginUser`メソッドを呼び出します。`Flutter`プラットフォームのチャネルを通じて、このメソッドが`AppDelegate`クラスで定義された`loginUser`メソッドを呼び出します。
 
-
 `Xcode`からアプリケーションを実行して、コンパイルされていることを確認します。
 
 ユーザーがログインできるようにする前に、`Vonage SDK Client`を初期化する必要があります。
-
 
 ### クライアントを初期化
 
@@ -438,7 +430,6 @@ import NexmoClient
 ```
 
 同じファイルに、`Vonage Client`への参照を保持する`client`プロパティを追加します。
-
 
 ```swift
 @UIApplicationMain
@@ -451,7 +442,6 @@ import NexmoClient
 
 ここで、クライアントを初期化するために、`initClient`メソッドを追加します：
 
-
 ```swift
 func initClient() {
         client.setDelegate(self)
@@ -459,7 +449,6 @@ func initClient() {
 ```
 
 既存の`application`メソッドから`initClient`メソッドを呼び出すには、以下の例のように`initClient()`の行を追加する必要があります：
-
 
 ```swift
 override func application(
@@ -475,8 +464,6 @@ override func application(
 ```
 
 会話を許可する前に、ユーザーが正しくログインしたことを知る必要があります。`AppDelegate`ファイルで、`Vonage Client SDK`の接続状態の変更をリッスンするデリゲートを追加します：
-
-
 
 ```swift
 extension AppDelegate: NXMClientDelegate {
@@ -506,9 +493,7 @@ extension AppDelegate: NXMClientDelegate {
 
 ### ユーザーをログイン
 
-
 `loginUser`メソッドのボディを変更して、クライアントインスタンスの`login`を呼び出します：
-
 
 ```swift
 func loginUser(token: String) {
@@ -554,7 +539,6 @@ _CallWidgetState() {
 
 同じクラス`(_CallWidgetState)`の中に、ハンドラーメソッドを追加します：
 
-
 ```dart
 Future<dynamic> methodCallHandler(MethodCall methodCall) async {
     switch (methodCall.method) {
@@ -574,7 +558,6 @@ Future<dynamic> methodCallHandler(MethodCall methodCall) async {
 ```
 
 これらのメソッドは、`Android`から「シグナル」を受け取り、それを列挙型に変換します。次に、`SdkState.WAITとSdkState.LOGGED_IN`の状態をサポートするために、`_updateView`メソッドの内容を以下の例のように更新します：
-
 
 ```dart
 Widget _updateView() {
@@ -606,7 +589,6 @@ Widget _updateView() {
 
 次に、電話をかけるための機能を追加する必要があります。`main.dart`ファイルを開き、`_makeCall`メソッドのボディを以下のように更新します：
 
-
 ```dart
 Future<void> _makeCall() async {
     try {
@@ -619,8 +601,6 @@ Future<void> _makeCall() async {
 ```
 
 上記のメソッドはiOSと通信するため、`AppDelegate`クラスのコードも更新する必要があります。`addFlutterChannelListener`メソッド内の`switch`文に`makeCall`句を追加します：
-
-
 
 ```swift
 func addFlutterChannelListener() {
@@ -651,13 +631,11 @@ func addFlutterChannelListener() {
 
 次に、同じファイルに`onGoingCall`プロパティを追加します。これは、コールが進行中であるかどうか、またいつ進行中であるかを定義するものです：
 
-
 ```swift
 var onGoingCall: NXMCall?
 ```
 
 > 注：現在、`Client SDK`は進行中のコールリファレンスを保存していないため、`AppDelegate`クラスに保存する必要があります。この参照は、後でコールを終了する際に使用します。
-
 
 同じクラスに`makeCall`メソッドを追加します：
 
@@ -678,8 +656,6 @@ func makeCall() {
 ```
 
 T上記のメソッドは、`Flutter`アプリの状態を`SdkState.WAIT`に設定し、`Client SDK`のレスポンス(エラーまたは成功)を待ちます。ここで、`main.dart`ファイル内に両方の状態（`SdkState.ON_CALLとSdkState.ERROR`）のサポートを追加する必要があります。以下のように`_updateView`メソッドのボディを更新します：
-
-
 
 ```dart
 Widget _updateView() {
@@ -712,7 +688,6 @@ Widget _updateView() {
 
 状態が変化するたびに、UIが変更されます。コールする前に、アプリケーションはマイクを使用するための特定の許可を必要とします。次のステップでは、これらの許可をリクエストするための機能をプロジェクトに追加します。
 
-
 ### 許可をリクエスト
 
 アプリケーションはマイクにアクセスする必要があるので、マイクへのアクセスをリクエストしなければなりません（`Flutter`では`Permission.microphone`）。
@@ -723,13 +698,11 @@ Widget _updateView() {
 
 すでに`Flutter`プロジェクトに[permission_handler](https://pub.dev/packages/permission_handler)パッケージを追加しました。では、`main.dart`ファイルの先頭で、以下の例のように`permission_handler`パッケージをインポートする必要があります：
 
-
 ```dart
 import 'package:permission_handler/permission_handler.dart';
 ```
 
 特定の許可のリクエストを起動させるためには、`main.dart`ファイル内の`_CallWidgetState`クラスに`requestPermissions()`メソッドを追加する必要があります。そこで、この新しいメソッドをクラス内に追加します：
-
 
 ```dart
 Future<void> requestPermissions() async {
@@ -752,19 +725,15 @@ Future<void> _makeCall() async {
 
 Rアプリを起動し、`MAKE PHONE CALL`をクリックしてコールを開始します。許可ダイアログが表示されるので、許可するとコールが開始されます。
 
-
 > リマインダー：`NCCO`では以前に電話番号を定義しました。
 
-
 アプリケーションの状態が`SdkState.ON_CALL`に更新され、UIが更新されます：
-
 
 ![On call UI](/content/blog/make-app-to-phone-call-using-ios-and-flutter/oncall.png)
 
 ### コールを終了
 
 コールを終了するには、`platformMethodChannel`を使ってネイティブ`iOS`アプリケーション上でメソッドをトリガーする必要があります。`main.dart`ファイル内で、`_endCall`メソッドのボディを更新します：
-
 
 ```dart
 Future<void> _endCall() async {
@@ -820,10 +789,7 @@ func endCall() {
 
 コールの終了は、`Flutter`アプリケーションのUIにある`END CALL`ボタンを押すことで処理しました。しかし、コールは`Flutter`アプリ以外でも終了することができます。例えば、（実際の電話で）コールを受ける側が通話を拒否したり、応答した後で終了させることができます。
 
-
-
 これらのケースをサポートするためには、`NexmoCallEventListener`リスナーをコールインスタンスに追加し、コール固有のイベントをリッスンする必要があります。
-
 
 `AppDelegares.swift`ファイルに、`NXMCallDelegate`を追加します：
 
@@ -848,7 +814,6 @@ extension AppDelegate: NXMCallDelegate {
 
 上記のリスナーを登録するには、`makeCall`メソッド内の`onSuccess`コールバックを変更します：
 
-
 ```swift
 func makeCall() {
         client.call("IGNORED_NUMBER", callHandler: .server) { [weak self] (error, call) in
@@ -870,10 +835,9 @@ func makeCall() {
 
 # サマリ
 
-これでアプリケーションの構築に成功しました。これにより、`Vonage Client SDK`を使用して、モバイルアプリケーションから電話に電話をかける方法を学びました。プロジェクト全体については、[GitHub]https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)をご覧ください。このプロジェクトには、さらに`Android`のネイティブコード（`android`フォルダ）が含まれており、Android上でもこのアプリを実行することができます。
+これでアプリケーションの構築に成功しました。これにより、`Vonage Client SDK`を使用して、モバイルアプリケーションから電話に電話をかける方法を学びました。プロジェクト全体については、\[GitHub]https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)をご覧ください。このプロジェクトには、さらに`Android`のネイティブコード（`android`フォルダ）が含まれており、Android上でもこのアプリを実行することができます。
 
 その他の機能については、[他のチュートリアル](https://developer.vonage.com/client-sdk/tutorials) や[Vonage開発者センター](https://developer.vonage.com/)をご覧ください。
-
 
 # 関連資料
 
