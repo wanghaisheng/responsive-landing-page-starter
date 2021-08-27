@@ -9,8 +9,9 @@ published_at: 2020-10-21T13:58:09.402Z
 updated_at: 2021-08-25T13:35:10.682Z
 category: tutorial
 tags:
-  - "#フェイシャル-idビデオ-api"
-  - video-api
+  - ビデオ-api
+  - "#フェイシャル-id"
+  - facial-id
 comments: true
 spotlight: false
 redirect: ""
