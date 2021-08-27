@@ -85,16 +85,90 @@ Place the web application in one browser window and your Facebook page in anothe
 
 Let’s take a look at the code involved to make the above happen.
 When a user sends a message to your Facebook page, it gets sent by Vonage to your web application’s inbound webhook. The webhook returns an object that lets Vonage know how to handle the message. In this case, we are sending back information the Client SDK Messages API Integration needs to connect the Facebook User with your web application to have a conversation. This includes the Facebook User’s id and the conversation name (which we set as the Facebook User’s id so that it’s unique).
-(insert code snippet)
 
-If this is the first time the Facebook User is sending a message, a new conversation is created. This emits a `conversation:created` event that we listen for on the events webhook. The web application’s backend takes this event and repackages it as a custom event that can be used to notify the agent’s dashboard to display the new conversation. 
-(insert code snippet)
+```javascript
+// server.js
+app.post("/webhooks/inbound", (request, response) => {
+  response.status(200).send([{ "action": "message", "conversation_name": request.body.from.id, "user": request.body.from.id, "geo": "region-code" }]);
+});
+```
+
+If this is the first time the Facebook User is sending a message, a new conversation is created. This emits a `conversation:created` event that we listen for on the events webhook. The web application’s backend takes this event and repackages it as a custom event, `custom:new_conv`, that can be used to notify the agent’s dashboard to display the new conversation. 
+
+```javascript
+// server.js
+app.post("/webhooks/rtcevent", (request, response) => {
+   ...
+  // If Facebook user is new, a new conversation should be created, so listen for it here 
+  // and then send the custom event to the Agents Conversation
+  if (request.body.type === "conversation:created"){
+    vonage.conversations.events.create(process.env.AGENTS_CONV_ID, {
+      "type": "custom:new_conv",
+      "from": "system",
+      "body": request.body
+    },
+    (error, result) => {
+      if (error) {
+        console.error(error);
+      } else {
+        console.log(result);
+      }
+    });
+  }
+  response.status(200).send({code:200, status: 'got rtcevent request'});
+});
+
+```
 
 In the code for the chat application, there is a `message:received` event listener that fires when a message is received from the Facebook User. It then takes the message and adds it to the chat display.
-(insert code snippet)
 
-When the agent responds to the Facebook User, that is an outbound message. Full implementation of outbound messages into the Client SDK will be completed in a future release. Until then, just like listening for when a new conversation is created, we can listen for when a `text` event is sent to the events webhook. The Vonage Node SDK is used to relay the agent’s message to the Facebook User.
-(insert code snippet)
+```javascript
+// public/chat.js
+   // Adding conversation.id here in the on. means that we're filtering events to only the ones regarding this conversation. (it's called grouping)
+    conversation.on('message:received', conversation.id, (from, event) => {
+      console.log('message-received sender: ', from);
+      console.log('message-reveived event: ', event);
+      const formattedMessage = formatMessage(from, event, conversation.me);
+      // Update UI
+      messageFeed.innerHTML = messageFeed.innerHTML + formattedMessage;
+      messagesCountSpan.textContent = messagesCount;
+    });
+```
+
+When the agent responds to the Facebook User, that is an outbound message. Full implementation of outbound messages into the Client SDK will be completed in a future release. Until then, just like listening for when a new conversation is created, we can listen for when a `custom:chat` event is sent to the events webhook. The Vonage Node SDK is used to relay the agent’s message to the Facebook User.
+
+```javascript
+// server.js
+app.post("/webhooks/rtcevent", (request, response) => {
+  ...
+  // We currently do not support the outbound part of the integration so you should take
+  // the text message from the chat and relay to Messenger using the messages API 
+  // (here, using the Server SDK wrapping of it)
+  if (request.body.type === "custom:chat"){
+    const FB_RECIPIENT_ID = request.body.from;
+    const FB_SENDER_ID = request.body.to;
+    vonage.channel.send(
+      { type: 'messenger', id: FB_RECIPIENT_ID },
+      { type: 'messenger', id: FB_SENDER_ID },
+      {
+          content: {
+              type: 'text',
+              text: request.body.text,
+          },
+      },
+      (err, data) => {
+          if (err) {
+              console.error(err);
+          } else {
+              console.log(data.message_uuid);
+          }
+      }
+    );
+  }
+  ...
+});
+
+```
 
 ## Conclusion
 
