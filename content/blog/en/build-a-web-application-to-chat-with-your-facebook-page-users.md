@@ -36,6 +36,8 @@ Make your own copy of the sample web application by \[remixing this Glitch](link
 
 When the agent clicks a conversation, a chat application with the Facebook User will open in a new window. The chat application is based on the one created in the [Creating a chat app tutorial](https://developer.nexmo.com/client-sdk/tutorials/in-app-messaging).
 
+![Screenshot of a chat room where the Agent and Facebook user are having a conversation.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/demo-chat.png "Chat application demo")
+
 ## Link your Facebook page to your Vonage application
 
 All that is left of the setup is to connect your Facebook page to the web application so they can communicate back and forth. Here are the steps:
@@ -64,8 +66,6 @@ All that is left of the setup is to connect your Facebook page to the web applic
 ![Screen shot of Connect Facebook Page where the page can be selected.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-6.png "Select your Facebook Business Page")
 
 ![Screen shot of Social Channels section of Vonage Dashboard with a success alert.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-7.png "Confirmation that Facebook Business page was successfully connected")
-
-
 
 * Now that Vonage knows about your Facebook page, let’s connect to your Vonage application that was created when you set up the sample with Glitch. Either click “Link to an application” or go to the Applications section of the dashboard.
 
