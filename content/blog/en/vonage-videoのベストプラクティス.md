@@ -17,18 +17,17 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-*This is translated from an English blog. In case of any inconsistency between the English version and the Japanese version, the English version shall prevail. 
-本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。*
+*本文は英語版からの翻訳となります。日本語版において意味または文言に相違があった場合、英語版が優先するものとします。*
 https://learn.vonage.com/blog/2021/05/24/best-practices-to-get-started-with-the-vonage-video-api/
 
 このドキュメントでは、Vonage Video APIを活用した豊富な機能を備えるビデオアプリケーションの構築を開始する前に、Vonageが推奨する注目すべきベストプラクティスについて説明しています。
 
-VonageのWebサイトで新規アカウントを設定してください。設定は無料で、また新規アカウント登録時に自動的に10ドル付与致します。
+[VonageのWebサイト](https://www.vonage.com/communications-apis/video/)で新規アカウントを設定してください。設定は無料で、また新規アカウント登録時に自動的に10ドル付与致します。
 
 ## 関連資料/サポートに関して
 
-Vonage Video APIにおける開発者向けの詳細ドキュメントは、Video API開発者サイトで公開されています。
-このサイトでは、サンプルコードやリリースノートなどをはじめとして、基本的にあらゆる質問に対応しています。また、サイトには「Video APIに関する質問と回答」といった大変役立つセクションも用意されています。
+Vonage Video APIにおける開発者向けの詳細ドキュメントは、[Video API開発者サイト](https://tokbox.com/developer/)で公開されています。
+このサイトでは、サンプルコードやリリースノートなどをはじめとして、基本的にあらゆる質問に対応しています。また、サイトには[「Video APIに関する質問と回答」](https://support.tokbox.com/hc/en-us)といった大変役立つセクションも用意されています。
 今後とも皆様によりよい支援をご提供するため、是非メールにてフィードバックをいただけたら幸いです：video.api.support@vonage.com
 
 ## ビデオプラットフォーム
@@ -145,10 +144,10 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
 
 ## ユーザーインターフェース/エクスペリエンス
 
-* 一般的に、UIカスタマイゼーションドキュメント（Web、iOS、Android、Windows）をご覧いただき、アプリケーションに関連するセクションを、お読みいただくことを推奨しています。
+* 一般的に、[UIカスタマイゼーションドキュメント（Web、iOS、Android、Windows](https://tokbox.com/developer/guides/customize-ui/js/)）をご覧いただき、アプリケーションに関連するセクションを、お読みいただくことを推奨しています。
 * **事前コールテスト**：ユーザーのデバイスや接続において、セッションに参加する前にネットワークやハードウェアのテストが必要な場合、事前コールテスト機能を追加してください。テストごとに新規のsessionIDを作成し、より正確な結果を得るために、最低30秒のテスト時間を設けることを忘れないでください。
 
-  * Vonage事前コールテストツールを使用して、ユーザーがVideo APIの一般的な接続テストを行うことができます。
+  * [Vonage事前コールテストツール](https://tokbox.com/developer/tools/precall)を使用して、ユーザーがVideo APIの一般的な接続テストを行うことができます。
   * 自社の事前コールテストの仕組みと連携し、全てのテストデータを集約したい場合、以下を活用することができます：
 
     * [iOS/Android Githubサンプルs](https://github.com/opentok/opentok-network-test)
@@ -167,18 +166,17 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
     * [パブリッシャーイベント（JS)](https://tokbox.com/developer/sdks/js/reference/Publisher.html#events)
     * [サブスクライバーイベント（JS)](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#events)
     * AndroidとiOSについては上記の「例外処理」をご覧ください
-* **オーディオフォールバック**：Vonageのメディアサーバでは、常時ネットワークの状態をチェックしており、エンドユーザーの接続に関する問題を検知すると、パケットロスが15%を超える場合、ビデオを自動的に停止してオーディオのみで継続するとともに、これに関するイベントが送信されます（iOSの場合：subscriberVideoDisabled:reason:とsubscriberVideoEnabled:reason:）。このようなイベントをUIに表示し、影響を受けるユーザーに対して、接続品質が低下したためにオーディオのみに切り替えたことを知らせることを推奨します。オーディオのみの切り替えのしきい値を構成することはできません。詳細は以下の例をご覧ください：
+* **オーディオフォールバック**：Vonageのメディアサーバでは、常時ネットワークの状態をチェックしており、エンドユーザーの接続に関する問題を検知すると、パケットロスが15%を超える場合、ビデオを自動的に停止してオーディオのみで継続するとともに、これに関するイベントが送信されます（iOSの場合：[subscriberVideoDisabled:reason:](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoDisabled:reason)と[subscriberVideoEnabled:reason:](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoEnabled:reason)）。このようなイベントをUIに表示し、影響を受けるユーザーに対して、接続品質が低下したためにオーディオのみに切り替えたことを知らせることを推奨します。オーディオのみの切り替えのしきい値を構成することはできません。詳細は以下の例をご覧ください：
 * [ビデオ無効の警告](https://tokbox.com/developer/sdks/js/reference/Subscriber.html#event:videoDisableWarning)
+* [ビデオ無効の理由](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoDisabled:reason:)
+* [ビデオ有効の理由](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoEnabled:reason:)
 
-  * [ビデオ無効の理由](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoDisabled:reason:)
-  * [ビデオ有効の理由](https://tokbox.com/developer/sdks/ios/reference/Protocols/OTSubscriberKitDelegate.html#//api/name/subscriberVideoEnabled:reason:)
+オーディオフォールバックはデフォルトで有効になっていますが、audioFallbackEnabledパラメータで無効にすることができます。詳細は[こちら](https://tokbox.com/developer/sdks/js/reference/OT.html)。
 
-オーディオフォールバックはデフォルトで有効になっていますが、audioFallbackEnabledパラメータで無効にすることができます。詳細はこちら。
-
-* **セッションへの再接続**：参加者がネットワーク関連の問題で突然セッションから脱落した場合、セッションへの再接続を試みます。よりよいユーザーエクスペリエンスを実現するため、こうしたイベントを捕捉し、UIに正しく表示してセッションへの再接続を試みていることをユーザーに知らせることを推奨します。詳細はこちらをご覧ください。
+* **セッションへの再接続**：参加者がネットワーク関連の問題で突然セッションから脱落した場合、セッションへの再接続を試みます。よりよいユーザーエクスペリエンスを実現するため、こうしたイベントを捕捉し、UIに正しく表示してセッションへの再接続を試みていることをユーザーに知らせることを推奨します。詳細は[こちら](https://tokbox.com/developer/guides/connect-session/js/#automatic_reconnection)をご覧ください。
 * **アクティブスピーカー**：オーディオのみのセッションでは、オーディオレベルメーターを追加し、参加者が現在のアクティブスピーカーを把握できるように可視化することをお薦めします。また、ビデオでは、アクティブスピーカーの画面を拡大するように設定してみてください。UIの調整は定期的に送信されるaudioLevelUpdatedイベントを活用してください。詳細は以下をご覧ください。
   https://tokbox.com/developer/guides/customize-ui/js/ 
-* **Loudness detector（音量検知**：音量検知機能により、ミュートされているユーザーが話そうとしていることを特定することができます。この場合、audioLevelが0に設定された状態で、audioLevelUpdatedイベントが発生します。つまり、この状況を避けるにはAudioContextの使用が必要になります。参考までにブログをご覧ください。
+* **Loudness detector（音量検知**：音量検知機能により、ミュートされているユーザーが話そうとしていることを特定することができます。この場合、audioLevelが0に設定された状態で、[audioLevelUpdated](https://tokbox.com/developer/sdks/js/reference/AudioLevelUpdatedEvent.html)イベントが発生します。つまり、この状況を避けるにはAudioContextの使用が必要になります。参考までに[ブログ](https://vonagedev.medium.com/how-to-create-a-loudness-detector-using-vonage-video-api-8dbcf93595a8)をご覧ください。
 * **Issue API(イシューAPI）のレポート**：https://tokbox.com/developer/guides/debugging/js/#report-issue。これにより、アプリケーションのエンドユーザーは、クライアントサイドより個々のイシュー（問題）IDを生成することができます。顧客はイシューIDを保存し、サポートのチケットを発行する際に使用することができます。イシューIDは、問題が報告された個々の接続IDを特定し、サポート部門による調査に役立てることができます。
 
 ## 機能
@@ -229,7 +227,7 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
 
   * いいえ。全てのストリームがレコーディングされ、一部のストリームを選択してアーカイブすることはできません。
 
-アーカイブにSafariブラウザを使用する際の重要な注意点：*Safariクライアントからパブリッシュされたストリームのビデオの場合、Safari OpenTokプロジェクトを使用する必要があります。さもないとSafariからパブリッシュされたストリームはオーディオのみになります*。
+アーカイブにSafariブラウザを使用する際の重要な注意点：*Safariクライアントからパブリッシュされたストリームのビデオの場合、*[Safari OpenTokプロジェクト](https://tokbox.com/developer/sdks/js/safari/)*を使用する必要があります。さもないとSafariからパブリッシュされたストリームはオーディオのみになります*。
 
 * **画面共有**：ミラー効果を回避するため、画面を共有しているパブリッシャーを隠します。
 
@@ -244,7 +242,7 @@ Vonageが推奨する参加者人数：
 * モバイル=4（エンジニアリングの公式発表では最大8までサポート）
 * ラップトップ=10
 * デスクトップ=15
-* **帯域幅要件**に関しては「OpenTokの使用時における最低限の帯域幅要件とは？」をご覧ください。
+* **帯域幅要件**に関しては[「OpenTokの使用時における最低限の帯域幅要件とは？」](https://support.tokbox.com/hc/en-us/articles/360029732311-What-is-the-minimum-bandwidth-requirement-to-use-OpenTok-)をご覧ください。
 * **プロキシ**：ユーザーがプロキシ経由でしかインターネットにアクセスできない場合、webRTCは認証を要求するプロキシではあまりよく機能しないため、「透過的な」プロキシを使用するか、ブラウザでHTTPS接続を構成する必要があります。Vonageのネットワークチェックフローについては以下をご覧ください。
   https://tokbox.com/developer/guides/restricted-networks/
 * **ファイアウォール**：最低限ファイアウォールのルールに含める必要があるポートやドメイン：
@@ -282,7 +280,7 @@ VP8とH.264の違い：
 
 ## アドオン
 
-企業顧客は簡単にアドオンを購入できるようになりました。本プレゼンテーションのスライドでは、セルフサービスツールで構成できるアドオンリストが掲載されていますので参考にしてください。
+企業顧客は簡単にアドオンを購入できるようになりました。[本プレゼンテーション](https://docs.google.com/presentation/d/16Q9XRznFLs5rl2DZFYt5Nwl1ibKj_j_y-9XQZ5C3VSc/edit#slide=id.gafa078777f_0_18)のスライドでは、セルフサービスツールで構成できるアドオンリストが掲載されていますので参考にしてください。
 
 * SIPの相互接続
 
