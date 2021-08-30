@@ -251,7 +251,7 @@ Complete the form with the following:
 * `Answer URL` text field enter your ngrok URL again: `https://[ngrok url here]/answer`
 * `Event URL` text field enter your ngrok URL: `https://[ngrok url here]/event`
 
-Scroll to the bottom of the page and click the black `save-changes` button.
+Scroll to the bottom of the page and click the `save-changes` button.
 
 With that last step, you have finished! You now have a fully functional simple IVR Rails application powered by Vonage. You can give it a go by starting your Rails server, and with ngrok also running, give your application a call at the phone number you just purchased.
 
