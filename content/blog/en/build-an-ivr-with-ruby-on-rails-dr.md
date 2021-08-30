@@ -241,7 +241,6 @@ Once you own the number, you can now link it to your `vonage-rails-ivr-demo` Voi
 ![link numbers menu](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/screen-shot-2021-08-24-at-20.52.35.png "link numbers menu")
 
 Simply click the white `link` button. The button will turn red and change to `unlink.` Your Vonage phone number is now linked to your application. \
-\
 Our last step is to configure the Vonage application to accept phone calls and send them to the IVR Rails app. Click the black `edit` button in the top section, under your application's name. You will be redirected to a page called `Edit vonage-rails-ivr-demo.` Scroll until you find the following Capabilities section:
 
 ![](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ivr-screenshot-1.png)
