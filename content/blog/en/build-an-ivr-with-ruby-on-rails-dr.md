@@ -83,7 +83,7 @@ class IvrController < ApplicationController
 end
 ```
 
-As shown above, the `#answer` method provides two NCCO instructions. The first is the `talk` action, wherein the caller is greeted by the application. I chose the United States locale and style number 9. The Voice API provides a robust selection of language and style options, see more in the [text-to-speech guide.](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech)\
+As shown above, the `#answer` method provides two NCCO instructions. The first is the `talk` action, wherein the caller is greeted by the application. I chose the United States locale and style number 9. The Voice API provides a robust selection of language and style options, see more in the [text-to-speech guide.](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech)
 \
 **Note:** the previous voiceName parameter is now deprecated. [Read more.](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech#supported-languages)
 
