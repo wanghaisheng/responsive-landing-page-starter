@@ -245,7 +245,6 @@ Our last step is to configure the Vonage application to accept phone calls and s
 
 ![](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ivr-screenshot-1.png)
 
-\
 Complete the form with the following:
 
 * `Answer URL` text field enter your ngrok URL again: `https://[ngrok url here]/answer`
