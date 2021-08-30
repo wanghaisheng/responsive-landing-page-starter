@@ -55,15 +55,27 @@ All that is left of the setup is to connect your Facebook page to the web applic
 
 ![Screen shot of steps to connect a Facebook Page](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-masked.png "Connect Facebook Page")
 
+* Select the Facebook page(s) to connect to Vonage 
+
 ![Screen shot of a Facebook Page selector](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-2.png "Select a Facebook Page")
+
+* Verify you are using the correct Facebook account
 
 ![Screen shot of a confirmation popup to continue as a user](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-3.png "Continue as user")
 
+* Review the permissions granted to Vonage
+
 ![Screen shot of the list of permissions that can be granted to Vonage](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-4.png "Ask for permissions")
+
+* Confirmation that Vonage was able to be successfully linked
 
 ![Confirmation of Facebook Page being successfully linked](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-5.png "Confirmation of Facebook Page being successfully linked")
 
+* Select a Facebook page that was linked to Vonage and complete the setup
+
 ![Screen shot of Connect Facebook Page where the page can be selected.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-6.png "Select your Facebook Business Page")
+
+* Congratulations, your Facebook page was successfully connected
 
 ![Screen shot of Social Channels section of Vonage Dashboard with a success alert.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/03-connect-facebook-page-7.png "Confirmation that Facebook Business page was successfully connected")
 
