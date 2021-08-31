@@ -84,7 +84,6 @@ end
 ```
 
 As shown above, the `#answer` method provides two NCCO instructions. The first is the `talk` action, wherein the caller is greeted by the application. I chose the United States locale and style number 9. The Voice API provides a robust selection of language and style options, see more in the [text-to-speech guide.](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech)
-\
 **Note:** the previous voiceName parameter is now deprecated. [Read more.](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech#supported-languages)
 
 The second action is the `input` action, and we have set the optional parameter `submitOnHash` to `true` so that the input ends when the user presses the hash key on their phone. We also provide the required `eventUrl` parameter with a URL that points to our other route that will respond to the user input.
