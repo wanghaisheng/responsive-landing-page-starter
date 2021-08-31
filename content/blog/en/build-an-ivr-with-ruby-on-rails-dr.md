@@ -219,7 +219,7 @@ Complete the form with the following:
 
 * `Application name` text field enter `vonage-rails-ivr-demo`
 
-Once you have finished, go ahead and click the purple `Create Application` button.
+Once you have finished, go ahead and click the `Create Application` button.
 
 After the application has been created you can generate a public/private key pair. We will not be using them for this tutorial, but it is good to know where they are in case you choose to expand upon this application with more functionality.
 
