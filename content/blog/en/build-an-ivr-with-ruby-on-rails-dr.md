@@ -233,7 +233,7 @@ This will redirect you to the settings page for your application. In the second 
 
 For our purposes: pick the country that you are currently in so that the call will be a local call for you; pick `Voice` for features and either mobile or landline for type. You do not need to enter anything for the `Number` text field. When you click `Search`, you will see a list of phone numbers available.
 
-Pick one by clicking the purple `Buy` button, and click the black `Buy` button once more in the confirmation prompt.
+Pick one by clicking the `Buy` button, and click the black `Buy` button once more in the confirmation prompt.
 
 Once you own the number, you can now link it to your `vonage-rails-ivr-demo` Voice application. To do so, click on the `Your applications` option from the left-hand panel. Navigate back to your application page. Now you will see your newly purchased phone number listed in the second half of the page, as seen below:
 
