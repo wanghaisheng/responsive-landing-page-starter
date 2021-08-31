@@ -5,9 +5,10 @@ description: In this tutorial, you will learn how to create a chrome extension.
   dashboard. The knowledge you’ll acquire from following the steps of this
   tutorial will give you a foundation on how to create your own chrome
   extensions for different purposes.
+thumbnail: /content/blog/create-your-first-chrome-extension-in-javascript-to-hide-your-api-keys/javascript_hide-api-keys_1200x600.png
 author: amanda-cavallaro
 published: true
-published_at: 2021-08-23T10:21:09.589Z
+published_at: 2021-08-31T10:35:06.887Z
 updated_at: 2021-08-23T10:21:09.603Z
 category: tutorial
 tags:
