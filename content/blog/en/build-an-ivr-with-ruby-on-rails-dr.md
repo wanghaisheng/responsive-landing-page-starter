@@ -227,7 +227,7 @@ You now have created a Vonage Voice application. Our next step is to purchase a 
 
 ![configure application button](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/screen-shot-2021-08-24-at-20.43.18.png "configure application button")
 
-This will redirect you to the settings page for your application. In the second half of the page you can link your application to Vonage provisioned phone numbers. Click on the black `Buy numbers` button and you will be directed to a page where you can choose a country, features, type, and four digits you would like the number to have.
+This will redirect you to the settings page for your application. In the second half of the page, you can link your application to Vonage provisioned phone numbers. Click on the `Buy numbers` button and you will be directed to a page where you can choose a country, features, type, and four digits you would like the number to have.
 
 ![buy numbers menu](/content/blog/how-to-build-a-simple-ivr-with-ruby-on-rails/ivr-screenshot-2.png "buy numbers menu")
 
