@@ -93,12 +93,6 @@ You can stop right here, or proceed to play with Express.js to be able to take t
 
 ### Building a Bare Minimal SMS App with Express.js
 
-<!-- THIS IS HOW FAR YOU'VE GOTTEN.
-
-THE SIMPLE SEND SMS APP WORKS, NOW IT'S TIME TO EXTEND IT AND UPDATE THE TEXT BELOW.
-
-DON'T FORGET TO CREATE A GITHUB REPO WITH RUNNING INSTRUCTIONS. -->
-
 Let’s write a very simple app using [Express](https://expressjs.com/) to send an SMS.
 
 Install Express as a dependency:
@@ -186,7 +180,7 @@ Also, you will see the response printed in your terminal.
 
 You can view [the code sample](https://github.com/nexmo-community/send-sms-nodejs-express/blob/main/index.js) used in this tutorial on GitHub.
 
-In the next tutorial, you will learn how to receive SMS messages to your virtual number. Stay tuned!
+In the [next tutorial](https://learn.vonage.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr/), you will learn how to receive SMS messages to your virtual number. Stay tuned!
 
 ## References
 
