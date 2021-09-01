@@ -128,7 +128,7 @@ app.listen(3000, () => {
 });
 ```
 
-Now, wrap `vonage.message.sendSms()` with the Express `post` route method. Let’s set the `type` to `'unicode'` so you can send some emoji too! Also, print out the success response at the callback.
+Now, wrap `vonage.message.sendSms()` with the Express `post` route method. Let’s set the `type` to `'unicode'` so you can send some emojis too! Also, print out the response in the callback.
 
 ```javascript
 app.post('/send', (req, res) => {
