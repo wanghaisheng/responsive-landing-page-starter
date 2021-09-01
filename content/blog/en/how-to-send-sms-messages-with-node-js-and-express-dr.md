@@ -149,7 +149,7 @@ app.post('/send', (req, res) => {
 
 Now, you can try sending an SMS to any mobile phone number (including Google Voice numbers) using your app.
 
-In this tutorial, we are not going to create an HTML with the form UI where a user can fill out a phone number and message (I will write a full tutorial including a front-end code sometimes!), so let’s pretend we are sending data from a web interface by using [Postman](https://www.getpostman.com/) to make requests to your app. Postman is a good tool to have when you develop apps with REST APIs!
+In this tutorial, we are not going to create the HTML with the form UI where a user can fill out a phone number and message (I will write a full tutorial including the front-end code in the future!), so let’s pretend we are sending data from a web interface by using [Postman](https://www.postman.com/) to make requests to your app. Postman is a good tool to have when you develop apps with REST APIs!
 
 1. Launch Postman and Select **POST**, and enter _http://localhost:3000/send_.
 2. At **Headers**, Set _Content-Type: application/json_
