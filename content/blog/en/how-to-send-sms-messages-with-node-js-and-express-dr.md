@@ -166,7 +166,7 @@ Once you made a successful POST request to your app, you will get a text message
 
 ![SMS on Android](/content/blog/how-to-send-sms-messages-with-node-js-and-express/screencast-sms.gif)
 
-Also, you will see the response printed on your terminal.
+Also, you will see the response printed in your terminal.
 
 ```shell
 {
