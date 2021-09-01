@@ -52,7 +52,7 @@ const vonage = new Vonage({
 
 There are also optional params you can use. Find out more in [the SMS API Reference](https://developer.vonage.com/api/sms?theme=dark).
 
-## Send SMS Messages with Node.js and the Vonage SMS API
+## Send an SMS Message with Node.js and the Vonage SMS API
 
 To send a message, use the `vonage.message.sendSms` function and pass your virtual number you are sending the message from, a recipient number, and the message to be sent.
 
