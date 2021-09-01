@@ -1,7 +1,7 @@
 ---
 title: Send SMS Messages with Node.js and Express using the Vonage SMS API
 description: A step-by-step tutorial on how to send SMS messages with Node.js
-  and Express using the Nexmo SMS API and Node.js client library.
+  and Express using the Vonage SMS API and Node.js client library.
 thumbnail: ""
 author: tomomi
 published: true
