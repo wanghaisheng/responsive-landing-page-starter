@@ -2,11 +2,11 @@
 title: Send SMS Messages with Node.js and Express using the Vonage SMS API
 description: A step-by-step tutorial on how to send SMS messages with Node.js
   and Express using the Vonage SMS API and Node.js client library.
-thumbnail: ""
+thumbnail: /content/blog/send-sms-messages-with-node-js-and-express-using-the-vonage-sms-api/send-sms_node-js.png
 author: tomomi
 published: true
 published_at: 2016-10-19T16:53:39.000Z
-updated_at: 2021-08-11T20:08:50.826Z
+updated_at: 2021-09-01T14:34:10.439Z
 category: tutorial
 tags:
   - node
