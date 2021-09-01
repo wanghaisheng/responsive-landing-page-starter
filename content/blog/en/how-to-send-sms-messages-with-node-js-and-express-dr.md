@@ -99,7 +99,7 @@ THE SIMPLE SEND SMS APP WORKS, NOW IT'S TIME TO EXTEND IT AND UPDATE THE TEXT BE
 
 DON'T FORGET TO CREATE A GITHUB REPO WITH RUNNING INSTRUCTIONS. -->
 
-Let’s write a very simple app using [Express](http://expressjs.com/) to send an SMS.
+Let’s write a very simple app using [Express](https://expressjs.com/) to send an SMS.
 
 Install Express as a dependency:
 
