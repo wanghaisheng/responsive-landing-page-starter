@@ -81,7 +81,7 @@ vonage.message.sendSms(
 );
 ```
 
-Let's run this, and see if you get a SMS to your mobile phone.
+Let's run this, and see if you get an SMS to your mobile phone.
 
 `$ node index.js`
 
