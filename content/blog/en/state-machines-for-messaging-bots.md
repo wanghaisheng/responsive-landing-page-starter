@@ -2,9 +2,10 @@
 title: State Machines for WhatsApp Messaging Bots with Node.js
 description: Learn how to create a persistent state to build a Node.js state
   machine in a WhatsApp messaging bot server
+thumbnail: /content/blog/state-machines-for-whatsapp-messaging-bots-with-node-js/state-machine_1200x600-1.png
 author: garann-means
-published: false
-published_at: 2021-08-23T11:56:56.399Z
+published: true
+published_at: 2021-09-02T12:06:26.603Z
 updated_at: 2021-08-23T11:56:56.437Z
 category: tutorial
 tags:
