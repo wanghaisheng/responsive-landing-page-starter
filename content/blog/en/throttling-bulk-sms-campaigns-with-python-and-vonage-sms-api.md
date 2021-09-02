@@ -213,7 +213,25 @@ In the code above, the first "for" statement loops through batches of phone numb
 
 The inner "for" loop takes each phone number in a batch and makes an HTTP request to the Vonage Messages API. The request header contains the base64 encoded credentials that you created earlier as a "b64value." It also includes a JSON payload to deliver to the Messages API. The JSON payload consists of the receiver details in the `to` dictionary, the sender's details in `from`, and the message content in `message`.
 
-The `send_message` function takes the `from` as the sender of the SMS campaign and `to` as the SMS receiver. It also takes the `text` as the SMS message. The value of the `sender` input taken from the user of your application will be shown to the receivers in the text received as the sender of the message. The phone numbers of the recipients will receive the message at a particular time, based on the `batch_size`  fed into the `to` variable. Additionally, the `delay_period` delays the execution after each batch of SMS is sent and it is executed by the` time.sleep(delay_period)` line. The delay period is in seconds. Finally, a `JsonResponse` is returned if the SMS sending is successful or an error statement if it is unsuccessful. The full `views.py` code is as follows:
+As you learned earlier, the `sendSmsMessage` function handles the logic that sends the bulk SMS to the recipients. It accepts a POST request whose body contains a description of the sender, the list of the recipients' phone numbers, the size of the batches for throttling the sending action, and the period of delay between each subsequent batch of messages sent. You unpack these in `body_data`. To recap, the details in the request body are:
+
+* `sender`: a variable that contains the information about the sender of the message.
+* `recipients`: a list of the phone numbers of the SMS recipients.
+* `message_string`: the text to be contained in the bulk SMS.
+* `batch_size`: the number of recipients to be sent a message to at once.
+* `delay_period`: the time frame in between the SMS batches to be sent.
+
+There are two `for` loops inside the `sendSmsMessage` function. The external `for` statement loops through the batches of phone numbers using the `batch` function you defined earlier in this article. You divide the recipients' phone numbers into batches using  `batch_size' from the POST request.  
+
+Then, you have an inner loop that takes each number in every batch and makes a POST request to the Vonage Messages API at the https://api.nexmo.com/v0.1/messages endpoint. The request has a header that includes the Base64 value of your Vonage credentials. The request body is JSON data, which has information about the message to be sent, including the recipient's phone number, "from" address, and message.
+
+Upon making a successful request to the Messages API endpoint, the SMS message goes to the recipient, and the code prints a message to your terminal to alert you of the sent message. Then, your code works on sending the next batch.
+
+After you've sent a message to all the recipients in a batch, the parent for loop executes after the delay period you set with `time.sleep(delay_period).
+
+When you finish sending the SMS messages, your code returns a `200 - OK` `JsonResponse`.
+
+The full `views.py` code is as follows:
 
 ```python
 from django.views.decorators.csrf import csrf_exempt
