@@ -15,11 +15,12 @@ comments: true
 redirect: ""
 canonical: ""
 ---
+> We've built this example using Ruby 3.0.0 and Ruby on Rails 6.1.4.1, and the Vonage Voice API.
+
 Have you ever dialed a company and been prompted to follow along with menu prompts? If you have then you have interacted with an Interactive Voice Response (IVR). The IVR acts on input provided by the caller, usually in the form of numeric keypad choices. You can build your own IVR using Ruby on Rails and the Vonage Voice API.
 
 In this walkthrough, we will build a small Rails application that will host a simple IVR service. After we are done, you can expand on this application to build whatever you need. In this tutorial, our application will accept a numeric input (also called a DTMF code) from the caller, and then speak back the input entered to the caller. 
 
-> We've built this example using Ruby 3.0.0 and Ruby on Rails 6.1.4.1, and the Vonage Voice API.
 
 ## Prerequisites
 
