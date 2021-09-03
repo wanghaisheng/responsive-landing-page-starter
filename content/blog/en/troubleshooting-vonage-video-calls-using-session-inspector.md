@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-"I was not able to log in."  
+"I was not able to log in."\
 "One of my teammates couldn’t share their screen."
 
 You've built your awesome app using Vonage Video API. Your customers love your app, and they love that they can have a video chat within the app itself. 
@@ -29,3 +29,15 @@ You can always talk to our super helpful support team, but did you know you can 
 Session Inspector—most prominent among developer tools—is a powerful tool that allows you to deep dive into a specific video session and view quality metrics, user info, errors, and events for reporting and post-call diagnostic purposes.
 
 Below is a video mini-series on the Session Inspector to help you become an expert at debugging your video sessions:
+
+<youtube id="AMzcMQQ_3Ls"></youtube>
+
+<youtube id="zkaJreu9ONM"></youtube>
+
+<youtube id="AEFTrQDp6vE"></youtube>
+
+<youtube id="Rf1m3fih7qU"></youtube>
+
+<youtube id="etVdMKKA_X8"></youtube>
+
+<youtube id="U3OjWk34C90"></youtube>
