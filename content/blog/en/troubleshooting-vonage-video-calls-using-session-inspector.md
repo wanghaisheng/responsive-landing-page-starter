@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-"I was not able to log in."\
+"I was not able to log in."  
 "One of my teammates couldn’t share their screen."
 
 You've built your awesome app using Vonage Video API. Your customers love your app, and they love that they can have a video chat within the app itself. 
@@ -30,7 +30,7 @@ Session Inspector—most prominent among developer tools—is a powerful tool th
 
 Below is a video mini-series on the Session Inspector to help you become an expert at debugging your video sessions:
 
-<youtube id="AMzcMQQ_3Ls"></youtube>
+<youtube id="CT3iwJqtFSY"></youtube>
 
 <youtube id="zkaJreu9ONM"></youtube>
 
