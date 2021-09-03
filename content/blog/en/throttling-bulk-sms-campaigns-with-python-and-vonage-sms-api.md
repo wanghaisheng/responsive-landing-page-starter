@@ -110,13 +110,14 @@ In the above code, replace the `API_KEY` and `API_SECRET` values with the values
 Now, create a view for sending the SMS messages in `views.py` like this:
 
 ```python
-from vonage import Sms
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.decorators import parser_classes
 from rest_framework.parsers import JSONParser
 import json
-from django.http.response import JsonResponse
+import requests
+import base64
 import time
+from django.http.response import JsonResponse
 
 vonageCredentials = 'API_KEY:API_SECRET'
 encodedData = vonageCredentials.encode("utf-8")
@@ -128,7 +129,7 @@ def sendMessage(self, request):
     pass
 ```
 
-In the code above, you imported the `csrf_exempt`, `parser_classes`, and `JSONParser` class to enable you to define decorators for the view. You also imported the `json`,  `JsonResponse`, and `time` modules. Then, you created the `sendMessage` function, where you will put the logic for sending the message.
+In the code above, you imported the `csrf_exempt`, `parser_classes`, and `JSONParser` class to enable you to define decorators for the view. You also imported the `json`,  `JsonResponse`, and other modules you will need in your web app. Then, you created the `sendMessage` function, where you will put the logic for sending the message.
 
 Next, you will add code inside the `sendMessage` view to accept requests and user inputs. Modify `view.py` as follows:
 
@@ -166,7 +167,9 @@ You defined a function called `batch`. It accepts two parameters: the `recipient
 Now, you will implement the logic to enable sending messages. Modify the `sendMessage` view as shown below:
 
 ```python
-def sendMessage(self, request):
+@ csrf_exempt
+@ parser_classes([JSONParser])
+def sendMessage(request):
     if request.method == 'POST':
         body_unicode = request.body.decode('utf-8')
         body_data = json.loads(body_unicode)
@@ -238,20 +241,17 @@ import time
 from django.http.response import JsonResponse
 
 
-vonageCredentials = 'API_KEY:API_SECRET'
+# Create your views here.
+vonageCredentials = 'ba779f8e:fFImpyBSezdXV1Nd'
 encodedData = vonageCredentials.encode("utf-8")
 b64value = base64.b64encode(encodedData).decode("ascii")
-
-
-def batch(recipients, batch_size=1):
-    for i in range(0, len(recipients), batch_size):
-        yield recipients[i:min(i + batch_size, len(recipients))]
+print(b64value)
 
 
 @ csrf_exempt
 @ parser_classes([JSONParser])
 def sendMessage(request):
-    if request.method == "POST":
+    if request.method == 'POST':
         body_unicode = request.body.decode('utf-8')
         body_data = json.loads(body_unicode)
 
@@ -263,7 +263,7 @@ def sendMessage(request):
 
         for eachBatch in batch(recipients, batch_size):
             for number in eachBatch:
-                requests.post('https://api.nexmo.com/v0.1/messages',
+                response = requests.post('https://api.nexmo.com/v0.1/messages',
                      headers={
                          "Authorization": "Basic %s" % b64value,
                          "Content-type": "application/json",
@@ -286,6 +286,18 @@ def sendMessage(request):
                      })
                 print("message sent to ", number)
             time.sleep(delay_period)
+        try:
+            return JsonResponse("OK", status=200, safe=False)
+
+        except Exception as e:
+            return JsonResponse({'the error is': str(e)}, status=403)
+
+
+def batch(recipients, batch_size=1):
+    for i in range(0, len(recipients), batch_size):
+        yield recipients[i:min(i + batch_size, len(recipients))]
+
+
 ```
 
 ### Define a URL path
@@ -318,9 +330,9 @@ Let's assume you intend to use the following details for your SMS bulk campaign.
 
 ```json
 {
-    "sender": "Admin Team",
-    "recipients": [2340000000000, 23411111111, 2342222222222, 2343333333333, 2344444444444, 2345555555555, 2346666666666, 2347777777777, 2348888888888, 2349999999999],
-    "message_string": "COVID-19 Vaccine now available in your state",
+    "sender": "Your Vonage number.",
+    "recipients": ["Numbers to send to."],
+    "message_string": "Hello, World!",
     "batch_size": 3,
     "delay_period": 3600
 }
