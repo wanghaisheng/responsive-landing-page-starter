@@ -30,13 +30,13 @@ The [Vonage Messages API](https://developer.nexmo.com/messages/overview) allows 
 
 ## Prerequisites
 
-1. A free [Vonage API account](https://dashboard.nexmo.com/sign-up).
-
-   <sign-up number></sign-up>
+1. A free Vonage API account
 2. A Vonage application. You can [follow this guide](https://developer.nexmo.com/messages/code-snippets/create-an-application) to create an application on your Vonage dashboard.
 3. Python (version 3.6 or a later). You can download Python from the [official website](https://www.python.org/).
 4. The Python package manager pip. You can find [instructions for installing pip here](https://pip.pypa.io/en/stable/installing/).
 5. The Python tool `virtualenv` for creating isolated [virtual environments for Python projects](https://pypi.org/project/virtualenv/).
+
+<sign-up></sign-up>
 
 ## Setup and Installation
 
