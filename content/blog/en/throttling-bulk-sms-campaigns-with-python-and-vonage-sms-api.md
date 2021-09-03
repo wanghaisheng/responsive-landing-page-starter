@@ -296,8 +296,6 @@ def sendMessage(request):
 def batch(recipients, batch_size=1):
     for i in range(0, len(recipients), batch_size):
         yield recipients[i:min(i + batch_size, len(recipients))]
-
-
 ```
 
 ### Define a URL path
@@ -331,7 +329,7 @@ Let's assume you intend to use the following details for your SMS bulk campaign.
 ```json
 {
     "sender": "Your Vonage number.",
-    "recipients": ["Numbers to send to."],
+    "recipients": ["First number to send to.", "Second number to send to"],
     "message_string": "Hello, World!",
     "batch_size": 3,
     "delay_period": 3600
@@ -340,7 +338,7 @@ Let's assume you intend to use the following details for your SMS bulk campaign.
 
 You can input the above details into the body of a Postman request as JSON as shown in the following image:
 
-![A Postman screenshot](/content/blog/throttling-bulk-sms-campaigns-with-python-and-vonage-sms-api/screen-shot-2021-09-02-at-4.50.34-pm.png)
+![A Postman screenshot](/content/blog/throttling-bulk-sms-campaigns-with-python-and-vonage-sms-api/screen-shot-2021-09-02-at-5.09.56-pm.png)
 
 Make sure you replace the  `"recipients"` phone numbers with real numbers and replace `"sender"` with your Vonage number before sending the request. Then, the messages will be delivered to your recipients.
 
