@@ -3,9 +3,10 @@ title: Troubleshooting Vonage Video Calls Using Session Inspector
 description: "Did you know you can troubleshoot your video sessions without
   contacting support? Meet the Session Inspector and our excellent suite of
   developer tools designed to debug and troubleshoot your video sessions. "
+thumbnail: /content/blog/troubleshooting-vonage-video-calls-using-session-inspector/sis_blog-image_1200x600.png
 author: sreekanth-kolamala
 published: true
-published_at: 2021-09-03T11:58:50.034Z
+published_at: 2021-09-07T09:28:58.233Z
 updated_at: 2021-09-03T11:58:50.087Z
 category: tutorial
 tags:
