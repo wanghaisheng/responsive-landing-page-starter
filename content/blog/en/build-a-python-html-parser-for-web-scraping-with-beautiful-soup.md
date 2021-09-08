@@ -33,7 +33,7 @@ When you build a web scraper, you write code that sends the HTTP request for you
 
 ## Web Scraping Problems
 
-Although web scraping is helpful in many situations, it does have some problems. One problem is web scrapers often break. Web scrapers rely on a website’s HTML staying the same, so when a developer updates a site, it can break your scraper, and you have to make changes to fix it. 
+Although web scraping is helpful in many situations, it does have some problems. One problem is web scrapers often break. Web scrapers rely on a website’s HTML staying the same, so when a developer updates a site, it can break your scraper, and you will have to make changes to fix it. 
 
 Web scraping can also be against the terms of service of certain websites, so it is important to read a website's terms of service before scraping data from it. 
 
