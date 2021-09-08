@@ -70,7 +70,7 @@ To see its HTML, you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (
 
 ## Downloading a Website's HTML
 
-Alright, it is time to start building our web scraper! To start, we will scrape all the data from [www.example.com](http://www.example.com). The first thing we need to do is get example.com's HTML. You can get a website's HTML by sending an HTTP request. An HTTP request is how your browser (or web scraper) gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but we will use a GET request to ask a website's server to send us its resources. Python has a built-in library called `requests` that lets you easily send an HTTP request. Here is how to use the `requests` library to send a GET request and print example.com's HTML.
+Alright, it is time to start building our web scraper! To start, we will scrape all the data from [www.example.com](http://www.example.com). The first thing we need to do is get example.com's HTML. You can get a website's HTML by sending an HTTP request. An HTTP request is how your browser (or web scraper) gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are different HTTP requests to accomplish various tasks, but we will use a GET request to ask a website's server to send us its resources. Python has a built-in library called `requests` that lets you easily send an HTTP request. Here is how to use the `requests` library to send a GET request and print example.com's HTML.
 
 ```python
 import requests
