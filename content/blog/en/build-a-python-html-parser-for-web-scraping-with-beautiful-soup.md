@@ -58,7 +58,7 @@ To see this website live, you can head to [www.example.com](http://www.example.c
 
 ## Downloading a Website's HTML
 
-Alright, it is time to start building our web scraper! In this tutorial, we will scrape all the data from [www.example.com](http://www.example.com). You can use Python's request library to send an HTTP request. An HTTP request is how your browser gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many different types of HTTP requests to accomplish various tasks, but you can use a GET request to ask a website's server to send you its resources. Here is how to use the request library to send a GET request and print example.com's HTML.
+Alright, it is time to start building our web scraper! In this tutorial, we will scrape all the data from [www.example.com](http://www.example.com). You can use Python's request library to send an HTTP request. An HTTP request is how your browser gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but you can use a GET request to ask a website's server to send you its resources. Here is how to use the request library to send a GET request and print example.com's HTML.
 
 ```python
 import request
@@ -96,7 +96,7 @@ Now you can use your BeautifulSoup object’s find method to search for differen
 print(soup.find('p'))
 ```
 
-In this case, you searched the HTML for ‘p’ tags, which stands for paragraph and BeautifulSoup returned the first result.
+In this case, you searched the HTML for `p` tags, which stands for paragraph, and BeautifulSoup returned the first result.
 
 ![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
 
