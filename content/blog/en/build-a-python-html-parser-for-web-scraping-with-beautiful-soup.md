@@ -54,7 +54,7 @@ Before we get any further, here is a quick primer on HTML (if you are already fa
 
 ![Example.com](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/example.com.png)
 
-The website has “Example Domain” at the top as a header (which means it is in a  large font and in bold). Underneath “Example Domain” is a paragraph of text followed by a link. 
+The website has “Example Domain” at the top as a header (which means it is in a  large font and bold). Underneath “Example Domain” is a paragraph of text followed by a link. 
 
 Here is the HTML for this website.
 
