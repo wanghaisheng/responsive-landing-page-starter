@@ -37,7 +37,7 @@ Although web scraping is helpful in many situations, it does have some problems.
 
 Web scraping can also be against the terms of service of certain websites, so it is important to read a website's terms of service before scraping data from it. 
 
-If a website allows you to scrape data from it in their terms of service, scraping a website’s data still costs money for the website (because you are consuming its resources), so here are a few things to keep in mind as best practices when you are scraping data: 
+If a website allows you to scrape data from it, scraping a website’s data still costs money for the website (because you are consuming its resources), so here are a few things to keep in mind as best practices when you are scraping data: 
 
 1. Don’t scrape data more often than you need to. 
 2. Cache data when you can. 
