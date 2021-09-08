@@ -189,7 +189,7 @@ print(result)
 
 ```
 
-
+All you have to do is pass in the name of the class to `find` with this code: `class_="title is-1"`. 
 
 ## Regular Expressions
 
