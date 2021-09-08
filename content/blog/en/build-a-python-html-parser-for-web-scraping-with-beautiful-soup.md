@@ -94,10 +94,136 @@ soup = BeautifulSoup(page.content, "html.parser")
 
 Now you can use your BeautifulSoup object’s find method to search for different tags in the HTML. The find method accepts the name of a tag as a parameter and returns all the tags that match.   
 
-
-
+```python
 print(soup.find('p'))
-
-
+```
 
 In this case, you searched the HTML for ‘p’ tags, which stands for paragraph and BeautifulSoup returned the first result.
+
+![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
+
+The text “This domain is for use…” is in a <p> tag, so in this case, your code returns that text. 
+
+The part of the example.com website that says “Example Domain” is in a `<h1>` tag. To scrape “Example Domain,” you can pass in `h1` to find_all instead of `p`.
+
+```python
+print(soup.find(“h1”))
+```
+
+Now, your code should print this: `[<h1>Example Domain</h1>]`.
+
+The last piece of information on example.com is the link at the end that says “More information…” to grab this final piece of information, you simply need to search for an `a` tag. 
+
+```python
+print(soup.find(“a”))
+```
+
+Now when you run your code, it should return the link like this: 
+
+`[<a href="https://www.iana.org/domains/example">More information...</a>]`
+
+## Scrape More Data
+
+Let’s take a look at how to scrape even more data from a website. 
+
+When you are using your web browser, and you have multiple tabs open, each tab has the name of the website. 
+
+Web developers define a website’s title in a `<title>` tag. You can get a website’s title like this: 
+
+```python
+import requests
+
+from bs4 import BeautifulSoup
+
+
+
+URL = "https://example.com"
+
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, "html.parser")
+
+print (soup.title.get_text())
+```
+
+When you run this code, Python should print “Example Domain.”
+
+## Regular Expressions
+
+If you want to get fancier with your web scraping, you can use regular expressions. A regular expression is a sequence of characters that define a search pattern. 
+
+For example, you can define a regular expression that searches for numbers in a string. Python has a built-in library called re you can use to define them. Here is how to use re to search for numbers in a string.
+
+```python
+import re
+
+
+
+print(re.findall('\d+', 'hello 1 hello 2 hello 3'))
+
+
+
+>> \[‘1’, ‘2’, ‘3’]
+```
+
+
+
+As you can see, this regular expression returned all of the numbers in the string `'hello 1 hello 2 hello 3'`. The regular expression that looks for digits is `'\d+'`. 
+
+Regular expressions are flexible: you can write regular expressions to match everything from broad patterns to specific ones. For example, here is how to match a regular expression that only matches strings that start with The and end with brown. 
+
+
+
+import re
+
+
+
+print(re.findall('^The.*brown$', 'The fox is brown'))
+
+
+
+In this case, Python prints the string because it starts with The and ends with brown.
+
+
+
+But if you changer the string to end with green, Python does not find a match: 
+
+
+
+import re
+
+
+
+print(re.findall('^The.*brown$', 'The fox is green))
+
+
+
+You can use regular expressions when you are scraping data from websites. Here is how: 
+
+
+
+import re
+
+import requests
+
+from bs4 import BeautifulSoup
+
+
+
+URL = "https://example.com"
+
+page = requests.get(URL)
+
+soup = BeautifulSoup(page.content, "html.parser")
+
+result = soup.find_all(re.compile("(head|div)"))
+
+print(result)
+
+
+
+This code uses a regular expression to return anything either in a <head> tag or a <div> tag.
+
+
+
+``
