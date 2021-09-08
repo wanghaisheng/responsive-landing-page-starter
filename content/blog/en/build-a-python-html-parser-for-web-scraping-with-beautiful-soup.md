@@ -70,7 +70,7 @@ To see its HTML, you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (
 
 ## Downloading a Website's HTML
 
-Alright, it is time to start building our web scraper! To start, we we will scrape all the data from [www.example.com](http://www.example.com). The first thing we need to do is get example.com's HTML. You can get a website's HTML by sending an HTTP request. An HTTP request is how your browser (or web scraper) gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but we will use a GET request to ask a website's server to send us its resources. Python has a built-in library called `requests` that lets you easily send an HTTP request. Here is how to use the `requests` library to send a GET request and print example.com's HTML.
+Alright, it is time to start building our web scraper! To start, we will scrape all the data from [www.example.com](http://www.example.com). The first thing we need to do is get example.com's HTML. You can get a website's HTML by sending an HTTP request. An HTTP request is how your browser (or web scraper) gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but we will use a GET request to ask a website's server to send us its resources. Python has a built-in library called `requests` that lets you easily send an HTTP request. Here is how to use the `requests` library to send a GET request and print example.com's HTML.
 
 ```python
 import requests
@@ -254,4 +254,4 @@ Congratulations! You know how to scrape a website! All of the public data from t
 
 Of course, there is more to web scraping than the basics I covered in this tutorial. If you want to learn more about web scraping, you can try a free Coursera course like [Using Python to Access Web Data](https://www.coursera.org/learn/python-network-data). You can also read through [BeautifulSoup’s documentation.](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) You can [learn more about regular expressions here](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285). Finally, you might want to [check out Scrapy](https://scrapy.org/), a popular Python framework for web scraping.\
 \
-Thanks for reading and best of luck with your web scraping!
+Thanks for reading, and best of luck with your web scraping!
