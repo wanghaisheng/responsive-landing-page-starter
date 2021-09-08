@@ -154,6 +154,19 @@ You can also search for tags by class and id. In HTML, you can assign a tag an i
 <h1 class="title is-1">Fake Python </h1>
 ```
 
+If you want to scrape this data, first you have to send an HTTP request to download the HTML. Then, you can use BeautifulSoup to look for a tag with the class "title is-1." Here is how to do it: 
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://realpython.github.io/fake-jobs/"
+page = requests.get(URL)
+soup = BeautifulSoup(page.content, "html.parser")
+result = soup.find(class_="title is-1")
+print(result)
+```
+
 
 
 ## Regular Expressions
