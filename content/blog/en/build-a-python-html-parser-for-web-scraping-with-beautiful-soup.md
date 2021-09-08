@@ -92,22 +92,33 @@ page = requests.get("https://example.com")
 soup = BeautifulSoup(page.content, "html.parser")
 ```
 
-Now you can use your `BeautifulSoup` object’s find method to search for different tags in the HTML. The find method accepts the name of a tag as a parameter and returns all the tags that match.   
+The `BeautifulSoup` class accepts the text is parsing as a parameter and a string letting it know what the text is. In this case, the text represents HTML, so we pass in `html.parser`.    
+
+Now you can use your `BeautifulSoup` object’s `find` method to search for different tags in the HTML. The `find` method accepts the name of a tag as a parameter and returns all the tags that match.   
 
 ```python
+import requests
+from bs4 import BeautifulSoup
+
+
+page = requests.get("https://example.com")
+soup = BeautifulSoup(page.content, "html.parser")
 print(soup.find('p'))
+
+>> <p>This domain is for use in illustrative examples in documents. You may use this
+    domain in literature without prior coordination or asking for permission.</p>
 ```
 
-In this case, you searched the HTML for `p` tags, which stands for paragraph, and BeautifulSoup returned the first result.
+In this case, you searched the HTML for `p` tags, which stands for paragraph, and BeautifulSoup returned everything it found in `<p>` tags. 
 
 ![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
-
-The text “This domain is for use…” is in a `<p>` tag, so in this case, your code returns that text. 
 
 The part of the example.com website that says “Example Domain” is in an `<h1>` tag. To scrape “Example Domain,” you can pass in `h1` to `find` instead of `p`.
 
 ```python
-print(soup.find(“h1”))
+print(soup.find("h1"))
+
+>> <h1>Example Domain</h1>
 ```
 
 Now, your code should print this: `[<h1>Example Domain</h1>]`.
