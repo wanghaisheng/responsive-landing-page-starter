@@ -139,9 +139,7 @@ print(soup.find("a"))
 >> <a href="https://www.iana.org/domains/example">More information...</a>
 ```
 
-Now when you run your code, it should return the link like this: 
-
-`[<a href="https://www.iana.org/domains/example">More information...</a>]`
+Now when you run your code, it should return the link.
 
 ## Scrape More Data
 
