@@ -42,9 +42,9 @@ If a website allows you to scrape data from it in their terms of service, scrapi
 
 ## Web Scraping VS. APIs
 
-Before you build a web scraper, you may want to investigate if the data source you are scraping from has an API. An API is an application programming interface, and it allows two programs to talk to each other. For example, at Vonage, we have an SMS API that allows you to programmatically send an SMS message. We also have a video API that lets you easily add video streaming to your website and a bunch of other communication APIs. 
+Before you build a web scraper, you may want to investigate if the data source you are scraping from has an API. An API is an application programming interface, and it allows two programs to talk to each other. For example, at Vonage, we have an SMS API that allows you to [send an SMS message programmatically](https://www.vonage.com/communications-apis/). We also have a video API that lets you easily add video streaming to your website and a bunch of other communication APIs. 
 
-Many data sources offer APIs that give you access to their information without having to write a web scraper. For example, Rotten Tomatoes has an API you can use to get their movie ratings. There are several advantages to using Rotten Tomatoes API instead of scraping the data from their website yourself. The first is that you don’t have to worry about violating their terms of service. It is also much faster to get data from an API than to scrape it. Finally, Rotten Tomatoes API is managed by a team of developers, so you don’t have to worry about it breaking like a web scraper could.
+Many data sources offer APIs that give you access to their information without having to write a web scraper. For example, Rotten Tomatoes has an API you can use to get their movie ratings. There are several advantages to using Rotten Tomatoes API instead of scraping the data from their website yourself. The first is that you don’t have to worry about violating their terms of service. It is also much faster to get data from an API than to scrape it. Finally, a team of developers manages the Rotten Tomatoes API, so you don’t have to worry about it breaking like a web scraper could.
 
 ## What is HTML? 
 
