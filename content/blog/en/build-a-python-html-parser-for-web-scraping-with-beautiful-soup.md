@@ -124,7 +124,7 @@ Now when you run your code, it should return the link like this: 
 
 Let’s take a look at how to scrape even more data from a website. 
 
-When you are using your web browser, and you have multiple tabs open, each tab has the name of the website. 
+When you are using your web browser, and you have multiple tabs open, each tab has the website's name.
 
 Web developers define a website’s title in a `<title>` tag. You can get a website’s title like this: 
 
@@ -148,9 +148,9 @@ When you run this code, Python should print “Example Domain.”
 
 ## Regular Expressions
 
-If you want to get fancier with your web scraping, you can use regular expressions. A regular expression is a sequence of characters that define a search pattern. 
+If you want to get fancier with your web scraping, you can use regular expressions. A regular expression is a sequence of characters that define a search pattern. 
 
-For example, you can define a regular expression that searches for numbers in a string. Python has a built-in library called re you can use to define them. Here is how to use re to search for numbers in a string.
+Python has a built-in library called re you can use to define them. For example, you can define a regular expression that searches for numbers in a string. Here is how to use re to search for numbers in a string.
 
 ```python
 import re
@@ -218,6 +218,10 @@ This code uses a regular expression to return anything either in a `<head>` tag 
 
 ## Final Thoughts
 
-Congratulations! You know how to scrape a website! All of the public data from the web is now at your fingertips. Of course, as we discussed earlier, web scraping does have some problems, so before you commit to scraping data, it is best to see if the data source provides an API first. If they do not provide one, and their terms of service allow it, you can now scrape any data you need. Of course, there is more to web scraping than the basics I covered in this tutorial. If you want to learn more about web scraping you can try a free Coursera course like [Using Python to Access Web Data](https://www.coursera.org/learn/python-network-data). You can also read through BeautifulSoup’s documentation, Finally, you might want to check out Scrapy, a popular Python framework for web scraping.
+Congratulations! You know how to scrape a website! All of the public data from the web is now at your fingertips. Of course, as we discussed earlier, web scraping does have some problems, so before you commit to scraping data, it is best to see if the data source provides an API first. If they do not provide one, and their terms of service allow it, you can now scrape any data you need. 
+
+Of course, there is more to web scraping than the basics I covered in this tutorial. If you want to learn more about web scraping, you can try a free Coursera course like [Using Python to Access Web Data](https://www.coursera.org/learn/python-network-data). You can also read through BeautifulSoup’s documentation.
+
+ Finally, you might want to check out Scrapy, a popular Python framework for web scraping.
 
 ``
