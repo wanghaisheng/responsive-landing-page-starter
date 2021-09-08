@@ -141,7 +141,7 @@ Now when you run your code, it should return the link.
 
 Let’s take a look at how to scrape even more data from a website. 
 
-When you are using your web browser, and have multiple tabs open, each tab has the website's name.
+When you use your web browser, and have multiple tabs open, each tab has the website's name.
 
 Web developers define a website’s title in a `<title>` tag. You can get a website’s title like this: 
 
