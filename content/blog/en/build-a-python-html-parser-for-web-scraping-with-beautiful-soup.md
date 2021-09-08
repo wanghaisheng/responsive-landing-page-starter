@@ -180,9 +180,9 @@ import re
 print(re.findall('^The.*brown$', 'The fox is brown'))
 ```
 
-In this case, Python prints the string because it starts with The and ends with brown.
+In this case, Python prints the string because it starts with "The" and ends with "brown."
 
-But if you changer the string to end with green, Python does not find a match: 
+But if you changer the string to end with "green," Python does not find a match: 
 
 ```python
 import re
@@ -222,8 +222,8 @@ This code uses a regular expression to return anything either in a `<head>` tag 
 
 Congratulations! You know how to scrape a website! All of the public data from the web is now at your fingertips. Of course, as we discussed earlier, web scraping does have some problems, so before you commit to scraping data, it is best to see if the data source provides an API first. If they do not provide one, and their terms of service allow it, you can now scrape any data you need. 
 
-Of course, there is more to web scraping than the basics I covered in this tutorial. If you want to learn more about web scraping, you can try a free Coursera course like [Using Python to Access Web Data](https://www.coursera.org/learn/python-network-data). You can also read through BeautifulSoup’s documentation.
+Of course, there is more to web scraping than the basics I covered in this tutorial. If you want to learn more about web scraping, you can try a free Coursera course like [Using Python to Access Web Data](https://www.coursera.org/learn/python-network-data). You can also read through [BeautifulSoup’s documentation.](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 
- Finally, you might want to check out Scrapy, a popular Python framework for web scraping.
+ Finally, you might want to [check out Scrapy](https://scrapy.org/), a popular Python framework for web scraping.
 
 ``
