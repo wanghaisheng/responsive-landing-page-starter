@@ -161,7 +161,7 @@ print (soup.title.get_text())
 
 When you run this code, Python should print “Example Domain.”
 
-In HTML, you can assign a tag an id or a class, which allows you to give it style using CSS. You can search for tags by class and id when you are scraping a website. To see this in action, let's look at a website Real Python put together: [a fake job board site.](https://realpython.github.io/fake-jobs/) When you go there, you will see the top of the website says "Fake Python." When you look at the website's HTML, you will see that this HTML is what creates "Fake Python."
+In HTML, you can give a tag an id or a class, which allows you to give it style using CSS. You can search for tags by class and id when you are scraping a website. To see this in action, let's look at a website Real Python put together: [a fake job board site.](https://realpython.github.io/fake-jobs/) When you go there, you will see the top of the website says "Fake Python." When you look at the website's HTML, you will see that this HTML is what creates "Fake Python."
 
 ```phtml
 <h1 class="title is-1">Fake Python </h1>
