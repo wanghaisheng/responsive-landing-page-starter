@@ -206,7 +206,9 @@ print(re.findall('\d+', 'hello 1 hello 2 hello 3'))
 >> \[‘1’, ‘2’, ‘3’]
 ```
 
-As you can see, this regular expression returned all of the numbers in the string `'hello 1 hello 2 hello 3'`. The regular expression that looks for digits is `'\d+'`. 
+The `re` module's `findall` method accepts two parameters: the string to search and a regular expression.  The regular expression in this example is `'\d+'`.
+
+As you can see, this regular expression returned all of the numbers in the string `'hello 1 hello 2 hello 3'`. 
 
 Regular expressions are flexible: you can write regular expressions to match everything from broad patterns to specific ones. For example, here is how to match a regular expression that only matches strings that start with "The" and end with "brown." 
 
@@ -249,9 +251,7 @@ print(result)
 <title>Example Domain</title>...
 ```
 
-
-
-This code uses a regular expression to return anything either in a `<head>` tag or a `<div>` tag.
+In this code, you pass `soup.find_all` a regular expression that matches anything either in a `<head>` tag or a `<div>` tag.
 
 ## Final Thoughts
 
