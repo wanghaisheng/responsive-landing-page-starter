@@ -185,7 +185,7 @@ from bs4 import BeautifulSoup
 URL = "https://realpython.github.io/fake-jobs/"
 page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
-result = soup.find(class_="title is-1")
+result = soup.find(class_="title")
 print(result)
 
 >> <h1 class="title is-1">
@@ -193,7 +193,27 @@ print(result)
    </h1>
 ```
 
-All you have to do is pass in the name of the class to `find` with this code: `class_="title is-1"`. 
+All you have to do is pass in the name of the class to `find` with this code: `class_="title"`. 
+
+Up until now, w've been using `soup.find` to search our HTML, which returns the first result it finds. Beautiful Soup also has a method `soup.find_all` that returns every match. For example, you could use it to get all of the job titles on the Fake Python site. Here is how:
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+URL = "https://realpython.github.io/fake-jobs/"
+page = requests.get(URL)
+soup = BeautifulSoup(page.content, "html.parser")
+result = soup.find_all(class_="is-5")
+for html in result:
+    print(html)
+    
+>> <h2 class="title is-5">Senior Python Developer</h2>
+<h2 class="title is-5">Energy engineer</h2>
+<h2 class="title is-5">Legal executive</h2>...
+```
+
+
 
 ## Regular Expressions
 
