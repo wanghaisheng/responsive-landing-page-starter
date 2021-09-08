@@ -19,9 +19,9 @@ replacement_url: ""
 ---
 Hey there! I'm Karl, and I'm really excited to be joining the Developer Relations Team at Vonage as a Ruby Developer Advocate.
 
-Originally from North-West London, I now live in scenic North-West Wales, on the edge of Parc Cenedlaethol Eryri/ Snowdonia National Park. When I'm not working, I enjoy spending time exploring the mountains and coastlines of North Wales, and getting out climbing as much as I can.
+Originally from North-West London, I now live in scenic North-West Wales, on the edge of Parc Cenedlaethol Eryri/ Snowdonia National Park. When I'm not working, I enjoy spending time exploring the mountains and coastlines of North Wales and getting out climbing as much as I can.
 
-I've long been interested in technology, especially web tech, and built my first website way back when [tables for layout](https://thehistoryoftheweb.com/tables-layout-absurd/) was still a thing! That early interest eventually led to career in tech which has spanned design, development, developer education, and now developer relations.
+I've long been interested in technology, especially web tech, and built my first website way back when [tables for layout](https://thehistoryoftheweb.com/tables-layout-absurd/) was still a thing! That early interest eventually led to a career in tech which has spanned design, development, developer education, and now developer relations.
 
 I love learning, building stuff, and sharing knowledge, and I'm looking forward to combining all of that in my role as a Developer Advocate at Vonage.
 
