@@ -56,7 +56,9 @@ The image below is what your web browser produces when it displays this HTML. 
 
 ![Example.com site](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/example.com.png)
 
-To see this website live, you can head to [www.example.com](http://www.example.com). To see its HTML, you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (Cmd+U if you are using Firefox).
+To see this website live, you can head to [www.example.com](http://www.example.com). 
+
+To see its HTML, you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (Cmd+U if you are using Firefox).
 
 ## Downloading a Website's HTML
 
