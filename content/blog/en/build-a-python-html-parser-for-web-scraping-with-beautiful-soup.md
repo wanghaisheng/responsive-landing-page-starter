@@ -108,7 +108,7 @@ In this case, you searched the HTML for ‘p’ tags, which stands for paragraph
 
 The text “This domain is for use…” is in a <p> tag, so in this case, your code returns that text. 
 
-The part of the example.com website that says “Example Domain” is in a <h1> tag. To scrape “Example Domain,” you can pass in “h1” to find_all instead of “p.”
+The part of the example.com website that says “Example Domain” is in a `<h1>` tag. To scrape “Example Domain,” you can pass in “h1” to find_all instead of “p.”
 
 ```python
 print(soup.find(“h1”))
