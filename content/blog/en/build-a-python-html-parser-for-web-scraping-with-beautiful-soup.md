@@ -62,7 +62,7 @@ To see its HTML, you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (
 
 ## Downloading a Website's HTML
 
-Alright, it is time to start building our web scraper! To start, we we will scrape all the data from [www.example.com](http://www.example.com). The first thing we need to do is get its HTML. You can get a website's HTML by sending an HTTP request. An HTTP request is how your browser (or web scraper) gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but you can use a GET request to ask a website's server to send you its resources. Python has a built-in library called `requests` that lets you easily send an HTTP request. Here is how to use the `request` library to send a GET request and print example.com's HTML.
+Alright, it is time to start building our web scraper! To start, we we will scrape all the data from [www.example.com](http://www.example.com). The first thing we need to do is get its HTML. You can get a website's HTML by sending an HTTP request. An HTTP request is how your browser (or web scraper) gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but you can use a GET request to ask a website's server to send you its resources. Python has a built-in library called `requests` that lets you easily send an HTTP request. Here is how to use the `requests` library to send a GET request and print example.com's HTML.
 
 ```python
 import requests
@@ -70,6 +70,9 @@ import requests
 
 
 print(requests.get('http://example.com').content)
+
+>>b'<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n\n    <meta charset="utf-8" />\n    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />\n    <meta name="viewport" content="width=device-width, initial-scale=1" />\n    <style type="text/css">\n    body {\n        background-color: #f0f0f2;\n        margin: 0;\n        padding: 0;\n        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;\n        \n    }\n    div {\n        width: 600px;\n        margin: 5em auto;\n        padding: 2em;\n        background-color: #fdfdff;\n        border-radius: 0.5em;\n        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);\n    }\n    a:link, a:visited {\n        color: #38488f;\n        text-decoration: none;\n    }\n    @media (max-width: 700px) {\n        div {\n            margin: 0 auto;\n            width: auto;\n        }\n    }\n    </style>    \n</head>\n\n<body>\n<div>\n    <h1>Example Domain</h1>\n    <p>This domain is for use in illustrative examples in documents. You may use this\n    domain in literature without prior coordination or asking for permission.</p>\n    <p><a href="https://www.iana.org/domains/example">More information...</a></p>\n</div>\n</body>\n</html>\n'
+
 ```
 
 
