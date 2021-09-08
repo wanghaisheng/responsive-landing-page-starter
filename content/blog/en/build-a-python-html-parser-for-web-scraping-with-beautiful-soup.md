@@ -100,7 +100,7 @@ page = requests.get("https://example.com")
 soup = BeautifulSoup(page.content, "html.parser")
 ```
 
-The `BeautifulSoup` class accepts the text it is parsing as a parameter and a string letting it know what the text is. In this case, the text represents HTML, so we pass in `html.parser`.    
+The `BeautifulSoup` class accepts the text it is parsing as a parameter and a string letting it know what the text is. In this case, the text represents HTML, so we pass in `"html.parser"`.    
 
 Now you can use your `BeautifulSoup` object’s `find` method to search for different tags in the HTML. The `find` method accepts the name of a tag as a parameter and returns all the tags that match.   
 
