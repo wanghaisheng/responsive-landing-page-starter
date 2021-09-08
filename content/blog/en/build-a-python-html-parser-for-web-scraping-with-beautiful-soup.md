@@ -225,9 +225,9 @@ print(re.findall('^The.*brown$', 'The fox is brown'))
 >> ['The fox is brown']
 ```
 
-In this case, Python prints the string because it starts with "The" and ends with "brown."
+In this case, Python prints the string because it starts with "The" and ends with "brown." In this case, the regular expression is `'^The.*brown$'`. The caret at the beginning followed by "The" means match "The" at the start of a string. The .`*` means match anything. Next is `brown$`, which means the string must end with brown.  
 
-But if you changer the string to end with "green," Python does not find a match: 
+If you change the string to end with "green," Python does not find a match, because it does not fit the pattern you defined: 
 
 ```python
 import re
@@ -255,7 +255,7 @@ print(result)
 <title>Example Domain</title>...
 ```
 
-In this code, you pass `soup.find_all` a regular expression that matches anything either in a `<head>` tag or a `<div>` tag.
+In this code, you pass `soup.find_all` a regular expression that matches anything either in a `<head>` tag or a `<div>` tag. When you define a regular expression, the pip symbol means "or." 
 
 ## Final Thoughts
 
