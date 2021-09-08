@@ -50,9 +50,7 @@ Many data sources offer APIs that give you access to their information without h
 
 ## What is HTML? 
 
-Before we get any further, here is a quick primer on HTML (if you are already familiar with web development, feel free to skip this section). HTML stands for hyper-text markup language and is a markup language that gives websites their structure. For example, this is what HTML looks like:
-
-Take a look at this website:
+Before we get any further, here is a quick primer on HTML (if you are already familiar with web development, feel free to skip this section). HTML stands for hyper-text markup language and is a markup language that gives websites their structure. Take a look at this website:
 
 ![Example.com](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/example.com.png)
 
