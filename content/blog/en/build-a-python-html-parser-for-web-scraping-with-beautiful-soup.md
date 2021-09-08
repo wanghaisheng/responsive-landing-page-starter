@@ -50,11 +50,11 @@ Many data sources offer APIs that give you access to their information without h
 
 Before we get any further, here is a quick primer on HTML (if you are already familiar with web development, feel free to skip this section). HTML stands for hyper-text markup language and is a markup language that gives websites their structure. For example, this is what HTML looks like:![](https://lh6.googleusercontent.com/PwRNMCaDayPIg3daAZR1c3zNBqqAMNvOK8NxJLZNZgpFTTfxU7yJPuCe72akCzWMN447Hg_M5h42qSW_R3KFSJHvlM-GfIGtpkjB7I6Iwc0r6PH3VD7uqfdqRi5AWfzmBwjlUgkP=s0)As you can see, HTML consists of tags that tell your web browser to do something. In this case, your HTML tells your web browser to create a webpage that says “Example Domain” as a header (which means it is in a  large font). Underneath “Example Domain,” there is text inside of <p> tags. A <p> tag tells your browser to create a paragraph of text. Finally, the information inside the `<a>` tag tells your browser to create a link to https://www.iana.org/domains/example.
 
-This is what your web browser produces when it displays the HTML in the image above. 
+This image is what your web browser produces when it displays the HTML in the image above. 
 
 ![Example.com site](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/example.com.png)
 
-To see this website live, you can head to [www.example.com](http://www.example.com). To see its HTML you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (Cmd+U if you are using Firefox).
+To see this website live, you can head to [www.example.com](http://www.example.com). To see its HTML, you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (Cmd+U if you are using Firefox).
 
 ## Downloading a Website's HTML
 
