@@ -110,7 +110,7 @@ print(soup.find(“h1”))
 
 Now, your code should print this: `[<h1>Example Domain</h1>]`.
 
-The last piece of information on example.com is the link at the end that says “More information…” to grab this final piece of information, you simply need to search for an `a` tag. 
+The last piece of information on example.com is the link at the end that says “More information…” to grab this final piece of information, you need to search for an `a` tag. 
 
 ```python
 print(soup.find(“a”))
