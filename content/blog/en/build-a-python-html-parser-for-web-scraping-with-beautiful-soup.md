@@ -73,7 +73,7 @@ To see its HTML, you can press Ctrl+U in your browser or Cmd+Option+U on a Mac (
 
 In this tutorial, you will learn how to scrape data from the internet and parse it. What does parsing mean, though? Parsing means taking text and turning it into another format that allows you to extract meaningful information.
 
-For example, soon you will take HTML and feed it into Beautiful Soup. Once you've done that, you can look at the data in a variety of different ways. For example, you can get all of the links on the page, the text, or the images. 
+For example, soon you will take HTML and feed it into Beautiful Soup. Once you've done that, you can look at the data in a variety of different ways. You can get all of the links on the page, the text, or the images. 
 
 Beautiful Soup allows you to "understand" the data by making sense of HTML's different tags. That way, you can quickly get all of the information you need from a website. 
 
@@ -122,7 +122,7 @@ print(soup.find('p'))
 >> <p>This domain is for use in illustrative examples in documents...
 ```
 
-In this case, you searched the HTML for `p` tags, which stands for paragraph, and BeautifulSoup returned everything it found in `<p>` tags. 
+In this case, you searched the HTML for `p` tags, which stands for paragraph, and BeautifulSoup returned everything in `<p>` tags. 
 
 ![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
 
