@@ -92,7 +92,7 @@ page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 ```
 
-Now you can use your BeautifulSoup object’s find method to search for different tags in the HTML. The find method accepts the name of a tag as a parameter and returns all the tags that match.   
+Now you can use your `BeautifulSoup` object’s find method to search for different tags in the HTML. The find method accepts the name of a tag as a parameter and returns all the tags that match.   
 
 ```python
 print(soup.find('p'))
