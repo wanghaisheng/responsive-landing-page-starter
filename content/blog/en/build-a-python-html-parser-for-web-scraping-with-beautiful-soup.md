@@ -70,7 +70,9 @@ print(request.get('example.com').content)
 
 
 
-When you run this code, you should see example.com's HTML, which should look something like this:
+When you run this code, you should see example.com's HTML.
+
+
 
 ## Parsing HTML with Beautiful Soup
 
