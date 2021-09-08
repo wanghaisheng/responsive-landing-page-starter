@@ -48,7 +48,7 @@ Many data sources offer APIs that give you access to their information without h
 
 ## What is HTML? 
 
-Before we get any further, here is a quick primer on HTML (if you are already familiar with web development, feel free to skip this section). HTML stands for hyper-text markup language and is a markup language that gives websites their structure. For example, this is what HTML looks like:![](https://lh6.googleusercontent.com/PwRNMCaDayPIg3daAZR1c3zNBqqAMNvOK8NxJLZNZgpFTTfxU7yJPuCe72akCzWMN447Hg_M5h42qSW_R3KFSJHvlM-GfIGtpkjB7I6Iwc0r6PH3VD7uqfdqRi5AWfzmBwjlUgkP=s0)As you can see, HTML consists of tags that tell your web browser to do something. In this case, your HTML tells your web browser to create a webpage that says “Example Domain” as a header (which means it is in a  large font). Underneath “Example Domain,” there is text inside of <p> tags. A <p> tag tells your browser to create a paragraph of text. Finally, the information inside the `<a>` tag tells your browser to create a link to https://www.iana.org/domains/example.
+Before we get any further, here is a quick primer on HTML (if you are already familiar with web development, feel free to skip this section). HTML stands for hyper-text markup language and is a markup language that gives websites their structure. For example, this is what HTML looks like:![](https://lh6.googleusercontent.com/PwRNMCaDayPIg3daAZR1c3zNBqqAMNvOK8NxJLZNZgpFTTfxU7yJPuCe72akCzWMN447Hg_M5h42qSW_R3KFSJHvlM-GfIGtpkjB7I6Iwc0r6PH3VD7uqfdqRi5AWfzmBwjlUgkP=s0)As you can see, HTML consists of tags that tell your web browser to do something. In this case, your HTML tells your web browser to create a webpage that says “Example Domain” as a header (which means it is in a  large font). Underneath “Example Domain,” there is text inside of `<p>` tags. A `<p>` tag tells your browser to create a paragraph of text. Finally, the information inside the `<a>` tag tells your browser to create a link to https://www.iana.org/domains/example.
 
 This image is what your web browser produces when it displays the HTML in the image above. 
 
@@ -58,7 +58,7 @@ To see this website live, you can head to [www.example.com](http://www.example.c
 
 ## Downloading a Website's HTML
 
-Alright, it is time to start building our web scraper! In this tutorial, we will scrape all the data from [www.example.com](http://www.example.com). You can use Python's request library to send an HTTP request. An HTTP request is how your browser gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but you can use a GET request to ask a website's server to send you its resources. Here is how to use the request library to send a GET request and print example.com's HTML.
+Alright, it is time to start building our web scraper! In this tutorial, we will scrape all the data from [www.example.com](http://www.example.com). The first thing we need to do is get its HTML. You can get a website's HTML by sending an HTTP request. An HTTP request is how your browser gets the HTML, JavaScript, CSS, and anything else it needs from a website’s server. There are many types of HTTP requests to accomplish various tasks, but you can use a GET request to ask a website's server to send you its resources. Python has a built-in library called `request` that lets you easily send an HTTP request. Here is how to use the `request` library to send a GET request and print example.com's HTML.
 
 ```python
 import request
