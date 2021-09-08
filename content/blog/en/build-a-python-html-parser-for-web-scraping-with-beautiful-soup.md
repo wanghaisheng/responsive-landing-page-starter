@@ -195,7 +195,7 @@ print(result)
 
 All you have to do is pass in the name of the class to `find` with this code: `class_="title"`. 
 
-Up until now, w've been using `soup.find` to search our HTML, which returns the first result it finds. Beautiful Soup also has a method `soup.find_all` that returns every match. For example, you could use it to get all of the job titles on the Fake Python site. Here is how:
+Up until now, we've been using `soup.find` to search our HTML, which returns the first result it finds. Beautiful Soup also has a method `soup.find_all` that returns every match. For example, you could use it to get all of the job titles on the Fake Python site. Here is how:
 
 ```python
 import requests
