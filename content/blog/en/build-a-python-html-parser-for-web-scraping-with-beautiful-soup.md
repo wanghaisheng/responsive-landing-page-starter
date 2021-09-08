@@ -255,7 +255,7 @@ print(result)
 <title>Example Domain</title>...
 ```
 
-In this code, you pass `soup.find_all` a regular expression that matches anything either in a `<head>` tag or a `<div>` tag. When you define a regular expression, the pip symbol means "or." 
+In this code, you pass `soup.find_all` the regular expression `"(head|div)"`. This regular expression matches anything either in a `<head>` tag or a `<div>` tag. When you define a regular expression, the pip symbol means "or." 
 
 ## Final Thoughts
 
