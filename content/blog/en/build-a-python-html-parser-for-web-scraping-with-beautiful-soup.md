@@ -60,7 +60,7 @@ Here is the HTML for this website.
 
 ![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
 
-As you can see, HTML consists of tags. The tags tell your web browser to do something. In this case, the HTML tells your web browser to create a webpage that says "Example.com" at the top. The writing at the top is followed by a paragraph of text and a link. If you look at the HTML, you will see "Example.com" is surrounded by `<h1>` and `</h1>`. Many HTML tags, like this one, have an opening tag and a closing tag. In this case, your browser treats everything in between the tags as a header. 
+As you can see, HTML consists of tags. The tags tell your web browser to do something. In this case, the HTML tells your web browser to create a webpage that says "Example.com" at the top. After the writing at the top comes a paragraph of text and a link. If you look at the HTML, you will see "Example.com" is surrounded by `<h1>` and `</h1>`. Many HTML tags, like this one, have an opening tag and a closing tag. In this case, your browser treats everything in between the tags as a header. 
 
 Anything inside of `<p>` tags is a paragraph. Finally, an `<a>` tag is a link. In this case, the line of code `"ahref=https://www.iana.org/domains/example"` inside the `<a>` tag  tells your browser to create a link to https://www.iana.org/domains/example. All of the HTML in this example is wrapped in `<body>`, `<div>` and, `<html>` tags, which give your browser additional information. 
 
@@ -75,7 +75,7 @@ In this tutorial, you will learn how to scrape data from the internet and parse 
 
 For example, in this tutorial, you will take HTML and feed it into Beautiful Soup. Once you've done that, you can look at the data in a variety of different ways. For example, you can get all of the links on the page, the text, or the images. 
 
-Beautiful Soup allows you to "understand" the data by making sense of HTML's different tags. That way, you can easily get all of the information you need from a website. 
+Beautiful Soup allows you to "understand" the data by making sense of HTML's different tags. That way, you can quickly get all of the information you need from a website. 
 
 ## Downloading a Website's HTML
 
