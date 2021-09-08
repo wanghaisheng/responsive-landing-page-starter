@@ -176,7 +176,7 @@ In HTML, you can give a tag an id or a class, which allows you to give it style 
 <h1 class="title is-1">Fake Python </h1>
 ```
 
-If you want to scrape this data, first, you must send an HTTP request to download the HTML. Then, you can use Beautiful Soup to look for a tag with the class `"title is-1"`. Here is how to do it: 
+If you want to scrape this data, first, you must send an HTTP request to download the HTML. Then, you can use Beautiful Soup to look for a tag with the class `"title"`. Here is how to do it: 
 
 ```python
 import requests
