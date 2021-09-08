@@ -22,7 +22,7 @@ The internet contains the most extensive collection of data in human history. Al
 
 When you visit a website, your web browser sends an HTTP request to the website’s server, asking for the resources your browser needs to display the site. The server might respond with files containing HTML, CSS, JavaScript, and anything else your browser needs to display the site. HTML gives a website its structure, CSS gives it style, and JavaScript makes it interactive.
 
-When you build a web scraper, you write code that sends the HTTP request for you and uses the data without going to the website using your web browser. So a web scraper:
+When you build a web scraper, you write code that sends the HTTP request for you and uses the data without you having to go the website using your web browser. So a web scraper:
 
 1. Makes a request to a website.
 2. Gets the website’s HTML.
@@ -31,7 +31,7 @@ When you build a web scraper, you write code that sends the HTTP request for you
 
 ## Web Scraping Problems
 
-Although web scraping is helpful in many situations, it does have some problems. One problem is web scrapers often break. Web scrapers rely on a website’s content staying the same, so when a developer updates a site content, it can break your scraper, and you have to make changes to fix it. 
+Although web scraping is helpful in many situations, it does have some problems. One problem is web scrapers often break. Web scrapers rely on a website’s HTML staying the same, so when a developer updates a site, it can break your scraper, and you have to make changes to fix it. 
 
 Web scraping can also be against the terms of service of certain websites, so it is important to read a website's terms of service before scraping data from it. 
 
@@ -42,7 +42,7 @@ If a website allows you to scrape data from it in their terms of service, scrapi
 
 ## Web Scraping VS. APIs
 
-Before you build a web scraper, you may want to investigate if the data source you are scraping from has an API. An API is an application programming interface, and it allows two programs to talk to each other. For example, at Vonage, we have an SMS API that allows you to [send an SMS message programmatically](https://www.vonage.com/communications-apis/). We also have a video API that lets you easily add video streaming to your website and a bunch of other communication APIs. 
+Before you build a web scraper, you may want to investigate if the data source you are scraping from has an API. An API is an application programming interface, and it allows two programs to talk to each other. For example, at Vonage, we have an SMS API that allows you to send an SMS message programmatically. We also have a video API that lets you easily add video streaming to your website and a bunch of [other communication APIs](https://www.vonage.com/communications-apis/). 
 
 Many data sources offer APIs that give you access to their information without having to write a web scraper. For example, Rotten Tomatoes has an API you can use to get their movie ratings. There are several advantages to using Rotten Tomatoes API instead of scraping the data from their website yourself. The first is that you don’t have to worry about violating their terms of service. It is also much faster to get data from an API than to scrape it. Finally, a team of developers manages the Rotten Tomatoes API, so you don’t have to worry about it breaking like a web scraper could.
 
