@@ -102,7 +102,7 @@ In this case, you searched the HTML for `p` tags, which stands for paragraph, an
 
 ![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
 
-The text “This domain is for use…” is in a <p> tag, so in this case, your code returns that text. 
+The text “This domain is for use…” is in a `<p>` tag, so in this case, your code returns that text. 
 
 The part of the example.com website that says “Example Domain” is in a `<h1>` tag. To scrape “Example Domain,” you can pass in `h1` to find_all instead of `p`.
 
@@ -152,7 +152,7 @@ When you run this code, Python should print “Example Domain.”
 
 If you want to get fancier with your web scraping, you can use regular expressions. A regular expression is a sequence of characters that define a search pattern. 
 
-Python has a built-in library called re you can use to define them. For example, you can define a regular expression that searches for numbers in a string. Here is how to use re to search for numbers in a string.
+Python has a built-in library called `re` you can use to define them. For example, you can define a regular expression that searches for numbers in a string. Here is how to use re to search for numbers in a string.
 
 ```python
 import re
@@ -170,7 +170,7 @@ print(re.findall('\d+', 'hello 1 hello 2 hello 3'))
 
 As you can see, this regular expression returned all of the numbers in the string `'hello 1 hello 2 hello 3'`. The regular expression that looks for digits is `'\d+'`. 
 
-Regular expressions are flexible: you can write regular expressions to match everything from broad patterns to specific ones. For example, here is how to match a regular expression that only matches strings that start with The and end with brown. 
+Regular expressions are flexible: you can write regular expressions to match everything from broad patterns to specific ones. For example, here is how to match a regular expression that only matches strings that start with "The" and end with "brown." 
 
 ```python
 import re
