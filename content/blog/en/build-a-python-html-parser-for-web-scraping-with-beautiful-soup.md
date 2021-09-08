@@ -247,7 +247,7 @@ print(re.findall('^The.*brown$', 'The fox is brown'))
 
 In this case, Python prints the string because it starts with "The" and ends with "brown." In this case, the regular expression is `'^The.*brown$'`. The caret at the beginning followed by "The" means match "The" at the start of a string. The .`*` means match anything. Next is `brown$`, which means the string must end with brown.  
 
-If you change the string to end with "green," Python does not find a match, because it does not fit the pattern you defined: 
+If you change the string to end with "green," Python does not find a match because it does not fit the pattern you defined: 
 
 ```python
 import re
