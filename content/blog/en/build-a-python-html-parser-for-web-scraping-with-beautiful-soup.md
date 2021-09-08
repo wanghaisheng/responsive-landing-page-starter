@@ -126,7 +126,9 @@ Now, your code should print this: `[<h1>Example Domain</h1>]`.
 The last piece of information on example.com is the link at the end that says “More information…” to grab this final piece of information, you need to search for an `a` tag. 
 
 ```python
-print(soup.find(“a”))
+print(soup.find("a"))
+
+>> <a href="https://www.iana.org/domains/example">More information...</a>
 ```
 
 Now when you run your code, it should return the link like this: 
@@ -143,17 +145,13 @@ Web developers define a website’s title in a `<title>` tag. You can get a webs
 
 ```python
 import requests
-
 from bs4 import BeautifulSoup
 
 
 
 URL = "https://example.com"
-
 page = requests.get(URL)
-
 soup = BeautifulSoup(page.content, "html.parser")
-
 print (soup.title.get_text())
 ```
 
