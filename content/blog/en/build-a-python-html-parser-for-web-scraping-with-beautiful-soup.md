@@ -62,9 +62,9 @@ Here is the HTML for this website.
 
 ![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
 
-As you can see, HTML consists of tags that tell your web browser to do something. In this case, your HTML tells your web browser to create a webpage that says "Example.com" at the top, followed by a paragraph of text and a link. If you look at the HTML, you will see "Example.com" is surrounded by `<h1>` and `</h1>`. Many HTML tags, like this one, have an opening tag and a closing tag. In this case, your browser treats everything in between the tags as a header (the text is bigger and in bold). 
+As you can see, HTML consists of tags. The tags tell your web browser to do something. In this case, the HTML tells your web browser to create a webpage that says "Example.com" at the top, followed by a paragraph of text and a link. If you look at the HTML, you will see "Example.com" is surrounded by `<h1>` and `</h1>`. Many HTML tags, like this one, have an opening tag and a closing tag. In this case, your browser treats everything in between the tags as a header (the text is bigger and in bold). 
 
-paragraph of text is inside of `<p>` tags. A `<p>` tag tells your browser to create a paragraph of text. Finally, the information inside the `<a>` tag tells your browser to create a link to https://www.iana.org/domains/example. All of this information is wrapped in `<body>`, `<div>` and, `<html>` tags, which also give your browser additional information. 
+Anything inside of `<p>` tags is a paragraph. Finally, an `<a>` tag is a link. In this case, the line of code `ahref="https://www.example.com"` inside the `<a>` tag  tells your browser to create a link to https://www.iana.org/domains/example. All of the HTML in this example is wrapped in `<body>`, `<div>` and, `<html>` tags, which give your browser additional information. 
 
 To see this website live, you can head to [www.example.com](http://www.example.com). 
 
