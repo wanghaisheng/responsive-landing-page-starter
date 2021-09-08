@@ -153,6 +153,8 @@ URL = "https://example.com"
 page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 print (soup.title.get_text())
+
+>> Example Domain
 ```
 
 When you run this code, Python should print “Example Domain.”
