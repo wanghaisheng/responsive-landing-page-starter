@@ -50,11 +50,19 @@ Many data sources offer APIs that give you access to their information without h
 
 ## What is HTML? 
 
-Before we get any further, here is a quick primer on HTML (if you are already familiar with web development, feel free to skip this section). HTML stands for hyper-text markup language and is a markup language that gives websites their structure. For example, this is what HTML looks like:![](https://lh6.googleusercontent.com/PwRNMCaDayPIg3daAZR1c3zNBqqAMNvOK8NxJLZNZgpFTTfxU7yJPuCe72akCzWMN447Hg_M5h42qSW_R3KFSJHvlM-GfIGtpkjB7I6Iwc0r6PH3VD7uqfdqRi5AWfzmBwjlUgkP=s0)As you can see, HTML consists of tags that tell your web browser to do something. In this case, your HTML tells your web browser to create a webpage that says “Example Domain” as a header (which means it is in a  large font and in bold). Underneath “Example Domain,” there is text inside of `<p>` tags. A `<p>` tag tells your browser to create a paragraph of text. Finally, the information inside the `<a>` tag tells your browser to create a link to https://www.iana.org/domains/example. All of this information is wrapped in `<body>`, `<div>` and, `<html>` tags, which also give your browser additional information. 
+Before we get any further, here is a quick primer on HTML (if you are already familiar with web development, feel free to skip this section). HTML stands for hyper-text markup language and is a markup language that gives websites their structure. For example, this is what HTML looks like:
 
-The image below is what your web browser produces when it displays this HTML. 
+Take a look at this website:
 
-![Example.com site](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/example.com.png)
+![Example.com](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/example.com.png)
+
+The website has “Example Domain” at the top as a header (which means it is in a  large font and in bold). Underneath “Example Domain” is a paragraph of text followed by a link. 
+
+Here is the HTML for this website.
+
+![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
+
+As you can see, HTML consists of tags that tell your web browser to do something. In this case, your HTML tells your web browser to create a webpage that says "Example.com" at the top, followed by a paragraph of text and a link. If you look at the HTML, you will see the  paragraph of text is inside of `<p>` tags. A `<p>` tag tells your browser to create a paragraph of text. Finally, the information inside the `<a>` tag tells your browser to create a link to https://www.iana.org/domains/example. All of this information is wrapped in `<body>`, `<div>` and, `<html>` tags, which also give your browser additional information. 
 
 To see this website live, you can head to [www.example.com](http://www.example.com). 
 
@@ -176,6 +184,11 @@ page = requests.get(URL)
 soup = BeautifulSoup(page.content, "html.parser")
 result = soup.find(class_="title is-1")
 print(result)
+
+>> <h1 class="title is-1">
+        Fake Python
+   </h1>
+
 ```
 
 
@@ -190,15 +203,10 @@ Python has a built-in library called `re` you can use to define them. For exampl
 import re
 
 
-
 print(re.findall('\d+', 'hello 1 hello 2 hello 3'))
-
-
 
 >> \[‘1’, ‘2’, ‘3’]
 ```
-
-
 
 As you can see, this regular expression returned all of the numbers in the string `'hello 1 hello 2 hello 3'`. The regular expression that looks for digits is `'\d+'`. 
 
@@ -208,8 +216,9 @@ Regular expressions are flexible: you can write regular expressions to match eve
 import re
 
 
-
 print(re.findall('^The.*brown$', 'The fox is brown'))
+
+>> ['The fox is brown']
 ```
 
 In this case, Python prints the string because it starts with "The" and ends with "brown."
@@ -220,30 +229,26 @@ But if you changer the string to end with "green," Python does not find a match:
 import re
 
 
+print(re.findall('^The.*brown$', 'The fox is green'))
 
-print(re.findall('^The.*brown$', 'The fox is green))
+>> []
 ```
 
 You can use regular expressions when you are scraping data from websites. Here is how: 
 
 ```python
 import re
-
 import requests
-
 from bs4 import BeautifulSoup
 
 
-
-URL = "https://example.com"
-
-page = requests.get(URL)
-
+page = requests.get("https://example.com")
 soup = BeautifulSoup(page.content, "html.parser")
-
 result = soup.find_all(re.compile("(head|div)"))
-
 print(result)
+
+>> [<head>
+<title>Example Domain</title>...
 ```
 
 
