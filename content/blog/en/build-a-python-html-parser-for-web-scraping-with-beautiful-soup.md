@@ -85,15 +85,10 @@ We can now use Python's Beautiful Soup library to parse example.com's HTML. To d
 
 ```python
 import requests
-
 from bs4 import BeautifulSoup
 
 
-
-URL = "https://example.com"
-
-page = requests.get(URL)
-
+page = requests.get("https://example.com")
 soup = BeautifulSoup(page.content, "html.parser")
 ```
 
