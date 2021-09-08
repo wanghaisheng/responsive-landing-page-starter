@@ -172,36 +172,29 @@ As you can see, this regular expression returned all of the numbers in the strin
 
 Regular expressions are flexible: you can write regular expressions to match everything from broad patterns to specific ones. For example, here is how to match a regular expression that only matches strings that start with The and end with brown. 
 
-
-
+```python
 import re
 
 
 
 print(re.findall('^The.*brown$', 'The fox is brown'))
-
-
+```
 
 In this case, Python prints the string because it starts with The and ends with brown.
 
-
-
 But if you changer the string to end with green, Python does not find a match: 
 
-
-
+```python
 import re
 
 
 
 print(re.findall('^The.*brown$', 'The fox is green))
-
-
+```
 
 You can use regular expressions when you are scraping data from websites. Here is how: 
 
-
-
+```python
 import re
 
 import requests
@@ -219,10 +212,11 @@ soup = BeautifulSoup(page.content, "html.parser")
 result = soup.find_all(re.compile("(head|div)"))
 
 print(result)
+```
 
 
 
-This code uses a regular expression to return anything either in a <head> tag or a <div> tag.
+This code uses a regular expression to return anything either in a `<head>` tag or a `<div>` tag.
 
 
 
