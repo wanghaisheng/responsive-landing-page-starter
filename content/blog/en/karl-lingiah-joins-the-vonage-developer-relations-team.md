@@ -2,6 +2,7 @@
 title: Karl Lingiah Joins the Vonage Developer Relations Team
 description: Karl Lingiah joins the Vonage Developer Relations team as a Ruby
   Developer Advocate
+thumbnail: /content/blog/karl-lingiah-joins-the-vonage-developer-relations-team/karl-lingiah.png
 author: karl-lingiah
 published: true
 published_at: 2021-09-02T17:51:45.363Z
