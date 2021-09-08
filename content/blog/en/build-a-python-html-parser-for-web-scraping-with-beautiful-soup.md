@@ -20,11 +20,9 @@ The internet contains the most extensive collection of data in human history. Al
 
 ## How Web Scraping Works
 
-When you visit a website, your web browser sends an HTTP request to the website’s server asking for the resources your browser needs to display the site. The server might respond with files containing HTML, CSS, JavaScript, and anything else your browser needs to display the site. HTML gives a website its structure, CSS gives it style, and JavaScript makes it interactive.
+When you visit a website, your web browser sends an HTTP request to the website’s server, asking for the resources your browser needs to display the site. The server might respond with files containing HTML, CSS, JavaScript, and anything else your browser needs to display the site. HTML gives a website its structure, CSS gives it style, and JavaScript makes it interactive.
 
-When you build a web scraper, you write code that sends the HTTP request for you, without you having to go to the website using your web browser. Your program then extracts the data it needs and processes it. 
-
-So a web scraper:
+When you build a web scraper, you write code that sends the HTTP request for you without going to the website using your web browser. So a web scraper:
 
 1. Makes a request to a website.
 2. Gets the website’s HTML.
@@ -33,7 +31,7 @@ So a web scraper:
 
 ## Web Scraping Problems
 
-Although web scraping is useful in many situations, it does have some problems. One problem is web scrapers often break. Web scrapers rely on a website’s content staying the same, so when a developer updates a site content, it can break your scraper and you have to make changes to fix it. 
+Although web scraping is helpful in many situations, it does have some problems. One problem is web scrapers often break. Web scrapers rely on a website’s content staying the same, so when a developer updates a site content, it can break your scraper, and you have to make changes to fix it. 
 
 Web scraping can also be against the terms of service of certain websites, so it is important to read a website's terms of service before scraping data from it. 
 
