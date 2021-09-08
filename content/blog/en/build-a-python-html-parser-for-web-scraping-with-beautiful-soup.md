@@ -213,7 +213,7 @@ for html in result:
 <h2 class="title is-5">Legal executive</h2>...
 ```
 
-First, you use your browser to look at Fake Python's HTML. You discover all of the job titles have the class `"is-5"`. Then, all you have to do is search for any HTML that has that class using` find_all`, iterate through the results, and print them. 
+First, you need to use your browser to look at Fake Python's HTML. You discover all of the job titles have the class `"is-5"`. Then, all you have to do is search for any HTML that has that class using` find_all`, iterate through the results, and print them. 
 
 ## Regular Expressions
 
