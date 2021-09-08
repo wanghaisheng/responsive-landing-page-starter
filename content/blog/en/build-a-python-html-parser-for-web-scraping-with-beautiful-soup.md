@@ -24,7 +24,7 @@ In this tutorial, you will learn how to scrape data from the web using Python an
 
 When you visit a website, your web browser sends an HTTP request to the website’s server, asking for the resources your browser needs to display the site. The server might respond with files containing HTML, CSS, JavaScript, and anything else your browser needs to display the site. HTML gives a website its structure, CSS gives it style, and JavaScript makes it interactive.
 
-When you build a web scraper, you write code that sends the HTTP request for you and uses the data without you having to go the website using your web browser. So a web scraper:
+When you build a web scraper, you write code that sends the HTTP request for you and uses the data to accomplish something without you having to go the website using your web browser. So a web scraper:
 
 1. Makes a request to a website.
 2. Gets the website’s HTML.
@@ -154,7 +154,7 @@ You can also search for tags by class and id. In HTML, you can assign a tag an i
 <h1 class="title is-1">Fake Python </h1>
 ```
 
-If you want to scrape this data, first you have to send an HTTP request to download the HTML. Then, you can use BeautifulSoup to look for a tag with the class "title is-1." Here is how to do it: 
+If you want to scrape this data, first you have to send an HTTP request to download the HTML. Then, you can use Beautiful Soup to look for a tag with the class "title is-1." Here is how to do it: 
 
 ```python
 import requests
