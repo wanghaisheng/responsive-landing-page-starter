@@ -2,9 +2,10 @@
 title: Throttling Bulk SMS Campaigns with Python and Vonage SMS API
 description: "A guide to creating a bulk SMS campaign that includes throttling
   and sending in batches. "
+thumbnail: /content/blog/throttling-bulk-sms-campaigns-with-python-and-vonage-sms-api/python_sms-throttling_1200x600.png
 author: jekayinoluwa-olabemiwo
 published: true
-published_at: 2021-08-18T21:49:37.989Z
+published_at: 2021-09-09T09:18:55.397Z
 updated_at: 2021-08-18T21:49:38.022Z
 category: tutorial
 tags:
