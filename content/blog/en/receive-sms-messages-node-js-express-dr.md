@@ -78,7 +78,7 @@ const app = express();
 app.use(json());
 app.use(
     urlencoded({
-        extended: "true"
+        extended: true
     })
 );
 
@@ -110,7 +110,7 @@ function handleParams(params, res) {
       type: params.type,
       timestamp: params['message-timestamp']
     };
-    console.log("Success", incomingData);
+    console.log('Success', incomingData);
   }
   res.status(200).end();
 }
