@@ -69,7 +69,7 @@ Add `"type": "module"` to your `package.json` file to enable [import](https://de
 Create a `.js` file, instantiate Express, and listen at port 3000. Because you have set your ngrok to expose `localhost:3000`, you must stick with the same port.
 
 ```javascript
-import express from "express";
+import express from 'express';
 
 const { json, urlencoded } = express;
 
