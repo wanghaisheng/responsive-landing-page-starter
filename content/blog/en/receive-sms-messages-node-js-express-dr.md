@@ -40,7 +40,7 @@ $ ngrok http 3000
 
 ![running ngrok](/content/blog/how-to-receive-sms-messages-with-node-js-and-express/ngrok.png "running ngrok")
 
-Your local server (localhost:3000) now has a ngrok URL like `https://71f03962.ngrok.io` that can be used as your webhook endpoint during development. Also, notice the Web Interface URL—you can inspect, modify, and replay your requests here—more about this later!
+Your local server (localhost:3000) now has an ngrok URL like `https://71f03962.ngrok.io` that can be used as your webhook endpoint during development. Also, notice the Web Interface URL—you can inspect, modify, and replay your requests here—more about this later!
 
 ### Setting the Webhook Endpoint With Vonage
 
