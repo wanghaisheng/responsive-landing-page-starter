@@ -8,7 +8,7 @@ published_at: 2021-04-01T08:35:09.354Z
 updated_at: 2021-08-25T08:35:09.397Z
 category: tutorial
 tags:
-  - カンバセーション-api
+  - conversation-api
   - flutter
   - ios
 comments: true
