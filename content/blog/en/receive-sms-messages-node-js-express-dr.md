@@ -1,12 +1,12 @@
 ---
-title: How to Receive SMS Messages with Node.js and Express
+title: Receive SMS Messages with Node.js, Express, and the Vonage SMS API
 description: A step-by-step tutorial on how to receive SMS messages and write a
-  webhook with Node.js and ExpressJS using the Nexmo SMS API.
-thumbnail: /content/blog/receive-sms-messages-node-js-express-dr/sms-receive-node.png
+  webhook with Node.js and ExpressJS using the Vonage SMS API.
+thumbnail: ""
 author: tomomi
 published: true
 published_at: 2016-10-27T18:35:15.000Z
-updated_at: 2020-11-12T14:03:27.553Z
+updated_at: 2021-09-07T17:55:12.114Z
 category: tutorial
 tags:
   - express
@@ -14,23 +14,21 @@ tags:
   - sms-api
 comments: true
 redirect: ""
-canonical: https://www.nexmo.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr
-outdated: true
-replacement_url: https://learn.vonage.com/blog/2019/09/16/how-to-send-and-receive-sms-messages-with-node-js-and-express-dr
+canonical: ""
+outdated: false
+replacement_url: ""
 ---
-*This is the second article in a series of “Getting Started with Vonage and Node.js” tutorials.*
+> We've built this tutorial using the Vonage SMS API, Node.js, and Express
 
-In the previous article, you set up your Vonage account and learned [how to send SMS messages with Node.js](https://learn.vonage.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this article, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
+In the previous article, you set up your Vonage account and learned [how to send SMS messages with Node.js](https://learn.vonage.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/). In this blog post, you will learn about receiving an inbound SMS by implementing a webhook endpoint in Node.js using [Express](http://expressjs.com/).
 
-**View** **[the source code on GitHub](https://github.com/Vonage/vonage-node-code-snippets/blob/master/sms/receive-express.js)**
+**View** **[the source code on GitHub](https://github.com/nexmo-community/receive-sms-node)**
 
 ## Defining a Webhook Endpoint
 
-In order to receive an SMS from Vonage you need to associate a webhook endpoint (URL) with a virtual number that you have rented from Vonage. [Inbound Messages](https://docs.nexmo.com/messaging/sms-api#inbound) to that number are then sent to your webhook endpoint.
+To receive an SMS message from Vonage, you need to associate a webhook endpoint (URL) with a virtual number you have rented from Vonage. [Inbound Messages](https://developer.vonage.com/messaging/sms/guides/inbound-sms) to that number are then sent to your webhook endpoint.
 
-![A diagram showing how a SMS is received from a user](/content/blog/how-to-receive-sms-messages-with-node-js-and-express/diagram-receive.png "A diagram showing how a SMS is received from a user")
-
-While you are developing the webhook endpoint, it is a pain to keep deploying your work in progress. To make your life easier, let’s use **[ngrok](https://ngrok.com/)** to expose your webhook endpoint on your local machine as a public URL!
+While developing the webhook endpoint, it is a pain to keep deploying your work in progress. To make your life easier, let’s use **[ngrok](https://ngrok.com/)** to expose your webhook endpoint on your local machine as a public URL!
 
 ### Using ngrok
 
@@ -42,42 +40,55 @@ $ ngrok http 3000
 
 ![running ngrok](/content/blog/how-to-receive-sms-messages-with-node-js-and-express/ngrok.png "running ngrok")
 
-Your local server (localhost:3000) now has a ngrok URL, `https://71f03962.ngrok.io` that can be used as your webhook endpoint during development (also, notice the Web Interface URL - I will explain it later!).
+Your local server (localhost:3000) now has an ngrok URL like `https://71f03962.ngrok.io` that can be used as your webhook endpoint during development. Also, notice the Web Interface URL—you can inspect, modify, and replay your requests here—more about this later!
 
 ### Setting the Webhook Endpoint With Vonage
 
-Sign in to your Vonage account, and go to [Settings](https://dashboard.nexmo.com/settings). Scroll all way down to **API Settings** and fill out the **Callback URL for Inbound Message** with the ngrok URL with a route, let’s call it inbound, enter `https://71f03962.ngrok.io/inbound`, and let's set the **HTTP Method** to `POST` then save.
+Sign in to your Vonage account, go to [Settings](https://dashboard.nexmo.com/settings), and find the **SMS Settings** section.  
 
-![setting your webhook endpoint](/content/blog/how-to-receive-sms-messages-with-node-js-and-express/webhook-endpoint.png "setting your webhook endpoint")
+Vonage has two different APIs capable of sending and receiving SMS messages. You can only use one at a time because it will change the format of the webhooks you receive. This time, we're going with the `SMS API`, so make sure this is selected.  
+
+Next, fill out the **Inbound SMS webhooks** field using the ngrok URL with a route—let’s call it "inbound". Enter `https://YOUR_NGROK_URL/inbound`, set the **HTTP Method** to `POST` then click on **Save changes**.
+
+![setting your webhook endpoint](/content/blog/receive-sms-messages-with-node-js-express-and-the-vonage-sms-api/screenshot-2021-09-03-at-22.10.12.png "setting your webhook endpoint")
 
 Now all your incoming messages will go to the webhook (callback) URL, so let’s write some code with Node.js and Express!
 
-*Note: Above we're setting the webhook endpoint for SMS at an account level. But you can also set up unique webhook endpoints for each virtual number.*
+> Note: Above, we're setting the webhook endpoint for SMS at an account level. Alternatively, you can also set up unique webhook endpoints for each virtual number by clicking *Manage* next to one of [your virtual numbers](https://dashboard.nexmo.com/your-numbers) in the Vonage dashboard.
 
 ## Writing Webhook Endpoints With Express
 
-Now, handle the `POST` requests with [Express](https://expressjs.com/), so you will also need to install body-parser.
+Next, you'll handle the `POST` requests with [Express](https://expressjs.com/), so install it.
 
 ```shell
-$ npm install express body-parser --save
+$ npm install express
 ```
 
-Create a `.js` file, and instantiate express and listen the server to port 3000. Because you have set your ngrok to expose localhost:3000, you must stick with the same port.
+Add `"type": "module"` to your `package.json` file to enable [import](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import) statements.
+
+Create a `.js` file, instantiate Express, and listen at port 3000. Because you have set your ngrok to expose `localhost:3000`, you must stick with the same port.
 
 ```javascript
-'use strict';
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+import express from 'express';
 
-const server = app.listen(3000, () => {
-  console.log('Express server listening on port %d in %s mode', server.address().port, app.settings.env);
+const { json, urlencoded } = express;
+
+const app = express();
+
+app.use(json());
+app.use(
+    urlencoded({
+        extended: true
+    })
+);
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server listening at http://localhost:${PORT}`);
 });
 ```
 
-Now, create a HTTP POST route to handle the requests:
+Next, create an HTTP POST route to handle the requests:
 
 ```javascript
 app.post('/inbound', (req, res) => {
@@ -92,7 +103,6 @@ function handleParams(params, res) {
   if (!params.to || !params.msisdn) {
     console.log('This is not a valid inbound SMS message!');
   } else {
-    console.log('Success');
     let incomingData = {
       messageId: params.messageId,
       from: params.msisdn,
@@ -100,34 +110,25 @@ function handleParams(params, res) {
       type: params.type,
       timestamp: params['message-timestamp']
     };
-    res.send(incomingData);
+    console.log('Success', incomingData);
   }
   res.status(200).end();
 }
 ```
 
-Let's run the node code, and try sending some messages from your phone to your virtual number!
+Run the node code, and try sending some messages from your phone to your virtual number!
 
-![screenshot of a user sending a sms message from an Android phone](/content/blog/how-to-receive-sms-messages-with-node-js-and-express/screenshot-sending-sms.gif "screenshot of a user sending a sms message from an Android phone")
+![screenshot of a user sending an SMS message from an Android phone](/content/blog/how-to-receive-sms-messages-with-node-js-and-express/screenshot-sending-sms.gif "screenshot of a user sending an sms message from an Android phone")
 
 When you are tunneling your local app with ngrok, you can also inspect the request at <http://127.0.0.1:4040/> on your browser:
 
 ![ngrok inspector](/content/blog/how-to-receive-sms-messages-with-node-js-and-express/ngrok-inspector.png "ngrok inspector")
 
-Voilà, now you can see your SMS message has been sent, Vonage has received the message and passed it on to your express application via a webhook!
+Voilà, now you can see your SMS message has been sent. Vonage has received the message and passed it on to your Express application via a Webhook!
 
-If you take a look at the [code sample in GitHub](https://github.com/Vonage/vonage-node-code-snippets), you will notice the extra example - a persist data storage (like the HTML5 Local Storage, but for Node) and the incoming data is stored with each key (message ID) and values. That way, you can set up a `/inbound/:id` route parameter as named URL segment. For instance, when you access http://localhost:3000/inbound/080000001947F7B2, it returns:
-
-```shell
-{"messageId":"080000001947F7B2","from":"14159873202","text":"Yo!","type":"text","timestamp":"2016-10-26 17:47:26"}
-```
-
-In reality, you should set up a real DB, rather than the data storage.
-
-I hope you find this useful. Let me know, I'm [@girlie_mac on Twitter](https://twitter.com/girlie_mac).
+I hope you found this helpful. Let us know [@VonageDev on Twitter](https://twitter.com/VonageDev).
 
 ## References
 
-* Vonage SMS API <https://docs.nexmo.com/messaging/sms-api>
-* Vonage Webhooks <https://developer.nexmo.com/messaging/sms/overview>
-* Ngrok <https://ngrok.com/>
+* [Vonage SMS API](https://developer.vonage.com/messaging/sms/overview)
+* [Ngrok](https://ngrok.com/)
