@@ -7,7 +7,7 @@ author: filippos-kyprianou
 published: true
 published_at: 2021-02-24T13:53:54.940Z
 updated_at: ""
-category: announcement
+category: startup
 tags:
   - startups
 comments: true

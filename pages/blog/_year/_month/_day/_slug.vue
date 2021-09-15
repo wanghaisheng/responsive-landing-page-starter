@@ -47,6 +47,14 @@
               </nuxt-link>
             </h3>
             <Tags class="mt-2 text-sm font-medium" :tags="post.tags" />
+            <p
+              v-if="post.updated_at && post.updated_at > post.published_at"
+              class="flex space-x-1 text-sm text-gray-500"
+            >
+              <time datetime="2021-06-29">
+                Last updated on {{ post.updated_at | moment('MMM D, YYYY') }}
+              </time>
+            </p>
           </header>
           <main v-if="!post.redirect" class="px-4 my-4 md:px-6">
             <section v-if="post.spotlight" class="mb-4">

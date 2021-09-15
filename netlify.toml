@@ -43,3 +43,47 @@
   to = "/.netlify/functions/live-on-twitch"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/blog/tag/conversation-api/"
+  to = "/tags/conversation-api/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/voice/"
+  to = "/tags/voice-api/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/verify/"
+  to = "/tags/verify-api/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/sms/"
+  to = "/tags/sms-api/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/number-insight/"
+  to = "/tags/number-insight-api/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/messages/"
+  to = "/tags/messages-api/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/dispatch/"
+  to = "  /tags/dispatch-api/"
+  status = 301
+  force = true
+
+

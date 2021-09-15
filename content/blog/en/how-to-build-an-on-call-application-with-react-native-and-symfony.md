@@ -1402,7 +1402,7 @@ password: test_pass
 
 On successful login, the next screen you see is the Alerts screen. However, this will be empty right now because, in the database, there aren't any alerts.
 
-![An example of raising an alert with Postman](raise-alert.png)
+![An example of raising an alert with Postman](/content/blog/how-to-build-an-on-call-application-with-react-native-and-symfony/raise-alert.png)
 
 Now, retry logging into your mobile application. You'll see the new alert, and you'll also be able to click on this alert to be taken to a screen that shows more information. 
 

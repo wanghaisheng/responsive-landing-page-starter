@@ -83,7 +83,7 @@ nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/u
 
 ### Clone the iOS Project
 
-To get a local copy of the iOS project your terminal, enter `git clone git@github.com:nexmo-community/client-sdk-swift-voice-phone-to-app.git` in your terminal. Change directory into the `client-sdk-swift-voice-phone-to-app` folder by using `cd client-sdk-swift-voice-phone-to-app`. Then make sure that the dependencies of the project are up to date. You can do so by running `pod install`. Once complete, you can open the Xcode project by running using `open PhoneToApp.xcworkspace`.
+To get a local copy of the iOS project your terminal, enter `git clone git@github.com:nexmo-community/client-sdk-tutorials.git` in your terminal. Change directory into the `PhoneToApp` folder by using `cd client-sdk-tutorials/phone-to-app-swift/PhoneToApp`. Then make sure that the dependencies of the project are installed and up to date. You can do so by running `pod install`. Once complete, you can open the Xcode project by running using `open PhoneToApp.xcworkspace`.
 
 ## Set up Push Certificates
 
@@ -211,7 +211,7 @@ class ViewController: UIViewController {
     
     func displayIncomingCallAlert(call: NXMCall) {
         var from = "Unknown"
-        if let otherParty = call.otherCallMembers.firstObject as? NXMCallMember {
+        if let otherParty = call.allMembers.first {
             from = otherParty.channel?.from.data ?? "Unknown"
         }
         let alert = UIAlertController(title: "Incoming call from", message: from, preferredStyle: .alert)
@@ -399,7 +399,7 @@ func client(_ client: NXMClient, didChange status: NXMConnectionStatus, reason: 
 
 ## Handle Incoming Push Notifications
 
-With the device registered, it can now receive push notifications from Vonage. The Client SDK has functions for checking is a push notification payload is the expected payload and for processing the payload. You can view the JSON Vonage sends in the push payload on \[GitHub]https://github.com/nexmo-community/client-sdk-push-payload). When `processNexmoPushPayload` is called, it converts the payload into an NXMCall which is received on the `didReceive` function of the `NXMClientDelegate`.  Implement the functions on the `ClientManager` class alongside a local variable to store an incoming push: 
+With the device registered, it can now receive push notifications from Vonage. The Client SDK has functions for checking is a push notification payload is the expected payload and for processing the payload. You can view the JSON Vonage sends in the [push payload documentation](https://developer.nexmo.com/client-sdk/in-app-voice/guides/push-notification-payload.md). When `processNexmoPushPayload` is called, it converts the payload into an NXMCall which is received on the `didReceive` function of the `NXMClientDelegate`.  Implement the functions on the `ClientManager` class alongside a local variable to store an incoming push: 
 
 ```swift
 typealias PushInfo = (payload: PKPushPayload, completion: () -> Void)
@@ -477,7 +477,7 @@ import AVFoundation
 struct PushCall {
     var call: NXMCall?
     var uuid: UUID?
-    var answerBlock: (() -> Void)?
+    var answerAction: CXAnswerCallAction?
 }
 
 final class ProviderDelegate: NSObject {
@@ -517,18 +517,15 @@ extension ProviderDelegate: CXProviderDelegate {
     
     func provider(_ provider: CXProvider, perform action: CXAnswerCallAction) {
         NotificationCenter.default.post(name: .handledCallCallKit, object: nil)
+        configureAudioSession()
+        activeCall?.answerAction = action
+        
         if activeCall?.call != nil {
-            answerCall(with: action)
-        } else {
-            activeCall?.answerBlock = { [weak self] in
-                guard let self = self, self.activeCall != nil else { return }
-                self.answerCall(with: action)
-            }
+            action.fulfill()
         }
     }
     
     private func answerCall(with action: CXAnswerCallAction) {
-        configureAudioSession()
         activeCall?.call?.answer(nil)
         activeCall?.call?.setDelegate(self)
         activeCall?.uuid = action.callUUID
@@ -536,6 +533,17 @@ extension ProviderDelegate: CXProviderDelegate {
     }
     
     func provider(_ provider: CXProvider, perform action: CXEndCallAction) {
+        hangup()
+        action.fulfill()
+    }
+
+    func provider(_ provider: CXProvider, didActivate audioSession: AVAudioSession) {
+        assert(activeCall?.answerAction != nil, "Call not ready - see provider(_:perform:CXAnswerCallAction)")
+        assert(activeCall?.call != nil, "Call not ready - see callReceived")
+        answerCall(with: activeCall!.answerAction!)
+    }
+
+    func provider(_ provider: CXProvider, didDeactivate audioSession: AVAudioSession) {
         hangup()
     }
 
@@ -564,7 +572,7 @@ extension ProviderDelegate: CXProviderDelegate {
     @objc private func callReceived(_ notification: NSNotification) {
         if let call = notification.object as? NXMCall {
             activeCall?.call = call
-            activeCall?.answerBlock?()
+            activeCall?.answerAction?.fulfill()
         }
     }
 
@@ -581,11 +589,11 @@ extension ProviderDelegate: CXProviderDelegate {
 }
 ```
 
-When the CallKit UI answers the call, it calls the `CXAnswerCallAction` delegate function. If the device is locked, the Client SDK needs time to reinitialize, so the `answerCall` actions are stored in a closure. If the app is in the foreground, the call object is not nil; the call is ready to be answered. The `reportCall` function will be called from the `AppDelegate` class when an incoming push notification is received to tell the system to display the CallKit UI with the option to either pick up or reject the call. 
+When the CallKit UI answers the call, it calls the `CXAnswerCallAction` delegate function. If the device is locked, the Client SDK needs time to reinitialize, so the `CXAnswerCallAction` action is stored to be fulfilled later. Fulfilling a `CXAnswerCallAction` will notify CallKit that the device is ready to start the call and will activate the audio session and call the `didActivate` audio session function on the `CXProviderDelegate`. If the app is in the foreground, the call object is not nil; the call is ready to be answered so the `CXAnswerCallAction` is fulfilled.
 
-The `callReceived` function would be called after the push payload is processed so you will store it and call the `answerBlock` function if it is not nil. It will not be nil if the device has picked up the call before the Client SDK has not had enough time to set up and process the push notification payload.
+The `reportCall` function will be called from the `AppDelegate` class when an incoming push notification is received to tell the system to display the CallKit UI with the option to either pick up or reject the call. 
 
-The `handledCallCallKit` notification is sent so that the `ViewController` class knows that the call has been handled by CallKit UI and can dismiss the alert shown to pick up a call. Add an extension to keep track of the status of the ongoing call using the `NXMCallDelegate`:
+The `callReceived` function would be called after the push payload is processed so you will store it and fulfil the `CXAnswerCallAction`. The `handledCallCallKit` notification is sent so that the `ViewController` class knows that the call has been handled by CallKit UI and can dismiss the alert shown to pick up a call. Add an extension to keep track of the status of the ongoing call using the `NXMCallDelegate`:
 
 ```swift
 extension ProviderDelegate: NXMCallDelegate {
@@ -594,16 +602,16 @@ extension ProviderDelegate: NXMCallDelegate {
         hangup()
     }
     
-    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, with status: NXMCallMemberStatus) {
+    func call(_ call: NXMCall, didUpdate callMember: NXMMember, with status: NXMCallMemberStatus) {
         switch status {
-        case .canceled, .failed, .timeout, .rejected, .completed:
+        case .cancelled, .failed, .timeout, .rejected, .completed:
             hangup()
         default:
             break
         }
     }
     
-    func call(_ call: NXMCall, didUpdate callMember: NXMCallMember, isMuted muted: Bool) {}
+    func call(_ call: NXMCall, didUpdate callMember: NXMMember, isMuted muted: Bool) {}
 
     private func hangup() {
         if let uuid = activeCall?.uuid {
@@ -652,11 +660,11 @@ extension AppDelegate: PKPushRegistryDelegate {
 
 ## Try it out
 
-Build and Run (CMD + R) the project onto your iOS device, accept the microphone permissions, and lock the device. Then call the number linked to your Vonage Application from earlier. You will see the incoming call directly on your lock screen; then once you pick up it will go into the familiar iOS call screen: 
+Build and Run (CMD + R) the project onto your iOS device, accept the microphone permissions, and lock the device. Then call the number linked to your Vonage Application from earlier. You will see the incoming call directly on your lock screen; then once you pick up it will go into the familiar iOS call screen:
 
-![Incoming call on a locked screen](/content/blog/handling-voip-push-notifications-with-callkit/lockedcall.png)
+![Incoming call on a locked screen](/content/blog/handling-voip-push-notifications-with-callkit/loackedcallsm.png)
 
-![An active call in progress](/content/blog/handling-voip-push-notifications-with-callkit/activecall.png)
+![An active call in progress](/content/blog/handling-voip-push-notifications-with-callkit/activecallsm.png)
 
 If you check the call logs on the device, you will also see the call listed there.
 

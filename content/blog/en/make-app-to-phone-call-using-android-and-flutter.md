@@ -326,7 +326,7 @@ Open `MainActivity` class. Note that the Flutter plugin displays a hint to open 
 
 > NOTE: This happens because the Flutter project consists of the Android project and the iOS project.
 
-To listen for method calls originating from Flutter add `addFlutterChannelListener` method call inside `configureFlutterEngine` method:
+To listen for method calls originating from Flutter overide `configureFlutterEngine` and add `addFlutterChannelListener` method call inside `configureFlutterEngine` method:
 
 ```kotlin
 override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
