@@ -45,11 +45,14 @@
             anywhere else.
           </p>
           <p class="mb-2">
-            <strong>Well-written.</strong> Our standards are high, and we want
-            everything published on our blog to meet those standards. That said,
-            you don't have to be a professional writer to submit! If the post is
-            original, helpful and interesting, our editorial team is happy to
-            work with you to get it publication-ready.
+            <strong>Well-written.</strong> Before we can publish a post, it must
+            conform to our
+            <a
+              class="text-purple-dark"
+              href="https://learn.vonage.com/contributing/#writing-style-guide"
+              >style guide</a
+            >. We’re happy to help fine-tune, but submissions should be
+            proofread and need only minor editing.
           </p>
           <p class="mb-2">
             <strong>Code-driven. </strong> The result of your post should be
@@ -64,218 +67,6 @@
               class="text-purple-dark"
               >successfully published</a
             >
-          </p>
-
-          <h2 class="mt-4 mb-2 text-lg font-bold">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
-              />
-            </svg>
-
-            What We're Not Looking For
-          </h2>
-
-          <ul class="pl-6 mb-2 list-disc">
-            <li>Beginner-level tutorials on how to use Vonage APIs</li>
-            <li>Thought leadership articles</li>
-            <li>
-              Introduction to different frameworks, programming languages, and
-              modern development techniques
-            </li>
-            <li>
-              Articles on a broad topic such as trends in development or
-              anything that is not a step-by-step tutorial
-            </li>
-            <li>Articles about blogging or writing technical content</li>
-            <li>
-              Articles that have already been published on other platforms
-            </li>
-            <li>
-              Tutorials on topics that we have already covered. You can check
-              what we have already published on our
-              <a class="text-purple-dark" href="https://learn.vonage.com/"
-                >learning platform
-              </a>
-            </li>
-          </ul>
-
-          <h2 class="mt-4 mb-2 text-lg font-bold">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            How to Submit Your Idea
-          </h2>
-          <p class="mb-2">
-            You will need to submit a rough draft of your article as a Google
-            Doc. The draft should include:
-          </p>
-          <ul class="pl-6 mb-2 list-disc">
-            <li>Title</li>
-            <li>
-              Introduction: a paragraph that explains the scope of the tutorial
-              (What does the app do? What’s its purpose?)
-            </li>
-            <li>Prerequisites</li>
-            <li>Step by step outline</li>
-            <li>Conclusion</li>
-          </ul>
-          <p class="mb-2">
-            The more details you provide, the better feedback we can give you.
-          </p>
-          <p class="mb-2">The final draft should be around 2000 words</p>
-
-          <h2 class="mt-4 mb-2 text-lg font-bold">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            Before Submitting
-          </h2>
-          <p class="mb-2">
-            Before you begin working on your draft, we recommend that you:
-          </p>
-          <ul class="pl-6 mb-2 list-disc">
-            <li>
-              Browse our
-              <a class="text-purple-dark" href="https://learn.vonage.com/"
-                >Learning Platform</a
-              >
-              to make sure we haven’t already published a similar article
-            </li>
-            <li>
-              Read our
-              <a
-                class="text-purple-dark"
-                href="https://learn.vonage.com/contributing/#writing-style-guide"
-                >Style Guide</a
-              >
-            </li>
-            <li>
-              Check our
-              <a class="text-purple-dark" href="https://learn.vonage.com/"
-                >recent articles</a
-              >
-              for insight into structuring and formatting your piece.
-            </li>
-          </ul>
-          <p class="mb-2">
-            Please note that
-            <strong
-              >getting your article published will take time and commitment on
-              both sides.</strong
-            ><br />
-            Once accepted, our Developer Education team will work extensively
-            with you to make sure your article is at its best.
-          </p>
-          <p class="mb-2">
-            We expect high quality in the submissions we receive. We can only
-            approve drafts that show effort and thought, subjects that are
-            relevant, tutorials that use Vonage products and have professional
-            language. If you have dedicated time to your submission and have
-            taken the task seriously, we’re more than willing to work with you.
-          </p>
-
-          <h2 class="mt-4 mb-2 text-lg font-bold">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-              />
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-              />
-            </svg>
-            The Process
-          </h2>
-          <p class="mb-2">
-            When you send your idea via the submission form, our Developer
-            Education Team will evaluate it to see if it's a good fit for the
-            Vonage learning platform.
-          </p>
-          <p class="mb-2">
-            At the end of the month, we will get back to you with feedback on
-            whether the application was successful or not.
-          </p>
-          <p class="mb-2">
-            If we think your idea is in line with our needs and meets the
-            quality standard, we will confirm we have accepted it.
-          </p>
-          <p class="mb-2">
-            From the day of acceptance, we expect to receive your complete draft
-            within 3 weeks. However, we can be flexible on the deadline so, if
-            you need more time, that’s totally fine.
-          </p>
-          <p class="mb-2">
-            When you have sent the complete draft, one of our Developer
-            Educators will review it and leave comments, if needed.
-          </p>
-          <p class="mb-2">
-            When you have addressed the comments and the article is almost ready
-            to go live, we will confirm a publication date.
-          </p>
-          <p class="mb-2">
-            You will receive your payment the day that the article is published.
-          </p>
-          <p class="mb-2">
-            Please note that submission is not a guarantee that your work will
-            be published; we reserve the right to decline submissions that
-            aren't right for our learning platform. We may also be unable to
-            publish your work if your draft isn’t what we expected from your
-            submission, so please be as specific as possible!
           </p>
 
           <h2 class="mt-4 mb-2 text-lg font-bold">
@@ -310,24 +101,35 @@
               class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
             >
               <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="{2}"
-                d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.618 5.984A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016zM12 9v2m0 4h.01"
               />
             </svg>
-            Who Owns Your Work?
+
+            What We're Not Looking For
           </h2>
-          <p class="mb-2">
-            You do! You grant Vonage an unlimited license to publish and promote
-            your post, but you retain full ownership.
-          </p>
-          <p class="mb-2">
-            This means you are free to re-publish elsewhere (on your own Medium
-            page, for example). All we require is that you add a
-            <code>rel=canonical</code> tag to your post wherever possible,
-            naming the original post at Vonage the canonical URL.
-          </p>
+
+          <ul class="pl-6 mb-2 list-disc">
+            <li>Beginner-level tutorials on how to use Vonage APIs</li>
+            <li>Thought leadership articles</li>
+            <li>
+              Introduction to third-party frameworks, programming languages, and
+              modern development techniques
+            </li>
+            <li>Anything that is not a step-by-step tutorial</li>
+            <li>
+              Articles that have already been published on other platforms
+            </li>
+            <li>
+              Tutorials on topics that we have already covered. You can check
+              what we have already published on our
+              <a class="text-purple-dark" href="https://learn.vonage.com/"
+                >learning platform
+              </a>
+            </li>
+          </ul>
 
           <h2 class="mb-2 text-lg font-bold">
             <svg
@@ -348,21 +150,11 @@
           </h2>
           <p class="mb-2">
             We pay $500 USD per post. Your tutorial will be published on our
-            <a
-              class="text-purple-dark"
-              href="https://learn.vonage.com/
-"
+            <a class="text-purple-dark" href="https://learn.vonage.com/"
               >learning platform</a
             >
-            and may be shared in our newsletter or showcased during
-            <a
-              class="text-purple-dark"
-              href="https://www.youtube.com/playlist?list=PLWYngsniPr_nK-YY-YsUBNrD74adnsSnE
-
-"
-              >The Dev Lounge</a
-            >
-            stream.
+            and may be shared in our newsletter or showcased during one of our
+            streams.
           </p>
           <p class="mb-2">
             We make every effort to amplify the reach of each and every blog
@@ -386,6 +178,116 @@
           <p class="mb-2">
             Authors can now choose to pay it forward and donate their $500 to a
             charity making a difference in the technology industry.
+          </p>
+
+          <h2 class="mt-4 mb-2 text-lg font-bold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            How to Submit Your Article
+          </h2>
+          <p class="mb-2">
+            You will need to submit a rough draft of your article in Markdown.
+            The draft should be around 2000 words and include all the text, code
+            examples, and images a reader would need to follow along with the
+            tutorial.
+          </p>
+
+          <h2 class="mt-4 mb-2 text-lg font-bold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+              />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+              />
+            </svg>
+            The Process
+          </h2>
+          <p class="mb-2">
+            When you send your draft via the submission form, our Developer
+            Education Team will evaluate it to see if it's a good fit for the
+            Vonage learning platform.
+          </p>
+          <p class="mb-2">
+            At the end of the month, we will get back to you with feedback on
+            whether the application was successful or not.
+          </p>
+          <p class="mb-2">
+            If we think your article is in line with our needs and meets the
+            quality standard, we will confirm we have accepted it.
+          </p>
+          <p class="mb-2">
+            From the day of acceptance, we usually expect to have a final draft
+            within 3 weeks. When the final draft is almost ready to go live, we
+            will confirm a publication date.
+          </p>
+          <p class="mb-2">
+            You will receive your payment the day that the article is published.
+          </p>
+          <p class="mb-2">
+            Please note that submission is not a guarantee that your work will
+            be published; we reserve the right to decline submissions that
+            aren't right for our learning platform. We may also be unable to
+            publish your work if we are unable to get a final draft within three
+            weeks, so please set aside a few hours for revisions!
+          </p>
+
+          <h2 class="mt-4 mb-2 text-lg font-bold">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              class="inline-block mr-1 stroke-current stroke-2 icon-size text-blue"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="{2}"
+                d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"
+              />
+            </svg>
+            Who Owns Your Work?
+          </h2>
+          <p class="mb-2">
+            You do! You grant Vonage an unlimited license to publish and promote
+            your post, but you retain full ownership.
+          </p>
+          <p class="mb-2">
+            This means you are free to re-publish elsewhere (on your own Medium
+            page, for example). All we require is that you add a
+            <code>rel=canonical</code> tag to your post wherever possible,
+            naming the original post at Vonage the canonical URL.
           </p>
 
           <h2 class="mt-4 text-lg font-bold">
@@ -457,8 +359,8 @@
                 for="background"
                 class="block text-sm font-medium text-gray-700"
               >
-                Please write a few lines about your background and why you'd
-                like to write for Vonage
+                Please write a few lines about your background for your author
+                bio
               </label>
               <div class="mt-1">
                 <textarea
@@ -475,17 +377,16 @@
                 for="outline"
                 class="block text-sm font-medium text-gray-700"
               >
-                URL of the Google Doc containing your draft
+                Paste in your draft
               </label>
               <div class="mt-1">
-                <input
+                <textarea
                   id="outline"
                   name="outline"
-                  type="outline"
-                  autocomplete="outline"
+                  rows="10"
                   required
                   class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
-                />
+                ></textarea>
               </div>
             </div>
             <div>
@@ -523,24 +424,6 @@
                   <option>Voice API</option>
                   <option>Voice Webhooks</option>
                 </select>
-              </div>
-            </div>
-            <div>
-              <label
-                for="previous_content"
-                class="block text-sm font-medium text-gray-700"
-              >
-                Please link to a piece of content written by you
-              </label>
-              <div class="mt-1">
-                <input
-                  id="previous_content"
-                  name="previous_content"
-                  type="previous_content"
-                  autocomplete="previous_content"
-                  required
-                  class="block w-full px-3 py-2 placeholder-gray-400 border border-gray-300 rounded-md shadow-sm appearance-none focus:outline-none focus:ring-indigo-500 focus:border-purple sm:text-sm"
-                />
               </div>
             </div>
             <div>
@@ -586,7 +469,13 @@
                 class="text-purple"
                 >privacy policy</a
               >, which sets out how we use your data and the rights you have in
-              respect of your data.
+              respect of your data. Submitting your draft does not obligate us
+              to accept it for publication, and you retain sole rights to any
+              work submitted until we agree to publish it. You may withdraw a
+              submission from consideration at any time by
+              <a href="mailto:devrel@vonage.com" class="text-purple"
+                >notifying us</a
+              >
             </p>
             <div>
               <button
