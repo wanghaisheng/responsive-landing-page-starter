@@ -45,11 +45,14 @@
             anywhere else.
           </p>
           <p class="mb-2">
-            <strong>Well-written.</strong> Before we can publish a post, it must 
-            conform to our 
-            <a class="text-purple-dark" href="https://learn.vonage.com/contributing/#writing-style-guide">style 
-            guide</a>. We’re happy to help fine-tune, but 
-            submissions should be proofread and need only minor editing.
+            <strong>Well-written.</strong> Before we can publish a post, it must
+            conform to our
+            <a
+              class="text-purple-dark"
+              href="https://learn.vonage.com/contributing/#writing-style-guide"
+              >style guide</a
+            >. We’re happy to help fine-tune, but submissions should be
+            proofread and need only minor editing.
           </p>
           <p class="mb-2">
             <strong>Code-driven. </strong> The result of your post should be
@@ -115,9 +118,7 @@
               Introduction to third-party frameworks, programming languages, and
               modern development techniques
             </li>
-            <li>
-              Anything that is not a step-by-step tutorial
-            </li>
+            <li>Anything that is not a step-by-step tutorial</li>
             <li>
               Articles that have already been published on other platforms
             </li>
@@ -149,11 +150,11 @@
           </h2>
           <p class="mb-2">
             We pay $500 USD per post. Your tutorial will be published on our
-            <a
-              class="text-purple-dark"
-              href="https://learn.vonage.com/"
-              >learning platform</a>
-            and may be shared in our newsletter or showcased during one of our streams.
+            <a class="text-purple-dark" href="https://learn.vonage.com/"
+              >learning platform</a
+            >
+            and may be shared in our newsletter or showcased during one of our
+            streams.
           </p>
           <p class="mb-2">
             We make every effort to amplify the reach of each and every blog
@@ -171,7 +172,8 @@
             <a
               class="text-purple"
               href="https://www.nexmo.com/legacy-blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr"
-              >Spotlight for Donations</a>
+              >Spotlight for Donations</a
+            >
           </p>
           <p class="mb-2">
             Authors can now choose to pay it forward and donate their $500 to a
@@ -202,11 +204,11 @@
             How to Submit Your Article
           </h2>
           <p class="mb-2">
-            You will need to submit a rough draft of your article in Markdown. 
-            The draft should be around 2000 words and include all the text, code 
-            examples, and images a reader would need to follow along with the tutorial.</p>
-
-          
+            You will need to submit a rough draft of your article in Markdown.
+            The draft should be around 2000 words and include all the text, code
+            examples, and images a reader would need to follow along with the
+            tutorial.
+          </p>
 
           <h2 class="mt-4 mb-2 text-lg font-bold">
             <svg
@@ -246,8 +248,8 @@
           </p>
           <p class="mb-2">
             From the day of acceptance, we usually expect to have a final draft
-            within 3 weeks. When the final draft is almost ready
-            to go live, we will confirm a publication date.
+            within 3 weeks. When the final draft is almost ready to go live, we
+            will confirm a publication date.
           </p>
           <p class="mb-2">
             You will receive your payment the day that the article is published.
@@ -256,8 +258,8 @@
             Please note that submission is not a guarantee that your work will
             be published; we reserve the right to decline submissions that
             aren't right for our learning platform. We may also be unable to
-            publish your work if we are unable to get a final draft within three weeks, 
-            so please set aside a few hours for revisions!
+            publish your work if we are unable to get a final draft within three
+            weeks, so please set aside a few hours for revisions!
           </p>
 
           <h2 class="mt-4 mb-2 text-lg font-bold">
@@ -357,7 +359,8 @@
                 for="background"
                 class="block text-sm font-medium text-gray-700"
               >
-                Please write a few lines about your background for your author bio
+                Please write a few lines about your background for your author
+                bio
               </label>
               <div class="mt-1">
                 <textarea
@@ -466,10 +469,13 @@
                 class="text-purple"
                 >privacy policy</a
               >, which sets out how we use your data and the rights you have in
-              respect of your data. Submitting your draft does not obligate us to accept 
-              it for publication, and you retain sole rights to any work submitted until 
-              we agree to publish it. You may withdraw a submission from consideration at 
-              any time by <a href="mailto:devrel@vonage.com" class="text-purple">notifying us</a>
+              respect of your data. Submitting your draft does not obligate us
+              to accept it for publication, and you retain sole rights to any
+              work submitted until we agree to publish it. You may withdraw a
+              submission from consideration at any time by
+              <a href="mailto:devrel@vonage.com" class="text-purple"
+                >notifying us</a
+              >
             </p>
             <div>
               <button
