@@ -835,7 +835,7 @@ func makeCall() {
 
 # サマリ
 
-これでアプリケーションの構築に成功しました。これにより、`Vonage Client SDK`を使用して、モバイルアプリケーションから電話に電話をかける方法を学びました。プロジェクト全体については、\[GitHub]https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)をご覧ください。このプロジェクトには、さらに`Android`のネイティブコード（`android`フォルダ）が含まれており、Android上でもこのアプリを実行することができます。
+これでアプリケーションの構築に成功しました。これにより、`Vonage Client SDK`を使用して、モバイルアプリケーションから電話に電話をかける方法を学びました。プロジェクト全体については、[GitHub]  (https://github.com/nexmo-community/client-sdk-voice-app-to-phone-flutter)をご覧ください。このプロジェクトには、さらに`Android`のネイティブコード（`android`フォルダ）が含まれており、Android上でもこのアプリを実行することができます。
 
 その他の機能については、[他のチュートリアル](https://developer.vonage.com/client-sdk/tutorials) や[Vonage開発者センター](https://developer.vonage.com/)をご覧ください。
 
