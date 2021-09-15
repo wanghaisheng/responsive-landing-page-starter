@@ -177,7 +177,8 @@ https://tokbox.com/developer/guides/broadcast/live-streaming/
 * **アクティブスピーカー**：オーディオのみのセッションでは、オーディオレベルメーターを追加し、参加者が現在のアクティブスピーカーを把握できるように可視化することをお薦めします。また、ビデオでは、アクティブスピーカーの画面を拡大するように設定してみてください。UIの調整は定期的に送信されるaudioLevelUpdatedイベントを活用してください。詳細は以下をご覧ください。
   https://tokbox.com/developer/guides/customize-ui/js/ 
 * **Loudness detector（音量検知**：音量検知機能により、ミュートされているユーザーが話そうとしていることを特定することができます。この場合、audioLevelが0に設定された状態で、[audioLevelUpdated](https://tokbox.com/developer/sdks/js/reference/AudioLevelUpdatedEvent.html)イベントが発生します。つまり、この状況を避けるにはAudioContextの使用が必要になります。参考までに[ブログ](https://vonagedev.medium.com/how-to-create-a-loudness-detector-using-vonage-video-api-8dbcf93595a8)をご覧ください。
-* **Issue API(イシューAPI）のレポート**：https://tokbox.com/developer/guides/debugging/js/#report-issue。これにより、アプリケーションのエンドユーザーは、クライアントサイドより個々のイシュー（問題）IDを生成することができます。顧客はイシューIDを保存し、サポートのチケットを発行する際に使用することができます。イシューIDは、問題が報告された個々の接続IDを特定し、サポート部門による調査に役立てることができます。
+* **Issue API(イシューAPI）のレポート**：https://tokbox.com/developer/guides/debugging/js/#report-issue。
+これにより、アプリケーションのエンドユーザーは、クライアントサイドより個々のイシュー（問題）IDを生成することができます。顧客はイシューIDを保存し、サポートのチケットを発行する際に使用することができます。イシューIDは、問題が報告された個々の接続IDを特定し、サポート部門による調査に役立てることができます。
 
 ## 機能
 
