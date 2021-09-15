@@ -3,6 +3,7 @@ title: Generate and Assign Token Roles using the Video API | One Dev Minute
 description: In this video Amanda Cavallaro, our developer advocate shows you
   how the token roles allow you to identify users and change the permission
   roles using the video-api.
+thumbnail: /content/blog/generate-and-assign-token-roles-using-the-video-api-one-dev-minute/videoapi_waitingroom.png
 author: amanda-cavallaro
 published: true
 published_at: 2021-09-15T13:24:38.295Z
@@ -19,9 +20,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Welcome to One Dev Minute! This series is hosted by Vonage. The goal of this video series is to share knowledge in a bite-sized manner. 
+Welcome to[ One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY)! This series is hosted on the [Vonage Dev YouTube channel](https://www.youtube.com/vonagedev). The goal of this video series is to share knowledge in a bite-sized manner. 
 
-In this video Amanda Cavallaro, our developer advocate shows you how the token roles allow you to identify users and change the permission roles using the Vonage video API. 
+In this video, Amanda Cavallaro, our Developer Advocate, shows you how the token roles allow you to identify users and change the permission roles using the Vonage Video API. 
 
 <youtube id="1yzLSpwqrw8"></youtube>
 
