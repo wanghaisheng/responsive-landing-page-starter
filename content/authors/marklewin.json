@@ -1,7 +1,8 @@
 {
-  "team": true,
+  "team": false,
   "name": "Mark Lewin",
   "image_url": "https://secure.gravatar.com/avatar/7d0aec7fad5bd1aa361e411049ba5c3e?s=384&d=mm&r=g",
-  "bio": "Technical writer at Nexmo. Loves playing with and documenting APIs.",
-  "website_url": ""
+  "bio": "Former technical writer at Vonage. Loves playing with and documenting APIs.",
+  "website_url": "",
+  "alumni": true
 }

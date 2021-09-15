@@ -7,7 +7,7 @@ author: filippos-kyprianou
 published: true
 published_at: 2021-03-04T13:32:07.808Z
 updated_at: ""
-category: community
+category: startup
 tags:
   - startups
 comments: true
