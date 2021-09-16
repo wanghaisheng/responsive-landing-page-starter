@@ -2,9 +2,10 @@
 title: Build a Python HTML Parser for Web Scraping with Beautiful Soup
 description: "Learn how to parse HTML by building a web scraper using Beautiful
   Soup and Python. "
+thumbnail: /content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/python-html_soup_1200x600.png
 author: cory-althoff
 published: true
-published_at: 2021-09-08T01:08:28.326Z
+published_at: 2021-09-16T12:43:13.925Z
 updated_at: 2021-09-08T01:08:28.361Z
 category: tutorial
 tags:
