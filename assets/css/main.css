@@ -1,5 +1,5 @@
 @import '../fonts/spezia/spezia.css';
-@import 'fontsource-roboto/index.css';
+@import '@fontsource/roboto/index.css';
 
 body {
   @apply bg-grey-lighter;
