@@ -73,7 +73,8 @@ You will do the second step for requesting microphone permissions later on in th
 
 ## Create the Login Screen
 
-The Client SDK needs a JWT to connect to the Vonage servers. The iOS application needs to send a username to the `/auth` endpoint of the server. Create a new file called `Models.swift` by going to *File > New > File* (CMD + N). Similar to the backend, there is a struct for the request's body and a struct for server response.\
+The Client SDK needs a JWT to connect to the Vonage servers. The iOS application needs to send a username to the `/auth` endpoint of the server. Create a new file called `Models.swift` by going to *File > New > File* (CMD + N). Similar to the backend, there is a struct for the request's body and a struct for server response.
+
 Add the following structs to the `Models.swift` file:
 
 ```swift
@@ -127,11 +128,14 @@ final class RemoteLoader {
 }
 ```
 
-The `RemoteLoader` class consists of an error enum and a static `load` function. The load function is generic over two types, `T` and `U`, which conform to the `Codeable` protocol.\
-`T` represents the struct that will be used as the body of a request that this function sends. It is optional as some requests may not require a body. `U` represents the type of response struct.\
+The `RemoteLoader` class consists of an error enum and a static `load` function. The load function is generic over two types, `T` and `U`, which conform to the `Codeable` protocol.
+
+`T` represents the struct that will be used as the body of a request that this function sends. It is optional as some requests may not require a body. `U` represents the type of response struct.
+
 When making a network request, you supply the URL, body, and response type, and the `load` function returns a result. 
 
-Before you start building the user interface (UI) for the app, you will build a model class first. This class is used to separate the logic of the app from the view code. In this case, the model class will handle the Client SDK delegate calls and make the login network request.\
+Before you start building the user interface (UI) for the app, you will build a model class first. This class is used to separate the logic of the app from the view code. In this case, the model class will handle the Client SDK delegate calls and make the login network request.
+
 At the top of the `ContentView.swift` file, import the Client SDK and AVFoundation:
 
 ```swift
@@ -161,7 +165,8 @@ final class AuthModel: NSObject, ObservableObject, NXMClientDelegate {
 }
 ```
 
-The `@Published` property wrapper is how the UI will know when to react to changes from the model class; this is all handled for you as the class conforms to the `ObservedObject` protocol.\
+The `@Published` property wrapper is how the UI will know when to react to changes from the model class; this is all handled for you as the class conforms to the `ObservedObject` protocol.
+
 The `audioSession` property is used to request the microphone permissions. To complete requesting microphone permissions for the app, add the following function to the `AuthModel` class:
 
 ```swift
@@ -174,7 +179,7 @@ func requestPermissionsIfNeeded() {
 }
 ```
 
-This function will first check if the permissions have already been granted; if not, it will request them and print the outcome to the console.\
+This function will first check if the permissions have already been granted; if not, it will request them and print the outcome to the console.
 Next, you can add the function that makes the request to the backend server using the `RemoteLoader` class:
 
 ```swift
@@ -195,7 +200,7 @@ func login() {
 }
 ```
 
-Replace the `urlString` string with your ngrok URL. Once the response is received, the function will use the JWT to log in to the Client SDK and set the SDK's delegate to this class.\
+Replace the `urlString` string with your ngrok URL. Once the response is received, the function will use the JWT to log in to the Client SDK and set the SDK's delegate to this class.
 In a production environment, you would want to have the server also pass along information about the TTL of the JWT and perform further checks in the application about the validity of the JWT before performing actions that require the Client SDK. 
 
 The `NXMClientDelegate` is how the Client SDK communicates changes with the Vonage servers back to your application. Next, implement the required delegate functions in the `AuthModel` class:
@@ -338,7 +343,8 @@ final class RoomModel: ObservableObject {
 }
 ```
 
-This model class handles loading the list of rooms and sending the request to create a new room; replace the `urlString` string with your URL from ngrok. The UI will observe the `results` property.\
+This model class handles loading the list of rooms and sending the request to create a new room; replace the `urlString` string with your URL from ngrok. The UI will observe the `results` property.
+
 Next, create the UI that will observe this model class. Add the `RoomListView` struct to the same file:
 
 ```swift
@@ -423,17 +429,22 @@ final class ConversationModel: NSObject, ObservableObject, NXMConversationDelega
     @Published var members = [Member]()
     
     private var conversation: NXMConversation?
+    private let currentUsername: String? = NXMClient.shared.user?.name
         
-    func memberFrom(_ nxmMember: NXMMember) -> Member {
-        return Member(id: nxmMember.memberUuid, name: nxmMember.user.name)
+    func memberFrom(_ event: NXMMemberEvent) -> Member {
+        return Member(id: event.fromMemberId, name: event.embeddedInfo?.user.name ?? "")
     }
+
+    func memberFrom(_ nxmMemberSummary: NXMMemberSummary) -> Member {
+         return Member(id: nxmMemberSummary.memberUuid, name: nxmMemberSummary.user.name)
+     }
     
     func conversation(_ conversation: NXMConversation, didReceive event: NXMMemberEvent) {
-        let member = memberFrom(event.member)
+        let member = memberFrom(event)
         switch event.state {
         case .joined:
             guard !self.members.contains(member),
-                  NXMClient.shared.user?.name != member.name else { break }
+                  self.currentUsername != member.name else { break }
             self.members.append(member)
         case .left:
             guard self.members.contains(member),
@@ -466,18 +477,25 @@ final class ConversationModel: NSObject, ObservableObject, NXMConversationDelega
         NXMClient.shared.getConversationWithUuid(convID) { error, conversation in
             self.conversation = conversation
             self.conversation?.delegate = self
-            
-            self.conversation?.join { error, member in
-                DispatchQueue.main.async {
-                    self.loading = false
-                    self.members = self.conversation!.allMembers.map { self.memberFrom($0) }
-                    if !self.members.contains(where: { $0.name == member?.user.name }) {
-                        self.members.append(self.memberFrom(member!))
+
+            self.conversation?.join { [weak self] error, memberId in
+                guard let self = self else { return }
+                self.conversation?.getMembersPage(withPageSize: 100, order: .asc) { error, membersPage in
+                    DispatchQueue.main.async {
+                        guard let membersPage = membersPage else { return }
+                        self.members = membersPage.memberSummaries.map { self.memberFrom($0) }
+
+                        if !self.members.contains(where: { $0.name == self.currentUsername }) {
+                            if let id = memberId, let name = self.currentUsername {
+                                self.members.append(Member(id: id, name: name))
+                            }
+                        }
+                        self.loading = false
                     }
-                }
-                
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    self.conversation?.enableMedia()
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        self.conversation?.enableMedia()
+                    }
                 }
             }
         }
@@ -492,8 +510,8 @@ final class ConversationModel: NSObject, ObservableObject, NXMConversationDelega
 }
 ```
 
-The `loadConversation` function calls `getConversationWithUuid` on the Client SDK, returning the conversation object stored in a local property.\
-Now that you have the conversation object, you can join the conversation. Once that is complete, you can enable media for the user, allowing them to speak and hear other users in the conversation.\
+The `loadConversation` function calls `getConversationWithUuid` on the Client SDK, returning the conversation object stored in a local property.
+Now that you have the conversation object, you can join the conversation. Once that is complete, you can enable media for the user, allowing them to speak and hear other users in the conversation.
 `leaveConversation` does the opposite. It disables media, leaves the conversation, and calls a completion handler passed to the function.  
 
 The UI for this screen is split into two structs, a smaller view for a single member and a bigger view with a grid of members and handles navigation. Create the `MemberView` struct in the same file:
@@ -517,7 +535,7 @@ This is a circle with `Text` component beneath for the room member's name. Next 
 
 ```swift
 struct RoomView: View {
-    @ObservedObject var conversationModel = ConversationModel()
+    @StateObject var conversationModel = ConversationModel()
     @Environment(\.presentationMode) var presentationMode
     
     var convID: String

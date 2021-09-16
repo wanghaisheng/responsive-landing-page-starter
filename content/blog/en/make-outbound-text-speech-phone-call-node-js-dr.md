@@ -36,22 +36,22 @@ An Application:
 
 ![Vonage Voice API make call diagram](/content/blog/how-to-make-an-outbound-text-to-speech-phone-call-with-node-js/voice-make-call-diagram.png "Vonage Voice API make call diagram")
 
-### Creating a Vonage Application and Generating a Private Key
+### Creating a Nexmo Application and Generating a Private Key
 
 Your app needs to authenticate requests to the Voice API. Now, you will generate a private key with The Application API, which allows you to create [JSON Web Tokens](https://jwt.io/) (JWT) to make the requests.
 
-Let’s create an application with our command-line interface (CLI) tool, which will set up the app and generate a private key for you.
+Let’s create an application with the Nexmo command-line interface (CLI) tool, which will set up the app and generate a private key for you.
 
 First, make sure Node.js 4.0 or above is installed on your machine, then install `nexmo-cli` from npm:
 
 ```bash
-
+$ npm install nexmo-cli -g
 ```
 
-Then set up the CLI with [your Vonage API key and secret](https://dashboard.nexmo.com/settings):
+Then set up the CLI with [your Nexmo API key and secret](https://dashboard.nexmo.com/settings):
 
 ```bash
-
+$ nexmo setup API_KEY API_SECRET
 ```
 
 This will save your credentials to `~/.nexmorc`.
@@ -61,47 +61,73 @@ Once configured, you are going to create an application in your working director
 Along with the `app:create` command, you need to register an application name (let’s call it "My Voice App") as well as two webhook endpoints. You don’t need to specify the answer and event URLs for making calls, so use some placeholder values for now and leave the optional field blank:
 
 ```bash
-
+$ nexmo app:create "My Voice App" http://example.com/answer http://example.com/event --keyfile private.key
 ```
 
 When the application is successfully created, the CLI returns something like this:
 
 ```
-
+Application created: c6b78717-db0c-4b8b-9723-ee91400137cf
+Private Key saved to: private.key
 ```
 
 These are your application ID and private key (in this case, the **private.key** file is generated in the same directory). You will need both the App ID and the private key to make a phone call using the Voice API.
 
-You can edit the app info with the Vonage `app:update` command later as you need. To learn more about the CLI, read the doc on the [GitHub repo](https://github.com/Nexmo/nexmo-cli).
+You can edit the app info with the nexmo `app:update` command later as you need. To learn more about the CLI, read the doc on the [GitHub repo](https://github.com/Nexmo/nexmo-cli).
 
-### Making a Call with Vonage Voice API
+### Making a Call with Nexmo Voice API
 
-Now you are going to use the Voice API to make a call with the Vonage Node.js client library. If you have not followed the [Getting Started with SMS using Node.js](https://www.nexmo.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/) guide, first make sure Node.js is installed on your machine and install the Vonage Node.js library via npm:
+Now you are going to use the Voice API to make a call with the Nexmo Node.js client library. If you have not followed the [Getting Started with SMS using Node.js](https://www.nexmo.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/) guide, first make sure Node.js is installed on your machine and install the Nexmo Node.js library via npm:
 
 ```bash
-
+$ npn install nexmo --save
 ```
 
-Create a `.js` file, and initialize Vonage with your API credentials, as well as the Application ID and the private key you just created. The value for the `privateKey` has to be read from the saved file, not the path of the file:
+Create a `.js` file, and initialize Nexmo with your API credentials, as well as the Application ID and the private key you just created. The value for the `privateKey` has to be read from the saved file, not the path of the file:
 
 ```javascript
-
+const privateKey = require('fs').readFileSync(privateKeyFile);
+const nexmo = new Nexmo({
+apiKey: NEXMO_API_KEY,
+apiSecret: NEXMO_API_SECRET,
+applicationId: appId,
+privateKey: privateKey
+});
 ```
 
 Then, make a call with the `calls.create` function:
 
 ```javascript
-
+nexmo.calls.create({
+to: [{
+type: 'phone',
+number: process.argv[2] // take a phone number from command line argument
+}],
+from: {
+type: 'phone',
+number: FROM_NUMBER // your virtual number
+},
+answer_url: ['https://nexmo-community.github.io/ncco-examples/first_call_talk.json']
+}, (err, res) =>
+if(err) { console.error(err); }
+else { console.log(res); }
+});
 ```
 
 Let’s take a phone number to call as a command line argument. So when you run this code, run it with a number. The FROM_NUMBER should be your virtual number, which you can find in your [dashboard](https://dashboard.nexmo.com/your-numbers).
 
-The synthesized voice will read the text from your webhook endpoint at `answer_url`, which contains NCCO in JSON. You can use the example hosted on Vonage’s Community [GitHub repo](https://github.com/nexmo-community/ncco-examples/), or create your own and host it on a server (or even on GitHub Gist) that the Vonage API can reach.
+The synthesized voice will read the text from your webhook endpoint at `answer_url`, which contains NCCO in JSON. You can use the example hosted on Nexmo’s Community [GitHub repo](https://github.com/nexmo-community/ncco-examples/), or create your own and host it on a server (or even on GitHub Gist) that the Nexmo API can reach.
 
 **my-greeting.json**:
 
 ```javascript
-
+[
+{
+"action": "talk",
+"voiceName": "Chipmunk",
+"text": "Yo, this is Chipmunk. I am created with Nexmo Voice API!"
+}
+]
 ```
 
 You can customize the audio with [optional params](https://docs.nexmo.com/voice/voice-api/ncco-reference) such as `voiceName`. You can choose from varieties of voices by language, gender and accent.
@@ -111,13 +137,18 @@ Or you can use an audio file:
 **my-greeting-audio.json**:
 
 ```javascript
-
+[
+{
+"action": "stream",
+"streamUrl": ["https://example.com/audio_file.mp3"]
+}
+]
 ```
 
 Now, let’s run the app to call to your phone. Use the phone number starting with a country code ("1" for the US, for example) as an argument when running the node code:
 
 ```bash
-
+$ node voice-call.js 15105551234
 ```
 
 When it is successful, it retrieves the NCCO from your webhook, executes the actions, and terminates the call. You may observe some latency depending on the phone carrier. It can take some time for your phone to ring after the code is executed.

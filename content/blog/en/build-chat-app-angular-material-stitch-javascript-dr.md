@@ -11,6 +11,7 @@ category: tutorial
 tags:
   - angular
   - typescript
+  - conversation-api
 comments: true
 redirect: ""
 canonical: ""
@@ -19,39 +20,30 @@ In this tutorial, we'll enable chat in an Angular web application using the [Jav
 
 This is what we're trying to build:
 
-![Demo of the sample app](/content/blog/build-a-chat-application-with-angular-material-and-vonage/end-game.gif "Demo of the sample app")
+![Gif showing the end goal of this chat application](/content/blog/build-a-chat-application-with-angular-material-and-vonage/end-game.gif)
 
-## Vonage API Account
-
-**<sign-up></sign-up>**
-
-Once you have an account, you can find your API Key and API Secret at the top of the [Vonage API Dashboard](http://developer.nexmo.com/ed?c=blog_text&ct=2018-03-28-build-chat-app-angular-material-stitch-javascript-dr).
+<sign-up></sign-up>
 
 ## Before You Begin
 
 Before we begin you’ll need a few things:
 
-<ul>
-<li>A basic understanding of <a href="https://angular.io" rel="noopener noreferrer" target="_blank">Angular</a>.</li>
-<li><a href="https://nodejs.org/en/" rel="noopener noreferrer" target="_blank">Node.js</a> installed on your machine.</li>
-<li>The Nexmo CLI. Install it as follows:
+* A basic understanding of [Angular](https://angular.io)
+* [Node.js](https://nodejs.org/en/) installed on your machine.
+* The middleware code from Github
+* The Nexmo CLI. Install it as follows:
 
-```
-<pre>
+```bash
 $ npm install -g nexmo-cli@beta
-</pre>
+```
 
 Setup the CLI to use your Vonage API Key and API Secret:
 
-<pre>
+```bash
 $ nexmo setup api_key api_secret
-</pre></li>
 ```
 
-<li>The middleware code from Github</li>
-</ul>
-
-\### Getting the middleware code from GitHub
+### Getting the middleware code from Github
 
 First, we’re going to clone the middleware source code and install the dependencies for it. We're going to write a Node.js application using Express that provides a level of abstraction between the Vonage API and the Angular code:
 
@@ -61,20 +53,22 @@ $ cd stitch-demo/
 $ npm install
 ```
 
-### Running the middleware code from GitHub
+### Running the middleware code from Github
 
 Before we can run the code, we'll need to create an RTC application within the Vonage platform to use within this code:
 
-<pre class="lang:default highlight:0 decode:true " >$ nexmo app:create "My Conversation App" https://example.com/answer https://example.com/event --type=rtc --keyfile=private.key</pre> 
+```bash
+$ nexmo app:create "My Conversation App" https://example.com/answer https://example.com/event --type=rtc --keyfile=private.key
+```
 
 The output of the above command will be something like this:
 
-<pre class="lang:default highlight:0 decode:true " >
+```bash
 Application created: aaaaaaaa-bbbb-cccc-dddd-0123456789ab
 No existing config found. Writing to new file.
 Credentials written to /path/to/your/local/folder/.nexmo-app
 Private Key saved to: private.key
-</pre>
+```
 
 The first item is the Application ID, which you should take note of (we'll refer to this as `APP_ID` later). The last value is a private key location. The private key is used to generate JWTs that are used to authenticate your interactions with Vonage.
 
@@ -90,7 +84,7 @@ The app should be running on `localhost:3000`. Now that the app is running, we'r
 
 We'll create a couple of users by running this command twice, once with the username `alice` and then with `jamie`:
 
-<pre class="lang:default highlight:0 decode:true " >
+```bash
 $ curl --request POST \
   --url http://localhost:3000/api/users \
   --header 'content-type: application/json' \
@@ -98,9 +92,9 @@ $ curl --request POST \
 	"username": "alice",
 	"admin": true
 }'
-</pre>
+```
 
-The output should look similar to:
+The ouput should look similar to:
 
 ```bash
 {"user":{"id":"USR-aaaaaaaa-bbbb-cccc-dddd-0123456789ab","href":"http://conversation.local/v1/users/USR-aaaaaaaa-bbbb-cccc-dddd-0123456789ab"},"user_jwt":"USER_JWT"}
@@ -108,14 +102,14 @@ The output should look similar to:
 
 We'll make a note of the user ID and refer to it later on as `USER_ID`. Now let's create a conversation via the demo API:
 
-<pre class="lang:default highlight:0 decode:true " >
+```bash
 $ curl --request POST \
   --url http://localhost:3000/api/conversations \
   --header 'content-type: application/json' \
   --data '{"displayName": "My Chat"}'
-</pre>
+```
 
-The output should look similar to:
+The ouput should look similar to:
 
 ```bash
 {"id":"CON-aaaaaaaa-bbbb-cccc-dddd-0123456789ab","href":"http://conversation.local/v1/conversations/CON-aaaaaaaa-bbbb-cccc-dddd-0123456789ab"}
@@ -123,7 +117,7 @@ The output should look similar to:
 
 We'll make a note of the conversation ID and refer to it later on as `CONVERSATION_ID`. Now let's join the users to the conversation. We're going to run the following command twice—remember to replace the `CONVERSATION_ID` and `USER_ID` with IDs from the two previous steps every time you run this command:
 
-<pre class="lang:default highlight:0 decode:true " >
+```bash
 $ curl --request PUT \
   --url http://localhost:3000/api/conversations \
   --header 'content-type: application/json' \
@@ -132,7 +126,7 @@ $ curl --request PUT \
 	"userId": "USR-aaaaaaaa-bbbb-cccc-dddd-0123456789ab",
 	"action": "join"
 }'
-</pre>
+```
 
 ## Generate Angular App
 
@@ -782,9 +776,9 @@ The app will run at "http://localhost:4200". I'd suggest opening the app in two 
 
 If you'd like to continue learning how to use the Vonage Client SDK for JavaScript, check out our quickstarts where we show you how to: 
 
-<ul>
-<li><a href="https://developer.nexmo.com/stitch/in-app-messaging/guides/1-simple-conversation?platform=javascript">create a simple conversation</a>.</li>
-<li><a href="https://developer.nexmo.com/stitch/in-app-messaging/guides/2-inviting-members?platform=javascript">invite and chat with another user</a>.</li>
-<li><a href="https://developer.nexmo.com/stitch/in-app-messaging/guides/3-utilizing-events?platform=javascript">use more event listeners</a> to show chat history and when a user is typing.</li>
-</ul>
-If you have more questions about using In-App SDK, we encourage you to join the \\[Vonage Developer Community Slack](https://developer.nexmo.com/community/slack/) and check out our \\[#nexmo-client-sdk](https://nexmo-community.slack.com/messages/C9H152ATW/) channel or email us directly at \\[ea-support@nexmo.com](mailto:ea-support@nexmo.com).
+* [create a simple conversation](https://developer.nexmo.com/stitch/in-app-messaging/guides/1-simple-conversation?platform=javascript)
+* [invite and chat with another user](https://developer.nexmo.com/stitch/in-app-messaging/guides/2-inviting-members?platform=javascript)
+* [use more event listeners](https://developer.nexmo.com/stitch/in-app-messaging/guides/3-utilizing-events?platform=javascript) to show chat history and when a user is typing
+
+
+If you have more questions about using In-App SDK, we encourage you to join the [Vonage Developer Community Slack](https://developer.nexmo.com/community/slack/) and check out our [#nexmo-client-sdk](https://nexmo-community.slack.com/messages/C9H152ATW/) channel or email us directly at [ea-support@nexmo.com](mailto:ea-support@nexmo.com).

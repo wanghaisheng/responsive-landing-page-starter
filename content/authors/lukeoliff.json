@@ -11,5 +11,6 @@
   "title": "Vonage Developer Educator",
   "stackoverflow_url": "https://stackoverflow.com/users/2114771/lukeocodes",
   "email": "luke.oliff@vonage.com",
-  "team": true
+  "team": false,
+  "alumni": true
 }

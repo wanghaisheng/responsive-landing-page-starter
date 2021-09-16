@@ -6,11 +6,13 @@ thumbnail: /content/blog/add-strong-psd2-authentication-to-your-application/Blog
 author: lornajane
 published: true
 published_at: 2020-06-23T07:53:47.000Z
-comments: true
+updated_at: 2021-05-04T15:37:03.511Z
 category: tutorial
 tags:
   - security
   - verify-api
+  - authentication
+comments: true
 ---
 
 With more and more purchases made online, the dangers of fraud and unauthorized payments increase.
