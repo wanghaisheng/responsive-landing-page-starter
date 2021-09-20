@@ -29,8 +29,6 @@ Here you will find all the details you need for basically any question you might
 
 To help us better assist you, please send us your feedback via email at: [support@tokbox.com](mailto:support@tokbox.com)
 
-
-
 ## Video Platform
 
 Vonage video uses webRTC for audio-video communications and consists of client libraries for web, IOS and Android, as well as server SDKs and REST API. More information can be found here <https://tokbox.com/developer/guides/basics/#opentok-platform>.
@@ -110,13 +108,13 @@ See the following example: <https://github.com/nexmo-se/opentok-get-stats>
 
 ## Broadcast
 
-* **Interactive** - this type of broadcast allows clients to interact with each other by subscribing to each other's stream. Important to note that this type of broadcast can only support up to 3,000 subscribers; anything above that will generate an error message. Below are things to consider when using this broadcast:
+* **Interactive** - this type of broadcast allows clients to interact with each other by subscribing to each other's stream. Important to note that this type of broadcast can only support up to 5,000 subscribers; anything above that will generate an error message. Below are things to consider when using this broadcast:
 
   * Contact support and have them enable simulcast. Visit <https://support.tokbox.com/hc/en-us/articles/360029733831-TokBox-Scalable-Video-Simulcast-FAQ> to learn more about Simulcast. By default Simulcast is set to heuristic in all API keys, this means that Simulcast will only kick in after the third connection joins the call (this is done to avoid Simulcast in one-to-one calls). Important to note that the first two connections won’t use Simulcast if it is set to heuristic.
-  * Allow no more than five publishers. Keep in mind that the maximum number of subscribers will be impacted when streams increase. To get the max subscribers based on the number of publishers, divide the max participants (3,000) by the number of publishers. Example: two publishers can have 1,500 subscribers (3,000 divided by 2).
+  * Allow no more than five publishers. Keep in mind that the maximum number of subscribers will be impacted when streams increase. To get the max subscribers based on the number of publishers, divide the max participants (5,000) by the number of publishers. Example: two publishers can have 1,500 subscribers (5,000 divided by 2).
   * Suppress connection events, see <https://tokbox.com/developer/guides/broadcast/live-interactive-video/#suppressing-connection-events>
   * See <https://tokbox.com/developer/guides/broadcast/live-interactive-video/>for more information
-* **Live Streaming** - this type of broadcast allows for more than 3,000 subscribers to subscribe to streams. There are two types of protocols available to broadcast video, RTMP (Real Time Messaging Protocol) and HLS (HTTP Live Streaming). Regardless of which one you choose, limit the number of publishers to five for a better experience.
+* **Live Streaming** - this type of broadcast allows for more than 5,000 subscribers to subscribe to streams. There are two types of protocols available to broadcast video, RTMP (Real Time Messaging Protocol) and HLS (HTTP Live Streaming). Regardless of which one you choose, limit the number of publishers to five for a better experience.
 
 ### HLS vs RTMP
 
