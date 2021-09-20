@@ -56,7 +56,7 @@ Our secret sauce is our expertise, which allows us to source the best borrowers 
 
 ![The Team at Kilde](/content/blog/startup-spotlight-series-lets-meet-kilde/befunky-collage.jpg "The Team at Kilde")
 
-*The Team at Kindle*
+*The Team at Kilde*
 
 ## VC, Angel, Bootstrap or Other?
 
