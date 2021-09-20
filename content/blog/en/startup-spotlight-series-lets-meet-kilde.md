@@ -54,7 +54,7 @@ Initially, we focused around the needs of the borrowers on our platform and late
 
 Our secret sauce is our expertise, which allows us to source the best borrowers and arrange unique deals for investors on our platform and actively manage the risks of their investments. 
 
-![The Team at Kindle](/content/blog/startup-spotlight-series-lets-meet-kilde/befunky-collage.jpg "The Team at Kindle")
+![The Team at Kilde](/content/blog/startup-spotlight-series-lets-meet-kilde/befunky-collage.jpg "The Team at Kilde")
 
 *The Team at Kindle*
 
@@ -70,7 +70,7 @@ Getting out there, relying on our own track record as a team, and talking throug
 
 ## The biggest mistake Kilde has made so far and what did you learn from it?
 
-If we could go back in time, we would start shipping our product and talking to customers earlier before we had our regulatory licensing and technology stack ready. That would allow us to correct the course earlier than we did. 
+If we could go back in time, we would start testing our product and talking to customers earlier before we had our regulatory licensing and technology stack ready. That would allow us to correct the course earlier than we did. 
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos and Bill Gates. Who do you choose and why? 
 
