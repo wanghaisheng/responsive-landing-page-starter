@@ -16,8 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Today marks a very proud moment for everyone here. Our Vonage CLI (Command Line Interface) is now v1.0.0.  
-I honestly couldn't be happier with how things have gone so far, and I know they will only get better from here. 
+Today marks a very proud moment for everyone here. Our Vonage CLI (Command Line Interface) is now v1.0.0. I honestly couldn't be happier with how things have gone so far, and I know they will only get better from here. 
 
 ## What's In v1?
 
