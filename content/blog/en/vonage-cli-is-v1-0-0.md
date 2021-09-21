@@ -1,9 +1,7 @@
 ---
 title: Vonage CLI is v1.0.0
-description: Today marks a really proud moment for everyone here. Today, our
-  Vonage CLI (Command Line Interface) is now v1.0.0. I honestly couldn't be
-  happier with how things have gone so far, and I know they will only get better
-  from here.
+description: Today, our Vonage CLI (Command Line Interface) is in v1.0.0. See
+  new features and find out what happens to the Nexmo CLI.
 author: kellyjandrews
 published: false
 published_at: 2021-09-21T06:50:42.889Z
@@ -18,7 +16,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Today marks a really proud moment for everyone here. Today, our Vonage CLI (Command Line Interface) is now v1.0.0.  I honestly couldn't be happier with how things have gone so far, and I know they will only get better from here. 
+Today marks a very proud moment for everyone here. Our Vonage CLI (Command Line Interface) is now v1.0.0.  
+I honestly couldn't be happier with how things have gone so far, and I know they will only get better from here. 
 
 ## What's In v1?
 
@@ -56,26 +55,25 @@ vonage balance --help
 ```
 
 ## Getting Started
-I typically put a getting started section at the front of the article, but in the middle is where you are, so read on and learn how to get going. 
 
-The latest core is on npm and can be installed with
+The latest core is on npm and you can install it with:
 
 ```
 npm install -g @vonage/cli
 ```
 
-Once you have that installed, you will need to go to your [dashboard](https://dashboard.nexmo.com/) and grab your apiKey and secret, and set your config with the following:
+Once you have that installed, you will need to go to your [dashboard](https://dashboard.nexmo.com/) to grab your API key and secret, and set your config with the following:
 
 ```shell
 vonage config:set --apiKey=XXXXXX --apiSecret=XXXXXX
 ```
 
-And now you are set to explore using `--help, -h` on any command. 
+Now you are set to start exploring using `--help, -h` on any command. 
 
 ## What happens to the Nexmo CLI?
-The Nexmo CLI will move into maintenance mode and receive bug fixes for the next year, September 21, 2022. At that time, it will officially deprecate and no longer be supported. 
+The Nexmo CLI will move into maintenance mode and receive bug fixes for the next year—until September 21, 2022. At that time, it will officially deprecate and will no longer be supported. 
 
 ## Final Request
 I only want the best tools here, but I can't do it without you. Your feedback and support are fantastic, and with all of us working together, we can make the future of our CLI something special. 
 
-Feel free to drop me a line @kellyjandrews, send me an [issue](https://github.com/Vonage/vonage-cli/issues), or email us at devrel@vonage.com.
+Feel free to drop me a line [@kellyjandrews](https://twitter.com/kellyjandrews), send me an [issue](https://github.com/Vonage/vonage-cli/issues), or email us at devrel@vonage.com.
