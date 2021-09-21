@@ -2,9 +2,10 @@
 title: Vonage CLI is v1.0.0
 description: Today, our Vonage CLI (Command Line Interface) is in v1.0.0. See
   new features and find out what happens to the Nexmo CLI.
+thumbnail: /content/blog/vonage-cli-is-v1-0-0/dev_sdk-updates_1000x420.png
 author: kellyjandrews
-published: false
-published_at: 2021-09-21T06:50:42.889Z
+published: true
+published_at: 2021-09-21T14:16:46.129Z
 updated_at: 2021-09-21T06:50:42.941Z
 category: announcement
 tags:
