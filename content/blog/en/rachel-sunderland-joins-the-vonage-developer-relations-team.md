@@ -2,8 +2,9 @@
 title: Rachel Sunderland Joins the Vonage Developer Relations Team
 description: "An introduction to Rachel Sunderland and some reflections from her
   two months at Vonage. "
+thumbnail: /content/blog/rachel-sunderland-joins-the-vonage-developer-relations-team/rachel-sunderland.png
 author: rachel-sunderland
-published: false
+published: true
 published_at: 2021-09-22T09:15:32.922Z
 updated_at: 2021-09-22T09:15:32.936Z
 category: team
