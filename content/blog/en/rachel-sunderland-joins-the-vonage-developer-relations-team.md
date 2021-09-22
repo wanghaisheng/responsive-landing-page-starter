@@ -27,7 +27,6 @@ I’m originally from West Yorkshire; home of the rhubarb triangle, liquorice al
 
 I started my journey in London at Goldsmiths College, studying BA English & Drama. During this time I worked at VIP Events and Harrods - learning first hand about world class customer service and understanding how an awesome experience with brands can be achieved. I also ran a monthly comedy night and performed stand-up...unfortunately I’ve forgotten all my funny jokes since then...
 
-\
 After graduating, I knew I wanted to work within tech but wasn’t sure where I’d fit in as someone non-technical. I began a short stint as an iOS & Android Developer Recruiter. I loved working with developers and discussing their career goals but wasn’t so keen on the recruitment side of things. So, I moved onto working back in Higher Education (HE). 
 
 
