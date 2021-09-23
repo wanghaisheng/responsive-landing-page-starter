@@ -2,7 +2,7 @@
 title: Receive SMS Messages with Node.js, Express, and the Vonage SMS API
 description: A step-by-step tutorial on how to receive SMS messages and write a
   webhook with Node.js and ExpressJS using the Vonage SMS API.
-thumbnail: ""
+thumbnail: /content/blog/receive-sms-messages-with-node-js-express-and-the-vonage-sms-api/recieve-sms_node-js.png
 author: tomomi
 published: true
 published_at: 2016-10-27T18:35:15.000Z
