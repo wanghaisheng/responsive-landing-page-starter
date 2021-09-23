@@ -1,5 +1,5 @@
 ---
-title: Video Express Is Here and Why It’s Awesome!
+title: Video Express Is Here and Why It Is Awesome!
 description: The Vonage Video Express is here! Here are some advantages, code
   samples, demo application and other reasons to give it a try.
 thumbnail: /content/blog/video-express-is-here-and-why-it’s-awesome/video-express_1200x600.png
@@ -29,11 +29,11 @@ Let’s start by defining what multiparty means. This is when a video call has m
 
 Previously, it was quite common to have teams of people in the same room and then get on a video call with a team in another room.
 
-![Graphic depicting 2 groups of people passing information back and forth via 2 streams](/content/blog/2teams-2streams.jpg "2 teams 2 streams")
+![Graphic depicting 2 groups of people passing information back and forth via 2 streams](/content/blog/video-express-is-here-and-why-it-is-awesome/2teams-2streams.jpg "2 teams 2 streams")
 
 As you may have experienced yourself lately, things are shifting towards individuals calling in from different locations.
 
-![Graphic depicting 6 individuals passing information back and forth via 36 streams](/content/blog/6people-36streams.jpg "6 people 36 streams")
+![Graphic depicting 6 individuals passing information back and forth via 36 streams](/content/blog/video-express-is-here-and-why-it-is-awesome/6people-36streams.jpg "6 people 36 streams")
 
 As you can see from the image above, it can quickly become a complex challenge to keep up with all the connections from the participants.
 
@@ -81,7 +81,7 @@ Video Express handles all the publishing and subscribing of all the participants
 
 # Quality Manager
 
-![Graphic showing the larger video feed on the left with a higher resolution and more bitrate and a column of other smaller video feeds to the right with smaller resolution and bitrates.](/content/blog/qualitymanager.jpg "Quality Manager diagram")
+![Graphic showing the larger video feed on the left with a higher resolution and more bitrate and a column of other smaller video feeds to the right with smaller resolution and bitrates.](/content/blog/video-express-is-here-and-why-it-is-awesome/qualitymanager.jpg "Quality Manager diagram")
 
 To help create the best quality video call, Video Express will apply various methods automatically. These include maximizing tile sizes for visible video streams and pausing the ones that can’t be seen. It will also adjust resolution and frame rates depending on network conditions and CPU. By dynamically setting higher priorities on speakers and screen shares, the things that need the focus can achieve the best quality.
 
@@ -91,15 +91,15 @@ To create a great user experience, Video Express will optimize things on the cli
 
 Example of a raw, unoptimized video session
 
-![Table showing the amount of bandwidth used for audio and video for 1 to 1, 10 videos, and 25 videos in unoptimized sessions](/content/blog/unoptimized-video-session.jpg "Table with data of an unoptimized multiparty video session")
+![Table showing the amount of bandwidth used for audio and video for 1 to 1, 10 videos, and 25 videos in unoptimized sessions](/content/blog/video-express-is-here-and-why-it-is-awesome/unoptimized-video-session.jpg "Table with data of an unoptimized multiparty video session")
 
 Example of an optimized video session
 
-![Table showing the amount of bandwidth used for audio and video for 1 to 1, 10 videos, and 25 videos in optimized sessions with as much as 80% lower bandwidth. ](/content/blog/optimized-video-session.jpg "Table with data of an optimized multiparty video session")
+![Table showing the amount of bandwidth used for audio and video for 1 to 1, 10 videos, and 25 videos in optimized sessions with as much as 80% lower bandwidth. ](/content/blog/video-express-is-here-and-why-it-is-awesome/optimized-video-session.jpg "Table with data of an optimized multiparty video session")
 
 # Layout Manager
 
-![Demonstrating the layout changes of colored blocks representing video feeds as they are being added and removed to the screen.](/content/blog/layoutmanager.gif "Layout Manager diagram")
+![Demonstrating the layout changes of colored blocks representing video feeds as they are being added and removed to the screen.](/content/blog/video-express-is-here-and-why-it-is-awesome/layoutmanager.gif "Layout Manager diagram")
 
 Out of the box, Video Express will automatically adjust the layout of the streams based on screen size and the number of participants. Screen shares and the active speaker are given a higher priority or take up more space.
 
