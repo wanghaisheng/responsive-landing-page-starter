@@ -1,5 +1,5 @@
 ---
-title: Create a Multiparty Video App With the New Video Express
+title: Create a Multiparty Video App With the New Vonage Video Express
 description: This blog post will help you develop a Multiparty Video
   Application   based on ReactJS and the new Vonage Video Express.
 author: enrico-portolan
