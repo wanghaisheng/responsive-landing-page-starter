@@ -21,11 +21,11 @@ replacement_url: ""
 This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Video Express. 
 The Video Express provides by default the following features:
 
-* __Room and Participant Manager__: simplified publishing, subscribing, and stream management logic
-* __Layout Management__: out of the box responsive UI and Layout Manager with customizable components
-* __Video Quality Optimization__ (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
-* __Network optimization__: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
-* __Ease of use__: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
+* **Room and Participant Manager**: simplified publishing, subscribing, and stream management logic
+* **Layout Management**: out of the box responsive UI and Layout Manager with customizable components
+* **Video Quality Optimization** (framerate and resolution) based on the number of participants, rendering sizes, CPU, and network conditions
+* **Network optimization**: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
+* **Ease of use**: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
 
 ## App Architecture
 
@@ -250,7 +250,7 @@ One of the most important components of our application is the [WaitingRoom](htt
 
 This is what our waiting room looks like:
 
-![Screenshot of waiting room on mobile device](/content/blog/create-a-multiparty-video-app-with-the-new-vonage-multiparty-toolkit/image1.png "Screenshot of waiting room on mobile device")
+![Screenshot of waiting room on mobile device](/content/blog/create-a-multiparty-video-app-with-the-new-video-express/waiting-room.png "Screenshot of waiting room on mobile device")
 
 We have a few state variables that will hold the user’s choice; this is done to allow the user to join the room with the audio or video turned off, set a name, or change the audio devices:
 
