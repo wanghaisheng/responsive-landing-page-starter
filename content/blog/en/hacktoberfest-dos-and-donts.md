@@ -33,17 +33,17 @@ All that being said, here are some of the Do's and Don'ts of Hacktoberfest from 
 
 ## Do's
 
-* Be respectful to each other. As participant be mindful of project maintainers time. In most cases maintainer are volunteering their time to work on these projects. Coming in with a demand to get your PR merged is not helpful, nor is it okay to create a PR that fixes a typo or grammar that 4 other person has already fixed. For maintainers if you have the time please try to create proper expectations of what you would want help in. For many this will be first interaction they have with open source contribution. Your action may deter someone from helping in open source. 
-* As participants read the project code of conduct and contributions guidelines. Many questions can be avoided by just looking through the docs and previous issues. Remember the ratio of participant vs maintainers is pretty low. As maintainer try to make it easy for people to find info. A good code of conduct and contributions guide go a long way to help folks get the info they need without creating a new issue.
+* Be respectful to each other. As participant, be mindful of project maintainers time. In most cases maintainers are volunteering their time to work on these projects. Demanding to get your PR merged is not helpful, nor is it okay to create a PR that fixes a typo or grammar that 4 other person has already fixed. For maintainers, if you have the time please try to create proper expectations of what the project needs help in. For many this will be first interaction they have with open source contribution. Your action may deter someone from helping in open source. 
+* As participants, read the project code of conduct and contributions guidelines. Many questions can be avoided by just looking through the docs and previous issues. Remember the ratio of participant to maintainers is pretty low. As maintainers, try to make it easy for people to find information. A good code of conduct and contributions guide go a long way to help folks get the information they need without requiring to create a new issue.
 * Look for projects that have \`Hacktoberfest\` and \`Good first issue\` tags. An easy way to find this is looking in the [Hacktoberfest guide](https://hacktoberfest.digitalocean.com/resources/beginners). 
 * If you are project maintainer and would like to get some contributions you will need to setup the repositories first. In previous years all repos were eligible which led to some problems for maintainer. So this year you will have to setup your repositories beforehand. [Follow these steps](https://hacktoberfest.digitalocean.com/resources/maintainers) from official Hactoberfest website. Also be prepared to spend some time with the PRs in either approving, rejecting or commenting on them. While you volunteer your time, so does the participants. 
 
 ## Don'ts
 
-* As participants don't create spam PRs. You are excited about making your Hacktoberfest goals but in the other end of a spam PR is a real human that is spending their time trying to maintain an open source project. 
+* As participants, don't create spam PRs. You are excited about making your Hacktoberfest goals but in the other end of a spam PR is a real human that is spending their time trying to maintain an open source project. 
 * Do not harass maintainer to merge your PR. A gentle reminder is not 10+ comments and emails. 
 * Do not go about fixing grammatical and spelling errors unless the contribution guide explicitly asks for it. 
-* As maintainers do not burn yourself out trying to entertain every PR and interaction. 
+* As maintainers, do not burn yourself out trying to entertain every PR and interaction. 
 * Do not admonish folks for their bad PRs. Try to assume positive intent. You are the ambassador of open source for many of these developers who might be trying out open source for the first time. 
 
 Finally, have fun with it. This is probably the biggest festivals us developers get. Yes we have had our problems with it. But I still believe it to be primarily a force for good.
