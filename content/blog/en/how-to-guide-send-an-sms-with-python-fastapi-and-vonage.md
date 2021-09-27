@@ -491,6 +491,6 @@ You see a boat approaching and realize that it’s for you. 
 
 You hop on and they bring you to safety.
 
-Later that evening you lay in bed watching Loki, thinking to yourself: Thank goodness for Python.
+Later that evening, you lay in bed watching Loki, thinking to yourself: Thank goodness for Python.
 
 The end.
