@@ -41,7 +41,7 @@ You want to make sure the installation was successful so you type:
 % vonage
 ```
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_1.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_1.png)
 
 Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API Key and API Secret. You’ve already registered so all you have to do is sign in. 
 
@@ -67,7 +67,7 @@ Now for the fun part. You have to create your application so you run this comman
 
 You give it an **Application Name** of **send sms** and press Return.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_2.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_2.png)
 
 Then under the option **Select App Capabilities** you choose **Messages**.
 
@@ -237,8 +237,6 @@ async def get_message(request: Request):
   return templates.TemplateResponse("index.html", {"request": request})
 ```
 
-
-
 Here you are also importing Request **`from fastapi import FastAPI, Request.`** Request allows you to get incoming details or requests to your function.
 
 Import Jinja so you can use its templating engine **`from fastapi.templating import Jinja2Templates`**.
@@ -279,7 +277,7 @@ This line is crucial: `<form action="/sent_sms" method="POST" novalidate>`. The 
 
 Here  `<input type="text" placeholder="Enter number to text" name="to_number" >` you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called **to_number** which specifies the name of the input element. This will be important later on when you reference this attribute to get the number in which you’re sending the SMS.
 
-This line` <button type=submit">Send Text</button>` we define a button with **`type=”submit”`**, so when the user clicks the button, the text will be sent. 
+This line`<button type=submit">Send Text</button>` we define a button with **`type=”submit”`**, so when the user clicks the button, the text will be sent. 
 
 Next, you code up the page since it’s very simple.
 
@@ -297,8 +295,6 @@ Next, you code up the page since it’s very simple.
 </body>
 </html>
 ```
-
-
 
 If the SMS is sent successfully, you will see this page. The only sort of tricky thing here is this: **`{{ number }}`**. But it’s not that tricky at all! This is the Jinja language and it’s pulling in the phone number you put in the form. The number you want to send the SMS to. You’re about to write the POST route and will see how it works.
 
@@ -351,8 +347,6 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
 return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
 ```
 
-
-
 Here **`from fastapi import FastAPI, Request, Form`** you're importing **`Form`** , which you need to receive the form field data
 
 You need this line, `from base64 import b64encode` to encode the API key and API secret. 
@@ -394,8 +388,6 @@ A few things to note about this key/value pair in the payload: **`"number": to_n
       },
 ```
 
-
-
 Another thing to notice in the payload is the **number: \[YOUR_VONAGE_NUMBER]**, which will be your [Vonage phone number you buy here](https://dashboard.nexmo.com/buy-numbers).
 
 ```python
@@ -404,8 +396,6 @@ Another thing to notice in the payload is the **number: \[YOUR_VONAGE_NUMBER]**,
           "number": \[YOUR_VONAGE_NUMBER]
       },
 ```
-
-
 
 Lastly, in the payload you’ll leave the type set to text like this **"type": "text"** and provide a message for your text like so **"text": "Help me! I need to watch Loki!"**.
 
@@ -416,8 +406,6 @@ Lastly, in the payload you’ll leave the type set to text like this **"type": "
               "text": "Help me! I need to watch Loki!"
           }
 ```
-
-
 
 Next, you define the headers for the request which indicates that the body request format is JSON:
 
@@ -433,8 +421,6 @@ You store your API key and secret in these variables:
 key = 'abcde'
 secret = '12345'
 ```
-
-
 
 You then create a variable called encoded_credentials and proceed to do the Base64 encoding by using an f-string and passing in your key and secret.
 
@@ -487,8 +473,6 @@ You’re super nervous about if they’ll receive the message.
 Great news! They got the text message!
 
 ![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/img-7473.jpg)
-
-
 
 ![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/screen-shot-2021-09-26-at-9.17.22-pm.png)
 
