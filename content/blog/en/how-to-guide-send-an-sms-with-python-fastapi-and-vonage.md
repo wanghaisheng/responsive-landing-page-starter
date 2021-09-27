@@ -1,6 +1,8 @@
 ---
 title: The How To Guide -  Sending an SMS With Python, FastAPI and Vonage
-description: Test
+description: This is a how to guide on sending an SMS with Python, FastAPI and
+  Vonage. Buckle up and come on an adventure to learn how you'd send a text
+  message to rescue you from a stranded island.
 author: tonya-sims-1
 published: false
 published_at: 2021-09-27T00:50:14.818Z
