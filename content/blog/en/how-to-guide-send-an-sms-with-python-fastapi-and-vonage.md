@@ -101,13 +101,13 @@ Your application has been created and you’re pretty darn happy about that. You
 
 You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on **Your Applications** and you see it. 
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_9.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_9.png)
 
 You’d like to check if the Messages API option is toggled on and if your webhooks made it, so you select to edit. 
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_10.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_11.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_11.png)
 
 Everything looks great! You also realize that you don’t need to do this step every time as it’s only a sanity check.
 
