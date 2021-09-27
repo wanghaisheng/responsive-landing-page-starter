@@ -199,17 +199,19 @@ The line **`from fastapi import FastAPI`** just imports FastAPI as a Python clas
 
 Here **`@app.get("/")`** you create a route operation. Route refers to the URL or where you want to direct yourself when you hit your endpoint. In your case, you're going to the root of the page or localhost (<http://127.0.0.1:8000>). The operation refers to the HTTP method, in this case, you’re doing a GET operation using the decorator **`@app.get`**, which tells users to read the data and go to the route, which is (“/”) or the root page.
 
-This is an async function **async def home():**. They allow you to have asynchronous functions which can process other requests before others have been completed, so they run in parallel, which is pretty sweet because it makes things much faster than running synchronously, or in order. You can also define a normal function here with just: **def home():** if you don’t care about asynchronous code.
+This is an async function **`async def home():`**. They allow you to have asynchronous functions which can process other requests before others have been completed, so they run in parallel, which is pretty sweet because it makes things much faster than running synchronously, or in order. You can also define a normal function here with just: **`def home():`** if you don’t care about asynchronous code.
 
-This line “return {"hello": "world"}” returns a dictionary to the browser.
+This line `return {"hello": "world"}` returns a dictionary to the browser.
 
 Now you run your code in development mode by doing the following:
 
+```shell
 % uvicorn main:app --reload
+```
 
-You think of uvicorn as being a super fast ASGI (Asynchronous Server Gateway Interface) server implementation. In “main:app”, main is the name of your file “main.py” and “app” is the name of your FastAPI instance from above. The “--reload” flag using hot reloading which allows you to make live code changes, so you don’t have to keep restarting your server every time.
+You think of uvicorn as being a super fast ASGI (Asynchronous Server Gateway Interface) server implementation. In **main:app**, main is the name of your file **main.py** and **app** is the name of your FastAPI instance from above. The **\--reload** flag using hot reloading which allows you to make live code changes, so you don’t have to keep restarting your server every time.
 
-You see in the terminal you need to go to your localhost <http://127.0.0.1:8000/> in the browser and you see “{"hello": "world"}”. Perfect!
+You see in the terminal you need to go to your localhost <http://127.0.0.1:8000/> in the browser and you see **{"hello": "world"}**. Perfect!
 
 Now it’s time to write your code to send your SMS. 
 
@@ -217,12 +219,11 @@ The sky is dark and the wind is heavy. A tornado is brewing.
 
 You need to hurry!
 
-In your “main.py” you replace your Hello World code with this:
+In your main.py you replace your Hello World code with this:
 
+```python
 from fastapi import FastAPI, Request
-
 from fastapi.templating import Jinja2Templates
-
 from fastapi.responses import HTMLResponse
 
 app = FastAPI()
@@ -230,10 +231,11 @@ app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
-
 async def get_message(request: Request):
-
   return templates.TemplateResponse("index.html", {"request": request})
+```
+
+
 
 Here you are also importing Request “from fastapi import FastAPI, Request”. Request allows you to get incoming details or requests to your function.
 
