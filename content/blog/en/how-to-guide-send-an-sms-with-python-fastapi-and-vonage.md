@@ -57,25 +57,33 @@ You got this but in case you forget something you can always turn to the help fl
 % vonage --help
 ```
 
-
-
 Now for the fun part. You have to create your application so you run this command:
 
-% vonage apps:create 
+```shell
+% vonage apps:create
+```
 
-You give it an “Application Name” of “send sms” and press Return.
+You give it an **Application Name** of **send sms** and press Return.
 
-Then under the option “Select App Capabilities” you choose “Messages”.
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_2.png)
+
+Then under the option **Select App Capabilities** you choose **Messages**.
+
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_3.png)
 
 Now you create your webhooks: inbound and status. 
 
-You choose “Y” for “Create Message Webhooks?”
+You choose **“Y”** for **Create Message Webhooks**.
+
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_4.png)
 
 For the Webhook URLs, you use the examples from the [Vonage documentation](https://developer.nexmo.com/messages/code-snippets/configure-webhooks) but understand these are configurable and can be tested with [ngrok](https://developer.nexmo.com/tools/ngrok).
 
 You proceed.
 
-For the “Inbound Message Webhook” you provide this URL: <https://www.example.com/webhooks/inbound-message> and in the next option select “POST” for the “Inbound Message Method”.
+For the **Inbound Message Webhook,** you provide this URL: <https://www.example.com/webhooks/inbound-message>. In the next option select **POST** for the **Inbound Message Method**.
+
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_5.png)
 
 For the “Status Message Webhook” you give it this URL: <https://www.example.com/webhooks/message-status> and also select “POST” for the “Status Message Method”.
 
