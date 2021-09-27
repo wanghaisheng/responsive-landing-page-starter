@@ -107,9 +107,9 @@ You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to
 
 You’d like to check if the Messages API option is toggled on and if your webhooks made it, so you select to edit. 
 
-![Check Messages API is toggled on and webhooks are correct in Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
+![Edit your application in the Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_11.png)
+![Check Messages API is toggled on and webhooks are correct in Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_11.png)
 
 Everything looks great! You also realize that you don’t need to do this step every time as it’s only a sanity check.
 
@@ -377,7 +377,7 @@ This is the payload or body of data you’ll send to your request:
       },
       "from": {
           "type": "sms",
-          "number": \[YOUR_VONAGE_NUMBER]
+          "number": [YOUR_VONAGE_NUMBER]
       },
       "message": {
           "content": {
@@ -402,7 +402,7 @@ Another thing to notice in the payload is the **number: \[YOUR_VONAGE_NUMBER]**,
 ```python
 "from": {
           "type": "sms",
-          "number": \[YOUR_VONAGE_NUMBER]
+          "number": [YOUR_VONAGE_NUMBER]
       },
 ```
 
