@@ -193,11 +193,11 @@ async def home(): 
   return {"hello": "world"}
 ```
 
-The line **from fastapi import FastAPI** just imports FastAPI as a Python class
+The line **`from fastapi import FastAPI`** just imports FastAPI as a Python class
 
-**app = FastAPI()** creates an instance of FastAPI called app.
+**`app = FastAPI()`** creates an instance of FastAPI called app.
 
-Here **@app.get("/")** you create a route operation. Route refers to the URL or where you want to direct yourself when you hit your endpoint. In your case, you're going to the root of the page or localhost (<http://127.0.0.1:8000>). The operation refers to the HTTP method, in this case, you’re doing a GET operation using the decorator **@app.get**, which tells users to read the data and go to the route, which is (“/”) or the root page.
+Here **`@app.get("/")`** you create a route operation. Route refers to the URL or where you want to direct yourself when you hit your endpoint. In your case, you're going to the root of the page or localhost (<http://127.0.0.1:8000>). The operation refers to the HTTP method, in this case, you’re doing a GET operation using the decorator **`@app.get`**, which tells users to read the data and go to the route, which is (“/”) or the root page.
 
 This is an async function **async def home():**. They allow you to have asynchronous functions which can process other requests before others have been completed, so they run in parallel, which is pretty sweet because it makes things much faster than running synchronously, or in order. You can also define a normal function here with just: **def home():** if you don’t care about asynchronous code.
 
