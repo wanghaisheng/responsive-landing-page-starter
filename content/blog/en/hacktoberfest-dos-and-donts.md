@@ -1,6 +1,6 @@
 ---
 title: Hacktoberfest Do's and Don'ts
-description: Hacktoberfest is a yearly month long event where developers
+description: Hacktoberfest is a yearly month-long event where developers
   contribute to participating opensource projects for a chance to win swag.
 author: mofi-rahman
 published: true
