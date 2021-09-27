@@ -123,27 +123,37 @@ The first thing you do is navigate to or **cd** into the directory where you wan
 
 Then you create a new folder called **send_sms** by running this command from your directory:
 
+```shell
 % mkdir send_sms
+```
 
 You change into that directory by doing this:
 
+```shell
 % cd send_sms
+```
 
 You think to yourself that this would be a good time to create a virtual environment, so you run:
 
+```shell
 % python3 -m venv venv
+```
 
 To verify this new virtual environment was created you should see one called “venv”, so you type:
 
+```shell
 % ls
+```
 
 Walla! There it is.
 
 Now it’s time to activate it so you can install FastAPI and your other packages, so you do:
 
+```shell
 % source venv/bin/activate
+```
 
-You see that “(venv)” is at the beginning of your user in your terminal, so you know it’s been activated. 
+You see that **(venv)** is at the beginning of your user in your terminal, so you know it’s been activated. 
 
 Gosh, the sun is beating down on your face and there’s a glare on your computer screen. You can barely see anything and wish you had your sunglasses. You remembered that right before leaving home and getting stranded, your dog ate them! 
 
@@ -151,15 +161,21 @@ Ok, now it’s time for you to install FastAPI.
 
 You remembered the last time you installed it and had to upgrade pip first like this:
 
+```shell
 % pip install --upgrade pip
+```
 
 Then because you’re using “zsh” you installed FastAPI like so:
 
+```shell
 % pip install 'fastapi\[all]'
+```
 
-When you used bash you’d install it without the ‘ ‘ around fastapi\[all] like this:
+When you used bash you’d install it without the **‘ ‘** around fastapi\[all] like this:
 
+```shell
 % pip install fastapi\[all]
+```
 
 Anyways, you now have FastAPI installed and are thrilled you installed it with the “\[all]” option because it gives you all the dependencies and features like async-generators, the requests module, JSON, Jinja2 for templating in HTML, Pydantic, etc.
 
