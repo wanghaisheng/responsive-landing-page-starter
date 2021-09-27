@@ -41,7 +41,7 @@ You want to make sure the installation was successful so you type:
 % vonage
 ```
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_1.png)
+![Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_1.png)
 
 Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API Key and API Secret. You’ve already registered so all you have to do is sign in. 
 
