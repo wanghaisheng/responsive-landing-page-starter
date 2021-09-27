@@ -187,7 +187,7 @@ When you used bash you’d install it without the **‘ ‘** around fastapi\[al
 
 Anyways, you now have FastAPI installed and are thrilled you installed it with the **\[all]** option because it gives you all the dependencies and features like async-generators, the requests module, JSON, Jinja2 for templating in HTML, Pydantic, etc.
 
-## FastAPI Hello World
+## Quick FastAPI Hello World
 
 You want to get a Hello World example up and running fast, so you can test if your install worked. You create a main.py file in your project directory.
 
@@ -223,7 +223,7 @@ You think of uvicorn as being a super fast ASGI (Asynchronous Server Gateway Int
 
 You see in the terminal you need to go to your localhost <http://127.0.0.1:8000/> in the browser and you see **{"hello": "world"}**. Perfect!
 
-## FastAPI Hello World
+## Sending Your SMS 
 
 Now it’s time to write your code to send your SMS. 
 
@@ -287,7 +287,7 @@ This line is crucial: `<form action="/sent_sms" method="POST" novalidate>`. The 
 
 Here  `<input type="text" placeholder="Enter number to text" name="to_number" >` you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called **to_number** which specifies the name of the input element. This will be important later on when you reference this attribute to get the number in which you’re sending the SMS.
 
-This line`<button type=submit">Send Text</button>` we define a button with **`type=”submit”`**, so when the user clicks the button, the text will be sent. 
+In this line `<button type=submit">Send Text</button>` we define a button with **`type=”submit”`**, so when the user clicks the button, the text will be sent. 
 
 Next, you code up the page since it’s very simple.
 
