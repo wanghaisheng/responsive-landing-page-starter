@@ -416,7 +416,7 @@ Lastly, in the payload you’ll leave the type set to text like this **"type": "
           }
 ```
 
-Next, you define the headers for the request which indicates that the body request format is JSON:
+Next, you define the headers for the request, which indicates that the body request format is JSON:
 
 ```python
 headers = {"content-type": "application/json"}
