@@ -251,37 +251,27 @@ This is another async function `async def get_message(request: Request):`. Decla
 
 Lastly, **`return templates.TemplateResponse("index.html", {"request": request})`** renders your template or your response. It takes as arguments the HTML file (index.html) and the context, which keeps track of the data we get from our request
 
-You just created the route that does the “GET” operation. You’ll also have to create a “POST” because you’re submitted data to a form. But before that, you decide to create the “templates” folder in your project directory to hold your HTML files. You create two HTML files inside of “templates”: index.html and sent_sms.html. 
+You just created the route that does the **GET** operation. You’ll also have to create a **POST** because you’re submitted data to a form. But before that, you decide to create the “templates” folder in your project directory to hold your HTML files. You create two HTML files inside of templates: index.html and sent_sms.html. 
 
-Then in your “index.html” you include this markup:
+Then in your **index.html** you include this markup:
 
+```html
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-
    <meta charset="UTF-8">
-
    <title>Title</title>
-
 </head>
-
 <body>
-
 <h1>Send a Text Message</h1>
-
   <form action="/sent_sms" method="POST" novalidate>
-
       <input type="text" placeholder="Enter number to text" name="to_number" >
-
       <button type=submit">Send Text</button>
-
   </form>
-
 </body>
-
 </html>
+```
 
 This line is crucial: “<form action="/sent_sms" method="POST" novalidate>”. The “method” attribute tells you how to send form data, in this case, you’re doing a POST. The “action” attribute specifies which page to send the form data to. You’re sending it to “sent_sms.html”. Note that the POST method here does not display the data in the URL like a GET would, instead it appends the data inside the body of the HTTP request.
 
