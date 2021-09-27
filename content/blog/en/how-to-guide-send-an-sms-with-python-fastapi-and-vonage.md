@@ -388,7 +388,7 @@ This is the payload or body of data you’ll send to your request:
   }
 ```
 
-A few things to note about this key/value pair in the payload: **`"number": to_number`**.  to_number is the same value as in our index.html with the name attribute set to **to_number.** To use it you’ll have to use its key: number.
+A few things to note about this key/value pair in the payload: **`"number": to_number`**.  to_number is the same value as in our index.html with the name attribute set to **to_number.** To use it, you’ll have to use its key: number.
 
 ```python
  "to": {
