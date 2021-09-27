@@ -71,13 +71,13 @@ You give it an **Application Name** of **send sms** and press Return.
 
 Then under the option **Select App Capabilities** you choose **Messages**.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_3.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_3.png)
 
 Now you create your webhooks: inbound and status. 
 
 You choose **“Y”** for **Create Message Webhooks**.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_4.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_4.png)
 
 For the Webhook URLs, you use the examples from the [Vonage documentation](https://developer.nexmo.com/messages/code-snippets/configure-webhooks) but understand these are configurable and can be tested with [ngrok](https://developer.nexmo.com/tools/ngrok).
 
@@ -85,11 +85,11 @@ You proceed.
 
 For the **Inbound Message Webhook,** you provide this URL: <https://www.example.com/webhooks/inbound-message>. In the next option select **POST** for the **Inbound Message Method**.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_5.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_5.png)
 
 For the **Status Message Webhook**, you give it this URL: <https://www.example.com/webhooks/message-status> and also select **POST** for the **Status Message Method**.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_6.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_6.png)
 
 The next prompt asks you if you want to **Allow use of data for AI training? Read data collection disclosure** and you say **“No”**.
 
