@@ -4,7 +4,7 @@ description: This blog post will help you develop a Multiparty Video
   Application   based on ReactJS and the new Vonage Video Express.
 author: enrico-portolan
 published: true
-published_at: 2021-09-24T16:13:40.264Z
+published_at: 2021-09-27T09:54:40.676Z
 updated_at: 2021-09-24T16:13:40.307Z
 category: tutorial
 tags:
@@ -18,6 +18,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*This article was written in collaboration with [Javier Molina Sanz](https://learn.vonage.com/authors/javier-molina-sanz/)*
+
 This blog post will help you develop a Multiparty Video Application based on ReactJS and the new Vonage Video Express. 
 The Video Express provides by default the following features:
 
