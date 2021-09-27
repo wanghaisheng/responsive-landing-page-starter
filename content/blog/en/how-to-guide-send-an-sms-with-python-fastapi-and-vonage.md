@@ -466,7 +466,7 @@ You navigate to your localhost <http://127.0.0.1:8000/>
 
 You see where to enter a phone number to send an SMS to your friend, and you do so.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/sms_form_10.png)
+![Test](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/sms_form_10.png)
 
 You’re super nervous about if they’ll receive the message.
 
