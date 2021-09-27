@@ -93,11 +93,11 @@ For the **Status Message Webhook**, you give it this URL: <https://www.example.c
 
 The next prompt asks you if you want to **Allow use of data for AI training? Read data collection disclosure** and you say **“No”**.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_7.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_7.png)
 
 Your application has been created and you’re pretty darn happy about that. You’ll be able to binge-watch Loki in no time.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_8.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_8.png)
 
 You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on **Your Applications** and you see it. 
 
