@@ -167,19 +167,19 @@ Gosh, the sun is beating down on your face and there’s a glare on your compute
 
 Now it’s time for you to install FastAPI.
 
-You remember the last time you installed it and had to upgrade pip first like this:
+The last time it was installed you had to upgrade pip first like this:
 
 ```shell
 % pip install --upgrade pip
 ```
 
-Then because you’re using **zsh** you installed FastAPI like so:
+Since you’re using **zsh** in your terminal you installed FastAPI like so:
 
 ```shell
 % pip install 'fastapi[all]'
 ```
 
-When you used bash you’d install it without the **‘ ‘** around fastapi\[all] like this:
+When you used bash you installed it without the **‘ ‘** around fastapi\[all] like this:
 
 ```shell
 % pip install fastapi[all]
