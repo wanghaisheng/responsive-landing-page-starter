@@ -40,7 +40,7 @@ All that being said, here are some of the Do's and Don'ts of Hacktoberfest from 
 
 ## Don'ts
 
-* As participants, don't create spam PRs. You are excited about making your Hacktoberfest goals but in the other end of a spam PR is a real human that is spending their time trying to maintain an open source project. 
+* As participants, don't create spam PRs. You are excited about making your Hacktoberfest goals but on the other end of a spam PR is a real human that is spending their time trying to maintain an open-source project. 
 * Do not harass maintainer to merge your PR. A gentle reminder is not 10+ comments and emails. 
 * Do not go about fixing grammatical and spelling errors unless the contribution guide explicitly asks for it. 
 * As maintainers, do not burn yourself out trying to entertain every PR and interaction. 
