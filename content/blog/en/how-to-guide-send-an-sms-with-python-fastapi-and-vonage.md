@@ -25,6 +25,8 @@ The only way out is for you to quickly build a Python website and send a text me
 
 Equipped with all this new knowledge, you whip out your laptop to get started. 
 
+## Using the Vonage CLI
+
 The first thing you do is install the new **[Vonage CLI ](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)**which will allow you to quickly create the dashboard application you need to interact with the Messages API. From your Mac terminal, you run these commands and talk yourself through them during the installation:
 
 You have NodeJS and npm installed so the first command should work depending on whether or not your $PATH is set properly. 
@@ -121,6 +123,8 @@ What you’ve learned about FastAPI so far is that it offers an amazing develope
 
 Perfect.
 
+## Creating the Python Virtual Environment
+
 The first thing you do is navigate to or **cd** into the directory where you want to create your Python project. 
 
 Then you create a new folder called **send_sms** by running this command from your directory:
@@ -158,6 +162,8 @@ Now it’s time to activate it so you can install FastAPI and your other package
 You see that **(venv)** is at the beginning of your user in your terminal, so you know it’s been activated. 
 
 Gosh, the sun is beating down on your face and there’s a glare on your computer screen. You can barely see anything and wish you had your sunglasses. You remembered that right before leaving home and getting stranded, your dog ate them! 
+
+## Installing FastAPI
 
 Ok, now it’s time for you to install FastAPI.
 
