@@ -462,9 +462,11 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
                         data=json.dumps(payload))
 ```
 
-The last step is to render the template and pass in that will be shown when the SMS is successful (send.html), the request, and the context. The context "number": to_number will display the number on send.html.
+The last step is to render the template and pass in that will be shown when the SMS is successful (send.html), the request, and the context. The context **`"number": to_number`** will display the number on send.html.
 
+```python
 return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
+```
 
 Ok. Here’s do or die time. 
 
