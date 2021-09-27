@@ -27,7 +27,7 @@ After about 8 years of Hactoberfest, it has become more or less a household name
 
 ## The dark side of Hacktoberfest
 
-Hacktoberfest is a great idea. Open source is the backbone of the software industry and having more people interested in using and contributing to open source is a good thing for the community. But like most things, there is always a catch. During Hacktoberfest there are chances of winning various swag like t-shirts and stickers and it incentivizes completing four pull requests faster. Which in turn causes many people to open trivial and spam pull requests to popular open source projects. The problem was so bad, last year Hacktoberfest had to change rules so projects had to opt in with tags. 
+Hacktoberfest is a great idea. Open source is the backbone of the software industry and having more people interested in using and contributing is a good thing for the community. But like most things, there is always a catch. During Hacktoberfest there are chances of winning various swag like t-shirts and stickers and it incentivizes completing four pull requests faster. Which in turn caused many people to open trivial and spam pull requests to popular open-source projects. The problem was so bad last year, Hacktoberfest had to change the rules so projects had to opt-in with tags.
 
 All that being said, here are some of the Do's and Don'ts of Hacktoberfest from a participant's and maintainer's perspective.
 
