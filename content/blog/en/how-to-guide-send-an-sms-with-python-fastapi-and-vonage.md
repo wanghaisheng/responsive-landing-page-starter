@@ -383,37 +383,39 @@ This is the payload or body of data you’ll send to your request:
   }
 ```
 
-A few things to note about this key/value pair in the payload: "number": to_number.  to_number is the same value as in our index.html with the name attribute set to “to_number”. To use it you’ll have to use its key: number.
+A few things to note about this key/value pair in the payload: **`"number": to_number`**.  to_number is the same value as in our index.html with the name attribute set to **to_number.** To use it you’ll have to use its key: number.
 
+```python
  "to": {
-
           "type": "sms",
-
           "number": to_number
-
       },
+```
 
-Another thing to notice in the payload is the “number”: \[YOUR_VONAGE_NUMBER], which will be your [Vonage phone number you buy here](https://dashboard.nexmo.com/buy-numbers).
 
+
+Another thing to notice in the payload is the **number: \[YOUR_VONAGE_NUMBER]**, which will be your [Vonage phone number you buy here](https://dashboard.nexmo.com/buy-numbers).
+
+```python
 "from": {
-
           "type": "sms",
-
           "number": \[YOUR_VONAGE_NUMBER]
-
       },
+```
 
-Lastly, in the payload you’ll leave the type set to text like this "type": "text" and provide a message for your text like so "text": "Help me! I need to watch Loki!".
 
+
+Lastly, in the payload you’ll leave the type set to text like this **"type": "text"** and provide a message for your text like so **"text": "Help me! I need to watch Loki!"**.
+
+```python
 "message": {
-
           "content": {
-
               "type": "text",
-
               "text": "Help me! I need to watch Loki!"
-
           }
+```
+
+
 
 Next, you define the headers for the request which indicates that the body request format is JSON:
 
