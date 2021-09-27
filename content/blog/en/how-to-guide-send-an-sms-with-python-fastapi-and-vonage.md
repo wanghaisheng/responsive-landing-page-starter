@@ -422,7 +422,7 @@ Next, you define the headers for the request, which indicates that the body requ
 headers = {"content-type": "application/json"}
 ```
 
-You pause here for a second and remember for the next line of code you’ll need to use authentication. You can choose between using a [JWT or Basic Authentication](https://developer.nexmo.com/concepts/guides/authentication#header-based-api-key-and-secret-authentication) and you choose the latter. 
+You pause here for a second and remember that you'll need to use authentication for the next line of code. You can choose between using a [JWT or Basic Authentication](https://developer.nexmo.com/concepts/guides/authentication#header-based-api-key-and-secret-authentication), and you choose the latter. 
 
 You store your API key and secret in these variables:
 
