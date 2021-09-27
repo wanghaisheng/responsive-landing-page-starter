@@ -145,7 +145,7 @@ You think to yourself that this would be a good time to create a virtual environ
 % python3 -m venv venv
 ```
 
-To verify this new virtual environment was created you should see one called “venv”, so you type:
+To verify this new virtual environment was created, you check to see if one called **venv** is in your new directory, so you type:
 
 ```shell
 % ls
