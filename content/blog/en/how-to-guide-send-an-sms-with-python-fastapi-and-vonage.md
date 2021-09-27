@@ -85,15 +85,33 @@ For the **Inbound Message Webhook,** you provide this URL: <https://www.example.
 
 ![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_5.png)
 
-For the “Status Message Webhook” you give it this URL: <https://www.example.com/webhooks/message-status> and also select “POST” for the “Status Message Method”.
+For the **Status Message Webhook**, you give it this URL: <https://www.example.com/webhooks/message-status> and also select **POST** for the **Status Message Method**.
 
-The next prompt asks you if you want to “Allow use of data for AI training? Read data collection disclosure” and you say “No”.
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_6.png)
+
+The next prompt asks you if you want to **Allow use of data for AI training? Read data collection disclosure** and you say **“No”**.
+
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_7.png)
 
 Your application has been created and you’re pretty darn happy about that. You’ll be able to binge-watch Loki in no time.
 
-You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on “Your Applications” and you see it. You’d like to check if the Messages API option is toggled on and if your webhooks made it, so you select to edit. Everything looks great! You also realize that you don’t need to do this step every time as it’s only a sanity check.
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_8.png)
 
-The water is rising past your knees and your biggest fear is you’ll be left alone on this island with a volleyball. You hated that movie. 
+You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on **Your Applications** and you see it. 
+
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_9.png)
+
+You’d like to check if the Messages API option is toggled on and if your webhooks made it, so you select to edit. 
+
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_10.png)
+
+![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/cli_11.png)
+
+Everything looks great! You also realize that you don’t need to do this step every time as it’s only a sanity check.
+
+The water is rising past your knees and your biggest fear is you’ll be left alone on this island with a volleyball.
+
+You hated that movie. 
 
 Now it’s time for you to write your FastAPI application so you can send your SMS.
 
@@ -101,9 +119,9 @@ What you’ve learned about FastAPI so far is that it offers an amazing develope
 
 Perfect.
 
-The first thing you do is navigate to or “cd” into the directory where you want to create your Python project. 
+The first thing you do is navigate to or **cd** into the directory where you want to create your Python project. 
 
-Then you create a new folder called send_sms by running this command from your directory:
+Then you create a new folder called **send_sms** by running this command from your directory:
 
 % mkdir send_sms
 
