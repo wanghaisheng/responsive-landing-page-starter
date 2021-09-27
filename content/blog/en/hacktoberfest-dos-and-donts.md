@@ -23,7 +23,7 @@ Running for the 8th year Hacktoberfest is an annual month-long event where devel
 
 ## What works really well
 
-After about 8 years of Hactoberfest, it has become more or less a household name in developer community. Every year over hundred thousand developer participate in events and submitting PRs. Although Digital Ocean and Dev.to are primary sponsors of the event, many companies have their own events with swag for folks to join in and make the event even bigger. The whole developer community comes together to make this event a success.
+After about 8 years of Hacktoberfest, it has become more or less a household name in the developer community. Every year over a hundred thousand developers participate in events and submit PRs (pull requests). Although Digital Ocean and Dev.to are the primary sponsors, many companies have their own events with swag for folks to join that makes the event even bigger. The whole developer community comes together to make this event a success.
 
 ## The dark side of Hacktoberfest
 
