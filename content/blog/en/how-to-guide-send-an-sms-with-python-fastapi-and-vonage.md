@@ -173,7 +173,7 @@ You remembered the last time you installed it and had to upgrade pip first like 
 % pip install --upgrade pip
 ```
 
-Then because you’re using “zsh” you installed FastAPI like so:
+Then because you’re using **zsh** you installed FastAPI like so:
 
 ```shell
 % pip install 'fastapi[all]'
@@ -187,9 +187,11 @@ When you used bash you’d install it without the **‘ ‘** around fastapi\[al
 
 Anyways, you now have FastAPI installed and are thrilled you installed it with the **\[all]** option because it gives you all the dependencies and features like async-generators, the requests module, JSON, Jinja2 for templating in HTML, Pydantic, etc.
 
+## Getting Hello World Running in FastAPI
+
 You want to get a Hello World example up and running fast, so you can test if your install worked. You create a main.py file in your project directory.
 
-### **main.py**
+##### **main.py**
 
 ```python
 from fastapi import FastAPI
