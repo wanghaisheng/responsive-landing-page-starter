@@ -69,17 +69,17 @@ Now for the fun part. You have to create your application so you run this comman
 
 You give it an **Application Name** of **send sms** and press Return.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_2.png)
+![Vonage CLI create application ](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_2.png)
 
-Then under the option **Select App Capabilities** you choose **Messages**.
+Then under the option **Select App Capabilities,** you choose **Messages**.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_3.png)
+![Vonage CLI select Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_3.png)
 
 Now you create your webhooks: inbound and status. 
 
 You choose **“Y”** for **Create Message Webhooks**.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_4.png)
+![Vonage CLI create messages webhooks](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_4.png)
 
 For the Webhook URLs, you use the examples from the [Vonage documentation](https://developer.nexmo.com/messages/code-snippets/configure-webhooks) but understand these are configurable and can be tested with [ngrok](https://developer.nexmo.com/tools/ngrok).
 
@@ -87,11 +87,11 @@ You proceed.
 
 For the **Inbound Message Webhook,** you provide this URL: <https://www.example.com/webhooks/inbound-message>. In the next option select **POST** for the **Inbound Message Method**.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_5.png)
+![Vonage CLI create inbound messages webhooks and choose POST method](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_5.png)
 
 For the **Status Message Webhook**, you give it this URL: <https://www.example.com/webhooks/message-status> and also select **POST** for the **Status Message Method**.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_6.png)
+![Vonage CLI create status messages webhooks and choose POST method](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_6.png)
 
 The next prompt asks you if you want to **Allow use of data for AI training? Read data collection disclosure** and you say **“No”**.
 
@@ -469,7 +469,9 @@ Ok. Here’s do or die time. 
 
 You start your server:
 
+```shell
 % uvicorn main:app --reload
+```
 
 You navigate to your localhost <http://127.0.0.1:8000/>
 
