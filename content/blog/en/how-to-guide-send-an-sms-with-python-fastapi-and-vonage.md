@@ -219,7 +219,7 @@ You run your code in development mode by doing the following:
 % uvicorn main:app --reload
 ```
 
-You think of uvicorn as being a super fast ASGI (Asynchronous Server Gateway Interface) server implementation. In **main:app**, main is the name of your file **main.py** and **app** is the name of your FastAPI instance from above. The **\--reload** flag using hot reloading which allows you to make live code changes, so you don’t have to keep restarting your server every time.
+You can think of uvicorn as a super-fast ASGI (Asynchronous Server Gateway Interface) server implementation. In **main:app**, main is the name of your file **main.py.** The name of your FastAPI instance is **app.**  The **\--reload** flag allows you to use hot reloading which allows you to make live code changes. 
 
 You see in the terminal you need to go to your localhost <http://127.0.0.1:8000/> in the browser and you see **{"hello": "world"}**. Perfect!
 
