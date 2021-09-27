@@ -161,13 +161,13 @@ Now it’s time to activate it so you can install FastAPI and your other package
 
 You see that **(venv)** is at the beginning of your user in your terminal, so you know it’s been activated. 
 
-Gosh, the sun is beating down on your face and there’s a glare on your computer screen. You can barely see anything and wish you had your sunglasses. You remembered that right before leaving home and getting stranded, your dog ate them! 
+Gosh, the sun is beating down on your face and there’s a glare on your computer screen. You can barely see anything and wish you had your sunglasses. You remember that right before leaving home and getting stranded, your dog ate them! 
 
 ## Installing FastAPI
 
-Ok, now it’s time for you to install FastAPI.
+Now it’s time for you to install FastAPI.
 
-You remembered the last time you installed it and had to upgrade pip first like this:
+You remember the last time you installed it and had to upgrade pip first like this:
 
 ```shell
 % pip install --upgrade pip
