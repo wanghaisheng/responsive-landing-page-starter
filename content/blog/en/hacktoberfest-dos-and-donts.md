@@ -44,6 +44,6 @@ All that being said, here are some of the Do's and Don'ts of Hacktoberfest from 
 * Do not harass maintainer to merge your PR. A gentle reminder is not 10+ comments and emails. 
 * Do not go about fixing grammatical and spelling errors unless the contribution guide explicitly asks for it. 
 * As maintainers, do not burn yourself out trying to entertain every PR and interaction. 
-* Do not admonish folks for their bad PRs. Try to assume positive intent. You are the ambassador of open source for many of these developers who might be trying out open source for the first time. 
+* Do not admonish folks for their bad PRs. Try to assume positive intent. You are the open-source ambassador for many of these developers who might be participating in open source for the first time. 
 
 Finally, have fun with it. This is probably the biggest festivals us developers get. Yes we have had our problems with it. But I still believe it to be primarily a force for good.
