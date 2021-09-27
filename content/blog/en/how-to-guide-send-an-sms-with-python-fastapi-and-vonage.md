@@ -187,7 +187,7 @@ When you used bash you’d install it without the **‘ ‘** around fastapi\[al
 
 Anyways, you now have FastAPI installed and are thrilled you installed it with the **\[all]** option because it gives you all the dependencies and features like async-generators, the requests module, JSON, Jinja2 for templating in HTML, Pydantic, etc.
 
-## Getting Hello World Running in FastAPI
+## FastAPI Hello World
 
 You want to get a Hello World example up and running fast, so you can test if your install worked. You create a main.py file in your project directory.
 
@@ -223,6 +223,8 @@ You think of uvicorn as being a super fast ASGI (Asynchronous Server Gateway Int
 
 You see in the terminal you need to go to your localhost <http://127.0.0.1:8000/> in the browser and you see **{"hello": "world"}**. Perfect!
 
+## FastAPI Hello World
+
 Now it’s time to write your code to send your SMS. 
 
 The sky is dark and the wind is heavy. A tornado is brewing.
@@ -251,7 +253,7 @@ Import Jinja so you can use its templating engine **`from fastapi.templating imp
 
 In this line, **`from fastapi.responses import HTMLResponse`** we need to allow you to get back an HTMLResponse.
 
-Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called **templates**. Your line of code looks like this: t**`emplates = Jinja2Templates(directory="templates")`**
+Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called **templates**. Your line of code looks like this: **`templates = Jinja2Templates(directory="templates")`**
 
 In the route decorator **`@app.get("/", response_class=HTMLResponse)`**. The HTMLResponse indicates that the response you get back contains HTML.
 
