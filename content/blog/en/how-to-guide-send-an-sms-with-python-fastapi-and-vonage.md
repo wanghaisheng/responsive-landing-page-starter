@@ -466,15 +466,15 @@ You navigate to your localhost <http://127.0.0.1:8000/>
 
 You see where to enter a phone number to send an SMS to your friend, and you do so.
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/sms_form_10.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/sms_form_10.png)
 
 You’re super nervous about if they’ll receive the message.
 
 Great news! They got the text message!
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/img-7473.jpg)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/img-7473.jpg)
 
-![](/content/blog/how-to-guide-send-an-sms-with-python-fastapi-and-vonage/screen-shot-2021-09-26-at-9.17.22-pm.png)
+![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/screen-shot-2021-09-26-at-9.17.22-pm.png)
 
 You see a boat approaching and realize that it’s for you. 
 
