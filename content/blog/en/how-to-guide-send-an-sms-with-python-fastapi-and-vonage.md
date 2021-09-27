@@ -203,7 +203,7 @@ async def home(): 
   return {"hello": "world"}
 ```
 
-The line **`from fastapi import FastAPI`** imports FastAPI as a Python class
+The line **`from fastapi import FastAPI`** imports FastAPI as a Python class.
 
 **`app = FastAPI()`** creates an instance of FastAPI called app.
 
@@ -213,7 +213,7 @@ Here is an asynchronous function **`async def home():`**. They can process requ
 
 This line `return {"hello": "world"}` returns a dictionary to the browser.
 
-Now you run your code in development mode by doing the following:
+You run your code in development mode by doing the following:
 
 ```shell
 % uvicorn main:app --reload
