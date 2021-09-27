@@ -27,7 +27,7 @@ Equipped with all this new knowledge, you whip out your laptop to get started. 
 
 ## Using the Vonage CLI
 
-The first thing you do is install the new **[Vonage CLI](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)** which will allow you to quickly create the dashboard application you need to interact with the Messages API. From your terminal, you run these commands and talk yourself through them during the installation:
+The first thing you do is install the new **[Vonage CLI](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)** which allows you to quickly create the dashboard application you need to interact with the Messages API. From your terminal, you run these commands and talk yourself through them during the installation:
 
 You have NodeJS and npm installed, so the first command should work depending on whether or not your $PATH is set correctly. 
 
@@ -45,7 +45,7 @@ You want to make sure the installation was successful so you type:
 
 ![Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_1.png)
 
-Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API Key and API Secret. You’ve already registered so all you have to do is sign in. 
+Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API Key and API Secret. You’re already registered so all you have to do is sign in. 
 
 Then you set your keys by doing the following:
 
@@ -55,7 +55,7 @@ Then you set your keys by doing the following:
 
 Success.
 
-You got this but in case you forget something you can always turn to the help flag:
+You got this! In case you forgot something you can use the help flag:
 
 ```shell
 % vonage --help
