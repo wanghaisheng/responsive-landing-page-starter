@@ -223,7 +223,7 @@ You think of uvicorn as being a super fast ASGI (Asynchronous Server Gateway Int
 
 You see in the terminal you need to go to your localhost <http://127.0.0.1:8000/> in the browser and you see **{"hello": "world"}**. Perfect!
 
-## Sending Your SMS 
+## Sending Your SMS
 
 Now it’s time to write your code to send your SMS. 
 
@@ -494,3 +494,5 @@ You hop on and they bring you to safety.
 Later that evening, you lay in bed watching Loki, thinking to yourself: Thank goodness for Python.
 
 The end.
+
+Let me know if you sent an SMS using this tutorial. You can Tweet me at [@tonyasims](https://twitter.com/TonyaSims).
