@@ -101,7 +101,7 @@ Your application has been created and you’re pretty darn happy about that. You
 
 ![Vonage CLI application created](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_8.png)
 
-You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on **Your Applications** and you see it. 
+You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on **Your Applications** and see it. 
 
 ![See Vonage dashboard after creating application with Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_9.png)
 
