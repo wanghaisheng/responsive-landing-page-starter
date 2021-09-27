@@ -266,20 +266,22 @@ Then in your **index.html** you include this markup:
 <body>
 <h1>Send a Text Message</h1>
   <form action="/sent_sms" method="POST" novalidate>
-      <input type="text" placeholder="Enter number to text" name="to_number" >
+      <input type="text" placeholder="Enter number to text" name="to_number">
       <button type=submit">Send Text</button>
   </form>
 </body>
 </html>
 ```
 
-This line is crucial: “<form action="/sent_sms" method="POST" novalidate>”. The “method” attribute tells you how to send form data, in this case, you’re doing a POST. The “action” attribute specifies which page to send the form data to. You’re sending it to “sent_sms.html”. Note that the POST method here does not display the data in the URL like a GET would, instead it appends the data inside the body of the HTTP request.
+This line is crucial: `<form action="/sent_sms" method="POST" novalidate>`. The **method** attribute tells you how to send form data, in this case, you’re doing a POST. The **`action`** attribute specifies which page to send the form data to. You’re sending it to “sent_sms.html”. Note that the POST method here does not display the data in the URL like a GET would, instead it appends the data inside the body of the HTTP request.
 
-Here “ <input type="text" placeholder="Enter number to text" name="to_number" >” you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called “to_number” which specifies the name of the input element. This will be important later on when you reference this attribute to get the number in which you’re sending the SMS.
+Here  `<input type="text" placeholder="Enter number to text" name="to_number" >` you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called **to_number** which specifies the name of the input element. This will be important later on when you reference this attribute to get the number in which you’re sending the SMS.
 
-This line “ <button type=submit">Send Text</button>” we define a button with “type=”submit””, so when the user clicks the button, the text will be sent. 
+This line` <button type=submit">Send Text</button>` we define a button with **`type=”submit”`**, so when the user clicks the button, the text will be sent. 
 
-Next, you code up the “sent_sms.html” page since it’s very simple.
+Next, you code up the 
+
+ page since it’s very simple.
 
 <!DOCTYPE html>
 
