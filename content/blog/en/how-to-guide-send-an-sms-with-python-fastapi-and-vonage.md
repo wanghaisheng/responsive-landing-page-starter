@@ -438,7 +438,7 @@ encoded_credentials = b64encode(bytes(f'{key}:{secret}',
                                      encoding='ascii')).decode('ascii')
 ```
 
-Here you create your authorization header which is a key/value pair including your Base64 encoded username and password. This pair authenticates your requests and allows you to access the API. 
+Here you create your authorization header, a key/value pair including your Base64 encoded username and password. This pair authenticates your requests and allows you to access the API. 
 
 ```python
 auth_header = f'Basic {encoded_credentials}'
