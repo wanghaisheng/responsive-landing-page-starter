@@ -344,7 +344,6 @@ async def send_message(request: Request, to_number: str = Form(...)):
 key = 'abcde'
 secret = '12345'
 encoded_credentials = b64encode(bytes(f'{key}:{secret}',
-
                                      encoding='ascii')).decode('ascii')
 
 auth_header = f'Basic {encoded_credentials}'
