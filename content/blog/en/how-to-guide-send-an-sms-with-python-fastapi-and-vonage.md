@@ -237,19 +237,19 @@ async def get_message(request: Request):
 
 
 
-Here you are also importing Request “from fastapi import FastAPI, Request”. Request allows you to get incoming details or requests to your function.
+Here you are also importing Request **`from fastapi import FastAPI, Request.`** Request allows you to get incoming details or requests to your function.
 
-Import Jinja so you can use its templating engine “from fastapi.templating import Jinja2Templates”.
+Import Jinja so you can use its templating engine **`from fastapi.templating import Jinja2Templates`**.
 
-This line “from fastapi.responses import HTMLResponse” we need to allow you to get back an HTMLResponse.
+In this line, **`from fastapi.responses import HTMLResponse`** we need to allow you to get back an HTMLResponse.
 
-Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called “templates”. Your line of code looks like this: “templates = Jinja2Templates(directory="templates")”  
+Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called **templates**. Your line of code looks like this: t**`emplates = Jinja2Templates(directory="templates")`**
 
-In the route decorator “@app.get("/", response_class=HTMLResponse)”. The HTMLResponse indicates that the response you get back contains HTML.
+In the route decorator **`@app.get("/", response_class=HTMLResponse)`**. The HTMLResponse indicates that the response you get back contains HTML.
 
-This is another async function “async def get_message(request: Request):”. Declaring a route operation function with a parameter of type "Request", will tell your application to pass the Request in that parameter.
+This is another async function `async def get_message(request: Request):`. Declaring a route operation function with a parameter of type Request will tell your application to pass the Request in that parameter.
 
-Lastly, “return templates.TemplateResponse("index.html", {"request": request})” renders your template or your response. It takes as arguments the HTML file (index.html) and the context, which keeps track of the data we get from our request
+Lastly, **`return templates.TemplateResponse("index.html", {"request": request})`** renders your template or your response. It takes as arguments the HTML file (index.html) and the context, which keeps track of the data we get from our request
 
 You just created the route that does the “GET” operation. You’ll also have to create a “POST” because you’re submitted data to a form. But before that, you decide to create the “templates” folder in your project directory to hold your HTML files. You create two HTML files inside of “templates”: index.html and sent_sms.html. 
 
