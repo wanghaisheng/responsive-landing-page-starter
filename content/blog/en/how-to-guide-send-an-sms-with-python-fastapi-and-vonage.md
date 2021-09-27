@@ -1,5 +1,5 @@
 ---
-title: How to Guide - Send an SMS With Python, FastAPI and Vonage
+title: The How To Guide -  Sending an SMS With Python, FastAPI and Vonage
 description: Test
 author: tonya-sims-1
 published: false
