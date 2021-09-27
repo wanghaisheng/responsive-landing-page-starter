@@ -95,19 +95,19 @@ For the **Status Message Webhook**, you give it this URL: <https://www.example.c
 
 The next prompt asks you if you want to **Allow use of data for AI training? Read data collection disclosure** and you say **“No”**.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_7.png)
+![Vonage CLI choose AI training option](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_7.png)
 
 Your application has been created and you’re pretty darn happy about that. You’ll be able to binge-watch Loki in no time.
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_8.png)
+![Vonage CLI application created](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_8.png)
 
 You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on **Your Applications** and you see it. 
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_9.png)
+![See Vonage dashboard after creating application with Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_9.png)
 
 You’d like to check if the Messages API option is toggled on and if your webhooks made it, so you select to edit. 
 
-![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
+![Check Messages API is toggled on and webhooks are correct in Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
 
 ![](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_11.png)
 
