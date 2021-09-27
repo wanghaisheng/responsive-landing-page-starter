@@ -168,13 +168,13 @@ You remembered the last time you installed it and had to upgrade pip first like 
 Then because you’re using “zsh” you installed FastAPI like so:
 
 ```shell
-% pip install 'fastapi\[all]'
+% pip install 'fastapi[all]'
 ```
 
 When you used bash you’d install it without the **‘ ‘** around fastapi\[all] like this:
 
 ```shell
-% pip install fastapi\[all]
+% pip install fastapi[all]
 ```
 
 Anyways, you now have FastAPI installed and are thrilled you installed it with the “\[all]” option because it gives you all the dependencies and features like async-generators, the requests module, JSON, Jinja2 for templating in HTML, Pydantic, etc.
