@@ -306,11 +306,11 @@ Next, you code up the page since it is simple.
 </html>
 ```
 
-If the SMS is sent successfully, you will see this page. The only sort of tricky thing here is this: **`{{ number }}`**. But it’s not that tricky at all! This is the Jinja language and it’s pulling in the phone number you put in the form. The number you want to send the SMS to. You’re about to write the POST route and will see how it works.
+If the SMS sends successfully, you will see this page. The only tricky thing is this: **{{ number }},**  which is the Jinja language. It will pull in the phone number you put in the form, the number you want to send the SMS. You’re about to write the POST route and will see how it works.
 
 You’re feeling pretty good now because you’re in the home stretch. But it’s raining now, and you’re worried your laptop is going to get messed up. So your fingers get to coding. 
 
-You continue in the **main.py** file by adding this POST method:
+You continue in the **main.py** file by adding this POST method:
 
 ```python
 from fastapi import FastAPI, Request, Form
