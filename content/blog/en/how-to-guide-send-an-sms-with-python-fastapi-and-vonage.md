@@ -388,7 +388,7 @@ The payload or body of data you’ll send to your request:
   }
 ```
 
-A few things to note about this key/value pair in the payload: **`"number": to_number`**.  to_number is the same value as in our index.html with the name attribute set to **to_number.** To use it, you’ll have to use its key: number.
+A few things to note about this key/value pair in the payload: **"number": to_number**. to_number is the same value as in our index.html with the name attribute set to **to_number.** To use it, you will have to use its key: **number**.
 
 ```python
  "to": {
@@ -406,7 +406,7 @@ Another thing to notice in the payload is the **number: \[YOUR_VONAGE_NUMBER]**,
       },
 ```
 
-Lastly, in the payload you’ll leave the type set to text like this **"type": "text"** and provide a message for your text like so **"text": "Help me! I need to watch Loki!"**.
+Lastly, in the payload, leave the type set to text like this **"type": "text"** and provide a message for your text like so **"text": "Help me! I need to watch Loki!"**.
 
 ```python
 "message": {
@@ -422,7 +422,7 @@ Next, you define the headers for the request, which indicates that the body requ
 headers = {"content-type": "application/json"}
 ```
 
-You pause here for a second and remember that you'll need to use authentication for the next line of code. You can choose between using a [JWT or Basic Authentication](https://developer.nexmo.com/concepts/guides/authentication#header-based-api-key-and-secret-authentication), and you choose the latter. 
+You pause here for a second and remember that you'll need to use authentication for this line of code. You can choose between using a [JWT or Basic Authentication](https://developer.nexmo.com/concepts/guides/authentication#header-based-api-key-and-secret-authentication), and you choose the latter. 
 
 You store your API key and secret in these variables:
 
@@ -431,14 +431,14 @@ key = 'abcde'
 secret = '12345'
 ```
 
-You then create a variable called encoded_credentials and proceed to do the Base64 encoding by using an f-string and passing in your key and secret.
+You then create a variable called encoded_credentials and do the Base64 encoding by using an f-string and passing in your key and secret.
 
 ```python
 encoded_credentials = b64encode(bytes(f'{key}:{secret}',
                                      encoding='ascii')).decode('ascii')
 ```
 
-Here you create your authorization header, a key/value pair including your Base64 encoded username and password. This pair authenticates your requests and allows you to access the API. 
+You create your authorization header, a key/value pair including your Base64 encoded username and password. This pair authenticates your requests and allows you to access the API.
 
 ```python
 auth_header = f'Basic {encoded_credentials}'
@@ -450,7 +450,7 @@ Next, you pass in the authorization header:
 headers = {"content-type": "application/json", "Authorization": auth_header}
 ```
 
-Now the fun part! Here you are using the requests module and sending a post request requests.post to the Vonage API. You pass in the API URL (<https://api.nexmo.com/v0.1/messages>) and use HTTP Basic Auth from the requests module. The auth keyword provides a shortcut and allows you to do [Basic Authentication](https://docs.python-requests.org/en/latest/user/authentication/#basic-authentication). Then you pass in your headers **`headers=headers`**. Lastly, you pass in the request body and convert the Python dictionary object into a JSON string **`data=json.dumps(payload)`**.
+Now the fun part! Here you use the requests module and send a post request **requests.post** to the Vonage API. You pass in the API URL (<https://api.nexmo.com/v0.1/messages>) and use HTTP Basic Auth from the requests module. The auth keyword provides a shortcut and allows you to do [Basic Authentication](https://docs.python-requests.org/en/latest/user/authentication/#basic-authentication). Then you pass in your headers **headers=header** and the request body, a Python dictionary object. You convert it to a JSON string **data=json.dumps(payload)**.
 
 ```python
 response = requests.post("https://api.nexmo.com/v0.1/messages",
