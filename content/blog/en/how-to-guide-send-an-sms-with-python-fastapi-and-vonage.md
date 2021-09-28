@@ -29,9 +29,9 @@ Equipped with all this new knowledge, you whip out your laptop to get started.
 
 ## Using the Vonage CLI
 
-The first thing you do is install the new **[Vonage CLI](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)** which allows you to quickly create the dashboard application you need to interact with the Messages API. From your terminal, you run these commands and talk yourself through them during the installation:
+ The first thing you do is install the new **[Vonage CLI](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)**. It allows you to create a dashboard application quickly. You need a Vonage application to interact with the Messages API. From your terminal, you run these commands and talk yourself through them during the installation:
 
-You have NodeJS and npm installed, so the first command should work depending on whether or not your $PATH is set correctly. 
+You have NodeJS and npm installed, so the first command should work depending on whether or not your $PATH is correct.
 
 ```shell
 % npm install -g @vonage/cli
