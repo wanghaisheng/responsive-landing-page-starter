@@ -129,7 +129,6 @@ app.post("/webhooks/rtcevent", (request, response) => {
   }
   response.status(200).send({code:200, status: 'got rtcevent request'});
 });
-
 ```
 
 In the code for the chat application, there is a `message:received` event listener that fires when a message is received from the Facebook User. It then takes the message and adds it to the chat display.
@@ -157,30 +156,42 @@ app.post("/webhooks/rtcevent", (request, response) => {
   // the text message from the chat and relay to Messenger using the messages API 
   // (here, using the Server SDK wrapping of it)
   if (request.body.type === "custom:chat"){
-    const FB_RECIPIENT_ID = request.body.from;
-    const FB_SENDER_ID = request.body.to;
+    const FB_RECIPIENT_ID = request.body.body.to;
+    const FB_SENDER_ID = request.body.body.from;
     vonage.channel.send(
       { type: 'messenger', id: FB_RECIPIENT_ID },
       { type: 'messenger', id: FB_SENDER_ID },
       {
           content: {
               type: 'text',
-              text: request.body.text,
+              text: request.body.body.text,
           },
       },
       (err, data) => {
           if (err) {
-              console.error(err);
+              console.error("error sending outgoing message: ", err);
           } else {
-              console.log(data.message_uuid);
+              console.log("message sent successfully: ", data.message_uuid);
           }
       }
     );
   }
   ...
 });
-
 ```
+
+For those wondering, `FB_RECIPIENT_ID` is also the Conversation Name that was set when the intial message was sent from the Facebook User. Getting the value for `FB_SENDER_ID`, the Facebook Page Id, is a little more involved.  When an agent opens a chat, a request is made to the server's `getChatAppAccounts` endpoint which makes a call to Vonage's `chatapp-accounts` API endpoint with an admin JWT. The Facebook Page Id is in the response, which we send back to the client. The good news is that when outbound messages gets integrated, you won't have to worry about any of this and the Client SDK will take care of everything. This is just an example of why Client SDK can be very helpful when developing applications.
+
+## Small Gotcha
+
+If your outbound messages stop working all of a sudden, check your server log for any errors. If you come across an error that has this:
+
+```json
+status: 'rejected',
+error: { reason: 'Expired access Token', code: 1370 }
+```
+
+That means your Facebook Page token has expired and will need to be refreshed. Log into the Vonage dashboard and go to [Messages and Dispatch, then Social Channels](https://dashboard.nexmo.com/messages/social-channels). A button should be next to your Facebook Page to refresh your token. 
 
 ## Conclusion
 
