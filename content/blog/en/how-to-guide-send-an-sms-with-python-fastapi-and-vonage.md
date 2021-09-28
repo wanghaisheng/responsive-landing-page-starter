@@ -29,7 +29,7 @@ Equipped with all this new knowledge, you whip out your laptop to get started.
 
 ## Installing the Vonage CLI
 
- The first thing you do is install the new **[Vonage CLI](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)**. It allows you to create a dashboard application quickly. You need a Vonage application to interact with the Messages API. From your terminal, you run these commands and talk yourself through them during the installation:
+The first thing you do is install the new **[Vonage CLI](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)**. It allows you to create a dashboard application quickly. You need a Vonage application to interact with the Messages API. From your terminal, you run these commands and talk yourself through them during the installation:
 
 You have NodeJS and npm installed, so the first command should work depending on whether or not your $PATH is correct.
 
@@ -55,9 +55,7 @@ Then you set your keys by doing the following:
 % vonage config:set --apiKey=12345 --apiSecret=abcde
 ```
 
-Success.
-
-You got this! In case you forgot a Vonage command, you can use the help flag:
+Success, you got this! In case you forgot a Vonage command, you can use the help flag:
 
 ```shell
 % vonage --help
@@ -296,7 +294,7 @@ Here **`<input type="text" placeholder="Enter number to text" name="to_number" 
 
 In this line **`<button type=submit">Send Text</button>`** you define a button with **`type=”submit"`.** The text will send when you click the button.
 
-Next, you code up the page since it is simple.
+Next, you build the sent SMS page.
 
 ```html
 <!DOCTYPE html>
