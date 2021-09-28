@@ -283,13 +283,13 @@ Then in your **index.html,** you include this markup:
 </html>
 ```
 
-This line is crucial: `<form action="/sent_sms" method="POST" novalidate>`. The **method** attribute tells you how to send form data, in this case, you’re doing a POST. The **`action`** attribute specifies which page to send the form data to. You’re sending it to “sent_sms.html”. Note that the POST method here does not display the data in the URL like a GET would, instead it appends the data inside the body of the HTTP request.
+This line is crucial: **`<form action="/sent_sms" method="POST" novalidate>`**. The **method** attribute tells you how to send form data as a POST. The **action** attribute specifies which page to send the form data to. You send it to **sent_sms.html**. Note that the POST method here does not display the data in the URL as a GET would. Instead, it appends the data inside the body of the HTTP request.
 
-Here  `<input type="text" placeholder="Enter number to text" name="to_number" >` you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called **to_number** which specifies the name of the input element. This will be important later on when you reference this attribute to get the number in which you’re sending the SMS.
+Here **`<input type="text" placeholder="Enter number to text" name="to_number" >`** you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called **to_number** that specifies the name of the input element. It is important when you reference the attribute to get the number that you are sending the SMS.
 
-In this line `<button type=submit">Send Text</button>` we define a button with **`type=”submit”`**, so when the user clicks the button, the text will be sent. 
+In this line **`<button type=submit">Send Text</button>`** you define a button with **`type=”submit"`.** The text will send when you click the button.
 
-Next, you code up the page since it’s very simple.
+Next, you code up the page since it is simple.
 
 ```html
 <!DOCTYPE html>
