@@ -455,7 +455,7 @@ Next, you pass in the authorization header:
 headers = {"content-type": "application/json", "Authorization": auth_header}
 ```
 
-Now the fun part! Here you use the requests module and send a post request **requests.post** to the Vonage API. You pass in the API URL (<https://api.nexmo.com/v0.1/messages>) and use HTTP Basic Auth from the requests module. The auth keyword provides a shortcut and allows you to do [Basic Authentication](https://docs.python-requests.org/en/latest/user/authentication/#basic-authentication). Then you pass in your headers **headers=header** and the request body, a Python dictionary object. You convert it to a JSON string **data=json.dumps(payload)**.
+Now the fun part! Here you use the requests module and send a post request **`requests.post`** to the Vonage API. You pass in the API URL (<https://api.nexmo.com/v0.1/messages>) and use HTTP Basic Auth from the requests module. The auth keyword provides a shortcut and allows you to do [Basic Authentication](https://docs.python-requests.org/en/latest/user/authentication/#basic-authentication). Then you pass in your headers **`headers=headers`** and the request body, a Python dictionary object. You convert it to a JSON string **`data=json.dumps(payload)`**.
 
 ```python
 response = requests.post("https://api.nexmo.com/v0.1/messages",
