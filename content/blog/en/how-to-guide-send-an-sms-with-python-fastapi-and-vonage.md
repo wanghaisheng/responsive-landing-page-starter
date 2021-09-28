@@ -356,17 +356,17 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
 return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
 ```
 
-Here **`from fastapi import FastAPI, Request, Form`** you're importing **`Form`** , which you need to receive the form field data
+Here you import the **Form** object **`from fastapi import FastAPI, Request`. Form** allows you to receive form field data.
 
-You need this line, `from base64 import b64encode` to encode the API key and API secret. 
+This line, **`from base64 import b64encode`** is needed to encode the API key and API secret. 
 
-You import requests so you can send HTTP requests and import json because you have to do some things with JSON.
+You **`import requests`** to send HTTP requests and **`import JSON`** because you have to do some things with JSON.
 
-This line should look a little familiar `@app.post("/send_sms", response_class=HTMLResponse)`. Here you have an **`@app.post`** route operation and pass in an HTML Response. 
+This line should look a little familiar @app.post("/send_sms", response_class=HTMLResponse). Here you have an **`@app.post`** route operation and pass in an HTML Response. 
 
-You have your async function again **`async def send_message(request: Request, to_number: str = Form(...)):`** This time you define form parameters as a type hint and read the form in by doing `Form(...)`.
+You have your async function again **`async def send_message(request: Request, to_number: str = Form(...)):`** You define form parameters as a type hint and read it in by using **`Form(...)`**.
 
-This is the payload or body of data you’ll send to your request:
+The payload or body of data you’ll send to your request:
 
 ```python
  payload = {
