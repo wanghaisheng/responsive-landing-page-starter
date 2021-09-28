@@ -87,9 +87,9 @@ Then you continue to use the default values by pressing Return for each option u
 
 You have an application now and are pretty darn happy about that. You will be able to binge-watch Loki in no time. You want to confirm its creation, so you go back to the [dashboard](https://dashboard.nexmo.com/). You click on **Your Applications** and see it.
 
-You check if the toggled option is on for Messages API. You also want to verify your webhooks made it, so you select to edit.
-
 ![See Vonage dashboard after creating application with Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_9.png)
+
+You check if the toggled option is on for Messages API. You also want to verify your webhooks made it, so you select to edit.
 
 ![Edit your application in the Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
 
@@ -336,7 +336,12 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
                         headers=headers,
                         data=json.dumps(payload))
 
-return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
+
+  if response:
+            return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
+
+
+  return templates.TemplateResponse("send.html", {"request": request, "error": "There is an error!"})
 ```
 
 Here you import the **Form** object **`from fastapi import FastAPI, Request`. Form** allows you to receive form field data.
