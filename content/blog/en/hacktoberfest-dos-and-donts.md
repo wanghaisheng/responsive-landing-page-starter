@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# What is Hacktoberfest
+## What is Hacktoberfest
 
 Running for the 8th year Hacktoberfest is an annual month-long event where developers of all experience levels get to contribute to open-source projects, participate in events, complete pull requests, and support these projects financially. Hacktoberfest is a great way for both new and experienced developers to get to work on open-source projects. It is also an opportunity for project maintainers to attract new developers to help maintain the projects. 
 
