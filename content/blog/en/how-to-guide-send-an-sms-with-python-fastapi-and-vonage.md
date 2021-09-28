@@ -63,7 +63,7 @@ You got this! In case you forgot a Vonage command, you can use the help flag:
 % vonage --help
 ```
 
-Now for the fun part. You have to create your application so you run this command:
+Now for the fun part. You have to create your application, so you run this command:
 
 ```shell
 % vonage apps:create
