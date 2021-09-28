@@ -19,11 +19,13 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Imagine you’re stranded on an island with only your computer and WiFi. The ocean waters are starting to creep up, and you’re worried you’ll be underwater if you don’t act quickly. 
+Imagine you are on an island, stranded. You only have your computer and WiFi. The ocean waters are starting to creep up, and you’re worried you’ll be underwater if you don’t act quickly. 
 
-The only way out is to build a Python website and send a text message to someone. Luckily, you’re a coder and have recently tinkered with the new FastAPI web framework. You’ve also tried out the Vonage Messages API to send SMS messages. 
 
-Equipped with all this new knowledge, you whip out your laptop to get started. 
+The only way out is to build a Python website and send a text message to someone. Luckily, you’re a coder and have recently tinkered with the new FastAPI web framework. You’ve also tried out the Vonage Messages API to send SMS messages. 
+
+
+Equipped with all this new knowledge, you whip out your laptop to get started.
 
 ## Using the Vonage CLI
 
