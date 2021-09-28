@@ -338,7 +338,7 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
 
 
   if response:
-            return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
+    return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
 
 
   return templates.TemplateResponse("send.html", {"request": request, "error": "There is an error!"})
@@ -350,7 +350,7 @@ This line, **`from base64 import b64encode`,** is needed to encode the API key 
 
 You **`import requests`** to send HTTP requests and **`import JSON`** because you have to do some things with JSON.
 
-This line should look a little familiar @app.post("/send_sms", response_class=HTMLResponse). Here you have an **`@app.post`** route operation and pass in an HTML Response. 
+This line should look a little familiar **`@app.post("/send_sms", response_class=HTMLResponse)`**. Here you have an **`@app.post`** route operation and pass in an HTML Response. 
 
 You have your async function again **`async def send_message(request: Request, to_number: str = Form(...)):`** . You define form parameters as a type hint and read it in by using **`Form(...)`**.
 
@@ -447,10 +447,14 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
                         data=json.dumps(payload))
 ```
 
-The last step is to render the template. Pass in what will be shown when the SMS is successful: send.html, the request, and the context. The context **"number": to_number** will display the number on send.html.
+The last step is to render the template. Here you check if the response is 200 or ok with **`if response`.** Then you pass in send.html, the request, and the context. The context **"number": to_number** will display the number on send.html. Finally, you render the error message if something goes awry.
 
 ```python
-return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
+if response:
+    return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
+
+
+return templates.TemplateResponse("send.html", {"request": request, "error": "There is an error!"})
 ```
 
 Here’s do or die time.
