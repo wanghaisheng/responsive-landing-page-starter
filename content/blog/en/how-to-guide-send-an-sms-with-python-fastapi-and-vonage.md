@@ -365,13 +365,13 @@ return templates.TemplateResponse("send.html", {"request": request, "number": to
 
 Here you import the **Form** object **`from fastapi import FastAPI, Request`. Form** allows you to receive form field data.
 
-This line, **`from base64 import b64encode`** is needed to encode the API key and API secret. 
+This line, **`from base64 import b64encode `,** is needed to encode the API key and API secret. 
 
 You **`import requests`** to send HTTP requests and **`import JSON`** because you have to do some things with JSON.
 
 This line should look a little familiar @app.post("/send_sms", response_class=HTMLResponse). Here you have an **`@app.post`** route operation and pass in an HTML Response. 
 
-You have your async function again **`async def send_message(request: Request, to_number: str = Form(...)):`** You define form parameters as a type hint and read it in by using **`Form(...)`**.
+You have your async function again **`async def send_message(request: Request, to_number: str = Form(...)):`** . You define form parameters as a type hint and read it in by using **`Form(...)`**.
 
 The payload or body of data you’ll send to your request:
 
