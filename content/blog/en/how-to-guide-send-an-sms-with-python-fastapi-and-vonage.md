@@ -21,9 +21,7 @@ replacement_url: ""
 ---
 Imagine you are on an island, stranded. You only have your computer and WiFi. The ocean waters are starting to creep up, and you’re worried you’ll be underwater if you don’t act quickly. 
 
-
 The only way out is to build a Python website and send a text message to someone. Luckily, you’re a coder and have recently tinkered with the new FastAPI web framework. You’ve also tried out the Vonage Messages API to send SMS messages. 
-
 
 Equipped with all this new knowledge, you whip out your laptop to get started.
 
@@ -77,7 +75,7 @@ Then under the option **Select App Capabilities,** you choose **Messages**.
 
 ![Vonage CLI select Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_3.png)
 
-Now you create your webhooks: inbound and status. 
+Now you create your inbound and status webhooks. 
 
 You choose **“Y”** for **Create Message Webhooks**.
 
@@ -115,16 +113,12 @@ You check if the toggled option is on for Messages API. You also want to verify 
 
 Everything looks great! You also realize that you don’t need to do this step every time as it’s only a sanity check.
 
-
 The water is rising past your knees. Your biggest fear is you’ll be left alone on this island with a volleyball.
 You hated that movie. 
 
-
 Now it’s time for you to write your FastAPI application so you can send your SMS.
 
-
 You’ve learned that FastAPI offers a wonderful developer experience and speeds up coding time. It’s also super fast in performance because of its asynchronous nature. 
-
 
 Perfect.
 
@@ -363,7 +357,7 @@ return templates.TemplateResponse("send.html", {"request": request, "number": to
 
 Here you import the **Form** object **`from fastapi import FastAPI, Request`. Form** allows you to receive form field data.
 
-This line, **`from base64 import b64encode `,** is needed to encode the API key and API secret. 
+This line, **`from base64 import b64encode`,** is needed to encode the API key and API secret. 
 
 You **`import requests`** to send HTTP requests and **`import JSON`** because you have to do some things with JSON.
 
