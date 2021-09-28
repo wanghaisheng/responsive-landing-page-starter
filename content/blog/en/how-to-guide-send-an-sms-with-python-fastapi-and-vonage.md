@@ -27,7 +27,7 @@ The only way out is to build a Python website and send a text message to someone
 
 Equipped with all this new knowledge, you whip out your laptop to get started.
 
-## Using the Vonage CLI
+## Installing the Vonage CLI
 
  The first thing you do is install the new **[Vonage CLI](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/)**. It allows you to create a dashboard application quickly. You need a Vonage application to interact with the Messages API. From your terminal, you run these commands and talk yourself through them during the installation:
 
@@ -39,7 +39,7 @@ You have NodeJS and npm installed, so the first command should work depending on
 
 Bam! That worked! You now have the Vonage CLI installed on your machine. 
 
-You want to make sure the installation was successful, so you type:
+You want to make sure the installation was successful so you type:
 
 ```shell
 % vonage
@@ -63,7 +63,9 @@ You got this! In case you forgot a Vonage command, you can use the help flag:
 % vonage --help
 ```
 
-Now for the fun part. You have to create your application, so you run this command:
+## Using the Vonage CLI
+
+Now for the fun part. You have to create your application so you run this command:
 
 ```shell
 % vonage apps:create
