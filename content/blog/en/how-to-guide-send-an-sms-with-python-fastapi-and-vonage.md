@@ -47,7 +47,7 @@ You want to make sure the installation was successful so you type:
 
 ![Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_1.png)
 
-Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API Key and API Secret. You’re already registered so all you have to do is sign in. 
+Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API Key and API Secret. You’re already registered. All you have to do is sign in. 
 
 Then you set your keys by doing the following:
 
@@ -57,7 +57,7 @@ Then you set your keys by doing the following:
 
 Success.
 
-You got this! In case you forgot something you can use the help flag:
+You got this! In case you forgot a Vonage command, you can use the help flag:
 
 ```shell
 % vonage --help
@@ -99,15 +99,15 @@ The next prompt asks you if you want to **Allow use of data for AI training? Rea
 
 ![Vonage CLI choose AI training option](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_7.png)
 
-Your application has been created and you’re pretty darn happy about that. You’ll be able to binge-watch Loki in no time.
+You have a created application! You’re pretty darn happy about that. You’ll be able to binge-watch Loki in no time.
 
 ![Vonage CLI application created](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_8.png)
 
-You go back to the [dashboard](https://dashboard.nexmo.com/) because you want to check if your application was created. You click on **Your Applications** and see it. 
+Your created application awaits. You want to confirm. You go back to the [dashboard](https://dashboard.nexmo.com/). You click on **Your Applications** and see it.
+
+You check if the toggled option is on for Messages API. You also want to verify your webhooks made it, so you select to edit.
 
 ![See Vonage dashboard after creating application with Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_9.png)
-
-You’d like to check if the Messages API option is toggled on and if your webhooks made it, so you select to edit. 
 
 ![Edit your application in the Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
 
