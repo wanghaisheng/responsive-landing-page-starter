@@ -81,21 +81,7 @@ You choose **“Y”** for **Create Message Webhooks**.
 
 ![Vonage CLI create messages webhooks](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_4.png)
 
-For the Webhook URLs, you use the examples from the [Vonage documentation](https://developer.nexmo.com/messages/code-snippets/configure-webhooks) but understand these are configurable and can be tested with [ngrok](https://developer.nexmo.com/tools/ngrok).
-
-You proceed.
-
-For the **Inbound Message Webhook,** you provide this URL: <https://www.example.com/webhooks/inbound-message>. In the next option select **POST** for the **Inbound Message Method**.
-
-![Vonage CLI create inbound messages webhooks and choose POST method](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_5.png)
-
-For the **Status Message Webhook**, you give it this URL: <https://www.example.com/webhooks/message-status> and also select **POST** for the **Status Message Method**.
-
-![Vonage CLI create status messages webhooks and choose POST method](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_6.png)
-
-The next prompt asks you if you want to **Allow use of data for AI training? Read data collection disclosure** and you say **“No”**.
-
-![Vonage CLI choose AI training option](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_7.png)
+Then you continue to use the default values by pressing Return for each option until you create your application.
 
 You have a created application! You’re pretty darn happy about that. You’ll be able to binge-watch Loki in no time.
 
