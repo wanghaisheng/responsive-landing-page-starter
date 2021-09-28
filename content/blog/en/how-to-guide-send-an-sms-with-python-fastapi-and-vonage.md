@@ -459,13 +459,13 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
                         data=json.dumps(payload))
 ```
 
-The last step is to render the template and pass in that will be shown when the SMS is successful (send.html), the request, and the context. The context **`"number": to_number`** will display the number on send.html.
+The last step is to render the template. Pass in what will be shown when the SMS is successful: send.html, the request, and the context. The context **"number": to_number** will display the number on send.html.
 
 ```python
 return templates.TemplateResponse("send.html", {"request": request, "number": to_number})
 ```
 
-Ok. Here’s do or die time. 
+Here’s do or die time.
 
 You start your server:
 
@@ -475,12 +475,11 @@ You start your server:
 
 You navigate to your localhost <http://127.0.0.1:8000/>
 
-You see where to enter a phone number to send an SMS to your friend, and you do so.
+You enter a phone number to send an SMS to your friend.
 
 ![Send a Text Message form - Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/sms_form_10.png)
 
-You’re super nervous about if they’ll receive the message.
-
+You’re super nervous and wonder if they’ll receive the SMS.
 Great news! They got the text message!
 
 ![Recieve a Text Message from Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/img-7473.jpg)
@@ -489,10 +488,10 @@ Great news! They got the text message!
 
 You see a boat approaching and realize that it’s for you. 
 
-You hop on and they bring you to safety.
+You hop on as it brings you to safety.
 
 Later that evening, you lay in bed watching Loki, thinking to yourself: Thank goodness for Python.
 
 The end.
 
-Let me know if you sent an SMS using this tutorial. You can Tweet me at [@tonyasims](https://twitter.com/TonyaSims).
+Let me know if you sent an SMS using this tutorial. You can Tweet me at [@tonyasims](https://twitter.com/TonyaSims).
