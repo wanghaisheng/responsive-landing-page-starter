@@ -39,7 +39,7 @@ You have NodeJS and npm installed, so the first command should work depending on
 
 Bam! That worked! You now have the Vonage CLI installed on your machine. 
 
-You want to make sure the installation was successful so you type:
+You want to make sure the installation was successful, so you type:
 
 ```shell
 % vonage
