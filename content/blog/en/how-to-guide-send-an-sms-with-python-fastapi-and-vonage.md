@@ -221,11 +221,11 @@ You run your code in development mode by doing the following:
 
 You can think of uvicorn as a super-fast ASGI (Asynchronous Server Gateway Interface) server implementation. In **main:app**, main is the name of your file **main.py.** The name of your FastAPI instance is **app.**  The **\--reload** flag allows you to use hot reloading which allows you to make live code changes. 
 
-You see in the terminal you need to go to your localhost <http://127.0.0.1:8000/> in the browser and you see **{"hello": "world"}**. Perfect!
+In the terminal, you go to your localhost <http://127.0.0.1:8000/> in the browser and see **{"hello": "world"}**. Perfect!
 
 ## Sending Your SMS
 
-Now it’s time to write your code to send your SMS. 
+Now it’s time to write code to send your SMS. 
 
 The sky is dark and the wind is heavy. A tornado is brewing.
 
@@ -247,23 +247,23 @@ async def get_message(request: Request):
   return templates.TemplateResponse("index.html", {"request": request})
 ```
 
-Here you are also importing Request **`from fastapi import FastAPI, Request.`** Request allows you to get incoming details or requests to your function.
+Here you are also importing Request like so:** `from fastapi import FastAPI, Request`.** This **Request** allows you to get incoming details or requests to your function.
 
-Import Jinja so you can use its templating engine **`from fastapi.templating import Jinja2Templates`**.
+Import Jinja so you can use its templating engine **`from fastapi.templating import Jinja2Templates`**.
 
-In this line, **`from fastapi.responses import HTMLResponse`** we need to allow you to get back an HTMLResponse.
+In this line, **`from fastapi.responses import HTMLResponse`** you need to allow an HTMLResponse.
 
-Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called **templates**. Your line of code looks like this: **`templates = Jinja2Templates(directory="templates")`**
+Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called **templates**. Your line of code looks like this: **`templates = Jinja2Templates(directory="templates")`.**
 
-In the route decorator **`@app.get("/", response_class=HTMLResponse)`**. The HTMLResponse indicates that the response you get back contains HTML.
+In the route decorator **`@app.get("/", response_class=HTMLResponse)`**. The HTMLResponse indicates that the response you get back contains HTML.
 
-This is another async function `async def get_message(request: Request):`. Declaring a route operation function with a parameter of type Request will tell your application to pass the Request in that parameter.
+This is another async function **`async def get_message(request: Request):`**. You declare a route operation function with a parameter of type Request. 
 
-Lastly, **`return templates.TemplateResponse("index.html", {"request": request})`** renders your template or your response. It takes as arguments the HTML file (index.html) and the context, which keeps track of the data we get from our request
+Lastly, **`return templates.TemplateResponse("index.html", {"request": request})`** renders your template or your response. It takes arguments in the HTML file (index.html) and the context, which keeps track of the data we get from our request.
 
-You just created the route that does the **GET** operation. You’ll also have to create a **POST** because you’re submitted data to a form. But before that, you decide to create the “templates” folder in your project directory to hold your HTML files. You create two HTML files inside of templates: index.html and sent_sms.html. 
+You created the route that does the **GET** operation earlier. You also have to create a **POST** because you need to submit data to a form. Before that, you decide to make the **templates** folder in your project directory to hold your HTML files. You create two HTML files inside of templates: index.html and sent_sms.html. 
 
-Then in your **index.html** you include this markup:
+Then in your **index.html,** you include this markup:
 
 ```html
 <!DOCTYPE html>
