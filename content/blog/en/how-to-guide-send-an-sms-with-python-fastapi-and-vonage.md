@@ -115,13 +115,16 @@ You check if the toggled option is on for Messages API. You also want to verify 
 
 Everything looks great! You also realize that you don’t need to do this step every time as it’s only a sanity check.
 
-The water is rising past your knees and your biggest fear is you’ll be left alone on this island with a volleyball.
 
-You hated that movie. 
+The water is rising past your knees. Your biggest fear is you’ll be left alone on this island with a volleyball.
+You hated that movie. 
+
 
 Now it’s time for you to write your FastAPI application so you can send your SMS.
 
-What you’ve learned about FastAPI so far is that it offers an amazing developer experience and speeds up coding time. It’s also super fast in performance because of its asynchronous nature. 
+
+You’ve learned that FastAPI offers a wonderful developer experience and speeds up coding time. It’s also super fast in performance because of its asynchronous nature. 
+
 
 Perfect.
 
