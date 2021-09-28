@@ -83,11 +83,9 @@ You choose **“Y”** for **Create Message Webhooks**.
 
 Then you continue to use the default values by pressing Return for each option until you create your application.
 
-You have a created application! You’re pretty darn happy about that. You’ll be able to binge-watch Loki in no time.
-
 ![Vonage CLI application created](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_8.png)
 
-Your created application awaits. You want to confirm. You go back to the [dashboard](https://dashboard.nexmo.com/). You click on **Your Applications** and see it.
+You have an application now and are pretty darn happy about that. You will be able to binge-watch Loki in no time. You want to confirm its creation, so you go back to the [dashboard](https://dashboard.nexmo.com/). You click on **Your Applications** and see it.
 
 You check if the toggled option is on for Messages API. You also want to verify your webhooks made it, so you select to edit.
 
