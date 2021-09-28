@@ -284,12 +284,12 @@ Next, you build the sent SMS page.
 </head>
 <body>
   <h1>Send a Text Message</h1>
-  <h3>Thank you {{ number }}!</h3>
+  <h3>Thank you {{ number }} | {{ error}}!</h3>
 </body>
 </html>
 ```
 
-If the SMS sends successfully, you will see this page. The only tricky thing is this: **{{ number }},**  which is the Jinja language. It will pull in the phone number you put in the form, the number you want to send the SMS. You’re about to write the POST route and will see how it works.
+If the SMS sends successfully, you will see this page. The only tricky thing is this: **`{{ number }} | {{ error}}`,**  which is the Jinja templating language. It will render the phone number you put in the form or an error. The phone number is the one which you want to send the SMS. You’re about to write the POST route and will see how it works.
 
 You’re feeling pretty good now because you’re in the home stretch. But it’s raining now, and you’re worried your laptop is going to get messed up. So your fingers get to coding. 
 
