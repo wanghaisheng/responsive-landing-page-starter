@@ -1,6 +1,6 @@
 ---
 title: "Python Environment Variables: A Primer"
-description: test
+description: "Everything you need to know about using environment variables with Python. "
 author: cory-althoff
 published: true
 published_at: 2021-09-29T22:17:02.132Z
@@ -8,6 +8,7 @@ updated_at: 2021-09-29T22:17:02.176Z
 category: tutorial
 tags:
   - python
+  - environmentvariables
 comments: true
 spotlight: false
 redirect: ""
