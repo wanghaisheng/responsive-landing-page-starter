@@ -70,9 +70,9 @@ You may want to use the first way if the environment variable is required for yo
 
 One important environment variable you have access to in `os.environ` is `PYTHONPATH`. 
 
-The URLS stored in `PYTHONPATH` is where Python looks for modules. 
+The URLs in `PYTHONPATH` is where Python looks for modules. 
 
-If you naviage to the URL in your `PYTHONPATH`, you can see this for yourself (you should see all of Python’s built-in modules there). 
+If you navigate to the URL in your `PYTHONPATH`, you can see this for yourself (you should see all of Python’s built-in modules there). 
 
 Adding directories to this environment variable adds them to Python’s search path when it is looking for modules.
 
