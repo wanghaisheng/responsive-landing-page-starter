@@ -82,17 +82,21 @@ That means you can add a directory with a module in it anywhere on your computer
 
 In the previous example, `“USER”` was an environment variable your operating automatically sets that represents who is using your computer. Although this is created automatically, you can also create your own environment variables on your operating system. 
 
-Here is how to create an environment variable from your operating system on a Unix-like system. First, open up your command line. Then, type the following command:
+Here is how to create an environment variable on your operating system (using a Unix-like system). First, open up your command line. Then, type the following command:
 
+```python
 export vonage_api =your_api
+```
 
-The code above creates a variable called vonage_api and sets it to your_api. 
+The code above creates a variable called `vonage_api` and sets it to `your_api`. 
 
 Now you can print your variable’s value like this:
 
+```
 echo $vonage
+```
 
-When you run the code above, your terminal should print your_api. 
+When you run the code above, your terminal should print `your_api`. 
 
 If you are using Windows, you can [learn how get and set environment variables here](https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0). 
 
@@ -100,43 +104,50 @@ If you are using Windows, you can [learn how get and set environment variables h
 
 When you create a new environment variable using your terminal, it only exists for that session. When you close your terminal, the environment variable no longer exists.
 
-Often when you are programming, you want your environment variable to persist. One way to accomplish this is to store them in a file: for example a .env file. 
+Often when you are programming, you want your environment variable to persist. One way to accomplish this is to store them in a file: for example a `.env` file. 
 
-To store environment variables in a .env file, first you need to create a .env file in your project directory. 
+To store environment variables in a .env file, first you need to create a `.env` file in your project directory. 
 
-Here is how to do it. First, create a new project.
+ First, create a new project.
 
+```
 mkdir test_project
+```
 
-Then, go into your new directory and create a .env file:
+Then, go into your new directory and create a `.env` file:
 
-Next, create a variable inside your .env file like this:
+Next, create a variable inside your `.env` file like this:
 
+```
 vonage_api=your_api
+```
 
-To continue, first you need to download Python’s dotenv library.
+Now you need to download Python’s `dotenv` library.
 
 First, create and activate a new virtual environment by typing the following in your terminal’s command prompt:
 
+```
 python3 -m venv env
-
 source env/bin/activate
+```
 
-Then, use pip to download dotenv:
+Then, use pip to download `dotenv`:
 
+```
 pip3 install dotenv
+```
 
-Now, you can use Python’s dotenv library to load your environment variables into os.environ like this:
+Now, you can use Python’s `dotenv` library to load your environment variables into `os.environ` like this:
 
+```
 from dotenv import load_dotenv
-
 import os
 
 load_dotenv()
-
 print(os.environ\[“vonage_api”])
+```
 
-The line of code load_dotenv brings your environment variables into os.environ, and you can then use them like you normally would. 
+The line of code `load_dotenv` brings your environment variables into `os.environ`, and you can then use them like you normally would. 
 
 ## Storing Environment Variables in the Cloud
 
@@ -157,11 +168,11 @@ Here is a list of cloud providers and where you can get more information about d
 
 ## Universal Secrets Managers
 
-Storing your secrets in a .env file persists your environment variables, but does have some problems.
+Storing your secrets in a `.env` file persists your environment variables but does have some problems.
 
-For example, if say you are on a team with ten people. Everyone is tracking their secrets in .env files, and one of the secrets changes (say you get a new API key).
+For example, if say you are on a team with ten people. Everyone is tracking their secrets in `.env` files, and one of the secrets changes (say you get a new API key).
 
-In that case, ten people all have to update their .env file, which is not very efficient.     
+In that case, ten people all have to update their `.env` file, which is not very efficient.     
 
 Or, what if you decide to switch from Heroku to AWS? In that case, you will have to learn how to deal with secrets on a new platform, which requires extra work.  
 
@@ -171,7 +182,7 @@ A universal secrets manager allows you to store all of your secrets in one place
 
 With a universal secrets manager, your secrets are independent of your local machine or a cloud provider, and so you can bring them with you no matter where you run your code. 
 
-Final Thoughts 
+## Final Thoughts 
 
 Setting environment variables is an important part of creating production software. 
 
