@@ -60,11 +60,11 @@ You can access the different environment variables in `os.environ` like a Python
 ```python
 import os
 
-os.environ\[“USER”]
-os.environ.get(“USER”)
+os.environ\["USER"]
+os.environ.get("USER")
 ```
 
-The last two lines in your Python code above get the `“USER”` environment variable from your operating system, but when you use the first way, Python throws an exception if it does not find the variable. 
+The last two lines in your Python code above get the "`USER"` environment variable from your operating system, but when you use the first way, Python throws an exception if it does not find the variable. 
 
 You may want to use the first way if the environment variable is required for your Python application to run and the second if it is optional. 
 
@@ -80,7 +80,7 @@ That means you can add a directory with a module in it anywhere on your computer
 
 ## Environment Variables in Operating Systems
 
-In the previous example, `“USER”` was an environment variable your operating sets representing who is using your computer. Although your operating system creates this variable automatically, you can also create your own environment variables on your operating system. 
+In the previous example, "`USER"` was an environment variable your operating sets representing who is using your computer. Although your operating system creates this variable automatically, you can also create your own environment variables on your operating system. 
 
 Here is how to create an environment variable on your operating system (using a Unix-like system). First, open up your command line. Then, type the following command:
 
@@ -106,7 +106,7 @@ When you create a new environment variable using your terminal, it only exists f
 
 Often when you are programming, you want your environment variable to persist. One way to accomplish this is to store them in a file: for example, a `.env` file. 
 
-To store environment variables in a .env file, first, you must create a `.env` file in your project directory. 
+To store environment variables in a `.env` file, you must create a `.env` file in your project directory. 
 
  First, create a new project.
 
@@ -144,7 +144,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-print(os.environ\[“vonage_api”])
+print(os.environ\["vonage_api"])
 ```
 
 The line of code `load_dotenv` brings your environment variables into `os.environ`, and you can then use them like you usually would. 
