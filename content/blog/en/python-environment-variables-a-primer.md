@@ -188,7 +188,7 @@ Setting environment variables is an essential part of creating production softwa
 
 You are now familiar with how to get and set environment variables using Python. 
 
-You also now understand your different options for storing your secrets: temporarily setting them using  your OS, storing them in a .env file, storing them on the cloud, and using a universal secrets manager.
+You also now understand your different options for storing your secrets: temporarily setting them using your OS, storing them in a .env file, keeping them on the cloud, and using a universal secrets manager.
 
 Which method you choose depends on the circumstances of the project you are working on. 
 
