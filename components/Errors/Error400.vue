@@ -5,8 +5,7 @@
     <div>
       <h1 class="text-3xl font-bold">Our bad!</h1>
       <p class="my-2">
-        Don't worry you definitely typed the correct URL, it's the keyboard's
-        fault.
+        That's a nice URL, but it doesn't exist on this server.
       </p>
       <nuxt-link to="/" class="button button--primary"> Home page </nuxt-link>
     </div>
