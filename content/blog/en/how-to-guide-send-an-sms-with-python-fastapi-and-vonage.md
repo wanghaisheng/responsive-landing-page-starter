@@ -80,7 +80,7 @@ Now you create your inbound and status webhooks. 
 
 You choose **“Y”** for **Create Message Webhooks**.
 
-![Vonage CLI create messages webhooks](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_4.png)
+![Vonage CLI create messages webhooks](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_4.png)
 
 Then you continue to use the default values by pressing Return for each option until you create your application.
 
