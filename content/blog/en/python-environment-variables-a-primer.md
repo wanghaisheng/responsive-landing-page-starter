@@ -90,7 +90,7 @@ export vonage_api =your_api
 
 The code above creates a variable called `vonage_api` and sets it to `your_api`. 
 
-Now you can print your variable’s value like this:
+Now you can print your variable's value like this:
 
 ```
 echo $vonage
@@ -104,9 +104,9 @@ If you are using Windows, you can [learn how to get and set environment variable
 
 When you create a new environment variable using your terminal, it only exists for that session. When you close your terminal, the environment variable no longer exists.
 
-Often when you are programming, you want your environment variable to persist. One way to accomplish this is to store them in a file: for example a `.env` file. 
+Often when you are programming, you want your environment variable to persist. One way to accomplish this is to store them in a file: for example, a `.env` file. 
 
-To store environment variables in a .env file, first you need to create a `.env` file in your project directory. 
+To store environment variables in a .env file, first, you must create a `.env` file in your project directory. 
 
  First, create a new project.
 
@@ -122,9 +122,9 @@ Next, create a variable inside your `.env` file like this:
 vonage_api=your_api
 ```
 
-Now you need to download Python’s `dotenv` library.
+Now you need to download Python's `dotenv` library.
 
-First, create and activate a new virtual environment by typing the following in your terminal’s command prompt:
+First, create and activate a new virtual environment by typing the following in your terminal's command prompt:
 
 ```
 python3 -m venv env
@@ -137,7 +137,7 @@ Then, use pip to download `dotenv`:
 pip3 install dotenv
 ```
 
-Now, you can use Python’s `dotenv` library to load your environment variables into `os.environ` like this:
+Now, you can use Python's `dotenv` library to load your environment variables into `os.environ` like this:
 
 ```
 from dotenv import load_dotenv
@@ -147,7 +147,7 @@ load_dotenv()
 print(os.environ\[“vonage_api”])
 ```
 
-The line of code `load_dotenv` brings your environment variables into `os.environ`, and you can then use them like you normally would. 
+The line of code `load_dotenv` brings your environment variables into `os.environ`, and you can then use them like you usually would. 
 
 ## Storing Environment Variables in the Cloud
 
