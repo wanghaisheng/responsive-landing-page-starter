@@ -6,7 +6,7 @@ description: This is a how to guide on sending an SMS with Python, FastAPI and
 thumbnail: /content/blog/how-to-send-sms-with-python-fastapi-and-vonage/send-sms_python-fastapi_1200x600.png
 author: tonya-sims-1
 published: true
-published_at: 2021-09-27T00:50:14.818Z
+published_at: 2021-09-29T13:32:15.735Z
 updated_at: 2021-09-27T00:50:14.858Z
 category: tutorial
 tags:
