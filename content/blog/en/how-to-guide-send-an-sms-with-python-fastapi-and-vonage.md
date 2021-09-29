@@ -134,7 +134,7 @@ To verify this new virtual environment was created, you check to see if one call
 $ ls
 ```
 
-Walla! There it is.
+Voilà!! There it is.
 
 Now it’s time to activate it so you can install FastAPI and your other packages, so you do:
 
@@ -159,10 +159,10 @@ $ pip install --upgrade pip
 Now you install FastAPI like so:
 
 ```shell
-% pip install fastapi[all]
+$ pip install fastapi[all]
 ```
 
-Anyways, you now have FastAPI installed and are thrilled you installed it with the **\[all]** option because it gives you all the dependencies and features like async-generators, the requests module, JSON, Jinja2 for templating in HTML, Pydantic, etc.
+You now have FastAPI installed and are thrilled you installed it with the **\[all]** option because it gives you all the dependencies and features like async-generators, the requests module, JSON, Jinja2 for templating in HTML, Pydantic, etc.
 
 ## Quick FastAPI Hello World
 
@@ -193,7 +193,7 @@ This line `return {"hello": "world"}` returns a dictionary to the browser.
 You run your code in development mode by doing the following:
 
 ```shell
-% uvicorn main:app --reload
+$ uvicorn main:app --reload
 ```
 
 You can think of uvicorn as a super-fast ASGI (Asynchronous Server Gateway Interface) server implementation. In **main:app**, main is the name of your file **main.py.** The name of your FastAPI instance is **app.**  The **\--reload** flag allows you to use hot reloading which allows you to make live code changes. 
@@ -456,7 +456,7 @@ Here’s do or die time.
 You start your server:
 
 ```shell
-% uvicorn main:app --reload
+$ uvicorn main:app --reload
 ```
 
 You navigate to your localhost <http://127.0.0.1:8000/>
