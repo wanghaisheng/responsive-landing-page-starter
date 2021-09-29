@@ -70,7 +70,7 @@ You may want to use the first way if the environment variable is required for yo
 
 One important environment variable you have access to in `os.environ` is `PYTHONPATH`. 
 
-The URLs in `PYTHONPATH` is where Python looks for modules. 
+The URLs in `PYTHONPATH` are where Python looks for modules. 
 
 If you navigate to the URL in your `PYTHONPATH`, you can see this for yourself (you should see all of Python’s built-in modules there). 
 
@@ -80,7 +80,7 @@ That means you can add a directory with a module in it anywhere on your computer
 
 ## Environment Variables in Operating Systems
 
-In the previous example, `“USER”` was an environment variable your operating automatically sets that represents who is using your computer. Although this is created automatically, you can also create your own environment variables on your operating system. 
+In the previous example, `“USER”` was an environment variable your operating sets representing who is using your computer. Although your operating system creates this variable automatically, you can also create your own environment variables on your operating system. 
 
 Here is how to create an environment variable on your operating system (using a Unix-like system). First, open up your command line. Then, type the following command:
 
@@ -98,7 +98,7 @@ echo $vonage
 
 When you run the code above, your terminal should print `your_api`. 
 
-If you are using Windows, you can [learn how get and set environment variables here](https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0). 
+If you are using Windows, you can [learn how to get and set environment variables here](https://docs.oracle.com/en/database/oracle/machine-learning/oml4r/1.5.1/oread/creating-and-modifying-environment-variables-on-windows.html#GUID-DD6F9982-60D5-48F6-8270-A27EC53807D0). 
 
 ## Storing Environment Variables in Files
 
