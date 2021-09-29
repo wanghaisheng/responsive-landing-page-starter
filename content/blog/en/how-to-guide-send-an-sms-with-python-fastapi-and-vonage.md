@@ -88,7 +88,7 @@ Then you continue to use the default values by pressing Return for each option u
 
 You have an application now and are pretty darn happy about that. You will be able to binge-watch Loki in no time. You want to confirm its creation, so you go back to the [dashboard](https://dashboard.nexmo.com/). You click on **Your Applications** and see it.
 
-![See Vonage dashboard after creating application with Vonage CLI]()
+![See Vonage dashboard after creating application with Vonage CLI](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_9.png)
 
 You check if the toggled option is on for Messages API. You also want to verify your webhooks made it, so you select to edit.
 
