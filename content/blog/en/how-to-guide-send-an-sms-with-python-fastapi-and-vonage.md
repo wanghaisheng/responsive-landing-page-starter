@@ -95,7 +95,7 @@ You check if the toggled option is on for Messages API. You also want to verify 
 
 ![Check Messages API is toggled on and webhooks are correct in Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_11.png)
 
-Everything looks great! You also realize that you don’t need to do this step every time, as it’s only a sanity check.
+Everything looks great! You also realize that you don’t need to do this step every time, as it’s only to double-check.
 
 The water is rising past your knees. Your biggest fear is you’ll be left alone on this island with a volleyball.
 You hated that movie. 
