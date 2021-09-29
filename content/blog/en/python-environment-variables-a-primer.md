@@ -184,7 +184,7 @@ With a universal secrets manager, your secrets are independent of your local mac
 
 ## Final Thoughts 
 
-Setting environment variables is an important part of creating production software. 
+Setting environment variables is an essential part of creating production software. 
 
 You are now familiar with how to get and set environment variables using Python. 
 
