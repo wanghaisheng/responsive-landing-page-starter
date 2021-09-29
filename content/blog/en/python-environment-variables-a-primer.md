@@ -17,7 +17,7 @@ replacement_url: ""
 ---
 # Python Environment Variables: A Primer
 
-Python programmers have a lot of secrets. That doesn’t mean they have many things they've sworn to keep to themselves (although they might). Instead, they often deal with data they don't want anyone else to see—for example, API keys, API secrets, database names, etc.
+Python programmers have a lot of secrets. That doesn't mean they have many things they've sworn to keep to themselves (although they might). Instead, they often deal with data they don't want anyone else to see—for example, API keys, API secrets, database names, etc.
 
 One way programmers store these secrets are in environment variables. In this article, you will learn everything you need to know about using environment variables in Python, including how to set them, get them, and the different ways you can keep all of your secrets safe. 
 
@@ -41,7 +41,7 @@ To follow along with the examples in this article, you need to have Python insta
 
 There are two main versions of Python: Python 2 and 3. For this tutorial, make sure you are using Python 3. 
 
-If you haven’t already, you can install Python 3 [by following the instructions here.](https://www.python.org/downloads/) 
+If you haven't already, you can install Python 3 [by following the instructions here.](https://www.python.org/downloads/) 
 
 ## Environment Variables in Python
 
@@ -72,9 +72,9 @@ One important environment variable you have access to in `os.environ` is `PYTHON
 
 The URLs in `PYTHONPATH` are where Python looks for modules. 
 
-If you navigate to the URL in your `PYTHONPATH`, you can see this for yourself (you should see all of Python’s built-in modules there). 
+If you navigate to the URL in your `PYTHONPATH`, you can see this for yourself (you should see all of Python's built-in modules there). 
 
-Adding directories to this environment variable adds them to Python’s search path when it is looking for modules.
+Adding directories to this environment variable adds them to Python's search path when it is looking for modules.
 
 That means you can add a directory with a module in it anywhere on your computer to `PYTHONPATH`, and Python will be able to find it.   
 
