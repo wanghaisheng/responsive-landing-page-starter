@@ -44,7 +44,7 @@ You want to make sure the installation was successful, so you type:
 $ vonage
 ```
 
-![Vonage CLI](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_1.png)
+![Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_1.png)
 
 Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API Key and API Secret. You’re already registered. All you have to do is sign in. 
 
@@ -464,12 +464,12 @@ You navigate to your localhost <http://127.0.0.1:8000/>
 
 You enter a phone number to send an SMS to your friend.
 
-![Send a Text Message form - Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/sms_form_10.png)
+![Send a Text Message form - Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_1.png)
 
 You’re super nervous and wonder if they’ll receive the SMS.
 Great news! They got the text message!
 
-![Recieve a Text Message from Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/img-7473.jpg)
+![Recieve a Text Message from Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_2.png)
 
 ![Thank you page confirming SMS from Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/screen-shot-2021-09-26-at-9.17.22-pm.png)
 
