@@ -32,7 +32,7 @@ The first thing you do is install the new **[Vonage CLI](https://learn.vonage.c
 You have NodeJS and npm installed, so the first command should work depending on whether or not your $PATH is correct.
 
 ```shell
-% npm install -g @vonage/cli
+$ npm install -g @vonage/cli
 ```
 
 Bam! That worked! You now have the Vonage CLI installed on your machine. 
@@ -40,7 +40,7 @@ Bam! That worked! You now have the Vonage CLI installed on your machine. 
 You want to make sure the installation was successful, so you type:
 
 ```shell
-% vonage
+$ vonage
 ```
 
 ![Vonage CLI](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_1.png)
@@ -50,13 +50,13 @@ Next, you go to the [dashboard](https://dashboard.nexmo.com/) to grab your API
 Then you set your keys by doing the following:
 
 ```shell
-% vonage config:set --apiKey=12345 --apiSecret=abcde
+$ vonage config:set --apiKey=12345 --apiSecret=abcde
 ```
 
 Success, you got this! In case you forgot a Vonage command, you can use the help flag:
 
 ```shell
-% vonage --help
+$ vonage --help
 ```
 
 ## Using the Vonage CLI
@@ -64,7 +64,7 @@ Success, you got this! In case you forgot a Vonage command, you can use the help
 Now for the fun part. You have to create your application so you run this command:
 
 ```shell
-% vonage apps:create
+$ vonage apps:create
 ```
 
 You give it an **Application Name** of **send sms** and press Return.
@@ -113,25 +113,25 @@ The first thing you do is navigate to or **cd** into the directory where you wan
 Then you create a new folder called **send_sms** by running this command from your directory:
 
 ```shell
-% mkdir send_sms
+$ mkdir send_sms
 ```
 
 You change into that directory by doing this:
 
 ```shell
-% cd send_sms
+$ cd send_sms
 ```
 
 You think to yourself that this would be a good time to create a virtual environment, so you run:
 
 ```shell
-% python3 -m venv venv
+$ python3 -m venv venv
 ```
 
 To verify this new virtual environment was created, you check to see if one called **venv** is in your new directory, so you type:
 
 ```shell
-% ls
+$ ls
 ```
 
 Walla! There it is.
@@ -153,16 +153,10 @@ Now it’s time for you to install FastAPI.
 The last time it was installed you had to upgrade pip first like this:
 
 ```shell
-% pip install --upgrade pip
+$ pip install --upgrade pip
 ```
 
-Since you’re using **zsh** in your terminal you installed FastAPI like so:
-
-```shell
-% pip install 'fastapi[all]'
-```
-
-When you used bash you installed it without the **‘ ‘** around fastapi\[all] like this:
+Now you install FastAPI like so:
 
 ```shell
 % pip install fastapi[all]
