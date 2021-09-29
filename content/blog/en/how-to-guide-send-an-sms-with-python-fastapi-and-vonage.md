@@ -92,9 +92,9 @@ You have an application now and are pretty darn happy about that. You will be ab
 
 You check if the toggled option is on for Messages API. You also want to verify your webhooks made it, so you select to edit.
 
-![Edit your application in the Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_10.png)
+![Edit your application in the Vonage dashboard](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_10.png)
 
-![Check Messages API is toggled on and webhooks are correct in Vonage dashboard](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/cli_11.png)
+![Check Messages API is toggled on and webhooks are correct in Vonage dashboard](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_11.png)
 
 Everything looks great! You also realize that you don’t need to do this step every time, as it’s only to double-check.
 
