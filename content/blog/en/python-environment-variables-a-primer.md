@@ -64,7 +64,7 @@ os.environ\[“USER”]
 os.environ.get(“USER”)
 ```
 
-Both of the last two lines in your Python code above get the `“USER”` environment variable from your operating system, but when you use the first way, Python throws an exception if the variable is not found. 
+The last two lines in your Python code above get the `“USER”` environment variable from your operating system, but when you use the first way, Python throws an exception if it does not find the variable. 
 
 You may want to use the first way if the environment variable is required for your Python application to run and the second if it is optional. 
 
