@@ -19,15 +19,19 @@ replacement_url: ""
 
 Python programmers have a lot of secrets. That doesn’t mean they have many things they've sworn to keep to themselves (although they might). Instead, they often deal with data they don't want anyone else to see. For example, API keys, API secrets, database names, etc. 
 
-One way programmers store secrets are in environment variables. In this article, you will learn everything you need to know about environment variables in Python, including how to set them, get them, and the different ways you can keep all of your secrets safe. 
+One way programmers store these secrets are in environment variables. In this article, you will learn everything you need to know about using environment variables in Python, including how to set them, get them, and the different ways you can keep all of your secrets safe. 
 
 ## What Are Environment Variables? 
 
-Environment variables are variables you store outside of your program that can affect how it runs. For example, you can set environment variables in your operating system that contain the API key and secret for an API. Your program could then use those variables when it connects to the API. Storing your secrets in your environment instead of your source code has two advantages. 
+Environment variables are variables you store outside of your program that can affect how it runs. For example, you can set environment variables that contain the key and secret for an API. Your program might then use those variables when it connects to the API. 
 
-The first is that it keeps sensitive data safe. For example, you may not want whoever downloads your source code to have access to an API key you are using. Using environment variables means you do not have to update your source code when they change.
+Storing your secrets in your environment instead of your source code has two advantages. 
 
- For example, say your code needed to change based on the operating system user. Instead of changing your source code every time you run the code with a different user, you can have the value update automatically by using an environment variable. 
+The first is that it keeps sensitive data safe. For example, you may not want whoever downloads your source code to have access to an API key you are using. 
+
+The second is using environment variables means you do not have to update your source code when they change.
+
+For example, say your code needed to change based on the operating system user. Instead of changing your source code every time you run the code with a different user, you can have the value update automatically by using an environment variable. 
 
 Using environment variables from your operating system can cause problems, however, and there are other ways to deal with them in your programs, which we will discuss later.  
 
