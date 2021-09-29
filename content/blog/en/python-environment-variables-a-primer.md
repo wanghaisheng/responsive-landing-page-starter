@@ -17,7 +17,7 @@ replacement_url: ""
 ---
 # Python Environment Variables: A Primer
 
-Python programmers have a lot of secrets. That doesn’t mean they have many things they've sworn to keep to themselves (although they might). Instead, they often deal with data they don't want anyone else to see. For example, API keys, API secrets, database names, etc. 
+Python programmers have a lot of secrets. That doesn’t mean they have many things they've sworn to keep to themselves (although they might). Instead, they often deal with data they don't want anyone else to see—for example, API keys, API secrets, database names, etc.
 
 One way programmers store these secrets are in environment variables. In this article, you will learn everything you need to know about using environment variables in Python, including how to set them, get them, and the different ways you can keep all of your secrets safe. 
 
@@ -27,11 +27,11 @@ Environment variables are variables you store outside of your program that can a
 
 Storing your secrets in your environment instead of your source code has two advantages. 
 
-The first is that it keeps sensitive data safe. For example, you may not want whoever downloads your source code to have access to an API key you are using. 
+The first is that it keeps sensitive data safe. For example, you may not want whoever downloads your source code access to an API key you are using. 
 
 The second advantage is that when you use environment variables, you do not have to update your source code when your secrets change.
 
-For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can have the value update automatically by using an environment variable. 
+For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can automatically update the value by using an environment variable.
 
 You often store environment variables in your operating system, but there other ways to store them as well you will learn about shortly.  
 
