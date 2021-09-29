@@ -33,7 +33,7 @@ The second advantage is that when you use environment variables, you do not have
 
 For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can have the value update automatically by using an environment variable. 
 
-You often store environemt variables in your operating system, but there other ways to store them as well you will learn about shortly.  
+You often store environment variables in your operating system, but there other ways to store them as well you will learn about shortly.  
 
 ## Installing Python
 
@@ -191,5 +191,7 @@ You are now familiar with how to get and set environment variables using Python.
 You also now understand your different options for storing your secrets: temporarily setting them using  your OS, storing them in a .env file, storing them on the cloud, and using a universal secrets manager.
 
 Which method you choose depends on the circumstances of the project you are working on. 
+
+I hope this article helped you better understand how to manage all of your secrets. 
 
 If you have any questions, feel free to [reach out to us on Twitter](https://twitter.com/vonagedev)!
