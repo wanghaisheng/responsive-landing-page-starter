@@ -151,11 +151,11 @@ The line of code `load_dotenv` brings your environment variables into `os.enviro
 
 ## Storing Environment Variables in the Cloud
 
-When you create software for production, you probably won’t run it from your computer. 
+When you create software for production, you probably won't run it from your computer. 
 
 Instead, you most likely will run your code on a server. 
 
-That means, you need to know how to set and get environment variables from wherever you run your code in production. 
+That means you need to know how to set and get environment variables from wherever you run your code in production. 
 
 Here is a list of cloud providers and where you can get more information about dealing with environment variables using them:
 
@@ -170,7 +170,7 @@ Here is a list of cloud providers and where you can get more information about d
 
 Storing your secrets in a `.env` file persists your environment variables but does have some problems.
 
-For example, if say you are on a team with ten people. Everyone is tracking their secrets in `.env` files, and one of the secrets changes (say you get a new API key).
+For example, say you are on a team with ten people. Everyone is tracking their secrets in `.env` files, and one of the secrets changes (say you get a new API key).
 
 In that case, ten people all have to update their `.env` file, which is not very efficient.     
 
@@ -178,7 +178,7 @@ Or, what if you decide to switch from Heroku to AWS? In that case, you will have
 
 To solve these problems, some programmers use a universal secrets manager like Doppler. 
 
-A universal secrets manager allows you to store all of your secrets in one place, so everyone on your team can access them. 
+A universal secrets manager allows you to store your secrets in one place, so everyone on your team can access them. 
 
 With a universal secrets manager, your secrets are independent of your local machine or a cloud provider, and so you can bring them with you no matter where you run your code. 
 
