@@ -33,7 +33,7 @@ The second advantage is that when you use environment variables, you do not have
 
 For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can automatically update the value using an environment variable.
 
-You often store environment variables in your operating system, but there other ways to store them you will learn about shortly.  
+You often store environment variables in your operating system, but there are other ways to use them you will learn about shortly.  
 
 ## Installing Python
 
