@@ -471,7 +471,7 @@ Great news! They got the text message!
 
 ![Recieve a Text Message from Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_2.png)
 
-![Thank you page confirming SMS from Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/the-how-to-guide-sending-an-sms-with-python-fastapi-and-vonage/screen-shot-2021-09-26-at-9.17.22-pm.png)
+![Thank you page confirming SMS from Vonage with Python and FastAPI sending an SMS with Messages API](/content/blog/how-to-send-sms-with-python-fastapi-and-vonage/cli_11.png)
 
 You see a boat approaching and realize that it’s for you. 
 
