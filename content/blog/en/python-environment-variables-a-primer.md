@@ -31,9 +31,9 @@ The first is that it keeps sensitive data safe. For example, you may not want wh
 
 The second advantage is that when you use environment variables, you do not have to update your source code when your secrets change.
 
-For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can automatically update the value by using an environment variable.
+For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can automatically update the value using an environment variable.
 
-You often store environment variables in your operating system, but there other ways to store them as well you will learn about shortly.  
+You often store environment variables in your operating system, but there other ways to store them you will learn about shortly.  
 
 ## Installing Python
 
