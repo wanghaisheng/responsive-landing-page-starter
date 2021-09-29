@@ -62,7 +62,7 @@ $ vonage --help
 
 ## Using the Vonage CLI
 
-Now for the fun part. You have to create your application so you run this command:
+Now for the fun part. You have to create your application, so you run this command:
 
 ```shell
 $ vonage apps:create
