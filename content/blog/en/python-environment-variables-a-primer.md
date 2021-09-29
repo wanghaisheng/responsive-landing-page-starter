@@ -29,11 +29,9 @@ Storing your secrets in your environment instead of your source code has two adv
 
 The first is that it keeps sensitive data safe. For example, you may not want whoever downloads your source code to have access to an API key you are using. 
 
-The second is using environment variables means you do not have to update your source code when they change.
+The second advantage is that when you use environment variables, you do not have to update your source code when your secrets change.
 
-For example, say your code needed to change based on the operating system user. Instead of changing your source code every time you run the code with a different user, you can have the value update automatically by using an environment variable. 
-
-Using environment variables from your operating system can cause problems, however, and there are other ways to deal with them in your programs, which we will discuss later.  
+For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can have the value update automatically by using an environment variable. 
 
 ## Installing Python
 
