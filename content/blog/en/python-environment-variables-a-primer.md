@@ -43,7 +43,7 @@ If you haven’t already, you can install Python 3 [by following the instruction
 
 ## Environment Variables in Python
 
-You can get and set environment variables in Python using the built-in os module. You can view all of the environment variables in a program by saving the following code in a Python file and then running your Python program. 
+You can get and set environment variables in Python using the built-in `os` module. You can view all of the environment variables in your program by saving the following code in a Python file and then running this Python program. 
 
 import os
 
