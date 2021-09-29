@@ -159,12 +159,12 @@ That means you need to know how to set and get environment variables from wherev
 
 Here is a list of cloud providers and where you can get more information about dealing with environment variables using them:
 
-1. Azure Websites
-2. Azure Functions
-3. AWS
-4. Docker File
-5. Docker Run
-6. Heroku
+1. [Azure Websites](https://docs.microsoft.com/en-us/azure/app-service/configure-common#application-settings)
+2. [Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings?tabs=portal#application-settings)
+3. [AWS](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html)
+4. [Docker File](https://docs.docker.com/engine/reference/builder/#/env)
+5. [Docker Run](https://docs.docker.com/engine/reference/run/#/env-environment-variables)
+6. [Heroku](https://devcenter.heroku.com/articles/config-vars)
 
 ## Universal Secrets Managers
 
