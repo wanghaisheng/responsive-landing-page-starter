@@ -181,13 +181,13 @@ async def home(): 
   return {"hello": "world"}
 ```
 
-The line **`from fastapi import FastAPI`** imports FastAPI as a Python class.
+The line `from fastapi import FastAPI` imports FastAPI as a Python class.
 
-**`app = FastAPI()`** creates an instance of FastAPI called app.
+`app = FastAPI()` creates an instance of FastAPI called app.
 
-Here **`@app.get("/")`** creates a route operation. A route refers to where you want to direct yourself when you hit your endpoint. You can also think of it as a URL. The root of the page or localhost (<http://127.0.0.1:8000>) is where you get directed. The operation refers to the HTTP method. To handle a GET use the decorator **`@app.get`**, which tells you to read the data and go to the route. The route here is **(“/”)** or the root page.
+Here `@app.get("/")` creates a route operation. A route refers to where you want to direct yourself when you hit your endpoint. You can also think of it as a URL. The root of the page or localhost (<http://127.0.0.1:8000>) is where you get directed. The operation refers to the HTTP method. To handle a GET use the decorator `@app.get`, which tells you to read the data and go to the route. The route here is **(“/”)** or the root page.
 
-Here is an asynchronous function **`async def home():`**. They can process requests before others have completed them. They run in parallel, which is pretty sweet because it makes things much faster than running synchronously, or in order. You can also define a function here with just: **`def home():`** if you don’t care about asynchronous code.
+Here is an asynchronous function `async def home():`. They can process requests before others have completed them. They run in parallel, which is pretty sweet because it makes things much faster than running synchronously, or in order. You can also define a function here with just: `def home():` if you don’t care about asynchronous code.
 
 This line `return {"hello": "world"}` returns a dictionary to the browser.
 
@@ -225,19 +225,19 @@ async def get_message(request: Request):
   return templates.TemplateResponse("index.html", {"request": request})
 ```
 
-Here you are also importing Request like so:** `from fastapi import FastAPI, Request`.** This **Request** allows you to get incoming details or requests to your function.
+Here you are also importing Request like so:`from fastapi import FastAPI, Request`**.** This **Request** allows you to get incoming details or requests to your function.
 
-Import Jinja so you can use its templating engine **`from fastapi.templating import Jinja2Templates`**.
+Import Jinja so you can use its templating engine `from fastapi.templating import Jinja2Templates`.
 
-In this line, **`from fastapi.responses import HTMLResponse`** you need to allow an HTMLResponse.
+In this line, `from fastapi.responses import HTMLResponse` you need to allow an HTMLResponse.
 
-Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called **templates**. Your line of code looks like this: **`templates = Jinja2Templates(directory="templates")`.**
+Here you mount the templates folder (you’ll create one in a bit) and tell it to hold all your HTML files in a directory called **templates**. Your line of code looks like this: `templates = Jinja2Templates(directory="templates")`**.**
 
-In the route decorator **`@app.get("/", response_class=HTMLResponse)`**. The HTMLResponse indicates that the response you get back contains HTML.
+In the route decorator `@app.get("/", response_class=HTMLResponse)`. The HTMLResponse indicates that the response you get back contains HTML.
 
-This is another async function **`async def get_message(request: Request):`**. You declare a route operation function with a parameter of type Request. 
+This is another async function `async def get_message(request: Request):`. You declare a route operation function with a parameter of type Request. 
 
-Lastly, **`return templates.TemplateResponse("index.html", {"request": request})`** renders your template or your response. It takes arguments in the HTML file (index.html) and the context, which keeps track of the data we get from our request.
+Lastly, `return templates.TemplateResponse("index.html", {"request": request})` renders your template or your response. It takes arguments in the HTML file (index.html) and the context, which keeps track of the data we get from our request.
 
 You created the route that does the **GET** operation earlier. You also have to create a **POST** because you need to submit data to a form. Before that, you decide to make the **templates** folder in your project directory to hold your HTML files. You create two HTML files inside of templates: index.html and sent_sms.html. 
 
@@ -261,11 +261,11 @@ Then in your **index.html,** you include this markup:
 </html>
 ```
 
-This line is crucial: **`<form action="/sent_sms" method="POST" novalidate>`**. The **method** attribute tells you how to send form data as a POST. The **action** attribute specifies which page to send the form data to. You send it to **sent_sms.html**. Note that the POST method here does not display the data in the URL as a GET would. Instead, it appends the data inside the body of the HTTP request.
+This line is crucial: `<form action="/sent_sms" method="POST" novalidate>`. The **method** attribute tells you how to send form data as a POST. The **action** attribute specifies which page to send the form data to. You send it to **sent_sms.html**. Note that the POST method here does not display the data in the URL as a GET would. Instead, it appends the data inside the body of the HTTP request.
 
-Here **`<input type="text" placeholder="Enter number to text" name="to_number" >`** you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called **to_number** that specifies the input element's name. It is important when you reference the attribute to get the number that you are sending the SMS.
+Here `<input type="text" placeholder="Enter number to text" name="to_number" >` you define an input element of type text and give it some placeholder text which will display inside of the textbox. Next, you provide a name attribute called **to_number** that specifies the input element's name. It is important when you reference the attribute to get the number that you are sending the SMS.
 
-In this line **`<button type=submit">Send Text</button>`** you define a button with **`type=”submit"`.** The text will send when you click the button.
+In this line `<button type=submit">Send Text</button>` you define a button with `type=”submit"`**.** The text will send when you click the button.
 
 Next, you build the sent SMS page.
 
@@ -284,7 +284,7 @@ Next, you build the sent SMS page.
 </html>
 ```
 
-If the SMS sends successfully, you will see this page. The only tricky thing is this: **`{{ number }} | {{ error}}`,**  which is the Jinja templating language. It will render the phone number you put in the form or an error. The phone number is the one which you want to send the SMS. You’re about to write the POST route and will see how it works.
+If the SMS sends successfully, you will see this page. The only tricky thing is this: `{{ number }} | {{ error}}`**,**  which is the Jinja templating language. It will render the phone number you put in the form or an error. The phone number is the one which you want to send the SMS. You’re about to write the POST route and will see how it works.
 
 You’re feeling pretty good now because you’re in the home stretch. But it’s raining now, and you’re worried your laptop is going to get messed up. So your fingers get to coding. 
 
@@ -339,15 +339,15 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
   return templates.TemplateResponse("send.html", {"request": request, "error": "There is an error!"})
 ```
 
-Here you import the **Form** object **`from fastapi import FastAPI, Request`. Form** allows you to receive form field data.
+Here you import the **Form** object `from fastapi import FastAPI, Request`**. Form** allows you to receive form field data.
 
-This line, **`from base64 import b64encode`,** is needed to encode the API key and API secret. 
+This line, `from base64 import b64encode`**,** is needed to encode the API key and API secret. 
 
-You **`import requests`** to send HTTP requests and **`import JSON`** because you have to do some things with JSON.
+You `import requests` to send HTTP requests and `import JSON` because you have to do some things with JSON.
 
 This line should look a little familiar **`@app.post("/send_sms", response_class=HTMLResponse)`**. Here you have an **`@app.post`** route operation and pass in an HTML Response. 
 
-You have your async function again **`async def send_message(request: Request, to_number: str = Form(...)):`** . You define form parameters as a type hint and read it in by using **`Form(...)`**.
+You have your async function again `async def send_message(request: Request, to_number: str = Form(...)):` . You define form parameters as a type hint and read it in by using `Form(...)`.
 
 The payload or body of data you’ll send to your request:
 
@@ -433,7 +433,7 @@ Next, you pass in the authorization header:
 headers = {"content-type": "application/json", "Authorization": auth_header}
 ```
 
-Now the fun part! Here you use the requests module and send a post request **`requests.post`** to the Vonage API. You pass in the API URL (<https://api.nexmo.com/v0.1/messages>) and use HTTP Basic Auth from the requests module. The auth keyword provides a shortcut and allows you to do [Basic Authentication](https://docs.python-requests.org/en/latest/user/authentication/#basic-authentication). Then you pass in your headers **`headers=headers`** and the request body, a Python dictionary object. You convert it to a JSON string **`data=json.dumps(payload)`**.
+Now the fun part! Here you use the requests module and send a post request `requests.post` to the Vonage API. You pass in the API URL (<https://api.nexmo.com/v0.1/messages>) and use HTTP Basic Auth from the requests module. The auth keyword provides a shortcut and allows you to do [Basic Authentication](https://docs.python-requests.org/en/latest/user/authentication/#basic-authentication). Then you pass in your headers `headers=headers` and the request body, a Python dictionary object. You convert it to a JSON string `data=json.dumps(payload)`.
 
 ```python
 response = requests.post("https://api.nexmo.com/v0.1/messages",
@@ -442,7 +442,7 @@ response = requests.post("https://api.nexmo.com/v0.1/messages",
                         data=json.dumps(payload))
 ```
 
-The last step is to render the template. Here you check if the response is 200 or ok with **`if response`.** Then you pass in send.html, the request, and the context. The context **"number": to_number** will display the number on send.html. Finally, you render the error message if something goes awry.
+The last step is to render the template. Here you check if the response is 200 or ok with `if response`**.** Then you pass in send.html, the request, and the context. The context **"number": to_number** will display the number on send.html. Finally, you render the error message if something goes awry.
 
 ```python
 if response:
