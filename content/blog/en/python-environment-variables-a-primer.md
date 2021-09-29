@@ -33,6 +33,8 @@ The second advantage is that when you use environment variables, you do not have
 
 For example, say your code ran differently based on the operating system the user is running. Instead of changing your source code every time you run the code with a different user, you can have the value update automatically by using an environment variable. 
 
+You often store environemt variables in your operating system, but there other ways to store them as well you will learn about shortly.  
+
 ## Installing Python
 
 To follow along with the examples in this article, you need to have Python installed.
@@ -43,41 +45,44 @@ If you haven’t already, you can install Python 3 [by following the instruction
 
 ## Environment Variables in Python
 
-You can get and set environment variables in Python using the built-in `os` module. You can view all of the environment variables in your program by saving the following code in a Python file and then running this Python program. 
+You can get and set environment variables in Python using the built-in `os` module. You can view all of the environment variables in your program by saving the following code in a Python file and then running this Python program: 
 
+```python
 import os
 
 os.environ
+```
 
 When you run this code, your Python interpreter should print out all of your operating system’s environment variables. 
 
-You can access the different environment variables in os.environ like a Python dictionary. Here are the two ways to access them:
+You can access the different environment variables in `os.environ` like a Python dictionary. Here are two ways to access them:
 
+```python
 import os
 
 os.environ\[“USER”]
-
 os.environ.get(“USER”)
+```
 
-Both of the last two lines in your Python code above get the “USER” environment variable from your operating system, but when you use the first way, Python throws an exception if the variable is not found. 
+Both of the last two lines in your Python code above get the `“USER”` environment variable from your operating system, but when you use the first way, Python throws an exception if the variable is not found. 
 
 You may want to use the first way if the environment variable is required for your Python application to run and the second if it is optional. 
 
-One important environment variable you have access to in os.environ is PYTHONPATH. 
+One important environment variable you have access to in `os.environ` is `PYTHONPATH`. 
 
-Your PYTHONPATH is where Python looks for modules. 
+The URLS stored in `PYTHONPATH` is where Python looks for modules. 
 
-If you naviage to the URL in your PYTHONPATH, you can see this for yourself (you should see all of Python’s built-in modules there). 
+If you naviage to the URL in your `PYTHONPATH`, you can see this for yourself (you should see all of Python’s built-in modules there). 
 
-Adding directories to this variable adds them to Python’s search path when it is looking for modules.
+Adding directories to this environment variable adds them to Python’s search path when it is looking for modules.
 
-That means you can add a directory to PYTHONPATH with a module in it anywhere on your computer, add it to PYTHONPATH, and Python will be able to find it.   
+That means you can add a directory with a module in it anywhere on your computer to `PYTHONPATH`, and Python will be able to find it.   
 
 ## Environment Variables in Operating Systems
 
-In the previous example, “USER” was an environment variable your operating automatically sets that represents who is using your computer. You can set and get environment variables in your operating system similar to the way you do it in Python. 
+In the previous example, `“USER”` was an environment variable your operating automatically sets that represents who is using your computer. Although this is created automatically, you can also create your own environment variables on your operating system. 
 
-Here is how to get an environment variable from your operating system on a Unix-like system. First, open up your command line. Then, type the following command:
+Here is how to create an environment variable from your operating system on a Unix-like system. First, open up your command line. Then, type the following command:
 
 export vonage_api =your_api
 
