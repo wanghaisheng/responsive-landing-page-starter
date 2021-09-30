@@ -81,6 +81,8 @@ That means you can add a directory with a module in it anywhere on your computer
 
 ## Environment Variables in Operating Systems
 
+![Coder working at desk](/content/blog/python-environment-variables-a-primer/coder_at_desk.png)
+
 In the previous example, "`USER"` was an environment variable your operating sets representing who is using your computer. Although your operating system creates this variable automatically, you can also create your own environment variables on your operating system. 
 
 Here is how to create an environment variable on your operating system (using a Unix-like system). First, open up your command line. Then, type the following command:
