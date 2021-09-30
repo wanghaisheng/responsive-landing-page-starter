@@ -67,13 +67,13 @@ Before we get any further, here is a quick primer on HTML (if you are already fa
 
 The website has “Example Domain” at the top as a header (which means it is in a  large font and bold). Underneath “Example Domain” is a paragraph of text followed by a link. 
 
-Here is the HTML for this website.
+Here is the HTML code for this website.
 
 ![HTML example](/content/blog/build-a-python-html-parser-for-web-scraping-with-beautiful-soup/html.png)
 
 As you can see, HTML consists of tags. The tags tell your web browser to do something. In this case, the HTML tells your web browser to create a webpage that says "Example.com" at the top. 
 
-After the writing at the top comes a paragraph of text and a link. If you look at the HTML, you will see "Example.com" is surrounded by `<h1>` and `</h1>`. Many HTML tags, like this one, have an opening tag and a closing tag. In this case, your browser treats everything in between the tags as a header. 
+Inside a body tag comes a paragraph of text and a link. If you look at the HTML, you will see "Example.com" is surrounded by `<h1>` and `</h1>`. Many HTML tags, like this one, have an opening tag and a closing tag. In this case, your browser treats everything in between the tags as a header. 
 
 Anything inside of `<p>` tags is a paragraph. Finally, an `<a>` tag is a link. In this case, the line of code `"ahref=https://www.iana.org/domains/example"` inside the `<a>` tag  tells your browser to create a link to https://www.iana.org/domains/example. 
 
@@ -319,6 +319,6 @@ Of course, there is more to web scraping than the basics I covered in this tutor
 
 You can also read through [BeautifulSoup’s documentation.](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) You can [learn more about regular expressions here](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285). 
 
-Finally, you might want to [check out Scrapy](https://scrapy.org/), a popular Python framework for web scraping.\
+Finally, you might want to [check out Scrapy](https://docs.scrapy.org/en/latest/), a popular Python framework for web scraping.\
 \
 Thanks for reading, and best of luck with your web scraping!
