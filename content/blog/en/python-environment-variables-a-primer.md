@@ -52,7 +52,7 @@ import os
 os.environ
 ```
 
-Your Python interpreter should print out all of your operating system's environment variables when you run this code. 
+Your Python interpreter should print out all of your operating system's environment variables when running this code. 
 
 You can access the different environment variables in `os.environ` like a Python dictionary. Here are two ways to access them:
 
