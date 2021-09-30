@@ -345,7 +345,7 @@ This line, `from base64 import b64encode`**,** is needed to encode the API key 
 
 You `import requests` to send HTTP requests and `import JSON` because you have to do some things with JSON.
 
-This line should look a little familiar **`@app.post("/send_sms", response_class=HTMLResponse)`**. Here you have an **`@app.post`** route operation and pass in an HTML Response. 
+This line should look a little familiar `@app.post("/send_sms", response_class=HTMLResponse)`. Here you have an `@app.post` route operation and pass in an HTML Response. 
 
 You have your async function again `async def send_message(request: Request, to_number: str = Form(...)):` . You define form parameters as a type hint and read it in by using `Form(...)`.
 
