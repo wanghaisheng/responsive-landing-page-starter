@@ -7,7 +7,7 @@ author: dwanehemmings
 published: true
 published_at: 2021-09-23T13:38:38.639Z
 updated_at: 2021-09-23T13:38:38.678Z
-category: announcement
+category: release
 tags:
   - JavaScript
   - video-api
