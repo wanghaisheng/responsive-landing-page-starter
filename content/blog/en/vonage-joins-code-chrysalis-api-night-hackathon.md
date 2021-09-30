@@ -5,7 +5,7 @@ description: In September 2021, Vonage and Code Chrysalis have teamed up for a
 thumbnail: /content/blog/vonage-joins-code-chrysalis-api-night-hackathon/night-hackathon_1200x600.png
 author: clarisse-ng
 published: true
-published_at: 2021-09-29T09:48:05.847Z
+published_at: 2021-09-30T09:56:21.754Z
 updated_at: 2021-09-29T09:48:05.967Z
 category: event
 tags:
