@@ -7,7 +7,7 @@ author: dwanehemmings
 published: true
 published_at: 2021-09-23T13:38:38.639Z
 updated_at: 2021-09-23T13:38:38.678Z
-category: announcement
+category: release
 tags:
   - JavaScript
   - video-api
@@ -19,11 +19,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Express Explanation
+## Express Explanation
 
 Vonage, with a decade of video development expertise, has created a simple high-level API called Video Express to accelerate the development and integration of multiparty video into web applications.
 
-# Multiparty?
+## Multiparty?
 
 Let’s start by defining what multiparty means. This is when a video call has multiple participants that are both publishing their audio and video streams while simultaneously subscribing to everyone else’s streams.
 
@@ -41,7 +41,7 @@ This is where [Video Express](https://tokbox.com/developer/multiparty/) comes in
 
 Here is Video Express used in a vanilla JavaScript [Glitch project](https://glitch.com/edit/#!/remix/video-express-demo?path=README.md%3A1%3A0) you can view. Just input your API Key and Secret in the .env file and you will have your own working example. This is a bare-bones implementation to highlight Video Express.
 
-# Removing complexity
+## Removing complexity
 
 See the comparison below of the starter code needed to create a video chat.
 
@@ -79,13 +79,13 @@ room.join();
 
 Video Express handles all the publishing and subscribing of all the participants of the video call. Just tell it the id of the HTML element (in this example, "roomContainer") to place the "Room" into, join and that’s it. Read our [documentation](https://tokbox.com/developer/multiparty/) for more on what you can do.
 
-# Quality Manager
+## Quality Manager
 
 ![Graphic showing the larger video feed on the left with a higher resolution and more bitrate and a column of other smaller video feeds to the right with smaller resolution and bitrates.](/content/blog/video-express-is-here-and-why-it-is-awesome/qualitymanager.jpg "Quality Manager diagram")
 
 To help create the best quality video call, Video Express will apply various methods automatically. These include maximizing tile sizes for visible video streams and pausing the ones that can’t be seen. It will also adjust resolution and frame rates depending on network conditions and CPU. By dynamically setting higher priorities on speakers and screen shares, the things that need the focus can achieve the best quality.
 
-# Experience Manager
+## Experience Manager
 
 To create a great user experience, Video Express will optimize things on the client-side. For example, every participant after 10 is automatically muted to avoid very noisy rooms. When a displayed video gets smaller in size, a smaller stream is requested to help reduce the bandwidth needed for smooth playback.
 
@@ -97,13 +97,13 @@ Example of an optimized video session
 
 ![Table showing the amount of bandwidth used for audio and video for 1 to 1, 10 videos, and 25 videos in optimized sessions with as much as 80% lower bandwidth. ](/content/blog/video-express-is-here-and-why-it-is-awesome/optimized-video-session.jpg "Table with data of an optimized multiparty video session")
 
-# Layout Manager
+## Layout Manager
 
 ![Demonstrating the layout changes of colored blocks representing video feeds as they are being added and removed to the screen.](/content/blog/video-express-is-here-and-why-it-is-awesome/layoutmanager.gif "Layout Manager diagram")
 
 Out of the box, Video Express will automatically adjust the layout of the streams based on screen size and the number of participants. Screen shares and the active speaker are given a higher priority or take up more space.
 
-# Preview Publisher
+## Preview Publisher
 
 Another feature that Video Express handles for you is allowing the user to preview their video and audio before joining the room. Here is some sample code:
 
@@ -118,7 +118,7 @@ await previewPublisher.previewMedia({
 });
 ```
 
-# Screenshare
+## Screenshare
 
 The final feature of Video Express that I want to point out is how screen sharing is handled.
 
@@ -138,7 +138,7 @@ screenshareStopBtn.addEventListener("click", stopScreensharing, false);
 
 That's it! With these few lines of code, you can share your screen and Video Express will reconfigure the room's layout to make it the priority.
 
-# Well...
+## Well...
 
 Ready to build something amazing?!
 
