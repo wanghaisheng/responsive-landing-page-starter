@@ -319,6 +319,6 @@ Of course, there is more to web scraping than the basics I covered in this tutor
 
 You can also read through [BeautifulSoup’s documentation.](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) You can [learn more about regular expressions here](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285). 
 
-Finally, you might want to [check out Scrapy](https://docs.scrapy.org/en/latest/), a popular Python framework for web scraping.\
-\
+Finally, you might want to [check out Scrapy](https://docs.scrapy.org/en/latest/), a popular Python framework for web scraping.
+
 Thanks for reading, and best of luck with your web scraping!
