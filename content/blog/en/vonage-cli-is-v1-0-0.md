@@ -7,7 +7,7 @@ author: kellyjandrews
 published: true
 published_at: 2021-09-21T14:16:46.129Z
 updated_at: 2021-09-21T06:50:42.941Z
-category: announcement
+category: release
 tags:
   - cli
 comments: true
