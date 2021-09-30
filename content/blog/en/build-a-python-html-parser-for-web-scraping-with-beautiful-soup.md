@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 The internet contains the most extensive collection of data in human history. 
 
-All that data is available to you if you learn how to build a web scraper. A web scraper is a piece of software that collects data from websites. It is a powerful tool you can use to feed data to your programs. 
+All that data is available to you if you learn how to build a web scraper. A web scraper is a piece of software that collects data from web pages. It is a powerful tool you can use to feed data to your programs. 
 
 For example, you could scrape data from a lyrics website and use it to create a word cloud from the day’s top 10 most popular songs. Or you could analyze headlines and use their sentiment to trade stocks.
 
