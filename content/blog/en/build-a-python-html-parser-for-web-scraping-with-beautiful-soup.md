@@ -117,7 +117,17 @@ When you run this code, you should see example.com's HTML.
 
 ## Parsing HTML with Beautiful Soup
 
-We can now use Python's Beautiful Soup library to parse example.com's HTML. To do this, we are going to import the `BeautifulSoup` library and use it to create a `BeautifulSoup` object like this: 
+We can now use Python's Beautiful Soup library to parse example.com's HTML. 
+
+First, you need to download BeautifulSoup (it usually comes with Python but make sure you [have pip installed](https://pip.pypa.io/en/stable/getting-started/)).
+
+Enter this command in the terminal. 
+
+```
+pip install beautifulsoup4
+```
+
+Now we can import the `BeautifulSoup` library and use it to create a `BeautifulSoup` object like this: 
 
 ```python
 import requests
