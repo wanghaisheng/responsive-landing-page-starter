@@ -1,7 +1,8 @@
 ---
 title: Vonage Joins Code Chrysalis API Night Hackathon
-description: "In the week of 14th to 17th of September, Vonage and Code
-  Chrysalis have teamed up for a special API Night Hackathon. "
+description: In September 2021, Vonage and Code Chrysalis have teamed up for a
+  special API Night Hackathon. Find out more!
+thumbnail: /content/blog/vonage-joins-code-chrysalis-api-night-hackathon/night-hackathon_1200x600.png
 author: clarisse-ng
 published: true
 published_at: 2021-09-29T09:48:05.847Z
