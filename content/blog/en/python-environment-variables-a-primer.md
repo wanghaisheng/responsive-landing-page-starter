@@ -154,6 +154,8 @@ The line of code `load_dotenv` brings your environment variables into `os.enviro
 
 ## Storing Environment Variables in the Cloud
 
+![HTML](/content/blog/python-environment-variables-a-primer/html.png)
+
 When you create software for production, you probably won't run it from your computer. 
 
 Instead, you most likely will run your code on a server. 
