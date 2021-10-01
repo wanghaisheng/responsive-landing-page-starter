@@ -95,7 +95,7 @@ The code above creates a variable called `vonage_api` and sets it to `your_api`.
 Now you can print your variable's value like this:
 
 ```
-echo $vonage
+echo $vonage_api
 ```
 
 When you run the code above, your terminal should print `your_api`. 
