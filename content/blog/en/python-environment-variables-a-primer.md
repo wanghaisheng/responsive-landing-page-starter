@@ -146,7 +146,7 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-print(os.environ\["vonage_api"])
+print(os.environ["vonage_api"])
 ```
 
 The line of code `load_dotenv` brings your environment variables into `os.environ`, and you can then use them like you usually would. 
