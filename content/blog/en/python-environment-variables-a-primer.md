@@ -60,7 +60,7 @@ You can access the different environment variables in `os.environ` like a Python
 ```python
 import os
 
-os.environ\["USER"]
+os.environ["USER"]
 os.environ.get("USER")
 ```
 
