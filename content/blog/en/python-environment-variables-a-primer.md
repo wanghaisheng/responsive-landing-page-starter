@@ -136,7 +136,7 @@ source env/bin/activate
 Then, use pip to download `dotenv`:
 
 ```
-pip3 install dotenv
+pip3 install python-dotenv
 ```
 
 Now, you can use Python's `dotenv` library to load your environment variables into `os.environ` like this:
