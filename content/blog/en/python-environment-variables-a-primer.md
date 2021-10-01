@@ -87,7 +87,7 @@ In the previous example, "`USER"` was an environment variable your operating set
 Here is how to create an environment variable on your operating system (using a Unix-like system). First, open up your command line. Then, type the following command:
 
 ```python
-export vonage_api =your_api
+export vonage_api=your_api
 ```
 
 The code above creates a variable called `vonage_api` and sets it to `your_api`. 
