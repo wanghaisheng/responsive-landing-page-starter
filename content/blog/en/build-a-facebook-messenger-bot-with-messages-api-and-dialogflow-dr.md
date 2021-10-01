@@ -16,15 +16,15 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-In this tutorial you are going to learn how to implement a Facebook Messenger bot on your Facebook page using the [Nexmo Messages API](https://developer.nexmo.com/messages/overview) and the [Google Dialogflow](https://dialogflow.com) service.
+In this tutorial, you are going to learn how to implement a Facebook Messenger bot on your Facebook page using the [Vonage Messages API](https://developer.vonage.com/messages/overview) and the [Google Dialogflow](https://dialogflow.com) service.
 
 This example is going to take inbound messages sent either via the 'Send Message' button on a Facebook page, or via the Facebook Messenger app. Both will work just fine.
 
-Messages will be routed through our app to the Google Dialogflow service which will generate responses to questions and then send these back via the Nexmo Messages API.
+Messages will be routed through our app to the Google Dialogflow service which will generate responses to questions and then send these back via the Vonage Messages API.
 
 In this example, we're using the [prebuilt _Small Talk_ agent](https://dialogflow.com/docs/agents/prebuilt-smalltalk) in Dialogflow that will respond with chirpy answers to inbound questions and is great for development purposes.
 
-You can download and run this code for yourself from the [nexmo-community/nexmo-messages-facebook-dialogflow](https://github.com/nexmo-community/nexmo-messages-facebook-dialogflow) respository on GitHub.
+You can download and run this code for yourself from the [nexmo-community/nexmo-messages-facebook-dialogflow](https://github.com/nexmo-community/nexmo-messages-facebook-dialogflow) repository on GitHub.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ You'll need to create accounts to run this for yourself, so make sure you have t
 - A Facebook account with a brand/business page you can use for testing
 - A [Google Dialogflow](https://dialogflow.com) account
 - [Ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) (so the outside world can access the app on your local machine)
-- The [Nexmo Command Line Interface](https://github.com/Nexmo/nexmo-cli)
+- The [Vonage Command Line Interface](https://github.com/Nexmo/nexmo-cli)
 
 <sign-up number></sign-up>
 
@@ -172,21 +172,21 @@ Open your terminal and ensure that you are in the root of your application folde
 Using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) run the following command:
 
 ```bash
-nexmo jwt:generate private.key exp=$(($(date +%s)+86400)) application_id=NEXMO_APPLICATION_ID
+nexmo jwt:generate private.key exp=$(($(date +%s)+86400)) application_id=VONAGE_APPLICATION_ID
 ```
 
-Be sure to replace `NEXMO_APPLICATION_ID` with the ID of the application you just created.
+Be sure to replace `VONAGE_APPLICATION_ID` with the ID of the application you just created.
 
 Running this command will result in a big string of letters and numbers - this is your JSON Web Token. Copy the whole thing.
 
 To connect your Facebook page to your app, we've created a handy page:
 
-[https://static.nexmo.com/messenger/](https://static.nexmo.com/messenger/)
+[https://dashboard.nexmo.com/messages/social-channels](https://dashboard.nexmo.com/messages/social-channels)
 
 Complete the following steps:
 
 - Log in with your Facebook credentials
-- Select the Facebook page you want to connect to your Nexmo app
+- Select the Facebook page you want to connect to your Vonage app
 - Click _Subscribe_
 
 If all is well, you'll see a green dialog pop up congratulating you on your success, and letting you know the ID of your Facebook page.
@@ -219,7 +219,7 @@ You should see your messages appearing in the console.
 
 Now that your stunning word play is being received by the application, it's time to send it over to Dialogflow to get some equally pithy responses back.
 
-In the `controllers` folder, create a new file called `dialogflow.js` and add the the contents of [this javascript file](https://raw.githubusercontent.com/nexmo-community/nexmo-messages-facebook-dialogflow/master/controllers/dialogflow.js).
+In the `controllers` folder, create a new file called `dialogflow.js` and add the contents of [this javascript file](https://raw.githubusercontent.com/nexmo-community/nexmo-messages-facebook-dialogflow/master/controllers/dialogflow.js).
 
 The exported function in the file achieves the following:
 
@@ -292,26 +292,26 @@ _Note: If you need help setting up Dialogflow, follow the [SmallTalk Prebuilt Ag
 You're almost close to completion. Here is what has been achieved so far.
 
 - Set up the Koa server ✔️
-- Set up a new Nexmo App ✔️
+- Set up a new Vonage App ✔️
 - Connected the app to a Facebook Page ✔️
 - Test for incoming messages ✔️
 - Send incoming messages to Dialogflow and get a response ✔️
 
 The final piece in this puzzle is to take the response that Dialogflow returns and send it back to the user as a reply to their message.
 
-The [Nexmo Messages API](https://developer.nexmo.com/messages/overview) will handle all of this for us.
+The [Vonage Messages API](https://developer.vonage.com/messages/overview) will handle all of this for us.
 
-Create a new file in the `controllers` folder called `nexmo.js` and populate it with the contents of [this file](https://github.com/nexmo-community/nexmo-messages-facebook-dialogflow/blob/master/controllers/nexmo.js).
+Create a new file in the `controllers` folder called `vonage.js` and populate it with the contents of [this file](https://github.com/nexmo-community/nexmo-messages-facebook-dialogflow/blob/master/controllers/vonage.js).
 
 The main function being exported in this file is called `messageResponder`.
 
-This function uses the [Nexmo Node JS Client Library](https://github.com/Nexmo/nexmo-node/tree/beta) to send a message back to the user.
+This function uses the [Vonage Node JS Client Library](https://github.com/Nexmo/nexmo-node/tree/beta) to send a message back to the user.
 
 The function is passed an object called `message` that will contain the `id` of the user to send the reply to, and the `dialogflowResponse` (the text to send in the message).
 
 ```javascript
 const messageResponder = async message => {
-  nexmo.channel.send(
+  vonage.channel.send(
     { type: 'messenger', id: message.id }, // Who the message goes to
     { type: 'messenger', id: FBID }, // Your FBID - who the message comes from
     {
@@ -332,7 +332,7 @@ To make use of this `messageResponder` function import it in the `routes/index.j
 At the top of the file, underneath the `require` statement for the `dialogflow.js` file created earlier, add the following:
 
 ```javascript
-const messageResponder = require('../controllers/nexmo');
+const messageResponder = require('../controllers/vonage');
 ```
 
 Then, in the `inbound` function, add the following code just above the `ctx.status = 200` line:
@@ -354,11 +354,11 @@ This will make the object being passed to the function look like this:
 }
 ```
 
-The `id` in this instance is the ID of the user on Facebook that sent the message, so it will be different to the one above.
+The `id` in this instance is the ID of the user on Facebook that sent the message, so it will be different from the one above.
 
 ## The Moment of Truth
 
-The stage is set. With that final file the loop has been closed and any incoming message should now receive a reply straight back.
+The stage is set. With that final file, the loop has been closed and any incoming message should now receive a reply straight back.
 
 Once again, send a message from your Facebook page. The response from Dialogflow should now pop up in the same window!
 
