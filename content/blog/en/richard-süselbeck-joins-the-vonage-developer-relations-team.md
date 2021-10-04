@@ -2,9 +2,10 @@
 title: Richard Süselbeck Joins the Vonage Developer Relations Team
 description: My name is Richard Süselbeck and I have recently joined Vonage as
   Director of Developer Relations. I'd like to introduce myself and the team.
+thumbnail: /content/blog/richard-süselbeck-joins-the-vonage-developer-relations-team/richard-suselbeck.png
 author: richard-süselbeck
 published: true
-published_at: 2021-10-01T15:39:51.433Z
+published_at: 2021-10-04T10:44:44.777Z
 updated_at: 2021-10-01T15:39:51.464Z
 category: team
 tags:
