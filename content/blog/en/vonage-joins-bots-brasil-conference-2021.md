@@ -20,22 +20,18 @@ replacement_url: ""
 ---
 ## Have You Heard of Bots Brasil?
 
-You might have heard of one of the most significant community-led communities in Latin America about conversational interfaces, artificial intelligence, and bots. 
-
-Bots Brasil started in 2016. They have organized events, shared content, and helped professionals and companies in the conversational industry.
+Since 2016, Bots Brasil has been one of the most significant communities in Latin America for conversational interfaces, artificial intelligence, and bots. They have organized events, shared content, and helped professionals and companies in the conversational industry.
 
 ## Bots Brasil 2021 Conference
 
-In 2021 they organized their first remote conference about conversational interfaces connecting communities, companies, platforms, and market experts to share experiences and create opportunities for everyone. 
+In 2021, Bots Brasil organized its 4th annual and first remote conference. This year's theme was "bringing conversations together". As the world has had to adapt to the pandemic, there's been a digital transformation on a global scale. The rise of new technologies and new media has brought communications closer to people at scale.
 
-On its fourth conference edition, this year's theme was "bringing conversations together". We all had to adapt to a digital transformation due to the pandemic at a global scale, we are still dealing with this situation. In response to this challenge, we have seen the rise of new technologies and new media that could bring communications closer to people at scale.
-
-In this Bots Brasil 2021 Conference, we explored how the conversational market has helped and allowed people and companies to stay close even though they are far away. We were proud to be a gold sponsor.
+At Bots Brasil 2021 conference, we explored how the conversational market has helped people and companies to stay close even though they are far away. We were proud to be a gold sponsor.
 
 There were eight tracks: 
 
 1. Careers
-2. Success case and learnings
+2. Success Cases and Learnings
 3. Curatorship and Computational Linguistics
 4. Diversity and Inclusion
 5. Artificial Intelligence
@@ -47,15 +43,15 @@ There were eight tracks:
 
 <youtube id="7pEzVf1S410"></youtube>
 
-In this session, learn to build a Facebook Messenger bot with the Vonage Messages API. This bot will tell users whether the restaurant is currently delivering. If the restaurant is closed, it will notify the user when deliveries resume.
+In this session, we learned to build a Facebook Messenger bot with the Vonage Messages API. This bot tells users whether the restaurant is currently delivering. If the restaurant is closed, it notifies the user when deliveries resume.
 
 <youtube id="t_aBilqUuqg"></youtube>
 
-In this session, we will discuss the Vonage AI solution and describe a use case we have done for the Israeli Employment office, in which we reached over 1 million citizens monthly, using voice and WhatsApp bots. This success story is a great way to understand how to use conversational AI to increase the conversation rate and reduce costs in the business communication world.
+In this session, we discussed the Vonage AI solution and described a use case we have done for the Israeli Employment office, in which we reached over 1 million citizens monthly, using voice and WhatsApp bots. This success story was a great way to understand how to use conversational AI to increase the conversation rate and reduce costs in the business communication world.
 
 <youtube id="PezL3MzcheA"></youtube>
 
-In this session, we'll look at how to assign a phone number to a chatbot created using Dialogflow, Google Cloud, Node.js, and Vonage API integrations. The architecture shown will allow the user to call their agent by phone and integrate other services such as SMS and WhatsApp.
+In this session, we looked at how to assign a phone number to a chatbot created using Dialogflow, Google Cloud, Node.js, and Vonage API integrations. The architecture shown allows the user to call their agent by phone and integrate other services such as SMS and WhatsApp.
 
 There were more than 1500 registrations and 60 live and recorded talks with Brazilian Sign Language (Libras) interpretation. [You can check them out in this youtube playlist on Bots Brasil Youtube Channel](https://www.youtube.com/playlist?list=PL3j5_lNQE6qW094EBC-rvHPOq7v0RZNBU).
 
@@ -65,17 +61,15 @@ Vonage had a booth with Amanda Cavallaro (me!), Daniel Barna, Fábio Flores, and
 
 We had the opportunity and privilege to talk to different people at different levels in their careers and talk about our APIs and bots from different angles and perspectives.
 
-It's a very different experience to have an online stand at a conference, the experience of physically being at a booth and talking to many different along the day, showing them the demos is a challenge to be replicated online, but to the extent, we made new connections and made an impact!
+It was a very different experience to be in an online stand at a conference compared to the experience of physically being at a booth. We talked to many different people throughout the day like usual, but showing them the demos was a challenge to replicate online. Regardless, we formed new connections and made an impact!
 
 ![Vonage's logo inside of a Bots Brasil 2021 Conference layout](/content/blog/vonage-joins-bots-brasil-conference-2021/vonage-feed.png "Vonage is a sponsor at Bots Brasil 2021 Conference")
 
-## Final Remarks  
+## Final Remarks
 
 It was a remarkable experience to be part of the story of the 4th edition of the Bots Brasil Conference, we even created a video in Brazilian Portuguese explaining what our Developer Relations team does here at Vonage. Watch it below if you're interested!
 
 <youtube id="RsX_rF1ntPU"></youtube>
-
-
 
 ## Next Steps
 
