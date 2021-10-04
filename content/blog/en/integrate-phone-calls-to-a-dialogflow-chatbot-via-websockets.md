@@ -43,26 +43,26 @@ An agent is a Dialogflow instance, which you can think of as your chatbot applic
 ### Follow the steps
 
 1. Open the [dialogflow console](https://dialogflow.cloud.google.com/)
-2. Create an agent by giving it a name, setting the default language, choosing the timezone, and clicking on the button to create an agent it can either be seen as `Create` or `Create Agent`
+2. Create an agent by giving it a name, setting the default language, choosing the timezone, and clicking on the button to create an agent. The button can either be shown as `Create` or `Create Agent`
 3. On the menu on the left click on the gear icon
-4. Under Google Project click on the project ID name, for instance `VonageDF`
+4. Under Google Project, click on the project ID name. For instance, `VonageDF`
    This will take you to the [Google Cloud console](https://console.cloud.google.com/)
 
 ![Gif showing the steps to create the dialogflow Agent](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/dialogflow-1_1.gif "Gif showing the steps to create the dialogflow Agent")
 
 ## 2/7 Create a Service Account on the Google Cloud Console
 
-We will use the graphical user interface to manage our Google Cloud project and resources via the Google Cloud console, by using the same project created in Dialogflow. In the next steps, we will create a service account for access control and authentication.
+We will use the graphical user interface to manage our Google Cloud project and resources via the Google Cloud console using the same project created in Dialogflow. In the following steps, we will create a service account for access control and authentication.
 
 ### Follow the steps
 
 1. From the [Google Cloud console](https://console.cloud.google.com/), click on `Go to project settings`
-2. On the menu on the left click on `Service accounts`
-3. At the top bar click on `+ Create Service Account`
+2. On the menu on the left, click on `Service accounts`
+3. At the top bar, click on `+ Create Service Account`
 4. Give it a Service Account Name you'll remember, for instance `VonageDF`
 5. Add a service account description
 6. Click on `Create and Continue`
-7. Under `Grant this service account access to project` filter and select the role `Dialogflow API Admin`
+7. Under `Grant this service account access to project`, filter and select the role `Dialogflow API Admin`
 
 ![Gif showing the seven above steps while creating the Service Account](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/googlecloud1.gif "Gif showing the seven above steps while creating the Service Account")
 
@@ -80,9 +80,9 @@ You are now taken back to the Service Accounts page
 
 ## 3/7 Set Up the Dialogflow Reference Connection
 
-The Dialogflow Reference Connection makes use of the [WebSockets feature](https://docs.nexmo.com/voice/voice-api/websockets) of the Vonage Voice API. When a voice call is established, a Voice API application triggers a WebSocket connection to this [Dialogflow-reference-connection](https://github.com/nexmo-community/dialogflow-reference-connection) and streams the audio to and from the voice call in real-time.
+The Dialogflow Reference Connection makes use of the [WebSockets feature](https://docs.nexmo.com/voice/voice-api/websockets) of the Vonage Voice API. When a voice call is established, a Voice API application triggers a WebSocket connection to the [Dialogflow-reference-connection](https://github.com/nexmo-community/dialogflow-reference-connection). It streams the audio to and from the voice call in real-time.
 
-In the following steps below we will give two options as examples using ngrok to tunnel the connecting server which is interacting with our Dialogflow Agent and deploying it Heroku.
+In the following steps below, we will give two options as examples. Using ngrok to tunnel the connecting server, which is interacting with our Dialogflow Agent and deploying it Heroku.
 
 ### Follow the steps
 
@@ -113,7 +113,7 @@ In the following steps below we will give two options as examples using ngrok to
 12. Install [git](https://git-scm.com/downloads)
 13. Install [Heroku command line](https://devcenter.heroku.com/categories/command-line) and login to your Heroku account
 14. If you do not yet have a local git repository, create one: `git init`
-15. Start by creating this application on Heroku from the command line using the Heroku CLI. Note: In below command, replace `thisappname` with a unique name on the whole Heroku platform. `heroku create thisappname`
+15. Start by creating this application on Heroku from the command line using the Heroku CLI. Note: In the below command, replace `thisappname` with a unique name on the whole Heroku platform. `heroku create thisappname`
 16. On your Heroku dashboard where your application page is shown, click on `Settings` button, add the following `Config Vars` and set them with their respective values:\
     `GCLOUD_PROJECT_ID`
     `GOOGLE_APPLICATION_CREDENTIALS`  
@@ -128,14 +128,14 @@ In the following steps below we will give two options as examples using ngrok to
 
 1. Create an Application from the [Vonage API Dashboard](https://dashboard.nexmo.com/)
 2. Give the application a name, for instance `VonageDF` 
-3. Click on the button to generate a public and private key, a `private.key` file will be downloaded and we will add it to the Dialogflow Voice API Sample Application in the next section of this tutorial
+3. Click on the button to generate a public and private key, a `private.key` file will be downloaded. We will add it to the Dialogflow Voice API Sample Application in the next section of this tutorial
 4. Link a phone number to this application. If you do not already have one, on the menu on the left click on `Numbers` and then `Buy Numbers` and follow the steps to purchase it
 
 We will set up the Dialogflow Voice API Sample application and get back to this Vonage application dashboard soon to add more information.
 
 ## 5/7 Set Up the Dialogflow Voice API Sample Application
 
-This sample application makes use of Vonage Voice API to answer incoming voice calls and set up a WebSocket connection to stream audio to and from the Dialogflow reference connection for each call.
+This sample application uses the Vonage Voice API to answer incoming voice calls and set up a WebSocket connection to stream audio to and from the Dialogflow reference connection for each call.
 
 The [dialogflow reference connection](https://github.com/nexmo-community/dialogflow-reference-connection) code will:
 
@@ -151,7 +151,7 @@ We will use ngrok to tunnel the connecting server which is interacting with our 
 
 1. From your terminal, clone the [Dialogflow Voice API Sample Application](https://github.com/nexmo-community/dialogflow-sample-voice-application) from GitHub and change directory
     `git clone https://github.com/nexmo-community/dialogflow-sample-voice-application && cd dialogflow-sample-voice-application`
-   You can continue to follow the below steps explanation or from the read me file of the [Dialogflow Voice API Sample Application](https://github.com/nexmo-community/dialogflow-sample-voice-application)
+   You can continue to follow the below steps explanation or from the readme file of the [Dialogflow Voice API Sample Application](https://github.com/nexmo-community/dialogflow-sample-voice-application)
 2. Add the `private.key` generated from the Vonage Dashboard and downloaded to your machine to the project root
 3. From the `.env.example` create a `.env` file
 4. Populate the environment variables with the information present on the [Vonage API Dashboard](https://dashboard.nexmo.com/)
@@ -169,7 +169,7 @@ We will use ngrok to tunnel the connecting server which is interacting with our 
 7. On a separate terminal tab run `ngrok http 8000`
    Get back to the Vonage Dashboard website and under capabilities:
 8. Toggle Voice to enable this capability
-9. Add the ngrok url running on `dialogflow-sample-voice-application`  followed by `/answer` on the Answer URL. Make sure HTTP GET is selected.
+9. Add the ngrok URL running on `dialogflow-sample-voice-application`  followed by `/answer` on the Answer URL. Make sure HTTP GET is selected.
 10. Add the ngrok url running on `dialogflow-sample-voice-application`  followed by  `/event` on the Event URL. Make sure HTTP POST is selected.
 11. Click on Save Changes
 
