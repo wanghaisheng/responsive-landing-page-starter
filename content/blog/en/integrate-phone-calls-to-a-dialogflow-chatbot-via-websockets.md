@@ -122,7 +122,7 @@ In the following steps below, we will give two options as examples. Using ngrok 
 
 ## Set Up Your Vonage Voice API Application Credentials and Phone Number
 
-   ![](https://lh5.googleusercontent.com/sMtzm5Ru-Mi6YwkpuKSn9Y-Da5MSzbKWjlpRTUW7bXSJZYbH1c_OWAxt_5211PAmMvg6ICu-OrmewGa1b5OrBeKfe-bU2aAM13CpjBWvoJLAcFsAW9ACdSCU1TiOCKi7-zTKYlrw)
+   ![An image explaining that to complete this turorial you need a VONAGE API Account and to purchase a virtual number](https://lh5.googleusercontent.com/sMtzm5Ru-Mi6YwkpuKSn9Y-Da5MSzbKWjlpRTUW7bXSJZYbH1c_OWAxt_5211PAmMvg6ICu-OrmewGa1b5OrBeKfe-bU2aAM13CpjBWvoJLAcFsAW9ACdSCU1TiOCKi7-zTKYlrw)
 
 ### Follow the steps
 
