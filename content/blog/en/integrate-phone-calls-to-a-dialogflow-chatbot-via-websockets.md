@@ -198,19 +198,19 @@ We will use ngrok to tunnel the connecting server which is interacting with our 
 
 ## 6/7 Improving the Dialogflow Agent
 
-If you were to try and call the phone number at this point of the tutorial you would be able to interact with the starting point of the conversation from the Dialogflow perspective, the `Default Welcome Intent`.
+If you were to try and call the phone number at this point of the tutorial, you would be able to interact with the starting point of the conversation from the Dialogflow perspective, the `Default Welcome Intent`.
 
 A message would be sent back to the caller from the list of the user responses. But the conversation would not take turns as we do not have any other data trained for other turns of conversation.
 
 Let's take a step back and explore some of the concepts of Dialogflow to add the utterances the users might say, provide them with a response, and add the end of the conversation, so that you can see a full conversation in turns taking place.
 
-Once you create an agent, you will create intents, they are going to handle and shape the conversation.
+Once you create an agent, you will create intents that will handle and shape the conversation.
 
-In the event of a user utterance, Dialogflow matches what is being said to an intent, based on the NLP and the training phrases that a user could potentially say to match that intent. Once the intent classification happens, a response is sent back to the user.
+In the event of a user utterance, Dialogflow matches what is being said to an intent, which is based on the NLP and the training phrases that a user could potentially say to match that intent. Once the intent classification happens, a response is sent back to the user.
 
-Entities are the types of information that we will extract from the conversation. For the use case we will see below we are booking a table via a phone call and the information we will extract from the conversation are `person`, `date` and `time`.
+Entities are the types of information that we will extract from the conversation. For the use-case we will see below, we are booking a table via a phone call. The information we will extract from the conversation are `person`, `date` and `time`.
 
-Let's improve the Default Welcome Intent, create an intent, outline the entities and add an end to the conversation and test it out.
+Let's improve the Default Welcome Intent, create an intent, outline the entities, and add an end to the conversation and test it out.
 
 ### Follow the steps
 
@@ -226,14 +226,14 @@ Let's improve the Default Welcome Intent, create an intent, outline the entities
    	- Could I book a slot at 14:00 on 10/12/2021 for Joseph?
    	- I'd like to book a table on the 10/09/2020 at 16:00 for Amanda
    You will notice that as you type these sentences, some words will be outlined in a colorful highlight, make sure to double click the words and make sure they are using the correct entities `@sys.person`, `@sys.date` and `@sys.time`. 
-9. Under Actions and Parameters tick `required` for `person`, `date` and `time`
-10. Add prompts for each one of the parameters, because in case they haven't said that specific piece of information during the conversation, they'll be prompted to add them
+9. Under Actions and Parameters, tick `required` for `person`, `date` and `time`
+10. Add prompts for each one of the parameters because in case they haven't said that specific piece of information during the conversation, they'll be prompted to add them
 
 
     ![Training phrases examples](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/trainingphrases.png "Training phrases examples")
 
 
-11. In the response you can add the following: `Table booked for $person at $time on $date. Thank you!`
+11. In the response, you can add the following: `Table booked for $person at $time on $date. Thank you!`
 12. Toggle `Set this intent as end of conversation`, below responses
 13. Click Save
 
@@ -246,7 +246,7 @@ Let's improve the Default Welcome Intent, create an intent, outline the entities
 Now that we have all the parts set up it's time to call your virtual phone number and test it out, let's go through what is going on and then follow our final step to make the call!
 
 Once you call the phone number linked to your Voice API application to interact with the Dialogflow Agent
-You will hear the confirmation message: `Connecting your call, please wait.`. That Text To Speech from the Vonage API platform is played as soon as your call is answered by the platform.
+You will hear the confirmation message: `Connecting your call, please wait.`. That Text To Speech from the Vonage API platform is played as soon as the platform answers your call.
 
 Once the WebSocket is established, the Vonage API platform plays the Text To Speech `Hello` to the Dialogflow Agent (you as the caller will not hear that).
 
@@ -256,7 +256,7 @@ At this point, you will interact with the intents you set up in the previous sec
 
 You will see the transcriptions on the Dialogflow reference connection application console and also on the Dialogflow sample voice API application console.
 
-If you'd like to see the sentiment analysis results you'll have to enable the Cloud Natural API from the Google Cloud console, if it's not enabled you'll get an error similar to `PERMISSION_DENIED: Cloud Natural Language API has not been used in project xxxx before or it is disabled`.
+If you'd like to see the sentiment analysis results, you'll have to enable the Cloud Natural API from the Google Cloud console. If it's not enabled you'll get an error similar to `PERMISSION_DENIED: Cloud Natural Language API has not been used in project xxxx before or it is disabled`.
 
 Let's go to our final step and see all the building blocks together in action!
 
@@ -274,7 +274,7 @@ Let's go to our final step and see all the building blocks together in action!
 
 ## Congratulations
 
-You have completed this tutorial on how to make phone call to a Dialogflow agent using a Vonage WebSockets integration.
+You have completed this tutorial on making phone calls to a Dialogflow agent using a Vonage WebSockets integration.
 
 ## Resources
 
@@ -284,6 +284,6 @@ Check the [WebSockets reference guide](https://developer.nexmo.com/voice/voice-a
 
 Check the [A blog post explaining ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
 	
-If you would like to see a similar example using an [Amazon Lex Bot](https://learn.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot/). 
+You can also look at a similar example using an [Amazon Lex Bot](https://learn.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot/). 
 
-Hope you enjoyed this. Feel free to contact me [on Twitter](https://twitter.com/amdcavallaro) or join our [Community Slack Channel](https://developer.nexmo.com/community/slack).
+I hope you enjoyed this. Feel free to contact me [on Twitter](https://twitter.com/amdcavallaro) or join our [Community Slack Channel](https://developer.nexmo.com/community/slack).
