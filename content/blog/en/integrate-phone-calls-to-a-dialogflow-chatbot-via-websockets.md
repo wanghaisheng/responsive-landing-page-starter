@@ -38,7 +38,7 @@ To perform the actions outlined in the following steps, you will need to create:
 
 Dialogflow is a Software as a Service (SaaS) and a Natural Language Understanding platform used to build conversational user interfaces. 
 
-An agent is a Dialogflow instance, in a nutshell, it is your chatbot application. It allows you to take what the users say, map it to [intents](https://cloud.google.com/dialogflow/es/docs/intents-overview) and provide them with responses. 
+An agent is a Dialogflow instance, which you can think of as your chatbot application. It allows you to take what the users say, map it to [intents](https://cloud.google.com/dialogflow/es/docs/intents-overview) and provide them with responses. 
 
 ### Follow the steps
 
