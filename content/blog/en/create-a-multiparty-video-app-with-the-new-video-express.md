@@ -30,6 +30,8 @@ The Video Express provides by default the following features:
 * **Network optimization**: Automatically remove video or audio for participants who are non-visible or non-speaking, optimizing bandwidth resources. 
 * **Ease of use**: It provides a more natural interaction by replacing publishing, subscribing, and streams with Room and Participants.
 
+> Want to skip to the end? You can find all the source code for this tutorial on [GitHub](https://github.com/nexmo-se/video-express-react-app).
+
 ## App Architecture
 
 The app is divided into two main sections, server and client-side:
