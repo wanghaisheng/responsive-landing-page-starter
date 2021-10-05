@@ -357,4 +357,4 @@ const handleVideoSource = React.useCallback(
 
 This post shows how to integrate the brand new Video Express with a React Application. The application implements the main features related to a video application, such as waiting room, device selection, network status detection, screen sharing, chat, and more.
 
-Feel free to clone the [Github Repo](https://github.com/nexmo-se/video-api-aws-moderation) and start using it in your application.
+Feel free to clone the [Github Repo](https://github.com/nexmo-se/video-express-react-app) and start using it in your application.
