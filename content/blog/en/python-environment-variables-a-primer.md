@@ -184,7 +184,7 @@ To solve these problems, some programmers use [a universal secrets manager like 
 
 A universal secrets manager allows you to store your secrets in one place, so everyone on your team can access them. 
 
-![Doppler's Dashboard](/content/blog/python-environment-variables-a-primer/doppler.png)
+![Doppler's Dashboard](/content/blog/python-environment-variables-a-primer/doppler.png "Doppler's Dashboard")
 
 With a universal secrets manager, your secrets are independent of your local machine or a cloud provider, and so you can bring them with you no matter where you run your code. 
 
