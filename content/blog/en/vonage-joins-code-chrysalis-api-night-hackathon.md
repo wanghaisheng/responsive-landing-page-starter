@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 # Introduction
 
-On the 14th of September, Vonage and Code Chrysalis teamed up for a special API Night Hackathon. The API Hackathon is designed to challenge the software engineering Bootcamp students to innovate and build brand new apps using Vonage APIs in only four days! 
+On the 14th of September, Vonage and [Code Chrysalis](https://www.codechrysalis.io/) teamed up for a special API Night Hackathon. The API Hackathon is designed to challenge the software engineering Bootcamp students to innovate and build brand new apps using Vonage APIs in only four days! 
 
 The hackathon began on Tuesday with an amazing presentation from [Amanda Cavallaro](https://learn.vonage.com/authors/amanda-cavallaro/) that explained what the Vonage APIs are and how to use them. The session also offered a few inspiring ideas that encouraged the participants to begin their projects. 
 
@@ -64,7 +64,7 @@ Built with:
 * Material UI
 * Knex
 * Postgres
-* Vonage Video API
+* [Vonage Video API](https://www.vonage.com/communications-apis/video/)
 * Heroku
 
 The [Application](https://vonage-hackathon.herokuapp.com) is available on Heroku, and you can check out their code on [GitHub](https://github.com/gonuma/vonage-hackathon). You can also watch their [demo and presentation](https://www.youtube.com/watch?v=-4O2LioAjK8).
