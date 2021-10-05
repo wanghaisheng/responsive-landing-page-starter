@@ -64,7 +64,7 @@ Built with:
 * Material UI
 * Knex
 * Postgres
-* Vonage Video API
+* [Vonage Video API](https://www.vonage.com/communications-apis/video/)
 * Heroku
 
 The [Application](https://vonage-hackathon.herokuapp.com) is available on Heroku, and you can check out their code on [GitHub](https://github.com/gonuma/vonage-hackathon). You can also watch their [demo and presentation](https://www.youtube.com/watch?v=-4O2LioAjK8).
