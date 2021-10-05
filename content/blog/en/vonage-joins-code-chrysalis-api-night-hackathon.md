@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 # Introduction
 
-On the 14th of September, Vonage and Code Chrysalis teamed up for a special API Night Hackathon. The API Hackathon is designed to challenge the software engineering Bootcamp students to innovate and build brand new apps using Vonage APIs in only four days! 
+On the 14th of September, Vonage and [Code Chrysalis](https://www.codechrysalis.io/) teamed up for a special API Night Hackathon. The API Hackathon is designed to challenge the software engineering Bootcamp students to innovate and build brand new apps using Vonage APIs in only four days! 
 
 The hackathon began on Tuesday with an amazing presentation from [Amanda Cavallaro](https://learn.vonage.com/authors/amanda-cavallaro/) that explained what the Vonage APIs are and how to use them. The session also offered a few inspiring ideas that encouraged the participants to begin their projects. 
 
