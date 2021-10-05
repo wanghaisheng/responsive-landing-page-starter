@@ -180,9 +180,11 @@ In that case, ten people all have to update their `.env` file, which is not very
 
 Or, what if you decide to switch from Heroku to AWS? In that case, you will have to learn how to deal with secrets on a new platform, which requires extra work.  
 
-To solve these problems, some programmers use a universal secrets manager like Doppler. 
+To solve these problems, some programmers use [a universal secrets manager like Doppler.](https://www.doppler.com/) 
 
 A universal secrets manager allows you to store your secrets in one place, so everyone on your team can access them. 
+
+![Doppler's Dashboard](/content/blog/python-environment-variables-a-primer/doppler.png)
 
 With a universal secrets manager, your secrets are independent of your local machine or a cloud provider, and so you can bring them with you no matter where you run your code. 
 
