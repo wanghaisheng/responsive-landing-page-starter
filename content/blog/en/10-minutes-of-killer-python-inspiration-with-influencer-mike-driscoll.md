@@ -58,7 +58,7 @@ I also have a book called ReportLab: PDF Processing with Python that helps you c
 
 **Me: What inspired you to become an author?**
 
-**Mike Driscoll:** I blog at <https://www.blog.pythonlibrary.org/>. Several years ago, my readers and people from the wxPython users' group told me to write a book. I think it was mainly wxPython people at that time as they wanted more books on the topic.
+**Mike Driscoll:** I blog at <https://www.blog.pythonlibrary.org/>. Several years ago, my readers and people from the [wxPython users' group](https://discuss.wxpython.org/) told me to write a book. I think it was mainly wxPython people at that time as they wanted more books on the topic.
 
 Because of their encouragement and the popularity of my first book, Python 101, I decided to continue writing books on Python. 
 
