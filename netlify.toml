@@ -86,4 +86,28 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog/author/*"
+  to = "/authors/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/tag/*"
+  to = "/tags/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/category/*"
+  to = "/categories/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog/page/*"
+  to = "/blog/"
+  status = 301
+  force = true
+
 
