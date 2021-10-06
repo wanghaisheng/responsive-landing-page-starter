@@ -50,9 +50,9 @@ His books helped me improve tremendously as a Python developer, and I'm very exc
 
 **Me: Can you share more about the books you have authored and how they might help budding or more experienced Pythonistas?**
 
-**Mike Driscoll:** I have authored nine books on Python as well as a tenth book nearly finished. Python 101 is my beginner book and helps the reader get up to speed on Python. It also covers topics not covered in other beginner books, such as distributing your code on PyPI or as a binary.
+**Mike Driscoll:** I have authored nine books on Python as well as a tenth book nearly finished. [Python 101](https://www.amazon.com/Python-101-2nd-Michael-Driscoll/dp/B08GVJTWSP/ref=sr_1_3?crid=2RQREOEZQ1F9W&dchild=1&keywords=python+101+michael+driscoll&qid=1633531693&sprefix=python+101+michael+%2Caps%2C165&sr=8-3) is my beginner book and helps the reader get up to speed on Python. It also covers topics not covered in other beginner books, such as distributing your code on PyPI or as a binary.
 
-I have a popular book on the basics of Jupyter Notebook. If you are just getting started with Jupyter, you might like that book.
+[I have a popular book on the basics of Jupyter Notebook](https://www.amazon.com/Jupyter-Notebook-101-Michael-Driscoll-ebook/dp/B07JN5QJQR/ref=sr_1_1?dchild=1&keywords=jupyter+notebook+michael+driscoll&qid=1633531753&sr=8-1). If you are just getting started with Jupyter, you might like that book.
 
 I also have a book called ReportLab: PDF Processing with Python that helps you create PDFs and process PDFs in various ways. This Spring, I released Pillow: Image Processing with Python, which teaches you how to use Pillow to edit your photos and much more besides.
 
