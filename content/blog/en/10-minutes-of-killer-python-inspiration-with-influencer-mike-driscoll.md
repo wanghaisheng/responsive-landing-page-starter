@@ -70,7 +70,7 @@ Because of their encouragement and the popularity of my first book, Python 101, 
 
 **Me: Why did you choose the Python coding language?**
 
-**Mike Driscoll:**  In an IT department, as a Software Applications Specialist, I was hired. The job was to convert our login scripts from Kixtart to Python. Then to move on and convert all our VBA code to Python. The idea was to try to get as much in Python as possible.
+**Mike Driscoll:**  I was hired as a Software Applications Specialist in an IT department. The job was to convert our login scripts from Kixtart to Python. Then to move on and convert all our VBA code to Python. The idea was to try to get as much in Python as possible.
 
 I had never heard of Python before that job. My boss loved Python and was very encouraging. The Python community, especially the wxPython sub-group, was welcoming and helpful. Besides that, Python was the first language that made sense to me.
 
