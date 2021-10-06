@@ -4,9 +4,10 @@ description: The Bots Brasil Conference reaches its fourth edition. It is an
   event about conversational interfaces that connect communities, companies,
   platforms and market experts to share experiences and create opportunities.
   Vonage is a proud gold sponsor!
+thumbnail: /content/blog/vonage-joins-bots-brasil-conference-2021/bots-brasil-conference_1200x600.png
 author: amanda-cavallaro
 published: true
-published_at: 2021-10-04T08:49:01.306Z
+published_at: 2021-10-06T09:45:40.327Z
 updated_at: 2021-10-04T08:49:01.325Z
 category: event
 tags:
