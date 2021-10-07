@@ -2,15 +2,15 @@
 title: 10 Minutes of Killer Python Inspiration With Influencer Mike Driscoll
 description: "A conversation with Python author and influencer Mike Driscoll
   will leave you inspired. "
+thumbnail: /content/blog/10-minutes-of-killer-python-inspiration-with-influencer-mike-driscoll/interview-with-influencer_1200x600.png
 author: tonya-sims-1
 published: true
-published_at: 2021-10-05T14:29:51.320Z
+published_at: 2021-10-07T10:19:52.722Z
 updated_at: 2021-10-05T14:29:51.356Z
 category: inspiration
 tags:
   - python
   - fastapi
-  - Guido van Rossum
 comments: false
 spotlight: false
 redirect: ""
