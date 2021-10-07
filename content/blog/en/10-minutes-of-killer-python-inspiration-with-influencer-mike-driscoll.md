@@ -3,7 +3,7 @@ title: 10 Minutes of Killer Python Inspiration With Influencer Mike Driscoll
 description: "A conversation with Python author and influencer Mike Driscoll
   will leave you inspired. "
 author: tonya-sims-1
-published: false
+published: true
 published_at: 2021-10-05T14:29:51.320Z
 updated_at: 2021-10-05T14:29:51.356Z
 category: inspiration
