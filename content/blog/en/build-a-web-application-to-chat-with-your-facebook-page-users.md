@@ -26,7 +26,7 @@ By the end of this blog post, you’ll have a web application capable of sending
 
 ## Create a Facebook page
 
-Log into Facebook and [create a Test Facebook page](https://www.facebook.com/pages/creation/) unless you want to test with a page already created. 
+Log into Facebook and [create a Test Facebook page](https://www.facebook.com/pages/creation/). You can also test with a page that already exists.
 
 ## Set up the sample web application
 
