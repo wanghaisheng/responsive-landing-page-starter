@@ -32,7 +32,7 @@ Log into Facebook and [create a Test Facebook page](https://www.facebook.com/pag
 
 Make your copy of the sample web application by [remixing this Glitch](https://glitch.com/edit/#!/remix/messages-inbound-demo).  To get your application set up, follow the steps in the readme file. The sample application follows the scenario of an agent signing into a dashboard, with current conversations between Facebook page customers and the agent. On the left side is where all the conversations are happening, and the agent can join one.
 
-![Agent's dashboard with all conversations in a column with join buttons on the left in a gray box and the rest of the page is space for conversations the agent is already a part of with an open link for each.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/web-dashboard.png "Sample application's agent dashboard")
+![The agent's dashboard with all conversations in a column. Join buttons are on the left in a gray box. The rest of the page is space for conversations the agent is already a part of with an open link for each.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/web-dashboard.png "Sample application's agent dashboard")
 
 When the agent clicks a conversation, a chat application with the Facebook User will open in a new window. The chat application is based on the one created in the [Creating a chat app tutorial](https://developer.nexmo.com/client-sdk/tutorials/in-app-messaging).
 
