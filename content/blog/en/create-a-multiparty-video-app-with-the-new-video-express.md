@@ -42,7 +42,7 @@ The client-side is where the real action happens. Using Video Express, we were a
 
 ## Client
 
-The React application leverages the [@vonage/multiparty](https://www.npmjs.com/package/@vonage/multiparty) module via NPM. Remember that you can also use the Video Express via an HTML script tag—check out out the [Video Express Documentation](https://tokbox.com/developer/multiparty/) for all the details.  
+The React application leverages the [@vonage/video-express](https://www.npmjs.com/package/@vonage/video-express) module via NPM. Remember that you can also use the Video Express via an HTML script tag—check out out the [Video Express Documentation](https://tokbox.com/developer/video-express/) for all the details.  
 
 The app is based on React Hooks that came with React 16.8. Next, let's have a closer look at the main hooks of this application.
 
