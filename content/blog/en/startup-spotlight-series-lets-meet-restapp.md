@@ -4,7 +4,7 @@ description: Meet London-based startup RestApp as a part of Vonage Startup Spotl
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-restapp/restapp_1200x600.png
 author: filippos-kyprianou
 published: true
-published_at: 2021-10-07T09:42:26.072Z
+published_at: 2021-10-08T09:00:32.401Z
 updated_at: 2021-10-07T09:42:26.115Z
 category: startup
 tags:
@@ -20,13 +20,13 @@ replacement_url: ""
 ---
 The future of the restaurant business is shaping rapidly. With each passing year, exponential technologies like artificial intelligence become more widely used in the food and beverage industry, bringing a wave of disruption.
 
-Thanks to these advancements restaurants are starting to integrate technology into their experience – and customers absolutely adore it. By being proactive and utilising the right technological enhancements, restaurants can deliver superior customer experience, retaining and winning new customers in the process. There are many reasons for restaurants to adopt technology including enhancing customer satisfaction, improving operations and cutting costs.
+Thanks to these advancements restaurants are starting to integrate technology into their experience – and customers absolutely adore it. By being proactive and utilising the right technological enhancements, restaurants can deliver a superior customer experience, retaining and winning new customers in the process. There are many reasons for restaurants to adopt technology including enhancing customer satisfaction, improving operations and cutting costs.
 
 RestApp is a startup disrupting the space with a new generation sales, automation and loyalty system developed with 30 years of experience that meets all operational needs of single branch or chain businesses.
 
 The team at RestApp believes that restaurants can only succeed if they give all their concentration on their food and services. In order to help restaurants achieve this focus, RestApp has developed an easy-to-use sales system, marketing tools, loyalty programs, cost and stock management, online ordering system and mobile applications.
 
-This week we caught up with Oytun Oztumer, the Founder of Restapp to discuss how they enable businesses to use the latest and most advanced technologies in the industry at lower cost.
+This week we caught up with Oytun Oztumer, the Founder of Restapp to discuss how they enable businesses to use the latest and most advanced technologies in the industry at a lower cost.
 
 ## The startup at a glance
 
@@ -54,13 +54,13 @@ RestApp offers online ordering platforms and cloud based sales automation for re
 
 RestApp was born from a common problem at restaurants “waiting for a waiter to order something, or losing too much time on waiting for the bill before leaving the place”.
 
-Initial version was addressed to solve that problem, a digital menu that opens after scanning a simple QR code. You can check the menu, place an order and pay the bill from it, even split the bill digitally between your friends.
+The initial version was addressed to solve that problem, a digital menu that opens after scanning a simple QR code. You can check the menu, place an order and pay the bill from it, even split the bill digitally between your friends.
 
 Saves time for guests and increases orders for restaurants.
 
-Guests were so eager to place orders easily from their smartphones, and pay their bills. They loved the experience but restaurants were having a hard time. They couldn’t deliver their orders on time and keep an eye on the paid bills. Because RestApp’s dashboard was running on another screen, on a different tablet next to their POS system. They had to enter all orders to their POS systems manually. Not so efficient.
+Guests were so eager to place orders easily from their smartphones, and pay their bills. They loved the experience but restaurants were having a hard time. They couldn’t deliver their orders on time and keep an eye on the paid bills. Because RestApp’s dashboard was running on another screen, on a different tablet next to their POS system. They had to enter all orders into their POS systems manually. Not so efficient.
 
-We had to be integrated with their POS systems, but where to start? There are thousands of different systems. And almost 95% of those were on-premise offline systems.So we decided to create our own cloud based POS system and built a new team for that. Our EPOS was designed to be fully integrated with other RestApp products and also other online ordering marketplaces, so restaurants won’t have to keep an eye on so many different screens or platforms.
+We had to be integrated with their POS systems, but where to start? There are thousands of different systems. And almost 95% of those were on-premise offline systems. So we decided to create our own cloud based POS system and built a new team for that. Our EPOS was designed to be fully integrated with other RestApp products and also other online ordering marketplaces, so restaurants won’t have to keep an eye on so many different screens or platforms.
 
 We also added an online ordering feature for delivery and pick up orders, so restaurants won’t have to pay commissions to get orders from their own customers, and increased their customer engagement.
 
@@ -72,11 +72,11 @@ Well, that's an easy one. Focus and simplicity.
 
 “**Focus and simplicity**. Simple can be harder than complex: you have to work hard to get your thinking clean to make it simple. But it's worth it in the end because **once you get there, you can move mountains.**” – Steve Jobs, Interview with Business Week (1998)  
 
-Our focus made RestApp one of the most stable ordering platforms in the market, and simplicity made it one of the most loved ones by customers. These are two main things that differentiates us from our competitors. 
+Our focus made RestApp one of the most stable ordering platforms in the market, and simplicity made it one of the most loved ones by customers. These are two main things that differentiate us from our competitors. 
 
 ## VC, Angel, Bootstrap or Other?
 
-RestApp is a self funded startup.
+RestApp is a self-funded startup.
 
 ## **What’s the biggest challenge you faced and how did you overcome it?**
 
@@ -90,7 +90,7 @@ This will be a boring answer but RestApp is our latest startup after so many dif
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos and Bill Gates. Who do you choose and why?
 
-Definitely Jeff Bezos. He has more free time lately :)
+Definitely Jeff Bezos. He has had more free time lately :)
 
 ## How have you been using Vonage’s APIs?
 
