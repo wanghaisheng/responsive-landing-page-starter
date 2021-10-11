@@ -1,10 +1,11 @@
 ---
 title: James Seconde joins the Developer Relations team
-description: Meet James Seconde, Vonage's new Developer Advocate on the
+description: Meet James Seconde, Vonage's new PHP Developer Advocate on the
   Developer Relations team
+thumbnail: /content/blog/james-seconde-joins-the-developer-relations-team/jim-seconde.png
 author: james-seconde
-published: false
-published_at: 2021-10-15T13:04:48.158Z
+published: true
+published_at: 2021-10-11T09:16:16.996Z
 updated_at: 2021-09-24T13:04:48.191Z
 category: team
 tags:
