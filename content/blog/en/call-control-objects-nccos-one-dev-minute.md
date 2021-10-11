@@ -1,8 +1,8 @@
 ---
 title: Call Control Objects (NCCOs) | One Dev Minute
-description: Welcome to One Dev Minute! This series is hosted by Vonage. The
-  goal of this video series is to share knowledge in a bite-sized manner. Let's
-  learn about the Call Control Objects.
+description: Welcome to One Dev Minute! The goal of this video series is to
+  share knowledge in a bite-sized manner. Let's learn about Call Control
+  Objects.
 author: amanda-cavallaro
 published: true
 published_at: 2021-10-07T20:55:54.809Z
