@@ -233,8 +233,7 @@ Let's improve the Default Welcome Intent, create an intent, outline the entities
 11. In the response, you can add the following: `Table booked for $person at $time on $date. Thank you!`
 12. Toggle `Set this intent as end of conversation`, below responses
 13. Click Save
-
-    ![Table Booker Intent Overview](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/dialogflow.png "Table Booker Intent Overview")
+   
 
 ## Interact Via Voice With the Dialogflow Agent
 
@@ -265,7 +264,7 @@ Let's go to our final step and see all the building blocks together in action!
    3. You: I'd like to book a table at 10:00 am on 01/09/2022 for Tanya
    4. Bot response: Table booked for Tanya at 10:00 on 01/09/2022. Thank you!
 
-   **End of call** 
+  **End of call** 
 
 ## Congratulations
 
