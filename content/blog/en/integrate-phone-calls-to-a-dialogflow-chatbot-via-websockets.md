@@ -122,7 +122,7 @@ In the following steps below, we will give two options as examples. Using ngrok 
 
 ## Set Up Your Vonage Voice API Application Credentials and Phone Number
 
-   ![An image explaining that to complete this turorial you need a VONAGE API Account and to purchase a virtual number](https://lh5.googleusercontent.com/sMtzm5Ru-Mi6YwkpuKSn9Y-Da5MSzbKWjlpRTUW7bXSJZYbH1c_OWAxt_5211PAmMvg6ICu-OrmewGa1b5OrBeKfe-bU2aAM13CpjBWvoJLAcFsAW9ACdSCU1TiOCKi7-zTKYlrw)
+   ![An image explaining that to complete this tutorial you need a VONAGE API Account and to purchase a virtual number](https://lh5.googleusercontent.com/sMtzm5Ru-Mi6YwkpuKSn9Y-Da5MSzbKWjlpRTUW7bXSJZYbH1c_OWAxt_5211PAmMvg6ICu-OrmewGa1b5OrBeKfe-bU2aAM13CpjBWvoJLAcFsAW9ACdSCU1TiOCKi7-zTKYlrw)
 
 ### Follow the steps
 
@@ -170,7 +170,7 @@ We will use ngrok to tunnel the connecting server which is interacting with our 
    Get back to the Vonage Dashboard website and under capabilities:
 8. Toggle Voice to enable this capability
 9. Add the ngrok URL running on `dialogflow-sample-voice-application`  followed by `/answer` on the Answer URL. Make sure HTTP GET is selected.
-10. Add the ngrok url running on `dialogflow-sample-voice-application`  followed by  `/event` on the Event URL. Make sure HTTP POST is selected.
+10. Add the ngrok URL running on `dialogflow-sample-voice-application`  followed by  `/event` on the Event URL. Make sure HTTP POST is selected.
 11. Click on Save Changes
 
 ![Vonage Dashboard](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/application.png "Vonage Dashboard")
@@ -229,11 +229,14 @@ Let's improve the Default Welcome Intent, create an intent, outline the entities
 9. Under Actions and Parameters, tick `required` for `person`, `date` and `time`
 10. Add prompts for each one of the parameters because in case they haven't said that specific piece of information during the conversation, they'll be prompted to add them
 
-    ![Training phrases examples](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/trainingphrases.png "Training phrases examples")
+![Training phrases examples](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/trainingphrases.png "Training phrases examples")
+
 11. In the response, you can add the following: `Table booked for $person at $time on $date. Thank you!`
 12. Toggle `Set this intent as end of conversation`, below responses
 13. Click Save
-   
+
+![Table Booker Intent Overview](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/dialogflow.png "Table Booker Intent Overview")
+
 
 ## Interact Via Voice With the Dialogflow Agent
 
