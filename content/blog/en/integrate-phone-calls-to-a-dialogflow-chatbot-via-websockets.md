@@ -99,7 +99,9 @@ In the following steps below, we will give two options as examples. Using ngrok 
    `npm install`
 7. Run the file Dialogflow connecting server
    `node df-connecting-server.js` 
-   There are many deployment types, such as App Engine, Heroku, Cloud Run. For this tutorial, we will show examples using the [ngrok](https://ngrok.com) tunneling. [Here's a link explaining more about ngrok](https://developer.nexmo.com/tools/ngrok) and Heroku.
+   There are many deployment types, such as App Engine, Heroku, Cloud Run.
+
+For this tutorial, we will show examples using the [ngrok](https://ngrok.com) tunneling. [Here's a link explaining more about ngrok](https://developer.nexmo.com/tools/ngrok) and Heroku.
 
 **Option 1: Example with ngrok**
 
@@ -187,11 +189,11 @@ We will use ngrok to tunnel the connecting server which is interacting with our 
    `SERVICE_NUMBER`\
    `DF_CONNECTING_SERVER`\
    Add also the parameter `PRIVATE_KEY_FILE` with the value `./private.key`  
-10. On your Heroku dashboard where your application page is shown, click on the `Open App` button and copy the URL. 
+10. On your Heroku dashboard where your application page is shown, click on the `Open App` button and copy the URL
 11. Now, let's deploy the application. Get back to the Vonage Dashboard website and under capabilities:
 12. Toggle Voice to enable this capability
-13. That hostname (the URL you just copied from Heroku) will be used followed by `/answer` on the Answer URL. Make sure HTTP GET is selected.
-14. Do the same for  `/event` on the Event URL. Make sure HTTP POST is selected.
+13. That hostname (the URL you just copied from Heroku) will be used followed by `/answer` on the Answer URL. Make sure HTTP GET is selected
+14. Do the same for  `/event` on the Event URL. Make sure HTTP POST is selected
 15. Click on Save Changes
 
 ![Vonage Dashboard](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/screenshot-2021-09-04-at-17.53.26.png "Vonage Dashboard")
@@ -280,6 +282,7 @@ You can find the [Dialogflow Reference sample](https://github.com/nexmo-communit
 Check the [WebSockets reference guide](https://developer.nexmo.com/voice/voice-api/guides/websockets).
 
 Check the [A blog post explaining ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
+
 	
 You can also look at a similar example using an [Amazon Lex Bot](https://learn.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot/). 
 
