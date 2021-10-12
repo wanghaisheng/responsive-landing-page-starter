@@ -422,9 +422,9 @@ func CreateAuth(userid uint64, td *TokenDetails) error {
 }
 ```
 
-Passamos no `TokenDetails` que têm informações sobre o tempo de expiração dos JWTs e os uuids utilizados na criação dos JWTs. Se o tempo de expiração for alcançado tanto para o token de refresh quanto para o token de access, o JWT é automaticamente excluído do redis.
+Passamos no `TokenDetails` que têm informações sobre o tempo de expiração dos JWTs e os uuids utilizados na criação dos JWTs. Se o tempo de expiração for alcançado tanto para o Token de Refresh quanto para o Token de Acesso, o JWT é automaticamente excluído do redis.
 
-Eu pessoalmente uso Redily, uma GUI redis. É uma boa ferramenta. Você pode dar uma olhada abaixo para ver como os metadados do JWT são armazenados no par key-value.
+Eu pessoalmente uso Redily, uma GUI para redis. É uma boa ferramenta. Você pode dar uma olhada abaixo para ver como os metadados do JWT são armazenados no par key-value.
 
 [![results](https://www.nexmo.com/wp-content/uploads/2020/03/image2.png)]
 
@@ -629,17 +629,17 @@ Para testar o `CreateTodo`, faça o login e copie o `access_token` e adicione-o 
 
 [![bearer token](https://www.nexmo.com/wp-content/uploads/2020/03/image6.png)]
 
-Em seguida, adicionar um título ao corpo do request para criar um todo e fazer um request POST ao endpoint `/todo`, como mostrado abaixo:
+Em seguida, adicione um título ao corpo do request para criar um todo e fazer um request POST ao endpoint `/todo`, como mostrado abaixo:
 
 [![result](https://www.nexmo.com/wp-content/uploads/2020/03/image4.png)]
 
-A tentativa de criar um todo sem acesso será denegada:
+A tentativa de criar um ToDo sem acesso será denegada:
 
 [![denied](https://www.nexmo.com/wp-content/uploads/2020/03/image5.png)]
 
 ## Request de logout
 
-Até agora, temos visto como um JWT é usado para fazer um request autenticado. Quando um usuário faz o logout, nós revogamos/invalidamos instantaneamente seu JWT. Isto é possível apagando os metadados do JWT de nosso redis store.
+Até agora, nós vimos como um JWT é usado para fazer um request autenticado. Quando um usuário faz o logout, nós revogamos/invalidamos instantaneamente seu JWT. Isto é possível apagando os metadados do JWT de nosso redis store.
 
 Vamos agora definir uma função que nos permite excluir metadados JWT do redis:
 
@@ -653,7 +653,7 @@ func DeleteAuth(givenUuid string) (int64,error) {
 }
 ```
 
-A função acima apagará o registro em redis que corresponde ao `uuid` passado como parâmetro.
+A função acima apagará o registro no redis que corresponde ao `uuid` passado como parâmetro.
 
 A função `Logout` tem este aspecto:
 
@@ -687,7 +687,7 @@ func main() {
 }
 ```
 
-Fornecer um `access_token` válido associado a um usuário e, em seguida, fazer logout do usuário. Lembre-se de adicionar o `access_token` ao `Authorization Bearer Token` e, em seguida, acesse o endpoint de logout:
+Forneça um `access_token` válido associado a um usuário e, em seguida, faça logout do usuário. Lembre-se de adicionar o `access_token` ao `Authorization Bearer Token` e, em seguida, acesse o endpoint de logout:
 
 [![logout endpoint](https://www.nexmo.com/wp-content/uploads/2020/03/image1.png)]
 
@@ -727,7 +727,7 @@ func main() {
 }
 ```
 
-## Refrescando os Tokens
+## Atulizando os Tokens
 
 Até o momento, podemos criar, utilizar e revogar JWTs. Em uma aplicação que envolverá uma interface de usuário, o que acontece se o token de acesso expirar e o usuário precisar fazer um pedido autenticado? O usuário será desautorizado e será obrigado a fazer o login novamente? Infelizmente, este será o caso. Mas isto pode ser evitado usando o conceito de um refresh token. O usuário não precisa fazer o login novamente.
 
@@ -831,9 +831,9 @@ Testando o empoint com um `refresh_token` válido:
 
 E criamos com sucesso novos pares de fichas. Beleza!! 😎.
 
-## Enviar mensagens usando a API de Mensagens Vonage
+## Enviar mensagens usando a API de Mensagens da Vonage
 
-Notifiquemos os usuários cada vez que eles criarem um Todo usando a API de Mensagens Vonage.
+Notifiquemos os usuários cada vez que eles criarem um ToDo usando a API de Mensagens Vonage.
 
 Você pode definir sua API key e sua senha em uma variável env e depois usá-las neste arquivo desta forma:
 
@@ -916,7 +916,7 @@ func SendMessage(username, phone string) (*http.Response, error) {
 
 Na função acima, o número To é o número do usuário, enquanto o número From deve ser comprado através de seu painel de controle Vonage.
 
-Certifique-se de ter seu `NEXMO_API_KEY` e `NEXMO_API_SECRET` definidos em seu arquivo de variáveis env.
+Certifique-se de ter suas variáveis `NEXMO_API_KEY` e `NEXMO_API_SECRET` definidas em seu arquivo de variáveis de ambiente.
 
 Atualizamos então a função `CreateTodo` para incluir a função `SendMessage` que acabou de ser definida, passando nos parâmetros necessários:
 
@@ -960,4 +960,4 @@ Certifique-se de que um número de telefone válido seja fornecido para que voc�
 
 ## Conclusão
 
-Você viu como você pode criar e invalidar um JWT. Você também viu como você pode integrar o Vonage Messages API em sua aplicação Golang para enviar notificações. Para mais informações sobre as melhores práticas e o uso de um JWT, não deixe de conferir este [repo do GitHub](https://github.com/victorsteven/jwt-best-practices). Você pode estender esta aplicação e usar um banco de dados real para persistir usuários e todos, e também pode usar React ou VueJS para construir um frontend. É aí que você realmente apreciará o recurso Refresh Token com a ajuda do Axios Interceptors.
+Você viu como você pode criar e invalidar um JWT. Você também viu como você pode integrar o Vonage Messages API em sua aplicação Golang para enviar notificações. Para mais informações sobre as melhores práticas e o uso de um JWT, não deixe de conferir este [repo do GitHub](https://github.com/victorsteven/jwt-best-practices). Você pode estender esta aplicação e usar um banco de dados real para persistir usuários e todos, e também pode usar React ou Vue.js para construir um frontend. É aí que você realmente apreciará o recurso Refresh Token com a ajuda dos Axios Interceptors.
