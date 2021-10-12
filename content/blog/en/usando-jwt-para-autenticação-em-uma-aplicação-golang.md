@@ -1,6 +1,7 @@
 ---
 title: " Usando JWT para Autenticação em uma Aplicação Golang"
-description: xxx
+description: Aprenda a criar um app em Go que cria e invalida tokens JWT para
+  trazer autenticação a rotas protegidas.
 thumbnail: /content/blog/usando-jwt-para-autenticação-em-uma-aplicação-golang/blog_jwt-golang_authentification_1200x600-2.png
 author: victor-steven
 published: true
@@ -20,9 +21,9 @@ replacement_url: ""
 ---
 ## Introdução
 
-Um JSON Web Token (JWT) é uma forma compacta e independente de transmitir informações de forma segura entre as partes como um objeto JSON, e eles são comumente usados pelos desenvolvedores em suas APIs. Os JWTs são populares porque:
+Um JSON Web Token (JWT) é uma forma compacta e independente de transmitir informações de forma segura entre as partes como um objeto JSON, e eles são comumente usados pelas pessoas desenvolvedoras em suas APIs. Os JWTs são populares porque:
 
-1. Um JWT é sem Estado. Ou seja, ele não precisa ser armazenado em um banco de dados (camada de persistência), ao contrário dos tokens opacos.
+1. Um JWT é sem estado. Ou seja, ele não precisa ser armazenado em um banco de dados (camada de persistência), ao contrário dos tokens opacos.
 2. A assinatura de um JWT nunca é decodificada uma vez formada, garantindo assim que o token seja seguro e protegido.
 3. Um JWT pode ser configurado para ser inválido após um certo período de tempo. Isto ajuda a minimizar ou eliminar totalmente qualquer dano que possa ser feito por um hacker, caso o token seja hackeado.
 
@@ -30,7 +31,7 @@ Neste tutorial, vou demonstrar a criação, uso e invalidação de um JWT com um
 
 ## Conta API Vonage
 
-Para completar este tutorial, você precisará de uma conta Vonage API. Se você ainda não tem uma, pode se inscrever hoje e começar a construir com crédito gratuito. Uma vez que você tenha uma conta, poderá encontrar sua API key e seu API secret na parte superior do Painel API da Vonage.
+Para completar este tutorial, você precisará de uma conta Vonage API. Se você ainda não tem uma, pode se inscrever hoje e começar a construir usando créditos gratuitos. Uma vez que você tenha uma conta, poderá encontrar sua API key e seu API secret na parte superior do Painel de API da Vonage.
 
 Este tutorial também usa um número de telefone virtual. Para adquirir um, vá para Números > Comprar Números e procure por um que atenda às suas necessidades. Se você acabou de se inscrever, o custo inicial de um número será facilmente coberto pelo seu crédito disponível.
 
@@ -51,9 +52,9 @@ Vamos usar um token simples para entender os conceitos acima.
 Token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoX3V1aWQiOiIxZGQ5MDEwYy00MzI4LTRmZjMtYjllNi05NDRkODQ4ZTkzNzUiLCJhdXRob3JpemVkIjp0cnVlLCJ1c2VyX2lkIjo3fQ.Qy8l-9GUFsXQm4jqgswAYTAX9F4cngrl28WJVYNDwtM
 ```
 
-Não se preocupe, a ficha é inválida, portanto não funcionará em nenhuma aplicação de produção.
+Não se preocupe, o token é inválido, portanto não funcionará em nenhuma aplicação de produção.
 
-Você pode navegar para [jwt.to](https://jwt.to) e testar a assinatura do token se ela for verificada ou não. Use o "HS512" como algoritmo. Você receberá a mensagem "Signature Verified" (Assinatura verificada):
+Você pode navegar o site [jwt.to](https://jwt.to) e testar a assinatura do token se ela for verificada ou não. Use o "HS512" como algoritmo. Você receberá a mensagem "Signature Verified" (Assinatura verificada):
 
 [![JWT.IO Example](https://www.nexmo.com/wp-content/uploads/2020/03/image9.png)]
 
@@ -63,7 +64,7 @@ Para fazer a assinatura, sua aplicação terá que fornecer uma chave. Esta chav
 
 Uma vez que um JWT pode ser definido para expirar (ser invalidado) após um determinado período de tempo, dois tokens serão considerados neste pedido:
 
-- Access Token: Um token de acesso é usado para requests que requerem autenticação. Ele é normalmente adicionado no cabeçalho do pedido. Recomenda-se que um token de acesso tenha um tempo de vida curto, digamos 15 minutos. Dar a um token de acesso um curto período de tempo pode evitar qualquer dano grave se o token de um usuário for adulterado, caso o token seja rackeado. O hacker tem apenas 15 minutos ou menos para realizar suas operações antes que o token seja invalidado.
+- Access Token: Um token de acesso é usado para requests que requerem autenticação. Ele é normalmente adicionado no cabeçalho do pedido. Recomenda-se que um token de acesso tenha um tempo de vida curto, digamos 15 minutos. Dar a um token de acesso um curto período de tempo pode evitar qualquer dano grave se o token de um usuário for adulterado, caso o token seja hackeado. O hacker tem apenas 15 minutos ou menos para realizar suas operações antes que o token seja invalidado.
 - Refresh Token: Um token de atualização tem uma vida útil mais longa, geralmente 7 dias. Este token é usado para gerar novos tokens de acesso e de atualização. Caso o token de acesso expire, novos conjuntos de tokens de acesso e de atualização são criados quando a rota do token de atualização é atingida (a partir de nossa aplicação).
 
 ## Onde armazenar um JWT
@@ -157,7 +158,7 @@ func Login(c *gin.Context) {
 }
 ```
 
-Recebemos o request do usuário e, em seguida, não o transferimos para o "struct" do usuário. Comparamos então o usuário de entrada com aquele que definimos em memória. Se estivéssemos utilizando um banco de dados, teríamos comparado com um registro no banco de dados.
+Recebemos o request do usuário e, em seguia o desserializamos para o "struct" do usuário. Comparamos então o usuário de entrada com aquele que definimos em memória. Se estivéssemos utilizando um banco de dados, teríamos comparado com um registro no banco de dados.
 
 Para não tornar a função de Login inutilizada, a lógica para gerar um JWT é tratada pelo `CreateToken`. Observe que a identificação do usuário é passada para esta função. Ela é usada como uma reivindicação ao gerar o JWT.
 
@@ -187,7 +188,7 @@ func CreateToken(userid uint64) (string, error) {
 }
 ```
 
-Definimos que o token seja válido apenas por 15 minutos, logo após que ele ser invalidado, não poderá ser usado para qualquer pedido de autenticação. Observe também que assinamos o JWT utilizando uma senha(ACCESS_SECRET) obtido de nossa variável ambiental. É altamente recomendável que esta senha não seja exposta em sua base de código, mas sim chamado do meio ambiente tal como fizemos acima. Você pode salvá-lo em um .env, .yml ou qualquer coisa que funcione para você.
+Definimos que o token seja válido apenas por 15 minutos, logo após que ele for invalidado, não poderá ser usado para qualquer pedido de autenticação. Observe também que assinamos o JWT utilizando uma senha(ACCESS_SECRET) obtido de nossa variável de ambiente. É altamente recomendável que esta senha não seja exposta em sua base de código, mas sim chamado do ambiente tal como fizemos acima. Você pode salvá-lo em um `.env`, `.yml ou como funcionar pra você.
 
 Até agora, nosso arquivo `main.go` se parece com isto:
 
@@ -264,7 +265,7 @@ Agora podemos executar a aplicação:
 go run main.go
 ```
 
-Agora podemos experimentá-lo e ver o que conseguimos! Ative sua ferramenta API favorita e clique no endpoint de login:
+Agora podemos experimentá-lo e ver o que conseguimos! Ative sua ferramenta de API favorita e clique no endpoint de login:
 
 [![result](https://www.nexmo.com/wp-content/uploads/2020/03/image8.png)]
 
@@ -275,7 +276,7 @@ Como visto acima, geramos um JWT que vai durar 15 minutos.
 Sim, nós podemos fazer o login de um usuário e gerar um JWT, mas há muitos erros com a implementação acima:
 
 1. O JWT só pode ser invalidado quando expirar. Uma grande limitação a isto é: um usuário pode fazer login, depois decidir sair imediatamente, mas o JWT do usuário permanece válido até que o tempo de expiração seja alcançado.
-2. O JWT pode ser rackeado e usado por um hacker sem que o usuário faça nada a respeito, até que o token expire.
+2. O JWT pode serhrackeado e usado por um hacker sem que o usuário faça nada a respeito, até que o token expire.
 3. O usuário precisará registrar-se novamente após a expiração do token, levando assim a uma má experiência do usuário.
 
 Podemos resolver os problemas mencionados acima de duas maneiras:
@@ -285,7 +286,7 @@ Podemos resolver os problemas mencionados acima de duas maneiras:
 
 ## Usando Redis para armazenar metadados de JWT
 
-Uma das soluções que oferecemos acima é salvar um metadados JWT em uma camada de persistência. Isto pode ser feito em qualquer camada de persistência de escolha, mas redis é altamente recomendado. Uma vez que os JWTs que geramos têm tempo de expiração, o redis tem uma característica que elimina automaticamente os dados cujo tempo de expiração foi atingido. Redis também pode manipular muitas escritas e pode escalar horizontalmente.
+Uma das soluções que oferecemos acima é salvar metadados JWT em uma camada de persistência. Isto pode ser feito em qualquer camada de persistência de escolha, mas redis é altamente recomendado. Uma vez que os JWTs que geramos têm tempo de expiração, o redis tem uma característica que elimina automaticamente os dados cujo tempo de expiração foi atingido. O redis também pode manipular muitas escritas e pode escalar horizontalmente.
 
 Como o redis é um armazenamento de tipo key-value, suas chaves precisam ser únicas, para conseguir isso, usaremos uuid como chave e usaremos o id do usuário como valor.
 
@@ -341,7 +342,7 @@ Em nossa solução proposta, em vez de criar apenas um token, precisaremos criar
 1. O token de acesso
 1. O Token Refresh
 
-Para isso, será necessário definir uma estrutura que abrigue estas definições de tokens, seus prazos de validade e u UUIDS:
+Para isso, será necessário definir uma estrutura que abrigue estas definições de tokens, seus prazos de validade e UUIDS:
 
 ```go
 type TokenDetails struct {
@@ -558,7 +559,7 @@ func ExtractTokenMetadata(r *http.Request) (*AccessDetails, error) {
 }
 ```
 
-A função `ExtractTokenMetadata` retorna um `AccessDetails` (que é um struct). Esta struct contém os metadados (`access_uuid` e `user_id`) que precisaremos fazer uma busca no redis. Se houver alguma razão para não conseguirmos obter os metadados deste token, o pedido é interrompido com uma mensagem de erro.
+A função `ExtractTokenMetadata` retorna um `AccessDetails` (que é um struct). Este struct contém os metadados (`access_uuid` e `user_id`) que precisaremos fazer uma busca no redis. Se houver alguma razão para não conseguirmos obter os metadados deste token, o pedido é interrompido com uma mensagem de erro.
 
 O struct `AccessDetails` mencionado acima se parece com isto:
 
