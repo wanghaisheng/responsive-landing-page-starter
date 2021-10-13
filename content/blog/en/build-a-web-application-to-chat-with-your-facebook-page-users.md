@@ -105,7 +105,7 @@ app.post("/webhooks/inbound", (request, response) => {
 });
 ```
 
-If this is the first time the Facebook User is sending a message, a new conversation is created. This emits a `conversation:created` event that we listen for on the events webhook. The web application’s backend takes this event and repackages it as a custom event, `custom:new_conv`, that can be used to notify the agent’s dashboard to display the new conversation. 
+If this is the first time the Facebook User sends a message, a new conversation is created. This emits a `conversation:created` event that we listen for on the events webhook. The web application’s backend takes this event and repackages it as a custom event, `custom:new_conv`, that can be used to notify the agent’s dashboard to display the new conversation. 
 
 ```javascript
 // server.js
