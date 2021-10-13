@@ -49,7 +49,7 @@ An agent is a Dialogflow instance, which you can think of as your chatbot applic
 4. Under Google Project, click on the project ID name. For instance, `VonageDF`
    This will take you to the [Google Cloud console](https://console.cloud.google.com/)
 
-![Gif showing the steps to create the dialogflow Agent](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/dialogflow-1_1.gif "Gif showing the steps to create the dialogflow Agent")
+![Gif showing the steps to create the dialogflow Agent](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/dialogflow.gif "Gif showing the steps to create the dialogflow Agent")
 
 ## Create a Service Account on the Google Cloud Console
 
