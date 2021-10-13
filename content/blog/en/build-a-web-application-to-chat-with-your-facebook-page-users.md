@@ -180,7 +180,7 @@ app.post("/webhooks/rtcevent", (request, response) => {
 });
 ```
 
-For those wondering, `FB_RECIPIENT_ID` is also the Conversation Name that was set when the intial message was sent from the Facebook User. Getting the value for `FB_SENDER_ID`, the Facebook Page Id, is a little more involved.  When an agent opens a chat, a request is made to the server's `getChatAppAccounts` endpoint which makes a call to Vonage's `chatapp-accounts` API endpoint with an admin JWT. The Facebook Page Id is in the response, which we send back to the client. The good news is that when outbound messages gets integrated, you won't have to worry about any of this and the Client SDK will take care of everything. This is just an example of why Client SDK can be very helpful when developing applications.
+For those wondering, `FB_RECIPIENT_ID` is also the Conversation Name that was set when the initial message was sent from the Facebook User. Getting the value for `FB_SENDER_ID`, the Facebook Page Id, is a little more involved. When an agent opens a chat, a request is made to the server's `getChatAppAccounts` endpoint which makes a call to Vonage's `chatapp-accounts` API with an admin JWT. The Facebook Page Id is in the response, which we send back to the client. The good news is, when Outbound Messages gets integrated, you won't have to worry about any of this, and the Client SDK will take care of everything. This is an example of how the Client SDK can be very helpful when developing applications.
 
 ## Small Gotcha
 
