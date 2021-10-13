@@ -91,7 +91,7 @@ All that is left of the setup is to connect your Facebook page to the web applic
 
 ## Try it out
 
-Place the web application in one browser window and your Facebook page in another. If you haven't already, enter a name in the web application to enter the dashboard. Think of this as your name or an agent's name, it's just a simple way to "log in". Now, in the window with the Facebook Page, send a message from your Facebook account page. A little card should appear in the all conversations section of the web application. Click join, a chat application will open up, and you should see the message in the chat. Send a message from the web application, and it should appear in your Facebook Messenger.
+Place the web application in one browser window and your Facebook page in another. If you haven't already, enter a name in the web application to enter the dashboard. Think of this as your name or an agent's name, it's just a simple way to "log in". Now, in the window with the Facebook Page, send a message from your Facebook account. A little card should appear in the all conversations section of the web application. Click join, a chat application will open up, and you should see the message in the chat. Send a message from the chat application, and it should appear in your Facebook Messenger.
 
 ## What’s Happening
 
