@@ -195,7 +195,7 @@ That means your Facebook Page token has expired and will need to be refreshed. L
 
 ## Conclusion
 
-That’s it! With the Messages API integrated into the Client SDK, it is a lot easier to be able to communicate with a Facebook User from your own web application.
+That’s it! With the Messages API integrated into the Client SDK, it is a lot easier to communicate with a Facebook User from your own web application.
 
 ## Next Steps
 
