@@ -26,7 +26,7 @@ This tutorial will show you how to make a phone call to a Dialogflow agent using
 
 The diagram below shows an overview of the architecture.
 
-![Architecture overview showing how the parts are connected](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/highlevel.png "Diagram of the call")
+![Architecture overview showing how the parts are connected](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/highlevel-15.29.19.png "Diagram of the call")
 
 ## Pre-requisites
 
@@ -240,7 +240,6 @@ Let's improve the Default Welcome Intent, create an intent, outline the entities
 
 ![Table Booker Intent Overview](/content/blog/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets/dialogflow.png "Table Booker Intent Overview")
 
-
 ## Interact Via Voice With the Dialogflow Agent
 
 Now that we have all the parts set up it's time to call your virtual phone number and test it out, let's go through what is going on and then follow our final step to make the call!
@@ -270,7 +269,7 @@ Let's go to our final step and see all the building blocks together in action!
    3. You: I'd like to book a table at 10:00 am on 01/09/2022 for Tanya
    4. Bot response: Table booked for Tanya at 10:00 on 01/09/2022. Thank you!
 
-  **End of call** 
+   **End of call** 
 
 ## Congratulations
 
@@ -284,7 +283,6 @@ Check the [WebSockets reference guide](https://developer.nexmo.com/voice/voice-a
 
 Check the [A blog post explaining ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
 
-	
 You can also look at a similar example using an [Amazon Lex Bot](https://learn.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot/). 
 
 I hope you enjoyed this. Feel free to contact me [on Twitter](https://twitter.com/amdcavallaro) or join our [Community Slack Channel](https://developer.nexmo.com/community/slack).
