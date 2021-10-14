@@ -2,9 +2,10 @@
 title: Build a Web Application to Chat With Your Facebook Page Users
 description: Use the the Client SDK's new Messages API integration to build a
   Web Application to chat with your Facebook Page users
+thumbnail: /content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/chat_facebook_1200x600.png
 author: dwanehemmings
 published: true
-published_at: 2021-08-25T20:59:42.499Z
+published_at: 2021-10-14T13:32:39.330Z
 updated_at: 2021-08-25T20:59:42.519Z
 category: announcement
 tags:
