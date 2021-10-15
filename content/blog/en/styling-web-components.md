@@ -148,4 +148,4 @@ For a much more detailed explanation, including diagrams, please take a look at 
 
 We've gone over how to style Web Components and presented the ones we built to work with our Client SDKs as examples.
 
-How do you style your Web Components? Have you used our Client SDK UI Components? Let us know in our [Community Slack Channel](https://developer.nexmo.com/slack)
+How do you style your Web Components? Have you used our Client SDK UI Components? Let us know in our [Community Slack Channel](https://developer.nexmo.com/slack)!
