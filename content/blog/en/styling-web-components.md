@@ -108,7 +108,7 @@ Up next is `vc-text-input`. There are two parts to this component. The input whe
 
 Now for the component responsible for displaying the messages of the chat, `vc-messages`. On the outer level, there's the message where its part is labeled as `message`. The message is composed of the message text labeled `message-text` and the user who sent the message is labeled `username`.
 
-To differentiate between the web application user's messages and others, we add `mine` to the `message`, `message-text`, and `username` parts.
+To differentiate between the web application user's messages and messages from others, we add `mine` to the `message`, `message-text`, and `username` parts.
 
 <iframe height="300" style="width: 100%;" scrolling="no" title="vc-messages-style" src="https://codepen.io/conshus/embed/yLoyaRB?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/conshus/pen/yLoyaRB">
