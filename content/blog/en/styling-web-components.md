@@ -22,7 +22,7 @@ A few months ago, we announced the release of a set of Web Components built to b
 
 Happy to say that I was wrong. Turns out people are using it and the main feedback was around the styling or lack thereof. So in this blog post, we'll not only go over how to style the ones for the Client SDK, but Web Components in general.
 
-The Shadow DOM, one of the technologies that make Web Components possible, can shield a Web Component's styling from being affected by the outer application. It would be pretty bad if the application had a section tag with `position: absolute` and that modified the Web Component's section tag.
+The Shadow DOM, one of the technologies that make Web Components possible, can shield a Web Component's styling from being affected by the outer application. It would be pretty bad if the application had a `section` tag with `position: absolute` and that modified the Web Component's `section` tag.
 
 What if you do want to style the elements in a Web Component? It would be nice if all the buttons in your application looked the same, right?
 
