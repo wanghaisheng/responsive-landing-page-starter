@@ -142,7 +142,7 @@ Each button is labeled `button`. Just like with rows, to target a particular but
   on <a href="https://codepen.io">CodePen</a>.
 </iframe>
 
-For a much more detailed explanation, including diagrams, please take a look at the Client SDK UI Web Components [GitHub repo](https://github.com/nexmo-community/clientsdk-ui-js).
+For a much more detailed explanation, including diagrams, please take a look at the [Client SDK UI Web Components GitHub repo](https://github.com/nexmo-community/clientsdk-ui-js).
 
 ## Conclusion
 
