@@ -47,7 +47,7 @@ In the surrounding application, you can assign a value that matches the rest of 
 }
 ```
 
-Great! All your buttons can have the same color, but what about the button's font color? That would require another CSS variable. Want to match the border-radius? Another variable. Border color? Yup, another variable.
+Great! All your buttons can have the same color, but what about the button's font color? That would require another CSS variable. Want to match the border radius? Another variable. Border color? Yup, another variable.
 
 The number of variables can quickly increase the more a Web Component is customizable. It can also be very limiting because you only have what is made available by the Web Component author.
 
