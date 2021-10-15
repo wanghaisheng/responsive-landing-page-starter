@@ -26,7 +26,7 @@ The Shadow DOM, one of the technologies that make Web Components possible, can s
 
 What if you do want to style the elements in a Web Component? It would be nice if all the buttons in your application looked the same, right?
 
-## CSS custom properties
+## CSS Custom Properties
 
 While researching Web Components and looking at various design systems, I saw developers use [CSS custom properties, also known as CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
 The Web Component author would create variables like `--myelement-button-color` and declare them like
