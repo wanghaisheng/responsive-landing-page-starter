@@ -78,7 +78,7 @@ This way, the Web Component author only needs to label the different parts of th
 
 Pretty awesome, right?
 
-## And now... the Client SDK UI Web Components
+## And Now... The Client SDK UI Web Components
 
 With the introduction of CSS custom properties and ::part, let's take a look at the Client SDK UI Web Components and how to style them one at a time.
 
