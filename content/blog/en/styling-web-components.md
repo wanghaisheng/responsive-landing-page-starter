@@ -82,7 +82,7 @@ Pretty awesome, right?
 
 With the introduction of CSS custom properties and ::part, let's take a look at the Client SDK UI Web Components and how to style them one at a time.
 
-Each component has an embed to show the default styling. Uncomment the CSS to see an example of how the style can be customized. Feel free to add your own and try it out.
+Each component has an `embed` to show the default styling. Uncomment the CSS to see an example of how the style can be customized. Feel free to add your own and try it out.
 
 ### vc-typing-indicator
 
