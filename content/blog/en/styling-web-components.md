@@ -55,7 +55,7 @@ What can we do?
 
 ## The Awesome ::part
 
-This is where [::part](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) comes in. It’s a CSS pseudo-element like `::before` and `::after`, that lets you enter the Shadow DOM to style a labeled part of the Web Component. There's a good write-up of the history of how we got here from this [blog post](https://meowni.ca/posts/part-theme-explainer/) by Monica Dinculescu.
+This is where [`::part`](https://developer.mozilla.org/en-US/docs/Web/CSS/::part) comes in. It’s a CSS pseudo-element, like `::before` and `::after`, that lets you enter the Shadow DOM to style a labeled part of the Web Component. There's a good write-up of [the history of how we got here](https://meowni.ca/posts/part-theme-explainer/) by Monica Dinculescu.
 
 As an example, here is a button that is inside the Web Component:
 
