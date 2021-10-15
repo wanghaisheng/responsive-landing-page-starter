@@ -134,7 +134,7 @@ The `vc-members` component lists the members in the chat. It's an unordered list
 
 Finally, here's the component with the most elements, `vc-keypad`.  Starting at the top, the digits display is labeled `input`. The buttons are grouped into rows and labeled `row`. To target a particular row, they are labeled `position1` to `position5`. So for example, styling part `row position2` would affect buttons 4, 5, and 6.
 
-Each button is labeled `button`. Just like with rows, to target a particular button, you add on its position. For example, the # button can be styled by targeting part `button position12`.
+Each button is labeled `button`. Just like with rows, to target a particular button, you add on its position. For example, the "#" button can be styled by targeting part `button position12`.
 
 <iframe height="450" style="width: 100%;" scrolling="no" title="vc-keypad" src="https://codepen.io/conshus/embed/VwzYaEg?default-tab=css%2Cresult&editable=true" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/conshus/pen/VwzYaEg">
