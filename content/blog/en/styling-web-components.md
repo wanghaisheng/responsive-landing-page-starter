@@ -29,7 +29,7 @@ What if you do want to style the elements in a Web Component? It would be nice i
 ## CSS Custom Properties
 
 While researching Web Components and looking at various design systems, I saw developers use [CSS custom properties, also known as CSS variables](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties).
-The Web Component author would create variables like `--myelement-button-color` and declare them like
+The Web Component author would create variables with something like `--myelement-button-color` and declare them like:
 
 ```css
 button {
