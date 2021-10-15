@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-A few months ago, we announced the release of a set of Web Components built to be used with the Vonage Client SDK. Create a Conversation, pass it to the components and that's it. Each component will handle all of its responsibilities such as listening for and sending events, leaving the developer to work on other aspects of their application. Honestly, I wasn't sure if others would find it as valuable as I thought it could be, so the elements all have the default styling.
+A few months ago, we announced the release of a set of Web Components built to be used with the Vonage Client SDK. Create a Conversation, pass it to the components, and that's it. Each component will handle all of its responsibilities–such as listening for and sending events–leaving the developer to work on other aspects of their application. Honestly, I wasn't sure if others would find it as valuable as I thought it could be, so the elements all have the default styling.
 
 Happy to say that I was wrong, haha. Turns out people are using it and the main feedback was around the styling or lack thereof. So in this blog post, we'll not only go over how to style the ones for the Client SDK but Web Components in general.
 
