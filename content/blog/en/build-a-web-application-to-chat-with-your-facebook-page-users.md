@@ -7,7 +7,7 @@ author: dwanehemmings
 published: true
 published_at: 2021-10-14T13:32:39.330Z
 updated_at: 2021-08-25T20:59:42.519Z
-category: announcement
+category: tutorial
 tags:
   - messages-api
   - javascript
