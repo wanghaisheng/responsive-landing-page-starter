@@ -2,9 +2,10 @@
 title: Styling Web Components
 description: Showing how to style Web Components with CSS custom properties and
   ::part using the Vonage Client SDK UI Web Components as an example.
+thumbnail: /content/blog/styling-web-components/styling-web-components_1200x600.png
 author: dwanehemmings
 published: true
-published_at: 2021-10-13T17:20:51.292Z
+published_at: 2021-10-18T12:10:06.290Z
 updated_at: 2021-10-13T17:20:51.328Z
 category: tutorial
 tags:
