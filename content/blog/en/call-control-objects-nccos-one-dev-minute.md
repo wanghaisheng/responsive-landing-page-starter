@@ -3,9 +3,10 @@ title: Call Control Objects (NCCOs) | One Dev Minute
 description: Welcome to One Dev Minute! The goal of this video series is to
   share knowledge in a bite-sized manner. Let's learn about Call Control
   Objects.
+thumbnail: /content/blog/call-control-objects-nccos-one-dev-minute/thumbnail-and-assets-for-one-dev-minute-1-.png
 author: amanda-cavallaro
 published: true
-published_at: 2021-10-07T20:55:54.809Z
+published_at: 2021-10-20T10:51:18.158Z
 updated_at: 2021-10-07T20:55:54.833Z
 category: tutorial
 tags:
