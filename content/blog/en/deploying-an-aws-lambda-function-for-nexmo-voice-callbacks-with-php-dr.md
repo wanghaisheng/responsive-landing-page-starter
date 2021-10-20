@@ -181,7 +181,7 @@ After deployment, you receive the URL needed to access the application via the A
 
 Unfortunately, in the case of deploying AWS Lambda applications, you did not know the URL until after deployment. However, you still need to create the Application at Nexmo to gain the `NEXMO_APPLICATION_PRIVATE_KEY_PATH` and `NEXMO_APPLICATION_ID` for the application to function.
 
-Using the Nexmo CLI, installed as a prerequisite, enter the following command:
+Using the Vonage CLI, installed as a prerequisite, enter the following command:
 
 ```bash
 nexmo app:create <name> <answer_url>/webhooks/answer <event_url>/webhooks/event
