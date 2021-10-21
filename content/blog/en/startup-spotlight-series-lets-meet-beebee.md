@@ -75,6 +75,8 @@ Carbon dioxide emissions levels have risen dramatically globally over the past h
 
 We use it in the background for each user who registers, we do SMS verification of their phone number to know that it is really that user and that we are sure that they are driving his electric scooter.
 
+![beebee](https://pbs.twimg.com/media/E5SjxlLXMAQC2aQ.jpg "beebee")
+
 ## What progress have you made since launching? 
 
 In just 12 months we had 27000 rides. We reduced 11 tons of CO2 emission with 43.000 km fewer car trips. 2000 active riders and 11000 verified users. We are profitable from the start. The EU micro-mobility market is expected to reach €100 billion by 2030. Expanding to SEE capital cities we can reach up to 9M customers. Our services are used in everyday life mainly by students, business people, tourists and delivery services. Our target group is generation Y and Z that will soon represent 60% of the total productive adult market. Revenue models have 4 streams. User rides, Advertisers, b2b plans and grants.
