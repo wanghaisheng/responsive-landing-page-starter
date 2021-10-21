@@ -29,7 +29,7 @@ One of the players in the European scene is Sarajevo based beebee. This week, we
 
 **Startup Name**: [beebee](http://beebee.buzz/)
 
-**Industry**: Mobility
+**Industry**: Mobility as a Service
 
 **Location**: Sarajevo
 
@@ -39,13 +39,11 @@ One of the players in the European scene is Sarajevo based beebee. This week, we
 
 **Vonage API used**: Verify/SMS
 
-
-
 ## In one sentence, what does a beebee do?
 
 Beebee is the first and only ride sharing platform for electric scooters in SEE and an award winning company helping commuters easily move through the city. 
 
-
+<iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fbeebee.scooter%2Fvideos%2F993328424603248%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
 
 ## What is the problem you are solving? Was this the initial problem or did you pivot?
 
@@ -55,15 +53,13 @@ The problems faced by all cities include high levels of carbon dioxide, disorgan
 
 No similar system exists in the SEE market. Our indirect competitors are public transport, e-bikes, taxi companies, as well as other ride sharing companies which still do not operate in this area. Our secret sauce is in providing high quality, user-friendly devices and technology, with a platform that is designed with safety and sustainability in mind.
 
-
+![beebee](https://media-exp1.licdn.com/dms/image/C4E22AQHUmVH9rJS6-A/feedshare-shrink_800/0/1624951457838?e=1637798400&v=beta&t=_XryBogJUJ3F9mh1FScHQjrOUbVoiKoQiWUr0xSYOoA "beebee")
 
 ## VC, Angel, Bootstrap or Other?
 
 It is all about co-founding, more precisely the shareholder capital of the founders, who financed the launch of the complete beebee concept from their own funds.
 
 ## What’s the biggest challenge you faced and how did you overcome it?
-
-
 
 The biggest challenge we faced is that beebee was founded and started operating last year in the midst of a pandemic, when many global companies were facing problems. However, with hard work, the beebee proved to be an excellent alternative means of transport during this period. What we are proud of is that we ended 2020 by operating positively, even though we were only available on the market for 4 months.
 
@@ -87,8 +83,9 @@ In just 12 months we had 27000 rides. We reduced 11 tons of CO2 emission with 43
 
 We are going to expand to new markets (Zagreb, Belgrade and Skopje) and increase the number of scooters in our fleets.The plan is to  enhance Customer care center as well and run app development and updates. In 3 years from now we will be recognised as a sharing platform in SEE smart cities.
 
+### Let's work together - Vonage for Startups
 
+At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
-##  
-
-##
+**\
+Apply to join us [here](https://vonage.dev/3d093hA).**
