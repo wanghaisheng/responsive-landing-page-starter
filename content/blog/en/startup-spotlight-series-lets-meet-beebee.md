@@ -49,11 +49,11 @@ Beebee is the first and only ride sharing platform for electric scooters in SEE 
 
 The problems faced by all cities include high levels of carbon dioxide, disorganized public transport, lack of parking spaces and parking congestion alone, first and last mile issues, and what is important in a period of pandemic, health & safety issues. With the beebee platform and electric scooters, bikes and mopeds we provide an eco-friendly and fun way of commuting which leads to the shift-away from unnecessary car trips.
 
+![beebee](https://beebee.buzz/osoawhip/2021/06/Beebee-Oriflame-1-1200x350.jpg "beebe")
+
 ## What differentiates beebee from your competitors? Is there a secret sauce?
 
 No similar system exists in the SEE market. Our indirect competitors are public transport, e-bikes, taxi companies, as well as other ride sharing companies which still do not operate in this area. Our secret sauce is in providing high quality, user-friendly devices and technology, with a platform that is designed with safety and sustainability in mind.
-
-![beebee](https://media-exp1.licdn.com/dms/image/C4E22AQHUmVH9rJS6-A/feedshare-shrink_800/0/1624951457838?e=1637798400&v=beta&t=_XryBogJUJ3F9mh1FScHQjrOUbVoiKoQiWUr0xSYOoA "beebee")
 
 ## VC, Angel, Bootstrap or Other?
 
