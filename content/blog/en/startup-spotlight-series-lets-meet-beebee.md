@@ -89,5 +89,5 @@ We are going to expand to new markets (Zagreb, Belgrade and Skopje) and increase
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
-**\
+**
 Apply to join us [here](https://vonage.dev/3d093hA).**
