@@ -94,6 +94,6 @@ Whether you are building a machine learning project or one from this list, I wis
 
 If you end up using any of the ideas from this article, let us know!
 
-You can r[each us @vonagdev](about:blank) or on our [Slack channel](https://developer.nexmo.com/community/slack). 
+You can [reach us on Twitter](https://twitter.com/VonageDev) or on our [Slack channel](https://developer.nexmo.com/community/slack). 
 
 Best of luck at your next hackathon!
