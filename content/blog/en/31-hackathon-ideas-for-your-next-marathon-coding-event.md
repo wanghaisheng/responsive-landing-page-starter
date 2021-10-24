@@ -22,7 +22,7 @@ Hackathons are a ton of fun. If you’ve never participated in one: a hackathon 
 
 Hackathons are great because they allow you to improve your coding skills, build new things, and try new technologies. 
 
-One of the hardest parts about participating in a hackathon is coming up with a great idea, so in this article, I will give you some fun ideas for your next hackathon. 
+One of the hardest parts about participating in a hackathon is coming up with an idea to work on, so in this article, I will give you some fun ideas for your next hackathon. 
 
 ## Popular Hackathons
 
