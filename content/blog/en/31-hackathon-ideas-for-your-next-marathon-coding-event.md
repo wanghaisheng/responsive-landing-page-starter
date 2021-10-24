@@ -71,10 +71,7 @@ Now, let's get to some hackathon ideas!
 
 ## Hackathon Ideas for New Coders
 
-22. Christmas is coming up, so you know what that means! It is time to start reminding people what presents you want. I challenge you to build an app that lets you enter the presents you want, and the email addresses of your friends and family, and n days. 
-
-Then, your app should email them every x number of days and remind them not to forget to buy you lots of presents (and send them the list of what you want.) This year, no one will forget to buy you gifts!
-
+22. Christmas is coming up, so you know what that means! It is time to start reminding people what presents you want. I challenge you to build an app that lets you enter the presents you want, and the email addresses of your friends and family, and emails them every x number of days and remind them not to forget to buy you lots of presents (and send them the list of what you want.) This year, no one will forget to buy you gifts!
 23. Hackathons are not always about building something new. Sometimes, it is just about building your skills. Try making the classic game TikTokToe as a website, complete with a nice-looking UI. 
 24. Not interested in TikTokToe? Build a website that lets you play poker with friends instead. 
 25. Another fun project for new coders is to build an API. Look for a website that has great information but no free API. Please make sure the website’s terms of service allow it and then scrape the website. 
