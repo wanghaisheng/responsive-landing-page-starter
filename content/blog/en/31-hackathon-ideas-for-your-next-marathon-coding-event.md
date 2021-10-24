@@ -74,10 +74,7 @@ Now, let's get to some hackathon ideas!
 22. Christmas is coming up, so you know what that means! It is time to start reminding people what presents you want. I challenge you to build an app that lets you enter the presents you want, and the email addresses of your friends and family, and emails them every x number of days and remind them not to forget to buy you lots of presents (and send them the list of what you want.) This year, no one will forget to buy you gifts!
 23. Hackathons are not always about building something new. Sometimes, it is just about building your skills. Try making the classic game TikTokToe as a website, complete with a nice-looking UI. 
 24. Not interested in TikTokToe? Build a website that lets you play poker with friends instead. 
-25. Another fun project for new coders is to build an API. Look for a website that has great information but no free API. Please make sure the website’s terms of service allow it and then scrape the website. 
-
-Put their data in a database and then build an API around it. You can contact the webmaster after and give them the code for free. 
-
+25. Another fun project for new coders is to build an API. Look for a website that has great information but no free API. Please make sure the website’s terms of service allow it and then scrape the website. Put their data in a database and then build an API around it. You can contact the webmaster after and give them the code for free. 
 26. As a new coder, staying consistent practicing can be challenging. Build a program that sends an SMS message to your phone every day to remind you to code that day. You can use our SMS API to [send an SMS message easily](https://www.vonage.com/communications-apis/sms/). 
 27. Build a website that keeps track of every coding book and course you’ve read and taken and allows you to add new ones easily.  
 28. Create a website that lets you pick a song. It then plays that song using YouTube’s API and creates a custom music video by scraping images from the web. 
