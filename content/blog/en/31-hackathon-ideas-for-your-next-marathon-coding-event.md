@@ -26,7 +26,7 @@ One of the hardest parts about participating in a hackathon is coming up with a 
 
 ## Popular Hackathons
 
-![](https://lh3.googleusercontent.com/J6SRYXQB416r82J_FKbsNbM_XERnqc-LQtuWd-2peOrfGQ8sIgcYfofTkqW3VI4Cqn-t9dht3nxTd_GGzPaLcAu_erTep-2NWC_QGoQxEjmSDyTzm3bLnQIkjcu9u3IlzK-KE4Zf=s1600)
+![A coder at work on a hackathon project. ](https://lh3.googleusercontent.com/J6SRYXQB416r82J_FKbsNbM_XERnqc-LQtuWd-2peOrfGQ8sIgcYfofTkqW3VI4Cqn-t9dht3nxTd_GGzPaLcAu_erTep-2NWC_QGoQxEjmSDyTzm3bLnQIkjcu9u3IlzK-KE4Zf=s1600)
 
 First, I want to highlight a few popular hackathons, so you can have a few ideas of what events to sign up for. First up is Hacktoberfest. [Hacktoberfest is all about open-source.](https://hacktoberfest.digitalocean.com/resources) Put on by DigitalOcean, participants contribute to open-source projects for a chance to win swag. 
 
