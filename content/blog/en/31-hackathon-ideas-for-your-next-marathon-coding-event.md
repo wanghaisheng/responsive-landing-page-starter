@@ -90,7 +90,7 @@ I hope this article inspired you to try one out if you never have or participate
 
 One of the challenges many programmers face is coming up with new project ideas: whether for a side or hackathon project, so I hope this article gave you some inspiration. 
 
-Whether you are building a machine learning project or one with natural language processing, I wish you the best of luck.
+Whether you are building a machine learning project or one from this list, I wish you the best of luck.
 
 If you end up using any of the ideas from this article, let us know!
 
