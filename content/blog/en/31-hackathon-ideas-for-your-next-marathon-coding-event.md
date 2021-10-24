@@ -40,18 +40,20 @@ If you are a beginner and are looking for a hackathon targeted at people with le
 
 These are some of the most well-known hackathons, but far from an exhaustive list. 
 
+Now, let's get to some hackathon ideas!
+
 ## General Hackathon Ideas
 
-1. I did a Twitch stream with my coworker Dwane Hemmings where we built a web component together. If you haven’t created one yet, you should try making one. I challenge you to take one of the ideas on here and turn them into a web component. 
-2. Create an app that gives you outfit suggestions based on the weather. Use the weather API from our list of [fun APIs](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/) to get the weather for your area and suggest appropriate outfits for the day. 
-3. Sometimes it can be hard to keep up with all the people in your life. For your next hackathon, you could build a bot that [programmatically sends a nice text message](https://www.vonage.com/communications-apis/sms/) to your friend and family once a month to let them know you are thinking about them. 
-4. Build a virtual assistant for yourself. Siri is OK, but there are many tasks specific to you Siri can’t help with. Brainstorm a list of them, then create an assistant that can automate those tasks. 
-5. Speaking of automating your life, have you experimented with robotic process automation? If your work involves anything repetitive using your computer, try spending your next hackathon using [robocorp’s free open-source RPA software](https://robocorp.com/docs/) [](https://robocorp.com/) to automate repetitive tasks. 
-6. Another fun bot idea is to build a chatbot that can [text your friends and family](https://www.vonage.com/communications-apis/sms/). See how long your bot can keep the conversation going without them realizing they are talking to a robot!
-7.  Build something using AR.[Try using this API](https://modelviewer.dev/) for your project. 
-8. Make a program that monitors places like Reddit and social networks for new music and TV shows. When a new song or TV starts to become popular, it should [send you an SMS message](https://www.vonage.com/communications-apis/sms/). 
-9. Code a [program that calls you](https://www.vonage.com/communications-apis/voice/) every week and reads you a quote from the Simpsons.
-10.  Forgetting someone’s birthday is the worst feeling. Code an app that [automatically sends a text message](https://www.vonage.com/communications-apis/sms/) to your friends and family on their birthday, so you never forget one again. 
+1. Create an app that gives you outfit suggestions based on the weather. Use the weather API from our list of [fun APIs](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/) to get the weather for your area and suggest appropriate outfits for the day. 
+2. Sometimes it can be hard to keep up with all the people in your life. For your next hackathon, you could build a bot that [programmatically sends a nice text message](https://www.vonage.com/communications-apis/sms/) to your friend and family once a month to let them know you are thinking about them. 
+3. Build a virtual assistant for yourself. Siri is OK, but there are many tasks specific to you Siri can’t help with. Brainstorm a list of them, then create an assistant that can automate those tasks. 
+4. Speaking of automating your life, have you experimented with robotic process automation? If your work involves anything repetitive using your computer, try spending your next hackathon using [robocorp’s free open-source RPA software](https://robocorp.com/docs/) [](https://robocorp.com/) to automate repetitive tasks. 
+5. Another fun bot idea is to build a chatbot that can [text your friends and family](https://www.vonage.com/communications-apis/sms/). See how long your bot can keep the conversation going without them realizing they are talking to a robot!
+6.  Build something using AR.[Try using this API](https://modelviewer.dev/) for your project. 
+7. Make a program that monitors places like Reddit and social networks for new music and TV shows. When a new song or TV starts to become popular, it should [send you an SMS message](https://www.vonage.com/communications-apis/sms/). 
+8. Code a [program that calls you](https://www.vonage.com/communications-apis/voice/) every week and reads you a quote from the Simpsons.
+9.  Forgetting someone’s birthday is the worst feeling. Code an app that [automatically sends a text message](https://www.vonage.com/communications-apis/sms/) to your friends and family on their birthday, so you never forget one again. 
+10. I did a Twitch stream with my coworker Dwane Hemmings where we built a web component together. If you haven’t created one yet, you should try making one. I challenge you to take one of the ideas on here and turn them into a web component. 
 
 ## Fintech & EdtechHackathon Ideas
 
