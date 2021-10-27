@@ -1,5 +1,5 @@
 ---
-title: 31 Hackathon Ideas for Your Next Marathon Coding Event
+title: The Ultimate List of Ideas for Your Next Hackathon
 description: Looking for hackthon ideas for your next big hackathon? Here are 31
   ideas for projects to help get you inspired!
 author: cory-althoff
