@@ -76,7 +76,7 @@
     "prettier": "^2.4.1",
     "release-it": "^14.11.6",
     "remark-cli": "^9.0.0",
-    "remark-frontmatter": "^3.0.0",
+    "remark-frontmatter": "^4.0.1",
     "remark-preset-lint-recommended": "^5.0.0",
     "wpapi": "^1.2.2",
     "yaml": "^1.10.2"
