@@ -77,7 +77,7 @@ const room = new VideoExpress.Room({ apiKey, sessionId, token, roomContainer: 'r
 room.join();
 ```
 
-Video Express handles all the publishing and subscribing of all the participants of the video call. Just tell it the id of the HTML element (in this example, "roomContainer") to place the "Room" into, join and that’s it. Read our [documentation](https://tokbox.com/developer/multiparty/) for more on what you can do.
+Video Express handles all the publishing and subscribing of all the participants of the video call. Just tell it the id of the HTML element (in this example, "roomContainer") to place the "Room" into, join and that’s it. Read our [documentation](https://tokbox.com/developer/video-express/) for more on what you can do.
 
 ## Quality Manager
 
