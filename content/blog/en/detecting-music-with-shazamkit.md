@@ -26,7 +26,8 @@ In this tutorial, you will use [ShazamKit](https://developer.apple.com/documenta
 * An Apple Developer account and a test device running iOS 15.
 * Xcode 13.
 * Cocoapods to install the Vonage Client SDK for iOS.
-* Our Command Line Interface. You can install it with npm install nexmo-cli@beta -g.
+* Our Command Line Interface, which you can install with `npm install @vonage/cli -g`.
+* The Vonage CLI Conversations plugin, you can install it with `vonage plugins:install @vonage/cli-plugin-conversations`
 
 <sign-up></sign-up>
 
@@ -39,39 +40,41 @@ This tutorial will be building on top of the ["Creating a chat app"](https://dev
 You now need to create a Vonage Application. An application contains the security and configuration information you need to connect to Vonage. Create a directory for your project using mkdir `vonage-tutorial` in your terminal, then change into the new directory using cd `vonage-tutorial`. Create a Vonage application using the following command: 
 
 ```sh
-nexmo app:create "ShazamKit" --capabilities=rtc --rtc-event-url=https://example.com/ --keyfile=./private.key
+vonage apps:create "ShazamKit" --rtc-event-url=https://example.com/
 ```
 
-A file named `.nexmo-app` is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named private.key is also created.
+A file named `vonage_app.json` is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named `shazamkit.key` is also created.
 
 Next, create users for your application. You can do so by running:
 
 ```sh
-nexmo user:create name="Alice"
-nexmo user:create name="Bob"
+vonage apps:users:create Alice
+vonage apps:users:create Bob
 ```
 
 Create a conversation:
 
 ```sh
-nexmo conversation:create display_name="shazam"
+vonage apps:conversations:create "shazam"
 ```
 
-Add your users to the conversation, replacing `CONV_ID` with your conversation ID from earlier:
+Add your users to the conversation, replacing `CONVERSATION_ID` and `USER_ID` with the values from earlier:
 
 ```sh
-nexmo member:add CONV_ID action=join channel='{"type":"app"}' user_name=Alice
-nexmo member:add CONV_ID action=join channel='{"type":"app"}' user_name=Bob
+# Alice's User ID
+vonage apps:conversations:members:add CONVERSATION_ID USER_ID
+# Bob's User ID
+vonage apps:conversations:members:add CONVERSATION_ID USER_ID
 ```
 
 The Client SDK uses JWTs for authentication. The JWT identifies the user name, the associated application ID and the permissions granted to the user. It is signed using your private key to prove that it is a valid token. You can create a JWT for your users by running the following command replacing `APP_ID` with your application ID from earlier:
 
 ```sh
-nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}' application_id=APP_ID sub=Alice
+vonage jwt --app_id=APP_ID --subject=Alice --key_file=./shazamkit.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
 ```
 
 ```sh
-nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}' application_id=APP_ID sub=Bob
+vonage jwt --app_id=APP_ID --subject=Bob --key_file=./shazamkit.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
 ```
 
 ## Clone the iOS Project

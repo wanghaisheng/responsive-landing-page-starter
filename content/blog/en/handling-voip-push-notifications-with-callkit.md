@@ -29,7 +29,7 @@ In this tutorial, you will use [CallKit](https://developer.apple.com/documentati
 * A GitHub account.
 * Xcode 12 and Swift 5 or greater.
 * [Cocoapods](https://cocoapods.org) to install the Vonage Client SDK for iOS.
-* Our Command Line Interface. You can install it with `npm install nexmo-cli@beta -g`.
+* Our Command Line Interface, which you can install with `npm install @vonage/cli -g`.
 
 ## The Starter Project
 
@@ -68,24 +68,26 @@ Create the gist, then click the "Raw" button to get a URL for your NCCO. Keep no
 You now need to create a Vonage Application. An application contains the security and configuration information you need to connect to Vonage. Create a directory for your project using `mkdir vonage-tutorial` in your terminal, then change into the new directory using `cd vonage-tutorial`. Create a vonage application using the following command replacing `GIST_URL` with the URL from the previous step:
 
 ```sh
-nexmo app:create "Phone To App Tutorial" --capabilities=voice --keyfile=private.key  --voice-event-url=https://example.com/ --voice-answer-url=GIST_URL 
+vonage apps:create "Phone To App Tutorial" --voice-event-url=https://example.com/ --voice-answer-url=GIST_URL 
 ```
 
 A file named .nexmo-app is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named private.key is also created. 
 
-Since the iOS app will be receiving an inbound call from a phone, you will need to buy and link a Vonage number to your application. You can buy a number by running `nexmo number:buy -c US --confirm`. The command buys a US number, but you can specify an alternate [two-character country code](https://www.iban.com/country-codes) to purchase a number in another country. You can now link your new number to your application using `nexmo link:app YOUR_VONAGE_NUMBER APPLICATION_ID` replacing `YOUR_VONAGE_NUMBER` with the newly generated number and `APPLICATION_ID` with your application ID.
+Since the iOS app will be receiving an inbound call from a phone, you will need to buy and link a Vonage number to your application. You can search for a number by running `vonage numbers:search US`. The command searches for a US number, but you can specify an alternate [two-character country code](https://www.iban.com/country-codes). Once you find a number, you can buy it be running `vonage numbers:buy VONAGE_NUMBER US`
 
-The next step would be to create a user for your application, you can do so by running `nexmo user:create name="Alice"` to create a user called Alice. The Client SDK uses JWTs for authentication. The JWT identifies the user name, the associated application ID and the permissions granted to the user. It is signed using your private key to prove that it is a valid token. You can create a JWT for the Alice user by running the following command replacing `APP_ID` with your application ID from earlier: 
+You can now link your new number to your application using `vonage apps:link APPLICATION_ID --number=YOUR_VONAGE_NUMBER` replacing `YOUR_VONAGE_NUMBER` with the newly generated number and `APPLICATION_ID` with your application ID.
+
+The next step would be to create a user for your application, you can do so by running `vonage apps:users:create Alice` to create a user called Alice. The Client SDK uses JWTs for authentication. The JWT identifies the user name, the associated application ID and the permissions granted to the user. It is signed using your private key to prove that it is a valid token. You can create a JWT for the Alice user by running the following command replacing `APP_ID` with your application ID from earlier: 
 
 ```sh
-nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{}}}' sub=Alice application_id=APP_ID
+vonage jwt --app_id=APP_ID --subject=Alice --key_file=./phone_to_app_tutorial.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
 ```
 
 ### Clone the iOS Project
 
 To get a local copy of the iOS project your terminal, enter `git clone git@github.com:nexmo-community/client-sdk-tutorials.git` in your terminal. Change directory into the `PhoneToApp` folder by using `cd client-sdk-tutorials/phone-to-app-swift/PhoneToApp`. Then make sure that the dependencies of the project are installed and up to date. You can do so by running `pod install`. Once complete, you can open the Xcode project by running using `open PhoneToApp.xcworkspace`.
 
-## Set up Push Certificates
+## Set up Push Certificatesn
 
 There are two types of push notifications that you can use in an iOS app, VoIP pushes with PushKit or User Notifications. This tutorial will be focusing on VoIP pushes. [Apple Push Notifications service](https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1) (APNs) uses certificate-based authentication to secure the connections between APNs and Vonage servers. So you will need to create a certificate and upload it to the Vonage Servers so Vonage can send a push to the device when there is an incoming call.
 

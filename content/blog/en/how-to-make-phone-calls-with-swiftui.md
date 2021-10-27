@@ -27,7 +27,7 @@ In this tutorial, you will create a SwiftUI application that can make calls to a
 * Xcode 12 and Swift 5 or greater.
 * [Cocoapods](https://cocoapods.org) to install the Vonage Client SDK for iOS.
 * [ngrok](https://ngrok.com) for exposing your local machine to the internet.
-* Our Command Line Interface. It can be installed with `npm install nexmo-cli@beta -g`.
+* Our Command Line Interface, which you can install with `npm install @vonage/cli -g`.
 
 <sign-up></sign-up>
 
@@ -53,24 +53,24 @@ To do so run `ngrok http 7000` in your terminal. The forwarding URL that ngrok p
 
 ## Scaffolding the Application
 
-To create the application we will be using our command line interface. If you have not set up the CLI yet, do so by running the command `nexmo setup API_KEY API_SECRET` in your terminal, where the API Key and Secret are the API key and secret found on your [account’s settings page](https://dashboard.nexmo.com/settings).
+To create the application we will be using our command line interface. If you have not set up the CLI yet, do so by running the command `vonage config:set --apiKey=api_key --apiSecret=api_secret` in your terminal, where the API Key and Secret are the API key and secret found on your [account’s settings page](https://dashboard.nexmo.com/settings).
 
 ### Create an Application
 
-You can create an application using the `nexmo app:create` command. It will take two URLs, the `answer_url` and `event_url` that were mentioned earlier. Replace `NGROK_URL` in the following command with the URL you created with ngrok. Make sure to add a `/invoke` to the path as shown, this runs the lambda function. 
+You can create an application using the `vonage apps:create` command. It will take two URLs, the `answer_url` and `event_url` that were mentioned earlier. Replace `NGROK_URL` in the following command with the URL you created with ngrok. Make sure to add a `/invoke` to the path as shown, this runs the lambda function. 
 
 ```sh
-nexmo app:create "SwiftUICall" --capabilities=voice --keyfile=private.key  --voice-event-url=https://example.com/ --voice-answer-url=NGROK_URL/invoke --voice-answer-method POST
+vonage apps:create "SwiftUICall" --voice_event_url=https://example.com/ --voice_answer_url=NGROK_URL/invoke --voice_answer_http=POST
 ```
 
-This will save your application's private key to the `private.key` file and output your application's ID, you will need them for the next step. 
+This will save your application's private key to the `swiftuicall.key` file and output your application's ID, you will need them for the next step. 
 
 ### Create a User
 
 The Vonage Conversation API has the concept of [users](https://developer.nexmo.com/conversation/concepts/user). A user represents a unique user of your application and therefore has a unique ID. This is how your iOS application will authenticate with and be identified by the Vonage servers. You can use the CLI to create a user. 
 
 ```sh
-nexmo user:create name="Alice" 
+vonage apps:users:create Alice
 ```
 
 This will add a user, with the username Alice, to your application and output their unique ID.
@@ -79,10 +79,10 @@ This will add a user, with the username Alice, to your application and output th
 
 The Vonage Client SDKs use JSON Web Tokens (JWTs) for authentication. JWTs are a method for representing claims securely between two parties. You can read more on about JWTs on [JWT.io](https://jwt.io) or the claims that the [Conversation API supports](https://developer.nexmo.com/conversation/guides/jwt-acl).
 
-We will be using the private key, application ID and username from the earlier sections to create the JWT needed for your iOS application. Again, this is done via the CLI. Replace `APPLICATION_ID` with the application ID from the earlier step. 
+We will be using the private key, application ID and username from the earlier sections to create the JWT needed for your iOS application. Again, this is done via the CLI. Replace `APP_ID` with the application ID from the earlier step. 
 
 ```sh
-nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{}}}' sub=Alice application_id=APPLICATION_ID
+vonage jwt --app_id=APP_ID --subject=Alice --key_file=./swiftuicall.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
 ```
 
 This will output the JWT for the user Alice that has been signed using your private key. Keep hold of this as you will need it later. 

@@ -25,7 +25,7 @@ This blog post takes you through a project that showcases how to build an [Ionic
 * A [GitHub](https://github.com) account.
 * [Xcode 12](https://developer.apple.com/xcode/), to build and run the app on an iOS simulator.
 * [Android Studio](https://developer.android.com/studio), with JDK 8 or newer to build and run the app on an emulator.
-* [Our Command Line Interface](https://developer.nexmo.com/application/nexmo-cli). It can be installed with `npm install nexmo-cli@beta -g`.
+* Our Command Line Interface, which you can install with `npm install @vonage/cli -g`.
 
 <sign-up></sign-up>
 
@@ -58,7 +58,7 @@ Once done, load the config into the current shell using the `source` command. Yo
 
 ## The Vonage Application
 
-To create the application, we will be using our command-line interface. If you have not set up the CLI yet, do so by running the command `nexmo setup API_KEY API_SECRET` in your terminal, where the API Key and Secret are the API key and secret found on your [account’s settings](https://dashboard.nexmo.com/settings) page.
+To create the application, we will be using our command-line interface. If you have not set up the CLI yet, do so by running the command `vonage config:set --apiKey=api_key --apiSecret=api_secret` in your terminal, where the API Key and Secret are the API key and secret found on your [account’s settings](https://dashboard.nexmo.com/settings) page.
 
 ### Create an NCCO
 
@@ -93,17 +93,17 @@ Create the gist, then click the "Raw" button to get a URL for your NCCO. Keep no
 You now need to create a Vonage Application. An application contains the security and configuration information you need to connect to Vonage. In your terminal, create a Vonage application using the following command replacing `GIST_URL` with the URL from the previous step:
 
 ```sh
-nexmo app:create "Phone To App Tutorial" --capabilities=voice --keyfile=private.key  --voice-event-url=https://example.com/ --voice-answer-url=GIST_URL 
+vonage apps:create "App to Phone Tutorial" --voice_event_url=https://example.com/ --voice_answer_url=GIST-URL 
 ```
 
-A file named .nexmo-app is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named private.key is also created. 
+file named `vonage_app.json` is created in your project directory and contains the newly created Vonage Application ID and the private key. A private key file named `app_to_phone_tutorial.key` is also created. 
 
 ### Create a JWT
 
-The Client SDK uses JWTs for authentication. The JWT identifies the user name, the associated application ID and the permissions granted to the user. It is signed using your private key to prove that it is a valid token. Create a user for your application, you can do so by running `nexmo user:create name="Alice"` to create a user called Alice. Then create a JWT for the Alice user by running the following command replacing `APP_ID` with your application ID from earlier: 
+The Client SDK uses JWTs for authentication. The JWT identifies the user name, the associated application ID and the permissions granted to the user. It is signed using your private key to prove that it is a valid token. Create a user for your application, you can do so by running `vonage apps:users:create Alice` to create a user called Alice. Then create a JWT for the Alice user by running the following command replacing `APP_ID` with your application ID from earlier: 
 
 ```sh
-nexmo jwt:generate ./private.key exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{}}}' sub=Alice application_id=APP_ID
+vonage jwt --app_id=APP_ID --subject=Alice --key_file=./app_to_phone_tutorial.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
 ```
 
 ## Run the Project
