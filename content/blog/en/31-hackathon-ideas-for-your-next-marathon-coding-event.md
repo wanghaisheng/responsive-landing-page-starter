@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Hackathons are a ton of fun. If you’ve never participated in one: a hackathon is an event where programmers build something in a short period: for example, in 24 hours. Often hackathons include a prize for the winning teams. 
+Hackathons are a ton of fun. If you’ve never participated in one: a hackathon is an event where programmers build something in a short period (often in 24 hours). Often hackathons include a prize for the winning teams. 
 
 Hackathons are great because they allow you to improve your coding skills, build new things, and try new technologies. 
 
