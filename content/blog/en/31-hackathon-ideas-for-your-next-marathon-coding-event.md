@@ -31,13 +31,13 @@ One of the hardest parts about participating in a hackathon is coming up with an
 
 First, I want to highlight a few popular hackathons, so you can have a few ideas of what events to sign up for. First up is Hacktoberfest. [Hacktoberfest is all about open-source.](https://hacktoberfest.digitalocean.com/resources) Put on by DigitalOcean, participants contribute to open-source projects for a chance to win swag. 
 
-HackMIT is another popular hackathon. It is a weekend-long event where students work on new software or hardware projects. Beware, however, because this event is not known as beginner-friendly! 
+[HackMIT](https://hackmit.org/#about) is another popular hackathon. It is a weekend-long event where students work on new software or hardware projects. Beware, however, because this event is not known as beginner-friendly! 
 
-If you want to participate in big hackathons with many people, you can register for MHacks, LAHacks, or HackTech.
+If you want to participate in big hackathons with many people, you can register for [MHacks](https://mhacks.org/), [LAHacks](https://lahacks.com/home), or [HackTech](https://hacktech.app/#faq).
 
-Are you interested in startups? Consider registering for TechCrunch Disrupt. TechCrunch Disrupt is a series of events for startups, but it also includes a 24-hour hackathon. 
+Are you interested in startups? Consider registering for TechCrunch Disrupt. [TechCrunch Disrupt](https://techcrunch.com/events) is a series of events for startups, but it also includes a 24-hour hackathon. 
 
-If you are a beginner and are looking for a hackathon targeted at people with less experience, you can check out HackIllinois, BoilerMake, BitCamp, HackTX, or Hack@Brown. 
+If you are a beginner and are looking for a hackathon targeted at people with less experience, you can check out [HackIllinois](https://www.hackillinois.org/), [BoilerMake](https://boilermake.org/about), [BitCamp](https://bit.camp/#faq), [HackTX](https://hacktx.com/), or [Hack@Brown](https://2021.hackatbrown.org/). 
 
 These are some of the most well-known hackathons, but far from an exhaustive list. 
 
