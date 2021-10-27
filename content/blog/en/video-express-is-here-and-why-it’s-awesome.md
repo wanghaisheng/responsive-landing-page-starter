@@ -37,7 +37,7 @@ As you may have experienced yourself lately, things are shifting towards individ
 
 As you can see from the image above, it can quickly become a complex challenge to keep up with all the connections from the participants.
 
-This is where [Video Express](https://tokbox.com/developer/multiparty/) comes in. Maybe you are new to developing applications that integrate video or a seasoned developer that wants to focus on other things. Video Express helps remove the complexity PLUS optimizes for quality, CPU usage, and layout! That’s why it’s awesome!
+This is where [Video Express](https://tokbox.com/developer/video-express/) comes in. Maybe you are new to developing applications that integrate video or a seasoned developer that wants to focus on other things. Video Express helps remove the complexity PLUS optimizes for quality, CPU usage, and layout! That’s why it’s awesome!
 
 Here is Video Express used in a vanilla JavaScript [Glitch project](https://glitch.com/edit/#!/remix/video-express-demo?path=README.md%3A1%3A0) you can view. Just input your API Key and Secret in the .env file and you will have your own working example. This is a bare-bones implementation to highlight Video Express.
 
