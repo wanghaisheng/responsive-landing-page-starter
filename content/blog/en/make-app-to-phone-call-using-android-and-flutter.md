@@ -30,9 +30,9 @@ The source code is available on [GitHub](https://github.com/nexmo-community/clie
 Before we begin building the application for our Android device, you'll need to prepare with the following prerequisites:
 
 * Create a Call Control Object ([NCCO](https://developer.nexmo.com/voice/voice-api/guides/ncco))
-* Install Nexmo CLI
-* Setup Vonage application
-* Install Flutter SDK
+* Install the Vonage CLI
+* Setup a Vonage application
+* Install the Flutter SDK
 * Create a Flutter project
 
 ## Vonage Application
@@ -70,24 +70,24 @@ The NCCO needs to be public and accessible by the internet. To accomplish this, 
 6. Click the `Raw` button
 7. Take note of the URL shown in our browser, we will be using it in the next step
 
-### Install Nexmo CLI
+### Install Vonage CLI
 
-The [Nexmo CLI](https://developer.nexmo.com/application/nexmo-cli) allows us to carry out many operations on the command line. If we want to carry out tasks such as creating applications, purchasing Vonage numbers and so on, we will need to install the Nexmo CLI.
+The [Vonage CLI](https://developer.nexmo.com/application/vonage-cli) allows us to carry out many operations on the command line. If we want to carry out tasks such as creating applications, purchasing Vonage numbers and so on, we will need to install the Vonage CLI.
 
-Nexmo CLI requires `node.js`, so we will need to install node.js first using [these instructions](https://nodejs.org/en/download/).
+Vonage CLI requires `node.js`, so we will need to install node.js first using [these instructions](https://nodejs.org/en/download/).
 
 To install the Beta version of the CLI with NPM run this command:
 
 ```cmd
-npm install nexmo-cli@beta -g
+npm install @vonage/cli -g
 ```
 
-Set up the Nexmo CLI to use our Vonage API Key and API Secret. we can get these from the [settings page](https://dashboard.nexmo.com/settings) in the Dashboard.
+Set up the vonage CLI to use our Vonage API Key and API Secret. we can get these from the [settings page](https://dashboard.nexmo.com/settings) in the Dashboard.
 
 Run the following command in a terminal, while replacing api_key and api_secret with our own:
 
 ```cmd
-nexmo setup api_key api_secret
+vonage config:set --apiKey=api_key --apiSecret=api_secret
 ```
 
 ### Setup Vonage Application
@@ -107,12 +107,12 @@ cd vonage-tutorial
 3. Create a Vonage application by copying and pasting the command below into the terminal Make sure to change the value of `--voice-answer-url` argument by replacing `GIST-URL` with the gist URL from the previous step.
 
 ```
-nexmo app:create "App to Phone Tutorial" --capabilities=voice --keyfile=private.key --voice-event-url=https://example.com/ --voice-answer-url=GIST-URL
+vonage apps:create "App to Phone Tutorial" --voice_event_url=https://example.com/ --voice_answer_url=GIST-URL
 ```
 
 Make a note of the Application ID that is echoed in our terminal when our application is created.
 
-> NOTE: A hidden file named `.nexmo-app` is created in our project directory and contains the newly created Vonage Application ID and the private key. A private key file named `private.key` is also created.
+> NOTE: A file named `vonage_app.json` is created in our project directory and contains the newly created Vonage Application ID and the private key. A private key file named `app_to_phone_tutorial.key` is also created.
 
 ### Create User
 
@@ -121,7 +121,7 @@ Each participant is represented by a [User](https://developer.nexmo.com/convers
 Execute the following command to create a user called `Alice`
 
 ```cmd
-nexmo user:create name="Alice"
+vonage apps:users:create Alice
 ```
 
 ### Generate JWT
@@ -131,7 +131,7 @@ The JWT is used to authenticate the user. Execute the following command in the t
 In the following command replace the `APPLICATION_ID` with the ID of our application:
 
 ```
-nexmo jwt:generate sub=Alice exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
+vonage jwt --app_id=APPLICATION_ID --subject=Alice --key_file=./app_to_phone_tutorial.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}'
 ```
 
 The command above sets the expiry of the JWT to one day from now, which is the maximum.

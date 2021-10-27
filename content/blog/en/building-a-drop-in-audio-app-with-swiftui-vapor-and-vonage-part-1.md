@@ -31,14 +31,13 @@ In this tutorial, you will use the [Conversation API](https://developer.nexmo.co
 * Xcode 12 and Swift 5 or greater
 * [Vapor 4.0](https://vapor.codes) installed on your machine
 * [ngrok](https://ngrok.com) for exposing your local machine to the internet
-* Our Command Line Interface, which you can install with `npm install nexmo-cli@beta -g`.
+* Our Command Line Interface, which you can install with `npm install @vonage/cli -g`.
 
 ## Creating a Vonage Application
 
-To create the application, you will be using the Vonage command-line interface. If you haven't set up the CLI yet, run `nexmo setup API_KEY API_SECRET` in your terminal, substituting API Key and Secret with the values found on your [account's settings page](https://dashboard.nexmo.com/settings).
+To create the application, you will be using the Vonage command-line interface. If you haven't set up the CLI yet, run `vonage config:set --apiKey=API_KEY --apiSecret=API_SECRET` in your terminal, substituting API Key and Secret with the values found on your [account's settings page](https://dashboard.nexmo.com/settings).
 
-First, create a directory using `mkdir vonageapi`, then navigate into the directory with `cd vonageapi`.\
-Next, create the Vonage application with `nexmo app:create "VaporConvAPI" --capabilities=rtc --keyfile=private.key  --rtc-event-url=https://example.com/`. This command will save your application's private key to the `private.key` file and output your application's ID. You will need both values for future steps. 
+First, create a directory using `mkdir vonageapi`, then navigate into the directory with `cd vonageapi`. Next, create the Vonage application with `vonage apps:create VaporConvAPI --rtc_event_url=https://example.com/`. This command will save your application's private key to the `vaporconvapi.key` file and output your application's ID. You will need both values for future steps. 
 
 ## Create a Vapor Project
 
@@ -48,15 +47,15 @@ Create a Vapor project using the new project command `vapor new VaporConvAPI` in
 
 ![Vapor project setup terminal output](/content/blog/building-a-drop-in-audio-app-with-swiftui-and-vapor-part-1/vapor.png)
 
-Next, copy your `private.key` file from your project's root directory to the Vapor project's `Sources/App/` folder. Once done, you can open the project in Xcode using `vapor xcode`.  When Xcode opens, it will start downloading the dependencies that Vapor relies on, using Swift Package Manager (SPM). To view the dependencies, you can open the `Package.swift` file.  
+Next, copy your `vaporconvapi.key` file from your project's root directory to the Vapor project's `Sources/App/` folder. Once done, you can open the project in Xcode using `vapor xcode`.  When Xcode opens, it will start downloading the dependencies that Vapor relies on, using Swift Package Manager (SPM). To view the dependencies, you can open the `Package.swift` file.  
 
-By default, Xcode runs your application from a randomized local directory. Since you will be loading the `private.key` file, you need to set a custom working directory. Go to *Product > Scheme > Edit Scheme...* and set the working directory to your project's root folder.
+By default, Xcode runs your application from a randomized local directory. Since you will be loading the `vaporconvapi.key` file, you need to set a custom working directory. Go to *Product > Scheme > Edit Scheme...* and set the working directory to your project's root folder.
 
 ![Setting custom working directory](/content/blog/building-a-drop-in-audio-app-with-swiftui-and-vapor-part-1/workingdir.png)
 
 ## User Authentication
 
-When using your application, you will need to authenticate users to use the Client SDK in the iOS application. The Conversation API has a concept of [Users](https://developer.nexmo.com/conversation/concepts/user), an object that identifies a unique Vonage user in the context of your Vonage application.\
+When using your application, you will need to authenticate users to use the Client SDK in the iOS application. The Conversation API has a concept of [Users](https://developer.nexmo.com/conversation/concepts/user), an object that identifies a unique Vonage user in the context of your Vonage application.
 Your backend server will also keep track of users, which will map one-to-one with the Vonage user. To differentiate between the two, the users on your backend server will be referred to as a database user going forward. Once you have a registered and saved user, the server will use this to generate a JSON Web Tokens (JWTs) for the Client SDK to log in.
 
 ### Create the Database User Model
@@ -86,7 +85,7 @@ The `schema` property will be the table's name in the database; the `id` and `na
 
 ### Create the Database User Migration
 
-To create the table in the database, you will need a [migration](https://docs.vapor.codes/4.0/fluent/migration/).\
+To create the table in the database, you will need a [migration](https://docs.vapor.codes/4.0/fluent/migration/).
 Migrations define changes to the database, in this case creating the User table. In the `Migrations` folder, delete the `CreateTodo.swift` file and create a new file named `CreateUser.swift`. Then create a new struct called `CreateUser`:
 
 ```swift
@@ -164,7 +163,7 @@ struct Auth {
     }()
     
     private let jwtSigner: JWTSigner = {
-        let privateKeyPath = URL(fileURLWithPath: "Sources/App/private.key")
+        let privateKeyPath = URL(fileURLWithPath: "Sources/App/vaporconvapi.key")
         let privateKey: Data = try! Data(contentsOf: privateKeyPath, options: .alwaysMapped)
         return JWTSigner.rs256(privateKey: privateKey)
     }()
@@ -234,7 +233,7 @@ func routes(_ app: Application) throws {
 
 ## Creating a Vonage User
 
-Next, you can start creating the endpoints for the iOS application.\
+Next, you can start creating the endpoints for the iOS application.
 The first endpoint will be for authentication. The server will first check if a database user matching the incoming username exists. If it does, the server will return a JWT. If the database user does not exist, it will make a call to the Conversation API to create a Vonage user, save the details to the database, and then return a JWT.
 
 ![Diagram of the authentication flow](/content/blog/building-a-drop-in-audio-app-with-swiftui-and-vapor-part-1/authflow.png)
@@ -314,7 +313,7 @@ func routes(_ app: Application) throws {
 
 This function defines a new route at the `/auth` path of the server, which returns a [future](https://docs.vapor.codes/4.0/async/) with a `UserAuth.Response` type—the type the iOS application is expecting.  
 
-The body of the request sent to the server is decoded into the `authBody` variable. The body is then used to filter the database users.\
+The body of the request sent to the server is decoded into the `authBody` variable. The body is then used to filter the database users.
 Since you are looking for one user (and usernames are unique), `.first()` is used on the response of the database query, which returns the type `EventLoopFuture<User?>`. That then gets transformed into the expected type of `EventLoopFuture<UserAuth.Response>` with the `flatMap` closure.
 
 ![Diagram of the authentication flow, first part circled](/content/blog/building-a-drop-in-audio-app-with-swiftui-and-vapor-part-1/authflow-1.png)
@@ -355,7 +354,7 @@ With the whole route complete, you can now see the flow of data from the input t
 
 ## Listing Conversations
 
-Once the iOS application has been authenticated, it will display a list of audio rooms that the user can join. Audio rooms will be the equivalent of the [conversation](https://developer.nexmo.com/conversation/concepts/conversation) concept of the Conversation API.\
+Once the iOS application has been authenticated, it will display a list of audio rooms that the user can join. Audio rooms will be the equivalent of the [conversation](https://developer.nexmo.com/conversation/concepts/conversation) concept of the Conversation API.
 To get a list of available conversations for your Vonage application, you can call `/v0.2/conversations`. Add the needed models to the `APIModels` file:
 
 ```swift
@@ -474,5 +473,5 @@ The second part of this tutorial will build a drop-in audio iOS application with
 
 ![Image of the completed iOS application](/content/blog/building-a-drop-in-audio-app-with-swiftui-and-vapor-part-1/screenshot-2021-03-03-at-12.54.38.png)
 
-You can find the completed project on [GitHub](https://github.com/nexmo-community/swift-vapor-drop-in-audio).\
+You can find the completed project on [GitHub](https://github.com/nexmo-community/swift-vapor-drop-in-audio).
 Learn more about the Conversation API on [developer.vonage.com](https://developer.vonage.com/conversation/overview), and Vapor on [vapor.codes](https://vapor.codes).
