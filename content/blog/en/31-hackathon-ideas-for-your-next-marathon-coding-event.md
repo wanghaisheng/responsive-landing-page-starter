@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Hackathons are a ton of fun. If you’ve never participated in one: a hackathon is an event where programmers build something in a short period: for example, in 24 hours. Often hackathons include a prize for the winning teams. 
+Hackathons are a ton of fun. If you’ve never participated in one: a hackathon is an event where programmers build something in a short period (often in 24 hours). Often hackathons include a prize for the winning teams. 
 
 Hackathons are great because they allow you to improve your coding skills, build new things, and try new technologies. 
 
@@ -29,15 +29,15 @@ One of the hardest parts about participating in a hackathon is coming up with an
 
 ![A coder at work on a hackathon project. ](https://lh3.googleusercontent.com/J6SRYXQB416r82J_FKbsNbM_XERnqc-LQtuWd-2peOrfGQ8sIgcYfofTkqW3VI4Cqn-t9dht3nxTd_GGzPaLcAu_erTep-2NWC_QGoQxEjmSDyTzm3bLnQIkjcu9u3IlzK-KE4Zf=s1600)
 
-First, I want to highlight a few popular hackathons, so you can have a few ideas of what events to sign up for. First up is Hacktoberfest. [Hacktoberfest is all about open-source.](https://hacktoberfest.digitalocean.com/resources) Put on by DigitalOcean, participants contribute to open-source projects for a chance to win swag. 
+First, I want to highlight a few popular hackathons, so you can have an idea of what events to sign up for. First up is Hacktoberfest. [Hacktoberfest is all about open-source.](https://hacktoberfest.digitalocean.com/resources) Put on by DigitalOcean, participants contribute to open-source projects for a chance to win swag. 
 
-HackMIT is another popular hackathon. It is a weekend-long event where students work on new software or hardware projects. Beware, however, because this event is not known as beginner-friendly! 
+[HackMIT](https://hackmit.org/#about) is another popular hackathon. It is a weekend-long event where students work on new software or hardware projects. Beware, however, because this event is not known as beginner-friendly! 
 
-If you want to participate in big hackathons with many people, you can register for MHacks, LAHacks, or HackTech.
+If you want to participate in big hackathons with many people, you can register for [MHacks](https://mhacks.org/), [LAHacks](https://lahacks.com/home), or [HackTech](https://hacktech.app/#faq).
 
-Are you interested in startups? Consider registering for TechCrunch Disrupt. TechCrunch Disrupt is a series of events for startups, but it also includes a 24-hour hackathon. 
+Are you interested in startups? Consider registering for TechCrunch Disrupt. [TechCrunch Disrupt](https://techcrunch.com/events) is a series of events for startups, but it also includes a 24-hour hackathon. 
 
-If you are a beginner and are looking for a hackathon targeted at people with less experience, you can check out HackIllinois, BoilerMake, BitCamp, HackTX, or Hack@Brown. 
+If you are a beginner and are looking for a hackathon targeted at people with less experience, you can check out [HackIllinois](https://www.hackillinois.org/), [BoilerMake](https://boilermake.org/about), [BitCamp](https://bit.camp/#faq), [HackTX](https://hacktx.com/), or [Hack@Brown](https://2021.hackatbrown.org/). 
 
 These are some of the most well-known hackathons, but far from an exhaustive list. 
 
@@ -48,7 +48,7 @@ Now, let's get to some hackathon ideas!
 1. Create an app that gives you outfit suggestions based on the weather. Use the weather API from our list of [fun APIs](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/) to get the weather for your area and suggest appropriate outfits for the day. 
 2. Sometimes it can be hard to keep up with all the people in your life. For your next hackathon, you could build a bot that [programmatically sends a nice text message](https://www.vonage.com/communications-apis/sms/) to your friend and family once a month to let them know you are thinking about them. 
 3. Build a virtual assistant for yourself. Siri is OK, but there are many tasks specific to you Siri can’t help with. Brainstorm a list of them, then create an assistant that can automate those tasks. 
-4. Speaking of automating your life, have you experimented with robotic process automation? If your work involves anything repetitive using your computer, try spending your next hackathon using [robocorp’s free open-source RPA software](https://robocorp.com/docs/) [](https://robocorp.com/) to automate repetitive tasks. 
+4. Speaking of automating your life, have you experimented with robotic process automation? If your work involves anything repetitive using your computer, try spending your next hackathon using robocorp’s free [open-source RPA software](https://robocorp.com/docs/) [](https://robocorp.com/) to automate repetitive tasks. 
 5. Another fun bot idea is to build a chatbot that can [text your friends and family](https://www.vonage.com/communications-apis/sms/). See how long your bot can keep the conversation going without them realizing they are talking to a robot!
 6.  Build something using AR.[Try using this API](https://modelviewer.dev/) for your project. 
 7. Make a program that monitors places like Reddit and social networks for new music and TV shows. When a new song or TV starts to become popular, it should [send you an SMS message](https://www.vonage.com/communications-apis/sms/). 
@@ -95,6 +95,6 @@ Whether you are building a machine learning project or one from this list, I wis
 
 If you end up using any of the ideas from this article, let us know!
 
-You can [reach us on Twitter](https://twitter.com/VonageDev) or on our [Slack channel](https://developer.nexmo.com/community/slack). 
+You can [reach us on Twitter](https://twitter.com/VonageDev) or on our Slack channel. 
 
 Best of luck at your next hackathon!
