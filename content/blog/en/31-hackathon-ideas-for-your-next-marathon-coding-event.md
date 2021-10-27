@@ -2,9 +2,10 @@
 title: The Ultimate List of Ideas for Your Next Hackathon
 description: Looking for hackthon ideas for your next big hackathon? Here are 31
   ideas for projects to help get you inspired!
+thumbnail: /content/blog/the-ultimate-list-of-ideas-for-your-next-hackathon/hackathon_1200x600.png
 author: cory-althoff
 published: true
-published_at: 2021-10-24T21:23:16.689Z
+published_at: 2021-10-27T09:50:46.891Z
 updated_at: 2021-10-24T21:23:16.733Z
 category: inspiration
 tags:
