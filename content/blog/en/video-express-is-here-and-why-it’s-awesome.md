@@ -72,7 +72,7 @@ session.publish(pub, undefined, err => { // Try to publish media
 **Vonage Video Express**
 
 ```javascript
-const room = new Room({ apiKey, sessionId, token, roomContainer: 'roomContainer’ });
+const room = new VideoExpress.Room({ apiKey, sessionId, token, roomContainer: 'roomContainer’ });
 
 room.join();
 ```
@@ -108,7 +108,7 @@ Out of the box, Video Express will automatically adjust the layout of the stream
 Another feature that Video Express handles for you is allowing the user to preview their video and audio before joining the room. Here is some sample code:
 
 ```javascript
-const previewPublisher = new MP.PreviewPublisher('previewContainer');
+const previewPublisher = new VideoExpress.PreviewPublisher('previewContainer');
 await previewPublisher.previewMedia({
   targetElement: 'previewContainer',
   publisherProperties: {
@@ -142,7 +142,7 @@ That's it! With these few lines of code, you can share your screen and Video Exp
 
 Ready to build something amazing?!
 
-Take a look at the [Video Express documentation](https://tokbox.com/developer/multiparty/) for more details.
+Take a look at the [Video Express documentation](https://tokbox.com/developer/video-express/) for more details.
 
 Play around with the [basic starter project](https://glitch.com/edit/#!/remix/video-express-demo?path=README.md%3A1%3A0).
 
