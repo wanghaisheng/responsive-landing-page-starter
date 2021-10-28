@@ -1,10 +1,11 @@
 ---
-title: '"But what does a Community Manager actually do?"'
+title: But what does a Community Manager actually do?
 description: "A short guide to what our community managers get up to in their
   role at Vonage. "
+thumbnail: /content/blog/but-what-does-a-community-manager-actually-do/community-manager_1200x600.png
 author: rachel-sunderland
 published: false
-published_at: 2021-10-28T07:49:33.694Z
+published_at: 2021-10-28T13:44:34.391Z
 updated_at: 2021-10-28T07:49:33.711Z
 category: community
 tags:
