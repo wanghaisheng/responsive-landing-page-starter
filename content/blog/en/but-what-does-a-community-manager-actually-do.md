@@ -24,7 +24,9 @@ Here at Vonage, we have a team of excited Community Managers who work behind the
 
 **Event and Developer Program Sponsorships** 
 
-One of our main objectives is to support developer communities through sponsoring events, hackathons and meetups. Instead of asking developers to come to us, we want to make sure we’re meeting you where you already are - and that is usually at events! The Community Manager’s role is to help Developer Advocates find exciting events to attend where Vonage APIs may be of interest to attendees. We also help with their travel/accommodation & expenses and ensure we can deliver all of the commitments of our sponsorship contracts. Sometimes we get the opportunity to go along to some events, to help with booths or set-up, so it’s a really exciting part of our role!
+One of our main objectives is to support developer communities through sponsoring events, hackathons and meetups. Instead of asking developers to come to us, we want to make sure we’re meeting you where you already are - and that is usually at events! 
+
+The Community Manager’s role is to help Developer Advocates find exciting events to attend where Vonage APIs may be of interest to attendees. We also help with their travel/accommodation & expenses and ensure we can deliver all of the commitments of our sponsorship contracts. Sometimes we get the opportunity to go along to some events, to help with booths or set-up, so it’s a really exciting part of our role!
 
 If you organise any developer events, workshops or hackathons and you're interested in a partnership or sponsorship, please email [community@vonage.com](mailto:community@vonage.com)
 
@@ -56,7 +58,9 @@ Community Managers also have the fun job of reviewing what swag we give out at e
 
 **Managing our Online Community**
 
-Ok, so I know I said that we're not Social Media Managers, but we do manage our online community too. This includes moderating our Community Slack, Twitter, Twitch and other social media accounts. We do build some content but this is only about an eighth of the whole team's weekly efforts. In the future we hope to have an active Community Hub online, so keep your eyes peeled for this... 
+Ok, so I know I said that we're not Social Media Managers, but we do manage our online community too. This includes moderating our Community Slack, Twitter, Twitch and other social media accounts. We do build some content but this is only about an eighth of the whole team's weekly efforts. 
+
+In the future we hope to have an active Community Hub online, so keep your eyes peeled for this... 
 
 I hope this gives you a bit of a snapshot into what we do at the moment. As our community and activity grow, we will be able to introduce more initiatives. 
 
