@@ -1,10 +1,10 @@
 ---
-title: But what does a Community Manager actually do?
+title: A Week in the Life of a DevRel Community Manager
 description: "A short guide to what our community managers get up to in their
   role at Vonage. "
-thumbnail: /content/blog/but-what-does-a-community-manager-actually-do/community-manager_1200x600.png
+thumbnail: /content/blog/a-week-in-the-life-of-a-devrel-community-manager/community-manager_1200x600.png
 author: rachel-sunderland
-published: false
+published: true
 published_at: 2021-10-28T13:44:34.391Z
 updated_at: 2021-10-28T07:49:33.711Z
 category: community
@@ -32,7 +32,9 @@ If you organise any developer events, workshops or hackathons and you're interes
 
 **Organise Events**
 
-Alongside the events and programs that we sponsor, we also run events. This can be anything from internal hackathons to meet-ups with the community or online talks and workshops. We make sure all of the logistics associated with the event are sorted, so our developer advocates get more time to network and help attendees. 
+Alongside the events and programs that we sponsor, we also run events. This can be anything from internal hackathons to meet-ups with the community or online talks and workshops. 
+
+We make sure all of the logistics associated with the event are sorted, so our developer advocates get more time to network and help attendees. 
 
 **Talks, Workshops & Hackathons**
 
