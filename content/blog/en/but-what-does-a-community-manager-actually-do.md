@@ -66,5 +66,5 @@ In the future we hope to have an active Community Hub online, so keep your eyes 
 
 I hope this gives you a bit of a snapshot into what we do at the moment. As our community and activity grow, we will be able to introduce more initiatives. 
 
-**\
+**
 If this article has sparked your interest, and you want to join us, we're currently hiring a [Community Manager (EMEA)](https://www.google.com/search?q=community+manager+vonage&rlz=1C5GCEA_enGB968GB969&oq=community+manager+vonage&aqs=chrome.0.69i59j69i60l2j69i61.3845j1j7&sourceid=chrome&ie=UTF-8&ibp=htl;jobs&sa=X&ved=2ahUKEwig08GawOrzAhXmRUEAHcFTB2oQkd0GegQIDxAB#fpstate=tldetail&htivrt=jobs&htiq=community+manager+vonage&htidocid=DRuKt4IcBzkAAAAAAAAAAA%3D%3D). Interested in the role? Drop me an email and let's talk! rachel.sunderland@vonage.com**
