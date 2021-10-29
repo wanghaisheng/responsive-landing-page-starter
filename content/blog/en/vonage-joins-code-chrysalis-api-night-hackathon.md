@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Introduction
+## Introduction
 
 On the 14th of September, Vonage and [Code Chrysalis](https://www.codechrysalis.io/) teamed up for a special API Night Hackathon. The API Hackathon is designed to challenge the software engineering Bootcamp students to innovate and build brand new apps using Vonage APIs in only four days! 
 
@@ -31,7 +31,7 @@ The hackathon began on Tuesday with an amazing presentation from [Amanda Cavalla
 
 Later that day, the students decided on the applications they wanted to build, their features, designs, and colour schemes. They also formed teams and chose the roles they wanted to take on, such as Tech Lead, Front-end, and Back-end.
 
-# The Vonage API Challenge
+## The Vonage API Challenge
 
 Team: Subarashi
 
@@ -71,7 +71,7 @@ The [Application](https://vonage-hackathon.herokuapp.com) is available on Heroku
 
 ![People working on document in CollabSpace](https://lh5.googleusercontent.com/HXicdQVZ6h7rTvkug6ngMNavwTFrDB_W8cvTXeUy7oQgj2AVbI_yikPMg1QCVcnJYomcE8oJ5GuDNYO2_q2hFuxgEwFM-Y8p8C40cxCGgxm_2L4KhcKnLKM4zNi8av-EbynBO9nA=s0 "People working on document in CollabSpace")
 
-# Conclusion
+## Conclusion
 
 The event was a great success, and we are glad to have been able to support the API Hackathon hosted by Code Chrysalis. The students did fantastic work building a full-stack application and deploying it on the web in only four days with our Video API! We thoroughly enjoyed the time together, and we look forward to sharing our knowledge with the students and developer communities in the future to inspire, collaborate, and learn from one another. 
 
