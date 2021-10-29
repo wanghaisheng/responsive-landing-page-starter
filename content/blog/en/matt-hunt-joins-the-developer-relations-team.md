@@ -1,5 +1,5 @@
 ---
-title: Matt Hunt joins the Developer Relations Team
+title: Matt Hunt Joins the Developer Relations Team
 description: "Matt Hunt has joined the Developer Relations Team at Vonage as Sr
   .Net Developer Advocate and cannot wait to getting stuck in helping people "
 thumbnail: /content/blog/matt-hunt-joins-the-developer-relations-team/matt-hunt.png
