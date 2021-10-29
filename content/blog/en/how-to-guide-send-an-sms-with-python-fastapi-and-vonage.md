@@ -12,7 +12,7 @@ category: tutorial
 tags:
   - python
   - fastapi
-  - sms
+  - messages-api
 comments: false
 spotlight: false
 redirect: ""
