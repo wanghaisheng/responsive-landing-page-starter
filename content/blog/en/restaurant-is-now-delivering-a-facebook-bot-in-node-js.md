@@ -36,6 +36,15 @@ Before I get started with any coding task, I like to think out the logic. Let's 
 5. Send a message to the user based on the restaurant status
 6. Loop if the restaurant is offline
 
-
-
 ## Setup
+
+Let's begin will by creating our project. First w
+
+```
+mkdir isItDelivering
+cd isItDelivering
+npm init
+npm install @vonage/server-sdk@beta express dotenv got -s
+touch index.js .env
+
+```
