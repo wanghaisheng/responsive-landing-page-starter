@@ -133,10 +133,6 @@ We will now need to tell our Sandbox to listen to requests from our Application 
 
 ## Setup Complete, Let's Code!
 
-
-
-
-
 ## Setting Up an Express Server
 
 ### Build a Boilerplate Server with Dependencies
@@ -144,8 +140,6 @@ We will now need to tell our Sandbox to listen to requests from our Application 
 First, let's setup a boilerplate Express server that will import our required libraries and simply run on port 3000:
 
 ![Boilerplate Express Server](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-15.04.45.png "Boilerplate Express Server")
-
-
 
 ## Sending Basic Facebook Message
 
@@ -159,8 +153,6 @@ Next, we actually use that Vonage object to send out a POST request on our `/inb
 
 ![Basic Sandbox Messaging](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-10-31-at-17.38.05.png "Basic Sandbox Messaging")
 
-
-
 So now we just need to fire up our Express Server:
 
 `node index.js`
@@ -168,8 +160,6 @@ So now we just need to fire up our Express Server:
 And we can interact with our Facebook Bot! 
 
 \[enter screen recordign of basic Messaging]
-
-
 
 ## Receiving Restaurant Information From Wolt API
 
@@ -183,23 +173,15 @@ We can see that inside index zero, there is a property called `name` of type arr
 
 ![Get Restaurant Function](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-15.32.54.png "Get Restaurant Function")
 
-
-
 ## Check if the received restaurant is online
 
 Using the property `online` inside the `restaurant` instance, we want to create some logic will determine what message we send to the user. We can write the following function:
 
 ![Send Status Message Function](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-15.42.32.png "Send Status Message Function")
 
-
-
 The `sendStatusMessage` has abstracted our Vonage code into a function called `sendFacebookMessage` :
 
 ![sendFacebookMessage Function](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-10-31-at-18.45.01.png "sendFacebookMessage Function")
-
-
-
-
 
 ## Send a message to the user based on the restaurant status
 
@@ -207,15 +189,11 @@ And now combining our new functionality we can update our simple Sandbox Messagi
 
 ![Enhanced Sandbox Messaging](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-10-31-at-18.23.34.png "Enhanced Sandbox Messaging")
 
-
-
 ## Loop if the Restaurant is Offline
 
 Now that we've created the logic based on the restaurant's status, we want to continue to check that status until finally the restaurant comes back online. So we know we need a function like this, which check the status every minute:
 
 ![Generic Loop Function](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-15.50.28.png "Generic Loop Function")
-
-
 
 Now we know we need to create some sort of `RESTAURANT_IS_OFFLINE` global variable to store our restaurant information and we know we'll need to write a function called `theLoop` which will run our code every 60 seconds. 
 
@@ -225,16 +203,24 @@ So we'll add the global variable `RESTAURANT_IS_OFFLINE` with properties `status
 
 ![RESTAURANT_IS_OFFLINE Global Variable](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-15.52.08.png "RESTAURANT_IS_OFFLINE Global Variable")
 
-
-
 We'll now need to update our `sendStatusMessage`. The new function will continue to check a restaurant based on its delivery status. However it will now only send the offline status message if this is the first time its status is reported as offline.
 
-
-
 ![Enhanced sendStatusMessage Function](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-15.53.33.png "Enhanced sendStatusMessage Function")
-
-
 
 And now we can complete our `theLoop` function:
 
 ![theLoop Function](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-10-31-at-18.54.42.png "theLoop Function")
+
+
+
+And now we can run the program, seeing that when a restaurant is offline we receive a message notifying so, and when restaurants go online we are updated to the new status. I suggest trying the app in the morning and seeing as restaurants suddenly open for lunch. It's very fun to get the push notifications from Facebook Messenger arrive on your phone! 
+
+
+
+# What's Next
+
+* In this tutorial, we used the Facebook Messenger functionality of the Messages API but we could extend this application to provide omnichannel capabilities with WhatsApp and SMS. Imagine a very urgent use case (I have a particular bagel shop, on Saturday mornings in mind) that you would want to know immediately a status change, omnichannel alerts would be useful.
+* We could extend this code to make the alerts smarter based on delivery schedules, user proximity to restaurants, and more. We could also hold multiple jobs more intelligently.
+* We could take the app out of the Sandbox and connect it to a business Facebook Account.
+
+The final code for the tutorial can be found on GitHub.
