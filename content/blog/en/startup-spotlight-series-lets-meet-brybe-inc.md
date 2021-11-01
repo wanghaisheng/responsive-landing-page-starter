@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 The gig economy is rapidly growing with millions of specialists worldwide switching from traditional employment to freelancing or influencer careers. More than 2 million U.S. adults joined the freelance workforce since 2019 and last year, the income of freelancers increased 22% from 2019 to a stunning $1.2 trillion fueled in part by an influx of younger, highly-skilled professionals seeking flexible alternatives to traditional employment.
 
-As a result of the increased demand and supply of freelancers, the number of freelancing platforms is growing too. A freelance marketplace is a two-sided platform where companies can find and hire individual specialists for specific jobs, and, in turn, freelance specialists can apply for positions if their skills match requirements. 
+As a result of the increased demand and supply of freelancers, the number of freelancing marketplaces is growing too. A freelance marketplace is a two-sided platform where companies can find and hire individual specialists for specific jobs, and, in turn, freelance specialists can apply for positions if their skills match requirements. 
 
 [Brybe, Inc.](http://brybe.com/) is one of these platforms leading this paradigm shift. This week we caught up with [Igor Fedenkoff](https://www.linkedin.com/in/igorfedenkoff) the Co-Founder and CEO of Brybe and we learned more about their exciting story and plans for the future. Enjoy!
 
