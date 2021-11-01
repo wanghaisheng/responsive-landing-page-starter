@@ -72,7 +72,7 @@ The Pandemic brought new changes to the online community, when not only the work
 
 The Vision and the approach that we take are user-centered and aimed at automating and simplifying the processes that today are associated with many additional steps and redundant details. Marketing campaigns are cumbersome and expensive.
 
- Hiring is not only tough in the human factor sense, but involves limitless bureaucracy and time consuming processes. There are numerous solutions on the market, but they are either offering services to niche groups, or focus on charging huge fees, having an agency approach and basically offering to outsource the HR or Marketing departments. 
+Hiring is not only tough in the human factor sense, but involves limitless bureaucracy and time consuming processes. There are numerous solutions on the market, but they are either offering services to niche groups, or focus on charging huge fees, having an agency approach and basically offering to outsource the HR or Marketing departments. 
 
 There are very few that are relatively successfully pursuing the true marketplace concept by facilitating the deals, not making them, and by providing solutions that streamline hiring, information and asset exchanges, and payment processing. 
 
