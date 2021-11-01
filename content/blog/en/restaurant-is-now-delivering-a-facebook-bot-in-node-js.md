@@ -196,9 +196,9 @@ Next, we actually use that Vonage object to send out a POST request on our `/inb
 
 ```javascript
 // Basic Sandbox Messaging
-app.post('inbound', (req, res) => {
+app.post('/inbound', (req, res) => {
   vonage.channel.send(
-    req.body.from
+    req.body.from,
     req.body.to,
     {
       content: {
@@ -223,7 +223,7 @@ app.post('/status', (req, res) => {
 
 ```
 
-So now we just need to fire up our Express Server:
+So now in a second terminal window, separate from our ngrok server, we just need to fire up our Express Server:
 
 ```javascript
 $ node index.js
@@ -249,7 +249,7 @@ const getRestaurant = async (reqRestaurant) => {
   const response = await got.get(`https://restaurant-api.wolt.com/v3/venues/slug/${reqRestaurant}`)
       .json();
   return response.results[0];
-}}
+}
 
 ```
 
@@ -260,7 +260,7 @@ Using the property `online` inside the `restaurant` instance, we want to create 
 ```javascript
 const sendStatusMessage = (restaurant, req, rest) => {
   if (restaurant.online) {
-    sendFacebookMessage(`Hey, $restaurant.name[0].value} is now accepting orders!!`, req, res);
+    sendFacebookMessage(`Hey, ${restaurant.name[0].value} is now accepting orders!!`, req, res);
   } else {
       sendFacebookMessage(`Sorry, ${restaurant.name[0].value} is currently offline. I'll ping you when it's open again!`, req, res);
     }
@@ -271,7 +271,7 @@ const sendStatusMessage = (restaurant, req, rest) => {
 The `sendStatusMessage` function has abstracted our Vonage code into a function called `sendFacebookMessage` :
 
 ```javascript
-const sendFacebookMEssage = async (text, req, res) => {
+const sendFacebookMessage = async (text, req, res) => {
   vonage.channel.send(
     req.body.from,
     req.body.to,
@@ -433,6 +433,105 @@ app.post('/inbound', async (req, res) => {
 });
 ```
 
+Our final `index.js` file will look like this:
+
+```javascript
+require('dotenv').config();
+const Vonage = require('@vonage/server-sdk');
+const got = require('got');
+
+
+const express = require('express');
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+const TIMEOUT = 600000;
+
+let intervalId;
+let shouldPing = true;
+let CURRENT_RESTAURANT = {};
+
+const vonage = new Vonage(
+  {
+    apiKey: process.env.API_KEY,
+    apiSecret: process.env.API_SECRET,
+    applicationId: process.env.APP_ID,
+    privateKey: './private.key'
+  },
+  { apiHost: 'https://messages-sandbox.nexmo.com/'}
+ );
+
+// store current search status
+const setNewCurrentRestaurant = (restaurant) => {
+		CURRENT_RESTAURANT =  {
+			name: restaurant.name[0].value, 
+			isOnline: restaurant.online,  
+		};
+}
+
+const getRestaurant = async (reqRestaurant) => {
+	const response = await got.get(`https://restaurant-api.wolt.com/v3/venues/slug/${reqRestaurant}`)
+		.json();
+	return response.results[0];
+}
+
+const sendFacebookMessage = async (text, req, res) => {
+	vonage.channel.send(
+		req.body.from,
+		req.body.to,
+		{
+			content: {
+				type: 'text',
+				text: text,
+			},
+		},
+		(err, data) => {
+			if (err) {
+				console.error(err);
+			} else {
+				console.log(data.message_uuid);
+			}
+		}
+	);
+}
+
+
+const sendStatusMessage = (req) => {
+	if (CURRENT_RESTAURANT.isOnline) {
+		sendFacebookMessage(`Hey, ${CURRENT_RESTAURANT.name} is now accepting orders!!`, req);
+	} else if (shouldPing) {
+		sendFacebookMessage(`Sorry, ${CURRENT_RESTAURANT.name} is currently offline. I'll ping you when it's open again!`, req);
+		shouldPing = false;
+	}
+}
+
+
+const theLoop = async (req) => {
+	const restaurant = await getRestaurant(CURRENT_RESTAURANT.name);
+	setNewCurrentRestaurant(restaurant);
+	sendStatusMessage(req);
+	if (CURRENT_RESTAURANT.isOnline) {
+		clearInterval(intervalId);
+		intervalId = null;
+	}
+}
+
+app.post('/inbound', async (req, res) => {
+	const requestedRestaurant = req.params.name;
+	const restaurant = await getRestaurant(requestedRestaurant);
+	setNewCurrentRestaurant(restaurant);
+	shouldPing = true;
+	sendStatusMessage(req);
+	if (!intervalId) {
+		intervalId = setInterval(await theLoop(req), TIMEOUT);
+	}
+	res.send('ok');
+});
+
+app.listen(3000);
+
+```
 # What's Next
 
 -   In this tutorial, we used the Facebook Messenger functionality of the Messages API but we could extend this application to provide omnichannel capabilities with WhatsApp and SMS. Imagine a very urgent use case (I have a particular bagel shop, on Saturday mornings in mind) that you would want to know immediately a status change, omnichannel alerts would be useful.
