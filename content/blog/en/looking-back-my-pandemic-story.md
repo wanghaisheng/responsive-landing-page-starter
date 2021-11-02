@@ -25,13 +25,25 @@ It was around my birthday - March 2020 - when things started shutting down. We'd
 
 I didn't know how long we would be closed if anything would be open again soon, or what all I really needed. So I stocked up on the basics - flour, sugar, water, paper products, and so on.  
 
+![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-1.jpg)
+
+![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-2.jpg) 
+
+![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-3.jpg)
+
 [Indiana](https://www.wfyi.org/news/articles/reflections-a-timeline-of-the-covid-19-pandemic-in-indiana) stayed closed for about 6 weeks before starting to "reopen" already. Although we were reopening, there were many restrictions placed on who could go out and when.
 
 Schools, however, didn't see it that way and closed for the remainder of the year without much warning. My kids were now unable to attend school.   I have six kids, and in 2020 they were in 12th, 5th, 3rd, 1st, PreK, and a 3yo. This was probably the hardest thing I had to watch, as I was utterly helpless.  My kids miss their friends and typically enjoy school. Seeing this pain for them was one we couldn't relieve - it just was. It hurt. 
 
+![My son just wanted to see his friends](/content/blog/looking-back-my-pandemic-story/finn.jpg)
+
 My senior was hit the hardest - missing out on so many Senior traditions like prom and last concerts. Graduation alone went from a significant indoor activity to an outdoor limited attendance event that was certainly less than expected before the closures. 
 
+![Clay High School Graduation - 2020](/content/blog/looking-back-my-pandemic-story/graduation.jpg)
+
 The younger children's schools closed but tried very hard to do some sort of virtual learning.  It was clear that the schools were unprepared for such an event (as we all really were) because the assignments were updated daily and were by grades.  The first few weeks were sort of fun - we spent time working on projects, doing fun crafts around the house, and staying huddled in together. I even took them out kite flying in a field.  It felt strange to even leave the house. 
+
+![Kite flying](/content/blog/looking-back-my-pandemic-story/kites-1.jpg)
 
 Too much together can start to create problems, though. As summer rolled around and the lock-down continued, stress really started to take its toll. By this time, the kids were on summer break. However, even playing outside was stressful, as neighbors were also stressed and were sure to let me know that my kids were not welcome. This ended up leaving my kids in the house, with little to do, all summer long. 
 
@@ -45,13 +57,12 @@ Once the kids went back to school, I had time during the day for calls and devel
 
 The school year started smooth, but the truth was that even with the precautions, schools just were not a place for kids to avoid getting sick.  The 2020-2021 school year was possibly the most demanding year any of us will deal with. The kids were constantly switching between in-person and virtual, making for a very unpredictable year. 
 
+![Our annual Christmas ornament](/content/blog/looking-back-my-pandemic-story/ornament.jpg)
+
 I think the hardest thing to deal with for all of us was the multitude of changes with the schedule. Kids were in school, then out, then back in - multiple times. Trying to balance the schedules, changes, assignments. At this point, we were not only parents but also teachers as well. To be honest, this was one of the most challenging years I can recall. It was honestly too much for all of us to deal with. 
 
 Once the 20/21 school year ended, the summer saw a much-needed escape to our closest amusement park, [Kentucky Kingdom](https://www.kentuckykingdom.com/). Being able to get outside and enjoy time together made all the difference in the world. We all had something we could look forward to doing again. 
 
 Working through the pandemic with all of the kids at home trying to do school and their needs was nothing short of brutal. We've all been on an emotional rollercoaster since the beginning of the pandemic. My kids are all in school full time now, and work can resume as usual. 
 
-We've all grown considerably - my family has put up with many changes and come out the other side more resilient. Working from home with a full house and online school is a difficult task for anyone. I've learned to enjoy the quiet, but also to embrace the chaos. 
-
-
-
+We've all grown considerably - my family has put up with many changes and come out the other side more resilient. Working from home with a full house and online school is a difficult task for anyone. I've learned to enjoy the quiet, but also to embrace the chaos.
