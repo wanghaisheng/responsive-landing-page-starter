@@ -1,12 +1,10 @@
 ---
 title: "Looking Back: My Pandemic Story"
-description: One thing we can all say, the last year and a half have brought
-  changes none of us have anticipated. A global pandemic is something I've
-  certainly never experienced, let alone my family. While we adjusted to what
-  may be the new normal, I think taking the time to reflect on what's actually
-  happened in my own family is important.
+description: The last year and a half have brought changes none of us have
+  anticipated. Taking time to reflect on what's actually happened in my own
+  family is important.
 author: kellyjandrews
-published: false
+published: true
 published_at: 2021-11-02T17:13:39.797Z
 updated_at: 2021-11-02T17:13:39.862Z
 category: devlife
@@ -25,17 +23,9 @@ It was around my birthday - March 2020 - when things started shutting down. We'd
 
 I didn't know how long we would be closed if anything would be open again soon, or what all I really needed. So I stocked up on the basics - flour, sugar, water, paper products, and so on.  
 
-<span style="float:left; padding-right:10px">
-
 ![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-1.jpg)
 
-</span>
-
-<span style="float:left; padding-right:10px">
-
 ![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-2.jpg) 
-
-</span>
 
 ![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-3.jpg)
 
