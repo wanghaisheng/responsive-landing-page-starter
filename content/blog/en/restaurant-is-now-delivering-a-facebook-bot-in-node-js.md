@@ -506,7 +506,7 @@ const theLoop = async (req) => {
 }
 
 app.post('/inbound', async (req, res) => {
-	const requestedRestaurant = req.params.name;
+	const requestedRestaurant = await req.body.message.content.text.split('/').pop();
 	const restaurant = await getRestaurant(requestedRestaurant);
 	setNewCurrentRestaurant(restaurant);
 	shouldPing = true;
