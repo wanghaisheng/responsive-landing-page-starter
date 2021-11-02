@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 ## Introduction
 
-Often times when I'm coding I get hungry. And everyone knows the best developers are lazy so instead of shopping and cooking and cleaning, instead I often use a food delivery app and just order a tasty meal. The problem is that too often my favorite restaurants are offline. Sometimes they are closed for business or other times they are too busy and stopped accepting online orders. So I'm forced to wait, and remember to check if they're back online, and then actually open the app and look to see if they're back online. And sometimes check again, and again, and again. It's truly a grave injustice 😆.
+Often times when I'm coding I get hungry. And everyone knows the best developers are lazy so instead of shopping and cooking and cleaning, I often simply use a food delivery app and just order a tasty meal. The problem is that too often my favorite restaurants are offline. Sometimes they are closed for business or other times they are too busy and stopped accepting online orders. So I'm forced to wait, and remember to check if they're back online, and then actually open the app and look to see if they're back online. And sometimes check again, and again, and again. It's truly a grave injustice 😆.
 
 There's got to be a better, smarter way! Thankfully [I recently discovered my favorite food delivery app, Wolt, has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that let's me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
 
@@ -34,7 +34,7 @@ Before I get started with any coding task, I like to think out the logic. Let's 
 3.  Call the Wolt API for a requested restaurant
 4.  Check if the received restaurant is online
 5.  Send a message to the user based on the restaurant status
-6.  Loop if the restaurant is offline
+6.  If the restaurant is offline continue checking
 
 ## Setup our Project
 
@@ -91,9 +91,9 @@ As you can see our Vonage Application allows us to turn on/off various capabilit
 
 There are several ways to make our local development server externally accessible, but one of the simplest ways is with ngrok. You can read [this article](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) for a more detailed explanation of how ngrok works.
 
-However, for our purposes, we just need to get it running and copy the URL that it provides us.
+For our purposes, we just need to get it running and copy the URL that it provides us.
 
-In order to start ngrok, open up a new terminal window and execute the following from the command line:
+After having ngrok installed on your machine, we'll need to start it. In order to start ngrok, open up a new terminal window and execute the following from the command line:
 
 ```javascript
 $ ngrok http 3000
@@ -255,7 +255,7 @@ const getRestaurant = async (reqRestaurant) => {
 
 ## Check if the received restaurant is online
 
-Using the property `online` inside the `restaurant` instance, we want to create some logic that will determine what message we send to the user. We can write the following function:
+Using the property `online` inside the `restaurant` object, we want to create some logic that will determine what message we send to the user. We can write the following function:
 
 ```javascript
 const sendStatusMessage = (restaurant, req, rest) => {
