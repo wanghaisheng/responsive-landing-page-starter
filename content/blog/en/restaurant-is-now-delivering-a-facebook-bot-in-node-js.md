@@ -23,7 +23,7 @@ replacement_url: ""
 
 Often times when I'm coding I get hungry. And everyone knows the best developers are lazy so instead of shopping and cooking and cleaning, I often simply use a food delivery app and just order a tasty meal. The problem is that too often my favorite restaurants are offline. Sometimes they are closed for business or other times they are too busy and stopped accepting online orders. So I'm forced to wait, and remember to check if they're back online, and then actually open the app and look to see if they're back online. And sometimes check again, and again, and again. It's truly a grave injustice 😆.
 
-There's got to be a better, smarter way! Thankfully [I recently discovered my favorite food delivery app, Wolt, has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that let's me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
+There's got to be a better, smarter way! Thankfully [I recently discovered my favorite food delivery app, Wolt, has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that lets me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
 
 *(This example is built around a use case of food delivery but the same code can be repurposed to build a Facebook Bot that will alert users for any boolean case change.)*
 
@@ -33,11 +33,7 @@ This app requires the following:
 
 * [Node.js](https://nodejs.org/en/)
 
-<sign-up></sign-up> 
-
-
-
-
+<sign-up></sign-up>
 
 ## Pseudo Code:
 
