@@ -25,9 +25,17 @@ It was around my birthday - March 2020 - when things started shutting down. We'd
 
 I didn't know how long we would be closed if anything would be open again soon, or what all I really needed. So I stocked up on the basics - flour, sugar, water, paper products, and so on.  
 
+<span style="float:left; padding-right:10px">
+
 ![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-1.jpg)
 
+</span>
+
+<span style="float:left; padding-right:10px">
+
 ![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-2.jpg) 
+
+</span>
 
 ![Empty Costco Shelves](/content/blog/looking-back-my-pandemic-story/shelves-3.jpg)
 
