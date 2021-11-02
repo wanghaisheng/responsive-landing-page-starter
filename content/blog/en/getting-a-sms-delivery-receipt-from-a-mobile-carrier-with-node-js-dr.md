@@ -41,7 +41,7 @@ Now, every time you send a message from your virtual number, the delivery receip
 
 ## Handling a WebHook with Express
 
-The code is similar to the example in [the last article](https://learn.vonage.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr/), except the HTTP route. For DLR, use `/receipt` or whatever the callback URL you have specified in the previos step in *Settings*.
+The code is similar to the example in [the last article](https://learn.vonage.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr/), except for the HTTP route. For DLR, use `/receipt` or whatever the callback URL you have specified in the previous step in *Settings*.
 
 ```javascript
 const server = app.listen(5000);
