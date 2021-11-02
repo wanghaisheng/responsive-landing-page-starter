@@ -1,6 +1,8 @@
 ---
 title: "Restaurant Is Now Delivering: a Facebook Bot in Node.js"
-description: This tutorial is about the blah blah blah
+description: "This javascript tutorial shows how to code a facebook bot which
+  tells a user whether a restaurant is currently delivering. Using Vonage API
+  and Node.js. "
 author: benjamin-aronov
 published: true
 published_at: 2021-10-13T16:57:51.724Z
@@ -24,6 +26,18 @@ Often times when I'm coding I get hungry. And everyone knows the best developers
 There's got to be a better, smarter way! Thankfully [I recently discovered my favorite food delivery app, Wolt, has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that let's me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
 
 *(This example is built around a use case of food delivery but the same code can be repurposed to build a Facebook Bot that will alert users for any boolean case change.)*
+
+## Prerequisites
+
+This app requires the following:
+
+* [Node.js](https://nodejs.org/en/)
+
+<sign-up></sign-up> 
+
+
+
+
 
 ## Pseudo Code:
 
@@ -226,7 +240,7 @@ $ node index.js
 
 And we can interact with our Facebook Bot!
 
-\[enter screen recordign of basic Messaging]
+![Basic Facebook SandBox Message](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/ezgif.com-gif-maker-8-.gif "Basic Facebook SandBox Message")
 
 ## Receiving Restaurant Information From Wolt API
 
