@@ -311,7 +311,7 @@ app.post('/inbound', async(req, res) => {
 
 ## Loop if the Restaurant is Offline
 
-Now that we've created the logic based on the restaurant's status, we want to continue to check that status until finally, the restaurant comes back online. So we know we need a function like this, which check the status every minute:
+Now that we've created the logic based on the restaurant's status, we want to continue checking that status until the restaurant finally comes back online. So we know we need a function like this, which check the status every minute:
 
 ```javascript
 while(RESTAURANT_IS_OFFLINE.status){
