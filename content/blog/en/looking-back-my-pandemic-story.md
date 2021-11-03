@@ -3,6 +3,7 @@ title: "Looking Back: My Pandemic Story"
 description: The last year and a half have brought changes none of us have
   anticipated. Taking time to reflect on what's actually happened in my own
   family is important.
+thumbnail: /content/blog/looking-back-my-pandemic-story/coding-at-home_1200x600.png
 author: kellyjandrews
 published: true
 published_at: 2021-11-02T17:13:39.797Z
