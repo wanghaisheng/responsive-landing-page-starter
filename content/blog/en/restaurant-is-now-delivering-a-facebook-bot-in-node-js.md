@@ -536,6 +536,6 @@ app.listen(3000);
 * We could extend this code to make the alerts smarter based on delivery schedules, user proximity to restaurants, and more. We could also hold multiple jobs.
 * We could take the app out of the Sandbox and connect it to a business Facebook Account.
 
-The final code for the tutorial can be found on GitHub.\
+The final code for the tutorial can be found on GitHub.
 \
 I would love to hear what you built using the Vonage Messages API! Please join the conversation on our [Community Slack](https://developer.nexmo.com/community/slack) and share your story!
