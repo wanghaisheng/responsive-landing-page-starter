@@ -532,7 +532,7 @@ app.listen(3000);
 
 # What's Next
 
-* In this tutorial, we used the Facebook Messenger functionality of the Messages API but we could extend this application to provide omnichannel capabilities with WhatsApp and SMS. Imagine a very urgent use case (I have a particular bagel shop, on Saturday mornings in mind) that you would want to know immediately a status change, omnichannel alerts would be useful.
+* In this tutorial, we used the Facebook Messenger functionality of the Messages API, but we could extend this application to provide omnichannel capabilities with WhatsApp and SMS. Imagine a very urgent use case (I have a particular bagel shop on Saturday mornings in mind) that you would want to be immediately notified about a status change, omnichannel alerts would be useful.
 * We could extend this code to make the alerts smarter based on delivery schedules, user proximity to restaurants, and more. We could also hold multiple jobs.
 * We could take the app out of the Sandbox and connect it to a business Facebook Account.
 
