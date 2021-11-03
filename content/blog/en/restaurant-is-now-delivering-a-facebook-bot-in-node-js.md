@@ -35,7 +35,7 @@ This app requires the following:
 
 <sign-up></sign-up>
 
-## Pseudo Code:
+## Pseudocode:
 
 Before I get started with any coding task, I like to think out the logic. Let's breakdown the steps needed to build this app:
 
