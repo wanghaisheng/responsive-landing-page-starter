@@ -10,7 +10,7 @@ published_at: 2021-11-03T13:18:37.389Z
 updated_at: 2021-11-02T17:13:39.862Z
 category: devlife
 tags:
-  - "#devlife"
+  - devlife
 comments: false
 spotlight: false
 redirect: ""
