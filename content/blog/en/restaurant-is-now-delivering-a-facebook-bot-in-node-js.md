@@ -228,7 +228,7 @@ app.post('/status', (req, res) => {
 });
 ```
 
-So now in a second terminal window, separate from our ngrok server, we just need to fire up our Express Server:
+So now in a second terminal window, separate from our ngrok server, we need to fire up our Express Server:
 
 ```javascript
 $ node index.js
