@@ -6,7 +6,7 @@ description: The last year and a half have brought changes none of us have
 thumbnail: /content/blog/looking-back-my-pandemic-story/coding-at-home_1200x600.png
 author: kellyjandrews
 published: true
-published_at: 2021-11-02T17:13:39.797Z
+published_at: 2021-11-03T13:18:37.389Z
 updated_at: 2021-11-02T17:13:39.862Z
 category: devlife
 tags:
