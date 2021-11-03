@@ -88,7 +88,7 @@ To set up our server, we're going to need some information from the [Vonage Deve
 
 This will automatically generate a key for authentication which we will use later. Move the generated key into the root of your local project.  
 
-At this point, your project should contain your index file, node modules, package.json, and your ENV file. IF you run the command `ls` your project should look like this:
+At this point, your project should contain your index file, node modules, package.json, and your ENV file. If you run the command `ls`, your project should look like this:
 
 ![Project Should Include index.js, node_modules, pack.json, private.key](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-14.35.44.png "Project Should Include index.js, node_modules, pack.json, private.key")
 
