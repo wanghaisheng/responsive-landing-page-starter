@@ -1,6 +1,6 @@
 ---
 title: Deploying an AWS Lambda Function for Vonage Voice Callbacks With PHP
-description: Highlight how to deploy PHP application containing Nexmo Voice
+description: Highlight how to deploy PHP application containing Vonage Voice
   callback to a AWS Lambda function that transcribes speech to text with
   Serverless framework.
 thumbnail: /content/blog/deploying-an-aws-lambda-function-for-nexmo-voice-callbacks-with-php-dr/E_Vonage-Voice-Callbacks_1200x600.png
@@ -30,7 +30,7 @@ In this example the following are needed:
 * PHP installed locally (version 7.3 preferred)
 * [Composer installed globally](https://getcomposer.org/doc/00-intro.md#globally)
 * A local clone of the [nexmo-community/voice-aws-speechtotext-php](https://github.com/nexmo-community/voice-aws-speechtotext-php) repo on Github
-* [Nexmo CLI tool](https://github.com/Nexmo/nexmo-cli)
+* [Vonage CLI tool](https://github.com/Vonage/vonage-cli)
 * [AWS account](https://aws.amazon.com/)
 * [Serverless Framework](https://serverless.com/framework/docs/getting-started/) installed globally. (more on this later)
 
@@ -181,7 +181,7 @@ After deployment, you receive the URL needed to access the application via the A
 
 Unfortunately, in the case of deploying AWS Lambda applications, you did not know the URL until after deployment. However, you still need to create the Application at Nexmo to gain the `NEXMO_APPLICATION_PRIVATE_KEY_PATH` and `NEXMO_APPLICATION_ID` for the application to function.
 
-Using the Nexmo CLI, installed as a prerequisite, enter the following command:
+Using the Vonage CLI, installed as a prerequisite, enter the following command:
 
 ```bash
 nexmo app:create <name> <answer_url>/webhooks/answer <event_url>/webhooks/event
