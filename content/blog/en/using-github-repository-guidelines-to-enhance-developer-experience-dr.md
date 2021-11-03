@@ -7,7 +7,7 @@ author: lornajane
 published: true
 published_at: 2020-01-17T13:08:45.000Z
 updated_at: 2021-04-27T19:52:02.530Z
-category: devlife
+category: inspiration
 tags:
   - github
 comments: true
