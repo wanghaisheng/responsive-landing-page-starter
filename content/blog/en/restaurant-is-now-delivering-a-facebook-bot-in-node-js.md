@@ -363,7 +363,7 @@ And now we can run the program, seeing that when a restaurant is offline we rece
 
 ## Some Code Clean Up
 
-Although the code above works, it will act erratically. This is because the intervalID which is returned from setInterval() is never cleared. ([Read more here](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)) We can do a few things to clean up our code. And we'll create the code which will also allow us to keep track of multiple requests and implement jobs in the future.
+Although the code above works, it will act erratically. This is because the `intervalID` which is returned from `setInterval()` is never cleared. ([Read more here](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)) We can do a few things to clean up our code. And we'll create the code which will also allow us to keep track of multiple requests and implement jobs in the future.
 
 First, let's modify our `RESTAURANT_IS_OFFLINE` global variable. We've been keeping track of quite a few pieces of information; the current requested restaurant's name, its online status, and whether we should ping the user. Additionally, we'll now keep track of our `intervalId`. To make our code easier to adjust, say we want to check every 30 seconds, we'll move our timeout limit into its own variable as well. So we can decouple our `RESTAURANT_IS_OFFLINE` variable into:
 
