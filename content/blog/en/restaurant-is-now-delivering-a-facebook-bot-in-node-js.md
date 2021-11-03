@@ -52,31 +52,31 @@ Before I get started with any coding task, I like to think out the logic. Let's 
 
 Let's begin will by creating our project:
 
-```javascript
+```bash
 $ mkdir isItDelivering
 ```
 
 Then move inside the project directory:
 
-```javascript
+```bash
 $ cd isItDelivering
 ```
 
 Initialize the node project:
 
-```javascript
+```bash
 $ npm init
 ```
 
 Install our required Node packages:
 
-```javascript
+```bash
 $ npm install @vonage/server-sdk@beta express dotenv got -s
 ```
 
 And finally create the files where our code will live:
 
-```javascript
+```bash
 $ touch index.js .env
 ```
 
@@ -114,7 +114,7 @@ Now in our Vonage Dashboard we will add our ngrok URLs and add the appropriate U
 
 ![Webook URLs](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-14.40.42.png "Webhook URLs")
 
-## Get Connected with Vonage
+## Get Connected With Vonage
 
 ### Connect Your Vonage Account
 
@@ -136,7 +136,7 @@ API_SECRET="XXXXXXXXX"
 APP_ID="XXXXXXXXX"
 ```
 
-## Getting Started with Messages API Sandbox
+## Getting Started With Messages API Sandbox
 
 ### Adding Users to Your Sandbox
 
@@ -154,9 +154,9 @@ We will now need to tell our Sandbox to listen to requests from our Application 
 
 Once we hit the `Save webhooks` button, we're now complete with our setup and we can start to code!
 
-## Setting Up an Express Server
+## Setting up an Express Server
 
-### Build a Boilerplate Server with Dependencies
+### Build a Boilerplate Server With Dependencies
 
 First, let's set up a boilerplate Express server that will import our required libraries and simply run on port 3000:
 
@@ -240,7 +240,7 @@ And we can interact with our Facebook Bot!
 
 ## Receiving Restaurant Information From Wolt API
 
-### Making HTTP Request
+### Making the HTTP Request
 
 Using the `https://restaurant-api.wolt.com/v3/venues/slug/{restaurant}` endpoint, we know that we can receive all kinds of information about the restaurant. The returned JSON looks like this:
 
@@ -257,7 +257,7 @@ const getRestaurant = async (reqRestaurant) => {
 }
 ```
 
-## Check if the received restaurant is online
+## Check if the Received Restaurant Is Online
 
 Using the property `online` inside the `restaurant` object, we want to create some logic that will determine what message we send to the user. We can write the following function:
 
@@ -295,7 +295,7 @@ const sendFacebookMessage = async (text, req, res) => {
  }
 ```
 
-## Send a message to the user based on the restaurant status
+## Send a Message to the User Based on the Restaurant Status
 
 And now combining our new functionality we can update our simple Sandbox Messaging to tell the user whether the requested restaurant is online or not.
 
@@ -309,7 +309,7 @@ app.post('/inbound', async(req, res) => {
 });
 ```
 
-## Loop if the Restaurant is Offline
+## Loop if the Restaurant Is Offline
 
 Now that we've created the logic based on the restaurant's status, we want to continue checking that status until the restaurant finally comes back online. So we know we need a function like this, which check the status every minute:
 
