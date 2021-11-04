@@ -15,7 +15,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-I love teaching people how to program. I even wrote a book called The Self-Taught Programmer to help people learn how to code. It would be fair, then, to assume I want everyone to work as a software engineer. While I do encourage most people to learn to program, there are other career paths that involve coding other than software engineering more people should consider. 
+I love teaching people how to program. I even wrote a book called The Self-Taught Programmer to help people learn how to code. It would be fair, then, to assume I want everyone to work as a software engineer. While I  encourage most people to learn to program, there are other career paths involving coding other than software engineering more people should consider. 
 
 This article will tell you about one of those paths: working as a developer relations engineer. A developer relations engineer, or developer advocate, spreads awareness about a company’s product to programmers and other technical decision-makers and makes sure developers have a fantastic experience using them.  
 
@@ -29,7 +29,7 @@ One of the best parts about developer relations is how many different paths ther
 
 Let me tell you how I got into developer relations and share a few stories from my teammates. 
 
-After working as a software engineer, I wrote The Self-Taught Programmer and started a Facebook group called [Self-Taught Programmers](https://www.facebook.com/groups/selftaughtprogrammers/). So when it came time to look for a job again after writing my second book, I decided to get into developer relations so I could program professionally but not give up all the other things I love, like writing and public speaking.
+After working as a software engineer, I wrote The Self-Taught Programmer and started a Facebook group called [Self-Taught Programmers](https://www.facebook.com/groups/selftaughtprogrammers/). So when it came time to look for a job again after writing my second book, I decided to get into developer relations to program professionally without giving up all the other things I love, like writing and public speaking.
 
 My teammate and fellow developer advocate Tonya Sims made the transition from basketball to programming to developer relations. Tonya was a hall of fame college basketball player and even got to play in the WNBA. While teaching herself to code, she became an active member of the Python community, which helped inspire her to get into devrel. 
 
