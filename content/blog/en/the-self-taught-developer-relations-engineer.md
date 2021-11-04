@@ -21,7 +21,7 @@ This article will tell you about one of those paths: working as a developer rela
 
 I started my career as a software engineer, but I am now working as a developer advocate. I love working in developer relations because it includes all my interests: programming, business, and marketing. 
 
-## The Path to DevRel 
+## The Path to DevRel
 
 ![Vonage devrel team](/content/blog/the-self-taught-developer-relations-engineer/screen-shot-2021-11-04-at-11.10.11-am.png)
 
@@ -61,7 +61,7 @@ Working in developer relations can be a great way to advance your career because
 
 A successful developer advocate will be educated in programming, marketing, business, and public speaking: a fantastic combination of valuable skills in today’s economy. 
 
-Developer relations is still a relatively new field. Still, with its becoming popular, we should see more people in leadership positions at different tech companies coming from developer relations because of the unique skills developer advocates possess. 
+Developer relations is a relatively new field. Still, with its becoming popular, we should see more people in leadership positions at different tech companies coming from developer relations because of the unique skills developer advocates possess. 
 
 ## Final Thoughts
 
