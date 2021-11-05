@@ -16,7 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-I love teaching people how to program. I even wrote a book called The Self-Taught Programmer to help people learn how to code. It would be fair, then, to assume I want everyone to work as a software engineer. While I  encourage most people to learn to program, there are other career paths involving coding other than software engineering more people should consider. 
+I love teaching people how to program. I even wrote a book called *The Self-Taught Programmer* to help people learn how to code. It would be fair, then, to assume I want everyone to work as a software engineer. While I  encourage most people to learn to program, there are other career paths involving coding other than software engineering more people should consider. 
 
 This article will tell you about one of those paths: working as a developer relations engineer. A developer relations engineer, or developer advocate, spreads awareness about a company’s product to programmers and other technical decision-makers and makes sure developers have a fantastic experience using them.  
 
@@ -30,9 +30,9 @@ One of the best parts about developer relations is how many different paths ther
 
 Let me tell you how I got into developer relations and share a few stories from my teammates. 
 
-After working as a software engineer, I wrote The Self-Taught Programmer and started a Facebook group called [Self-Taught Programmers](https://www.facebook.com/groups/selftaughtprogrammers/). So when it came time to look for a job again after writing my second book, I decided to get into developer relations to program professionally without giving up all the other things I love, like writing and public speaking.
+After working as a software engineer, I wrote *The Self-Taught Programmer* and started a Facebook group called [Self-Taught Programmers](https://www.facebook.com/groups/selftaughtprogrammers/). So when it came time to look for a job again after writing my second book, I decided to get into developer relations to program professionally without giving up all the other things I love, like writing and public speaking.
 
-My teammate and fellow developer advocate [Tonya Sims](https://twitter.com/tonyasims) made the transition from basketball to programming to developer relations. Tonya was a hall of fame college basketball player and even got to play in the WNBA. While teaching herself to code, she became an active member of the Python community, which helped inspire her to get into devrel. 
+My teammate and fellow developer advocate [Tonya Sims](https://twitter.com/tonyasims) made the transition from basketball to programming to developer relations. Tonya was a hall of fame college basketball player and played in the WNBA. While teaching herself to code, she became an active member of the Python community, which helped inspire her to get into devrel. 
 
 [Amanda Cavallaro](https://amandacavallaro.com/) joined our team after working as a software engineer for six years. Amanda is one of the founders of GDG Cloud London: one of the biggest and most active GDG Cloud chapters in the world! Amanda loves connecting people, so she decided to get into developer relations after a successful career as a software engineer. 
 
@@ -76,6 +76,8 @@ If you have any questions about working in devrel, please [reach out to us on Tw
 
 Feel free to [connect with me on Twitter](https://twitter.com/coryalthoff) as well. 
 
-Lastly, check out our developer relations openings [on our career page](https://www.vonage.com/careers/); we have several open positions. 
+Lastly, check out our developer relations openings at Vonage.
+
+We are currently looking for an [Android developer advocate](https://boards.greenhouse.io/vonage/jobs/5429611002?gh_src=996671b92us), a [Java developer advocate](https://grnh.se/34fb4eff2us), and a [community manager](https://grnh.se/2363ff312us), and a few other positions on our devrel team! 
 
 Best of luck!
