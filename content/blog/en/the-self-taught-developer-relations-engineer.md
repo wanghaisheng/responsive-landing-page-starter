@@ -1,9 +1,10 @@
 ---
 title: The Self-Taught Developer Relations Engineer
 description: "Everything you need to know about starting a career in developer relations. "
+thumbnail: /content/blog/the-self-taught-developer-relations-engineer/how-to_devrel-1.png
 author: cory-althoff
 published: true
-published_at: 2021-11-04T17:45:09.468Z
+published_at: 2021-11-05T11:58:43.386Z
 updated_at: 2021-11-04T17:45:09.513Z
 category: inspiration
 tags:
