@@ -76,6 +76,8 @@ If you have any questions about working in devrel, please [reach out to us on Tw
 
 Feel free to [connect with me on Twitter](https://twitter.com/coryalthoff) as well. 
 
-Lastly, check out our developer relations openings [on our career page](https://www.vonage.com/careers/); we have several open positions. 
+Lastly, check out our developer relations openings at Vonage.
+
+We are currently looking for an [Android developer advocate](https://boards.greenhouse.io/vonage/jobs/5429611002?gh_src=996671b92us), a [Java developer advocate](https://grnh.se/34fb4eff2us), and a [community manager](https://grnh.se/2363ff312us), and a few other positions on our devrel team! 
 
 Best of luck!
