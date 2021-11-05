@@ -32,7 +32,7 @@ Let me tell you how I got into developer relations and share a few stories from 
 
 After working as a software engineer, I wrote *The Self-Taught Programmer* and started a Facebook group called [Self-Taught Programmers](https://www.facebook.com/groups/selftaughtprogrammers/). So when it came time to look for a job again after writing my second book, I decided to get into developer relations to program professionally without giving up all the other things I love, like writing and public speaking.
 
-My teammate and fellow developer advocate [Tonya Sims](https://twitter.com/tonyasims) made the transition from basketball to programming to developer relations. Tonya was a hall of fame college basketball player and even got to play in the WNBA. While teaching herself to code, she became an active member of the Python community, which helped inspire her to get into devrel. 
+My teammate and fellow developer advocate [Tonya Sims](https://twitter.com/tonyasims) made the transition from basketball to programming to developer relations. Tonya was a hall of fame college basketball player and even played in the WNBA. While teaching herself to code, she became an active member of the Python community, which helped inspire her to get into devrel. 
 
 [Amanda Cavallaro](https://amandacavallaro.com/) joined our team after working as a software engineer for six years. Amanda is one of the founders of GDG Cloud London: one of the biggest and most active GDG Cloud chapters in the world! Amanda loves connecting people, so she decided to get into developer relations after a successful career as a software engineer. 
 
