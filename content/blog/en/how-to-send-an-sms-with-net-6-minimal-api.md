@@ -49,3 +49,22 @@ We should now have an API with one endpoint, to this we will add two nuget packa
 dotnet add package Vonage
 dotnet add package Swashbuckle.AspNetCore
 ```
+
+## Small is Beautiful
+
+Along with the usual `appsettings.json` your newly created project will be just one file, `Program.cs`, this is truly minimal, for an ASP.Net project at least.
+
+![]()
+
+Let’s open `Program.cs`, it should look like this.
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello World!");
+
+app.Run();
+```
+
+This is all you need to have a fully-fledged .NET API all in a single file. This will provide a much lighter starting point to build a small API or microservice.
