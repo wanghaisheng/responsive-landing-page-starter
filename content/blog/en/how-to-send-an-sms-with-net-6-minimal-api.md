@@ -87,3 +87,44 @@ Let’s make a start by adding some settings. Inside the `appsettings.json` file
 ```
 
 Currently, we do not have Dependency Injection configured so let’s add the VonageClient class to the services collection. This will allow it to be injected into any class or method that we will use further down the line.
+
+Import a couple of namespaces at the top of the file.
+
+```csharp
+using Vonage;
+using Vonage.Messaging;
+using Vonage.Request;
+```
+
+Register the VonageClient with the services collection.
+
+```csharp
+builder.Services.AddSingleton<VonageClient>(provider =>
+{
+    var config = provider.GetRequiredService<IConfiguration>();
+    var key = config.GetValue<string>("Vonage_key");
+    var secret = config.GetValue<string>("Vonage_Secret");
+    var credentials = Credentials.FromApiKeyAndSecret(key, secret);
+
+    return new VonageClient(credentials);
+});
+```
+
+Going line at a time we can see that we get an instance of IConfiguration, this enables us to access the app settings we need. The key and secret are then retrieved and so that we can create credentials that are required by the VonageClient constructor.
+
+## Sending Out an SMS
+
+Now that we have our VonageClient class configured and ready to be injected let us create a new endpoint that we can send requests. We need to pass in a data model to the endpoint so create a class in a new file called \`SmsModel\`. Then inside the class we want to add the following properties.
+
+```csharp
+public class SmsModel
+{
+    public string To { get;set; }
+
+    public string From { get;set; }
+
+    public string Text { get;set; }
+}
+```
+
+With our model created we can go ahead and add a new POST method with the VonageClient, our SmsModel and
