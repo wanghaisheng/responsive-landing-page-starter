@@ -67,4 +67,23 @@ app.MapGet("/", () => "Hello World!");
 app.Run();
 ```
 
-This is all you need to have a fully-fledged .NET API all in a single file. This will provide a much lighter starting point to build a small API or microservice.
+This is all you need to have a fully-fledged .NET API all in a single file. This will provide a much lighter starting point to build a small API or microservice. And to be honest still blows my mind when I think back to how much code WebAPI would need to produce the same outcome.
+
+## Configuration
+
+Let’s make a start by adding some settings. Inside the `appsettings.json` file we need to add our Vonage key and secret, these are used to authenticate your application with Vonage’s services and can be found at the top of the Dashboard.
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "Vonage_key": "ab12c3de",
+  "Vonage_secret": "ZKSQ1vlzNvyZnQCI"
+}
+```
+
+Currently, we do not have Dependency Injection configured so let’s add the VonageClient class to the services collection. This will allow it to be injected into any class or method that we will use further down the line.
