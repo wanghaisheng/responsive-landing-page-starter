@@ -24,7 +24,7 @@ A little over a year ago we released a blog post entitled “[How to Send an SMS
 
 ## Just give me code
 
-You can skip straight to the code on [GitHub](https://github.com/nexmo-community/send-sms-dotnet-minimal-api)
+You can skip straight to the code on [GitHub](https://github.com/Vonage-Community/blog-sms-dotnet_minimal_api-send_sms)
 
 ## Prerequisites
 
@@ -177,7 +177,7 @@ Now browse to <https://localhost:5001/swagger> and you should be able to use the
 
 Input validation is a vital part of any API, as it stands there is no validation built into Minimal APIs as you would find with ASP.NET MVC. Damian Edwards has created a small library called [MinimalValidation](https://github.com/DamianEdwards/MiniValidation) using validation attributes similar to the MVC validation.
 
-Personally, I prefer [Fluent Validation](https://fluentvalidation.net/) as it uses code to define rules rather than attributes. An example of this is below, for the full code including validation check out the [repository on GitHub](https://github.com/nexmo-community/send-sms-dotnet-minimal-api).
+Personally, I prefer [Fluent Validation](https://fluentvalidation.net/) as it uses code to define rules rather than attributes. An example of this is below, for the full code including validation check out the [repository on GitHub](https://github.com/Vonage-Community/blog-sms-dotnet_minimal_api-send_sms).
 
 Service registration and endpoint changes
 
@@ -247,4 +247,12 @@ public static class ValidationExtensions
 
 ## Final Thoughts
 
-While MVC is a fully-featured framework incorporating built-in model binding and validation, extensible pipelines via filter, convention and declarative based behaviours and more. Some may not need specific features or have performance constraints that make using MVC undesirable. With more and more features surfacing as  ASP.NET Core middleware (authorisation, authentication, routing etc) ASP.NET 6 and Minimal APIs bring these features into play with less pomp and a perfect fit for creating lightweight microservices in a timely fashion in a maintainable way,
+While MVC is a fully-featured framework incorporating built-in model binding and validation, extensible pipelines via filters, convention and declarative based behaviours and more. Some may not need specific features or have performance constraints that make using MVC undesirable. With more and more features surfacing as  ASP.NET Core middleware (authorisation, authentication, routing etc) ASP.NET 6 and Minimal APIs bring these features into play with less pomp and is a perfect fit for creating lightweight microservices in a timely fashion in a maintainable way. 
+
+## Resources
+
+* The code from this tutorial can all be found on [GitHub](https://github.com/Vonage-Community/blog-sms-dotnet_minimal_api-send_sms)
+* Microsoft [Minimal APIs Overview](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/minimal-apis?view=aspnetcore-6.0)
+* David Fowler's Gist [Minimal API's at a Glance](https://gist.github.com/davidfowl/ff1addd02d239d2d26f4648a06158727)
+* What people are [Tweeting about Minimal APIs](https://twitter.com/hashtag/minimalapis)
+* [Vonage SMS API](https://www.vonage.co.uk/communications-apis/sms/)
