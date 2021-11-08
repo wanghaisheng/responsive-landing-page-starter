@@ -52,7 +52,7 @@ dotnet add package Swashbuckle.AspNetCore
 
 ## Small is Beautiful
 
-Along with the usual `appsettings.json` your newly created project will be just one file, `Program.cs`, this is truly minimal, for an ASP.Net project at least.
+Along with the usual `appsettings.json`, your newly created project will be just one file, `Program.cs`. This is truly minimal, for an ASP.Net project at least.
 
 ![Solution Explorer](/content/blog/how-to-send-an-sms-with-net-6-minimal-api/min-project.png ".Net 6 Project")
 
