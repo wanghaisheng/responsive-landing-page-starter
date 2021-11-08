@@ -25,31 +25,17 @@ To help improve accessibility, organizations can educate teams, recruit in-house
 
 Failing to apply WCAG and not meeting its success criteria will likely result in broken interfaces for some users. In addition to blocking the target audience from using services and damaging revenue, failing to comply with the WCAG standard is a human rights violation that exposes an organization to lawsuits.
 
-Hence, we need a strategy to instill the right state of mind, focus on the joint actions teams need to take, set up workflows, and plan gradual steps to make our applications accessible.
+So, we need a strategy to instill the right state of mind, focus on the joint actions teams need to take, set up workflows, and plan gradual steps to make our applications accessible.
 
 ## Suggested strategies
 
-Consider 11y practices as an integral part of development. Put it right next to design, code, testing, security vulnerabilities, business logic, and more.
-
-Let's spread out what we found as quick and most effective workflows.
+Consider [11y accessibility practices](https://www.a11yproject.com/) as an integral part of development. Put it right next to design, code, testing, security vulnerabilities, business logic, and more. Here are some things to think about when creating an accessibility strategy for your application. 
 
 ### Separation of concerns
 
 At Vonage, we [maintain a library](https://github.com/Vonage/vivid) (Vivid) where organization-wide engineers can enjoy the benefits of UI-based components built from the ground up to meet WCAG success criteria.
 
-Vonage's Vivid web UI library helps you integrate the library across Vonage products makes it easy to handle violations in a single codebase and continuously improve it to fit required standards. You can also easily adjust components to create a compelling user experience by the consuming authors (devs). Plus, on its own, a11y related API may help authors better understand how to craft a11y practices.
-
-Let say, for example, we default a banner component role to '*status*' with a redundant aria-live attribute set to polite (To maximize compatibility when using this role). This action indicates the screen reader should wait until the user is idle before presenting updates to the user.
-
-However, we can modify the above attributes (role and aria-live) to fit contextually. So if the information is critical, we could still alter the banner's role to '*alert*,' telling assistive technologies to interrupt other processes and provide users with immediate notification.
-
-As a result, Consuming authors can seamlessly concentrate on their products' progress rather than deep dive into a11y practices, as we separate the concern of eligible a11y from the other development concerns by "outsourcing" them.
-
-Some organizations practice an even more isolated codebase dedicated to a11y; see Adobe's react-aria.
-
-### Ready-made
-
-If setting up a dedicated team isn't a reasonable choice in your organization, a practical alternative would be to adopt a reliable 3rd party OSS that satisfies the required criteria. The Vivid team also gained a significant head-start by partially subclassing the material web components library under its hood.
+Vonage's Vivid web UI library helps you integrate the library across Vonage products makes it easy to handle violations in a single codebase and meet required standards. 
 
 ### Prioritize
 
@@ -81,7 +67,7 @@ Remember, every feature you make more accessible improves the experience for so
 
 A reasonable starting point is to have automated tools, such as tests, linters, browser addons, and IDE plugins to first aid with reporting identified violations and help get up and ready to brief in on *good-first issues*.
 
-Here are a few of the standard tools out there -
+Here are a few tools you may find helpful. 
 
 * [Deque's Axe](https://www.deque.com/axe)
 * [Microsoft accessibility insights](http://accessibilityinsights.io/)
@@ -90,25 +76,17 @@ Here are a few of the standard tools out there -
 * [Pope.tech](https://pope.tech/)
 * [Assistive labs](https://assistivlabs.com/) (Like BrowserStack for screen readers)
 
-**Note** that "off the shelf" automated tools pick up **< 40%** of the errors and are **superficial** (e.g., color contrast, inputs associated with labels, and more). Furthermore, compliance does not equal a genuinely accessible site. We must manually test and review.
+Keep in mind that automated tools generally pick up less than 40% of errors and are superficial (e.g., color contrast, inputs associated with labels, and more). Furthermore, compliance does not equal a genuinely accessible site. You must manually test and review your code in addition to using tools. 
 
 ### Services
 
-If feasible and resources apply, get 3rd party services to review applications by actual users, some even with relevant disabilities, which will provide actual "field" data on UX failures.
+If you have the resources, consider using 3rd party services that review applications by actual users, some even with relevant disabilities, which will provide actual "field" data on UX failures. Here are some services you can consider using. 
 
 * [Deque](https://www.deque.com/)
 * [Level Access](https://www.levelaccess.com/)
 * [Audioeye](https://www.audioeye.com/)
 * [Vision Australia Digital Access](https://www.visionaustralia.org/services/digital-access)
 * [Digital Accessibility Centre (DAC)](http://digitalaccessibilitycentre.org/)
-
-There are dozen paid services to choose from, but the ones that seem most genuine to me are those with real disabled users.
-
-Disclosure: I ran into DAC reference following [gov. uk's insightful success story](https://accessibility.blog.gov.uk/2018/05/15/what-we-learned-from-getting-our-autocomplete-tested-for-accessibility/) about getting an accessibility audit.
-
-We had our autocomplete tested by the Digital Accessibility Centre (DAC). They are one of several companies that specialize in accessibility testing and auditing. The majority of DAC's testers have access needs. They are expert users, but they depend on services being accessible in their day-to-day lives.
-
-DAC invited us to their offices in Neath to watch them put the autocomplete through its paces...
 
 ### Communicate
 
