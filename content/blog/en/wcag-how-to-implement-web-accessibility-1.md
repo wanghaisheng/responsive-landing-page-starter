@@ -17,15 +17,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-How can you improve the accessibility of your applications? What difficulties prevent organizations from achieving that goal? 
+How can you improve the accessibility of your applications? Many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accesibility might even feel extraneous to users we assume are non-disabled.
 
-Many organizations dodge these accessibility-related questions during development. We commonly perceive such duties as enriching rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accesibility might even feel extraneous to users we assume are non-disabled.
+Accessibility, however, is not a feature: it is a social issue. Eveyone has the right to access the internet and companies need to make sure they are creating their applications in a way that allows people with disabilities to use their websites. Failing to do so is a human rights violation that exposes an organization to lawsuits.
 
 To help improve accessibility, organizations can educate teams, recruit in-house experts, and even get 3rd party services to support repair processes. 
-
-Failing to apply WCAG and not meeting its success criteria will likely result in broken interfaces for some users. In addition to blocking the target audience from using services and damaging revenue, failing to comply with the WCAG standard is a human rights violation that exposes an organization to lawsuits.
-
-So, we need a strategy to instill the right state of mind, focus on the joint actions teams need to take, set up workflows, and plan gradual steps to make our applications accessible.
 
 Here are some things to think about when creating an accessibility strategy for your application. 
 
