@@ -43,7 +43,7 @@ dotnet new web -o SmsDotnetMinimalApi
 
 Microsoft also has a [great tutorial](https://docs.microsoft.com/en-us/aspnet/core/tutorials/min-web-api?view=aspnetcore-6.0&tabs=visual-studio) on creating a new Minimal API project using Visual Studio.
 
-We should now have an API with one "Hellow World" endpoint, to this we will add two NuGet packages, the first is [Vonage’s .Net SDK](https://www.nuget.org/packages/Vonage/) version 5.9.2 at the time of writing. As this will be an API we won’t have a UI so the second is Swashbuckle / Swagger that will enable us to try out any endpoints we create easily.
+We should now have an API with one "Hello World" endpoint. To this we will add two NuGet packages, the first is [Vonage’s .Net SDK](https://www.nuget.org/packages/Vonage/) version 5.9.2 at the time of writing. As this will be an API we won’t have a UI so the second is Swashbuckle / Swagger that will enable us to try out any endpoints we create easily.
 
 ```
 dotnet add package Vonage
