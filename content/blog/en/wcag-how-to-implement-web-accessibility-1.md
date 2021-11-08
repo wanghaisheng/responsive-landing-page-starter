@@ -82,53 +82,29 @@ Keep in mind that automated tools generally pick up less than 40% of errors an
 
 If you have the resources, consider using 3rd party services that review applications by actual users, some even with relevant disabilities, which will provide actual "field" data on UX failures. Here are some services you can consider using. 
 
-* [Deque](https://www.deque.com/)
-* [Level Access](https://www.levelaccess.com/)
-* [Audioeye](https://www.audioeye.com/)
-* [Vision Australia Digital Access](https://www.visionaustralia.org/services/digital-access)
-* [Digital Accessibility Centre (DAC)](http://digitalaccessibilitycentre.org/)
+* [Deque](https://www.deque.com/).
+* [Level Access](https://www.levelaccess.com/).
+* [Audioeye](https://www.audioeye.com/).
+* [Vision Australia Digital Access](https://www.visionaustralia.org/services/digital-access).
+* [Digital Accessibility Centre (DAC)](http://digitalaccessibilitycentre.org/).
 
 ### Communicate
 
-Provide an accessibility statement to:
+Your application should also have an accessibility statement to: 
 
-* Show your users that you care about accessibility and them
-* Provide them with information about the accessibility of your content
-* Demonstrate commitment to accessibility and social responsibility
+* Show your users that you care about accessibility and them.
+* Provide them with information about the accessibility of your content.
+* Demonstrate commitment to accessibility and social responsibility.
 
-—w3c, *[web accessibility initiative](https://www.w3.org/WAI/planning/statements)*
+You can [learn more about developing an accessibility statement here](https://www.w3.org/WAI/planning/statements). 
 
-Start with
+Here is a [tool for generating your statement ](https://www.accessibilitystatementgenerator.com/)you may find helpful. 
 
-[Minimal accessibility statement](https://www.w3.org/WAI/planning/statements/minimal-example)
-
-[Complete accessibility statement](https://www.w3.org/WAI/planning/statements/complete-example)
-
-Or generate with
-
-<https://www.w3.org/WAI/planning/statements/generator/#create>
-
-[https://www.accessibilitystatementgenerator.com](https://www.accessibilitystatementgenerator.com/)
-
-Keep an open channel for users' feedback - a wide range of disability types and assistive tools may fail in play with the applications' UI. The [following article section](https://dev.to/karkranikhil/web-accessibility-by-making-your-site-accessible-you-automatically-increase-the-target-audience-d8d#web-accessibility-statistics) hints at how diverse it gets.
+In addition to your accessibility statement, make sure you keep an open channel for user's feedback on your applicatoin as well. 
 
 ### Summary
 
-To serve all users, we need to operate on a full spectrum of disabilities UX flaws continuously.
 
-Applying and maintaining a11y in your app(s) is a practice much like tests and security. You need to not only apply a11y but also set up the mechanisms that will allow you to maintain it.
-
-You can get a head start with an a11y-ready UI library. If you have the sources, establish a dedicated team solely operating on UI, semantics, and accessible components.
-
-In our experience, you will soon find out there's no "one-fits-all," and you'll need to start handling feedback - either from customers or from the business side. 
-
-Feedback is like feature requests or bugs. You need to maintain and test it to ensure they don't break (regression is bad for business). Here automated tests come into play - either 3rd party tools or tools you build that are dedicated to your UI (using tools like Cypress).
-
-Eventually, when you do the best, you can do it on your own and feel you need another push to get to a new level - get the help of experts.
-
-Just like any other task, you'll need to set the gradual steps to comply with web content accessibility guidelines. It will be a joint effort of teams involved in UI development with set up workflows and a roadmap plan (also known as Epic on Jira).
-
-Remember, every feature you make more accessible improves the experience for **some** users. You don't have to solve it all at once to improve.
 
 I encourage everyone who is starting to learn about the topic to initiate action in their organizational environment.
 
