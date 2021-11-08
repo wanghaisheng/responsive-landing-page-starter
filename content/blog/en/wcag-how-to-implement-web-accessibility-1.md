@@ -50,7 +50,7 @@ Here are a few other tools you may find helpful.
 * [Pope.tech](https://pope.tech/)
 * [Assistive labs](https://assistivlabs.com/) (Like BrowserStack for screen readers)
 
-Keep in mind that automated tools generally pick up less than 40% of errors and they are superficial (e.g., color contrast, inputs associated with labels, and more). 
+Remember that automated tools generally pick up less than 40% of errors, and they are superficial (e.g., color contrast, inputs associated with labels, and more). 
 
 Furthermore, compliance does not equal a genuinely accessible site. You must manually test and review your code in addition to using tools. 
 
