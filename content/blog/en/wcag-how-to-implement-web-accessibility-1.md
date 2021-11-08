@@ -88,6 +88,6 @@ I encourage everyone who is starting to learn about accessibility to initiate ac
 
 Please raise any questions, arguments, concerns in the comments. I would love to hear back.
 
-You can reach us on Twitter or on Slack. 
+You can [reach us on Twitter](https://twitter.com/vonagedev) or [on Slack](https://developer.nexmo.com/community/slack). 
 
-Thank you for reading.
+Thank you for reading!
