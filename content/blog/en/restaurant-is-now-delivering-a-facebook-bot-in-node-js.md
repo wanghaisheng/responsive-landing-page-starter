@@ -21,11 +21,11 @@ replacement_url: ""
 ---
 ## Introduction
 
-Often when I'm coding I get hungry. And everyone knows the best developers are lazy, so instead of shopping and cooking *and* cleaning, I often use a food delivery app and simply order a tasty meal. The problem is that too often my favorite restaurants are offline. Sometimes they are closed for business; other times they are too busy and stop accepting online orders. So I'm forced to wait and remember to check if they're back online, and then actually open the app and look to see if they're back online. And sometimes check again, and again, and again. It's truly a grave injustice 😆.
+Often when I'm coding, I get hungry. And everyone knows the best developers are lazy, so instead of shopping and cooking *and* cleaning, I usually use a food delivery app and simply order a tasty meal. The problem is that too often my favorite restaurants are offline. Sometimes they are closed for business; other times they are too busy and stop accepting online orders. So I'm forced to wait and remember to check if they're back online, and then actually open the app and look to see if they're back online. And sometimes check again, and again, and again. It's truly a grave injustice 😆.
 
-There must be a better, smarter way! Thankfully [I recently discovered my favorite food delivery app, Wolt, has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that lets me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
+There must be a better, more innovative way! Thankfully [I recently discovered my favorite food delivery app, Wolt, has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that lets me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
 
-*(This example is built around a use case of food delivery, but the same code can be repurposed to build a Facebook Bot that will alert users for any boolean case change.)*
+*(This example is built around a use case of food delivery, but the same code can be repurposed to create a Facebook bot that will alert users for any boolean case change.)*
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ This app requires the following:
 
 * [Node.js](https://nodejs.org/en/)
 
-<sign-up></sign-up>
+![Vonage API Account](/admin/signup-preview.png)
 
 ## Pseudocode:
 
@@ -44,7 +44,9 @@ Before I get started with any coding task, I like to think out the logic. Let's 
 3. Call the Wolt API for a requested restaurant
 4. Check if the received restaurant is online
 5. Send a message to the user based on the restaurant status
-6. If the restaurant is offline, continue checking
+6. If the restaurant is offline, add to a list of offline restaurants
+7. Continuously check the list of offline restaurants for a status change
+8. If a restaurant goes online, send a user message and remove it from the list of offline restaurants
 
 ## Setup our Project
 
@@ -71,10 +73,10 @@ $ npm init
 Install our required Node packages:
 
 ```bash
-$ npm install @vonage/server-sdk@beta express dotenv got -s
+$ npm install @vonage/server-sdk@beta express dotenv got -s lokijs
 ```
 
-And finally create the files where our code will live:
+And finally, create the files where our code will live:
 
 ```bash
 $ touch index.js .env
@@ -86,13 +88,13 @@ To set up our server, we're going to need some information from the [Vonage Deve
 
 ![Generate Public/Private Key](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/group-1-25-.png "Generate Public/Private Key")
 
-This will automatically generate a key for authentication which we will use later. Move the generated key into the root of your local project.  
+This will automatically generate a key for authentication, which we will use later. Move the generated key into the root of your local project.
 
 At this point, your project should contain your index file, node modules, package.json, and your ENV file. If you run the command `ls`, your project should look like this:
 
 ![Project Should Include index.js, node_modules, pack.json, private.key](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/screen-shot-2021-09-22-at-14.35.44.png "Project Should Include index.js, node_modules, pack.json, private.key")
 
-As you can see our Vonage Application allows us to turn on/off various capabilities through the different Vonage APIs. We'll want to switch on the Messages capabilities. We'll now be asked for two URLs corresponding to webhooks that the Messages API will use to interact with our bot application.
+As you can see, our Vonage Application allows us to turn on/off various capabilities through the different Vonage APIs. We'll want to switch on the Messages capabilities. We'll now be asked for two URLs corresponding to webhooks that the Messages API will use to interact with our bot application.
 
 ## Connect to the Outside World
 
@@ -118,7 +120,7 @@ Now in our Vonage Dashboard we will add our ngrok URLs and add the appropriate U
 
 ### Connect Your Vonage Account
 
-In your ENV file in your project, you will need to add 3 environment variables; `API_KEY` , `API_SECRET`, and `APP_ID`.  
+In your ENV file in your project, you will need to add 3 environment variables; `API_KEY` , `API_SECRET`, and `APP_ID`.
 
 You can find your `API_KEY` and `API_SECRET` in the home page of your Vonage Dashboard:
 
@@ -262,22 +264,37 @@ const getRestaurant = async (reqRestaurant) => {
 Using the property `online` inside the `restaurant` object, we want to create some logic that will determine what message we send to the user. We can write the following function:
 
 ```javascript
-const sendStatusMessage = (restaurant, req, rest) => {
+const firstStatusCheck = (restaurant, recipient) => {
   if (restaurant.online) {
-    sendFacebookMessage(`Hey, ${restaurant.name[0].value} is now accepting orders!!`, req, res);
+    sendFacebookMessage(`Hey, ${restaurant.name[0].value} is now accepting orders!!`, recipient);
   } else {
-      sendFacebookMessage(`Sorry, ${restaurant.name[0].value} is currently offline. I'll ping you when it's open again!`, req, res);
+	  sendFacebookMessage(`Sorry, ${restaurant.name[0].value} is currently offline. I'll ping you when it's open again!`, recipient);
     }
 }
 ```
 
-The `sendStatusMessage` function has abstracted our Vonage code into a function called `sendFacebookMessage` :
+The `firstStatusCheck` function has abstracted our Vonage code to send the Facebook Message into a function called `sendFacebookMessage`. This function now can send any message from our Sandbox account as long as we pass it two parameters `text` and `recipient`. 
+
+We can use a constant variable `SENDER` to pass through the sender id information of the Sandbox account. First, we'll declare it.
 
 ```javascript
-const sendFacebookMessage = async (text, req, res) => {
+let SENDER;
+```
+
+And then we assign it when we receive the `req` from the `/inbound` endpoint: 
+
+```javascript
+app.post('/inbound', async(req, res) => {
+  SENDER = req.body.from;
+```
+
+Now the `sendFacebookMessage` should look like this:
+
+```javascript
+const sendFacebookMessage = async (text, recipient) => {
   vonage.channel.send(
-    req.body.from,
-    req.body.to,
+    SENDER,
+    recipient,
     {
       content: {
         type: 'text',
@@ -297,244 +314,136 @@ const sendFacebookMessage = async (text, req, res) => {
 
 ## Send a Message to the User Based on the Restaurant Status
 
-And now combining our new functionality we can update our simple Sandbox Messaging to tell the user whether the requested restaurant is online or not.
+Combining our new functionality we can update our simple Sandbox Messaging to tell the user whether the requested restaurant is currently online or not.
 
 ```javascript
 // Enhanced Sandbox Messaging
 app.post('/inbound', async(req, res) => {
-  const requestedRestaurant = await req.body.message.content.text.split('/').pop();
-  const restaurant = await getRestaurant(requestedRestaurant);
-  sendStatusMessage(restaurant, req, res);
-  res.send('ok');
+	SENDER = req.body.from;
+	const recipient = await req.body.to;
+	const requestedRestaurant = await req.body.message.content.text.split('/').pop();
+	const restaurant = await getRestaurant(requestedRestaurant);
+	firstStatusCheck(restaurant, recipient);
+	res.send('ok');
 });
 ```
 
 ## Loop if the Restaurant Is Offline
 
-Now that we've created the logic based on the restaurant's status, we want to continue checking that status until the restaurant finally comes back online. So we know we need a function like this, which check the status every minute:
+Now that we've created the logic based on the restaurant's status, we want to continue checking that status until the restaurant finally comes back online. So we need to build out the last three steps of our pseudocode:
+
+6. If the restaurant is offline, add to a list of offline restaurants
+7. Continuously check the list of offline restaurants for a status change
+8. If a restaurant goes online, send the user a message and remove it from the list of offline restaurants
+
+## Creating an In-Memory Database of Offline Restaurants
+
+At this point we'll be using our `LokiJS` library. [LokiJS is an in-memory database](https://github.com/techfort/LokiJS) that will allow us to keep track of each restaurant that gets requested in a simple, runtime fashion. If you've used MongoDB, LokiJS will look very familiar.
+
+First, we need to include Loki with our other dependencies:
 
 ```javascript
-while(RESTAURANT_IS_OFFLINE.status){
- setInterval(await theLoop(), 600000);
+const loki = require('lokijs');
+```
+
+Then we'll need to instantiate our database:
+
+```javascript
+let db = new loki("restaurants.db");
+let restaurants = db.addCollection("restaurants");
+```
+
+Each restaurant entry will contain 4 data points: name, online status, recipient, and slug. `Name` is the name of the restaurant. `Online status` is a boolean whether the restaurant is currently online. `Recipient` is the user information from the Messages API, which will allow us to track who needs to be notified. And finally, `slug` is the URL ending that the Wolt API uses to find a restaurant. 
+
+Now that we have a database, we can start adding our offline restaurants to it! We can use the following function to add restaurants to our offline list:
+
+```javascript
+ const addRestaurantToDb = (restaurant, recipient) => {
+  restaurants.insert({name: restaurant.name[0].value, online: restaurant.online, recipient: recipient, slug: restaurant.slug});
+ }
+```
+
+We'll now need to update our `firstStatusCheck` to add restaurants to the offline list.
+
+```javascript
+// Check initially whether restaurant is online or should it be added to list of offline restaurants to check
+const firstStatusCheck = (restaurant, recipient) => {
+  if (restaurant.online) {
+    sendFacebookMessage(`Hey, ${restaurant.name[0].value} is now accepting orders!!`, recipient);
+  } else {
+      sendFacebookMessage(`Sorry, ${restaurant.name[0].value} is currently offline. I'll ping you when it's open again!`, recipient);
+      addRestaurantToDb(restaurant, recipient);
+    }
 }
 ```
 
-Now we know we need to create some sort of `RESTAURANT_IS_OFFLINE` global variable to store our restaurant information and we know we'll need to write a function called `theLoop` which will run our code every 60 seconds.
+## Continuously Check For Status Changes
 
-*The reason we need to store our restaurant information in a global variable is to keep track of the number of times we've checked its status. We want to only send an offline message to the user the first time. Imagine how annoying it would be for the user to receive an update every 60 seconds that the restaurant is still offline 😬.*
-
-So we'll add the global variable `RESTAURANT_IS_OFFLINE` with properties `status`, `count`, and `name`.
+Now that we have a list of offline restaurants, we want to check if they go back online. Because we want to do this regularly and continuously, we'll use the built-in `setInterval` function:
 
 ```javascript
-let RESTAURANT_IS_OFFLINE = {
-  status: true,
-  count: 0,
-  name: ""
-};
+setInterval(function(){offlineRestaurantLookup(req)} , INTERVAL);
 ```
 
-We'll now need to update our `sendStatusMessage`. The new function will continue to check a restaurant based on its delivery status. However, it will now only send the offline status message if this is the first time its status is reported as offline.
+The `INTERVAL` constant tells setInterval how often it should run the `offlineRestaurantLookup` function. We define this at the top of the file next to `SENDER`. By default, let's check every 60 seconds:
 
 ```javascript
-const sendStatusMessage = (restaurant, req, res) => {
-  if (restaurant.online) {
-    RESTAURANT_IS_OFFLINE.status = false;
-    sendFacebookMessage(`Hey, ${restaurant.name[0].name.value} is now accepting orders!!`, req, res);
-  } else {
-    if (RESTAURANT_IS_OFFLINE.count == 0){
-        sendFacebookMessage(`Sorry, ${restaurant.name[0].value} is currently offline. I'll ping you when it's open again!`, req, res);
-    }
-    RESTAURANT_IS_OFFLINE = {status: true, count: 1};
+const INTERVAL = 60000;
+```
+
+The `offlineRestaurantLookup` will retrieve all restaurants in the offline database and then for each restaurant it will check that the restaurant is still offline. 
+
+```javascript
+const offlineRestaurantLookup = async () => {
+  let offlineRestaurants = restaurants.data;
+  offlineRestaurants.forEach(await checkIsStill0ffline);
+}
+```
+
+The `checkIsStill0ffline` function in turn checks if a restaurant is now online. If the restaurant has gone online then it will message the correct user and then delete this restaurant from the list of offline restaurants.
+
+```javascript
+const checkIsStill0ffline = async (restaurant) => {
+  const checkedRestaurant = await getRestaurant(restaurant.slug);
+  if (checkedRestaurant.online) {
+    sendFacebookMessage(`Hey, ${restaurant.name} is now accepting orders!!`, restaurant.recipient);
+    restaurants.chain().find({'name': restaurant.name}).remove();
   }
 }
 ```
 
-And now we can complete our `theLoop` function:
+Now we can add the `setInterval` functionality below our Sandbox Messaging logic:
 
 ```javascript
-const theLoop = async () => {
-  const restaurant = away getRestaurant(RESTAURANT_IS_OFFLINE.name);
-  const status = restaurant.online;
-  sendStatusMessage(status);
-}
-```
-
-And now we can run the program, seeing that when a restaurant is offline we receive a message notifying so, and when restaurants go online we are updated to the new status. I suggest trying the app in the morning and seeing as restaurants suddenly open for lunch. It's very fun to get the push notifications from Facebook Messenger to arrive on your phone!
-
-## Some Code Clean Up
-
-Although the code above works, it will act erratically. This is because the `intervalID` which is returned from `setInterval()` is never cleared. ([Read more here](https://developer.mozilla.org/en-US/docs/Web/API/setInterval)) We can do a few things to clean up our code. And we'll create the code which will also allow us to keep track of multiple requests and implement jobs in the future.
-
-First, let's modify our `RESTAURANT_IS_OFFLINE` global variable. We've been keeping track of quite a few pieces of information; the current requested restaurant's name, its online status, and whether we should ping the user. Additionally, we'll now keep track of our `intervalId`. To make our code easier to adjust, say we want to check every 30 seconds, we'll move our timeout limit into its own variable as well. So we can decouple our `RESTAURANT_IS_OFFLINE` variable into:
-
-```javascript
-const TIMEOUT = 600000;
-
-let intervalId;
-let shouldPing = true;
-let CURRENT_RESTAURANT = {};
-```
-
-But where's the name or online status? We'll move that into a new function called `setNewCurrentRestaurant`:
-
-```javascript
-const setNewCurrentRestaurant = (restaurant) => {
-	CURRENT_RESTAURANT = {
-		name: restaurant.name[0].value,
-		isOnline: restaurant.online,
-	};
-}
-```
-
-And we update our `sendStatusMessage` and `theLoop` functions accordingly: 
-
-```javascript
-const sendStatusMessage = (req) => {
-	if (CURRENT_RESTAURANT.isOnline) {
-		sendFacebookMessage(`Hey, ${CURRENT_RESTAURANT.name} is now accepting orders!!`, req);
-	} else if (shouldPing) {
-		sendFacebookMessage(`Sorry, ${CURRENT_RESTAURANT.name} is currently offline. I'll ping you when it's open again!`, req);
-		shouldPing = false;
-	}
-}
-
-const theLoop = async (req) => {
-	const restaurant = await getRestaurant(CURRENT_RESTAURANT.name);
-	setNewCurrentRestaurant(restaurant);
-	sendStatusMessage(req);
-	if (CURRENT_RESTAURANT.isOnline) {
-		clearInterval(intervalId);
-		intervalId = null;
-	}
-}
-```
-
-And lastly, our updated request looks like this:
-
-```javascript
-app.post('/inbound', async (req, res) => {
-	const requestedRestaurant = await req.body.message.content.text.split('/').pop();
-	const restaurant = await getRestaurant(requestedRestaurant);
-	setNewCurrentRestaurant(restaurant);
-
-	// When there is a new restaurant request, we set should Ping to true
-	shouldPing = true;
-	sendStatusMessage(req);
-
-	// Start interval only if we havent yet started one
-	if (!intervalId) {
-		// Don't need to pass the entire req but it is simpler this way i believe
-		intervalId = setInterval(await theLoop(req), TIMEOUT);
-	}
-
-	res.send('ok');
+// Enhanced Sandbox Messaging
+app.post('/inbound', async(req, res) => {
+  SENDER = req.body.from;
+  const recipient = await req.body.to;
+  const requestedRestaurant = await req.body.message.content.text.split('/').pop();
+  const restaurant = await getRestaurant(requestedRestaurant);
+  firstStatusCheck(restaurant, recipient);
+  res.send('ok');
 });
-```
 
-Our final `index.js` file will look like this:
-
-```javascript
-require('dotenv').config();
-const Vonage = require('@vonage/server-sdk');
-const got = require('got');
-
-
-const express = require('express');
-const app = express();
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-
-const TIMEOUT = 600000;
-
-let intervalId;
-let shouldPing = true;
-let CURRENT_RESTAURANT = {};
-
-const vonage = new Vonage(
-  {
-    apiKey: process.env.API_KEY,
-    apiSecret: process.env.API_SECRET,
-    applicationId: process.env.APP_ID,
-    privateKey: './private.key'
-  },
-  { apiHost: 'https://messages-sandbox.nexmo.com/'}
- );
-
-// store current search status
-const setNewCurrentRestaurant = (restaurant) => {
-		CURRENT_RESTAURANT =  {
-			name: restaurant.name[0].value, 
-			isOnline: restaurant.online,  
-		};
-}
-
-const getRestaurant = async (reqRestaurant) => {
-	const response = await got.get(`https://restaurant-api.wolt.com/v3/venues/slug/${reqRestaurant}`)
-		.json();
-	return response.results[0];
-}
-
-const sendFacebookMessage = async (text, req, res) => {
-	vonage.channel.send(
-		req.body.from,
-		req.body.to,
-		{
-			content: {
-				type: 'text',
-				text: text,
-			},
-		},
-		(err, data) => {
-			if (err) {
-				console.error(err);
-			} else {
-				console.log(data.message_uuid);
-			}
-		}
-	);
-}
-
-
-const sendStatusMessage = (req) => {
-	if (CURRENT_RESTAURANT.isOnline) {
-		sendFacebookMessage(`Hey, ${CURRENT_RESTAURANT.name} is now accepting orders!!`, req);
-	} else if (shouldPing) {
-		sendFacebookMessage(`Sorry, ${CURRENT_RESTAURANT.name} is currently offline. I'll ping you when it's open again!`, req);
-		shouldPing = false;
-	}
-}
-
-
-const theLoop = async (req) => {
-	const restaurant = await getRestaurant(CURRENT_RESTAURANT.name);
-	setNewCurrentRestaurant(restaurant);
-	sendStatusMessage(req);
-	if (CURRENT_RESTAURANT.isOnline) {
-		clearInterval(intervalId);
-		intervalId = null;
-	}
-}
-
-app.post('/inbound', async (req, res) => {
-	const requestedRestaurant = await req.body.message.content.text.split('/').pop();
-	const restaurant = await getRestaurant(requestedRestaurant);
-	setNewCurrentRestaurant(restaurant);
-	shouldPing = true;
-	sendStatusMessage(req);
-	if (!intervalId) {
-		intervalId = setInterval(await theLoop(req), TIMEOUT);
-	}
-	res.send('ok');
+app.post('/status', (req, res) => {
+  res.send('ok');
 });
+
+setInterval(function(){offlineRestaurantLookup()} , INTERVAL);
 
 app.listen(3000);
 ```
 
+And now we can run the program, seeing that when a restaurant is offline we receive a message notifying so, and when restaurants go online we are updated to the new status. I suggest trying the app in the morning and seeing as restaurants suddenly open for lunch. It's amusing to get the push notifications from Facebook Messenger to arrive on your phone!
+
+
+
+![Enhanced Facebook SandBox Message](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/ezgif.com-gif-maker-9-.gif "Enhanced Facebook SandBox Message")
+
 # What's Next
 
-* In this tutorial, we used the Facebook Messenger functionality of the Messages API, but we could extend this application to provide omnichannel capabilities with WhatsApp and SMS. Imagine a very urgent use case (I have a particular bagel shop on Saturday mornings in mind) that you would want to be immediately notified about a status change, omnichannel alerts would be useful.
+* In this tutorial, we used the Facebook Messenger functionality of the Messages API, but we could extend this application to provide omnichannel capabilities with WhatsApp and SMS. Imagine a very urgent use case (I have a particular bagel shop on Saturday mornings in mind) that you would want to be immediately notified about a status change; omnichannel alerts would be useful.
 * We could extend this code to make the alerts smarter based on delivery schedules, user proximity to restaurants, and more. We could also hold multiple jobs.
 * We could take the app out of the Sandbox and connect it to a business Facebook Account.
 
-The final code for the tutorial can be found on GitHub.
-I would love to hear what you built using the Vonage Messages API! Please join the conversation on our [Community Slack](https://developer.nexmo.com/community/slack) and share your story!
+The final code for the tutorial can be found on GitHub. I would love to hear what you built using the Vonage Messages API! Please join the conversation on our [Community Slack](https://developer.nexmo.com/community/slack) and share your story!
