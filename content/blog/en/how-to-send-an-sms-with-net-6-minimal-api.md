@@ -143,7 +143,7 @@ app.MapPost("/sms", async (VonageClient vonageClient, SmsModel smsModel) =>
 
 There are a couple of things going on in the block of code. First, we are using the `MapPost` extension method to create an endpoint at http://localhost:5000/sms. Secondly, we are declaring the parameters for the method; `VonageClient` will get injected using the dependency injection we set up previously, `SmsModel` will be created using the body of the request using [model binding](https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding?view=aspnetcore-6.0). 
 
-The main body of the method does the actual work of sending the SMS. We create an instance of the SendSmsRequest using the data from the model we passed in then it's just a case of passing the request class to the SmsClient's `SendAnSmsAsync` method. In the spirit of "minimal", this is only one line!
+The main body of the method does the actual work of sending the SMS. We create an instance of the SendSmsRequest using the data from the model we passed in, then it's just a case of passing the request class to the SmsClient's `SendAnSmsAsync` method. In the spirit of "minimal", this is only one line!
 
 ## Try It Out
 
