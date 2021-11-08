@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-An accessible application is one that anyone, even individuals with disabilities, can use. Unfortunately, Many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accesibility might even feel extraneous to users we assume are non-disabled.
+An accessible application is one that anyone, even individuals with disabilities, can use. Unfortunately, Many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accesibility might even feel extraneous to users we assume are non-disabled.a
 
 Accessibility, however, is not a feature: it is a social issue. Eveyone has the right to access the internet and companies need to make sure they are creating their applications in a way that allows people with disabilities to use them. Failing to do so is a human rights violation that exposes an organization to lawsuits.
 
@@ -81,8 +81,6 @@ Here is a [tool for generating your statement](https://www.accessibilitystatemen
 In addition to your accessibility statement, make sure you keep an open channel for user's feedback on your application as well. 
 
 ### Summary
-
-
 
 I encourage everyone who is starting to learn about accessibility to initiate action in their organizational environment.
 
