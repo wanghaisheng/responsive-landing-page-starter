@@ -22,7 +22,7 @@ I’ve been looking at the preview releases of .Net 6 for some time now, and one
 
 A little over a year ago we released a blog post entitled “[How to Send an SMS With ASP.NET Core MVC](https://learn.vonage.com/blog/2020/07/09/how-to-send-an-sms-with-asp-net-core-mvc)”. So with the Release of .Net 6 upon us, I thought it would be a good idea to take inspiration and see what it would be like to use the new Minimal API syntax to emulate the same functionality.
 
-## Just give me code
+## Just Give Me Code
 
 You can skip straight to the code on [GitHub](https://github.com/Vonage-Community/blog-sms-dotnet_minimal_api-send_sms).
 
@@ -33,7 +33,7 @@ You can skip straight to the code on [GitHub](https://github.com/Vonage-Communit
 
 <sign-up></sign-up>
 
-## Creating the project
+## Creating the Project
 
 The easiest way I’ve found to create a new Minimal API project is using the command below
 
@@ -50,7 +50,7 @@ dotnet add package Vonage
 dotnet add package Swashbuckle.AspNetCore
 ```
 
-## Small is Beautiful
+## Small Is Beautiful
 
 Along with the usual `appsettings.json`, your newly created project will be just one file, `Program.cs`. This is truly minimal, for an ASP.Net project at least.
 
