@@ -19,9 +19,7 @@ replacement_url: ""
 ---
 An accessible application is one that anyone, even individuals with disabilities, can use. Unfortunately, Many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accessibility might even feel extraneous to users we assume are non-disabled.
 
-Accessibility, however, is not a feature: it is a social issue. Everyone has the right to access the internet and companies need to make sure they are creating their applications in a way that allows people with disabilities to use them. Failing to do so is a human rights violation that exposes an organization to lawsuits.
-
-To help improve accessibility, organizations can educate teams, recruit in-house experts, and even get 3rd party services to support repair processes. 
+Accessibility, however, is not a feature: it is a social issue. Everyone has the right to access the internet, and companies need to make sure they create their applications to allow people with disabilities to use them. To help improve accessibility, organizations can educate teams, recruit in-house experts, and even get 3rd party services to support repair processes. 
 
 Here are some things to think about when creating an accessibility strategy for your application. 
 
@@ -39,7 +37,7 @@ Remember, every feature you make more accessible improves the experience for so
 
 You can use automated tools, such as tests, linters, browser addons, and IDE plugins to help find accessibility problems. 
 
-At Vonage, we [maintain a library](https://github.com/Vonage/vivid) (Vivid) so our engineers can enjoy the benefits of UI-based components built from the ground up to meet WCAG's success criteria.
+At Vonage, we [maintain a library](https://github.com/Vonage/vivid) (Vivid), so our engineers can enjoy the benefits of UI-based components built from the ground up to meet WCAG's success criteria.
 
 Vonage's Vivid web UI library helps you integrate the library across Vonage products and makes it easy to handle violations in a single codebase.
 
@@ -52,7 +50,7 @@ Here are a few other tools you may find helpful.
 * [Pope.tech](https://pope.tech/)
 * [Assistive labs](https://assistivlabs.com/) (Like BrowserStack for screen readers)
 
-Keep in mind that automated tools generally pick up less than 40% of errors and are the errors are superficial (e.g., color contrast, inputs associated with labels, and more). 
+Keep in mind that automated tools generally pick up less than 40% of errors and they are superficial (e.g., color contrast, inputs associated with labels, and more). 
 
 Furthermore, compliance does not equal a genuinely accessible site. You must manually test and review your code in addition to using tools. 
 
@@ -82,9 +80,9 @@ In addition to your accessibility statement, make sure you keep an open channel 
 
 ### Summary
 
-Accesibility is a human right, not a feature.  
+Accessibility is a human right, not a feature.  
 
-Once your organization starts to adopt this mindset, your team will think of accesibility as a top priority, not somehting to push into your team's backlog. 
+Once your organization adopts this mindset, your team will think of accessibility as a top priority, not something to push into your team's backlog. 
 
 I encourage everyone who is starting to learn about accessibility to initiate action in their organizational environment.
 
