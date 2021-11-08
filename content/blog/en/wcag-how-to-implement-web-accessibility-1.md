@@ -17,9 +17,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-How can you improve the accessibility of your applications? Many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accesibility might even feel extraneous to users we assume are non-disabled.
+An accessible application is one that anyone, even individuals with disabilities, can use. Unfortunately, Many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accesibility might even feel extraneous to users we assume are non-disabled.
 
-Accessibility, however, is not a feature: it is a social issue. Eveyone has the right to access the internet and companies need to make sure they are creating their applications in a way that allows people with disabilities to use their websites. Failing to do so is a human rights violation that exposes an organization to lawsuits.
+Accessibility, however, is not a feature: it is a social issue. Eveyone has the right to access the internet and companies need to make sure they are creating their applications in a way that allows people with disabilities to use them. Failing to do so is a human rights violation that exposes an organization to lawsuits.
 
 To help improve accessibility, organizations can educate teams, recruit in-house experts, and even get 3rd party services to support repair processes. 
 
@@ -27,25 +27,21 @@ Here are some things to think about when creating an accessibility strategy for 
 
 ### Prioritize
 
-Choosing how we handle defects in-house is bound to business needs. Priorities can alter, but here's a few suggestion to start:
+WCAG defines three levels of conformance (A, AA, AAA) an organization may adopt. Most countries' laws require UX to comply with at least the first level (A).
 
-1. Issues picked up by crawlers and found using automated tools are often easy to handle and fix to protect the organization from lawsuits and improve sites' ranking.
-2. Legal implications pages (e.g., privacy policy, nutritional information, GDRP pages).
-3. High traffic pages (e.g., homepage, landing/login/campaign pages).
+Your company can start with level A and work your way up to higher levels. 
 
-As for a gradual increase, WCAG defines three levels of conformance (A, AA, AAA) an organization may adopt. Most countries' laws require UX to comply with at least the first level (A). Nonetheless, we can cherry-pick on specific features, go the extra mile, and opt-in to higher levels.
-
-Product teams should include [accessibility targets](https://www.ibm.com/able/toolkit/plan/release#establishing-the-accessibility-scope-for-the-release) in each release. Each team member takes on specific tasks to ensure they set up the product for success. This process  will result in improved, sustainable accessibility.
+Product teams should include [accessibility targets](https://www.ibm.com/able/toolkit/plan/release#establishing-the-accessibility-scope-for-the-release) in each release. Each team member should take on specific tasks to ensure they set up the product for success. This process  will result in improved, sustainable accessibility.
 
 Remember, every feature you make more accessible improves the experience for some users. You don't have to solve it all at once to improve.
 
 ### Tooling
 
-You can use automated tools, such as tests, linters, browser addons, and IDE plugins to aid with reporting identified violations.
+You can use automated tools, such as tests, linters, browser addons, and IDE plugins to help find accessibility problems. 
 
-At Vonage, we [maintain a library](https://github.com/Vonage/vivid) (Vivid) where organization-wide engineers can enjoy the benefits of UI-based components built from the ground up to meet WCAG success criteria.
+At Vonage, we [maintain a library](https://github.com/Vonage/vivid) (Vivid) so our engineers can enjoy the benefits of UI-based components built from the ground up to meet WCAG's success criteria.
 
-Vonage's Vivid web UI library helps you integrate the library across Vonage products makes it easy to handle violations in a single codebase and meet required standards. 
+Vonage's Vivid web UI library helps you integrate the library across Vonage products and makes it easy to handle violations in a single codebase.
 
 Here are a few other tools you may find helpful. 
 
@@ -80,14 +76,18 @@ Your application should also have an accessibility statement to:
 
 You can [learn more about developing an accessibility statement here](https://www.w3.org/WAI/planning/statements). 
 
-Here is a [tool for generating your statement ](https://www.accessibilitystatementgenerator.com/)you may find helpful. 
+Here is a [tool for generating your statement](https://www.accessibilitystatementgenerator.com/) you may find helpful. 
 
-In addition to your accessibility statement, make sure you keep an open channel for user's feedback on your applicatoin as well. 
+In addition to your accessibility statement, make sure you keep an open channel for user's feedback on your application as well. 
 
 ### Summary
 
-I encourage everyone who is starting to learn about the topic to initiate action in their organizational environment.
+
+
+I encourage everyone who is starting to learn about accessibility to initiate action in their organizational environment.
 
 Please raise any questions, arguments, concerns in the comments. I would love to hear back.
+
+You can reach us on Twitter or on Slack. 
 
 Thank you for reading.
