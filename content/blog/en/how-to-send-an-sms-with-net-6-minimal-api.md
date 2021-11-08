@@ -24,7 +24,7 @@ A little over a year ago we released a blog post entitled “[How to Send an SMS
 
 ## Just give me code
 
-You can skip straight to the code on [GitHub](https://github.com/Vonage-Community/blog-sms-dotnet_minimal_api-send_sms)
+You can skip straight to the code on [GitHub](https://github.com/Vonage-Community/blog-sms-dotnet_minimal_api-send_sms).
 
 ## Prerequisites
 
