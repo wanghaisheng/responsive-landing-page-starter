@@ -6,7 +6,7 @@ author: kellyjandrews
 published: true
 published_at: 2021-08-24T09:27:25.992Z
 updated_at: 2021-08-20T12:59:30.361Z
-category: announcement
+category: release
 tags:
   - CLI
   - oclif
