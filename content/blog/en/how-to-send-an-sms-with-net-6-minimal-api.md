@@ -171,7 +171,7 @@ With all our code now written, we can run the project, hit F5 if you're using Vi
 dotnet run
 ```
 
-Now browse to <https://localhost:5001/swagger> and you should be able to use the "Try it out" button on the SMS endpoint from there you will see a 200 response code and receive a text message. 
+Now browse to <https://localhost:5001/swagger> and you should be able to use the "Try it out" button on the SMS endpoint. From there you will see a 200 response code and receive a text message. 
 
 ## Validation
 
