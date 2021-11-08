@@ -165,7 +165,7 @@ app.UseSwaggerUI();
 app.Run();
 ```
 
-With all our code now written we can run the project, hit F5 if you're using Visual Studio or run the command below inside the project folder
+With all our code now written, we can run the project, hit F5 if you're using Visual Studio or run the command below inside the project folder
 
 ```powershell
 dotnet run
