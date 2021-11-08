@@ -247,4 +247,4 @@ public static class ValidationExtensions
 
 ## Final Thoughts
 
-Getting an API up and running with useful functionality using Minimal API
+While MVC is a fully-featured framework incorporating built-in model binding and validation, extensible pipelines via filter, convention and declarative based behaviours and more. Some may not need specific features or have performance constraints that make using MVC undesirable. With more and more features surfacing as  ASP.NET Core middleware (authorisation, authentication, routing etc) ASP.NET 6 and Minimal APIs bring these features into play with less pomp and a perfect fit for creating lightweight microservices in a timely fashion in a maintainable way,
