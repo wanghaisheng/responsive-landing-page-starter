@@ -147,7 +147,7 @@ The main body of the method does the actual work of sending the SMS. We create a
 
 ## Try It Out
 
-The project should now build, run and receive requests. As mentioned previously though we have no UI to test this out easily so we will add a few more lines of code to implement the Swagger UI into out project.
+The project should now build, run and receive requests. As mentioned previously though we have no UI to test this out easily so we will add a few more lines of code to implement the Swagger UI into our project.
 
 Directly after var builder = WebApplication.CreateBuilder(args) we need to add two lines of code. These will add the necessary services to dependency inject.
 
