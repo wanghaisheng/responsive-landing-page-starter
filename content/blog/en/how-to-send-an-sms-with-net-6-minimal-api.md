@@ -171,4 +171,80 @@ With all our code now written we can run the project, hit F5 if you're using Vis
 dotnet run
 ```
 
-Now browse to <https://localhost:5001/swagger> and you should be able to use the "Try it out" button on the SMS endpoint from there you will see a 200 response code and recieve a text message.
+Now browse to <https://localhost:5001/swagger> and you should be able to use the "Try it out" button on the SMS endpoint from there you will see a 200 response code and recieve a text message. 
+
+## Validation
+
+Input validation is a vital part of any API, as it stands there is no validation built into Minimal APIs as you would find with ASP.NET MVC. Damian Edwards has created a small library called [MinimalValidation](https://github.com/DamianEdwards/MiniValidation) using validation attributes similar to the MVC validation.
+
+Personally, I prefer [Fluent Validation](https://fluentvalidation.net/) as it uses code to define rules rather than attributes. An example of this is below, for the full code including validation check out the [repository on GitHub](https://github.com/nexmo-community/send-sms-dotnet-minimal-api).
+
+Service registration and endpoint changes
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+// validation
+builder.Services.AddValidatorsFromAssemblyContaining<SmsModel>(ServiceLifetime.Scoped);
+
+...
+ 
+app.MapPost("/sms", async (VonageClient vonageClient, SmsModel smsModel, IValidator<SmsModel> validator) =>
+{
+    ValidationResult validationResult =validator.Validate(smsModel);
+    if (!validationResult.IsValid)
+    {
+        return Results.ValidationProblem(validationResult.ToDictionary());
+    }
+
+    var smsResponse = await vonageClient.SmsClient.SendAnSmsAsync(new SendSmsRequest
+    {
+        To = smsModel.To,
+        From = smsModel.From,
+        Text = smsModel.Text
+    });
+
+    return Results.Ok();
+});
+```
+
+Model validator
+
+```csharp
+public class SmsModel
+{
+    public string To { get; set; }
+    public string From { get; set; }
+    public string Text { get; set; }
+
+    public class Validator : AbstractValidator<SmsModel>
+    {
+        public Validator()
+        {
+            RuleFor(x => x.To).NotEmpty().WithMessage("To phone number required");
+            RuleFor(x => x.From).NotEmpty().WithMessage("From phone number required");
+        }
+    }
+}
+```
+
+Validation extension
+
+```csharp
+public static class ValidationExtensions
+{
+    public static IDictionary<string, string[]> ToDictionary(this ValidationResult validationResult)
+       => validationResult.Errors
+               .GroupBy(x => x.PropertyName)
+               .ToDictionary(
+                   g => g.Key,
+                   g => g.Select(x => x.ErrorMessage).ToArray()
+               );
+}
+```
+
+## Final Thoughts
+
+Getting an API up and running with useful functionality using Minimal API
