@@ -17,15 +17,15 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-What does it take to improve the accessibility of applications? What difficulties prevent organizations from achieving that goal? How can you solve these problems and make interfaces disability-friendly?
+How can you improve the accessibility of your applications? What difficulties prevent organizations from achieving that goal? How can you solve these problems and make interfaces disability-friendly?
 
-Many organizations dodge these accessibility-related questions during development. We commonly perceive such duties as enriching rather than a necessity, which results in **web content accessibility guidelines** (WCAG) remaining overlooked until they fade off in the backlog. It might also seem inconsequential to the design pattern we typically practice or even extraneous to users we assume are non-disabled.
+Many organizations dodge these accessibility-related questions during development. We commonly perceive such duties as enriching rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. It might also seem inconsequential to the design pattern we typically practice or even extraneous to users we assume are non-disabled.
 
 To help improve accessibility, organizations can educate teams, recruit in-house experts, and even get 3rd party services to support repair processes. However, the latter won't stick unless carried out forever, as proper compliance to WCAG requires ongoing care and is not a one-time refurbishment.
 
-Failing to apply WCAG and not meeting its success criteria will likely result in broken interfaces for **some** users. In addition to blocking the target audience from using services and damaging revenue, failing to comply with the WCAG standard is a human rights violation that exposes an organization to lawsuits.
+Failing to apply WCAG and not meeting its success criteria will likely result in broken interfaces for some users. In addition to blocking the target audience from using services and damaging revenue, failing to comply with the WCAG standard is a human rights violation that exposes an organization to lawsuits.
 
-Hence, we need a strategy to instill a state of mind, focus on the joint actions teams need to take, set up workflows, and plan gradual steps to make our applications accessible.
+Hence, we need a strategy to instill the right state of mind, focus on the joint actions teams need to take, set up workflows, and plan gradual steps to make our applications accessible.
 
 ## Suggested strategies
 
@@ -35,20 +35,9 @@ Let's spread out what we found as quick and most effective workflows.
 
 ### Separation of concerns
 
-At Vonage, we strategically maintain a tailor-maid library (Vivid) where organization-wide engineers can enjoy the benefits of UI-based components built from the ground up to meet WCAG success criteria.
+At Vonage, we [maintain a library](https://github.com/Vonage/vivid) (Vivid) where organization-wide engineers can enjoy the benefits of UI-based components built from the ground up to meet WCAG success criteria.
 
-Benefits:
-
-##  [Vonage ](https://github.com/Vonage)/ [vivid](https://github.com/Vonage/vivid)
-
-### Vonage's web UI 🎨 toolbelt
-
-1. Battery charged
-2. Integrating the library across Vonage products makes it easy to handle violations in a single codebase and continuously improve it to fit required standards.
-3. Flexibility
-4. Components can be easily adjusted and enhanced to an even more compelling user experience by the consuming authors (devs). Plus, on its own, a11y related API may help authors better understand how to craft a11y practices.
-
-#### In practice
+Vonage's Vivid web UI library helps you integrate the library across Vonage products makes it easy to handle violations in a single codebase and continuously improve it to fit required standards. You can also easily adjust components to create a compelling user experience by the consuming authors (devs). Plus, on its own, a11y related API may help authors better understand how to craft a11y practices.
 
 Let say, for example, we default a banner component role to '*status*' with a redundant aria-live attribute set to polite (To maximize compatibility when using this role). This action indicates the screen reader should wait until the user is idle before presenting updates to the user.
 
@@ -56,7 +45,7 @@ However, we can modify the above attributes (role and aria-live) to fit contextu
 
 As a result, Consuming authors can seamlessly concentrate on their products' progress rather than deep dive into a11y practices, as we separate the concern of eligible a11y from the other development concerns by "outsourcing" them.
 
-Some organizations practice an even more isolated codebase dedicated to a11y; see adobe's react-aria.
+Some organizations practice an even more isolated codebase dedicated to a11y; see Adobe's react-aria.
 
 ### Ready-made
 
@@ -64,11 +53,11 @@ If setting up a dedicated team isn't a reasonable choice in your organization, a
 
 ### Prioritize
 
-Choosing how we handle defects in-house is bound to business needs. Priorities can alter, but here's a suggestion to start -
+Choosing how we handle defects in-house is bound to business needs. Priorities can alter, but here's a few suggestion to start:
 
 1. Issues picked up by crawlers and found using automated tools are often easy to handle and fix to protect the organization from lawsuits and improve sites' ranking.
-2. Legal implications pages (e.g., privacy policy, nutritional information, GDRP pages)
-3. High traffic pages (e.g., homepage, landing/login/campaign pages)
+2. Legal implications pages (e.g., privacy policy, nutritional information, GDRP pages).
+3. High traffic pages (e.g., homepage, landing/login/campaign pages).
 
 As for a gradual increase, WCAG defines three levels of conformance (A, AA, AAA) an organization may adopt. Most countries' laws require UX to comply with at least the first level (A). Nonetheless, we can cherry-pick on specific features, go the extra mile, and opt-in to higher levels.
 
@@ -84,11 +73,9 @@ You should complete these tasks in addition to the first level to address the ne
 
 Completing all three levels achieves compliance with the A and AA criteria of the Web Content Accessibility Guidelines (WCAG).
 
-—IBM, *[pace of completion](https://www.ibm.com/able/toolkit/plan/#pace-of-completion)*
-
 Product teams should include [accessibility targets](https://www.ibm.com/able/toolkit/plan/release#establishing-the-accessibility-scope-for-the-release) in each release. Each team member takes on specific tasks to ensure they set up the product for success. This process set regularly will outcome in improved, sustainable accessibility.
 
-**Remember**, every feature you make more accessible improves the experience for **some** users. You don't have to solve it all at once to improve.
+Remember, every feature you make more accessible improves the experience for some users. You don't have to solve it all at once to improve.
 
 ### Tooling
 
