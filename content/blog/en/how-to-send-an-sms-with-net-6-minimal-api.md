@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-I’ve been looking at the preview releases of .Net 6 for some time now and one of the exciting features that a lot of people have been talking about is Minimal APIs. While it seems that opinion is very divided, I think they are a welcome addition, it removes a lot of the weight of using ASP.NET MVC and certainly lowers the bar to entry with a similar feel to ExpressJS in NodeJS.
+I’ve been looking at the preview releases of .Net 6 for some time now, and one of the exciting features that a lot of people have been talking about is Minimal APIs. While it seems that opinion is very divided, I think they are a welcome addition. It removes a lot of the weight of using ASP.NET MVC and certainly lowers the bar to entry with a similar feel to ExpressJS in NodeJS.
 
 A little over a year ago we released a blog post entitled “[How to Send an SMS With ASP.NET Core MVC](https://learn.vonage.com/blog/2020/07/09/how-to-send-an-sms-with-asp-net-core-mvc)” so with the Release of .Net 6 upon us I thought it would be a good idea to take inspiration and see what it would be like to use the new Minimal API syntax to emulate the same functionality.
 
