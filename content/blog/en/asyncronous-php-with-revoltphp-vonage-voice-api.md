@@ -29,10 +29,23 @@ A new project has been created off the back of the release of PHP8.1, [RevoltPhp
 
 OK, what I really mean is that I'm going to introduce our use-case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce need to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in <insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
 
-## Prerequisites: PHP 8.1, Composer, Slim, ngrok
+## Setting up: PHP 8.1, Composer, Slim, ngrok, Vonage, RevoltPhp
 
 ### PHP 8.1
 You'll need PHP 8.1 for this, which has not officially been released. Mac users can find it under [shivammathur's homebrew repository](https://github.com/shivammathur/homebrew-php), Linux users can find it on [ondrej's apt PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php/) and Windows users can find it on the QA section of [PHP for Windows](https://windows.php.net/qa/).
 
 ### Composer
+We need composer, PHP's de-facto dependency manager, so [follow the installation instructions for that here](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) if you've not already got it.
 
+### Slim Framework
+To have a truly non-blocking Event Loop _and_ have HTTP request handling, you'd want to using something like [ReactPhp's HTTP client](https://reactphp.org/http/). For this example though, we need some routes open for the Voice API handling, and Slim is a quick way to do this. To get it, we use composer:
+
+```composer require slim/slim```
+
+We also need a PSR-7 compliant library to handle requests/responses (I've gone with Guzzle's, but several options are available):
+
+```composer require guzzlehttp/psr7```
+
+### ngrok
+
+If you've not come across ngrok before, it's a super tool for creating SSL pipelines into your localhost. We'll need this for Vonage's webhooks to work. Check out the [installation instructions here] and create yourself an account.
