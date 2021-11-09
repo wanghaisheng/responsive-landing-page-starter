@@ -324,5 +324,12 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 
 **Woah!** So what it this?
 
-## (semi) Asynchronous PHP
+## The Event Loop
 
+`EventLoop::run();` will continue to work _as long as it has work_. So, what we're doing is creating a workload with the static callback creation `EventLoop::repeat()`. Here are the main parts to it:
+
+* The first argument to the callback is 0, as this is a float for the interval we want between iterations. No delays please, we have dinos on the loose!
+
+* The second is our callback generation - we get the `callbackID` for fiber management.
+
+* The `$static` variable keeps a counter of how many callbacks are being created. It's being used as an index for the `$phoneNumbers`, so once we have no more data, `isset($phoneNumbers[$i])` is false and so we cancel the Event Loop with our callback ID for reference.
