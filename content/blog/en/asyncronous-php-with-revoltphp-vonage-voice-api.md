@@ -256,4 +256,71 @@ We have an endpoint for our outbound calls, we have a reply to give when people 
 
 ## Introducing the Event Loop
 
+RevoltPhp's Event Loop will continue executing any work until there is no more work to do, and hand back control to the parent thread (this is usually the termination of the application, because for a non-blocking I/O PHP app we want the `EventLoop` to _never_ run out of work).
+
+In our case, our outbound calls are currently synchronous and blocking within the `foreach` loop. We want to notify all 2000 park employees at once, before the inevitable chaos ensues.
+
+RevoltPhp's Event Loop defines six core callbacks that the `EventLoop` class will execute:
+
+* **Defer**
+
+> The callback is executed in the next iteration of the event loop. If there are defers scheduled, the event loop won’t wait between iterations.
+
+* **Delay**
+
+> The callback is executed after the specified number of seconds. Fractions of a second may be expressed as floating point numbers.
+
+* **Repeat**
+
+> The callback is executed after the specified number of seconds, repeatedly. Fractions of a second may be expressed as floating point numbers.
+
+* **Stream readable**
+
+> The callback is executed when there’s data on the stream to be read, or the connection closed.
+
+* **Stream writable**
+
+> The callback is executed when there’s enough space in the write buffer to accept new data to be written.
+
+* **Signal**
+
+> The callback is executed when the process received a specific signal from the OS.
+
+OK, so we need to create callbacks within our route. From our requirements, we're going to need the `repeat` callback. Here's what it looks like:
+
+```php
+$app->get('/code32', function (Request $request, Response $response) use ($phoneNumbers, $vonage) {
+    EventLoop::repeat(0, function ($callbackId) use ($phoneNumbers, $vonage): void {
+        static $i = 0;
+
+        if (isset($phoneNumbers[$i])) {
+            $outboundCall = new OutboundCall(
+                new Phone($phoneNumbers[$i]),
+                new Phone('+447451284518')
+            );
+
+            $outboundCall
+                ->setAnswerWebhook(
+                    new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/answer', 'GET')
+                )
+                ->setEventWebhook(
+                    new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
+                );
+
+            $vonage->voice()->createOutboundCall($outboundCall);
+            $i++;
+        } else {
+            EventLoop::cancel($callbackId);
+        }
+    });
+
+    EventLoop::run();
+
+    $response->getBody()->write('Outbound calls sent.' . PHP_EOL);
+
+    return $response;
+});
+```
+
+**Woah!** So what it this?
 
