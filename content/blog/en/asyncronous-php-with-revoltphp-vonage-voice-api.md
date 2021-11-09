@@ -203,4 +203,18 @@ ngrok http 8000
 ```
 All being well, you'll get a response like this:
 
-The URL it gives you will need to be added to your Vonage application. Navigate to your Vonage application on your dashboard, and hit edit. In the application 
+The URL it gives you will need to be added to your Vonage application. Navigate to your Vonage application on your dashboard, and hit edit. In the Edit Application panel you can set the voice webhooks for incoming calls; take the ngrok URL and add the paths we've put placeholders in when setting the webhooks in our PHP code. For example, if ngrok created the URL `https://aef9-82-30-208-179.ngrok.io`, we would change our webhook urls to
+
+* https://aef9-82-30-208-179.ngrok.io/webhooks/answer
+* https://aef9-82-30-208-179.ngrok.io/webhooks/event
+ 
+So our PHP code for our route would now look like this when setting the webhooks:
+
+```
+$outboundCall
+    ->setAnswerWebhook(
+        new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/answer', 'GET')
+    )
+    ->setEventWebhook(
+        new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
+    );
