@@ -134,12 +134,14 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 $app->run();
 ```
 
-There's a lot to digest here, so let's break it down. Firstly we're setting up our Vonage client with credentials needed to make Voice calls, using a `Keypair` object and reading in the SSH file you can download when creating your Vonage application.
+There's a lot to digest here, so let's break it down.
+
+Firstly we're setting up our Vonage client with credentials needed to make Voice calls, using a `Keypair` object and reading in the SSH file you can download when creating your Vonage application as the first argument, with the application ID as the second:
 
 ```php
 $keypair = new Keypair(
-    file_get_contents('../my-example-app.key'),
-    '940597b9-7f52-416f-8fd4-a19e0f689602'
+    file_get_contents('../my-example-app.key'), //  <- SSH key downloaded from vonage and put in the root directory
+    '9999999-7f52-416f-8fd4-a19e0f689602' // <- application key here
 );
 
 $vonage = new Client($keypair);
@@ -158,4 +160,36 @@ for ($i = 1; $i < 2001; $i++) {
 ```
 Faker allows you to set a locale, so in this case I chose UK numbers by setting it to 'en_GB'. If you want to set a different locale, [have a look at the faker documentation here](https://fakerphp.github.io/).
 
+We're using a classic `for` loop to create the phone numbers into an array here, so we now have 2000 phone numbers ready to get their dino warnings. How do we do it? With a `foreach` loop in the endpoint:
+
+```php
+$app->get('/code32', function (Request $request, Response $response) use ($phoneNumbers, $vonage) {
+    foreach ($phoneNumbers as $outboundNumber) {
+
+        $outboundCall = new OutboundCall(
+            new Phone($outboundNumber),
+            new Phone('MY_VIRTUAL_NUMBER') // <- this is dummy phone number, make it your virtual number on your app
+        );
+
+        $outboundCall
+            ->setAnswerWebhook(
+                new Webhook('/webhook/answer', 'GET')
+            )
+            ->setEventWebhook(
+                new Webhook('/webhook/event', 'GET')
+            );
+
+        $vonage->voice()->createOutboundCall($outboundCall);
+    }
+
+    $response->getBody()->write('Park employees notified.' . PHP_EOL);
+
+    return $response;
+});
+```
+So, we have an endpoint to hit on our app. It will loop through all the phone numbers to call, but there are two things needed to complete our **synchronous** warning. You see that `setAnswerWebhook()` method in the code above? Well, once we make that outbound call, Vonage needs to know what to do with it. This is where ngrok and our webhooks come in.
+
+## Fire ngrok
+
+Ngrok will open a tunnel up and give you a URL to localhost when you launch it. PHP has a built in web server, so we'll use that for localhost and then fire ngrok to open the tunnel.
 
