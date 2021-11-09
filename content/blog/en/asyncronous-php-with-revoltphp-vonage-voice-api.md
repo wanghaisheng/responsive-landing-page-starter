@@ -219,3 +219,27 @@ $outboundCall
         new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
     );
 ```
+
+## Setting the warning
+
+We're going to issue our dino warning with a new route that the answer webhook is pointing to. In order to use Vonage text-to-speech, we use what is called an `NCCO object`, which is a fancy term for a JSON object that controls what to do with the call. Add the following route to your `index.php`:
+
+```
+$app->get('/webhook/answer', function (Request $request, Response $response) {
+    $ncco = [
+        [
+            'action' => 'talk',
+            'language' => 'en-GB',
+            'style' => 1,
+            'text' => 'This is a code 32. Asset #784 is out of containment.'
+        ]
+    ];
+
+    $response->getBody()->write(json_encode($ncco));
+
+    return $response
+        ->withHeader('Content-Type', 'application/json');
+});
+
+```
+The NCCO object is given as a JSON response to the webhook, so Vonage knows what to do with it - in this case, the `language` and `style` of your choosing will read out the `text` you give it.
