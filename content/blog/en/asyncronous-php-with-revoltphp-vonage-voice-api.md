@@ -1,5 +1,5 @@
 ---
-title: Asyncronous PHP with RevoltPHP & Vonage Voice API
+title: Asynchronous PHP with RevoltPHP & Vonage Voice API
 description: Think async PHP doesn't exist? It sure does, and now it's native!
 author: james-seconde
 published: false
