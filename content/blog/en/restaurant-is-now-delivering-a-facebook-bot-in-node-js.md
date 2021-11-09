@@ -23,7 +23,7 @@ replacement_url: ""
 
 Often when I'm coding, I get hungry. And everyone knows the best developers are lazy, so instead of shopping and cooking *and* cleaning, I usually use a food delivery app and simply order a tasty meal. The problem is that too often my favorite restaurants are offline. Sometimes they are closed for business; other times they are too busy and stop accepting online orders. So I'm forced to wait and remember to check if they're back online, and then actually open the app and look to see if they're back online. And sometimes check again, and again, and again. It's truly a grave injustice 😆.
 
-There must be a better, more innovative way! Thankfully [I recently discovered my favorite food delivery app, Wolt, has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that lets me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
+There must be a better, more innovative way! Thankfully I recently discovered my favorite food delivery app, Wolt, [has an API](https://medium.com/analytics-vidhya/exploring-the-api-of-a-website-8579b04df28f) that lets me know if a restaurant is online. So using the Vonage Messages API, I created a Facebook Messenger Bot that will alert me when my favorite restaurant is back online!
 
 *(This example is built around a use case of food delivery, but the same code can be repurposed to create a Facebook bot that will alert users for any boolean case change.)*
 
@@ -73,7 +73,7 @@ $ npm init
 Install our required Node packages:
 
 ```bash
-$ npm install @vonage/server-sdk@beta express dotenv got -s lokijs
+$ npm install -s @vonage/server-sdk@beta express dotenv got lokijs
 ```
 
 And finally, create the files where our code will live:
@@ -156,11 +156,13 @@ We will now need to tell our Sandbox to listen to requests from our Application 
 
 Once we hit the `Save webhooks` button, we're now complete with our setup and we can start to code!
 
+All subsequent code will go in our `index.js` file.
+
 ## Setting up an Express Server
 
 ### Build a Boilerplate Server With Dependencies
 
-First, let's set up a boilerplate Express server that will import our required libraries and simply run on port 3000:
+First, let's set up a boilerplate Express server in our `index.js` file that will import our required libraries and simply run on port 3000:
 
 ```javascript
 // access our environment variables
@@ -183,7 +185,7 @@ app.listen(3000);
 
 ### Sending A Facebook Message From Our Application
 
-We need to initialize a Vonage instance, passing our ENV variables, and then tell it to use the Vonage Sandbox as the host used for making the HTTP requests.
+We need to initialize a Vonage instance, passing our ENV variables, and then tell it to use the Vonage Sandbox as the host used for making the HTTP requests. We can copy the following code int our 
 
 ```
 // initialize a new Vonage instance, with ENV variables/keys
@@ -338,7 +340,7 @@ Now that we've created the logic based on the restaurant's status, we want to co
 
 ## Creating an In-Memory Database of Offline Restaurants
 
-At this point we'll be using our `LokiJS` library. [LokiJS is an in-memory database](https://github.com/techfort/LokiJS) that will allow us to keep track of each restaurant that gets requested in a simple, runtime fashion. If you've used MongoDB, LokiJS will look very familiar.
+At this point we'll be using our `LokiJS` library. [LokiJS](https://github.com/techfort/LokiJS) is an in-memory database that will allow us to keep track of each restaurant that gets requested in a simple, runtime fashion. If you've used MongoDB, LokiJS will look very familiar.
 
 First, we need to include Loki with our other dependencies:
 
@@ -435,8 +437,6 @@ app.listen(3000);
 ```
 
 And now we can run the program, seeing that when a restaurant is offline we receive a message notifying so, and when restaurants go online we are updated to the new status. I suggest trying the app in the morning and seeing as restaurants suddenly open for lunch. It's amusing to get the push notifications from Facebook Messenger to arrive on your phone!
-
-
 
 ![Enhanced Facebook SandBox Message](/content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/ezgif.com-gif-maker-9-.gif "Enhanced Facebook SandBox Message")
 
