@@ -187,6 +187,11 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
     return $response;
 });
 ```
+
+> This tutorial is simulating an example, so don't run this live! The reason
+> being that 2000 fake phone numbers will be generated, and Vonage will attempt
+> to phone them all!
+
 So, we have an endpoint to hit on our app. It will loop through all the phone numbers to call, but there are two things needed to complete our **synchronous** warning. You see that `setAnswerWebhook()` method in the code above? Well, once we make that outbound call, Vonage needs to know what to do with it. This is where ngrok and our webhooks come in.
 
 ## Wiring the calls
@@ -243,3 +248,4 @@ $app->get('/webhook/answer', function (Request $request, Response $response) {
 
 ```
 The NCCO object is given as a JSON response to the webhook, so Vonage knows what to do with it - in this case, the `language` and `style` of your choosing will read out the `text` you give it.
+
