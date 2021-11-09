@@ -50,9 +50,14 @@ We also need a PSR-7 compliant library to handle requests/responses (I've gone w
 
 If you've not come across ngrok before, it's a super tool for creating SSL pipelines into your localhost. We'll need this for Vonage's webhooks to work. Check out the [installation instructions here](https://ngrok.com/download) and create yourself an account.
 
+### Vonage Voice API
+
+
+
 ### RevoltPhp
 
-The last requirement is to get the Event Loop from Revolt. It's currently still pre-release, so you'll need to specify the dev branch:
+Finally, we need to get the Event Loop from RevoltPhp. It's currently still pre-release, so you'll need to specify the dev branch:
 
-```composer require revolt/event-loop:dev-main
+```composer require revolt/event-loop:dev-main```
+
 
