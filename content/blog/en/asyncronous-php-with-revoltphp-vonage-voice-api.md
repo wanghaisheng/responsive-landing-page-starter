@@ -15,4 +15,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It may surprise some readers that asynchronous PHP is nothing new. Both [amphp]() and [ReactPhp]() have been using PHP's generators introduced in [PHP5.5]() way back in 2014. PHP developers tend not to think in terms of asynchronous programming due to the nature of the request/response lifecycle (with encapsulated state) we are comfortable with. While the amphp and ReactPhp libraries have introduced workarounds with co-routines, it's never quite been near-native as much as languages with runtimes that have been designed that way - for example, [node.js]() or [Go]().
+It may surprise some readers that asynchronous PHP is nothing new. PHP5.5 introduced generators way back in 2014, and since then we have seen the creation of [amphp](), [ReactPhp]() and [Swoole]()/[OpenSwoole]().
+
+PHP developers tend not to think in terms of asynchronous programming due to the nature of the request/response lifecycle (with encapsulated state) we are comfortable working with. Something has happened that might just change that though: [the introduction of native fibers to PHP8.1]().
