@@ -31,13 +31,18 @@ OK, what I really mean is that I'm going to introduce our use-case, but I like b
 
 ## Setting up: PHP 8.1, Composer, Slim, ngrok, Vonage, RevoltPhp
 
-### PHP 8.1
+#### PHP 8.1
 You'll need PHP 8.1 for this, which has not officially been released. Mac users can find it under [shivammathur's homebrew repository](https://github.com/shivammathur/homebrew-php), Linux users can find it on [ondrej's apt PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php/) and Windows users can find it on the QA section of [PHP for Windows](https://windows.php.net/qa/).
 
-### Composer
+#### Composer
 We need composer, PHP's de-facto dependency manager, so [follow the installation instructions for that here](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) if you've not already got it.
 
-### Slim Framework
+#### Project space
+The following requirements will need your project space, so create a new directory where the code will sit and use composer to create a `composer.json` configuration. Do this by running the following in your blank directory:
+
+```composer init```
+
+#### Slim Framework
 To have a truly non-blocking Event Loop _and_ have HTTP request handling, you'd want to using something like [ReactPhp's HTTP client](https://reactphp.org/http/). For this example though, we need some routes open for the Voice API handling, and Slim is a quick way to do this. To get it, we use composer:
 
 ```composer require slim/slim```
@@ -46,13 +51,15 @@ We also need a PSR-7 compliant library to handle requests/responses (I've gone w
 
 ```composer require guzzlehttp/psr7```
 
-### ngrok
+#### ngrok
 
-If you've not come across ngrok before, it's a super tool for creating SSL pipelines into your localhost. We'll need this for Vonage's webhooks to work. Check out the [installation instructions here](https://ngrok.com/download) and create yourself an account.
+If you've not come across ngrok before, it's a super useful tool for creating secure URL tunnels into your localhost. We'll need this for Vonage's webhooks to work. Check out the [installation instructions here](https://ngrok.com/download) and create yourself an account.
 
-### Vonage Voice API
+#### Vonage Voice API
 
+Vonage provides a fully-featured API for sending and receiving calls, so we're going to use the core PHP SDK to send outbound calls. Install it with composer:
 
+```composer require vonage/client-core```
 
 ### RevoltPhp
 
@@ -60,4 +67,12 @@ Finally, we need to get the Event Loop from RevoltPhp. It's currently still pre-
 
 ```composer require revolt/event-loop:dev-main```
 
+## Setting up Vonage Applications & Numbers
 
+In order to create outbound calls to warn the blissfully ignorant park workers of the danger at bay, you'll need to set up your Vonage account accordingly.
+
+<sign-up number></sign-up>
+
+## Make that call!
+
+OK, let's get going on the Slim application. Create a file 
