@@ -168,7 +168,7 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 
         $outboundCall = new OutboundCall(
             new Phone($outboundNumber),
-            new Phone('MY_VIRTUAL_NUMBER') // <- this is dummy phone number, make it your virtual number on your app
+            new Phone('MY_VIRTUAL_NUMBER') // <- this is a dummy phone number, make it your virtual number on your app
         );
 
         $outboundCall
@@ -296,7 +296,7 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
         if (isset($phoneNumbers[$i])) {
             $outboundCall = new OutboundCall(
                 new Phone($phoneNumbers[$i]),
-                new Phone('+447451284518')
+                new Phone('MY_VIRTUAL_NUMBER') // <- this is a dummy phone number, make it your virtual number on your app
             );
 
             $outboundCall
@@ -323,4 +323,6 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 ```
 
 **Woah!** So what it this?
+
+## (semi) Asynchronous PHP
 
