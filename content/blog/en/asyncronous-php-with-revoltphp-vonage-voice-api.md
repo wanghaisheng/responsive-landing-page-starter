@@ -189,7 +189,18 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 ```
 So, we have an endpoint to hit on our app. It will loop through all the phone numbers to call, but there are two things needed to complete our **synchronous** warning. You see that `setAnswerWebhook()` method in the code above? Well, once we make that outbound call, Vonage needs to know what to do with it. This is where ngrok and our webhooks come in.
 
-## Fire ngrok
+## Wiring the calls
 
-Ngrok will open a tunnel up and give you a URL to localhost when you launch it. PHP has a built in web server, so we'll use that for localhost and then fire ngrok to open the tunnel.
+Ngrok will open a tunnel up and give you a URL to localhost when you launch it. PHP has a built in web server, so we'll use that for localhost and then fire ngrok to open the tunnel. While in the `public` directory we created, start the PHP server:
 
+```
+php -S 0.0.0.0:8000 -t .
+```
+Port 8000 is now opened up on our machine, so enter the following to get ngrok to tunnel it:
+
+```
+ngrok http 8000
+```
+All being well, you'll get a response like this:
+
+The URL it gives you will need to be added to your Vonage application. Navigate to your Vonage application on your dashboard, and hit edit. In the application 
