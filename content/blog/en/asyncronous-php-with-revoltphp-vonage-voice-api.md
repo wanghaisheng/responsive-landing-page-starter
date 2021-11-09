@@ -333,3 +333,9 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 * The second is our callback generation - we get the `callbackID` for fiber management.
 
 * The `$static` variable keeps a counter of how many callbacks are being created. It's being used as an index for the `$phoneNumbers`, so once we have no more data, `isset($phoneNumbers[$i])` is false and so we cancel the Event Loop with our callback ID for reference.
+
+That's the code part, but what's going on under the hood? Finally, we get to:
+
+## Asynchronous PHP
+
+Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously.
