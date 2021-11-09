@@ -2,9 +2,10 @@
 title: How to Send an SMS with .Net 6 Minimal API
 description: This tutorial will show you how to send an SMS with .Net 6 and
   Minimal API using the Vonage API.
+thumbnail: /content/blog/how-to-send-an-sms-with-net-6-minimal-api/sms_net-6.png
 author: matt-hunt
-published: false
-published_at: 2021-11-06T17:57:46.503Z
+published: true
+published_at: 2021-11-09T11:34:48.690Z
 updated_at: 2021-11-06T17:57:46.531Z
 category: tutorial
 tags:
