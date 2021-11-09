@@ -117,10 +117,10 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 
         $outboundCall
             ->setAnswerWebhook(
-                new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/answer', 'GET')
+                new Webhook('/webhook/answer', 'GET')
             )
             ->setEventWebhook(
-                new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
+                new Webhook('/webhook/event', 'GET')
             );
 
         $vonage->voice()->createOutboundCall($outboundCall);
@@ -145,4 +145,17 @@ $keypair = new Keypair(
 $vonage = new Client($keypair);
 ```
 
-You can find more documentation on setting up your client in [the PHP SDK documentation]()
+Next, we simulate a payload of phone numbers to call by using the [faker](https://github.com/FakerPHP/Faker/) library, set to a variable named `$phoneNumbers`.
+
+```
+$faker = Faker\Factory::create('en_GB');
+
+$phoneNumbers = [];
+
+for ($i = 1; $i < 2001; $i++) {
+    $phoneNumbers[] = $faker->phoneNumber();
+}
+```
+Faker allows you to set a locale, so in this case I chose UK numbers by setting it to 'en_GB'. If you want to set a different locale, [have a look at the faker documentation here](https://fakerphp.github.io/).
+
+
