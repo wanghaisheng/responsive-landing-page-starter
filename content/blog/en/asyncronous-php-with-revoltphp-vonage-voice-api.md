@@ -338,4 +338,6 @@ That's the code part, but what's going on under the hood? Finally, we get to:
 
 ## Asynchronous PHP
 
-Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously.
+Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously. What is interesting from the PHP developers point of view is that this has been done without some of the common DevOps-y approaches of spreading the load, such as [Google Cloud Compute] and [AWS Lambda].
+
+Thanks to Vonage and Revolt, we call all be safe a little quicker, thanks to the tireless efforts of our park staff.
