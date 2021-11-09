@@ -75,4 +75,74 @@ In order to create outbound calls to warn the blissfully ignorant park workers o
 
 ## Make that call!
 
-OK, let's get going on the Slim application. Create a file 
+OK, let's get going on the Slim application. Create a directory in your project route named `public` and create a new php file in it named `index.php`. Our file will look like this:
+
+```php
+<?php
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Slim\Factory\AppFactory;
+use Vonage\Client;
+use Vonage\Client\Credentials\Keypair;
+use Vonage\Voice\Endpoint\Phone;
+use Vonage\Voice\OutboundCall;
+use Vonage\Voice\Webhook;
+
+require __DIR__ . '/../vendor/autoload.php';
+
+$keypair = new Keypair(
+    file_get_contents('../revolt_php_example.key'),
+    '940597b9-7f52-416f-8fd4-a19e0f689602'
+);
+
+$vonage = new Client($keypair);
+
+$faker = Faker\Factory::create('en_GB');
+
+$phoneNumbers = [];
+
+for ($i = 1; $i < 1201; $i++) {
+    $phoneNumbers[] = $faker->phoneNumber();
+}
+
+$app = AppFactory::create();
+
+$app->get('/code32', function (Request $request, Response $response) use ($phoneNumbers, $vonage) {
+    foreach ($phoneNumbers as $outboundNumber) {
+
+        $outboundCall = new OutboundCall(
+            new Phone($outboundNumber),
+            new Phone('999999')
+        );
+
+        $outboundCall
+            ->setAnswerWebhook(
+                new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/answer', 'GET')
+            )
+            ->setEventWebhook(
+                new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
+            );
+
+        $vonage->voice()->createOutboundCall($outboundCall);
+    }
+
+    $response->getBody()->write('Park employees notified.' . PHP_EOL);
+
+    return $response;
+});
+
+$app->run();
+```
+
+There's a lot to digest here, so let's break it down. Firstly we're setting up our Vonage client with credentials needed to make Voice calls, using a `Keypair` object and reading in the SSH file you can download when creating your Vonage application.
+
+```php
+$keypair = new Keypair(
+    file_get_contents('../my-example-app.key'),
+    '940597b9-7f52-416f-8fd4-a19e0f689602'
+);
+
+$vonage = new Client($keypair);
+```
+
+You can find more documentation on setting up your client in [the PHP SDK documentation]()
