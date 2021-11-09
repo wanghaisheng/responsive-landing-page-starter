@@ -247,5 +247,13 @@ $app->get('/webhook/answer', function (Request $request, Response $response) {
 });
 
 ```
-The NCCO object is given as a JSON response to the webhook, so Vonage knows what to do with it - in this case, the `language` and `style` of your choosing will read out the `text` you give it.
+
+The NCCO object is given as a JSON response to the webhook, so Vonage knows what to do with it - in this case, the `language` and `style` of your choosing will read out the `text` you give it as you choose.
+
+## Back to Async vs. Sync
+
+We have an endpoint for our outbound calls, we have a reply to give when people answer the emergency call. But, the point of this article was about asynchronous code, right? Our emergency endpoint, when hit at runtime, will synchronously loop through each number and phone it; that's PHP. So, now it's time for fibers.
+
+## Introducing the Event Loop
+
 
