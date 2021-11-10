@@ -234,12 +234,14 @@ Here is where you edit them in the Vonage dashboard:
 Then we change our PHP code for our route would now look like this when setting the webhooks:
 
 ```
+$baseUrl = 'https://aef9-82-30-208-179.ngrok.io'
+
 $outboundCall
     ->setAnswerWebhook(
-        new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/answer', 'GET')
+        new Webhook($baseUrl . '/webhook/answer', 'GET')
     )
     ->setEventWebhook(
-        new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
+        new Webhook($baseUrl . '/webhook/event', 'GET')
     );
 ```
 
@@ -315,13 +317,14 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
                 new Phone($phoneNumbers[$i]),
                 new Phone('MY_VIRTUAL_NUMBER') // <- this is a dummy phone number, make it your virtual number on your app
             );
+            $baseUrl = 'https://aef9-82-30-208-179.ngrok.io'
 
             $outboundCall
                 ->setAnswerWebhook(
-                    new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/answer', 'GET')
+                    new Webhook($baseUrl . '/webhook/answer', 'GET')
                 )
                 ->setEventWebhook(
-                    new Webhook('https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
+                    new Webhook($baseUrl . '/https://aef9-82-30-208-179.ngrok.io/webhook/event', 'GET')
                 );
 
             $vonage->voice()->createOutboundCall($outboundCall);
