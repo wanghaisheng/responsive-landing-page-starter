@@ -30,13 +30,13 @@ A new project has been created off the back of the release of PHP8.1, [RevoltPhp
 
 ![](/content/blog/asynchronous-php-with-revoltphp-vonage-voice-api/mehmet-turgut-kirkgoz-15zmeuktjm-unsplash.jpg)
 
-OK, what I mean is that I'm going to introduce our use-case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce needs to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in <insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
+OK, what I mean is that I'm going to introduce our use case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce needs to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in \<insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
 
 ## Setting up: PHP 8.1, Composer, Slim, ngrok, Vonage, RevoltPhp
 
 #### PHP 8.1
 
-You'll need PHP 8.1 for this, which has not officially been released. Mac users can find it under [shivammathur's homebrew repository](https://github.com/shivammathur/homebrew-php), Linux users can find it on [ondrej's apt PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php/) and Windows users can find it on the QA section of [PHP for Windows](https://windows.php.net/qa/).
+You'll need PHP 8.1 for this, which has not officially been released. Mac users can find it under [shivammathur's homebrew repository](https://github.com/shivammathur/homebrew-php), Linux users can find it on [ondrej's apt PPA](https://launchpad.net/~ondrej/+archive/ubuntu/php/), and Windows users can find it on the QA section of [PHP for Windows](https://windows.php.net/qa/).
 
 #### Composer
 
@@ -76,7 +76,7 @@ Finally, we need to get the Event Loop from RevoltPhp. It's currently still pre-
 
 ## Setting up Vonage Applications & Numbers
 
-In order to create outbound calls to warn the blissfully ignorant park workers of the danger at bay, you'll need to set up your Vonage account accordingly.
+To create outbound calls to warn the blissfully ignorant park workers of the danger at bay, you'll need to set up your Vonage account accordingly.
 
 <sign-up number></sign-up>
 
@@ -197,10 +197,10 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 ```
 
 > This tutorial is simulating an example, so don't run this live! The reason
-> being that 2000 fake phone numbers will be generated, and Vonage will attempt
+> is that 2000 fake phone numbers will be generated, and Vonage will attempt
 > to phone them all!
 
-So, we have an endpoint to hit on our app. It will loop through all the phone numbers to call, but there are two things needed to complete our **synchronous** warning. You see that `setAnswerWebhook()` method in the code above? Well, once we make that outbound call, Vonage needs to know what to do with it. This is where ngrok and our webhooks come in.
+So, we have an endpoint to hit on our app. It will loop through all the phone numbers to call, but there are two things needed to complete our **synchronous** warning. Do you see that `setAnswerWebhook()` method in the code above? Well, once we make that outbound call, Vonage needs to know what to do with it. This is where ngrok and our webhooks come in.
 
 ## Wiring the calls
 
