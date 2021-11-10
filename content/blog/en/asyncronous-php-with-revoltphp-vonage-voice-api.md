@@ -80,6 +80,8 @@ To create outbound calls to warn the blissfully ignorant park workers of the dan
 
 <sign-up number></sign-up>
 
+Create a new application with Voice capability enabled and download the application keys.
+
 ## Make that call!
 
 OK, let's get going on the Slim application. Create a directory in your project route named `/public` and create a new php file in it named `index.php`. Our file will look like this:
@@ -143,7 +145,7 @@ $app->run();
 
 There's a lot to digest here, so let's break it down.
 
-Firstly we're setting up our Vonage client with credentials needed to make Voice calls, using a `Keypair` object and reading in the SSH file you can download when creating your Vonage application as the first argument, with the application ID as the second:
+Firstly we're setting up our Vonage client with our applicaton credentials we created earlier using a `Keypair` object and reading in the SSH key you downloaded as the first argument, with the application ID as the second:
 
 ```php
 $keypair = new Keypair(
