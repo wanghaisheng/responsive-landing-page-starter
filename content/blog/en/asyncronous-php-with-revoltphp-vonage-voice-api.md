@@ -30,7 +30,7 @@ A new project has been created off the back of the release of PHP8.1, [RevoltPhp
 
 ![](/content/blog/asynchronous-php-with-revoltphp-vonage-voice-api/mehmet-turgut-kirkgoz-15zmeuktjm-unsplash.jpg)
 
-OK, what I mean is that I'm going to introduce our use case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce needs to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in \<insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
+OK, what I mean is that I'm going to introduce our use case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce needs to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in <insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
 
 ## Setting up: PHP 8.1, Composer, Slim, ngrok, Vonage, RevoltPhp
 
@@ -218,12 +218,18 @@ ngrok http 8000
 
 All being well, you'll get a response like this:
 
+![](/content/blog/asynchronous-php-with-revoltphp-vonage-voice-api/screenshot-2021-11-09-at-20.33.37.png)
+
 The URL it gives you will need to be added to your Vonage application. Navigate to your Vonage application on your dashboard, and hit edit. In the Edit Application panel you can set the voice webhooks for incoming calls; take the ngrok URL and add the paths we've put placeholders in when setting the webhooks in our PHP code. For example, if ngrok created the URL `https://aef9-82-30-208-179.ngrok.io`, we would change our webhook URLs to
 
 * https://aef9-82-30-208-179.ngrok.io/webhooks/answer
 * https://aef9-82-30-208-179.ngrok.io/webhooks/event
 
-So our PHP code for our route would now look like this when setting the webhooks:
+Here is where you edit them in the Vonage dashboard:
+
+![](/content/blog/asynchronous-php-with-revoltphp-vonage-voice-api/screenshot-2021-11-09-at-20.56.31.png)
+
+Then we change our PHP code for our route would now look like this when setting the webhooks:
 
 ```
 $outboundCall
@@ -345,6 +351,6 @@ That's the code part, but what's going on under the hood? Finally, we get to:
 
 ## Asynchronous PHP
 
-Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously. What is interesting from the PHP developers' point of view is that this has been done without some of the common engineering approaches of spreading the load, such as using [Laravel](<>) Job/Queue worker or a Serverless architecture with [Bref](<https://bref.sh/>) tied to [Google Cloud Compute](<https://cloud.google.com/compute>) or [AWS Lambda](<https://aws.amazon.com/lambda/>). These are all perfectly good approaches, but the main point here is that our approach **is plain PHP**.
+Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously. What is interesting from the PHP developers' point of view is that this has been done without some of the common engineering approaches of spreading the load, such as using [Laravel](<>) Job/Queue worker or a Serverless architecture with [Bref](https://bref.sh/) tied to [Google Cloud Compute](https://cloud.google.com/compute) or [AWS Lambda](https://aws.amazon.com/lambda/). These are all perfectly good approaches, but the main point here is that our approach **is plain PHP**.
 
 Thanks to Vonage and RevoltPhp, we call all be safe a little quicker, thanks to the tireless efforts of our park staff getting that asset back into containment as fast as possible.
