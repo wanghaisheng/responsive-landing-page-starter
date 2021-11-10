@@ -16,15 +16,15 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It may surprise some readers that asynchronous PHP is nothing new. PHP5.5 introduced generators way back in 2014, and since then we have seen the creation of [amphp](), [ReactPhp]() and [Swoole]()/[OpenSwoole]().
+It may surprise some readers that asynchronous PHP is nothing new. PHP5.5 introduced generators way back in 2014 which set us on this path, and since then we have seen the creation of [amphp](https://amphp.org/), [ReactPhp](https://reactphp.org/) and [OpenSwoole](https://www.swoole.co.uk/).
 
 ## Hello, fibers!
 
-PHP developers tend not to think in terms of async programming due to the nature of the request/response lifecycle (with encapsulated state) we are comfortable working with. Something has happened that might just change that though: [the introduction of native fibers to PHP8.1](). While fibers may not be "true" async execution while runtimes like [node.js]() and [Go]() are, it certainly can give you a massive performance boost if executed without any blocking I/O.
+PHP developers tend not to think in terms of async programming due to the nature of the request/response lifecycle (with encapsulated state) we are comfortable working with. Something has happened that might just change that though: [the introduction of native fibers to PHP8.1](https://wiki.php.net/rfc/fibers). While fibers may not be "true" async execution while runtimes like [node.js](https://nodejs.org/en/) and [Go](https://golang.org/) are, it certainly can give you a massive performance boost if executed without any blocking I/O.
 
 ## Hello, RevoltPhp!
 
-A new project has been created off the back of the release of PHP8.1, [RevoltPhp](), which is a collaboration from the creators of amphp & ReactPhp, aiming to bring their experience in async PHP to fiber implementation. While it's best to think of it as more an "underlying library" for a framework to use on top of it (concepts such as Read/Writeable Stream callbacks can be pretty difficult to navigate), I'm going to show you a small taster of how you can learn this concept.
+A new project has been created off the back of the release of PHP8.1, [RevoltPhp](https://revolt.run/), which is a collaboration from the creators of amphp & ReactPhp, aiming to bring their experience in async PHP to fiber implementation. While it's best to think of it as more an "underlying library" for a framework to use on top of it (concepts such as Read/Writeable Stream callbacks can be pretty difficult to navigate), I'm going to show you a small taster of how you can learn this concept.
 
 ## Emergency! Asset out of containment!
 
@@ -339,6 +339,6 @@ That's the code part, but what's going on under the hood? Finally, we get to:
 
 ## Asynchronous PHP
 
-Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously. What is interesting from the PHP developers' point of view is that this has been done without some of the common DevOps type engineering approaches of spreading the load with Serverlesss, such as [Google Cloud Compute]() and [AWS Lambda]() (though we could achieve the same thing with [Bref](), but that's an article for another day!).
+Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously. What is interesting from the PHP developers' point of view is that this has been done without some of the common engineering approaches of spreading the load, such as using [Laravel]() Job/Queue worker or a Serverless architecture with [Bref]() tied to [Google Cloud Compute]() or [AWS Lambda](). These are all perfectly good approaches, but the main point here is that our approach **is plain PHP**.
 
 Thanks to Vonage and RevoltPhp, we call all be safe a little quicker, thanks to the tireless efforts of our park staff getting that asset back into containment as fast as possible.
