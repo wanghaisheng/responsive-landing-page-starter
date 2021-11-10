@@ -30,7 +30,7 @@ A new project has been created off the back of the release of PHP8.1, [RevoltPhp
 
 ![](/content/blog/asynchronous-php-with-revoltphp-vonage-voice-api/mehmet-turgut-kirkgoz-15zmeuktjm-unsplash.jpg)
 
-OK, what I really mean is that I'm going to introduce our use-case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce needs to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in <insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
+OK, what I mean is that I'm going to introduce our use-case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce needs to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in <insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
 
 ## Setting up: PHP 8.1, Composer, Slim, ngrok, Vonage, RevoltPhp
 
