@@ -16,11 +16,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It may surprise some readers that asynchronous PHP is nothing new. PHP5.5 introduced generators way back in 2014 which set us on this path, and since then we have seen the creation of [amphp](https://amphp.org/), [ReactPhp](https://reactphp.org/) and [OpenSwoole](https://www.swoole.co.uk/).
+It may surprise some readers that asynchronous PHP is nothing new. PHP5.5 introduced generators way back in 2014 which set us on this path, and since then we have seen the creation of [amphp](https://amphp.org/), [ReactPhp](https://reactphp.org/), and [OpenSwoole](https://www.swoole.co.uk/).
 
 ## Hello, fibers!
 
-PHP developers tend not to think in terms of async programming due to the nature of the request/response lifecycle (with encapsulated state) we are comfortable working with. Something has happened that might just change that though: [the introduction of native fibers to PHP8.1](https://wiki.php.net/rfc/fibers). While fibers may not be "true" async execution while runtimes like [node.js](https://nodejs.org/en/) and [Go](https://golang.org/) are, it certainly can give you a massive performance boost if executed without any blocking I/O.
+PHP developers tend not to think in terms of async programming due to the nature of the request/response lifecycle (with the encapsulated state) we are comfortable working with. Something has happened that might just change that though: [the introduction of native fibers to PHP8.1](https://wiki.php.net/rfc/fibers). While fibers may not be "true" async execution while runtimes like [node.js](https://nodejs.org/en/) and [Go](https://golang.org/) are, it certainly can give you a massive performance boost if executed without any blocking I/O.
 
 ## Hello, RevoltPhp!
 
@@ -30,7 +30,7 @@ A new project has been created off the back of the release of PHP8.1, [RevoltPhp
 
 ![](/content/blog/asynchronous-php-with-revoltphp-vonage-voice-api/mehmet-turgut-kirkgoz-15zmeuktjm-unsplash.jpg)
 
-OK, what I really mean is that I'm going to introduce our use-case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce need to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in <insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
+OK, what I really mean is that I'm going to introduce our use-case, but I like being a tad dramatic at times. Let's say we have our real-world dinosaur park. The workforce needs to be notified when a furious, human-eating lizard escapes out of its pen. Thing is, the communications system was written in <insert your favourite PHP framework of choice>, and therefore is technically in a blocking I/O language. You need to use Vonage to call 2000 park workers simultaneously with a text-to-voice warning, right? Let's get to making an asynchronous code thread.
 
 ## Setting up: PHP 8.1, Composer, Slim, ngrok, Vonage, RevoltPhp
 
@@ -50,7 +50,7 @@ The following requirements will need your project space, so create a new directo
 
 #### Slim Framework
 
-To have a truly non-blocking Event Loop *and* have HTTP request handling, you'd want to using something like [ReactPhp's HTTP client](https://reactphp.org/http/). For this example though, we need some routes open for the Voice API handling, and [Slim](https://www.slimframework.com/) is a quick way to do this. To get it, we use composer:
+To have a truly non-blocking Event Loop *and* have HTTP request handling, you'd want to use something like [ReactPhp's HTTP client](https://reactphp.org/http/). For this example though, we need some routes open for the Voice API handling, and [Slim](https://www.slimframework.com/) is a quick way to do this. To get it, we use composer:
 
 `composer require slim/slim`
 
@@ -166,7 +166,7 @@ for ($i = 1; $i < 2001; $i++) {
 }
 ```
 
-Faker allows you to set a locale, so in this case I chose UK numbers by setting it to 'en_GB'. If you want to set a different locale, [have a look at the faker documentation here](https://fakerphp.github.io/).
+Faker allows you to set a locale, so in this case, I chose UK numbers by setting it to 'en_GB'. If you want to set a different locale, [have a look at the faker documentation here](https://fakerphp.github.io/).
 
 We're using a classic `for` loop to create the phone numbers into an array here, so we now have 2000 phone numbers ready to get their dino warnings. How do we do it? With a `foreach` loop in the endpoint:
 
@@ -204,7 +204,7 @@ So, we have an endpoint to hit on our app. It will loop through all the phone nu
 
 ## Wiring the calls
 
-Ngrok will open a tunnel up and give you a URL to localhost when you launch it. PHP has a built in web server, so we'll use that for localhost and then fire ngrok to open the tunnel. While in the `public` directory we created, start the built in PHP web server:
+Ngrok will open a tunnel up and give you a URL to localhost when you launch it. PHP has a built-in web server, so we'll use that for localhost and then fire ngrok to open the tunnel. While in the `public` directory we created, start the built-in PHP web server:
 
 ```
 php -S 0.0.0.0:8000 -t .
@@ -218,7 +218,7 @@ ngrok http 8000
 
 All being well, you'll get a response like this:
 
-The URL it gives you will need to be added to your Vonage application. Navigate to your Vonage application on your dashboard, and hit edit. In the Edit Application panel you can set the voice webhooks for incoming calls; take the ngrok URL and add the paths we've put placeholders in when setting the webhooks in our PHP code. For example, if ngrok created the URL `https://aef9-82-30-208-179.ngrok.io`, we would change our webhook urls to
+The URL it gives you will need to be added to your Vonage application. Navigate to your Vonage application on your dashboard, and hit edit. In the Edit Application panel you can set the voice webhooks for incoming calls; take the ngrok URL and add the paths we've put placeholders in when setting the webhooks in our PHP code. For example, if ngrok created the URL `https://aef9-82-30-208-179.ngrok.io`, we would change our webhook URLs to
 
 * https://aef9-82-30-208-179.ngrok.io/webhooks/answer
 * https://aef9-82-30-208-179.ngrok.io/webhooks/event
@@ -277,11 +277,11 @@ RevoltPhp's Event Loop defines six core callbacks that the `EventLoop` class wil
 
 * **Delay**
 
-> The callback is executed after the specified number of seconds. Fractions of a second may be expressed as floating point numbers.
+> The callback is executed after the specified number of seconds. Fractions of a second may be expressed as floating-point numbers.
 
 * **Repeat**
 
-> The callback is executed after the specified number of seconds, repeatedly. Fractions of a second may be expressed as floating point numbers.
+> The callback is executed after the specified number of seconds, repeatedly. Fractions of a second may be expressed as floating-point numbers.
 
 * **Stream readable**
 
@@ -331,7 +331,7 @@ $app->get('/code32', function (Request $request, Response $response) use ($phone
 });
 ```
 
-**Woah!** So what it this?
+**Woah!** So what is this?
 
 ## The Event Loop
 
