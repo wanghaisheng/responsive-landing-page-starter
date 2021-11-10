@@ -24,7 +24,7 @@ PHP developers tend not to think in terms of async programming due to the nature
 
 ## Hello, RevoltPhp!
 
-A new project has been created off the back of the release of PHP8.1, [RevoltPhp](https://revolt.run/), which is a collaboration from the creators of amphp & ReactPhp, aiming to bring their experience in async PHP to fiber implementation. While it's best to think of it as more an "underlying library" for a framework to use on top of it (concepts such as Read/Writeable Stream callbacks can be pretty difficult to navigate), I'm going to show you a small taster of how you can learn this concept.
+A new project has been created off the back of the release of PHP8.1, [RevoltPhp](https://revolt.run/), which is a collaboration from the creators of amphp & ReactPhp, aiming to bring their experience in co-routines to utilise the new fibers feature. While it's best to think of it as more an "underlying library" for a framework to use on top of it (concepts such as Read/Writeable Stream callbacks can be pretty difficult to navigate), I'm going to show you a small taster of how you can learn this concept.
 
 ## Emergency! Asset out of containment!
 
