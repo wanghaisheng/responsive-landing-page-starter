@@ -237,7 +237,7 @@ $outboundCall
 
 ## Setting the warning
 
-We're going to issue our dino warning with a new route that the answer webhook is pointing to. In order to use Vonage text-to-speech, we use what is called an `NCCO object`, which is a fancy term for a JSON object that controls what to do with the call. Add the following route to your `index.php`:
+We're going to issue our dino warning with a new route that the answer webhook is pointing to. To use Vonage text-to-speech, we use what is called an `NCCO object`, which is a fancy term for a JSON object that controls what to do with the call. Add the following route to your `index.php`:
 
 ```
 $app->get('/webhook/answer', function (Request $request, Response $response) {
@@ -265,9 +265,9 @@ We have an endpoint for our outbound calls, we have a reply to give when people 
 
 ## Introducing RevoltPhp
 
-RevoltPhp's Event Loop will continue executing any work until there is no more work to do, and hand back control to the parent thread (this is usually the termination of the application, because for a non-blocking I/O PHP app we want the `EventLoop` to *never* run out of work).
+RevoltPhp's Event Loop will continue executing any work until there is no more work to do, and hand back control to the parent thread (this is usually the termination of the application because for a non-blocking I/O PHP app we want the `EventLoop` to *never* run out of work).
 
-In our case, our outbound calls are currently synchronous and blocking within the `foreach` loop. We want to notify all 2000 park employees at once, before the inevitable chaos ensues.
+In our case, our outbound calls are currently synchronous and blocking within the `foreach` loop. We want to notify all 2000 park employees at once before the inevitable chaos ensues.
 
 RevoltPhp's Event Loop defines six core callbacks that the `EventLoop` class will execute:
 
@@ -285,7 +285,7 @@ RevoltPhp's Event Loop defines six core callbacks that the `EventLoop` class wil
 
 * **Stream readable**
 
-> The callback is executed when there’s data on the stream to be read, or the connection closed.
+> The callback is executed when there’s data on the stream to be read, or the connection is closed.
 
 * **Stream writable**
 
