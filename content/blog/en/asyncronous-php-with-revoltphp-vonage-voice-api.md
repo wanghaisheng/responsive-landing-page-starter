@@ -255,7 +255,7 @@ The NCCO object is given as a JSON response to the webhook, so Vonage knows what
 
 We have an endpoint for our outbound calls, we have a reply to give when people answer the emergency call. But, the point of this article was about asynchronous code, right? Our emergency endpoint, when hit at runtime, will synchronously loop through each number and phone it; that's PHP. So, now it's time for fibers.
 
-## Introducing the Event Loop
+## Introducing RevoltPhp
 
 RevoltPhp's Event Loop will continue executing any work until there is no more work to do, and hand back control to the parent thread (this is usually the termination of the application, because for a non-blocking I/O PHP app we want the `EventLoop` to _never_ run out of work).
 
@@ -339,6 +339,6 @@ That's the code part, but what's going on under the hood? Finally, we get to:
 
 ## Asynchronous PHP
 
-Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously. What is interesting from the PHP developers point of view is that this has been done without some of the common DevOps-y approaches of spreading the load, such as [Google Cloud Compute] and [AWS Lambda].
+Unlike traditional PHP synchronous operations, from the moment the Event Loop is run, the encapsulated `repeat` callbacks get spread across PHP's runtime fibers. That's 2000 calls fired with fibers instead of being executed synchronously. What is interesting from the PHP developers' point of view is that this has been done without some of the common DevOps type engineering approaches of spreading the load with Serverlesss, such as [Google Cloud Compute]() and [AWS Lambda]() (though we could achieve the same thing with [Bref](), but that's an article for another day!).
 
-Thanks to Vonage and RevoltPhp, we call all be safe a little quicker, thanks to the tireless efforts of our park staff.
+Thanks to Vonage and RevoltPhp, we call all be safe a little quicker, thanks to the tireless efforts of our park staff getting that asset back into containment as fast as possible.
