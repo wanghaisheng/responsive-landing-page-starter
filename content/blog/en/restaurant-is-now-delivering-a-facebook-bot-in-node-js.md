@@ -3,9 +3,10 @@ title: "Restaurant Is Now Delivering: a Facebook Bot in Node.js"
 description: "This javascript tutorial shows how to code a facebook bot which
   tells a user whether a restaurant is currently delivering. Using Vonage API
   and Node.js. "
+thumbnail: /content/blog/restaurant-is-now-delivering-a-facebook-bot-in-node-js/restaurant-closed_1200x600.png
 author: benjamin-aronov
 published: true
-published_at: 2021-10-13T16:57:51.724Z
+published_at: 2021-11-10T10:15:35.805Z
 updated_at: 2021-10-13T16:57:51.751Z
 category: tutorial
 tags:
