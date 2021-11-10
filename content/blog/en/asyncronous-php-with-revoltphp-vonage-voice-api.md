@@ -44,7 +44,7 @@ The following requirements will need your project space, so create a new directo
 ```composer init```
 
 #### Slim Framework
-To have a truly non-blocking Event Loop _and_ have HTTP request handling, you'd want to using something like [ReactPhp's HTTP client](https://reactphp.org/http/). For this example though, we need some routes open for the Voice API handling, and Slim is a quick way to do this. To get it, we use composer:
+To have a truly non-blocking Event Loop _and_ have HTTP request handling, you'd want to using something like [ReactPhp's HTTP client](https://reactphp.org/http/). For this example though, we need some routes open for the Voice API handling, and [Slim](https://www.slimframework.com/) is a quick way to do this. To get it, we use composer:
 
 ```composer require slim/slim```
 
@@ -54,11 +54,11 @@ We also need a PSR-7 compliant library to handle requests/responses (I've gone w
 
 #### ngrok
 
-If you've not come across ngrok before, it's a super useful tool for creating secure URL tunnels into your localhost. We'll need this for Vonage's webhooks to work. Check out the [installation instructions here](https://ngrok.com/download) and create yourself an account.
+If you've not come across [ngrok](https://ngrok.com) before, it's a super useful tool for creating secure URL tunnels into your localhost. We'll need this for Vonage's webhooks to work. Check out the [installation instructions here](https://ngrok.com/download) and create yourself an account.
 
 #### Vonage Voice API
 
-Vonage provides a fully-featured API for sending and receiving calls, so we're going to use the core PHP SDK to send outbound calls. Install it with composer:
+Vonage provides a fully-featured API for sending and receiving calls, so we're going to use the core [PHP SDK](https://github.com/Vonage/vonage-php-sdk-core) to send outbound calls. Install it with composer:
 
 ```composer require vonage/client-core```
 
@@ -76,7 +76,7 @@ In order to create outbound calls to warn the blissfully ignorant park workers o
 
 ## Make that call!
 
-OK, let's get going on the Slim application. Create a directory in your project route named `public` and create a new php file in it named `index.php`. Our file will look like this:
+OK, let's get going on the Slim application. Create a directory in your project route named `/public` and create a new php file in it named `index.php`. Our file will look like this:
 
 ```php
 <?php
@@ -141,7 +141,7 @@ Firstly we're setting up our Vonage client with credentials needed to make Voice
 
 ```php
 $keypair = new Keypair(
-    file_get_contents('../my-example-app.key'), //  <- SSH key downloaded from vonage and put in the root directory
+    file_get_contents('../my-example-app.key'), //  <- SSH key downloaded from Vonage dashboard and put in the root directory
     '9999999-7f52-416f-8fd4-a19e0f689602' // <- application key here
 );
 
@@ -197,7 +197,7 @@ So, we have an endpoint to hit on our app. It will loop through all the phone nu
 
 ## Wiring the calls
 
-Ngrok will open a tunnel up and give you a URL to localhost when you launch it. PHP has a built in web server, so we'll use that for localhost and then fire ngrok to open the tunnel. While in the `public` directory we created, start the PHP server:
+Ngrok will open a tunnel up and give you a URL to localhost when you launch it. PHP has a built in web server, so we'll use that for localhost and then fire ngrok to open the tunnel. While in the `public` directory we created, start the built in PHP web server:
 
 ```
 php -S 0.0.0.0:8000 -t .
