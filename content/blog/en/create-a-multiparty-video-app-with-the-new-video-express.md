@@ -327,7 +327,7 @@ useEffect(() => {
   ]);
 ```
 
-The logic to change devices is almost the same for audio and video. We will explain it for audio, but remember that you can check the implementation of the [WaitingRoom[(https://github.com/nexmo-se/video-express-react-app/blob/main/src/components/WaitingRoom/index.js) component.
+The logic to change devices is almost the same for audio and video. We will explain it for audio, but remember that you can check the implementation of the [WaitingRoom](https://github.com/nexmo-se/video-express-react-app/blob/main/src/components/WaitingRoom/index.js) component.
 
 ```js
 useEffect(() => {
