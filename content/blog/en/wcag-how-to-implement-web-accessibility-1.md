@@ -2,9 +2,10 @@
 title: "WCAG: How to implement web accessibility "
 description: "Learn how to improve your application's accessibility by making it
   WCAG compliant "
-author: cory-althoff
+thumbnail: /content/blog/wcag-how-to-implement-web-accessibility/web-accessiblity_1200x627.jpg
+author: yinon-oved
 published: true
-published_at: 2021-11-08T19:14:50.200Z
+published_at: 2021-11-11T11:10:49.772Z
 updated_at: 2021-11-08T19:14:50.242Z
 category: inspiration
 tags:
