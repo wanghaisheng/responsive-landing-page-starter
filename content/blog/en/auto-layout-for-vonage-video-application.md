@@ -18,3 +18,5 @@ outdated: false
 replacement_url: ""
 ---
 Vonage Video API makes it very easy to create our very own video chat application. With as little as 15 lines of code we can get a working video application. But to make it look and feel like a proper video chat app we have to do some work. One of these challenges is to properly place the participants in the screen. We are all kind of familiar with how a video chat app looks. Apps like Zoom, Teams, Google Meet or Webex all have their distinct look. But fundamentally they all accomplish the same goal: place participants in the screen in some form of grid and rearrange them in different screen sizes. Thats what we will attempt to do for our Vonage Video Application today.
+
+[![demo9a78f3a979365eb2.gif](https://s9.gifyu.com/images/demo9a78f3a979365eb2.gif)](https://gifyu.com/image/S22vG)
