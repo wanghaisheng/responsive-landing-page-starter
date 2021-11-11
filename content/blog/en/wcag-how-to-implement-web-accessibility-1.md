@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-An accessible application is one that anyone, even individuals with disabilities, can use. Unfortunately, Many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accessibility might even feel extraneous to users we assume are non-disabled.
+An accessible application is one that anyone, even individuals with disabilities, can use. Unfortunately, many organizations ignore accessibility during development. Companies often perceive accessibility as a feature rather than a necessity, which results in web content accessibility guidelines (WCAG) remaining overlooked until they fade off in the backlog. Prioritizing accessibility might even feel extraneous to users we assume are non-disabled.
 
 Accessibility, however, is not a feature: it is a social issue. Everyone has the right to access the internet, and companies need to make sure they create their applications to allow people with disabilities to use them. To help improve accessibility, organizations can educate teams, recruit in-house experts, and even get 3rd party services to support repair processes. 
 
