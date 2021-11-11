@@ -70,6 +70,56 @@ In the `<body>` we add an empty `div` with `id="layout"`. This is the container 
     </div>
 ``` 
 
+Finally we add reference to our `script.js` file.
 
+### style.css
+
+Most of the css file is used to place the buttons in the bottom of the screen and leave the rest of the screen real estate for `layout` container. There is some css transition set to make the transition from one view to another look smooth.
+
+### script.js
+
+This is where we initialize and make use of `opentok-layout-js`. We first get access to our `layoutEl` and create a global variable of `layout` function which we will call every time we need to reorganize the screen.
+
+```js
+var layoutEl = document.getElementById('layout');
+var layout;
+```
+
+Then we create a function that initializes the layout container and set the `layout` function.
+
+```js
+function updateLayoutValues() {
+  const opts = {
+    maxRatio: 3 / 2,
+    minRatio: 9 / 16,
+    fixedRatio: false,
+    alignItems: 'center',
+    bigPercentage: 0.8,
+    bigFixedRatio: false,
+    bigMaxRatio: 3 / 2,
+    bigMinRatio: 9 / 16,
+    bigFirst: true,
+    scaleLastRow: true,
+    smallMaxWidth: Infinity,
+    smallMaxHeight: Infinity,
+    bigMaxWidth: Infinity,
+    bigMaxHeight: Infinity,
+    bigAlignItems: 'center',
+    smallAlignItems: 'center',
+  };
+  layout = initLayoutContainer(layoutEl, opts).layout;
+}
+updateLayoutValues();
+```
+
+You can read about what all the possible fields in `opts` are and what they mean [here](https://github.com/aullman/opentok-layout-js#usage). 
+
+At this point we have `layout` ready to be called when we need to reorganize the participants. We also write functions for adding and removing elements. And finally a window resize event listener to call `layout` on window resize.
+
+## Conclusion
+
+This was a quick demo to showcase how you can get easy auto layout for your Vonage Video Application. For creating a quick, easy and streamlined multi party Video Application using Vonage API you can make use of [Vonage Video Express](https://tokbox.com/developer/video-express/). Video Express actually uses `opentok-layout-js` and wraps our OpenTok client sdk to make building Multiparty Video application easier. You can get started with Vonage Video Express with [this article by Enrico](https://learn.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express/).
+
+You can reach out to us via [Twitter](https://twitter.com/vonagedev) or [Slack](https://developer.nexmo.com/community/slack). 
 
 
