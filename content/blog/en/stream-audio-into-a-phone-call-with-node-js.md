@@ -34,13 +34,13 @@ Finally, you'll want the source code, which is available [on GitHub](https://git
 Install the Vonage CLI globally using the following command:
 
 ```bash
-npm install vonage-cli -g
+npm install @vonage/cli -g
 ```
 
 Then, configure the CLI with your Vonage API key and secret, which you will find in the [Developer Dashboard](https://dashboard.nexmo.com):
 
 ```bash
-vonage setup VONAGE_API_KEY VONAGE_API_SECRET
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
 Replace the `VONAGE_API_KEY` and `VONAGE_API_SECRET` with your own details to authenticate the CLI.
@@ -50,7 +50,8 @@ Replace the `VONAGE_API_KEY` and `VONAGE_API_SECRET` with your own details to au
 You need a number to make calls from. Rent one by executing the following command, replacing the country code as appropriate. For example, if you are in the USA, replace `GB` with `US`:
 
 ```bash
-vonage number:buy --country_code GB
+vonage numbers:search GB
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 Make a note of the telephone number that the command returns.
@@ -62,10 +63,10 @@ To use the Voice API, you must create a [Voice API application](https://develope
 Create an application using the CLI and make a note of the application ID it returns:
 
 ```bash
-vonage app:create "Play audio app" http://example.com/answer http://example.com/event --keyfile private.key
+ vonage apps:create "Play audio app"  --voice_answer_url=http://example.com/answer  --voice_event_url=http://example.com/event
 ```
 
-Note that the `app:create` command shown uses a few parameters. These are to set the webhook endpoints and download your private key to authenticate your application.
+Note that the `apps:create` command shown uses a few parameters. These are to set the webhook endpoints and generate your private key to authenticate your application.
 
 The Vonage APIs need to know your webhook endpoints so that they can make requests to them when there is an incoming call or an event that your application should know about. You can safely leave these as `example.com` because we will specify the webhooks programmatically.
 
