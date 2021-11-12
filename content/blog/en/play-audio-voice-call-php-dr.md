@@ -26,7 +26,7 @@ In addition to making [text-to-speech calls](https://learn.vonage.com/blog/2017/
 
 You’ll need PHP installed before working through this post. I’m running PHP 7.4, but the code here should work on PHP 7.2 and above. You’ll also need [Composer](https://getcomposer.org/) available to install the Vonage PHP client.
 
-You’ll also need a [Vonage Account](https://dashboard.nexmo.com/sign-up) and the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) installed. We’ll be using the CLI to configure our Vonage account and purchase a phone number.
+You’ll also need a [Vonage Account](https://dashboard.nexmo.com/sign-up) and the [Vonage CLI](https://github.com/Vonage/vonage-cli) installed. We’ll be using the CLI to configure our Vonage account and purchase a phone number.
 
 ### Play an Audio File Into an Incoming Call
 
@@ -99,12 +99,12 @@ Now that we have an application it’s time to make it accessible to the interne
 So far, we’ve built an application and exposed it to the internet, but we haven’t told Vonage where our application lives. To do this, we need to create a Vonage application and set the `answer_url` and `event_url`.  Run the following in the same directory as `index.php`, replacing `example.com` with your `ngrok` URL:
 
 ```bash
-nexmo app:create "Vonage Stream Audio" http://example.com/webhooks/answer http://example.com/webhooks/event --keyfile private.key
+vonage apps:create "Vonage Stream Audio" --voice_answer_url=http://example.com/webhooks/answer --voice_event_url=http://example.com/webhooks/event
 ```
 
-This will create a file named `private.key` and return an application ID in the terminal. The `private.key` is your authentication credentials for making a request to the Vonage API (which we’ll use later) and the application ID is needed for both authentication and configuration.
+This will create a file in the directory you ran the CLI command in named `private.key` and return an application ID in the terminal. The `private.key` is your authentication credentials for making a request to the Vonage API (which we’ll use later) and the application ID is needed for both authentication and configuration.
 
-Now that we have an application, we need a way for a user to connect to it. This is done by purchasing a phone number and linking it to the application. Purchase a number by running `nexmo number:buy --country_code US --confirm`. Make a note of the number purchased (you can change `US` to any country). Finally, link this number to your application by running `nexmo link:app <number> <application_id>`. Now, whenever someone makes a call to the number you purchased Nexmo will make a request to `/webhooks/answer` in your application.
+Now that we have an application, we need a way for a user to connect to it. This is done by purchasing a phone number and linking it to the application. Purchase a number by running `vonage numbers:buy COUNTRY_CODE`. Make a note of the number purchased. Finally, link this number to your application by running `vonage apps:link <application_id> --number=<number>`. Now, whenever someone makes a call to the number you purchased Vonage will make a request to `/webhooks/answer` in your application.
 
 ### Test Your Application
 
