@@ -25,7 +25,7 @@ The source code for this blog post is available [on Github](https://github.com/n
 
 You’ll need PHP installed before working through this post. I’m running PHP 7.4, but the code here should work on PHP 7.3 and above. You'll also need [Composer](http://getcomposer.org/) to download our dependencies.
 
-Finally, you'll need the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) installed. We'll use it to purchase a phone number and configure our Vonage account to point at our new application.
+Finally, you'll need the [Vonage CLI](https://github.com/vonage/vonage-cli) installed. We'll use it to purchase a phone number and configure our Vonage account to point at our new application.
 
 <sign-up number></sign-up>
 
@@ -39,7 +39,7 @@ To receive the incoming SMS content, we're going to be using the [Slim framework
 composer require slim/slim:"4.*"
 ```
 
-When we receive an SMS, we're going to log out all of the information that Nexmo provide to the console. In the real world, you could store this in a file or a database.
+When we receive an SMS, we're going to log out all of the information that Vonage provide to the console. In the real world, you could store this in a file or a database.
 
 Vonage will make either a `GET` or a `POST` request to your application with the data, depending on how your account is configured (you can see this under `HTTP Method` [in the dashboard](https://dashboard.nexmo.com/settings)). In this post, we'll write an application that can handle both HTTP methods:
 
@@ -98,17 +98,26 @@ We're going to use [ngrok](/blog/2017/07/04/local-development-nexmo-ngrok-tunnel
 
 With Vonage, each phone number you own can have a different callback URL that they use to send inbound SMS to. 
 
- Let's start by purchasing a phone number using the Nexmo CLI that we can use to test:
+Let's start by purchasing a phone number using the Vonage CLI that we can use to test. Firstly pick an available number to buy:
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US
 ```
 
-Take the number you just purchased and link it to your `ngrok` URL so that Nexmo know where to send the inbound SMS to (replacing the phone number and URL with your own values):
+And then buy it:
 
 ```bash
-nexmo link:sms 14155550100 http://abc123.ngrok.io/webhooks/inbound-sms
+vonage numbers:buy <number> US
 ```
+
+Now create a new application with the URL to send the inbound SMS to:
+```bash
+vonage apps:create --messages_inbound_url=http://abc123.ngrok.io/webhooks/inbound-sms
+
+Now we link our number to our application:
+
+```bash
+vonage apps:link <application_id> --number=14155550100
 
 At this point, you can send an SMS to your Vonage number and watch as it appears in your terminal. It may take a few minutes due to network latency, but it should arrive soon!
 
