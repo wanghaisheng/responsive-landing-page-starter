@@ -50,7 +50,7 @@ Replace the `VONAGE_API_KEY` and `VONAGE_API_SECRET` with your own details to au
 You need a number to make calls from. Rent one by executing the following command, replacing the country code as appropriate. For example, if you are in the USA, replace `GB` with `US`:
 
 ```bash
-vonage numbers:search GB
+vonage numbers:search US
 vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
