@@ -19,26 +19,26 @@ replacement_url: ""
 ---
 # Table of Contents
 
-1. A Bit of Audio History
-2. Should You Care About Spatial Audio?
-3. Do I Need Any Special Hardware?
-4. Spatial Audio Experience Using Vonage Video APIs and Resonance SDK \
-   a. Requirements
+1. [A Bit of Audio History](#a-bit-of-audio-history)
+2. [Should You Care About Spatial Audio?](#should-you-care-about-spatial-audio)
+3. [Do I Need Any Special Hardware?](#do-i-need-any-special-hardware)
+4. [Spatial Audio Experience Using Vonage Video APIs and Resonance SDK](#spatial-audio-experience-using-vonage-video-aPIs-and-resonance-sDK)
+   a. [Requirements](#requirements)
 
-   b.  Initial Setup
+   b.  [Initial Setup](#initial-setup)
 
-   c.  Connect Subscribers to Resonance Audio
+   c.  [Connect Subscribers to Resonance Audio](#connect-subscribers-to-resonance-audio)
 
-   d.  Assign Source Positions to Subscribers
+   d.  [Assign Source Positions to Subscribers](#assign-source-positions-to-subscribers)
 
-   e.  Switching Between Spatial and Mono
+   e.  [Switching Between Spatial and Mono](#switching-between-spatial-and-mono)
 
-   f.  Browser Compatibility
+   f.  [Browser Compatibility](#browser-compatibility)
 
-   g.  Future Improvements
-5. Sample Video With Spatial Audio
+   g.  [Future Improvements](#future-improvement)
+5. [Sample Video With Spatial Audio](#sample-video-with-spatial-audio)
 
-   a.  Complete Source Code
+   a.  [Complete Source Code](#complete-source-code)
 
 # A Bit of Audio History
 
