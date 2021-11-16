@@ -1,5 +1,5 @@
 ---
-title: How WSGI vs. ASGI is Like Baking a Cake
+title: How Python's WSGI vs. ASGI is Like Baking a Cake
 description: WSGI vs. ASGI
 author: tonya-sims-1
 published: false
