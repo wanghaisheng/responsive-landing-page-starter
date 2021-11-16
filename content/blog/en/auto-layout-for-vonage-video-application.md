@@ -36,7 +36,7 @@ The main ingredient to make our auto layout work is [Opentok Layout JS](https://
 
 ## Code Deep Dive
 
-The code for this demo is fairly short. There are 4 files in total. `index.html`, `style.css`, `script.js` and `opentok-layout.js` which is downloaded from [Opentok Layout JS](https://github.com/aullman/opentok-layout-js) repository. 
+The code for this demo is fairly short. There are 4 files in total. Three that we will create (`index.html`, `style.css`, `script.js`) and one (`opentok-layout.js`) that is downloaded from [Opentok Layout JS](https://github.com/aullman/opentok-layout-js) repository. 
 
 ### index.html
 
