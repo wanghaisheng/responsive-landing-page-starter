@@ -18,48 +18,49 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+## Introduction
 
-# A Bit of Audio History
+The way we consume audio on our mobile, desktop, and other devices is changing, and the pandemic has definitely influenced our consumption model. One buzzword that is lingering around audio is “spatial audio”. This article will show you how to build a spatial audio experience using Vonage Video APIs and Resonance SDK on Web Browsers. 
 
-The way we consume audio on our mobile, desktop, and other devices is changing, and the pandemic has definitely influenced our consumption model. One buzzword that is lingering around audio is "spatial audio".
-Before we talk about Spatial audio/3D audio, let's talk about audio channels and how they are different.
+Curious how the spatial audio experience would be? Check our sample demo below and please use a headset to watch the video. 
 
-## Mono
+<youtube id="https://www.youtube.com/watch?v=ZwRXvyUztsM"></youtube>
 
-Mono (means one) audio is single channel audio where the audio played in your right earbud is the same audio played in your left earbud. Every sound is evenly dispersed in both earbuds.
+## A Bit of Audio History
 
-## Stereo
+Before we talk about Spatial audio/3D audio, let’s talk about audio channels and how they are different. 
 
-Stereo audio is two-channel audio where you can hear different sounds played in the right earbud and left earbud. You can distinguish a guitar sound being played on the right and footsteps sounds on the left.
+### Mono
 
-## Surround Sound
+Mono (means one) audio is single channel audio where the audio played in your right earbud is the same audio played in your left earbud. Every sound is evenly dispersed in both earbuds. 
 
-There has been proprietary work done on how the audio is mixed and played back. Mono and/or stereo audio is mixed for the number of speakers and subwoofers in the audio setup (5.1, 7.1, etc. which is
-equal to 5 speakers and 1 subwoofer or 7 speakers and 1 subwoofer) and played back through all the speakers and subwoofers to create a surround sound feeling.
+### Stereo
 
-## Binaural
+Stereo audio is two-channel audio where you can hear different sounds played in the right earbud and left earbud. You can distinguish a guitar sound being played on the right and footsteps sounds on the left. 
 
-This is an improved version of stereo where the recording requires two omnidirectional microphones. When this audio is played back, you hear the sounds as if you are physically present in the location.
+### Surround Sound
 
-## Spatial Audio
+There has been proprietary work done on how the audio is mixed and played back. Mono and/or stereo audio is mixed for the number of speakers and subwoofers in the audio setup (5.1, 7.1, etc. which is equal to 5 speakers and 1 subwoofer or 7 speakers and 1 subwoofer) and played back through all the speakers and subwoofers to create a surround sound feeling. 
 
-Spatial audio lets you position the audio anywhere in a 3D space. This means you can not just distinguish sound sources between left and right but above, below, front and rear as well. Spatial audio tricks the human
-brain by delaying the time audio reaches our left and right ears and using higher and lower frequencies. The growth in VR space has fueled the popularity of spatial audio.
+### Binaural
 
-# Should You Care About Spatial Audio?
+This is an improved version of stereo where the recording requires two omnidirectional microphones. When this audio is played back, you hear the sounds as if you are physically present in the location. 
 
-* **Video Conferencing Fatigue** - The audio in video conferencing produces an unnatural listening experience as all the audio comes from the same speaker and distance. This synthetic soundscape is different
-from a real-life listening experience where the sound is positional, directional, and spherical. Spatial audio can recreate a real-life listening experience by positioning the audio in a 3D space.
+### Spatial Audio
 
+Spatial audio lets you position the audio anywhere in a 3D space. This means you can not just distinguish sound sources between left and right but above, below, front and rear as well. Spatial audio tricks the human brain by delaying the time audio reaches our left and right ears and using higher and lower frequencies. The growth in VR space has fueled the popularity of spatial audio. 
+
+### Should You Care About Spatial Audio?
+
+* **Video Conferencing Fatigue** - The audio in video conferencing produces an unnatural listening experience as all the audio comes from the same speaker and distance. This synthetic soundscape is different from a real-life listening experience where the sound is positional, directional, and spherical. Spatial audio can recreate a real-life listening experience by positioning the audio in a 3D space.
 * **AR and VR Spaces -** Spatial audio produces an immersive experience in AR/VR spaces. Audio plays a key role in AR/VR space as much as visuals and actions.
-
 * **Building Social Apps** - Audio/Video live-streaming apps have introduced spatial audio to make conversations more engaging and interactive.
 
-# Do I Need Any Special Hardware?
+## Do I Need Any Special Hardware?
 
 No, you just need a stereo headset/earphones or a compatible device for rendering the audio. You do not need a special microphone for this particular example.
 
-# Spatial Audio Experience Using Vonage Video APIs and Resonance SDK
+## Spatial Audio Experience Using Vonage Video APIs and Resonance SDK
 
 Our rockstar Customer Solution Engineer Rajkiran Talusani has created a "HOW TO" guide on building spatial audio experience using Vonage Video SDK and Resonance SDK. Please follow the instructions below.
 
@@ -263,18 +264,12 @@ Fix below:
 
 Safari (14.1.2) also introduces some audio issues, but 15.x seems to be working fine.
 
+
 ## Future Improvements
 
 Even though we have placed the sound sources in 3D space, they are point sources - they emit sound in all directions. As a future improvement, you can make them directional sources, so each subscriber emits sounds in the listener's direction only.
 
-# Sample Video With Spatial Audio
+## Conclusion
 
-Please use a headset to watch the video:
+Today, we built a spatial audio experience using Vonage Video APIs and Resonance SDK by positioning the subscribers in different parts of a virtual room. You can now have more fun in virtual meetings by enabling spatial audio. Please check the [complete source code](https://github.com/nexmo-se/vonage-roundtable/blob/spacial-audio/public/lib/spacial-audio/spacial-audio.js) if you are excited to build this on your own.
 
-[Spatial Audio Demo](https://drive.google.com/file/d/1B2Iq1vcDFPWgZrg-oyedF8q8TH7s7GuQ/view?usp=sharing)
-
-# Complete Source Code
-
-The final code for the tutorial can be found on [GitHub](https://github.com/nexmo-se/vonage-roundtable/blob/spacial-audio/public/lib/spacial-audio/spacial-audio.js). 
-
-We would love to hear what you built using the Vonage Video SDK. Please join the conversation on our [Community Slack](https://developer.vonage.com/community/slack) and share your story.
