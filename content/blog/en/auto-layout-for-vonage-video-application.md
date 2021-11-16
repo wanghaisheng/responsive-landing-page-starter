@@ -85,7 +85,6 @@ var layoutEl = document.getElementById('layout');
 var layout;
 ```
 
-Then we create a function that initializes the layout container and set the `layout` function.
 
 ```js
 function updateLayoutValues() {
