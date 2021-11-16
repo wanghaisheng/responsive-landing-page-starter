@@ -78,7 +78,7 @@ Most of the CSS file is used to place the buttons at the bottom of the screen Wh
 
 ### script.js
 
-This is where we initialize and make use of `opentok-layout-js`. We first get access to our `layoutEl` and create a global variable of `layout` function which we will call every time we need to reorganize the screen.
+This is where we initialize and make use of the Opentok Layout JS library. We first create a reference to our layout container, `layoutEl`. Then a `layout` variable is initialized and set to an Opentok Layout JS function that returns when passed in `layoutEl` and some options.
 
 ```js
 var layoutEl = document.getElementById('layout');
