@@ -69,7 +69,7 @@ Since we now know that WSGI will process the requests sequentially, it will carr
 10. Pour the batter into the baking pans
 11. Put the pans in the oven
 
-**Make the Frosting**
+## Make the Frosting
 
 1. Grab a bowl
 2. Grab the powdered sugar and butter
