@@ -53,7 +53,7 @@ Let’s say you want to bake a cake and make the frosting, both from scratch.
 
 Since we now know that WSGI will process the requests sequentially, it will carry out the instructions step-by-step, one after the other. 
 
-Bake a Cake
+**Bake a Cake**
 
 1. Prepare the baking pans
 2. Preheat the oven
@@ -67,7 +67,7 @@ Bake a Cake
 10. Pour the batter into the baking pans
 11. Put the pans in the oven
 
-Make the Frosting
+**Make the Frosting**
 
 1. Grab a bowl
 2. Grab the powdered sugar and butter
@@ -77,45 +77,46 @@ Make the Frosting
 
 Here’s an example of what it would look like in Python pseudocode:
 
-Request 1
+**Request 1**
 
+```python
 def bake_cake(request):
+  
+    # task 1
+    # task 2
+    # task 3
 
-\# task 1
+    return response
+```
 
-\# task 2
+**Request 2**
 
-\# task 3
-
-return response
-
-Request 2
-
+```python
 def make_frosting(request):
 
-\# task 1
+    # task 1
+    # task 2
+    # task 3
 
-\# task 2
-
-\# task 3
-
-return response
+    return response
+```
 
 We’d process Request 1 and wait until that request finishes before moving on to Request 2.
 
 For ASGI, remember that we process requests asynchronously. So requests don’t have to wait on the others before it to finish. Our cake baking and frosting making example would look like this:
 
-Bake a Cake
+**Bake a Cake**
 
 1. Prepare the baking pans
 2. Preheat the oven
 3. Grab the flour, baking powder, and salt
 4. Stir together the dry ingredients
 
-Make the Frosting
+**Make the Frosting**
 
-1. Grab a bowl
-2. Grab the powdered sugar and butter
+   5. Grab a bowl
+
+   6. Grab the powdered sugar and butter
 
 Bake a Cake
 
