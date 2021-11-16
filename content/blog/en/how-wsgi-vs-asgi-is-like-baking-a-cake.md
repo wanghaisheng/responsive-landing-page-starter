@@ -25,7 +25,7 @@ But first, what are WSGI and ASGI?
 
 WSGI stands for Web Server Gateway Interface, and ASGI stands for Asynchronous Server Gateway interface. They both specify the interface and sit in between the web server and a Python web application or framework. 
 
-![wsgi vs. asgi interface](/content/blog/how-pythons-wsgi-vs-asgi-is-like-baking-a-cake/wsgi-vs.-asgi.png)
+![wsgi vs. asgi interface](/content/blog/how-pythons-wsgi-vs-asgi-is-like-baking-a-cake/wsgi-vs.-asgi.png "wsgi vs. asgi interface")
 
 One of their jobs is to handle incoming requests from the client, but they go about it in different ways.
 
@@ -33,7 +33,7 @@ Let’s look at how WSGI does it then we’ll check out ASGI.
 
 WSGI handles requests synchronously. When requests come in, they are processed sequentially or one after the other. They have to wait until the one before it finishes before switching to a new task. 
 
-![synchronous requests python wsgi vs. asgi](/content/blog/how-pythons-wsgi-vs-asgi-is-like-baking-a-cake/screen-shot-2021-11-16-at-2.10.14-pm.png)
+![synchronous requests python wsgi vs. asgi](/content/blog/how-pythons-wsgi-vs-asgi-is-like-baking-a-cake/screen-shot-2021-11-16-at-2.10.14-pm.png "synchronous requests python wsgi vs. asgi")
 
 As you can imagine, it could take a long time for the requests to be processed, especially if there are a lot of them, and hinder performance. 
 
@@ -45,7 +45,7 @@ ASGI is the spiritual successor of WSGI. It processes requests asynchronously, i
 
 When requests are processed asynchronously, the beauty is that they don’t have to wait for the others before them to finish doing their tasks. The different requests can do their processing finishing in no particular order. 
 
-![asynchronous requests python wsgi vs. asgi](/content/blog/how-pythons-wsgi-vs-asgi-is-like-baking-a-cake/screen-shot-2021-11-16-at-2.10.24-pm.png)
+![asynchronous requests python wsgi vs. asgi](/content/blog/how-pythons-wsgi-vs-asgi-is-like-baking-a-cake/screen-shot-2021-11-16-at-2.10.24-pm.png "asynchronous requests python wsgi vs. asgi")
 
 You may have heard of the new Python web framework, FastAPI. By default, it uses ASGI, which makes it lightning fast. FastAPI is also a micro web framework with many advantages, including out-of-the-box support for asynchronous code using the Python async and await keywords, and much more! It’s also gaining traction super fast and has some of the best documentation out there. 
 
