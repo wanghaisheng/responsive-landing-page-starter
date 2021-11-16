@@ -23,6 +23,7 @@ replacement_url: ""
 2. [Should You Care About Spatial Audio?](#should-you-care-about-spatial-audio)
 3. [Do I Need Any Special Hardware?](#do-i-need-any-special-hardware)
 4. [Spatial Audio Experience Using Vonage Video APIs and Resonance SDK](#spatial-audio-experience-using-vonage-video-aPIs-and-resonance-sDK)
+   
    a. [Requirements](#requirements)
 
    b.  [Initial Setup](#initial-setup)
