@@ -25,7 +25,7 @@ This is what we will have at the end of the tutorial.
 
 ## Prerequisite
 
-- Text editor (VS Code)
+- Text editor (e.g. [VS Code](https://code.visualstudio.com/))
 - Web Browser
 
 ## Getting started
