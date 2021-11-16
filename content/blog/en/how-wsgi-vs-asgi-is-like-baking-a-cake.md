@@ -55,7 +55,7 @@ Let’s say you want to bake a cake and make the frosting, both from scratch.
 
 Since we now know that WSGI will process the requests sequentially, it will carry out the instructions step-by-step, one after the other. 
 
-**Bake a Cake**
+## Bake a Cake
 
 1. Prepare the baking pans
 2. Preheat the oven
@@ -69,7 +69,7 @@ Since we now know that WSGI will process the requests sequentially, it will carr
 10. Pour the batter into the baking pans
 11. Put the pans in the oven
 
-**Make the Frosting**
+## Make the Frosting
 
 1. Grab a bowl
 2. Grab the powdered sugar and butter
@@ -79,7 +79,7 @@ Since we now know that WSGI will process the requests sequentially, it will carr
 
 Here’s an example of what it would look like in Python pseudocode:
 
-**Request 1**
+## Request 1
 
 ```python
 def bake_cake(request):
@@ -91,7 +91,7 @@ def bake_cake(request):
     return response
 ```
 
-**Request 2**
+## Request 2
 
 ```python
 def make_frosting(request):
@@ -107,7 +107,7 @@ We’d process Request 1 and wait until that request finishes before moving on t
 
 For ASGI, remember that we process requests asynchronously. So requests don’t have to wait on the others before it to finish. Our cake baking and frosting making example would look like this:
 
-##Bake a Cake
+## Bake a Cake
 
 1. Prepare the baking pans
 
@@ -117,7 +117,7 @@ For ASGI, remember that we process requests asynchronously. So requests don’t 
 
 4. Stir together the dry ingredients
 
-**Make the Frosting**
+## Make the Frosting
 
 5. Grab a bowl
 
@@ -135,7 +135,7 @@ For ASGI, remember that we process requests asynchronously. So requests don’t 
 
 11. Stir in the eggs
 
-**Make the Frosting**
+## Make the Frosting
 
 12. Mix with a spoon
 
@@ -143,7 +143,7 @@ For ASGI, remember that we process requests asynchronously. So requests don’t 
 
 14. Stir in the vanilla and milk to the ingredients
 
-**Bake a Cake**
+## Bake a Cake
 
 15. Pour the batter into the baking pans
 
@@ -151,7 +151,7 @@ For ASGI, remember that we process requests asynchronously. So requests don’t 
 
 You see here that the requests are not processed sequentially, and we can switch between tasks. Here’s what that would look like in code:
 
-**Request 1**
+## Request 1
 
 ```python
 async def bake_cake(request):
@@ -164,7 +164,7 @@ async def bake_cake(request):
     return response
 ```
 
-**Request 2**
+## Request 2
 
 ```python
 async def make_frosting(request):
