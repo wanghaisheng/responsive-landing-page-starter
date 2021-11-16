@@ -119,7 +119,9 @@ There are also event listeners for the add and remove buttons. Another event lis
 
 ## Conclusion
 
-This was a quick demo to showcase how you can get easy auto layout for your Vonage Video Application. For creating a quick, easy and streamlined multi party Video Application using Vonage API you can make use of [Vonage Video Express](https://tokbox.com/developer/video-express/). Video Express actually uses `opentok-layout-js` and wraps our OpenTok client sdk to make building Multiparty Video application easier. You can get started with Vonage Video Express with [this article by Enrico](https://learn.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express/).
+This was a quick explanation to showcase how you can achieve a responsive layout for your Vonage Video application.
+
+For an even quicker path to creating a multi-party video application, you can make use of [Vonage Video Express](https://tokbox.com/developer/video-express/). Video Express uses `opentok-layout-js` and wraps our OpenTok Client SDK. You can learn how to use Vonage Video Express with [this article](https://learn.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express/) by Enrico.
 
 You can reach out to us via [Twitter](https://twitter.com/vonagedev) or [Slack](https://developer.nexmo.com/community/slack). 
 
