@@ -70,7 +70,7 @@ In the `<body>`, we add an empty `div` with `id="layout"`. This is the container
     </div>
 ``` 
 
-Finally we add reference to our `script.js` file.
+Finally, we add a reference to our `script.js` file right after the `</body>` tag.
 
 ### style.css
 
