@@ -1,6 +1,8 @@
 ---
 title: How Python's WSGI vs. ASGI is Like Baking a Cake
-description: WSGI vs. ASGI
+description: If you’re like most of us and want to understand this Python WSGI
+  vs. ASGI business, let’s break it down simply by using an example of baking a
+  cake.
 author: tonya-sims-1
 published: false
 published_at: 2021-11-16T20:13:44.652Z
@@ -108,65 +110,74 @@ For ASGI, remember that we process requests asynchronously. So requests don’t 
 **Bake a Cake**
 
 1. Prepare the baking pans
+
 2. Preheat the oven
+
 3. Grab the flour, baking powder, and salt
+
 4. Stir together the dry ingredients
 
 **Make the Frosting**
 
-   5. Grab a bowl
+5. Grab a bowl
 
-   6. Grab the powdered sugar and butter
+6. Grab the powdered sugar and butter
 
-Bake a Cake
+**Bake a Cake**
 
-1. Grab the butter and sugar
-2. Combine the butter and sugar
-3. Grab the eggs
-4. Add the eggs to the ingredients
-5. Stir in the eggs
+7. Grab the butter and sugar
 
-Make the Frosting
+8. Combine the butter and sugar
 
-1. Mix with a spoon
-2. Grab the vanilla extract and milk
-3. Stir in the vanilla and milk to the ingredients
+9. Grab the eggs
 
-Bake a Cake
+10. Add the eggs to the ingredients
 
-1. Pour the batter into the baking pans
-2. Put the pans in the oven
+11. Stir in the eggs
+
+**Make the Frosting**
+
+12. Mix with a spoon
+
+13. Grab the vanilla extract and milk
+
+14. Stir in the vanilla and milk to the ingredients
+
+**Bake a Cake**
+
+15. Pour the batter into the baking pans
+
+16. Put the pans in the oven
 
 You see here that the requests are not processed sequentially, and we can switch between tasks. Here’s what that would look like in code:
 
-Request 1
+**Request 1**
 
+```python
 async def bake_cake(request):
 
-\# task 1
+    # task 1
+    # task 2
+    # task 3 is taking a long time for process Request 2
+    # task 4
 
-\# task 2
+    return response
+```
 
-\# task 3 is taking a long time for process Request 2
+**Request 2**
 
-\# task 4
-
-return response
-
-Request 2
-
+```python
 async def make_frosting(request):
 
-\# task 1
+    # task 1
+    # task 2
+    # task 3 
 
-\# task 2
-
-\# task 3 
-
-return response
+    return response
+```
 
 Hopefully, now you have a better understanding of WSGI vs. ASGI and will be able to choose a Python web framework for your next project based on these interfaces. 
 
-As always, if you have any questions or comments, feel free to reach out to @ vonagedev.
+As always, if you have any questions or comments, feel free to [Tweet us at @vonagedev.](https://twitter.com/VonageDev)
 
 We’d love to hear from you!
