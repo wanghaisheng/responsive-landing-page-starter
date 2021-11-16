@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 Vonage Video API makes it easier to create our own video chat application with as little as 15 lines of code. To make it look and feel like a proper video chat app we have to do some more work. One challenge is to properly place the participants on the screen. Apps like Zoom, Teams, Google Meet, and Webex all have their own distinct looks. Fundamentally they all accomplish the same goal: place participants on the screen in some form of a grid and rearrange them based on different screen sizes. That's what we will do for our Vonage Video Application today.
 
-This is what we will have at the end of the tutorial.
+Here is an example of what we will be building.
 
 [![Screen recording of a demo application where multiple copies of a live webcam video are added to the screen, then the screen dimensions are changed to demonstrate video feeds resizing and layout shift. One video feed is selected and gets larger. Then video feeds are removed one by one.](https://s9.gifyu.com/images/demo9a78f3a979365eb2.gif)](https://gifyu.com/image/S22vG)
 
