@@ -123,6 +123,6 @@ This was a quick explanation to showcase how you can achieve a responsive layout
 
 For an even quicker path to creating a multi-party video application, you can make use of [Vonage Video Express](https://tokbox.com/developer/video-express/). Video Express uses `opentok-layout-js` and wraps our OpenTok Client SDK. You can learn how to use Vonage Video Express with [this article](https://learn.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express/) by Enrico.
 
-You can reach out to us via [Twitter](https://twitter.com/vonagedev) or [Slack](https://developer.nexmo.com/community/slack). 
+If you have any questions or comments, please reach out to us via [Twitter](https://twitter.com/vonagedev) or [Slack](https://developer.nexmo.com/community/slack).
 
 
