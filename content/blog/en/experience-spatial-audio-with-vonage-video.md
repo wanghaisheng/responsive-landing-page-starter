@@ -18,29 +18,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Table of Contents
-
-1. [A Bit of Audio History](#a-bit-of-audio-history)
-2. [Should You Care About Spatial Audio?](#should-you-care-about-spatial-audio)
-3. [Do I Need Any Special Hardware?](#do-i-need-any-special-hardware)
-4. [Spatial Audio Experience Using Vonage Video APIs and Resonance SDK](#spatial-audio-experience-using-vonage-video-aPIs-and-resonance-sDK)
-   
-   a. [Requirements](#requirements)
-
-   b.  [Initial Setup](#initial-setup)
-
-   c.  [Connect Subscribers to Resonance Audio](#connect-subscribers-to-resonance-audio)
-
-   d.  [Assign Source Positions to Subscribers](#assign-source-positions-to-subscribers)
-
-   e.  [Switching Between Spatial and Mono](#switching-between-spatial-and-mono)
-
-   f.  [Browser Compatibility](#browser-compatibility)
-
-   g.  [Future Improvements](#future-improvement)
-5. [Sample Video With Spatial Audio](#sample-video-with-spatial-audio)
-
-   a.  [Complete Source Code](#complete-source-code)
 
 # A Bit of Audio History
 
@@ -71,14 +48,14 @@ brain by delaying the time audio reaches our left and right ears and using highe
 
 # Should You Care About Spatial Audio?
 
-**Video Conferencing Fatigue** - The audio in video conferencing produces an unnatural listening experience as all the audio comes from the same speaker and distance. This synthetic soundscape is different
+* **Video Conferencing Fatigue** - The audio in video conferencing produces an unnatural listening experience as all the audio comes from the same speaker and distance. This synthetic soundscape is different
 from a real-life listening experience where the sound is positional, directional, and spherical. Spatial audio can recreate a real-life listening experience by positioning the audio in a 3D space.
 
-**AR and VR Spaces -** Spatial audio produces an immersive experience in AR/VR spaces. Audio plays a key role in AR/VR space as much as visuals and actions.
+* **AR and VR Spaces -** Spatial audio produces an immersive experience in AR/VR spaces. Audio plays a key role in AR/VR space as much as visuals and actions.
 
-**Building Social Apps** - Audio/Video live-streaming apps have introduced spatial audio to make conversations more engaging and interactive.
+* **Building Social Apps** - Audio/Video live-streaming apps have introduced spatial audio to make conversations more engaging and interactive.
 
-## Do I Need Any Special Hardware?
+# Do I Need Any Special Hardware?
 
 No, you just need a stereo headset/earphones or a compatible device for rendering the audio. You do not need a special microphone for this particular example.
 
@@ -296,7 +273,7 @@ Please use a headset to watch the video:
 
 [Spatial Audio Demo](https://drive.google.com/file/d/1B2Iq1vcDFPWgZrg-oyedF8q8TH7s7GuQ/view?usp=sharing)
 
-## Complete Source Code
+# Complete Source Code
 
 The final code for the tutorial can be found on [GitHub](https://github.com/nexmo-se/vonage-roundtable/blob/spacial-audio/public/lib/spacial-audio/spacial-audio.js). 
 
