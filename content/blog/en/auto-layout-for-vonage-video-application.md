@@ -113,7 +113,9 @@ updateLayoutValues();
 
 There is an explanation of all the `opts` properties and possible values in the Opentok Layout JS [ReadMe](https://github.com/aullman/opentok-layout-js#usage). 
 
-At this point we have `layout` ready to be called when we need to reorganize the participants. We also write functions for adding and removing elements. And finally a window resize event listener to call `layout` on window resize.
+`layout` is called every time we need to reorganize the application's layout when videos are added, removed, or the window resizes.
+
+There are also event listeners for the add and remove buttons. Another event listener is created for when a participant's video is double-clicked which will toggle between enlarging or shrinking the video. 
 
 ## Conclusion
 
