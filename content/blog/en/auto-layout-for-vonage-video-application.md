@@ -48,7 +48,7 @@ In the `<head>` section of our HTML file, we add a reference to the Opentok Clie
     <link rel="stylesheet" href="css/style.css" />
 ```
 
-In the `<body>` we add an empty `div` with `id="layout"`. This is the container where we will place all our participant videos. We also have two buttons used for adding and removing video from our layout.
+In the `<body>`, we add an empty `div` with `id="layout"`. This is the container where we will place all our participant videos. We also have two buttons used for adding and removing videos from our layout.
 
 ```html
     <div id="layout"></div>
