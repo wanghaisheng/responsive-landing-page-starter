@@ -32,7 +32,7 @@ Here is an example of what we will be building.
 
 The source code for this demo is in [this repo](https://github.com/moficodes/opentok-layout-demo). 
 
-The main ingredient to our auto layout is [Opentok Layout JS](https://github.com/aullman/opentok-layout-js). This is an Open Source library created by Adam Ullman. 
+The main ingredient to make our auto layout work is [Opentok Layout JS](https://github.com/aullman/opentok-layout-js). This is an open-source library created by Adam Ullman. 
 
 ## Code Deep Dive
 
