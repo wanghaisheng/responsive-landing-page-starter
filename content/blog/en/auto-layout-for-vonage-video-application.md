@@ -74,7 +74,7 @@ Finally, we add a reference to our `script.js` file right after the `</body>` ta
 
 ### style.css
 
-Most of the css file is used to place the buttons in the bottom of the screen and leave the rest of the screen real estate for `layout` container. There is some css transition set to make the transition from one view to another look smooth.
+Most of the CSS file is used to place the buttons at the bottom of the screen Which leaves the rest of the screen real estate for the `layout` container. The container has a CSS transition property set to make the layout changes from adding and removing videos look smooth.
 
 ### script.js
 
