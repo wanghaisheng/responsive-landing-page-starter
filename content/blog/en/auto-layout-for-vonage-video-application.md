@@ -40,7 +40,7 @@ The code for this demo is fairly short. There are 4 files in total. Three that w
 
 ### index.html
 
-In `<head>` of our html file we add reference to Opentok Client Library used for getting access to `OT` which allows us to get camera access. We also include `opentok-layout.js` and our `style.css`.
+In the `<head>` section of our HTML file, we add a reference to the Opentok Client Library. It is used for getting access to `OT` which allows us to get camera access. We also include `opentok-layout.js` and our `style.css`.
 
 ```html
     <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
