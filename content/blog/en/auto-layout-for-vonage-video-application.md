@@ -111,7 +111,7 @@ function updateLayoutValues() {
 updateLayoutValues();
 ```
 
-You can read about what all the possible fields in `opts` are and what they mean [here](https://github.com/aullman/opentok-layout-js#usage). 
+There is an explanation of all the `opts` properties and possible values in the Opentok Layout JS [ReadMe](https://github.com/aullman/opentok-layout-js#usage). 
 
 At this point we have `layout` ready to be called when we need to reorganize the participants. We also write functions for adding and removing elements. And finally a window resize event listener to call `layout` on window resize.
 
