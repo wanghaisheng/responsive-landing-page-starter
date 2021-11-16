@@ -1,10 +1,7 @@
 ---
 title: Announcing Vonage Messages API Version 1.0
-description: Version 1.0 of the Vonage Messages API is now live as of November
-  10th 2021. This version brings a simpler API design and a number of new
-  features.' => "Version 1.0 of the Vonage Messages API is now live as of
-  November 10th 2021. This version brings a simpler API design and a number of
-  new features.
+description: Version 1.0 of the Vonage Messages API is now live. This version
+  brings a simpler API design and a number of new features.
 author: karl-lingiah
 published: true
 published_at: 2021-11-15T14:44:02.222Z
