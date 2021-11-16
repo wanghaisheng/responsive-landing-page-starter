@@ -10,7 +10,7 @@ updated_at: 2021-11-15T14:44:02.300Z
 category: release
 tags:
   - messages-api
-comments: true
+comments: false
 spotlight: false
 redirect: ""
 canonical: ""
