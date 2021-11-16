@@ -69,7 +69,7 @@ Since we now know that WSGI will process the requests sequentially, it will carr
 10. Pour the batter into the baking pans
 11. Put the pans in the oven
 
-## Make the Frosting
+**Make the Frosting**
 
 1. Grab a bowl
 2. Grab the powdered sugar and butter
@@ -107,7 +107,7 @@ We’d process Request 1 and wait until that request finishes before moving on t
 
 For ASGI, remember that we process requests asynchronously. So requests don’t have to wait on the others before it to finish. Our cake baking and frosting making example would look like this:
 
-**Bake a Cake**
+##Bake a Cake
 
 1. Prepare the baking pans
 
