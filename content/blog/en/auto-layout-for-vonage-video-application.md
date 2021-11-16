@@ -26,7 +26,7 @@ This is what we will have at the end of the tutorial.
 ## Prerequisite
 
 - Text editor (VS Code)
-- Browser
+- Web Browser
 
 ## Getting started
 
