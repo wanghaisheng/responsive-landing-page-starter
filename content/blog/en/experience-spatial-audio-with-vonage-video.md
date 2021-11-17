@@ -5,7 +5,7 @@ description: This tutorial will teach you to enable spatial audio (3D Audio)
 thumbnail: /content/blog/experience-spatial-audio-with-vonage-video/spatial-audio_video-api-1.png
 author: binoy-chemmagate
 published: true
-published_at: 2021-11-16T09:19:20.870Z
+published_at: 2021-11-17T10:05:57.771Z
 updated_at: 2021-11-16T09:19:20.899Z
 category: tutorial
 tags:
