@@ -52,9 +52,11 @@ Spatial audio lets you position the audio anywhere in a 3D space. This means you
 
 ## Should You Care About Spatial Audio?
 
-* **Video Conferencing Fatigue** - The audio in video conferencing produces an unnatural listening experience as all the audio comes from the same speaker and distance. This synthetic soundscape is different from a real-life listening experience where the sound is positional, directional, and spherical. Spatial audio can recreate a real-life listening experience by positioning the audio in a 3D space.
-* **AR and VR Spaces -** Spatial audio produces an immersive experience in AR/VR spaces. Audio plays a key role in AR/VR space as much as visuals and actions.
-* **Building Social Apps** - Audio/Video live-streaming apps have introduced spatial audio to make conversations more engaging and interactive.
+**Video Conferencing Fatigue** - The audio in video conferencing produces an unnatural listening experience as all the audio comes from the same speaker and distance. This synthetic soundscape is different from a real-life listening experience where the sound is positional, directional, and spherical. Spatial audio can recreate a real-life listening experience by positioning the audio in a 3D space.
+
+**AR and VR Spaces -** Spatial audio produces an immersive experience in AR/VR spaces. Audio plays a key role in AR/VR space as much as visuals and actions.
+
+**Building Social Apps** - Audio/Video live-streaming apps have introduced spatial audio to make conversations more engaging and interactive.
 
 ## Do I Need Any Special Hardware?
 
