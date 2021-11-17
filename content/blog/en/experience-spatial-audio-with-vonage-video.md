@@ -266,7 +266,6 @@ Fix below:
 
 Safari (14.1.2) also introduces some audio issues, but 15.x seems to be working fine.
 
-
 ## Future Improvements
 
 Even though we have placed the sound sources in 3D space, they are point sources - they emit sound in all directions. As a future improvement, you can make them directional sources, so each subscriber emits sounds in the listener's direction only.
@@ -274,4 +273,3 @@ Even though we have placed the sound sources in 3D space, they are point sources
 ## Conclusion
 
 Today, we built a spatial audio experience using Vonage Video APIs and Resonance SDK by positioning the subscribers in different parts of a virtual room. You can now have more fun in virtual meetings by enabling spatial audio. Please check the [complete source code](https://github.com/nexmo-se/vonage-roundtable/blob/spacial-audio/public/lib/spacial-audio/spacial-audio.js) if you are excited to build this on your own.
-
