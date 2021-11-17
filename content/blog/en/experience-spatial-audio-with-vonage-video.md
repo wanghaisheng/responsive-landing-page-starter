@@ -50,7 +50,7 @@ This is an improved version of stereo where the recording requires two omnidirec
 
 Spatial audio lets you position the audio anywhere in a 3D space. This means you can not just distinguish sound sources between left and right but above, below, front and rear as well. Spatial audio tricks the human brain by delaying the time audio reaches our left and right ears and using higher and lower frequencies. The growth in VR space has fueled the popularity of spatial audio. 
 
-### Should You Care About Spatial Audio?
+## Should You Care About Spatial Audio?
 
 * **Video Conferencing Fatigue** - The audio in video conferencing produces an unnatural listening experience as all the audio comes from the same speaker and distance. This synthetic soundscape is different from a real-life listening experience where the sound is positional, directional, and spherical. Spatial audio can recreate a real-life listening experience by positioning the audio in a 3D space.
 * **AR and VR Spaces -** Spatial audio produces an immersive experience in AR/VR spaces. Audio plays a key role in AR/VR space as much as visuals and actions.
@@ -60,7 +60,7 @@ Spatial audio lets you position the audio anywhere in a 3D space. This means you
 
 No, you just need a stereo headset/earphones or a compatible device for rendering the audio. You do not need a special microphone for this particular example.
 
-## Spatial Audio Experience Using Vonage Video APIs and Resonance SDK
+# Spatial Audio Experience Using Vonage Video APIs and Resonance SDK
 
 Our rockstar Customer Solution Engineer Rajkiran Talusani has created a "HOW TO" guide on building spatial audio experience using Vonage Video SDK and Resonance SDK. Please follow the instructions below.
 
