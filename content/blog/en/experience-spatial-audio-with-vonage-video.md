@@ -58,10 +58,6 @@ Spatial audio lets you position the audio anywhere in a 3D space. This means you
 
 **Building Social Apps** - Audio/Video live-streaming apps have introduced spatial audio to make conversations more engaging and interactive.
 
-## Do I Need Any Special Hardware?
-
-No, you just need a stereo headset/earphones or a compatible device for rendering the audio. You do not need a special microphone for this particular example.
-
 # Spatial Audio Experience Using Vonage Video APIs and Resonance SDK
 
 Our rockstar Customer Solution Engineer Rajkiran Talusani has created a "HOW TO" guide on building spatial audio experience using Vonage Video SDK and Resonance SDK. Please follow the instructions below.
@@ -70,6 +66,10 @@ Our rockstar Customer Solution Engineer Rajkiran Talusani has created a "HOW TO"
 
 * [Vonage Video SDK](https://tokbox.com/developer/sdks/js/)
 * [Resonance SDK](https://resonance-audio.github.io/resonance-audio/)
+
+## Do I Need Any Special Hardware?
+
+No, you just need a stereo headset/earphones or a compatible device for rendering the audio. You do not need a special microphone for this particular example.
 
 ## Initial Setup
 
