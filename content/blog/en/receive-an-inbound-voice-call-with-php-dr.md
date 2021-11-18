@@ -25,11 +25,11 @@ The source code for this blog post is available [on Github](https://github.com/n
 
 You’ll need PHP installed before working through this post. I’m running PHP 7.2, but the code here should work on PHP 5.6 and above. You'll also need [Composer](http://getcomposer.org/) to download our dependencies.
 
-Finally, you'll need the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) installed. We'll be using this to configure our Nexmo account and purchase a phone number.
+Finally, you'll need the [Vonage CLI](https://github.com/Vonage/vonage-cli) installed. We'll be using this to configure our Vonage account and purchase a phone number.
 
 ## Receiving a phone call with PHP
 
-Before we get into the details about how it all works, we'll start by creating a PHP application to handle incoming voice calls. When a voice call is received, Nexmo will make a request to your application to find out how to respond to that call.
+Before we get into the details about how it all works, we'll start by creating a PHP application to handle incoming voice calls. When a voice call is received, Vonage will make a request to your application to find out how to respond to that call.
 
 We're going to be using the [Slim framework](https://www.slimframework.com/) to handle the incoming request, so let's install it now with `composer`:
 
@@ -63,7 +63,7 @@ php -t . -S localhost:8000
 
 If you visit [http://localhost:8000/webhook/answer?from=14155550100](http://localhost:8000/webhook/answer?from=14155550100), you will see the `from` number returned in the response body.
 
-This is a great start, but Nexmo won't know what to do if we only respond with the caller's phone number. To tell Nexmo how to handle the call, we have to return an [NCCO](https://developer.nexmo.com/api/voice/ncco).
+This is a great start, but Vonage won't know what to do if we only respond with the caller's phone number. To tell Vonage how to handle the call, we have to return an [NCCO](https://developer.nexmo.com/api/voice/ncco).
 
 To keep things simple, we'll use Text-To-Speech to read the caller's phone number back to them, digit by digit. First, we split their number in to an array of characters, then join them together using spaces:
 
@@ -126,50 +126,54 @@ Visit [http://localhost:8000/webhook/answer?from=14155550100](http://localhost:8
 ]
 ```
 
-Congratulations! You just wrote an application that receives an inbound phone call and responds with some dynamic content. You can customise your response using any of the parameters that Nexmo provide, including `to`, `from` and `conversation_uuid`.
+Congratulations! You just wrote an application that receives an inbound phone call and responds with some dynamic content. You can customise your response using any of the parameters that Vonage provide, including `to`, `from` and `conversation_uuid`.
 
 ## Exposing your application with ngrok
 
-We've built an application that responds how we'd expect, but there's one big problem at the moment. Nexmo are supposed to make a request to it when a call is received but it's running on our local machine!
+We've built an application that responds how we'd expect, but there's one big problem at the moment. Vonage are supposed to make a request to it when a call is received but it's running on our local machine!
 
-Don't worry though, ngrok can save the day. If you're unfamiliar with ngrok, there's a fantastic [introduction to ngrok](/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) available on the Nexmo blog.
+Don't worry though, ngrok can save the day. If you're unfamiliar with ngrok, there's a fantastic [introduction to ngrok](/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) available on the Vonage blog.
 
-Once you have ngrok installed, run `ngrok http 8000` to expose your application to the internet. You'll need to make a note of the `ngrok` URL generated as we'll need to provide it to Nexmo (it'll look something like `http://abc123.ngrok.io`).
+Once you have ngrok installed, run `ngrok http 8000` to expose your application to the internet. You'll need to make a note of the `ngrok` URL generated as we'll need to provide it to Vonage (it'll look something like `http://abc123.ngrok.io`).
 
-## Configure your Nexmo account
+## Configure your Vonage account
 
-Once your application is exposed to the internet, the final thing to do is hook it up to a Nexmo phone number. Let's start by purchasing a phone number using the Nexmo CLI:
+Once your application is exposed to the internet, the final thing to do is hook it up to a Vonage phone number. Let's start by purchasing a phone number using the Vonage CLI. First, search for a number:
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US
 ```
 
-Make a note of the number you just purchased, as we'll need it in just a second!
+Then buy one of the numbers listed as available:
 
-The next step is to create a Nexmo application, which is a container for all the settings required for your application. In this case we need to tell Nemxo which URL to make a request to when a call is received (`answer_url`), and where to send any event information about the call (`event_url`).
+```bash
+vonage numbers:buy <number> US
+```
+
+The next step is to create a Vonage application, which is a container for all the settings required for your application. In this case we need to tell Vonage which URL to make a request to when a call is received (`answer_url`), and where to send any event information about the call (`event_url`).
 
 We can use the Nexmo CLI to create an application, making sure to substitute `http://abc123.ngrok.io` for your own generated URL. We provide a name, then an `answer_url` and `event_url` for the application:
 
 ```bash
-nexmo app:create "InboundCalls" http://abc123.ngrok.io/webhook/answer http://abc123.ngrok.io/webhook/event
+vonage apps:create "InboundCalls" --voice_answer_url=http://abc123.ngrok.io/webhook/answer --voice_event_url=http://abc123.ngrok.io/webhook/event
 ```
 
-You can ignore the private key output as it is not required to receive inbound calls. Above the key is your new application's ID. We do need that, so make a note (it'll look similar to `aaaaaaaa-bbbb-cccc-dddd-0123456789ab`) then carry on reading.
+Make a note of your application's ID (it'll look similar to `aaaaaaaa-bbbb-cccc-dddd-0123456789ab`) then carry on reading.
 
-The final thing to do is to link the number you purchased to the application you just created. This will tell Nexmo that when a call is received, they should make a `GET` request to the application's `answer_url` to find out how to proceed with the call.
+The final thing to do is to link the number you purchased to the application you just created. This will tell Vonage that when a call is received, they should make a `GET` request to the application's `answer_url` to find out how to proceed with the call.
 
 Once again, we can use the Nexmo CLI to do this, replacing the example phone number and application ID with your own:
 
 ```bash
-nexmo link:app 14155550100 aaaaaaaa-bbbb-cccc-dddd-0123456789ab
+vonage apps:link aaaaaaaa-bbbb-cccc-dddd-0123456789ab --number=14155550100
 ```
 
-That's everything we needed to do for Nexmo to associate our PHP application to an incoming phone call. Give it a go now by calling the phone number you purchased.
+That's everything we needed to do for Vonage to associate our PHP application to an incoming phone call. Give it a go now by calling the phone number you purchased.
 
 ## Conclusion
 
 Together, we just built an application that can receive an incoming phone call and dynamically generate a response in just 22 lines of code!
 
-If you want to learn more about voice calls with PHP and Nexmo, you can find [example building blocks](https://developer.nexmo.com/voice/voice-api/building-blocks/make-an-outbound-call) in Nexmo Developer. Alternatively, if you want to make your inbound call response more complex (e.g. recording the audio from the caller) you can learn more about NCCOs in the [NCCO reference](https://developer.nexmo.com/api/voice/ncco)
+If you want to learn more about voice calls with PHP and Vonage, you can find [example building blocks](https://developer.nexmo.com/voice/voice-api/building-blocks/make-an-outbound-call) in Nexmo Developer. Alternatively, if you want to make your inbound call response more complex (e.g. recording the audio from the caller) you can learn more about NCCOs in the [NCCO reference](https://developer.nexmo.com/api/voice/ncco)
 
 As always, if you have any questions about this post feel free to email devrel@nexmo.com or [join the Nexmo community Slack channel](https://developer.nexmo.com/community/slack), where we're waiting and ready to help.
