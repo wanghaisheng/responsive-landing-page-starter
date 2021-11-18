@@ -42,7 +42,7 @@ You'll need an AWS account, as well as [IAM credentials](https://aws.amazon.com/
 
 #### Create an S3 Bucket
 
-Create an S3 Bucket to store the voice recording MP3 files retrieved from Nexmo. Amazon Transcribe can then easily access the files for transcription later.
+Create an S3 Bucket to store the voice recording MP3 files retrieved from Vonage. Amazon Transcribe can then easily access the files for transcription later.
 
 After creating it, make sure to check the box beside the bucket name. A panel opens from the right, so you can click the button "Copy Bucket ARN" and save it for later usage.
 
@@ -148,9 +148,9 @@ Also, notice that `iamRoleStatements` is setting permissions for the Lambda to u
 
 #### Environment Variables
 
-As a part of the preparation, rename the `.env.default` file to become `.env`, and update as needed to suit your AWS and Nexmo account information. Though you can safely ignore `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, because those are automatically added to the environment by Lambda.
+As a part of the preparation, rename the `.env.default` file to become `.env`, and update as needed to suit your AWS and Vonage account information. Though you can safely ignore `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`, because those are automatically added to the environment by Lambda.
 
-You will also not be able to populate the `NEXMO_APPLICATION_PRIVATE_KEY_PATH` and `NEXMO_APPLICATION_ID` values until AFTER you deploy to Lambda, causing the need to deploy to Lambda twice. The first time to provide you with the URLs needed to create the Nexmo Application. Then, the second deployment contains an updated `.env` file with the Nexmo values. That's all covered later.
+You will also not be able to populate the `VONAGE_APPLICATION_PRIVATE_KEY_PATH` and `VONAGE_APPLICATION_ID` values until AFTER you deploy to Lambda, causing the need to deploy to Lambda twice. The first time to provide you with the URLs needed to create the Vonage Application. Then, the second deployment contains an updated `.env` file with the Vonage values. That's all covered later.
 
 #### Event URLs
 
@@ -177,20 +177,20 @@ After deployment, you receive the URL needed to access the application via the A
 
 **IMPORTANT:** The example application, as-is, does not carry any authentication or verification. Anyone with access to the URL provided after deployment can access it. Doing so could cause unexpected charges to your accounts. Therefore, please secure the app if you intend to leave it active.
 
-### Nexmo Setup
+### Vonage Setup
 
-Unfortunately, in the case of deploying AWS Lambda applications, you did not know the URL until after deployment. However, you still need to create the Application at Nexmo to gain the `NEXMO_APPLICATION_PRIVATE_KEY_PATH` and `NEXMO_APPLICATION_ID` for the application to function.
+Unfortunately, in the case of deploying AWS Lambda applications, you did not know the URL until after deployment. However, you still need to create the Application at Vonage to gain the `VONAGE_APPLICATION_PRIVATE_KEY_PATH` and `VONAGE_APPLICATION_ID` for the application to function.
 
 Using the Vonage CLI, installed as a prerequisite, enter the following command:
 
 ```bash
-nexmo app:create <name> <answer_url>/webhooks/answer <event_url>/webhooks/event
+vonage app:create <name> <answer_url>/webhooks/answer <event_url>/webhooks/event
 ```
 
 As an example, the command might look like this:
 
 ```bash
-nexmo app:create MyTranscripeApp https://asdrferwef.execute-api.us-east-1.amazonaws.com/dev/webhooks/answer https://asdrferwef.execute-api.us-east-1.amazonaws.com/dev/webhooks/event
+vonage app:create MyTranscripeApp https://asdrferwef.execute-api.us-east-1.amazonaws.com/dev/webhooks/answer https://asdrferwef.execute-api.us-east-1.amazonaws.com/dev/webhooks/event
 ```
 
 The response from the command provides the `Application ID` and the `Private Key`, to be used in the following steps.
@@ -201,34 +201,34 @@ Rename the file `private.key.default` to `private.key` and save the `Private Key
 
 #### Update .env
 
-Update the `.env` file with the values for `NEXMO_APPLICATION_PRIVATE_KEY_PATH` and `NEXMO_APPLICATION_ID`. It will look something like this:
+Update the `.env` file with the values for `VONAGE_APPLICATION_PRIVATE_KEY_PATH` and `VONAGE_APPLICATION_ID`. It will look something like this:
 
 ```bash
-NEXMO_APPLICATION_PRIVATE_KEY_PATH=./private.key
-NEXMO_APPLICATION_ID=2735sd6ed1asd-29cf4-4858f-bd90sd-7135a8cf122bas
+VONAGE_APPLICATION_PRIVATE_KEY_PATH=./private.key
+VONAGE_APPLICATION_ID=2735sd6ed1asd-29cf4-4858f-bd90sd-7135a8cf122bas
 ```
 
 #### Number Association
 
-The last step to prepare Nexmo is to associate the rented Nexmo number with the newly created application. Use the following command for this:
+The last step to prepare Vonage is to associate the rented Vonage number with the newly created application. Use the following command for this:
 
 ```bash
-nexmo link:app <number> <app_id>
+vonage link:app <number> <app_id>
 ```
 
-Make sure to update the variables above with your Nexmo number and the `app_id` given with the Application creation. Ensure you prepend the country code, to prevent failure. Here is an example:
+Make sure to update the variables above with your Vonage number and the `app_id` given with the Application creation. Ensure you prepend the country code, to prevent failure. Here is an example:
 
 ```bash
-nexmo link:app +15558675309 2735sd6ed1asd-29cf4-4858f-bd90sd-7135a8cf122bas
+vonage link:app 2735sd6ed1asd-29cf4-4858f-bd90sd-7135a8cf122bas --number=+15558675309
 ```
 
 #### More Details
 
-Creating the Nexmo application, and associating the number, instructs Nexmo to make callbacks when events happen, and you want those callbacks to point to the newly created app.
+Creating the Vonage application, and associating the number, instructs Vonage to make callbacks when events happen, and you want those callbacks to point to the newly created app.
 
 The Event URL is for when an event changes the status of a call, while the Answer URL is requested for any inbound calls to retrieve an NCCO object ([Nexmo Call Control Object](https://developer.nexmo.com/voice/voice-api/ncco-reference)).
 
-Now we are finished with the Nexmo setup. Time to redeploy to Lambda with the following command:
+Now we are finished with the Vonage setup. Time to redeploy to Lambda with the following command:
 
 ```bash
 serverless deploy
@@ -238,7 +238,7 @@ After a couple of minutes, the updated application will be redeployed to Lambda.
 
 ### Testing
 
-Now it is time to make a test call to your Nexmo number. After calling, the automated voice should say, "Please leave a message after the tone, then press #". unless you changed that message in `index.php`. Then, after you leave a short voice message and hit `#`, the automated voice should say, "Thank you for your message. Goodbye."
+Now it is time to make a test call to your Vonage number. After calling, the automated voice should say, "Please leave a message after the tone, then press #". unless you changed that message in `index.php`. Then, after you leave a short voice message and hit `#`, the automated voice should say, "Thank you for your message. Goodbye."
 
 To confirm everything worked as expected, you should be able to see the MP3 file in the S3 bucket you specified. There should also be a transcription job running at Amazon Transcribe. All of that is accessible through the AWS Console.
 
