@@ -9,7 +9,8 @@ updated_at: 2021-11-18T14:57:27.773Z
 category: tutorial
 tags:
   - ruby
-  - testingmessages-api
+  - testing
+  - messages-api
 comments: true
 spotlight: false
 redirect: ""
