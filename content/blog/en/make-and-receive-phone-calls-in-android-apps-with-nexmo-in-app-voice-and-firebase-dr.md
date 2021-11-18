@@ -26,14 +26,10 @@ To follow along with this blog post, you should have some knowledge of JavaScrip
 
 There are a few things you’ll need before we get started.
 
-
-
 * [Firebase Account](https://firebase.google.com/)
 * Vonage Account
 
-<sign-up></sign-up> 
-
-
+<sign-up></sign-up>
 
 ## Set up the Firebase Function.
 
@@ -61,8 +57,8 @@ If like me, you were not able to create a firebase function project from the com
 You can see the final version of the methods we'll use for the Firebase Functions in the [repo for this demo on GitHub.](https://github.com/nexmo-community/In-App-Voice-Calling-Firebase-Android/tree/master/functions) In short we need three endpoints:
 
 1. An Answer URL that will host the NCCO
-1. An Event URL to capture events from the Voice API
-1. A URL to return a JWT for users to login with
+2. An Event URL to capture events from the Voice API
+3. A URL to return a JWT for users to login with
 
 To edit the Firebase functions, we'll need to edit the `index.js` file in the new `functions/` directory that firebase created after we ran `firebase init functions`
 
@@ -168,20 +164,44 @@ Function URL (event): https://your-project-name.cloudfunctions.net/event
 Function URL (jwt): https://your-project-name.cloudfunctions.net/jwt
 </pre>
 
-## Set up the Nexmo Application.
+## Set up the Vonage Application.
 
-To create an application, we'll use the answer and event url that Firebase provided us in the previous section.
+To create an application, first Install the Vonage CLI globally with this command:
 
-<pre class="lang:default highlight:0 decode:true " >
-#Ensure you're in the firebase-functions-nexmo-in-app-calling/ directory we created at the beginning of this tutorial
-nexmo app:create "Firebase Functions Nexmo In-App Calling" https://your-project-name.cloudfunctions.net/answer https://your-project-name.cloudfunctions.net/event --keyfile=functions/private.key --type=rtc
+```
+npm install @vonage/cli -g
+```
 
-Application created: aaaaaaaa-bbbb-cccc-dddd-0123456789ab
-Credentials written to /firebase-functions-nexmo-in-app-calling/.nexmo-app
-Private Key saved to: functions/private.key
-</pre>
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
 
-_Note: I'm saving the private key in the `functions/` directory so that the file can be referenced when the function is published_
+```
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
+
+Create a directory for your project and CD into it
+
+```
+mkdir functions
+CD functions
+```
+
+ Now we'll use the answer and event URL that Firebase provided us in the previous section.
+
+```
+vonage apps:create
+✔ Application Name … your_vonage_application
+✔ Select App Capabilities › Messages, RTC
+✔ Create messages webhooks? … yes
+✔ Inbound Message Webhook - URL … https://your-project-name.cloudfunctions.net/answer
+✔ Inbound Message Webhook - Method › POST
+✔ Status Webhook - URL … https://your-project-name.cloudfunctions.net/event
+✔ Status Webhook - Method › POST
+✔ Create RTC webhook? … no
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
+Creating Application... done
+```
+
+Your private key gets saved in the functions directory you created.
 
 Record the application ID and save the private key in the "functions" directory. I recommend you add the `private.key` and `.nexmo-app` files with your credentials to your `.gitignore`.
 
@@ -193,10 +213,9 @@ Now we need to store the Nexmo application ID in the firebase config via the fir
 firebase functions:config:set nexmo.application_id="aaaaaaaa-bbbb-cccc-dddd-0123456789ab"
 </pre>
 
-_Note: Firebase requires config variable keys to be lowercase, so we'll use snake case for our variable names._
+*Note: Firebase requires config variable keys to be lowercase, so we'll use snake case for our variable names.*
 
 If you wish, you could upload the private key string found in the `.nexmo-app` file from your Nexmo application as a firebase config variable instead of uploading the entire `private.key` file to the firebase functions.
-
 
 ## Link a phone number and user to our application
 
@@ -212,7 +231,6 @@ firebase functions:config:set nexmo.from_number="12013753230"
 </pre>
 
 Nexmo In-App Voice also requires us to create a user for authentication. By creating a user, we can route incoming phone calls to them. We can do that simply with the [beta version of the Nexmo CLI](https://github.com/Nexmo/nexmo-cli/tree/beta)
-
 
 <pre class="lang:default highlight:0 decode:true " >
 #Ensure you have the beta version of the CLI installed
@@ -236,7 +254,6 @@ dependencies {
 ```
 
 We'll use [Retrofit](https://github.com/square/retrofit) to make a `GET` request the Firebase function's JWT endpoint that Firebase CLI provided us.
-
 
 ```java
 //FirebaseFunctionService.kt
@@ -358,6 +375,7 @@ class CallActivity : BaseActivity(), RequestHandler<Call> {
 
 }
 ```
+
 As you can see the Nexmo Stitch SDK handles the hard work of placing and answering phone calls.
 
 ## How does it work?
@@ -425,7 +443,6 @@ We can use the `to` parameter to dynamically return a NCCO that tells Nexmo whic
 ```
 
 In this case, the `from` number is the number that we rented from Nexmo and set as the `nexmo.from_number` with Firebase config variables. The value in `number` key in the `endpoint` array is the number that our user wants to call.
-
 
 ## Try it for yourself
 
