@@ -237,7 +237,7 @@ If all went as it should, we have received an HTTP 200 response back from the AP
 {"error-code":"200","error-code-label":"success"}
 ```
 
-You could also update the Inbound SMS settings for your virtual number via [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers) or using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#numbers) but I wanted to look fancier 😜
+You could also update the Inbound SMS settings for your virtual number via [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers) or using the [](https://github.com/Nexmo/nexmo-cli#numbers)[Vonage CLI](https://developer.vonage.com/application/vonage-cli) but I wanted to look fancier 😜
 
 Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Nexmo number we've just configured. As an example, I will query the name of the line that gets me to work every day.
 
