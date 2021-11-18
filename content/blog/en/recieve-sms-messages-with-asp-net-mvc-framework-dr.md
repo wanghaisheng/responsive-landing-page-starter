@@ -82,12 +82,43 @@ Next, head over to the [Nexmo Dashboard](https://dashboard.nexmo.com/) and navig
 
 ![Ngrok API Settings](/content/blog/how-to-receive-sms-messages-with-asp-net-mvc-framework/ngrok-api-settings.png)
 
-If you prefer to use a command-line interface, you can also achieve this using the Nexmo CLI. Open up Terminal and install the Nexmo CLI via npm. Next, set up the CLI with your api_key and api_secret to link your Nexmo account. Lastly, update the callback URL for the Nexmo number you chose to receive the SMS messages on.
+If you prefer to use a command-line interface, you can also achieve this using the Vonage CLI.
+
+Install the Vonage CLI globally with this command:
+
+```
+npm install @vonage/cli -g
+```
+
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
+
+```
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
+
+### Create a Voice Application
+
+Create a new directory for your project and CD into it:
+
+```
+mkdir my_project
+CD my_project
+```
+
+Now, use the CLI to create a Vonage application. 
+
+Now create your Vonage application
 
 ```sh
-npm install nexmo-cli -g
-nexmo setup api_key api_secret
-nexmo link:sms 1231231234 https://www.example.ngrok.io/SMS/Recieve
+vonage apps:create
+✔ Application Name … interior_hedgehog
+✔ Select App Capabilities › Messages
+✔ Create messages webhooks? … yes
+✔ Inbound Message Webhook - URL … https://www.example.ngrok.io/SMS/Recieve
+✔ Inbound Message Webhook - Method › GET
+✔ Status Webhook - URL … https://example.com/webhook_name
+✔ Status Webhook - Method › GET
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 ```
 
 ## Receive an SMS with ASP.NET
