@@ -150,8 +150,6 @@ That will save your account credentials locally, and then you can set up forward
 ngrok http 3000
 ```
 
-
-
 ![An image example of Ngrok running](/content/blog/build-a-“google-authenticator”-from-a-landline-with-vonage/russ3.png)
 
 Make a note of the URIs it displays as those will be specific to your service and will change every time ngrok runs.
@@ -176,14 +174,40 @@ Enter a name like “TOTP Passcode Example,” and generate a keypair so it can 
 
 Then turn on the “Voice” capability, and set the event (https://bd934ed5.ngrok.io/webhooks/passcode) and answer (https://bd934ed5.ngrok.io/webhooks/answer) URIs to the ones from ngrok that you noted down above. Be sure to use your own ngrok URIs. Note that the event URI uses HTTP POST, so you’ll need to select that from the drop-down:
 
-
-
 ![Choosing the capabilities and setting webhoosk for your Vonage Application](/content/blog/build-a-“google-authenticator”-from-a-landline-with-vonage/russ6.png)
 
-Alternatively, if you prefer a CLI and have nexmo-cli installed, you can do this by running:
+Alternatively, if you prefer using a CLI, you can create an app like this. 
+
+Install the Vonage CLI globally with this command:
+
+```
+npm install @vonage/cli -g
+```
+
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
+
+```
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
+
+Create a new directory for your project and CD into it:
+
+```
+mkdir my_project
+CD my_project
+```
+
+Now, use the CLI to create a Vonage application. 
 
 ```bash
-nexmo app:create "TOTP Passcode Example" https://bd934ed5.ngrok.io/webhooks/answer https://bd934ed5.ngrok.io/webhooks/passcode --keyfile private.key
+✔ Application Name … theoretical_felidae
+✔ Select App Capabilities › Voice
+✔ Create voice webhooks? … yes
+✔ Answer Webhook - URL … https://bd934ed5.ngrok.io/webhooks/answer
+✔ Answer Webhook - Method › GET
+✔ Event Webhook - URL … https://bd934ed5.ngrok.io/webhooks/passcode
+✔ Event Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 ```
 
 To be able to dial this service, we need an externally-facing number. Create one using “Numbers” -> “Buy Numbers” from the dashboard:
@@ -193,13 +217,14 @@ To be able to dial this service, we need an externally-facing number. Create one
 Again, for CLI fans, there’s the option to first search for voice-capable numbers (e.g. in the US):
 
 ```bash
-nexmo number:search US --voice --verbose
+vonage numbers:search US
+
 ```
 
 Then buy one from the list:
 
 ```bash
-nexmo number:buy 12013813029
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 Finally, we need to link this number to the application. If you go to “My Applications” in the dashboard and click on your TOTP application, you should see a line at the bottom for your number and a “Link” button under “Manage”:
@@ -207,8 +232,6 @@ Finally, we need to link this number to the application. If you go to “My Appl
 ![Screenshot showing how to link a number to your application](/content/blog/build-a-“google-authenticator”-from-a-landline-with-vonage/russ8.png)
 
 Click “Link” and confirm if necessary:
-
-
 
 ![Screenshot showing confirmation of linking number to application](/content/blog/build-a-“google-authenticator”-from-a-landline-with-vonage/russ9.png)
 
