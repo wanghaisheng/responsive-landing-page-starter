@@ -3,9 +3,10 @@ title: Auto Layout for Vonage Video Application
 description: Using opentok-layout-js we can easily render vonage video call
   participants on the screen. This saves time and makes it super simple to build
   video application using vonage video sdk.
+thumbnail: /content/blog/auto-layout-for-vonage-video-application/auto-layout_videoapi.png
 author: mofi-rahman
-published: false
-published_at: 2021-11-11T15:40:53.771Z
+published: true
+published_at: 2021-11-18T10:29:04.444Z
 updated_at: 2021-11-11T15:40:53.817Z
 category: tutorial
 tags:
