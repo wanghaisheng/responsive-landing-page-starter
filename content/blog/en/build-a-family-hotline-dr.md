@@ -120,57 +120,50 @@ Now you need to configure a *Vonage Virtual Number* to call your server when som
 
 ### Create a Vonage Account
 
-[Sign up](https://dashboard.nexmo.com/sign-up) for an account on the Vonage website.
+<sign-up number></sign-up>
 
-### Install the Nexmo CLI
+### Install the Vonage CLI
 
-Follow the installation instructions in the [Nexmo CLI README](https://github.com/Nexmo/nexmo-cli/blob/master/README.md).
-This is generally a really useful tool for configuring your account.
+Install the Vonage CLI globally with this command:
+
+```
+npm install @vonage/cli -g
+```
+
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
+
+```
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
 
 ### Create a Voice Application
 
+Now, use the CLI to create a Vonage application. 
+
 ```bash
-$ nexmo app:create \
-    --type voice \
-    --answer_method POST \
-    --event_method POST \
-    --keyfile hotline.pem \
-    "Home Hotline" \
-    https://ed330676.ngrok.io/incoming/ \
-    https://ed330676.ngrok.io/event/
+$ vonage apps:create
+✔ Application Name … naval_junglefowl
+✔ Select App Capabilities › Voice
+✔ Create voice webhooks? … yes
+✔ Answer Webhook - URL …  https://ed330676.ngrok.io/incoming/
+✔ Answer Webhook - Method › POST
+✔ Event Webhook - URL … https://ed330676.ngrok.io/event/
+✔ Event Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 
 Application created: 34abcd12-ef12-40e3-9c6c-4274b3633761
-Private Key saved to: hotline.pem
+
 ```
 
 You'll want to save that ID that's printed out after `Application created:`. You'll need it in the next step.
 
 ### Buy a Number and Link it to Your Voice App
 
-This step is where the command-line interface really comes into its own - the following is just 3 commands:
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
 
 ```bash
-# Search for numbers in your country:
-# (I'm in Scotland, so I use GB. In the USA, you'd use US)
-$ nexmo number:search GB
-447700900462
-447700900463
-...
-447700900465
-447700900466
-447700900467
-
-# Pick a number you like from the list, and buy it:
-$ nexmo number:buy 447700900466
-Buying 447700900466. This operation will charge your account.
-
-Please type "confirm" to continue: confirm
-
-Number purchased: 447700900466
-
-# Link the number to your Voice app (use the app ID you saved from earlier):
-$ nexmo link:app 447700900466  34abcd12-ef12-40e3-9c6c-4274b3633761
-Number updated
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 **Okay**!
