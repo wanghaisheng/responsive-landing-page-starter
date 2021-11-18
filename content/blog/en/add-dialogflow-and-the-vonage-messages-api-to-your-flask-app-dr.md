@@ -46,15 +46,10 @@ In the interactive CLI mode:
 ```
 Application Name: your-app-name
 Select capabilities: press the space bar to select voice, messages and rtc
-Use default HTTP methods?: yes
-Voice answer url: press enter to leave it as default (https://example.com)
-Voice Fallback Answer URL: Optional
-Voice Event URL: press enter to leave it as default (https://example.com)
-Messages Inbound URL: use ngrok to create a URL and add '/update/' on the end
-Messages Status URL: press enter to leave it as default (https://example.com)
-RTC Event URL: press enter
-Public key path: press enter
-Private Key path: your private key (downloadable from the nexmo dashboard)
+Create voice webhooks? No
+Create messaging webhooks? No
+Create RTC webhooks? No
+Allow use of data for AI training? No
 ```
 
 The application should now be created. Visit the [dashboard](https://dashboard.nexmo.com) and navigate to *Applications*. Your shiny new app should be listed there.
