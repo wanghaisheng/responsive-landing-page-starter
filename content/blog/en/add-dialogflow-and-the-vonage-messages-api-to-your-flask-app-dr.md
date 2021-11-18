@@ -23,10 +23,10 @@ Dialogflow is a natural language understanding (NLU) platform provided by Google
 
 ## Create an Application
 
- We will begin by using the Nexmo CLI mode to create an app. Install the Nexmo CLI on your machine as follows:
+ We will begin by using the Vonage CLI mode to create an app. Install the Vonage CLI on your machine as follows:
 
 ```
-npm install nexmo-cli@beta -g
+npm install -g @vonage/cli
 ```
 
 Create a directory for your application locally: 
@@ -38,7 +38,7 @@ mkdir your-application
 Inside the directory, run the following command:
 
 ```
-nexmo app:create
+vonage apps:create
 ```
 
 In the interactive CLI mode:
