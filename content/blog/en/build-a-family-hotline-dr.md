@@ -138,6 +138,13 @@ vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 
 ### Create a Voice Application
 
+Create a new directory for your project and CD into it:
+
+```
+mkdir my_project
+CD my_project
+```
+
 Now, use the CLI to create a Vonage application. 
 
 ```bash
@@ -152,7 +159,6 @@ $ vonage apps:create
 ✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 
 Application created: 34abcd12-ef12-40e3-9c6c-4274b3633761
-
 ```
 
 You'll want to save that ID that's printed out after `Application created:`. You'll need it in the next step.
