@@ -37,7 +37,7 @@ In order to begin sentiment analysis, you will need to setup the [IBM Tone Analy
 
 The repository for the sample application is on [Github](https://nexmo.dev/ibm-nexmo-sms-analysis-repo). The full repo will allow you to deploy to [Heroku](https://nexmo.dev/ibm-nexmo-sms-analysis-heroku), [IBM Cloud](https://nexmo.dev/ibm-nexmo-sms-analysis-ibmcloud), run locally as a Docker container, or remix on [Glitch](https://nexmo.dev/ibm-nexmo-sms-analysis-glitchremix).  
 
-The quickest way to get going is to remix on Glitch and update your environment variables. Check out the readme on directions to get a new virtual number using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#installation) or using the [dashboard](https://developer.nexmo.com/numbers/guides/numbers#rent-virtual-numbers).
+The quickest way to get going is to remix on Glitch and update your environment variables. Check out the readme on directions to get a new virtual number using the [Vonage CLI](https://www.npmjs.com/package/@vonage/cli) or using the [dashboard](https://developer.nexmo.com/numbers/guides/numbers#rent-virtual-numbers).
 
 ## What's Happening
 
