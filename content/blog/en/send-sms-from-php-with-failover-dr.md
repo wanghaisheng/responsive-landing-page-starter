@@ -1,7 +1,7 @@
 ---
 title: "Sending SMS from PHP with Failover: The Cupcake Bakery"
 description: In this tutorial we'll look at how you can reach your customers in
-  a manner that suits them using the new Nexmo messages API
+  a manner that suits them using the new Vonage messages API
 thumbnail: /content/blog/send-sms-from-php-with-failover-dr/sms-cupcake.png
 author: lornajane
 published: true
@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Staying in touch with customers is key for any organisation. In this post, we'll explore the [Nexmo Messages API](https://developer.nexmo.com/messages/overview) and how it can be used to make sure that a business can get messages to its customers in a manner that suits them. The case study is an imaginary "Cupcake Bakery" business that needs the ability to send messages to its customers. This post shows how to use the cornerstone of modern communication, SMS, in your PHP web application. It also demonstrates how the Messages API can use other communication channels to send your message if your first attempt fails, to give you the best chance of reaching your customer.
+Staying in touch with customers is key for any organisation. In this post, we'll explore the [Vonage Messages API](https://developer.nexmo.com/messages/overview) and how it can be used to make sure that a business can get messages to its customers in a manner that suits them. The case study is an imaginary "Cupcake Bakery" business that needs the ability to send messages to its customers. This post shows how to use the cornerstone of modern communication, SMS, in your PHP web application. It also demonstrates how the Messages API can use other communication channels to send your message if your first attempt fails, to give you the best chance of reaching your customer.
 
 If you're a web developer ready to implement modern messaging features in your application, then this tutorial is for you!
 
@@ -23,15 +23,15 @@ If you're a web developer ready to implement modern messaging features in your a
 
 Before we start, we'll need to gather the following ingredients:
 
-* [PHP](https://php.net) on a publicly-accessible webserver, or PHP on a development platform with a tool such as [ngrok](https://ngrok.com/) to make your web site available. Nexmo sends responses by [webhook](https://developer.nexmo.com/concepts/guides/webhooks) so it needs to be able to reach your application.
-* [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) if you don't have it already.
+* [PHP](https://php.net) on a publicly-accessible webserver, or PHP on a development platform with a tool such as [ngrok](https://ngrok.com/) to make your web site available. Vonage sends responses by [webhook](https://developer.nexmo.com/concepts/guides/webhooks) so it needs to be able to reach your application.
+* [Vonage CLI](https://github.com/vonage/vonage-cli) if you don't have it already.
 * It's more fun if you have two phone numbers you can send SMS to :)
 
 <sign-up number></sign-up>
 
 ### Meet the Messages API
 
-Nexmo has long been known for its SMS capabilities, but the Messages API is new (it's still in Beta). Using the Messages API you can send messages to a number of different channels using a single interface. It's often cheaper to send a message to Facebook Messenger or WhatsApp rather than SMS, and the Messages API means you only need to integrate one tool to cover all of these. There will also be more message channels added over time, so it's an investment that saves you having to add more integrations for every new messaging platform to come into fashion.
+Vonage has long been known for its SMS capabilities, but the Messages API is new (it's still in Beta). Using the Messages API you can send messages to a number of different channels using a single interface. It's often cheaper to send a message to Facebook Messenger or WhatsApp rather than SMS, and the Messages API means you only need to integrate one tool to cover all of these. There will also be more message channels added over time, so it's an investment that saves you having to add more integrations for every new messaging platform to come into fashion.
 
 Complementing the Messages API is the Dispatch API which gives extra reliability to the task of getting the message to its intended recipient. With the Dispatch API, you can set rules about what to do if a message isn't delivered within a particular time window - and then also say what to do next. So if you have another contact method for that user, an alternative phone number for example, or you've interacted with them on Facebook then you can send a second message via another method. This post shows an example of sending to an alternative phone number, a feature I often wish for myself when I'm using different numbers in different countries when I travel!
 
@@ -52,7 +52,7 @@ On the dashboard, make a note of the application ID you create and make sure tha
 
 Code for a working application is available on GitHub. Visit <https://github.com/nexmo-community/bakery-messaging-with-dispatch> and either clone the repository or download the code.
 
-Once you have it, there are some dependencies we need to install. To keep things as simple as possible, this project uses the [Slim microframework](https://www.slimframework.com/). To make the API calls (since Messaging and Dispatch APIs are still in Beta, they aren't supported in our [PHP library](https://github.com/Nexmo/nexmo-php) quite yet), the project uses [GuzzleHTTP](https://github.com/Nexmo/nexmo-php).
+Once you have it, there are some dependencies we need to install. To keep things as simple as possible, this project uses the [Slim microframework](https://www.slimframework.com/). To make the API calls (since Messaging and Dispatch APIs are still in Beta, they aren't supported in our [PHP library](https://github.com/Vonage/vonage-php-sdk-core) quite yet), the project uses [GuzzleHTTP](https://github.com/guzzle/guzzle).
 
 To install the dependencies, use [Composer](https://getcomposer.org/):
 
@@ -60,10 +60,10 @@ To install the dependencies, use [Composer](https://getcomposer.org/):
 composer install
 ```
 
-The Messages API and Dispatch API use [JSON Web Tokens (JWTs)](https://en.wikipedia.org/wiki/JSON_Web_Token) for authentication. Take the application ID you created in the dashboard and use it with the Nexmo CLI to run a command like this (assuming your private key is called `private.key`):
+The Messages API and Dispatch API use [JSON Web Tokens (JWTs)](https://en.wikipedia.org/wiki/JSON_Web_Token) for authentication. Take the application ID you created in the dashboard and use it with the Vonage CLI to run a command like this (assuming your private key is called `private.key`):
 
 ```
-nexmo jwt:generate private.key exp=$(($(date +%s)+86400)) application_id=NEXMO_APPLICATION_ID
+vonage jwt:generate private.key exp=$(($(date +%s)+86400)) application_id=NEXMO_APPLICATION_ID
 ```
 
 The output of this command is your JWT that you will use for access with this application; copy it to your clipboard now. Beware that it expires every 24 hours so you may need to repeat this process when your perfectly working application suddenly starts returning "Invalid token" errors.
