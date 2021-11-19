@@ -152,7 +152,7 @@ You need a Nexmo virtual number to receive phone calls. If you don't already hav
 You can install the Vonage CLI using the [Node Package Manager](https://www.npmjs.com/get-npm), `npm`:
 
 ```
-npm install -g nexmo-cli
+npm install -g vonage-cli
 ```
 
 Then, configure the Vonage CLI with your API key and secret from the [developer dashboard](https://dashboard.nexmo.com):
