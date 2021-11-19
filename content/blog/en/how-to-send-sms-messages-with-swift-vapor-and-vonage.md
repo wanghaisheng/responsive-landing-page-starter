@@ -29,7 +29,7 @@ The [Vonage SMS API](https://developer.nexmo.com/messaging/sms/overview) allows 
 <sign-up></sign-up>
 
 * Xcode 12 and Swift 5 or greater.
-* [Vapor 4.0](https://vapor.codes) installed on your machine.
+* The [Vapor toolbox](https://docs.vapor.codes/4.0/install/macos/) installed on your machine.
 
 ## Create a Vapor Project
 
@@ -72,7 +72,7 @@ Now that your project is set up, you will create an interface to enter a phone n
     <form action="/send" method="post">
         <p>
         <label>Phone number E.g. 447000000000</label><br>
-        <input type="text" name="to" place>
+        <input type="text" name="to">
         </p>
 
         <p>
