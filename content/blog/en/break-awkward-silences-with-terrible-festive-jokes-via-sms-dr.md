@@ -92,14 +92,23 @@ NEXMO_API_SECRET="" # from your account dashboard
 Next up is the application-specific detail. Set that up using the CLI:
 
 ```bash
-nexmo application:create "Xmas Jokes" https://<your_ngrok_url>/inbound https://<your_ngrok_url>/status  --keyfile private.key --type messages
+vonage apps:create 
+✔ Application Name … Xmas Jokes
+✔ Select App Capabilities › Messages
+✔ Create messages webhooks? … yes
+✔ Inbound Message Webhook - URL … https://<your_ngrok_url>/inbound
+✔ Inbound Message Webhook - Method › GET
+✔ Status Webhook - URL … https://<your_ngrok_url>/status
+✔ Status Webhook - Method › GET
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
+
 ```
 
-This command will set up a new Messages & Dispatch application on your account. It outputs the `Application ID` to the screen and will also write a file called `private.key` into the directory you're currently in. Both are needed for the next step of the config:
+This command will set up a new Messages & Dispatch application on your account. It outputs the `Application ID` to the screen and will also create a private key in the directory you're currently in. Both are needed for the next step of the config:
 
 ```bash
 NEXMO_APPLICATION_ID="" # The new App ID you just generated
-NEXMO_APPLICATION_PRIVATE_KEY="./private.key" # No need to change this unless you called your keyfile something different
+NEXMO_APPLICATION_PRIVATE_KEY="./XmasJokes.key" # No need to change this unless you called your keyfile something different
 ```
 
 Finally, add in your new SMS capable number:
