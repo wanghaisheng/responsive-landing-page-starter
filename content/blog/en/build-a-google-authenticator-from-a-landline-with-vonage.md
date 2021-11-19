@@ -200,6 +200,7 @@ CD my_project
 Now, use the CLI to create a Vonage application. 
 
 ```bash
+vonage apps:create
 ✔ Application Name … theoretical_felidae
 ✔ Select App Capabilities › Voice
 ✔ Create voice webhooks? … yes
@@ -218,7 +219,6 @@ Again, for CLI fans, there’s the option to first search for voice-capable numb
 
 ```bash
 vonage numbers:search US
-
 ```
 
 Then buy one from the list:
@@ -238,10 +238,10 @@ Click “Link” and confirm if necessary:
 Fear not, CLI army, there’s a command for this as well:
 
 ```bash
-nexmo link:app 12013813029 c5956b8e-0fe2-4d83-b939-ec6754cbd252
+vonage apps:link APPLICATION_ID --number=YOUR_VONAGE_NUMBER
 ```
 
-There are also handy commands if you can’t remember the phone number (`nexmo numbers:list`) or application UUID (`nexmo app:list`).
+There are also handy commands if you can’t remember the phone number (`vonage numbers`) or application UUID (`vonage apps`).
 
 Now we have our service attached to a phone number. If we call that number, it’ll trigger the `/webhooks/answer` endpoint and the NCCO returned will trigger text-to-speech to speak the phrase “Please enter your PIN, followed by a hash.” and then wait for input from the telephone keypad. Enter “1234#” on your keypad, and that will be sent to the `/webhooks/passcode` endpoint, which will read out the six-digit passcode.
 
