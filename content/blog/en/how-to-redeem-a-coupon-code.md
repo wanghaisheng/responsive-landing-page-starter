@@ -1,7 +1,6 @@
 ---
 title: How to Redeem a Coupon Code
-description: "In this blog post, you will learn what a coupon code is and how to
-  redeem it. "
+description: In this blog post, you will learn what a coupon code is and how to redeem it.
 thumbnail: /content/blog/how-to-redeem-a-coupon-code/coupon-code.png
 author: caroline-kerns
 published: true
@@ -17,7 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Whether you attended one of our events, participated in a challenge, or spoke with one of our lovely [](https://developer.vonage.com/team)[DevRel Team Members](https://developer.vonage.com/team), you likely will have come across one of our coupon codes.
+Whether you attended one of our events, participated in a challenge, or spoke with one of our lovely [DevRel Team Members](https://developer.vonage.com/team), you likely will have come across one of our coupon codes.
 
 In this blog post, you will learn what a coupon code is, and how to redeem it to go forth and build amazing things. 
 
@@ -29,17 +28,13 @@ Typically our coupon codes are alphanumeric codes and may be given out as part o
 
 These coupon codes will only be valid for a specific period of time, so be sure to redeem them quickly! 
 
-
-
-### How do I redeem a coupon code? 
+### How Do I Redeem a Coupon Code?
 
 In order to redeem your coupon code, you will need to create a [Vonage API account](https://dashboard.nexmo.com/sign-up). Once you have created your account and confirmed your email address, take a look at your [Dashboard](https://dashboard.nexmo.com/). 
 
 ![Screenshot of Vonage API Dashboard view.](/content/blog/how-to-redeem-a-coupon-code/dashboard.png "Screenshot of Vonage API Dashboard view.")
 
-
-
-On the left-hand side of your dashboard, you will see what your balance is. Typically, if you created a new account, your will see a balance of €2. \
+On the left-hand side of your dashboard, you will see what your balance is. Typically, if you created a new account, you will see a balance of €2. \
 (**Note**: Your balance will be shown in Euro (€) regardless of your location). 
 
 ![Screenshot of extended profile dropdown menu with Coupons highlighted.](/content/blog/how-to-redeem-a-coupon-code/coupons.png "Screenshot of extended profile dropdown menu with Coupons highlighted.")
@@ -59,9 +54,7 @@ If your coupon was successfully redeemed, you will see two things:
 
 *Congratulations, you have successfully redeemed your coupon code!*
 
-
-
-### What if something went wrong? 
+### What if Something Went Wrong?
 
 ![Coupon failed screenshot with arrow pointing at the error message.](/content/blog/how-to-redeem-a-coupon-code/couponfailedcouponnot-found.png "Coupon failed screenshot with arrow pointing at the error message.")
 
@@ -71,12 +64,12 @@ If the redemption keeps failing, please message us on [Twitter](https://twitter.
 
 ### What's Next?
 
-Now it is up to you to build amazing projects! If you are brand-new to Vonage, take a look at our [tutorials](https://developer.vonage.com/tutorials). If you are looking for new ideas and inspirations, check out our [blogs](https://learn.vonage.com/). 
+Now it is up to you to build amazing projects! If you are brand-new to Vonage, take a look at our [tutorials](https://developer.vonage.com/tutorials). If you are looking for new ideas and inspirations, check out our [blog posts](https://learn.vonage.com/). 
 
-We hope you feel inspired and we are looking forward to seeing what you build with your  Vonage balance. Tag us on [Twitter ](https://twitter.com/VonageDev)and share your projects in our [Community Slack Channel](https://developer.vonage.com/community/slack). If you love to create content around your projects, take a look at our [Developer Spotlight Program.](https://learn.vonage.com/spotlight/)
+We hope you feel inspired and we are looking forward to seeing what you build with your  Vonage balance. Tag us on [Twitter](https://twitter.com/VonageDev) and share your projects in our [Community Slack Channel](https://developer.vonage.com/community/slack). If you love to create content around your projects, take a look at our [Developer Spotlight Program.](https://learn.vonage.com/spotlight/)
 
-### Any Questions? 
+### Any Questions?
 
-If you have any questions around coupons and redemptions, please don't hesitate to reach out to us via the [Community Slack Channel](https://developer.vonage.com/community/slack). 
+If you have any questions about coupons and redemptions, please don't hesitate to reach out to us via the [Community Slack Channel](https://developer.vonage.com/community/slack). 
 
 Happy Building!
