@@ -24,7 +24,9 @@ As developers, we're familiar and comfortable with the concept of writing automa
 
 ### Example: Sending an SMS with the Vonage Messages API
 
-Imagine a scenario where we're developing an application that includes the functionality to send text messages via SMS. This would be an excellent use-case for the [Vonage Messages API](https://developer.vonage.com/messages/overview). In order to implement this functionality using the Messages API, our application could perhaps include a `MessagesClient` class which defines a `send_sms` method. The purpose of this method would be to send an appropriately formatted `POST` request to use the [Messages API endpoint](https://developer.vonage.com/api/messages-olympus#SendMessage) `https://api.nexmo.com/v1/messages`.
+Imagine a scenario where we're developing an application that includes the functionality to send text messages via SMS. This would be an excellent use-case for the [Vonage Messages API](https://developer.vonage.com/messages/overview). In order to implement this functionality using the Messages API, our application could perhaps include a `MessagesClient` class which defines a `send_sms` method. The purpose of this method would be to send an appropriately formatted `POST` request to use the [Messages API endpoint](https://developer.vonage.com/api/messages-olympus#SendMessage):
+
+`https://api.nexmo.com/v1/messages`
 
 In terms of the dependencies required for testing, our `Gemfile` might look something like this (though in reality, our application would likely include some additional dependencies).
 
@@ -112,7 +114,7 @@ While this might not *seem* that slow, this is a single test for a single method
 
 Secondly, since our test relies on an HTTP request being sent over the network and being processed by an external dependency, we can't be certain on the fact that a valid response will be received, or indeed any response at all. There could be network issues, temporary outages, or other external factors beyond our control, which mean that we might not receive the expected response *every time* we run our test.
 
-There's plenty of discussion on the topic of best practices for writing automated testing, and on what different types of tests should and shouldn't do. Some generally agreed principles though, particularly when working with unit tests and small integration tests, is that we should try to make our tests **fast** and **deterministic**.
+There's plenty of discussion on the topic of best practices for writing automated testing, and what different types of tests should and shouldn't do. Some generally agreed principles though, particularly when working with unit tests and small integration tests, is that we should try to make our tests **fast** and **deterministic**.
 
 The further down the 'testing pyramid' we go, the more tests we have, and the more often we run them. Fast tests are therefore important at this level. Additionally, when using tests as part of the development process or for early feedback, it's important that our tests be deterministic; in other words, we want to be sure that, when provided with a specific input, the test should produce a pre-determined output.
 
@@ -120,7 +122,7 @@ Considering these principles in the context of our `send_sms` test presents with
 
 There are other possible considerations when using an external API, such as non-idempotent HTTP methods (for example, the `POST` request in our method will create an actual SMS messages will be created every time we run our test), or potential issues with costs or rate limits. Many of these additional issues could be addressed by using an API sandbox, and the Messages API [provides a sandbox](https://developer.vonage.com/messages/concepts/messages-api-sandbox) for some messaging channels.
 
-Using a sandbox is more relevant to tests higher up the pyramid, such as end-to-end/ functional tests and some larger integration test, and doesn't really solve our speed and determinism issues. What we really want for our lower level tests is a way of *not hitting the external dependency at all*. One solution to this is *mocking*.
+Using a sandbox is more relevant to tests higher up the pyramid, such as end-to-end or functional tests and some larger integration test, and doesn't really solve our speed and determinism issues. What we really want for our lower level tests is a way of *not hitting the external dependency at all*. One solution to this is *mocking*.
 
 ## Mocking
 
