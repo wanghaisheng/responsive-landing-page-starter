@@ -172,6 +172,12 @@ vonage numbers:search US
 vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
+Now link the number to your app:
+
+```
+vonage apps:link APPLICATION_ID --number=YOUR_VONAGE_NUMBER
+```
+
 **Okay**!
 
 Now you can test all that by calling the phone number you just bought. You should hear Amy read out the message "Welcome to the Brockman family hotline." If you hear a message saying the number was not recognised, or things don't work out, open the ngrok debug page at `http://127.0.0.1:4040/` in your browser so you can see what requests came in and whether the server responded correctly.
