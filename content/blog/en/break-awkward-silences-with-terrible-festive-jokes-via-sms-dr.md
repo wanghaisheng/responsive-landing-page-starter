@@ -54,7 +54,7 @@ The code is available in a repository on the [Nexmo Community GitHub](https://gl
 
 ### Clone The Repository
 
-In any directory clone a copy of the code from our[ Vonage CLI repository](https://github.com/vonage/vonage-cli) on GitHub:
+In any directory clone a copy of the code from our [nexmo-community](https://github.com/nexmo-community/xmas-jokes-nodejs) repository on GitHub:
 
 ```bash
 git clone git@github.com:nexmo-community/xmas-jokes-nodejs.git
