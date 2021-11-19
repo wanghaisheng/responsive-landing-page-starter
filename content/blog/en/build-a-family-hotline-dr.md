@@ -148,7 +148,7 @@ CD my_project
 Now, use the CLI to create a Vonage application. 
 
 ```bash
-$ vonage apps:create
+vonage apps:create
 ✔ Application Name … naval_junglefowl
 ✔ Select App Capabilities › Voice
 ✔ Create voice webhooks? … yes
