@@ -26,11 +26,11 @@ Awkward. Fire up your code editor and let's get started.
 
 My version of this app is live, so you can message it right now and see the results before we dig into the code.
 
----
+- - -
 
 **Send an SMS containing the word 'awkward' to `+44 7520619627` if you're in the UK, or `+1 201 844 9627` if you're in the US and bust out laughing at the genius lines you'll be sent in return... maybe.**
 
----
+- - -
 
 (The keen of eye will have already spotted that the last 4 digits of each of those numbers spell out X-M-A-S on a telephone keypad.)
 
@@ -44,17 +44,17 @@ The code is available in a repository on the [Nexmo Community GitHub](https://gl
 
 ### Prerequisites
 
-- The [Nexmo Command Line Interface](https://github.com/Nexmo/nexmo-cli)
-- A fresh SMS capable number
-- Node.js version 8 or above
-- A selection of terrible jokes and one-liners
-- An awkward situation
+* The V[onage command line interface](https://developer.vonage.com/application/vonage-cli) 
+* A fresh SMS capable number
+* Node.js version 8 or above
+* A selection of terrible jokes and one-liners
+* An awkward situation
 
 <sign-up number></sign-up>
 
 ### Clone The Repository
 
-In any directory clone a copy of the code from our [nexmo-community](https://github.com/nexmo-community/xmas-jokes-nodejs) repository on GitHub:
+In any directory clone a copy of the code from our[ Vonage CLI repository](https://github.com/vonage/vonage-cli) on GitHub:
 
 ```bash
 git clone git@github.com:nexmo-community/xmas-jokes-nodejs.git
@@ -115,10 +115,10 @@ With all those fields filled out you can save your `.env` and close it.
 
 The app you have cloned has two endpoints in it:
 
-- `/inbound` receives new SMS messages
-- `/status` is a required URL for any Messages & Dispatch application, it receives read receipts and other information about the messages you send
+* `/inbound` receives new SMS messages
+* `/status` is a required URL for any Messages & Dispatch application, it receives read receipts and other information about the messages you send
 
-So that the app can receive SMS messages, your number needs to _know_ about your app. You do this by providing it with a callback URL:
+So that the app can receive SMS messages, your number needs to *know* about your app. You do this by providing it with a callback URL:
 
 ```bash
 nexmo link:sms <your number> http://<your_ngrok_url>/inbound
@@ -167,7 +167,7 @@ Then you're good to go.
 If you're looking for an even quicker route to playing with the code for this application, you can [remix it on Glitch](https://glitch.com/edit/#!/nexmo-community-xmas-jokes-nodejs) by clicking the button below:
 
 <!-- Remix Button -->
+
 <a href="https://glitch.com/edit/#!/remix/nexmo-community-xmas-jokes-nodejs">
   <img src="https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix%402x.png?1513093958726" alt="remix button" aria-label="remix" height="33" border="0">
 </a>
-
