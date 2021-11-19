@@ -34,7 +34,7 @@ In order to redeem your coupon code, you will need to create a [Vonage API accou
 
 ![Screenshot of Vonage API Dashboard view.](/content/blog/how-to-redeem-a-coupon-code/dashboard.png "Screenshot of Vonage API Dashboard view.")
 
-On the left-hand side of your dashboard, you will see what your balance is. Typically, if you created a new account, you will see a balance of €2. \
+On the left-hand side of your dashboard, you will see what your balance is. Typically, if you created a new account, you will see a balance of €2.
 (**Note**: Your balance will be shown in Euro (€) regardless of your location). 
 
 ![Screenshot of extended profile dropdown menu with Coupons highlighted.](/content/blog/how-to-redeem-a-coupon-code/coupons.png "Screenshot of extended profile dropdown menu with Coupons highlighted.")
