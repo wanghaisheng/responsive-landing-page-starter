@@ -63,7 +63,7 @@ composer install
 The Messages API and Dispatch API use [JSON Web Tokens (JWTs)](https://en.wikipedia.org/wiki/JSON_Web_Token) for authentication. Take the application ID you created in the dashboard and use it with the Vonage CLI to run a command like this (assuming your private key is called `private.key`):
 
 ```
-vonage jwt:generate private.key exp=$(($(date +%s)+86400)) application_id=NEXMO_APPLICATION_ID
+vonage jwt --application_id=VONAGE_APPLICATION_ID
 ```
 
 The output of this command is your JWT that you will use for access with this application; copy it to your clipboard now. Beware that it expires every 24 hours so you may need to repeat this process when your perfectly working application suddenly starts returning "Invalid token" errors.
@@ -100,7 +100,7 @@ Clearly it is very important that we can read the status updates, so let's look 
 
 ### Handle Status Updates
 
-When anything interesting happens regarding the status of the message, a webhook is sent to the webhook you configured in the dashbaord at the start. For this application it's `/status`. Here is the code for that route:
+When anything interesting happens regarding the status of the message, a webhook is sent to the webhook you configured in the dashboard at the start. For this application it's `/status`. Here is the code for that route:
 
 ```php
 $app->post('/status', function (Request $request, Response $response) {
