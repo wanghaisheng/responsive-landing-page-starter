@@ -33,7 +33,7 @@ You'll need PHP installed before working through this post. I'm running PHP 7.4,
 
 You'll also need [Composer](http://getcomposer.org/) to download our dependencies.
 
-Finally, you'll need the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) installed. We'll be using it to configure our delivery receipt URL on our Vonage account.
+Finally, you'll need the [Vonage CLI](https://github.com/vonage/vonage-cli) installed. We'll be using it to configure our delivery receipt URL on our Vonage account.
 
 ## Vonage API Account
 
@@ -107,14 +107,18 @@ We can use [ngrok](/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) to
 
 The final thing to do is to configure the webhook URL for delivery receipts in the Vonage dashboard. Visit your [settings](https://dashboard.nexmo.com/settings) page, update *Webhook URL for Delivery Receipt* with your `ngrok` URL (e.g. http://abc123.ngrok.io/webhooks/delivery-receipt) and click *Save Changes*.
 
-At this point, we can send an SMS and watch the delivery receipt arrive. You can either [send an SMS using PHP](/blog/2017/09/20/sending-sms-messages-with-php-dr/) or use the Nexmo CLI to send it. To keep things easy, let's send an SMS using the CLI.
+At this point, we can send an SMS and watch the delivery receipt arrive. You can either [read a previous tutorial on sending an SMS with PHP here](/blog/2017/09/20/sending-sms-messages-with-php-dr/) or run the following code to send an SMS:
 
-> Not all countries support alpha senders. If this is the case, you may need to purchase a number by running `nexmo number:buy --country_code US` and use that as your `from` parameter.
+> Not all countries support alpha senders. If this is the case, you may need to purchase a number by first finding a number to purchase with `vonage numbers:search  US` then buying one by entering `vonage numbers:buy <number>` and use that as your `from` parameter.
 
-Open up a terminal and run the following to send an SMS:
+```php
 
-```bash
-nexmo sms -f DLRTEST <your_personal_number> "Testing"
+$client = new \Vonage\Client(new Vonage\Client\Credentials\Basic(API_KEY, API_SECRET));     
+
+$text = new \Vonage\SMS\Message\SMS(VONAGE_TO, VONAGE_FROM, 'Test message using PHP client library');
+$text->setClientRef('test-message');
+
+$client->sms()->send($text);
 ```
 
 It may take a few minutes due to network latency, but the SMS should be delivered soon, and the delivery receipt should arrive soon after.
