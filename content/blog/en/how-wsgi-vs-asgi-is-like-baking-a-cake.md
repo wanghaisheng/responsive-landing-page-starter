@@ -2,9 +2,10 @@
 title: How Python's WSGI vs. ASGI is Like Baking a Cake
 description: If you’re like us and want to understand this Python WSGI vs. ASGI
   business, let’s break it down by using an example of baking a cake.
+thumbnail: /content/blog/how-pythons-wsgi-vs-asgi-is-like-baking-a-cake/flask-vs-fastapi_2.png
 author: tonya-sims-1
 published: true
-published_at: 2021-11-16T20:13:44.652Z
+published_at: 2021-11-19T13:12:18.026Z
 updated_at: 2021-11-16T20:13:44.703Z
 category: tutorial
 tags:
