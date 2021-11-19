@@ -16,7 +16,6 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-
 Today's post shows you how you can connect multiple parties to the same call using the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview).
 
 If you read our earlier post on [how to receive inbound calls](https://www.nexmo.com/blog/2019/03/28/handling-inbound-calls-with-python-dr/), you will see that this example is very similar: it defines a webhook endpoint that Vonage's APIs can make a request to when someone calls your virtual number. As before, its response is a [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference) that tells Vonage how to handle the call.
@@ -37,10 +36,9 @@ Steps:
 6. [Link the application to your Vonage number](#link-the-application-to-your-vonage-number)
 7. [Try it out](#try-it-out)
 
-
 <h2 id="install-dependencies">Install Dependencies</h2>
 
-This tutorial is based on Python 3, so you'll need to have that installed. You'll also need [Node.js](https://nodejs.org/en/) to run the [CLI](https://github.com/Nexmo/nexmo-cli).
+This tutorial is based on Python 3, so you'll need to have that installed. You'll also need [Node.js](https://nodejs.org/en/) to run the [CLI](https://github.com/Vonage/vonage-cli).
 
 > Using the CLI (and therefore Node.js) is optional here. You can buy numbers and manage your applications using the [Vonage Developer Dashboard](https://dashboard.nexmo.com/) instead if you prefer.
 
@@ -105,28 +103,28 @@ Unless you are using one of their [paid plans](https://ngrok.com/pricing), then 
 
 You need a Vonage virtual number to receive phone calls. If you already have one, you can skip this step and move on to [creating a voice application](#create-a-nexmo-voice-api-application).
 
-You can purchase a number from the [developer dashboard](https://dashboard.nexmo.com/buy-numbers), but it's often quicker to perform administrative tasks like this from the command line instead, using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli). The CLI is a Node application so you need to install it with the [Node Package Manager](https://www.npmjs.com/get-npm), `npm`:
+You can purchase a number from the [developer dashboard](https://dashboard.nexmo.com/buy-numbers), but it's often quicker to perform administrative tasks like this from the command line instead, using the [Vonage CLI](https://github.com/Vonage/vonage-cli). The CLI is a Node application so you need to install it with the [Node Package Manager](https://www.npmjs.com/get-npm), `npm`:
 
 ```bash
-npm install -g nexmo-cli
+npm install -g @vonage/cli
 ```
 
-Then, configure the Nexmo CLI with your API key and secret from the [developer dashboard](https://dashboard.nexmo.com):
+Then, configure the Vonage CLI with your API key and secret from the [developer dashboard](https://dashboard.nexmo.com):
 
 ```bash
-nexmo setup YOUR_API_KEY YOUR_API_SECRET
+vonage config:set --apiKey=XXXXXX --apiSecret=XXXXXX
 ```
 
-To see which numbers are available for purchase, run `nexmo number:search`, passing it your two-character country code. For example, `GB` for Great Britain or `US` for the USA. You want to ensure that the number you purchase is able to receive voice calls:
+To see which numbers are available for purchase, run `vonage numbers:search`, passing it your two-character country code. For example, `GB` for Great Britain or `US` for the USA. You want to ensure that the number you purchase is able to receive voice calls:
 
 ```bash
-nexmo number:search COUNTRY_CODE --voice
+vonage numbers:search [COUNTRYCODE]
 ```
 
 Choose a number from the list and buy it using the following command:
 
 ```bash
-nexmo number:buy <NUMBER>
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 Confirm your purchase and make a note of the number that you bought.
@@ -135,17 +133,17 @@ Confirm your purchase and make a note of the number that you bought.
 
 You now need to create a Vonage Voice API Application. An application in this context is not the same as the application you have just written the code for. Instead, it is a container for the configuration and security information you need to use the Voice API.
 
-You'll use the Nexmo CLI again for this. You need to specify the following information:
+You'll use the Vonage CLI again for this. You need to specify the following information:
 
 * A name for your application
 * The public URL to your `/webhooks/answer` endpoint (e.g. `https://066d53c9.ngrok.io/webhooks/answer`)
 * The public URL to your `/webhooks/events` endpoint (e.g. `https://066d53c9.ngrok.io/webhooks/events`)
 * The name and location of the file that will contain your security credentials
 
-In the same directory as  `confcall.py`, run the following command, supplying a name for your application as the first parameter and the URL for your inbound call webhook as the second. The third parameter defines another webhook that Nexmo can send call-related event data to. We're not capturing the event data in this example so you can supply any URL here.
+In the same directory as  `confcall.py`, run the following command, supplying a name for your application as the first parameter and the URL for your inbound call webhook as the second. The third parameter defines another webhook that Vonage can send call-related event data to. We're not capturing the event data in this example so you can supply any URL here. Run `vonage apps:create` and follow the prompts. 
 
 ```bash
-nexmo app:create “My Conf Call” ANSWER_URL https://example.com/events --keyfile private.key
+vonage apps:create
 ```
 
 Running this command configures a Voice API application with your webhook and downloads your security credentials in a file called `private.key`. It also returns a unique Application ID: make a note of this as you will need it in the next step.
@@ -157,17 +155,16 @@ Now you need to link your Voice API application to your Vonage number so that Vo
 Execute the following command, replacing `APPLICATION_ID` with your own unique application ID:
 
 ```bash
-nexmo link:app NEXMO_NUMBER APPLICATION_ID
+vonage apps:link [APPLICATION_ID] --number=number
 ```
 
-Verify that the number and application are linked by executing the `nexmo app:list` command. 
+Verify that the number and application are linked by executing the `vonage apps:show` command or by navigating to your [application in the dashboard](https://dashboard.nexmo.com/applications). 
 
 ```bash
-nexmo app:list 
+vonage apps:show
 ```
 
 You can also see this information in the [developer dashboard](https://dashboard.nexmo.com).
-
 
 <h2 id="try-it-out">Try it Out</h2>
 
@@ -185,8 +182,8 @@ That's all you need to do to start a conference call, but the Voice API provides
 
 ## Further Reading
 
-- [Voice API overview](https://developer.nexmo.com/voice/voice-api/overview)
-- [Voice API reference](https://developer.nexmo.com/api/voice)
-- [Conversation NCCO action](https://developer.nexmo.com/voice/voice-api/ncco-reference#conversation)
-- [PyCascades code of conduct hotline](https://www.nexmo.com/blog/2018/11/20/build-a-family-hotline-dr/)
-- [Build a family hotline](https://www.nexmo.com/blog/2018/11/20/build-a-family-hotline-dr/)
+* [Voice API overview](https://developer.nexmo.com/voice/voice-api/overview)
+* [Voice API reference](https://developer.nexmo.com/api/voice)
+* [Conversation NCCO action](https://developer.nexmo.com/voice/voice-api/ncco-reference#conversation)
+* [PyCascades code of conduct hotline](https://www.nexmo.com/blog/2018/11/20/build-a-family-hotline-dr/)
+* [Build a family hotline](https://www.nexmo.com/blog/2018/11/20/build-a-family-hotline-dr/)
