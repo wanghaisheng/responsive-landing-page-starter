@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Swift 5.5 introduces the async/await language feature to help improve the readability of concurrent Swift code by removing the need for completion handlers. This post will be very similar to [another one](https://learn.vonage.com/blog/2021/01/12/how-to-send-sms-messages-with-swift-vapor-and-vonage/) on our blog. This post will be using the [Messages API V1](https://learn.vonage.com/blog/2021/11/16/announcing-vonage-messages-api-version-1-0/) rather than the SMS API but will be a good way to illustrate the improvements from using async/await.
+Swift 5.5 introduces the async/await language feature to help improve the readability of concurrent Swift code by removing the need for completion handlers. This post will be very similar to [How to send SMS Messages with Swift, Vapor and Vonage](https://learn.vonage.com/blog/2021/01/12/how-to-send-sms-messages-with-swift-vapor-and-vonage/) on our blog. This post will be using the [Messages API V1](https://learn.vonage.com/blog/2021/11/16/announcing-vonage-messages-api-version-1-0/) rather than the SMS API but will be a good way to illustrate the improvements from using async/await.
 
 If you are familiar with the original blog post, you can skip to the "Send the SMS" section.
 
@@ -37,7 +37,7 @@ You will also need to create a `.env` file to store your Vonage API account cred
 
 `echo "APIKEY=X \nAPISECRET=Y" > .env`
 
-Now you can open the project in Xcode using the `vapor xcode` command. Once Xcode opens, it will start downloading Vapor's dependencies using Swift Package Manager (SPM). To view the dependencies, you can open the Package.swift file.
+Now you can open the project in Xcode using the `vapor xcode` command. Once Xcode opens, it will start downloading Vapor's dependencies using Swift Package Manager (SPM). To view the dependencies, you can open the `Package.swift` file.
 
 By default, Xcode runs your application from a randomized local directory. Since you will be loading local resources, you need to set a custom working directory. Go to Product > Scheme > Edit Scheme... and set the working directory to your project's root folder.
 
@@ -174,6 +174,6 @@ Clicking the send button will send the data to the route you defined earlier, ma
 
 ## What Next?
 
-You can find the completed project on [GitHub](https://github.com/Vonage-Community/blog-messages-swift_vapor-async_sms).
+You can find [the completed project on GitHub](https://github.com/Vonage-Community/blog-messages-swift_vapor-async_sms).
 
 You can do more with the Messages API, such as sending messages on Whatsapp and Facebook Messenger. Learn about it on our [developer platform](https://developer.vonage.com/messaging/sms/overview).
