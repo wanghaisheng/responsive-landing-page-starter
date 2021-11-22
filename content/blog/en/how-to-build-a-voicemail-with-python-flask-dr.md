@@ -38,12 +38,11 @@ I love a good spy thriller, and it seems like one of the hardest parts of being 
 
 ## Prerequisites
 
-
 I'm going to assume you've read Aaron's awesome post describing how to use [Ngrok for developing webooks](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/). If you haven't go read it now - it's worth it.
 
 I'm also going to assume you have a basic knowledge of Python and Flask.
 
-I recommend installing the [Nexmo CLI tool](https://github.com/Nexmo/nexmo-cli) - some of the instructions below will use it, although you can complete these actions in the [Nexmo Dashboard](https://dashboard.nexmo.com/) if you prefer.
+I recommend installing the [Vonage CLI tool](https://github.com/Vonage/vonage-cli) and reading the [short blog post](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/) about how to install it- some of the instructions below will use it, although you can complete these actions in the [Nexmo Dashboard](https://dashboard.nexmo.com/) if you prefer.
 
 <sign-up number></sign-up>
 
@@ -141,17 +140,11 @@ Now if you visit `https://your-random-id.ngrok.io/answer` with your web browser 
 ]
 ```
 
-Now let's create a Voice app and link a number to this URL. In your console, run the Nexmo CLI tool:
+Now let's create a Voice app and link a number to this URL. In your console, run the Vonage CLI tool which will walk you step-by-step of creating your application:
 
 ```bash
 # Create an app
-nexmo app:create \
-    "Oleg's Pizza" \
-    https://your-random-id.ngrok.io/answer \
-    https://your-random-id.ngrok.io/event \
-    --answer_method=POST \
-    --event_method=POST \
-    --keyfile private.key
+vonage apps:create
 ```
 
 It will print something like `Application created: 26aa5db4-546a-11e9-8f2d-0f348a273d3a`, and it will create a file called `private.key` in your current directory.
@@ -296,7 +289,7 @@ def recording(uuid):
 
 The code above opens the binary MP3 file, creates a response from the bytes, and then sets the content-type header to 'audio/mpeg' which is the correct type for MP3 data.
 
-You can test this by going loading up the "/recordings/you-uuid-goes-here" URL using the id ofone of the MP3 files in your recordings folder.
+You can test this by going loading up the "/recordings/you-uuid-goes-here" URL using the id of one of the MP3 files in your recordings folder.
 
 Now you should add a view that will list all of the recordings, along with some of the call data associated with each recording.
 
