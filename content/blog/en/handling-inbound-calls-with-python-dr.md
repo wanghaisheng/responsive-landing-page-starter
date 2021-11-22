@@ -137,22 +137,22 @@ Nexmo posts event information that helps you monitor your call to the Event URL.
 
 If you do not already have a Vonage Number you will need to purchase one.
 
-First search for a suitable number with `COUNTRYCODE` being either `GB` for British numbers or `US` for numbers in the USA:
+First search for a suitable number:
 
 ```sh
-1. vonage numbers:search [COUNTRYCODE]
+vonage numbers:search [COUNTRYCODE]
 ```
 
-> NOTE: You can change the country code to suit your requirements. For example if you are in the US you could use:
+> NOTE: You can change the country code to suit your requirements. For example if you are in the US you could replace `COUNTRYCODE` with `US` or for British numbers `GB`:
 
 ```sh
-nexmo number:search US
+vonage numbers:search US
 ```
 
 Choose a suitable number and then buy it using a command similar to:
 
 ```sh
-nexmo number:buy 442039051952
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 > NOTE: You will need to confirm your purchase.
@@ -162,7 +162,7 @@ nexmo number:buy 442039051952
 You now need to associate your Vonage Number with your Vonage Application:
 
 ```sh
-nexmo link:app YOUR_NEXMO_NUMBER APPLICATION_ID
+vonage apps:link [APPLICATION_ID] --number=number
 ```
 
 ## Write Your Python Code
