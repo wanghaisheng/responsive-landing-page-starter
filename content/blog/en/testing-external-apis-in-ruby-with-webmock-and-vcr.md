@@ -2,9 +2,10 @@
 title: Testing External APIs in Ruby with Webmock and VCR
 description: Testing external APIs comes with certain challenges. Ruby libraries
   like Webmock and VCR can help us overcome them.
+thumbnail: /content/blog/testing-external-apis-in-ruby-with-webmock-and-vcr/webmock_vcr.png
 author: karl-lingiah
 published: true
-published_at: 2021-11-18T14:57:27.685Z
+published_at: 2021-11-22T12:02:16.627Z
 updated_at: 2021-11-18T14:57:27.773Z
 category: tutorial
 tags:
