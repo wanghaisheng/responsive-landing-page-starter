@@ -53,22 +53,28 @@ Also, create a new [AWS S3 bucket](https://aws.amazon.com/s3/) and make note of 
 
 #### Create a Vonage Application Using the Command Line Interface
 
-Install the CLI by following [these instructions](https://github.com/Nexmo/nexmo-cli#installation). You'll use this to create a new Vonage Voice application that also sets up an `answer_url` and `event_url` for the app running in AWS Lambda:
+Install the CLI by following [these instructions](https://github.com/vonage/vonage-cli#installation). You'll use this to create a new Vonage Voice application that also sets up an `answer_url` and `event_url` for the app running in AWS Lambda:
 
 ```
-nexmo app:create aws-transcribe https://<your_hostname>/webhooks/answer https://<your_hostname>/webhooks/event
+vonage apps:create aws-transcribe --voice_answer_url=https://<your_hostname>/webhooks/answer --voice_event_url=https://<your_hostname>/webhooks/event
 ```
 
 *NOTE: You'll be using `<your_hostname>` as a placeholder in this command. Later, after you know the URLs provided by deploying to AWS Lambda, you'll need to update these pieces of the URLs via the [Vonage API Dashboard](https://dashboard.nexmo.com/applications/) settings for your application.*
 
-IMPORTANT: This will return an application ID and a private key. The application ID will be needed for the `nexmo link:app` command as well as the `.env` file later. A file named `private.key` will be created in the same location/level as `server.js`, by default.
+IMPORTANT: This will return an application ID and a private key. The application ID will be needed for the `vonage apps:link` command as well as the `.env` file later. A file named `private.key` will be created in the same location/level as `server.js`, by default.
 
 ### Obtain a New Virtual Number
 
 If you don't have a number already in place, obtain one from Vonage. This can also be achieved using the CLI by running this command:
 
 ```
-nexmo number:buy
+vonage numbers:search US
+```
+
+And purchasing one of the available numbers given back by running:
+
+```
+vonage numbers:buy <number>
 ```
 
 ### Link the Virtual Number to the Application
@@ -76,7 +82,7 @@ nexmo number:buy
 Finally, link the new number to the created application by running:
 
 ```
-nexmo link:app YOUR_NUMBER YOUR_APPLICATION_ID
+vonage apps:link YOUR_APPLICATION_ID --number=<number>
 ```
 
 ### Update Environment
@@ -91,8 +97,8 @@ AWS_VERSION=latest
 AWS_S3_ARN=<aws_s3_arn>
 AWS_S3_BUCKET_NAME='<bucket_name>'
 AWS_S3_RECORDING_FOLDER_NAME='<aws_s3_bucket_folder_name>'
-NEXMO_APPLICATION_PRIVATE_KEY_PATH='./private.key'
-NEXMO_APPLICATION_ID=<application_id>
+VONAGE_APPLICATION_PRIVATE_KEY_PATH='./private.key'
+VONAGE_APPLICATION_ID=<application_id>
 ```
 
 *NOTE: All placeholders noted by `<>` need to be updated.*
