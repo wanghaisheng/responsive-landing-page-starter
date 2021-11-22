@@ -11,7 +11,7 @@ category: inspiration
 tags:
   - wcag
   - accessibility
-comments: true
+comments: false
 spotlight: false
 redirect: ""
 canonical: ""
