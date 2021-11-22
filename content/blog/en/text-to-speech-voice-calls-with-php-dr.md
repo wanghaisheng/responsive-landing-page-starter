@@ -33,11 +33,12 @@ You'll need a way to expose the app that you're developing to the public so that
 
 Finally, if you don't already have a [Vonage Voice](https://www.vonage.com/communications-apis/voice/) application ready, you'll need to create an application and purchase and link a number. The easiest way to do this is by using the [Nexmo CLI tool](https://github.com/nexmo/nexmo-cli/). Here's the short version:
 
-* Install the Nexmo CLI tool by running `npm install -g nexmo-cli@beta`
-* Authenticate with your Nexmo CLI by running `nexmo setup <api_key> <api_secret>`. Replacing `api_key` and `api_secret` with your credentials found on your [Dashboard](https://dashboard.nexmo.com/settings)
-* Create an application, replacing `voice-answer-url` and `voice-event-url` with your endpoints by running `nexmo app:create "Test Application 1" --capabilities=voice --voice-answer-url=http://example.com/webhooks/answer`. Make a note of the application ID it returns
-* Purchase a number by running `nexmo number:buy --country_code US --confirm`. Make a note of the number purchased
-* Finally, link the number to your application by running `nexmo link:app <your new number> <your application id>`
+* Install the Vonage CLI tool by running `npm install -g vonage-cli`
+* Authenticate with your Vonage CLI by running `vonage config:set --apiKey=<api_key> --apiSecret=<api_secret>`. Replacing `api_key` and `api_secret` with your credentials found on your [Dashboard](https://dashboard.nexmo.com/settings)
+* Create an application, replacing `voice-answer-url` and `voice-event-url` with your endpoints by running `vonage apps:create "Test Application 1" --vbc --voice_answer_url=http://example.com/webhooks/answer`. Make a note of the application ID it returns
+* Find a purchasable number by searching: `vonage numbers:search US`
+* Purchase one of the numbers given back in the search by running `vonage numbers:buy <number>`. Make a note of the number purchased
+* Finally, link the number to your application by running `vonage apps:link <application_id> --number=<number>`
 
 <sign-up number></sign-up>
 
