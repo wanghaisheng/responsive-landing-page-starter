@@ -22,7 +22,7 @@ Vonage Video API makes it easier to create our own video chat application with a
 
 Here is an example of what we will be building.
 
-[![Screen recording of a demo application where multiple copies of a live webcam video are added to the screen, then the screen dimensions are changed to demonstrate video feeds resizing and layout shift. One video feed is selected and gets larger. Then video feeds are removed one by one.](https://s9.gifyu.com/images/demo9a78f3a979365eb2.gif)](https://gifyu.com/image/S22vG)
+![Screen recording of a demo application where multiple copies of a live webcam video are added to the screen, then the screen dimensions are changed to demonstrate video feeds resizing and layout shift. One video feed is selected and gets larger. Then video feeds are removed one by one.](https://media.giphy.com/media/sJiLXHB3UwDr93Pv6W/source.gif)
 
 ## Prerequisite
 
