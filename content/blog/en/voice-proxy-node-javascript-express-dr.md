@@ -1,7 +1,7 @@
 ---
 title: Proxy Voice Calls Anonymously with Express
 description: In this tutorial, we'll learn how to create an anonymous voice
-  proxy using Nexmo Voice APIs, Nodejs, JavaScript and the Express framework.
+  proxy using Vonage Voice APIs, Nodejs, JavaScript and the Express framework.
   Protect your users' privacy by concealing their telephone numbers.
 thumbnail: /content/blog/voice-proxy-node-javascript-express-dr/anonymous-voice-proxy-featured-image.png
 author: aaron
@@ -22,17 +22,17 @@ We've all been there: you've gotten out of your cab and a few minutes later you 
 
 Perhaps it's the other way around. Maybe you're making a delivery and you need some directions to the address.
 
-In all these situations you're going to need to call the other person, but you don't want to be giving your phone number out to strangers. So instead you can use [a virtual number](https://www.nexmo.com/products/phone-numbers) which connects the two parties but is only usable for the duration of the current transaction.
+In all these situations you're going to need to call the other person, but you don't want to be giving your phone number out to strangers. So instead you can use [a virtual number](https://www.vonage.com/communications-apis/phone-numbers/) that connects the two parties but is only usable for the duration of the current transaction.
 
 ## Renting a Virtual Number
 
-In this tutorial, we're going to use [the Nexmo CLI](https://github.com/Nexmo/nexmo-cli) to rent our virtual number, but you can also manage your numbers and voice applications via [the Nexmo dashboard](https://dashboard.nexmo.com/buy-numbers) if you'd prefer to use a GUI. If you haven't done so already, you can [install the Nexmo CLI via npm/yarn](https://github.com/Nexmo/nexmo-cli#installation). Full instructions are in the [Github repository](https://github.com/Nexmo/nexmo-cli).
+In this tutorial, we're going to use [the Vonage CLI](https://github.com/Vonage/vonage-cli) to rent our virtual number, but you can also manage your numbers and voice applications via [the Vonage dashboard](https://dashboard.nexmo.com/buy-numbers) if you'd prefer to use a GUI. If you haven't done so already, you can [install the Vonage CLI via npm/yarn](https://github.com/Vonage/vonage-cli#install-and-run-from-source). Full instructions are in the [Github repository](https://github.com/Vonage/vonage-cli).
 
-At the time of writing, you can rent virtual numbers in 85 different countries. I'm going to use GB (Great Britain) in my example; you can see a [complete list of countries and prices on our pricing page](https://www.nexmo.com/pricing).
+At the time of writing, you can rent virtual numbers in 85 different countries. I'm going to use GB (Great Britain) in my example; you can see a [complete list of countries and prices on our pricing page](https://www.vonage.com/communications-apis/pricing/?icid=nexmo_rd).
 
 ```sh
-    nexmo number:search GB
-    nexmo number:buy <NUMBER>
+vonage numbers:search GB
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 ## Creating Our Voice Proxy Server
@@ -67,25 +67,25 @@ Our Express server has a single endpoint, which looks like this:
     })
 ```
 
-The route defined above returns an [NCCO (Nexmo Call Control Object)](https://developer.nexmo.com/api/voice/ncco), a JSON file which is used to provide instructions to the Nexmo API when someone answers an inbound or outbound call. An NCCO can contain many different types of actions. You can [view the available actions in our developer docs](https://developer.nexmo.com/api/voice/ncco).
+The route defined above returns an [NCCO (Call Control Object)](https://developer.vonage.com/voice/voice-api/ncco-reference), a JSON file that is used to provide instructions to the Vonage API when someone answers an inbound or outbound call. An NCCO can contain many different types of actions. You can [view the available actions in our developer docs](https://developer.vonage.com/voice/voice-api/ncco-reference).
 
-Our proxy server requires a single action [`connect`](https://developer.nexmo.com/api/voice/ncco#connect). With this we can proxy our incoming call to a range of different endpoints: another phone number, a WebSocket, or even a SIP URI. In the example above we connect to another phone number.
+Our proxy server requires a single action [`connect`](https://developer.vonage.com/voice/voice-api/ncco-reference#connect). With this, we can proxy our incoming call to a range of different endpoints: another phone number, a WebSocket, or even a SIP URI. In the example above we connect to another phone number.
 
-One of the requirements of the `connect` action is that the `process.env.FROM_NUMBER` *must* be a Nexmo Virtual Number. This virtual number is what your call recipient sees. You can use the same virtual number you rented above, that way your caller and callee see the same virtual number, keeping their numbers private.
+One of the requirements of the `connect` action is that the `process.env.FROM_NUMBER` *must* be a Vonage Virtual Number. This virtual number is what your call recipient sees. You can use the same virtual number you rented above, that way your caller and callee see the same virtual number, keeping their numbers private.
 
-When you [remix the app](https://glitch.com/edit/#!/remix/jungle-pigeon), you need to configure the `FROM_NUMBER` and `TO_NUMBER` in your Glitch `.env`  file. These numbers need to be in the [E.164 format](https://en.wikipedia.org/wiki/E.164). We're not using the `EVENTS_URL` in this example, but if you're interested in how you can track analytics about your voice calls, then you should watch our webinar ["Inbound Voice Call Campaign Tracking with Nexmo Virtual Numbers and Mixpanel"](https://www.youtube.com/watch?v=gm-XUvUwgyc) or [read the accompanying blog post](https://learn.vonage.com/blog/2017/08/03/inbound-voice-call-campaign-tracking-dr/).
+When you [remix the app](https://glitch.com/edit/#!/remix/jungle-pigeon), you need to configure the `FROM_NUMBER` and `TO_NUMBER` in your Glitch `.env`  file. These numbers need to be in the [E.164 format](https://en.wikipedia.org/wiki/E.164). We're not using the `EVENTS_URL` in this example, but if you're interested in how you can track analytics about your voice calls, then you should watch our webinar ["Inbound Voice Call Campaign Tracking with Vonage Virtual Numbers and Mixpanel"](https://www.youtube.com/watch?v=gm-XUvUwgyc) or [read the accompanying blog post](https://learn.vonage.com/blog/2017/08/03/inbound-voice-call-campaign-tracking-dr/).
 
 ## Linking Our Virtual Number to Our Proxy Server
 
-To link our virtual number to our proxy server on Glitch we first need to create a [Nexmo Voice Application](https://developer.nexmo.com/concepts/guides/applications). You can [create a voice application and link it to your number using the Nexmo dashboard](https://dashboard.nexmo.com/voice/create-application), or via [the Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
+To link our virtual number to our proxy server on Glitch we first need to create a [Vonage Voice Application](https://developer.vonage.com/application/overview). You can [create a voice application and link it to your number using the Vonage dashboard](https://dashboard.nexmo.com/voice/create-application), or via [the Vonage CLI](https://github.com/Vonage/vonage-cli).
 
 ```sh
-    nexmo app:create "Application name" <GLITCH_URL> <EVENTS_URL>
-    nexmo link:app <NUMBER> <APPLICATION_ID>
+     vonage apps:create "Application name"  --voice_answer_url=<GLITCH_URL> --voice_event_url=<EVENTS_URL> 
+     vonage apps:link --number=<NUMBER>
 ```
 
-The [Application Overview](https://developer.nexmo.com/concepts/guides/applications) and the [Nexmo CLI README](https://github.com/Nexmo/nexmo-cli#applications) contain more information on `app:create` and the expected arguments.
+The [Application Overview](https://developer.vonage.com/application/overview) and the [Vonage CLI README](https://github.com/Vonage/vonage-cli#readme) contain more information on `apps:create` and the expected arguments.
 
 ## Where to Next?
 
-Read the "[private voice communication](https://developer.nexmo.com/tutorials/private-voice-communication)" tutorial for a more in-depth example. For an example of [the proxy server in Kotlin, watch my webinar](https://www.youtube.com/watch?v=pHf9Df3Ns2U). Alternatively, for more information on what else you can do with [Nexmo Voice APIs](https://www.nexmo.com/products/voice) view our [example use cases](https://www.nexmo.com/use-cases) or read [the developer documentation](https://developer.nexmo.com/voice/voice-api/overview).
+Read the "[private voice communication](https://developer.vonage.com/use-cases/private-voice-communication)" tutorial for a more in-depth example. For an example of [the proxy server in Kotlin, watch my webinar](https://www.youtube.com/watch?v=pHf9Df3Ns2U). Alternatively, for more information on what else you can do with [Vonage Voice APIs](https://www.vonage.com/communications-apis/voice/?icmp=hibox_voiceapi_novalue) view our [example use cases](https://www.vonage.com/communications-apis/programmable-solutions/) or read [the developer documentation](https://developer.vonage.com/voice/voice-api/overview).
