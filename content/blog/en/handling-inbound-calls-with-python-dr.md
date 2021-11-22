@@ -94,11 +94,11 @@ The example code uses the Flask framework to create a web app that can handle in
 pip install flask
 ```
 
-## Install the Nexmo CLI
+## Install the Vonage CLI
 
 ```sh
-npm install nexmo-cli -g
-nexmo setup <api_key> <api_secret>
+npm install -g @vonage/cli
+vonage config:set --apiKey=XXXXXX --apiSecret=XXXXXX
 ```
 
 ## Install the Python Client Library
@@ -110,7 +110,7 @@ In this article it is used to make a single REST API call - "Update Call".
 You can learn how to install the Python Client [in its repo](https://github.com/Nexmo/nexmo-python). The simple process is to use PIP:
 
 ```sh
-pip install nexmo
+pip install vonage
 ```
 
 Please [read the documentation](https://github.com/Nexmo/nexmo-python#installation) for more details.
@@ -119,10 +119,10 @@ Please [read the documentation](https://github.com/Nexmo/nexmo-python#installati
 
 Create a directory for your project and change into that new directory.
 
-Although you can create a Vonage application in the Dashboard, you can also create one on the command line if you have Nexmo CLI installed:
+Although you can create a Vonage application in the Dashboard, you can also create one on the command line if you have Vonage CLI installed. After running the below command, follow to prompts:
 
 ```sh
-nexmo app:create "Blog Voice App" https://1234abcd.ngrok.io/webhooks/answer https://1234abcd.ngrok.io/webhooks/event --keyfile=private.key
+vonage apps:create
 ```
 
 Make a note of the generated `APPLICATION_ID`, as you will need this later.
@@ -137,10 +137,10 @@ Nexmo posts event information that helps you monitor your call to the Event URL.
 
 If you do not already have a Vonage Number you will need to purchase one.
 
-First search for a suitable number:
+First search for a suitable number with `COUNTRYCODE` being either `GB` for British numbers or `US` for numbers in the USA:
 
 ```sh
-nexmo number:search GB
+1. vonage numbers:search [COUNTRYCODE]
 ```
 
 > NOTE: You can change the country code to suit your requirements. For example if you are in the US you could use:
@@ -175,7 +175,7 @@ The code for scenario 3 is a little different in that the inbound call is handle
 
 Add the following to a new file and save it as `scenario-1.py`:
 
-``` python
+```python
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -227,7 +227,7 @@ difference is the addition of a new NCCO action, `connect` to forward
 the call to the agent. Create a new file `scenario-2.py` and add the
 following code:
 
-``` python
+```python
 from flask import Flask, request, jsonify
 
 NEXMO_NUMBER = "44700000002"
@@ -301,7 +301,7 @@ Here's a summary of what the code does:
 
 Add the following code to a new file `scenario-3.py`:
 
-``` python
+```python
 from flask import Flask, request, jsonify
 from threading import Timer
 import nexmo
