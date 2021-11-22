@@ -19,9 +19,9 @@ canonical: ""
 ---
 ## Introduction
 
-In a previous tutorial, we showed you how to [Receive a Phone Call with Java](https://www.nexmo.com/blog/2018/08/09/receive-a-phone-call-with-java-dr/) and respond using [Text-to-Speech](https://www.nexmo.com/tts). In addition to receiving a phone call, you can also make outgoing phone calls.
+In a previous tutorial, we showed you how to [Receive a Phone Call with Java](https://www.nexmo.com/blog/2018/08/09/receive-a-phone-call-with-java-dr/) and respond using [Text-to-Speech](https://www.vonage.com/communications-apis/voice/features/tts/). In addition to receiving a phone call, you can also make outgoing phone calls.
 
-In this tutorial, you will create an application that can make outgoing text-to-speech phone calls utilizing Java and the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview).
+In this tutorial, you will create an application that can make outgoing text-to-speech phone calls utilizing Java and the [Vonage Voice API](https://developer.vonage.com/voice/voice-api/overview).
 
 ## Prerequisites
 
@@ -29,7 +29,7 @@ In this tutorial, you will create an application that can make outgoing text-to-
 
 You will be using [Gradle](https://gradle.org/) to manage your dependencies and run your application. Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 11, which is the current LTS, in this tutorial.
 
-Finally, you’ll need the [Vonage CLI](https://github.com/Nexmo/nexmo-cli#installation) installed. You’ll use it to configure your Nexmo account to point at your new application.
+Finally, you’ll need the [Vonage CLI](https://github.com/Vonage/vonage-cli#install-and-run-from-source) installed. You’ll use it to configure your Vonage account to point at your new application.
 
 ## Make Text-to-Speech Phone Call with Java
 
@@ -46,12 +46,12 @@ If you do not have an application, you can use the Vonage CLI to create one. You
 * The Vonage Voice API will make a request to your answer URL when a phone number linked to your application receives a phone call.
 * The Vonage Voice API will make requests to your event URL when various status changes occur.
 
-To learn more about applications see our [Vonage Concepts Guide](https://developer.nexmo.com/concepts/guides/applications).
+To learn more about applications see our [Vonage Concepts Guide](https://developer.vonage.com/application/overview).
 
 Use the following command to create an application using the Vonage CLI:
 
 ```sh
-nexmo app:create "Send TTS Call" http://example.com/webhooks/answer http://example.com/webhooks/events --keyfile private.key
+vonage apps:create "Send TTS Call"  --voice_answer_url=http://example.com/webhooks/answer --voice_event_url=http://example.com/webhooks/events
 ```
 
 This command will also create a file called `private.key` which you will need to authenticate with the Vonage Voice API to make calls. This file will be saved to the directory you run the command inside of. Also make a note of the Application ID that is returned, as you will need it later.
@@ -128,9 +128,9 @@ public static void main(String[] args) throws Exception {
 
 ### Build the Nexmo Call Control Object
 
-The Nexmo Voice API is controlled using [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference). An NCCO is a JSON array which contains a set of actions that the Voice API will execute.
+The Vonage Voice API is controlled using [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference). An NCCO is a JSON array which contains a set of actions that the Voice API will execute.
 
-The following NCCO will instruct the Nexmo Voice API to speak to the recipient when they answer the call:
+The following NCCO will instruct the Vonage Voice API to speak to the recipient when they answer the call:
 
 ```json
 [
@@ -173,4 +173,4 @@ Once you answer this call, the Vonage Voice API will speak the message, "This is
 
 In a few lines of code, you have created an application that can call a recipient and speak a message.
 
-Check out our documentation on [Nexmo Developer](https://developer.nexmo.com) where you can learn more about [call flow](https://developer.nexmo.com/voice/voice-api/guides/call-flow) or [Nexmo Call Control Objects](https://developer.nexmo.com/voice/voice-api/ncco-reference). See our [Nexmo Code Snippets for Java](https://github.com/nexmo/nexmo-java-code-snippets) for full code examples on [this tutorial](https://github.com/Nexmo/nexmo-java-code-snippets/blob/master/src/main/java/com/nexmo/quickstart/voice/OutboundTextToSpeechWithNcco.java) and more.
+Check out our documentation on [Vonage Developer](https://developer.vonage.com) where you can learn more about [call flow](https://developer.nexmo.com/voice/voice-api/guides/call-flow) or [Nexmo Call Control Objects](https://developer.vonage.com/voice/voice-api/guides/call-flow). See our [Nexmo Code Snippets for Java](https://github.com/nexmo/nexmo-java-code-snippets) for full code examples on [this tutorial](https://github.com/Nexmo/nexmo-java-code-snippets/blob/master/src/main/java/com/nexmo/quickstart/voice/OutboundTextToSpeechWithNcco.java) and more.
