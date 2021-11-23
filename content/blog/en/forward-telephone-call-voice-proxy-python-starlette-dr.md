@@ -23,11 +23,8 @@ With call forwarding, you can allow people to call each other without either par
 
 There are a few things you need before you begin:
 
-
 1. Python 3.6+. This example uses the asynchronous [Starlette](https://www.starlette.io/) framework, so a recent version of Python is a must.
 2. If you're running the example in your local development environment, you need a way to expose it to the internet, such as by using [ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/).
-
-
 
 <sign-up></sign-up>
 
@@ -96,23 +93,23 @@ Ensure that you have your server running `python server.py` and then open a new 
 ngrok http 8000
 ```
 
-Now your proxy server is running and reachable by the Nexmo API, you can rent a Nexmo Virtual Number and create a new Voice Application using the [Nexmo dashboard](https://dashboard.nexmo.com/voice/create-application), or via the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli). 
+Now your proxy server is running and reachable by the Nexmo API, you can rent a Nexmo Virtual Number and create a new Voice Application using the [Nexmo dashboard](https://dashboard.nexmo.com/voice/create-application), or via the [Vonage CLI](https://github.com/Vonage/vonage-cli). You can find more information about how to install the Vonage CLI [here](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/).
 
 To do this via the CLI you need to run several commands:
 
 ```
-nexmo number:search GB --voice
-nexmo number:buy <VIRTUAL NUMBER>
-nexmo app:create "Python Voice Proxy" <NGROK URL> <NGROK URL>  --keyfile private.key
-nexmo link:app <VIRTUAL NUMBER> <APPLICATION ID>
+vonage numbers:search [COUNTRYCODE]
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+vonage apps:create
+vonage apps:link [APPLICATION_ID] --number=number
 ```
 
 The commands above perform the following:
 
-- Search for an available British Virtual Number which supports Voice calls
-- Once you have found a suitable number you rent it
-- When creating a new Voice Application, you must supply a name for the application, the URL of your NCCO file, the URL of your events webhook, and a location to save your private key. The private key is used to authenticate with the Nexmo Voice API when making outbound calls. As this example only handles inbound calls, you do not need this private key this time.
-- Finally, link the Virtual Number to your new application. Multiple numbers can be associated with a single application, for example, if you wanted to have different local numbers for users in different countries.
+* Search for an available number with `COUNTRYCODE`. Pass in `GB` for British virtual numbers and `US`  for ones in the USA.
+* Once you have found a suitable number you buy it using `vonage numbers:buy [NUMBER] [COUNTRYCODE]`
+* When creating a new Voice Application run `vonage apps:create` and follow the prompts. You must supply a name for the application, the URL of your NCCO file, the URL of your events webhook, and a location to save your private key. The private key is used to authenticate with the Nexmo Voice API when making outbound calls. As this example only handles inbound calls, you do not need this private key this time.
+* Finally, link the Virtual Number to your new application. Multiple numbers can be associated with a single application, for example, if you wanted to have different local numbers for users in different countries.
 
 ## Putting it All Together
 
