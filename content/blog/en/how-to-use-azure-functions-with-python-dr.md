@@ -16,13 +16,13 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Here at Vonage, we try to make our APIs as simple to use as possible. One awkward thing we can't get away from, though, is that many of our APIs, like the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview), need to ask your app what to do during a call. This means you need to run your own _server_. Or do you?
+Here at Vonage, we try to make our APIs as simple to use as possible. One awkward thing we can't get away from, though, is that many of our APIs, like the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview), need to ask your app what to do during a call. This means you need to run your own *server*. Or do you?
 
 ## Going Serverless with Azure Functions
 
 Microsoft provides [Azure Functions](https://azure.microsoft.com/en-us/services/functions/) support for Python, and it's great! Lots of support has been provided to help you get up and running quickly, and it works with standard Python project idioms, like `requirements.txt`. It allows you to write small, standalone functions in Python, and then deploy them easily to the Azure cloud.
 
-There's a free tier that provides a _million_ function executions free, per month. That should be enough for a small demo app, or even a small production app!
+There's a free tier that provides a *million* function executions free, per month. That should be enough for a small demo app, or even a small production app!
 
 ## Let's Get Functional
 
@@ -34,12 +34,12 @@ I'll describe all the steps to create all the code and configuration you'll need
 
 ## Requirements
 
-As you can see below, there are a _few_ things you'll need to set up or install, but trust me, it's worth it.
+As you can see below, there are a *few* things you'll need to set up or install, but trust me, it's worth it.
 
 * A free [Azure](https://azure.microsoft.com/Account/Free) account so you can publish your Azure Functions.
-* Install the [Nexmo CLI Tool](https://github.com/Nexmo/nexmo-cli)
+* Install the [Vonage CLI Tool](https://github.com/Vonage/vonage-cli) and read [this short blog post](https://learn.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0/) on how to get started with it.
 
-    This gives you the `nexmo` command in your console, which allows you to create Vonage Voice Applications, buy virtual numbers, and link the two together.
+    This gives you the `vonage` command in your console, which allows you to create Vonage Voice Applications, buy virtual numbers, and link the two together.
 * Install [Ngrok](https://ngrok.com/)
 
     This gives you the `ngrok` command in your console, which will tunnel requests to your development machine, allowing Vonage to send webhooks to your development server.
@@ -116,7 +116,7 @@ Run the boiler-plate Python function, using the `func host` command:
 func host start
 ```
 
-If you load up your browser at the URL [http://localhost:7071/api/answer_inbound?name=bob](http://localhost:7071/api/answer_inbound?name=bob) you should see "Hello bob!" Well done! You've "written" your first Azure Function!
+If you load up your browser at the URL <http://localhost:7071/api/answer_inbound?name=bob> you should see "Hello bob!" Well done! You've "written" your first Azure Function!
 
 ## From Azure Function to Phone Call
 
@@ -146,13 +146,13 @@ The code above returns a JSON response, containing two NCCO Actions. An NCCO Act
 
 Because we've set `bargeIn` to `true` in the `talk` action, if the caller enters a digit before the `input` action has started, Vonage will assume that they've just been impatient, and will execute the following `input` instruction.
 
-If you run `func host start` again, when you load your browser at [http://localhost:7071/api/answer_inbound?name=bob](http://localhost:7071/api/answer_inbound?name=bob) you should see a bunch of JSON containing the actions described above.
+If you run `func host start` again, when you load your browser at <http://localhost:7071/api/answer_inbound?name=bob> you should see a bunch of JSON containing the actions described above.
 
 ## Tunnel to Your Development Server
 
 While you're still developing, you'll want Vonage to be able to access your functions, so you can test them. I recommend following the instructions my colleague [Aaron Bassett](https://twitter.com/aaronbassett) has written to [connect your local development server to the Vonage API using an Ngrok tunnel](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
 
-Assuming you now know how Ngrok works, in a _separate_ console, run:
+Assuming you now know how Ngrok works, in a *separate* console, run:
 
 ```shell
 ngrok http 7071
@@ -164,33 +164,31 @@ If that works, it's time to tell Vonage how to contact your development server!
 
 ## Connect Vonage to your development server
 
-If you haven't already, you'll need to configure the Nexmo CLI with your api key and secret. If you've already run `nexmo setup`, you don't need to do this again.
+If you haven't already, you'll need to configure the Vonage CLI, after installation, with your api key and secret.
 
 ```shell
-nexmo setup <api_key> <api_secret>
+vonage config:set --apiKey=XXXXXX --apiSecret=XXXXXX
 ```
 
-Create a new Vonage Voice Application
+Create a new Vonage Voice Application by running `vonage apps:create` and name it "Enter Your Mood" when prompted. Follow the rest of the command line prompts to create your application.
 
 ```shell
-$ nexmo app:create "Enter Your Mood" "https://r4nd0m.ngrok.io/api/answer_inbound" "https://api.example.com/events" --answer_method POST --event_method POST --keyfile private.key
-Application created: 4f33ff5e-dbbc-11e9-8656-6bdabe7b8258
-Private Key saved to: private.key
+vonage apps:create
 ```
 
 This creates an app called "Enter Your Mood" in the Vonage API Dashboard. When an inbound call is detected to any phone number linked to this app, it will call the webhook at `https://r4nd0m.ngrok.io/api/answer_inbound`, posting the details of the inbound call. The Azure Function at this endpoint is expected to respond with NCCO Actions ... sound familiar? It's also saved a private key, which we won't be using just now, to a file called "private.key"
 
 You now need to buy a virtual number and link it to the Vonage app. So take a note of the Application ID that was just created (here it's '4f33ff5e-dbbc-11e9-8656-6bdabe7b8258').
 
-Buy a virtual number, if you don't have one already. I recommend buying it using the [Vonage API Dashboard](https://dashboard.nexmo.com/buy-numbers), but you _can_ also search for numbers and purchase them using the Nexmo CLI tool. Once you have a number, link it to the app with the following command, replacing the phone number with the one you've just bought, and the app ID with the one you noted above:
+Buy a virtual number, if you don't have one already. I recommend buying it using the [Vonage API Dashboard](https://dashboard.nexmo.com/buy-numbers), but you *can* also search for numbers and purchase them using the Vonage CLI tool. Once you have a number, link it to the app with the following command, replacing the phone number with the one you've just bought, and the application ID with the one you noted above:
 
 ```shell
-nexmo link:app 447700900223 4f33ff5e-dbbc-11e9-8656-6bdabe7b8258
+vonage apps:link [APPLICATION_ID] --number=number
 ```
 
 Now, with your phone, call the number you've just linked.
 
-**What should happen:** A voice should answer, with the message above. If you enter a number on your phone's number pad, the call will probably beep and then go dead. That's because the _second_ URL, at `/api/mood_feedback` doesn't exist yet!
+**What should happen:** A voice should answer, with the message above. If you enter a number on your phone's number pad, the call will probably beep and then go dead. That's because the *second* URL, at `/api/mood_feedback` doesn't exist yet!
 
 ## Handling Input
 
@@ -218,7 +216,7 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
         )
 ```
 
-There's a little extra code here, which will be used for extracting the data sent from the phone call, but for now, you should just be able to call the number again, and _this time_ when you enter a number during the call, you should hear the message "thank you for telling us how you feel."
+There's a little extra code here, which will be used for extracting the data sent from the phone call, but for now, you should just be able to call the number again, and *this time* when you enter a number during the call, you should hear the message "thank you for telling us how you feel."
 
 ## Make the Response Dynamic
 
@@ -236,7 +234,7 @@ Now, in the NCCO you're returning, replace the string with `RESPONSES.get(req_bo
 
 ## Creating a Function App on Azure
 
-What you've done so far is _great_ - as long as your development machine is on and you have console windows open running `func host` & `ngrok`. But that's impractical, so now I'll show you how to deploy the code you've written to Azure Functions, so Microsoft can host it for you!
+What you've done so far is *great* - as long as your development machine is on and you have console windows open running `func host` & `ngrok`. But that's impractical, so now I'll show you how to deploy the code you've written to Azure Functions, so Microsoft can host it for you!
 
 To interact with Azure's servers, we'll use the Azure CLI command, `az`.
 
@@ -249,7 +247,7 @@ az login
 
 Now, you'll run the three `az` commands below - I've added a comment to each of them, so you can see what they do. The only thing you'll need to change is to replace `MYVONAGEFUNCTIONSTORE` with something globally unique. The actual name you pick isn't important - it's just a place to store the data for your running functions, and won't be seen by users. You'll also need to change `moodfeedbackapp` to something globally unique.
 
-``` shell
+```shell
 # Create a resource group. (This is analagous to a Vonage 'Application'):
 az group create --name myResourceGroup --location westeurope
 
@@ -316,6 +314,7 @@ If you'd like to build interesting capabilities into your app, you could:
 * Store the feedback of each caller in a database, to analyse trends over time.
 
 ## Other Resources
+
 * Check out the [NCCO reference docs](https://developer.nexmo.com/voice/voice-api/ncco-reference) to see what you can do with Vonage Voice calls.
 * Learn how to [Write an Azure Function in Python](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-first-function-python)
 * The [Azure Functions Reference](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python) is very useful.
