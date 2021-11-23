@@ -17,7 +17,6 @@ redirect: ""
 canonical: ""
 outdated: true
 ---
-
 This blog post shows you, step-by-step, how to play an audio stream into a voice phone call using Python. Two methods for doing this are described in this article:
 
 1. Using a Call Control Object (NCCO)
@@ -63,18 +62,18 @@ There is only one action we are interested in our scenarios, `stream`. There are
 
 There are some `stream` action options that are of interest:
 
-Option | Description
----|---
-`streamUrl` | An array containing a single URL to an MP3 or WAV (16-bit) audio file to stream to the Call or Conversation.
-`level` | Set the audio level of the stream in the range `-1 >=level<=1` with a precision of 0.1. The default value is 0.
-`bargeIn` | If set to `true`, this action is terminated when the user presses a button on the keypad. Use this feature to enable users to choose an option without having to listen to the whole message in your Interactive Voice Response (IVR) system. If you set `bargeIn` to `true` on one more Stream actions then the next action in the NCCO stack must be an `input` action. The default value is `false`.
-`loop` | The number of times audio is repeated before the Call is closed. The default value is 1. Set to 0 to loop infinitely.
+| Option      | Description                                                                                                                                                                                                                                                                                                                                                                                             |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `streamUrl` | An array containing a single URL to an MP3 or WAV (16-bit) audio file to stream to the Call or Conversation.                                                                                                                                                                                                                                                                                            |
+| `level`     | Set the audio level of the stream in the range `-1 >=level<=1` with a precision of 0.1. The default value is 0.                                                                                                                                                                                                                                                                                         |
+| `bargeIn`   | If set to `true`, this action is terminated when the user presses a button on the keypad. Use this feature to enable users to choose an option without having to listen to the whole message in your Interactive Voice Response (IVR) system. If you set `bargeIn` to `true` on one more Stream actions then the next action in the NCCO stack must be an `input` action. The default value is `false`. |
+| `loop`      | The number of times audio is repeated before the Call is closed. The default value is 1. Set to 0 to loop infinitely.                                                                                                                                                                                                                                                                                   |
 
 We won't be looking at the `bargeIn` option in this article as that will be covered at a later date.
 
 An example NCCO for playing audio into a call:
 
-``` json
+```json
 [
   {
     "action": "stream",
@@ -130,8 +129,8 @@ pip install flask
 ## Install the CLI
 
 ```bash
-npm install nexmo-cli -g
-nexmo setup <api_key> <api_secret>
+npm install -g @vonage/cli
+vonage config:set --apiKey=XXXXXX --apiSecret=XXXXXX
 ```
 
 ## Install the Python Client Library
@@ -155,7 +154,7 @@ Create a directory for your project and change into that new directory.
 Although you can create a Vonage application in the Dashboard, you can also create one on the command line if you have CLI installed:
 
 ```
-nexmo app:create "Blog Voice App" https://1234abcd.ngrok.io/webhooks/answer https://1234abcd.ngrok.io/webhooks/event --keyfile=private.key
+vonage apps:create
 ```
 
 Make a note of the generated `APPLICATION_ID`, as you will need this later.
@@ -173,19 +172,22 @@ If you do not already have a Vonage Number you will need to purchase one.
 First search for a suitable number:
 
 ```
-nexmo number:search GB
+vonage numbers:search [COUNTRYCODE]
+
 ```
 
 > NOTE: You can change the country code to suit your requirements. For example if you are in the US you could use:
 
 ```
-nexmo number:search US
+vonage numbers:search US
+
 ```
 
 Choose a suitable number and then buy it using a command similar to:
 
 ```
-nexmo number:buy 442039051952
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+
 ```
 
 > NOTE: You will need to confirm your purchase.
@@ -195,7 +197,8 @@ nexmo number:buy 442039051952
 You now need to associate your Vonage Number with your Nexmo Application:
 
 ```
-nexmo link:app YOUR_VONAGE_NUMBER APPLICATION_ID
+vonage apps:link [APPLICATION_ID] --number=number
+
 ```
 
 ## Write Your Python Code
@@ -213,7 +216,7 @@ In this scenario, you will call a Nexmo number and music will be streamed into y
 
 Add the following to a new file and save it as `scenario-1.py`:
 
-``` python
+```python
 from flask import Flask, request, jsonify
 
 audio_url = "https://your_domain.com/music/your_music.mp3"
@@ -237,7 +240,6 @@ def events():
 
 if __name__ == '__main__':
     app.run(host="localhost", port=9000)
-
 ```
 
 You can also find the latest version of this code in the [GitHub repo](https://github.com/nexmo-community/play-audio-stream-python/blob/master/scenario-1.py).
@@ -266,7 +268,7 @@ In this scenario, you call your Vonage number and you are joined into a conferen
 
 Add the following to a new file and save it as `scenario-2.py`:
 
-``` python
+```python
 from flask import Flask, request, jsonify
 import nexmo
 
