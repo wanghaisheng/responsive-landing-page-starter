@@ -4,7 +4,7 @@ description: In this post, we'll show you how to receive SMS messages on your
   Nexmo virtual number with Python and the Flask framework.
 thumbnail: /content/blog/receive-an-sms-with-python-dr/Receive-an-SMS-with-Python.png
 author: marklewin
-published: false
+published: true
 published_at: 2019-05-31T09:57:29.000Z
 updated_at: ""
 category: tutorial
