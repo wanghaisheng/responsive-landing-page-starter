@@ -81,7 +81,7 @@ To link our virtual number to our proxy server on Glitch we first need to create
 
 ```sh
      vonage apps:create "Application name"  --voice_answer_url=<GLITCH_URL> --voice_event_url=<EVENTS_URL> 
-     vonage apps:link --number=<NUMBER>
+     vonage apps:link --number=<NUMBER> <APP_ID>
 ```
 
 The [Application Overview](https://developer.vonage.com/application/overview) and the [Vonage CLI README](https://github.com/Vonage/vonage-cli#readme) contain more information on `apps:create` and the expected arguments.
