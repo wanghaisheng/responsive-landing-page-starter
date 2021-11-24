@@ -29,8 +29,6 @@ pip3 install flask
 
 Lastly, you'll need to install [our Vonage CLI](https://github.com/Vonage/vonage-cli). You will use this to purchase a Vonage virtual number (if you haven't already got one) and to send a test SMS.
 
-<sign-up number></signup>
-
 When you have all these things, you're ready to start coding!
 
 ## Create the Webhook for Inbound SMS
