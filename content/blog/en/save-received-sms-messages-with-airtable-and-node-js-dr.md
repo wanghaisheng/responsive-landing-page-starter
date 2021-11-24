@@ -221,7 +221,7 @@ function createMessage(message, numberId) {
 			{ "type": "sms", "number": req.body.from },
 			{ "type": "sms", "number": YOUR_VONAGE_NUMBER },
 			{ "content": { "type": "text", "text": "Thank you for getting in touch. We will ring you back as soon as possible." } },
-			vonageoErr => {
+			vonageErr => {
 					if(vonageErr) { console.error(err); return; } 
 			}
 		), 
