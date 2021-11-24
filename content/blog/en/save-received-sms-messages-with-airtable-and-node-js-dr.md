@@ -63,7 +63,7 @@ $ vonage numbers:search GB
 $ vonage numbers:buy [NUMBER_FROM_LIST] [COUNTRYCODE]
 
 # Create a new Vonage messages application
-$ vonage apps:create "Application Name" --messages_inbound_url=https://7YOUR_NGROK_URL/inbound --messages_status_url=YOUR_NGROK_URL.ngrok.io/status 
+$ vonage apps:create "Application Name" --messages_inbound_url=https://7YOUR_NGROK_URL/inbound --messages_status_url=YOUR_NGROK_URL/status 
 
 # Link your number to your application
 $ vonage link:app --number=VONAGE_NUMBER APPLICATION_ID
@@ -199,10 +199,10 @@ Before your inbound message handler, include the Vonage JavaScript Node.js clien
 ```
 const Vonage = require('@vonage/server-sdk');
 const vonage = new Vonage({
-    apiKey: config.VONAGE_KEY,
-    apiSecret: config.VONAGE_SECRET,
-    applicationId: config.VONAGE_APPLICATION_ID,
-    privateKey: './private.key'
+  apiKey: config.VONAGE_KEY,
+  apiSecret: config.VONAGE_SECRET,
+  applicationId: config.VONAGE_APPLICATION_ID,
+  privateKey: './private.key'
 });
 ```
 
