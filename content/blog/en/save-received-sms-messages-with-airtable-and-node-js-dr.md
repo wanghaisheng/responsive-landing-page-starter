@@ -16,9 +16,9 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-[Airtable](https://airtable.com) is an online database tool that allows you to create linked datasets with a friendly interface. Instead of needing to build admin dashboards for your data, Airtable lets you query, sort, and filter data through it’s accessible, collaborative, and (dare I say) fun interface.
+[Airtable](https://airtable.com) is an online database tool that allows you to create linked datasets with a friendly interface. Instead of needing to build admin dashboards for your data, Airtable lets you query, sort, and filter data through its accessible, collaborative, and (dare I say) fun interface.
 
-By the end of this tutorial, you’ll be able to store SMS messages sent in from your users in an Airtable base and reply to them using the [Vonage Messages API](https://developer.nexmo.com/messages/overview).
+By the end of this tutorial, you’ll be able to store SMS messages sent in from your users in an Airtable base and reply to them using the [Vonage Messages API](https://developer.vonage.com/messages/overview).
 
 The code for this tutorial is on [GitHub](https://github.com/nexmo-community/save-sms-airtable-express). 
 
@@ -57,16 +57,16 @@ To get started with the Messages API, you'll need to purchase a virtual phone nu
 
 ```
 # Search numbers that can send/receive SMS (replace GB for other regions)
-$ vonage number:search GB --sms
+$ vonage numbers:search GB
 
 # Buy a number from the list
-$ vonage number:buy NUMBER_FROM_LIST
+$ vonage numbers:buy [NUMBER_FROM_LIST] [COUNTRYCODE]
 
 # Create a new Vonage messages application
-$ vonage app:create "Application Name" --capabilities=messages --messages-inbound-url=YOUR_NGROK_URL/inbound --messages-status-url=YOUR_NGROK_URL/status --keyfile=private.key
+$ vonage apps:create "Application Name" --messages_inbound_url=https://7YOUR_NGROK_URL/inbound --messages_status_url=YOUR_NGROK_URL.ngrok.io/status 
 
 # Link your number to your application
-$ vonage link:app VONAGE_NUMBER APPLICATION_ID
+$ vonage link:app --number=VONAGE_NUMBER APPLICATION_ID
 ```
 
 ## Install Dependencies
@@ -78,7 +78,7 @@ The final step before you write some code is to install dependencies:
 $ npm init
 
 # Install dependencies
-$ npm install nexmo@beta express body-parser airtable
+$ npm install @vonage/server-sdk@beta express body-parser airtable
 ```
 
 ## Set Up Express.js Application
@@ -120,10 +120,10 @@ const Airtable = require('airtable');
 const base = new Airtable({ apiKey: config.AIRTABLE_KEY }).base('YOUR_AIRTABLE_BASE_ID');
 
 app.post('/inbound', async (req, res) => {
-  const { msisdn, text } = req.body;
+  const { from, text } = req.body;
 
   base('Messages').select({
-		filterByFormula: `Number=${msisdn}`
+		filterByFormula: `Number=${from}`
 	}).eachPage(records => {
 		createMessage(text, records[0].fields.Number[0])
 	});
@@ -157,21 +157,21 @@ If you send an SMS message from a number that isn't already in your Numbers tabl
 
 ```
 app.post('/inbound', async (req, res) => {
-  const { msisdn, text } = req.body;
+  const { from, text } = req.body;
 
   base('Messages').select({
-		filterByFormula: `Number=${msisdn}`
+		filterByFormula: `Number=${from}`
 	}).eachPage(records => {
 		if (records.length == 0) {
-			createNumber(text, msisdn)
+			createNumber(text, from)
 		} else {
 			createMessage(text, records[0].fields.Number[0])
 		}
 	});
 
-	function createNumber(message, msisdn) {
+	function createNumber(message, from) {
 			base('Numbers').create({
-				Number: msisdn
+				Number: from
 			}, (err, record) => {
 				if (err) { console.error(err); return; }
 				createMessage(message, record.getId())
@@ -197,12 +197,12 @@ The fact you're now correctly logging data is brilliant, but your users have no 
 Before your inbound message handler, include the Vonage JavaScript Node.js client and initialize it:
 
 ```
-const Nexmo = require('nexmo');
-const nexmo = new Nexmo({
-	apiKey: YOUR_VONAGE_KEY,
-	apiSecret: YOUR_VONAGE_SECRET,
-	applicationId: YOUR_VONAGAE_APPLICATION_ID,
-	privateKey: './private.key'
+const Vonage = require('@vonage/server-sdk')
+const vonage = new Vonage({
+    apiKey: config.VONAGE_KEY,
+    apiSecret: config.VONAGE_SECRET,
+    applicationId: config.VONAGE_APPLICATION_ID,
+    privateKey: './private.key'
 })
 ```
 
@@ -217,12 +217,12 @@ function createMessage(message, numberId) {
 		Number: [numberId]
 	}, err => {
 		if (err) { console.error(err); return; }
-		nexmo.channel.send(
-			{ "type": "sms", "number": msisdn },
+		vonage.channel.send(
+			{ "type": "sms", "number": req.body.from },
 			{ "type": "sms", "number": YOUR_VONAGE_NUMBER },
 			{ "content": { "type": "text", "text": "Thank you for getting in touch. We will ring you back as soon as possible." } },
-			nexmoErr => {
-					if(nexmoErr) { console.error(err); return; } 
+			vonageoErr => {
+					if(vonageErr) { console.error(err); return; } 
 			}
 		), 
 		res.status(200).end();
