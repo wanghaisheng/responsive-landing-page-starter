@@ -43,7 +43,7 @@ In your [Airtable account](https://airtable.com/account) you should also generat
 
 ## Run ngrok
 
-Our Vonage application requires a public URL, and ngrok allows you to take applications running on localhost and make them public. For more information, [check out our post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) all about local development with ngrok. Once set up, you'll need to run it targeting port 3000 - the port we'll later build our Express.js application on:
+Our Vonage application requires a public URL, and ngrok allows you to take applications running on localhost and make them public. For more information, [check out our post](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) all about local development with ngrok. Once set up, you'll need to run it targeting port 3000 - the port we'll later build our Express.js application on:
 
 ```
 $ ngrok http 3000
