@@ -32,8 +32,8 @@ You'll need to create accounts to run this for yourself, so make sure you have t
 
 - A Facebook account with a brand/business page you can use for testing
 - A [Google Dialogflow](https://dialogflow.com) account
-- [Ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) (so the outside world can access the app on your local machine)
-- The [Vonage Command Line Interface](https://github.com/Nexmo/nexmo-cli)
+- [Ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) (so the outside world can access the app on your local machine)
+- The [Vonage Command Line Interface](https://github.com/Vonage/vonage-cli)
 
 <sign-up number></sign-up>
 
@@ -181,7 +181,7 @@ Running this command will result in a big string of letters and numbers - this i
 
 To connect your Facebook page to your app, we've created a handy page:
 
-[https://dashboard.nexmo.com/messages/social-channels](https://dashboard.nexmo.com/messages/social-channels)
+[Social channels](https://dashboard.nexmo.com/messages/social-channels)
 
 Complete the following steps:
 
@@ -195,7 +195,7 @@ Make a note of this ID.
 
 You can verify the content of your JWT by using [jwt.io](https://jwt.io).
 
-_Note: If any element of this wasn't clear, there's a [guide to creating JWTs for use in this context](https://developer.nexmo.com/tutorials/sending-facebook-messenger-messages-with-messages-api#generate-a-jwt) in our Facebook Messenger tutorial._
+_Note: If any element of this wasn't clear, there's a [guide to creating JWTs for use in this context](https://developer.vonage.com/messages/tutorials/send-fbm-message/introduction#generate-a-jwt) in our Facebook Messenger tutorial._
 
 ## Test the Connection
 
