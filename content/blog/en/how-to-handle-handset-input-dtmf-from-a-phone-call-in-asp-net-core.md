@@ -67,7 +67,7 @@ Now that your CLI is setup, we will purchase a number, create a Vonage Applicati
 To buy a number, use the following command (substituting your Country ID for `US`)
 
 ```sh
-vonage numbers:search 
+vonage numbers:search US
 vonage numbers:buy <PHONE_NUMBER> US
 ```
 
