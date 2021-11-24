@@ -287,10 +287,10 @@ You have completed this tutorial on making phone calls to a Dialogflow agent usi
 
 You can find the [Dialogflow Reference sample](https://github.com/nexmo-community/dialogflow-reference-connection) and [Sample Voice Application on Github](https://github.com/nexmo-community/dialogflow-sample-voice-application).
 
-Check the [WebSockets reference guide](https://developer.nexmo.com/voice/voice-api/guides/websockets).
+Check the [WebSockets reference guide](https://developer.vonage.com/voice/voice-api/guides/websockets).
 
 Check the [A blog post explaining ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
 
 You can also look at a similar example using an [Amazon Lex Bot](https://learn.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot/). 
 
-I hope you enjoyed this. Feel free to contact me [on Twitter](https://twitter.com/amdcavallaro) or join our [Community Slack Channel](https://developer.nexmo.com/community/slack).
+I hope you enjoyed this. Feel free to contact me [on Twitter](https://twitter.com/amdcavallaro) or join our [Community Slack Channel](https://developer.vonage.com/community/slack).
