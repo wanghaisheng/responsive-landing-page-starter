@@ -106,15 +106,15 @@ vonage apps:create
 This command will set up a new Messages & Dispatch application on your account. It outputs the `Application ID` to the screen and will also create a private key in the directory you're currently in. Both are needed for the next step of the config:
 
 ```bash
-NEXMO_APPLICATION_ID="" # The new App ID you just generated
-NEXMO_APPLICATION_PRIVATE_KEY="./XmasJokes.key" # No need to change this unless you called your keyfile something different
+VONAGE_APPLICATION_ID="" # The new App ID you just generated
+VONAGE_APPLICATION_PRIVATE_KEY="./XmasJokes.key" # No need to change this unless you called your keyfile something different
 ```
 
 Finally, add in your new SMS capable number:
 
 ```bash
-NEXMO_FROM_NUMBER="" # If you have a Non-US number put it here, otherwise blank
-NEXMO_FROM_NUMBER_US="" # If you have a US number, put it here, otherwise blank
+VONAGE_FROM_NUMBER="" # If you have a Non-US number put it here, otherwise blank
+VONAGE_FROM_NUMBER_US="" # If you have a US number, put it here, otherwise blank
 ```
 
 With all those fields filled out you can save your `.env` and close it.
@@ -142,7 +142,7 @@ That's it. Set up complete!
 
 ## Fire Up The Festive Cheer
 
-Nexmo now knows where everything is going and how to route new messages over to your application. There's only one thing left to do:
+Vonage now knows where everything is going and how to route new messages over to your application. There's only one thing left to do:
 
 ```bash
 npm run dev
