@@ -18,7 +18,7 @@ canonical: ""
 ---
 *This is the first tutorial on how to use Voice APIs with ASP.NET series.*
 
-Building high-quality voice applications is now made easy with The How to Make a Text-to-Speech Phone Call in ASP.NET Voice API. It allows you to make and receive phone calls with your ASP.NET applications among other things.
+Building high-quality voice applications is now made easy with The Vonage Voice API. It allows you to make and receive phone calls with your ASP.NET applications among other things.
 
 In this tutorial, we will see how to make a Text-to-Speech phone call with ASP.NET.
 
