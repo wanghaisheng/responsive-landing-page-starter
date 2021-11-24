@@ -147,7 +147,7 @@ ngrok http 3000
 
 ## Create a Messages & Dispatch Application
 
-Set up a new Messages & Dispatch application via the [Nexmo Dashboard](https://dashboard.nexmo.com/messages/create-application).
+Set up a new Messages & Dispatch application via the [Vonage Dashboard](https://dashboard.nexmo.com/messages/create-application).
 
 Make sure that you append `/webhooks/inbound` and `/webhooks/status` to the URL you get from Ngrok when you paste them into the form (like in the image below).
 
@@ -165,11 +165,11 @@ Make a note of your Application ID, you'll need it in the next step.
 
 In order for Facebook to be aware of your newly created app, you need to connect them together.
 
-First, you'll need to create a [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) to authorise Facebook to use your application, you can do this with the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
+First, you'll need to create a [JSON Web Token](https://en.wikipedia.org/wiki/JSON_Web_Token) to authorise Facebook to use your application, you can do this with the [Vonage CLI](https://github.com/Vonage/vonage-cli).
 
-Open your terminal and ensure that you are in the root of your application folder.
+Open your terminal and ensure that you are at the root of your application folder.
 
-Using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) run the following command:
+Using the [Vonage CLI](https://github.com/Vonage/vonage-cli) run the following command:
 
 ```bash
 nexmo jwt:generate private.key exp=$(($(date +%s)+86400)) application_id=VONAGE_APPLICATION_ID
@@ -219,7 +219,7 @@ You should see your messages appearing in the console.
 
 Now that your stunning word play is being received by the application, it's time to send it over to Dialogflow to get some equally pithy responses back.
 
-In the `controllers` folder, create a new file called `dialogflow.js` and add the contents of [this javascript file](https://raw.githubusercontent.com/nexmo-community/nexmo-messages-facebook-dialogflow/master/controllers/dialogflow.js).
+In the `controllers` folder, create a new file called `dialogflow.js` and add the contents of [this JavaScript file](https://raw.githubusercontent.com/nexmo-community/nexmo-messages-facebook-dialogflow/master/controllers/dialogflow.js).
 
 The exported function in the file achieves the following:
 
