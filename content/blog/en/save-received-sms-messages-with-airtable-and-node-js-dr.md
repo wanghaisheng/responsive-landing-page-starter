@@ -87,8 +87,8 @@ Create an `index.js` file and set up a standard Express.js application:
 
 ```
 const app = require('express')();
-const bodyParser = require('body-parser')
-app.use(bodyParser.json())
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Other code will go in here
@@ -197,13 +197,13 @@ The fact you're now correctly logging data is brilliant, but your users have no 
 Before your inbound message handler, include the Vonage JavaScript Node.js client and initialize it:
 
 ```
-const Vonage = require('@vonage/server-sdk')
+const Vonage = require('@vonage/server-sdk');
 const vonage = new Vonage({
     apiKey: config.VONAGE_KEY,
     apiSecret: config.VONAGE_SECRET,
     applicationId: config.VONAGE_APPLICATION_ID,
     privateKey: './private.key'
-})
+});
 ```
 
 The `private.key` file should have been generated in this directory when you created a new Vonage application. Make sure it's there (move it into this directory if not), and you'll be good to go. 
