@@ -27,7 +27,7 @@ You'll use [Python 3](https://www.python.org/downloads/) and [Flask](http://flas
 pip3 install flask
 ```
 
-Lastly, you'll need to install [our CLI](https://github.com/Nexmo/nexmo-cli). You will use this to purchase a Vonage virtual number (if you haven't already got one) and to send a test SMS.
+Lastly, you'll need to install [our Vonage CLI](https://github.com/Vonage/vonage-cli). You will use this to purchase a Vonage virtual number (if you haven't already got one) and to send a test SMS.
 
 <sign-up number></signup>
 
@@ -95,20 +95,19 @@ On their free plan, every time you restart `ngrok` the URLs change and you will 
 
 If you don't already have a Vonage virtual number to use for this example, you'll need to buy one. You can do this in the [developer dashboard](https://dashboard.nexmo.com/buy-numbers) but it's often more convenient to perform these account management tasks using our CLI. So that's what we'll do here.
 
-To check which numbers are available, use `nexmo number:search`, passing it your two-character country code. For example, `GB` for Great Britain or `US` for the USA. You want to ensure that the number you purchase is able to receive SMS:
+To check which numbers are available, use `vonage numbers:search [COUNTRYCODE]`, passing it your two-character country code. For example, `GB` for Great Britain or `US` for the USA. You want to ensure that the number you purchase is able to receive SMS:
 
 ```sh
-nexmo number:search COUNTRY_CODE --sms
+vonage numbers:search [COUNTRYCODE]
 ```
 
 Choose a number from the list and buy it using the following command:
 
 ```sh
-nexmo number:buy NUMBER
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 You will be prompted to confirm your purchase. Make a note of the number that you bought.
-
 
 ## Configure Your Vonage Account
 
@@ -124,7 +123,6 @@ nexmo link:sms VONAGE_VIRTUAL_NUMBER WEBHOOK_URL
 ```
 
 This configures your virtual number to use your webhook. If you want to create a "catch all" webhook to capture SMS sent to any of your numbers, visit your [account settings](https://dashboard.nexmo.com/settings) page and enter the URL in the "Inbound messages" textbox under "Default SMS Setting". Vonage always uses the number-specific webhook if it has been set.
-
 
 ## Try it Out
 
@@ -157,15 +155,7 @@ In the terminal window that is running your Python application you should see th
 
 If you want to learn more about the SMS API, check out the following resources:
 
-- [SMS API overview](https://developer.nexmo.com/messaging/sms/overview)
-- [SMS API reference](https://developer.nexmo.com/api/sms)
-- [Inbound SMS guide](https://developer.nexmo.com/messaging/sms/guides/inbound-sms)
-- [Concatenation and encoding](https://developer.nexmo.com/messaging/sms/guides/concatenation-and-encoding)
-
-
-
-
-
-
-
-
+* [SMS API overview](https://developer.nexmo.com/messaging/sms/overview)
+* [SMS API reference](https://developer.nexmo.com/api/sms)
+* [Inbound SMS guide](https://developer.nexmo.com/messaging/sms/guides/inbound-sms)
+* [Concatenation and encoding](https://developer.nexmo.com/messaging/sms/guides/concatenation-and-encoding)
