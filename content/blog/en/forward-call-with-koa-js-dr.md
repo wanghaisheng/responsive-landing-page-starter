@@ -152,7 +152,7 @@ TO_NUMBER=447700900003
 You also want to associate the number you've rented with your application, which is done from the command line. You supply one argument: the new number.
 
 ```
-vonage apps:link --number=442079460005
+vonage apps:link --number=442079460005 APP_ID
 ```
 
 ## Test Your Application
