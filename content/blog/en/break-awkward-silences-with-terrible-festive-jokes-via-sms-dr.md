@@ -38,7 +38,7 @@ One line didn't break the grim, grim silence? Okay, SMS the word 'more' in reply
 
 ## Building The App
 
-The app we're going to build uses [Node.js](https://nodejs.org/en/), the [Koa framework](https://koajs.com/) (which is just a more modern implementation of Express), and the [Nexmo Messages API](https://developer.nexmo.com/messages/overview).
+The app we're going to build uses [Node.js](https://nodejs.org/en/), the [Koa framework](https://koajs.com/) (which is just a more modern implementation of Express), and the Vonage Messages API.
 
 The code is available in a repository on the [Nexmo Community GitHub](https://glitch.com/edit/#!/nexmo-community-xmas-jokes-nodejs) account, and also in [remixable form on Glitch](https://glitch.com/edit/#!/remix/nexmo-community-xmas-jokes-nodejs).
 
@@ -85,8 +85,8 @@ The first piece to configure is the `.env.sample` file. Start by renaming it to 
 Add all the following pieces of information:
 
 ```bash
-NEXMO_API_KEY="" # from your account dashboard
-NEXMO_API_SECRET="" # from your account dashboard
+VONAGE_API_KEY="" # from your account dashboard
+VONAGE_API_SECRET="" # from your account dashboard
 ```
 
 Next up is the application-specific detail. Set that up using the CLI:
@@ -101,7 +101,6 @@ vonage apps:create
 ✔ Status Webhook - URL … https://<your_ngrok_url>/status
 ✔ Status Webhook - Method › GET
 ✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
-
 ```
 
 This command will set up a new Messages & Dispatch application on your account. It outputs the `Application ID` to the screen and will also create a private key in the directory you're currently in. Both are needed for the next step of the config:
