@@ -2,9 +2,10 @@
 title: How to send SMS Messages with Swift and Vapor using Async/Await
 description: Use the new async/await feature from Swift 5.5 to send an SMS using
   the Vonage Messages API
+thumbnail: /content/blog/how-to-send-sms-messages-with-swift-and-vapor-using-async-await/2fa_swift-vaporasync-1.png
 author: abdul-ajetunmobi
 published: true
-published_at: 2021-11-19T15:52:49.941Z
+published_at: 2021-11-24T11:03:09.252Z
 updated_at: 2021-11-19T15:52:49.980Z
 category: tutorial
 tags:
