@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Welcome to [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY)! This series is hosted on the [Vonage Dev YouTube channel](https://www.youtube.com/vonagedev). The goal of this video series is to share knowledge in a bite-sized manner
+Welcome to [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY)! This series is hosted on the [Vonage Dev YouTube channel](https://www.youtube.com/vonagedev). The goal of this video series is to share knowledge in a bite-sized manner.
 
 This quick walk-through will show you how to create an SMS message log and a response to the sender using Firebase Cloud Functions and the Real Time Database alongside the Vonage SMS API. 
 
@@ -38,7 +38,7 @@ Create the project in the Firebase console and choose whether or not you will us
 
 Wait for your project to be created.
 
-Select the Firebase billing plan, in this case it is the pay as you go.
+Select the Firebase billing plan, in this case, it is the pay as you go.
 
 In the Command line, install the Firebase tools.
 
