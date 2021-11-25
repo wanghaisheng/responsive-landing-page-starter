@@ -4,7 +4,7 @@ description: In this blog post, you will learn what a coupon code is and how to 
 thumbnail: /content/blog/how-to-redeem-a-coupon-code/coupon-code.png
 author: caroline-kerns
 published: true
-published_at: 2021-11-18T21:45:25.874Z
+published_at: 2021-11-25T12:19:23.237Z
 updated_at: 2021-11-18T21:45:25.907Z
 category: tutorial
 tags:
