@@ -10,7 +10,7 @@ published_at: 2021-09-15T13:24:38.295Z
 updated_at: 2021-09-15T13:24:38.314Z
 category: tutorial
 tags:
-  - videoapi
+  - video-api
   - javascript
   - nodejs
 comments: true
