@@ -1,5 +1,5 @@
 ---
-title: Integrate Phone Calls to a Dialogflow Chatbot Via Websockets
+title: Integrate Phone Calls to a Dialogflow Chatbot Via WebSockets
 description: "This tutorial will help you to start with an example Dialogflow
   bot and interact with it from phone calls using provided sample reference
   codes using Vonage Voice API. "
@@ -117,9 +117,13 @@ For this tutorial, we will show examples using the [ngrok](https://ngrok.com) tu
 13. Install [Heroku command line](https://devcenter.heroku.com/categories/command-line) and login to your Heroku account
 14. If you do not yet have a local git repository, create one: `git init`
 15. Start by creating this application on Heroku from the command line using the Heroku CLI. Note: In the below command, replace `thisappname` with a unique name on the whole Heroku platform. `heroku create thisappname`
-16. On your Heroku dashboard where your application page is shown, click on `Settings` button, add the following `Config Vars` and set them with their respective values:\
-    `GCLOUD_PROJECT_ID`
-    `GOOGLE_APPLICATION_CREDENTIALS`  
+16. On your Heroku dashboard where your application page is shown, click on `Settings` button, add the following `Config Vars` and set them with their respective values:
+
+```bash
+GCLOUD_PROJECT_ID
+GOOGLE_APPLICATION_CREDENTIALS  
+```
+
 17. Deploy the application `git push heroku master` or `git push heroku main` depending on your branch name.
 18. Make a note of the URL found in the console (e.g. `thisappname.herokuapp.com`). We will add this information in the  `DF_CONNECTING_SERVER` argument of 'Set Up the Dialogflow Voice API Sample Application' part of the tutorial
 
@@ -184,12 +188,16 @@ We will use ngrok to tunnel the connecting server which is interacting with our 
 8. Start by creating this application on Heroku from the command line using the Heroku CLI. Note: In  command, replace `myappname` with a unique name on the whole Heroku platform. `heroku create myappname`
 9. On your Heroku dashboard where your application page is shown, click on `Settings` button, add the following `Config Vars` and set them with their respective values found in your `.env` file.
 
-   `API_KEY`
-   `API_SECRET`\
-   `APP_ID`\
-   `SERVICE_NUMBER`\
-   `DF_CONNECTING_SERVER`\
+```bash
+API_KEY
+API_SECRET
+APP_ID
+SERVICE_NUMBER
+DF_CONNECTING_SERVER
+```
+
    Add also the parameter `PRIVATE_KEY_FILE` with the value `./private.key`  
+
 10. On your Heroku dashboard where your application page is shown, click on the `Open App` button and copy the URL
 11. Now, let's deploy the application. Get back to the Vonage Dashboard website and under capabilities:
 12. Toggle Voice to enable this capability
@@ -279,10 +287,10 @@ You have completed this tutorial on making phone calls to a Dialogflow agent usi
 
 You can find the [Dialogflow Reference sample](https://github.com/nexmo-community/dialogflow-reference-connection) and [Sample Voice Application on Github](https://github.com/nexmo-community/dialogflow-sample-voice-application).
 
-Check the [WebSockets reference guide](https://developer.nexmo.com/voice/voice-api/guides/websockets).
+Check the [WebSockets reference guide](https://developer.vonage.com/voice/voice-api/guides/websockets).
 
 Check the [A blog post explaining ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
 
 You can also look at a similar example using an [Amazon Lex Bot](https://learn.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot/). 
 
-I hope you enjoyed this. Feel free to contact me [on Twitter](https://twitter.com/amdcavallaro) or join our [Community Slack Channel](https://developer.nexmo.com/community/slack).
+I hope you enjoyed this. Feel free to contact me [on Twitter](https://twitter.com/amdcavallaro) or join our [Community Slack Channel](https://developer.vonage.com/community/slack).
