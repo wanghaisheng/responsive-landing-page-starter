@@ -17,7 +17,7 @@ canonical: ""
 ---
 ## Introduction
 
-In a previous tutorial, we showed you how to create an application that can [Receive a Phone Call with Java](https://www.nexmo.com/blog/2018/08/09/receive-a-phone-call-with-java-dr/). In this tutorial, you will create an application that can receive a phone call and respond to user input using the [Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview).
+In a previous tutorial, we showed you how to create an application that can [Receive a Phone Call with Java](https://www.nexmo.com/blog/2018/08/09/receive-a-phone-call-with-java-dr/). In this tutorial, you will create an application that can receive a phone call and respond to user input using the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview).
 
 ## Prerequisites
 
@@ -131,13 +131,13 @@ This code will setup a route on <http://localhost:3000/webhooks/answer> which wi
 ]
 ```
 
-The talk action will instruct Nexmo to speak the `text` property back to the caller. The input action will instruct Nexmo to capture a single digit that the caller inputs and to send a POST request to `eventUrl` with this information.
+The talk action will instruct Vonage to speak the `text` property back to the caller. The input action will instruct Vonage to capture a single digit that the caller inputs and to send a POST request to `eventUrl` with this information.
 
-A route will also be setup on <http://localhost:3000/webhooks/events> which Nexmo will use to communicate call status changes.
+A route will also be setup on <http://localhost:3000/webhooks/events> which Vonage will use to communicate call status changes.
 
 #### Setup the DTMF Route
 
-When the caller presses a digit on their device, a Dual-Tone Multi-Frequency (DTMF) signal is created. Nexmo uses this DTMF signal to determine which set of keys were pressed. Once this happens, Nexmo sends a POST request to the `eventUrl` defined in the `InputNcco`.
+When the caller presses a digit on their device, a Dual-Tone Multi-Frequency (DTMF) signal is created. Vonage uses this DTMF signal to determine which set of keys were pressed. Once this happens, Vonage sends a POST request to the `eventUrl` defined in the `InputNcco`.
 
 Here is an example of the POST request which contains a JSON body:
 
@@ -236,7 +236,7 @@ After running this command, you will be shown an an application id. For example:
 You can use the [Vonage CLI](https://github.com/vonage/vonage-cli) to link your phone number and application:
 
 ```bash
-nexmo apps:link your-application-id --number=your-vonage-phone-number 
+vonage apps:link your-application-id --number=your-vonage-phone-number 
 ```
 
 This command instructs Vonage to create a new application on your account. The application will send a request to the first URL when it receives a phone call. The application will send requests to the second URL when the call status changes.
