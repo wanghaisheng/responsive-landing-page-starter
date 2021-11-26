@@ -16,23 +16,23 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Now that you have successfully [sent an SMS](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) and [received an SMS](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/) using your Nexmo number, it’s time to check the status of the message to ensure it was delivered. To do this, we have to fetch the delivery receipt, which will return the delivery status of the message.
+Now that you have successfully [sent an SMS](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) and [received an SMS](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/) using your Vonage number, it’s time to check the status of the message to ensure it was delivered. To do this, we have to fetch the delivery receipt, which will return the delivery status of the message.
 
 ## Requirements
 
 * A Visual Studio project
 * A project set up as described in the previous [blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) in this tutorial series which you can find on [GitHub.](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/SMSRecieveStarterProject)
-* Optional: [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
+* Optional: [Vonage CLI](https://github.com/Vonage/vonage-cli)
 
 <sign-up number></sign-up>
 
 ## Receive webhooks on your localhost
 
-The Nexmo SMS API uses webhooks to inform the ASP.NET app of the status of the sent text message. As explained in the [previous tutorial](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/), we will be using [ngrok to expose the port to the internet](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) so Nexmo’s servers can connect to it while testing.
+The Vonage SMS API uses webhooks to inform the ASP.NET app of the status of the sent text message. As explained in the [previous tutorial](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/), we will be using [ngrok to expose the port to the internet](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) so Vonage’s servers can connect to it while testing.
 
 ![Example of Ngrok running](/content/blog/how-to-get-an-sms-delivery-receipt-in-asp-net-mvc/image_0.png)
 
-Go back to Visual Studio and run your program, then head over to the [Nexmo Dashboard](https://dashboard.nexmo.com/). On the **Settings** page, towards the bottom, you will see **Callback for Delivery Receipt** under the **API Settings**. Paste the ngrok URL inside the textbox and add **/SMS/DLR** to the end of it. This will route the message to the Receive action in the SMS controller.
+Go back to Visual Studio and run your program, then head over to the [Vonage Dashboard](https://dashboard.nexmo.com/). On the **Settings** page, towards the bottom, you will see **Callback for Delivery Receipt** under the **API Settings**. Paste the ngrok URL inside the textbox and add **/SMS/DLR** to the end of it. This will route the message to the Receive action in the SMS controller.
 
 ![Configuring Nexmo webhooks](/content/blog/how-to-get-an-sms-delivery-receipt-in-asp-net-mvc/image_1.png)
 
@@ -48,15 +48,15 @@ In order to read the delivery receipt, we will create an action method called **
 
 ![Code example receiving DLR](/content/blog/how-to-get-an-sms-delivery-receipt-in-asp-net-mvc/image_2.png)
 
-As you can see in the code above, you need to add **\[FromUri]** in the parameter to be able to read the delivery receipt. Above this method, add a **HTTPGetAttribute** to restrict the method to handling GET requests. Print the messageID (**message ID**), msisdn (**Nexmo virtual number**), to (**destination number**), and the status (**status message**) to the output window using ‘Debug.WriteLine’.
+As you can see in the code above, you need to add **\[FromUri]** in the parameter to be able to read the delivery receipt. Above this method, add a **HTTPGetAttribute** to restrict the method to handling GET requests. Print the messageID (**message ID**), msisdn (**Vonage virtual number**), to (**destination number**), and the status (**status message**) to the output window using ‘Debug.WriteLine’.
 You can [check the list of status codes here](https://developer.nexmo.com/api/sms#delivery-receipt).
 
-Now you are ready to go! Send an SMS using your Nexmo virtual number and open up the output window in Visual Studio. There you should see the delivery receipt for the text you have sent! You have now successfully setup your virtual number to return a status for a text message via a webhook!
+Now you are ready to go! Send an SMS using your Vonage virtual number and open up the output window in Visual Studio. There you should see the delivery receipt for the text you have sent! You have now successfully setup your virtual number to return a status for a text message via a webhook!
 
 ![Example output of a DLR](/content/blog/how-to-get-an-sms-delivery-receipt-in-asp-net-mvc/image_3.png)
 
 ## Helpful links
 
-* [Nexmo .NET Quickstart](https://github.com/nexmo-community/nexmo-dotnet-quickstart)
-* [Nexmo SMS REST API](https://docs.nexmo.com/messaging/sms-api)
+* [Vonage .NET code snippets](https://github.com/Vonage/vonage-dotnet-code-snippets)
+* [Vonage SMS REST API](https://developer.vonage.com/messaging/sms/overview)
 * [Nexmo C# Client Library](https://github.com/Nexmo/nexmo-dotnet)
