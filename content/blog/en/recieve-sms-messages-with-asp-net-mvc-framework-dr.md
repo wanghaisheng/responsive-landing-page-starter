@@ -78,7 +78,7 @@ In the Solution Explorer, expand the project and click **Properties**. Click the
 
 ## Set the SMS Callback Webhook URL for Your Nexmo Number
 
-Now use the Vonage CLI to create a webhook to route the message to Receive action in the SMS controller.
+Now use the Vonage CLI to create a Vonage app and a webhook for it.
 
 Install the Vonage CLI globally with this command:
 
