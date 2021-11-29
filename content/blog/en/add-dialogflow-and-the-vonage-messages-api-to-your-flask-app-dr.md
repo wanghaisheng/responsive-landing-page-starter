@@ -80,7 +80,7 @@ For the next steps, we need to create the logic that will handle the back and fo
 
 ## Application Code
 
-We want to write an interface for sending an SMS to the end user. First, make sure you have the Nexmo Python library installed:
+We want to write an interface for sending an SMS to the end user. First, make sure you have the Vonage Python library installed:
 
 ```
 pip install vonage
@@ -99,7 +99,7 @@ def vonage_sms(sms, recipient):
    VONAGE_API_SECRET = os.getenv("VONAGE_API_SECRET")
    VONAGE_NUMBER = os.getenv("VONAGE_NUMBER")
 
-   client = nexmo.Client(key=VONAGE_API_KEY, secret=VONAGE_API_SECRET)
+   client = vonage.Client(key=VONAGE_API_KEY, secret=VONAGE_API_SECRET)
 
    response_data = client.send_message(
        {
@@ -126,7 +126,7 @@ import os
 from dotenv import load_dotenv
 
 sys.path.append('../')
-from vonage.nexmo import nexmo_sms
+import vonage
 
 APP_ROOT = os.path.join(os.path.dirname(__file__), '..')  # refers to application_top
 dotenv_path = os.path.join(APP_ROOT, '.env')
@@ -136,7 +136,7 @@ load_dotenv(dotenv_path)
 def notify_customer(number):
    text = "Hello. You can start your quiz with quizzie-bot by sending the following keywords: hi," \
           " hello or vonage."
-   print(nexmo_sms(text, number))
+   print(vonage_sms(text, number))
 ```
 
 Once the end user receives the messages, we want them to reply. We need to create an incoming webhook endpoint to receive the reply. Remember, we set up the inbound sms URL while creating an app earlier. It is now time to add logic to our webhook:
