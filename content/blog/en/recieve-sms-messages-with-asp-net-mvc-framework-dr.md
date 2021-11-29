@@ -105,7 +105,7 @@ Now, use the CLI to create a Vonage application.
 
 ```sh
 vonage apps:create
-✔ Application Name … interior_hedgehog
+✔ Application Name … your_app_name
 ✔ Select App Capabilities › Messages
 ✔ Create messages webhooks? … yes
 ✔ Inbound Message Webhook - URL … https://www.example.ngrok.io/SMS/Recieve
