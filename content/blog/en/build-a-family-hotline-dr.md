@@ -57,7 +57,7 @@ Now let's install the dependencies we'll need for this project, and activate our
 
 ```bash
 # Install compatible versions of `vonage`, `flask` and `attrs`
-pipenv install vonage flask~=1.0.2 attrs~=18.2.0
+pipenv install vonage~=2.5.5 flask~=1.0.2 attrs~=18.2.0
 
 # Activate the virtualenv:
 pipenv shell
