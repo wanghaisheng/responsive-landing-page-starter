@@ -15,20 +15,20 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-My previous tutorial explained how to use the Nexmo [C# Client Library](https://github.com/Nexmo/nexmo-dotnet) to [send your first SMS message](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) from an ASP.NET MVC web app. In this follow-up, I continue exploring the Nexmo Platform by showing how to receive SMS messages on a Nexmo phone number using the C# Client Library.
+My previous tutorial explained how to use the Nexmo [C# Client Library](https://github.com/Nexmo/nexmo-dotnet) to [send your first SMS message](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) from an ASP.NET MVC web app. In this follow-up, I continue exploring the Vonage Platform by showing how to receive SMS messages on a Nexmo phone number using the C# Client Library.
 
 ## Requirements
 
 * Visual Studio 2017 RC
 * Windows machine
 * A [starter project](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/SMSRecieveStarterProject") set up in the previous [blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)
-* *Optional*: [The Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
+* *Optional*: [The Vonage CLI](https://developer.vonage.com/application/vonage-cli)
 
 <sign-up number></sign-up>
 
 ## Receive Webhooks on Your Localhost with Ngrok
 
-The Nexmo [SMS API](https://www.nexmo.com/products/sms) uses webhooks to inform your ASP.NET web application that an incoming text message has been sent to one of your Nexmo phone numbers. In order to do this, Nexmo needs to be able to make an HTTP request to a public URL. Since we’re developing our app on our local machine, we need to create a local tunnel that gives our machine a public URL. We will be using [ngrok](https://ngrok.com/) to expose the port over the internet to easily communicate with the Nexmo platform during this testing phase. This approach saves you from having to deploy your application.
+The Vonage SMS API uses webhooks to inform your ASP.NET web application that an incoming text message has been sent to one of your Vonage phone numbers. In order to do this, Vonage needs to be able to make an HTTP request to a public URL. Since we’re developing our app on our local machine, we need to create a local tunnel that gives our machine a public URL. We will be using [ngrok](https://ngrok.com/) to expose the port over the internet to easily communicate with the Vonage platform during this testing phase. This approach saves you from having to deploy your application.
 
 [Download ngrok](https://ngrok.com/download) and run the following command in Command Prompt (replace the port number with the number of the port you wish to run the app on).
 
@@ -44,9 +44,9 @@ The command above allows your local server (running on the port above) to have a
 
 In the previous tutorial, we created an ASP.NET MVC project and added another controller called `SMSController.cs`. Next, we created two action methods. One method was to present the view for the details of the SMS (destination number and message text) and the other was to retrieve the values from the form and send an SMS. 
 
-Continuing the project from the [previous blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/), let's create an [action method](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/488a97c576c882aeef8a7cf327bade27750f4856/NexmoDotNetQuickStarts/Controllers/SMSController.cs#L40-L62) called ‘Receive’ in `SMSController.cs`. This path will be receiving the inbound SMS data as we will be setting the Nexmo webhook (later in this tutorial) to our ngrok URL with the route of ‘SMS/Receive’. 
+Continuing the project from the [previous blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/), let's create an [action method](https://github.com/nexmo-community/nexmo-dotnet-quickstart/blob/488a97c576c882aeef8a7cf327bade27750f4856/NexmoDotNetQuickStarts/Controllers/SMSController.cs#L40-L62) called ‘Receive’ in `SMSController.cs`. This path will be receiving the inbound SMS data as we will be setting the Vonage webhook (later in this tutorial) to our ngrok URL with the route of ‘SMS/Receive’. 
 
-Add \[FromUri] in the parameter to read the incoming SMS. In order to be able to use \[FromUri], you need to install the following package: `Microsoft.AspNet.WebApi.Core`. Above this method, add an HTTPGetAttribute to restrict the method to accepting only GET requests. If the value for response.to (the Nexmo phone number) and msidsn (the sender) are not null, print out the message to the output window using `Debug.WriteLine`. Else, the endpoint was hit as a result of something other than an incoming SMS. (This can happen when you first set up your webhook. We’ll see this shortly.)
+Add \[FromUri] in the parameter to read the incoming SMS. In order to be able to use \[FromUri], you need to install the following package: `Microsoft.AspNet.WebApi.Core`. Above this method, add an HTTPGetAttribute to restrict the method to accepting only GET requests. If the value for response.to (the Vonage phone number) and msidsn (the sender) are not null, print out the message to the output window using `Debug.WriteLine`. Else, the endpoint was hit as a result of something other than an incoming SMS. (This can happen when you first set up your webhook. We’ll see this shortly.)
 
 ```dotnet
 [System.Web.Mvc.HttpGet]
@@ -123,12 +123,12 @@ vonage apps:create
 
 ## Receive an SMS with ASP.NET
 
-You are ready to go! With your ASP.NET web app running, open up the output window in Visual Studio. Send an SMS to your Nexmo phone number and you will see the incoming texts coming through! Your ASP.NET web app is able to receive SMS messages that are sent to your Nexmo phone number via an inbound webhook!
+You are ready to go! With your ASP.NET web app running, open up the output window in Visual Studio. Send an SMS to your Vonage phone number and you will see the incoming texts coming through! Your ASP.NET web app is able to receive SMS messages that are sent to your Vonage phone number via an inbound webhook!
 
 Feel free to reach out via [e-mail](mailto:sidharth.sharma@nexmo.com) or [Twitter](https://twitter.com/sidsharma_27) if you have any questions!
 
 ### Helpful Links
 
-* [Nexmo SMS REST API](https://docs.nexmo.com/messaging/sms-api)
-* [Nexmo C# Client Library](https://github.com/Nexmo/nexmo-dotnet)
-* [Nexmo ASP.NET MVC Quickstart](https://github.com/nexmo-community/nexmo-dotnet-quickstart)
+* [Vonage SMS REST API](https://docs.nexmo.com/messaging/sms-api)
+* [Vonage C# Client Library](https://github.com/Nexmo/nexmo-dotnet)
+* [Vonage ASP.NET MVC Quickstart](https://github.com/nexmo-community/nexmo-dotnet-quickstart)
