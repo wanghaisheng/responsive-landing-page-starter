@@ -19,11 +19,11 @@ replacement_url: ""
 ---
 # Scrub up! Cleaning your PHP application with PHPStan
 
-In the time that I have been a PHP developer, the way we write and ship code has changed dramatically. In early [Symfony](https://symfony.com/) and [Zend Framework](https://framework.zend.com/) applications, the [PHP-FIG](https://www.php-fig.org/) didns't exist and coding standards were at the discretion of whoever was writing it. While my experience working in PHP applications has seen widespread adoption of [PSR standards](https://www.php-fig.org/psr/), rock-solid static analysis tooling has been somewhat patchy. That is, until now: let's go through some features to [celebrate the release of version 1.0 of PHPStan](https://phpstan.org/blog/phpstan-1-0-released).
+In the time that I have been a PHP developer, the way we write and ship code has changed dramatically. In early [Symfony](https://symfony.com/) and [Zend Framework](https://framework.zend.com/) applications, the [PHP-FIG](https://www.php-fig.org/) didn't exist and coding standards were at the discretion of whoever was writing it. While my experience working in PHP applications has seen widespread adoption of [PSR standards](https://www.php-fig.org/psr/), rock-solid static analysis tooling has been somewhat patchy. That is, until now: let's go through some features to [celebrate the release of version 1.0 of PHPStan](https://phpstan.org/blog/phpstan-1-0-released).
 
 ### Compiled languages, your preemptive bug-squasher
 
-One of the great advantages of using a compiled language such as [Java](java.com) or [NET](https://dotnet.microsoft.com/) is that compile-time will completely fail if your code isn't [typesafe](https://en.wikipedia.org/wiki/Type_safety), enforcing standards (though this is easy for me to say as it's not 2am, on my 10th coffee of the night). With [PHP](https://www.php.net/) being a interpreted language, we don't have the same luxury.
+One of the great advantages of using a compiled language such as [Java](java.com) or [NET](https://dotnet.microsoft.com/) is that compile-time will completely fail if your code isn't [typesafe](https://en.wikipedia.org/wiki/Type_safety), enforcing standards (though this is easy for me to say as it's not 2am, on my 10th coffee of the night). With [PHP](https://www.php.net/) being an interpreted language, we don't have the same luxury.
 
 ### Interpreted as compiled: CI + tooling
 
@@ -31,11 +31,11 @@ Thanks to the sheer quantity of DevOps tooling available to us in modern web dev
 
 ### The scenario
 
-It's common to try and pick a theme that's fun, or applicable to what you're writing about when it comes to tooling like this. But, for this article I'm going to present to you a scenario that I have personally come across time-and-time again in agency environments: 
+It's common to try and pick a theme that's fun, or applicable to what you're writing about when it comes to tooling like this. But, for this article I'm going to present to you a scenario that I have personally come across time and time again in agency environments: 
 
-**"Help! Someone else built my PHP app and I need someone to rescue it and take over maintenance of it because I need X/Y/Z features need to be built and features A/B/C don't even work well"**
+**"Help! Someone else built my PHP app and I need someone to rescue it and take over maintenance of it because X/Y/Z features need to be built and features A/B/C don't even work well"**
 
-Taking over someone else's codebase/project is always a complete lottery. If you're taking it over because it needs new features and it's already a tech-debt riddled mess, you know you've got to sort that out before you touch anything else. Worse, a lot of these project (in my experience) tend to arrive with absolutely no tests to self-document the code. Consider a classic example, which I have seen time and time again:
+Taking over someone else's codebase/project is always a complete lottery. If you're taking it over because it needs new features and it's already a tech-debt riddled mess, you know you've got to sort that out before you touch anything else. Worse, a lot of these projects (in my experience) tend to arrive with absolutely no tests to self-document the code. Consider a classic example, which I have seen time and time again:
 
 ```php
 $someData = \MyNamespace\MyORM\MyRepository::findAllBySomething(SOMETHING);
@@ -53,7 +53,7 @@ It's time to set [PHPStan](https://github.com/phpstan/phpstan) on it.
 
 ### Know your strategy
 
-While it's easy to say "use PHPStan", if you have a legacy or tech-debt heavy application you'll want a strategy rather than just throwing things out there to see what happens. Firstly, you'll want to acquaint yourself with the Rule Levels.
+While it's easy to say "use PHPStan", if you have a legacy or tech-debt-heavy application you'll want a strategy rather than just throwing things out there to see what happens. Firstly, you'll want to acquaint yourself with the Rule Levels.
 
 #### Rule Levels
 
