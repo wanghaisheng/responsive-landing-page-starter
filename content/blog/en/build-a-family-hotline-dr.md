@@ -68,7 +68,7 @@ Now let's start writing our Flask server.
 Open up a file called `hotline.py`, and type the following:
 
 ```python
-from flask import Flask, jsonify
+from flask import Flask, jsonify, url_for as url_for_, request
 
 
 app = Flask(__name__)
