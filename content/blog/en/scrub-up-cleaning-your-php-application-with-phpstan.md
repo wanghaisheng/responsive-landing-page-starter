@@ -23,7 +23,7 @@ In the time that I have been a PHP developer, the way we write and ship code has
 
 ### Compiled languages, your preemptive bug-squasher
 
-One of the great advantages of using a compiled language such as [Java](java.com) or [NET](https://dotnet.microsoft.com/) is that compile-time will completely fail if your code isn't [typesafe](https://en.wikipedia.org/wiki/Type_safety), enforcing standards (though this is easy for me to say as it's not 2am, on my 10th coffee of the night). With [PHP](https://www.php.net/) being an interpreted language, we don't have the same luxury.
+One of the great advantages of using a compiled language such as [Java](java.com) or [NET](https://dotnet.microsoft.com/) is that compile-time will completely fail if your code isn't [typesafe](https://en.wikipedia.org/wiki/Type_safety), enforcing standards (though this is easy for me to say as it's not 2 am, on my 10th coffee of the night). With [PHP](https://www.php.net/) being an interpreted language, we don't have the same luxury.
 
 ### Interpreted as compiled: CI + tooling
 
@@ -60,7 +60,7 @@ While it's easy to say "use PHPStan", if you have a legacy or tech-debt-heavy ap
 PHPStan is structured to run with given rule levels, numbered from 0-9:
 
 1. basic checks, unknown classes, unknown functions, unknown methods called on `$this`, wrong number of arguments passed to those methods and functions, always undefined variables
-2. possibly undefined variables, unknown magic methods and properties on classes with `__call` and `__get`
+2. possibly undefined variables, unknown magic methods, and properties on classes with `__call` and `__get`
 3. unknown methods checked on all expressions (not just `$this`), validating PHPDocs
 4. return types, types assigned to properties
 5. basic dead code checking - always false `instanceof` and other type checks, dead `else` branches, unreachable code after return; etc.
@@ -75,22 +75,22 @@ This is why your strategy is important. If you've got a legacy project written b
 * Set yourself milestones for each level identified, and start small.
 * The long term investment to start analysis will pay off eventually (we'll get onto the pipelines shortly), but set the top level you are willing to go to when classifying "fixed the tech-debt" under your own "definition of done"
 * A good de-facto target for a legacy project is to get Rule Level 6 passing. It's at this point where your codebase can likely transition from a state of "danger" to "correct". This would make Rule Level 6 [your baseline](https://phpstan.org/user-guide/baseline)).
-* **This is super important**: make sure to assign time (sprints, broken down Jira tickets for the masochists) to *fixing* what PHPStan is flagging at each rule level. Fixing tech-debt is *not easy* in many cases, and you don't have any idea what kind of business-domain logic faults there could be in your application.
-* While setting the incremental targets for Rule Levels, make sure you set up your [pipeline](#pipeline) up before committing changes so that you don't introduce any new code smells while refactoring. Setting up your pipeline will need you to establish [your baseline](https://phpstan.org/user-guide/baseline), which we'll get to.
+* **This is super important**: make sure to assign time (sprints, broken down Jira tickets for the masochists) to *fix* what PHPStan is flagging at each rule level. Fixing tech debt is *not easy* in many cases, and you don't have any idea what kind of business-domain logic faults there could be in your application.
+* While setting the incremental targets for Rule Levels, make sure you set up your [pipeline](#pipeline) before committing changes so that you don't introduce any new code smells while refactoring. Setting up your pipeline will need you to establish [your baseline](https://phpstan.org/user-guide/baseline), which we'll get to.
 
 ### Pipeline
 
-In the world of DevOps, there are a somewhat overwhelming amount of tooling options available to solve your problems. For this instance I'm offering just one approach, but it's one that is less complex than other options available. Once you have established your strategy, it's time to set up your pipeline so that we don't commit any new code that hasn't been through PHPStan first.
+In the world of DevOps, there are a somewhat overwhelming amount of tooling options available to solve your problems. For this instance, I'm offering just one approach, but it's one that is less complex than other options available. Once you have established your strategy, it's time to set up your pipeline so that we don't commit any new code that hasn't been through PHPStan first.
 
 #### Barriers of Defence: local vs. server-side
 
-I like to introduce tooling to eliminate any possibility of single-points-of-failure, and as a result of that cynasism highly recommend you run your static analysis on both local developers' machines *as well as* server-side CI checks in your repository.
+I like to introduce tooling to eliminate any possibility of single-points-of-failure, and as a result of that cynicism highly recommend you run your static analysis on both local developers' machines *as well as* server-side CI checks in your repository.
 
 ##### Local
 
 * Composer + PHPStan
 
-Firstly, you'll want to install PHPStan on your project. We're going to use [composer](https://getcomposer.org/) for this, working under the assumption that hopefully your legacy code does actually use package management. If not, you can [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) and use `composer init` to create a new project.
+Firstly, you'll want to install PHPStan on your project. We're going to use [composer](https://getcomposer.org/) for this, working under the assumption that hopefully, your legacy code does actually use package management. If not, you can [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) and use `composer init` to create a new project.
 
 To install PHPStan, run the following:
 
@@ -102,10 +102,10 @@ We're adding `--dev` as we don't need it for production (in theory!).
 
 * Configuration: establishing the baseline
 
-This is a pretty neat feature of PHPStan. Your baseline establishes your "ground zero" of your app, so that any current errors that exist within the Rule Level of your choosing are ignored *until you decide to deal with them*, but at the same time *can enforce a rule level for any new changes committed*. A sensible approach as outlined in the strategy would be to set a baseline at Rule Level 6:
+This is a pretty neat feature of PHPStan. Your baseline establishes your "ground zero" of your app so that any current errors that exist within the Rule Level of your choosing are ignored *until you decide to deal with them*, but at the same time *can enforce a rule level for any new changes committed*. A sensible approach as outlined in the strategy would be to set a baseline at Rule Level 6:
 
 * All new code committed to the project would need to be at Rule Level 6
-* You can then set out the tech-debt targets for the lower levels, as identified in your strategy goals.
+* You can then set out the tech-debt targets for the lower levels, as identified in your strategic goals.
 
 To create your baseline, run the following:
 
@@ -113,13 +113,13 @@ To create your baseline, run the following:
 vendor/bin/phpstan analyse --level 6 \  --configuration phpstan.neon \  src/ tests/ --generate-baseline
 ```
 
-You'll now have your baseline configuration set in the file specified (`phpstan.neon`), which saves a detailed overview of errors per-file.
+You'll now have your baseline configuration set in the file specified (`phpstan.neon`), which saves a detailed overview of errors per file.
 
-Now we want PHPStan to prevent commits to your repository, *before* they can be pushed up to your source. For this, we use Git hooks.
+Now we want PHPStan to prevent commits to your repository *before* they can be pushed up to your source. For this, we use Git hooks.
 
 * Git hooks
 
-It somehow took me years to realise that git actually installs hooks as standard in a new git repository on `git init`. You can [read more about git hooks here](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks). We're going to edit the the `pre-commit` hook. As long as you've not touched any hooks before in your project, you can enable the the pre-commit hook by renaming it - run this from the root of your project:
+It somehow took me years to realise that git actually installs hooks as standard in a new git repository on `git init`. You can [read more about git hooks here](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks). We're going to edit the `pre-commit` hook. As long as you've not touched any hooks before in your project, you can enable the pre-commit hook by renaming it - run this from the root of your project:
 
 ```bash
 mv ./.git/hooks/pre-commit.sample ./.git/hooks/pre-commit
@@ -167,7 +167,7 @@ You may want to adjust the command line trigger when you move up levels, so when
 
 ##### Server-side
 
-The more defense you can put up for your code, the better. Running PHPStan server-side after a push to your code as part of your Continuous Integration is a *must have*.  For this example we're going to use Github Actions, but bear in mind you can set this up with the same level of functionality in [CircleCI](https://circleci.com/), [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/), [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/) or [Jenkins](https://www.jenkins.io/). Here is an example actions workflow set up on Github, building your code with an [Ubuntu](https://ubuntu.com/) container:
+The more defense you can put up for your code, the better. Running PHPStan server-side after a push to your code as part of your Continuous Integration is a *must-have*.  For this example, we're going to use Github Actions, but bear in mind you can set this up with the same level of functionality in [CircleCI](https://circleci.com/), [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/), [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/) or [Jenkins](https://www.jenkins.io/). Here is an example actions workflow set up on Github, building your code with an [Ubuntu](https://ubuntu.com/) container:
 
 ```yaml
 ---  
@@ -201,7 +201,7 @@ jobs:
 
 The command under "Run PHPStan" can be configurable to your requirements in the same way you can configure the command when running PHPStan locally. I've written this workflow to run PHPStan at a default level on all files within the project (this workflow hasn't fired `composer` yet, so will not have the unnecessary and inefficient step of running it on your `vendor` folder) so here I would recommend having a configuration to pull in that sets your entire project's Rule Level.
 
-Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project, while giving insights as to where the likely areas as that need refactoring to take out tech-debt. \
+Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project while giving insights as to where the likely areas as that need refactoring to take out tech debt. \
 
 ### Last, but not least: static analysis vs. tests
 
