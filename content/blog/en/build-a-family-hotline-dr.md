@@ -56,7 +56,7 @@ sudo pip install --upgrade pipenv
 Now let's install the dependencies we'll need for this project, and activate our virtual environment. Run these commands in your new project's directory - I've called mine `hotline`:
 
 ```bash
-# Install compatible versions of `nexmo`, `flask` and `attrs`
+# Install compatible versions of `vonage`, `flask` and `attrs`
 pipenv install vonage flask~=1.0.2 attrs~=18.2.0
 
 # Activate the virtualenv:
@@ -156,7 +156,7 @@ vonage apps:create
 ✔ Answer Webhook - Method › POST
 ✔ Event Webhook - URL … https://ed330676.ngrok.io/event/
 ✔ Event Webhook - Method › POST
-✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
+✔ Allow use of data for AI training? Read data collection disclosure  … yes
 
 Application created: 34abcd12-ef12-40e3-9c6c-4274b3633761
 ```
