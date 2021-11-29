@@ -27,7 +27,7 @@ One of the great advantages of using a compiled language such as [Java](java.com
 
 ### Interpreted as compiled: CI + tooling
 
-Thanks to the sheer quantity of DevOps tooling available to us in modern web development and static analysis, the thing is _we do have the same tooling available but through different means_. As that is the case I cannot advocate **how much** I recommend you have something similar to the environment I'll be laying out. And why would you want this tooling? Let us take, for example:
+Thanks to the sheer quantity of DevOps tooling available to us in modern web development and static analysis, the thing is *we do have the same tooling available but through different means*. As that is the case I cannot advocate **how much** I recommend you have something similar to the environment I'll be laying out. And why would you want this tooling? Let us take, for example:
 
 ### The scenario
 
@@ -43,11 +43,13 @@ $someData = \MyNamespace\MyORM\MyRepository::findAllBySomething(SOMETHING);
 foreach ($someData as $myEntity) {
 	$myEntity->doTheThing();
 }
-````
+```
 
 You didn't write that entity class or the repository method. They've got no typehints, because this was written originally in PHP5.3, or the developer didn't use any. It's fine if your ORM returns an array of the same entities, but one bug, one null result in the return value of `findAllBySomething()` and `doTheThing()` will throw a fatal error.
 
 It's time to set [PHPStan](https://github.com/phpstan/phpstan) on it.
+
+![](/content/blog/scrub-up-cleaning-your-php-application-with-phpstan/photo-1529220502050-f15e570c634e.jpeg)
 
 ### Know your strategy
 
@@ -57,23 +59,23 @@ While it's easy to say "use PHPStan", if you have a legacy or tech-debt heavy ap
 
 PHPStan is structured to run with given rule levels, numbered from 0-9:
 
-0.  basic checks, unknown classes, unknown functions, unknown methods called on `$this`, wrong number of arguments passed to those methods and functions, always undefined variables
-1.  possibly undefined variables, unknown magic methods and properties on classes with `__call` and `__get`
-2.  unknown methods checked on all expressions (not just `$this`), validating PHPDocs
-3.  return types, types assigned to properties
-4.  basic dead code checking - always false `instanceof` and other type checks, dead `else` branches, unreachable code after return; etc.
-5.  checking types of arguments passed to methods and functions
-6.  report missing typehints
-7.  report partially wrong union types - if you call a method that only exists on some types in a union type, level 7 starts to report that; other possibly incorrect situations
-8.  report calling methods and accessing properties on nullable types
-9.  be strict about the `mixed` type - the only allowed operation you can do with it is to pass it to another `mixed`
+1. basic checks, unknown classes, unknown functions, unknown methods called on `$this`, wrong number of arguments passed to those methods and functions, always undefined variables
+2. possibly undefined variables, unknown magic methods and properties on classes with `__call` and `__get`
+3. unknown methods checked on all expressions (not just `$this`), validating PHPDocs
+4. return types, types assigned to properties
+5. basic dead code checking - always false `instanceof` and other type checks, dead `else` branches, unreachable code after return; etc.
+6. checking types of arguments passed to methods and functions
+7. report missing typehints
+8. report partially wrong union types - if you call a method that only exists on some types in a union type, level 7 starts to report that; other possibly incorrect situations
+9. report calling methods and accessing properties on nullable types
+10. be strict about the `mixed` type - the only allowed operation you can do with it is to pass it to another `mixed`
 
 This is why your strategy is important. If you've got a legacy project written by someone else and you fire the PHPStan task runner at level 9, you might be overwhelmed at the results it produces. Everything is broken! To refactor, I'd suggest the following:
 
 * Set yourself milestones for each level identified, and start small.
 * The long term investment to start analysis will pay off eventually (we'll get onto the pipelines shortly), but set the top level you are willing to go to when classifying "fixed the tech-debt" under your own "definition of done"
 * A good de-facto target for a legacy project is to get Rule Level 6 passing. It's at this point where your codebase can likely transition from a state of "danger" to "correct". This would make Rule Level 6 [your baseline](https://phpstan.org/user-guide/baseline)).
-* **This is super important**: make sure to assign time (sprints, broken down Jira tickets for the masochists) to _fixing_ what PHPStan is flagging at each rule level. Fixing tech-debt is _not easy_ in many cases, and you don't have any idea what kind of business-domain logic faults there could be in your application.
+* **This is super important**: make sure to assign time (sprints, broken down Jira tickets for the masochists) to *fixing* what PHPStan is flagging at each rule level. Fixing tech-debt is *not easy* in many cases, and you don't have any idea what kind of business-domain logic faults there could be in your application.
 * While setting the incremental targets for Rule Levels, make sure you set up your [pipeline](#pipeline) up before committing changes so that you don't introduce any new code smells while refactoring. Setting up your pipeline will need you to establish [your baseline](https://phpstan.org/user-guide/baseline), which we'll get to.
 
 ### Pipeline
@@ -94,13 +96,13 @@ To install PHPStan, run the following:
 
 ```bash
 $composer require --dev phpstan/phpstan
-````
+```
 
 We're adding `--dev` as we don't need it for production (in theory!).
 
 * Configuration: establishing the baseline
 
-This is a pretty neat feature of PHPStan. Your baseline establishes your "ground zero" of your app, so that any current errors that exist within the Rule Level of your choosing are ignored _until you decide to deal with them_, but at the same time _can enforce a rule level for any new changes committed_. A sensible approach as outlined in the strategy would be to set a baseline at Rule Level 6:
+This is a pretty neat feature of PHPStan. Your baseline establishes your "ground zero" of your app, so that any current errors that exist within the Rule Level of your choosing are ignored *until you decide to deal with them*, but at the same time *can enforce a rule level for any new changes committed*. A sensible approach as outlined in the strategy would be to set a baseline at Rule Level 6:
 
 * All new code committed to the project would need to be at Rule Level 6
 * You can then set out the tech-debt targets for the lower levels, as identified in your strategy goals.
@@ -113,7 +115,7 @@ vendor/bin/phpstan analyse --level 6 \  --configuration phpstan.neon \  src/ tes
 
 You'll now have your baseline configuration set in the file specified (`phpstan.neon`), which saves a detailed overview of errors per-file.
 
-Now we want PHPStan to prevent commits to your repository, _before_ they can be pushed up to your source. For this, we use Git hooks.
+Now we want PHPStan to prevent commits to your repository, *before* they can be pushed up to your source. For this, we use Git hooks.
 
 * Git hooks
 
@@ -159,13 +161,13 @@ exec 1>&2
 exec git diff-index --check --cached $against --
 ```
 
-Now you've enabled `pre-commit`, PHPStan will fire before each commit and analyze against the baseline _for any new files that have been changed in the git commit_. No more smelly committed code!
+Now you've enabled `pre-commit`, PHPStan will fire before each commit and analyze against the baseline *for any new files that have been changed in the git commit*. No more smelly committed code!
 
 You may want to adjust the command line trigger when you move up levels, so when it needs to change (or you want to enable other PHPStan features), change the `analysisResult=$(vendor/bin/phpstan analyse $gitDiffFiles)` line arguments.
 
 ##### Server-side
 
-The more defense you can put up for your code, the better. Running PHPStan server-side after a push to your code as part of your Continuous Integration is a _must have_.  For this example we're going to use Github Actions, but bear in mind you can set this up with the same level of functionality in [CircleCI](https://circleci.com/), [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/), [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/) or [Jenkins](https://www.jenkins.io/). Here is an example actions workflow set up on Github, building your code with an [Ubuntu](https://ubuntu.com/) container:
+The more defense you can put up for your code, the better. Running PHPStan server-side after a push to your code as part of your Continuous Integration is a *must have*.  For this example we're going to use Github Actions, but bear in mind you can set this up with the same level of functionality in [CircleCI](https://circleci.com/), [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/), [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/) or [Jenkins](https://www.jenkins.io/). Here is an example actions workflow set up on Github, building your code with an [Ubuntu](https://ubuntu.com/) container:
 
 ```yaml
 ---  
@@ -203,9 +205,9 @@ Your legacy project now has a strategy for scrubbing up your code, and pipelines
 
 ### Last, but not least: static analysis vs. tests
 
-I say this loudly, especially for the folks at the back: PHPStan and any other static analysis tool is not a replacement for your tests! The way I would frame it's usage is that a test suite and PHPStan _compliment each other_ in assessing the quality of your code.
+I say this loudly, especially for the folks at the back: PHPStan and any other static analysis tool is not a replacement for your tests! The way I would frame it's usage is that a test suite and PHPStan *compliment each other* in assessing the quality of your code.
 
-It's a misconception that it means you have less need for a test suite. The most important thing here is that **static analysis cannot test your domain logic**. While it might seem an obvious statement, it's worth noting that it can be confusing as PHPStan **can** eliminate the need for certain tests. An example of this would be an `instanceOf` test, that asserts that a class being created is the end result of a process. PHPStan can remove this requirement, as it provides the analysis needed to eliminate this potential bug, but it _does not_ know about your domain logic required beforehand - this is what you _do_ need to test.
+It's a misconception that it means you have less need for a test suite. The most important thing here is that **static analysis cannot test your domain logic**. While it might seem an obvious statement, it's worth noting that it can be confusing as PHPStan **can** eliminate the need for certain tests. An example of this would be an `instanceOf` test, that asserts that a class being created is the end result of a process. PHPStan can remove this requirement, as it provides the analysis needed to eliminate this potential bug, but it *does not* know about your domain logic required beforehand - this is what you *do* need to test.
 
 #### And remember, there are alternatives!
 
