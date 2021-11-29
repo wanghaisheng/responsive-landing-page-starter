@@ -83,27 +83,27 @@ For the next steps, we need to create the logic that will handle the back and fo
 We want to write an interface for sending an SMS to the end user. First, make sure you have the Nexmo Python library installed:
 
 ```
-pip install nexmo
+pip install vonage
 ```
 
 The function for sending an SMS looks like this:
 
 ```
-import nexmo
+import vonage
 import os
 import json
 
 
-def nexmo_sms(sms, recipient):
-   NEXMO_API_KEY = os.getenv("NEXMO_API_KEY")
-   NEXMO_API_SECRET = os.getenv("NEXMO_API_SECRET")
-   NEXMO_NUMBER = os.getenv("NEXMO_NUMBER")
+def vonage_sms(sms, recipient):
+   VONAGE_API_KEY = os.getenv("VONAGE_API_KEY")
+   VONAGE_API_SECRET = os.getenv("VONAGE_API_SECRET")
+   VONAGE_NUMBER = os.getenv("VONAGE_NUMBER")
 
-   client = nexmo.Client(key=NEXMO_API_KEY, secret=NEXMO_API_SECRET)
+   client = nexmo.Client(key=VONAGE_API_KEY, secret=VONAGE_API_SECRET)
 
    response_data = client.send_message(
        {
-           "from": NEXMO_NUMBER,
+           "from": VONAGE_NUMBER,
            "to": recipient,
            "text": sms,
        }
