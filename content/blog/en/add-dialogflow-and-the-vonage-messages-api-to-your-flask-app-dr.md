@@ -94,18 +94,19 @@ import os
 import json
 
 
-def vonage_sms(sms, recipient):
+def vonage_sms(message, recipient):
    VONAGE_API_KEY = os.getenv("VONAGE_API_KEY")
    VONAGE_API_SECRET = os.getenv("VONAGE_API_SECRET")
    VONAGE_NUMBER = os.getenv("VONAGE_NUMBER")
 
    client = vonage.Client(key=VONAGE_API_KEY, secret=VONAGE_API_SECRET)
+   sms = vonage.Sms(client)
 
-   response_data = client.send_message(
+   response_data = sms.send_message(
        {
            "from": VONAGE_NUMBER,
            "to": recipient,
-           "text": sms,
+           "text": message,
        }
    )
 
