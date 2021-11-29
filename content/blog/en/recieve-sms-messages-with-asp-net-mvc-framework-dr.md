@@ -22,7 +22,7 @@ My previous tutorial explained how to use the Vonage [C# Client Library](https:/
 * Visual Studio 2017 RC
 * Windows machine
 * A [starter project](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/SMSRecieveStarterProject") set up in the previous [blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)
-* *Optional*: [The Vonage CLI](https://developer.vonage.com/application/vonage-cli)
+* [The Vonage CLI](https://developer.vonage.com/application/vonage-cli)
 
 <sign-up number></sign-up>
 
