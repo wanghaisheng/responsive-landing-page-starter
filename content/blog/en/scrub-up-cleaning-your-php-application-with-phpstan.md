@@ -33,7 +33,7 @@ Thanks to the sheer quantity of DevOps tooling available to us in modern web dev
 
 It's common to try and pick a theme that's fun, or applicable to what you're writing about when it comes to tooling like this. But, for this article I'm going to present to you a scenario that I have personally come across time and time again in agency environments: 
 
-**"Help! Someone else built my PHP app and I need someone to rescue it and take over maintenance of it because X/Y/Z features need to be built and features A/B/C don't even work well"**
+**"Help! Someone else built my PHP app and I need someone to rescue it and take over maintenance of it because features X/Y/Z need to be built, but features A/B/C don't even work well!"**
 
 Taking over someone else's codebase/project is always a complete lottery. If you're taking it over because it needs new features and it's already a tech-debt riddled mess, you know you've got to sort that out before you touch anything else. Worse, a lot of these projects (in my experience) tend to arrive with absolutely no tests to self-document the code. Consider a classic example, which I have seen time and time again:
 
