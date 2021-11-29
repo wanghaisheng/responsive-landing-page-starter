@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-My previous tutorial explained how to use the Nexmo [C# Client Library](https://github.com/Nexmo/nexmo-dotnet) to [send your first SMS message](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) from an ASP.NET MVC web app. In this follow-up, I continue exploring the Vonage Platform by showing how to receive SMS messages on a Nexmo phone number using the C# Client Library.
+My previous tutorial explained how to use the Vonage [C# Client Library](https://github.com/Nexmo/nexmo-dotnet) to [send your first SMS message](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) from an ASP.NET MVC web app. In this follow-up, I continue exploring the Vonage Platform by showing how to receive SMS messages on a Nexmo phone number using the C# Client Library.
 
 ## Requirements
 
