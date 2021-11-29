@@ -1,5 +1,5 @@
 ---
-title: How to Redeem a Coupon Code
+title: How to Redeem a Vonage Coupon Code
 description: In this blog post, you will learn what a coupon code is and how to redeem it.
 thumbnail: /content/blog/how-to-redeem-a-coupon-code/coupon-code.png
 author: caroline-kerns
