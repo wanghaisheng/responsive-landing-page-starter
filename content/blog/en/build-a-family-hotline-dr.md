@@ -433,7 +433,7 @@ def create_conference_call(endpoints):
         nexmo_client.create_call(
             {
                 "to": [{"type": "phone", "number": endpoint.phone_number}],
-                "from": {"type": "phone", "number": NEXMO_NUMBER},
+                "from": {"type": "phone", "number": VONAGE_NUMBER},
                 "answer_url": [
                     url_for("conference_ncco", conference_id=conference_name)
                 ],
