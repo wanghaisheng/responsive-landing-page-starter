@@ -356,7 +356,7 @@ def family_selection():
                     talk(f"Connecting to {endpoint.name}"),
                     {
                         "action": "connect",
-                        "from": NEXMO_NUMBER,
+                        "from": VONAGE_NUMBER,
                         "endpoint": [{"type": "phone", "number": endpoint.phone_number}],
                     },
                 ]
