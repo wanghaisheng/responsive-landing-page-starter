@@ -57,7 +57,7 @@ Now let's install the dependencies we'll need for this project, and activate our
 
 ```bash
 # Install compatible versions of `nexmo`, `flask` and `attrs`
-pipenv install nexmo~=2.3 flask~=1.0.2 attrs~=18.2.0
+pipenv install vonage flask~=1.0.2 attrs~=18.2.0
 
 # Activate the virtualenv:
 pipenv shell
@@ -149,7 +149,7 @@ Now, use the CLI to create a Vonage application.
 
 ```bash
 vonage apps:create
-✔ Application Name … naval_junglefowl
+✔ Application Name … hotline
 ✔ Select App Capabilities › Voice
 ✔ Create voice webhooks? … yes
 ✔ Answer Webhook - URL …  https://ed330676.ngrok.io/incoming/
@@ -175,7 +175,8 @@ vonage numbers:buy [NUMBER] [COUNTRYCODE]
 Now link the number to your app:
 
 ```
-vonage apps:link APPLICATION_ID --number=YOUR_VONAGE_NUMBER
+vonage apps:link --number=VONAGE_NUMBER APP_ID
+
 ```
 
 **Okay**!
