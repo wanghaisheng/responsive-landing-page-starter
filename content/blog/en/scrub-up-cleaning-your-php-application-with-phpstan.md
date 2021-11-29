@@ -19,11 +19,11 @@ replacement_url: ""
 ---
 # Scrub up! Cleaning your PHP application with PHPStan
 
-In the time that I have been a PHP developer, the way we write and ship code has changed dramatically. In early [Symfony](https://symfony.com/) and [Zend Framework](https://framework.zend.com/) applications, the [PHP-FIG](https://www.php-fig.org/) didn't exist and coding standards were at the discretion of whoever was writing it. While my experience working in PHP applications has seen widespread adoption of [PSR standards](https://www.php-fig.org/psr/), rock-solid static analysis tooling has been somewhat patchy. That is, until now: let's go through some features to [celebrate the release of version 1.0 of PHPStan](https://phpstan.org/blog/phpstan-1-0-released).
+During my time as a PHP developer, the way we write and ship code has changed dramatically. In early [Symfony](https://symfony.com/) and [Zend Framework](https://framework.zend.com/) applications, the [PHP-FIG](https://www.php-fig.org/) didn't exist and coding standards were at the discretion of whoever was writing it. Over the years that we've seen widespread adoption of [PSR standards](https://www.php-fig.org/psr/), rock-solid static analysis tooling has been somewhat patchy. That is, until now, with the [release of version 1.0 of PHPStan](https://phpstan.org/blog/phpstan-1-0-released). Let's celebrate this occasion by going through some of its features!
 
 ### Compiled languages, your preemptive bug-squasher
 
-One of the great advantages of using a compiled language such as [Java](java.com) or [NET](https://dotnet.microsoft.com/) is that compile-time will completely fail if your code isn't [typesafe](https://en.wikipedia.org/wiki/Type_safety), enforcing standards (though this is easy for me to say as it's not 2 am, on my 10th coffee of the night). With [PHP](https://www.php.net/) being an interpreted language, we don't have the same luxury.
+One of the great advantages of using a compiled language such as [Java](java.com) or [](https://dotnet.microsoft.com/)[C#](https://docs.microsoft.com/en-us/dotnet/csharp/) is that compile-time will completely fail if your code isn't [typesafe](https://en.wikipedia.org/wiki/Type_safety), enforcing standards (though this is easy for me to say as it's not 2 am, on my 10th coffee of the night). With [PHP](https://www.php.net/) being an interpreted language, we don't have the same luxury.
 
 ### Interpreted as compiled: CI + tooling
 
