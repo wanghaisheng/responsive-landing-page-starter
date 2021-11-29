@@ -73,7 +73,7 @@ PHPStan is structured to run with given rule levels, numbered from 0-9:
 This is why your strategy is important. If you've got a legacy project written by someone else and you fire the PHPStan task runner at level 9, you might be overwhelmed by the results it produces. Everything is broken! To refactor, I'd suggest the following:
 
 * Set yourself milestones for each level identified, and start small.
-* The long term investment to start analysis will pay off eventually (we'll get onto the pipelines shortly), but set the top level you are willing to go to when classifying "fixed the tech-debt" under your own "definition of done"
+* The long term investment will pay off eventually (we'll get onto the pipelines shortly), but set the top level you are willing to go to when classifying "fixed the tech debt" under your own "definition of done"
 * A good de-facto target for a legacy project is to get Rule Level 6 passing. It's at this point where your codebase can likely transition from a state of "danger" to "correct". This would make Rule Level 6 [your baseline](https://phpstan.org/user-guide/baseline)).
 * **This is super important**: make sure to assign time (sprints, broken down Jira tickets for the masochists) to *fix* what PHPStan is flagging at each rule level. Fixing tech debt is *not easy* in many cases, and you don't have any idea what kind of business-domain logic faults there could be in your application.
 * While setting the incremental targets for Rule Levels, make sure you set up your [pipeline](#pipeline) before committing changes so that you don't introduce any new code smells while refactoring. Setting up your pipeline will need you to establish [your baseline](https://phpstan.org/user-guide/baseline), which we'll get to.
@@ -84,13 +84,13 @@ In the world of DevOps, there are a somewhat overwhelming amount of tooling opti
 
 #### Barriers of Defence: local vs. server-side
 
-I like to introduce tooling to eliminate any possibility of single-points-of-failure, and as a result of that cynicism highly recommend you run your static analysis on both local developers' machines *as well as* server-side CI checks in your repository.
+I like to introduce tooling to eliminate any possibility of single-points-of-failure, and as a result of that cynicism highly recommend that you run your static analysis on both local developers' machines *as well as* server-side CI checks in your repository.
 
 ##### Local
 
 * Composer + PHPStan
 
-Firstly, you'll want to install PHPStan on your project. We're going to use [composer](https://getcomposer.org/) for this, working under the assumption that hopefully, your legacy code does use package management. If not, you can [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) and use `composer init` to create a new project.
+Firstly, you'll want to install PHPStan inside your project. We're going to use [composer](https://getcomposer.org/) for this, working under the assumption that hopefully, your legacy code does use package management. If not, you can [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) and use `composer init` to create a new project.
 
 To install PHPStan, run the following:
 
@@ -115,7 +115,7 @@ vendor/bin/phpstan analyse --level 6 \  --configuration phpstan.neon \  src/ tes
 
 You'll now have your baseline configuration set in the file specified (`phpstan.neon`), which saves a detailed overview of errors per file.
 
-Now we want PHPStan to prevent commits to your repository *before* they can be pushed up to your source. For this, we use Git hooks.
+Now you will want PHPStan to prevent commits to your repository *before* they can be pushed up to your source. For this, we use Git hooks.
 
 * Git hooks
 
@@ -201,13 +201,13 @@ jobs:
 
 The command under "Run PHPStan" can be configurable to your requirements in the same way you can configure the command when running PHPStan locally. I've written this workflow to run PHPStan at a default level on all files within the project (this workflow hasn't fired `composer` yet, so will not have the unnecessary and inefficient step of running it on your `vendor` folder) so here I would recommend having a configuration to pull in that sets your entire project's Rule Level.
 
-Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project while giving insights as to where the likely areas that need refactoring to take out tech debt. \
+Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project while giving insights as to where the likely areas that need refactoring to take out tech debt.
 
 ### Last, but not least: static analysis vs. tests
 
 I say this loudly, especially for the folks at the back: PHPStan and any other static analysis tool is not a replacement for your tests! The way I would frame its usage is that a test suite and PHPStan *complement each other* in assessing the quality of your code.
 
-It's a misconception that it means you have less need for a test suite. The most important thing here is that **static analysis cannot test your domain logic**. While it might seem an obvious statement, it's worth noting that it can be confusing as PHPStan **can** eliminate the need for certain tests. An example of this would be an `instanceOf` test, that asserts that a class being created is the end result of a process. PHPStan can remove this requirement, as it provides the analysis needed to eliminate this potential bug, but it *does not* know about your domain logic required beforehand - this is what you *do* need to test.
+It's a misconception to believe that you have little or no need for a test suite. The most important thing here is that **static analysis cannot test your domain logic**. While it might seem an obvious statement, it's worth noting that it can be confusing as PHPStan **can** eliminate the need for certain tests. An example of this would be an `instanceOf` test, that asserts that a class being created is the end result of a process. PHPStan can remove this requirement, as it provides the analysis needed to eliminate this potential bug, but it *does not* know about your domain logic required beforehand - this is what you *do* need to test.
 
 #### And remember, there are alternatives!
 
