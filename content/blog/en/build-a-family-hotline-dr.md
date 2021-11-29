@@ -386,6 +386,8 @@ A conference call is created with a `conversation` action, and it ends (by defau
 We're going to need a Vonage `Client` object to create outbound calls to the parents, so it's lucky we installed the Vonage Python library at the start of this tutorial, right? Put the following lines near the top of your file. If you *want* to, you can paste your `application_id` and `private_key` values directly into the file, but I think it's better to load them from environment variables instead. It's too easy to commit them to a public repository, and anyone who has them can spend *your* Vonage balance!
 
 ```python
+import vonage
+
 vonage_client = vonage.Client(
     application_id=os.getenv('VONAGE_APPLICATION_ID'),
     private_key=os.getenv('VONAGE_PRIVATE_KEY')
