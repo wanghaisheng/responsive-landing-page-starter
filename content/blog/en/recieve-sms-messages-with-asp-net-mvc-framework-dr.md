@@ -78,11 +78,7 @@ In the Solution Explorer, expand the project and click **Properties**. Click the
 
 ## Set the SMS Callback Webhook URL for Your Nexmo Number
 
-Next, head over to the [Vonage Dashboard](https://dashboard.nexmo.com/) and navigate to the **Settings** page. Towards the bottom, you will see **Callback for Inbound SMS** under the **API Settings**. Paste the ngrok URL inside the textbox and add **/SMS/Receive** to the end of it. This will route the message to Receive action in the SMS controller.
-
-![Ngrok API Settings](/content/blog/how-to-receive-sms-messages-with-asp-net-mvc-framework/ngrok-api-settings.png)
-
-If you prefer to use a command-line interface, you can also achieve this using the Vonage CLI.
+Now use the Vonage CLI to create a webhook to route the message to Receive action in the SMS controller.
 
 Install the Vonage CLI globally with this command:
 
@@ -107,8 +103,6 @@ CD my_project
 
 Now, use the CLI to create a Vonage application. 
 
-Now create your Vonage application
-
 ```sh
 vonage apps:create
 ✔ Application Name … interior_hedgehog
@@ -117,7 +111,7 @@ vonage apps:create
 ✔ Inbound Message Webhook - URL … https://www.example.ngrok.io/SMS/Recieve
 ✔ Inbound Message Webhook - Method › GET
 ✔ Status Webhook - URL … https://example.com/webhook_name
-✔ Status Webhook - Method › GET
+✔ Status Webhook - Method › POST
 ✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 ```
 
