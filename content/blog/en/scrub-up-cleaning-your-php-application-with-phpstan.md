@@ -2,6 +2,7 @@
 title: Scrub up! Cleaning your PHP application with PHPStan
 description: What can PHPStan do for your legacy code; introducing compiler-like
   static analysis into your pipelines
+thumbnail: /content/blog/scrub-up-cleaning-your-php-application-with-phpstan/scrub-up_phpstan.png
 author: james-seconde
 published: false
 published_at: 2021-11-29T09:21:12.906Z
