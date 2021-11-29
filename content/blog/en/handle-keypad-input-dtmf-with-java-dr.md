@@ -17,7 +17,7 @@ canonical: ""
 ---
 ## Introduction
 
-In a previous tutorial, we showed you how to create an application that can [Receive a Phone Call with Java](https://www.nexmo.com/blog/2018/08/09/receive-a-phone-call-with-java-dr/). In this tutorial, you will create an application that can receive a phone call and respond to user input using the [Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview).
+In a previous tutorial, we showed you how to create an application that can [Receive a Phone Call with Java](https://www.nexmo.com/blog/2018/08/09/receive-a-phone-call-with-java-dr/). In this tutorial, you will create an application that can receive a phone call and respond to user input using the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview).
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ This tutorial will walk you through the following steps:
 
 1. Using [Gradle](https://gradle.org) to setup a new Java project.
 2. Using the [Spark](http://sparkjava.com) framework for controlling the call.
-3. Purchasing a number and configuring your Nexmo account to use that number with your application.
+3. Purchasing a number and configuring your Vonage account to use that number with your application.
 
 ### Using Gradle to Setup a New Java Project
 
@@ -49,7 +49,7 @@ The `gradle init --type java-application` command will create all of the folders
 
 ### Using the Spark Framework for Controlling the Call
 
-You will use the [Spark](http://sparkjava.com) framework to intercept the HTTP call that Nexmo uses when your number receives a call, and for the request that Nexmo sends when input is received.
+You will use the [Spark](http://sparkjava.com) framework to intercept the HTTP call that Vonage uses when your number receives a call, and for the request that Vonage sends when input is received.
 
 #### Adding the Dependencies
 
@@ -131,13 +131,13 @@ This code will setup a route on <http://localhost:3000/webhooks/answer> which wi
 ]
 ```
 
-The talk action will instruct Nexmo to speak the `text` property back to the caller. The input action will instruct Nexmo to capture a single digit that the caller inputs and to send a POST request to `eventUrl` with this information.
+The talk action will instruct Vonage to speak the `text` property back to the caller. The input action will instruct Vonage to capture a single digit that the caller inputs and to send a POST request to `eventUrl` with this information.
 
-A route will also be setup on <http://localhost:3000/webhooks/events> which Nexmo will use to communicate call status changes.
+A route will also be setup on <http://localhost:3000/webhooks/events> which Vonage will use to communicate call status changes.
 
 #### Setup the DTMF Route
 
-When the caller presses a digit on their device, a Dual-Tone Multi-Frequency (DTMF) signal is created. Nexmo uses this DTMF signal to determine which set of keys were pressed. Once this happens, Nexmo sends a POST request to the `eventUrl` defined in the `InputNcco`.
+When the caller presses a digit on their device, a Dual-Tone Multi-Frequency (DTMF) signal is created. Vonage uses this DTMF signal to determine which set of keys were pressed. Once this happens, Vonage sends a POST request to the `eventUrl` defined in the `InputNcco`.
 
 Here is an example of the POST request which contains a JSON body:
 
@@ -193,17 +193,23 @@ where 6 is the `dtmf` property of the json sent to `/webhooks/dtmf`.
 
 ### Purchasing a Number
 
-You will need a Nexmo number in order to receive phone calls. If you do not have a number you can use the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) to purchase one:
+You will need a Vonage number in order to receive phone calls. If you do not have a number you can use the [Vonage CLI](https://github.com/vonage/vonage-cli) to find and then purchase one. Firstly pick an available number to buy:
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US
+```
+
+And then buy one of the numbers available:
+
+```bash
+vonage numbers:buy <number> US
 ```
 
 Take note of the number that is assigned to you on purchase. You will need this number to link your application and for testing.
 
 ### Exposing Your Application
 
-In order to send an HTTP request to your application, Nexmo needs to know the URL that your application is running on.
+In order to send an HTTP request to your application, Vonage needs to know the URL that your application is running on.
 
 Instead of configuring your local network or hosting your application on an external service, you can use [ngrok](https://ngrok.com/) to safely expose your application to the internet.
 
@@ -217,29 +223,29 @@ Take note of the forwarding address as you will need it when you configure your 
 
 ![Screenshot of ngrok running in terminal with forwarding address http://99cad2de.ngrok.io](https://www.nexmo.com/wp-content/uploads/2018/08/ngrok.png "screenshot of ngrok")
 
-### Configure Your Nexmo Account
+### Configure Your Vonage Account
 
-If you do not have an application you can use the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) to create one using your [ngrok](https://ngrok.com/) forwarding address:
+If you do not have an application you can use the [Vonage CLI](https://github.com/vonage/vonage-cli) to create one using your [ngrok](https://ngrok.com/) forwarding address:
 
 ```bash
-nexmo app:create "Receive Call Demo" http://your-ngrok-forwarding-address/webhooks/answer http://your-ngrok-forwarding-address/webhooks/events --keyfile private.key
+vonage apps:create "Receive Call Demo" http://your-ngrok-forwarding-address/webhooks/answer http://your-ngrok-forwarding-address/webhooks/events --keyfile private.key
 ```
 
 After running this command, you will be shown an an application id. For example: `notreal-1111-2222-3333-appid`. You will need this application id to link your phone number to the application.
 
-You can use the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) to link your phone number and application:
+You can use the [Vonage CLI](https://github.com/vonage/vonage-cli) to link your phone number and application:
 
 ```bash
-nexmo link:app your-nexmo-phone-number your-application-id
+vonage apps:link your-application-id --number=your-vonage-phone-number 
 ```
 
-This command instructs Nexmo to create a new application on your account. The application will send a request to the first URL when it receives a phone call. The application will send requests to the second URL when the call status changes.
+This command instructs Vonage to create a new application on your account. The application will send a request to the first URL when it receives a phone call. The application will send requests to the second URL when the call status changes.
 
 ### Test Your Application
 
 Start your application with the `gradle run` command inside of your `handle-user-input` directory.
 
-Make a call to your Nexmo number and test out your application. You will hear the message, "Hello please press any key to continue." Press a digit on your phone's keypad and you will then hear the message, "You pressed 6, Goodbye" where 6 is the number that you pressed.
+Make a call to your Vonage number and test out your application. You will hear the message, "Hello please press any key to continue." Press a digit on your phone's keypad and you will then hear the message, "You pressed 6, Goodbye" where 6 is the number that you pressed.
 
 ## Conclusion
 
