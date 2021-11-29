@@ -76,7 +76,7 @@ In the Solution Explorer, expand the project and click **Properties**. Click the
 
 ![Project settings](/content/blog/how-to-receive-sms-messages-with-asp-net-mvc-framework/projectsettings.png)
 
-## Set the SMS Callback Webhook URL for Your Nexmo Number
+## Set the SMS Callback Webhook URL for Your Vonage Number
 
 Now use the Vonage CLI to create a Vonage app and a webhook for it.
 
