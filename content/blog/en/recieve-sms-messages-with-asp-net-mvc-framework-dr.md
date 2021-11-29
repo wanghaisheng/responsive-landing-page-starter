@@ -115,6 +115,19 @@ vonage apps:create
 ✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 ```
 
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
+
+```bash
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+```
+
+Now link the number to your app:
+
+```
+vonage apps:link --number=VONAGE_NUMBER APP_ID
+```
+
 ## Receive an SMS with ASP.NET
 
 You are ready to go! With your ASP.NET web app running, open up the output window in Visual Studio. Send an SMS to your Vonage phone number and you will see the incoming texts coming through! Your ASP.NET web app is able to receive SMS messages that are sent to your Vonage phone number via an inbound webhook!
