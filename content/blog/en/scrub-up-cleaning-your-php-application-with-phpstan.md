@@ -45,7 +45,7 @@ foreach ($someData as $myEntity) {
 }
 ```
 
-You didn't write that entity class or the repository method. They've got no typehints, because this was written originally in PHP5.3, or the developer didn't use any. It's fine if your ORM returns an array of the same entities, but one bug, one null result in the return value of `findAllBySomething()` and `doTheThing()` will throw a fatal error.
+You didn't write that entity class or the repository method. They've got no typehints because this was written originally in PHP5.3, or the developer didn't use any. It's fine if your ORM returns an array of the same entities, but one bug, one null result in the return value of `findAllBySomething()` and `doTheThing()` will throw a fatal error.
 
 It's time to set [PHPStan](https://github.com/phpstan/phpstan) on it.
 
@@ -53,7 +53,7 @@ It's time to set [PHPStan](https://github.com/phpstan/phpstan) on it.
 
 ### Know your strategy
 
-While it's easy to say "use PHPStan", if you have a legacy or tech-debt-heavy application you'll want a strategy rather than just throwing things out there to see what happens. Firstly, you'll want to acquaint yourself with the Rule Levels.
+While it's easy to say "use PHPStan" if you have a legacy or tech-debt-heavy application you'll want a strategy rather than just throwing things out there to see what happens. Firstly, you'll want to acquaint yourself with the Rule Levels.
 
 #### Rule Levels
 
@@ -70,7 +70,7 @@ PHPStan is structured to run with given rule levels, numbered from 0-9:
 9. report calling methods and accessing properties on nullable types
 10. be strict about the `mixed` type - the only allowed operation you can do with it is to pass it to another `mixed`
 
-This is why your strategy is important. If you've got a legacy project written by someone else and you fire the PHPStan task runner at level 9, you might be overwhelmed at the results it produces. Everything is broken! To refactor, I'd suggest the following:
+This is why your strategy is important. If you've got a legacy project written by someone else and you fire the PHPStan task runner at level 9, you might be overwhelmed by the results it produces. Everything is broken! To refactor, I'd suggest the following:
 
 * Set yourself milestones for each level identified, and start small.
 * The long term investment to start analysis will pay off eventually (we'll get onto the pipelines shortly), but set the top level you are willing to go to when classifying "fixed the tech-debt" under your own "definition of done"
@@ -80,7 +80,7 @@ This is why your strategy is important. If you've got a legacy project written b
 
 ### Pipeline
 
-In the world of DevOps, there are a somewhat overwhelming amount of tooling options available to solve your problems. For this instance, I'm offering just one approach, but it's one that is less complex than other options available. Once you have established your strategy, it's time to set up your pipeline so that we don't commit any new code that hasn't been through PHPStan first.
+In the world of DevOps, there are a somewhat overwhelming amount of tooling options available to solve your problems. For this instance, I'm offering just one approach, but it's less complex than other options available. Once you have established your strategy, it's time to set up your pipeline so that we don't commit any new code that hasn't been through PHPStan first.
 
 #### Barriers of Defence: local vs. server-side
 
@@ -90,7 +90,7 @@ I like to introduce tooling to eliminate any possibility of single-points-of-fai
 
 * Composer + PHPStan
 
-Firstly, you'll want to install PHPStan on your project. We're going to use [composer](https://getcomposer.org/) for this, working under the assumption that hopefully, your legacy code does actually use package management. If not, you can [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) and use `composer init` to create a new project.
+Firstly, you'll want to install PHPStan on your project. We're going to use [composer](https://getcomposer.org/) for this, working under the assumption that hopefully, your legacy code does use package management. If not, you can [install composer](https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos) and use `composer init` to create a new project.
 
 To install PHPStan, run the following:
 
@@ -167,7 +167,7 @@ You may want to adjust the command line trigger when you move up levels, so when
 
 ##### Server-side
 
-The more defense you can put up for your code, the better. Running PHPStan server-side after a push to your code as part of your Continuous Integration is a *must-have*.  For this example, we're going to use Github Actions, but bear in mind you can set this up with the same level of functionality in [CircleCI](https://circleci.com/), [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/), [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/) or [Jenkins](https://www.jenkins.io/). Here is an example actions workflow set up on Github, building your code with an [Ubuntu](https://ubuntu.com/) container:
+The more defense you can put up for your code, the better. Running PHPStan server-side after a push to your code as part of your Continuous Integration is a *must-have*.  For this example, we're going to use Github Actions, but bear in mind you can set this up with the same level of functionality in [CircleCI](https://circleci.com/), [Bitbucket Pipelines](https://support.atlassian.com/bitbucket-cloud/docs/get-started-with-bitbucket-pipelines/), [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/), or [Jenkins](https://www.jenkins.io/). Here is an example actions workflow set up on Github, building your code with an [Ubuntu](https://ubuntu.com/) container:
 
 ```yaml
 ---  
@@ -201,17 +201,17 @@ jobs:
 
 The command under "Run PHPStan" can be configurable to your requirements in the same way you can configure the command when running PHPStan locally. I've written this workflow to run PHPStan at a default level on all files within the project (this workflow hasn't fired `composer` yet, so will not have the unnecessary and inefficient step of running it on your `vendor` folder) so here I would recommend having a configuration to pull in that sets your entire project's Rule Level.
 
-Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project while giving insights as to where the likely areas as that need refactoring to take out tech debt. \
+Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project while giving insights as to where the likely areas that need refactoring to take out tech debt. \
 
 ### Last, but not least: static analysis vs. tests
 
-I say this loudly, especially for the folks at the back: PHPStan and any other static analysis tool is not a replacement for your tests! The way I would frame it's usage is that a test suite and PHPStan *compliment each other* in assessing the quality of your code.
+I say this loudly, especially for the folks at the back: PHPStan and any other static analysis tool is not a replacement for your tests! The way I would frame its usage is that a test suite and PHPStan *complement each other* in assessing the quality of your code.
 
 It's a misconception that it means you have less need for a test suite. The most important thing here is that **static analysis cannot test your domain logic**. While it might seem an obvious statement, it's worth noting that it can be confusing as PHPStan **can** eliminate the need for certain tests. An example of this would be an `instanceOf` test, that asserts that a class being created is the end result of a process. PHPStan can remove this requirement, as it provides the analysis needed to eliminate this potential bug, but it *does not* know about your domain logic required beforehand - this is what you *do* need to test.
 
 #### And remember, there are alternatives!
 
-Did you give it a go? Not too keen on it? Everyone has their own preference, and while I'll sing my praises to [Ondřej](#Thanks) for his work on PHPStan, it's worth noting that there are several other tools that either perform the same job, or can be used in conjunction with PHPStan:
+Did you give it a go? Not too keen on it? Everyone has their preference, and while I'll sing my praises to [Ondřej](#Thanks) for his work on PHPStan, it's worth noting that there are several other tools that either perform the same job or can be used in conjunction with PHPStan:
 
 * [Psalm PHP (static analyser like PSPStan)](https://psalm.dev/)
 * [GrumPHP (task runner to fire a suite of code quality tools)](https://github.com/phpro/grumphp)
