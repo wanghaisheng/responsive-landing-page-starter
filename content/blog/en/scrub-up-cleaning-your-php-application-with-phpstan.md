@@ -201,7 +201,7 @@ jobs:
 
 The command under "Run PHPStan" can be configurable to your requirements in the same way you can configure the command when running PHPStan locally. I've written this workflow to run PHPStan at a default level on all files within the project (this workflow hasn't fired `composer` yet, so will not have the unnecessary and inefficient step of running it on your `vendor` folder) so here I would recommend having a configuration to pull in that sets your entire project's Rule Level.
 
-Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project, while giving insights as to where the likely areas as that need refactoring to take out tech-debt.
+Your legacy project now has a strategy for scrubbing up your code, and pipelines to stop new bugs appearing in commits while performing analysis against the baseline for all the existing code. It's this kind of setup that can give you far more confidence in committing to the project, while giving insights as to where the likely areas as that need refactoring to take out tech-debt. \
 
 ### Last, but not least: static analysis vs. tests
 
