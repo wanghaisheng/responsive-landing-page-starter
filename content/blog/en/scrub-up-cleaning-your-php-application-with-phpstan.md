@@ -27,7 +27,7 @@ One of the great advantages of using a compiled language such as [Java](java.com
 
 ### Interpreted as compiled: CI + tooling
 
-Thanks to the sheer quantity of DevOps tooling available to us in modern web development and static analysis, the thing is *we do have the same tooling available but through different means*. As that is the case I cannot advocate **how much** I recommend you have something similar to the environment I'll be laying out. And why would you want this tooling? Let us take, for example:
+Thanks to the sheer quantity of DevOps tooling available to us in modern web development and static analysis, the thing is *we do have the same tooling available but through different means*. As that is the case I cannot advocate **how much** I recommend you have something similar to the environment I'll be laying out. So why would you want this tooling? Let's look at an example.
 
 ### The scenario
 
