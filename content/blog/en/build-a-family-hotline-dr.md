@@ -287,7 +287,7 @@ ENDPOINTS = [
     Endpoint(name="Pete Brockman", phone_number="447700900123"),
     Endpoint(name="Sue Brockman", phone_number="447700900456"),
 ]
-NEXMO_NUMBER = "447700900847"
+VONAGE_NUMBER = "447700900847"
 ```
 
 In the code above, I'm using the amazing [attrs](https://www.attrs.org/en/stable/) library to define a simple class, `Endpoint`, for holding a person's name and phone number. I'm then creating a list of `Endpoint`s for the people we may want to forward calls to.
