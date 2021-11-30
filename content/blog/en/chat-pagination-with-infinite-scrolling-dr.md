@@ -16,7 +16,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Following on from the previous post [Create a Simple Messaging UI with Bootstrap](https://www.nexmo.com/blog/2019/12/18/create-a-simple-messaging-ui-with-bootstrap-dr), this article will show you how to load older messages from the conversation using the Vonage Conversation Client SDK, which is now delivered paginated from the Conversation API.
+Following on from the previous post [Create a Simple Messaging UI with Bootstrap](https://learn.vonage.com/blog/2019/12/18/create-a-simple-messaging-ui-with-bootstrap-dr/), this article will show you how to load older messages from the conversation using the Vonage Conversation Client SDK, which is now delivered paginated from the Conversation API.
 
 ## Prerequisites
 
@@ -159,8 +159,7 @@ Lastly, generate your new user a token. This token represents the user when acce
 In practice, you'll configure the application with this token. In production, these should be guarded, kept secret, and very carefully exposed to the client application, if at all.
 
 ```bash
-nexmo jwt:generate ./private.key sub=<USER_NAME> exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{}}}' application_id=<APPLICATION_ID>
-# eyJhbGciOi...XVCJ9.eyJpYXQiOjE1NzM5M...In0.qn7J6...efWBpemaCDC7HtqA
+vonage jwt --key_file=./vonage_rtc_chat.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}' --subject=USER_NAME --app_id=APP_ID
 ```
 
 #### Configure the Application
@@ -492,6 +491,6 @@ With any luck, when you try it out, you'll discover messages will seemingly load
 
 ## The End
 
-This article followed on from the previous post [Create a Simple Messaging UI with Bootstrap](https://www.nexmo.com/blog/2019/12/18/create-a-simple-messaging-ui-with-bootstrap-dr), showing you how to load older messages as you scroll through the message history.
+This article followed on from the previous post [Create a Simple Messaging UI with Bootstrap](https://learn.vonage.com/blog/2019/12/18/create-a-simple-messaging-ui-with-bootstrap-dr/), showing you how to load older messages as you scroll through the message history.
 
 Don't forget, if you have any questions, feedback, advice, or ideas you'd like to share with the broader community, then please feel free to jump on our [Community Slack](https://developer.nexmo.com/community/slack) workspace or pop a reply below 👇.
