@@ -41,20 +41,19 @@ In this tutorial, we will use this as our main way of preparing our application.
 
 The Nexmo CLI is a Node module and therefore does require NPM to have been installed.
 
-<pre class="lang:default highlight:0 decode:true ">$ npm install nexmo-cli -g
-$ nexmo setup YOUR-API-KEY YOUR-API-SECRET
-Credentials written to /Users/your_username/.nexmorc
+<pre class="lang:default highlight:0 decode:true ">
+$ npm install vonage-cli -g
+$ vonage config:set --apiKey=YOUR-API-KEY --apiSecret=YOUR-API-SECRET
 </pre>
 
 With this in place, we can run the following commands to find and purchase a Voice-enabled number:
 
 ```shell
-$ nexmo number:search US --voice
+$ vonage numbers:search US --features=VOICE
 14155550102
 14155550103
 14155550104
 $ nexmo number:buy 14155550102 --confirm
-Number purchased: 14155550102
 ```
 
 Alternatively, head over to the [Numbers page](https://dashboard.nexmo.com/buy-numbers) on the Nexmo Dashboard and purchase a number via the web interface.
