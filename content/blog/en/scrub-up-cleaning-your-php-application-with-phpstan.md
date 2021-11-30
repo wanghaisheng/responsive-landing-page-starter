@@ -209,12 +209,12 @@ It's a misconception to believe that you have little or no need for a test suite
 
 #### And remember, there are alternatives!
 
-Did you give it a go? Not too keen on it? Everyone has their preference, and while I'll sing my praises to [Ondřej](#Thanks) for his work on PHPStan, it's worth noting that there are several other tools that either perform the same job or can be used in conjunction with PHPStan:
+Did you give it a go? Not too keen on it? Everyone has their preference, and while I'll sing my praises to [Ondřej](https://ondrej.mirtes.cz/) for his work on PHPStan, it's worth noting that there are several other tools that either perform the same job or can be used in conjunction with PHPStan:
 
-* [Psalm PHP (static analyser like PSPStan)](https://psalm.dev/)
+* [Psalm PHP (static analyser like PHPStan)](https://psalm.dev/)
 * [GrumPHP (task runner to fire a suite of code quality tools)](https://github.com/phpro/grumphp)
 * [PHPCS (a code linter)](https://github.com/squizlabs/PHP_CodeSniffer)
 
 #### Thanks
 
-Special thanks got to [Ondřej Mirtes](https://ondrej.mirtes.cz/) for both advice and all his hard work releasing this awesome tool.
+Special thanks got to Ondřej Mirtes for both advice and all his hard work releasing this awesome tool.
