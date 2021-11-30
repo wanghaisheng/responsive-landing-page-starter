@@ -246,32 +246,35 @@ There is also a fallback for all non-GET requests to return an empty `200 OK` re
 
 You've probably noticed I've used `process.env.NEXMO_NUMBER` as caller id and that means Nuxt.js is going to look for it in the `.env` file. Before we can add it there, we'll need to buy a VOICE enabled phone number in the [Vonage Dashboard](https://dashboard.nexmo.com/buy-numbers).
 
-We could also buy a number through the Nexmo CLI, and I'm going to do just that.
+We could also buy a number through the Vonage CLI, and I'm going to do just that.
 
-We'll use the `number:search` command to look for an available number before we buy it. The command accepts a two-letter country code as input (I've used `US` for United States numbers), and we can specify a few flags to narrow down the returned list of available phone numbers. I'm using `--voice` to flag VOICE enabled numbers, `--size=5` to limit the size of the returned list, and `--verbose` to return a nicely formatted table with additional information about the available phone numbers.
+We'll use the `numbers:search` command to look for an available number before we buy it. The command accepts a two-letter country code as input (I've used `US` for United States numbers), and we can specify a flag to narrow down the returned list of available phone numbers. I'm using `--features=VOICE` to flag VOICE enabled numbers.
 
 ```shell
-$ nexmo number:search US --voice --size=5 --verbose
+$ vonage numbers:search US --features=VOICE
 ```
 
 The response I got looked a bit like this:
 
 ```shell
-Item 1-5 of 152097
-
-msisdn      | country | cost | type       | features
------------------------------------------------------
-12013456151 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12013505282 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12013505971 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12014163584 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12014264360 | US      | 0.90 | mobile-lvn | VOICE,SMS
+Country Number      Type       Cost Features  
+ ─────── ─────────── ────────── ──── ───────── 
+ US      12013456151 mobile-lvn 0.90 VOICE,SMS 
+ US      12013660246 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711374 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711389 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711396 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711449 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711729 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711936 mobile-lvn 0.90 VOICE,SMS 
+ US      12013713723 mobile-lvn 0.90 VOICE,SMS 
+ US      12013743788 mobile-lvn 0.90 VOICE,SMS 
 ```
 
 I've picked the first number in the response, so let's go ahead and buy that number on the Vonage platform.
 
 ```shell
-$ nexmo number:buy 12013456151 --confirm
+$ vonage numbers:buy 12013456151 US
 ```
 
 Now that you own that phone number let's go ahead and add it to the `.env` file.
@@ -280,7 +283,7 @@ Now that you own that phone number let's go ahead and add it to the `.env` file.
 NEXMO_API_KEY=aabbcc0
 NEXMO_API_SECRET=s3cRet$tuff
 NEXMO_APPLICATION_ID=aaaaaaaa-bbbb-cccc-dddd-abcd12345678
-NEXMO_PRIVATE_KEY=./private.key
+NEXMO_PRIVATE_KEY=./vonage-nuxt-call.key
 FROM_NUMBER=12013456151
 ```
 
@@ -328,13 +331,13 @@ I'm checking to see if the incoming request is a `GET` request, and then stringi
 
 We'll need to associate the phone number we bought earlier to the application we created so that when the number gets an incoming phone call, it uses the Application Answer URL to handle the incoming call.
 
-We can use the Nexmo CLI to link the Vonage phone number you bought earlier with the Application ID:
+We can use the Vonage CLI to link the Vonage phone number you bought earlier with the Application ID:
 
 ```shell
-$ nexmo link:app 12013456151 aaaaaaaa-bbbb-cccc-dddd-abcd12345678
+$ vonage apps:link aaaaaaaa-bbbb-cccc-dddd-abcd12345678 --number=12013456151
 ```
 
-You can make a phone call from your phone to your Vonage phone number, you'll hear the message `Thank you for calling my Vonage number.`, and you should see call events logged in the terminal where you Nuxt.js application is running.
+You can make a phone call from your phone to your Vonage phone number, you'll hear the message `Thank you for calling my Vonage number.`, and you should see call events logged in the terminal where your Nuxt.js application is running.
 
 ![log events received](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/log-events-receive.png "log events received")
 
@@ -394,7 +397,7 @@ I'm using a Mac Terminal template from [tailwindcomponents.com](https://tailwind
         <p v-for="counter in counters" :key="counter.id" class="pb-1">
           <span class="text-red-600">@lakatos88</span>
           <span class="text-yellow-600 mx-1">></span>
-          <span class="text-blue-600">~/nexmo/nexmo-nuxt-call</span>
+          <span class="text-blue-600">~/projects/vonage-nuxt-call</span>
           <span class="text-red-600 mx-1">$</span>
           <span v-if="!counter.message" class="blink" contenteditable="true" @click.once="stopBlinking" @keydown.enter.once="runCommand">_</span>
           <span v-if="counter.message">{{ counter.message }}</span>
@@ -436,7 +439,7 @@ export default {
     async runCommand (event) {
       const splitCommand = event.target.textContent.trim().split(' ')
       event.target.contentEditable = false
-      if (splitCommand.length > 3 && splitCommand[0] === 'nexmo' && splitCommand[1] === 'call') {
+      if (splitCommand.length > 3 && splitCommand[0] === 'vonage' && splitCommand[1] === 'call') {
         const call = await this.$axios.$get(`/api/make?text=${splitCommand.slice(3).join(' ')}&number=${splitCommand[2]}`)
         this.counters.push({ id: this.counters.length, message: call })
       } else {
@@ -449,9 +452,9 @@ export default {
 </script>
 ```
 
-The `runCommand` method is async, and it stops the HTML element from being `contentEditable`. It also splits the command from the terminal into four parts, the command name, the argument, the phone number, and the text message. The method checks to see if there are more than three parts in the command and that the first one is `nexmo`, and the second one is `call`. If that's the case, it makes an HTTP `GET` request using `axios` to the `/api/make` endpoint we created earlier, passing along the text and number from the command. It then uses the message it receives back to display on the UI.
+The `runCommand` method is async, and it stops the HTML element from being `contentEditable`. It also splits the command from the terminal into four parts, the command name, the argument, the phone number, and the text message. The method checks to see if there are more than three parts in the command and that the first one is `vonage`, and the second one is `call`. If that's the case, it makes an HTTP `GET` request using `axios` to the `/api/make` endpoint we created earlier, passing along the text and number from the command. It then uses the message it receives back to display on the UI.
 
-If the command is not `nexmo call number text`, it displays a generic error in the UI. Once that's done, it adds a new line with a blinking underscore to the UI, waiting for the next command.
+If the command is not `vonage call number text`, it displays a generic error in the UI. Once that's done, it adds a new line with a blinking underscore to the UI, waiting for the next command.
 
 I've also replaced the contents of the `<style>` tag to position the Nuxt.js logos at the top of the terminal window, and create the blinking animation for the underscore.
 
@@ -558,7 +561,7 @@ env: {
 
 ### Try It Out
 
-You can load `http://localhost:3000/` in your browser, click on the blinking underscore, and type `nexmo call YOUR_PHONE_NUMBER hello`. After you press Enter on the keyboard, you should receive a call on your phone, and the event data should show up in the UI. If you call that number back, you can see the status for that call appearing in your browser as well.
+You can load `http://localhost:3000/` in your browser, click on the blinking underscore, and type `vonage call YOUR_PHONE_NUMBER hello`. After you press Enter on the keyboard, you should receive a call on your phone, and the event data should show up in the UI. If you call that number back, you can see the status for that call appearing in your browser as well.
 
 ![Make and Receive Phone Calls with Nuxt.js and Vonage](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/make-receive-nuxt.png "Make and Receive Phone Calls with Nuxt.js and Vonage")
 
