@@ -47,7 +47,7 @@ You can find your API key and secret on the [Dashboard](https://dashboard.nexmo.
 vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-The Vonage CLI has plugins that when installed, provide additional capabilities. In this tutorial, you will be working with Conversations, so here is the command to install it:
+The Vonage CLI has plugins that when installed, provide additional capabilities. In this tutorial, you will be working with Conversations, so here is the command to install its plugin:
 
 ```bash
 vonage plugins:install @vonage/cli-plugin-conversations
