@@ -572,28 +572,28 @@ There are three values we need to assign in the `.env` file:
 
 The first two are our Azure API key and Azure URL endpoint, respectively. 
 
-The latter is the webhook URL for the data returned by the Vonage Automatic Speech Recognition feature. This latter value needs to be an externally accessible URL. A good tool to use during development is ngrok to make your local environment externally available. You can find a guide to setting up ngrok locally on our [developer website](https://developer.nexmo.com/tools/ngrok#testing-with-ngrok).
+The latter is the webhook URL for the data returned by the Vonage Automatic Speech Recognition feature. This latter value needs to be an externally accessible URL. A good tool to use during development is ngrok to make your local environment externally available. You can find a guide to setting up ngrok locally on our [developer website](https://developer.vonage.com/tools/ngrok#testing-with-ngrok).
 
 ## Provisioning a Vonage Virtual Phone Number
 
-There are two ways to provision a Vonage virtual phone number. Once you have a [Vonage developer account](https://dashboard.nexmo.com/sign-up) you can either purchase a phone number through the dashboard or using the Nexmo NodeJS CLI. We will do so here using the CLI.
+There are two ways to provision a Vonage virtual phone number. Once you have a [Vonage developer account](https://dashboard.nexmo.com/sign-up) you can either purchase a phone number through the dashboard or using the Vonage CLI. We will do so here using the CLI.
 
-To install the CLI you can use either yarn or npm: `yarn global add nexmo-cli` or `npm install nexmo-cli -g`. After installation you need to provide it with your API credentials obtained from the dashboard:
+To install the CLI you can use either yarn or npm: `yarn global add @vonage/cli` or `npm install @vonage/cli -g`. After installation you need to provide it with your API credentials obtained from the dashboard:
 
 ```sh
-$ nexmo setup <api_key> <api_secret>
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-Now that your CLI is set up, you can use it to search for available numbers in your country. To do so run the following using your two-letter country code. The example below shows a number search in the United States. Make sure to add the `--voice` flag to only return numbers that are voice-enabled:
+Now that your CLI is set up, you can use it to search for available numbers in your country. To do so run the following using your two-letter country code. The example below shows a number search in the United States. Make sure to add the `--features=VOICE` flag to only return numbers that are voice-enabled:
 
 ```sh
-$ nexmo number:search US --voice
+vonage numbers:search US --features=VOICE
 ```
 
 Once you found a number you want you can purchase it also with the CLI:
 
 ```sh
-$ nexmo number:buy <phone_number>
+vonage numbers:buy NUMBER COUNTRYCODE
 ```
 
 You will be asked to type `confirm` after you submit the command to officially purchase the number.
@@ -601,13 +601,13 @@ You will be asked to type `confirm` after you submit the command to officially p
 Since we are creating a voice app, we also need to create a Vonage Application. This, too, can be done with the CLI and, once finished, we can link the recently provisioned phone number to the application. You can also use the creation of the application to supply it with the answer webhook and event webhook URLs. If creating in development, now is a good time to create your ngrok server and supply the ngrok URLs:
 
 ```sh
-$ nexmo app:create "Name of Application" <answer_url> <event_url>
+vonage apps:create APP_NAME --voice_answer_url=https://www.example.com/answer --voice_event_url=https://www.example.com/event
 ```
 
-The command will return to you the application ID: `Application created: asdasdas-asdd-2344-2344-asdasdasd345`. We will use that ID now to link the application to the phone number:
+The command will return to you the application ID: `Application ID: asdasdas-asdd-2344-2344-asdasdasd345`. We will use that ID now to link the application to the phone number:
 
 ```sh
-$ nexmo link:app <phone_number> <application_id>
+vonage apps:link APP_ID --number=YOUR_VONAGE_NUMBER
 ```
 
 Once you have finished those commands, you are ready to run your application!
