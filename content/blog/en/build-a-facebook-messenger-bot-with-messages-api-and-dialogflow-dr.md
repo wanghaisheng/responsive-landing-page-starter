@@ -225,7 +225,7 @@ You should see your messages appearing in the console.
 
 Now that your stunning word play is being received by the application, it's time to send it over to Dialogflow to get some equally pithy responses back.
 
-In the `controllers` folder, create a new file called `dialogflow.js` and add the contents of [this JavaScript file](https://raw.githubusercontent.com/nexmo-community/nexmo-messages-facebook-dialogflow/master/controllers/dialogflow.js).
+In the `controllers` folder, create a new file called `dialogflow.js` and add the contents of the JavaScript file [controllers/dialogflow.js](https://raw.githubusercontent.com/nexmo-community/nexmo-messages-facebook-dialogflow/master/controllers/dialogflow.js).
 
 The exported function in the file achieves the following:
 
@@ -307,7 +307,7 @@ The final piece in this puzzle is to take the response that Dialogflow returns a
 
 The [Vonage Messages API](https://developer.vonage.com/messages/overview) will handle all of this for us.
 
-Create a new file in the `controllers` folder called `vonage.js` and populate it with the contents of [this file](https://github.com/nexmo-community/nexmo-messages-facebook-dialogflow/blob/master/controllers/vonage.js).
+Create a new file in the `controllers` folder called `vonage.js` and populate it with the contents of this file:  [controllers/vonage.js](https://github.com/nexmo-community/nexmo-messages-facebook-dialogflow/blob/master/controllers/vonage.js).
 
 The main function being exported in this file is called `messageResponder`.
 
