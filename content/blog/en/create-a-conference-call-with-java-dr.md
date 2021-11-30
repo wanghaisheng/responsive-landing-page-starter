@@ -23,7 +23,7 @@ Previously, we've shown you how to [Receive a Phone Call](https://www.nexmo.com/
 
 You will be using [Gradle](https://gradle.org/) to manage your dependencies and run your application. Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 11 in this tutorial, but anything JDK 8 and higher should work.
 
-Finally, you'll need the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) installed. You'll use it to purchase a phone number and configure your Nexmo account to point at your new application.
+Finally, you'll need the [Vonage CLI](https://github.com/Vonage/vonage-cli) installed. You'll use it to purchase a phone number and configure your Vonage account to point at your new application.
 
 <sign-up number></sign-up>
 
@@ -33,7 +33,7 @@ This tutorial will walk you through the following steps:
 
 1. Using Gradle to set up a new Java project.
 2. Using the [Spark](http://sparkjava.com/) framework for controlling the call.
-3. Purchasing a number and configuring your Nexmo account to use that number with your application.
+3. Purchasing a number and configuring your Vonage account to use that number with your application.
 
 ### Using Gradle to Setup a New Java Project
 
@@ -70,7 +70,7 @@ public class App {
 
 ### Using the Spark Framework for Controlling the Call
 
-You will use the Spark framework to receive an HTTP call made by Nexmo when your number gets a call.
+You will use the Spark framework to receive an HTTP call made by Vonage when your number gets a call.
 
 #### Adding the Dependencies
 
@@ -98,7 +98,7 @@ dependencies {
 
 #### Define the Answer Route
 
-When a call is received, Nexmo will send a request to a pre-defined webhook URL. It expects to receive a [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference) containing a list of actions to execute.
+When a call is received, Vonage will send a request to a pre-defined webhook URL. It expects to receive a [Vonage Call Control Object (NCCO)](https://https://developer.vonage.com/voice/voice-api/ncco-reference) containing a list of actions to execute.
 
 You will be using the `talk` action to greet the incoming caller, and the `conversation` action to connect incoming calls to a conference. 
 
@@ -117,7 +117,7 @@ This is the resulting NCCO that your application will create:
 ]
 ```
 
-You will use the `TalkAction` and `ConversationAction` classes from the Nexmo Java Server SDK for building the above NCCO.
+You will use the `TalkAction` and `ConversationAction` classes from the Vonage Java Server SDK for building the above NCCO.
 
 Add the following code to the `main` method:
 
@@ -163,7 +163,7 @@ public static void main(String[] args) {
 
 ### Purchasing a Number
 
-You will need a Nexmo number to receive phone calls. If you do not have a number, you can use the Nexmo CLI to purchase one:
+You will need a Vonage number to receive phone calls. If you do not have a number, you can use the Vonage CLI to purchase one:
 
 ```bash
 vonage numbers:buy NUMBER COUNTRYCODE
@@ -179,7 +179,7 @@ Make note of the number that you purchased. You will need this number to link yo
 
 ### Exposing Your Application
 
-To send an HTTP request to your application, Nexmo needs to know the URL that your application is running on.
+To send an HTTP request to your application, Vonage needs to know the URL that your application is running on.
 
 Instead of configuring your local network or hosting your application on an external service, you can use [ngrok](https://ngrok.com/) to expose your application to the internet safely.
 
@@ -193,32 +193,32 @@ Take note of the forwarding address as you will need it when you configure your 
 
 ![Screenshot of ngrok running in a terminal with forwarding address http://99cad2de.ngrok.io](https://www.nexmo.com/wp-content/uploads/2018/08/ngrok.png "ngrok running in a terminal")
 
-### Configure Your Nexmo Account
+### Configure Your Vonage Account
 
-If you do not have an application you can use the Nexmo CLI to create one using your ngrok forwarding address:
+If you do not have an application you can use the Vonage CLI to create one using your ngrok forwarding address:
 
 ```bash
-vonage apps:create "Conference Call Demo" --voice_answer_url=http://your-ngrok-forwarding-address/webhooks/answer --voice_event_url=http://your-ngrok-forwarding-address/webhooks/events --keyfile private.key
+vonage apps:create "Conference Call Demo" --voice_answer_url=http://your-ngrok-forwarding-address/webhooks/answer --voice_event_url=http://your-ngrok-forwarding-address/webhooks/events
 ```
 
 After running this command, you will be shown an application id. For example: `notreal-1111-2222-3333-appid`. You will need this application id to link your phone number to the application.
 
-You can use the Nexmo CLI to link your phone number and application:
+You can use the Vonage CLI to link your phone number and application:
 
 ```bash
-vonage apps:link your-application-id --number=your-nexmo-phone-number
+vonage apps:link your-application-id --number=your-vonage-phone-number
 ```
 
 ### Test Your Application
 
 Start your application with the `gradle run` command inside of your `conference-call` directory.
 
-Call your Nexmo number and grab a friend, colleague, or another phone to do the same. Every new caller is entered into the conference call.
+Call your Vonage number and grab a friend, colleague, or another phone to do the same. Every new caller is entered into the conference call.
 
 ## Conclusion
 
 In a few lines of code, you have created an application that can create conference calls with multiple people.
 
-Check out our documentation on [Nexmo Developer](https://developer.nexmo.com) where you can learn more about [call flow](https://developer.nexmo.com/voice/voice-api/guides/call-flow) or [Nexmo Call Control Objects](https://developer.nexmo.com/voice/voice-api/ncco-reference).
+Check out our documentation on [Vonage Developer](https://developer.vonage.com) where you can learn more about [call flow](https://developer.vonage.com/voice/voice-api/guides/call-flow) or [Vonage Call Control Objects](https://developer.vonage.com/voice/voice-api/ncco-reference).
 
-You can also take a look at the [Conference Call](https://developer.nexmo.com/voice/voice-api/code-snippets/connect-callers-into-a-conference/java) code snippet for this example and more.
+You can also take a look at the [Conference Call](https://developer.vonage.com/voice/voice-api/code-snippets/connect-callers-into-a-conference/java) code snippet for this example and more.
