@@ -35,7 +35,7 @@ You will need to have the following prerequisites in place before you begin this
     ```bash
     npm install @vonage/cli -g
     ```
-- Setup the CLI to use your Vonage API key and secret, which is available from the setting page in the Nexmo Dashboard
+- Setup the CLI to use your Vonage API key and secret, which is available from the setting page in the Vonage Dashboard
     ```bash
     vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
     ```
@@ -90,13 +90,13 @@ The long string generated is the Application ID, which you should take note of. 
 If you run `ls -al`, you should be able to see the *support_agent.key* file in your home folder. Move the file to a *.data/* folder as Glitch uses that folder for sensitive data.
 
 ```bash
-mv private.key .data/private.key
+mv support_agent.key .data/support_agent.key
 ```
 
 The next command will create a user. This user is the support agent who will always be added to the chat. In a real world scenario, there will always be a handful of support agents talking to multiple users who require support.
 
 ```bash
-nexmo user:create name=agent
+vonage apps:users:create agent --display_name="Support Agent"
 ```
 
 This will generate a user and give you something like this in the console:
@@ -136,7 +136,7 @@ const listener = app.listen(process.env.PORT, function() {
 });
 ```
 
-But this is a good place to start. First, install the beta version of the nexmo-node library, body-parser and a random user name generator:
+But this is a good place to start. First, install the beta version of the nexmo-node library, body-parser, and a random user name generator:
 
 ```bash
 npm install nexmo@beta body-parser username-generator
@@ -162,7 +162,7 @@ const nexmo = new Nexmo({
 });
 ```
 
-Let's settle the non-Nexmo-related portions of the *server.js* file, namely the routes for our respective web pages, and setting up the `body-parser` middleware to parse incoming request bodies.
+Let's settle the non-Vonage-related portions of the *server.js* file, namely the routes for our respective web pages, and setting up the `body-parser` middleware to parse incoming request bodies.
 
 ```javascript
 app.use(bodyParser.json());
@@ -184,7 +184,7 @@ app.get('/agent', function(request, response) {
 
 As you can see from the routes, there are 2 separate web pages. In theory, these would be 2 separate applications but for the purpose of this tutorial, we have combined them into a single project.
 
-Let's define an **Access Control List (ACL)** in the *server.js* file. This is a list of paths which are Nexmo API paths and are used to generate the JWT with appropriate permissions.
+Let's define an **Access Control List (ACL)** in the *server.js* file. This is a list of paths which are Vonage API paths and are used to generate the JWT with appropriate permissions.
 
 ```javascript
 const ACL = {
@@ -197,7 +197,8 @@ const ACL = {
     '/*/media/**': {},
     '/*/applications/**': {},
     '/*/push/**': {},
-    '/*/knocking/**': {}
+    '/*/knocking/**': {},
+    '/*/legs/**': {}
   }
 };
 ```
@@ -313,7 +314,7 @@ app.route('/api/jwt/:user').get((req, res) => {
 });
 ```
 
-Lastly, we need to set up the webhook URL, which gets all the events that occur on the application, and can be used for debugging or further functionality developement.
+Lastly, we need to set up the webhook URL, which gets all the events that occur on the application, and can be used for debugging or further functionality development.
 
 ```javascript
 app.route('/webhooks/event').post((req, res) => {
@@ -321,7 +322,7 @@ app.route('/webhooks/event').post((req, res) => {
 });
 ```
 
-## Using the Nexmo Client SDK for Javascript
+## Using the Vonage Client SDK for Javascript
 
 Glitch starts you off with a single *index.html* file in the *views/* folder. Add another HTML file to the *views/* folder called *agent.html*.
 
@@ -340,7 +341,7 @@ public/
 `-- common.js
 ```
 
-The bulk of the work is done with the [Nexmo Client SDK for Javascript](https://developer.nexmo.com/sdk/stitch/javascript/). You can either install the Client Library via NPM or use a CDN hosted version. Include the script in both the *index.html* and *agent.html*
+The bulk of the work is done with the [Vonage Client SDK for Javascript](https://developer.nexmo.com/sdk/stitch/javascript/). You can either install the Client Library via NPM or use a CDN hosted version. Include the script in both the *index.html* and *agent.html*
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/nexmo-client@6.0.1/dist/nexmoClient.js"></script>
@@ -550,6 +551,6 @@ For the styling of the messages, it would be fairly similar to the customer chat
 
 This tutorial did not make use of any frontend frameworks or module loaders because it was meant to simplify the application to place focus on the Conversation API, what it does and how it works. If you are keen to do more with the Conversation API, here are some links that might be helpful to you:
 
-* [Documentation for the Conversation API on the developer portal](https://developer.nexmo.com/conversation/overview)
-* If you need us, try the [Nexmo Community Slack channel](https://developer.nexmo.com/community/slack)
-* Let us know what you think by tweeting at [@NexmoDev](https://twitter.com/nexmodev)
+* [Documentation for the Conversation API on the developer portal](https://developer.vonage.com/conversation/overview)
+* If you need us, try the [Vonage Community Slack channel](https://developer.nexmo.com/community/slack)
+* Let us know what you think by tweeting at [@VonageDev](https://twitter.com/VonageDev)
