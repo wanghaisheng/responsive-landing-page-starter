@@ -148,7 +148,7 @@ Within `send_alert`, which actually sends the message, we will pass along 4 para
 * `from` - The Nexmo Voice number to send a voice message from *(optional)*
 * `lg` - The voice language to use. In this case we will use a British voice. *(optional)*
 
-To get a Nexmo Voice Number either head over to the [Nexmo Dashboard](https://dashboard.nexmo.com/) and purchase a number, or alternatively use the [Nexmo CLI](https://github.com/nexmo/nexmo-cli) and buy a number right on the command line. Once purchased add the number to the `.env` file:
+To get a Nexmo Voice Number either head over to the [Nexmo Dashboard](https://dashboard.nexmo.com/) and purchase a number, or alternatively use the [Vonage CLI](https://github.com/Vonage/vonage-cli) and buy a number right on the command line. Once purchased add the number to the `.env` file:
 
 ```sh
 # .env
