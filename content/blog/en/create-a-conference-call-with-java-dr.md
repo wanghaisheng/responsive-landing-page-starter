@@ -166,10 +166,16 @@ public static void main(String[] args) {
 You will need a Nexmo number to receive phone calls. If you do not have a number, you can use the Nexmo CLI to purchase one:
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:buy NUMBER COUNTRYCODE
 ```
 
-Take note of the number that is assigned to you. You will need this number to link your application and for testing.
+Note: `NUMBER` here represents the number you want to buy, and `COUNTRYCODE` the country code for that number. If you do no already know the number, you can search for available numbers in a specific country like so (here we're searching for numbers in the USA):
+
+```bash
+vonage numbers:search US
+```
+
+Make note of the number that you purchased. You will need this number to link your application and for testing.
 
 ### Exposing Your Application
 
@@ -192,7 +198,7 @@ Take note of the forwarding address as you will need it when you configure your 
 If you do not have an application you can use the Nexmo CLI to create one using your ngrok forwarding address:
 
 ```bash
-nexmo app:create "Conference Call Demo" http://your-ngrok-forwarding-address/webhooks/answer http://your-ngrok-forwarding-address/webhooks/events --keyfile private.key
+vonage apps:create "Conference Call Demo" --voice_answer_url=http://your-ngrok-forwarding-address/webhooks/answer --voice_event_url=http://your-ngrok-forwarding-address/webhooks/events --keyfile private.key
 ```
 
 After running this command, you will be shown an application id. For example: `notreal-1111-2222-3333-appid`. You will need this application id to link your phone number to the application.
@@ -200,7 +206,7 @@ After running this command, you will be shown an application id. For example: `n
 You can use the Nexmo CLI to link your phone number and application:
 
 ```bash
-nexmo link:app your-nexmo-phone-number your-application-id
+vonage apps:link your-application-id --number=your-nexmo-phone-number
 ```
 
 ### Test Your Application
