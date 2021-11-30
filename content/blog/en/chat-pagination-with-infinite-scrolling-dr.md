@@ -33,18 +33,24 @@ npm --version
 
 > Both Node and NPM need to be installed and at the correct version. Go to nodejs.org and install the correct version if you don't have it.
 
-### Nexmo CLI
+### Vonage CLI
 
-To set up your application, you'll need to install the Nexmo CLI. Install it using NPM in the terminal.
+To set up your application, you'll need to install the Vonage CLI. Install it using NPM in the terminal.
 
 ```bash
-npm install -g nexmo-cli@beta
+npm install @vonage/cli -g
 ```
 
-You can find your API key and secret on the [Dashboard](https://dashboard.nexmo.com/) which are used to set up the Nexmo CLI.
+You can find your API key and secret on the [Dashboard](https://dashboard.nexmo.com/) which are used to set up the Vonage CLI.
 
 ```bash
-nexmo setup <your_api_key> <your_api_secret>
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
+
+The Vonage CLI has plugins that when installed, provide additional capabilities. In this tutorial, you will be working with Conversations, so here is the command to install it:
+
+```bash
+vonage plugins:install @vonage/cli-plugin-conversations
 ```
 
 ### Git (Optional)
@@ -114,13 +120,10 @@ To connect to Vonage, and send or receive messages from the service, you need to
 
 #### Create a Vonage Application
 
-Firstly, create a Vonage Application with RTC (real-time communication) capabilities. The event URL will be a live log of events happening on the Nexmo service, like users joining/leaving, sending messages, enabling audio (if you felt like enabling it).
+Firstly, create a Vonage Application with RTC (real-time communication) capabilities. The event URL will be a live log of events happening on the Vonage service, like users joining/leaving, sending messages, enabling audio (if you felt like enabling it).
 
 ```bash
-nexmo app:create "Nexmo RTC Chat" --capabilities=rtc --rtc-event-url=http://example.com --keyfile=private.key
-# Application created: 4556dbae-bf...f6e33350d8
-# Credentials written to .nexmo-app
-# Private Key saved to: private.key
+vonage apps:create "Vonage RTC Chat" --rtc_event_url=http://example.com
 ```
 
 #### Create a Vonage Conversation
