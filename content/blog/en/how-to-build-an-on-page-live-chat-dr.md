@@ -17,7 +17,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-The Nexmo [Conversation API](https://developer.nexmo.com/conversation/overview) allows developers to build conversation features where communication can take place across multiple mediums. A key aspect of this is that the context of the conversations can be maintained across mediums, which opens up a myriad of possibilities. 
+The Vonage [Conversation API](https://developer.vonage.com/conversation/overview) allows developers to build conversation features where communication can take place across multiple mediums. A key aspect of this is that the context of the conversations can be maintained across mediums, which opens up a myriad of possibilities. 
 
 This tutorial will explain the basics of how the Conversation API works by using it to build a rudimentary on-page live chat as a use-case example. This chatbox will allow customers to message a support agent in real-time and the support agent will be able to reply to the customer.
 
@@ -27,30 +27,34 @@ In addition, we will also cover the styling and layout part of things, including
 
 <sign-up></sign-up> 
 
-You will need to have the following prequisites in place before you begin this tutorial:
+You will need to have the following prerequisites in place before you begin this tutorial:
 
 - Have [Node.js](https://nodejs.org/en/) installed on your machine
 
-- Install the beta version of the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
+- Install the beta version of the [Vonage CLI](https://github.com/Vonage/vonage-cli)
     ```bash
-    npm install -g nexmo-cli@beta
+    npm install @vonage/cli -g
     ```
-- Setup the CLI to use your Nexmo API key and secret, which is available from the setting page in the Nexmo Dashboard
+- Setup the CLI to use your Vonage API key and secret, which is available from the setting page in the Nexmo Dashboard
     ```bash
-    nexmo setup YOUR_API_KEY YOUR_API_SECRET
+    vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
     ```
 
-
-    The above command will create a `.nexmorc` file in your home directory and will be used for some of the other command line operations
 
 To use the console on Glitch like you would on a local machine, click on *Tools*, then *Logs* and finally, *Console*.
 
 ![Glitch console](https://cdn.glitch.com/b3d48878-10e4-4f1c-a8f5-2ca6a95ca45b%2Ftrigger-console.png?v=1571153773442 "Glitch console")
 
-On **Glitch**, do not use the `-g` flag when installing the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
+On **Glitch**, do not use the `-g` flag when installing the [Vonage CLI](https://github.com/Vonage/vonage-cli)
 
 ```bash
-npm install nexmo-cli@beta
+npm install @vonage/cli
+```
+
+The Vonage CLI has plugins that when installed, provide additional capabilities. In this tutorial, we will be working with Conversations, so here is the command to install its plugin:
+
+```bash
+vonage plugins:install @vonage/cli-plugin-conversations
 ```
 
 ## Scenario
@@ -63,42 +67,39 @@ The chat window will connect you to a support agent on the other side of the cus
 
 An easy way to start off the project is to use Glitch, because it starts you off with a Node application built on Express out of the box. You are free to use any other Node framework you like, or even write your own, but for this tutorial, we will use Express.
 
-First, create a new Nexmo application with the `nexmo app:create` command.
+First, create a new Vonage application with the `vonage apps:create` command.
 
 ```bash
-nexmo app:create "Support Agent" --capabilities=rtc --rtc-event-url=https://YOUR_GLITCH_PROJECT.glitch.me/webhooks/event --keyfile=private.key
+vonage apps:create "Support Agent" --rtc_event_url=https://YOUR_GLITCH_PROJECT.glitch.me/webhooks/event
 ```
 
-Let's go through what the additional flags and parameters do. `nexmo app:create "NAME_OF_APPLICATION"` creates a Nexmo application with whatever name you want to call your application, and is required for the command to work.
+Let's go through what the additional flags and parameters do. `vonage apps:create "NAME_OF_APPLICATION"` creates a Vonage application with whatever name you want to call your application, and is required for the command to work.
 
-The `--capabilities` flag is mandatory, and we currently support 4 capabilities, namely *voice*, *messages*, *rtc* and *vbc*. It is possible to have multiple capabilities, but for this tutorial, we will only be using *rtc*.
-
-The `--rtc-event-url` specifies the event url, which is the webhook where Nexmo sends all the events happening on the application.
+The `--rtc_event_url` specifies the event URL, which is the webhook where Vonage sends all the events happening on the application.
 
 Running the command should give you an output that looks similar to this (the paths will look like this if you use Glitch):
 
 ```bash
 Application created: aaaaaaaa-bbbb-cccc-dddd-0123456789ab
-No existing config found. Writing to new file.
-Credentials written to /app/.nexmo-app
-Private Key saved to: /app/private.key
+...
+Private Key File: .../support_agent.key
 ```
 
-The long string generated in the first line is the Application ID, which you should take note of. We'll refer to this as `YOUR_APP_ID` throughout the tutorial. The last value is your private key file. The private key is used to generate JWTs that are used to authenticate your interactions with Nexmo.
+The long string generated is the Application ID, which you should take note of. We'll refer to this as `YOUR_APP_ID` throughout the tutorial. The private key is used to generate JWTs that are used to authenticate your interactions with Vonage.
 
-If you run `ls -al`, you should be able to see the *private.key* file in your home folder. Move the file to a *.data/* folder as Glitch uses that folder for sensitive data.
+If you run `ls -al`, you should be able to see the *support_agent.key* file in your home folder. Move the file to a *.data/* folder as Glitch uses that folder for sensitive data.
 
 ```bash
 mv private.key .data/private.key
 ```
 
-The next command will create an user. This user is the support agent who will always be added to the chat. In a real world scenario, there will always be a handful of support agents talking to multiple users who require support.
+The next command will create a user. This user is the support agent who will always be added to the chat. In a real world scenario, there will always be a handful of support agents talking to multiple users who require support.
 
 ```bash
 nexmo user:create name=agent
 ```
 
-This will generate an user and give you something like this in the console:
+This will generate a user and give you something like this in the console:
 
 ```bash
 USR-00000xxx-000x-0x00-0x00-0x00xx0x0000
