@@ -22,7 +22,7 @@ An API that uses JSON as a building block is the Vonage [Voice API](https://deve
 
 Here's a look at what we're building:
 
-![nexmo call vue](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/end-result-1.png "nexmo call vue")
+![vonage call vue](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/end-result-1.png "nexmo call vue")
 
 The code for this tutorial is on [GitHub](https://github.com/nexmo-community/nexmo-nuxt-call).
 
@@ -95,19 +95,19 @@ To interact with the Vonage Voice API, we'll need to create a Vonage Application
 $ vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-We'll use the `app:create` command of the CLI to create the voice application, and generate a private key for it. We'll save the private key on disk as well because we'll need it to make a phone call later on.
+We'll use the `apps:create` command of the CLI to create the voice application, and generate a private key for it. We'll save the private key on disk as well because we'll need it to make a phone call later on.
 
 ```shell
-$ nexmo app:create "vonage-nuxt-call" --capabilities=voice --voice-answer-url=https://YOUR_NGROK_URL/api/receive --voice-event-url=https://YOUR_NGROK_URL/api/events --keyfile=./private.key
+$ vonage apps:create "vonage-nuxt-call" --voice_answer_url=https://YOUR_NGROK_URL/api/receive --voice_event_url=https://YOUR_NGROK_URL/api/events
 ```
 
 The output for the command returns a Vonage Application ID and looks similar to this:
 
 ```shell
 Application created: aaaaaaaa-bbbb-cccc-dddd-abcd12345678
-No existing config found. Writing to new file.
-Credentials written to /Users/lakatos88/nexmo/nexmo-nuxt-call/.nexmo-app
-Private Key saved to: /Users/lakatos88/nexmo/nexmo-nuxt-call/private.key
+App Files
+Vonage App File: /Users/lakatos88/projects/vonage-nuxt-call/vonage_app.json
+Private Key File: /Users/lakatos88/projects/vonage-nuxt-call/vonage-nuxt-call.key
 ```
 
 When Vonage receives a phone call on a number you have rented, it makes an HTTP request to a URL (a 'webhook', that we specified) that contains all of the information needed to receive and respond to the call. This URL is commonly called the *answer URL*. And we've set that to our ngrok URL, followed by `/api/receive`, which is going to be our handler for incoming calls.
@@ -188,7 +188,7 @@ We're using `dotenv` here to take the API key and secret, the application Id and
 NEXMO_API_KEY=aabbcc0
 NEXMO_API_SECRET=s3cRet$tuff
 NEXMO_APPLICATION_ID=aaaaaaaa-bbbb-cccc-dddd-abcd12345678
-NEXMO_PRIVATE_KEY=./private.key
+NEXMO_PRIVATE_KEY=./vonage-nuxt-call.key
 ```
 
 The file exports a default function that has the default request and response Node.js objects. Because they are there, and I didn't want to add the extra dependency of `express`, we'll use them to create a classical Node.js HTTP server. Let's update the `export` in the `make-call.js` file to look like this:
@@ -234,7 +234,7 @@ export default function (req, res, next) {
 }
 ```
 
-I'm checking to see if the request is a `GET` request here and then using the ["Make an outbound call with an NCCO"](https://developer.nexmo.com/voice/voice-api/code-snippets/make-an-outbound-call-with-ncco/node) code snippet to make a phone call. The `nexmo.calls.create` method takes an object parameter to determine the `from`, `to` and `ncco` for the call. For the NCCO, it expects a valid set of instructions according to the [NCCO reference](https://developer.nexmo.com/voice/voice-api/ncco-reference). It also takes a `callback` method that is going to run once the API call completes. I'm taking the `from` parameter from the `.env` file, and that's going to be a Vonage phone number. The `to` and `text` parameters are coming from the query parameters of the incoming HTTP request.
+I'm checking to see if the request is a `GET` request here and then using the ["Make an outbound call with an NCCO"](https://developer.vonage.com/voice/voice-api/code-snippets/make-an-outbound-call-with-ncco/node) code snippet to make a phone call. The `nexmo.calls.create` method takes an object parameter to determine the `from`, `to` and `ncco` for the call. For the NCCO, it expects a valid set of instructions according to the [NCCO reference](https://developer.vonage.com/voice/voice-api/ncco-reference). It also takes a `callback` method that is going to run once the API call completes. I'm taking the `from` parameter from the `.env` file, and that's going to be a Vonage phone number. The `to` and `text` parameters are coming from the query parameters of the incoming HTTP request.
 
 My `callback` function is anonymous, and I'm checking to see if there was an error with the request first. If there was an error, I transform the error object to String and pass that along to the response message. If there was no error, I'm going to pass a generic `Call in progress.` message so that we can update the UI later.
 
