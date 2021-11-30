@@ -16,6 +16,8 @@ comments: true
 redirect: ""
 canonical: ""
 ---
+*Please note that React is not officially supported by the Vonage Video API*
+
 I've recently started tinkering around with [Vonage's Video API platform](https://tokbox.com/developer/guides/basics/) and building a few starter apps with video chat.    
 
 ![tweet of playing with Vonage Video API for first time](/content/blog/create-custom-video-chat-with-react-components-and-vonage/tweet.png "tweet of playing with Vonage Video API for first time")
@@ -61,8 +63,6 @@ From there, select `Create Custom Project` and name it whatever you like. Once y
 Next, scroll down to the section titled `Project Tools` and click the blue button to `Create Session ID`.  
 
 ![what to click to generate a sessionID](/content/blog/create-custom-video-chat-with-react-components-and-vonage/sessionid.png "what to click to generate a sessionID")
-
- 
 
 Copy and paste that sessionID into the section below `Generate Token`. Feel free to prolong the expiration time beyond the default 1 hour if you'd like.\
 Next, click the blue `Generate Token` button and save the generated token.   
