@@ -1,11 +1,11 @@
 ---
-title: Scrub up! Cleaning your PHP application with PHPStan
-description: What can PHPStan do for your legacy code; introducing compiler-like
-  static analysis into your pipelines
+title: Scrub Up! Cleaning Your PHP Application With PHPStan
+description: "Learn what PHPStan can do for your legacy code: introducing
+  compiler-like static analysis into your pipelines"
 thumbnail: /content/blog/scrub-up-cleaning-your-php-application-with-phpstan/scrub-up_phpstan.png
 author: james-seconde
-published: false
-published_at: 2021-11-29T09:21:12.906Z
+published: true
+published_at: 2021-11-30T11:02:10.147Z
 updated_at: 2021-11-29T09:21:12.939Z
 category: tutorial
 tags:
@@ -17,8 +17,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Scrub up! Cleaning your PHP application with PHPStan
-
 During my time as a PHP developer, the way we write and ship code has changed dramatically. In early [Symfony](https://symfony.com/) and [Zend Framework](https://framework.zend.com/) applications, the [PHP-FIG](https://www.php-fig.org/) didn't exist and coding standards were at the discretion of whoever was writing it. Over the years that we've seen widespread adoption of [PSR standards](https://www.php-fig.org/psr/), rock-solid static analysis tooling has been somewhat patchy. That is, until now, with the [release of version 1.0 of PHPStan](https://phpstan.org/blog/phpstan-1-0-released). Let's celebrate this occasion by going through some of its features!
 
 ### Compiled languages, your preemptive bug-squasher
