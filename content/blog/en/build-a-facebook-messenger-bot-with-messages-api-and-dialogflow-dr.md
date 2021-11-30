@@ -22,7 +22,7 @@ This example is going to take inbound messages sent either via the 'Send Message
 
 Messages will be routed through our app to the Google Dialogflow service which will generate responses to questions and then send these back via the Vonage Messages API.
 
-In this example, we're using the [prebuilt _Small Talk_ agent](https://dialogflow.com/docs/agents/prebuilt-smalltalk) in Dialogflow that will respond with chirpy answers to inbound questions and is great for development purposes.
+In this example, we're using the [prebuilt *Small Talk* agent](https://cloud.google.com/dialogflow/es/docs/agents-small-talk) in Dialogflow that will respond with chirpy answers to inbound questions and is great for development purposes.
 
 You can download and run this code for yourself from the [nexmo-community/nexmo-messages-facebook-dialogflow](https://github.com/nexmo-community/nexmo-messages-facebook-dialogflow) repository on GitHub.
 
@@ -30,10 +30,10 @@ You can download and run this code for yourself from the [nexmo-community/nexmo-
 
 You'll need to create accounts to run this for yourself, so make sure you have the following set up:
 
-- A Facebook account with a brand/business page you can use for testing
-- A [Google Dialogflow](https://dialogflow.com) account
-- [Ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) (so the outside world can access the app on your local machine)
-- The [Vonage Command Line Interface](https://github.com/Vonage/vonage-cli)
+* A Facebook account with a brand/business page you can use for testing
+* A [Google Dialogflow](https://dialogflow.com) account
+* [Ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) (so the outside world can access the app on your local machine)
+* The [Vonage Command Line Interface](https://github.com/Vonage/vonage-cli)
 
 <sign-up number></sign-up>
 
@@ -56,7 +56,7 @@ npm init -y
 Next, install the dependencies for the project:
 
 ```bash
-npm i koa koa-route koa-bodyparser nexmo@beta dialogflow
+npm i koa koa-route koa-bodyparser vonage@beta dialogflow
 ```
 
 Additionally, we'll be using the excellent [Nodemon](https://github.com/remy/nodemon) and [DotEnv](https://github.com/motdotla/dotenv) packages to keep our app up and running whilst changes are made so you don't have to keep restarting it. Install these as `devDependencies`.
@@ -153,11 +153,11 @@ Make sure that you append `/webhooks/inbound` and `/webhooks/status` to the URL 
 
 ![Create an application](https://cl.ly/3f51a95aa73d/Image%202018-10-15%20at%2010.57.06%20am.png)
 
-Remember to also click the _Generate public/private key pair_ link. This will download a file called `private.key`.
+Remember to also click the *Generate public/private key pair* link. This will download a file called `private.key`.
 
 Locate the `private.key` file on your system and move it to the root folder for your application.
 
-Finalise the app set up by clicking the _Create Application_ button and you're done with config.
+Finalise the app set up by clicking the *Create Application* button and you're done with config.
 
 Make a note of your Application ID, you'll need it in the next step.
 
@@ -172,22 +172,28 @@ Open your terminal and ensure that you are at the root of your application folde
 Using the [Vonage CLI](https://github.com/Vonage/vonage-cli) run the following command:
 
 ```bash
-nexmo jwt:generate private.key exp=$(($(date +%s)+86400)) application_id=VONAGE_APPLICATION_ID
+JWT="$(vonage jwt --key_file=private.key --app_id=VONAGE_APPLICATION_ID)"
 ```
 
 Be sure to replace `VONAGE_APPLICATION_ID` with the ID of the application you just created.
 
 Running this command will result in a big string of letters and numbers - this is your JSON Web Token. Copy the whole thing.
 
+You can then view the JWT with:
+
+```bash
+echo $JWT
+```
+
 To connect your Facebook page to your app, we've created a handy page:
 
-[Social channels](https://dashboard.nexmo.com/messages/social-channels)
+[Connect Facebook Page](https://dashboard.nexmo.com/messages/social-channels/facebook-connect)
 
 Complete the following steps:
 
-- Log in with your Facebook credentials
-- Select the Facebook page you want to connect to your Vonage app
-- Click _Subscribe_
+* Login with your Facebook credentials
+* Select the Facebook page you want to connect to your Vonage app
+* Click *Complete Setup*
 
 If all is well, you'll see a green dialog pop up congratulating you on your success, and letting you know the ID of your Facebook page.
 
@@ -195,7 +201,7 @@ Make a note of this ID.
 
 You can verify the content of your JWT by using [jwt.io](https://jwt.io).
 
-_Note: If any element of this wasn't clear, there's a [guide to creating JWTs for use in this context](https://developer.vonage.com/messages/tutorials/send-fbm-message/introduction#generate-a-jwt) in our Facebook Messenger tutorial._
+*Note: If any element of this wasn't clear, there's a [guide to creating JWTs for use in this context](https://developer.vonage.com/messages/tutorials/send-fbm-message/introduction#generate-a-jwt) in our Facebook Messenger tutorial.*
 
 ## Test the Connection
 
@@ -205,7 +211,7 @@ With your server still running, and Ngrok still exposing it to the world, head o
 
 ![Facebook Messenger Button](https://cl.ly/f38ca8b97869/Image%202018-10-15%20at%2011.41.51%20am.png)
 
-Click it to open the messaging window and start sending some wonderful missives. Alternatively, just start with _'Hello'_.
+Click it to open the messaging window and start sending some wonderful missives. Alternatively, just start with *'Hello'*.
 
 Any message you send will be passed along to the Inbound Webhook you specified in your application set up. This maps directly to the `inbound` function in the `routes.js` file.
 
@@ -223,10 +229,10 @@ In the `controllers` folder, create a new file called `dialogflow.js` and add th
 
 The exported function in the file achieves the following:
 
-- An async function called `dialogflowHandler` is instantiated and it accepts a param called `query`.
-- An object called `request` is created, containing all the keys that Dialogflow expects.
-- The request object is sent to Dialogflow.
-- The reply from the Small Talk agent, contained within `result[0].queryResult.fulfillmentText` is returned.
+* An async function called `dialogflowHandler` is instantiated and it accepts a param called `query`.
+* An object called `request` is created, containing all the keys that Dialogflow expects.
+* The request object is sent to Dialogflow.
+* The reply from the Small Talk agent, contained within `result[0].queryResult.fulfillmentText` is returned.
 
 ```javascript
 const dialogflowHandler = async query => {
@@ -285,17 +291,17 @@ This time you'll see the incoming message being logged to the console, as well a
 
 ![Reponse from Dialogflow](https://cl.ly/16d34b88573e/Image%202018-10-15%20at%2012.25.39%20pm.png)
 
-_Note: If you need help setting up Dialogflow, follow the [SmallTalk Prebuilt Agent](https://dialogflow.com/docs/agents/prebuilt-smalltalk) guide._
+*Note: If you need help setting up Dialogflow, follow the [SmallTalk Prebuilt Agent](https://cloud.google.com/dialogflow/es/docs/agents-small-talk) guide.*
 
 ## Send the Reply Using the Messages API
 
 You're almost close to completion. Here is what has been achieved so far.
 
-- Set up the Koa server ✔️
-- Set up a new Vonage App ✔️
-- Connected the app to a Facebook Page ✔️
-- Test for incoming messages ✔️
-- Send incoming messages to Dialogflow and get a response ✔️
+* Set up the Koa server ✔️
+* Set up a new Vonage App ✔️
+* Connected the app to a Facebook Page ✔️
+* Test for incoming messages ✔️
+* Send incoming messages to Dialogflow and get a response ✔️
 
 The final piece in this puzzle is to take the response that Dialogflow returns and send it back to the user as a reply to their message.
 
@@ -305,7 +311,7 @@ Create a new file in the `controllers` folder called `vonage.js` and populate it
 
 The main function being exported in this file is called `messageResponder`.
 
-This function uses the [Vonage Node JS Client Library](https://github.com/Nexmo/nexmo-node/tree/beta) to send a message back to the user.
+This function uses the [Vonage Node.js Client Library](https://github.com/Vonage/vonage-node-sdk/tree/beta) to send a message back to the user.
 
 The function is passed an object called `message` that will contain the `id` of the user to send the reply to, and the `dialogflowResponse` (the text to send in the message).
 
@@ -364,13 +370,12 @@ Once again, send a message from your Facebook page. The response from Dialogflow
 
 ## Conclusion
 
-The prebuilt _Small Talk_ agent is great for testing but the next step here would be to actually build an agent of your own that can relay some knowledge that is of some worth to the user.
+The prebuilt *Small Talk* agent is great for testing but the next step here would be to actually build an agent of your own that can relay some knowledge that is of some worth to the user.
 
 For more information on getting up and running with building Dialogflow agents, check out some of these articles:
 
-- [Build an agent from scratch using best practices](https://dialogflow.com/docs/tutorial-build-an-agent)
-- [Bitesize videos from Google](https://dialogflow.com/docs) on building Dialogflow agents
-- [Building Your Own Chatbot Using Dialogflow](https://tutorials.botsfloor.com/building-your-own-chatbot-using-dialogflow-1b6ca92b3d3f)
+* [Build an agent from scratch using best practices](https://dialogflow.com/docs/tutorial-build-an-agent)
+* [Bitesize videos from Google](https://dialogflow.com/docs) on building Dialogflow agents
+* [Building Your Own Chatbot Using Dialogflow](https://tutorials.botsfloor.com/building-your-own-chatbot-using-dialogflow-1b6ca92b3d3f)
 
 With the code from this tutorial, you have the link between Facebook and Dialoglow already in place so you can go ahead and build the mightiest agent of all time.
-
