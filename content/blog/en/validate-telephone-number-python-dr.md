@@ -20,17 +20,14 @@ Phone number verification can do a lot more than ensuring that a telephone numbe
 
 Nexmo's [Number Insight API](https://www.nexmo.com/products/number-insight) has several different tiers of information based upon the level of detail you require. I'll go through each of these in more detail below, but in summary, they are:
 
-1. _Basic API_, used to identify which number the country is from and to ensure that it is correctly formatted. This tier is free to use.
-2. _Standard API_, determine the type of number; landline, mobile (cellular), or virtual as well as the service provider.
-3. _Advanced API_, our most detailed level and the most useful for discerning risk. This API provides information on number porting, roaming, validity, and reachability (not available in the US), as well as caller name and type. This Caller ID Name (CNAM) is only available for US numbers.
+1. *Basic API*, used to identify which number the country is from and to ensure that it is correctly formatted. This tier is free to use.
+2. *Standard API*, determine the type of number; landline, mobile (cellular), or virtual as well as the service provider.
+3. *Advanced API*, our most detailed level and the most useful for discerning risk. This API provides information on number porting, roaming, validity, and reachability (not available in the US), as well as caller name and type. This Caller ID Name (CNAM) is only available for US numbers.
 
 ## Prerequisites
 
-
 2. [The Nexmo Server SDK for Python](https://github.com/Nexmo/nexmo-python). You can download this from GitHub or install from PyPI.
-<sign-up></sign-up>
-
-
+   <sign-up></sign-up>
 
 ## Optional Requirements
 
@@ -69,7 +66,7 @@ In the example above you can see that the API takes an [E.164 formatted number](
 
 It's worth noting that while I have created a CLI to demo the usage of Number Insight, it's not a requirement to use the API. You can use the Nexmo Server SDK for Python directly within your Python scripts; [the source is MIT Licensed](https://github.com/Nexmo/nexmo-python#license).
 
-While this demo only works with number insight, if you would like to access all of Nexmo's APIs from the command line we also have [the Nexmo CLI](https://github.com/Nexmo/nexmo-cli). You could even combine the two.
+While this demo only works with number insight, if you would like to access all of Nexmo's APIs from the command line we also have [the Vonage CLI](https://github.com/Vonage/vonage-cli). You could even combine the two.
 
 <script id="asciicast-232915" src="https://asciinema.org/a/232915.js" async></script>
 
@@ -128,4 +125,3 @@ A handy way to remember [which Number Insight level to use](https://developer.ne
 1. Basic, what country is the number from and how should it look
 2. Standard, what type of number is it and who provided it
 3. Advanced, does this number raise any red flags which might indicate a risk to my business or my users
-
