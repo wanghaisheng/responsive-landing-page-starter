@@ -16,9 +16,9 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-In this blog post we'll walk through how you can make a phone call from a web brower to a phone with [Vonage In-App Voice](https://developer.nexmo.com/stitch/in-app-voice/overview) using the Vonage Client SDK for JavaScript and Vue.JS. In-App Voice and [In-App Messaging](https://developer.nexmo.com/stitch/in-app-messaging/overview) is in Developer Preview so we'd love your feedback on both the development experience that you have and on the functionality that's provided. You can get in touch via the [Vonage Developer Community Slack](https://developer.nexmo.com/community/slack).
+In this blog post we'll walk through how you can make a phone call from a web browser to a phone with [Vonage In-App Voice](https://developer.vonage.com/client-sdk/in-app-voice/overview) using the Vonage Client SDK for JavaScript and Vue.JS. In-App Voice and [In-App Messaging](https://developer.nexmo.com/stitch/in-app-messaging/overview) is in Developer Preview so we'd love your feedback on both the development experience that you have and on the functionality that's provided. You can get in touch via the [Vonage Developer Community Slack](https://developer.nexmo.com/community/slack).
 
-In order to make a phone call from a web browser we're going to need a number of components in our app. A Vue.JS application that runs in the browser and that uses the Vonage Client SDK for JavaScript, an application server used to authenticate the application user with Vonage by generating a User JWT, and a phone to receive the phone call.
+In order to make a phone call from a web browser, we're going to need a number of components in our app. A Vue.JS application that runs in the browser and that uses the Vonage Client SDK for JavaScript, an application server used to authenticate the application user with Vonage by generating a User JWT, and a phone to receive the phone call.
 
 The sequence diagram below shows how things will work once we've built our app. In this blog post, we'll first create the Vue.JS application with a UI that allows a phone number to be entered. We'll then create an application server that can generate the required User JWT. Once the app server is up and running we'll update the Vue.JS app to retrieve the JWT and use that with the Vonage Client SDK for JavaScript to login to the Vonage platform and initiate the phone call. We then need to update the app server to handle a GET request that Vonage will make in order to retrieve instructions for how to proceed with the phone call. Those instructions will tell Vonage to connect the call from the Vue.JS application in the web browser to a phone.
 
@@ -31,7 +31,7 @@ Participant Nexmo as N
 Participant Phone as P
 
 V->A: Get User JWT
-Note right of V: In a production app\n this request should\n be authenticaterd
+Note right of V: In a production app\n this request should\n be authenticated
 A-->V: User JWT
 V -> V: Create Nexmo\nConversation Client
 V -> N: Login
@@ -53,9 +53,9 @@ If you'd rather dive straight into the code you can find the [Call from Browser 
 
 * [Yarn](https://yarnpkg.com/en/docs/install) for package management
 * The [Vue CLI](https://cli.vuejs.org/guide/installation.html) for scaffolding out our app and running a dev server
-* A [Nexmo account](https://dashboard.nexmo.com/sign-up) to enable us to use the SDK and make phone calls
-* The [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#installation) to quickly create and setup a Nexmo application from the command line. **Please use the beta version of the CLI e.g. `npm install -g nexmo@beta`**
-* A local tunnel solution such as [Ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) so that the Nexmo platform can reach a locally running web server). For this blog post we're going to use Ngrok.
+* A [Vonage account](https://dashboard.nexmo.com/sign-up) to enable us to use the SDK and make phone calls
+* The [Vonage CLI](https://github.com/Vonage/vonage-cli) to quickly create and setup a Vonage application from the command line. `npm install @vonage/cli -g`
+* A local tunnel solution such as [Ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) so that the Vonage platform can reach a locally running web server). For this blog post we're going to use Ngrok.
 
 With those in place, let's get started.
 
@@ -257,10 +257,10 @@ With this running, navigating in a browser to `http://localhost:8080` and trying
 
 ## Creating a User JWT to login to the Vonage Platform
 
-The Nexmo Stitch JavaScript SDK connects to the Vonage platform to enable In-App Voice functionality within the web browser. In order to connect to the Nexmo platform, we need to `login` with a valid user authentication JWT (JSON Web Token) for the application user that defines that user's permissions. To create a User JWT we're going to need to create a few things:
+The Vonage Stitch JavaScript SDK connects to the Vonage platform to enable In-App Voice functionality within the web browser. In order to connect to the Vonage platform, we need to `login` with a valid user authentication JWT (JSON Web Token) for the application user that defines that user's permissions. To create a User JWT we're going to need to create a few things:
 
 1. a simple server that generates the User JWT that can be retrieved by the `CallFromBrowser` Vue.JS component
-2. an Application within the Vonage platform - we can do this using the Nexmo CLI
+2. an Application within the Vonage platform - we can do this using the Vonage CLI
 3. a User within the Application for the current web app users
 
 Let's start by creating a simple server. Create a `server` directory, install a few dependencies and create an `index.js` and `.env` files for the functionality we need.
@@ -276,29 +276,39 @@ touch .env # for environment variables
 
 For the server, we're going to use [Express.js](https://expressjs.com/) with the CORS and body-parser middleware. [dotenv](https://github.com/motdotla/dotenv) is used to load in the `.env` file which itself will contain configuration that we wouldn't want in source control. We've also installed the [Nexmo Node.JS library](https://github.com/Nexmo/nexmo-node/) to help with User JWT generation.
 
-Before we look at the server code let's also create the Application and the User for that application. We can do this using the Nexmo CLI:
+Before we look at the server code let's also create the Application and the User for that application. We can do this using the Vonage CLI.
+
+First, let's set up the Vonage CLI with your API Key and API Secret. Get your Vonage Developer API Key and API Secret from your [dashboard](https://dashboard.nexmo.com/settings).
+
+Run the following command in a terminal, while replacing api_key and api_secret with your own:
+
+```shell
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
+
+Next, here is the command to create the Application:
 
 ```sh
-$ nexmo app:create call-from-browser https://example.com/answer https://example.com/event --keyfile=private.key
+$ vonage apps:create "call-from-browser" --voice_event_url=hhttps://example.com/event --voice_answer_url=https://example.com/answer
 ```
 
-Running this command will output an application ID. It will also add the Application details to a `.nexmo-app` file. Take the application ID and add it to the `.env` file along with a variable for the `private.key` location:
+Running this command will output an application ID. It will also add the Application details to a `vonage_app.json` file. Take the application ID and add it to the `.env` file along with a variable for the `call-from-browser.key` location:
 
 ```
-NEXMO_PRIVATE_KEY=private.key
+NEXMO_PRIVATE_KEY=call-from-browser.key
 NEXMO_APP_ID=YOUR_APPLICATION_ID
 ```
 
-The last piece of Application setup is to create a user within the application. It's possible to do this using Nexmo libraries but in this case, we'll set up a user using the Nexmo CLI:
+The last piece of Application setup is to create a user within the application. It's possible to do this using Vonage libraries but in this case, we'll set up a user using the Vonage CLI:
 
 ```sh
-$ nexmo user:create name=demo
+$ vonage apps:users:create "demo"
 ```
 
 This command will create the user for the application ID identified within the `.nexmo-app` file. Add an environment variable for the user name to the `.env` file.
 
 ```
-NEXMO_PRIVATE_KEY=private.key
+NEXMO_PRIVATE_KEY=call-from-browser
 NEXMO_APP_ID=YOUR_APPLICATION_ID
 NEXMO_APP_USER_NAME=demo
 ```
@@ -361,7 +371,7 @@ app.get('/no-auth', (req, res) => {
 })
 ```
 
-The `userAcl` variables provide a set of claims or access rules that are used when creating the JWT along with the application ID, a `sub` for the name of the user and an `exp` as an expiry time for the JWT. See the [JWT and ACL overview](https://developer.nexmo.com/stitch/concepts/jwt-acl) in Nexmo Developer for more information.
+The `userAcl` variables provide a set of claims or access rules that are used when creating the JWT along with the application ID, a `sub` for the name of the user and an `exp` as an expiry time for the JWT. See the [JWT and ACL overview](https://developer.vonage.com/conversation/guides/jwt-acl) in Vonage Developer for more information.
 
 Restarting the node `index.js` processing and accessing `http://localhost:3000/no-auth` will show a real JWT having been generated.
 
@@ -515,7 +525,7 @@ With all the client-side functionality in place, you can enter a valid phone num
 
 ![conversation-not-found message in browser console](/content/blog/making-phone-calls-from-a-web-browser-with-vue-js-and-vonage/conversation-not-found.png "conversation-not-found message in browser console")
 
-When a call is initiated or received by the Nexmo platform it makes an HTTP request to an `answer_url` for the relevant associated Nexmo application. The server that receives that HTTP request must return a Nexmo Conversation Control Object (NCCO); a set of instructions informing Nexmo how to proceed with the call.
+When a call is initiated or received by the Vonage platform it makes an HTTP request to an `answer_url` for the relevant associated Vonage application. The server that receives that HTTP request must return a Vonage Conversation Control Object (NCCO); a set of instructions informing Vonage how to proceed with the call.
 
 ## Connecting the Browser to a Phone
 
@@ -536,16 +546,16 @@ app.get('/answer', (req, res) => {
 })
 ```
 
-Nexmo expects a JSON structure, the NCCO, to be returned instructing it how to proceed with the call. The above `ncco` JSON structure that we return informs Nexmo to `connect` the call to a `phone` endpoint with the number identified by the value in `req.query.to` - the `to` query parameter in the inbound GET request. This number is the number we passed to `this.app.callPhone` in our Vue.JS app.
+Vonage expects a JSON structure, the NCCO, to be returned instructing it how to proceed with the call. The above `ncco` JSON structure that we return informs Vonage to `connect` the call to a `phone` endpoint with the number identified by the value in `req.query.to` - the `to` query parameter in the inbound GET request. This number is the number we passed to `this.app.callPhone` in our Vue.JS app.
 
 _Notes:
 
 1. Please remember that we have no application-level authentication in our web app so you'll need to add this yourself e.g. within the answer URL endpoint you can check the `req.query.to` and `req.query.from` to ensure that the user (identified by `from`) is allowed to make the requested call.
-2. If you have a Nexmo virtual phone number you should add a `NEXMO_FROM_NUMBER` entry to the `.env` file so that recipient of phone calls see a number on their inbound call. Otherwise, it may come up as a "Private Number" or "Unknown"._
+2. If you have a Vonage virtual phone number you should add a `NEXMO_FROM_NUMBER` entry to the `.env` file so that recipient of phone calls see a number on their inbound call. Otherwise, it may come up as a "Private Number" or "Unknown"._
 
 Restart the Node process for the server so it's running with the updated code.
 
-Finally, we need to make it possible for the Nexmo platform to reach the answer URL. To do this use Ngrok to create a local tunnel to `localhost:3000`.
+Finally, we need to make it possible for the Vonage platform to reach the answer URL. To do this use Ngrok to create a local tunnel to `localhost:3000`.
 
 ```sh
 $ ngrok http 3000
@@ -553,13 +563,13 @@ $ ngrok http 3000
 
 ![Ngrok output in a terminal](/content/blog/making-phone-calls-from-a-web-browser-with-vue-js-and-vonage/ngrok.png "Ngrok output in a terminal")
 
-And update the `answer_url` for your Nexmo Application to utilise the Ngrok tunnel URLs using the Nexmo CLI.
+And update the `answer_url` for your Vonage Application to utilise the Ngrok tunnel URLs using the Vonage CLI.
 
 ```sh
-$ nexmo app:update NEXMO_APP_ID "call-from-browser" https://4ca73ac6.ngrok.io/answer https://4ca73ac6.ngrok.io/event
+$ vonage apps:update VONAGE_APP_ID --voice_answer_url=https://4ca73ac6.ngrok.io/answer --voice_event_url=https://4ca73ac6.ngrok.io/event
 ```
 
-*Note: you can find the `NEXMO_APP_ID` in `server/.env` or `server/.nexmo-app`*
+*Note: you can find the `VONAGE_APP_ID` in `server/.env` or `server/vonage_app.json`*
 
 Head back into the Vue.JS app in the browser, enter a phone number and click the button to make an outbound call from your web browser.
 
@@ -575,7 +585,7 @@ As mentioned at the start of this post, In-App Voice is in Developer Preview so 
 
 If you found this blog post interesting then the following resources are also worth checking out:
 
-* [In-App Voice docs](https://developer.nexmo.com/stitch/in-app-voice/overview)
-* [In-App Messaging docs](https://developer.nexmo.com/stitch/in-app-messaging/overview)
-* [Build a Chat Application with Angular Material and the Nexmo In-App JavaScript SDK](https://www.nexmo.com/blog/2018/03/28/build-chat-app-angular-material-stitch-javascript-dr/)
-* [Creating a Peer-to-Peer Voice Journal with Nexmo Voice APIs, Python and Vue.JS](https://www.nexmo.com/blog/2018/06/19/next-web-voice-journal-python-vue-javascript-dr/)
+* [In-App Voice docs](https://developer.vonage.com/client-sdk/in-app-voice/overview)
+* [In-App Messaging docs](https://developer.vonage.com/client-sdk/in-app-messaging/overview)
+* [Build a Chat Application with Angular Material and the Vonage In-App JavaScript SDK](https://learn.vonage.com/blog/2018/03/28/build-chat-app-angular-material-stitch-javascript-dr/)
+* [Creating a Peer-to-Peer Voice Journal with Vonage Voice APIs, Python and Vue.JS](https://learn.vonage.com/blog/2018/06/19/next-web-voice-journal-python-vue-javascript-dr/)
