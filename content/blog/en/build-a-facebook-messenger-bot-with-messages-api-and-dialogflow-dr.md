@@ -137,7 +137,7 @@ Use Ngrok to open up this port to the world and make note of the URLs it produce
 
 ![Ngrok output](https://cl.ly/962fe109ab90/Image%202018-10-15%20at%201.52.51%20pm.png)
 
-[Here is a handy guide to working with Ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) if you haven't used it before.
+[Here is a handy guide to working with Ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) if you haven't used it before.
 
 TLDR? You can start up Ngrok (if installed) by running this command:
 
