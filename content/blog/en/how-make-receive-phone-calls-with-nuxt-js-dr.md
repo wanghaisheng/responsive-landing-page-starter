@@ -16,31 +16,31 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-I've explored the Nuxt.js framework in [a previous blog post](https://www.nexmo.com/blog/2020/02/19/how-send-receive-sms-messages-with-nuxt-js-dr), and I liked it so much that I was looking for reasons to use it more. So I thought it would be good to take what I learned in there and apply it to a more complex API. I wrote the Middleware methods using Node.js requests, so this blog post expands on them, using them not only for plain text but for JSON requests as well.
+I've explored the Nuxt.js framework in [a previous blog post](https://learn.vonage.com/blog/2020/02/19/how-send-receive-sms-messages-with-nuxt-js-dr/), and I liked it so much that I was looking for reasons to use it more. So I thought it would be good to take what I learned in there and apply it to a more complex API. I wrote the Middleware methods using Node.js requests, so this blog post expands on them, using them not only for plain text but for JSON requests as well.
 
-An API that uses JSON as a building block is the Vonage [Voice API](https://developer.nexmo.com/voice/voice-api/overview). It allows you to make and receive phone calls programmatically, and control the flow of inbound and outbound calls in JSON with Call Control Objects. We're going to use it, alongside [Node.js HTTP requests](https://nodejs.org/api/http.html) (yes, without [Express](https://expressjs.com/)), [Nuxt.js](https://nuxtjs.org/) server middleware, a [Vue.js](https://vuejs.org/) Terminal UI and [WebSockets](https://developer.mozilla.org/en-US/docs/Glossary/WebSockets) to make and receive phone calls.
+An API that uses JSON as a building block is the Vonage [Voice API](https://developer.vonage.com/voice/voice-api/overview). It allows you to make and receive phone calls programmatically, and control the flow of inbound and outbound calls in JSON with Call Control Objects. We're going to use it, alongside [Node.js HTTP requests](https://nodejs.org/api/http.html) (yes, without [Express](https://expressjs.com/)), [Nuxt.js](https://nuxtjs.org/) server middleware, a [Vue.js](https://vuejs.org/) Terminal UI and [WebSockets](https://developer.mozilla.org/en-US/docs/Glossary/WebSockets) to make and receive phone calls.
 
 Here's a look at what we're building:
 
 ![nexmo call vue](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/end-result-1.png "nexmo call vue")
 
-The code for this tutorial can is on [GitHub](https://github.com/nexmo-community/nexmo-nuxt-call).
+The code for this tutorial is on [GitHub](https://github.com/nexmo-community/nexmo-nuxt-call).
 
 ## Prerequisites
 
-Before you begin, make  sure you have:
+Before you begin, make sure you have:
 
 * A [Vonage account](https://dashboard.nexmo.com/sign-up)
 * [Node.js](https://nodejs.org/en/download/) installed on your machine
 * [ngrok](https://ngrok.com/) to make the code on our local machine-accessible to the outside world
-* The beta version of the [Nexmo CLI](https://developer.nexmo.com/tools): `npm install -g nexmo-cli@beta`
+* The [Vonage CLI](https://developer.nexmo.com/tools): `npm install @vonage/cli -g`
 
 ## Generate a New Nuxt.js Application
 
-To make it easier to get started, the Nuxt.js team created a CLI tool called `create-nuxt-app`, that scaffolds a new project and lets you select your way through all the modules you can have in a Nuxt.js application. I've used that tool to generate a new project, called `nexmo-nuxt-call`.
+To make it easier to get started, the Nuxt.js team created a CLI tool called `create-nuxt-app`, that scaffolds a new project and lets you select your way through all the modules you can have in a Nuxt.js application. I've used that tool to generate a new project, called `vonage-nuxt-call`.
 
 ```shell
-$ npx create-nuxt-app nexmo-nuxt-call
+$ npx create-nuxt-app vonage-nuxt-call
 ```
 
 I've chosen:
@@ -59,7 +59,7 @@ I've chosen:
 After the scaffolding finished, I've switched directory to my new project, and ran the project using `npm run dev`. That starts both the client and server processes and makes them available at `http://localhost:3000`. It will also hot reload them every time I make a change, so I can see it live without having to restart the processes.
 
 ```shell
-$ cd nexmo-nuxt-call
+$ cd vonage-nuxt-call
 $ npm run dev
 ```
 
@@ -79,7 +79,7 @@ export default {
 
 ## Run ngrok
 
-Because Vonage makes requests on our `/api/receive` and `/api/events` routes, we'll need to expose those to the internet. An excellent tool for that is ngrok. If you haven't used ngrok before, there is a [blog post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) that explains how to use it. If you're familiar with ngrok, run it with `http` on the 3000 port.
+Because Vonage makes requests on our `/api/receive` and `/api/events` routes, we'll need to expose those to the internet. An excellent tool for that is ngrok. If you haven't used ngrok before, there is a [blog post](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) that explains how to use it. If you're familiar with ngrok, run it with `http` on the 3000 port.
 
 ```shell
 $ ngrok http 3000
@@ -89,16 +89,16 @@ After ngrok runs, it gives you a random-looking URL, that we'll use as the base 
 
 ## Create a Vonage Application
 
-To interact with the Vonage Voice API, we'll need to create a Vonage Application that has a `voice` capability. You can create an application through the [Vonage Dashboard](https://dashboard.nexmo.com/applications/new). You could also create a Vonage application through the Nexmo CLI, and I'm going to do just that. In case you haven't used the Nexmo CLI before, you need to set up it with your Vonage API key and secret before we can use it. You can find your API key and secret in your [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).
+To interact with the Vonage Voice API, we'll need to create a Vonage Application that has a `voice` capability. You can create an application through the [Vonage Dashboard](https://dashboard.nexmo.com/applications/new). You could also create a Vonage application through the Vonage CLI, and I'm going to do just that. In case you haven't used the Vonage CLI before, you need to set up it with your Vonage API key and secret before we can use it. You can find your API key and secret in your [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).
 
 ```shell
-$ nexmo setup NEXMO_API_KEY NEXMO_API_SECRET
+$ vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
 We'll use the `app:create` command of the CLI to create the voice application, and generate a private key for it. We'll save the private key on disk as well because we'll need it to make a phone call later on.
 
 ```shell
-$ nexmo app:create "nexmo-nuxt-call" --capabilities=voice --voice-answer-url=https://YOUR_NGROK_URL/api/receive --voice-event-url=https://YOUR_NGROK_URL/api/events --keyfile=./private.key
+$ nexmo app:create "vonage-nuxt-call" --capabilities=voice --voice-answer-url=https://YOUR_NGROK_URL/api/receive --voice-event-url=https://YOUR_NGROK_URL/api/events --keyfile=./private.key
 ```
 
 The output for the command returns a Vonage Application ID and looks similar to this:
