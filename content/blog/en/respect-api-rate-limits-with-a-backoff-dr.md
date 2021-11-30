@@ -182,6 +182,19 @@ vonage apps:create
 
 This command will store your private key in the file my_project`.key`. We’ll need this when generating our JWT, along with the application id. The application id is output in the terminal when you run the `app:create` command, or you can find it on your Vonage dashboard.
 
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
+
+```bash
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+```
+
+Now link the number to your app:
+
+```
+vonage apps:link --number=VONAGE_NUMBER APP_ID
+```
+
 ### Sending the SMS
 
 ```python
