@@ -82,11 +82,15 @@ vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 Now, use the CLI to create a Vonage application. 
 
 ```bash
-vonage apps:create
 ✔ Application Name … my_project
 ✔ Select App Capabilities › Messages
-✔ Create messages webhooks? … no
-✔ Allow use of data for AI training? no
+✔ Create messages webhooks? … yes
+✔ Inbound Message Webhook - URL … http://3126bbcb.ngrok.io/inbound&country=xx&msisdn=xxxxxxxx
+✔ Inbound Message Webhook - Method › POST
+✔ Status Webhook - URL … https://example.com/webhook_name
+✔ Status Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … no
+Creating Application... done
 ```
 
 You'll want to save that ID that's printed out after `Application created:`. You'll need it in the next step.
@@ -256,24 +260,7 @@ Let's run ngrok in the same port where our local server is listening in my case 
 
 ![ngrok](https://raw.githubusercontent.com/javiermolsanz/Blog_Nexmo_TFL/master/Screen%20Shot%202019-07-22%20at%2009.06.27.png)
 
-Now we can configure our virtual number to point to our Inbound SMS webhook URL. Let's do it via our [Numbers API](https://developer.nexmo.com/api/numbers#updateANumber). As per the docs, we can see that we'll need to make a POST request, authenticating with API key and secret as query parameters. The Content-type must be set to `x-www-form-urlencoded` and the request body will be formed by three parameters, the `moHttpUrl` which is the webhook for inbound messages, `country` is the [two character country code in ISO 3166-1 alpha-2 format](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) and `msisdn` is the number to be updated. Note: Don't forget to replace it with your own credentials and append `/inbound` at the end of our ngrok URL as otherwise, it wouldn't match our express route.
-
-```bash
-curl -X POST \
-  'https://rest.nexmo.com/number/update?api_key=xxxxx&api_secret=xxxx@' \
-  -H 'Content-Type: application/x-www-form-urlencoded' \
-  -d 'moHttpUrl=http://3126bbcb.ngrok.io/inbound&country=xx&msisdn=xxxxxxxx'
-```
-
-If all went as it should, we have received an HTTP 200 response back from the API. Something like:
-
-```bash
-{"error-code":"200","error-code-label":"success"}
-```
-
-You could also update the Inbound SMS settings for your virtual number via [Nexmo Dashboard](https://dashboard.nexmo.com/buy-numbers) or using the [](https://github.com/Nexmo/nexmo-cli#numbers)[Vonage CLI](https://developer.vonage.com/application/vonage-cli) but I wanted to look fancier 😜
-
-Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Nexmo number we've just configured. As an example, I will query the name of the line that gets me to work every day.
+Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Vonage number we've just configured. As an example, I will query the name of the line that gets me to work every day.
 
 ![demo of app performance on phone](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/demo.gif "demo of app performance on phone")
 
