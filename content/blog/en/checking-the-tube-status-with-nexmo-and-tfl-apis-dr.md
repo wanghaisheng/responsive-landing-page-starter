@@ -175,7 +175,7 @@ function checkLineStatus(Line, number) {
 
 If the status of the given line is Good Service (Note that the TFL API will always return this when normal service is running) send this back to the user. Otherwise, It's important to take into account that when there's a line disruption, the TFL API will provide a `reason` within the `lineStatus` object. That's what we're pushing into our array for every disruption occurred (Hopefully none for commuters' sake 😂). Don't forget that within this function, we’re also calling the `sendSms()` function to return the line status to the user in both scenarios. 
 
-Lastly, we're going to fill in our inbound route to listen to incoming messages from the users. Let's have a look at what [an inbound message from Nexmo](https://developer.nexmo.com/api/sms#inbound-sms) looks like. 
+Lastly, we're going to fill in our inbound route to listen to incoming messages from the users. Let's have a look at what an inbound message from Vonage looks like. 
 
 ```bash
 {
