@@ -157,7 +157,7 @@ Let's define two functions to tidy-up a little bit the code. The first function 
 
 ```javascript
 function sendMessage(to, message){
-  vonage.message.sendSms(process.env.from;, to;, message, (err, responseData) => {
+  vonage.message.sendSms(process.env.from, to, message, (err, responseData) => {
     if (err) {
         console.log(err);
     } else {
