@@ -62,17 +62,17 @@ npm init -y
 Let's install and save the necessary dependencies.
 
 ```bash
-npm install --s express dotenv nexmo body-parser request
+npm install --s express dotenv vonage body-parser request
 ```
 
-We will fill in the `.env` file with the Nexmo `apikey` and `apiSecret` and the TFL `app_id` ID and `app_key`. We will also include here our previously purchased Virtual number. 
+We will fill in the `.env` file with the Vonage `apikey` and `apiSecret` and the TFL `app_id` ID and `app_key`. We will also include here our previously purchased Virtual number. 
 
 ```bash
 apiKey = 
 apiSecret = 
-app_id = 
-app_key = 
-Nexmo_LVN =
+to = 
+from = 
+
 ```
 
 ## Let's Start With The Fun Stuff
@@ -84,7 +84,7 @@ Paste the following code into your newly created file. We import all the depende
  The variable called status will contain any relevant status in relation to the status of the said line. Also, add in the different credentials you’ll need to utilize the Nexmo and TFL APIs respectively. These will be retreived from the `.env` file:
 
 ```javascript
-const Nexmo = require('nexmo');
+const Vonage = require('@vonage/server-sdk')
 const express = require('express');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 3000;
@@ -97,14 +97,15 @@ dotenv.config();
 
 const lines =['CENTRAL','BAKERLOO', 'DISTRICT', 'VICTORIA', 'NORTHERN', 'CIRCULAR', 'HAMMERSMITH-CITY', 'JUBILEE', 'METROPOLITAN', 'PICCADILLY', 'WATERLOO-CITY' ];
 
-const nexmo = new Nexmo({
+const vonage = new Vonage({
   apiKey: process.env.apiKey,
   apiSecret: process.env.apiSecret
-}, {debug: true});
+})
 
-const app_id = process.env.app_id;
-const app_key = process.env.app_key;
-const NexmoNumber = process.env.Nexmo_LVN;
+
+const from = process.env.from;
+const to = process.env.to;
+const message = 'A text message sent using the Vonage SMS API'
 ```
 
 In the following lines, we're initiating our application and defining some basic middleware. Note that we have defined the port 3000 for our server to be listening in, but you can choose other. Take into account that there's some space in between (commented out) that will be filled out with our route for incoming requests:
@@ -123,17 +124,18 @@ app.listen(port, ()=>{console.log('App listening in port ', port)});
 Let's define two functions to tidy-up a little bit the code. The first function `sendSms()` is going to take in two parameters: the phone number of the user and the text to be sent back to the user. We’ll be reusing a little bit of the code. 
 
 ```javascript
-function sendMessage(to, message) {
-    nexmo.message.sendSms(process.env.Nexmo_LVN, to, message,
-        (err, responseData) => {
-            if (err) {
-                console.log(err);
-            } else {
-
-                console.dir(responseData.messages);
-
-            }
-        })
+function sendMessage(to, from, message){
+  vonage.message.sendSms(from, to, message, (err, responseData) => {
+    if (err) {
+        console.log(err);
+    } else {
+        if(responseData.messages[0]['status'] === "0") {
+            console.log("Message sent successfully.");
+        } else {
+            console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+        }
+    }
+})
 }
 ```
 
