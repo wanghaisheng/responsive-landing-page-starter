@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-In this post, we are going to look at streaming an audio file into an in-progress phone call. There are many use cases for streaming audio files into calls, and with the Nexmo Voice API and the Nexmo Ruby gem, it is a relatively straightforward process. Whether you want to share music with someone over the phone or a snippet from a work meeting, you can do so with a few lines of Ruby and Nexmo.
+In this post, we are going to look at streaming an audio file into an in-progress phone call. There are many use cases for streaming audio files into calls, and with the Vonage Voice API and the Vonage Ruby gem, it is a relatively straightforward process. Whether you want to share music with someone over the phone or a snippet from a work meeting, you can do so with a few lines of Ruby and Vonage.
 
 The source code for this blog post is available on [GitHub](https://github.com/nexmo-community/ruby-voice-stream-audio-demo).
 
@@ -28,50 +28,57 @@ To work through this post, you'll need:
 * Ruby 2.5.3 or newer 
 * The [dotenv](https://github.com/bkeepers/dotenv) gem 
 * [Sinatra](https://github.com/sinatra/sinatra) 
-* [Nexmo CLI](https://github.com/Nexmo/nexmo-cli)
+* [Vonage CLI](https://github.com/Vonage/vonage-cli)
 
-## Configure your Nexmo Account and Application
+## Configure your Vonage Account and Application
 
-Let's start by purchasing a phone number we can use for testing. We'll use the Nexmo CLI to purchase the number.
+Let's start by purchasing a phone number we can use for testing. We'll use the Vonage CLI to purchase the number.
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:buy NUMBER COUNTRYCODE
 ```
 
-Go ahead and save that phone number you just purchased. We will be using it in just a moment in our code. 
+Here, `NUMBER` represents the number that you want to purchase, and `COUNTRYCODE` the country code for that number.
 
-We'll also use the Nexmo CLI to create a new application. We need to create an application to use the Voice API. 
+If you don't already know the number you want to buy, you can first search for a number in a particular country like so (here we're searching for numbers in the USA using the `US` country code):
 
 ```bash
-nexmo app:create "Test Application 1" http://example.com/answer http://example.com/event --keyfile private.key
+vonage numbers:search US
+```
+
+Go ahead and make a note of the phone number you just purchased. We will be using it in just a moment in our code. 
+
+We'll also use the Vonage CLI to create a new application. We need to create an application to use the Voice API. 
+
+```bash
+vonage apps:create "Test Application 1" --voice_answer_urlhttp://example.com/answer --voice_event_url=http://example.com/event
 ```
 
 Executing that command, we have now created a new application called "Test Application 1" and defined three parameters: 
 
-* `answer_url`: Where our application delivers the Nexmo Call Control Object (NCCO) that governs the call 
-* `event_url`: Where Nexmo sends the event information asynchronously when the `call_status` changes
-* `keyfile`: This is where we store the private key that we need for authentication. 
+* `answer_url`: Where our application delivers the Vonage Call Control Object (NCCO) that governs the call 
+* `event_url`: Where Vonage sends the event information asynchronously when the `call_status` changes
 
-We will redefine both the `answer_url` and the `event_url` in our code. It is important to note that they need to be **externally accessible** URLs for the Nexmo platform to access. For our local installation, we can use ngrok to make our local server externally available. You can find more information on using Nexmo with ngrok at [this blog post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/).
+We will redefine both the `answer_url` and the `event_url` in our code. It is important to note that they need to be **externally accessible** URLs for the Vonage platform to access. For our local installation, we can use ngrok to make our local server externally available. You can find more information on using Vonage with ngrok at [this blog post](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/).
 
-The `nexmo app:create` command also provides us with an application ID, which we will use in a moment in our code, alongside the new phone number we acquired.
+Running the `vonage apps:create` command also outputs an application ID for the created application. We will use this id in a moment in our code, alongside the new phone number we acquired.
 
 ## Setting up Our Credentials
 
-At this point, we now have the information we need to create our application. We are going to create a Sinatra web server that serves four routes, three `GET` requests and a `POST` request. The `GET` requests initiate the phone call, provide the NCCO instructions to the Nexmo platform and streams a silent file to keep the call open. The `POST` request streams the audio to the call once it has been answered.
+At this point, we now have the information we need to create our application. We are going to create a Sinatra web server that serves four routes, three `GET` requests and a `POST` request. The `GET` requests initiate the phone call, provide the NCCO instructions to the Vonage platform and streams a silent file to keep the call open. The `POST` request streams the audio to the call once it has been answered.
 
-To access our Nexmo account and to authenticate ourselves we need to provide the correct credentials. You should take care to store these securely and avoid checkling them into source control. In this example, we are going to use the `dotenv` gem to store our credentials as environment variables and access them in our code accordingly. We do that by first creating a file called `.env` and putting the following inside:
+To access our Vonage account and to authenticate ourselves we need to provide the correct credentials. You should take care to store these securely and avoid checkling them into source control. In this example, we are going to use the `dotenv` gem to store our credentials as environment variables and access them in our code accordingly. We do that by first creating a file called `.env` and putting the following inside:
 
 ```
-NEXMO_API_KEY=
-NEXMO_API_SECRET=
-NEXMO_APPLICATION_ID=
-NEXMO_APPLICATION_PRIVATE_KEY_PATH=private.key
-NEXMO_TO_NUMBER=
-NEXMO_NUMBER=
+VONAGE_API_KEY=
+VONAGE_API_SECRET=
+VONAGE_APPLICATION_ID=
+VONAGE_APPLICATION_PRIVATE_KEY_PATH=private.key
+VONAGE_TO_NUMBER=
+VONAGE_NUMBER=
 ```
 
-Your `NEXMO_API_KEY` and `NEXMO_API_SECRET` were provided to you when you signed up for a Nexmo account at the beginning of this walkthrough. You can reaccess them in your [account settings](https://dashboard.nexmo.com/settings). Your `NEXMO_APPLICATION_ID` is what was returned to you when you created a new application with the Nexmo CLI. Likewise, your `NEXMO_APPLICATION_PRIVATE_KEY_PATH` is the file path to the file you specified when initializing a new application with the CLI. In our example, it is `./private.key`. Your `NEXMO_NUMBER` is the phone number you purchased, and the `NEXMO_TO_NUMBER` is the phone number you wish to call. 
+Your `VONAGE_API_KEY` and `VONAGE_API_SECRET` were provided to you when you signed up for a Vonage account at the beginning of this walkthrough. You can reaccess them in your [account settings](https://dashboard.nexmo.com/settings). Your `VONAGE_APPLICATION_ID` is what was returned to you when you created a new application with the Nexmo CLI. Likewise, your `VONAGE_APPLICATION_PRIVATE_KEY_PATH` is the file path to the `private.key` file automatically created when initializing a new application with the CLI. In our example, it is `./private.key`. Your `VONAGE_NUMBER` is the phone number you purchased, and the `VONAGE_TO_NUMBER` is the phone number you wish to call. 
 
 If you are committing this to GitHub, please make sure also to create a `.gitignore` file and adding `.env` inside of it to ensure that your credentials do not get published online by accident.
 
@@ -81,27 +88,27 @@ Let's create a new file called `server.rb` and make sure we are requiring our ne
 
 ```ruby
 require 'sinatra'
-require 'nexmo'
+require 'vonage'
 require 'dotenv'
 require 'json'
 
 Dotenv.load
 ```
 
-Next, we are going to initialize a new Nexmo client instance utilizing those credentials and the Nexmo gem.
+Next, we are going to initialize a new Vonage client instance utilizing those credentials and the Vonage gem.
 
 ```ruby
-client = Nexmo::Client.new(
-  api_key: ENV['NEXMO_API_KEY'],
-  api_secret: ENV['NEXMO_API_SECRET'],
-  application_id: ENV['NEXMO_APPLICATION_ID'],
-  private_key: File.read(ENV['NEXMO_APPLICATION_PRIVATE_KEY_PATH'])
+client = Vonage::Client.new(
+  api_key: ENV['VONAGE_API_KEY'],
+  api_secret: ENV['VONAGE_API_SECRET'],
+  application_id: ENV['VONAGE_APPLICATION_ID'],
+  private_key: File.read(ENV['VONAGE_APPLICATION_PRIVATE_KEY_PATH'])
 )
 ```
 
-At this point, we now have a credentialed Nexmo client instance and our streaming audio defined. What are we missing? The phone call of course! 
+At this point, we now have a credentialed Vonage client instance and our streaming audio defined. What are we missing? The phone call of course! 
 
-First, let's get our `ngrok` externally accessible URL that we will use to make our server available to Nexmo to receive our call instructions from and to send call status updates back to. Once you have installed `ngrok`, open a new console window and execute `ngrok http 4567` from the command line. This will initiate a new `ngrok` server on port 4567 that parallels our Sinatra server, which is also running on port 4567. You will see a status displayed to you that contains the `ngrok` URL under the `Forwarding` parameter. Go ahead and copy and paste that URL into the `BASE_URL` constant variable in `server.rb`.
+First, let's get our `ngrok` externally accessible URL that we will use to make our server available to Vonage to receive our call instructions from and to send call status updates back to. Once you have installed `ngrok`, open a new console window and execute `ngrok http 4567` from the command line. This will initiate a new `ngrok` server on port 4567 that parallels our Sinatra server, which is also running on port 4567. You will see a status displayed to you that contains the `ngrok` URL under the `Forwarding` parameter. Go ahead and copy and paste that URL into the `BASE_URL` constant variable in `server.rb`.
 
 ```ruby
 BASE_URL = 'PASTE URL HERE'
@@ -118,8 +125,8 @@ We now can create a URL path to `/new` that when accessed will start the phone c
 ```ruby
 get '/new' do
   response = client.calls.create(
-    to: [{ type: 'phone', number: ENV['NEXMO_NUMBER'] }],
-    from: { type: 'phone', number: ENV['NEXMO_TO_NUMBER'] },
+    to: [{ type: 'phone', number: ENV['VONAGE_NUMBER'] }],
+    from: { type: 'phone', number: ENV['VONAGE_TO_NUMBER'] },
     answer_url: ["#{BASE_URL}/answer"],
     event_url: ["#{BASE_URL}/event"]
   )
@@ -129,13 +136,13 @@ end
 
 The `get /new` action above creates a new phone call with the `to:`, `from:`, `answer_url:` and `event_url:` parameters provided. 
 
-The `to:` and `from:` parameters require both a `type` and a `number`. In our case, the `type` for both is `phone`. The `answer_url` and `event_url` need to be externally accessible URLs that the Nexmo platform can receive instructions from and send call status updates to, respectively. 
+The `to:` and `from:` parameters require both a `type` and a `number`. In our case, the `type` for both is `phone`. The `answer_url` and `event_url` need to be externally accessible URLs that the Vonage platform can receive instructions from and send call status updates to, respectively. 
 
-Once we initiate the phone call, Nexmo accesses the `answer_url` path looking for call instructions. We need to create that action as well. The action will render and deliver the instructions as JSON. The instructions provide the `action`, the URL path to a silent audio file that will play in the background keeping the connection open and a `loop` parameter, which we set to `0`.
+Once we initiate the phone call, Vonage accesses the `answer_url` path looking for call instructions. We need to create that action as well. The action will render and deliver the instructions as JSON. The instructions provide the `action`, the URL path to a silent audio file that will play in the background keeping the connection open and a `loop` parameter, which we set to `0`.
 
 ```ruby
 get '/answer' do
-    # Provide the Nexmo Call Control Object (NCCO) as JSON to the Nexmo Platform
+    # Provide the Vonage Call Control Object (NCCO) as JSON to the Vonage Platform
     content_type :json
     [{ :action => 'stream', :streamUrl => ["#{BASE_URL}/stream/silent"], :loop => 0 }].to_json
 end
@@ -150,7 +157,7 @@ get '/stream/silent' do
 end
 ```
 
-Lastly, we also create a `POST` path to `/event` that receives the call status from the Nexmo platform and send the streaming audio once it has been answered. The action parses the data received and uses the `status` parameter to determine when the call has been answered. A call's status changes from `started` to `ringing` and then `answered` and finally, when it is disconnected, to `completed`. Our code plays the audio file once the `status` has reached `answered`. We also receive the unique identifier for this call, the `uuid`, from the data received, which is required for us to inject our streaming audio into this specific call.
+Lastly, we also create a `POST` path to `/event` that receives the call status from the Vonage platform and send the streaming audio once it has been answered. The action parses the data received and uses the `status` parameter to determine when the call has been answered. A call's status changes from `started` to `ringing` and then `answered` and finally, when it is disconnected, to `completed`. Our code plays the audio file once the `status` has reached `answered`. We also receive the unique identifier for this call, the `uuid`, from the data received, which is required for us to inject our streaming audio into this specific call.
 
 ```ruby
 post '/event' do
@@ -164,6 +171,6 @@ So with that `POST` action, we have finished creating our application. Now, we j
 
 ## Conclusion
 
-In approximately 40 lines of code, we have created a fully functioning web server that can call any phone number and play streaming audio into that call. There is a lot more that can be done with the Nexmo Voice API and you can explore it entirely on the [Nexmo Developer Platform](https://developer.nexmo.com/voice/voice-api/overview).
+In approximately 40 lines of code, we have created a fully functioning web server that can call any phone number and play streaming audio into that call. There is a lot more that can be done with the Vonage Voice API and you can explore it entirely on the [Vonage Developer Platform](https://developer.nexmo.com/voice/voice-api/overview).
 
-If you have any questions about this post feel free to email devrel@nexmo.com or [join the Nexmo community Slack channel](https://developer.nexmo.com/community/slack), where we're waiting and ready to help.
+If you have any questions about this post feel free to email devrel@nexmo.com or [join the Vonage community Slack channel](https://developer.vonage.com/community/slack), where we're waiting and ready to help.
