@@ -122,10 +122,9 @@ vonage apps:link --number=VONAGE_NUMBER APP_ID
 Finally, we will fill in the `.env` file with the Vonage `apikey` and `apiSecret,` `app_id`, and `app_key`, and the Vonage number we just purchased.
 
 ```bash
-apiKey = 
-apiSecret = 
-number = 
-from = 
+apiKey = your_vonage_api_key
+apiSecret = you_vonage_api_secret
+from = your_vonage_number
 ```
 
 ## Let's Start With The Fun Stuff
