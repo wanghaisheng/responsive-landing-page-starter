@@ -79,7 +79,11 @@ Next, configure the CLI with your Vonage API key and secret. You can find this i
 vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-Now, use the CLI to create a Vonage application. 
+Let's run ngrok in the same port where our local server is listening (in my case 3000).
+
+![ngrok](https://raw.githubusercontent.com/javiermolsanz/Blog_Nexmo_TFL/master/Screen%20Shot%202019-07-22%20at%2009.06.27.png)
+
+Now, use the CLI to create a Vonage application and create a webhook to your ngrok URL. 
 
 ```bash
 ✔ Application Name … my_project
@@ -255,10 +259,6 @@ app.post('/inbound', (req, res) => {
 ```
 
 The `(lines.indexOf(Tube_Line) &gt; -1)` bit will allow us to check if the value stored in `Tube_line` matches any of the values in the `lines` array. This method returns a first index at which the given item can be found in an array, or -1 if it is not present in an array. We'll want only to check the status of a given line if the input matches any of the valid values. Otherwise, we will receive a beautiful HTTP 404  back from the TFL API. Presuming we're gentle enough to let the user know that they've introduced a wrong value, we'll send them back a message providing them with the valid values. This is done when the indexOf method is equal to -1 as explained above.
-
-Let's run ngrok in the same port where our local server is listening in my case 3000 or the one specified in the `.env` file.
-
-![ngrok](https://raw.githubusercontent.com/javiermolsanz/Blog_Nexmo_TFL/master/Screen%20Shot%202019-07-22%20at%2009.06.27.png)
 
 Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to your Vonage number. As an example, I will query the name of the line that gets me to work every day.
 
