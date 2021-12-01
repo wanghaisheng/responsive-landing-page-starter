@@ -118,6 +118,7 @@ Finally, fill in the `.env` file with the Vonage API key, secret, and the number
 apiKey = your_vonage_api_key
 apiSecret = your_vonage_api_secret
 from = your_vonage_number
+PORT = your_local_server_port
 ```
 
 ## Let's Start With The Fun Stuff
