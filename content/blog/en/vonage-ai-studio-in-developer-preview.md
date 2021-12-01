@@ -7,9 +7,9 @@ author: binoy-chemmagate
 published: true
 published_at: 2021-12-01T08:32:34.005Z
 updated_at: 2021-12-01T08:32:34.023Z
-category: announcement
+category: release
 tags:
-  - chatbot
+  - customer-engagement
   - ai
   - vonage-ai
 comments: true
@@ -41,7 +41,7 @@ Vonage AI studio is a Low-code/No-code conversation designer that empowers devel
 
 Underlying Vonage AI APIs offer Natural Language Understanding (NLU), Automatic Speech Recognition (ASR), and Text to Speech (TTS). The Vonage APIs offer multiple engagement channels over voice and messaging to support various AI use cases over Vonage AI Studio. 
 
-![](https://lh6.googleusercontent.com/BSpvf0TrmL7WEPp-LrxQ6U-K-WrzYVP9vpiwg3_jnvQCqOVHvqo8TgFVdrnUszPt6Vuk7rS_AoaJeE0flKKNOHIg8Hg0mBLbd0g0E6F8clGT1FXZhjQsBimULrOew5Ed_H8oebaG)
+![A screenshot of AI Studio showing the graphical user interface](https://lh6.googleusercontent.com/BSpvf0TrmL7WEPp-LrxQ6U-K-WrzYVP9vpiwg3_jnvQCqOVHvqo8TgFVdrnUszPt6Vuk7rS_AoaJeE0flKKNOHIg8Hg0mBLbd0g0E6F8clGT1FXZhjQsBimULrOew5Ed_H8oebaG "A screenshot of AI Studio showing the graphical user interface")
 
 The AI Studio is divided into multiple parts. The building canvas (as seen in the picture above) and the building blocks of the conversation that we call “Nodes” are on the left navigation panel. Each of them has its own purpose, and together they create the conversational flow. 
 
