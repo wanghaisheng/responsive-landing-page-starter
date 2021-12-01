@@ -135,7 +135,7 @@ First, define the phone number you want to connect calls to by adding the follow
 private static final String YOUR_SECOND_NUMBER = "16165551234";
 ```
 
-Vonage sends the `to` parameter to your webhook which contains the Nexmo number that was called. You can use this same number to call you by adding it as a `from` parameter.
+Vonage sends the `to` parameter to your webhook which contains the Vonage number that was called. You can use this same number to call you by adding it as a `from` parameter.
 
 Now define the answer route by adding the following code to the `main` method of the `App` class, resolving any imports:
 
