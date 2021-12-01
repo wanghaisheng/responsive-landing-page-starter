@@ -302,7 +302,7 @@ npm-debug.log
 /*.env
 ```
 
-The only downside of using the free-tier is that once your application idles after 30 minutes of inactivity, it can take a little bit until it awakes (when receiving a new request). Pragmatically, this means that we may see a slight delay when receiving the message back from Nexmo if the application has been inactive for a while. This is because the request to the TFL API will be handled once the application is restarted again. This is acceptable as this application is not time-critical. However, if you don't find this sufficient, you can move to the paid service and have a dedicated dyno running for your application.
+The only downside of using the free-tier is that once your application idles after 30 minutes of inactivity, it can take a little bit until it awakes (when receiving a new request). Pragmatically, this means that we may see a slight delay when receiving the message back from Vonage if the application has been inactive for a while. This is because the request to the TFL API will be handled once the application is restarted again. This is acceptable as this application is not time-critical. However, if you don't find this sufficient, you can move to the paid service and have a dedicated dyno running for your application.
 
 To determine how to start your app, Heroku first looks for a Procfile. If no Procfile exists for a Node.js app, Heroku will attempt to start a default web process via the start script in your package.json. The command in a web process type must bind to the port number specified in the PORT environment variable. If it does not, the dyno will not start.
 
@@ -346,6 +346,6 @@ Hopefully, if we send an SMS once we have updated the Inbound Webhook URL for ou
 That's all for today but if you are willing to continue playing around with our APIs, you may find helpful the following links:
 
 * [Documentation](https://developer.nexmo.com/) for the different APIs on the developer portal
-* Series of [tutorials](https://www.nexmo.com/blog/category/developer/tutorial/) for various Nexmo APIs
-* If you need us, try the [Nexmo Community Slack channel](https://developer.nexmo.com/community/slack)
+* Series of [tutorials](https://www.nexmo.com/blog/category/developer/tutorial/) for various Vonage APIs
+* If you need us, try the [Vonage Community Slack channel](https://developer.nexmo.com/community/slack)
 * Let us know what you think by tweeting at [@VonageDev](https://twitter.com/vonagedev)
