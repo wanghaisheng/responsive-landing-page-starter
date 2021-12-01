@@ -102,8 +102,6 @@ const vonage = new Vonage({
   apiSecret: process.env.apiSecret
 })
 
-
-const message = 'A text message sent using the Vonage SMS API'
 ```
 
 In the following lines, we're initiating our application and defining some basic middleware. Note that we have defined the port 3000 for our server to be listening in, but you can choose other. Take into account that there's some space in between (commented out) that will be filled out with our route for incoming requests:
