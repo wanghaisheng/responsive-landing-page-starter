@@ -260,7 +260,7 @@ Let's run ngrok in the same port where our local server is listening in my case 
 
 ![ngrok](https://raw.githubusercontent.com/javiermolsanz/Blog_Nexmo_TFL/master/Screen%20Shot%202019-07-22%20at%2009.06.27.png)
 
-Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to the Vonage number we've just configured. As an example, I will query the name of the line that gets me to work every day.
+Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS with any line name that matches our `lines` array to your Vonage number. As an example, I will query the name of the line that gets me to work every day.
 
 ![demo of app performance on phone](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/demo.gif "demo of app performance on phone")
 
@@ -268,15 +268,15 @@ Alright, it's time to test this out 🙈. Let's grab our phone and send an SMS w
 
 ## Mocking Inbound Messages
 
-If for some reason you don't have the chance to use your handset or you don't want to manually send SMS in order to test the application, we've got you covered as well. An inbound message is simply represented as a GET or POST request to your webhook. You can define which method you want Nexmo to use to deliver your inbound messages in your [Nexmo Dashboard Settings](https://dashboard.nexmo.com/settings). I'm using POST for this tutorial.
+If for some reason you don't have the chance to use your handset or you don't want to manually send SMS in order to test the application, we've got you covered as well. An inbound message is simply represented as a GET or POST request to your webhook. You can define which method you want Vonage to use to deliver your inbound messages in your [Vonage Dashboard Settings](https://dashboard.nexmo.com/settings). I'm using POST for this tutorial.
 
-Taking this into account, we can simulate the behavior of an inbound message by manually hitting our local server exposed with ngrok to see if the application works as it should. I'll be using [POSTMAN](https://www.getpostman.com/) but feel free to use any other service of your choice. We're going to make a POST request to our inbound webhook defining a generic raw JSON body (as the one that Nexmo would send for an inbound message). However, do remember to change the `msisdn` so that our application knows where to reply. Also, replace the `text` parameter to play around with different line name values, you can purposely type down an invalid value so that you receive a message containing the permitted values. My API request looks something like this: 
+Taking this into account, we can simulate the behavior of an inbound message by manually hitting our local server exposed with ngrok to see if the application works as it should. I'll be using [POSTMAN](https://www.getpostman.com/) but feel free to use any other service of your choice. We're going to make a POST request to our inbound webhook defining a generic raw JSON body (as the one that Vonage would send for an inbound message). However, do remember to change the `msisdn` so that our application knows where to reply. Also, replace the `text` parameter to play around with different line name values, you can purposely type down an invalid value so that you receive a message containing the permitted values. My API request looks something like this: 
 
 ![](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/mock.png)
 
 In this case, the `to` parameter is not relevant so I set it to a random value. It is important to add the `Content-Type` header and set it to `application/json` so that our application knows how to handle this data. As you can see at the bottom-right-hand side, our application returns an HTTP 204 as defined in our `/inbound` route via the res.status(204).send()
 
-## What's Next? -&gt; Let's Deploy To Heroku
+## What's Next? Let's Deploy To Heroku
 
 Heroku is a platform intended to easily deploy your Web application and scale your services according to your needs. They also offer some useful add-ons to simplify some daily tasks.
 We are going to leverage Heroku due to the fact that it's pretty easy to use, and the documentation is great on the [Heroku site](https://www.heroku.com/what). By using Heroku we can avoid the hassle of renting, and configuring our server. 
