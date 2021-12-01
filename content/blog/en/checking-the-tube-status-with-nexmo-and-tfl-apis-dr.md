@@ -1,5 +1,5 @@
 ---
-title: Checking the London Tube Status with Nexmo’s SMS API
+title: Checking the London Tube Status with Vonage's SMS API
 description: How to build an application that allows you to check the status of
   a given line of the London Underground using the Nexmo SMS API.
 thumbnail: /content/blog/checking-the-tube-status-with-nexmo-and-tfl-apis-dr/Elevate-Tube-Status.png
@@ -15,13 +15,13 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Today we'll be building an application that will allow us to check the status of a given line of the London Underground using the Nexmo [SMS API](https://developer.nexmo.com/messaging/sms/overview). We are going to leverage the Transport for London  ([TFL API](https://api-portal.tfl.gov.uk/)) to retrieve real-time data about the status of a tube line chosen by the user. The trigger will be an inbound SMS to our Virtual number. Does it sound like a plan? Follow through this tutorial then.  We will get the same status as in [their website](https://tfl.gov.uk/tube-dlr-overground/status/) straight into our handset via SMS. This is especially handy if for some reason you don't have internet access to check Google Maps/Citymapper or if you've exceeded your monthly data allowance.
+Today we'll be building an application that will allow us to check the status of a given line of the London Underground using the Vonage [SMS API](https://developer.nexmo.com/messaging/sms/overview). We are going to leverage the Transport for London  ([TFL API](https://api-portal.tfl.gov.uk/)) to retrieve real-time data about the status of a tube line chosen by the user. The trigger will be an inbound SMS to our Virtual number. Does it sound like a plan? Follow through this tutorial then.  We will get the same status as in [their website](https://tfl.gov.uk/tube-dlr-overground/status/) straight into our handset via SMS. This is especially handy if for some reason you don't have internet access to check Google Maps/Citymapper or if you've exceeded your monthly data allowance.
 
 Our application workflow will be something like the following diagram:
 
 ![sketch diagram of workflow](/content/blog/checking-the-london-tube-status-with-nexmo’s-sms-api/workflow.png "sketch diagram of workflow")
 
-I know 😌 chances are you don't live in London, and you may think this tutorial is not relevant for you. However, I truly believe that this is a very illustrative example of what you can build on top of Nexmo. 
+I know 😌 chances are you don't live in London, and you may think this tutorial is not relevant for you. However, I truly believe that this is a very illustrative example of what you can build on top of Vonage. 
 
 This tutorial will walk you through all the steps to create this application from scratch. However, if you prefer to get a hold of the [finished repository](https://github.com/nexmo-community/tube-status-checker), please go check it out!
 
@@ -32,7 +32,7 @@ This tutorial will walk you through all the steps to create this application fro
 For the first part of the tutorial, we will need:
 
 * Some basic Javascript/node.js Knowledge.
-* You will need to use [ngrok](https://ngrok.com/) to expose your local server to the internet so Nexmo can reach it. We have a [detailed tutorial](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) on this.
+* You will need to use [ngrok](https://ngrok.com/) to expose your local server to the internet so Vonage can reach it. We have a [detailed tutorial](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) on this.
 
 If you want to get your application deployed to Heroku, you will also need:
 
@@ -47,7 +47,7 @@ Create a project folder named Nexmotubestatus on your local machine and change t
 mkdir Nexmotubestatus && cd Nexmotubestatus
 ```
 
-Let's create our main file where we'll store our code. We will also create our `.env` file where we'll be storing our Nexmo and TLF credentials as well as some other variables.
+Let's create our main file where we'll store our code. We will also create our `.env` file where we'll be storing our Vonage and credentials as well as some other variables.
 
 ```bash
 touch server.js .env
@@ -65,12 +65,12 @@ Let's install and save the necessary dependencies.
 npm install --s express dotenv vonage body-parser request
 ```
 
-We will fill in the `.env` file with the Vonage `apikey` and `apiSecret` and the TFL `app_id` ID and `app_key`. We will also include here our previously purchased Virtual number. 
+We will fill in the `.env` file with the Vonage `apikey` and `apiSecret,` `app_id`, and `app_key`. We will also include here our previously purchased Virtual number. 
 
 ```bash
 apiKey = 
 apiSecret = 
-to = 
+number = 
 from = 
 
 ```
@@ -103,8 +103,6 @@ const vonage = new Vonage({
 })
 
 
-const from = process.env.from;
-const to = process.env.to;
 const message = 'A text message sent using the Vonage SMS API'
 ```
 
@@ -124,8 +122,8 @@ app.listen(port, ()=>{console.log('App listening in port ', port)});
 Let's define two functions to tidy-up a little bit the code. The first function `sendSms()` is going to take in two parameters: the phone number of the user and the text to be sent back to the user. We’ll be reusing a little bit of the code. 
 
 ```javascript
-function sendMessage(to, from, message){
-  vonage.message.sendSms(from, to, message, (err, responseData) => {
+function sendMessage(to, message){
+  vonage.message.sendSms(process.env.from;, to;, message, (err, responseData) => {
     if (err) {
         console.log(err);
     } else {
