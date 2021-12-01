@@ -116,7 +116,7 @@ Finally, fill in the `.env` file with the Vonage API key, secret, and the number
 
 ```bash
 apiKey = your_vonage_api_key
-apiSecret = you_vonage_api_secret
+apiSecret = your_vonage_api_secret
 from = your_vonage_number
 ```
 
