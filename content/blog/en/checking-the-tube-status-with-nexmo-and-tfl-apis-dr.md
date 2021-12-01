@@ -65,9 +65,61 @@ Let's install and save the necessary dependencies.
 npm install --s express dotenv vonage body-parser request
 ```
 
-Now we need to buy a number from Vonage. 
+Now we need to create a Vonage app and buy a number.
 
-We will fill in the `.env` file with the Vonage `apikey` and `apiSecret,` `app_id`, and `app_key`. We will also include here our previously purchased Virtual number. 
+Install the Vonage CLI globally with this command:
+
+```
+npm install @vonage/cli -g
+```
+
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
+
+```
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
+
+### Create a Voice Application
+
+Create a new directory for your project and CD into it:
+
+```
+mkdir my_project
+CD my_project
+```
+
+Now, use the CLI to create a Vonage application. 
+
+```bash
+vonage apps:create
+✔ Application Name … hotline
+✔ Select App Capabilities › Voice
+✔ Create voice webhooks? … yes
+✔ Answer Webhook - URL …  https://ed330676.ngrok.io/incoming/
+✔ Answer Webhook - Method › POST
+✔ Event Webhook - URL … https://ed330676.ngrok.io/event/
+✔ Event Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure  … yes
+
+Application created: 34abcd12-ef12-40e3-9c6c-4274b3633761
+```
+
+You'll want to save that ID that's printed out after `Application created:`. You'll need it in the next step.
+
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
+
+```bash
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+```
+
+Now link the number to your app:
+
+```
+vonage apps:link --number=VONAGE_NUMBER APP_ID
+```
+
+Finally, we will fill in the `.env` file with the Vonage `apikey` and `apiSecret,` `app_id`, and `app_key`, and the Vonage number we just purchased.
 
 ```bash
 apiKey = 
