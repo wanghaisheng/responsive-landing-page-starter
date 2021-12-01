@@ -122,8 +122,8 @@ Finally, fill in the `.env` file with the Vonage API key for `apiKey`, Vonage se
 apiKey = your_vonage_api_key
 apiSecret = your_vonage_api_secret
 from = your_vonage_number
-app_id = 
-app_key = 
+app_id = TFL_app_id
+app_key = TFL_app_key
 PORT = 3000 
 ```
 
