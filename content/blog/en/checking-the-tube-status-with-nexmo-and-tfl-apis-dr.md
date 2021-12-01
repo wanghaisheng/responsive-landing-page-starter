@@ -79,29 +79,14 @@ Next, configure the CLI with your Vonage API key and secret. You can find this i
 vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-### Create a Voice Application
-
-Create a new directory for your project and CD into it:
-
-```
-mkdir my_project
-CD my_project
-```
-
 Now, use the CLI to create a Vonage application. 
 
 ```bash
 vonage apps:create
-✔ Application Name … hotline
-✔ Select App Capabilities › Voice
-✔ Create voice webhooks? … yes
-✔ Answer Webhook - URL …  https://ed330676.ngrok.io/incoming/
-✔ Answer Webhook - Method › POST
-✔ Event Webhook - URL … https://ed330676.ngrok.io/event/
-✔ Event Webhook - Method › POST
-✔ Allow use of data for AI training? Read data collection disclosure  … yes
-
-Application created: 34abcd12-ef12-40e3-9c6c-4274b3633761
+✔ Application Name … my_project
+✔ Select App Capabilities › Messages
+✔ Create messages webhooks? … no
+✔ Allow use of data for AI training? no
 ```
 
 You'll want to save that ID that's printed out after `Application created:`. You'll need it in the next step.
@@ -119,7 +104,7 @@ Now link the number to your app:
 vonage apps:link --number=VONAGE_NUMBER APP_ID
 ```
 
-Finally, we will fill in the `.env` file with the Vonage `apikey` and `apiSecret,` `app_id`, and `app_key`, and the Vonage number we just purchased.
+Finally, fill in the `.env` file with the Vonage API key, secret, and the number you just purchased.
 
 ```bash
 apiKey = your_vonage_api_key
@@ -129,11 +114,11 @@ from = your_vonage_number
 
 ## Let's Start With The Fun Stuff
 
-As always, let’s require all the dependencies at the beginning of our project. We will use the `express` framework to build our application. We’re going to use the `dotenv` library so that we work with environment variables. We'll be using `body-parser` so we can parse the incoming requests coming from Nexmo’s server. 
-For the API requests to the TFL API, I chose the [`request` library](https://github.com/request/request) as I find it quite straightforward but you can use any other such as [axios](https://www.npmjs.com/package/axios). Lastly and most importantly, 😊 we require the `Nexmo` library to send the line status back to the user. 
+As always, let’s require all the dependencies at the beginning of our project. We will use the `express` framework to build our application. We’re going to use the `dotenv` library so that we work with environment variables. We'll be using `body-parser` so we can parse the incoming requests coming from Vonage's server. 
+For the API requests to the TFL API, I chose the [`request` library](https://github.com/request/request) as I find it quite straightforward but you can use any other such as [axios](https://www.npmjs.com/package/axios). Lastly and most importantly, 😊 we require the Vonage library to send the line status back to the user. 
 
 Paste the following code into your newly created file. We import all the dependencies installed, and we've defined a variable that contains all the accepted line names provided by the TFL API. We don't want to send a request to the TFL API if the user doesn't provide a valid line name (I will explain in a bit why all the values are capitalized).
- The variable called status will contain any relevant status in relation to the status of the said line. Also, add in the different credentials you’ll need to utilize the Nexmo and TFL APIs respectively. These will be retreived from the `.env` file:
+ The variable called status will contain any relevant status in relation to the status of the said line. Also, add in the different credentials you’ll need to utilize the Vonage and TFL APIs respectively. These will be retreived from the `.env` file:
 
 ```javascript
 const Vonage = require('@vonage/server-sdk')
