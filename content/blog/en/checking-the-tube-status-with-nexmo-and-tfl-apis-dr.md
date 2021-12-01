@@ -81,6 +81,10 @@ vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 
 Let's run ngrok in the same port where our local server is listening (in my case 3000).
 
+```
+ngrok http 3000
+```
+
 ![ngrok](https://raw.githubusercontent.com/javiermolsanz/Blog_Nexmo_TFL/master/Screen%20Shot%202019-07-22%20at%2009.06.27.png)
 
 Now, use the CLI to create a Vonage application and create a webhook to your ngrok URL. 
