@@ -112,12 +112,14 @@ Now link the number to your app:
 vonage apps:link --number=VONAGE_NUMBER APP_ID
 ```
 
-Finally, fill in the `.env` file with the Vonage API key, secret, and the number you just purchased.
+Finally, fill in the `.env` file with the Vonage API key for `apiKey`, Vonage secret for `apiSecret`, and the number you just purchased for `from`. Next, add your TFL `app_id` and `app_key`. 
 
 ```bash
 apiKey = your_vonage_api_key
 apiSecret = your_vonage_api_secret
 from = your_vonage_number
+app_id = 
+app_key = 
 PORT = 3000 
 ```
 
