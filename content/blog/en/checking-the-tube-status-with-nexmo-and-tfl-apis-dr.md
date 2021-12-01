@@ -97,7 +97,7 @@ Now, use the CLI to create a Vonage application and create a webhook to your ngr
 Creating Application... done
 ```
 
-You'll want to save that ID that's printed out after `Application created:`. You'll need it in the next step.
+You'll want to save that ID that's printed out after `Application created:`. You'll need it shortly.
 
 Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
 
