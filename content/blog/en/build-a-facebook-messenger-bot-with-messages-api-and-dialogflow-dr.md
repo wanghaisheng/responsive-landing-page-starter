@@ -56,7 +56,7 @@ npm init -y
 Next, install the dependencies for the project:
 
 ```bash
-npm i koa koa-route koa-bodyparser vonage@beta dialogflow
+npm i koa koa-route koa-bodyparser @vonage/server-sdk@beta dialogflow
 ```
 
 Additionally, we'll be using the excellent [Nodemon](https://github.com/remy/nodemon) and [DotEnv](https://github.com/motdotla/dotenv) packages to keep our app up and running whilst changes are made so you don't have to keep restarting it. Install these as `devDependencies`.
@@ -151,7 +151,7 @@ Set up a new Messages & Dispatch application via the [Vonage Dashboard](https://
 
 Make sure that you append `/webhooks/inbound` and `/webhooks/status` to the URL you get from Ngrok when you paste them into the form (like in the image below).
 
-![Create an application](https://cl.ly/3f51a95aa73d/Image%202018-10-15%20at%2010.57.06%20am.png)
+![Webooks](/content/blog/build-a-facebook-messenger-bot-with-messages-api-and-dialogflow/webhooks.png)
 
 Remember to also click the *Generate public/private key pair* link. This will download a file called `private.key`.
 
@@ -191,9 +191,9 @@ To connect your Facebook page to your app, we've created a handy page:
 
 Complete the following steps:
 
-* Login with your Facebook credentials
-* Select the Facebook page you want to connect to your Vonage app
-* Click *Complete Setup*
+* Login with your Facebook credentials.
+* Select the Facebook page you want to connect to your Vonage app.
+* Click *Complete Setup.*
 
 If all is well, you'll see a green dialog pop up congratulating you on your success, and letting you know the ID of your Facebook page.
 
@@ -223,7 +223,7 @@ You should see your messages appearing in the console.
 
 ## Send the Messages to Dialogflow
 
-Now that your stunning word play is being received by the application, it's time to send it over to Dialogflow to get some equally pithy responses back.
+Now that your stunning wordplay is being received by the application, it's time to send it over to Dialogflow to get some equally pithy responses back.
 
 In the `controllers` folder, create a new file called `dialogflow.js` and add the contents of the JavaScript file [controllers/dialogflow.js](https://raw.githubusercontent.com/nexmo-community/nexmo-messages-facebook-dialogflow/master/controllers/dialogflow.js).
 
