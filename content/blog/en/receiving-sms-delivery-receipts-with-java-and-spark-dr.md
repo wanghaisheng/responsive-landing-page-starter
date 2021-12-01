@@ -16,19 +16,19 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-You've learned [how to send a text message](https://www.nexmo.com/blog/2017/05/03/send-sms-messages-with-java-dr) from your Nexmo virtual number using the SMS API. Everything looks good: your application is error-free and the API returns `status: 0`, so you're pretty confident that your message has been sent.
+You've learned [how to send a text message](https://www.nexmo.com/blog/2017/05/03/send-sms-messages-with-java-dr) from your Vonage virtual number using the SMS API. Everything looks good: your application is error-free and the API returns `status: 0`, so you're pretty confident that your message has been sent.
 
 But, unless you have direct access to the device associated with that number, how can you be sure that it was delivered?
 
-Well, the good news is that many of the networks that Nexmo uses to carry your message will provide a delivery receipt. You can access that delivery receipt programmatically, and that's what we'll show you how to do in this post.
+Well, the good news is that many of the networks that Vonage uses to carry your message will provide a delivery receipt. You can access that delivery receipt programmatically, and that's what we'll show you how to do in this post.
 
 The bad news is that not all networks' delivery receipts are definite proof that your message was actually delivered, with operators in some countries being more reliable than others.
 
 Some carriers will tell you that they received your message, but won't confirm if it arrived at the destination. Some will generate fake receipts. Others won't send any receipt at all. 
 
-So, before you rely on delivery receipts as being a source of truth, check out the [Nexmo Knowledge Base](https://help.nexmo.com/hc/en-us/articles/204014863-What-will-I-receive-if-a-network-country-does-not-support-Delivery-Receipts-) for country-specific information.
+So, before you rely on delivery receipts as being a source of truth, check out the [Vonage Knowledge Base](https://help.nexmo.com/hc/en-us/articles/204014863-What-will-I-receive-if-a-network-country-does-not-support-Delivery-Receipts-) for country-specific information.
 
-To request a delivery receipt you must create a publicly-accessible [webhook](https://developer.nexmo.com/concepts/guides/webhooks) and configure your Nexmo account to use it. We will be using Java and the [Spark web framework](https://sparkjava.com) to create the webhook. You can find the code for this tutorial on [GitHub](https://github.com/nexmo-community/java-get-delivery-receipt).
+To request a delivery receipt you must create a publicly-accessible [webhook](https://developer.vonage.com/concepts/guides/webhooks) and configure your Vonage account to use it. We will be using Java and the [Spark web framework](https://sparkjava.com) to create the webhook. You can find the code for this tutorial on [GitHub](https://github.com/nexmo-community/java-get-delivery-receipt).
 
 ## Prerequisites
 
@@ -67,7 +67,7 @@ dependencies {
     // Spark framework
     implementation 'com.sparkjava:spark-core:2.8.0'
 
-    // Nexmo client library
+    // Vonage client library
     implementation 'com.nexmo:client:4.4.0'
 
     // To display formatted JSON
@@ -104,7 +104,7 @@ public class App {
 
 ## Code the Delivery Receipt Webhook
 
-When Nexmo receives a delivery receipt from a carrier, it checks your account configuration to see if you have provided the URL of a webhook endpoint. If so, Nexmo makes a request to this endpoint with the delivery receipt information.
+When Vonage receives a delivery receipt from a carrier, it checks your account configuration to see if you have provided the URL of a webhook endpoint. If so, Vonage makes a request to this endpoint with the delivery receipt information.
 
 By default, this is a `GET` request, so we'll code that first. The endpoint we will expose is `/webhooks/delivery-receipt`.
 
@@ -121,11 +121,11 @@ get("/webhooks/delivery-receipt", (req, res) -> {
 });
 ```
 
-This code intercepts `GET` requests on your endpoint, strips out the delivery receipt information from the query string and writes it to `stdout`. It then returns HTTP status code `204` to tell Nexmo's APIs that the request was successful, but not to expect any content in the response.
+This code intercepts `GET` requests on your endpoint, strips out the delivery receipt information from the query string and writes it to `stdout`. It then returns HTTP status code `204` to tell Vonage's APIs that the request was successful, but not to expect any content in the response.
 
 ## Handle POST Requests on Your Webhook
 
-You can also configure your Nexmo account so that Nexmo supplies the delivery receipt by a `POST` request: either as a URL-encoded form or a JSON payload. 
+You can also configure your Vonage account so that Vonage supplies the delivery receipt by a `POST` request: either as a URL-encoded form or a JSON payload. 
 
 So that your application can accept either `GET` or `POST` requests, add the following code to `App.java`:
 
@@ -146,11 +146,11 @@ post("/webhooks/delivery-receipt", (req, res) -> {
 });
 ```
 
-That's all the code you need to capture delivery receipts regardless of the HTTP method Nexmo uses to send them.
+That's all the code you need to capture delivery receipts regardless of the HTTP method Vonage uses to send them.
 
 ## Make Your Webhook Accessible
 
-You must make your webhook accessible to Nexmo's APIs. A great way to do this during development is to use [ngrok](https://ngrok.com). To learn more, read our [blog post on ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
+You must make your webhook accessible to Vonage's APIs. A great way to do this during development is to use [ngrok](https://ngrok.com). To learn more, read our [blog post on ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr).
 
 Download and install `ngrok`, then execute the following command to expose your application on port 3000 to the public Internet:
 
@@ -162,9 +162,9 @@ Make a note of the public URLs that `ngrok` provides and leave it running for th
 
 ![Terminal showing the ngrok URLs](/content/blog/receiving-sms-delivery-receipts-with-java-and-spark/ngrok-urls.png "Terminal showing the ngrok URLs")
 
-## Configure Your Nexmo Account
+## Configure Your Vonage Account
 
-Now that you have a URL for your webhook, you must tell Nexmo to use it.
+Now that you have a URL for your webhook, you must tell Vonage to use it.
 
 Log into the [developer dashboard](https://dashboard.nexmo.com) and under your account name in the left-hand navigation menu, select "Settings".
 
@@ -182,15 +182,9 @@ Run your Java application from within your application directory:
 gradle run
 ```
 
-Use the Nexmo CLI to send a test message to your personal mobile number. This must include the country code, but exclude any leading zeroes. For example, use `447700900005` for the `GB` number `07700 900005`.
+Send a test message to your personal mobile number.
 
-Here, we're setting the "from" number to be an alphabetic string, but this can be anything you want [within reason](https://developer.nexmo.com/messaging/sms/guides/custom-sender-id):
-
-```sh
-nexmo sms -f NEXMOTEST YOUR_PERSONAL_NUMBER "This is a test message"
-```
-
-Once Nexmo receives a delivery receipt from the network, it forwards this to your application which then displays it:
+Once Vonage receives a delivery receipt from the network, it forwards this to your application which then displays it:
 
 ```sh
 GET request
@@ -198,7 +192,7 @@ network-code: 23420
 price: 0.03330000
 messageId: 1400022045C7C1E0
 scts: 1907161527
-to: NEXMOTEST
+to: VONAGETEST
 err-code: 0
 msisdn: 447700900005
 message-timestamp: 2019-07-16 14:27:43
@@ -224,7 +218,7 @@ DLR received via POST-JSON
 
 ## Conclusion
 
-In this tutorial, you learned how to create a Java application with the Spark framework to retrieve a delivery receipt from Nexmo using the SMS API. The webhook that you coded was able to extract the delivery receipt regardless of which HTTP method was used to make the request.
+In this tutorial, you learned how to create a Java application with the Spark framework to retrieve a delivery receipt from Vonage using the SMS API. The webhook that you coded was able to extract the delivery receipt regardless of which HTTP method was used to make the request.
 
 ## Further Reading
 
