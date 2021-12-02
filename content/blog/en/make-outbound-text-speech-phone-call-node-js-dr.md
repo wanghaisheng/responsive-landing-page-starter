@@ -32,11 +32,11 @@ An Application:
 
 * holds [security information](https://docs.nexmo.com/tools/application-api/application-security) - to connect to Vonage endpoints
 * contains configuration data for your app and the URLs to your webhook endpoints
-* uses [Nexmo Call Control Objects](https://docs.nexmo.com/voice/voice-api#ncco) (NCCO) to control your calls
+* uses [Nexmo Call Control Objects](https://developer.vonage.com/voice/voice-api/overview#ncco) (NCCO) to control your calls
 
 ![Vonage Voice API make call diagram](/content/blog/how-to-make-an-outbound-text-to-speech-phone-call-with-node-js/voice-make-call-diagram.png "Vonage Voice API make call diagram")
 
-### Creating a Nexmo Application and Generating a Private Key
+### Creating a Vonage Application and Generating a Private Key
 
 Your app needs to authenticate requests to the Voice API. Now, you will generate a private key with The Application API, which allows you to create [JSON Web Tokens](https://jwt.io/) (JWT) to make the requests.
 
@@ -49,7 +49,7 @@ Once configured, you are going to create an application in your working director
 
 
 
-You need to register an application name (let’s call it "My Voice App") as well as two webhook endpoints. You don’t need to specify the answer and event URLs for making calls, so use some placeholder values for now. Run the following in an empty repository.
+You need to register an application name (let’s call it "MY Voice APP") as well as two webhook endpoints. You don’t need to specify the answer and event URLs for making calls, so use some placeholder values for now. Run the following in an empty repository.
 
 
 
@@ -85,7 +85,7 @@ Create a file called `index.js`.
 
 
 ```bash
-$ npm install @vonage/server-sdk
+npm install @vonage/server-sdk
 ```
 
 
