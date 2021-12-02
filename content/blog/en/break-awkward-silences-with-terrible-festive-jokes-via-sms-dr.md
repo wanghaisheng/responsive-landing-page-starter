@@ -160,11 +160,7 @@ Remember, when you deploy the app elsewhere you will need to update the callback
 The CLI commands you need to do this are:
 
 ```bash
-nexmo link:sms <your number> http://<your_new_deployed_url>/inbound
-```
-
-```bash
-nexmo app:update <your_application_id> "Xmas Jokes" https://<your_new_deployed_url>/inbound https://<your_new_deployed_url>/status
+vonage apps:update [APP_ID] --voice_event_url=http://example.com/webhooks/event --voice_answer_url=http://example.com/webhooks/answer
 ```
 
 Then you're good to go.
