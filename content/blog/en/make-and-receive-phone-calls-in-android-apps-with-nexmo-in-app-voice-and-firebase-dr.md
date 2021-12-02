@@ -188,7 +188,7 @@ vonage apps:create
 ✔ Create voice webhooks? … yes
 ✔ Answer Webhook - URL … https://your-project-name.cloudfunctions.net/answer
 ✔ Answer Webhook - Method › POST
-✔ Event Webhook - URL … https://your-project-name.cloudfunctions.net/answer
+✔ Event Webhook - URL … https://your-project-name.cloudfunctions.net/event
 ✔ Event Webhook - Method › POST
 ✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … no
 Creating Application... done
