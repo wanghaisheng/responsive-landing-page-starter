@@ -178,36 +178,30 @@ Next, configure the CLI with your Vonage API key and secret. You can find this i
 vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-Create a directory for your project and CD into it
+Now we'll use the answer and event URL that Firebase provided us in the previous section.
 
 ```
-mkdir functions
-CD functions
-```
-
- Now we'll use the answer and event URL that Firebase provided us in the previous section.
-
-```
-vonage apps:create
-✔ Application Name … your_vonage_application
-✔ Select App Capabilities › Messages, RTC
-✔ Create messages webhooks? … yes
-✔ Inbound Message Webhook - URL … https://your-project-name.cloudfunctions.net/answer
-✔ Inbound Message Webhook - Method › POST
-✔ Status Webhook - URL … https://your-project-name.cloudfunctions.net/event
-✔ Status Webhook - Method › POST
-✔ Create RTC webhook? … no
-✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
+# Ensure you're in the firebase-functions-nexmo-in-app-calling/ directory we created at the beginning of this tutorial
+vonage apps:create 
+✔ Application Name … ruling_narwhal
+✔ Select App Capabilities › Voice
+✔ Create voice webhooks? … yes
+✔ Answer Webhook - URL … https://your-project-name.cloudfunctions.net/answer
+✔ Answer Webhook - Method › POST
+✔ Event Webhook - URL … https://your-project-name.cloudfunctions.net/answer
+✔ Event Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … no
 Creating Application... done
+Application Name: ruling_narwhal
 ```
 
-Your private key gets saved in the functions directory you created.
+Your private key gets saved in the functions directory you created. The key will have the same name as your project.
 
-Record the application ID and save the private key in the "functions" directory. I recommend you add the `private.key` and `.nexmo-app` files with your credentials to your `.gitignore`.
+Record the application ID and save the private key in the "functions" directory. I recommend you add the `your_private_key_name.key` and `.nexmo-app` files with your credentials to your `.gitignore`.
 
 Following best practices, we'll store some environment variables Firebase config via the firebase CLI. The Firebase docs contain an [overview about environment configuration.](https://firebase.google.com/docs/functions/config-env)
 
-Now we need to store the Nexmo application ID in the firebase config via the firebase CLI.
+Now we need to store the Vonage application ID in the firebase config via the firebase CLI.
 
 <pre class="lang:default highlight:0 decode:true " >
 firebase functions:config:set nexmo.application_id="aaaaaaaa-bbbb-cccc-dddd-0123456789ab"
@@ -215,7 +209,7 @@ firebase functions:config:set nexmo.application_id="aaaaaaaa-bbbb-cccc-dddd-0123
 
 *Note: Firebase requires config variable keys to be lowercase, so we'll use snake case for our variable names.*
 
-If you wish, you could upload the private key string found in the `.nexmo-app` file from your Nexmo application as a firebase config variable instead of uploading the entire `private.key` file to the firebase functions.
+If you wish, you could upload the private key string found in the `.nexmo-app` file from your Vonage application as a firebase config variable instead of uploading the entire `your_private_key_name.key` file to the firebase functions.
 
 ## Link a phone number and user to our application
 
