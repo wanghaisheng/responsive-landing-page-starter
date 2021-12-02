@@ -44,7 +44,7 @@ If you want to get your application deployed to Heroku, you will also need:
 Create a project folder named Nexmotubestatus on your local machine and change to it.
 
 ```console
-mkdir Nexmotubestatus && cd Nexmotubestatus
+mkdir tubestatus && cd tubestatus
 ```
 
 Let's create our main file where we'll store our code. We will also create our `.env` file where we'll be storing our Vonage and credentials as well as some other variables.
@@ -62,7 +62,7 @@ npm init -y
 Let's install and save the necessary dependencies.
 
 ```bash
-npm install --s express dotenv vonage body-parser request
+npm install --s express dotenv @vonage/server-sdk body-parser request
 ```
 
 Now we need to create a Vonage app and buy a number.
@@ -90,10 +90,11 @@ ngrok http 3000
 Now, use the CLI to create a Vonage application and create a webhook to your ngrok URL. 
 
 ```bash
+vonage apps:create
 ✔ Application Name … my_project
 ✔ Select App Capabilities › Messages
 ✔ Create messages webhooks? … yes
-✔ Inbound Message Webhook - URL … http://3126bbcb.ngrok.io/inbound&country=xx&msisdn=xxxxxxxx
+✔ Inbound Message Webhook - URL … http://3126bbcb.ngrok.io/inbound
 ✔ Inbound Message Webhook - Method › POST
 ✔ Status Webhook - URL … https://example.com/webhook_name
 ✔ Status Webhook - Method › POST
