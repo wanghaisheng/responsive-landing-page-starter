@@ -3,9 +3,10 @@ title: Vonage AI Studio in Developer Preview
 description: This blog will introduce you to Vonage AI Studio, why you should
   choose AI Studio, the general use cases, and finally, how to get developer
   preview access to Vonage AI Studio.
+thumbnail: /content/blog/vonage-ai-studio-in-developer-preview/ai-studio_devpreview.png
 author: binoy-chemmagate
 published: true
-published_at: 2021-12-01T08:32:34.005Z
+published_at: 2021-12-02T09:32:59.440Z
 updated_at: 2021-12-01T08:32:34.023Z
 category: release
 tags:
