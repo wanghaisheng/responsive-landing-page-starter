@@ -56,8 +56,8 @@ sudo pip install --upgrade pipenv
 Now let's install the dependencies we'll need for this project, and activate our virtual environment. Run these commands in your new project's directory - I've called mine `hotline`:
 
 ```bash
-# Install compatible versions of `nexmo`, `flask` and `attrs`
-pipenv install nexmo~=2.3 flask~=1.0.2 attrs~=18.2.0
+# Install compatible versions of `vonage`, `flask` and `attrs`
+pipenv install vonage~=2.5.5 flask~=1.0.2 attrs~=18.2.0
 
 # Activate the virtualenv:
 pipenv shell
@@ -68,7 +68,7 @@ Now let's start writing our Flask server.
 Open up a file called `hotline.py`, and type the following:
 
 ```python
-from flask import Flask, jsonify
+from flask import Flask, jsonify, url_for as url_for_, request
 
 
 app = Flask(__name__)
@@ -120,57 +120,63 @@ Now you need to configure a *Vonage Virtual Number* to call your server when som
 
 ### Create a Vonage Account
 
-[Sign up](https://dashboard.nexmo.com/sign-up) for an account on the Vonage website.
+<sign-up number></sign-up>
 
-### Install the Nexmo CLI
+### Install the Vonage CLI
 
-Follow the installation instructions in the [Nexmo CLI README](https://github.com/Nexmo/nexmo-cli/blob/master/README.md).
-This is generally a really useful tool for configuring your account.
+Install the Vonage CLI globally with this command:
+
+```
+npm install @vonage/cli -g
+```
+
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
+
+```
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
 
 ### Create a Voice Application
 
+Create a new directory for your project and CD into it:
+
+```
+mkdir my_project
+CD my_project
+```
+
+Now, use the CLI to create a Vonage application. 
+
 ```bash
-$ nexmo app:create \
-    --type voice \
-    --answer_method POST \
-    --event_method POST \
-    --keyfile hotline.pem \
-    "Home Hotline" \
-    https://ed330676.ngrok.io/incoming/ \
-    https://ed330676.ngrok.io/event/
+vonage apps:create
+✔ Application Name … hotline
+✔ Select App Capabilities › Voice
+✔ Create voice webhooks? … yes
+✔ Answer Webhook - URL …  https://ed330676.ngrok.io/incoming/
+✔ Answer Webhook - Method › POST
+✔ Event Webhook - URL … https://ed330676.ngrok.io/event/
+✔ Event Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure  … yes
 
 Application created: 34abcd12-ef12-40e3-9c6c-4274b3633761
-Private Key saved to: hotline.pem
 ```
 
 You'll want to save that ID that's printed out after `Application created:`. You'll need it in the next step.
 
 ### Buy a Number and Link it to Your Voice App
 
-This step is where the command-line interface really comes into its own - the following is just 3 commands:
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
 
 ```bash
-# Search for numbers in your country:
-# (I'm in Scotland, so I use GB. In the USA, you'd use US)
-$ nexmo number:search GB
-447700900462
-447700900463
-...
-447700900465
-447700900466
-447700900467
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+```
 
-# Pick a number you like from the list, and buy it:
-$ nexmo number:buy 447700900466
-Buying 447700900466. This operation will charge your account.
+Now link the number to your app:
 
-Please type "confirm" to continue: confirm
+```
+vonage apps:link --number=VONAGE_NUMBER APP_ID
 
-Number purchased: 447700900466
-
-# Link the number to your Voice app (use the app ID you saved from earlier):
-$ nexmo link:app 447700900466  34abcd12-ef12-40e3-9c6c-4274b3633761
-Number updated
 ```
 
 **Okay**!
@@ -281,7 +287,7 @@ ENDPOINTS = [
     Endpoint(name="Pete Brockman", phone_number="447700900123"),
     Endpoint(name="Sue Brockman", phone_number="447700900456"),
 ]
-NEXMO_NUMBER = "447700900847"
+VONAGE_NUMBER = "447700900847"
 ```
 
 In the code above, I'm using the amazing [attrs](https://www.attrs.org/en/stable/) library to define a simple class, `Endpoint`, for holding a person's name and phone number. I'm then creating a list of `Endpoint`s for the people we may want to forward calls to.
@@ -350,7 +356,7 @@ def family_selection():
                     talk(f"Connecting to {endpoint.name}"),
                     {
                         "action": "connect",
-                        "from": NEXMO_NUMBER,
+                        "from": VONAGE_NUMBER,
                         "endpoint": [{"type": "phone", "number": endpoint.phone_number}],
                     },
                 ]
@@ -380,9 +386,11 @@ A conference call is created with a `conversation` action, and it ends (by defau
 We're going to need a Vonage `Client` object to create outbound calls to the parents, so it's lucky we installed the Vonage Python library at the start of this tutorial, right? Put the following lines near the top of your file. If you *want* to, you can paste your `application_id` and `private_key` values directly into the file, but I think it's better to load them from environment variables instead. It's too easy to commit them to a public repository, and anyone who has them can spend *your* Vonage balance!
 
 ```python
-nexmo_client = nexmo.Client(
-    application_id=os.getenv('NEXMO_APPLICATION_ID'),
-    private_key=os.getenv('NEXMO_PRIVATE_KEY')
+import vonage
+
+vonage_client = vonage.Client(
+    application_id=os.getenv('VONAGE_APPLICATION_ID'),
+    private_key=os.getenv('VONAGE_PRIVATE_KEY')
 )
 ```
 
@@ -424,10 +432,10 @@ def create_conference_call(endpoints):
 
     # Loop through the endpoints and dial them into the conference call:
     for endpoint in endpoints:
-        nexmo_client.create_call(
+        vonage_client.create_call(
             {
                 "to": [{"type": "phone", "number": endpoint.phone_number}],
-                "from": {"type": "phone", "number": NEXMO_NUMBER},
+                "from": {"type": "phone", "number": VONAGE_NUMBER},
                 "answer_url": [
                     url_for("conference_ncco", conference_id=conference_name)
                 ],
