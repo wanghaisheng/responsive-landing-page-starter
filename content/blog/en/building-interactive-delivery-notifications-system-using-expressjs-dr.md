@@ -38,24 +38,24 @@ Then visit [localhost:3000](http://localhost:3000) in your browser and submit a 
 
 All the code for this starting point can be found on the [number-form](https://github.com/nexmo-community/expressjs-delivery-notifications-demo/tree/number-form) branch on Github. All the code we will be adding below can be found on the [delivery-notifications](https://github.com/nexmo-community/expressjs-delivery-notifications-demo/tree/delivery-notifications) branch. For your convenience, you can see [all the changes between our start and end point](https://github.com/nexmo-community/expressjs-delivery-notifications-demo/compare/delivery-notifications...number-form) on Github as well.
 
-## The Nexmo SMS API
+## The Vonage SMS API
 
 <sign-up number></sign-up>
 
-The [Nexmo SMS API](https://www.nexmo.com/products/sms/) provides you with low latency and high deliverability. It is the most reliable way to reach users around the globe. While it has plenty of features we'll only be looking at two core elements: sending and receiving basic text messages. We will use this API to send people a notification of their delivery, offering them to change their delivery slot, and listen to any changes they send to us. To do this we are going to add the following changes to our app:
+The [Vonage SMS API](https://www.vonage.com/communications-apis/sms/) provides you with low latency and high deliverability. It is the most reliable way to reach users around the globe. While it has plenty of features we'll only be looking at two core elements: sending and receiving basic text messages. We will use this API to send people a notification of their delivery, offering them to change their delivery slot, and listen to any changes they send to us. To do this we are going to add the following changes to our app:
 
-* Add Nexmo to our app
+* Add Vonage to our app
 * Send an SMS message to the number provided with their delivery slot and instructions on how to change their slot
 * Listen to and confirm incoming text messages from the user to change their slot
 
 We will be hardcoding the options in our app just to keep things simple. In your app you will obviously be determining the user's options based on some amazing machine learning algorithm you've personally invented.
 
-## Adding Nexmo to our app
+## Adding Vonage to our app
 
-In order to send an SMS message via Nexmo we're going to have to add the [nexmo](https://www.npmjs.com/package/nexmo) module to the project.
+In order to send an SMS message via Vonage we're going to have to add the [Vonage](https://www.npmjs.com/package/@vonage/server-sdk) module to the project.
 
 ```javascript
-npm install nexmo dotenv --save
+npm install @vonage/server-sdk dotenv --save
 ```
 
 As you can see, we also added the [dotenv](https://www.npmjs.com/package/dotenv) module. This is just so that the app can load the API credentials from a `.env` file. You can find your credentials on [the settings page of your Nexmo account](https://dashboard.nexmo.com/settings).
@@ -67,32 +67,36 @@ SECRET='<your_api_secret>'
 FROM='<phone_number>'
 ```
 
-We also added the Nexmo phone number that we will be sending an SMS message from to the `.env` file. You can buy a number from the [Nexmo Dashboard](https://dashboard.nexmo.com/settings), or you can use the [`nexmo-cli`](https://www.npmjs.com/package/nexmo) library and buy one straight from the command line.
+We also added the Vonage phone number that we will be sending an SMS message from to the `.env` file. You can buy a number from the [Vonage Dashboard](https://dashboard.nexmo.com/settings), or you can use the [`vonage-cli`](https://developer.vonage.com/application/vonage-cli) library and buy one straight from the command line.
 
-For example to buy a UK phone number starting with `077`:
+Setup your Vonage CLI using [this guide](https://developer.vonage.com/application/vonage-cli). You only need the [Installation](https://developer.vonage.com/application/vonage-cli#installation) and [Setting your configuration](https://developer.vonage.com/application/vonage-cli#setting-your-configuration) step.
 
-```sh
-npm install -g nexmo-cli
-nexmo setup <your_api_key> <your_api_secret>
-nexmo number:buy GB 4477* --confirm
+```bash
+vonage numbers:search --features=SMS COUNTRY_CODE
+```
+
+Choose one of the phone numbers from the list of phone numbers that are listed when you make command. Replace `VONAGE_VIRTUAL_NUMBER` in the command below with the chosen phone number, and run the command.
+
+```bash
+vonage numbers:buy VONAGE_VIRTUAL_NUMBER COUNTRY_CODE
 ```
 
 Now that we have our API key, secret, and Nexmo phone number, we initialize the Nexmo client.
 
 ```javascript
 // app.js - after the other imports
-import Nexmo from 'nexmo';        
+import Vonage from '@nexmo/server-sdk';        
 import dotenv from 'dotenv';        
 
 dotenv.config();
 
-const nexmo = new Nexmo({        
+const vonage = new Vonage({        
   key: process.env.KEY,        
   secret: process.env.SECRET        
 });
 ```
 
-From now on we can use `nexmo` anywhere in our app to make the API calls we need.
+From now on we can use `vonage` anywhere in our app to make the API calls we need.
 
 ## Sending an SMS message
 
@@ -115,7 +119,7 @@ We can use these options to generate a pretty text message to send to the user.
 
 ```javascript
 // app.js - after the previous code
-let notification = "Your Nexmo Mail delivery is scheduled for tomorrow between " +        
+let notification = "Your Vonage Mail delivery is scheduled for tomorrow between " +        
                    "8am and 2pm. If you wish to change the delivery date please " +        
                    "reply by typing 1, 2 or 3:\n\n";        
 
@@ -141,11 +145,18 @@ We wrapped the actual Nexmo API call in a `send` function to make things more re
 ```javascript
 // app.js - anywhere outside of an endpoint call      
 let send = function(number, message) {        
-  nexmo.sms.sendTextMessage(        
-    process.env.FROM,        
-    number,        
-    message        
-  );        
+     
+  vonage.message.sendSms(process.env.FROM, number, message, (err, responseData) => {
+    if (err) {
+        console.log(err);
+    } else {
+        if(responseData.messages[0]['status'] === "0") {
+            console.log("Message sent successfully.");
+        } else {
+            console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+        }
+    }
+  });
 }
 ```
 
@@ -169,12 +180,18 @@ app.get('/response', (request, response) => {
 
 You have a few options to make your app publicly reachable by the Nexmo webhooks. If you are lucky enough to have a public IP on your machine, you should be ready to go. For the rest of us, we could either deploy the app, use an SSH tunnel, or my favorite solution: use the amazing [ngrok](http://ngrok.com) tool.
 
-Once your app is publicly available we can link our number to make a call to this endpoint when a SMS has been received. For this, we use the `nexmo-cli`once again.
+Your new Vonage virtual number and your Webhook URL need to be linked together so that Vonage knows where to send the inbound SMS messages.
 
-```sh
-> nexmo link:sms 44755555555 http://<your_url>.ngrok.io/response
-Number updated
-```
+As with the previous step, you could add your webhook URL to your Vonage virtual number, but this tutorial will show the example on how to make this change via the web portal.
+
+Before you can setup, take note of the following:
+
+* `VONAGE_VIRTUAL_NUMBER`: The number you are trying to use.
+* `WEBHOOK_URL`: Your Ngrok URL, followed by `/response`, so it should look something like: `http://<your_url>.ngrok.io/response`
+
+Go to [Numbers page](https://dashboard.nexmo.com/your-numbers) in your dashboard.
+
+Click on the "Edit" icon (looks like a pen) under "Manage" column. In the pop up under SMS > Inbound Webhook URL paste you `WEBHOOK_URL` and click "Save".
 
 If you get any errors at this state please make sure you are using the Nexmo phone number on your account, and that the URL is publicly accessible.
 
@@ -206,6 +223,6 @@ Now try replying to the message you received earlier. It might take a few second
 
 ## Next steps
 
-The [Nexmo SMS API](https://www.nexmo.com/products/sms/) has a lot [more options](https://docs.nexmo.com/messaging/sms-api/api-reference#request) than I showed here including Flash Messages, vCard, vCal, and much more. Personally I really like how easy the [`nexmo-cli`](https://github.com/nexmo/nexmo-cli) make it to buy phone numbers and tie them to an endpoint.
+The [Vonage SMS API](https://www.vonage.com/communications-apis/sms/) has a lot [more options](https://developer.nexmo.com/api/sms?theme=dark#request) than I showed here including Flash Messages, vCard, vCal, and much more. Personally I really like how easy the [`Vonage CLI`](https://developer.vonage.com/application/vonage-cli) make it to buy phone numbers and tie them to an endpoint.
 
 I'd love to know what you'd add next? Please drop me a tweet (I'm [@cbetta](https://twitter.com/cbetta)) with your thoughts and ideas.
