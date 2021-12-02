@@ -146,11 +146,11 @@ exports.jwt = functions.https.onRequest((request, response) => {
 });
 ```
 
-Now that we've created our Firebase functions, we will create a Nexmo application.
+Now that we've created our Firebase functions, we will create a Vonage application.
 
 ## Deploy the Firebase function
 
-Now that the Firebase Functions have been written, we can deploy the Firebase project. After deploying the Functions, Firebase will give us the URLs for our answer and event endpoints. We can use these URLs to create our Nexmo application.
+Now that the Firebase Functions have been written, we can deploy the Firebase project. After deploying the Functions, Firebase will give us the URLs for our answer and event endpoints. We can use these URLs to create our Vonage application.
 
 <pre class="lang:default highlight:0 decode:true " >
 #Ensure you're in the firebase-functions-nexmo-in-app-calling/ directory we created at the beginning of this tutorial
