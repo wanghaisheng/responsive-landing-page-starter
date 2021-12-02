@@ -23,7 +23,7 @@ Making phone calls is a necessity for some of us. But every time you put your ph
 
 A voice proxy is a technique that allows you to protect private information between callers by masking each other's phone number behind an intermediary phone number.
 
-In this tutorial, you will learn how to protect both caller and callee phone numbers by creating a voice proxy. When a person calls your Nexmo number the phone call will be routed to your personal phone. The person calling you will only need to know your Nexmo number and, as a bonus, you won't know their phone number either.
+In this tutorial, you will learn how to protect both caller and callee phone numbers by creating a voice proxy. When a person calls your Vonage number the phone call will be routed to your personal phone. The person calling you will only need to know your Vonage number and, as a bonus, you won't know their phone number either.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ In this tutorial, you will learn how to protect both caller and callee phone num
 
 You will be using [Gradle](https://gradle.org/) to manage your dependencies and run your application. Additionally, you'll need to make sure you have a copy of the JDK installed. I will be using JDK 11 in this tutorial, but anything JDK 8 and higher should work.
 
-Finally, you'll need the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli) installed. You'll use it to purchase a phone number and configure your Nexmo account to point at your new application.
+Finally, you'll need the [Vonage CLI](https://github.com/Vonage/vonage-cli) installed. You'll use it to purchase a phone number and configure your Vonage account to point at your new application.
 
 ## Forward a Phone Call via Voice Proxy with Java
 
@@ -39,7 +39,7 @@ This tutorial will walk you through the following steps:
 
 1. Using Gradle to set up a new Java project.
 2. Using the [Spark](http://sparkjava.com/) framework for controlling the call.
-3. Purchasing a number and configuring your Nexmo account to use that number with your application.
+3. Purchasing a number and configuring your Vonage account to use that number with your application.
 
 ### Using Gradle to Setup a New Java Project
 
@@ -76,7 +76,7 @@ public class App {
 
 ### Using the Spark Framework for Controlling the Call
 
-You will use the Spark framework to receive an HTTP call made by Nexmo when your number gets a call.
+You will use the Spark framework to receive an HTTP call made by Vonage when your number gets a call.
 
 #### Adding the Dependencies
 
@@ -86,7 +86,7 @@ Add the following to the `dependencies` block in your `build.gradle` file:
 // Spark Framework
 implementation 'com.sparkjava:spark-core:2.8.0'
 
-// Nexmo Java Client
+// Vonage Java Client
 implementation 'com.nexmo:client:4.2.1'
 ```
 
@@ -104,9 +104,9 @@ dependencies {
 
 #### Define the Answer Route
 
-When a call is received, Nexmo will send a request to a pre-defined webhook URL. It expects to receive a [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference) containing a list of actions to execute.
+When a call is received, Vonage will send a request to a pre-defined webhook URL. It expects to receive a [Vonage Call Control Object (NCCO)](https://developer.vonage.com/voice/voice-api/ncco-reference) containing a list of actions to execute.
 
-You will be using the `connect` action to forward incoming calls to Nexmo to your phone. The `connect` action is used to connect calls to endpoints such as phone numbers.
+You will be using the `connect` action to forward incoming calls to Vonage to your phone. The `connect` action is used to connect calls to endpoints such as phone numbers.
 
 This is the resulting NCCO that your application will create:
 
@@ -125,9 +125,9 @@ This is the resulting NCCO that your application will create:
 ]
 ```
 
-You will use the `ConnectAction` and `PhoneEndpoint` classes from the Nexmo Java Client Library for building the above NCCO.
+You will use the `ConnectAction` and `PhoneEndpoint` classes from the Vonage Java Client Library for building the above NCCO.
 
-This will require two variables, the phone number that you want to connect calls to, and the Nexmo number you want to make the call with.
+This will require two variables, the phone number that you want to connect calls to, and the Vonage number you want to make the call with.
 
 First, define the phone number you want to connect calls to by adding the following constant to the `App` class. The phone number you replace it with should start with a country code and no leading `+`:
 
@@ -135,7 +135,7 @@ First, define the phone number you want to connect calls to by adding the follow
 private static final String YOUR_SECOND_NUMBER = "16165551234";
 ```
 
-Nexmo sends the `to` parameter to your webhook which contains the Nexmo number that was called. You can use this same number to call you by adding it as a `from` parameter.
+Vonage sends the `to` parameter to your webhook which contains the Vonage number that was called. You can use this same number to call you by adding it as a `from` parameter.
 
 Now define the answer route by adding the following code to the `main` method of the `App` class, resolving any imports:
 
@@ -144,11 +144,11 @@ Now define the answer route by adding the following code to the `main` method of
 * Route to answer incoming calls with an NCCO response.
 */
 Route answerRoute = (req, res) -> {
-    String nexmoNumber = req.queryParams("to");
+    String vonageNumber = req.queryParams("to");
 
     ConnectAction connect = ConnectAction.builder()
             .endpoint(PhoneEndpoint.builder(YOUR_SECOND_NUMBER).build())
-            .from(nexmoNumber)
+            .from(vonageNumber)
             .build();
 
     res.type("application/json");
@@ -170,17 +170,25 @@ Spark.get("/webhooks/answer", answerRoute);
 
 ### Purchasing a Number
 
-You will need a Nexmo number to receive phone calls. If you do not have a number you can use the Nexmo CLI to purchase one:
+You will need a Vonage number to receive phone calls. If you do not have a number you can use the Vonage CLI to purchase one.
+
+First, search for an available number with voice capability (in this example, we use US for the country code):
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US --features=VOICE
+```
+
+Pick a number from the list generated and then insert it in the following command:
+
+```bash
+vonage numbers:buy [NUMBER] US
 ```
 
 Take note of the number that is assigned to you. You will need this number to link your application and for testing.
 
 ### Exposing Your Application
 
-To send an HTTP request to your application, Nexmo needs to know the URL that your application is running on.
+To send an HTTP request to your application, Vonage needs to know the URL that your application is running on.
 
 Instead of configuring your local network or hosting your application on an external service, you can use [ngrok](https://ngrok.com/) to expose your application to the internet safely.
 
@@ -194,30 +202,30 @@ Take note of the forwarding address as you will need it when you configure your 
 
 ![Screenshot of ngrok running in a terminal with forwarding address http://99cad2de.ngrok.io](https://www.nexmo.com/wp-content/uploads/2018/08/ngrok.png)
 
-### Configure Your Nexmo Account
+### Configure Your Vonage Account
 
-If you do not have an application you can use the Nexmo CLI to create one using your ngrok forwarding address:
+If you do not have an application you can use the Vonage CLI to create one using your ngrok forwarding address:
 
 ```bash
-nexmo app:create "Forward Call Demo" http://your-ngrok-forwarding-address/webhooks/answer http://your-ngrok-forwarding-address/webhooks/events --keyfile private.key
+vonage apps:create "Forward Call Demo" --voice_event_url=http://your-ngrok-forwarding-address/webhooks/events --voice_answer_url=http://your-ngrok-forwarding-address/webhooks/answer
 ```
 
 After running this command, you will be shown an application id. For example: `notreal-1111-2222-3333-appid`. You will need this application id to link your phone number to the application.
 
-You can use the Nexmo CLI to link your phone number and application:
+You can use the Vonage CLI to link your phone number and application:
 
 ```bash
-nexmo link:app your-nexmo-phone-number your-application-id
+vonage apps:link your-application-id --number=your-vonage-phone-number
 ```
 
 ### Test Your Application
 
 Start your application with the `gradle run` command inside of your `forward-phone-call` directory.
 
-Grab a friend, colleague, or a second phone and call your Nexmo number. Your other phone should start ringing. Upon answering the phone, you will both be connected as if you called each other directly.
+Grab a friend, colleague, or a second phone and call your Vonage number. Your other phone should start ringing. Upon answering the phone, you will both be connected as if you called each other directly.
 
 ## Conclusion
 
-In a few lines of code, you have created an application that can forward phone calls from your Nexmo number to your personal phone.
+In a few lines of code, you have created an application that can forward phone calls from your Vonage number to your personal phone.
 
-Check out our documentation on [Nexmo Developer](https://developer.nexmo.com) where you can learn more about [call flow](https://developer.nexmo.com/voice/voice-api/guides/call-flow) or [Nexmo Call Control Objects](https://developer.nexmo.com/voice/voice-api/ncco-reference). You can also take a look at the [Connect an Inbound Call](https://developer.nexmo.com/voice/voice-api/code-snippets/connect-an-inbound-call/java) code snippet for this example and more.
+Check out our documentation on [Vonage Developer](https://developer.vonage.com) where you can learn more about [call flow](https://developer.vonage.com/voice/voice-api/guides/call-flow) or [Vonage Call Control Objects](https://developer.vonage.com/voice/voice-api/ncco-reference). You can also take a look at the [Connect an Inbound Call](https://developer.vonage.com/voice/voice-api/code-snippets/connect-an-inbound-call/java) code snippet for this example and more.
