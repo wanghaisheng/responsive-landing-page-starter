@@ -85,11 +85,16 @@ The first piece to configure is the `.env.sample` file. Start by renaming it to 
 Add all the following pieces of information:
 
 ```bash
-VONAGE_API_KEY="" # from your account dashboard
-VONAGE_API_SECRET="" # from your account dashboard
+NEXMO_API_KEY="" # from your account dashboard
+NEXMO_API_SECRET="" # from your account dashboard
 ```
 
-Next up is the application-specific detail. Set that up using the CLI:
+Next up is the application-specific detail. Set that up using the CLI. 
+
+The app you have cloned has two endpoints in it:
+
+* `/inbound` receives new SMS messages
+* `/status` is a required URL for any Messages & Dispatch application, it receives read receipts and other information about the messages you send
 
 ```bash
 vonage apps:create 
@@ -106,37 +111,31 @@ vonage apps:create
 This command will set up a new Messages & Dispatch application on your account. It outputs the `Application ID` to the screen and will also create a private key in the directory you're currently in. Both are needed for the next step of the config:
 
 ```bash
-VONAGE_APPLICATION_ID="" # The new App ID you just generated
-VONAGE_APPLICATION_PRIVATE_KEY="./XmasJokes.key" # No need to change this unless you called your keyfile something different
+NEXMO_APPLICATION_ID="" # The new App ID you just generated
+NEXMO_APPLICATION_PRIVATE_KEY="./XmasJokes.key" # No need to change this unless you called your keyfile something different
 ```
 
 Finally, add in your new SMS capable number:
 
 ```bash
-VONAGE_FROM_NUMBER="" # If you have a Non-US number put it here, otherwise blank
-VONAGE_FROM_NUMBER_US="" # If you have a US number, put it here, otherwise blank
+NEXMO_FROM_NUMBER="" # If you have a Non-US number put it here, otherwise blank
+NEXMO_FROM_NUMBER_US="" # If you have a US number, put it here, otherwise blank
 ```
 
 With all those fields filled out you can save your `.env` and close it.
 
-### Linking Numbers & Setting Callbacks
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
 
-The app you have cloned has two endpoints in it:
+* ```bash
+  vonage numbers:search US
+  vonage numbers:buy [NUMBER] [COUNTRYCODE]
+  ```
 
-* `/inbound` receives new SMS messages
-* `/status` is a required URL for any Messages & Dispatch application, it receives read receipts and other information about the messages you send
+  Now link the number to your app:
 
-So that the app can receive SMS messages, your number needs to *know* about your app. You do this by providing it with a callback URL:
-
-```bash
-nexmo link:sms <your number> http://<your_ngrok_url>/inbound
-```
-
-Once that is set, connect your application to the number as well:
-
-```bash
-nexmo link:app <your number> <your application id>
-```
+  ```
+  vonage apps:link --number=VONAGE_NUMBER APP_ID
+  ```
 
 That's it. Set up complete!
 
