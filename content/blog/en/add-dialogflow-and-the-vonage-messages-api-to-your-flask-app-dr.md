@@ -80,32 +80,33 @@ For the next steps, we need to create the logic that will handle the back and fo
 
 ## Application Code
 
-We want to write an interface for sending an SMS to the end user. First, make sure you have the Nexmo Python library installed:
+We want to write an interface for sending an SMS to the end user. First, make sure you have the Vonage Python library installed:
 
 ```
-pip install nexmo
+pip install vonage
 ```
 
 The function for sending an SMS looks like this:
 
 ```
-import nexmo
+import vonage
 import os
 import json
 
 
-def nexmo_sms(sms, recipient):
-   NEXMO_API_KEY = os.getenv("NEXMO_API_KEY")
-   NEXMO_API_SECRET = os.getenv("NEXMO_API_SECRET")
-   NEXMO_NUMBER = os.getenv("NEXMO_NUMBER")
+def vonage_sms(message, recipient):
+   VONAGE_API_KEY = os.getenv("VONAGE_API_KEY")
+   VONAGE_API_SECRET = os.getenv("VONAGE_API_SECRET")
+   VONAGE_NUMBER = os.getenv("VONAGE_NUMBER")
 
-   client = nexmo.Client(key=NEXMO_API_KEY, secret=NEXMO_API_SECRET)
+   client = vonage.Client(key=VONAGE_API_KEY, secret=VONAGE_API_SECRET)
+   sms = vonage.Sms(client)
 
-   response_data = client.send_message(
+   response_data = sms.send_message(
        {
-           "from": NEXMO_NUMBER,
+           "from": VONAGE_NUMBER,
            "to": recipient,
-           "text": sms,
+           "text": message,
        }
    )
 
@@ -126,7 +127,7 @@ import os
 from dotenv import load_dotenv
 
 sys.path.append('../')
-from vonage.nexmo import nexmo_sms
+import vonage
 
 APP_ROOT = os.path.join(os.path.dirname(__file__), '..')  # refers to application_top
 dotenv_path = os.path.join(APP_ROOT, '.env')
@@ -136,7 +137,7 @@ load_dotenv(dotenv_path)
 def notify_customer(number):
    text = "Hello. You can start your quiz with quizzie-bot by sending the following keywords: hi," \
           " hello or vonage."
-   print(nexmo_sms(text, number))
+   print(vonage_sms(text, number))
 ```
 
 Once the end user receives the messages, we want them to reply. We need to create an incoming webhook endpoint to receive the reply. Remember, we set up the inbound sms URL while creating an app earlier. It is now time to add logic to our webhook:
