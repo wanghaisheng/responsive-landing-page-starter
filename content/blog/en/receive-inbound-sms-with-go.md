@@ -86,29 +86,29 @@ If you haven't already purchased a Vonage virtual phone number to follow this tu
 The command below searches for phone numbers capable of sending and receiving SMS, as well as making sure the number belongs to the country of your choosing. The two-character country code chooses the country; for example, for the USA, it would be `US`.
 
 ```bash
-nexmo number:search COUNTRY_CODE --sms
+vonage numbers:search --features=SMS COUNTRY_CODE
 ```
 
 Choose one of the phone numbers from the list of phone numbers that are listed when you make command. Replace `VONAGE_VIRTUAL_NUMBER` in the command below with the chosen phone number, and run the command.
 
 ```bash
-nexmo number:buy VONAGE_VIRTUAL_NUMBER
+vonage numbers:buy VONAGE_VIRTUAL_NUMBER COUNTRY_CODE
 ```
 
 ## Configure Your Vonage Account
 
 Your new Vonage virtual number and your Webhook URL need to be linked together so that Vonage knows where to send the inbound SMS messages.
 
-As with the previous step, you could add your webhook URL to your Vonage virtual number, but this tutorial will show the example on how to make this change via the CLI.
+As with the previous step, you could add your webhook URL to your Vonage virtual number, but this tutorial will show the example on how to make this change via the web portal.
 
-Before you run the command below, replace the following placeholders:
+Before you can setup, take note of the following:
 
-* `VONAGE_VIRTUAL_NUMBER` with your recently purchased Vonage number
-* `WEBHOOK_URL` with your Ngrok URL, followed by `/webhooks/inbound-sms`, so it should look something like: `https://56feb86007e8.ngrok.io/webhooks/inbound-sms`
+* `VONAGE_VIRTUAL_NUMBER`: The number you are trying to use.
+* `WEBHOOK_URL`: Your Ngrok URL, followed by `/webhooks/inbound-sms`, so it should look something like: `https://56feb86007e8.ngrok.io/webhooks/inbound-sms`
 
-```bash
-nexmo link:sms VONAGE_VIRTUAL_NUMBER WEBHOOK_URL
-```
+Go to [Numbers page](https://dashboard.nexmo.com/your-numbers) in your dashboard.
+
+Click on the "Edit" icon (looks like a pen) under "Manage" column. In the pop up under SMS > Inbound Webhook URL paste you `WEBHOOK_URL` and click "Save".
 
 ## Time to Test
 
@@ -118,14 +118,9 @@ With `Ngrok` already running, in a new Terminal window, make sure you've navigat
 go run ./
 ```
 
-Now, within another Terminal window, run the following command, replacing `VONAGE_VIRTUAL_NUMBER` with the Vonage number you purchased.
-
-```bash
-nexmo sms -f VONAGETEST VONAGE_VIRTUAL_NUMBER "This is a test message."
-```
+Now from your phone you can text your `VONAGE_VIRTUAL_NUMBER`.
 
 If you check the Terminal window where you ran `go run ./`, you should see a line like what you see below appear:
-
 
 ```bash
 From: VONAGETEST, message: This is a test message
@@ -152,8 +147,8 @@ You can find the code shown in this tutorial on the [Go code snippets repository
 
 Below are a few other tutorials we've written either involving Go or receiving SMS messages:
 
-- [Go Explore the Vonage APIs with Vonage Go SDK](https://www.nexmo.com/blog/2020/09/30/go-explore-the-vonage-apis-with-vonage-go-sdk)
-- [Using JWT for Authentication in a Golang Application](https://www.nexmo.com/blog/2020/03/13/using-jwt-for-authentication-in-a-golang-application-dr)
-- [Receive an SMS with Python](https://www.nexmo.com/blog/2019/05/31/receive-an-sms-with-python-dr)
+- [Go Explore the Vonage APIs with Vonage Go SDK](https://learn.vonage.com/blog/2020/09/30/go-explore-the-vonage-apis-with-vonage-go-sdk/)
+- [Using JWT for Authentication in a Golang Application](https://learn.vonage.com/blog/2020/03/13/using-jwt-for-authentication-in-a-golang-application-dr/)
+- [Receive an SMS with Python](https://learn.vonage.com/blog/2019/05/31/receive-an-sms-with-python-dr/)
 
-Don't forget, if you have any questions, advice or ideas you'd like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack), or pop a reply below 👇. I'd love to hear back from anyone that has implemented this tutorial and how your project works.
+Don't forget, if you have any questions, advice or ideas you'd like to share with the community, then please feel free to jump on our [Community Slack workspace](https://developer.nexmo.com/community/slack). I'd love to hear back from anyone that has implemented this tutorial and how your project works.
