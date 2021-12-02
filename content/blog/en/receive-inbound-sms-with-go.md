@@ -92,7 +92,7 @@ vonage numbers:search --features=SMS COUNTRY_CODE
 Choose one of the phone numbers from the list of phone numbers that are listed when you make command. Replace `VONAGE_VIRTUAL_NUMBER` in the command below with the chosen phone number, and run the command.
 
 ```bash
-nexmo number:buy VONAGE_VIRTUAL_NUMBER
+vonage numbers:buy VONAGE_VIRTUAL_NUMBER COUNTRY_CODE
 ```
 
 ## Configure Your Vonage Account
