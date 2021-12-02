@@ -164,23 +164,7 @@ npm --version
 
 ### Our CLI
 
-To set up your application, you'll need to install [our CLI](https://www.npmjs.com/package/nexmo-cli). Install it using NPM in the terminal.
-
-```bash
-npm install -g nexmo-cli@beta
-```
-
-You can check you have the correct version with this command. At the time of writing, I was using version `0.4.9-beta-3`.
-
-```bash
-nexmo --version
-```
-
-Remember to [sign up for a free Vonage account](https://dashboard.nexmo.com/sign-up?utm_source=DEV_REL&utm_medium=blog&utm_campaign=home-surveillance-system-with-node-and-a-raspberry-pi) and configure the CLI with the API key and API secret found on your dashboard.
-
-```bash
-nexmo setup <your_api_key> <your_api_secret>
-```
+Setup your Vonage CLI using [this guide](https://developer.vonage.com/application/vonage-cli). You only need the [Installation](https://developer.vonage.com/application/vonage-cli#installation) and [Setting your configuration](https://developer.vonage.com/application/vonage-cli#setting-your-configuration) step.
 
 ### Git (Optional)
 
@@ -901,18 +885,18 @@ After around 10 seconds (for the service to initialize), wave your hand in front
 To use the new Vonage Messages API, which sends SMS messages whenever motion gets detected, you'll need to install the beta version of our Node SDK. Run the following command:
 
 ```javascript
-npm install nexmo@beta
+npm install @vonage/server-sdk
 ```
 
 The Messages API requires you to create an application on the Vonage Developer portal, and an accompanying a `private.key` which gets generated when creating the app. Running the command below creates the application, sets the webhooks (Which aren't required right now so leave them as quoted), and finally a key file called `private.key`.
 
 ```bash
-nexmo app:create "My Messages App" --capabilities=messages --messages-inbound-url=https://example.com/webhooks/inbound-message --messages-status-url=https://example.com/webhooks/message-status --keyfile=private.key
+vonage apps:create "My Messages App" --messages-inbound-url=https://example.com/webhooks/inbound-message --messages-status-url=https://example.com/webhooks/message-status
 ```
 
 Now that you've created the application, some environment variables need setting. You will find your `API key` and `API secret` on the [Vonage Developer Dashboard](https://dashboard.nexmo.com/getting-started-guide).
 
-The `VONAGE_APPLICATION_PRIVATE_KEY_PATH` is the location of the file you generated in the previous command. This project had it stored in the project directory, so for example: `/home/pi/pi-cam/private.key`
+The `VONAGE_APPLICATION_PRIVATE_KEY_PATH` is the location of the file you generated in the previous command. This project had it stored in the project directory, so for example: `/home/pi/pi-cam/my_messages_app.key`
 
 The `VONAGE_BRAND_NAME` doesn't get used in this project, but you are required to have one set for the Messages API, I've kept it simple `HomeCam`
 
@@ -929,7 +913,7 @@ TO_NUMBER=<your mobile number>
 At the top of your `index.js` file import the Vonage package:
 
 ```js
-const Vonage = require('nexmo');
+const Vonage = require('@vonage/server-sdk');
 ```
 
 To create the Vonage object which is used to make the API requests, under the definition of the OpenTok object, add the following:
