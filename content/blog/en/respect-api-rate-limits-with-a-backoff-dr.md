@@ -151,23 +151,56 @@ The request is Authorized using [JSON Web Tokens (JWT)](https://jwt.io/). JWT is
 
 ### Creating Your Application
 
-Before we can use the Messages API, we will need to [create a new application](https://developer.nexmo.com/messages/code-snippets/create-an-application). You can do this via the Vonage API Dashboard or with the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli). It’s worth noting at the time of writing you will need the beta version of the Nexmo CLI to create a Messages application.
+Install the Vonage CLI globally with this command:
 
-```sh
-npm install -g nexmo-cli@0.4.9-beta-3
+```
+npm install @vonage/cli -g
 ```
 
-If using the CLI, the `--messages-status-url` and `--messages-inbound-url` flags are not relevant for these examples, but they are required. You can set them to `https://example.com`.
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
 
-```sh
-nexmo app:create "Messages App with Backoff" --capabilities=messages --messages-inbound-url=https://example.com/ --messages-status-url=https://example.com/ --keyfile=private.key
+```
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-This command will store your private key in the file `private.key`. We’ll need this when generating our JWT, along with the application id. The application id is output in the terminal when you run the `app:create` command, or you can find it on your dashboard.
+Create a new directory for your project and CD into it:
+
+```
+mkdir my_project
+CD my_project
+```
+
+Now, use the CLI to create a Vonage application. 
+
+```
+vonage apps:create
+✔ Application Name … my_project
+✔ Select App Capabilities › Messages
+✔ Create messages webhooks? … no
+✔ Allow use of data for AI training? no
+```
+
+This command will store your private key in the file my_project`.key`. We’ll need this when generating our JWT, along with the application id. The application id is output in the terminal when you run the `app:create` command, or you can find it on your Vonage dashboard.
+
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
+
+```bash
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+```
+
+Now link the number to your app:
+
+```
+vonage apps:link --number=VONAGE_NUMBER APP_ID
+```
 
 ### Sending the SMS
 
 ```python
+import vonage
+
+
 vonage_client = vonage.Client(
    application_id=os.environ["VONAGE_APPLICATION_ID"],
    private_key=os.environ["VONAGE_PRIVATE_KEY"],
