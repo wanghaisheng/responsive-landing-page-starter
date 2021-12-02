@@ -1,7 +1,7 @@
 ---
 title: Checking the London Tube Status with Vonage's SMS API
 description: How to build an application that allows you to check the status of
-  a given line of the London Underground using the Nexmo SMS API.
+  a given line of the London Underground using the Vonage SMS API.
 thumbnail: /content/blog/checking-the-tube-status-with-nexmo-and-tfl-apis-dr/Elevate-Tube-Status.png
 author: javier-molina-sanz
 published: true
@@ -41,7 +41,7 @@ If you want to get your application deployed to Heroku, you will also need:
 
 ## Setting up our Project
 
-Create a project folder named Nexmotubestatus on your local machine and change to it.
+Create a project folder named tubestatus on your local machine and change to it.
 
 ```console
 mkdir tubestatus && cd tubestatus
@@ -338,7 +338,7 @@ heroku config:set apiKey=xxxxx
 heroku config:set apiSecret=xxxxxx
 heroku config:set app_key=xxxxxxxxxxxxxxxxxx
 heroku config:set app_id=xxxxxxx
-heroku config:set Nexmo_LVN=xxxxxxxxxxx
+heroku config:set from=xxxxxxxxxxx
 ```
 
 You can double-check that these variables were added fine by taking a look at your application settings under [Heroku Dashboard](https://dashboard.heroku.com/). This is what our application looks like in the Heroku dashboard. If we hit on *Reveal Config Vars*, we'll see the environment variables configured via the Heroku CLI. 
