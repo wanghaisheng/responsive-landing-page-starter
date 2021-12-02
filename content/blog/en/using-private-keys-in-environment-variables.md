@@ -26,7 +26,7 @@ Then go ahead and create an application with Voice capabilities; you will need t
 You can either use your [account dashboard](https://dashboard.nexmo.com) for this part, or you can use the CLI like this:
 
 ```shell
-nexmo app:create MyVoiceApp --keyfile private.key https://example.com https://example.com
+vonage apps:create private
 ```
 
 The command will print the application ID, and write the private key to the imaginatively named `private.key` file. Both these items are used in the next step.
