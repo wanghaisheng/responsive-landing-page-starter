@@ -102,9 +102,9 @@ vonage apps:create
 ✔ Select App Capabilities › Messages
 ✔ Create messages webhooks? … yes
 ✔ Inbound Message Webhook - URL … https://<your_ngrok_url>/inbound
-✔ Inbound Message Webhook - Method › GET
+✔ Inbound Message Webhook - Method › POST
 ✔ Status Webhook - URL … https://<your_ngrok_url>/status
-✔ Status Webhook - Method › GET
+✔ Status Webhook - Method › POST
 ✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 ```
 
