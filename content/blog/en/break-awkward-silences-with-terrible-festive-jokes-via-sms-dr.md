@@ -26,11 +26,11 @@ Awkward. Fire up your code editor and let's get started.
 
 My version of this app is live, so you can message it right now and see the results before we dig into the code.
 
----
+- - -
 
 **Send an SMS containing the word 'awkward' to `+44 7520619627` if you're in the UK, or `+1 201 844 9627` if you're in the US and bust out laughing at the genius lines you'll be sent in return... maybe.**
 
----
+- - -
 
 (The keen of eye will have already spotted that the last 4 digits of each of those numbers spell out X-M-A-S on a telephone keypad.)
 
@@ -38,23 +38,23 @@ One line didn't break the grim, grim silence? Okay, SMS the word 'more' in reply
 
 ## Building The App
 
-The app we're going to build uses [Node.js](https://nodejs.org/en/), the [Koa framework](https://koajs.com/) (which is just a more modern implementation of Express), and the [Nexmo Messages API](https://developer.nexmo.com/messages/overview).
+The app we're going to build uses [Node.js](https://nodejs.org/en/), the [Koa framework](https://koajs.com/) (which is just a more modern implementation of Express), and the Vonage Messages API.
 
 The code is available in a repository on the [Nexmo Community GitHub](https://glitch.com/edit/#!/nexmo-community-xmas-jokes-nodejs) account, and also in [remixable form on Glitch](https://glitch.com/edit/#!/remix/nexmo-community-xmas-jokes-nodejs).
 
 ### Prerequisites
 
-- The [Nexmo Command Line Interface](https://github.com/Nexmo/nexmo-cli)
-- A fresh SMS capable number
-- Node.js version 8 or above
-- A selection of terrible jokes and one-liners
-- An awkward situation
+* The V[onage command line interface](https://developer.vonage.com/application/vonage-cli) 
+* A fresh SMS capable number
+* Node.js version 8 or above
+* A selection of terrible jokes and one-liners
+* An awkward situation
 
 <sign-up number></sign-up>
 
 ### Clone The Repository
 
-In any directory clone a copy of the code from our [nexmo-community](https://github.com/nexmo-community/xmas-jokes-nodejs) repository on GitHub:
+In any directory clone a copy of the code from our [nexmo-community](https://github.com/nexmo-community/xmas-jokes-nodejs) repository on GitHub:
 
 ```bash
 git clone git@github.com:nexmo-community/xmas-jokes-nodejs.git
@@ -89,17 +89,30 @@ NEXMO_API_KEY="" # from your account dashboard
 NEXMO_API_SECRET="" # from your account dashboard
 ```
 
-Next up is the application-specific detail. Set that up using the CLI:
+Next up is the application-specific detail. Set that up using the CLI. 
+
+The app you have cloned has two endpoints in it:
+
+* `/inbound` receives new SMS messages
+* `/status` is a required URL for any Messages & Dispatch application, it receives read receipts and other information about the messages you send
 
 ```bash
-nexmo application:create "Xmas Jokes" https://<your_ngrok_url>/inbound https://<your_ngrok_url>/status  --keyfile private.key --type messages
+vonage apps:create 
+✔ Application Name … Xmas Jokes
+✔ Select App Capabilities › Messages
+✔ Create messages webhooks? … yes
+✔ Inbound Message Webhook - URL … https://<your_ngrok_url>/inbound
+✔ Inbound Message Webhook - Method › POST
+✔ Status Webhook - URL … https://<your_ngrok_url>/status
+✔ Status Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 ```
 
-This command will set up a new Messages & Dispatch application on your account. It outputs the `Application ID` to the screen and will also write a file called `private.key` into the directory you're currently in. Both are needed for the next step of the config:
+This command will set up a new Messages & Dispatch application on your account. It outputs the `Application ID` to the screen and will also create a private key in the directory you're currently in. Both are needed for the next step of the config:
 
 ```bash
 NEXMO_APPLICATION_ID="" # The new App ID you just generated
-NEXMO_APPLICATION_PRIVATE_KEY="./private.key" # No need to change this unless you called your keyfile something different
+NEXMO_APPLICATION_PRIVATE_KEY="./XmasJokes.key" # No need to change this unless you called your keyfile something different
 ```
 
 Finally, add in your new SMS capable number:
@@ -111,30 +124,24 @@ NEXMO_FROM_NUMBER_US="" # If you have a US number, put it here, otherwise blank
 
 With all those fields filled out you can save your `.env` and close it.
 
-### Linking Numbers & Setting Callbacks
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
 
-The app you have cloned has two endpoints in it:
+* ```bash
+  vonage numbers:search US
+  vonage numbers:buy [NUMBER] [COUNTRYCODE]
+  ```
 
-- `/inbound` receives new SMS messages
-- `/status` is a required URL for any Messages & Dispatch application, it receives read receipts and other information about the messages you send
+  Now link the number to your app:
 
-So that the app can receive SMS messages, your number needs to _know_ about your app. You do this by providing it with a callback URL:
-
-```bash
-nexmo link:sms <your number> http://<your_ngrok_url>/inbound
-```
-
-Once that is set, connect your application to the number as well:
-
-```bash
-nexmo link:app <your number> <your application id>
-```
+  ```
+  vonage apps:link --number=VONAGE_NUMBER APP_ID
+  ```
 
 That's it. Set up complete!
 
 ## Fire Up The Festive Cheer
 
-Nexmo now knows where everything is going and how to route new messages over to your application. There's only one thing left to do:
+Vonage now knows where everything is going and how to route new messages over to your application. There's only one thing left to do:
 
 ```bash
 npm run dev
@@ -153,11 +160,7 @@ Remember, when you deploy the app elsewhere you will need to update the callback
 The CLI commands you need to do this are:
 
 ```bash
-nexmo link:sms <your number> http://<your_new_deployed_url>/inbound
-```
-
-```bash
-nexmo app:update <your_application_id> "Xmas Jokes" https://<your_new_deployed_url>/inbound https://<your_new_deployed_url>/status
+vonage apps:update [APP_ID] --voice_event_url=http://example.com/webhooks/event --voice_answer_url=http://example.com/webhooks/answer
 ```
 
 Then you're good to go.
@@ -167,7 +170,7 @@ Then you're good to go.
 If you're looking for an even quicker route to playing with the code for this application, you can [remix it on Glitch](https://glitch.com/edit/#!/nexmo-community-xmas-jokes-nodejs) by clicking the button below:
 
 <!-- Remix Button -->
+
 <a href="https://glitch.com/edit/#!/remix/nexmo-community-xmas-jokes-nodejs">
   <img src="https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix%402x.png?1513093958726" alt="remix button" aria-label="remix" height="33" border="0">
 </a>
-
