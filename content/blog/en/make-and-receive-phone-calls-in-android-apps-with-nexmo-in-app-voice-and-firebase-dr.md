@@ -213,25 +213,20 @@ If you wish, you could upload the private key string found in the `.nexmo-app` f
 
 ## Link a phone number and user to our application
 
-Now that our functions have been written, we need to buy a number so that our users can make outbound calls from that number and receive inbound calls in their Android app whenever someone dials that number. After the number is bought we'll link the number to the Nexmo application and set it as the `from_number` in the Firebase Config variables.
+Now that our functions have been written, we need to buy a number so that our users can make outbound calls from that number and receive inbound calls in their Android app whenever someone dials that number. We also have to link the number to our Vonage app.
 
-<pre class="lang:default highlight:0 decode:true " >
-#Search for a number and buy it
-nexmo number:buy --country_code US
-#Link the number to our Nexmo application
-nexmo link:app 12013753230 aaaaaaaa-bbbb-cccc-dddd-0123456789ab
-#Set the `from_number` in the Firebase Config variables.
-firebase functions:config:set nexmo.from_number="12013753230"
-</pre>
+You can rent a number from Vonage by using the following command (replacing the country code with your code). For example, if you are in the USA, replace `GB` with `US`:
 
-Nexmo In-App Voice also requires us to create a user for authentication. By creating a user, we can route incoming phone calls to them. We can do that simply with the [beta version of the Nexmo CLI](https://github.com/Nexmo/nexmo-cli/tree/beta)
+```bash
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
+```
 
-<pre class="lang:default highlight:0 decode:true " >
-#Ensure you have the beta version of the CLI installed
-npm install nexmo-cli@beta -g
-#Create a user that will make a receive phone calls
-nexmo user:create name="Customer"
-</pre>
+Now link the number to your app:
+
+```
+vonage apps:link --number=VONAGE_NUMBER APP_ID
+```
 
 ## Set up the Android project
 
