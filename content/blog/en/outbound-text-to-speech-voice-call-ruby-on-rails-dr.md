@@ -16,11 +16,11 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-*This is the first article in a series of "Getting Started with Nexmo Voice APIs and Ruby on Rails" tutorials. It continues the "Getting Started with Nexmo SMS and Ruby on Rails" series.*
+*This is the first article in a series of "Getting Started with Vonage Voice APIs and Ruby on Rails" tutorials. It continues the "Getting Started with Vonage SMS and Ruby on Rails" series.*
 
-With the help of the [Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview) you can make worldwide outbound and inbound calls in 23 languages with varieties of voices and accents. All you need is your virtual phone number, the [Ruby Gem](https://github.com/Nexmo/nexmo-ruby), and a few lines of code.
+With the help of the [Vonage Voice API](https://developer.vonage.com/voice/voice-api/overview) you can make worldwide outbound and inbound calls in 23 languages with varieties of voices and accents. All you need is your virtual phone number, the [Ruby Gem](https://github.com/Vonage/vonage-ruby-sdk), and a few lines of code.
 
-In this tutorial—and the ones to follow—I will take you through some real-life examples of how to integrate Nexmo into your Rails application. I'll explain how to set up the basics, and then we will write some code together to properly integrate Nexmo and start making and receiving phone calls. Let's get started!
+In this tutorial—and the ones to follow—I will take you through some real-life examples of how to integrate Vonage into your Rails application. I'll explain how to set up the basics, and then we will write some code together to properly integrate Vonage and start making and receiving phone calls. Let's get started!
 
 [View the source code on GitHub](https://github.com/Nexmo/nexmo-rails-quickstart/blob/master/app/controllers/outbound_calls_controller.rb)
 
@@ -39,29 +39,28 @@ For this tutorial I assume you will have:
 
 In this tutorial, we will use this as our main way of preparing our application.
 
-The Nexmo CLI is a Node module and therefore does require NPM to have been installed.
+The Vonage CLI is a Node module and therefore does require NPM to have been installed.
 
-<pre class="lang:default highlight:0 decode:true ">$ npm install nexmo-cli -g
-$ nexmo setup YOUR-API-KEY YOUR-API-SECRET
-Credentials written to /Users/your_username/.nexmorc
+<pre class="lang:default highlight:0 decode:true ">
+$ npm install vonage-cli -g
+$ vonage config:set --apiKey=YOUR-API-KEY --apiSecret=YOUR-API-SECRET
 </pre>
 
 With this in place, we can run the following commands to find and purchase a Voice-enabled number:
 
 ```shell
-$ nexmo number:search US --voice
+$ vonage numbers:search US --features=VOICE
 14155550102
 14155550103
 14155550104
-$ nexmo number:buy 14155550102 --confirm
-Number purchased: 14155550102
+$ vonage numbers:buy 14155550102 US
 ```
 
-Alternatively, head over to the [Numbers page](https://dashboard.nexmo.com/buy-numbers) on the Nexmo Dashboard and purchase a number via the web interface.
+Alternatively, head over to the [Numbers page](https://dashboard.nexmo.com/buy-numbers) on the Vonage Dashboard and purchase a number via the web interface.
 
-## Create a Nexmo Application
+## Create a Vonage Application
 
-In our previous series of SMS tutorials, we were able to configure a phone number directly with an endpoint. In this tutorial, we will be using the new, more powerful and more secure [Nexmo Applications](https://developer.nexmo.com/api/application) API for configuring our callbacks.
+In our previous series of SMS tutorials, we were able to configure a phone number directly with an endpoint. In this tutorial, we will be using the new, more powerful and more secure [Vonage Applications](https://developer.nexmo.com/api/application) API for configuring our callbacks.
 
 ![Make voice calls](/content/blog/make-an-outbound-text-to-speech-phone-call-with-ruby-on-rails/voice-make-call-diagram.png "Make voice calls")
 
@@ -69,27 +68,27 @@ In our previous series of SMS tutorials, we were able to configure a phone numbe
 
 Our first step is to create an application by providing an application name and some callback URLs. Don't worry about these URLs yet as we'll be updating them later in a future tutorial.
 
-<pre class="lang:default highlight:0 decode:true ">$ nexmo app:create "My Voice App" http://example.com/inbound_calls http://example.com/call_events --keyfile private.key --answer_method POST --event_method POST
+<pre class="lang:default highlight:0 decode:true ">
+$ vonage apps:create "My Voice App" --voice_answer_url=http://example.com/inbound_calls --voice_event_url=http://example.com/call_events --voice_answer_http=POST --voice_event_http=POST
 Application created: aaaaaaaa-bbbb-cccc-dddd-0123456789ab
-Private Key saved to: private.key
 </pre>
 
-This will create a Nexmo Application with UUID `aaaaaaaa-bbbb-cccc-dddd-0123456789ab` and a private key stored in a file called `private.key`. Make sure you don't lose this key; Nexmo does not keep a copy and it's used to sign your API calls.
+This will create a Vonage Application with UUID `aaaaaaaa-bbbb-cccc-dddd-0123456789ab` and a private key stored in a file called `private.key`. Make sure you don't lose this key; Vonage does not keep a copy and it's used to sign your API calls.
 
-## Install the Nexmo Ruby Gem
+## Install the Vonage Ruby Gem
 
-The easiest way to interact with the Nexmo Voice API with Ruby is using the [`nexmo` gem](https://github.com/Nexmo/nexmo-ruby).
+The easiest way to interact with the Vonage Voice API with Ruby is using the [`vonage` gem](https://github.com/Vonage/vonage-ruby-sdk).
 
 ```shell
-$ gem install nexmo
+$ gem install vonage
 ```
 
-This gem conveniently provides an easy wrapper around the [Nexmo REST API](https://developer.nexmo.com/api/voice). To initialize it, we will need to pass it the Application UUID and private key that we created earlier. Create a file named `make-call.rb` with the following contents, replacing `application_id` with your application ID:
+This gem conveniently provides an easy wrapper around the [Vonage REST API](https://developer.nexmo.com/api/voice). To initialize it, we will need to pass it the Application UUID and private key that we created earlier. Create a file named `make-call.rb` with the following contents, replacing `application_id` with your application ID:
 
 ```ruby
-require "nexmo"
+require "vonage"
 
-nexmo = Nexmo::Client.new(
+vonage = Vonage::Client.new(
 application_id: 'aaaaaaaa-bbbb-cccc-dddd-0123456789ab',
 private_key: File.read('private.key')
 )
@@ -97,12 +96,12 @@ private_key: File.read('private.key')
 
 ## Make a voice call with Ruby
 
-With our API client in place, making the first voice call is easy; we simply call the `create_call` method on the initialized client and pass in a configuration specifying who to call `to`, what number to call `from`, and an `answer_url` that will return a [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/overview#ncco) containing the actions to play back to the receiver. To get us up and running quickly, we'll provide a predefined NCCO URL that's hosted on Github.
+With our API client in place, making the first voice call is easy; we simply call the `create_call` method on the initialized client and pass in a configuration specifying who to call `to`, what number to call `from`, and an `answer_url` that will return a [Vonage Call Control Object (NCCO)](https://developer.vonage.com/voice/voice-api/overview#ncco) containing the actions to play back to the receiver. To get us up and running quickly, we'll provide a predefined NCCO URL that's hosted on Github.
 
 Add the following code to `make-call.rb`:
 
 ```ruby
-nexmo.create_call({
+vonage.create_call({
 to: [
 {
 type: 'phone',
@@ -119,13 +118,13 @@ answer_url: [
 })
 ```
 
-This will play back a simple voice message to the recipient as specified by [`first_call_talk.json`](https://nexmo-community.github.io/ncco-examples/first_call_talk.json). Run `ruby make-call.rb` now, and wait for a call from Nexmo that will read you a simple voice message.
+This will play back a simple voice message to the recipient as specified by [`first_call_talk.json`](https://nexmo-community.github.io/ncco-examples/first_call_talk.json). Run `ruby make-call.rb` now, and wait for a call from Vonage that will read you a simple voice message.
 
 There are a lot more parameters that we could pass into this method. Have a look at the [reference documentation](https://developer.nexmo.com/api/voice#payload) for full details.
 
 ## Make an outbound call from Ruby on Rails
 
-In a Rails application, we'd probably have a Model for Calls where we can store the `to`, `from`, and maybe the `text` to play to the recipient before making the Nexmo API call. For this example you could create a migration for a Call like so:
+In a Rails application, we'd probably have a Model for Calls where we can store the `to`, `from`, and maybe the `text` to play to the recipient before making the Vonage API call. For this example you could create a migration for a Call like so:
 
 <pre class="lang:default highlight:0 decode:true ">$ rails generate migration CreateCalls to:string from:string text:text uuid:string status:string
 </pre>
@@ -166,12 +165,12 @@ end
 end
 ```
 
-Next, we can pass the call information to the Nexmo API.
+Next, we can pass the call information to the Vonage API.
 
 ```ruby
 # app/controllers/outbound_calls_controller.rb
 def make call
-response = nexmo.create_call({
+response = vonage.create_call({
 to: [
 {
 type: 'phone',
@@ -198,7 +197,7 @@ The response object will contain a `uuid` if the call was initiated successfully
 
 ## Provide an NCCO to play back text
 
-When we called the `create_call` method we used `outbound_call_url(call)` in the `answer_url` array. That `answer_url` needs to be available to the public internet so that it is reachable by the Nexmo APIs. You can do so by using [ngrok.](https://ngrok.com/) For more detailed instructions see [Aaron's](https://twitter.com/aaronbassett) post explaining [how to connect your local development server to the Nexmo API using an ngrok tunnel](https://www.nexmo.com/blog/2017/10/19/receive-sms-delivery-receipt-ruby-on-rails-dr/).
+When we called the `create_call` method we used `outbound_call_url(call)` in the `answer_url` array. That `answer_url` needs to be available to the public internet so that it is reachable by the Vonage APIs. You can do so by using [ngrok.](https://ngrok.com/) For more detailed instructions see [Aaron's](https://twitter.com/aaronbassett) post explaining [how to connect your local development server to the Vonage API using an ngrok tunnel](https://learn.vonage.com/blog/2017/10/19/receive-sms-delivery-receipt-ruby-on-rails-dr/).
 
 After setting up ngrok like so:
 
@@ -218,7 +217,7 @@ You will have an `answer_url` that looks something like this:
 
 `http://abc123.ngrok.io/outbound_call/123`
 
-When the call is initiated, Nexmo will make an HTTP request to that endpoint expecting an NCCO object with the actions to perform. In our case, we want to simply play back the `text` we specified on the Call object.
+When the call is initiated, Vonage will make an HTTP request to that endpoint expecting an NCCO object with the actions to perform. In our case, we want to simply play back the `text` we specified on the Call object.
 
 ```ruby
 # app/controllers/outbound_calls_controller.rb
@@ -244,13 +243,13 @@ Now go ahead, submit the form and within a few seconds you will receive a call p
 That's it for this tutorial. We've successfully:
 
 <ol>
- 	<li>Created a Nexmo account.</li>
+ 	<li>Created a Vonage account.</li>
  	<li>Installed the CLI.</li>
- 	<li>Bought a number and created a Nexmo Application.</li>
+ 	<li>Bought a number and created a Vonage Application.</li>
  	<li>Installed and initialized the Ruby gem.</li>
  	<li>Created a deep integration into our Rails application.</li>
 </ol>
-You can view the \[code used in this tutorial](https://github.com/Nexmo/nexmo-rails-quickstart/blob/master/app/controllers/outbound_calls_controller.rb) on GitHub.
+You can view the [code used in this tutorial](https://github.com/Nexmo/nexmo-rails-quickstart/blob/master/app/controllers/outbound_calls_controller.rb) on GitHub.
 
 ## Next steps
 
