@@ -17,11 +17,11 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-This is the second article in this step-by-step series about [Nexmo's Number Insight API](https://developer.nexmo.com/number-insight/overview) within an ASP.NET web application.
+This is the second article in this step-by-step series about [Vonage's Number Insight API](https://developer.vonage.com/number-insight/overview) within an ASP.NET web application.
 
-[In the first article](https://www.nexmo.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/), we walked through everything we need to know about the Number Insight API, setting up the ASP.NET application and getting ready to explore how to get insights about a phone number.
+[In the first article](https://learn.vonage.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/), we walked through everything we need to know about the Number Insight API, setting up the ASP.NET application and getting ready to explore how to get insights about a phone number.
 
-In this article, we will continue from where we left off in the first article for a deep dive into [Number Insight Basic API](https://developer.nexmo.com/number-insight/building-blocks/number-insight-basic). We will use the API to retrieve some basic information about a phone number such as its international and national formats and the country where the number is registered and then present it to the user.
+In this article, we will continue from where we left off in the first article for a deep dive into [Number Insight Basic API](https://developer.vonage.com/number-insight/building-blocks/number-insight-basic). We will use the API to retrieve some basic information about a phone number such as its international and national formats and the country where the number is registered and then present it to the user.
 
 Number Insight Basic API is a free synchronous, easy-to-use RESTful web service. For any phone number you can:
 
