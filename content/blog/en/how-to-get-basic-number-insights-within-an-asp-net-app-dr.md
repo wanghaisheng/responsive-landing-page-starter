@@ -1,6 +1,6 @@
 ---
 title: How to Get Basic Number Insights Within an ASP.NET App
-description: Learn how to use Nexmo's Number Insight Basic API to retrieve some
+description: Learn how to use Vonage's Number Insight Basic API to retrieve some
   basic information about a phone number, such as its international and national
   formats and the country where the number is registered, and then present it to
   the user.
@@ -107,17 +107,17 @@ public ActionResult BasicResults()
 ```
 
 Now, let's run the app and make a call to Number Insight Basic API.
-You can use [one of the Nexmo numbers](https://developer.nexmo.com/contribute/guides/write-the-docs#numbers) provided for testing.
+You can use one of the Vonage numbers provided for testing.
 
 ![Basic Number Insights Gif](/content/blog/how-to-get-basic-number-insights-within-an-asp-net-app/basicni.gif "Basic Number Insights Gif")
 
 ## Recap
 
-In this article, we learnt how to use Nexmo's Number Insight Basic API to retrieve the international and national formats of a phone number and the country where the number is registered. Then we showed this information on a view within an ASP.NET application.
+In this article, we learnt how to use Vonage's Number Insight Basic API to retrieve the international and national formats of a phone number and the country where the number is registered. Then we showed this information on a view within an ASP.NET application.
 In the next article of the series, we will learn how to get Standard Number Insights within an ASP.NET app. Stay tuned!
 
-## Nexmo Number Insight getting started guide for ASP.NET
+## Vonage Number Insight getting started guide for ASP.NET
 
-* [Getting Started with Nexmo Number Insight APIs and ASP.NET](https://www.nexmo.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
+* [Getting Started with Vonage Number Insight APIs and ASP.NET](https://www.nexmo.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
 * How to Get Basic Number Insights Within an ASP.NET App
 * [How to Get Standard Number Insights within an ASP.NET App](https://www.nexmo.com/blog/2018/05/24/how-to-get-standard-number-insights-within-an-asp-net-app-dr/)
