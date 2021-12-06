@@ -3,9 +3,10 @@ title: Send and Receive SMS Messages with Firebase Functions | One Dev Minute
 description: This quick walk-through will show you how to create an SMS message
   log and a response to the sender using Firebase Cloud Functions and the Real
   Time Database alongside the Vonage SMS API.
+thumbnail: /content/blog/send-and-receive-sms-messages-with-firebase-functions-one-dev-minute/thumbnail-and-assets-for-one-dev-minute.jpg
 author: amanda-cavallaro
 published: true
-published_at: 2021-11-25T08:55:14.362Z
+published_at: 2021-12-06T11:49:51.109Z
 updated_at: 2021-11-25T08:55:14.384Z
 category: tutorial
 tags:
