@@ -22,9 +22,11 @@ replacement_url: ""
 
 In our previous post about [Vonage Joins Code Chrysalis API Hackathon](https://learn.vonage.com/blog/2021/09/30/vonage-joins-code-chrysalis-api-night-hackathon/), we saw how Team Subarshi built an application called [CollabSpace](https://vonage-hackathon.herokuapp.com/) using [Vonage Video API](https://www.vonage.com/communications-apis/video/) to make online team collaboration more interactive and simple for connecting with others and editing documents in real-time. That was all, right? Of course not. 
 
-Within a few weeks following the hackathon, this group of Bootcamp students used the [Video API](https://www.vonage.com/communications-apis/video/) to build another innovative project which was an e-learning web application called [Senpai](https://senpai-container-flsg4ziguq-uc.a.run.app/#/), for their Bootcamp Demo Day. 
+Within a few weeks following the hackathon, this group of Bootcamp students used the [Video API](https://www.vonage.com/communications-apis/video/) to build another innovative project which was an e-learning web application called [Senpai](https://senpai-container-flsg4ziguq-uc.a.run.app/#/), for their Bootcamp Demo Day. In Japanese, the word Senpai refers to a teacher or master.
 
 # What did they build?
+
+![Home page of the Senpai, e-learning web application ](/content/blog/post-hackathon-the-e-learning-app-built-with-video-api/senpai.png "Home page of the Senpai, e-learning web application")
 
 Senpai
 
@@ -40,6 +42,8 @@ Built with:
 * [Vonage Video API](https://tokbox.com/developer/)
 
 You can check out their [Application](https://senpai-container-flsg4ziguq-uc.a.run.app/#/) and see their code on [GitHub](https://github.com/Team-Subarashi/senpai). You can also view their [demo and presentation](https://www.youtube.com/watch?v=O5HU8BrGvJQ).
+
+![In the “Find a Senpai” page, you can see a list of Senpai when you set the filter to All](/content/blog/post-hackathon-the-e-learning-app-built-with-video-api/find-a-senpai.png "In the “Find a Senpai” page, you can see a list of Senpai when you set the filter to All")
 
 # What makes it so special?
 
