@@ -43,7 +43,7 @@ npm --version
 To set up your application, you'll need to install the Vonage CLI. Install it using NPM in the terminal.
 
 ```shell
-npm install -g nexmo-cli@beta
+npm install @vonage/cli -g
 ```
 
 <sign-up number></sign-up>
@@ -51,7 +51,13 @@ npm install -g nexmo-cli@beta
 [Sign up for a free Vonage account](https://dashboard.nexmo.com/sign-up) and set up the Vonage CLI with the API key and secret found on the dashboard.
 
 ```shell
-nexmo setup <your_api_key> <your_api_secret>
+vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
+```
+
+The Vonage CLI has plugins that when installed, provide additional capabilities. In this tutorial, you will be working with Conversations, so here is the command to install its plugin:
+
+```bash
+vonage plugins:install @vonage/cli-plugin-conversations
 ```
 
 ### Git (Optional)
@@ -132,10 +138,7 @@ To connect to Vonage, and send or receive messages from the service, you need to
 Firstly, create a Vonage Application with RTC (real-time communication) capabilities. The event URL will be a live log of events happening on the Vonage service, like users joining/leaving, sending messages, enabling audio (if you felt like enabling it).
 
 ```shell
-nexmo app:create "Nexmo RTC Chat" --capabilities=rtc --rtc-event-url=http://example.com --keyfile=private.key
-# Application created: 4556dbae-bf...f6e33350d8
-# Credentials written to .nexmo-app
-# Private Key saved to: private.key
+vonage apps:create "Vonage RTC Chat" --rtc_event_url=http://example.com
 ```
 
 #### Create a Vonage Conversation
@@ -143,19 +146,17 @@ nexmo app:create "Nexmo RTC Chat" --capabilities=rtc --rtc-event-url=http://exam
 Secondly, create a Vonage Conversation, which acts like a chatroom. Or, a container for messages and events.
 
 ```shell
-nexmo conversation:create display_name="Bootstrap Chat"
-# Conversation created: CON-a57b0...11e57f56d
+vonage apps:conversations:create "Bootstrap Chat"
 ```
 
 #### Create Your User
 
 Now, create a user for yourself. 
 
-> ***Note:*** In this demo, you won't chat between two users. [Other guides](<>) [show you](<>) how to [create conversations](<>) between [multiple users](<>). This guide focusses on styling your message UI in a simple, yet appealing, way.
+> ***Note:*** In this demo, you won't chat between two users. [Other guides](<>) [show you](<>) how to [create conversations](<>) between [multiple users](<>). This guide focuses on styling your message UI in a simple, yet appealing, way.
 
 ```shell
-nexmo user:create name=<USER_NAME> display_name=<DISPLAY_NAME>
-# User created: USR-6eaa4...e36b8a47f
+vonage apps:users:create USER_NAME --display_name=DISPLAY_NAME
 ```
 
 #### Add the User to a Conversation
@@ -163,19 +164,17 @@ nexmo user:create name=<USER_NAME> display_name=<DISPLAY_NAME>
 Next, add your new user to the conversation. A user can be a member of an application, but they still need to join the conversation.
 
 ```shell
-nexmo member:add <CONVERSATION_ID> action=join channel='{"type":"app"}' user_id=<USER_ID>
-# Member added: MEM-df772...1ad7fa06
+vonage apps:conversations:members:add CONVERSATION_ID USER_ID
 ```
 
 #### Generate a User Token
 
 Lastly, generate your new user a token. This token represents the user when accessing the application. This access token identifies them, so anyone using it will be assumed to be the correct user.
 
-In practice, you'll configure the application with this token. In production, these should be guarded, kept secret and very carefully exposed to the client application, if at all.
+In practice, you'll configure the application with this token. In production, these should be guarded, kept secret, and very carefully exposed to the client application, if at all.
 
 ```shell
-nexmo jwt:generate ./private.key sub=<USER_NAME> exp=$(($(date +%s)+86400)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{}}}' application_id=<APPLICATION_ID>
-# eyJhbGciOi...XVCJ9.eyJpYXQiOjE1NzM5M...In0.qn7J6...efWBpemaCDC7HtqA
+vonage jwt --key_file=./vonage_rtc_chat.key --acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{},"/*/legs/**":{}}}' --subject=USER_NAME --app_id=APP_ID
 ```
 
 #### Configure the Application
