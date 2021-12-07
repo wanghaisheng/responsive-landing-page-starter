@@ -2,11 +2,11 @@
 title: Build a Facebook Messenger Bot with Messages API and Dialogflow
 description: "Learn how to implement a Facebook Messenger bot on your Facebook
   page using the Vonage Messages API and the Google Dialogflow service. "
-thumbnail: /content/blog/build-a-facebook-messenger-bot-with-messages-api-and-dialogflow-dr/build-bot-messages-api.png
+thumbnail: /content/blog/build-a-facebook-messenger-bot-with-messages-api-and-dialogflow/dialogflow_facebook-messenger.png
 author: martyn
 published: true
 published_at: 2018-10-16T14:46:18.000Z
-updated_at: 2021-04-19T13:46:17.407Z
+updated_at: 2021-12-07T08:23:16.061Z
 category: tutorial
 tags:
   - chatbots
