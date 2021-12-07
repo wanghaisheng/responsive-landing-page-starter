@@ -16,31 +16,31 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-I've explored the Nuxt.js framework in [a previous blog post](https://www.nexmo.com/blog/2020/02/19/how-send-receive-sms-messages-with-nuxt-js-dr), and I liked it so much that I was looking for reasons to use it more. So I thought it would be good to take what I learned in there and apply it to a more complex API. I wrote the Middleware methods using Node.js requests, so this blog post expands on them, using them not only for plain text but for JSON requests as well.
+I've explored the Nuxt.js framework in [a previous blog post](https://learn.vonage.com/blog/2020/02/19/how-send-receive-sms-messages-with-nuxt-js-dr/), and I liked it so much that I was looking for reasons to use it more. So I thought it would be good to take what I learned in there and apply it to a more complex API. I wrote the Middleware methods using Node.js requests, so this blog post expands on them, using them not only for plain text but for JSON requests as well.
 
-An API that uses JSON as a building block is the Vonage [Voice API](https://developer.nexmo.com/voice/voice-api/overview). It allows you to make and receive phone calls programmatically, and control the flow of inbound and outbound calls in JSON with Call Control Objects. We're going to use it, alongside [Node.js HTTP requests](https://nodejs.org/api/http.html) (yes, without [Express](https://expressjs.com/)), [Nuxt.js](https://nuxtjs.org/) server middleware, a [Vue.js](https://vuejs.org/) Terminal UI and [WebSockets](https://developer.mozilla.org/en-US/docs/Glossary/WebSockets) to make and receive phone calls.
+An API that uses JSON as a building block is the Vonage [Voice API](https://developer.vonage.com/voice/voice-api/overview). It allows you to make and receive phone calls programmatically, and control the flow of inbound and outbound calls in JSON with Call Control Objects. We're going to use it, alongside [Node.js HTTP requests](https://nodejs.org/api/http.html) (yes, without [Express](https://expressjs.com/)), [Nuxt.js](https://nuxtjs.org/) server middleware, a [Vue.js](https://vuejs.org/) Terminal UI and [WebSockets](https://developer.mozilla.org/en-US/docs/Glossary/WebSockets) to make and receive phone calls.
 
 Here's a look at what we're building:
 
-![nexmo call vue](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/end-result-1.png "nexmo call vue")
+![vonage call vue](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/end-result-1.png "nexmo call vue")
 
-The code for this tutorial can is on [GitHub](https://github.com/nexmo-community/nexmo-nuxt-call).
+The code for this tutorial is on [GitHub](https://github.com/nexmo-community/nexmo-nuxt-call).
 
 ## Prerequisites
 
-Before you begin, make  sure you have:
+Before you begin, make sure you have:
 
 * A [Vonage account](https://dashboard.nexmo.com/sign-up)
 * [Node.js](https://nodejs.org/en/download/) installed on your machine
 * [ngrok](https://ngrok.com/) to make the code on our local machine-accessible to the outside world
-* The beta version of the [Nexmo CLI](https://developer.nexmo.com/tools): `npm install -g nexmo-cli@beta`
+* The [Vonage CLI](https://developer.nexmo.com/tools): `npm install @vonage/cli -g`
 
 ## Generate a New Nuxt.js Application
 
-To make it easier to get started, the Nuxt.js team created a CLI tool called `create-nuxt-app`, that scaffolds a new project and lets you select your way through all the modules you can have in a Nuxt.js application. I've used that tool to generate a new project, called `nexmo-nuxt-call`.
+To make it easier to get started, the Nuxt.js team created a CLI tool called `create-nuxt-app`, that scaffolds a new project and lets you select your way through all the modules you can have in a Nuxt.js application. I've used that tool to generate a new project, called `vonage-nuxt-call`.
 
 ```shell
-$ npx create-nuxt-app nexmo-nuxt-call
+$ npx create-nuxt-app vonage-nuxt-call
 ```
 
 I've chosen:
@@ -59,7 +59,7 @@ I've chosen:
 After the scaffolding finished, I've switched directory to my new project, and ran the project using `npm run dev`. That starts both the client and server processes and makes them available at `http://localhost:3000`. It will also hot reload them every time I make a change, so I can see it live without having to restart the processes.
 
 ```shell
-$ cd nexmo-nuxt-call
+$ cd vonage-nuxt-call
 $ npm run dev
 ```
 
@@ -79,7 +79,7 @@ export default {
 
 ## Run ngrok
 
-Because Vonage makes requests on our `/api/receive` and `/api/events` routes, we'll need to expose those to the internet. An excellent tool for that is ngrok. If you haven't used ngrok before, there is a [blog post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr) that explains how to use it. If you're familiar with ngrok, run it with `http` on the 3000 port.
+Because Vonage makes requests on our `/api/receive` and `/api/events` routes, we'll need to expose those to the internet. An excellent tool for that is ngrok. If you haven't used ngrok before, there is a [blog post](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/) that explains how to use it. If you're familiar with ngrok, run it with `http` on the 3000 port.
 
 ```shell
 $ ngrok http 3000
@@ -89,25 +89,25 @@ After ngrok runs, it gives you a random-looking URL, that we'll use as the base 
 
 ## Create a Vonage Application
 
-To interact with the Vonage Voice API, we'll need to create a Vonage Application that has a `voice` capability. You can create an application through the [Vonage Dashboard](https://dashboard.nexmo.com/applications/new). You could also create a Vonage application through the Nexmo CLI, and I'm going to do just that. In case you haven't used the Nexmo CLI before, you need to set up it with your Vonage API key and secret before we can use it. You can find your API key and secret in your [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).
+To interact with the Vonage Voice API, we'll need to create a Vonage Application that has a `voice` capability. You can create an application through the [Vonage Dashboard](https://dashboard.nexmo.com/applications/new). You could also create a Vonage application through the Vonage CLI, and I'm going to do just that. In case you haven't used the Vonage CLI before, you need to set up it with your Vonage API key and secret before we can use it. You can find your API key and secret in your [Vonage Dashboard](https://dashboard.nexmo.com/getting-started-guide).
 
 ```shell
-$ nexmo setup NEXMO_API_KEY NEXMO_API_SECRET
+$ vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
 ```
 
-We'll use the `app:create` command of the CLI to create the voice application, and generate a private key for it. We'll save the private key on disk as well because we'll need it to make a phone call later on.
+We'll use the `apps:create` command of the CLI to create the voice application, and generate a private key for it. We'll save the private key on disk as well because we'll need it to make a phone call later on.
 
 ```shell
-$ nexmo app:create "nexmo-nuxt-call" --capabilities=voice --voice-answer-url=https://YOUR_NGROK_URL/api/receive --voice-event-url=https://YOUR_NGROK_URL/api/events --keyfile=./private.key
+$ vonage apps:create "vonage-nuxt-call" --voice_answer_url=https://YOUR_NGROK_URL/api/receive --voice_event_url=https://YOUR_NGROK_URL/api/events
 ```
 
 The output for the command returns a Vonage Application ID and looks similar to this:
 
 ```shell
 Application created: aaaaaaaa-bbbb-cccc-dddd-abcd12345678
-No existing config found. Writing to new file.
-Credentials written to /Users/lakatos88/nexmo/nexmo-nuxt-call/.nexmo-app
-Private Key saved to: /Users/lakatos88/nexmo/nexmo-nuxt-call/private.key
+App Files
+Vonage App File: /Users/lakatos88/projects/vonage-nuxt-call/vonage_app.json
+Private Key File: /Users/lakatos88/projects/vonage-nuxt-call/vonage-nuxt-call.key
 ```
 
 When Vonage receives a phone call on a number you have rented, it makes an HTTP request to a URL (a 'webhook', that we specified) that contains all of the information needed to receive and respond to the call. This URL is commonly called the *answer URL*. And we've set that to our ngrok URL, followed by `/api/receive`, which is going to be our handler for incoming calls.
@@ -188,7 +188,7 @@ We're using `dotenv` here to take the API key and secret, the application Id and
 NEXMO_API_KEY=aabbcc0
 NEXMO_API_SECRET=s3cRet$tuff
 NEXMO_APPLICATION_ID=aaaaaaaa-bbbb-cccc-dddd-abcd12345678
-NEXMO_PRIVATE_KEY=./private.key
+NEXMO_PRIVATE_KEY=./vonage-nuxt-call.key
 ```
 
 The file exports a default function that has the default request and response Node.js objects. Because they are there, and I didn't want to add the extra dependency of `express`, we'll use them to create a classical Node.js HTTP server. Let's update the `export` in the `make-call.js` file to look like this:
@@ -234,7 +234,7 @@ export default function (req, res, next) {
 }
 ```
 
-I'm checking to see if the request is a `GET` request here and then using the ["Make an outbound call with an NCCO"](https://developer.nexmo.com/voice/voice-api/code-snippets/make-an-outbound-call-with-ncco/node) code snippet to make a phone call. The `nexmo.calls.create` method takes an object parameter to determine the `from`, `to` and `ncco` for the call. For the NCCO, it expects a valid set of instructions according to the [NCCO reference](https://developer.nexmo.com/voice/voice-api/ncco-reference). It also takes a `callback` method that is going to run once the API call completes. I'm taking the `from` parameter from the `.env` file, and that's going to be a Vonage phone number. The `to` and `text` parameters are coming from the query parameters of the incoming HTTP request.
+I'm checking to see if the request is a `GET` request here and then using the ["Make an outbound call with an NCCO"](https://developer.vonage.com/voice/voice-api/code-snippets/make-an-outbound-call-with-ncco/node) code snippet to make a phone call. The `nexmo.calls.create` method takes an object parameter to determine the `from`, `to` and `ncco` for the call. For the NCCO, it expects a valid set of instructions according to the [NCCO reference](https://developer.vonage.com/voice/voice-api/ncco-reference). It also takes a `callback` method that is going to run once the API call completes. I'm taking the `from` parameter from the `.env` file, and that's going to be a Vonage phone number. The `to` and `text` parameters are coming from the query parameters of the incoming HTTP request.
 
 My `callback` function is anonymous, and I'm checking to see if there was an error with the request first. If there was an error, I transform the error object to String and pass that along to the response message. If there was no error, I'm going to pass a generic `Call in progress.` message so that we can update the UI later.
 
@@ -246,32 +246,35 @@ There is also a fallback for all non-GET requests to return an empty `200 OK` re
 
 You've probably noticed I've used `process.env.NEXMO_NUMBER` as caller id and that means Nuxt.js is going to look for it in the `.env` file. Before we can add it there, we'll need to buy a VOICE enabled phone number in the [Vonage Dashboard](https://dashboard.nexmo.com/buy-numbers).
 
-We could also buy a number through the Nexmo CLI, and I'm going to do just that.
+We could also buy a number through the Vonage CLI, and I'm going to do just that.
 
-We'll use the `number:search` command to look for an available number before we buy it. The command accepts a two-letter country code as input (I've used `US` for United States numbers), and we can specify a few flags to narrow down the returned list of available phone numbers. I'm using `--voice` to flag VOICE enabled numbers, `--size=5` to limit the size of the returned list, and `--verbose` to return a nicely formatted table with additional information about the available phone numbers.
+We'll use the `numbers:search` command to look for an available number before we buy it. The command accepts a two-letter country code as input (I've used `US` for United States numbers), and we can specify a flag to narrow down the returned list of available phone numbers. I'm using `--features=VOICE` to flag VOICE enabled numbers.
 
 ```shell
-$ nexmo number:search US --voice --size=5 --verbose
+$ vonage numbers:search US --features=VOICE
 ```
 
 The response I got looked a bit like this:
 
 ```shell
-Item 1-5 of 152097
-
-msisdn      | country | cost | type       | features
------------------------------------------------------
-12013456151 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12013505282 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12013505971 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12014163584 | US      | 0.90 | mobile-lvn | VOICE,SMS
-12014264360 | US      | 0.90 | mobile-lvn | VOICE,SMS
+Country Number      Type       Cost Features  
+ ─────── ─────────── ────────── ──── ───────── 
+ US      12013456151 mobile-lvn 0.90 VOICE,SMS 
+ US      12013660246 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711374 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711389 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711396 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711449 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711729 mobile-lvn 0.90 VOICE,SMS 
+ US      12013711936 mobile-lvn 0.90 VOICE,SMS 
+ US      12013713723 mobile-lvn 0.90 VOICE,SMS 
+ US      12013743788 mobile-lvn 0.90 VOICE,SMS 
 ```
 
 I've picked the first number in the response, so let's go ahead and buy that number on the Vonage platform.
 
 ```shell
-$ nexmo number:buy 12013456151 --confirm
+$ vonage numbers:buy 12013456151 US
 ```
 
 Now that you own that phone number let's go ahead and add it to the `.env` file.
@@ -280,7 +283,7 @@ Now that you own that phone number let's go ahead and add it to the `.env` file.
 NEXMO_API_KEY=aabbcc0
 NEXMO_API_SECRET=s3cRet$tuff
 NEXMO_APPLICATION_ID=aaaaaaaa-bbbb-cccc-dddd-abcd12345678
-NEXMO_PRIVATE_KEY=./private.key
+NEXMO_PRIVATE_KEY=./vonage-nuxt-call.key
 FROM_NUMBER=12013456151
 ```
 
@@ -328,13 +331,13 @@ I'm checking to see if the incoming request is a `GET` request, and then stringi
 
 We'll need to associate the phone number we bought earlier to the application we created so that when the number gets an incoming phone call, it uses the Application Answer URL to handle the incoming call.
 
-We can use the Nexmo CLI to link the Vonage phone number you bought earlier with the Application ID:
+We can use the Vonage CLI to link the Vonage phone number you bought earlier with the Application ID:
 
 ```shell
-$ nexmo link:app 12013456151 aaaaaaaa-bbbb-cccc-dddd-abcd12345678
+$ vonage apps:link aaaaaaaa-bbbb-cccc-dddd-abcd12345678 --number=12013456151
 ```
 
-You can make a phone call from your phone to your Vonage phone number, you'll hear the message `Thank you for calling my Vonage number.`, and you should see call events logged in the terminal where you Nuxt.js application is running.
+You can make a phone call from your phone to your Vonage phone number, you'll hear the message `Thank you for calling my Vonage number.`, and you should see call events logged in the terminal where your Nuxt.js application is running.
 
 ![log events received](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/log-events-receive.png "log events received")
 
@@ -394,7 +397,7 @@ I'm using a Mac Terminal template from [tailwindcomponents.com](https://tailwind
         <p v-for="counter in counters" :key="counter.id" class="pb-1">
           <span class="text-red-600">@lakatos88</span>
           <span class="text-yellow-600 mx-1">></span>
-          <span class="text-blue-600">~/nexmo/nexmo-nuxt-call</span>
+          <span class="text-blue-600">~/projects/vonage-nuxt-call</span>
           <span class="text-red-600 mx-1">$</span>
           <span v-if="!counter.message" class="blink" contenteditable="true" @click.once="stopBlinking" @keydown.enter.once="runCommand">_</span>
           <span v-if="counter.message">{{ counter.message }}</span>
@@ -436,7 +439,7 @@ export default {
     async runCommand (event) {
       const splitCommand = event.target.textContent.trim().split(' ')
       event.target.contentEditable = false
-      if (splitCommand.length > 3 && splitCommand[0] === 'nexmo' && splitCommand[1] === 'call') {
+      if (splitCommand.length > 3 && splitCommand[0] === 'vonage' && splitCommand[1] === 'call') {
         const call = await this.$axios.$get(`/api/make?text=${splitCommand.slice(3).join(' ')}&number=${splitCommand[2]}`)
         this.counters.push({ id: this.counters.length, message: call })
       } else {
@@ -449,9 +452,9 @@ export default {
 </script>
 ```
 
-The `runCommand` method is async, and it stops the HTML element from being `contentEditable`. It also splits the command from the terminal into four parts, the command name, the argument, the phone number, and the text message. The method checks to see if there are more than three parts in the command and that the first one is `nexmo`, and the second one is `call`. If that's the case, it makes an HTTP `GET` request using `axios` to the `/api/make` endpoint we created earlier, passing along the text and number from the command. It then uses the message it receives back to display on the UI.
+The `runCommand` method is async, and it stops the HTML element from being `contentEditable`. It also splits the command from the terminal into four parts, the command name, the argument, the phone number, and the text message. The method checks to see if there are more than three parts in the command and that the first one is `vonage`, and the second one is `call`. If that's the case, it makes an HTTP `GET` request using `axios` to the `/api/make` endpoint we created earlier, passing along the text and number from the command. It then uses the message it receives back to display on the UI.
 
-If the command is not `nexmo call number text`, it displays a generic error in the UI. Once that's done, it adds a new line with a blinking underscore to the UI, waiting for the next command.
+If the command is not `vonage call number text`, it displays a generic error in the UI. Once that's done, it adds a new line with a blinking underscore to the UI, waiting for the next command.
 
 I've also replaced the contents of the `<style>` tag to position the Nuxt.js logos at the top of the terminal window, and create the blinking animation for the underscore.
 
@@ -558,7 +561,7 @@ env: {
 
 ### Try It Out
 
-You can load `http://localhost:3000/` in your browser, click on the blinking underscore, and type `nexmo call YOUR_PHONE_NUMBER hello`. After you press Enter on the keyboard, you should receive a call on your phone, and the event data should show up in the UI. If you call that number back, you can see the status for that call appearing in your browser as well.
+You can load `http://localhost:3000/` in your browser, click on the blinking underscore, and type `vonage call YOUR_PHONE_NUMBER hello`. After you press Enter on the keyboard, you should receive a call on your phone, and the event data should show up in the UI. If you call that number back, you can see the status for that call appearing in your browser as well.
 
 ![Make and Receive Phone Calls with Nuxt.js and Vonage](/content/blog/how-to-make-and-receive-phone-calls-with-nuxt-js/make-receive-nuxt.png "Make and Receive Phone Calls with Nuxt.js and Vonage")
 
