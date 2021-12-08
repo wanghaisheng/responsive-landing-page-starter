@@ -16,6 +16,8 @@ comments: true
 redirect: ""
 canonical: ""
 ---
+*Post updated by[ Amanda Cavallaro](https://learn.vonage.com/authors/amanda-cavallaro/)*
+
 In this tutorial, you are going to learn how to implement a Facebook Messenger bot on your Facebook page using the [Vonage Messages API](https://developer.vonage.com/messages/overview) and the [Google Dialogflow](https://dialogflow.com) service.
 
 This example is going to take inbound messages sent either via the 'Send Message' button on a Facebook page, or via the Facebook Messenger app. Both will work just fine.
