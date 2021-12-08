@@ -90,21 +90,21 @@ Then select the Web Application template.
 
 ![Choosing ASP core project template](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/aspcore-project-template.png)
 
-### Installing the Nexmo C# Client Library
+### Installing the Vonage .Net SDK
 
 Whether you opt for ASP.Net Web or Core project, the following steps are the same. 
 
-Install the Nexmo C# Client Library via the NuGet Package Manager Console.
+Install the Vonage .Net SDK via the NuGet Package Manager Console.
 
 ```
-Install-Package Nexmo.Csharp.Client -Version 2.2.0’
+Install-Package Vonage
 ```
 
 Next, under the **Tools** dropdown menu, locate **NuGet Package Manager** and click **Manage NuGet Packages for Solution**. Under the Updates tab, select the **Update All Packages** box and click the **Update** button.
 
 ![Choosing packages for the project](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/packages-aspapp.png)
 
-Add a JSON file (appsettings.json) to your project. Inside which you will add your Nexmo credentials.
+Add a JSON file (appsettings.json) to your project. Inside which you will add your Vonage credentials.
 
 ```json
 {
@@ -121,9 +121,9 @@ Add a JSON file (appsettings.json) to your project. Inside which you will add yo
 
 Now you’re ready to dive into code. Let’s see how you can make a Text-to-Speech phone call in your ASP.NET project with the Voice API.
 
-## Learn more about Nexmo’s APIs and ASP.NET
+## Learn more about Vonage’s APIs and ASP.NET
 
-This post was just a quick introduction into setting up your first Nexmo application with ASP.NET.
-Now you are ready to dive into code and learn [How to make a Text-to-Speech phone call in ASP.NET with The Nexmo Voice API](https://learn.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr) 
+This post was just a quick introduction to setting up your first Vonage application with ASP.NET.
+Now you are ready to dive into code and learn [How to make a Text-to-Speech phone call in ASP.NET with The Vonage Voice API](https://learn.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr) 
 
-Also why not try [sending an SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)? Or learn how to [receive SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/)? Both posts are on our [developer blog](https://learn.vonage.com/blog/category/developers-2/). You might also be interested in our [open source .NET client which is available on Github](https://github.com/Nexmo/nexmo-dotnet).
+Also, why not try [sending an SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)? Or learn how to [receive SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/)? Both posts are on our [developer blog](https://learn.vonage.com/blog/category/developers-2/). You might also be interested in our [open source .NET client which is available on Github](https://github.com/Nexmo/nexmo-dotnet).
