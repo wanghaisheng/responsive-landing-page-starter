@@ -5,7 +5,7 @@ description: Weeks after the hackathon, the Tokyo Bootcamp students built
 thumbnail: /content/blog/post-hackathon-the-e-learning-app-built-with-video-api/hackathon_e-learning-app.png
 author: clarisse-ng
 published: true
-published_at: 2021-12-07T09:52:07.319Z
+published_at: 2021-12-08T09:23:16.234Z
 updated_at: 2021-12-07T09:52:07.359Z
 category: event
 tags:
