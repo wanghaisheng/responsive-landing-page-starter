@@ -1,7 +1,7 @@
 ---
 title: How to Receive SMS Messages with ASP.NET MVC Framework
 description: This tutorial explains how to receive SMS messages with ASP.NET MVC
-  using Nexmo's C# Client Library.
+  using Vonage's C# Client Library.
 thumbnail: /content/blog/recieve-sms-messages-with-asp-net-mvc-framework-dr/sms-receive.png
 author: sidharth-sharma
 published: true
@@ -15,13 +15,13 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-My previous tutorial explained how to use the Vonage [C# Client Library](https://github.com/Nexmo/nexmo-dotnet) to [send your first SMS message](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) from an ASP.NET MVC web app. In this follow-up, I continue exploring the Vonage Platform by showing how to receive SMS messages on a Vonage phone number using the C# Client Library.
+My previous tutorial explained how to use the Vonage [C# Client Library](https://github.com/Vonage/vonage-dotnet-sdk) to [send your first SMS message](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) from an ASP.NET MVC web app. In this follow-up, I continue exploring the Vonage Platform by showing how to receive SMS messages on a Vonage phone number using the C# Client Library.
 
 ## Requirements
 
 * Visual Studio 2017 RC
 * Windows machine
-* A [starter project](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/SMSRecieveStarterProject") set up in the previous [blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)
+* A [starter project](https://github.com/Vonage/vonage-dotnet-code-snippets/tree/master/DotNetWebhookCodeSnippets) set up in the previous [blog post](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)
 * [The Vonage CLI](https://developer.vonage.com/application/vonage-cli)
 
 <sign-up number></sign-up>
@@ -132,7 +132,7 @@ vonage apps:link --number=VONAGE_NUMBER APP_ID
 
 You are ready to go! With your ASP.NET web app running, open up the output window in Visual Studio. Send an SMS to your Vonage phone number and you will see the incoming texts coming through! Your ASP.NET web app is able to receive SMS messages that are sent to your Vonage phone number via an inbound webhook!
 
-Feel free to reach out via [e-mail](mailto:sidharth.sharma@nexmo.com) or [Twitter](https://twitter.com/sidsharma_27) if you have any questions!
+Feel free to reach out via [e-mail](mailto:sidharth.sharma@nexmo.com) or [Twitter](https://twitter.com/doesdotnet) if you have any questions!
 
 ### Helpful Links
 
