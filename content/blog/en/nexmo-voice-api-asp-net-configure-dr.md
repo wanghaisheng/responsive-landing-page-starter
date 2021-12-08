@@ -1,12 +1,12 @@
 ---
-title: "Nexmo Voice API with ASP.NET: Before You Start"
+title: "Vonage Voice API with ASP.NET: Before You Start"
 description: Before you start! Everything you need to know to set up and
-  configure a new Nexmo Voice API project to work with ASP.NET MVC.
+  configure a new Vonage Voice API project to work with ASP.NET MVC.
 thumbnail: /content/blog/nexmo-voice-api-asp-net-configure-dr/configure-voice-asp-net.png
 author: bibi
 published: true
 published_at: 2017-07-28T13:13:43.000Z
-updated_at: 2021-05-18T09:16:26.962Z
+updated_at: 2021-12-08T12:45:22.463Z
 category: tutorial
 tags:
   - asp.net
@@ -16,46 +16,48 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-*This is part of a series on using The Nexmo Voice API with ASP.NET projects. It continues the “Getting Started with Nexmo and ASP.NET” series, which follows our [Getting Started series on SMS APIs](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/).*
+*This is part of a series on using The Vonage Voice API with ASP.NET projects. It continues the “Getting Started with Vonage and ASP.NET” series, which follows our [Getting Started series on SMS APIs](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/).*
 
-In this tutorial, we are going to set up an ASP.NET project in Visual Studio that has all the configuration necessary to connect to The Nexmo Voice API. This makes it possible to add phone call abilities to an ASP.NET application. Future blog posts will show how to integrate the Voice API into your application; this is to show you how to get started.
+In this tutorial, we are going to set up an ASP.NET project in Visual Studio that has all the configuration necessary to connect to The Vonage Voice API. This makes it possible to add phone call abilities to an ASP.NET application. Future blog posts will show how to integrate the Voice API into your application; this is to show you how to get started.
 
 <sign-up number></sign-up>
 
 ## Configuring a Nexmo application
 
-In order to be able to use [The Nexmo Voice API](https://developer.nexmo.com/voice/overview), you'll have to use a [Nexmo Application](https://developer.nexmo.com/concepts/guides/applications).
-A Nexmo application contains the security and configuration information you need to interact with the Nexmo Voice REST API and easily use the Voice API.
+In order to be able to use [The Vonage Voice API](https://developer.vonage.com/voice/voice-api/overview), you'll have to use a [Vonage Application](https://developer.vonage.com/application/overview).
+A Vonage application contains the security and configuration information you need to interact with the Vonage Voice REST API and easily use the Voice API.
 
 All requests to the Voice API require authentication. You must generate a private key with the Application API, which allows you to create JSON Web Tokens (JWT) to make the requests. An application associated public/private keys can be created in two ways.
 
-### The Nexmo application dashboard
+### The Vonage application dashboard
 
-If you go to your Nexmo dashboard, under the [Voice tab](https://dashboard.nexmo.com/voice), you can see that you can create an application.
+If you go to your Vonage dashboard, under the [Voice tab](https://dashboard.nexmo.com/getting-started/voice), you can see that you can create an application.
 
 ![Creating a Voice enabled application](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/create-voice-app-dashbaord.png)
 
-Complete the required fields and then click “Generate public/private key pair” this will prompt you to download your private key *(keep this safe!)* as well as populating the public key for you.
+Complete the required fields and then click “Generate public/private key pair” this will prompt you to download your private key *(keep this safe!)* as well as populate the public key for you.
 
 ![Creating a Voice app, retrieving the public key](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/create-voice-app-dashboard-public-key.png)
 
-You can read more about [our application dashboard and how it makes Nexmo Voice application management easier to set up in our blog post](https://learn.vonage.com/blog/2017/06/29/voice-application-management-easier/).
+You can read more about [our application dashboard and how it makes Vonage Voice application management easier to set up in our blog post](https://learn.vonage.com/blog/2017/06/29/voice-application-management-easier/).
 
-### The Nexmo CLI
+### The Vonage CLI
 
-First, let’s install [Nexmo's CLI](https://github.com/Nexmo/nexmo-cli) from npm
+First, let’s install [Vonage's CLI](https://github.com/Vonage/vonage-cli) from npm
 
-```sh
-npm install nexmo-cli -g 
+```powershell
+npm install @vonage/cli -g 
 ```
 
-then set it up with your Nexmo API key and secret.
+then set it up with your Vonage API key and secret.
 
-This will save your app credentials to `..\.nexmorc`
+```powershell
+vonage config:set --apiKey=API_KEY --apiSecret=API_SECRET
+```
 
 Now that the configuration is done, the next step is creating the Voice Application using the command **`app:create`**.
 
-With both options, you need to register an application name, for example "My first voice app" and two webhook endpoints to specify the answer and event URLs.
+With both options, you need to register an application name, for example, "My first voice app" and two webhook endpoints to specify the answer and event URLs.
 
 ```sh
 nexmo app:create "My first voice app" http://example.com http://example.com --keyfile private.key
