@@ -37,24 +37,24 @@ Once you’ve created your account, you need to create a project.
 
 Click on “Projects” and then “Create New Project.”
 
-![Create a project](/content/blog/how-to-add-video-conferencing-to-your-website/createnewproject.png)
+![Create new project](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/createnewproject.png)
 
 Next, select “Create Custom Project.”
 
-![Create custom project](/content/blog/how-to-add-video-conferencing-to-your-website/create-custom-project.png)
+![](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/create-custom-project.png)
 
 Now create a new project named “my_project.”
 
-![my_project](/content/blog/how-to-add-video-conferencing-to-your-website/my_project.png)
+![My project](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/my_project.png)
 
 \
 Then click “Create.”
 
-![](/content/blog/how-to-add-video-conferencing-to-your-website/create.png)
+![Create](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/create.png)
 
 Now click “View project.” 
 
-![API key](/content/blog/how-to-add-video-conferencing-to-your-website/api_key.png)
+![view projet](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/api_key.png)
 
 Make sure to save your project API key and secret; you will need them later.
 
@@ -112,7 +112,7 @@ Go to `https://your_ngrok_link/admin` to stream video, and then `https://your_ng
 
 You should see a website that looks like this.
 
-![](/content/blog/how-to-add-video-conferencing-to-your-website/web_app_working.png)
+![Web app working](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/web_app_working.png)
 
 This web app also lets you chat!
 
@@ -156,12 +156,11 @@ With Flask, you can easily map a URL to a function like this:
 @app.route('/test', methods=['POST', 'GET'])
 def index():
     return "Hello, World!"
-
 ```
 
-If you add this code to app.py and visit /test on your local server, you should see `“Hello, World!” `
+If you add this code to app.py and visit /test on your local server, you should see `“Hello, World!”`
 
-This project maps three URLs to HTML templates using Flask’s render_template method. One function maps `/admin` to `admin.html`, and the other maps` join/` to` join.html`. 
+This project maps three URLs to HTML templates using Flask’s render_template method. One function maps `/admin` to `admin.html`, and the other maps`join/` to`join.html`. 
 
 ```python
 @app.route('/admin')
@@ -214,7 +213,7 @@ Then, this code grabs the user’s name from `request.form`. 
  name = request.form['name']
 ```
 
-Finally, this code uses `render_template` to render `index.html` and pass in the session ID you created earlier, the token you created earlier, whether or not the user is an admin, and their name to the` index.html` template. 
+Finally, this code uses `render_template` to render `index.html` and pass in the session ID you created earlier, the token you created earlier, whether or not the user is an admin, and their name to the`index.html` template. 
 
 ```python
 return render_template('index.html', session_id=session_id, token=token, is_admin=admin, name=name,
@@ -224,7 +223,7 @@ The `index.html` template then uses those variables to display the video to whoe
 
 Let’s quickly take a look at what happens on the front-end. 
 
-First, the `index.html `template loads this script.
+First, the `index.html`template loads this script.
 
 ```javascript
 <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
