@@ -1,5 +1,5 @@
 ---
-title: Build a Conference Call with the Nexmo Voice API and ASP.NET Core
+title: Build a Conference Call with the Vonage Voice API and ASP.NET Core
 description: Step by step guide on how to build a conference call "conversation"
   for multiple participants using ASP.NET Core and Nexmo's Voice API.
 thumbnail: /content/blog/build-a-conference-call-with-nexmo-voice-api-and-csharp-dr/csharp-conference-call-1.png
@@ -24,7 +24,7 @@ In this tutorial, we will:
 
 * Create an ASP.NET Core app.
 * Use NancyFX with ASP.NET Core.
-* Create a Nexmo voice application.
+* Create a Vonage voice application.
 * Create and return NCCOs.
 * Run and test the code using Ngrok.
 
@@ -32,21 +32,21 @@ In this tutorial, we will:
 
 * Visual Studio 2017 or higher.
 * A project setup for this tutorial series, which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoDotNetQuickStarts).
-* Optional: [The Nexmo CLI](https://github.com/Nexmo/nexmo-cli).
+* Optional: The [Vonage CLI](https://github.com/Vonage/vonage-cli).
 
 <sign-up></sign-up>
 
 ## Configuration
 
-To use [The Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview), we need to create [a voice application](https://developer.nexmo.com/concepts/guides/applications).
+To use [The Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview), we need to create [a voice application](https://developer.vonage.com/application/overview).
 
-The configuration steps are detailed in the [Nexmo Voice API with ASP.NET: Before you start](https://www.nexmo.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr/) post.
+The configuration steps are detailed in the [Vonage Voice API with ASP.NET: Before you start](https://learn.vonage.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr/) post.
 
 Once the configuration is done successfully, we can move on to setting up a conference call.
 
 ## Building a Conference Call
 
-When a user calls the Nexmo number, the Nexmo Voice API will make a request to the application to figure out how to respond using a [Nexmo Call Control Object (NCCO)](https://developer.nexmo.com/voice/voice-api/ncco-reference).
+When a user calls the Nexmo number, the Nexmo Voice API will make a request to the application to figure out how to respond using a [Vonage Call Control Object (NCCO)](https://developer.vonage.com/voice/voice-api/ncco-reference).
 
 The user will be greeted then will join the conference call.
 
@@ -124,23 +124,24 @@ Multiple callers can be added to the conference until they all have disconnected
 
 We are done! To test this sample app, some more configuration steps are required.
 
-<h2>Linking Your App to Nexmo</h2>
+## Linking Your App to Nexmo
 
-If you've been following along so far, you've already configured your Nexmo account and created a voice app as shown in [this post](https://www.nexmo.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr/). We need to link this app to a the Nexmo phone number that we are going to call.
+If you've been following along so far, you've already configured your Nexmo account and created a voice app as shown in [this post](https://www.nexmo.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr/). We need to link this app to a Vonage phone number that we are going to call.
 
-If you don't have a number, you can purchase one [using the dashboard](https://dashboard.nexmo.com/buy-numbers) or the by using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli):
+If you don't have a number, you can purchase one [using the dashboard](https://dashboard.nexmo.com/buy-numbers) or the by using the [Vonage CLI](https://github.com/Vonage/vonage-cli):
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 Similarly to link the number, you can [use the dashboard](https://dashboard.nexmo.com/your-numbers) or the CLI:
 
 ```bash
-nexmo link:app NEXMO_PHONE_NUMBER NEXMO_APP_ID
+vonage apps:link --number=VONAGE_NUMBER APP_ID
 ```
 
-We need to tell Nexmo which URL to make a request to when a call is received - this is called the `answer_url`. For me, this url is <http://localhost:63286/webhook/answer> and that's only running locally.
+We need to tell Vonage which URL to make a request to when a call is received - this is called the `answer_url`. For me, this url is <http://localhost:63286/webhook/answer> and that's only running locally.
 
 To expose our webhook answer url, we will use [Ngrok](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/).
 
@@ -156,9 +157,9 @@ Update your application with your new `answer_url`. It should look like `http://
 
 ### API References and Tools
 
-* [Application API](https://developer.nexmo.com/concepts/guides/applications).
-* [Voice API](https://developer.nexmo.com/voice/voice-api/overview).
-* [Nexmo REST client for .NET](https://github.com/Nexmo/nexmo-dotnet).
+* [Application API](https://developer.vonage.com/application/overview).
+* [Voice API](https://developer.vonage.com/voice/voice-api/overview).
+* [Vonage SDK for .NET](https://github.com/Vonage/vonage-dotnet-sdk).
 
 <h3>Nexmo Getting Started Guides for ASP.NET</h3>
 
