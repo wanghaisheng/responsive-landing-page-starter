@@ -22,7 +22,7 @@ In this tutorial, we are going to set up an ASP.NET project in Visual Studio tha
 
 <sign-up number></sign-up>
 
-## Configuring a Nexmo application
+## Configuring a Vonage application
 
 In order to be able to use [The Vonage Voice API](https://developer.vonage.com/voice/voice-api/overview), you'll have to use a [Vonage Application](https://developer.vonage.com/application/overview).
 A Vonage application contains the security and configuration information you need to interact with the Vonage Voice REST API and easily use the Voice API.
