@@ -79,7 +79,6 @@ When the application is successfully created, the CLI returns the application ID
 
 Now that we have generated our public/private key pair and our Vonage application let’s look at how we should configure our ASP.NET project. You may have noticed that there is now more than one ASP.Net platform: The ASP.Net is built specifically for Windows while ASP.Net Core is the new open-sourced and cross-platform framework. 
 
-
 We will try to cover both when there is a difference in code otherwise we will use one or the other with a focus on ASP.Net Core as it’s the way forward. 
 
 ### ASP.Net Web project setup
@@ -132,4 +131,4 @@ Now you’re ready to dive into code. Let’s see how you can make a Text-to-Spe
 This post was just a quick introduction to setting up your first Vonage application with ASP.NET.
 Now you are ready to dive into code and learn [How to make a Text-to-Speech phone call in ASP.NET with The Vonage Voice API](https://learn.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr) 
 
-Also, why not try [sending an SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)? Or learn how to [receive SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/)? Both posts are on our [developer blog](https://learn.vonage.com/blog/category/developers-2/). You might also be interested in our [open source .NET client which is available on Github](https://github.com/Nexmo/nexmo-dotnet).
+Also, why not try [sending an SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/)? Or learn how to [receive SMS with ASP.NET MVC](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/)? Both posts are on our [developer blog](https://learn.vonage.com/blog/category/developers-2/). You might also be interested in our [open source .NET SDK which is available on Github](https://github.com/Vonage/vonage-dotnet-sdk).
