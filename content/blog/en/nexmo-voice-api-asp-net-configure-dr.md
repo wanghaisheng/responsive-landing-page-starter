@@ -60,14 +60,24 @@ Now that the configuration is done, the next step is creating the Voice Applicat
 With both options, you need to register an application name, for example, "My first voice app" and two webhook endpoints to specify the answer and event URLs.
 
 ```sh
-nexmo app:create "My first voice app" http://example.com http://example.com --keyfile private.key
+vonage apps:create 
+
+√ Application Name ... My first voice app
+√ Select App Capabilities » Voice
+√ Create voice webhooks? ... yes
+√ Answer Webhook - URL ... http://example.com/webhook_name
+√ Answer Webhook - Method » POST
+√ Event Webhook - URL ... http://example.com/webhook_name
+√ Event Webhook - Method » POST
+√ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 ... no
+Creating Application... done
 ```
 
 When the application is successfully created, the CLI returns the application ID and private key, both are required to interact with the Nexmo's Voice API.
 
 ## ASP.NET project setup
 
-Now that we have generated our public/private key pair and our Nexmo application let’s look at how we should configure our ASP.NET project. You may have noticed that there is now more than one ASP.Net platform : The ASP.Net is built specifically for Windows while ASP.Net Core is the new open sourced and cross-platform framework. 
+Now that we have generated our public/private key pair and our Nexmo application let’s look at how we should configure our ASP.NET project. You may have noticed that there is now more than one ASP.Net platform: The ASP.Net is built specifically for Windows while ASP.Net Core is the new open-sourced and cross-platform framework. 
 We will try to cover both when there is a difference in code otherwise we will use one or the other with a focus on ASP.Net Core as it’s the way forward. 
 
 ### ASP.Net Web project setup
@@ -110,8 +120,6 @@ Add a JSON file (appsettings.json) to your project. Inside which you will add yo
 {
   "appSettings": {
     "Nexmo.UserAgent": "NEXMOQUICKSTART/1.0",
-    "Nexmo.Url.Rest": "https://rest.nexmo.com",
-    "Nexmo.Url.Api": "https://api.nexmo.com",
     "Nexmo.api_key": "NEXMO-API-KEY",
     "Nexmo.api_secret": "NEXMO-API-SECRET",
     "NEXMO_FROM_NUMBER": "NEXMO-VIRTUAL-NUMBER"
