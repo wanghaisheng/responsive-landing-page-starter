@@ -77,7 +77,9 @@ When the application is successfully created, the CLI returns the application ID
 
 ## ASP.NET project setup
 
-Now that we have generated our public/private key pair and our Nexmo application let’s look at how we should configure our ASP.NET project. You may have noticed that there is now more than one ASP.Net platform: The ASP.Net is built specifically for Windows while ASP.Net Core is the new open-sourced and cross-platform framework. 
+Now that we have generated our public/private key pair and our Vonage application let’s look at how we should configure our ASP.NET project. You may have noticed that there is now more than one ASP.Net platform: The ASP.Net is built specifically for Windows while ASP.Net Core is the new open-sourced and cross-platform framework. 
+
+
 We will try to cover both when there is a difference in code otherwise we will use one or the other with a focus on ASP.Net Core as it’s the way forward. 
 
 ### ASP.Net Web project setup
@@ -90,7 +92,7 @@ Select the **MVC Template** and ensure the Authentication type is set to **No Au
 
 ![Choosing an MVC template](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/mvc-template.png)
 
-### ASP.Net Core project setup
+### ASP.Net Core & .Net 5 onwards project setup
 
 In Visual Studio, create a new project and choose ASP.NET Core Web Application.
 
@@ -110,19 +112,15 @@ Install the Vonage .Net SDK via the NuGet Package Manager Console.
 Install-Package Vonage
 ```
 
-Next, under the **Tools** dropdown menu, locate **NuGet Package Manager** and click **Manage NuGet Packages for Solution**. Under the Updates tab, select the **Update All Packages** box and click the **Update** button.
-
-![Choosing packages for the project](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/packages-aspapp.png)
-
 Add a JSON file (appsettings.json) to your project. Inside which you will add your Vonage credentials.
 
 ```json
 {
   "appSettings": {
-    "Nexmo.UserAgent": "NEXMOQUICKSTART/1.0",
-    "Nexmo.api_key": "NEXMO-API-KEY",
-    "Nexmo.api_secret": "NEXMO-API-SECRET",
-    "NEXMO_FROM_NUMBER": "NEXMO-VIRTUAL-NUMBER"
+    "Vonage.UserAgent": "NEXMOQUICKSTART/1.0",
+    "Vonage.api_key": "NEXMO-API-KEY",
+    "Vonage.api_secret": "NEXMO-API-SECRET",
+    "VONAGE_FROM_NUMBER": "VONAGE-VIRTUAL-NUMBER"
   }
 }
 ```
