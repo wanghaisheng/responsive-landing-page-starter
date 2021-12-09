@@ -31,13 +31,13 @@ All requests to the Voice API require authentication. You must generate a privat
 
 ### The Vonage application dashboard
 
-If you go to your Vonage dashboard, under the [Voice tab](https://dashboard.nexmo.com/getting-started/voice), you can see that you can create an application.
+If you go to your Vonage dashboard, under the [Application section](https://dashboard.nexmo.com/applications), you can create a new an application.
 
-![Creating a Voice enabled application](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/create-voice-app-dashbaord.png)
+![Creating a Voice enabled application](/content/blog/vonage-voice-api-with-asp-net-before-you-start/create-voice-application.png)
 
 Complete the required fields and then click “Generate public/private key pair” this will prompt you to download your private key *(keep this safe!)* as well as populate the public key for you.
 
-![Creating a Voice app, retrieving the public key](/content/blog/nexmo-voice-api-with-asp-net-before-you-start/create-voice-app-dashboard-public-key.png)
+![Creating a Voice app, retrieving the public key](/content/blog/vonage-voice-api-with-asp-net-before-you-start/create-voice-application-keys.png)
 
 You can read more about [our application dashboard and how it makes Vonage Voice application management easier to set up in our blog post](https://learn.vonage.com/blog/2017/06/29/voice-application-management-easier/).
 
@@ -57,23 +57,23 @@ vonage config:set --apiKey=API_KEY --apiSecret=API_SECRET
 
 Now that the configuration is done, the next step is creating the Voice Application using the command **`app:create`**.
 
-With both options, you need to register an application name, for example, "My first voice app" and two webhook endpoints to specify the answer and event URLs.
+With both options, you need to register an application name, for example, "My first voice app" and two webhook endpoints to specify the answer and event URLs. The `app:create` command will guide you through this.
 
-```sh
+```
 vonage apps:create 
 
 √ Application Name ... My first voice app
 √ Select App Capabilities » Voice
 √ Create voice webhooks? ... yes
-√ Answer Webhook - URL ... http://example.com/webhook_name
+√ Answer Webhook - URL ... http://example.com/webhook_name/answer
 √ Answer Webhook - Method » POST
-√ Event Webhook - URL ... http://example.com/webhook_name
+√ Event Webhook - URL ... http://example.com/webhook_name/event
 √ Event Webhook - Method » POST
 √ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 ... no
 Creating Application... done
 ```
 
-When the application is successfully created, the CLI returns the application ID and private key, both are required to interact with the Nexmo's Voice API.
+When the application is successfully created, the CLI returns the application ID and private key, both are required to interact with the Vonage's Voice API. This information is also stored in two files located in your user directory eg. `c:\users\bob\` and are `vonage_app.json` and `<app_name>.key`
 
 ## ASP.NET project setup
 
