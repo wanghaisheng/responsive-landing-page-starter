@@ -7,7 +7,7 @@ thumbnail: /content/blog/text-to-speech-phone-call-dr/text-to-speech-asp.png
 author: bibi
 published: true
 published_at: 2017-07-28T13:13:24.000Z
-updated_at: 2021-05-18T09:34:15.585Z
+updated_at: 2021-12-09T15:46:28.432Z
 category: tutorial
 tags:
   - voice-api
