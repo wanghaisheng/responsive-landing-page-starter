@@ -144,7 +144,7 @@ Add an [action method named CreateStreamNCCO](https://github.com/nexmo-community
   Inside this method, we will call the CreateStreamNCCO method from the NCCO helpers class. 
 
 ```csharp
-\[HttpPost]
+[HttpPost]
 public ActionResult CreateStreamNCCO(string\[] streamUrl, int level=0, bool bargeIN = false, int loop =1)
 {
   _nccohelper.CreateStreamNCCO(_hostingEnvironment.WebRootPath, streamUrl, level, bargeIN,    loop); 
