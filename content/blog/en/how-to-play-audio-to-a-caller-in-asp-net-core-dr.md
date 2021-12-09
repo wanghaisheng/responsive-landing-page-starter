@@ -18,16 +18,16 @@ canonical: ""
 ---
 *Welcome to the second tutorial in our* how to use Voice APIs with ASP.NET *series. To check out other tutorials, please go to the* Learn more *section at the end of this post.*
 
-In the previous post, we learnt how to [make a text-to-speech phone call in an ASP.NET web application](https://www.nexmo.com/blog/2017/07/28/text-to-speech-phone-call-dr/). In this post, we will learn how to play audio to a caller. Sounds like fun, right? But that’s not all. We will also discover how to dynamically create Vonage Call Control Objects (NCCOs) in code and use them within our app. Bonus: We will be using an ASP.NET Core project for this demo.
+In the previous post, we learnt how to [make a text-to-speech phone call in an ASP.NET web application](https://learn.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr/). In this post, we will learn how to play audio to a caller. Sounds like fun, right? But that’s not all. We will also discover how to dynamically create Vonage Call Control Objects (NCCOs) in code and use them within our app. Bonus: We will be using an ASP.NET Core project for this demo.
 
 Let’s get started!
 
 ![are you ready gif](/content/blog/how-to-play-audio-to-a-caller-in-asp-net-core/are-you-ready.gif "are you ready gif")
 
-## Prerequisites for using Nexmo Voice API with ASP.NET
+## Prerequisites for using Vonage Voice API with ASP.NET
 
 * Visual Studio 2017
-* A project setup for this tutorial series, which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoVoiceASPNetCoreQuickStarts)
+* A project set-up for this tutorial series, which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoVoiceASPNetCoreQuickStarts)
 * Optional: [The Vonage CLI](https://github.com/Vonage/vonage-cli)
 
 <sign-up number></sign-up>
@@ -38,9 +38,9 @@ Since you may or may not have read the first tutorial in this series—which you
 
 To be able to use [The Vonage Voice API](https://developer.vonage.com/voice/voice-api/overview), you'll need a voice application to store configuration data and generate a public/private key pair. 
 
-How to do so? Don’t worry, I’ve got you covered. The [Vonage Voice API with ASP.NET: Before you start](https://learn.vonage.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr/) post outlines all the necessary configuration steps.
+How to do so? Don’t worry, I’ve got you covered. The [Vonage Voice API with ASP.NET: Before you start](https://learn.vonage.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr/) post has a great outline of all the necessary configuration steps.
 
-In your project, in the appsettings.json file, make sure to initialize Nexmo with your API credentials as well as the App ID and private key you just created.
+In your project, in the appsettings.json file, make sure to initialize Vonage with your API credentials as well as the App ID and private key you just created.
 
 Now, let’s write some code!
 
@@ -123,7 +123,6 @@ using Nexmo.Api
 ```
 
 Inside the constructor, we will pass the hosting environment, which will be used to specify the root path to where we will save the NCCO file.  We will also instantiate the NCCO helpers class.
-
 
 ```csharp
 private readonly IHostingEnvironment _hostingEnvironment;
