@@ -114,7 +114,7 @@ public ActionResult MakeCall(string to)
     var VONAGE_TO_NUMBER = to;
     var VONAGE_CALL_ANSWER_URL = "https://nexmo-community.github.io/ncco-examples/first_call_talk.json";
 
-    var VoiceClient = new VonageClient(new Credentials).VoiceClient;
+    var VoiceClient = new VonageClient(new Credentials()).VoiceClient;
   
     var callCommand = new CallCommand
     {
