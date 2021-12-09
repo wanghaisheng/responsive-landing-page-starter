@@ -104,35 +104,35 @@ In my NCCO below, I chose the voiceName to be “Amy” which is a female Britis
 ]
 ```
 
-Now back to MakeCall method, make sure <strong>NEXMO_CALL_ANSWER_URL</strong> points to your NCCO json file.
+Now back to MakeCall method, make sure **VONAGE_CALL_ANSWER_URL** points to your NCCO json file.
 
-```
+```csharp
 [HttpPost]
 public ActionResult MakeCall(string to)
 {
-    var NEXMO_FROM_NUMBER =    Configuration.Instance.Settings["appsettings:NEXMO_FROM_NUMBER"];
-    var NEXMO_TO_NUMBER = to;
-    var NEXMO_CALL_ANSWER_URL = "https://nexmo-community.github.io/ncco-examples/first_call_talk.json";
+    var VONAGE_FROM_NUMBER = Configuration.Instance.Settings["appsettings:VONAGE_FROM_NUMBER"];
+    var VONAGE_TO_NUMBER = to;
+    var VONAGE_CALL_ANSWER_URL = "https://nexmo-community.github.io/ncco-examples/first_call_talk.json";
 
-    var results = Call.Do(new Call.CallCommand
+    var VoiceClient = new VonageClient(new Credentials).VoiceClient;
+  
+    var callCommand = new CallCommand
     {
-        to = new[]
+        To = new[]
         {
-                    new Call.Endpoint {
-                        type = "phone",
-                        number = NEXMO_TO_NUMBER
-                    }
-                },
-        from = new Call.Endpoint
-        {
-            type = "phone",
-            number = NEXMO_FROM_NUMBER
+            new PhoneEndpoint {
+                Number = VONAGE_TO_NUMBER
+            }
         },
-        answer_url = new[]
+        From = new PhoneEndpoint
         {
-                    NEXMO_CALL_ANSWER_URL
-                }
-    });
+            Number = VONAGE_FROM_NUMBER
+        },
+        AnswerUrl = new[] { VONAGE_CALL_ANSWER_URL }
+    };
+
+    var callResponse = await VoiceClient.CreateCallAsync(callCommand);
+  
     var result = new HttpStatusCodeResult(200);
 
     return RedirectToAction("Index", "Voice");
