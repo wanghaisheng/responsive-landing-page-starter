@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-With the pandemic making remote work more prevalent than ever, video conferencing has become one of the primary ways we communicate with our friends, family, and coworkers. This change in how we communicate makes it is an excellent time to learn how to build a video conferencing web app. This tutorial will show you how to quickly build a video conferencing web app using [Python](https://www.python.org/downloads/), [Flask](https://flask.palletsprojects.com/en/2.0.x/), JavaScript, and [Vonage’s video API](https://www.vonage.com/communications-apis/video/). 
+With the pandemic making remote work more prevalent than ever, video conferencing has become one of the primary ways we communicate with our friends, family, and coworkers. This change in how we communicate makes now an excellent time to learn how to build a video conferencing web app. This tutorial will show you how to quickly build a video conferencing web app using [Python](https://www.python.org/downloads/), [Flask](https://flask.palletsprojects.com/en/2.0.x/), JavaScript, and [Vonage’s Video API](https://www.vonage.com/communications-apis/video/). 
 
 ## Prerequisites
 
@@ -25,13 +25,13 @@ To follow along with this tutorial, you need to have a basic understanding of Py
 
 You also need to[ install Ngrok](https://ngrok.com/download). 
 
-Finally, you will need to register for a free TokBox account (Vonage recently acquired TokBox). 
+Finally, you will need to register for a free Vonage Video API account (formerly TokBox). 
 
 ## Initial Setup
 
 To get started, we need to do some initial setup. 
 
-First, [go here to create your TokBox account](https://tokbox.com/account/user/signup). 
+First, [create your Video API account](https://tokbox.com/account/user/signup). 
 
 Once you’ve created your account, you need to create a project.
 
@@ -54,20 +54,20 @@ Then click “Create.”
 
 Now click “View project.” 
 
-![view projet](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/api_key.png)
+![view project](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/api_key.png)
 
 Make sure to save your project API key and secret; you will need them later.
 
-Next, you need to [clone this GitHub repository](https://github.com/calthoff/vonageunlocked) containing the project’s code.
+Next, you need to [clone the GitHub repository](https://github.com/calthoff/vonageunlocked) containing this project’s code.
 
 ```
 git clone https://github.com/calthoff/vonageunlocked.git
 ```
 
-CD into your Github repository and open up the empty `.env` file that comes with it. 
+`cd` into your Github repository and open up the empty `.env` file that comes with it. 
 
 ```
-CD vonageunlocked
+cd vonageunlocked
 vim .env
 ```
 
@@ -92,13 +92,13 @@ Then, download the project’s dependencies:
 pip3 install -r requirements.txt
 ```
 
-Once you’ve done that, start up your Flask test server by running app.py. 
+Once you’ve done that, start up your Flask test server by running app.py:
 
 ```
 python3 app.py
 ```
 
-Finally, fire up ngrok on the same port as your Flask test server (you can r[ead Ngrok’s documentation](https://ngrok.com/docs) to better understand how ngrok works). 
+Finally, fire up ngrok on the same port as your Flask test server (you can [read Ngrok’s documentation](https://ngrok.com/docs) to better understand how ngrok works):
 
 ```
 ngrok http 5000  
@@ -110,7 +110,7 @@ You can now video conference with yourself using your phone and your computer or
 
 Go to `https://your_ngrok_link/admin` to stream video, and then `https://your_ngrok_link/join` to view it from another browser or device (make sure to log into the admin page first). 
 
-You should see a website that looks like this.
+You should see a website that looks like this:
 
 ![Web app working](/content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/web_app_working.png)
 
@@ -120,7 +120,7 @@ This web app also lets you chat!
 
 Let’s take a look at how it works. 
 
-First, it imports the flask, decouple, and opentok (the Vonage video API) libraries. Flask is a popular Python web development framework.
+First, it imports the Flask, Decouple, and Opentok (the Vonage Video API) libraries. Flask is a popular Python web development framework.
 
 ```python
 from flask import Flask, render_template, request
@@ -142,9 +142,9 @@ client = Client(opentok_api, opentok_secret)
 session_id = client.create_session().session_id
 ```
 
-When you use the Vonage video API, everything happens in a session. You can publish a video to a session and consume video from a session. Each session has a unique ID. In this case, you create a new session and save the session’s ID in `session_id`. 
+When you use the Vonage Video API, everything happens in a session. You can publish a video to a session and consume video from a session. Each session has a unique ID. In this case, you create a new session and save the session’s ID in `session_id`. 
 
-Next, this code creates a Flask app. 
+Next, this code creates a Flask app:
 
 ```python
 app = Flask(__name__, static_url_path='')
@@ -158,9 +158,9 @@ def index():
     return "Hello, World!"
 ```
 
-If you add this code to app.py and visit /test on your local server, you should see `“Hello, World!”`
+If you add this code to app.py and visit `/test` on your local server, you should see `“Hello, World!”`
 
-This project maps three URLs to HTML templates using Flask’s render_template method. One function maps `/admin` to `admin.html`, and the other maps`join/` to`join.html`. 
+This project maps three URLs to HTML templates using Flask’s render_template method. One function maps `/admin` to `admin.html`, and the other maps `/join` to `join.html`. 
 
 ```python
 @app.route('/admin')
@@ -175,8 +175,7 @@ def join():
 
 \
 These two HTML templates let you log in either as an admin or a regular viewer. 
-
-You see them when you go to /join or /admin in the web app. 
+You see them when you go to `/join` or `/admin` in the web app. 
 
 You can find the complete HTML for each template in the templates folder of your repository. 
 
@@ -197,9 +196,7 @@ def index():
 ```
 
 Every user that joins a Vonage Video API session needs a unique token.   
-
 So when a  post request comes in, the code generates a new token using the Vonage Video API.
-
 Next, the code checks to see if the user is an admin or not by checking if ‘admin’ is in `request.form` (of course, you wouldn’t want to do this in a production application). 
 
 ```python
@@ -213,7 +210,7 @@ Then, this code grabs the user’s name from `request.form`. 
  name = request.form['name']
 ```
 
-Finally, this code uses `render_template` to render `index.html` and pass in the session ID you created earlier, the token you created earlier, whether or not the user is an admin, and their name to the`index.html` template. 
+Finally, this code uses `render_template` to render `index.html` and pass in the session ID you created earlier, the token you created earlier, whether the user is an admin, and their name to the `index.html` template. 
 
 ```python
 return render_template('index.html', session_id=session_id, token=token, is_admin=admin, name=name,
@@ -223,7 +220,7 @@ The `index.html` template then uses those variables to display the video to whoe
 
 Let’s quickly take a look at what happens on the front-end. 
 
-First, the `index.html`template loads this script.
+First, the `index.html` template loads this script:
 
 ```javascript
 <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
@@ -275,7 +272,6 @@ session.connect(token);
 ```
 
 If the user is an admin, the code from `admin_video.js` runs instead.
-
 The way it works is similar to `viewer_video.js`.
 
 Your code creates a session object.
@@ -312,9 +308,8 @@ session.on('streamCreated', event => {
 
 ## Final Thoughts
 
-You now know how to easily add video conferencing to a web app using Vonage’s video API and Flask. 
-
-There is some extra code in the project on the front-end I didn’t cover, which overlays your name onto the video. You can read this article to learn more about how that works here. 
+You now know how to quickly add video conferencing to a web app using Vonage’s Video API and Flask. 
+There is some extra code in the project on the front-end I didn’t cover, which overlays your name onto the video. You can [learn more about how that works in this article](). 
 
 [Let us know on Twitter](https://twitter.com/VonageDev) what projects you build using the Vonage Video API!
 
