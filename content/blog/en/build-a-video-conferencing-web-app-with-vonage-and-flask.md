@@ -1,9 +1,10 @@
 ---
 title: Build a Video Conferencing Web App With Vonage and Flask
 description: "This tutorial shows you how to add video conferencing to your website. "
+thumbnail: /content/blog/build-a-video-conferencing-web-app-with-vonage-and-flask/add-video-conferencing.png
 author: cory-althoff
 published: true
-published_at: 2021-12-08T06:39:45.053Z
+published_at: 2021-12-10T12:37:21.739Z
 updated_at: 2021-12-08T06:39:45.091Z
 category: tutorial
 tags:
