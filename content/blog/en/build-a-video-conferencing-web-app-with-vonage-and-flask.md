@@ -160,7 +160,7 @@ def index():
 
 If you add this code to app.py and visit `/test` on your local server, you should see `“Hello, World!”`
 
-This project maps three URLs to HTML templates using Flask’s render_template method. One function maps `/admin` to `admin.html`, and the other maps `/join` to `join.html`. 
+This project maps three URLs to HTML templates using Flask’s `render_template` method. One function maps `/admin` to `admin.html`, and the other maps `/join` to `join.html`. 
 
 ```python
 @app.route('/admin')
@@ -195,7 +195,8 @@ def index():
    return 'please log in'
 ```
 
-Every user that joins a Vonage Video API session needs a unique token.   
+Every user that joins a Vonage Video API session needs a unique token. 
+
 So when a  post request comes in, the code generates a new token using the Vonage Video API.
 Next, the code checks to see if the user is an admin or not by checking if ‘admin’ is in `request.form` (of course, you wouldn’t want to do this in a production application). 
 
@@ -309,7 +310,7 @@ session.on('streamCreated', event => {
 ## Final Thoughts
 
 You now know how to quickly add video conferencing to a web app using Vonage’s Video API and Flask. 
-There is some extra code in the project on the front-end I didn’t cover, which overlays your name onto the video. You can [learn more about how that works in this article](). 
+There is some extra code in the project on the front-end I didn’t cover, which overlays your name onto the video. You can [learn more about how that works in this article](<>). 
 
 [Let us know on Twitter](https://twitter.com/VonageDev) what projects you build using the Vonage Video API!
 
