@@ -1,5 +1,5 @@
 ---
-title: Happy Holidays From Vonage
+title: Happy Holidays From the Dev Rel Team at Vonage
 description: "We wish you all a very happy holiday season! Join us as we take a
   look at some of our exciting content from 2021. "
 thumbnail: /content/blog/happy-holidays-from-vonage/happy-holidays.png
@@ -19,9 +19,7 @@ replacement_url: ""
 ---
 As the year comes to a close (did it feel short to anyone else?), we want to wish you all a very happy holiday season and a fantastic start into the new year!
 
-![Grid image of Vonage DevRel team members wearing Holiday outfits and waving into the camera](/content/blog/happy-holidays-from-vonage/holidays2021team.png "Grid image of Vonage DevRel team members wearing Holiday outfits and waving into the camera")
-
-
+![Grid image of Vonage DevRel team members wearing Holiday outfits and waving into the camera](/content/blog/happy-holidays-from-the-dev-rel-team-at-vonage/holidays2021team.png "Grid image of Vonage DevRel team members wearing Holiday outfits and waving into the camera")
 
 ## Let's Take a Look Back at 2021
 
