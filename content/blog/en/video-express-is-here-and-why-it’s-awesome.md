@@ -11,7 +11,7 @@ category: release
 tags:
   - JavaScript
   - video-api
-  - express
+  - video-express
 comments: false
 spotlight: false
 redirect: ""
