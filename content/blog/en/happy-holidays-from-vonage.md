@@ -2,6 +2,7 @@
 title: Happy Holidays From Vonage
 description: "We wish you all a very happy holiday season! Join us as we take a
   look at some of our exciting content from 2021. "
+thumbnail: /content/blog/happy-holidays-from-vonage/happy-holidays.png
 author: caroline-kerns
 published: true
 published_at: 2021-12-10T05:08:34.819Z
