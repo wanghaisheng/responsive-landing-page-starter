@@ -4,7 +4,7 @@ description: The Vonage Video Express is here! Here are some advantages, code
   samples, demo application and other reasons to give it a try.
 thumbnail: /content/blog/video-express-is-here-and-why-it’s-awesome/video-express_1200x600.png
 author: dwanehemmings
-published: false
+published: true
 published_at: 2021-09-23T13:38:38.639Z
 updated_at: 2021-09-23T13:38:38.678Z
 category: release
