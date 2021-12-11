@@ -9,8 +9,7 @@ published_at: 2021-09-23T13:38:38.639Z
 updated_at: 2021-09-23T13:38:38.678Z
 category: release
 tags:
-  - JavaScript
-  - video-api
+  - javascript
 comments: false
 spotlight: false
 redirect: ""
