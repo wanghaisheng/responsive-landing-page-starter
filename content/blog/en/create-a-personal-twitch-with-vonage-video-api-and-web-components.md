@@ -62,4 +62,4 @@ One more thing. Have you ever gone to a page on Twitch where there is a live str
 
 If you would like to see the application created in action for yourself, you can remix the [Glitch project](https://glitch.com/edit/#!/remix/personal-twitch-demo?path=README.md%3A1%3A0). By running a setup script and entering a couple of API Keys and Secrets, you too can have your own personal Twitch.
 
-As always, if you have any questions or comments, feel free to connect with us in our community Slack channel(https://developer.nexmo.com/slack).
+As always, if you have any questions or comments, feel free to connect with us in our [community Slack channel](https://developer.vonage.com/slack).
