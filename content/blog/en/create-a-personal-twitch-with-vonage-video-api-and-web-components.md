@@ -22,7 +22,7 @@ replacement_url: ""
 To start, let’s define some things and set expectations. Twitch is a gigantic platform that allows people to broadcast and interact with viewers. From [Wikipedia](https://en.wikipedia.org/wiki/Twitch_(service)):
 “As of February 2020, it had 3 million broadcasters monthly and 15 million daily active users, with 1.4 million average concurrent users.” 
 
-Building something of that scale takes way more than what can be learned in a single blog post.  Instead, the scope of this post will be geared towards creating more of a “personal Twitch”. Less pop star stadium-sized concert and more local/independent artist in a coffee shop. A place where the person broadcasting can actually read the messages in the chat room.
+Building something of that scale takes way more than what can be learned in a single blog post. Instead, the scope of this post will be geared towards creating more of a “personal Twitch”. Less pop star stadium-sized concert and more local/independent artist in a coffee shop. A place where the person broadcasting can actually read the messages in the chat room.
 
 So at its core, the final application will allow a host to broadcast themselves along with guests to an audience and interact with them via text chat. Plus, it’s an opportunity to show how you can integrate Web Components into an existing application to add additional functionality.
 
