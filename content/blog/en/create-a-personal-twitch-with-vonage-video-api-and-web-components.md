@@ -56,7 +56,7 @@ For example, the chat requires a username so that everyone knows who typed what 
 
 The Client SDK UI Web Components also need to know the Conversation Id so that it can send and display the messages in the right chat. The Broadcast sample app uses parameters in the URL to pass some information about the stream, I just added another one for the Conversation Id so that everyone joins the same chat.
 
-One more thing. Have you ever gone to a page on Twitch where there is a live stream and the video was playing, but the volume was muted? Well, that is because of the Autoplay policy(https://developer.chrome.com/blog/autoplay/) of many browsers. To be in line with the policy, I muted the broadcast video stream by default and added a button to toggle it off and on.
+One more thing. Have you ever gone to a page on Twitch where there is a live stream and the video was playing, but the volume was muted? Well, that is because of the [Autoplay policy](https://developer.chrome.com/blog/autoplay/) of many browsers. To be in line with the policy, I muted the broadcast video stream by default and added a button to toggle it off and on.
 
 ## The Final Product
 
