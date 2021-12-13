@@ -19,11 +19,39 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-If you have a call center menu you want to make more usable, replacing DTMF (numbered options punched in using the keypad) with IVR (Interactive Voice Response) can be a good place to start. But if you've ever felt conspicuous yelling something like "Pay my bill" into your phone with increasing frustration, you'll also know IVR isn't perfect. When you're doing IVR with the Vonage Voice API, there are a few things you can do to improve the experience.
+If you want to make your call center menu more usable, replacing DTMF (numbered options punched in using the keypad) with IVR (Interactive Voice Response) can be a good place to start. But if you've ever felt conspicuous yelling something like "Pay my bill" into your phone with increasing frustration, you'll also know IVR isn't perfect. When you're doing IVR with the Vonage Voice API, there are a few things you can do to improve the experience.
 
 ## Give Context
 
-You capture user input with ASR (Automatic Speech Recognition) with Vonage by creating an input action in a Call Control Object (NCCO). To use ASR, you'll add `speech` as one value in the `type` array, and also supply a `speech` property with configuration. In `speech.context`, you can provide an array of likely responses. 
+You capture user input with ASR (Automatic Speech Recognition) with Vonage by creating an input action in a Call Control Object (NCCO). A basic NCCO with a voice prompt looks like this:
+
+```javascript
+  const ncco = [{
+      action: 'talk',
+      text: 'Thank you for calling the North Pole. Have you been naughty or nice?'
+    }
+  ];
+```
+
+You can collect answers to your prompt with ASR. To use ASR, you'll add `speech` as one value in the `type` array, and also supply a `speech` property with configuration. In `speech.context`, you can provide an array of likely responses. 
+
+```javascript
+  const ncco = [{
+      action: 'talk',
+      text: 'Thank you for calling the North Pole. Have you been naughty or nice?',
+    },
+    {
+      action: 'input',
+      type: ['speech'],
+      eventUrl: [`https://${process.env.PROJECT_DOMAIN}.glitch.me/nice`],
+      speech: {
+        context: ['naughty','nice'],
+        endOnSilence: 1,
+        language: "en-US"
+      }
+    }
+  ];
+```
 
 When the caller responds to a prompt, ASR will return an array of guesses. Each possible response will have a confidence rating, and the guesses will be ranked by confidence:
 
