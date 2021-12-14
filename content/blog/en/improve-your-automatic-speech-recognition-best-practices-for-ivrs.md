@@ -3,9 +3,10 @@ title: "Improve Your Automatic Speech Recognition: Best Practices for IVRs"
 description: Automatic Speech Recognition is powerful, but tricky. Learn a few
   ways to increase your chances of success when creating IVRs with the Vonage
   Voice API.
+thumbnail: /content/blog/improve-your-automatic-speech-recognition-best-practices-for-ivrs/ivr_asr-1.png
 author: garann-means
 published: true
-published_at: 2021-12-11T22:09:55.597Z
+published_at: 2021-12-14T12:09:51.159Z
 updated_at: 2021-12-11T22:09:55.712Z
 category: tutorial
 tags:
