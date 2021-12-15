@@ -18,7 +18,7 @@ canonical: ""
 ---
 *This is the fifth tutorial on how to use Voice APIs with ASP.NET series.*
 
-In the previous tutorial, we learnt [how to handle user input with ASP.NET Core](https://www.nexmo.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr/).
+In the previous tutorial, we learnt [how to handle user input with ASP.NET Core](https://learn.vonage.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr/).
 
 Nowadays, we use a lot of apps and services that require us to communicate with another party, usually a stranger, via phone calls or messages. Think about food delivery or taxi booking apps.
 
@@ -42,7 +42,7 @@ In this tutorial, we will:
 
 * Visual Studio 2017 or higher.
 * A Vonage account, which you can [sign up for here](https://dashboard.nexmo.com/sign-up).
-* A project setup for this tutorial series, which you can find on [Github](https://github.com/nexmo-community/nexmo-dotnet-quickstart/tree/ASPNET/NexmoDotNetQuickStarts).
+* A project setup for this tutorial series, which you can find on [Github](https://github.com/Vonage/vonage-dotnet-code-snippets/tree/ASPNET/NexmoDotNetQuickStarts).
 * Optional: [The Vonage CLI](https://github.com/Vonage/vonage-cli).
 
 ## Configuration
@@ -88,7 +88,8 @@ The next step is to create a Nancy module in which we set up a route to `/webhoo
 
 ```csharp
 using Nancy;
-using Newtonsoft.Json.Linq;
+using Vonage.Voice.Nccos;
+using Vonage.Voice.Nccos.Endpoints;
 
 namespace NexmoVoiceASPNetCoreQuickStarts
 {
@@ -96,28 +97,27 @@ namespace NexmoVoiceASPNetCoreQuickStarts
     {
         public VoiceModule()
         {
-            Get["/webhook/answer"] = x => { var response = (Response)GetConnectNCCO();
+            Get["/webhook/answer"] = x => { var response = Response.AsJson(GetConnectNCCO());
                                             response.ContentType = "application/json";
                                             return response;
                                           };
         }
 
-        private string GetConnectNCCO()
+        private Ncco GetConnectNCCO()
         {
-            dynamic Endpoint = new JObject();
-            Endpoint.number = "TO_NUMBER";
-            Endpoint.type = "phone";
+            var ncco = new Ncco();
 
-            dynamic ConnectNCCO = new JObject();
-            ConnectNCCO.action = "connect";
-            ConnectNCCO.from = "NEXMO_NUMBER";
-            ConnectNCCO.endpoint = new JArray(Endpoint);
-
-            JArray NCCObj = new JArray();
-            NCCObj.Add(ConnectNCCO);
-
-            return NCCObj.ToString();
-
+            ncco.Actions.Add(new ConnectAction
+            {
+                From = "VONAGE_NUMBER",
+                Endpoint = new[] {
+                    new PhoneEndpoint
+                    {
+                        Number = "TO_NUMBER"
+                    }
+                }
+            });
+            return ncco;
         }
     }
 }
@@ -125,7 +125,7 @@ namespace NexmoVoiceASPNetCoreQuickStarts
 
 The above code will do the following:
 
-When a call is received, Vonage will mask the original caller's number and instead uses a virtual number as a facade to this phone call.
+When a call is received, Vonage will mask the original caller's number and instead use a virtual number as a facade to this phone call.
 
 We are done! To test this sample app, some more configuration steps are required.
 
@@ -158,17 +158,17 @@ Tada! Run the app and give it a go by calling the TO_NUMBER; you will notice tha
 
 ### API References and Tools
 
-* [Application API](https://developer.nexmo.com/concepts/guides/applications).
-* [Voice API](https://developer.nexmo.com/voice/voice-api/overview).
-* [Nexmo REST client for .NET](https://github.com/Nexmo/nexmo-dotnet).
+* [Application API](https://developer.vonage.com/application/overview).
+* [Voice API](https://developer.vonage.com/voice/voice-api/overview).
+* [Vonage SDK .NET](https://github.com/Vonage/vonage-dotnet-sdk).
 
 ### Nexmo Getting Started Guides for ASP.NET
 
-* [How to Send SMS Messages with ASP.NET](https://www.nexmo.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/).
-* [How to Receive SMS Messages with ASP.NET](https://www.nexmo.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/).
-* [How to Get an SMS Delivery Receipt in ASP.NET](https://www.nexmo.com/blog/2017/07/21/get-sms-delivery-receipt-asp-net-mvc-dr/).
-* [How to make a Text-to-Speech phone call with ASP.NET](https://www.nexmo.com/blog/2017/07/28/text-to-speech-phone-call-dr/).
-* [How to play Audio to a Caller in ASP.NET](https://www.nexmo.com/blog/2017/11/29/how-to-play-audio-to-a-caller-in-asp-net-core-dr/).
-* [How to Receive a Phone Call with Nexmo Voice API, ASP.NET Core and NancyFX](https://www.nexmo.com/blog/2018/11/21/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-core-core-and-nancyfx-dr/).
-* [how to handle user input with ASP.NET Core](https://www.nexmo.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr/)
-* [Getting Started with Nexmo Number Insight APIs and ASP.NET](https://www.nexmo.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
+* [How to Send SMS Messages with ASP.NET](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/).
+* [How to Receive SMS Messages with ASP.NET](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/).
+* [How to Get an SMS Delivery Receipt in ASP.NET](https://learn.vonage.com/blog/2017/07/21/get-sms-delivery-receipt-asp-net-mvc-dr/).
+* [How to make a Text-to-Speech phone call with ASP.NET](https://learn.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr/).
+* [How to play Audio to a Caller in ASP.NET](https://learn.vonage.com/blog/2017/11/29/how-to-play-audio-to-a-caller-in-asp-net-core-dr/).
+* [How to Receive a Phone Call with Nexmo Voice API, ASP.NET Core and NancyFX](https://learn.vonage.com/blog/2018/11/21/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-core-core-and-nancyfx-dr/).
+* [How to handle user input with ASP.NET Core](https://learn.vonage.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr/)
+* [Getting Started with Vonage Number Insight APIs and ASP.NET](https://learn.vonage.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
