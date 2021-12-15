@@ -117,8 +117,8 @@ Add a JSON file (appsettings.json) to your project. Inside which you will add yo
 {
   "appSettings": {
     "Vonage.UserAgent": "NEXMOQUICKSTART/1.0",
-    "Vonage.api_key": "NEXMO-API-KEY",
-    "Vonage.api_secret": "NEXMO-API-SECRET",
+    "Vonage_key": "VONAGE-API-KEY",
+    "Vonage_secret": "VONAGE-API-SECRET",
     "VONAGE_FROM_NUMBER": "VONAGE-VIRTUAL-NUMBER"
   }
 }
