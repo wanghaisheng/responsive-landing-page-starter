@@ -34,13 +34,15 @@ Revisit (or explore for the first time) various articles and videos we have publ
 * Watch Amanda Cavallaro talk about her [background, perspective, and insights on Machine Learning.](https://www.youtube.com/watch?v=uXzZkaDOrfg)
 * Read an article from Filippos Kyprianou about an exciting [Startup and which problem we are solving for this company.](https://learn.vonage.com/blog/2021/06/16/startup-spotlight-series-lets-meet-plato-immo/)
 * Take a look back at[ life during the pandemic](https://learn.vonage.com/blog/2021/11/03/looking-back-my-pandemic-story/) with Kelly Andrews.
-* Continue the series on [Web Components and learn how to use them in an angular application](https://learn.vonage.com/blog/2021/02/16/using-web-components-in-an-angular-application-joyful-fun/) with Dwane Hemmings.
 * Learn from Karl Lingiah how to test [external APIs in Ruby with Webmock and VCR](https://learn.vonage.com/blog/2021/11/22/testing-external-apis-in-ruby-with-webmock-and-vcr/). 
 * Experience the excitement of building a [Song Generator with Voice and Node.js](https://www.youtube.com/watch?v=M4PBEIC1vHo) in a workshop by Abdul Ajetunmobi. 
 * Join Clarisse Ng as she checks in with a Hackathon group who are [building a fantastic e-learning app utilzing our Video API.](https://learn.vonage.com/blog/2021/12/08/post-hackathon-the-e-learning-app-built-with-video-api/)
+* Celebrate the [awesomeness of Video Express](https://learn.vonage.com/blog/2021/09/23/video-express-is-here-and-why-it%E2%80%99s-awesome/) with Dwane Hemmings.
 * Scrub up with James Seconde as he explores how to [clean your PHP application with PHPStan](https://learn.vonage.com/blog/2021/11/30/scrub-up-cleaning-your-php-application-with-phpstan/).
 * Fine-tune your [Video API experience using Auto Layout](https://learn.vonage.com/blog/2021/11/18/auto-layout-for-vonage-video-application/) with Mofi Rahman.
 * Last, but not least, feel inspired by the [Ultimate List of Hackathon Idea](https://learn.vonage.com/blog/2021/10/27/31-hackathon-ideas-for-your-next-marathon-coding-event/)s, put together by Cory Althoff.
+
+If you can't decide, take a look at our various playlists on YouTube, such as our bite-sized [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY) and [JavaScript Tutorials](https://www.youtube.com/playlist?list=PLWYngsniPr_lvPKuqrAO7UfcDgWX-f3AT), or head on over to [Twitch ](https://twitch.tv/vonagedevs)and revisit past episodes of ["Now We're Talking"](https://www.twitch.tv/collections/w_-5N2H4mhbZWA).
 
 **Thank you for revisiting some of our favorite content of this year!**
 
