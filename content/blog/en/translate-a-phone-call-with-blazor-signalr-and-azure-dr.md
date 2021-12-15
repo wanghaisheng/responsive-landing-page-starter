@@ -27,7 +27,7 @@ Machine Learning models enable us to do all sorts of neat things. For example, r
 * You'll need an Azure Speech Resource - you can create one following the steps [here](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview#create-the-azure-resource). Pull the region and key value from the `Keys and Endpoint` tab on your resource.
 * The latest [.NET Core SDK installed](https://dotnet.microsoft.com/download)
 * Visual Studio or Visual Studio Code. I will be using Visual Studio 2019 for this demo
-* Our CLI. If you don't have it, you can install it with `npm install nexmo-cli -g`
+* Our CLI. If you don't have it, you can install it with `npm install @vonage/cli -g`
 * [ngrok](https://ngrok.com/) for testing. You only need the free tier.
 
 <sign-up></sign-up>
@@ -48,7 +48,7 @@ The critical thing to take note of here is the forwarding URL - in my case, that
 
 ## Setup CLI
 
-If you've not set up our CLI yet, do so by running the command `nexmo setup API_KEY API_SECRET` where the API Key and Secret are the API key and secret found on your [account's settings page](https://dashboard.nexmo.com/settings)
+If you've not set up our CLI yet, do so by running the command `vonage config:set --apiKey=API_KEY --apiSecret=API_SECRET` where the API Key and Secret are the API key and secret found on your [account's settings page](https://dashboard.nexmo.com/settings)
 
 ## Buy a Number and Create Application
 
@@ -59,7 +59,8 @@ Now that your CLI is setup, we will purchase a number, create a Vonage Applicati
 To buy a number, use the following command (substituting your Country ID for `US`)
 
 ```sh
-nexmo number:buy --country_code US
+vonage numbers:search US
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 Type `confirm` to complete the operation; it will output a number that you purchased.
@@ -69,7 +70,15 @@ Type `confirm` to complete the operation; it will output a number that you purch
 Next, we're going to create an application. The create application command will take two URLs, the answer URL - which will be the number Vonage will send incoming calls to, and the event URL, which will be the URL that Vonage sends events that arise from one of your numbers. Remember to substitute `1976e6d913a7` with whatever the random hash for your ngrok URL is:
 
 ```sh
-nexmo app:create "DTMFInput" http://1976e6d913a7.ngrok.io/webhooks/answer http://1976e6d913a7.ngrok.io/webhooks/events
+vonage apps:create
+✔ Application Name … "DTMFInput"
+✔ Select App Capabilities › Messages
+✔ Create messages webhooks? … yes
+√ Answer Webhook - URL ... http://1976e6d913a7.ngrok.io/webhooks/answer
+√ Answer Webhook - Method » GET
+✔ Status Webhook - URL … http://1976e6d913a7.ngrok.io/webhooks/events
+✔ Status Webhook - Method › POST
+✔ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 … yes
 ```
 
 This operation will respond with an application ID and a private key. Save both of these values. We will only be using the app ID in this tutorial, but you use the private key to authorize your application requests.
@@ -79,7 +88,7 @@ This operation will respond with an application ID and a private key. Save both 
 Next, we need to link our newly purchased number to our application. Linking our number will tell Vonage to send any calls received on that number to our application's webhook URL. To do this, we will need the application ID that we just received from the create app request - which will look like `e7a25242-77a1-42cd-a32e-09febcb375f4`, and the phone number we just purchased, and we'll run a command that looks like this:
 
 ```sh
-nexmo link:app VONAGE_NUMBER APPLICATION_ID
+vonage apps:link --number=VONAGE_NUMBER APP_ID
 ```
 
 ## Build Our App
