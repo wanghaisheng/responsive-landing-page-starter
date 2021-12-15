@@ -19,7 +19,7 @@ When you are building applications that are voice-enabled, meaning they can make
 
 This serves as the basis for IVRs, an alert system that you're going to be connected to a call, as a prompt to do something, or even just an on-hold message. Without the ability to play audio into a call, there are few use cases for voice-enabled apps beyond voice-proxying. 
 
-In this tutorial, we'll be exploring how to get off the ground playing audio into calls with [Vonage's Voice API](https://developer.nexmo.com/voice/voice-api/overview) and [ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-3.1).
+In this tutorial, we'll be exploring how to get off the ground playing audio into calls with [Vonage's Voice API](https://developer.vonage.com/voice/voice-api/overview) and [ASP.NET Core MVC](https://docs.microsoft.com/en-us/aspnet/core/mvc/overview?view=aspnetcore-3.1).
 
 ## Jump Right to the Code
 
@@ -30,7 +30,7 @@ If you want to skip over this tutorial and just jump right to the code, it's all
 * We're going to need the latest .NET Core SDK, I'm using 3.1
 * We're going to use Visual Studio Code for this tutorial. Of course, this will also work with Visual Studio and Visual Studio for Mac. There may just be some slightly different steps for setup and running.
 * We'll be testing this with [ngrok](https://ngrok.com/) - so go ahead and follow their instructions for setting it up.
-* We're going to need [npm](https://www.npmjs.com/) to fetch the nexmo-cli
+* We're going to need [npm](https://www.npmjs.com/) to fetch the vonage-cli
 
   <sign-up></sign-up>
 
@@ -38,18 +38,18 @@ If you want to skip over this tutorial and just jump right to the code, it's all
 
 There are two methods that we are going to be talking through to play audio into a call.
 
-1. When our application is called, it will return an [NCCO](https://developer.nexmo.com/voice/voice-api/ncco-reference) (Nexmo Call Control Object) telling Vonage what to play into the call.
+1. When our application is called, it will return an [NCCO](https://developer.vonage.com/voice/voice-api/ncco-reference) (Nexmo Call Control Object) telling Vonage what to play into the call.
 2. We will be using the Vonage Voice API (VAPI) to place a call and play audio into the call that we create.
 
-In both cases, we are going to be using audio streaming functionality. This allows us to play an audio file into a call. However, I’d be remiss if I didn’t point out that in addition to playing audio files into calls, there is no shortage of ability to customize what’s played into a request—whether it’s using the [Text-To-Speech(TTS)](https://developer.nexmo.com/voice/voice-api/guides/text-to-speech) API or using [websockets](https://developer.nexmo.com/voice/voice-api/guides/websockets) to play dynamic audio streams into a call.
+In both cases, we are going to be using audio streaming functionality. This allows us to play an audio file into a call. However, I’d be remiss if I didn’t point out that in addition to playing audio files into calls, there is no shortage of ability to customize what’s played into a request—whether it’s using the [Text-To-Speech(TTS)](https://developer.vonage.com/voice/voice-api/guides/text-to-speech) API or using [websockets](https://developer.vonage.com/voice/voice-api/guides/websockets) to play dynamic audio streams into a call.
 
 ## Setup the Nexmo CLI
 
 With npm installed we can go ahead and install and configure the Nexmo CLI using:
 
 ```sh
-npm install nexmo-cli -g
-nexmo setup API_KEY API_SECRET
+npm install @vonage/cli -g
+vonage config:setup --apiKey=API_KEY --apiSecret=API_SECRET
 ```
 
 This will get the Nexmo CLI setup and ready to run.
@@ -69,7 +69,19 @@ Take a note of the URL that ngrok is running on. In my case, it's running on `ht
 A Vonage Application is a construct that enables us to link route our numbers and webhooks easily. You can create an application in the [Vonage Dashboard](https://dashboard.nexmo.com/applications), or you can just make it now with the CLI.
 
 ```sh
-nexmo app:create "AspNetTestApp" http://7ca005ad1287.ngrok.io/webhooks/answer http://7ca005ad1287.ngrok.io/webhooks/events
+vonage apps:create 
+√ Application Name ... "AspNetTestApp"
+√ Select App Capabilities » Voice
+√ Create voice webhooks? ... yes
+√ Answer Webhook - URL ... http://7ca005ad1287.ngrok.io/webhooks/answer
+√ Answer Webhook - Method » GET
+√ Event Webhook - URL ... http://7ca005ad1287.ngrok.io/webhooks/events
+√ Event Webhook - Method » POST
+√ Allow use of data for AI training? Read data collection disclosure - https://help.nexmo.com/hc/en-us/articles/4401914566036 ... no
+Creating Application... done
+
+
+  
 ```
 
 This is going to create a Vonage Application. It's going to then link all incoming calls to that application to the answer URL: `http://7ca005ad1287.ngrok.io/webhooks/answer`. All call events that happen on that application are going to be routed to `http://7ca005ad1287.ngrok.io/webhooks/events`. This command is going to print out two things.
@@ -82,7 +94,7 @@ This is going to create a Vonage Application. It's going to then link all incomi
 When you create your account, you are assigned a Vonage number. You can see this in the [numbers section of the dashboard.](https://dashboard.nexmo.com/your-numbers) Or you could alternatively just run `nexmo number:list` in your console to list your numbers. Take you Vonage Number and your Application Id and run the following:
 
 ```sh
-nexmo link:app VONAGE_NUMBER APPLICATION_ID
+vonage apps:link APPLICATION_ID --number=VONAGE_NUMBER
 ```
 
 With this done, your calls are going to route nicely to your URL.
@@ -240,6 +252,6 @@ With this done, all you need to do is run the command `dotnet run` and your appl
 
 ## Resources
 
-* You can learn much more about the Voice API By checking out our [documentation website](https://developer.nexmo.com/voice/voice-api/overview)
-* You can learn A LOT about working voice APIs,  particularly the NCCOS, by checking out our [NCCO reference](https://developer.nexmo.com/voice/voice-api/ncco-reference)
+* You can learn much more about the Voice API By checking out our [documentation website](https://developer.vonage.com/voice/voice-api/overview)
+* You can learn A LOT about working voice APIs,  particularly the NCCOS, by checking out our [NCCO reference](https://developer.vonage.com/voice/voice-api/ncco-reference)
 * All the code from this tutorial is available in [GitHub](https://github.com/nexmo-community/play-audio-aspnet-mvc)
