@@ -171,6 +171,6 @@ Update your application with your new `answer_url`. It should look like `http://
 * [How to make a Text-to-Speech phone call with ASP.NET](https://learn.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr/).
 * [How to play Audio to a Caller in ASP.NET](https://learn.vonage.com/blog/2017/11/29/how-to-play-audio-to-a-caller-in-asp-net-core-dr/).
 * [How to Receive a Phone Call with Nexmo Voice API, ASP.NET Core and NancyFX](https://learn.vonage.com/blog/2018/11/21/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-core-core-and-nancyfx-dr/).
-* [how to handle user input with ASP.NET Core](https://www.nexmo.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr/)
-* [how to forward a call via voice proxy with ASP.NET Core](https://learn.vonage.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr/)
+* [How to handle user input with ASP.NET Core](https://learn.vonage.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr/)
+* [How to forward a call via voice proxy with ASP.NET Core](https://learn.vonage.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr/)
 * [Getting Started with Nexmo Number Insight APIs and ASP.NET](https://learn.vonage.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr/).
