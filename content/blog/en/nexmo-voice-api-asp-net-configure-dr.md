@@ -116,7 +116,6 @@ Add a JSON file (appsettings.json) to your project. Inside which you will add yo
 ```json
 {
   "appSettings": {
-    "Vonage.UserAgent": "NEXMOQUICKSTART/1.0",
     "Vonage_key": "VONAGE-API-KEY",
     "Vonage_secret": "VONAGE-API-SECRET",
     "VONAGE_FROM_NUMBER": "VONAGE-VIRTUAL-NUMBER"
