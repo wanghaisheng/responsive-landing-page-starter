@@ -119,7 +119,7 @@ Under the Voice Views folder, create a new view `PlayAudioToCaller.cshtml`. With
 Back to the VoiceController. Make sure you have the following \`using\` statement on the top of the file.
 
 ```csharp
-using Nexmo.Api
+using Vonage
 ```
 
 Inside the constructor, we will pass the hosting environment, which will be used to specify the root path to where we will save the NCCO file.  We will also instantiate the NCCO helpers class.
