@@ -2,9 +2,10 @@
 title: Enable Live Captions in Vonage Video Using Symbl.ai
 description: Add transcription and closed captioning to your Vonage Video
   application using Symbl.ai
+thumbnail: /content/blog/enable-live-captions-in-vonage-video-using-symbl-ai/live-captions_video-api-1.png
 author: javier-molina-sanz
 published: true
-published_at: 2021-12-13T16:50:47.992Z
+published_at: 2021-12-16T11:11:05.140Z
 updated_at: 2021-12-13T16:50:48.032Z
 category: tutorial
 tags:
