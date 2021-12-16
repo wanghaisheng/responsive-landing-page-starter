@@ -73,6 +73,8 @@ https://github.com/sebastianbergmann/phpunit/issues/4305
 
 I guess that's the price we pay for being a bit bleeding edge.
 
+![](/content/blog/converting-your-test-suite-to-pest/elisa-ventur-bmjaxaz6ads-unsplash-1-.jpg)
+
 ### PHPUnit Syntax vs. PEST
 
 I've been playing with the test runner, but not actually shown the code or explained what PEST's actual purpose is.
