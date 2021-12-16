@@ -78,7 +78,7 @@ myAppointments.json
 ``` 
 
 ## Let's do the HTML `index.html`
-Did you know that the HTML input has a couple of types? For this tutorial we will use `<input type="datetime-local">` [https://lnkd.in/dbuRyzQ](https://lnkd.in/dbuRyzQ) it's not as a good as a proper library as there can be some inconsistencies, but it works for as simple demo.  
+Did you know that the HTML input has a couple of types? For this tutorial we will use `<input type="datetime-local">` []() it's not as a good as a proper library as there can be some inconsistencies, but it works for as simple demo.  
 
 ## Let's add some styling `index.css`
 ```CSS
@@ -293,8 +293,34 @@ Did you know that the HTML input has a couple of types? For this tutorial we wil
 
 ## Let's add some styling `index.css`
 ```CSS
+body {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
 
+div {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
 
+label {
+  display: inline-block;
+  width: 300px;
+}
+
+input:invalid+span:after {
+    content: '✖';
+    color: red;
+    padding-left: 5px;
+}
+
+input:valid+span:after {
+    content: '✓';
+    color: green;
+    padding-left: 5px;
+}
 ```
 
 ## `server.js`
