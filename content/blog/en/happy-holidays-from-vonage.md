@@ -5,7 +5,7 @@ description: "We wish you all a very happy holiday season! Join us as we take a
 thumbnail: /content/blog/happy-holidays-from-the-dev-rel-team-at-vonage/happy-holidays.png
 author: caroline-kerns
 published: true
-published_at: 2021-12-10T05:08:34.819Z
+published_at: 2021-12-17T13:32:26.615Z
 updated_at: 2021-12-10T05:08:34.853Z
 category: community
 tags:
