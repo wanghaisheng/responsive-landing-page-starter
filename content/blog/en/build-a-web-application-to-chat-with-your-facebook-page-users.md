@@ -198,4 +198,4 @@ That’s it! With the Messages API integrated into the Client SDK, it is a lot e
 ## Next Steps
 
 Please have a look at our [Client SDK documentation](https://developer.nexmo.com/client-sdk/overview). There’s more information on the methods used to create the Agent Dashboard, along with Tutorials, Guides, and more.
-Ran into any issues with the demo application? Looking to add new functionality? Any questions, comments, and/or feedback, please let us know in our [Community Slack Channel](https://developer.nexmo.com/slack)
+Ran into any issues with the demo application? Looking to add new functionality? Any questions, comments, and/or feedback, please let us know in our [Community Slack Channel](https://developer.vonage.com/community/slack)
