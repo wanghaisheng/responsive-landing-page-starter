@@ -149,33 +149,33 @@ In the code for the chat application, there is a `message` event listener that f
 
 ```javascript
 // public/chat.js
-   // Adding conversation.id here in the on. means that we're filtering events to only the ones regarding this conversation. (it's called grouping)
-    conversation.on('message', conversation.id, (from, event) => {
-      console.log('message-received sender: ', from);
-      console.log('message-reveived event: ', event);
-      const formattedMessage = formatMessage(from, event, conversation.me);
-      // Update UI
-      messageFeed.innerHTML = messageFeed.innerHTML + formattedMessage;
-      messagesCountSpan.textContent = messagesCount;
-    });
+// Adding conversation.id here in the on. means that we're filtering events to only the ones regarding this conversation. (it's called grouping)
+conversation.on('message', conversation.id, (from, event) => {
+  console.log('message-received sender: ', from);
+  console.log('message-reveived event: ', event);
+  const formattedMessage = formatMessage(from, event, conversation.me);
+  // Update UI
+  messageFeed.innerHTML = messageFeed.innerHTML + formattedMessage;
+  messagesCountSpan.textContent = messagesCount;
+});
 ```
 
 When the agent responds to the Facebook User, that is an outbound message. The Client SDK has a `sendMessage` method with a `"message_type": "text"` to send the agent's message.
 
 ```javascript
 // public/chat.js
-    // Listen for clicks on the submit button and send the existing text value
-    sendButton.addEventListener('click', async () => {
-      conversation.sendMessage({
-        "message_type": "text",
-        "text": messageTextarea.value
-      }).then((event) => {
-        console.log("message was sent", event);
-      }).catch((error)=>{
-        console.error("error sending the message ", error);
-      });
-      messageTextarea.value = '';
-    });
+// Listen for clicks on the submit button and send the existing text value
+sendButton.addEventListener('click', async () => {
+  conversation.sendMessage({
+    "message_type": "text",
+    "text": messageTextarea.value
+  }).then((event) => {
+    console.log("message was sent", event);
+  }).catch((error)=>{
+    console.error("error sending the message ", error);
+  });
+  messageTextarea.value = '';
+});
 ```
 
 To add a little more personalization, we display the Facebook Page's name at the top of the chat. To get this, a request is made to the server's `getChatAppAccounts` endpoint which makes a call to Vonage's `chatapp-accounts` API with an admin JWT. The Facebook Page's name is in the response, which we send back to the client.
