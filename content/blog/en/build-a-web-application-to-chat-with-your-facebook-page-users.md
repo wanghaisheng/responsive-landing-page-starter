@@ -19,6 +19,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*Post has been updated to use [JavaScript Client SDK version 8.3.0](https://developer.vonage.com/client-sdk/sdk-documentation/javascript/release-notes#version-8-3-0-november-01-2021) that can now handle outgoing messages.*
+
 ## Introduction
 
 The [Messages API](https://developer.nexmo.com/messages/overview) is being integrated into the [Client SDK](https://developer.nexmo.com/client-sdk/overview). This will provide a straightforward method where your customers, via Facebook Messenger, WhatsApp, Viber, and more, can communicate with an application you create.
@@ -102,7 +104,19 @@ When a user sends a message to your Facebook page, it gets sent by Vonage to you
 ```javascript
 // server.js
 app.post("/webhooks/inbound", (request, response) => {
-  response.status(200).send([{ "action": "message", "conversation_name": request.body.from.id, "user": request.body.from.id, "geo": "region-code" }]);
+  console.log("Inbound Message: " + request.body.from);
+  // By responding to the inbound message callback with this action you add -
+  // the message to a conversation so the agent client side will be notified about it
+  response.status(200).send([
+    {
+      action: "message",
+      // Creating a new conversation for every NEW incoming user.
+      // Messages from the same user will be tagged to the same conversation
+      conversation_name: request.body.from,
+      user: request.body.from,
+      geo: "us-1",
+    },
+  ]);  
 });
 ```
 
