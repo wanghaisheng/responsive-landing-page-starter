@@ -2,7 +2,7 @@
 title: Happy Holidays From the Dev Rel Team at Vonage
 description: "We wish you all a very happy holiday season! Join us as we take a
   look at some of our exciting content from 2021. "
-thumbnail: ""
+thumbnail: /content/blog/happy-holidays-from-the-dev-rel-team-at-vonage/happy-holidays.png
 author: caroline-kerns
 published: true
 published_at: 2021-12-17T13:32:26.615Z
