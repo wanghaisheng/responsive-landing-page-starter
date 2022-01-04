@@ -87,28 +87,67 @@ It would be time-consuming to install our packages one after the other because w
 	typing-extensions==3.10.0.0
 	urllib3==1.26.7
 	zope.interface==5.4.0
+```
 
 ```
-	Now, install all the packages in `requirements.txt` by running the command below in your terminal.
+Now, install all the packages in `requirements.txt` by running the command below in your terminal.
 
-	`pip install -r requirements.txt`
+`pip install -r requirements.txt`
+```
 
-3. ### Create your Django project
+### 3. Create your Django project
 
-- Create your Django project for Sales Fox with the django-admin command. Remember that we already installed Django in requirements.txt. It means the "django-admin" command is available in our virtual environment. Run the following to create project `sales_fox`
+Create your Django project for Sales Fox with the django-admin command. Remember that we already installed Django in requirements.txt. It means the "django-admin" command is available in our virtual environment. Run the following to create project `sales_fox`
 
+```
 	`django-admin startproject sales_fox`
+```
 
-- We will create two apps in our `sales_fox`: The `lead_manager` app to manage leads and the `conversation` app for sales agents to communicate with potential customers (known as leads). Our focus will be on the `conversation` app. Now, let's create our two apps by running these commands.
+We will create two apps in our `sales_fox`: The `lead_manager` app to manage leads and the `conversation` app for sales agents to communicate with potential customers (known as leads). Our focus will be on the `conversation` app. Now, let's create our two apps by running these commands.
 
+```
 	`python manage.py startapp lead_manager`
 
 	`python manage.py startapp conversation`
+```
 
 Take note that in this tutorial,
 
-- I'll be using the words - "leads" and "customers" interchangeably. Leads are potential customers, so it won't hurt to regard them as customers where convenient.
+* I'll be using the words - "leads" and "customers" interchangeably. Leads are potential customers, so it won't hurt to regard them as customers where convenient.
+* I will use the term `Project Directory` to refer to the directory where you have `settings.py`. This directory is created when you ran `django-admin startproject sales_fox`.
+* I will use the term `Overall Directory` to refer to the directory you created at the beginning of the tutorial. It contains your virtual environment folder, the app directories, and your project directory
 
-- I will use the term `Project Directory` to refer to the directory where you have `settings.py`. This directory is created when you ran `django-admin startproject sales_fox`.
+### 4. Let's get SalesFox ready to use Vonage.
 
-- I will use the term `Overall Directory` to refer to the directory you created at the beginning of the tutorial. It contains your virtual environment folder, the app directories, and your project directory
+* Create a `.env` file in your overall directory. Define `FACEBOOK_ID`, `VONAGE_API_KEY`, and `VONAGE_API_SECRET`. Your .env file should look like this:
+  		`FACEBOOK_ID=YOUR-LINKED-FACEBOOK-ID
+  		VONAGE_API_KEY=YOUR-VONAGE-API-KEY
+  		VONAGE_API_SECRET=YOUR-VONAGE-API-SECRET`
+
+  ```
+  	You can find your Vonage API key and API secret in your [Vonage settings page](https://dashboard.nexmo.com/settings).
+
+  	And your Facebook ID can be found in the `Link social channels` tab on your application page.
+  ```
+
+  In your project directory, Go to `settings.py`, load the variables in your .env file using `python-dotenv` installed from `requirements.txt`. Add the following snippet in `settings.py` to load the .env file:
+
+  ```
+  from  dotenv  import  load_dotenv	
+  import  os
+  load_dotenv()
+  ```
+
+  load_dotenv loads all variables in our .env file as environment variable.
+
+Now, define `FACEBOOK_ID`, `VONAGE_API_KEY`, `VONAGE_API_SECRET`, `VONAGE_MESSAGES_ENDPOINT` in your `settings.py` file. Simply copy and paste the snippet below. 
+
+````
+	 ```
+	FACEBOOK_ID = os.getenv("FACEBOOK_ID")
+ 
+	VONAGE_API_KEY = os.getenv("VONAGE_API_KEY")
+	VONAGE_API_SECRET = os.getenv("VONAGE_API_SECRET")
+	VONAGE_MESSAGES_ENDPOINT = "https://api.nexmo.com/v0.1/messages"
+	```
+````
