@@ -26,10 +26,10 @@ In this tutorial, we are going to build an appointment scheduler web application
 
 To start, let's create a new project from the [Firebase console](https://console.firebase.google.com/).
 
--   Click on `add a new project`
--   Give your project a meaningful name, for instance `vonage appointment scheduler`
--   Check if you like the unique identifier id for your project (it is used in your Realtime Database URL, Firebase Hosting subdomains, and more. It cannot be changed after project creation)
--   Click on the button to continue
+* Click on `add a new project`
+* Give your project a meaningful name, for instance `vonage appointment scheduler`
+* Check if you like the unique identifier id for your project (it is used in your Realtime Database URL, Firebase Hosting subdomains, and more. It cannot be changed after project creation)
+* Click on the button to continue
 
 ![Console view with a text field to enter project and name and edit the project id](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/1createproject.png "Console view with a text field to enter project and name and edit the project id")
 
@@ -39,8 +39,8 @@ To start, let's create a new project from the [Firebase console](https://console
 
 ![Project being created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/2projectbeingcreated.png "Project being created")
 
-* Once the project is ready to click to continue, you will be taken to your project's console view
-* Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use to Blaze. This Pay-as-you-go plan is required to use a third-party API
+* Once the project is ready, click to continue. You will be taken to your project's console view
+* Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use Blaze. This Pay-as-you-go plan is required to use a third-party API
 
 ### Install Firebase Tools CLI
 
@@ -56,7 +56,7 @@ Now it's time for us to create the NoSQL database instance that will hold the ap
 
 ![Button to create the database](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/3createdatabase.png "Button to create the database")
 
-* Click on Create Database
+* Click on "Create Database"
 * Select the Realtime Database location where your data will be stored and click on `next`
 * Select if you will use the database in locked or test mode. For this example I am using the test mode
 * Click `enable`
@@ -93,9 +93,9 @@ myAppointments.json
 
 The Firebase Realtime Database Rules determine who can access your database, how your indexes are built, and how your data is structured.
 
--   From the Firebase console on the Realtime database view, you can see "Rules", click on that tab. You'll be taken to a screen that will allow you to edit your rules
--   Copy and paste the rules from the below code snippet to your console in order to set the `myAppointments` collection to be indexed by the `date` field.
--   Click on `Publish`
+* From the Firebase console on the Realtime database view, you can see "Rules", click on that tab. You'll be taken to a screen that will allow you to edit your rules
+* Copy and paste the rules from the below code snippet to your console in order to set the `myAppointments` collection to be indexed by the `date` field.
+* Click on `Publish`
 
 ```JSON
 {
@@ -126,26 +126,43 @@ By the end of this tutorial, this is roughly how your project structure will loo
  ┃ ┣ 📜server.js  
  ┣ 📜.env  
  ┣ 📜.firebaserc
- ┣ 📜CONTRIBUTING.md  
  ┣ 📜README.md   
  ┣ 📜firebase.json   
  ┣ 📜package-lock.json  
  ┣ 📜package.json  
  ┣ 📜serviceAccountKey.json  
-
-```
 ```
 
 ## Setup
-- Create the project folder: `mkdir appointment-booker`
-- Initialize NPM: `npm init`. This command prompts to add information about the project. You can accept the defaults.
-- Install the dependencies: `npm install @vonage/server-sdk dotenv express`
+
+* Create the project folder: `mkdir appointment-scheduler && cd appointment-scheduler`
+* Initialize NPM: `npm init`. This command prompts to add information about the project. You can accept the defaults except for the "main" field making it `server.js` instead of `index.js`
+* Install the dependencies: `npm install @vonage/server-sdk dotenv express firebase-admin firebase-functions`
+* Type `firebase init`. Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also choose to use the `Realtime Database` feature.
+
+```bash
+? Which Firebase features do you want to set up for this directory? Press Space to select features, t
+hen Enter to confirm your choices. Realtime Database: Configure a security rules file for Realtime Da
+tabase and (optionally) provision default instance
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add, 
+but for now, we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: vonage-appointment-scheduler (vonage appointm
+ent scheduler)
+i  Using project vonage-appointment-scheduler (vonage appointment scheduler)
+```
 
 ## Create the HTML Content
 
-Did you know that the HTML input has many types? For this tutorial, we will use `<input type="datetime-local">` it's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
- 
- - Create an `index.html` that contains the content for the view to select a new appointment or cancel them by adding the below code snippet
+Did you know that the HTML input has many types for date and time? For instance, we have: `date`, datetime-local`,`time`. For this tutorial, we will use`<input type="datetime-local">`. It's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
+The user will be able to book slots every 5 minutes ending in 0 or 5 for instance 18:00 is bookable but 18:01 is not. 
+
+* Create the `public/index.html` that contains the content for the view to select a new appointment or cancel them by adding the below code snippet
 
 ```HTML
   <!-- index.html -->
@@ -196,11 +213,12 @@ Did you know that the HTML input has many types? For this tutorial, we will use 
 </html>
 ```
 
-## Add some styling `style.css`
+## Add CSS Styling
 
 For this demonstration web app, we have the styling with the contents centered on the page in addition to a red ✖ in case the input is invalid and a ✓ in case it is valid. 
-- Create a `style.css` file 
-- Paste in the below CSS code
+
+* Create the `public/styles.css` file 
+* Paste in the below CSS code
 
 ```CSS
 body {
@@ -233,40 +251,108 @@ input:valid+span:after {
 }
 ```
 
+## Create the Environment Variables File
+
+* Create the `.env` and populate it with the below information
+
+```bash
+FIREBASE_DATABASE_URL=
+VONAGE_API_KEY=
+VONAGE_API_SECRET=
+VONAGE_FROM_NUMBER=
+VONAGE_TO_NUMBER=
+```
+
+* The `FIREBASE_DATABASE_URL` can be found on the Firebase console
+* The `VONAGE_API_KEY`and the `VONAGE_API_SECRET` can be found in the [Vonage Dashboard](https://identity.nexmo.com/)
+* The `VONAGE_FROM_NUMBER` contains the number, name, or brand that will appear as the sender of the message
+* The `VONAGE_TO_NUMBER` is the number that will receive the SMS messages.
+
 ## Create the JavaScript file `server.js`
 
 We will create the `server.js` to handle the requests posted by the UI.  I'll show you step by step how we will build it. [You can find the complete server file here](https://github.com/nexmo-community/appointment-scheduler/blob/main/script/server_messages_api.js).
 
-- To add the dependencies and import files, add this below code snippet to your `server.js`
+Our web app will use express and it will read the static files we previously created from the folder `public`.
+
+* To add the dependencies and import files, add this below code snippet to your `script/server.js`
+
+```javascript
+// script/server.js
+require('dotenv').config();
+const express = require('express');
+const app = require('express')();
+const port = 3000; //setting the port to listen to as 3000
+const admin = require('firebase-admin');
+const Vonage = require('@vonage/server-sdk');
+
+app.use(express.static('public'));
+
+app.use(express.json());
+
+app.use(express.urlencoded({ extended: true }));
+```
+
+### Add the Service Account
+
+A Firebase service account can be used to authenticate various Firebase features, for our project we will use the Firebase Admin SDK to access our Database URL.
+
+* From the Firebase Console click on the gear and select the Service Account tab
+* Click on the button to `generate key`
+* Add the generated file to the root of your project and rename it to `serviceAccountKey.json`
+* Copy and paste the Admin SDK configuration snippet to your project as you can see in the following step of this tutorial to Initialize Firebase we are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file but it's the same Database URL found here
+
+![Admin SDK configuration](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/screenshot-2022-01-04-at-17.52.49.png "Admin SDK configuration")
 
 ### Initialize Firebase
 
-We use `initializeApp` to create and initialize a Firebase app instance that will use the `/myAppointments` Firebase database instance.
+We use `initializeApp` to create and initialize a Firebase app instance that will use the `/myAppointments` Firebase database instance we have previously created and populated from the Firebase Console.
+
+* Add this below code snippet to your `server.js` to initialize Firebase.
 
 ```javascript
+const serviceAccount = require('../serviceAccountKey.json');
+
 // Initializes firebase
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: `${process.env.FIREBASE_DATABASE_URL}`,
 });
 
+// A Reference represents a specific location in your Database and can be used for reading or writing data to that Database location.
 ref = admin.database().ref('/myAppointments');
 ```
 
 ### Initialize the Vonage API object
 
-We create the instance of the Vonage client class, initializing it with the Vonage API Key and Secret.
+We create the instance of the Vonage client class, initializing it with the Vonage API Key and Secret that you have previously added to your `.env` file.
 
-```
+* Add the below code snippet to your `server.js` to add Vonage.
+
+```javascript
 const vonage = new Vonage({
   apiKey: process.env.VONAGE_API_KEY,
   apiSecret: process.env.VONAGE_API_SECRET,
 });
 ```
 
-### Create the `/appointment`
+### Create the getDateTime Function
 
-It's time to create the  `/appointment` endpoint linked to the POST verb. This endpoint will contain the information related to the slots appointments. It will hold three functions to check if the slot is available, to add the slot to the Firebase database, and a final one to send an SMS back to the user's phone using the Vonage Messages API.
+The HTML input type `datetime-local` is formatted as **YYYY-MM-DDThh:mm**.
+So we will separate the date from the hour by splitting it on the character `T`. For instance in the example `2018-06-12T19:30` we'd have `2018-06-12` for the date and  `19:30` for the hour.
+
+* Add this below code snippet to your `server.js` to add the `getDateTime()` function
+
+```javascript
+  const getDateTime = (slot) => {
+	  return slot.split('T');
+	};
+```
+
+### Create the `/appointment` endpoint
+
+It's time to create the `/appointment` endpoint to handle the POST verb. This endpoint will manage the information related to the appointments slots. This endpoint will check if the slot is available, it will add the slot to the Firebase database, and finally will send an SMS confirmation back to the user's phone using the Vonage Messages API.
+
+* Add this below code snippet to your `server.js` to create the `/appointment` endpoint.
 
 ```javascript
 app.post('/appointment', async (request, response) => {
@@ -282,11 +368,17 @@ app.post('/appointment', async (request, response) => {
   
   // Sends an SMS back to the user's phone using the Vonage Messages API
   sendSMStoUser = async (code) => {};
+});
 ```
+
+Let's now expand on the stubs for the required functionalities. 
 
 ### Check Slot Availability `/checkIfAvailable()`
 
-This function checks if a slot is available by checking if the slot already exists in the database against the slot the user input.
+This function validates if a slot is available by checking if the slot already exists in the database. 
+We are querying `ref.orderByChild('date')`. Queries are allowed to order by one key at a time. We have previously defined our index via the `.indexOn` on the Firebase Rules for better performance. And then we make use `.once('value')` to listen for exactly one event of the value, and then it stops listening.
+
+* Add this below code snippet to your `server.js` to create the `checkIfAvailable()` function
 
 ```javascript
   // Checks if a slot is available
@@ -294,7 +386,7 @@ This function checks if a slot is available by checking if the slot already exis
     let snapshot = await ref.orderByChild('date').once('value');
 
     let available = true;
-	
+    
     snapshot.forEach((data) => {
       let dataval = data.val();
       for (let key in dataval) {
@@ -308,9 +400,9 @@ This function checks if a slot is available by checking if the slot already exis
   };
 ```
 
-#### Add the Slot to the Database `/addToDatabase`
+### Add the Slot to the Database `/addToDatabase`
 
-The following function `addToDatabase()` adds the slot and a code to the Firebase database. The user can later add in this coder to cancel the appointment.
+The following function `addToDatabase()` adds the slot and a numeric code to the Firebase database. This code is required to cancel the appointment.
 
 ```javascript
   // Adds the slot to the database
@@ -326,12 +418,14 @@ The following function `addToDatabase()` adds the slot and a code to the Firebas
   };
 ```
 
-#### Send an SMS with the Appointment Information
+### Send an SMS with the Appointment Information
 
-Finally, once the slot is reserved, an SMS is sent back to the user with the message `Meeting booked at ${time} on date: ${date}. Please save this code: ${code} in case you'd like to cancel your appointment.` as you can see in the below function `sendSMStoUser()`.
+Finally, once the slot is reserved, an SMS confirmation is sent back to the user with the message `Meeting booked at ${time} on date: ${date}. Please save this code: ${code} in case you'd like to cancel your appointment.` as you can see in the function `sendSMStoUser()`.
+
+* Add this below code snippet to your `server.js` to create the `sendSMStoUser()` function
 
 ```javascript
-  // Sends an SMS back to the user's phone using the Vonage SMS API
+  // Sends an SMS back to the user's phone using the Vonage Messages API
   sendSMStoUser = async (code) => {
     const from = process.env.VONAGE_FROM_NUMBER;
     const to = phonenumber;
@@ -358,28 +452,28 @@ Finally, once the slot is reserved, an SMS is sent back to the user with the mes
   };
 ```
 
-#### Put the Pieces Together
+### Finalize the Business Logic
 
-The piece of code below is responsible to call the previously created functions. If the slot is available, the user will have their slot added to the database and have the SMS sent back to them. Otherwise, they will be requested to choose a different time slot.
+The piece of code below is responsible to call the previously created helper functions. If the slot is available, the user will have their slot added to the database and have the SMS sent back to them. Otherwise, they will be requested to choose a different time slot.
 
 ```javascript
 let available = await checkIfAvailable(slot);
-  if (available) {
-    let code = addToDatabase();
-    await sendSMStoUser(code);
-    response.send(`This slot is available, booking it for you now: ${slot}`);
-  } else {
-    // Sends user error
-    response.send(
-      `Sorry, you'll need to choose a different slot.${slot} is already busy.`
-    );
-  }
-});
+
+if (available) {
+	let code = addToDatabase();
+	await sendSMStoUser(code);
+	response.send(`This slot is available, booking it for you now: ${slot}`);
+} else {
+	// Sends user error
+	response.send(
+		`Sorry, you'll need to choose a different slot.${slot} is already busy.`
+	);
+}
 ```
 
 ### Cancel the Appointment `/cancelAppointment`
 
-Let's create  `/cancelAppointment` endpoint linked to the POST verb. This endpoint will contain information related to canceling the appointment slots. It will hold one function to remove the slot from the database by using a code provided by the user that they received upon scheduling their appointment.
+Let's create the `/cancelAppointment` endpoint handling the POST verb. This endpoint will manage the process of canceling the appointment slots from the database by using a numeric code provided by the user that they received upon scheduling their appointment. 
 
 ```javascript
 app.post('/cancelAppointment', async (request, response) => {
@@ -395,9 +489,9 @@ app.post('/cancelAppointment', async (request, response) => {
 });
 ```
 
-### Listen to the port `port`
+### Listen to the Port
 
-Finally, the app will be listening on a given port to this app that can be accessed locally on `https://localhost:${port}`. In this URL you can interact with the UI of this demo application and check the slots being added/ removed on the Firebase console webpage.
+Finally, the app will be listening on the specified port, if run locally this will be accessible on `https://localhost:${port}`. In this URL you can interact with the UI of this demo application and check the slots being added/ removed on the Firebase console web page.
 
 ```javascript
 app.listen(port, () => {
@@ -405,8 +499,23 @@ app.listen(port, () => {
 });
 ```
 
+## Test it Out
+
+* In your `package.json` file add the start script `"start": "node script/server.js"` right under `"test": "echo \"Error: no test specified\" && exit 1",`. It should look like this: 
+
+```bash
+"scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "node script/server.js"
+},
+```
+
+* Run the NPM command to execute the project `npm run start`
+* Navigate to `http://localhost:3000`
+* Add and remove appointment slots and see them being added and removed from the Firebase Realtime Database
+
 ## Conclusion and Next Steps
 
-Today you saw how to build an appointment scheduler demo web app. Now you can go ahead and add fancier styling, other functionalities. You can take what you learned here to create many appointment schedulers may it be for a gym or for a vaccination slot - let the creativity flow!
+Today you saw how to build an appointment scheduler demo web app. Now you can go ahead and add fancier styling and other functionalities. You can take what you learned here to create many appointment schedulers may it be for a gym or for a vaccination slot - let the creativity flow!
 
 [Reach out to us on Twitter](https://twitter.com/VonageDev) and [join our community on Slack](https://app.slack.com/client/T24SLSN21/C24QZH6E7).
