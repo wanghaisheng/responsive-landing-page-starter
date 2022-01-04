@@ -137,7 +137,7 @@ By the end of this tutorial, this is roughly how your project structure will loo
 
 * Create the project folder: `mkdir appointment-scheduler && cd appointment-scheduler`
 * Initialize NPM: `npm init`. This command prompts to add information about the project
-* Install the dependencies: `npm install @vonage/server-sdk dotenv express firebase-admin firebase-functions`
+* Install the dependencies: `npm install @vonage/server-sdk dotenv uuid express firebase-admin firebase-functions`
 * Type `firebase init`. Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also choose to use the `Realtime Database` feature
 
 ```bash
@@ -281,6 +281,7 @@ const app = require('express')();
 const port = 3000; //setting the port to listen to as 3000
 const admin = require('firebase-admin');
 const Vonage = require('@vonage/server-sdk');
+const { v4: uuidv4 } = require('uuid');
 
 app.use(express.static('public'));
 
@@ -404,7 +405,7 @@ The following function `addToDatabase()` adds the slot and a code to the Firebas
 ```javascript
   // Adds the slot to the database
   addToDatabase = () => {
-    let code = Math.random().toString(36).substr(2, 9);
+    let code = uuidv4();
 
     ref.child(code).set({
       date: slot,
@@ -507,6 +508,7 @@ app.listen(port, () => {
 },
 ```
 
+* Install all the dependencies `npm install`
 * Run the NPM command to execute the project `npm run start`
 * Navigate to `http://localhost:3000`
 * Add and remove appointment slots and see them being added and removed from the Firebase Realtime Database
