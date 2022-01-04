@@ -141,9 +141,7 @@ By the end of this tutorial, this is roughly how your project structure will loo
 * Type `firebase init`. Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also choose to use the `Realtime Database` feature.
 
 ```bash
-? Which Firebase features do you want to set up for this directory? Press Space to select features, t
-hen Enter to confirm your choices. Realtime Database: Configure a security rules file for Realtime Da
-tabase and (optionally) provision default instance
+? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. Realtime Database: Configure a security rules file for Realtime Database and (optionally) provision default instance
 
 === Project Setup
 
@@ -265,7 +263,7 @@ VONAGE_TO_NUMBER=
 * The `FIREBASE_DATABASE_URL` can be found on the Firebase console
 * The `VONAGE_API_KEY`and the `VONAGE_API_SECRET` can be found in the [Vonage Dashboard](https://identity.nexmo.com/)
 * The `VONAGE_FROM_NUMBER` contains the number, name, or brand that will appear as the sender of the message
-* The `VONAGE_TO_NUMBER` is the number that will receive the SMS messages.
+* The `VONAGE_TO_NUMBER` is the number that will receive the SMS messages
 
 ## Create the JavaScript file `server.js`
 
@@ -512,6 +510,8 @@ app.listen(port, () => {
 * Run the NPM command to execute the project `npm run start`
 * Navigate to `http://localhost:3000`
 * Add and remove appointment slots and see them being added and removed from the Firebase Realtime Database
+
+![Example adding a slot and it being shown on the Firebase Realtime database](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/10testitout.gif "Example adding a slot and it being shown on the Firebase Realtime database")
 
 ## Conclusion and Next Steps
 
