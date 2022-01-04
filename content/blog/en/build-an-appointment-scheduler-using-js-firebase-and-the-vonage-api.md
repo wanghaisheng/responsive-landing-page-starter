@@ -44,7 +44,7 @@ To start, let's create a new project from the [Firebase console](https://console
 
 ### Install Firebase Tools CLI
 
-From your terminal, install the Firebase tools with NPM if you don't already have it by typing: `npm install -g firebase-tools`.
+From your terminal, install the Firebase tools with NPM if you don't already have them by typing: `npm install -g firebase-tools`.
 Log in to Firebase using Firebase login by typing: `firebase login`.
 The login process will open your browser for authentication that will either log you in automatically or ask you to add in your credentials. Once that's complete you now have the Firebase CLI installed.
 
@@ -58,7 +58,7 @@ Now it's time for us to create the NoSQL database instance that will hold the ap
 
 * Click on "Create Database"
 * Select the Realtime Database location where your data will be stored and click on `next`
-* Select if you will use the database in locked or test mode. For this example I am using the test mode
+* Select if you will use the database in locked or test mode. For this example, I am using the test mode
 * Click `enable`
 
   ![Database created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/4databasecreated.png "Database created")
@@ -136,9 +136,9 @@ By the end of this tutorial, this is roughly how your project structure will loo
 ## Setup
 
 * Create the project folder: `mkdir appointment-scheduler && cd appointment-scheduler`
-* Initialize NPM: `npm init`. This command prompts to add information about the project. You can accept the defaults except for the "main" field making it `server.js` instead of `index.js`
+* Initialize NPM: `npm init`. This command prompts to add information about the project
 * Install the dependencies: `npm install @vonage/server-sdk dotenv express firebase-admin firebase-functions`
-* Type `firebase init`. Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also choose to use the `Realtime Database` feature.
+* Type `firebase init`. Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also choose to use the `Realtime Database` feature
 
 ```bash
 ? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. Realtime Database: Configure a security rules file for Realtime Database and (optionally) provision default instance
@@ -156,7 +156,7 @@ i  Using project vonage-appointment-scheduler (vonage appointment scheduler)
 
 ## Create the HTML Content
 
-Did you know that the HTML input has many types for date and time? For instance, we have: `date`, datetime-local`,`time`. For this tutorial, we will use`<input type="datetime-local">`. It's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
+Did you know that the HTML input has many types for date and time? For instance, we have: `date`, `datetime-local`,`time`. For this tutorial, we will use`<input type="datetime-local">`. It's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
 The user will be able to book slots every 5 minutes ending in 0 or 5 for instance 18:00 is bookable but 18:01 is not. 
 
 * Create the `public/index.html` that contains the content for the view to select a new appointment or cancel them by adding the below code snippet
@@ -332,7 +332,7 @@ const vonage = new Vonage({
 });
 ```
 
-### Create the getDateTime Function
+### Create the getDateTime() Function
 
 The HTML input type `datetime-local` is formatted as **YYYY-MM-DDThh:mm**.
 So we will separate the date from the hour by splitting it on the character `T`. For instance in the example `2018-06-12T19:30` we'd have `2018-06-12` for the date and  `19:30` for the hour.
@@ -373,7 +373,7 @@ Let's now expand on the stubs for the required functionalities.
 ### Check Slot Availability `/checkIfAvailable()`
 
 This function validates if a slot is available by checking if the slot already exists in the database. 
-We are querying `ref.orderByChild('date')`. Queries are allowed to order by one key at a time. We have previously defined our index via the `.indexOn` on the Firebase Rules for better performance. And then we make use `.once('value')` to listen for exactly one event of the value, and then it stops listening.
+We are querying `ref.orderByChild('date')`. Queries are allowed to order one key at a time. We have previously defined our index via the `.indexOn` on the Firebase Rules for better performance. And then we make use `.once('value')` to listen for exactly one event of the value, and then it stops listening.
 
 * Add this below code snippet to your `server.js` to create the `checkIfAvailable()` function
 
@@ -399,7 +399,7 @@ We are querying `ref.orderByChild('date')`. Queries are allowed to order by one 
 
 ### Add the Slot to the Database `/addToDatabase`
 
-The following function `addToDatabase()` adds the slot and a numeric code to the Firebase database. This code is required to cancel the appointment.
+The following function `addToDatabase()` adds the slot and a code to the Firebase database. This code is required to cancel the appointment.
 
 ```javascript
   // Adds the slot to the database
@@ -470,7 +470,7 @@ if (available) {
 
 ### Cancel the Appointment `/cancelAppointment`
 
-Let's create the `/cancelAppointment` endpoint handling the POST verb. This endpoint will manage the process of canceling the appointment slots from the database by using a numeric code provided by the user that they received upon scheduling their appointment. 
+Let's create the `/cancelAppointment` endpoint handling the POST verb. This endpoint will manage the process of canceling the appointment slots from the database by using a code provided by the user that they received upon scheduling their appointment. 
 
 ```javascript
 app.post('/cancelAppointment', async (request, response) => {
