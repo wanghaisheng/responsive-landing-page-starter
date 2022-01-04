@@ -120,6 +120,8 @@ By the end of this demonstration, this is roughly how your project structure wil
 +-- package.json
 +-- server.js
 +-- index.html
++-- style.css
+
 // TODO finish completing here
 ```
 
@@ -180,7 +182,7 @@ Did you know that the HTML input has a couple of types? For this tutorial, we wi
 </html>
 ```
 
-## Add some styling `index.css`
+## Add some styling `style.css`
 
 ```CSS
 body {
@@ -350,7 +352,7 @@ Finally, once the slot is reserved, an SMS is sent back to the user with the mes
 
 #### Put the Pieces Together
 
-The piece of code below is responsible to call the previously created functions. If the slot is available, the user will have their slot added to the database and have the SMS sent back to them. Otherwise they will be requested to choose a different time slot.
+The piece of code below is responsible to call the previously created functions. If the slot is available, the user will have their slot added to the database and have the SMS sent back to them. Otherwise, they will be requested to choose a different time slot.
 
 ```javascript
 let available = await checkIfAvailable(slot);
@@ -367,7 +369,7 @@ let available = await checkIfAvailable(slot);
 });
 ```
 
-### Cancel the Appointment  `/cancelAppointment`
+### Cancel the Appointment `/cancelAppointment`
 
 Let's create  `/cancelAppointment` endpoint linked to the POST verb. This endpoint will contain the information related to canceling the appointment slots. It will hold one function to remove the slot from the database by using a code provided by the user that they received upon scheduling their appointment.
 
@@ -387,7 +389,7 @@ app.post('/cancelAppointment', async (request, response) => {
 
 ### Listen to the port `port`
 
-Finally, the app will be listening on a given port to this app that can be accessed locally on `https://localhost:${port}`.  In this URL you can interact with the UI of this demo application and check the slots being added/ removed on the Firebase console webpage.
+Finally, the app will be listening on a given port to this app that can be accessed locally on `https://localhost:${port}`. In this URL you can interact with the UI of this demo application and check the slots being added/ removed on the Firebase console webpage.
 
 ```javascript
 app.listen(port, () => {
