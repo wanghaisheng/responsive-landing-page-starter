@@ -33,7 +33,7 @@ Let's create a new project from the [Firebase console](https://console.firebase.
 
 ![Console view with a text field to enter project and name and edit the project id](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/1createproject.png "Console view with a text field to enter project and name and edit the project id")
 
-* Select if you will use analytics, I won't in this tutorial.
+* Select if you will use analytics, I won't in this tutorial
 * Click on the button to create the project
 * Wait for the project to be created
 
@@ -68,7 +68,7 @@ From the Firebase Console Menu, click on "Realtime Database" under Build, and le
 ### Import the Database JSON File
 
 Let's import an example database that already contains some slots allocated and where you'll be able to add and remove future slots.
-You can create a file called `myAppointments.json` and from the console add import it.
+You can create a file called `myAppointments.json` with the content from the below snippet in your computer import it from the Firebase Console.
 
 ```JSON
 myAppointments.json
@@ -89,6 +89,8 @@ myAppointments.json
   }
 }
 ```
+
+![Import Database](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/5databaseimport.gif "Import Database")
 
 #### Add the Database Rules
 
