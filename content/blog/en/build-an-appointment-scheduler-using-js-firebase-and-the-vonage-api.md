@@ -152,8 +152,7 @@ You can create multiple project aliases by running firebase use --add,
 but for now, we'll just set up a default project.
 
 ? Please select an option: Use an existing project
-? Select a default Firebase project for this directory: vonage-appointment-scheduler (vonage appointm
-ent scheduler)
+? Select a default Firebase project for this directory: vonage-appointment-scheduler (vonage appointment scheduler)
 i  Using project vonage-appointment-scheduler (vonage appointment scheduler)
 ```
 
@@ -344,8 +343,8 @@ So we will separate the date from the hour by splitting it on the character `T`.
 
 ```javascript
   const getDateTime = (slot) => {
-	  return slot.split('T');
-	};
+    return slot.split('T');
+  };
 ```
 
 ### Create the `/appointment` endpoint
