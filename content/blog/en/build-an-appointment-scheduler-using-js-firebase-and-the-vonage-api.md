@@ -112,6 +112,8 @@ The Firebase Realtime Database Security Rules determine who can access your data
 }
 ```
 
+![Edit Firebase Database Rules](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/6editrules.gif "Edit Firebase Database Rules")
+
 ## Create the Project Structure
 
 By the end of this demonstration, this is roughly how your project structure will look like. In the following steps, we will create the files that will build up the content, appearance, functionalities, and handle the services we will use.
