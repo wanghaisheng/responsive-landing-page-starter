@@ -20,16 +20,16 @@ replacement_url: ""
 ---
 ## Introduction
 
-In this tutorial, we are going to build an appointment scheduler using Node.js, Firebase, Express, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). The [GitHub repository for this project is also available, feel free to clone it](https://github.com/nexmo-community/appointment-scheduler).
+In this tutorial, we are going to build an appointment scheduler web application using Node.js, Firebase, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). The [GitHub repository for this project is also available, feel free to clone it here](https://github.com/nexmo-community/appointment-scheduler).
 
-## Setting Up Firebase
+## Set Up Firebase
 
-Let's create a new project from the [Firebase console](https://console.firebase.google.com/).
+To start, let's create a new project from the [Firebase console](https://console.firebase.google.com/).
 
-* Click to add a new project
-* Give your project a name for instance `vonage appointment scheduler`
-* Check if you like the unique identifier id for your project (it is used in your Realtime Database URL, Firebase Hosting subdomains, and more. It cannot be changed after project creation)
-* Click on the button to continue 
+-   Click on `add a new project`
+-   Give your project a meaningful name, for instance `vonage appointment scheduler`
+-   Check if you like the unique identifier id for your project (it is used in your Realtime Database URL, Firebase Hosting subdomains, and more. It cannot be changed after project creation)
+-   Click on the button to continue
 
 ![Console view with a text field to enter project and name and edit the project id](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/1createproject.png "Console view with a text field to enter project and name and edit the project id")
 
@@ -40,35 +40,32 @@ Let's create a new project from the [Firebase console](https://console.firebase.
 ![Project being created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/2projectbeingcreated.png "Project being created")
 
 * Once the project is ready to click to continue, you will be taken to your project's console view
-* Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use to Blaze. This Pay-as-you-go plan is required to use a third-party API.
+* Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use to Blaze. This Pay-as-you-go plan is required to use a third-party API
 
 ### Install Firebase Tools CLI
 
-From your terminal, install the Firebase tools with npm if you don't already have it installed by typing:
-	`npm install -g firebase-tools`
-Log in to Firebase using Firebase login by typing:
-	`firebase login` 
+From your terminal, install the Firebase tools with NPM if you don't already have it by typing: `npm install -g firebase-tools`.
+Log in to Firebase using Firebase login by typing: `firebase login`.
 The login process will open your browser for authentication that will either log you in automatically or ask you to add in your credentials. Once that's complete you now have the Firebase CLI installed.
 
 ### Create and Set Up a RealTime Database
 
-Now it's time for us to create the NoSQL database instance that will hold the slots information. As the person interacting with the view picks an appointment date and time or adds in a code to cancel their appointment, that slot will be added or removed from the Firebase RealTime Database.
+Now it's time for us to create the NoSQL database instance that will hold the appointment slots' information. As the person interacting with the view picks an appointment date and time or adds in a code to cancel their appointment, that slot will be added or removed from the Firebase RealTime Database.
 
-From the Firebase Console Menu, click on "Realtime Database" under Build, and let's create a new NoSQL database instance
+* From the Firebase Console Menu, click on "Realtime Database" under Build
 
 ![Button to create the database](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/3createdatabase.png "Button to create the database")
 
-* Click on "Create Database"
-* Select the Realtime Database location where your data will be stored and click on next
-* Select if you will use the database in locked or test mode
-* Click enable]
+* Click on Create Database
+* Select the Realtime Database location where your data will be stored and click on `next`
+* Select if you will use the database in locked or test mode. For this example I am using the test mode
+* Click `enable`
 
   ![Database created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/4databasecreated.png "Database created")
 
 ### Import the Database JSON File
 
-Let's import an example database that already contains some slots allocated and where you'll be able to add and remove future slots.
-You can create a file called `myAppointments.json` with the content from the below snippet in your computer import it from the Firebase Console.
+Let's import an example database that already contains some slots allocated from which you'll be able to add and remove future slots. You can create a file called `myAppointments.json` containing the below code snippet and from the console import this JSON file.
 
 ```JSON
 myAppointments.json
@@ -94,11 +91,11 @@ myAppointments.json
 
 #### Add the Database Rules
 
-The Firebase Realtime Database Security Rules determine who can access your database, the indexes, and how your data is structured. 
+The Firebase Realtime Database Rules determine who can access your database, how your indexes are built, and how your data is structured.
 
-* From the Firebase console on the Realtime database view, you can see "Rules", click on that tab. You'll be taken to a screen that will allow you to edit your rules
-* Copy and paste the rules from the below code snippet to your console in order to have your rules indexed on the date in addition to the read and write dates that will be accepted
-* Click on Publish
+-   From the Firebase console on the Realtime database view, you can see "Rules", click on that tab. You'll be taken to a screen that will allow you to edit your rules
+-   Copy and paste the rules from the below code snippet to your console in order to set the `myAppointments` collection to be indexed by the `date` field.
+-   Click on `Publish`
 
 ```JSON
 {
@@ -116,28 +113,39 @@ The Firebase Realtime Database Security Rules determine who can access your data
 
 ## Create the Project Structure
 
-By the end of this demonstration, this is roughly how your project structure will look like. In the following steps, we will create the files that will build up the content, appearance, functionalities, and handle the services we will use.
+By the end of this tutorial, this is roughly how your project structure will look like. In the following steps, we will create the files that will build up the content, appearance, functionalities, and handle the services we will use.
+
+```bash
+📦appointment-scheduler  
+ ┣ 📂public  
+ ┃ ┣ 📂styles  
+ ┃ ┃ ┗ 📜styles.css  
+ ┃ ┣ 📜favicon.ico  
+ ┃ ┗ 📜index.html  
+ ┣ 📂script  
+ ┃ ┣ 📜server.js  
+ ┣ 📜.env  
+ ┣ 📜.firebaserc
+ ┣ 📜CONTRIBUTING.md  
+ ┣ 📜README.md   
+ ┣ 📜firebase.json   
+ ┣ 📜package-lock.json  
+ ┣ 📜package.json  
+ ┣ 📜serviceAccountKey.json  
 
 ```
-.
-+-- _.env
-+-- _firebaserc
-+-- README.md
-+-- package.json
-+-- server.js
-+-- index.html
-+-- style.css
-
-// TODO finish completing here
 ```
 
-### Create the project
+## Setup
+- Create the project folder: `mkdir appointment-booker`
+- Initialize NPM: `npm init`. This command prompts to add information about the project. You can accept the defaults.
+- Install the dependencies: `npm install @vonage/server-sdk dotenv express`
 
-### Install Dependencies
+## Create the HTML Content
 
-## Create the HTML content
-
-Did you know that the HTML input has a couple of types? For this tutorial, we will use `<input type="datetime-local">` it's not as good as a proper library as there can be some inconsistencies, but it works for this demonstration code example.
+Did you know that the HTML input has many types? For this tutorial, we will use `<input type="datetime-local">` it's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
+ 
+ - Create an `index.html` that contains the content for the view to select a new appointment or cancel them by adding the below code snippet
 
 ```HTML
   <!-- index.html -->
@@ -190,6 +198,10 @@ Did you know that the HTML input has a couple of types? For this tutorial, we wi
 
 ## Add some styling `style.css`
 
+For this demonstration web app, we have the styling with the contents centered on the page in addition to a red ✖ in case the input is invalid and a ✓ in case it is valid. 
+- Create a `style.css` file 
+- Paste in the below CSS code
+
 ```CSS
 body {
     margin: auto;
@@ -223,19 +235,9 @@ input:valid+span:after {
 
 ## Create the JavaScript file `server.js`
 
-Create a JavaScript file, for this example, we will create the  `server.js` and let's add the dependencies and import files.
+We will create the `server.js` to handle the requests posted by the UI.  I'll show you step by step how we will build it. [You can find the complete server file here](https://github.com/nexmo-community/appointment-scheduler/blob/main/script/server_messages_api.js).
 
-```javascript
-// server.js
-require('dotenv').config();
-const express = require('express');
-const app = require('express')();
-const port = 3000;
-const admin = require('firebase-admin');
-const Vonage = require('@vonage/server-sdk');
-
-const serviceAccount = require('../serviceAccountKey.json');
-```
+- To add the dependencies and import files, add this below code snippet to your `server.js`
 
 ### Initialize Firebase
 
