@@ -40,10 +40,75 @@ Now that you have the pre-requisites completed. You need to set up your developm
 
 Create a directory for your project if you haven't done that already. Change your working directory to the directory you just created. Then, run the following commands to create and activate a virtual environment for your project.
 
-\`python3 -m venv sales-env\`
-
-\`source sales-env/bin/activate\`
+```
+python3 -m venv sales-env
+source sales-env/bin/activate
+```
 
 ### 2. Install the Required Packages
 
 It would be time-consuming to install our packages one after the other because we have a lot of them. Hence, copy all the packages we need in a .txt file and install everything with one command. Create a \`requirements.txt\` file in the directory created in step 1. Copy and paste the code snippet below in your \`requirements.txt\` file.
+
+```
+    aioredis==1.3.1
+	asgiref==3.3.4
+	async-timeout==3.0.1
+	attrs==21.2.0
+	autobahn==21.3.1
+	Automat==20.2.0
+	certifi==2021.10.8
+	cffi==1.14.6
+	channels==2.4.0
+	channels-redis==2.4.2
+	charset-normalizer==2.0.7
+	constantly==15.1.0
+	cryptography==3.4.7
+	daphne==2.5.0
+	Django==3.2.2
+	djangorestframework==3.12.4
+	hiredis==2.0.0
+	hyperlink==21.0.0
+	idna==3.2
+	incremental==21.3.0
+	msgpack==0.6.2
+	Pillow==8.2.0
+	pyasn1==0.4.8
+	pyasn1-modules==0.2.8
+	pycparser==2.20
+	pyOpenSSL==20.0.1
+	python-dotenv==0.19.2
+	pytz==2021.1
+	requests==2.26.0
+	service-identity==21.1.0
+	six==1.16.0
+	sqlparse==0.4.1
+	Twisted==21.7.0
+	txaio==21.2.1
+	typing-extensions==3.10.0.0
+	urllib3==1.26.7
+	zope.interface==5.4.0
+
+```
+	Now, install all the packages in `requirements.txt` by running the command below in your terminal.
+
+	`pip install -r requirements.txt`
+
+3. ### Create your Django project
+
+- Create your Django project for Sales Fox with the django-admin command. Remember that we already installed Django in requirements.txt. It means the "django-admin" command is available in our virtual environment. Run the following to create project `sales_fox`
+
+	`django-admin startproject sales_fox`
+
+- We will create two apps in our `sales_fox`: The `lead_manager` app to manage leads and the `conversation` app for sales agents to communicate with potential customers (known as leads). Our focus will be on the `conversation` app. Now, let's create our two apps by running these commands.
+
+	`python manage.py startapp lead_manager`
+
+	`python manage.py startapp conversation`
+
+Take note that in this tutorial,
+
+- I'll be using the words - "leads" and "customers" interchangeably. Leads are potential customers, so it won't hurt to regard them as customers where convenient.
+
+- I will use the term `Project Directory` to refer to the directory where you have `settings.py`. This directory is created when you ran `django-admin startproject sales_fox`.
+
+- I will use the term `Overall Directory` to refer to the directory you created at the beginning of the tutorial. It contains your virtual environment folder, the app directories, and your project directory
