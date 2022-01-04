@@ -61,7 +61,9 @@ From the Firebase Console Menu, click on "Realtime Database" under Build, and le
 * Click on "Create Database"
 * Select the Realtime Database location where your data will be stored and click on next
 * Select if you will use the database in locked or test mode
-* Click enable
+* Click enable]
+
+  ![Database created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/4databasecreated.png "Database created")
 
 ### Import the Database JSON File
 
@@ -258,7 +260,7 @@ const vonage = new Vonage({
 
 ### Create the `/appointment`
 
-It's time to create the  `/appointment` endpoint linked to the POST verb. This endpoint will contain the information related to the slots appointments. It will hold three functions to check if the slot is available, to add the slot to the Firebase database, and a final one to Send an SMS back to the user's phone using the Vonage Messages API.
+It's time to create the  `/appointment` endpoint linked to the POST verb. This endpoint will contain the information related to the slots appointments. It will hold three functions to check if the slot is available, to add the slot to the Firebase database, and a final one to send an SMS back to the user's phone using the Vonage Messages API.
 
 ```javascript
 app.post('/appointment', async (request, response) => {
@@ -371,7 +373,7 @@ let available = await checkIfAvailable(slot);
 
 ### Cancel the Appointment `/cancelAppointment`
 
-Let's create  `/cancelAppointment` endpoint linked to the POST verb. This endpoint will contain the information related to canceling the appointment slots. It will hold one function to remove the slot from the database by using a code provided by the user that they received upon scheduling their appointment.
+Let's create  `/cancelAppointment` endpoint linked to the POST verb. This endpoint will contain information related to canceling the appointment slots. It will hold one function to remove the slot from the database by using a code provided by the user that they received upon scheduling their appointment.
 
 ```javascript
 app.post('/cancelAppointment', async (request, response) => {
