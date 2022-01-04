@@ -21,7 +21,7 @@ One of the most used tools in the business world today is Customer Relationship 
 
 In this article, you will learn how to build the core feature of a social CRM using Django and the Vonage Messages API. Our social CRM will help sales agents and the customer support team communicate with potential customers directly on Facebook in real-time. Let's call it Sales Fox.
 
-### Pre-requisites
+## Pre-requisites
 
 1. You need a Vonage account. If you do not have one yet, Go to the [Vonage Sign-up](<1. https://dashboard.nexmo.com/sign-up>) page to create an account. Then, come back here to continue with the next steps.
 2. Now, login to your [Vonage accoun](https://dashboard.nexmo.com/sign-in)t. Click on \`Your applications\` in the menu tab and select \`Create a new application\`. (picture-1)
@@ -33,3 +33,17 @@ In this article, you will learn how to build the core feature of a social CRM us
 8. Install Ngrok. Ngrok provides you with a publicly available URL that forward requests to your locally running application. Go to the [Ngrok download page](https://ngrok.com/download) and follow the instructions to set Ngrok up on your computer.
 
 Now that you have the pre-requisites completed. You need to set up your development environment for the tutorial. You need Python >= 3.6, Django 3. Also, I recommend using Visual Studio as your IDE.
+
+## Project Set-up
+
+### 1. Create and Activate Your Virtual Environment
+
+Create a directory for your project if you haven't done that already. Change your working directory to the directory you just created. Then, run the following commands to create and activate a virtual environment for your project.
+
+\`python3 -m venv sales-env\`
+
+\`source sales-env/bin/activate\`
+
+### 2. Install the Required Packages
+
+It would be time-consuming to install our packages one after the other because we have a lot of them. Hence, copy all the packages we need in a .txt file and install everything with one command. Create a \`requirements.txt\` file in the directory created in step 1. Copy and paste the code snippet below in your \`requirements.txt\` file.
