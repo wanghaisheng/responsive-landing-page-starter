@@ -23,20 +23,13 @@ In this article, you will learn how to build the core feature of a social CRM us
 
 ### Pre-requisites
 
-1. You need a Vonage account. If you do not have one yet, Go to the Vonage Sign-up page \[here](https://dashboard.nexmo.com/sign-up) to create an account. Then, come back here to continue with the next steps.
-
-2. Now, login to your \[Vonage account](https://dashboard.nexmo.com/sign-in). Click on \`Your applications\` in the menu tab and select \`Create a new application\`. (picture-1)
-
-3. Fill in the form provided to create a new application. Under the capabilities section, turn on \*\*Messages\*\* capabilities.
-
-4. You will find two fields in Messages capabilities - inbound URL field and status URL field. These URLs are endpoints to web-hooks that help Vonage Messages API communicate with your application. For now, Fill in a dummy URL or maybe the link to your GitHub account. (picture-2)
-
-5. The next thing is to authorize Vonage to access your Facebook business page. You can create a demo business Facebook page for the sake of this tutorial. Go to \[Connect Facebook Page](https://dashboard.nexmo.com/messages/social-channels/facebook-connect) and follow the steps outlined on the page.
-
-6. Afterwards, Go to your application page and link your already authorized social media page to the application you created in Step 3. (picture-3)
-
-7. Install Redis - If you're using Linux or Mac, follow the instructions \[here](https://redis.io/topics/quickstart#installing-redis). If you're using Windows, follow the instructions \[here](https://redis.com/blog/redis-on-windows-10/).
-
-8. Install Ngrok. Ngrok provides you with a publicly available URL that forward requests to your locally running application. Go to \[Ngrok download page](https://ngrok.com/download) and follow the instructions to set Ngrok up on your computer.
+1. You need a Vonage account. If you do not have one yet, Go to the [Vonage Sign-up](<1. https://dashboard.nexmo.com/sign-up>) page to create an account. Then, come back here to continue with the next steps.
+2. Now, login to your [Vonage accoun](https://dashboard.nexmo.com/sign-in)t. Click on \`Your applications\` in the menu tab and select \`Create a new application\`. (picture-1)
+3. Fill in the form provided to create a new application. Under the capabilities section, turn on the **Messages** capabilities.
+4. You will find two fields in Messages capabilities: the inbound URL field and the status URL field. These URLs are endpoints to web-hooks that help the Vonage Messages API communicate with your application. For now, Fill in a dummy URL or maybe the link to your GitHub account. (picture-2)
+5. The next thing is to authorize Vonage to access your Facebook business page. You can create a demo business Facebook page for the sake of this tutorial. Go to [Connect Facebook Page](<1. https://dashboard.nexmo.com/messages/social-channels/facebook-connect>) and follow the steps outlined on the page.
+6. Afterward, Go to your application page and link your already authorized social media page to the application you created in Step 3. (picture-3)
+7. Install Redis - If you're using Linux or Mac, follow the instructions [here](<1. https://redis.io/topics/quickstart#installing-redis>). If you're using Windows, follow the instructions [here](<1. https://redis.com/blog/redis-on-windows-10/>).
+8. Install Ngrok. Ngrok provides you with a publicly available URL that forward requests to your locally running application. Go to the [Ngrok download page](https://ngrok.com/download) and follow the instructions to set Ngrok up on your computer.
 
 Now that you have the pre-requisites completed. You need to set up your development environment for the tutorial. You need Python >= 3.6, Django 3. Also, I recommend using Visual Studio as your IDE.
