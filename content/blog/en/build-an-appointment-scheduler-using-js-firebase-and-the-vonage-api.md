@@ -156,7 +156,7 @@ i  Using project vonage-appointment-scheduler (vonage appointment scheduler)
 
 ## Create the HTML Content
 
-Did you know that the HTML input has many types for date and time? For instance, we have: `date`, `datetime-local`,`time`. For this tutorial, we will use`<input type="datetime-local">`. It's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
+Did you know that the HTML input has many types for date and time? For instance, we have: `date`, `datetime-local`, `time`. For this tutorial, we will use `<input type="datetime-local">`. It's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
 The user will be able to book slots every 5 minutes ending in 0 or 5 for instance 18:00 is bookable but 18:01 is not. 
 
 * Create the `public/index.html` that contains the content for the view to select a new appointment or cancel them by adding the below code snippet
@@ -297,7 +297,7 @@ A Firebase service account can be used to authenticate various Firebase features
 * From the Firebase Console click on the gear and select the Service Account tab
 * Click on the button to `generate key`
 * Add the generated file to the root of your project and rename it to `serviceAccountKey.json`
-* Copy and paste the Admin SDK configuration snippet to your project as you can see in the following step of this tutorial to Initialize Firebase we are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file but it's the same Database URL found here
+* Copy and paste the Admin SDK configuration snippet to your project as you can see in the following step of this tutorial to initialize Firebase. We are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file but it's the same Database URL found on the Firebase Admin SDK configuration.
 
 ![Admin SDK configuration](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/screenshot-2022-01-04-at-17.52.49.png "Admin SDK configuration")
 
@@ -316,7 +316,8 @@ admin.initializeApp({
   databaseURL: `${process.env.FIREBASE_DATABASE_URL}`,
 });
 
-// A Reference represents a specific location in your Database and can be used for reading or writing data to that Database location.
+// A Reference represents a specific location in your Database and can be 
+// used for reading or writing data to that Database location.
 ref = admin.database().ref('/myAppointments');
 ```
 
@@ -348,7 +349,7 @@ So we will separate the date from the hour by splitting it on the character `T`.
 
 ### Create the `/appointment` endpoint
 
-It's time to create the `/appointment` endpoint to handle the POST verb. This endpoint will manage the information related to the appointments slots. This endpoint will check if the slot is available, it will add the slot to the Firebase database, and finally will send an SMS confirmation back to the user's phone using the Vonage Messages API.
+It's time to create the `/appointment` endpoint to handle the POST verb. This endpoint will manage the information related to the appointments slots. This endpoint will check if the slot is available, it will add the slot to the Firebase database, and finally, it will send an SMS confirmation back to the user's phone using the Vonage Messages API.
 
 * Add this below code snippet to your `server.js` to create the `/appointment` endpoint.
 
@@ -371,7 +372,7 @@ app.post('/appointment', async (request, response) => {
 
 Let's now expand on the stubs for the required functionalities. 
 
-### Check Slot Availability `/checkIfAvailable()`
+### Check Slot Availability
 
 This function validates if a slot is available by checking if the slot already exists in the database. 
 We are querying `ref.orderByChild('date')`. Queries are allowed to order one key at a time. We have previously defined our index via the `.indexOn` on the Firebase Rules for better performance. And then we make use `.once('value')` to listen for exactly one event of the value, and then it stops listening.
@@ -398,7 +399,7 @@ We are querying `ref.orderByChild('date')`. Queries are allowed to order one key
   };
 ```
 
-### Add the Slot to the Database `/addToDatabase`
+### Add the Slot to the Database
 
 The following function `addToDatabase()` adds the slot and a code to the Firebase database. This code is required to cancel the appointment.
 
