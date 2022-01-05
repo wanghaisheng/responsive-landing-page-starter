@@ -135,7 +135,7 @@ By the end of this tutorial, this is roughly how your project structure will loo
 
 ## Setup
 
-* Create the project folder: `mkdir appointment-scheduler && cd appointment-scheduler`
+* Create the project folder and `cd` into it: `mkdir appointment-scheduler && cd appointment-scheduler`
 * Initialize NPM: `npm init`. This command prompts to add information about the project
 * Install the dependencies: `npm install @vonage/server-sdk dotenv uuid express firebase-admin firebase-functions`
 * Type `firebase init`. Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also choose to use the `Realtime Database` feature
