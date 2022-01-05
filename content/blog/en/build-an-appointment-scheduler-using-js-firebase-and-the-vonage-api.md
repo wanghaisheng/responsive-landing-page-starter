@@ -33,20 +33,20 @@ To start, let's create a new project from the [Firebase console](https://console
 
 ![Console view with a text field to enter project and name and edit the project id](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/1createproject.png "Console view with a text field to enter project and name and edit the project id")
 
-* Select if you will use analytics, I won't in this tutorial
+* Select if you want to enable analytics. We won't in this tutorial
 * Click on the button to create the project
 * Wait for the project to be created
 
 ![Project being created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/2projectbeingcreated.png "Project being created")
 
 * Once the project is ready, click to continue. You will be taken to your project's console view
-* Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use Blaze. This Pay-as-you-go plan is required to use a third-party API
+* Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use Blaze. This pay-as-you-go plan is required when using a third-party API
 
 ### Install Firebase Tools CLI
 
 From your terminal, install the Firebase tools with NPM if you don't already have them by typing: `npm install -g firebase-tools`.
-Log in to Firebase using Firebase login by typing: `firebase login`.
-The login process will open your browser for authentication that will either log you in automatically or ask you to add in your credentials. Once that's complete you now have the Firebase CLI installed.
+Next, type firebase login. This will open a window in your browser which will either authenticate you automatically (if you're already logged in) or ask you for your credentials. 
+Once that's complete you now have the Firebase CLI installed.
 
 ### Create and Set Up a RealTime Database
 
@@ -297,7 +297,7 @@ A Firebase service account can be used to authenticate various Firebase features
 * From the Firebase Console click on the gear and select the Service Account tab
 * Click on the button to `generate key`
 * Add the generated file to the root of your project and rename it to `serviceAccountKey.json`
-* Copy and paste the Admin SDK configuration snippet to your project as you can see in the following step of this tutorial to initialize Firebase. We are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file but it's the same Database URL found on the Firebase Admin SDK configuration.
+* Copy and paste the Admin SDK configuration snippet to your project, as you can see in the following step of this tutorial, to initialize Firebase. We are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file but it's the same Database URL found on the Firebase Admin SDK configuration.
 
 ![Admin SDK configuration](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/screenshot-2022-01-04-at-17.52.49.png "Admin SDK configuration")
 
@@ -337,7 +337,7 @@ const vonage = new Vonage({
 ### Create the getDateTime() Function
 
 The HTML input type `datetime-local` is formatted as **YYYY-MM-DDThh:mm**.
-So we will separate the date from the hour by splitting it on the character `T`. For instance in the example `2018-06-12T19:30` we'd have `2018-06-12` for the date and  `19:30` for the hour.
+So we will write a function to separate the date from the hour by splitting it on the character `T`. For instance in the example `2018-06-12T19:30` we'd have `2018-06-12` for the date and  `19:30` for the hour.
 
 * Add this below code snippet to your `server.js` to add the `getDateTime()` function
 
@@ -349,7 +349,7 @@ So we will separate the date from the hour by splitting it on the character `T`.
 
 ### Create the `/appointment` endpoint
 
-It's time to create the `/appointment` endpoint to handle the POST verb. This endpoint will manage the information related to the appointments slots. This endpoint will check if the slot is available, it will add the slot to the Firebase database, and finally, it will send an SMS confirmation back to the user's phone using the Vonage Messages API.
+It's time to create the `/appointment` endpoint to handle the POST requests for creating an appointment. This endpoint will check if the slot is available, it will add the slot to the Firebase database, and finally, it will send an SMS confirmation back to the user's phone using the Vonage Messages API.
 
 * Add this below code snippet to your `server.js` to create the `/appointment` endpoint.
 
@@ -370,7 +370,7 @@ app.post('/appointment', async (request, response) => {
 });
 ```
 
-Let's now expand on the stubs for the required functionalities. 
+You may have noticed that much of the functionality within the request handler has not yet been implemented, so let's now expand on the stubs for the required functionalities.
 
 ### Check Slot Availability
 
@@ -472,7 +472,7 @@ if (available) {
 
 ### Cancel the Appointment `/cancelAppointment`
 
-Let's create the `/cancelAppointment` endpoint handling the POST verb. This endpoint will manage the process of canceling the appointment slots from the database by using a code provided by the user that they received upon scheduling their appointment. 
+Let's create the `/cancelAppointment` endpoint handling the POST requests for canceling an appointment from the database by using a code provided by the user that they received upon scheduling their appointment. 
 
 ```javascript
 app.post('/cancelAppointment', async (request, response) => {
