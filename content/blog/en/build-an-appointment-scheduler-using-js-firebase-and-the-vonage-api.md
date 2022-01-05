@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 ## Introduction
 
-In this tutorial, we are going to build an appointment scheduler web application using Node.js, Firebase, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). The [GitHub repository for this project is also available, feel free to clone it here](https://github.com/Vonage-Community/blog-messages_api-node_firebase-appointment_scheduler).
+In this tutorial, we are going to build an appointment scheduler web application using Node.js, Express, Firebase, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). The [GitHub repository for this project is also available, feel free to clone it here](https://github.com/Vonage-Community/blog-messages_api-node_firebase-appointment_scheduler).
 
 ## Set Up Firebase
 
