@@ -91,10 +91,9 @@ myAppointments.json
 
 #### Add the Database Rules
 
-The Firebase Realtime Database Rules determine who can access your database, how your indexes are built, and how your data is structured.
+The Firebase Realtime Database Rules determine who can access your database, how your indexes are built, and how your data is structured. Let's add a rule which sets the `myAppointments` collection to be indexed by the `date` field.
 
 * From the Firebase console on the Realtime database view, you can see "Rules", click on that tab. You'll be taken to a screen that will allow you to edit your rules
-* Copy and paste the rules from the below code snippet to your console in order to set the `myAppointments` collection to be indexed by the `date` field.
 * Click on `Publish`
 
 ```JSON
