@@ -87,7 +87,7 @@ myAppointments.json
 }
 ```
 
-![Import Database](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/5databaseimport.gif "Import Database")
+![Import Database](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/5databaseimport.gif "Import Database")
 
 #### Add the Database Rules
 
@@ -109,7 +109,7 @@ The Firebase Realtime Database Rules determine who can access your database, how
 }
 ```
 
-![Edit Firebase Database Rules](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/6editrules.gif "Edit Firebase Database Rules")
+![Edit Firebase Database Rules](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/6editrules.gif "Edit Firebase Database Rules")
 
 ## Create the Project Structure
 
@@ -299,7 +299,7 @@ A Firebase service account can be used to authenticate various Firebase features
 * Add the generated file to the root of your project and rename it to `serviceAccountKey.json`
 * Copy and paste the Admin SDK configuration snippet to your project, as you can see in the following step of this tutorial, to initialize Firebase. We are using `${process.env.FIREBASE_DATABASE_URL` to read the URL from the `.env` file but it's the same Database URL found on the Firebase Admin SDK configuration.
 
-![Admin SDK configuration](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/screenshot-2022-01-04-at-17.52.49.png "Admin SDK configuration")
+![Admin SDK configuration](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/screenshot-2022-01-04-at-17.52.49.png "Admin SDK configuration")
 
 ### Initialize Firebase
 
@@ -514,7 +514,7 @@ app.listen(port, () => {
 * Navigate to `http://localhost:3000`
 * Add and remove appointment slots and see them being added and removed from the Firebase Realtime Database
 
-![Example adding a slot and it being shown on the Firebase Realtime database]( "Example adding a slot and it being shown on the Firebase Realtime database")
+![Example adding a slot and it being shown on the Firebase Realtime database](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/10testitout.gif "Example adding a slot and it being shown on the Firebase Realtime database")
 
 ## Conclusion and Next Steps
 
