@@ -31,13 +31,13 @@ To start, let's create a new project from the [Firebase console](https://console
 * Check if you like the unique identifier id for your project (it is used in your Realtime Database URL, Firebase Hosting subdomains, and more. It cannot be changed after project creation)
 * Click on the button to continue
 
-![Console view with a text field to enter project and name and edit the project id](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/1createproject.png "Console view with a text field to enter project and name and edit the project id")
+![Console view with a text field to enter project and name and edit the project id](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/1createproject.png "Console view with a text field to enter project and name and edit the project id")
 
 * Select if you want to enable analytics. We won't in this tutorial
 * Click on the button to create the project
 * Wait for the project to be created
 
-![Project being created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/2projectbeingcreated.png "Project being created")
+![Project being created](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/2projectbeingcreated.png "Project being created")
 
 * Once the project is ready, click to continue. You will be taken to your project's console view
 * Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use Blaze. This pay-as-you-go plan is required when using a third-party API
@@ -54,14 +54,14 @@ Now it's time for us to create the NoSQL database instance that will hold the ap
 
 * From the Firebase Console Menu, click on "Realtime Database" under Build
 
-![Button to create the database](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/3createdatabase.png "Button to create the database")
+![Button to create the database](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/3createdatabase.png "Button to create the database")
 
 * Click on "Create Database"
 * Select the Realtime Database location where your data will be stored and click on `next`
 * Select if you will use the database in [locked or test mode](https://firebase.google.com/docs/rules/basics#default_rules_locked_mode). For this example, I am using the test mode
 * Click `enable`
 
-  ![Database created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/4databasecreated.png "Database created")
+  ![Database created](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/4databasecreated.png "Database created")
 
 ### Import the Database JSON File
 
@@ -91,9 +91,10 @@ myAppointments.json
 
 #### Add the Database Rules
 
-The Firebase Realtime Database Rules determine who can access your database, how your indexes are built, and how your data is structured. Let's add a rule which sets the `myAppointments` collection to be indexed by the `date` field.
+The Firebase Realtime Database Rules determine who can access your database, how your indexes are built, and how your data is structured.
 
 * From the Firebase console on the Realtime database view, you can see "Rules", click on that tab. You'll be taken to a screen that will allow you to edit your rules
+* Copy and paste the rules from the below code snippet to your console in order to set the `myAppointments` collection to be indexed by the `date` field.
 * Click on `Publish`
 
 ```JSON
@@ -513,7 +514,7 @@ app.listen(port, () => {
 * Navigate to `http://localhost:3000`
 * Add and remove appointment slots and see them being added and removed from the Firebase Realtime Database
 
-![Example adding a slot and it being shown on the Firebase Realtime database](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/10testitout.gif "Example adding a slot and it being shown on the Firebase Realtime database")
+![Example adding a slot and it being shown on the Firebase Realtime database]( "Example adding a slot and it being shown on the Firebase Realtime database")
 
 ## Conclusion and Next Steps
 
