@@ -156,7 +156,7 @@ i  Using project vonage-appointment-scheduler (vonage appointment scheduler)
 
 ## Create the HTML Content
 
-Did you know that the HTML input has many types for date and time? For instance, we have: `date`, `datetime-local`, `time`. For this tutorial, we will use `<input type="datetime-local">`. It's not as good as a proper library as there can be some inconsistencies, but it works for the purpose of this tutorial.
+Did you know that the HTML input element has many type options for date and time selection? For instance, we have: `date`, `datetime-local`, `time`. For this tutorial, we will use `<input type="datetime-local">`. This approach is perhaps not as robust as using date-time library, as there can be some inconsistencies, but it works for the purpose of this tutorial.
 The user will be able to book slots every 5 minutes ending in 0 or 5 for instance 18:00 is bookable but 18:01 is not. 
 
 * Create the `public/index.html` that contains the content for the view to select a new appointment or cancel them by adding the below code snippet
