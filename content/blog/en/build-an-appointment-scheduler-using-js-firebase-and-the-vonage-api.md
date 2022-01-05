@@ -20,7 +20,7 @@ replacement_url: ""
 ---
 ## Introduction
 
-In this tutorial, we are going to build an appointment scheduler web application using Node.js, Firebase, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). The [GitHub repository for this project is also available, feel free to clone it here](https://github.com/nexmo-community/appointment-scheduler).
+In this tutorial, we are going to build an appointment scheduler web application using Node.js, Firebase, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). The [GitHub repository for this project is also available, feel free to clone it here](https://github.com/Vonage-Community/blog-messages_api-node_firebase-appointment_scheduler).
 
 ## Set Up Firebase
 
@@ -65,7 +65,7 @@ Now it's time for us to create the NoSQL database instance that will hold the ap
 
 ### Import the Database JSON File
 
-Let's import an example database that already contains some slots allocated from which you'll be able to add and remove future slots. You can create a file called `myAppointments.json` containing the below code snippet and from the console import this JSON file.
+Let's import an example database which already contains some allocated slots, and from which you'll be able to add and remove future slots. You can create a file called `myAppointments.json` containing the JSON in the snippet below, and then import this file from the console.
 
 ```JSON
 myAppointments.json
@@ -136,9 +136,9 @@ By the end of this tutorial, this is roughly how your project structure will loo
 ## Setup
 
 * Create the project folder and `cd` into it: `mkdir appointment-scheduler && cd appointment-scheduler`
-* Initialize NPM: `npm init`. This command prompts to add information about the project
+* Initialize NPM: `npm init`. This command prompts you to add information about the project
 * Install the dependencies: `npm install @vonage/server-sdk dotenv uuid express firebase-admin firebase-functions`
-* Type `firebase init`. Since you already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also choose to use the `Realtime Database` feature
+* Type `firebase init`. Since we already created a project in the dashboard, you can select `Use an existing project` which will prompt you to choose the desired project. You can see my example with my project id `vonage-appointment-scheduler` below. I also chose to use the `Realtime Database` feature
 
 ```bash
 ? Which Firebase features do you want to set up for this directory? Press Space to select features, then Enter to confirm your choices. Realtime Database: Configure a security rules file for Realtime Database and (optionally) provision default instance
@@ -212,7 +212,7 @@ The user will be able to book slots every 5 minutes ending in 0 or 5 for instanc
 
 ## Add CSS Styling
 
-For this demonstration web app, we have the styling with the contents centered on the page in addition to a red ✖ in case the input is invalid and a ✓ in case it is valid. 
+For this demonstration web app, we'll add some styling to center the contents on the page, and also display a red ✖ in case the input is invalid and a ✓ in case it is valid. 
 
 * Create the `public/styles.css` file 
 * Paste in the below CSS code
@@ -267,9 +267,9 @@ VONAGE_TO_NUMBER=
 
 ## Create the JavaScript file `server.js`
 
-We will create the `server.js` to handle the requests posted by the UI.  I'll show you step by step how we will build it. [You can find the complete server file here](https://github.com/nexmo-community/appointment-scheduler/blob/main/script/server_messages_api.js).
+We will create the `server.js` to tell Express how to handle the requests posted by the UI. I'll show you step by step how we will build it. [You can find the complete server file here](https://github.com/nexmo-community/appointment-scheduler/blob/main/script/server_messages_api.js).
 
-Our web app will use express and it will read the static files we previously created from the folder `public`.
+Our web app will use express and it will read the static files we previously created from the `public` folder.
 
 * To add the dependencies and import files, add this below code snippet to your `script/server.js`
 
