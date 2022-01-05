@@ -50,7 +50,7 @@ Once that's complete you now have the Firebase CLI installed.
 
 ### Create and Set Up a RealTime Database
 
-Now it's time for us to create the NoSQL database instance that will hold the appointment slots' information. As the person interacting with the view picks an appointment date and time or adds in a code to cancel their appointment, that slot will be added or removed from the Firebase RealTime Database.
+Now it's time for us to create the NoSQL database instance that will hold the appointment slots' information. Our app will include a view where a user will be able to make or cancel appointments. As the person interacting with the view picks an appointment date and time, that slot will be added or removed from the Firebase RealTime Database.
 
 * From the Firebase Console Menu, click on "Realtime Database" under Build
 
