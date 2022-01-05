@@ -10,7 +10,7 @@ published_at: 2021-10-13T09:54:47.863Z
 updated_at: 2021-07-26T14:55:40.801Z
 category: tutorial
 tags:
-  - voiceapi
+  - voice-api
   - nodejs
   - dialogflow
 comments: true
