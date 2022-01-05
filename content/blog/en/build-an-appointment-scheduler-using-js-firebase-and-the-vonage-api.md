@@ -58,7 +58,7 @@ Now it's time for us to create the NoSQL database instance that will hold the ap
 
 * Click on "Create Database"
 * Select the Realtime Database location where your data will be stored and click on `next`
-* Select if you will use the database in locked or test mode. For this example, I am using the test mode
+* Select if you will use the database in [locked or test mode](https://firebase.google.com/docs/rules/basics#default_rules_locked_mode). For this example, I am using the test mode
 * Click `enable`
 
   ![Database created](/content/blog/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api/4databasecreated.png "Database created")
