@@ -4,7 +4,7 @@ description: In this article I'll look into changing your test PHP syntax to
   PEST, and attempt to automate switching
 thumbnail: /content/blog/converting-your-test-suite-to-pest/shifting-to-pest.png
 author: james-seconde
-published: false
+published: true
 published_at: 2021-12-16T16:47:16.294Z
 updated_at: 2021-12-16T16:47:16.326Z
 category: tutorial
@@ -29,7 +29,7 @@ Our Vonage PHP SDK has been comprehensively maintained through the years, and as
 
 The current suite on \[this branch] has 831 passing tests which run 4039 assertions. There are 9 skipped tests and 15 incomplete tests. Out total execution time is 13:54 in PHP8.
 
-![](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-11.10.30.png)
+![Screenshot of total tests showing 9 skipped and 15 incomplete tests.](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-11.10.30.png "Screenshot of total tests showing 9 skipped and 15 incomplete tests.")
 
 For the record, it runs pretty decently and one of those tests is actually a timeout test which bumps up the time. The aim here isn't to actually improve the runner, but change it to see what happens. Our first port of call is to \[install PEST] and run it. One of the most important features of PEST to note is that *it is completely backwards compatible with PHPUnit*, and so can be used interchangeably regardless of the syntax you're using. This allows for us to install PEST, run it to see the results and potentially try and implement the recent \[parallel testing] feature.
 
@@ -49,7 +49,7 @@ Time to run PEST and see what happens:
 
 The first thing you'll notice is that PEST uses an output format similar to the `--testdox` argument to format PHPUnit's output. It's output is pretty nice:
 
-![](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-12.01.27.png)
+![Test screenshot, showing a time of 13.21 seconds.](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-12.01.27.png "Test screenshot, showing a time of 13.21 seconds.")
 
 Hmm, so 13.28 seconds huh? Well, that is actually faster just on the runner alone. What if we try and use PEST's parallel feature? It comes as a separate package, so let's go get it:
 
@@ -65,7 +65,7 @@ And now to run it:
 
 And... oh. Well, it looks like our luck has run out:
 
-![](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-12.23.22.png)
+![Screenshot of a PHP bug.](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-12.23.22.png "Screenshot of a PHP bug.")
 
 A quick bit of Googling reveals that we have a bug in PHP itself for this, as documented in PHPUnit's issue log:
 
@@ -73,7 +73,7 @@ https://github.com/sebastianbergmann/phpunit/issues/4305
 
 I guess that's the price we pay for being a bit bleeding edge.
 
-![](/content/blog/converting-your-test-suite-to-pest/elisa-ventur-bmjaxaz6ads-unsplash-1-.jpg)
+![Photo of frustrated person looking at their laptop screen.](/content/blog/converting-your-test-suite-to-pest/elisa-ventur-bmjaxaz6ads-unsplash-1-.jpg "Photo of frustrated person looking at their laptop screen.")
 
 ### PHPUnit Syntax vs. PEST
 
@@ -127,7 +127,7 @@ It came to my attention [from Twitter](https://twitter.com/laravelshift/status/1
 
 However, when running PEST after the conversion:
 
-![](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-09.01.43.png)
+![Screenshot showing Pest\Exceptions\TestCaseClarrOrTrailNotFound.](/content/blog/converting-your-test-suite-to-pest/screenshot-2021-12-13-at-09.01.43.png "Screenshot showing Pest\Exceptions\TestCaseClarrOrTrailNotFound.")
 
 Hmm. So, not smooth sailing then. It's worth noting that I had no idea what to expect for a couple of reasons:
 
