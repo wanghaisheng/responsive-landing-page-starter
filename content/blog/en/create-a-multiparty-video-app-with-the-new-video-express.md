@@ -49,14 +49,14 @@ The app is based on React Hooks that came with React 16.8. Next, let's have a cl
 ### UseRoom
 
 The [UseRoom](https://github.com/nexmo-se/video-express-react-app/blob/main/src/hooks/useRoom.js) hook is the one that handles the lifecycle of our video room. Thanks to the Video Express, we don’t have to manage the Session, Publisher, and Subscriber lifecycle. 
-Instead, we only have to instantiate a [Room](https://tokbox.com/developer/multiparty/reference/room.html) object,  then use the `room.join()` method, which in turn will handle everything for us behind the scenes.
+Instead, we only have to instantiate a [Room](https://tokbox.com/developer/video-express/reference/room.html) object,  then use the `room.join()` method, which in turn will handle everything for us behind the scenes.
 
 First, we need to create a function in charge of initializing our Room object and joining the call. We need to provide our authentication (`apiKey`, `sessionId`, and `token`) and other optional parameters used as publisher settings such as the `userName`, the container where our Room will be visible, and some optional publisher settings.  
 
 Since we’re going to use the default Layout manager that the Video Express provides, we’re passing some layout parameters:
 set a grid view for the initial layout
 define a custom HTML element for the screensharing view
-You can find the complete list of parameters [here](https://tokbox.com/developer/multiparty/reference/room.html#constructor-options).
+You can find the complete list of parameters [here](https://tokbox.com/developer/video-express/reference/room.html#constructor-options).
 
 ```js
 const createCall = useCallback(
@@ -185,7 +185,7 @@ const getDevices = useCallback(async () => {
   }, []);
 ```
 
-Our `getDevices()` function will call the [MP.geDevices()](https://tokbox.com/developer/multiparty/reference/get-devices.html) method that returns a list of devices available once the user has granted device access. We will then filter through devices and populate our state with the different devices available.
+Our `getDevices()` function will call the [MP.geDevices()](https://tokbox.com/developer/video-express/reference/get-devices.html) method that returns a list of devices available once the user has granted device access. We will then filter through devices and populate our state with the different devices available.
 
 ```js
 const [deviceInfo, setDeviceInfo] = useState({
@@ -197,7 +197,7 @@ const [deviceInfo, setDeviceInfo] = useState({
 
 ### UsePreviewPublisher
 
-The Video Express helps you also implementing the pre-call user experience. Indeed, the Video Express implements a [PreviewPublisher](https://tokbox.com/developer/multiparty/reference/preview-publisher.html) class. The idea of the `PreviewPublisher` class is to allow the developers to preview media easily and ensure that your devices (audio/video) work fine without the need to create a `Room` object.  
+The Video Express helps you also implementing the pre-call user experience. Indeed, the Video Express implements a [PreviewPublisher](https://tokbox.com/developer/video-express/reference/preview-publisher.html) class. The idea of the `PreviewPublisher` class is to allow the developers to preview media easily and ensure that your devices (audio/video) work fine without the need to create a `Room` object.  
 
 We will create a preview to allow the user to choose the right device (if they have multiple), ensure that the microphone picks up the audio, and the camera works fine. Check out the full implementation on [GitHub](https://github.com/nexmo-se/video-express-react-app/blob/main/src/hooks/usePreviewPublisher.js).
 
