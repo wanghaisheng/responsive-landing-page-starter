@@ -67,7 +67,6 @@ You can further customize the `Pay` action using options. For example, you can s
 
 Or even have [custom prompts](https://developer.vonage.com/voice/voice-api/guides/payments#custom-prompts) for entering card or errors completely.
 
-
 ## What Next?
 
-Visit [developer.vonage.com] to learn more about the Voice API or the [Payments Over the Phone guide](https://developer.vonage.com/voice/voice-api/guides/payments) for information on how to get started accepting payments.
+Visit [developer.vonage.com](https://developer.vonage.com/) to learn more about the Voice API or the [Payments Over the Phone guide](https://developer.vonage.com/voice/voice-api/guides/payments) for information on how to get started accepting payments.
