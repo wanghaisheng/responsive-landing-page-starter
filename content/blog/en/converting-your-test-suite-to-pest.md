@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Changing the way I write code through Test-Driven Development quite frankly changed my abilities as a programmer. Suddenly I could write services and functionality with confidence - it's a mystery to my why so many companies *still* "Do not have the time to do testing." For a long time, [PHPUnit](https://phpunit.de/) has been the de-facto tool of choice when writing TDD PHP.
+Changing the way I write code through Test-Driven Development quite frankly changed my abilities as a programmer. Suddenly I could write services and functionality with confidence - it's a mystery to me why so many companies *still* "Do not have the time to do testing." For a long time, [PHPUnit](https://phpunit.de/) has been the de-facto tool of choice when writing TDD PHP.
 
 A new project has come along recently that could change that. There's [good documentation](https://pestphp.com/docs) and a [meetup community](https://www.youtube.com/playlist?list=PLsGrIkNZ8eVk0RAThd7Ed6cdBvl5JW-GA) being built around it that shows itself to be an attractive option to developers. I am of course referring to PEST, so I thought I'd give it a spin on our own [Vonage PHP SDK](https://github.com/Vonage/vonage-php-sdk-core). 
 
@@ -123,7 +123,7 @@ This is a pretty good example of where the PHP ecosystem is, in general, looking
 
 I'll be honest here, this did not go the way I wanted it to. I will, however, show you why.
 
-It came to my attention [from Twitter](https://twitter.com/laravelshift/status/1443644297685962753) that it could actually be possible to use a tool to automatically convert your PHPUnit suite to PEST, regardless of whether the code is in Laravel or not. So, I headed off to [Pest Converter](https://laravelshift.com/phpunit-to-pest-converter) and [set up a respository and branch to try it out on](https://github.com/SecondeJK/vonage-php-sdk-core/tree/pest-shift) Shift will take the branch and create logical step commits to move across the syntax. One of the things that needed to be done first was to change the `test/` folder to `tests/` so that the converter knows where to look for your tests.
+It came to my attention [from Twitter](https://twitter.com/laravelshift/status/1443644297685962753) that it could actually be possible to use a tool to automatically convert your PHPUnit suite to PEST, regardless of whether the code is in Laravel or not. So, I headed off to [Pest Converter](https://laravelshift.com/phpunit-to-pest-converter) and [set up a respository and branch to try it out on](https://github.com/SecondeJK/vonage-php-sdk-core/tree/pest-shift) When run, Shift will create a new branch off the base one you provide and create logical step commits to move across the syntax. One of the things that needed to be done first was to change the `test/` folder to `tests/` so that the converter knows where to look for your tests.
 
 However, when running PEST after the conversion:
 
