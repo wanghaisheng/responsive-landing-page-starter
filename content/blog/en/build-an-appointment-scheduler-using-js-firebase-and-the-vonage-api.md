@@ -267,7 +267,7 @@ VONAGE_TO_NUMBER=
 
 ## Create the JavaScript file `server.js`
 
-We will create the `server.js` to tell Express how to handle the requests posted by the UI. I'll show you step by step how we will build it. [You can find the complete server file here](https://github.com/nexmo-community/appointment-scheduler/blob/main/script/server_messages_api.js).
+We will create the `server.js` to tell Express how to handle the requests posted by the UI. I'll show you step by step how we will build it. [You can find the complete server file here](https://github.com/Vonage-Community/blog-messages_api-node_firebase-appointment_scheduler/blob/main/script/server_messages_api.js).
 
 Our web app will use express and it will read the static files we previously created from the `public` folder.
 
