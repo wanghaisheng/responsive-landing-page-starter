@@ -16,7 +16,11 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-[Payments Over the Phone](https://developer.vonage.com/voice/voice-api/guides/payments) allows you to securely charge cards with the Voice API via the familiar [NCCO](https://developer.vonage.com/voice/voice-api/ncco-reference#pay) syntax.
+[Payments Over the Phone](https://developer.vonage.com/voice/voice-api/guides/payments) allows you to securely charge cards with the Vonage Voice API. The [Voice API](https://developer.vonage.com/client-sdk/overview) enables you to build voice applications, including the ability to record calls, create conference calls and text-to-speech messages in over 40 languages.
+
+You can control the flow of calls with the Voice API using a [Call Control Object](https://developer.vonage.com/voice/voice-api/ncco-reference). Call Control Objects (NCCO) have different actions to allow you to control the flow of your calls. 
+
+<youtube id="26rm0MP2up0"></youtube>
 
 ## The `Pay` Action
 
