@@ -1,5 +1,5 @@
 ---
-title: "Startup Spotlight Series: Let's meet Waape"
+title: "Startup Spotlight Series: Let's Meet Waape"
 description: Meet Kampala-based startup Waape as a part of Vonage Startup Spotlight series.
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-waape/startups_waape.png
 author: filippos-kyprianou
