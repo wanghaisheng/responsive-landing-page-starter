@@ -1,9 +1,10 @@
 ---
 title: Payments Over the Phone Now Supports Multi-Currency
-description: Use the Voice API to take payments securely in multiple currencies.
+description: Use the Vonage Voice API to take payments securely in multiple currencies.
+thumbnail: /content/blog/payments-over-the-phone-now-supports-multi-currency/multi-currency-payment.png
 author: abdul-ajetunmobi
 published: true
-published_at: 2022-01-06T12:24:36.725Z
+published_at: 2022-01-11T10:51:44.213Z
 updated_at: 2022-01-06T12:24:36.891Z
 category: release
 tags:
