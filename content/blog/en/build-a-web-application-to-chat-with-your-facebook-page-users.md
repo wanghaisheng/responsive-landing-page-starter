@@ -160,7 +160,7 @@ conversation.on('message', conversation.id, (from, event) => {
 });
 ```
 
-When the agent responds to the Facebook User, that is an outbound message. The Client SDK has a `sendMessage` method with a `"message_type": "text"` to send the agent's message.
+When the agent responds to the Facebook User, that is an outbound message. The Client SDK has a `sendMessage` method with a `"message_type": "text"` to send the agent's message. With that, Vonage takes care of everything required to get the message to the Facebook User.
 
 ```javascript
 // public/chat.js
