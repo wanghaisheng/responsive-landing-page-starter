@@ -5,7 +5,7 @@ description: Let's build an appointment scheduler using Node.js, Firebase,
 thumbnail: /content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/appointment-scheduler.png
 author: amanda-cavallaro
 published: true
-published_at: 2021-12-16T12:45:57.235Z
+published_at: 2022-01-12T10:06:03.139Z
 updated_at: 2021-12-16T12:45:57.260Z
 category: tutorial
 tags:
