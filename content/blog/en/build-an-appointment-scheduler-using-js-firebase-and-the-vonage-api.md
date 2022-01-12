@@ -9,9 +9,9 @@ published_at: 2022-01-12T10:06:03.139Z
 updated_at: 2021-12-16T12:45:57.260Z
 category: tutorial
 tags:
-  - "#firebase"
-  - "#messages-api"
-  - "#javascript"
+  - firebase
+  - messages-api
+  - javascript
 comments: true
 spotlight: false
 redirect: ""
