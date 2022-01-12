@@ -33,7 +33,7 @@ Log into Facebook and [create a Test Facebook page](https://www.facebook.com/pag
 
 ## Set up the sample web application
 
-Make your copy of the sample web application by [remixing this Glitch](https://glitch.com/edit/#!/remix/messages-and-chat-demo).  To get your application set up, follow the steps in the readme file. The sample application follows the scenario of an agent signing into a dashboard, with current conversations between Facebook page customers and the agent. On the left side is where all the conversations are happening, and the agent can join one.
+Make your copy of the sample web application by [remixing this Glitch](https://glitch.com/edit/#!/remix/messages-and-chat-demo). To get your application set up, follow the steps in the readme file. The sample application follows the scenario of an agent signing into a dashboard, with current conversations between Facebook page customers and the agent. On the left side is where all the conversations are happening, and the agent can join one.
 
 ![The agent's dashboard with all conversations in a column. Join buttons are on the left in a gray box. The rest of the page is space for conversations the agent is already a part of with an open link for each.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/web-dashboard.png "Sample application's agent dashboard")
 
