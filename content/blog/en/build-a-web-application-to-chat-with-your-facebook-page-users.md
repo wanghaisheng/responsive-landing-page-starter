@@ -113,7 +113,7 @@ app.post("/webhooks/inbound", (request, response) => {
       // Messages from the same user will be tagged to the same conversation
       conversation_name: request.body.from,
       user: request.body.from,
-      geo: "us-1",
+      geo: "region-code",
     },
   ]);  
 });
