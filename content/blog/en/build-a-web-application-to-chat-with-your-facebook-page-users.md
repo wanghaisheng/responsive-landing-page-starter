@@ -6,7 +6,7 @@ thumbnail: /content/blog/build-a-web-application-to-chat-with-your-facebook-page
 author: dwanehemmings
 published: true
 published_at: 2021-10-14T13:32:39.330Z
-updated_at: 2021-08-25T20:59:42.519Z
+updated_at: 2022-01-13T08:02:22.291Z
 category: tutorial
 tags:
   - messages-api
@@ -19,6 +19,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*Post has been updated to use [JavaScript Client SDK version 8.3.0](https://developer.vonage.com/client-sdk/sdk-documentation/javascript/release-notes#version-8-3-0-november-01-2021) that can now handle outgoing messages.*
+
 ## Introduction
 
 The [Messages API](https://developer.nexmo.com/messages/overview) is being integrated into the [Client SDK](https://developer.nexmo.com/client-sdk/overview). This will provide a straightforward method where your customers, via Facebook Messenger, WhatsApp, Viber, and more, can communicate with an application you create.
@@ -31,7 +33,7 @@ Log into Facebook and [create a Test Facebook page](https://www.facebook.com/pag
 
 ## Set up the sample web application
 
-Make your copy of the sample web application by [remixing this Glitch](https://glitch.com/edit/#!/remix/messages-inbound-demo).  To get your application set up, follow the steps in the readme file. The sample application follows the scenario of an agent signing into a dashboard, with current conversations between Facebook page customers and the agent. On the left side is where all the conversations are happening, and the agent can join one.
+Make your copy of the sample web application by [remixing this Glitch](https://glitch.com/edit/#!/remix/messages-and-chat-demo). To get your application set up, follow the steps in the readme file. The sample application follows the scenario of an agent signing into a dashboard, with current conversations between Facebook page customers and the agent. On the left side is where all the conversations are happening, and the agent can join one.
 
 ![The agent's dashboard with all conversations in a column. Join buttons are on the left in a gray box. The rest of the page is space for conversations the agent is already a part of with an open link for each.](/content/blog/build-a-web-application-to-chat-with-your-facebook-page-users/web-dashboard.png "Sample application's agent dashboard")
 
@@ -102,7 +104,18 @@ When a user sends a message to your Facebook page, it gets sent by Vonage to you
 ```javascript
 // server.js
 app.post("/webhooks/inbound", (request, response) => {
-  response.status(200).send([{ "action": "message", "conversation_name": request.body.from.id, "user": request.body.from.id, "geo": "region-code" }]);
+  // By responding to the inbound message callback with this action you add -
+  // the message to a conversation so the agent client side will be notified about it
+  response.status(200).send([
+    {
+      action: "message",
+      // Creating a new conversation for every NEW incoming user.
+      // Messages from the same user will be tagged to the same conversation
+      conversation_name: request.body.from,
+      user: request.body.from,
+      geo: "region-code",
+    },
+  ]);  
 });
 ```
 
@@ -132,56 +145,40 @@ app.post("/webhooks/rtcevent", (request, response) => {
 });
 ```
 
-In the code for the chat application, there is a `message:received` event listener that fires when a message is received from the Facebook User. It then takes the message and adds it to the chat display.
+In the code for the chat application, there is a `message` event listener that fires when a message is received from the Facebook User. It then takes the message and adds it to the chat display.
 
 ```javascript
 // public/chat.js
-   // Adding conversation.id here in the on. means that we're filtering events to only the ones regarding this conversation. (it's called grouping)
-    conversation.on('message:received', conversation.id, (from, event) => {
-      console.log('message-received sender: ', from);
-      console.log('message-reveived event: ', event);
-      const formattedMessage = formatMessage(from, event, conversation.me);
-      // Update UI
-      messageFeed.innerHTML = messageFeed.innerHTML + formattedMessage;
-      messagesCountSpan.textContent = messagesCount;
-    });
-```
-
-When the agent responds to the Facebook User, that is an outbound message. Full implementation of outbound messages into the Client SDK will be completed in a future release. Until then, just like listening for when a new conversation is created, we can listen for when a `custom:chat` event is sent to the events webhook. The Vonage Node SDK is used to relay the agent’s message to the Facebook User.
-
-```javascript
-// server.js
-app.post("/webhooks/rtcevent", (request, response) => {
-  ...
-  // We currently do not support the outbound part of the integration so you should take
-  // the text message from the chat and relay to Messenger using the messages API 
-  // (here, using the Server SDK wrapping of it)
-  if (request.body.type === "custom:chat"){
-    const FB_RECIPIENT_ID = request.body.body.to;
-    const FB_SENDER_ID = request.body.body.from;
-    vonage.channel.send(
-      { type: 'messenger', id: FB_RECIPIENT_ID },
-      { type: 'messenger', id: FB_SENDER_ID },
-      {
-          content: {
-              type: 'text',
-              text: request.body.body.text,
-          },
-      },
-      (err, data) => {
-          if (err) {
-              console.error("error sending outgoing message: ", err);
-          } else {
-              console.log("message sent successfully: ", data.message_uuid);
-          }
-      }
-    );
-  }
-  ...
+// Adding conversation.id here in the on. means that we're filtering events to only the ones regarding this conversation. (it's called grouping)
+conversation.on('message', conversation.id, (from, event) => {
+  console.log('message-received sender: ', from);
+  console.log('message-reveived event: ', event);
+  const formattedMessage = formatMessage(from, event, conversation.me);
+  // Update UI
+  messageFeed.innerHTML = messageFeed.innerHTML + formattedMessage;
+  messagesCountSpan.textContent = messagesCount;
 });
 ```
 
-For those wondering, `FB_RECIPIENT_ID` is also the Conversation Name that was set when the initial message was sent from the Facebook User. Getting the value for `FB_SENDER_ID`, the Facebook Page Id, is a little more involved. When an agent opens a chat, a request is made to the server's `getChatAppAccounts` endpoint which makes a call to Vonage's `chatapp-accounts` API with an admin JWT. The Facebook Page Id is in the response, which we send back to the client. The good news is, when Outbound Messages gets integrated, you won't have to worry about any of this, and the Client SDK will take care of everything. This is an example of how the Client SDK can be very helpful when developing applications.
+When the agent responds to the Facebook User, that is an outbound message. The Client SDK has a `sendMessage` method with a `"message_type": "text"` to send the agent's message. With that, Vonage takes care of everything required to get the message to the Facebook User.
+
+```javascript
+// public/chat.js
+// Listen for clicks on the submit button and send the existing text value
+sendButton.addEventListener('click', async () => {
+  conversation.sendMessage({
+    "message_type": "text",
+    "text": messageTextarea.value
+  }).then((event) => {
+    console.log("message was sent", event);
+  }).catch((error)=>{
+    console.error("error sending the message ", error);
+  });
+  messageTextarea.value = '';
+});
+```
+
+To add a little more personalization, we display the Facebook Page's name at the top of the chat. To get this, a request is made to the server's `getChatAppAccounts` endpoint which makes a call to Vonage's `chatapp-accounts` API with an admin JWT. The Facebook Page's name is in the response, which we send back to the client.
 
 ## Small Gotcha
 
@@ -201,4 +198,4 @@ That’s it! With the Messages API integrated into the Client SDK, it is a lot e
 ## Next Steps
 
 Please have a look at our [Client SDK documentation](https://developer.nexmo.com/client-sdk/overview). There’s more information on the methods used to create the Agent Dashboard, along with Tutorials, Guides, and more.
-Ran into any issues with the demo application? Looking to add new functionality? Any questions, comments, and/or feedback, please let us know in our [Community Slack Channel](https://developer.nexmo.com/slack)
+Ran into any issues with the demo application? Looking to add new functionality? Any questions, comments, and/or feedback, please let us know in our [Community Slack Channel](https://developer.vonage.com/community/slack).
