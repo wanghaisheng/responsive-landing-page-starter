@@ -6,7 +6,7 @@ thumbnail: /content/blog/build-a-web-application-to-chat-with-your-facebook-page
 author: dwanehemmings
 published: true
 published_at: 2021-10-14T13:32:39.330Z
-updated_at: 2021-08-25T20:59:42.519Z
+updated_at: 2022-01-13T08:02:22.291Z
 category: tutorial
 tags:
   - messages-api
