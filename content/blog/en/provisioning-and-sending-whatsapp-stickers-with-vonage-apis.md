@@ -2,9 +2,10 @@
 title: Provisioning and Sending WhatsApp Stickers with Vonage APIs
 description: Learn how to provision stickers for your Vonage WhatsApp business
   account, and how to send a sticker using the Vonage Messages API
+thumbnail: /content/blog/provisioning-and-sending-whatsapp-stickers-with-vonage-apis/whatsapp_stickers.png
 author: karl-lingiah
 published: true
-published_at: 2022-01-12T14:13:32.627Z
+published_at: 2022-01-13T12:25:32.966Z
 updated_at: 2022-01-12T14:13:32.724Z
 category: tutorial
 tags:
