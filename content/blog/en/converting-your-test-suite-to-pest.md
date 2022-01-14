@@ -1,7 +1,7 @@
 ---
 title: Converting Your Test Suite to PEST
-description: In this article I'll look into changing your test PHP syntax to
-  PEST, and attempt to automate switching
+description: This article will look into changing your test PHP syntax to PEST,
+  and attempt to automate switching
 thumbnail: /content/blog/converting-your-test-suite-to-pest/shifting-to-pest.png
 author: james-seconde
 published: true
