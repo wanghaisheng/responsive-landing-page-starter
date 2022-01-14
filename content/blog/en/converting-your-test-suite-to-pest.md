@@ -5,7 +5,7 @@ description: In this article I'll look into changing your test PHP syntax to
 thumbnail: /content/blog/converting-your-test-suite-to-pest/shifting-to-pest.png
 author: james-seconde
 published: true
-published_at: 2021-12-16T16:47:16.294Z
+published_at: 2022-01-14T10:54:30.520Z
 updated_at: 2021-12-16T16:47:16.326Z
 category: tutorial
 tags:
