@@ -20,17 +20,21 @@ Over the past couple of months, you may have heard the term "10DLC" and wondered
 
 10DLC stands for 10-Digit Long Code. It is the new standard for Application-to-Person (A2P) messaging in the US, which applies to all messaging over 10 digit geographic phone numbers. 
 
-They are also the fixed numbers you may bring over to Vonage for SMS provisioning. A 10 DLC number is essentially a local 10-digit phone number that can support higher volumes of text messages. Many experts anticipate that 10 DLC will become the new standard for business text messaging. 10 DLC numbers are designed and sanctioned by the termination vendors for A2P SMS messaging. This new standard provides many benefits to our users including supporting higher messaging speeds and better deliverability.
+They are also the fixed numbers you may bring over to Vonage for SMS provisioning. A 10 DLC number is essentially a local 10-digit phone number that can support higher volumes of text messages. Many experts anticipate that 10 DLC will become the new standard for business text messaging. 10 DLC numbers are designed and sanctioned by the termination vendors for A2P SMS messaging. This new standard provides many benefits to our users including supporting higher messaging throughput and better deliverability.
 
 ## Background of Long Codes
 
-Long codes (also known as Long Virtual Numbers, LVNs, or long numbers) are essentially 10 digit phone numbers designated by the mobile operators for person-to-person communication. Some sample use cases include chat applications, anonymous dating applications, and customer service communications.
+Long codes are essentially 10 digit phone numbers designated by the mobile operators for person-to-person communication. Some sample use cases include chat applications, anonymous dating applications, and customer service communications.
 
-Historically in the United States, P2P (person-to-person) traffic (not A2P traffic) is permissible using a Vonage USA long code or LVN. Long virtual numbers are available [here](https://dashboard.nexmo.com/private/numbers#add_number) if your business does not already own one. There are also additional use case limitations for long code traffic, which can be viewed in more detail [here](https://help.nexmo.com/hc/en-us/articles/204017023-USA-SMS-Features-Restrictions).
+Historically in the United States, P2P (person-to-person) traffic (not A2P traffic) is permissible using a Vonage USA long code. Long virtual numbers are available [here](https://dashboard.nexmo.com/private/numbers#add_number) if your business does not already own one. There are also additional use case limitations for long code traffic, which can be viewed in more detail [here](https://help.nexmo.com/hc/en-us/articles/204017023-USA-SMS-Features-Restrictions).
 
 ## How is A2P 10DLC affecting the use of Short and Long Code Use
 
 Since A2P (application-to-person) traffic on long codes has not been supported by the carriers historically, businesses have been forced to utilize short codes for their A2P needs. However, for carriers that are opting to launch and support A2P for 10DLC in the USA, this limitation will be lifted and A2P traffic will be allowed (with new guidelines).
+
+You may wonder why the change from short to long codes. The reason this new regulation has been introduced is to cut down on spamming and misuse of messages for illegal and intrusive activities. 
+
+**Please Note:** Adherence to new rules mentioned below is a requirement and fines will be imposed on accounts found to be non-compliant.
 
 ## What do I need to do?
 
@@ -72,8 +76,6 @@ T-Mobile & Sprint:
 Other Carriers:
 
 * Other wireless carriers are currently testing their solution and expected to follow suit and release their A2P 10 DLC service in the future. As soon as we hear more about the respective A2P 10 DLC releases for other wireless carriers in the US, we’ll update you with what we know, how the changes will affect you, and what you can do to ensure the optimum benefits of your services and solutions with us.
-
-
 
 ## Questions?
 
