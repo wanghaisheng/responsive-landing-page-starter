@@ -1,9 +1,10 @@
 ---
 title: A2P 10DLC - What You Need to Know
 description: "A quick overview of what 10DLC is and what you need to know moving forward. "
+thumbnail: /content/blog/a2p-10dlc-what-you-need-to-know/10dlc_developers.png
 author: caroline-kerns
 published: true
-published_at: 2022-01-11T20:56:12.409Z
+published_at: 2022-01-17T14:54:38.888Z
 updated_at: 2022-01-11T20:56:12.434Z
 category: announcement
 tags:
