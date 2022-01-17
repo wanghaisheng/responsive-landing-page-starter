@@ -114,7 +114,8 @@ Take note that in this tutorial,
 
   You can find your Vonage API key and API secret in your [Vonage settings page](https://dashboard.nexmo.com/settings).
   And your Facebook ID can be found in the `Link social channels` tab on your application page.
-* In your project directory, Go to `settings.py`, load the variables in your .env file using `python-dotenv` installed from `requirements.txt`. Add the following snippet in `settings.py` to load the .env file:
+
+  In your project directory, Go to `settings.py`, load the variables in your .env file using `python-dotenv` installed from `requirements.txt`. Add the following snippet in `settings.py` to load the .env file:
 
   ```
   from  dotenv  import  load_dotenv	
@@ -133,15 +134,16 @@ VONAGE_MESSAGES_ENDPOINT = "https://api.nexmo.com/v0.1/messages"
 
 5. ### Setup Static Files
 
-* In `settings.py`,  find `STATIC_URL` variable and add the `STATICFILES_DIRS` and `STATIC_FILES` beneath `STATIC_URL`, You should have something like:
+In `settings.py`,  find `STATIC_URL` variable and add the `STATICFILES_DIRS` and `STATIC_FILES` beneath `STATIC_URL`, You should have something like:
 
 
-  ```
-  STATIC_URL = '/static/'
-  STATICFILES_DIRS = [BASE_DIR / 'static']
-  STATIC_ROOT = BASE_DIR / 'staticfiles'
-  ```
-* Go to your overall directory and create a folder named `static`. This is where you will keep all your static files. Note that you should only do this for a development environment. In a production environment, you should set up an external store like an AWS S3 bucket to serve your static files.
+```
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+```
+
+Go to your overall directory and create a folder named `static`. This is where you will keep all your static files. Note that you should only do this for a development environment. In a production environment, you should set up an external store like an AWS S3 bucket to serve your static files.
 
 6. ### Update Installed Apps and define channel layer 
 
@@ -180,132 +182,133 @@ CHANNEL_LAYERS = {
 
 Now, let's get to the real deal.
 
-* Create models for the `lead_manager` app. Here, we will add models for Lead and Agent. The model `Lead` will represent customers and prospective customers. The model `Agent` will represent SalesFox salespersons who will be in touch with the customers. Copy and paste the following code snippet into `lead_manager/models.py`:
+Create models for the `lead_manager` app. Here, we will add models for Lead and Agent. The model `Lead` will represent customers and prospective customers. The model `Agent` will represent SalesFox salespersons who will be in touch with the customers. Copy and paste the following code snippet into `lead_manager/models.py`:
 
-  ```
-  from django.db import models
-  from django.contrib.auth.models import AbstractUser
+```
+from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 
-  #Users are staffs or partners that use the CRM
-  class User(AbstractUser):
-      country = models.CharField(max_length=100, blank=True)
-      address = models.CharField(max_length=200, blank=True)
-      phone_number = models.CharField(max_length=15, blank=True)
+#Users are staffs or partners that use the CRM
+class User(AbstractUser):
+    country = models.CharField(max_length=100, blank=True)
+    address = models.CharField(max_length=200, blank=True)
+    phone_number = models.CharField(max_length=15, blank=True)
+
+  def __str__(self):
+      return self.username
+
+
+class Lead(models.Model):
+    LEAD_SOURCES = (
+        ('organic_search', 'Organic Search'),
+        ('google_ad', 'Google Ad'),
+        ('youtube', 'YouTube'),
+        ('facebook', 'Facebook'),
+        ('instagram', 'Instagram'),
+        ('twitter', 'Twitter'),
+    )
+
+    MEDIA_CHOICES = (
+        ('sms', 'SMS'),
+        ('facebook', 'Facebook'),
+        ('phone_call', 'Phone call')
+    )
+
+    first_name = models.CharField(max_length=25, blank=True)
+    last_name = models.CharField(max_length=25, blank=True)
+    age = models.IntegerField(default=0)
+
+    facebook_id = models.CharField(max_length=100, blank=True)
+    phone_number = models.CharField(max_length=15, blank=True)
+
+    source = models.CharField(
+        choices=LEAD_SOURCES, 
+        max_length=50,
+        blank=True,
+        help_text="Where Lead found us",
+        default=LEAD_SOURCES[3][0]
+    )
+    preferred_medium = models.CharField(
+        choices=MEDIA_CHOICES, 
+        max_length=50,
+        default=MEDIA_CHOICES[1][0],
+        help_text="Lead's preferred social media for communication"
+    )
+    active = models.BooleanField(default=False)
+
+    profile_picture = models.ImageField(blank=True, null=True)
+
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_updated = models.DateTimeField(auto_now=True)
+
+    agent = models.ForeignKey("Agent", on_delete=models.SET_NULL, null=True, blank=True, related_name='leads')
 
     def __str__(self):
-        return self.username
+        return self.first_name
+
+    @property
+    def has_agent(self):
+        return self.agent is not None
 
 
-  class Lead(models.Model):
-      LEAD_SOURCES = (
-          ('organic_search', 'Organic Search'),
-          ('google_ad', 'Google Ad'),
-          ('youtube', 'YouTube'),
-          ('facebook', 'Facebook'),
-          ('instagram', 'Instagram'),
-          ('twitter', 'Twitter'),
-      )
+class Agent(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='agent')
 
-      MEDIA_CHOICES = (
-          ('sms', 'SMS'),
-          ('facebook', 'Facebook'),
-          ('phone_call', 'Phone call')
-      )
+    def __str__(self):
+        return self.user.username
+```
 
-      first_name = models.CharField(max_length=25, blank=True)
-      last_name = models.CharField(max_length=25, blank=True)
-      age = models.IntegerField(default=0)
+We created a User model to represent every user in SalesFox - This could be community managers, region representatives, customer support, etc. However, to keep SalesFox as lean as possible, the only kind of users we have are the agents. 
 
-      facebook_id = models.CharField(max_length=100, blank=True)
-      phone_number = models.CharField(max_length=15, blank=True)
+The `Lead` model represents potential customers reaching out from their Facebook account. The facebook_id field represents the ID of a customer's Facebook account. It is the field we need for agents to send a direct message to customers on Facebook. The `Lead` model also has a preferred_medium field. It holds the customer's preferred means of communication. We will only focus on communicating via Facebook.
 
-      source = models.CharField(
-          choices=LEAD_SOURCES, 
-          max_length=50,
-          blank=True,
-          help_text="Where Lead found us",
-          default=LEAD_SOURCES[3][0]
-      )
-      preferred_medium = models.CharField(
-          choices=MEDIA_CHOICES, 
-          max_length=50,
-          default=MEDIA_CHOICES[1][0],
-          help_text="Lead's preferred social media for communication"
-      )
-      active = models.BooleanField(default=False)
-
-      profile_picture = models.ImageField(blank=True, null=True)
-
-      date_created = models.DateTimeField(auto_now_add=True)
-      date_updated = models.DateTimeField(auto_now=True)
-
-      agent = models.ForeignKey("Agent", on_delete=models.SET_NULL, null=True, blank=True, related_name='leads')
-
-      def __str__(self):
-          return self.first_name
-
-      @property
-      def has_agent(self):
-          return self.agent is not None
+```
+	
+	`AUTH_USER_MODEL = 'lead_manager.User'`
 
 
-  class Agent(models.Model):
-      user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='agent')
+```
 
-      def __str__(self):
-          return self.user.username
-  ```
+Now, let's create a `Message` model in the conversation app. The `Message` model represents a single message sent from/to SalesFox. Copy and Paste the following code snippet into `models.py` of the `conversation` app.
 
-  We created a User model to represent every user in SalesFox - This could be community managers, region representatives, customer support, etc. However, to keep SalesFox as lean as possible, the only kind of users we have are the agents. 
+```
+from django.db import models
+from django.contrib.contenttypes.models import ContentType
+from django.contrib.contenttypes.fields import GenericForeignKey
 
-  The `Lead` model represents potential customers reaching out from their Facebook account. The facebook_id field represents the ID of a customer's Facebook account. It is the field we need for agents to send a direct message to customers on Facebook. The `Lead` model also has a preferred_medium field. It holds the customer's preferred means of communication. We will only focus on communicating via Facebook.
+LEAD_MODEL = models.Q(app_label='lead_manager', model='Lead')
+AGENT_MODEL = models.Q(app_label='lead_manager', model='Agent')
+communicating_parties = LEAD_MODEL | AGENT_MODEL
 
-  ```
-  	
-  	`AUTH_USER_MODEL = 'lead_manager.User'`
+class Message(models.Model):
+    body = models.TextField()
 
+    sender_type = models.ForeignKey(
+        ContentType, 
+        limit_choices_to=communicating_parties,
+        null=True, blank=True, on_delete=models.SET_NULL, related_name="sent_messages"
+    ) 
+    sender_id = models.PositiveIntegerField(null=True, blank=True, db_index=True)
+    sender = GenericForeignKey(ct_field='sender_type', fk_field='sender_id')
 
-  ```
-* Now, let's create a `Message` model in the conversation app. The `Message` model represents a single message sent from/to SalesFox. Copy and Paste the following code snippet into `models.py` of the `conversation` app.
+    receiver_type = models.ForeignKey(
+        ContentType, 
+        limit_choices_to=communicating_parties,
+        null=True, blank=True, on_delete=models.SET_NULL, related_name="received_messages"
+    )
+    receiver_id = models.PositiveIntegerField(null=True, blank=True, db_index=True)
+    receiver = GenericForeignKey(ct_field='receiver_type', fk_field='receiver_id')
 
-  ```
-  from django.db import models
-  from django.contrib.contenttypes.models import ContentType
-  from django.contrib.contenttypes.fields import GenericForeignKey
+    date_created = models.DateTimeField(auto_now_add=True)
+    message_key = models.CharField(null=True, blank=True, max_length=50)
+    is_delivered = models.BooleanField(default=False)
 
-  LEAD_MODEL = models.Q(app_label='lead_manager', model='Lead')
-  AGENT_MODEL = models.Q(app_label='lead_manager', model='Agent')
-  communicating_parties = LEAD_MODEL | AGENT_MODEL
+    def __str__(self):
+        return "Message (%s) from %s to %s" % (self.id, self.sender, self.receiver)
+```
 
-  class Message(models.Model):
-      body = models.TextField()
-
-      sender_type = models.ForeignKey(
-          ContentType, 
-          limit_choices_to=communicating_parties,
-          null=True, blank=True, on_delete=models.SET_NULL, related_name="sent_messages"
-      ) 
-      sender_id = models.PositiveIntegerField(null=True, blank=True, db_index=True)
-      sender = GenericForeignKey(ct_field='sender_type', fk_field='sender_id')
-
-      receiver_type = models.ForeignKey(
-          ContentType, 
-          limit_choices_to=communicating_parties,
-          null=True, blank=True, on_delete=models.SET_NULL, related_name="received_messages"
-      )
-      receiver_id = models.PositiveIntegerField(null=True, blank=True, db_index=True)
-      receiver = GenericForeignKey(ct_field='receiver_type', fk_field='receiver_id')
-
-      date_created = models.DateTimeField(auto_now_add=True)
-      message_key = models.CharField(null=True, blank=True, max_length=50)
-      is_delivered = models.BooleanField(default=False)
-
-      def __str__(self):
-          return "Message (%s) from %s to %s" % (self.id, self.sender, self.receiver)
-  ```
-
-  In our `Message` model, we have two generic relations to identify the sender and recipient of the message. The sender and receiver can either be a lead or an agent. It means only Agents or Leads can send or receive messages. Visit [here](https://simpleisbetterthancomplex.com/tutorial/2016/10/13/how-to-use-generic-relations.html) to learn more about generic relations in Django.
+In our `Message` model, we have two generic relations to identify the sender and recipient of the message. The sender and receiver can either be a lead or an agent. It means only Agents or Leads can send or receive messages. Visit [here](https://simpleisbetterthancomplex.com/tutorial/2016/10/13/how-to-use-generic-relations.html) to learn more about generic relations in Django.
 
 Create a property method `messages` for the `Lead` model in lead_manager/models.py. This method returns all the incoming and outgoing messages of a lead.
 
@@ -339,159 +342,162 @@ def messages(self):
 
 Let's get started with the views.
 
-* In lead_manager, we will create views to perform CRUD operations on the Lead model. Go to the lead_manager app folder, then copy and paste the following code in views.py to create the views:
+In lead_manager, we will create views to perform CRUD operations on the Lead model. Go to the lead_manager app folder, then copy and paste the following code in views.py to create the views:
 
-  ```
-  from django.shortcuts import render, redirect
-  from django.urls import reverse
-  from django.views.generic import TemplateView, ListView, UpdateView, CreateView
-  from django.contrib import messages
-  from django.contrib.auth.mixins import LoginRequiredMixin
-  from django.core.exceptions import PermissionDenied
-  from django.contrib.auth.decorators import login_required
-  from .models import Lead
-  from .forms import LeadForm	
-      
-  class HomeView(TemplateView):
-      template_name = 'index.html'
-
-
-  class LeadListView(ListView, LoginRequiredMixin):
-      template_name = 'lead_manager/lead_list.html'
-      queryset = Lead.objects.all()
-      context_object_name = 'leads'
-
-      def dispatch(self, request, *args, **kwargs):
-          if not (request.user.is_superuser and hasattr(request.user, 'agent')):
-              return PermissionDenied
-          return super().dispatch(request, *args, **kwargs)
+```
+from django.shortcuts import render, redirect
+from django.urls import reverse
+from django.views.generic import TemplateView, ListView, UpdateView, CreateView
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
+from django.contrib.auth.decorators import login_required
+from .models import Lead
+from .forms import LeadForm	
+    
+class HomeView(TemplateView):
+    template_name = 'index.html'
 
 
-  class LeadCreateView(CreateView, LoginRequiredMixin):
-      template_name = 'lead_manager/lead_create.html'
-      form_class = LeadForm
+class LeadListView(ListView, LoginRequiredMixin):
+    template_name = 'lead_manager/lead_list.html'
+    queryset = Lead.objects.all()
+    context_object_name = 'leads'
 
-      def dispatch(self, request, *args, **kwargs):
-          if not (request.user.is_superuser and hasattr(request.user, 'agent')):
-              return PermissionDenied
-          return super().dispatch(request, *args, **kwargs)
-
-      def get_success_url(self):
-          return reverse('lead_manager:lead_list')
+    def dispatch(self, request, *args, **kwargs):
+        if not (request.user.is_superuser and hasattr(request.user, 'agent')):
+            return PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
 
 
-  class LeadUpdateView(UpdateView, LoginRequiredMixin):
-      template_name = 'lead_manager/lead_update.html'
-      queryset = Lead.objects.all()
-      form_class = LeadForm
+class LeadCreateView(CreateView, LoginRequiredMixin):
+    template_name = 'lead_manager/lead_create.html'
+    form_class = LeadForm
 
-      def dispatch(self, request, *args, **kwargs):
-          if not hasattr(request.user, 'agent'):
-              raise PermissionDenied
+    def dispatch(self, request, *args, **kwargs):
+        if not (request.user.is_superuser and hasattr(request.user, 'agent')):
+            return PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
 
-          return super().dispatch(request, *args, **kwargs)
-
-      def get_success_url(self):
-          messages.success(self.request, "{}'s info is successfully updated".format(self.get_object()))
-          return reverse('lead_manager:lead_update', args=[self.get_object().id])
+    def get_success_url(self):
+        return reverse('lead_manager:lead_list')
 
 
-  @login_required
-  def lead_delete(request, pk):
-      if not request.user.is_superuser:
-          return PermissionDenied
+class LeadUpdateView(UpdateView, LoginRequiredMixin):
+    template_name = 'lead_manager/lead_update.html'
+    queryset = Lead.objects.all()
+    form_class = LeadForm
 
-      lead = Lead.objects.only('id').get(id=pk)
-      lead.delete()
+    def dispatch(self, request, *args, **kwargs):
+        if not hasattr(request.user, 'agent'):
+            raise PermissionDenied
 
-      return redirect('lead_manager:lead_list')
+        return super().dispatch(request, *args, **kwargs)
 
-  ```
-
-  In the views above, we override the dispatch method to handle permissions for each view.
-* Create  `forms.py` inside the lead_manager app directory. In `forms.py`, define `LeadForm`:
-
-  ```
-  from django import forms
-  from .models import Lead
-
-  class LeadForm(forms.ModelForm):
-      class Meta:
-          model = Lead
-          fields = [
-              'first_name', 
-              'last_name', 
-              'age',
-              'facebook_id',
-              'phone_number',
-              'source', 
-              'preferred_medium', 
-              'agent'
-          ]
-  ```
-
-  Create `views.py` file inside a sub-folder in lead_manager named `agent`. And define your `AgentLoginView` and `AgentDashboardView` views.
-
-  ```
-  from django.contrib.auth.views import LoginView
-  from django.contrib.auth.mixins import LoginRequiredMixin
-  from django.core.exceptions import PermissionDenied
-  from django.views.generic.base import TemplateView
-
-  class AgentLoginView(LoginView):
-      template_name = 'lead_manager/agent_login.html'
+    def get_success_url(self):
+        messages.success(self.request, "{}'s info is successfully updated".format(self.get_object()))
+        return reverse('lead_manager:lead_update', args=[self.get_object().id])
 
 
-  class AgentDashboardView(LoginRequiredMixin, TemplateView):
-      template_name = 'lead_manager/agent_dashboard.html'
+@login_required
+def lead_delete(request, pk):
+    if not request.user.is_superuser:
+        return PermissionDenied
 
-      def dispatch(self, request, *args, **kwargs):
-          if not hasattr(request.user, 'agent'):
-              raise PermissionDenied
+    lead = Lead.objects.only('id').get(id=pk)
+    lead.delete()
 
-          return super().dispatch(request, *args, **kwargs)
+    return redirect('lead_manager:lead_list')
 
-      def get(self, request):
-          assigned_leads = request.user.agent.leads.all()
-          context = {
-              'assigned_leads': assigned_leads,
-          }
+```
 
-          return self.render_to_response(context)
-  ```
-* Let us create `lead_manager/urls.py` and `lead_manager/agent/urls.py`.
+In the views above, we override the dispatch method to handle permissions for each view.
 
-  Go to the lead_manager directory and create a `urls.py` file. Now, define URL patterns for lead_manager views.
+Create  `forms.py` inside the lead_manager app directory. In `forms.py`, define `LeadForm`:
 
-  ````
-  from django.urls import path
-  from . import views
+```
+from django import forms
+from .models import Lead
 
-  app_name = 'lead_manager'
-  urlpatterns = [
-      path('', views.LeadListView.as_view(), name='lead_list'),
-      path('create/', views.LeadCreateView.as_view(), name='lead_create'),
-      path('<int:pk>/update/', views.LeadUpdateView.as_view(), name='lead_update'),
-      path('<int:pk>/delete/', views.lead_delete, name='lead_delete'),
-  ]
-  ```
-  In your lead_manager directory, go to `agent` folder and create a file named `urls.py`. Define URL patterns for agent views as in the snippet below:
+class LeadForm(forms.ModelForm):
+    class Meta:
+        model = Lead
+        fields = [
+            'first_name', 
+            'last_name', 
+            'age',
+            'facebook_id',
+            'phone_number',
+            'source', 
+            'preferred_medium', 
+            'agent'
+        ]
+```
 
-  ```
-  from django.contrib.auth.views import LogoutView
-  from django.urls import path
-  from .views import AgentLoginView, AgentDashboardView  
+Create `views.py` file inside a sub-folder in lead_manager named `agent`. And define your `AgentLoginView` and `AgentDashboardView` views.
 
-  app_name = 'agent'
-  urlpatterns = [
-      path('login/', AgentLoginView.as_view(), name='agent_login'),
-      path('logout/', LogoutView.as_view(), name='agent_logout'),
-      path('dashboard/', AgentDashboardView.as_view(), name='agent_dashboard'),
-  ]
-  ````
+```
+from django.contrib.auth.views import LoginView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
+from django.views.generic.base import TemplateView
 
-  From the two `urls.py` in the lead_manager app, you can confirm that all the views we created in the lead_manager app have corresponding URL configurations.
-* Now, let's inform Django of the login URL, login redirect URL, and logout redirect URL. Add the following to `settings.py`
+class AgentLoginView(LoginView):
+    template_name = 'lead_manager/agent_login.html'
+
+
+class AgentDashboardView(LoginRequiredMixin, TemplateView):
+    template_name = 'lead_manager/agent_dashboard.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not hasattr(request.user, 'agent'):
+            raise PermissionDenied
+
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self, request):
+        assigned_leads = request.user.agent.leads.all()
+        context = {
+            'assigned_leads': assigned_leads,
+        }
+
+        return self.render_to_response(context)
+```
+
+Let us create `lead_manager/urls.py` and `lead_manager/agent/urls.py`.
+
+Go to the lead_manager directory and create a `urls.py` file. Now, define URL patterns for lead_manager views.
+
+````
+from django.urls import path
+from . import views
+
+app_name = 'lead_manager'
+urlpatterns = [
+    path('', views.LeadListView.as_view(), name='lead_list'),
+    path('create/', views.LeadCreateView.as_view(), name='lead_create'),
+    path('<int:pk>/update/', views.LeadUpdateView.as_view(), name='lead_update'),
+    path('<int:pk>/delete/', views.lead_delete, name='lead_delete'),
+]
+```
+In your lead_manager directory, go to `agent` folder and create a file named `urls.py`. Define URL patterns for agent views as in the snippet below:
+
+```
+from django.contrib.auth.views import LogoutView
+from django.urls import path
+from .views import AgentLoginView, AgentDashboardView  
+
+app_name = 'agent'
+urlpatterns = [
+    path('login/', AgentLoginView.as_view(), name='agent_login'),
+    path('logout/', LogoutView.as_view(), name='agent_logout'),
+    path('dashboard/', AgentDashboardView.as_view(), name='agent_dashboard'),
+]
+````
+
+From the two `urls.py` in the lead_manager app, you can confirm that all the views we created in the lead_manager app have corresponding URL configurations.
+
+Now, let's inform Django of the login URL, login redirect URL, and logout redirect URL. Add the following to `settings.py`
 
 ```
 LOGIN_URL = 'agent:agent_login'
@@ -503,73 +509,74 @@ Now, let's move to the conversation app.
 
 Besides views and URL configuration, you will also set up a web-socket consumer in the conversation app. It will enable communication between SalesFox agents and leads in real-time.
 
-* Let's create the `lead_conversation_room` view for the conversation room. Go to `views.py` in the conversation folder and paste the code snippet below	
+Let's create the `lead_conversation_room` view for the conversation room. Go to `views.py` in the conversation folder and paste the code snippet below	
 
-  ```
-  from  django.shortcuts  import  render
-  from  django.contrib.auth.decorators  import  login_required
-  from  django.http  import  HttpResponse, HttpResponseForbidden
-  from django.core.exceptions import PermissionDenied
-  from lead_manager.models import Lead	
-      
-  @login_required
-  def lead_conversation_room(request, lead_id):
-      if not hasattr(request.user, 'agent'):
-          return PermissionDenied
+```
+from  django.shortcuts  import  render
+from  django.contrib.auth.decorators  import  login_required
+from  django.http  import  HttpResponse, HttpResponseForbidden
+from django.core.exceptions import PermissionDenied
+from lead_manager.models import Lead	
+    
+@login_required
+def lead_conversation_room(request, lead_id):
+    if not hasattr(request.user, 'agent'):
+        return PermissionDenied
 
-      agent = request.user.agent
-      try:
-          lead = agent.leads.get(id=lead_id)
-      except Lead.DoesNotExist:
-          return HttpResponseForbidden()
+    agent = request.user.agent
+    try:
+        lead = agent.leads.get(id=lead_id)
+    except Lead.DoesNotExist:
+        return HttpResponseForbidden()
 
-      context = {"lead": lead}
-      return render(request, "conversation/room.html", context)
-  ```
+    context = {"lead": lead}
+    return render(request, "conversation/room.html", context)
+```
 
-  The `lead_conversation_room` view handles requests made by agents to open a conversation room with a customer.
-* Now, create `send_outbound` function. `send_outbound` function is responsible for sending messages from SalesFox to customers on Facebook Messenger. It takes the message to be sent and the lead facebook ID as arguments.
+The `lead_conversation_room` view handles requests made by agents to open a conversation room with a customer.
 
-  ```
-  from django.conf  import  settings
-  import  requests
-  import  json
-  import  base64
-  from  requests.exceptions  import  ConnectionError
+Now, create `send_outbound` function. `send_outbound` function is responsible for sending messages from SalesFox to customers on Facebook Messenger. It takes the message to be sent and the lead facebook ID as arguments.
 
-  def send_outbound(message, lead_facebook_id):
-      url = settings.VONAGE_MESSAGES_ENDPOINT
+```
+from django.conf  import  settings
+import  requests
+import  json
+import  base64
+from  requests.exceptions  import  ConnectionError
 
-      auth_param = settings.VONAGE_API_KEY + ":" + settings.VONAGE_API_SECRET
-      auth_code = base64.b64encode(auth_param.encode('utf-8'))
+def send_outbound(message, lead_facebook_id):
+    url = settings.VONAGE_MESSAGES_ENDPOINT
 
-      payload = json.dumps({
-      "from": {
-          "type": "messenger",
-          "id": settings.FACEBOOK_ID
-      },
-      "to": {
-          "type": "messenger",
-          "id": lead_facebook_id
-      },
-      "message": {
-          "content": {
-          "type": "text",
-          "text": message
-          }
-      }
-      })
-      headers = {
-      'Authorization': 'Basic %s' % auth_code.decode('utf-8'),
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-      }
-      try:
-          response = requests.request("POST", url, headers=headers, data=payload)
-      except ConnectionError:
-          return
-      return response
-  ```
+    auth_param = settings.VONAGE_API_KEY + ":" + settings.VONAGE_API_SECRET
+    auth_code = base64.b64encode(auth_param.encode('utf-8'))
+
+    payload = json.dumps({
+    "from": {
+        "type": "messenger",
+        "id": settings.FACEBOOK_ID
+    },
+    "to": {
+        "type": "messenger",
+        "id": lead_facebook_id
+    },
+    "message": {
+        "content": {
+        "type": "text",
+        "text": message
+        }
+    }
+    })
+    headers = {
+    'Authorization': 'Basic %s' % auth_code.decode('utf-8'),
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+    }
+    try:
+        response = requests.request("POST", url, headers=headers, data=payload)
+    except ConnectionError:
+        return
+    return response
+```
 
 Because we want real-time communication between leads and agents in the conversation room, we need to create a WebSocket on the client-side and set up a WebSocket consumer on the backend.
 
@@ -676,93 +683,96 @@ For every agent that opens the conversation page, there is a call to `Conversati
 
 Now, let's set up routing for our `ConversationConsumer`.
 
-* Create `routing.py` in the conversation app directory and paste the following:
-  		`
-  		from  django.urls  import  re_path
-  		from .consumers  import  ConversationConsumer
+Create `routing.py` in the conversation app directory and paste the following:
 
-  ```
-  	websocket_urlpatterns = [
-  	re_path(r'ws/conversation/(?P<lead_id>\d+)/$', ConversationConsumer),
-  	]
-  ```
-* Create a `routing.py` file in your project directory. This file holds the global routing configuration for the project. 
+```
+from  django.urls  import  re_path
+from .consumers  import  ConversationConsumer
 
-  ```
-  from  channels.routing  import  ProtocolTypeRouter, URLRouter
-  from  channels.auth  import  AuthMiddlewareStack
-  from  conversation  import  routing
+websocket_urlpatterns = [
+re_path(r'ws/conversation/(?P<lead_id>\d+)/$', ConversationConsumer),
+]
+```
 
-  application = ProtocolTypeRouter({
-      'websocket': AuthMiddlewareStack(URLRouter(
-          routing.websocket_urlpatterns
-      )),
-  })
-  ```
-* Now, reference `application` in `settings.py`  as ASGI application to be executed when Sales-Fox is served through asynchronous server gateway interface:
+Create a `routing.py` file in your project directory. This file holds the global routing configuration for the project. 
 
-  ```
-  ASGI_APPLICATION = 'sales_fox.routing.application'
-  ```
-* Let's create an `inbound` view. The `inbound` view receives a customer's message from Vonage, saves the message, and sends it to agents in the conversation room.
+```
+from  channels.routing  import  ProtocolTypeRouter, URLRouter
+from  channels.auth  import  AuthMiddlewareStack
+from  conversation  import  routing
 
-  ```
-  from  channels.layers  import  get_channel_layer
-  from  asgiref.sync  import  async_to_sync
-  from  django.views.decorators.http  import  require_POST
-  from  django.views.decorators.csrf  import  csrf_exempt
-  from  django.contrib.contenttypes.models  import  ContentType
-  from  lead_manager.models  import  Lead
-  from .models  import  Message
+application = ProtocolTypeRouter({
+    'websocket': AuthMiddlewareStack(URLRouter(
+        routing.websocket_urlpatterns
+    )),
+})
+```
+
+Now, reference `application` in `settings.py`  as ASGI application to be executed when Sales-Fox is served through asynchronous server gateway interface:
+
+```
+ASGI_APPLICATION = 'sales_fox.routing.application'
+```
+
+Let's create an `inbound` view. The `inbound` view receives a customer's message from Vonage, saves the message, and sends it to agents in the conversation room.
+
+```
+from  channels.layers  import  get_channel_layer
+from  asgiref.sync  import  async_to_sync
+from  django.views.decorators.http  import  require_POST
+from  django.views.decorators.csrf  import  csrf_exempt
+from  django.contrib.contenttypes.models  import  ContentType
+from  lead_manager.models  import  Lead
+from .models  import  Message
 
 
-  @require_POST
-  @csrf_exempt
-  def inbound(request):
-      from .consumers import create_conversation_group
-      body = json.loads(request.body)
-      channel_layer = get_channel_layer()
+@require_POST
+@csrf_exempt
+def inbound(request):
+    from .consumers import create_conversation_group
+    body = json.loads(request.body)
+    channel_layer = get_channel_layer()
 
-      message = body["message"]["content"].get("text")
-      lead_facebook_id = body["from"]["id"]
-      lead, _ = Lead.objects.get_or_create(facebook_id=lead_facebook_id)
-      if message:
-          sender_type = ContentType.objects.get_for_model(lead)
-          sender_id = lead.id
+    message = body["message"]["content"].get("text")
+    lead_facebook_id = body["from"]["id"]
+    lead, _ = Lead.objects.get_or_create(facebook_id=lead_facebook_id)
+    if message:
+        sender_type = ContentType.objects.get_for_model(lead)
+        sender_id = lead.id
 
-          message_data = dict(body=message, sender_type=sender_type, sender_id=sender_id)
-          agent = lead.agent
-          if agent:
-              receiver_type = ContentType.objects.get_for_model(agent)
-              receiver_id = agent.id
+        message_data = dict(body=message, sender_type=sender_type, sender_id=sender_id)
+        agent = lead.agent
+        if agent:
+            receiver_type = ContentType.objects.get_for_model(agent)
+            receiver_id = agent.id
 
-              message_data["receiver_type"] = receiver_type
-              message_data["receiver_id"] = receiver_id
+            message_data["receiver_type"] = receiver_type
+            message_data["receiver_id"] = receiver_id
 
-          message_obj = Message.objects.create(**message_data)
+        message_obj = Message.objects.create(**message_data)
 
-          conversation_group = create_conversation_group(lead.id)
-          try:
-              async_to_sync(channel_layer.group_send)(
-                  conversation_group,
-                  {
-                      "type": "send_to_conversation",
-                      "message": message,
-                      "from_agent": False, 
-                  } 
-              )
+        conversation_group = create_conversation_group(lead.id)
+        try:
+            async_to_sync(channel_layer.group_send)(
+                conversation_group,
+                {
+                    "type": "send_to_conversation",
+                    "message": message,
+                    "from_agent": False, 
+                } 
+            )
 
-              message_obj.is_delivered = True
-              message_obj.save()
-          except Exception as e:
-              print("Something went wrong")
-              print(e)
+            message_obj.is_delivered = True
+            message_obj.save()
+        except Exception as e:
+            print("Something went wrong")
+            print(e)
 
-      with open('inbound.txt', 'w') as inbound_file:
-          json.dump(body, inbound_file, sort_keys=True, indent=2)
-      return HttpResponse(status=204)
+    with open('inbound.txt', 'w') as inbound_file:
+        json.dump(body, inbound_file, sort_keys=True, indent=2)
+    return HttpResponse(status=204)
 
-  ```
+```
 
 Vonage sends message status updates via the status endpoint.
 
@@ -781,7 +791,7 @@ def  status(request):
 
 ```
 
-* Let's create URL configurations for the conversation app. Go to the conversation app directory and create `urls.py` file. Then copy and paste the code snippet below:
+Let's create URL configurations for the conversation app. Go to the conversation app directory and create `urls.py` file. Then copy and paste the code snippet below:
 
 ```
 from django.urls import path
@@ -819,215 +829,214 @@ if settings.DEBUG:
 
 Now that we're through with the backend of our project. Let's create the frontend files.
 
-* Go to your static folder in the overall directory and create a folder named `css`. In `css` folder, create two files `style.css` and `chat.css`.
+Go to your static folder in the overall directory and create a folder named `css`. In `css` folder, create two files `style.css` and `chat.css`.
 
-  In `styles.css`, copy and paste the following styles
+In `styles.css`, copy and paste the following styles
 
-  ```
-  .container {
-      margin: 30px;
-  }
+```
+.container {
+    margin: 30px;
+}
 
-  .link-group {
-      display: inline-flex; 
-      column-gap: 20px;
-  }
+.link-group {
+    display: inline-flex; 
+    column-gap: 20px;
+}
 
-  a {
-      text-decoration: none;
-  }
+a {
+    text-decoration: none;
+}
 
-  .list {
-      margin-bottom: 20px;
-  }
-  ```
+.list {
+    margin-bottom: 20px;
+}
+```
 
-  In chat.css, copy and paste the following styles:
+In chat.css, copy and paste the following styles:
 
-  ```
-  .container {
-      max-width: 500 !important;
-      margin: auto;
-      margin-top: 4%;
-      letter-spacing: 0.5px;
-  }
+```
+.container {
+    max-width: 500 !important;
+    margin: auto;
+    margin-top: 4%;
+    letter-spacing: 0.5px;
+}
 
-  .msg-header {
-      border: 1px solid #ccc;
-      width: 100%;
-      height: 10%;
-      border-bottom: none;
-      display: inline-block;
-      background-color: #007bff;
-  }
+.msg-header {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: 10%;
+    border-bottom: none;
+    display: inline-block;
+    background-color: #007bff;
+}
 
-  .active {
-      width: 120px;
-      float: left;
-      margin-top: 10px;
-  }
+.active {
+    width: 120px;
+    float: left;
+    margin-top: 10px;
+}
 
-  .active h4 {
-      font-size: 20px;
-      margin-left: 10px;
-      color: #fff;
-  }
+.active h4 {
+    font-size: 20px;
+    margin-left: 10px;
+    color: #fff;
+}
 
-  .msg-inbox {
-      border: 1px solid #ccc;
-      overflow: hidden;
-      padding-bottom: 20px;
-  }
+.msg-inbox {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
 
-  .chats {
-      padding: 30px 15px 0 25px;
+.chats {
+    padding: 30px 15px 0 25px;
 
-  }
+}
 
-  .msg-page {
-      height: 400px;
-      overflow-y: auto;
-  }
+.msg-page {
+    height: 400px;
+    overflow-y: auto;
+}
 
-  .received-msg {
-      display: inline-block;
-      padding: 0 0 0 10px;
-      vertical-align: top;
-      width: 53%;
-  }
+.received-msg {
+    display: inline-block;
+    padding: 0 0 0 10px;
+    vertical-align: top;
+    width: 53%;
+}
 
-  .received-msg p {
-      background: #efefef none repeat scroll;
-      border-radius: 10px;
-      color: #646464;
-      font-size: 14px;
-      margin: 0;
-      padding: 5px 10px 5px 12px;
-      width: 100%;
-  }
+.received-msg p {
+    background: #efefef none repeat scroll;
+    border-radius: 10px;
+    color: #646464;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
 
-  .time {
-      color: #777;
-      display: block;
-      font-size: 12px;
-      margin: 8px 0 0;
-  }
-  .outgoing-msg {
-      float: left;
-      width: 46%;
-      margin-left: 45%;
-  }
+.time {
+    color: #777;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+}
+.outgoing-msg {
+    float: left;
+    width: 46%;
+    margin-left: 45%;
+}
 
-  .outgoing-msg p {
-      background: #007bff none repeat scroll 0 0;
-      color: #fff;
-      border-radius: 10px;
-      font-size: 14px;
-      margin: 0;
-      padding: 5px 10px 5px 12px;
-      width: 100%;
-  }
+.outgoing-msg p {
+    background: #007bff none repeat scroll 0 0;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
 
-  .msg-bottom {
-      position: relative;
-      width: 100%;
-      height: 20%;
-      background: #007bff;
-      display: inline-block;
-  }
+.msg-bottom {
+    position: relative;
+    width: 100%;
+    height: 20%;
+    background: #007bff;
+    display: inline-block;
+}
 
-  .input-group {
-      float: right;
-      margin: 10px 20px 10px 0;
-      outline: none !important;
-      border-radius: 20px;
-      width: 61% !important;
-      background-color: #fff;
-  }
+.input-group {
+    float: right;
+    margin: 10px 20px 10px 0;
+    outline: none !important;
+    border-radius: 20px;
+    width: 61% !important;
+    background-color: #fff;
+}
 
-  .form-control {
-      border: none !important;
-      border-radius:  20px !important;
-  }
+.form-control {
+    border: none !important;
+    border-radius:  20px !important;
+}
 
-  .input-group-text {
-      background: transparent !important;
-      border: none !important;
-      color: #007bff;
-      cursor: pointer;
-  }
+.input-group-text {
+    background: transparent !important;
+    border: none !important;
+    color: #007bff;
+    cursor: pointer;
+}
 
-  .input-group-append {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-  }
+.input-group-append {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 
-  .input-group .fa {
-      color: #007bff;
-      float: right;
-  }
+.input-group .fa {
+    color: #007bff;
+    float: right;
+}
 
-  .bottom-icons {
-      float: left;
-      margin-top: 17ox;
-      width: 30px !important;
-      margin-left: 22px;
-  }
+.bottom-icons {
+    float: left;
+    margin-top: 17ox;
+    width: 30px !important;
+    margin-left: 22px;
+}
 
-  .bottom-icons .fa {
-      color: #007bff;
-      padding: 5px;
-  }
+.bottom-icons .fa {
+    color: #007bff;
+    padding: 5px;
+}
 
-  .form-control:focus {
-      border-color: none !important;
-      box-shadow: none !important;
-  }
+.form-control:focus {
+    border-color: none !important;
+    box-shadow: none !important;
+}
 
-  ```
+```
 
-  We will use the chat.css file for conversation `room.html` while we use styles.css for other pages. Now, in your overall directory, create a folder named templates and create two HTML files - `base.html` and `index.html`. You will extend `base.html` in every other HTML file except in conversation `room`.html.
+We will use the chat.css file for conversation `room.html` while we use styles.css for other pages. Now, in your overall directory, create a folder named templates and create two HTML files - `base.html` and `index.html`. You will extend `base.html` in every other HTML file except in conversation `room`.html.
 
-  In base.html, copy and paste the following
+In base.html, copy and paste the following
 
-  ```
-  {% load static %}
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+```
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
-      <title>{% block title %} Sales Fox {% endblock title %}</title>
-  </head>
-  <body>
-      <div class="container">
-      {% block content %}
-      {% endblock content %}
-      </div>
-  </body>
-  {% block script %}
-  {% endblock script %}
-  </html>
+    <title>{% block title %} Sales Fox {% endblock title %}</title>
+</head>
+<body>
+    <div class="container">
+    {% block content %}
+    {% endblock content %}
+    </div>
+</body>
+{% block script %}
+{% endblock script %}
+</html>
 
-  ```
+```
 
-  In index.html (Home page), copy and paste the following
+In index.html (Home page), copy and paste the following
 
-  ```
-  {% extends 'base.html' %}
-  {% load static %}
-  {% block content %}
-  ```
+```
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+```
 
 Now, go to the lead_manager application directory.
 Create a folder `templates` and in `templates`, create another folder `lead_manager`. In lead_manager/templates/lead_manager, create five html files - `lead_list.html`, `lead_create.html`, `lead_update.html`, `agent_login.html`, `agent_dashboard.html`.
 
 `lead_list.html`, 
-		`
 
 ```
  {% extends 'base.html' %}
