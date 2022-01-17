@@ -1028,7 +1028,6 @@ Create a folder `templates` and in `templates`, create another folder `lead_mana
 
 `lead_list.html`, 
 		`
-		
 
 ```
  {% extends 'base.html' %}
@@ -1060,115 +1059,115 @@ Create a folder `templates` and in `templates`, create another folder `lead_mana
 {% endblock content %}
 ```
 
-* `lead_create.html`, 
+`lead_create.html`, 
 
-  ````
-  	```
-  	{% extends 'base.html' %}
-  	{% load static %}
+```
+{% extends 'base.html' %}
+{% load static %}
 
-  	{% block content %}
-  	    <a href="{% url 'lead_manager:lead_list'  %}">Go to lead list</a>
-  	    <h1>Lead Creation Form</h1>
+{% block content %}
+    <a href="{% url 'lead_manager:lead_list'  %}">Go to lead list</a>
+    <h1>Lead Creation Form</h1>
 
-  	    <form action="." method="POST">
-  	        {% csrf_token %}
-  	        {{ form.as_p }}
-  	        <input type="submit" value="Send">
-  	    </form>
-  	{% endblock content %}
-  	```
-  ````
-* `lead_update.html`,
-  		`
-  		{% extends 'base.html' %}
-  		{% load static %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send">
+    </form>
+{% endblock content %}
+```
 
-  ````
-  	{% block content %}
-  	    <a href="{% url 'agent:agent_dashboard' %}">Go to dashboard</a>
+`lead_update.html`,
 
-  	    {% if messages %}
-  	    <ul class="messages">
-  	        {% for message in messages %}
-  	        <li{% if message.tags %}>{{ message }}</li>
-  	        {% endfor %}
-  	    </ul>
-  	    {% endif %}
+```
+{% extends 'base.html' %}
+{% load static %}	
 
-  	    <form action="." method="POST">
-  	        {% csrf_token %}
-  	        {{ form.as_p }}
-  	        <input type="submit" value="Send">
-  	    </form>
-  	{% endblock content %}
-  	```
-  ````
-* `agent_login.html`, 
-  		`
-  		{% extends 'base.html' %}
-  		{% load static %}
-  	
-  		{% block content %}
-  		    <h1>Login to your dashboard</h1>
+{% block content %}
+    <a href="{% url 'agent:agent_dashboard' %}">Go to dashboard</a>
 
-  ````
-  	    <form action="." method="POST">
-  	        {% csrf_token %}
-  	        {{ form.as_p }}
-  	        <input type="submit" value="Login">
-  	    </form>
-  	{% endblock content %}
-  	```
-  ````
-* `agent_dashboard.html`,
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
-  ````
-  	```
-  	{% extends 'base.html' %}
-  	{% load static %}
+    <form action="." method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send">
+    </form>
+{% endblock content %}
+	
+```
 
-  	{% block content %}
-  	    <h4>List of leads assigned to you</h4>
+`agent_login.html`
 
-  	    {% if messages %}
-  	    <ul class="messages">
-  	        {% for message in messages %}
-  	        <li{% if message.tags %} class="message-{{ message.tags }}"{% endif %}>{{ message }}</li>
-  	        {% endfor %}
-  	    </ul>
-  	    {% endif %}
-      
-  	    <div>
-  	        <ul>
-  	            {% for lead in assigned_leads %}
-  	            <li class="list">
-  	                <div class="link-group">
-  	                    <div style="width: 100px;">
-  	                        {{lead.first_name}} ({{lead.id}})
-  	                    </div>
-  	                    <a href="{% url 'lead_manager:lead_update' lead.id %}">Update</a>
-  	                    <a href="{% url 'conversation:lead-conversation-room' lead.id %}">Go to conversation room</a>
-  	                    </div>
-  	            </li>
-  	            {% empty %}
-  	            <p>No assigned lead</p>
-  	            {% endfor %}
-  	        </ul>
-  	    </div>
+```
+{% extends 'base.html' %}
+{% load static %}
 
-  	    <div class="link-group">
-  	        {% if request.user.is_superuser %}    
-  	        <a href="{% url 'lead_manager:lead_list' %}">View lead list</a>
-  	        <a href="{% url 'lead_manager:lead_create' %}">Create new lead</a>    
-  	        {% endif %}
-  	        <a href="{% url 'agent:agent_logout' %}">Logout</a>
-  	    </div>
-  	{% endblock content %}
-  	```
-  ````
+{% block content %}
+    <h1>Login to your dashboard</h1>
 
-  In the conversation app directory, create a folder `templates` and in `templates` folder create a sub-folder `conversation`.
+<form action="." method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Login">
+</form>
+{% endblock content %}
+
+```
+
+`agent_dashboard.html`
+
+```
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <h4>List of leads assigned to you</h4>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="message-{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <div>
+        <ul>
+            {% for lead in assigned_leads %}
+            <li class="list">
+                <div class="link-group">
+                    <div style="width: 100px;">
+                        {{lead.first_name}} ({{lead.id}})
+                    </div>
+                    <a href="{% url 'lead_manager:lead_update' lead.id %}">Update</a>
+                    <a href="{% url 'conversation:lead-conversation-room' lead.id %}">Go to conversation room</a>
+                    </div>
+            </li>
+            {% empty %}
+            <p>No assigned lead</p>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="link-group">
+        {% if request.user.is_superuser %}    
+        <a href="{% url 'lead_manager:lead_list' %}">View lead list</a>
+        <a href="{% url 'lead_manager:lead_create' %}">Create new lead</a>    
+        {% endif %}
+        <a href="{% url 'agent:agent_logout' %}">Logout</a>
+    </div>
+{% endblock content %}
+
+```
+
+In the conversation app directory, create a folder `templates` and in `templates` folder create a sub-folder `conversation`.
 
 Inside "conversation/templates/conversation" folder, create a `room.html` file. Copy and paste the following:
 
