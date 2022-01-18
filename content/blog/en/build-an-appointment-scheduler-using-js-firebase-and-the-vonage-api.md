@@ -116,6 +116,26 @@ The Firebase Realtime Database Rules determine who can access your database, how
 
 By the end of this tutorial, this is roughly how your project structure will look like. In the following steps, we will create the files that will build up the content, appearance, functionalities, and handle the services we will use.
 
+![Project Structure also displayed as a code block below for accessibility](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/projectstructure.png "Project Structure")
+
+```bash
+ appointment-scheduler  
+ | public  
+ | |- styles  
+ | | | L styles.css  
+ | |- favicon.ico  
+ | L index.html  
+ |- script  
+ |  |- server.js  
+ |- .env  
+ |- .firebaserc
+ |- README.md   
+ |- firebase.json   
+ |- package-lock.json  
+ |- package.json  
+ |- serviceAccountKey.json  
+```
+
 ## Setup
 
 * Create the project folder and `cd` into it: `mkdir appointment-scheduler && cd appointment-scheduler`
