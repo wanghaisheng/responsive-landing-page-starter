@@ -3,7 +3,7 @@ title: Build an Appointment Scheduler using Node, Firebase, and Vonage
 description: Learn how to build an appointment scheduler using Node.js,
   Firebase, Express and the Vonage Messages API
 thumbnail: /content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/appointment-scheduler.png
-author: abdul-ajetunmobi
+author: amanda-cavallaro
 published: true
 published_at: 2022-01-12T10:06:03.139Z
 updated_at: 2021-12-16T12:45:57.260Z
@@ -41,7 +41,7 @@ To start, let's create a new project from the [Firebase console](https://console
 ![Project being created](/content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/2projectbeingcreated.png "Project being created")
 
 * Once the project is ready, click to continue. You will be taken to your project's console view
-* Set the Billing type by clicking on the gear icon ⚙️, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use Blaze. This pay-as-you-go plan is required when using a third-party API
+* Set the Billing type by clicking on the gear icon, followed by Usage and Billing, then on the Details & Settings tab and modify the plan to use Blaze. This pay-as-you-go plan is required when using a third-party API
 
 ### Install Firebase Tools CLI
 
@@ -115,24 +115,6 @@ The Firebase Realtime Database Rules determine who can access your database, how
 ## Create the Project Structure
 
 By the end of this tutorial, this is roughly how your project structure will look like. In the following steps, we will create the files that will build up the content, appearance, functionalities, and handle the services we will use.
-
-```bash
-📦appointment-scheduler  
- ┣ 📂public  
- ┃ ┣ 📂styles  
- ┃ ┃ ┗ 📜styles.css  
- ┃ ┣ 📜favicon.ico  
- ┃ ┗ 📜index.html  
- ┣ 📂script  
- ┃ ┣ 📜server.js  
- ┣ 📜.env  
- ┣ 📜.firebaserc
- ┣ 📜README.md   
- ┣ 📜firebase.json   
- ┣ 📜package-lock.json  
- ┣ 📜package.json  
- ┣ 📜serviceAccountKey.json  
-```
 
 ## Setup
 
