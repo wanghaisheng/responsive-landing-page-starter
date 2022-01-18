@@ -23,7 +23,7 @@ The start of a new year is generally a time for looking forward and planning thi
 
 This time of year can also be a time of reflection. Last year was challenging for many reasons, and in some ways was a year many people would rather forget. That shouldn't mean we forget the high points and successes, so in this post we want to cover a few of the highlights from Q4 of 2021.
 
-### Delivering a Better Developer Experience
+### Making a Better Developer Experience
 
 **Vonage Video Express**
 
