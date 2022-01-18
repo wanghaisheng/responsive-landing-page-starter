@@ -51,7 +51,7 @@ We think that there is incredible potential in this platform for developing all 
 
 Delivering a better experience for developers isn't always about building new tools and features. It can also be about helping to deal with external changes in the wider ecosystem. One example of this has been the new regulatory requirements in the US around using 10-digit Long Codes for business text messaging. These changes have been made for understandable reasons, but dealing with regulatory changes that directly impact your applications can be confusing and frustrating. In [this post](https://learn.vonage.com/blog/2022/01/17/a2p-10dlc-what-you-need-to-know/), our Community Manager, Caroline, tells you exactly what you need to know about 10DLC, and its implications for sending business SMS messages via your applications.
 
-### Growing Conversational Commerce
+### Growing Your Business Conversational Commerce
 
 **Payments over the Phone**
 
