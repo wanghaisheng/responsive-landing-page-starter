@@ -48,13 +48,13 @@ We think that there is incredible potential in this platform for developing all 
 
 **10DLC Guidelines**
 
-Delivering a better experience for developers isn't always about building new tools and features. It can also be about helping to deal with external changes in the wider ecosystem. One example of this has been the new regulatory requirements in the US around using 10-digit Long Codes for business text messaging. These changes have been made for understandable reasons, but dealing with regulatory changes that directly impact your applications can be confusing and frustrating. In [this post](https://learn.vonage.com/blog/2022/01/17/a2p-10dlc-what-you-need-to-know/) our Community Manager, Caroline, tells you exactly what you need to know about 10DLC, and it's implications for sending business SMS messages via your applications.
+Delivering a better experience for developers isn't always about building new tools and features. It can also be about helping to deal with external changes in the wider ecosystem. One example of this has been the new regulatory requirements in the US around using 10-digit Long Codes for business text messaging. These changes have been made for understandable reasons, but dealing with regulatory changes that directly impact your applications can be confusing and frustrating. In [this post](https://learn.vonage.com/blog/2022/01/17/a2p-10dlc-what-you-need-to-know/), our Community Manager, Caroline, tells you exactly what you need to know about 10DLC, and its implications for sending business SMS messages via your applications.
 
 ### Supporting Conversational Commerce
 
 **Payments over the Phone**
 
-Conversational Commerce has been a huge growth area in recent years, and is set for even more rapid growth this year and into the future. Of course, a key aspect of leveraging this trend is the ability to accept payments from customers. Payments over the Phone allows you to securely charge payment cards using the Vonage Voice API. [Here](https://learn.vonage.com/blog/2022/01/11/payments-over-the-phone-now-supports-multi-currency/), our Developer Advocate, Abdul, outlines how Payments over the Phone now supports Multi-currency payments.
+Conversational Commerce has been a huge growth area in recent years and is set for even more rapid growth this year and into the future. Of course, a key aspect of leveraging this trend is the ability to accept payments from customers. Payments over the Phone allows you to securely charge payment cards using the Vonage Voice API. [Here](https://learn.vonage.com/blog/2022/01/11/payments-over-the-phone-now-supports-multi-currency/), our Developer Advocate, Abdul, outlines how Payments over the Phone now supports Multi-currency payments.
 
 **Messages API Improvements, including New WhatsApp Capabilities**
 
