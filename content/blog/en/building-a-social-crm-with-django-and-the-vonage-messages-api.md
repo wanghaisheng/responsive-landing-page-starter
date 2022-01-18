@@ -1,7 +1,8 @@
 ---
 title: Building a Social CRM with Django and the Vonage Messages API
 description: Learn how to build a social CRM using Django and the Vonage Messages API
-author: cory-althoff
+thumbnail: /content/blog/building-a-social-crm-with-django-and-the-vonage-messages-api/social-crm_django.png
+author: tolulope-olanrewaju
 published: true
 published_at: 2022-01-04T20:12:13.200Z
 updated_at: 2022-01-04T20:12:13.243Z
