@@ -1,7 +1,7 @@
 ---
 title: Build an Appointment Scheduler using Node, Firebase, and Vonage
-description: Let's build an appointment scheduler using Node.js, Firebase,
-  Express and the Vonage Messages API.
+description: Learn how to build an appointment scheduler using Node.js,
+  Firebase, Express and the Vonage Messages API
 thumbnail: /content/blog/build-an-appointment-scheduler-using-node-firebase-and-vonage/appointment-scheduler.png
 author: amanda-cavallaro
 published: true
