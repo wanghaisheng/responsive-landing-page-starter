@@ -2,9 +2,10 @@
 title: A Look Back at Some Highlights from Q4
 description: A retrospective of some of the new features and product relaeses
   during Quarter 4 2021
+thumbnail: /content/blog/a-look-back-at-some-highlights-from-q4/quaterly-releases.png
 author: karl-lingiah
 published: true
-published_at: 2022-01-17T13:28:54.865Z
+published_at: 2022-01-18T15:10:38.309Z
 updated_at: 2022-01-17T13:28:54.963Z
 category: announcement
 tags:
