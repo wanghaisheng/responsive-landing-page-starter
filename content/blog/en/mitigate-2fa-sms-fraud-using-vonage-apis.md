@@ -37,7 +37,7 @@ There are various ways of mitigating this kind of fraud.
 
 ### Rate limiting
 
-One approach could be to limit the number of verification SMS messages sent within a given period of time based on various factors. For example, limiting the number of messages sent to the same number, or to the same IP address or device id.
+One approach could be to limit the number of verification SMS messages sent within a given period of time based on various factors. For example, limiting the number of messages sent to the same number or the same IP address or device id.
 
 While rate limiting can lessen the impact of such a fraud, it may not negate it entirely. Equally important is running a hygiene check on numbers provided for 2FA set-up, helping prevent the source of the fraud itself. This can be achieved through robust input validation.
 
