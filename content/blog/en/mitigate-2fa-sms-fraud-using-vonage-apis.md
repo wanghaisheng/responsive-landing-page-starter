@@ -127,7 +127,7 @@ An updated workflow incorporating Number Insights API might look something like 
 
 3. On subsequent logins, as part of the 2FA verification, an SMS is sent to the number with a code that the customer can then enter via the application UI
 
-Although using the Number Insight API to help identify potentially fraudulent numbers, can have some immediate benefits in terms of fraud mitigation, this approach is unfortunately somewhat limited in terms of overall impact. The information provided by Number Insights is highly dependent on individual providers. There are also tricky decisions to be made in terms of which data points to use; blocking entire countries, for example, may not be an option for business reasons, even if numbers originating from those countries carry a greater risk of fraudulent activity.
+Although using the Number Insight API to help identify potentially fraudulent numbers can have some immediate benefits in terms of fraud mitigation, this approach is unfortunately somewhat limited in terms of overall impact. The information provided by Number Insights is highly dependent on individual providers. There are also tricky decisions to be made regarding which data points to use; blocking entire countries, for example, may not be an option for business reasons, even if numbers originating from those countries carry a greater risk of fraudulent activity.
 
 Another step, which can provide longer-term and more overarching mitigation, is contributing to robust routing data via the Vonage Conversion API.
 
