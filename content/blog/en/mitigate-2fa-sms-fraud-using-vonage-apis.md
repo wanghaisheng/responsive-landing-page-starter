@@ -23,7 +23,7 @@ Two-Factor Authentication (2FA) via SMS has been around for some time, and in re
 
 ## Fraud scenario: SMS 2FA Premium Rate Fraud
 
-A common motivation for this type of fraudulent activity, is to route messages through to Premium Rate numbers, or virtual numbers created by fraudsters as unofficial premium numbers. In order to understand how this fraud is perpetrated, let's first walk through a typical high-level workflow for implementing 2FA via SMS.
+A common motivation for this type of fraudulent activity is to route messages through to Premium Rate numbers or virtual numbers created by fraudsters as unofficial premium numbers. In order to understand how this fraud is perpetrated, let's first walk through a typical high-level workflow for implementing 2FA via SMS.
 
 1. A customer signs up or creates an account for an application
 2. As part of sign-up/ account creation process, the customer specifies a mobile number to be used for 2FA purposes
