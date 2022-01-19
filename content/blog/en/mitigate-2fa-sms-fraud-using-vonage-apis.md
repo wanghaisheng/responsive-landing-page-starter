@@ -153,4 +153,4 @@ Within the high-level workflow, the Conversion API would come into play at Step 
 
 
 
-Please contact your account manager or sales when you are ready to implement Conversion API.
+Please contact your account manager or sales when you are ready to implement the Conversion API.
