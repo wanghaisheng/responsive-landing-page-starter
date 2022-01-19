@@ -120,7 +120,7 @@ This response contains data points about the number such as `country_code`, `cou
 An updated workflow incorporating Number Insights API might look something like this:
 
 1. A customer signs up or creates an account for an application
-2. As part of sign-up/ account creation process, the customer specifies a mobile number to be used for 2FA purposes
+2. As part of the sign-up/account creation process, the customer specifies a mobile number to be used for 2FA purposes
 
 * Make a HTTP request to the Number Insights API to obtain information on this number
 * Use the data in the response to check the number against certain pre-set parameters. If the number is deemed to be acceptable according to these parameters, it is added, otherwise it is rejected.
