@@ -46,7 +46,7 @@ While rate limiting can lessen the impact of such a fraud, it may not negate it 
 Looking at the high level workflow from earlier, Step 3 is where the impact of the fraud occurs but the potential for this impact is created earlier, at Step 2, when the Premium Rate number is set up as the number to be used for 2FA. By performing some input validation at this point in the sign-up workflow, it's possible to prevent a Premium Rate number being routed to at Step 3. Let's look at an updated workflow that incorporates input validation:
 
 1. A customer signs up or creates an account for an application
-2. As part of sign-up/ account creation process, the customer specifies a mobile number to be used for 2FA purposes
+2. As part of the sign-up/account creation process, the customer specifies a mobile number to be used for 2FA purposes
 
 * The specified number is checked against certain pre-set parameters. If the number is deemed to be acceptable according to these parameters, it is added, otherwise it is rejected.
 
