@@ -65,7 +65,7 @@ As an aside here, since this fraudulent input is often carried out by bots, impl
 
 ### Use the Vonage Number Insights API
 
-A simple way of obtaining number identity information is via the Vonage Number Insights API. To do this we can send a request to the appropriate API endpoint. There are different endpoints for Basic, Standard, and Advanced Insights, with each providing a different level of information about the number. An overview of the differences is available in [this document](https://developer.vonage.com/number-insight/overview#basic-standard-and-advanced-apis). There is also an [API specification](https://developer.vonage.com/api/number-insight) covering all of the endpoints.
+A way of obtaining number identity information is via the Vonage Number Insights API. To do this, we can send a request to the appropriate API endpoint. There are different endpoints for Basic, Standard, and Advanced Insights, with each providing a different level of information about the number. An overview of the differences is available in [this document](https://developer.vonage.com/number-insight/overview#basic-standard-and-advanced-apis). There is also an [API specification](https://developer.vonage.com/api/number-insight) covering all of the endpoints.
 
 The Number Insights API can also be used via the Vonage SDKs. Below is an example of using the Node.js SDK to obtain information on a number via the Advanced Insights endpoint.
 
