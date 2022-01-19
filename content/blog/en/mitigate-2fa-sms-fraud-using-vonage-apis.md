@@ -115,7 +115,7 @@ A typical response from a request to the API would look something like this:
 }
 ```
 
-This response contains data points about the number such as `country_code`, `country_code_iso3`, and `country_prefix` which can be used to identify the country of origin. In addition to country data, other data points can sometimes indicate potentially fraudulent numbers. A `network_type` of `undefined`, or one that indicates a virtual number can sometimes be an indicator. Another useful datapoint is the `reachable` property; if this has a value `unknown`, or something other than `"reachable"`, it could indicate a potentially fraudulent number.
+This response contains data points about the number such as `country_code`, `country_code_iso3`, and `country_prefix`, which can be used to identify the country of origin. In addition to country data, other data points can sometimes indicate potentially fraudulent numbers. A `network_type` of `undefined`, or one that alludes to a virtual number, can sometimes be an indicator. Another useful data point is the `reachable` property; if this has a value `unknown`, or something other than `"reachable"`, it could indicate a potentially fraudulent number.
 
 An updated workflow incorporating Number Insights API might look something like this:
 
