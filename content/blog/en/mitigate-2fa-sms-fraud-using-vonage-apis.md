@@ -1,9 +1,10 @@
 ---
 title: Mitigate 2FA SMS Fraud using Vonage APIs
 description: An overview of 2FA SMS fraud, and some potential mitigations against it
+thumbnail: /content/blog/mitigate-2fa-sms-fraud-using-vonage-apis/fraud-mitigation.jpg
 author: karl-lingiah
 published: true
-published_at: 2022-01-17T15:44:30.209Z
+published_at: 2022-01-19T07:54:54.303Z
 updated_at: 2022-01-17T15:44:30.295Z
 category: tutorial
 tags:
