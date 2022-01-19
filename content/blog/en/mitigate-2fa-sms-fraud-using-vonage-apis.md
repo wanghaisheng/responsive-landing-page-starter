@@ -152,5 +152,4 @@ Within the high-level workflow, the Conversion API would come into play at Step 
 * Once confirmation that the customer has successfully entered the verification code has been received via the associated webhook, send a HTTP request containing the relevant message-id to the Conversion API.
 
 
-
 Please contact your account manager or sales when you are ready to implement the Conversion API.
