@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Communications technology is ever evolving, and the pace of change has been rapid over recent years. This evolution has brought many benefits to the businesses which leverage these technologies, providing improved interaction with customers and intelligent automation. Unfortunately, there are also bad actors who look to exploit changes in technological trends for nefarious reasons. One example of this is the increase in SMS 2FA fraud.
+Communications technology is ever-evolving, and the pace of change has been rapid over recent years. This evolution has brought many benefits to the businesses which leverage these technologies, providing improved interaction with customers and intelligent automation. Unfortunately, there are also bad actors who look to exploit changes in technological trends for nefarious reasons. One example of this is the increase in SMS 2FA fraud.
 
 Two-Factor Authentication (2FA) via SMS has been around for some time, and in recent years it has seen a massive increase in popularity. Most applications these days will offer 2FA, often implemented via the use of an SMS communication channel. Due to this popularity, 2FA systems have become something of a draw for fraudsters who seek to exploit these systems in various ways, such as routing non-legitimate traffic through them.
 
