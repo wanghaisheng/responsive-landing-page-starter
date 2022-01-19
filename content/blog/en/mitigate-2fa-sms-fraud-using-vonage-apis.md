@@ -57,7 +57,7 @@ The exact parameters used to identify potentially fraudulent numbers will vary a
 This type of number information could be used in a couple of ways:
 
 * Only allow numbers from certain countries. This approach is useful if, for example, you know that all of your customers will originate from a specific country that has a high level of regulation of Premium Rate numbers, and so a much lower likelihood for fraud of this type.
-* Prevent numbers from [specific countries](https://help.nexmo.com/hc/en-us/articles/360018406532) where you do not operate or hold a client audience.  Additionally, some countries hold a high fraud risk reputation, either due to known Premium Rate number fraud or where monetary kick back  on number fraud is prevalent (with light or no regulation on Premium Rate numbers).
+* Prevent numbers from [specific countries](https://help.nexmo.com/hc/en-us/articles/360018406532) where you do not operate or hold a client audience.  Additionally, some countries hold a high fraud risk reputation, either due to known Premium Rate number fraud or where monetary kickback  on number fraud is prevalent (with light or no regulation on Premium Rate numbers).
 
 As an aside here, since this fraudulent input is often carried out by bots, implementing a CAPTCHA can prevent some of the fraudulent activity.
 
