@@ -142,7 +142,7 @@ Since the objective for fraudsters is for the SMS to be sent rather than actuall
 Within the high-level workflow, the Conversion API would come into play at Step 3. Once the customer enters the verification code into the application, details of this action can be received via a webhook associated with the action. A more detailed overview of a typical 2FA workflow is available in [this document](https://developer.vonage.com/messaging/us-short-codes/guides/2fa/). For the purposes of our high-level workflow, an updated version might look something like this:
 
 1. A customer signs up or creates an account for an application
-2. As part of sign-up/ account creation process, the customer specifies a mobile number to be used for 2FA purposes
+2. As part of the sign-up/account creation process, the customer specifies a mobile number to be used for 2FA purposes
 
 * Make a HTTP request to the Number Insights API to obtain information on this number
 * Use the data in the response to check the number against certain pre-set parameters. If the number is deemed to be acceptable according to these parameters, it is added, otherwise it is rejected.
