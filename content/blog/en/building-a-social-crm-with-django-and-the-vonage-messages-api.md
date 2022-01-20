@@ -18,9 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Building a Social CRM with Django and Vonage Messages API
-
-  In this article, you will learn how to build the core feature of a social CRM using Django and Vonage Messages API. Our social CRM will help sales agents and the customer support team communicate with potential customers directly on Facebook in real-time. Let's call it Sales Fox.
+In this article, you will learn how to build the core feature of a social CRM using Django and Vonage Messages API. Our social CRM will help sales agents and the customer support team communicate with potential customers directly on Facebook in real-time. Let's call it Sales Fox.
 
 ## Pre-requisites
 
