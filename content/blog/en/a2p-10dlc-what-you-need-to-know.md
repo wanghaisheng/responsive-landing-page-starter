@@ -33,7 +33,7 @@ Historically in the United States, P2P (person-to-person) traffic (not A2P traff
 
 Since A2P (application-to-person) traffic on long codes has not been supported by the carriers historically, businesses have been forced to utilize short codes for their A2P needs. However, for carriers that are opting to launch and support A2P for 10DLC in the USA, this limitation will be lifted and A2P traffic will be allowed (with new guidelines).
 
-You may wonder why the change from short to long codes. The reason this new regulation has been introduced is to cut down on spamming and misuse of messages for illegal and intrusive activities. 
+You may wonder why additional option for A2P was introduced. The reason this new regulation has been introduced is to cut down on spamming and misuse of messages for illegal and intrusive activities. It also offers a cost effective option for customers to migraine off of US shared short codes.
 
 **Please Note:** Adherence to new rules mentioned below is a requirement and fines will be imposed on accounts found to be non-compliant.
 
@@ -46,7 +46,7 @@ There are two important requirements to keep in mind about the new A2P 10DLC sys
 * First, businesses have to identify **who** they are to the carrier networks (Brand Registration). 
 * Second, businesses must register **what type** of messages they are sending, i.e. notifications, etc. (Campaign Registration). 
 
-Each wireless carrier is launching their A2P 10 DLC capabilities with unique guidelines and on different timelines. We’ve outlined the current status of carrier launches for you on this page and will continue to update you with what we know, how the changes will affect you, and what you can do to ensure the optimum benefits of your services and solutions with us.
+Each wireless carrier is launching their A2P 10 DLC capabilities with unique guidelines and on different timelines. We’ve outlined the current fees for you on this page and will continue to update you with what we know, how the changes will affect you, and what you can do to ensure the optimum benefits of your services and solutions with us.
 
 T-Mobile and AT&T’s new Code of Conduct prohibits the use of shared originators, therefore, Shared Short codes are not an acceptable format for A2P messaging.
 
@@ -68,11 +68,11 @@ Verizon:
 
 AT&T: 
 
-* Pass-through fee for registered traffic to mobile terminated (MT) messages: $.002 or €0.00166 per SMS. 
+* Pass-through fee for registered/unregistered traffic to mobile terminated (MT) messages: $.002 or €0.00166 per SMS. 
 
 T-Mobile & Sprint:
 
-* Pass-through fee for registered/unregistered per SMS: $0.004 or €0.00332.
+* Pass-through fee for registered: $0.003 per mobile terminated (MT) and MO message. Pass-through fee for unregistered: $0.004 or €0.00332 per mobile terminated (MT) and MO message starting March 1st, 2022.
 
 Other Carriers:
 
