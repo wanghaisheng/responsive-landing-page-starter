@@ -195,6 +195,8 @@ Hopefully, this list gave you some inspiration for your next coding project. Aft
 
 Whether you are excited about the same APIs as I am or are more interested in other APIs on the list, with all of these excellent APIs to choose from,  it is such an exciting time to be a programmer!
 
+Do you need even more inspiration? Check out [The Ultimate List of Ideas for Your Next Hackathon](https://learn.vonage.com/blog/2021/10/27/31-hackathon-ideas-for-your-next-marathon-coding-event/).
+
 Best of luck with your next coding project!
 
 <!--EndFragment-->
