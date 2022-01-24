@@ -13,7 +13,7 @@ tags:
   - python
   - django
 comments: true
-spotlight: false
+spotlight: true
 redirect: ""
 canonical: ""
 outdated: false
@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 ## Introduction
 
-[Bulk SMS](https://www.bandwidth.com/glossary/bulk-sms/) comes in handy when marketing teams need to do promotional campaigns. Organizations can also deploy them to pass information to a large group of people. 
+Bulk SMS comes in handy when marketing teams need to do promotional campaigns. Organizations can also deploy them to pass information to a large group of people. 
 
 Problems can arise when you send a bulk SMS campaign meant to generate responses to a large audience. For instance, receiving thousands of inbound responses at once could overwhelm your team. One solution to this problem is to use throttling. For example, you can design a campaign to send the messages in batches, at specific periods, or both. 
 
