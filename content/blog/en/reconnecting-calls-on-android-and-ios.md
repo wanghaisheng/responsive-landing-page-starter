@@ -18,7 +18,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-When building software for mobile devices, it is common to take connectivity for granted. But when working with real-time communication, it is essential to consider how changes in connectivity can affect your app. The typical scenario of being on a cellular connection and reaching home and connecting to WiFi could present challenges as the device switches between the connections. This post will cover how to mitigate such issues when using the Vonage Client SDK for Android and iOS.
+The Vonage [Client SDK](https://developer.vonage.com/client-sdk/overview) allows you to build applications for iOS, Android, and the Web that feature voice and messaging communications backed by the Vonage [Conversation API](https://developer.vonage.com/conversation/overview).
+
+When building such apps, it is essential to consider how changes in connectivity can affect the app's experience. The typical scenario of being on a cellular connection and reaching home and connecting to WiFi could present challenges as the device switches between the connections. This post will cover how to mitigate such issues when using the Vonage Client SDK for Android and iOS.
 
 ## Automatically Reconnecting Calls
 
