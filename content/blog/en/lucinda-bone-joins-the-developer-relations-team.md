@@ -4,7 +4,7 @@ description: "Lucinda Bone joins the Developer Relations Team as EMEA Community 
 thumbnail: /content/blog/lucinda-bone-joins-the-developer-relations-team/lucinda-bone.png
 author: lucinda-bone
 published: true
-published_at: 2022-01-24T10:55:33.727Z
+published_at: 2022-01-24T10:55:44.870Z
 updated_at: 2022-01-14T10:31:12.578Z
 category: team
 tags:
