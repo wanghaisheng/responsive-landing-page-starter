@@ -1,9 +1,10 @@
 ---
 title: Lucinda Bone Joins the Developer Relations Team
 description: "Lucinda Bone joins the Developer Relations Team as EMEA Community Manager "
+thumbnail: /content/blog/lucinda-bone-joins-the-developer-relations-team/lucinda-bone.png
 author: lucinda-bone
 published: true
-published_at: 2022-01-14T10:31:12.421Z
+published_at: 2022-01-24T10:55:33.727Z
 updated_at: 2022-01-14T10:31:12.578Z
 category: team
 tags:
