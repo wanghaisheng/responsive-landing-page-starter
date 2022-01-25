@@ -2,9 +2,10 @@
 title: Reconnecting Calls on Android and iOS
 description: This post will cover how to mitigate call connection issues when
   using the Vonage Client SDK for Android and iOS.
+thumbnail: /content/blog/reconnecting-calls-on-android-and-ios/reconnecting-calls.jpg
 author: abdul-ajetunmobi
 published: true
-published_at: 2022-01-24T13:12:42.218Z
+published_at: 2022-01-25T10:51:24.183Z
 updated_at: 2022-01-24T13:12:42.354Z
 category: tutorial
 tags:
