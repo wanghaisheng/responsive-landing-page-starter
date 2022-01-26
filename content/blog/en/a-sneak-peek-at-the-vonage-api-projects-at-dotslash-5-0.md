@@ -44,7 +44,7 @@ As programmers, we often encounter a variety of issues during collaborative codi
 
 ### What Is The Biggest Problem?
 
-For voice calling features like Discord, we needed an API so that we do not have to reinvent the wheel and implement Webrtc from scratch. Luckily, we found a perfect API, that is, Vonage, which is one of the sponsors of the hackathon. The mentors from Vonage helped us to implement this audio calling feature smoothly.
+For voice calling features like Discord, we needed an API so that we do not have to reinvent the wheel and implement WebRTC from scratch. Luckily, we found a perfect API, that is, Vonage, which is one of the sponsors of the hackathon. The mentors from Vonage helped us to implement this audio calling feature smoothly.
 
 ### What Did You Learn?
 
