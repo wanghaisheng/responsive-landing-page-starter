@@ -28,10 +28,10 @@ Este passo a passo rápido mostrará como criar um registro de mensagens SMS e u
 
 ## Trancrição
 
-Você pode enviar mensagens SMS usando o Cloud Functions para Firebase.
-Você precisará criar algumas contas: 
-* Firebase
-* APIs da Vonage
+Você pode enviar mensagens de SMS usando o Cloud Functions para Firebase. Você precisará de criar duas contas:
+
+* Uma de Firebase
+* E outra de APIs da Vonage
 
 Crie o projeto no console do Firebase e escolha se você vai usar o Analytics.
 
@@ -39,9 +39,9 @@ Aguarde a criação do seu projeto.
 
 Selecione o plano de faturamento do Firebase, neste caso é o pagamento conforme o uso.
 
-Na linha de comando, instale as ferramentas do Firebase.
+A partir da linha de comandos, instale as ferramentas do Firebase.
 
-Efetue o login no Firebase e autentique.
+Efetue o login e autentique-se.
 
 Crie a pasta do projeto e altere o diretório dentro dela.
 
@@ -49,24 +49,21 @@ Inicialize o Cloud Functions para Firebase.
 
 Instale as dependências que vamos usar dentro da pasta functions.
 
-Crie um arquivo ponto env e adicione as variáveis de ambiente da Vonage lá.
+Crie um arquivo `.env` e adicione as variáveis de ambiente da Vonage lá.
 
-Dentro do arquivo index ponto js, adicione todas as dependências e variáveis de ambiente necessárias e inicialize o Firebase.
+Dentro do arquivo `index.js`, adicione todas as dependências e variáveis de ambiente necessárias e inicialize o Firebase.
 
-No mesmo arquivo, crie a primeira função que funcionará como um webhook para capturar e registrar mensagens SMS recebidas de um número de telefone Vonage.
+No mesmo arquivo, crie a primeira função que funcionará como um webhook para capturar e registrar mensagens de SMS recebidas de um número de telefone da Vonage.
 
-Vamos então criar uma função para o Firebase enviar o SMS de resposta
-e reagir às atualizações do banco de dados.
+Vamos então criar uma função para o Firebase enviar o SMS de resposta e reagir às atualizações do banco de dados.
 
-Implante a função, envie uma mensagem SMS do seu telefone para o
-Telefone do aplicativo Vonage.
+Implante a função, envie uma mensagem de SMS do seu telefone para o telefone do aplicativo da  Vonage.
 
-Você receberá uma mensagem SMS de resposta em seu telefone
-e uma atualização no Firebase Real-Time Database.
+Você receberá uma mensagem SMS de resposta em seu telefone e uma atualização no Banco de Dados Firebase Real-Time.
 
-Você pode encontrar o código completo no GitHub.
+O código completo está no GitHub.
 
-Obrigado por assistir e boa codificação!
+Obrigada por assistir e boa codificação!
 
 ## Links
 
