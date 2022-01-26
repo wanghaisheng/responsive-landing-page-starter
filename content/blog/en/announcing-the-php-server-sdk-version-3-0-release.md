@@ -16,7 +16,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Announcing the PHP Server SDK Version 3.0.0 Release
 
 For developers that have been following the recent roadmap of the [Vonage PHP Server SDK](https://github.com/Vonage/vonage-php-sdk-core), this release should look much as expected. In our previous [large release](https://learn.vonage.com/blog/2020/08/03/announcing-the-php-server-sdk-version-2-2-0-release/), previous maintainer [Chris Tankersley](https://ctankersley.com/) explained the goal to simplify the library, and I have continued that work.
 
