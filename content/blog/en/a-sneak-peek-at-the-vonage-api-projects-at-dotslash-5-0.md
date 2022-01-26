@@ -102,7 +102,7 @@ We came to know about Vonage API through the hackathon sessions and webinars. We
 
 We aim to integrate voice commands, a GUI for better usage. The project will also be equipped with auto-save functionality. Our final goal is to deploy the extensions so that the developer community can use them freely. As part of the plan, we will have user verification via OTP and send reminders via WhatsApp and Telegram using the WhatsApp message sender API from Vonage. The VSCode extension will also include video call and voice features for the developer teams.
 
-View the Mozart DevTool code on [GitHub](https://github.com/Mozart-dotSlash). Watch the CodeTogether [demo video](https://www.youtube.com/watch?v=QrUx8J_pDeI).
+View the Mozart DevTool [code on GitHub](https://github.com/Mozart-dotSlash). Watch the CodeTogether [demo video](https://www.youtube.com/watch?v=QrUx8J_pDeI).
 
 ## Conclusion
 
