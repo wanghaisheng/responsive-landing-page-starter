@@ -133,6 +133,6 @@ Similar to the support version bump for the container, `psr/log` v.2.0 is now su
 When creating an `Application\Client`, a shim exists for backward compatibility that allows the object to be created without an implementable `HydratorInterface` object. This shim has now been removed.
 
 #### Thanks for your support!
-My thanks go to Daniel Miedzik, Github user `iceleo-com`, and Fabien Salathe for contributions towards this release. There will be noticeable other changes that have already started in the maintenance of this library, such as keeping the issues list documented with appropriate labeling and speeding up response times. Our aim is to also move to more regular releases, in line with a more "CI" approach.
+My thanks go to Daniel Miedzik, Github user `iceleo-com`, and Fabien Salathe for contributions towards this release. There will be noticeable changes, some of which we've already begun to implement, with regards to the maintenance of this library, such as keeping the issues list documented with appropriate labelling and speeding up response times. Our aim is to also move to more regular releases, in line with a more "CI" approach.
 
 When we have removed the final marked deprecations in a future release, we're going to take steps to simplify the library further to encourage contributions from outside Vonage. After all, our libraries are Open Source!
