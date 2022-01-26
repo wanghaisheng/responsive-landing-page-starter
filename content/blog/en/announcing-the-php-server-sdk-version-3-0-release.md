@@ -107,7 +107,7 @@ $response = $client->voice()->createOutboundCall($outboundCall);
 
 #### Removal of `User` module
 
-The library originally had an incomplete implementation of a feature that was in the beta stage of the release cycle. This feature has now been dropped, and therefore the library has dropped support for it. There is no alternative functionality to replace this if it has been used, but as it was incomplete and marked for removal there should not be any impact on developers.
+The library originally had an incomplete implementation of a feature that was in the beta stage of the release cycle. This feature has now been dropped, and therefore the library has dropped support for it. There is no alternative functionality to replace this if it has been used, but as it was incomplete and marked for removal there should not be any impact in terms of using the SDK.
 
 ## Minor Changes
 These are changes that are very much "under the hood", behind the service layer of the library that is designed to be developer-facing. For transparency, I'm going to document a few of these changes.
