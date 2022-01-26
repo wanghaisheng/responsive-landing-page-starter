@@ -124,7 +124,7 @@ For continuously released, modern PHP Frameworks such as Laravel and Symfony, PS
 Previously this method would return an integer. This value is stored as a string from the API response made to populate it, and could possibly contain special characters. Given this, it has been changed to return a string.
 
 #### KeyPair changes
-The `Vonage\Client\Credentials\Keypair()` object now has an added method to get the `key` returned, `getKey()` This was added to add new testing to make sure that the JWT functionality behaves as expected.
+The `Vonage\Client\Credentials\Keypair()` object has a new method, `getKey()`, to get the `key`. This was added to support some additional testing of the JWT functionality.
 
 #### `psr/log` support
 Similar to the support version bump for the container, `psr/log` v.2.0 is now supported.
