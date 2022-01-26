@@ -32,7 +32,7 @@ Here is a look at the winning teams and what they experienced.
 
 ![CodeTogether application homepage](/content/blog/a-sneak-peek-at-the-vonage-api-projects-at-dotslash-5-0/codetogether-application-homepage.png "CodeTogether application homepage")
 
-CodeTogether was created by a group of 3 students – [Diya Karmakar](https://devfolio.co/@astron_diya), [Apara Biswas](https://devfolio.co/@apara) and [Shayan Debroy](https://devfolio.co/@shayancyber). This team also made it to the Top 10.
+CodeTogether was created by a group of 3 students – [Diya Karmakar](https://devfolio.co/@astron_diya), [Apara Biswas](https://devfolio.co/@apara), and [Shayan Debroy](https://devfolio.co/@shayancyber). This team also made it to the Top 10.
 
 ### What Does CodeTogether Do?
 
