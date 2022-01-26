@@ -17,7 +17,7 @@ outdated: false
 replacement_url: ""
 ---
 
-For developers that have been following the recent roadmap of the [Vonage PHP Server SDK](https://github.com/Vonage/vonage-php-sdk-core), this release should look much as expected. In our previous [large release](https://learn.vonage.com/blog/2020/08/03/announcing-the-php-server-sdk-version-2-2-0-release/), previous maintainer [Chris Tankersley](https://ctankersley.com/) explained the goal to simplify the library, and I have continued that work.
+For developers that have been following the recent roadmap of the [Vonage PHP Server SDK](https://github.com/Vonage/vonage-php-sdk-core), this release should look much as expected. In our previous [significant release](https://learn.vonage.com/blog/2020/08/03/announcing-the-php-server-sdk-version-2-2-0-release/), former maintainer [Chris Tankersley](https://ctankersley.com/) explained the goal of simplifying the library, and I have continued that work.
 
 This major release does, however, take into consideration a [change in team and therefore ownership](https://learn.vonage.com/blog/2021/10/11/james-seconde-joins-the-developer-relations-team/) of the SDK and therefore does not take out -every- deprecation. Coming in fresh to these libraries brings various challenges, such as understanding approaches previously taken as well as needing to meet the needs of our developers when it comes to the SDKs evolution. Some of the more complex 'under the hood' behaviour has been left as is, with the notices still present. These will still be removed but at a later time.
 
