@@ -25,7 +25,7 @@ This major release does, however, take into consideration a [change in team and 
 
 #### PHP Support
 
-The library will now track the [PHP language release lifecycle](https://www.php.net/supported-versions.php). As such, PHP8.1 is now supported, and support for versions 7.2 and 7.3 have been dropped.
+From this release onwards, the library will track the [PHP language release lifecycle](https://www.php.net/supported-versions.php). As such, PHP8.1 is now supported, and support for versions 7.2 and 7.3 have been dropped.
 
 #### Branching Strategy
 Although the majority of end-users will not be affected by this change, it significantly alters how the repository is structured for those that wish to contribute to this open-source library. The new workflow, designed to fall into line with [other Vonage Server SDKs](), looks like the following:
