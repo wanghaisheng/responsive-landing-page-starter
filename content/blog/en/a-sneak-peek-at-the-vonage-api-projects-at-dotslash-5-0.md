@@ -19,7 +19,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-![]()
 
 ## Introduction
 
