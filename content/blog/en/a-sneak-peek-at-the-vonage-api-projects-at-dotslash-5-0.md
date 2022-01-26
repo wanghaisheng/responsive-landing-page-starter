@@ -24,7 +24,7 @@ replacement_url: ""
 
 Vonage and the Sardar Vallabhbhai National Institute of Technology, Surat celebrated the start of the year 2022 with a hackathon called [DotSlash 5.0](https://hackdotslash.co.in/). Vonage is a proud sponsor of the online hackathon that challenged the student developers in India to build applications that are useful for society. In just 36 hours, more than 1,600 students designed and built 117 impressive projects. A variety of challenging problems statements was addressed, such as road safety, smart city management, developer tools, tech for everyone, personal growth & well-being, and much more.
 
-[Dwane Hemmings](https://learn.vonage.com/authors/dwanehemmings/), developer advocate at Vonage, led a successful [workshop](https://www.youtube.com/watch?v=NwaT81H8fIA) on the Vonage Video Express and Video API, which demonstrated how users can incorporate the API in their projects, in addition to other Communication APIs. 
+[Dwane Hemmings](https://learn.vonage.com/authors/dwanehemmings/), a developer advocate at Vonage, led a successful [workshop](https://www.youtube.com/watch?v=NwaT81H8fIA) on the Vonage Video Express and Video API, which demonstrated how users can incorporate the API in their projects, in addition to other Communication APIs. 
 
 Here is a look at the winning teams and what they experienced.
 
