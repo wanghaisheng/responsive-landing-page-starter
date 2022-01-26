@@ -1,6 +1,7 @@
 ---
 title: Announcing the PHP Server SDK Version 3.0 Release
 description: Announcing the PHP Server SDK Version 3.0 Release
+thumbnail: /content/blog/announcing-the-php-server-sdk-version-3-0-release/annoucnce.jpg
 author: james-seconde
 published: true
 published_at: 2022-01-26T10:02:41.734Z
