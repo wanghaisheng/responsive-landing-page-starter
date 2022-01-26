@@ -2,9 +2,10 @@
 title: A Sneak Peek at the Vonage API Projects at DotSlash 5.0
 description: The article provides an overview of the hackathon winning teams'
   projects and their experiences using the Vonage APIs.
+thumbnail: /content/blog/a-sneak-peek-at-the-vonage-api-projects-at-dotslash-5-0/dotslash.png
 author: clarisse-ng
 published: true
-published_at: 2022-01-24T14:26:33.936Z
+published_at: 2022-01-26T16:44:43.721Z
 updated_at: 2022-01-24T14:26:33.968Z
 category: event
 tags:
