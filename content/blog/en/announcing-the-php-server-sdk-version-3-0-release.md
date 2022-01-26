@@ -20,7 +20,7 @@ replacement_url: ""
 
 For developers that have been following the recent roadmap of the [Vonage PHP Server SDK](https://github.com/Vonage/vonage-php-sdk-core), this release should look much as expected. In our previous [large release](https://learn.vonage.com/blog/2020/08/03/announcing-the-php-server-sdk-version-2-2-0-release/), previous maintainer [Chris Tankersley](https://ctankersley.com/) explained the goal to simplify the library, and I have continued that work.
 
-This major release does, however, take into consideration a [change in team and therefore ownership](https://learn.vonage.com/blog/2021/10/11/james-seconde-joins-the-developer-relations-team/) of the SDK and therefore does not take out -every- deprecation. Coming in fresh to these libraries brings various challenges, such as understanding approaches previously taken as well as needing to meet the needs of our developers when it comes to the SDKs evolution. Some of the more complex 'under the hood' behaviour has been left as is, with the notices still present. These will still be removed, but at a later time.
+This major release does, however, take into consideration a [change in team and therefore ownership](https://learn.vonage.com/blog/2021/10/11/james-seconde-joins-the-developer-relations-team/) of the SDK and therefore does not take out -every- deprecation. Coming in fresh to these libraries brings various challenges, such as understanding approaches previously taken as well as needing to meet the needs of our developers when it comes to the SDKs evolution. Some of the more complex 'under the hood' behaviour has been left as is, with the notices still present. These will still be removed but at a later time.
 
 ## Major Changes
 
@@ -29,7 +29,7 @@ This major release does, however, take into consideration a [change in team and 
 The library will now track the [PHP language release lifecycle](https://www.php.net/supported-versions.php). As such, PHP8.1 is now supported, and support for versions 7.2 and 7.3 have been dropped.
 
 #### Branching Strategy
-Although the majority of end users will not be affected by this change, it significantly alters how the repository is structured for those that wish to contribute to this open source library. The new workflow, designed to fall into line with [other Vonage Server SDKs](), looks like the following:
+Although the majority of end-users will not be affected by this change, it significantly alters how the repository is structured for those that wish to contribute to this open-source library. The new workflow, designed to fall into line with [other Vonage Server SDKs](), looks like the following:
 
 * `main` branch (renamed from version branches such as `3.X`/`2.X`)
 * `dev` branch
@@ -108,7 +108,7 @@ $response = $client->voice()->createOutboundCall($outboundCall);
 
 #### Removal of `User` module
 
-The library originally had an incomplete implementation of a feature that was in a beta stage of the release cycle. This feature has now been dropped, and therefore the library has dropped support for it. There is no alternative functionality to replace this if it has been used, but as it was incomplete and marked for removal there should not be any impact on developers.
+The library originally had an incomplete implementation of a feature that was in the beta stage of the release cycle. This feature has now been dropped, and therefore the library has dropped support for it. There is no alternative functionality to replace this if it has been used, but as it was incomplete and marked for removal there should not be any impact on developers.
 
 ## Minor Changes
 These are changes that are very much "under the hood", behind the service layer of the library that is designed to be developer-facing. For transparency, I'm going to document a few of these changes.
@@ -122,7 +122,7 @@ A number of tests were marked as incomplete or skipped, with given reasons. Give
 For continuously released, modern PHP Frameworks such as Laravel and Symfony, PSR-11 support for v2.0 of the service container has been added with no impact.
 
 #### `Basic::getCountryPrefix()` return value
-Previously this method would return an integer. This value is stored as a string from the API response made to populate it, and could possible contain special characters. Given this, it has been changed to return a string.
+Previously this method would return an integer. This value is stored as a string from the API response made to populate it, and could possibly contain special characters. Given this, it has been changed to return a string.
 
 #### KeyPair changes
 The `Vonage\Client\Credentials\Keypair()` object now has an added method to get the `key` returned, `getKey()` This was added to add new testing to make sure that the JWT functionality behaves as expected.
@@ -134,6 +134,6 @@ Similar to the support version bump for the container, `psr/log` v.2.0 is now su
 When creating an `Application\Client`, a shim exists for backward compatibility that allows the object to be created without an implementable `HydratorInterface` object. This shim has now been removed.
 
 #### Thanks for your support!
-My thanks go to Daniel Miedzik, Github user `iceleo-com`, and Fabien Salathe for contributions towards this release. There will be noticeable other changes that have already started in the maintenance of this library, such as keeping the issues list documented with appropriate labelling and speeding up response times. Our aim is to also move to more regular releases, in line with a more "CI" approach.
+My thanks go to Daniel Miedzik, Github user `iceleo-com`, and Fabien Salathe for contributions towards this release. There will be noticeable other changes that have already started in the maintenance of this library, such as keeping the issues list documented with appropriate labeling and speeding up response times. Our aim is to also move to more regular releases, in line with a more "CI" approach.
 
 When we have removed the final marked deprecations in a future release, we're going to take steps to simplify the library further to encourage contributions from outside Vonage. After all, our libraries are Open Source!
