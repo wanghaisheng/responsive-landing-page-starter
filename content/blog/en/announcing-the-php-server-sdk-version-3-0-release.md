@@ -37,7 +37,7 @@ Although the majority of end-users will not be affected by this change, it signi
 
 #### Removal of Array Access
 
-The biggest code change to the library is almost all array accessors -which were marked as deprecated- have now been removed. Previously all entities used the `ArrayAccess` interface to implement various core PHP functions like `offsetExists()` and `offsetSet($offset, value)`. These caused complexity, especially as some entities actually proxied the value into a `request` object.
+The biggest code change to the library is almost all array accessors, which were marked as deprecated, have now been removed. Previously all entities used the `ArrayAccess` interface to implement various core PHP functions like `offsetExists()` and `offsetSet($offset, value)`. These caused unnecessary complexity, especially as some entities actually proxied the value into a `request` object.
 
 Now that these have been removed, you use getters and setters instead. For example:
 
