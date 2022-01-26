@@ -48,7 +48,7 @@ For voice calling features like Discord, we needed an API so that we do not have
 
 ### What Did You Learn?
 
-We learned about integrating Vonage API and implementing audio call functionality in our platform through the session hosted by Dwane Hemmings. Though we had prior knowledge about real-time communication with websockets, it was our first time implementing the websocket in this manner.
+We learned about integrating Vonage API and implementing audio call functionality in our platform through the session hosted by Dwane Hemmings. Though we had prior knowledge about real-time communication with WebSockets, it was our first time implementing the WebSocket in this manner.
 
 ### How’s Your Experience Using The Vonage APIs?
 
