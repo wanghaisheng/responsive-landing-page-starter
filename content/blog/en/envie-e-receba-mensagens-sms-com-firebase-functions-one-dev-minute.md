@@ -22,7 +22,7 @@ replacement_url: ""
 ---
 Boas vindas ao [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY)! Esta série está hospedada no [canal de YouTube VonageDev](https://www.youtube.com/vonagedev). O objetivo desta série de vídeos é compartilhar conhecimento de uma maneira breve.
 
-Este passo a passo rápido mostrará como criar um registro de mensagens SMS e uma resposta ao remetente usando o Firebase Cloud Functions e o Banco de Dados Real Time Database junto com a API de SMS da Vonage.
+Este passo a passo rápido mostrará como criar um registro de mensagens SMS e uma resposta ao remetente usando o Firebase Cloud Functions e o Banco de Dados Real Time Database juntamente a API de SMS da Vonage.
 
 <youtube id="c8gHy_KvQAE"></youtube>
 
@@ -47,7 +47,7 @@ Crie a pasta do projeto e altere o diretório dentro dela.
 
 Inicialize o Cloud Functions para Firebase.
 
-Instale as dependências que vamos usar dentro da pasta functions.
+Instale as dependências que vamos usar dentro da pasta `functions`.
 
 Crie um arquivo `.env` e adicione as variáveis de ambiente da Vonage lá.
 
