@@ -1,6 +1,6 @@
 ---
 title: Announcing the PHP Server SDK Version 3.0 Release
-description: Announcing the Vonage PHP Server SDK Version 3.0 Release
+description: The Vonage PHP Server SDK Version 3.0 is here. Find out what's new!
 thumbnail: /content/blog/announcing-the-php-server-sdk-version-3-0-release/php_sdk-updates.png
 author: james-seconde
 published: true
