@@ -24,7 +24,7 @@ Boas vindas ao [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsni
 
 Este passo a passo rápido mostrará como criar um registro de mensagens SMS e uma resposta ao remetente usando o Firebase Cloud Functions e o Banco de Dados Real Time Database juntamente a API de SMS da Vonage.
 
-<youtube id="c8gHy_KvQAE"></youtube>
+<youtube id="v2sh3KHyKXc"></youtube>
 
 ## Trancrição
 
