@@ -107,7 +107,7 @@ Using the Copy the `API Key` and `URL` found on the IBM Watson Translation Manag
 
 ## Setting Up Vonage Inbound SMS Messages
 
-This example requires a phone number from Vonage to receive inbound messages. We can do this by using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#installation) right from a terminal.
+This example requires a phone number from Vonage to receive inbound messages. We can do this by using the [Vonage CLI](https://developer.vonage.com/application/vonage-cli) right from a terminal.
 
 ### Purchase a Virtual Phone Number
 
