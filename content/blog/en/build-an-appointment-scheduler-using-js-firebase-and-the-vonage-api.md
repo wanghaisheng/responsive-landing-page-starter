@@ -429,27 +429,28 @@ Finally, once the slot is reserved, an SMS confirmation is sent back to the user
 ```javascript
   // Sends an SMS back to the user's phone using the Vonage Messages API
   sendSMStoUser = async (code) => {
-    const from = process.env.VONAGE_FROM_NUMBER;
     const to = phonenumber;
     const text = `Meeting booked at ${time} on date: ${date}. Please save this code: ${code} in case you'd like to cancel your appointment.`;
     const result = await new Promise((resolve, reject) => {
-      vonage.message.sendSms(from, to, text, (err, responseData) => {
-        if (err) {
-          return reject(new Error(err));
-        } else {
-          if (responseData.messages[0].status === '0') {
-            return resolve(
-              `Message sent successfully: ${responseData.messages[0]['message-id']}`
-            );
+      vonage.channel.send(
+        { type: 'sms', number: VONAGE_TO_NUMBER },
+        { type: 'sms', number: 'Vonage' },
+        {
+          content: {
+            type: 'text',
+            text: text,
+          },
+        },
+        (err, responseData) => {
+          if (err) {
+            console.log('Message failed with error:', err);
           } else {
-            return reject(
-              new Error(
-                `Message failed with error: ${responseData.messages[0]['error-text']}`
-              )
+            console.log(
+              `Message ${responseData.message_uuid} sent successfully.`
             );
           }
         }
-      });
+      );
     });
   };
 ```
