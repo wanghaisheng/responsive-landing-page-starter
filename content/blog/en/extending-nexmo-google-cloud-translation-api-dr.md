@@ -15,7 +15,7 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Text messaging has become a part of our daily lives.  We integrate it into multiple aspects like banking, alerts, marketing, and support. It has become simple to implement, and Nexmo is no different.  
+Text messaging has become a part of our daily lives.  We integrate it into multiple aspects like banking, alerts, marketing, and support. It has become simple to implement, and Vonage is no different.  
 
 As a part of the Extend team here, integrating text messages with translation API's makes perfect sense. Translating incoming text messages can help break down communication barriers and help you reach a broader audience.
 
