@@ -65,7 +65,7 @@ Now you need a number so you can receive calls. You can rent one by using the fo
 
 ```
 vonage numbers:search US
-vonage numbers:buy \[NUMBER] \[COUNTRYCODE]
+vonage numbers:buy [NUMBER] [COUNTRYCODE]
 ```
 
 Now link the number to your app:
@@ -81,7 +81,7 @@ You can find all the code for this project in [this GitHub repository](https://g
 To get started, you need to install the JavaScript libraries you will use for this project like this: 
 
 ```
-npm install ​​express body-parser dotenv firebase mongodb mongoose nexmo@beta
+npm install express body-parser dotenv firebase mongodb mongoose nexmo@beta
 ```
 
 Now, create a file called `app.js` and import these libraries:
@@ -192,12 +192,12 @@ Now, let’s define an endpoint to send an SMS message. Add this code to `app.js
 
 ```
 app.post('/alert', function(req, res){
-   let long = req.body\['coordinates']
-   let lat = req.body\['coordinates']
-   let contacts = req.body\['contacts']
+   let long = req.body['coordinates']
+   let lat = req.body['coordinates']
+   let contacts = req.body['contacts']
    for (let i = 0; i <= contacts.length; i++) {
        vonage.channel.send(
-           { "type": "sms", "number": contacts\[i].number},
+           { "type": "sms", "number": contacts[i].number},
            { "type": "sms", "number": process.env.FROM_NUMBER},
            {
                "content": {
@@ -221,9 +221,9 @@ app.post('/alert', function(req, res){
 This endpoint accepts a POST request with JSON containing the user’s latitude, longitude, and a list of numbers to send an SMS message to. 
 
 ```
-let long = req.body\['coordinates']
-let lat = req.body\['coordinates']
-let contacts = req.body\['contacts']
+let long = req.body['coordinates']
+let lat = req.body['coordinates']
+let contacts = req.body['contacts']
 ```
 
 Then, it loops through the contacts and uses the Vonage Messages API to send a message to each number. 
@@ -231,7 +231,7 @@ Then, it loops through the contacts and uses the Vonage Messages API to send a m
 ```
   for (let i = 0; i <= contacts.length; i++) {
        vonage.channel.send(
-           { "type": "sms", "number": contacts\[i].number},
+           { "type": "sms", "number": contacts[i].number},
            { "type": "sms", "number": process.env.FROM_NUMBER},
            {
                "content": {
@@ -316,10 +316,10 @@ Now, define `create_contacts`:
 
 ```
 function create_contacts(contacts) {
-   data\['contacts'] = \[]
+   data['contacts'] = []
    for (let i = 0; i < contacts.length; i++) {
-       let contact = contacts\[i]
-       data\['contacts'].push(contact)
+       let contact = contacts[i]
+       data['contacts'].push(contact)
        const newDiv = document.createElement("div");
        newDiv.className = 'left'
        const newContent = document.createTextNode(contact.name);
@@ -353,9 +353,9 @@ Finally, you need to define a function that responds when a user clicks the ALER
 ```
 function alert_them(){
    function success(position) {
-       data\['coordinates'] = {}
-       data\['coordinates'] = position.coords.latitude
-       data\['coordinates'] = position.coords.longitude
+       data['coordinates'] = {}
+       data['coordinates'] = position.coords.latitude
+       data['coordinates'] = position.coords.longitude
        let xmlHttp = new XMLHttpRequest();
        xmlHttp.open("POST", '/alert', true);
        xmlHttp.setRequestHeader("Content-Type", "application/json");
