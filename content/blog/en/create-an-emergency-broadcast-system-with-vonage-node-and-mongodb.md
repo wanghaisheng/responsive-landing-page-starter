@@ -146,7 +146,7 @@ const vonage = new Vonage({
 })
 ```
 
-The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. It gets this information from a `.env `file in your project, so create a `.env` file and add it to your project, and add the following variables:
+The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. It gets this information from a `.env`file in your project, so create a `.env` file and add it to your project, and add the following variables:
 
 ```javascript
 API_KEY=your_vonage_api_key
@@ -360,6 +360,7 @@ function alert_them(){
        xmlHttp.open("POST", '/alert', true);
        xmlHttp.setRequestHeader("Content-Type", "application/json");
        xmlHttp.send(JSON.stringify(data));
+       alert("Message Sent!");
    }
 
    function error(){
@@ -395,65 +396,74 @@ Create a new file in public called `style.css` and add the following code:
 
 ```css
 body {
-   background-color: lavenderblush;
-   text-align: center
+    background-color: lavenderblush;
+    text-align: center
 }
 
 h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
 
 .forms{
-   height: 2.5em;
-   width: 30%;
+    height: 2.5em;
+    width: 30%;
 }
 
 .tons {
-   margin-top: 1em;
-   background-color: #4CAF50; / *Green* /
-   border: none;
-   color: #f8f8ff;
-   padding: 15px 32px;
-   text-align: center;
-   text-decoration: none;
-   display: inline-block;
-   font-size: 22px;
-   font-family: Arial, serif;
+    margin-top: 1em;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: #f8f8ff;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 22px;
+    font-family: Arial, serif;
 }
 
 .custom-field input {
-   border: none;
-   -webkit-appearance: none;
-   -ms-appearance: none;
-   -moz-appearance: none;
-   appearance: none;
-   background: #f2f2f2;
-   padding: 12px;
-   border-radius: 3px;
-   width: 250px;
-   font-size: 14px;
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    font-size: 14px;
 }
 
 #alert {
-   margin-bottom: 5em;
-   margin-top:1em;
-   background-color:red;
+    margin-bottom: 5em;
+    margin-top:1em;
+    background-color:red;
+}
+
+#alert:hover {
+    background-color: black;
 }
 
 #add{
-   background-color:black;
+    background-color:black;
+}
+
+#add:hover {
+    background-color: pink;
 }
 
 #top{
-   margin-top: 5em;
-   margin-bottom: 1.5em;
+    margin-top: 5em;
+    margin-bottom: 1.5em;
 }
 
 .cons{
-   font-size: 22px;
+    font-size: 22px;
 }
 
 #number{
-   margin-top: 1em;
+    margin-top: 1em;
 }
+
 ```
 
 Now when you go to your website’s homepage, you should see a website like the preview at the beginning of this article. 
