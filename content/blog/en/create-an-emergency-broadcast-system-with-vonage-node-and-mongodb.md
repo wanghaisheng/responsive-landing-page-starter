@@ -56,7 +56,6 @@ CD my_project
 
 Now, use the CLI to create a Vonage application with this command:
 
-
 ```
 vonage apps:create
 ```
@@ -80,7 +79,6 @@ You can find all the code for this project in [this GitHub repository](https://g
 ### Building the Broadcast System
 
 To get started, you need to install the JavaScript libraries you will use for this project like this: 
-
 
 ```
 npm install ​​express body-parser dotenv firebase mongodb mongoose nexmo@beta
@@ -112,9 +110,9 @@ app.listen(port, () => {
 }) 
 ```
 
-When you run this code on your local server on port 3000 (http://127.0.0.1:3000), and go to the homepage, it should say `Hello, World! `
+When you run this code on your local server on port 3000 (http://127.0.0.1:3000), and go to the homepage, it should say `Hello, World!`
 
-Now, add this code underneath` const app = express()`:
+Now, add this code underneath`const app = express()`:
 
 ```
 app.use( bodyParser.json() );
@@ -188,10 +186,11 @@ app.get('/contacts', function(req, res){
 })
 ```
 
-This code gets all of the contacts in your database and returns it as JSON when you send a GET request to /contacts. 
+This code gets all of the contacts in your database and returns it as JSON when you send a GET request to `/contacts`. 
 
-Now, let’s define an endpoint to send an SMS message. Add this code to app.js: 
+Now, let’s define an endpoint to send an SMS message. Add this code to `app.js`: 
 
+```
 app.post('/alert', function(req, res){
    let long = req.body\['coordinates']
    let lat = req.body\['coordinates']
@@ -217,14 +216,21 @@ app.post('/alert', function(req, res){
        );
    }
 })
+```
 
 This endpoint accepts a POST request with JSON containing the user’s latitude, longitude, and a list of numbers to send an SMS message to. 
+
+```
 let long = req.body\['coordinates']
 let lat = req.body\['coordinates']
 let contacts = req.body\['contacts']
+```
 
 Then, it loops through the contacts and uses the Vonage Messages API to send a message to each number. 
-   for (let i = 0; i <= contacts.length; i++) {
+ 
+
+```
+  for (let i = 0; i <= contacts.length; i++) {
        vonage.channel.send(
            { "type": "sms", "number": contacts\[i].number},
            { "type": "sms", "number": process.env.FROM_NUMBER},
@@ -235,23 +241,29 @@ Then, it loops through the contacts and uses the Vonage Messages API to send a m
                        `their longitude is ${long}!`
                }
            },
+```
 
 Finally, let’s update our hompeage endpoint to handle when users go to our web app’s homepage. Change this code from earlier:
 
+```
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
+```
 
 To this:
 
+```
 app.get('/', function(req, res){
    res.sendFile('index.html')
 })
+```
 
 Now, your homepage will serve the file index.html, which you are about to create. 
 
 Go ahead and create a new file called index.html and add the following code: 
 
+```
 <!DOCTYPE html>
 
 <html lang="en">
@@ -276,28 +288,34 @@ Go ahead and create a new file called index.html and add the following code:
    <div></div>
    <div id="contacts"></div>
    <button onclick="alert_them()" class="tons" id="alert">ALERT</button>
+```
 
-The HTML above creates a form that allows you to enter a person’s name and number and press an “Add” button. When you press “Add” the form sends a POST request to /contacts, which creates a new contact in your database. Your HTML also has an ALERT button. When you press it, it sends a POST request to /alert, which sends an SMS message to all of the contacts in your database. 
+The HTML above creates a form that allows you to enter a person’s name and number and press an “Add” button. When you press “Add” the form sends a POST request to `/contacts`, which creates a new contact in your database. Your HTML also has an ALERT button. When you press it, it sends a POST request to `/alert`, which sends an SMS message to all of the contacts in your database. 
 
-Finally, you need to add some JavaScript to this HTML to display the user’s list of contacts and prepare the data to send to /alert. 
+Finally, you need to add some JavaScript to this HTML to display the user’s list of contacts and prepare the data to send to `/alert`. 
 
 After the ALERT button in your HTML, add a script tag and define an object called data.
 
+```
 <script>
 let data = {}
 </script>
+```
 
-We will use data to store the data to send to /alert. 
+We will use data to store the data to send to `/alert`. 
 
-Next, call a function called httpPostAsync and pass in ‘/contacts’ and create_contacts:
+Next, call a function called `httpPostAsync` and pass in `‘/contacts’ `and `create_contacts`:
 
+```
 <script>
 let data = {}
 httpPostAsync('/contacts', create_contacts)
 </script>
+```
 
-Now, define create_contacts:
+Now, define `create_contacts`:
 
+```
 function create_contacts(contacts) {
    data\['contacts'] = \[]
    for (let i = 0; i < contacts.length; i++) {
@@ -311,10 +329,13 @@ function create_contacts(contacts) {
        document.body.insertBefore(newDiv, currentDiv);
    }
 }
+```
 
-This is a callback function httpPostAsync will call when it gets the contact data from the server. It accepts contacts as a parameter (the contact data). First, this function adds an array to data\['contacts']. Then, it loops through the contacts from the server and adds each contact to the array and creates a new HTML div with each contact’s name. 
+This is a callback function `httpPostAsync` will call when it gets the contact data from the server. It accepts contacts as a parameter (the contact data). First, this function adds an array to `data['contacts']`. Then, it loops through the contacts from the server and adds each contact to the array and creates a new HTML `div` with each contact’s name. 
 
-Now, you need to define httpPostAsync: 
+Now, you need to define `httpPostAsync`: 
+
+```
 function httpPostAsync(theUrl, callback) {
    let xmlHttp = new XMLHttpRequest();
    xmlHttp.onreadystatechange = function() {
@@ -324,10 +345,13 @@ function httpPostAsync(theUrl, callback) {
    xmlHttp.open("GET", theUrl, true); // true for asynchronous
    xmlHttp.send(null);
 }
+```
 
 This code sends a GET request to a URL and passes in the JSON it receives in the response to a callback function. 
 
 Finally, you need to define a function that responds when a user clicks the ALERT button.
+
+```
 function alert_them(){
    function success(position) {
        data\['coordinates'] = {}
@@ -348,23 +372,30 @@ function alert_them(){
        navigator.geolocation.getCurrentPosition(success, error);
    }
 }
+```
 
-This function checks to see if navigator.geolocation is true. Navigator.geolocation lets you get the user’s location. You have to check if it is true because some browser versions do not support it. If it is true, the function above calls navigator.geolocation.getCurrentPosition(success, error) and passes in two functions: one that handles what happens if the browser successfully gets the user’s location and one that handles errors.
+This function checks to see if `navigator.geolocation` is `true`. `Navigator.geolocation` lets you get the user’s location. You have to check if it is true because some browser versions do not support it. If it is true, the function above calls `navigator.geolocation.getCurrentPosition(success, error)` and passes in two functions: one that handles what happens if the browser successfully gets the user’s location and one that handles errors.
 
-The success function adds the user’s coordinates to data\['coordinates'] and then sends a POST request to /alert with the data. 
+The success function adds the user’s coordinates to `data['coordinates']` and then sends a POST request to `/alert` with the data. 
+
+```
 function success(position) {
-       data\['coordinates'] = {}
-       data\['coordinates'] = position.coords.latitude
-       data\['coordinates'] = position.coords.longitude
+       data['coordinates'] = {}
+       data['coordinates'] = position.coords.latitude
+       data['coordinates'] = position.coords.longitude
        let xmlHttp = new XMLHttpRequest();
        xmlHttp.open("POST", '/alert', true);
        xmlHttp.setRequestHeader("Content-Type", "application/json");
        xmlHttp.send(JSON.stringify(data));
    }
+```
 
-Your /alert endpoint then sends an SMS message to all of the contacts in the database letting them know they are in trouble along with the user’s latitude and longitude. 
+Your `/alert` endpoint then sends an SMS message to all of the contacts in the database letting them know they are in trouble along with the user’s latitude and longitude. 
 Now all you need is to style your app with some css. 
-Create a new file in public called style.css and add the following code:
+Create a new file in public called `style.css` and add the following code:
+
+
+```
 body {
    background-color: lavenderblush;
    text-align: center
@@ -425,13 +456,15 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
 \#number{
    margin-top: 1em;
 }
+```
 
 Now when you go to your website’s homepage, you should see a website like the preview at the begining of this article. 
 
 Add yourself as a contact and press alert. 
 
-You should receive a text containing your longitude and lttitude letting you know you are in an emergency.\
-Final Thoughts
+You should receive a text containing your longitude and lttitude letting you know you are in an emergency
+
+### Final Thoughts ###
 This demo is only a starting point! 
 There are a ton of features you can add to it. 
 For example, if you were using this in production, you would want to create a feature to handle different users (logging in with a username and password, etc.). 
