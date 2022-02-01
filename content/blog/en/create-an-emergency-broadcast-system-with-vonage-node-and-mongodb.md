@@ -36,8 +36,9 @@ After you register for your MongoDB account, you need to set up a database, whic
 
 Once you’ve created your Vonage account, you need to do some initial setup.  
 
-```
 Install the Vonage CLI globally with this command:
+
+```
 npm install @vonage/cli -g
 ```
 
