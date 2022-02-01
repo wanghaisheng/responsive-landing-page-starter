@@ -87,7 +87,7 @@ npm install express body-parser dotenv firebase mongodb mongoose nexmo@beta
 
 Now, create a file called `app.js` and import these libraries:
 
-```
+```javascript
 require('dotenv/config')
 require('mongodb')
 const express = require('express')
@@ -98,7 +98,7 @@ const mongoose = require('mongoose')
 
 Let’s start by creating a `"Hello, World!"` Express app. Here is how: 
 
-```
+```javascript
 const app = express()
 const port = 3000
 
@@ -115,7 +115,7 @@ When you run this code on your local server on port 3000 (http://127.0.0.1:3000)
 
 Now, add this code underneath`const app = express()`:
 
-```
+```javascript
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
@@ -125,7 +125,7 @@ This helps you accept POST requests using Express and lets Express know to serve
 
 It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
 
-```
+```javascript
 mongoose.connect("mongodb+srv://…", { useNewUrlParser: true, useUnifiedTopology: true });
 const contactsSchema = new mongoose.Schema({
    name: String,
@@ -138,7 +138,7 @@ The code above uses mongoose to connect to your MongoDB database, creates a sche
 
 Next, add this code to help send SMS messages using the Vonage messages API.
 
-```
+```javascript
 const vonage = new Vonage({
    apiKey: process.env.API_KEY,
    apiSecret: process.env.API_SECRET,
@@ -149,7 +149,7 @@ const vonage = new Vonage({
 
 The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. It gets this information from a .env file in your project, so create a `.env` file and add it to your project, and add the following variables:
 
-```
+```javascript
 API_KEY=your_vonage_api_key
 API_SECRET=your_vonage_secret
 APPLICATION_ID=your_vonage_application_id
@@ -162,7 +162,7 @@ Make sure to replace everything after each equals sign for each variable with th
 
 Now, let’s create a few endpoints. Add the following code to `app.js`: 
 
-```
+```javascript
 app.post('/contacts',  function (req, res) {
    const contact = new Contacts({ name: req.body.name});
    contact.save();
@@ -174,7 +174,7 @@ Now, when you send a POST request to `/contacts`, this code creates a new contac
 
 Let’s create an endpoint to get all of the contacts from your database. Add the following code to `app.js`: 
 
-```
+```javascript
 app.get('/contacts', function(req, res){
    Contacts.find({}, function(err, contacts){
        if(err){
@@ -191,7 +191,7 @@ This code gets all of the contacts in your database and returns it as JSON when 
 
 Now, let’s define an endpoint to send an SMS message. Add this code to `app.js`: 
 
-```
+```javascript
 app.post('/alert', function(req, res){
    let long = req.body['coordinates']
    let lat = req.body['coordinates']
@@ -221,7 +221,7 @@ app.post('/alert', function(req, res){
 
 This endpoint accepts a POST request with JSON containing the user’s latitude, longitude, and a list of numbers to send an SMS message to. 
 
-```
+```javascript
 let long = req.body['coordinates']
 let lat = req.body['coordinates']
 let contacts = req.body['contacts']
@@ -229,7 +229,7 @@ let contacts = req.body['contacts']
 
 Then, it loops through the contacts and uses the Vonage Messages API to send a message to each number. 
 
-```
+```javascript
   for (let i = 0; i <= contacts.length; i++) {
        vonage.channel.send(
            { "type": "sms", "number": contacts[i].number},
@@ -245,7 +245,7 @@ Then, it loops through the contacts and uses the Vonage Messages API to send a m
 
 Finally, let’s update our hompeage endpoint to handle when users go to our web app’s homepage. Change this code from earlier:
 
-```
+```javascript
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -253,7 +253,7 @@ app.get('/', (req, res) => {
 
 To this:
 
-```
+```javascript
 app.get('/', function(req, res){
    res.sendFile('index.html')
 })
@@ -263,7 +263,7 @@ Now, your homepage will serve the file index.html, which you are about to create
 
 Go ahead and create a new file called index.html and add the following code: 
 
-```
+```html
 <!DOCTYPE html>
 
 <html lang="en">
@@ -296,7 +296,7 @@ Finally, you need to add some JavaScript to this HTML to display the user’s li
 
 After the ALERT button in your HTML, add a script tag and define an object called data.
 
-```
+```javascript
 <script>
 let data = {}
 </script>
@@ -306,7 +306,7 @@ We will use data to store the data to send to `/alert`.
 
 Next, call a function called `httpPostAsync` and pass in `‘/contacts’`and `create_contacts`:
 
-```
+```javascript
 <script>
 let data = {}
 httpPostAsync('/contacts', create_contacts)
@@ -315,7 +315,7 @@ httpPostAsync('/contacts', create_contacts)
 
 Now, define `create_contacts`:
 
-```
+```javascript
 function create_contacts(contacts) {
    data['contacts'] = []
    for (let i = 0; i < contacts.length; i++) {
@@ -335,7 +335,7 @@ This is a callback function `httpPostAsync` will call when it gets the contact d
 
 Now, you need to define `httpPostAsync`: 
 
-```
+```javascript
 function httpPostAsync(theUrl, callback) {
    let xmlHttp = new XMLHttpRequest();
    xmlHttp.onreadystatechange = function() {
@@ -351,7 +351,7 @@ This code sends a GET request to a URL and passes in the JSON it receives in the
 
 Finally, you need to define a function that responds when a user clicks the ALERT button.
 
-```
+```javascript
 function alert_them(){
    function success(position) {
        data['coordinates'] = {}
@@ -378,7 +378,7 @@ This function checks to see if `navigator.geolocation` is `true`. `Navigator.geo
 
 The success function adds the user’s coordinates to `data['coordinates']` and then sends a POST request to `/alert` with the data. 
 
-```
+```javascript
 function success(position) {
        data['coordinates'] = {}
        data['coordinates'] = position.coords.latitude
@@ -394,7 +394,7 @@ Your `/alert` endpoint then sends an SMS message to all of the contacts in the d
 Now all you need is to style your app with some css. 
 Create a new file in public called `style.css` and add the following code:
 
-```
+```css
 body {
    background-color: lavenderblush;
    text-align: center
