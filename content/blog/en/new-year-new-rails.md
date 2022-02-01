@@ -58,7 +58,7 @@ Stimulus bills itself as a "JavaScript framework with modest ambitions" and is i
 
 ---
 
-Hotwire is designed to be framework agnostic. It makes a lot of sense in a Rails context, though, especially given the way that the Rails implementations of the libraries integrate with `ActiveRecord`. For example, you can use a `broadcasts_to` helper in your models to set up various callbacks that publish to a particular named channel, say `:todo_list`, when any data changes are made within the context of that model (i.e., through create, update, or destroy actions).
+Hotwire is designed to be framework agnostic. But it makes a lot of sense in a Rails context, especially given the way that the Rails implementations of the libraries integrate with `ActiveRecord`. For example, you can use a `broadcasts_to` helper in your models to set up various callbacks that publish to a particular named channel, say `:todo_list`, when any data changes are made within the context of that model (i.e., through create, update, or destroy actions).
 
 ```ruby
 class Todo < ApplicationRecord
