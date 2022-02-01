@@ -17,22 +17,22 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It is hard to get anything right during an emergency, especially if you are panicking! If you are in an emergency, something as simple as letting the right person know you need help may prove impossible. Today, we will solve this by building a web app that allows you to click a single button to notify your family that you are in the middle of an emergency via text and send your location. We will create this website using Node.js, Express, MongoDB, and the Vonage Messages API. Node is a popular web server, and Express is a framework developers often use. MongoDB is a NoSQL database, and the Vonage Messages API lets you quickly send messages (such as SMS messages) programmatically. 
+It is hard to get anything right during an emergency, especially if you are panicking! If you are in an emergency, something as simple as letting the right person know you need help may prove impossible. Today, we will solve this by building a web app that allows you to click a single button to notify your family that you are in the middle of an emergency via text and send your location. We will create this website using Node.js, Express, MongoDB, and the Vonage Messages API. Node is a popular web server, and Express is a framework developers often use with it. MongoDB is a NoSQL database, and the Vonage Messages API lets you quickly send messages (such as SMS messages) programmatically. 
 
 Your web app will look like this.
 
 ![](/content/blog/screen-shot-2022-01-31-at-3.25.22-pm.png)
 
-You can add contacts, see them, and when you press ALERT it sends an SMS message to all of your contacts, letting them know your location and that you are in an emergency. 
+You can add contacts, see them, and when you press the Alert button, it sends an SMS message to all of your contacts, letting them know your location and that you are in an emergency. 
 
-Ready to get started? Let’s build an emergency broadcast app!
+Ready to get started? Let's build an emergency broadcast app!
 Prerequisites
 
 ### Prerequisites
 
-To follow along with this tutorial, you need Node (if you don’t have it you can download it here). You also need a Vonage account, which you can register for here. You will also need a https://account.mongodb.com/account/register.
+To follow this tutorial, you need Node (can [download it here](https://nodejs.org/en/download/)). You also need a Vonage account, which you can [register for here](https://www.vonage.com/communications-apis/). You will also need a [MongoDB account](https://account.mongodb.com/account/register).
 
-After you register for your MongoDB account, you need to set up a database, which you can learn to do in MongoDB’s documentation.  
+After you register for your MongoDB account, you need to set up a database, which you can learn to [do in MongoDB’s documentation](https://docs.mongodb.com/manual/tutorial/getting-started/).  
 
 Once you’ve created your Vonage account, you need to do some initial setup.  
 
@@ -121,7 +121,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 ```
 
-This helps you accept POST requests using Express and lets Express know to serve static files from a directory called `public`. 
+This code helps you accept POST requests using Express and tells Express serve static files from a directory called `public`. 
 
 It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
 
@@ -134,7 +134,7 @@ const contactsSchema = new mongoose.Schema({
 const Contacts = mongoose.model('Contacts', contactsSchema);
 ```
 
-The code above uses mongoose to connect to your MongoDB database, creates a schema for your contacts (the people you will send an SMS message to), and creates a new model called `Contacts` you will use to add and get the contacts from your database. 
+The code above uses mongoose to connect to your MongoDB database, creates a schema for your contacts (the people you will send an SMS message to), and creates a new model called `Contacts` to add and get the contacts from your database. 
 
 Next, add this code to help send SMS messages using the Vonage messages API.
 
@@ -290,9 +290,9 @@ Go ahead and create a new file called index.html and add the following code:
    <button onclick="alert_them()" class="tons" id="alert">ALERT</button>
 ```
 
-The HTML above creates a form that allows you to enter a person’s name and number and press an “Add” button. When you press “Add” the form sends a POST request to `/contacts`, which creates a new contact in your database. Your HTML also has an ALERT button. When you press it, it sends a POST request to `/alert`, which sends an SMS message to all of the contacts in your database. 
+The HTML above creates a form that allows you to enter a person’s name and number and press an “Add” button. When you press “Add” the form sends a POST request to `/contacts`, which creates a new contact in your database. Your HTML also has an ALERT button. When you press it, it sends a POST request to /alert, sending an SMS message to all contacts in your database.
 
-Finally, you need to add some JavaScript to this HTML to display the user’s list of contacts and prepare the data to send to `/alert`. 
+Finally, you need to add some JavaScript to this HTML to display the user’s contacts list and prepare the data to send to `/alert`. 
 
 After the ALERT button in your HTML, add a script tag and define an object called data.
 
@@ -331,7 +331,7 @@ function create_contacts(contacts) {
 }
 ```
 
-This is a callback function `httpPostAsync` will call when it gets the contact data from the server. It accepts contacts as a parameter (the contact data). First, this function adds an array to `data['contacts']`. Then, it loops through the contacts from the server and adds each contact to the array and creates a new HTML `div` with each contact’s name. 
+This is a callback function `httpPostAsync` will call when it gets the contact data from the server. It accepts contacts as a parameter (the contact data). First, this function adds an array to `data['contacts']`. Then, it loops through the contacts from the server and adds each contact to the array, and creates a new HTML `div` with each contact’s name. 
 
 Now, you need to define `httpPostAsync`: 
 
@@ -390,8 +390,8 @@ function success(position) {
    }
 ```
 
-Your `/alert` endpoint then sends an SMS message to all of the contacts in the database letting them know they are in trouble along with the user’s latitude and longitude. 
-Now all you need is to style your app with some css. 
+Your `/alert` endpoint then sends an SMS message to all of the contacts in the database, letting them know they are in trouble along with the user’s latitude and longitude. 
+Now all you need is to style your app with some CSS. 
 Create a new file in public called `style.css` and add the following code:
 
 ```css
@@ -457,11 +457,11 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
 }
 ```
 
-Now when you go to your website’s homepage, you should see a website like the preview at the begining of this article. 
+Now when you go to your website’s homepage, you should see a website like the preview at the beginning of this article. 
 
 Add yourself as a contact and press alert. 
 
-You should receive a text containing your longitude and lttitude letting you know you are in an emergency
+You should receive a text containing your longitude and latitude letting you know you are in an emergency
 
 ### Final Thoughts
 
