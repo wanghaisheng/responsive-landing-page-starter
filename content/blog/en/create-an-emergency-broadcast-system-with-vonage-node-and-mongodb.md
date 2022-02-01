@@ -133,7 +133,7 @@ const contactsSchema = new mongoose.Schema({
 const Contacts = mongoose.model('Contacts', contactsSchema);
 ```
 
-The code above uses mongoose to connect to your MongoDB database, creates a schema for your contacts (the people you will send an SMS message to), and creates a new model called `Contacts` to add and get the contacts from your database. 
+The code above uses Mongoose to connect to your MongoDB database, creates a schema for your contacts (the people you will send an SMS message to), and creates a new model called `Contacts` to add and get the contacts from your database. 
 
 Next, add this code to help send SMS messages using the Vonage messages API.
 
@@ -146,7 +146,7 @@ const vonage = new Vonage({
 })
 ```
 
-The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. It gets this information from a .env file in your project, so create a `.env` file and add it to your project, and add the following variables:
+The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. It gets this information from a `.env `file in your project, so create a `.env` file and add it to your project, and add the following variables:
 
 ```javascript
 API_KEY=your_vonage_api_key
