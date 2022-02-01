@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It is hard to get anything right during an emergency, especially if you are panicking! If you are in an emergency situation, something as simple as letting the right person know you need help may prove impossible. Today, we are going to solve this by building a web app that allows you to click a single button to notify your family that you are in the middle of an emergency via text, and also send your location. We will create this website using Node.js, Express, MongoDB, and the Vonage Messages API. Node is a popular web server and express is a framework that developers often use with it. MongoDB is a NoSQL database, and the Vonage Messages API lets you quickly send messages (such as SMS messages) programmatically. 
+It is hard to get anything right during an emergency, especially if you are panicking! If you are in an emergency, something as simple as letting the right person know you need help may prove impossible. Today, we will solve this by building a web app that allows you to click a single button to notify your family that you are in the middle of an emergency via text and send your location. We will create this website using Node.js, Express, MongoDB, and the Vonage Messages API. Node is a popular web server, and Express is a framework developers often use. MongoDB is a NoSQL database, and the Vonage Messages API lets you quickly send messages (such as SMS messages) programmatically. 
 
 Your web app will look like this.
 
