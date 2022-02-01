@@ -227,7 +227,6 @@ let contacts = req.body\['contacts']
 ```
 
 Then, it loops through the contacts and uses the Vonage Messages API to send a message to each number. 
- 
 
 ```
   for (let i = 0; i <= contacts.length; i++) {
@@ -304,7 +303,7 @@ let data = {}
 
 We will use data to store the data to send to `/alert`. 
 
-Next, call a function called `httpPostAsync` and pass in `‘/contacts’ `and `create_contacts`:
+Next, call a function called `httpPostAsync` and pass in `‘/contacts’`and `create_contacts`:
 
 ```
 <script>
@@ -394,7 +393,6 @@ Your `/alert` endpoint then sends an SMS message to all of the contacts in the d
 Now all you need is to style your app with some css. 
 Create a new file in public called `style.css` and add the following code:
 
-
 ```
 body {
    background-color: lavenderblush;
@@ -434,17 +432,17 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
    font-size: 14px;
 }
 
-\#alert {
+#alert {
    margin-bottom: 5em;
    margin-top:1em;
    background-color:red;
 }
 
-\#add{
+#add{
    background-color:black;
 }
 
-\#top{
+#top{
    margin-top: 5em;
    margin-bottom: 1.5em;
 }
@@ -453,7 +451,7 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
    font-size: 22px;
 }
 
-\#number{
+#number{
    margin-top: 1em;
 }
 ```
@@ -464,13 +462,14 @@ Add yourself as a contact and press alert.
 
 You should receive a text containing your longitude and lttitude letting you know you are in an emergency
 
-### Final Thoughts ###
+### Final Thoughts
+
 This demo is only a starting point! 
 There are a ton of features you can add to it. 
 For example, if you were using this in production, you would want to create a feature to handle different users (logging in with a username and password, etc.). 
 You could also add features like editing contacts and adding options for what type of emergency is happening. 
 If you decide to build on this demo, I would love to see what you do: make sure to send me what you build on Twitter. 
 Also, make sure to join the Vonage developer community for more awesome content and tutorials. 
-You can follow Vonage on Twitter here and join our Slack channel here.
+You can follow Vonage on [Twitter here ](https://twitter.com/VonageDev)and join our [Slack channel here](https://developer.vonage.com/community/slack).
 I hope you enjoyed this tutorial!
 Thanks for reading!
