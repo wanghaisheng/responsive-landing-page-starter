@@ -1,6 +1,6 @@
 ---
 title: Translating SMS Messages With Azure Translator Text
-description: How to create an inbound Nexmo SMS webhook and translate the
+description: How to create a Vonage inbound SMS webhook and translate the
   message into English using the Azure Translator Text.
 thumbnail: /content/blog/translating-sms-messages-with-azure-translator-text-dr/TW_Translate-SMS_1200x675.png
 author: kellyjandrews
@@ -15,16 +15,16 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://www.nexmo.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr), [AWS Translate](https://www.nexmo.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr). and [IBM Watson Language Translator](https://www.nexmo.com/blog/2019/11/12/translate-sms-messages-with-ibm-watson-dr).
+In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://learn.vonage.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr/), [AWS Translate](https://www.nexmo.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr). and [IBM Watson Language Translator](https://learn.vonage.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr/).
 
 ## Overview
 
-In this post, I show you how to create an [inbound Nexmo SMS](https://developer.nexmo.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [Azure Translator Text](https://azure.microsoft.com/en-us/services/cognitive-services/translator-text-api/).  
+In this post, I show you how to create a [Vonage inbound SMS](https://developer.vonage.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [Azure Translator Text](https://azure.microsoft.com/en-us/services/cognitive-services/translator/).  
 
 In order to get started, you will need the following items set up:
 
 * [Azure](https://azure.microsoft.com/en-us/)
-* [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+* [Vonage CLI installed](https://developer.vonage.com/application/vonage-cli)
 
   <sign-up></sign-up>
 
@@ -77,9 +77,9 @@ This will set up the server to run the example.
 
 ### Installing ngrok
 
-Publicly available webhooks are required so that Nexmo can communicate with the application to receive  incoming SMS messages. You could push your code up to a publicly available server, or you can use [`ngrok`](https://ngrok.com) to allow for public traffic to reach your local application.
+Publicly available webhooks are required so that Vonage can communicate with the application to receive incoming SMS messages. You could push your code up to a publicly available server, or you can use [`ngrok`](https://ngrok.com) to allow for public traffic to reach your local application.
 
-You can learn more about installing `ngrok` with [this post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr). After you have everything ready to go you can start ngrok using the following command to create your tunnel.
+You can learn more about installing `ngrok` with [this post](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/). After you have everything ready to go you can start ngrok using the following command to create your tunnel.
 
 ```bash
 ngrok http 3000
@@ -89,7 +89,7 @@ Make a note of the `ngrok` address, as you will need that in a later step.
 
 ## Setting Up Azure Translator Text
 
-Next you can set up the Azure Translator Text service in the Azure portal. Start by opening the portal and clicking `Create New Resource`.
+Next, you can set up the Azure Translator Text service in the Azure portal. Start by opening the portal and clicking `Create New Resource`.
 
 ![Azure Portal Home Page](https://www.nexmo.com/wp-content/uploads/2019/11/home_page_add_resource.png "Azure Portal Home Page")
 
@@ -101,7 +101,7 @@ Fill out the name, select `Pay As You Go` and the resource group, and then click
 
 ![Translator Text Create Resource Details](https://www.nexmo.com/wp-content/uploads/2019/11/translator_text_details.png "Translator Text Create Resource Details")
 
-The creation process take a few moments, so relax for a bit until that completes.
+The creation process takes a few moments, so relax for a bit until that completes.
 
 Open up the `.env` file first, and copy and paste the following:
 
@@ -112,29 +112,39 @@ TEXT_TRANSLATION_ENDPOINT=https://api.cognitive.microsofttranslator.com/translat
 
 Grab the key and endpoint from the quick start page and update the `.env` file with that information.
 
-During my trials, I attempted to use the services endpoint presented in the dashboard, but didn't have any luck getting it to work correctly.  The URL above is the global endpoint that will work if you run into the same troubles.
+During my trials, I attempted to use the services endpoint presented in the dashboard but didn't have any luck getting it to work correctly.  The URL above is the global endpoint that will work if you run into the same troubles.
 
 ![Translator Text Resource Quickstart](https://www.nexmo.com/wp-content/uploads/2019/11/translate_quickstart.png "Translator Text Resource Quickstart")
 
-## Setting Up Nexmo Inbound SMS Messages
+## Setting Up Vonage Inbound SMS Messages
 
-This example requires a phone number from Nexmo to receive inbound messages. We can do this by using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#installation) right from a terminal.
+This example requires a phone number from Vonage to receive inbound messages. We can do this by using the [Vonage CLI](https://developer.vonage.com/application/vonage-cli) right from your terminal.
 
 ### Purchase a Virtual Phone Number
 
-First, purchase a number directly from Nexmo (feel free to use a different [ISO 3166 alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code as needed).
+First, purchase a number directly from Vonage (feel free to use a different [ISO 3166 alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code as needed).
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US
+
+ Country Number      Type       Cost Features  
+ ─────── ─────────── ────────── ──── ───────── 
+ US      12017621343 mobile-lvn 0.90 VOICE,SMS 
+ US      12017782770 mobile-lvn 0.90 VOICE,SMS 
+ US      12018011956 mobile-lvn 0.90 VOICE,SMS 
+ US      12018099074 mobile-lvn 0.90 VOICE,SMS 
+ US      12018099756 mobile-lvn 0.90 VOICE,SMS 
+
+vonage numbers:buy 12017621343 US
 ```
 
-You haven't created the route as of yet, however you will name it `/message`. The phone number needs to be linked to this route so inbound messages know where to go. Get the `ngrok` host name from the previous setup and use it here:
+Although the actual route to use in the application isn't set up, you will name it `/message`. The phone number needs to be linked to this route so inbound messages know where to go. Get the `ngrok` hostname from the previous setup and use it here:
 
 ```bash
-nexmo link:sms phone_number https://my-ngrok-hostname/message
+vonage number:update 12017621343 US --url=https://my-ngrok-hostname/message
 ```
 
-Now the Nexmo webhook is set up to route inbound SMS messages.  
+Now the Vonage webhook is set up to route inbound SMS messages.  
 
 ## Finish the Application
 
@@ -142,9 +152,9 @@ The only step now is to create the Express route and functions to handle the inc
 
 ### Build the Webhook
 
-We can set up the route handler first.  Nexmo allows the  setting of a default SMS webhook behavior.  [In the settings panel](https://dashboard.nexmo.com/settings) you can change the default `HTTP` method used. Mine is set to `POST-JSON`, and I recommend using this setting. If you are unable to modify your setting, the code used here will handle all three options.
+We can set up the route handler first.  Vonage allows the  setting of a default SMS webhook behavior.  [In the settings panel](https://dashboard.nexmo.com/settings) you can change the default `HTTP` method used. Mine is set to `POST-JSON`, and I recommend using this setting. If you are unable to modify your setting, the code used here will handle all three options.
 
-![Default Nexmo SMS HTTP Method](https://www.nexmo.com/wp-content/uploads/2019/10/default-sms-settings.png "Default Nexmo SMS HTTP Method")
+![Default Vonage SMS HTTP Method](https://www.nexmo.com/wp-content/uploads/2019/10/default-sms-settings.png "Default Vonage SMS HTTP Method")
 
 Open up the `index.js` file, and at the bottom, paste the following code:
 
@@ -185,11 +195,11 @@ The webhook is ready to go and the final piece is the actual translations.
 
 ### Translation Method
 
-In the previous step we call `translateText`. This step will create that method.
+In the previous step, we call `translateText`. This step will create that method.
 
 You will initially get your credentials by using `CognitiveServicesCredentials.ApiKeyCredentials`. This will need to be passed as the first parameter to the `TranslatorTextClient` constructor.
 
-After create the `client`, use the `translate` method to translate the text.  The first argument is an array of languages you wish to translate the text into—allowing you to translate into multiple languages.  The service will automatically detect the incoming language if it can. The second argument is an array of objects for the text you want to translate.
+After creating the `client`, use the `translate` method to translate the text.  The first argument is an array of languages you wish to translate the text into—allowing you to translate into multiple languages.  The service will automatically detect the incoming language if it can. The second argument is an array of objects for the text you want to translate.
 
 ```js
 function translateText(params) {
@@ -223,8 +233,8 @@ The Azure Translator Text full response object has a lot of details as well, so 
 
 ## Recap
 
-Azure Translator Text is a great tool to translate your inbound messages from Nexmo. This example only scratches the surface, but should be a good start. You can venture off in several directions from here using this as a jumping point. Let me know what ideas you have for using these two services together.
+Azure Translator Text is a great tool to translate your inbound messages from Vonage. This example only scratches the surface but should be a good start. You can venture off in several directions from here using this as a jumping point. Let me know what ideas you have for using these two services together.
 
 You can find a completed version of this tutorial at <https://github.com/nexmo-community/sms-azure-translate-js>.
 
-If you want to learn more about the Extend projects we have, you can visit <https://developer.nexmo.com/extend> to learn more.
+If you want to learn more about the Extend projects we have, you can visit <https://developer.vonage.com/extend> to learn more.
