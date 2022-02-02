@@ -480,6 +480,6 @@ For example, if you were using this in production, you would want to create a fe
 You could also add features like editing contacts and adding options for what type of emergency is happening. 
 If you decide to build on this demo, I would love to see what you do: make sure to send us what you build on Twitter. 
 Also, make sure to join the Vonage developer community for more awesome content and tutorials. 
-You can follow Vonage on [Twitter here ](https://twitter.com/VonageDev)and join our [Slack channel here](https://developer.vonage.com/community/slack).
+You can follow Vonage on [Twitter here](https://twitter.com/VonageDev) and join our [Slack channel here](https://developer.vonage.com/community/slack).
 I hope you enjoyed this tutorial!
 Thanks for reading!
