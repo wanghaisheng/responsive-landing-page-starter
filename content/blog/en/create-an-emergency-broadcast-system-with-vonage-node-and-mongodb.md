@@ -51,7 +51,7 @@ Create a new directory for your project and CD into it:
 
 ```
 mkdir my_project
-CD my_project
+cd my_project
 ```
 
 Now, use the CLI to create a Vonage application with this command:
