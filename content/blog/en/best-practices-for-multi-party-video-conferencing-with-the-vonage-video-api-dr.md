@@ -1,5 +1,5 @@
 ---
-title: Best Practices for Multi-Party Video Conferencing with the Vonage Video API
+title: "Best Practices for Multi Party Video Conferencing with "
 description: Follow this guide to learn about platform limitations and best
   practices when moving Vonage Video API sessions from one-on-one to
   multi-party.
@@ -14,6 +14,7 @@ tags:
 comments: false
 redirect: ""
 canonical: ""
+outdated: true
 ---
 
 The [Vonage Video API](https://tokbox.com/developer/guides/basics/) makes it easier than ever to build multi-party conferencing into your application, but as Peter Parker taught us, "With great power comes great responsibility." Let's discuss what platform limitations and best practices you should consider when moving video sessions from one-on-one to multi-party.
