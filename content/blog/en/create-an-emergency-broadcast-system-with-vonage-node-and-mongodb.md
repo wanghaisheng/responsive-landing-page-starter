@@ -162,7 +162,7 @@ Make sure to replace everything after each equals sign for each variable with th
 Now, let’s create a few endpoints. Add the following code to `app.js`: 
 
 ```javascript
-app.post('/contacts',  function (req, res) {
+app.post('/contacts', function (req, res) {
    const contact = new Contacts({ name: req.body.name});
    contact.save();
    res.redirect('/')
