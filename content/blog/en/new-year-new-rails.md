@@ -1,10 +1,10 @@
 ---
 title: New Year, New Rails
 description: "Some personal impressions of the Rails 7 release. TLDR: I'm excited!"
-thumbnail: /content/blog/new-year-new-rails/ruby_sdk-updates.png
+thumbnail: /content/blog/new-year-new-rails/new-year_new-rails.png
 author: karl-lingiah
 published: true
-published_at: 2022-02-01T11:23:45.128Z
+published_at: 2022-02-02T11:55:20.239Z
 updated_at: 2022-01-31T11:37:06.868Z
 category: inspiration
 tags:
