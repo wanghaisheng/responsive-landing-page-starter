@@ -191,7 +191,7 @@ This code gets all of the contacts in your database and returns it as JSON when 
 Now, let’s define an endpoint to send an SMS message. Add this code to `app.js`: 
 
 ```javascript
-app.post('/alert', function(req, res){
+app.post('/alert', function (req, res){
    let long = req.body['coordinates']
    let lat = req.body['coordinates']
    let contacts = req.body['contacts']
