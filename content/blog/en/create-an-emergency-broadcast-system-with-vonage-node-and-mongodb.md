@@ -320,7 +320,7 @@ function create_contacts(contacts) {
    for (let i = 0; i < contacts.length; i++) {
        let contact = contacts[i]
        data['contacts'].push(contact)
-       const newDiv = document.createElement("div");
+       const newDiv = document.createElement("div")
        newDiv.className = 'left'
        const newContent = document.createTextNode(contact.name);
        newDiv.appendChild(newContent);
