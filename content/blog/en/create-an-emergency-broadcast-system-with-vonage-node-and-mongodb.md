@@ -117,7 +117,7 @@ Now, add this code underneath`const app = express()`:
 ```javascript
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static("public"));
+app.use(express.static("public"))
 ```
 
 This code helps you accept POST requests using Express and tells Express serve static files from a directory called `public`. 
