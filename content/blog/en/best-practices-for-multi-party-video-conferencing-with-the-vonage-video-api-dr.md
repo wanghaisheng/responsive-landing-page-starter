@@ -1,5 +1,5 @@
 ---
-title: "Best Practices for Multi Party Video Conferencing with "
+title: Multi Party Video Conferencing with the Vonage Video API
 description: Follow this guide to learn about platform limitations and best
   practices when moving Vonage Video API sessions from one-on-one to
   multi-party.
