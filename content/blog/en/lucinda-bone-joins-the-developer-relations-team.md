@@ -8,7 +8,7 @@ published_at: 2022-01-24T10:55:44.870Z
 updated_at: 2022-01-14T10:31:12.578Z
 category: team
 tags:
-  - "#careers"
+  - careers
 comments: true
 spotlight: false
 redirect: ""
