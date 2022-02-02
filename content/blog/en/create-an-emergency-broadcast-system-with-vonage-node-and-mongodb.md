@@ -470,7 +470,7 @@ Now when you go to your website’s homepage, you should see a website like the 
 
 Add yourself as a contact and press alert. 
 
-You should receive a text containing your longitude and latitude letting you know you are in an emergency
+You should receive a text containing your longitude and latitude letting you know you are in an emergency.
 
 ### Final Thoughts
 
