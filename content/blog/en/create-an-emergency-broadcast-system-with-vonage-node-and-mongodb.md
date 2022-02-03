@@ -1,5 +1,5 @@
 ---
-title: "Create an emergency broadcast system with Vonage, Node, and MongoDB "
+title: "Create an Emergency Broadcast System With Vonage, Node, and MongoDB"
 description: "Create an emergency broadcast system with Vonage, Node, and MongoDB "
 author: cory-althoff
 published: true
