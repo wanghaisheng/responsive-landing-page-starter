@@ -264,29 +264,28 @@ Go ahead and create a new file called index.html and add the following code:
 
 ```html
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang='en'>
 <head>
-   <meta charset="UTF-8">
-   <title>Emergency Broadcast</title>
-   <link rel="stylesheet" href="style.css">
+    <meta charset='UTF-8'>
+    <title>Emergency Broadcast</title>
+    <link rel='stylesheet' href='style.css'>
 </head>
 <body>
-   <h1 id="top">Add Contact</h1>
-   <form action="/contacts" method="POST">
-       <div>
-           <input id="name" class="forms" type="text" name="name" placeholder="name"> <br>
-           <input id="number" class="forms" type="text" name="number" placeholder="number">
-       </div>
-       <div>
-           <input type="submit" value="Add" class="tons" id="add">
-       </div>
-   </form>
-   <br> <br>
-   <h1>Your Contacts</h1>
-   <div></div>
-   <div id="contacts"></div>
-   <button onclick="alert_them()" class="tons" id="alert">ALERT</button>
+    <h1 id='top'>Add Contact</h1>
+    <form action='/contacts' method='POST'>
+        <div>
+            <input id='name' class='forms' type='text' name='name' placeholder='name'> <br>
+            <input id='number' class='forms' type='text' name='number' placeholder='number'>
+        </div>
+        <div>
+            <input type='submit' value='Add' class='tons' id='add'>
+        </div>
+    </form>
+    <br> <br>
+    <h1>Your Contacts</h1>
+    <div></div>
+    <div id='contacts'></div>
+    <button onclick='alert_them()' class='tons' id='alert'>ALERT</button>
 ```
 
 The HTML above creates a form that allows you to enter a person’s name and number and press an “Add” button. When you press “Add” the form sends a POST request to `/contacts`, which creates a new contact in your database. Your HTML also has an ALERT button. When you press it, it sends a POST request to /alert, sending an SMS message to all contacts in your database.
