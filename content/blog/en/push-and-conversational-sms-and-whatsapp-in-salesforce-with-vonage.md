@@ -21,41 +21,38 @@ replacement_url: ""
 
 In this tutorial, we are going to install Vonage’s open source connector and Lightning component to allow you to send push notifications and perform 2 way SMS and WhatsApp messaging straight from Salesforce!
 
-We’ll be using Salesforce, Node.js, Apex, JavaScript, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). The open source components can be found in the following GitHub repositories:
+We’ll be using Salesforce, Node.js, Apex, JavaScript, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). 
 
-* [Node.js connector](https://github.com/Vonage-Community/sample-messages-salesforce-nodejsconnector)- [Lightning Web Component](https://github.com/Vonage-Community/sample-messages-salesforce-lightning_component)
+The open source components can be found in the following GitHub repositories:
 
-You can see it in action here: [Video](https://www.youtube.com/watch?v=uUSaXOnNTOk)
+* [Node.js connector](https://github.com/Vonage-Community/sample-messages-salesforce-nodejsconnector)
+* [Lightning Web Component](https://github.com/Vonage-Community/sample-messages-salesforce-lightning_component)
+
+You can see it in action here:
+
+<youtube id="uUSaXOnNTOk"></youtube>
 
 ## Setting up Salesforce Org
 
 If you are reading this tutorial, you most certainly aren’t new to Salesforce, but before you start, let’s make sure that you have the correct setup.
 
 * You need to be a System Administration in the Org to install the package
-
-- Before installing this directly on your production Org, why don’t you deploy it in a sandbox environment? They call these developer accounts, and you can get as many as you like here: [Developer Signup](https://developer.salesforce.com/signup).
+* Before installing this directly on your production Org, why don’t you deploy it in a sandbox environment? They call these developer accounts, and you can get as many as you like here: [Developer Signup](https://developer.salesforce.com/signup).
 
 By the time you have gone through the onboarding flow, you will have your OWN developer instance of Salesforce, and you can do whatever you like without breaking anything! 
 
 ## Create Connected App Inside Salesforce
 
-When connected to your Salesforce Org, go to 'Setup' in the top right.![](https://lh5.googleusercontent.com/5Ttiql-vKW8rW6qRbLysNHI12YNJPDgHYqwkpFrCt9JodR4DH5jACLQn5OKVzgSdyoSj7p_Qu9cZeZvVrF3niRGOcEYmjCHPhUvA8_MShnqMW7GOsjY1jw-eugkRwJQxRbLhlpwV)Search for App Manager in the left-hand menu.
-
-![](https://lh5.googleusercontent.com/qyCwjGxFhq9AsE_LjfSLEVPBQrVaQG32-mR6uhRFJ29zNy2VIj2QlGeKKH1PFb5sMY9Z_hk3HME7FCUBMz_CZPzW_HzKzTNYhiMLJkIQY4IxrInQNKGaEF1l0nwzEut6ys294pnk)
-
-2. Then click on 'New Connected App'.
-
-![](https://lh3.googleusercontent.com/qCFc8QF-kvEKteLZEAkJR0M5F5ULdXN67zgPjqcVOoK-2NHQVKhfeiGDn1UjVtdwPVPS4BZFdMX1GZRbXYYHjrelW91TYuecqcQcFXuM8OvHl9ZCEh6uyHqNhcjWvwIVC623HqXG)
-
-3. Create the Connected App as per screenshot and tick 'Enable OAuth Settings'.
-4. Add a callback URL to a local webhook (this does not get used in our case)
+1.  When connected to your Salesforce Org, go to 'Setup' in the top right.![](https://lh5.googleusercontent.com/5Ttiql-vKW8rW6qRbLysNHI12YNJPDgHYqwkpFrCt9JodR4DH5jACLQn5OKVzgSdyoSj7p_Qu9cZeZvVrF3niRGOcEYmjCHPhUvA8_MShnqMW7GOsjY1jw-eugkRwJQxRbLhlpwV) 
+2. Search for App Manager in the left-hand menu.
+3. Then click on 'New Connected App'.
+4. Create the Connected App as per screenshot and tick 'Enable OAuth Settings'.
+5. Add a callback URL to a local webhook (this does not get used in our case)
    under API section and select 'Full Access' under 'Selected OAuth Scopes':
 
-![](https://lh6.googleusercontent.com/Abm5WHnUoJzBGCrPKbPebKxSBOukny8aj_bvq15z1uE3xRJqoLorq4k6GHLlb_u7SYY_WGGnc9izk_vZqbrKebhYxujT0ts-ldi-HvAxiAqgmd9ye4fiOEXsCjPluH8MXLQaA4E_)
-
-5. When you click 'Continue' on the following page, you will find the 'Consumer Key' and 'Consumer Secret'. Store both of these for the later part of the integration.
-
 ![](https://lh3.googleusercontent.com/Cmyhi8HbPvRf_otmSt0qIiQ5ZFZr0F1BIKzX0jnWQTZ_7DK3ZnAtw6OKY_jWpNRh6lt03Rv67WRoWsbffP4HValg24Ywy1cFJiTYox7sRrtr-TjPvZWUSh8Fz-0lS9oYXeiP2VAm)
+
+6. When you click 'Continue' on the following page, you will find the 'Consumer Key' and 'Consumer Secret'. Store both of these for the later part of the integration.
 
 ## Install the Salesforce Unmanaged Package
 
