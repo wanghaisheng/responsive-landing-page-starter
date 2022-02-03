@@ -192,8 +192,8 @@ Now, let’s define an endpoint to send an SMS message. Add this code to `app.js
 
 ```javascript
 app.post('/alert', function (req, res){
-    let long = req.body['coordinates']
-    let lat = req.body['coordinates']
+    let long = req.body['coordinates']['long']
+    let lat = req.body['coordinates']['lat']
     let contacts = req.body['contacts']
     for (let i = 0; i <= contacts.length; i++) {
         vonage.channel.send(
