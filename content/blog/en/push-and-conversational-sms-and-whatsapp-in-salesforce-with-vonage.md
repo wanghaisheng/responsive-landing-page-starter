@@ -1,7 +1,7 @@
 ---
 title: Push and Conversational SMS and WhatsApp in Salesforce with Vonage
 description: Push and 2-way SMS and WhatsApp in Salesforce With Vonage.
-author: amanda-cavallaro
+author: marc-marchal-de-corny
 published: true
 published_at: 2022-02-03T16:18:50.485Z
 updated_at: 2022-02-03T16:18:50.499Z
