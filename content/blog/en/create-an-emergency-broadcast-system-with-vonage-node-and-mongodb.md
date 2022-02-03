@@ -41,7 +41,7 @@ Install the Vonage CLI globally with this command:
 npm install @vonage/cli -g
 ```
 
-Next, configure the CLI with your Vonage API key and secret. You can find this information in the Developer Dashboard.
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
 
 ```
 vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
