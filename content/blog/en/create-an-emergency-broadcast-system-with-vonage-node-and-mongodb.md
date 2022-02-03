@@ -21,7 +21,7 @@ It is hard to get anything right during an emergency, especially if you are pani
 
 Your web app will look like this.
 
-![](/content/blog/screen-shot-2022-01-31-at-3.25.22-pm.png)
+![Emergency broadcast web app demo](/content/blog/screen-shot-2022-01-31-at-3.25.22-pm.png)
 
 You can add contacts, see them, and when you press the Alert button, it sends an SMS message to all of your contacts, letting them know your location and that you are in an emergency. 
 
@@ -41,7 +41,7 @@ Install the Vonage CLI globally with this command:
 npm install @vonage/cli -g
 ```
 
-Next, configure the CLI with your Vonage API key and secret. You can find this information in the [Developer Dashboard](https://dashboard.nexmo.com/).
+Next, configure the CLI with your Vonage API key and secret. You can find this information in the Developer Dashboard.
 
 ```
 vonage config:set --apiKey=VONAGE_API_KEY --apiSecret=VONAGE_API_SECRET
@@ -120,7 +120,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 ```
 
-This code helps you accept POST requests using Express and tells Express to serve static files from a directory called `public`. 
+This code helps you accept POST requests using Express and tells Express serve static files from a directory called `public`. 
 
 It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
 
@@ -152,12 +152,12 @@ The code above creates a new Vonage object and passes in your API key, secret, a
 API_KEY=your_vonage_api_key
 API_SECRET=your_vonage_secret
 APPLICATION_ID=your_vonage_application_id
-PRIVATE_KEY=your_vonage_private_key_path
+PRIVATE_KEY=your_vonage_private_key
 FROM_NUMBER=your_vonage_number
 PORT=5000
 ```
 
-Make sure to replace everything after each equals sign for each variable with the information from your Vonage account. You can now replace the line of code `const port = 3000` from earlier with `process.env.PORT`, so your app gets the port from an environment variable (instead of hard coding it). 
+Make sure to replace everything after each equals sign for each variable with the information from your Vonage account. You can now replace the line of code `const port = 3000` from earlier with  `process.env.PORT`, so your app gets the port from an environment variable (instead of hard coding it). 
 
 Now, let’s create a few endpoints. Add the following code to `app.js`: 
 
@@ -174,7 +174,7 @@ Now, when you send a POST request to `/contacts`, this code creates a new contac
 Let’s create an endpoint to get all of the contacts from your database. Add the following code to `app.js`: 
 
 ```javascript
-app.get('/contacts', function (req, res){
+app.get('/contacts', function(req, res){
     Contacts.find({}, function(err, contacts){
         if(err){
             console.log(err)
@@ -457,7 +457,7 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
     margin-bottom: 1.5em;
 }
 
-.cons {
+.cons{
     font-size: 22px;
 }
 
