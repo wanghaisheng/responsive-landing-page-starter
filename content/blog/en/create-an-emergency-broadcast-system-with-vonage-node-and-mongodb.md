@@ -115,8 +115,8 @@ When you run this code on your local server on port 3000 (http://127.0.0.1:3000)
 Now, add this code underneath`const app = express()`:
 
 ```javascript
-app.use( bodyParser.json() );
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use( bodyParser.json() )
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static("public"))
 ```
 
@@ -129,8 +129,8 @@ mongoose.connect("mongodb+srv://…", { useNewUrlParser: true, useUnifiedTopolog
 const contactsSchema = new mongoose.Schema({
    name: String,
    number: Number
-});
-const Contacts = mongoose.model('Contacts', contactsSchema);
+})
+const Contacts = mongoose.model('Contacts', contactsSchema)
 ```
 
 The code above uses Mongoose to connect to your MongoDB database, creates a schema for your contacts (the people you will send an SMS message to), and creates a new model called `Contacts` to add and get the contacts from your database. 
@@ -163,8 +163,8 @@ Now, let’s create a few endpoints. Add the following code to `app.js`:
 
 ```javascript
 app.post('/contacts', function (req, res) {
-   const contact = new Contacts({ name: req.body.name});
-   contact.save();
+   const contact = new Contacts({ name: req.body.name})
+   contact.save()
    res.redirect('/')
 })
 ```
@@ -177,12 +177,12 @@ Let’s create an endpoint to get all of the contacts from your database. Add th
 app.get('/contacts', function(req, res){
    Contacts.find({}, function(err, contacts){
        if(err){
-           console.log(err);
+           console.log(err)
        }
        else {
-           res.json(contacts);
+           res.json(contacts)
        }
-   });
+   })
 })
 ```
 
@@ -208,12 +208,12 @@ app.post('/alert', function (req, res){
            },
            (err, data) => {
                if (err) {
-                   console.error(err);
+                   console.error(err)
                } else {
-                   console.log(data.message_uuid);
+                   console.log(data.message_uuid)
                }
            }
-       );
+       )
    }
 })
 ```
@@ -322,10 +322,10 @@ function create_contacts(contacts) {
        data['contacts'].push(contact)
        const newDiv = document.createElement("div")
        newDiv.className = 'left'
-       const newContent = document.createTextNode(contact.name);
-       newDiv.appendChild(newContent);
-       const currentDiv = document.getElementById("contacts");
-       document.body.insertBefore(newDiv, currentDiv);
+       const newContent = document.createTextNode(contact.name)
+       newDiv.appendChild(newContent)
+       const currentDiv = document.getElementById("contacts")
+       document.body.insertBefore(newDiv, currentDiv)
    }
 }
 ```
@@ -336,13 +336,13 @@ Now, you need to define `httpPostAsync`:
 
 ```javascript
 function httpPostAsync(theUrl, callback) {
-   let xmlHttp = new XMLHttpRequest();
+   let xmlHttp = new XMLHttpRequest()
    xmlHttp.onreadystatechange = function() {
        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-           callback(JSON.parse(xmlHttp.responseText));
+           callback(JSON.parse(xmlHttp.responseText))
    }
-   xmlHttp.open("GET", theUrl, true); // true for asynchronous
-   xmlHttp.send(null);
+   xmlHttp.open("GET", theUrl, true)
+   xmlHttp.send(null)
 }
 ```
 
@@ -356,20 +356,20 @@ function alert_them(){
        data['coordinates'] = {}
        data['coordinates'] = position.coords.latitude
        data['coordinates'] = position.coords.longitude
-       let xmlHttp = new XMLHttpRequest();
-       xmlHttp.open("POST", '/alert', true);
-       xmlHttp.setRequestHeader("Content-Type", "application/json");
-       xmlHttp.send(JSON.stringify(data));
-       alert("Message Sent!");
+       let xmlHttp = new XMLHttpRequest()
+       xmlHttp.open("POST", '/alert', true)
+       xmlHttp.setRequestHeader("Content-Type", "application/json")
+       xmlHttp.send(JSON.stringify(data))
+       alert("Message Sent!")
    }
 
    function error(){
        console.log('error')
    }
    if(!navigator.geolocation) {
-       console.log('Geolocation is not supported by your browser');
+       console.log('Geolocation is not supported by your browser')
    } else {
-       navigator.geolocation.getCurrentPosition(success, error);
+       navigator.geolocation.getCurrentPosition(success, error)
    }
 }
 ```
@@ -383,10 +383,10 @@ function success(position) {
        data['coordinates'] = {}
        data['coordinates'] = position.coords.latitude
        data['coordinates'] = position.coords.longitude
-       let xmlHttp = new XMLHttpRequest();
-       xmlHttp.open("POST", '/alert', true);
-       xmlHttp.setRequestHeader("Content-Type", "application/json");
-       xmlHttp.send(JSON.stringify(data));
+       let xmlHttp = new XMLHttpRequest()
+       xmlHttp.open("POST", '/alert', true)
+       xmlHttp.setRequestHeader("Content-Type", "application/json")
+       xmlHttp.send(JSON.stringify(data))
    }
 ```
 
