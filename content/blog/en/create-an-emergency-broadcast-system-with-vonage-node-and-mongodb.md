@@ -1,6 +1,6 @@
 ---
 title: Create an Emergency Broadcast System With Vonage, Node, and MongoDB
-description: "Create an emergency broadcast system with Vonage, Node, and MongoDB "
+description: Create an emergency broadcast system with Vonage, Node, and MongoDB.
 author: cory-althoff
 published: true
 published_at: 2022-02-01T00:31:09.675Z
