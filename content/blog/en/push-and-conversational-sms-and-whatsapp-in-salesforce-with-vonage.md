@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 ## Introduction
 
-In this tutorial, we are going to install Vonage’s open source connector and Lightning component to allow you to send push notifications and perform 2 way SMS and WhatsApp messaging straight from Salesforce!
+In this tutorial, we are going to install Vonage’s open source connector and Lightning component to allow you to send push notifications and perform 2-way SMS and WhatsApp messaging straight from Salesforce!
 
 We’ll be using Salesforce, Node.js, Apex, JavaScript, and the [Vonage Messages API](https://developer.vonage.com/messaging/sms/overview). 
 
@@ -36,8 +36,8 @@ You can see it in action here:
 
 If you are reading this tutorial, you most certainly aren’t new to Salesforce, but before you start, let’s make sure that you have the correct setup.
 
-* You need to be a System Administration in the Org to install the package.
-* Before installing this directly on your production Org, why don’t you deploy it in a sandbox environment? They call these developer accounts, and you can get as many as you like here: [Developer Signup](https://developer.salesforce.com/signup).
+* You need to be a System Administrator in the Org to install the package.
+* Before installing this directly on your production Org, why don’t you deploy it in a sandbox environment? They call these developer accounts, and you can get as many as you like here: [Developer Sign-up](https://developer.salesforce.com/signup).
 
 By the time you have gone through the onboarding flow, you will have your OWN developer instance of Salesforce, and you can do whatever you like without breaking anything! 
 
@@ -46,9 +46,9 @@ By the time you have gone through the onboarding flow, you will have your OWN de
 1. When connected to your Salesforce Org, go to 'Setup' in the top right.![](https://lh5.googleusercontent.com/5Ttiql-vKW8rW6qRbLysNHI12YNJPDgHYqwkpFrCt9JodR4DH5jACLQn5OKVzgSdyoSj7p_Qu9cZeZvVrF3niRGOcEYmjCHPhUvA8_MShnqMW7GOsjY1jw-eugkRwJQxRbLhlpwV) 
 2. Search for App Manager in the left-hand menu.
 3. Then click on 'New Connected App'.
-4. Create the Connected App as per screenshot and tick 'Enable OAuth Settings'.
+4. Create the Connected App as per the screenshot and tick 'Enable OAuth Settings'.
 5. Add a callback URL to a local webhook (this does not get used in our case)
-   under API section and select 'Full Access' under 'Selected OAuth Scopes':
+   under the API section and select 'Full Access' under 'Selected OAuth Scopes':
 
 ![](https://lh3.googleusercontent.com/Cmyhi8HbPvRf_otmSt0qIiQ5ZFZr0F1BIKzX0jnWQTZ_7DK3ZnAtw6OKY_jWpNRh6lt03Rv67WRoWsbffP4HValg24Ywy1cFJiTYox7sRrtr-TjPvZWUSh8Fz-0lS9oYXeiP2VAm)
 
@@ -58,8 +58,8 @@ By the time you have gone through the onboarding flow, you will have your OWN de
 
 Option 1: Install it via the link 
 
-1. Go to the [GitHub link for the Lightning Web Component](https://github.com/Vonage-Community/sample-messages-salesforce-lightning_component), and at the very top, you will find a link to 'install the unmanaged package'. Please use the link in the first paragraph of GitHub as it will be updated with the latest version.
-2. Click on the link to install the package. When you have finished it will take you to the installed application page:
+1. Go to the [GitHub link for the Lightning Web Component](https://github.com/Vonage-Community/sample-messages-salesforce-lightning_component), and at the very top, you will find a link to 'install the unmanaged package'. Please use the link in the first paragraph of GitHub, as it will be updated with the latest version.
+2. Click on the link to install the package. When you have finished, it will take you to the installed application page:
 
 ![](https://lh3.googleusercontent.com/BWqgtbBzhBemFAg221lpTF3_Jqu_6QACJbJ2gDEptw0IMN1ILPJG3ibkIOFOL8fflJqEApWmieZGnabOYhfgEWz2mObeqb9TiKbnz4NJ9U6EGRYfxObq4nUnZaV3P-Grupx_UdPm)
 
@@ -71,7 +71,7 @@ To continue, you need to have the package installed and the Consumer Key and Con
 
 ## Deploying the Salesforce Node.Js Connector
 
-In order to do 2 way SMS and WhatsApp inside Salesforce, you need to create a webhook to receive the inbound messages from Vonage API and send them into the Salesforce Org via a Custom Object. We’ve got you covered. 
+In order to do 2-way SMS and WhatsApp inside Salesforce, you need to create a webhook to receive the inbound messages from Vonage API and send them into the Salesforce Org via a Custom Object. We’ve got you covered. 
 
 You will need to download the code from the [Node.js connector](https://github.com/Vonage-Community/sample-messages-salesforce-nodejsconnector) and deploy it onto your favourite Node.js environment: Heroku, AWS Lambda, etc.
 
@@ -80,20 +80,21 @@ Before deploying your code, you will need to provide the correct environment var
 Please follow the steps:
 
 1. Retrieve your Connected App setting:
-   We followed this step earlier. This is your CONSUMER KEY AND CONSUMER SECRET and you will need to save it under the following environment variables. [More info here](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5) 
+   We followed this step earlier. These are your CONSUMER KEY AND CONSUMER SECRET and you will need to save them under the following environment variables. [More info here](https://help.salesforce.com/s/articleView?id=sf.connected_app_create.htm&type=5) 
+
 * SFDC_CONSUMER_KEY
 * SFDC_CONSUMER_SECRET
-
-
 
 2. Create a dedicated Salesforce user (or reuse an existing user):
    [More info here](https://help.salesforce.com/s/articleView?language=en_US&type=5&id=adding_new_users.htm). 
 
 In the step above, after creating the user, you will be able to save the username and password of the user under the following environment variables:
+
 * SFDC_USERNAME
 * SFDC_PASSWORD
 
 Please store the URL on which you are hosting the service as you will need it when you set up the webhooks within the Vonage API Applications. Two URLs will be exposed:
+
 * Inbound URL: https://yourNodeServer/webhook/inbound
 * Event URL: https://yourNodeServer/webhook/event
 
@@ -103,23 +104,23 @@ If you don’t have a Vonage API account, head to our [sign-up page](https://das
 
 You will need to perform 3 things:
 
-1. Get your API key and Secret: You can find your them as soon as you have created your account [here](https://dashboard.nexmo.com/settings).
+1. Get your API key and Secret: You can find them as soon as you have created your account [on the dashboard](https://dashboard.nexmo.com/settings).
 2. Create an Application and configure webhooks:
-   Create an application under the API key [here on the Applications page of the dashboard](https://dashboard.nexmo.com/applications).
+   Create an application under the API key [on the Applications page of the dashboard](https://dashboard.nexmo.com/applications).
 
 Generate a public and private key (these will not be used). Under the Capabilities, activate Messages and insert the two callback URLs you created in the previous Node.js step.
 
 ![](https://lh4.googleusercontent.com/Icq-GYJkotC2mU8cuLOW7YlBUELj2UNrwXNzMUckYVnJXp1aP89Chie-NUXXL1NtmXx5U6Vtdo_0osSlfppcDYOYkBRXkUcuIUnNYeWpwhqnwMmOJ5l2LUgNPjkG8c2b-zN3sGzs)
 
-3. Associate an SMS/WhatsApp phone number or use WhatsApp Sandbox: you will need to order a phone number for WhatsApp or SMS. You can buy these by logging on to the [Numbers page. ](https://dashboard.nexmo.com/buy-numbers)
+3. Associate an SMS/WhatsApp phone number or use the WhatsApp Sandbox: you will need to order a phone number for WhatsApp or SMS. You can buy these by logging on to the [Numbers page](https://dashboard.nexmo.com/buy-numbers).
 
-You can also easily create a WhatsApp number using our new [Embedded Signup feature](https://dashboard.nexmo.com/messages/social-channels).
+You can also easily create a WhatsApp number using our new [Embedded Sign-up feature](https://dashboard.nexmo.com/messages/social-channels).
 
 Otherwise, you can use our WhatsApp Sandbox right away by configuring the same webhooks as before on the dedicated [Sandbox page](https://dashboard.nexmo.com/messages/sandbox).
 
 At this point, inbound messages should directly trigger your node connector and get pushed straight into Salesforce! You’re nearly done!
 
-## Configuring your Vonage Credentials Inside Salesforce
+## Configuring Your Vonage Credentials Inside Salesforce
 
 So now that inbound messages from Vonage should be working, let’s look at setting up the outbound part. Since the package is installed, you will find specific settings for the Vonage credentials.
 
@@ -141,12 +142,12 @@ So now that inbound messages from Vonage should be working, let’s look at sett
 
 ## Decide Where You Want to Place the Lightning Component
 
-So now that you are here, you can decide where you want to position the lightning component that is installed. 
+So now that you are here, you can decide where you want to position the Lightning component installed. 
 
 Let’s see how you can add it to the cases.
 
 1. Open a case by going to the Service Console and viewing an existing open case.
-2. In the top right-hand menu, click on the cog and select 'Edit Page'.
+2. Click on the cog in the top right-hand menu and select 'Edit Page'.
 
 ![](https://lh5.googleusercontent.com/1MuuaJNUw7pbzCeJSOXRXdLTYxpXtUrDjWcvXEC13HXZSijIuiYocyDYxCDEX16txvT9s7ivH70wow1XO4NAtzrrWTYloGhHauyC2CF4MzhdZPxVnSTgSz2jB5dKn4ZCmOZijA6E)
 
@@ -177,6 +178,6 @@ If you need to automate messages straight out of Salesforce, you can use the int
 
 ![](https://lh3.googleusercontent.com/i9soWlNZ3Yg7n2A02dfcXYAVo_lYs-CunIHzAi2S-L3cCVoTYgpE2QSKdfQo04G1qJgw5wjNuzRWVMk2j5RUYwScI-QjRrj0x4jYgrhOdbNFc2GI8qqhpIrLYb24T8WPloB-cPQp)
 
-## What’s Next?
+## What's Next?
 
 Now that you have integrated SMS and WhatsApp into Salesforce, your team can run all their B2C communication straight within Service Cloud or Sales Cloud and keep all your data in one place. Stay tuned as we will be adding even more features as part of our full-blown product.
