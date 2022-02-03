@@ -174,7 +174,7 @@ Now, when you send a POST request to `/contacts`, this code creates a new contac
 Let’s create an endpoint to get all of the contacts from your database. Add the following code to `app.js`: 
 
 ```javascript
-app.get('/contacts', function(req, res){
+app.get('/contacts', function (req, res){
     Contacts.find({}, function(err, contacts){
         if(err){
             console.log(err)
