@@ -120,7 +120,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.static('public'))
 ```
 
-This code helps you accept POST requests using Express and tells Express serve static files from a directory called `public`. 
+This code helps you accept POST requests using Express and tells Express to serve static files from a directory called `public`. 
 
 It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
 
