@@ -15,16 +15,16 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://www.nexmo.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr) and [AWS Translate](https://www.nexmo.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr).
+In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://learn.vonage.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr/) and [AWS Translate](https://learn.vonage.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr/).
 
 ## Overview
 
-In this post, I show you how to create an [inbound Vonage SMS](https://developer.nexmo.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [IBM Watson Language Translator](https://www.ibm.com/watson/services/language-translator/).  
+In this post, I show you how to create an [inbound Vonage SMS](https://developer.vonage.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [IBM Watson Language Translator](https://www.ibm.com/watson/services/language-translator/).  
 
 In order to get started, you will need the following items setup:
 
 * [IBM Cloud](https://cloud.ibm.com/login)
-* [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+* [Vonage CLI installed](https://developer.vonage.com/application/vonage-cli)
 
 <sign-up></sign-up>
 
@@ -107,20 +107,30 @@ Using the Copy the `API Key` and `URL` found on the IBM Watson Translation Manag
 
 ## Setting Up Vonage Inbound SMS Messages
 
-This example requires a phone number from Vonage to receive inbound messages. We can do this by using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#installation) right from a terminal.
+This example requires a phone number from Vonage to receive inbound messages. We can do this by using the [Vonage CLI](https://developer.vonage.com/application/vonage-cli) right from a terminal.
 
 ### Purchase a Virtual Phone Number
 
 The first step will be to purchase a number (feel free to use a different [ISO 3166 alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code as needed).
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US
+
+ Country Number      Type       Cost Features  
+ ─────── ─────────── ────────── ──── ───────── 
+ US      12017621343 mobile-lvn 0.90 VOICE,SMS 
+ US      12017782770 mobile-lvn 0.90 VOICE,SMS 
+ US      12018011956 mobile-lvn 0.90 VOICE,SMS 
+ US      12018099074 mobile-lvn 0.90 VOICE,SMS 
+ US      12018099756 mobile-lvn 0.90 VOICE,SMS 
+
+vonage numbers:buy 12017621343 US
 ```
 
 Although the actual route to use in the application isn't set up, you will name it `/message`. The phone number needs to be linked to this route so inbound messages know where to go. Get the `ngrok` host name from the previous setup and use it here:
 
 ```bash
-nexmo link:sms phone_number https://my-ngrok-hostname/message
+vonage number:update 12017621343 US --url=https://my-ngrok-hostname/message
 ```
 
 Now we have the webhook setup as a place for inbound SMS messages to be routed.  
@@ -223,4 +233,4 @@ The example above is just a small introduction to translation using the IBM Wats
 
 You can find a completed version of this tutorial on the [Vonage Community GitHub](https://github.com/nexmo-community/sms-translate-ibm-js).
 
-If you want to learn more about the Extend projects we have, you can visit <https://developer.nexmo.com/extend>.
+If you want to learn more about the Extend projects we have, you can visit <https://developer.vonage.com/extend>.
