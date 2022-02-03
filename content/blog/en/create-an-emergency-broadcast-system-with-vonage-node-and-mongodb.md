@@ -152,7 +152,7 @@ The code above creates a new Vonage object and passes in your API key, secret, a
 API_KEY=your_vonage_api_key
 API_SECRET=your_vonage_secret
 APPLICATION_ID=your_vonage_application_id
-PRIVATE_KEY=your_vonage_private_key
+PRIVATE_KEY=your_vonage_private_key_path
 FROM_NUMBER=your_vonage_number
 PORT=5000
 ```
