@@ -15,11 +15,11 @@ spotlight: true
 redirect: ""
 canonical: ""
 ---
-Even if you didn't know that's what they're called, you probably use IVR systems all the time. An [IVR system](https://www.nexmo.com/use-cases/interactive-voice-response) lets you call a phone number, listen the audio-cues, and navigate your way through the call to get the info you need. Nexmo makes creating a full-fledged IVR system as simple as spinning up a Web server. In this post we'll see how to create very complex and elaborate IVR systems while keeping the code simple and easy to maintain. In order to accomplish this, we'll use [XState](https://xstate.js.org/) which is a popular State Machine library for Javascript.
+Even if you didn't know that's what they're called, you probably use IVR systems all the time. An [IVR system](https://developer.vonage.com/use-cases/interactive-voice-response/) lets you call a phone number, listen the audio-cues, and navigate your way through the call to get the info you need. Vonage makes creating a full-fledged IVR system as simple as spinning up a Web server. In this post we'll see how to create very complex and elaborate IVR systems while keeping the code simple and easy to maintain. In order to accomplish this, we'll use [XState](https://xstate.js.org/) which is a popular State Machine library for Javascript.
 
 ## An IVR System with Less Than 35 Lines of Code
 
-The key to implementing an IVR System with Nexmo is to create a Web server that will instruct Nexmo how to handle each step of the call. Typically, this means that as soon as a user calls your virtual incoming number, Nexmo will send an HTTP request to your `/answer` endpoint and expect you to respond with a JSON payload composed of [NCCO](https://developer.nexmo.com/voice/voice-api/ncco-reference) objects that specify what the user should hear. Similarly, when the user uses their keypad to choose what they want to listen to next, then Nexmo makes a request to a different endpoint typically called `/dtmf`. The `/dtmf` endpoint will be called with a request payload that includes the number that the user has chosen, which your server should use to figure out what set of NCCO objects to respond with.
+The key to implementing an IVR System with Vonage is to create a Web server that will instruct Vonage how to handle each step of the call. Typically, this means that as soon as a user calls your virtual incoming number, Vonage will send an HTTP request to your `/answer` endpoint and expect you to respond with a JSON payload composed of [NCCO](https://developer.vonage.com/voice/voice-api/ncco-reference) objects that specify what the user should hear. Similarly, when the user uses their keypad to choose what they want to listen to next, then Vonage makes a request to a different endpoint typically called `/dtmf`. The `/dtmf` endpoint will be called with a request payload that includes the number that the user has chosen, which your server should use to figure out what set of NCCO objects to respond with.
 
 Let's see this what this looks like in code when using [express](https://expressjs.com/) to power our Web server.
 
@@ -66,8 +66,8 @@ You can start writing your app code right away. But in order to be able to call 
 <sign-up number></sign-up>
 
 * Make sure your Web server is accessible on the Web. You can do this by exposing your local development machine [using Ngrok](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/?utm_campaign=dev_spotlight&utm_content=IVR_XState_Mevorach) or by developing using [Glitch](https://glitch.com/).
-* Create a Voice application. You can do this via the [Nexmo Website](https://dashboard.nexmo.com/voice/create-application), or using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#create-a-new-application). You'll need to enter the public url of your `/answer` endpoint when you set up your application.
-* Obtain a virtual incoming number and connect it to your app using the [Website](https://dashboard.nexmo.com/buy-numbers?utm_campaign=dev_spotlight&utm_content=IVR_XState_Mevorach) or [CLI](https://github.com/Nexmo/nexmo-cli#create-a-new-application).
+* Create a Voice application. You can do this via the [Vonage Website](https://dashboard.nexmo.com/voice/create-application), or using the [Vonage CLI](https://developer.vonage.com/application/vonage-cli#creating-an-application). You'll need to enter the public url of your `/answer` endpoint when you set up your application.
+* Obtain a virtual incoming number and connect it to your app using the [Website](https://dashboard.nexmo.com/buy-numbers?utm_campaign=dev_spotlight&utm_content=IVR_XState_Mevorach) or [CLI](https://developer.vonage.com/application/vonage-cli#creating-an-application).
 
 When all this is in place you'll be able to call your number and you'll hear the audio response that's based on the data you return from your Web server.
 
@@ -203,11 +203,12 @@ class CallManager {
 exports.callManager = new CallManager();
 ```
 
-As you can see, each call is identified by its `uuid`  which Nexmo takes care of assigning to each call.
+As you can see, each call is identified by its `uuid`  which 
+Vonage takes care of assigning to each call.
 
 ## Putting It All Together
 
-Now we can modify our Web server code to defer to the `callManager` whenever the Nexmo backend calls our endpoints.
+Now we can modify our Web server code to defer to the `callManager` whenever the Vonage backend calls our endpoints.
 
 ```javascript
 /// server.js
@@ -241,7 +242,7 @@ app.post('/event', (req, res) =&gt; {
 app.listen(port, () =&gt; console.log(`Example app listening on port ${port}!`));
 ```
 
-As you can see, in order to know when the call has ended we added an /event endpoint. If you associate it with your Nexmo Application as the "Event URL" webhook then Nexmo will make a request to it asynchronously when the overall call state changes (e.g. the user hangs up). Unlike the `/answer` or `/dtmf` endpoint, you cannot respond with NCCO objects to this request and influence what the user hears.
+As you can see, in order to know when the call has ended we added an /event endpoint. If you associate it with your Vonage Application as the "Event URL" webhook then Vonage will make a request to it asynchronously when the overall call state changes (e.g. the user hangs up). Unlike the `/answer` or `/dtmf` endpoint, you cannot respond with NCCO objects to this request and influence what the user hears.
 
 ## Changing the Call Structure with Ease
 
@@ -353,4 +354,4 @@ By defining our machine with [`strict: true`](https://xstate.js.org/docs/guides/
 
 ## Wrapping Up
 
-In this post we introduced the XState library and how it can be used to control the progress of a call in an IVR System powered by Nexmo, in a way that scales well for a real-world use-case. The complete code covered in this post can be found [here](https://github.com/cowchimp/ivr-xstate-demo). If you're looking for more info, both [Nexmo](https://developer.nexmo.com/voice/voice-api/overview?utm_campaign=dev_spotlight&utm_content=IVR_XState_Mevorach) and [XState](https://xstate.js.org/docs) have excellent documentation.
+In this post we introduced the XState library and how it can be used to control the progress of a call in an IVR System powered by Vonage, in a way that scales well for a real-world use-case. The complete code covered in this post can be found [here](https://github.com/cowchimp/ivr-xstate-demo). If you're looking for more info, both [Vonage](https://developer.vonage.com/voice/voice-api/overview?utm_campaign=dev_spotlight&utm_content=IVR_XState_Mevorach) and [XState](https://xstate.js.org/docs) have excellent documentation.
