@@ -1,5 +1,5 @@
 ---
-title: "Create an Emergency Broadcast System With Vonage, Node, and MongoDB"
+title: Create an Emergency Broadcast System With Vonage, Node, and MongoDB
 description: "Create an emergency broadcast system with Vonage, Node, and MongoDB "
 author: cory-althoff
 published: true
@@ -61,7 +61,7 @@ vonage apps:create
 ```
 
 Scroll to SMS, click the spacebar, and it hit enter. 
-Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in the USA, replace GB with US:
+Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in Great Britain, replace US with GB:
 
 ```
 vonage numbers:search US
@@ -463,7 +463,6 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
 #number{
     margin-top: 1em;
 }
-
 ```
 
 Now when you go to your website’s homepage, you should see a website like the preview at the beginning of this article. 
