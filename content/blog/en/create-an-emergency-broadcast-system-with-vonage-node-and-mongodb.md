@@ -102,11 +102,11 @@ const app = express()
 const port = 3000
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.send('Hello World!')
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+    console.log(`Example app listening on port ${port}`)
 }) 
 ```
 
@@ -127,8 +127,8 @@ It is time to add code to connect to your MongoDB database! Add this code to you
 ```javascript
 mongoose.connect('mongodb+srv://…', { useNewUrlParser: true, useUnifiedTopology: true });
 const contactsSchema = new mongoose.Schema({
-   name: String,
-   number: Number
+    name: String,
+    number: Number
 })
 const Contacts = mongoose.model('Contacts', contactsSchema)
 ```
@@ -139,10 +139,10 @@ Next, add this code to help send SMS messages using the Vonage messages API.
 
 ```javascript
 const vonage = new Vonage({
-   apiKey: process.env.API_KEY,
-   apiSecret: process.env.API_SECRET,
-   applicationId: process.env.APPLICATION_ID,
-   privateKey: process.env.PRIVATE_KEY
+    apiKey: process.env.API_KEY,
+    apiSecret: process.env.API_SECRET,
+    applicationId: process.env.APPLICATION_ID,
+    privateKey: process.env.PRIVATE_KEY
 })
 ```
 
@@ -163,9 +163,9 @@ Now, let’s create a few endpoints. Add the following code to `app.js`:
 
 ```javascript
 app.post('/contacts', function (req, res) {
-   const contact = new Contacts({name: req.body.name})
-   contact.save()
-   res.redirect('/')
+    const contact = new Contacts({name: req.body.name})
+    contact.save()
+    res.redirect('/')
 })
 ```
 
@@ -175,9 +175,9 @@ Let’s create an endpoint to get all of the contacts from your database. Add th
 
 ```javascript
 app.get('/contacts', function(req, res){
-   Contacts.find({}, function(err, contacts){
-       if(err){
-           console.log(err)
+    Contacts.find({}, function(err, contacts){
+        if(err){
+            console.log(err)
        }
        else {
            res.json(contacts)
@@ -192,17 +192,17 @@ Now, let’s define an endpoint to send an SMS message. Add this code to `app.js
 
 ```javascript
 app.post('/alert', function (req, res){
-   let long = req.body['coordinates']
-   let lat = req.body['coordinates']
-   let contacts = req.body['contacts']
-   for (let i = 0; i <= contacts.length; i++) {
-       vonage.channel.send(
-           { 'type': 'sms', "number": contacts[i].number},
-           { 'type': 'sms', "number": process.env.FROM_NUMBER},
-           {
-               'content': {
-                   'type': 'text',
-                   'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+    let long = req.body['coordinates']
+    let lat = req.body['coordinates']
+    let contacts = req.body['contacts']
+    for (let i = 0; i <= contacts.length; i++) {
+        vonage.channel.send(
+            { 'type': 'sms', "number": contacts[i].number},
+            { 'type': 'sms', "number": process.env.FROM_NUMBER},
+            {
+              'content': {
+                  'type': 'text',
+                  'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
                        `their longitude is ${long}!`
                }
            },
@@ -229,15 +229,15 @@ let contacts = req.body['contacts']
 Then, it loops through the contacts and uses the Vonage Messages API to send a message to each number. 
 
 ```javascript
-  for (let i = 0; i <= contacts.length; i++) {
-       vonage.channel.send(
-           { 'type': 'sms', "number": contacts[i].number},
-           { 'type': 'sms', "number": process.env.FROM_NUMBER},
-           {
-               'content': {
-                   'type': "text",
-                   'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
-                       `their longitude is ${long}!`
+for (let i = 0; i <= contacts.length; i++) {
+    vonage.channel.send(
+        { 'type': 'sms', "number": contacts[i].number},
+        { 'type': 'sms', "number": process.env.FROM_NUMBER},
+        {
+          'content': {
+          'type': "text",
+          'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+                  `their longitude is ${long}!`
                }
            },
 ```
@@ -246,7 +246,7 @@ Finally, let’s update our homepage endpoint to handle when users go to our web
 
 ```javascript
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+    res.send('Hello World!')
 })
 ```
 
@@ -254,7 +254,7 @@ To this:
 
 ```javascript
 app.get('/', function(req, res){
-   res.sendFile('index.html')
+    res.sendFile('index.html')
 })
 ```
 
@@ -296,7 +296,7 @@ After the ALERT button in your HTML, add a script tag and define an object calle
 
 ```javascript
 <script>
-let data = {}
+    let data = {}
 </script>
 ```
 
@@ -306,8 +306,8 @@ Next, call a function called `httpPostAsync` and pass in `‘/contacts’`and `c
 
 ```javascript
 <script>
-let data = {}
-httpPostAsync('/contacts', create_contacts)
+    let data = {}
+    httpPostAsync('/contacts', create_contacts)
 </script>
 ```
 
@@ -315,16 +315,16 @@ Now, define `create_contacts`:
 
 ```javascript
 function create_contacts(contacts) {
-   data['contacts'] = []
-   for (let i = 0; i < contacts.length; i++) {
-       let contact = contacts[i]
-       data['contacts'].push(contact)
-       const newDiv = document.createElement('div')
-       newDiv.className = 'left'
-       const newContent = document.createTextNode(contact.name)
-       newDiv.appendChild(newContent)
-       const currentDiv = document.getElementById('contacts')
-       document.body.insertBefore(newDiv, currentDiv)
+    data['contacts'] = []
+    for (let i = 0; i < contacts.length; i++) {
+        let contact = contacts[i]
+        data['contacts'].push(contact)
+        const newDiv = document.createElement('div')
+        newDiv.className = 'left'
+        const newContent = document.createTextNode(contact.name)
+        newDiv.appendChild(newContent)
+        const currentDiv = document.getElementById('contacts')
+        document.body.insertBefore(newDiv, currentDiv)
    }
 }
 ```
@@ -335,13 +335,13 @@ Now, you need to define `httpPostAsync`:
 
 ```javascript
 function httpPostAsync(theUrl, callback) {
-   let xmlHttp = new XMLHttpRequest()
-   xmlHttp.onreadystatechange = function() {
-       if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+    let xmlHttp = new XMLHttpRequest()
+    xmlHttp.onreadystatechange = function() {
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
            callback(JSON.parse(xmlHttp.responseText))
    }
-   xmlHttp.open('GET', theUrl, true)
-   xmlHttp.send(null)
+    xmlHttp.open('GET', theUrl, true)
+    xmlHttp.send(null)
 }
 ```
 
@@ -351,24 +351,24 @@ Finally, you need to define a function that responds when a user clicks the ALER
 
 ```javascript
 function alert_them(){
-   function success(position) {
-       data['coordinates'] = {}
-       data['coordinates'] = position.coords.latitude
-       data['coordinates'] = position.coords.longitude
-       let xmlHttp = new XMLHttpRequest()
-       xmlHttp.open('POST', '/alert', true)
-       xmlHttp.setRequestHeader('Content-Type', 'application/json')
-       xmlHttp.send(JSON.stringify(data))
-       alert('Message Sent!')
+    function success(position) {
+        data['coordinates'] = {}
+        data['coordinates'] = position.coords.latitude
+        data['coordinates'] = position.coords.longitude
+        let xmlHttp = new XMLHttpRequest()
+        xmlHttp.open('POST', '/alert', true)
+        xmlHttp.setRequestHeader('Content-Type', 'application/json')
+        xmlHttp.send(JSON.stringify(data))
+        alert('Message Sent!')
    }
 
-   function error(){
-       console.log('error')
+function error(){
+    console.log('error')
    }
-   if(!navigator.geolocation) {
-       console.log('Geolocation is not supported by your browser')
+    if(!navigator.geolocation) {
+        console.log('Geolocation is not supported by your browser')
    } else {
-       navigator.geolocation.getCurrentPosition(success, error)
+        navigator.geolocation.getCurrentPosition(success, error)
    }
 }
 ```
@@ -379,13 +379,13 @@ The success function adds the user’s coordinates to `data['coordinates']` and 
 
 ```javascript
 function success(position) {
-       data['coordinates'] = {}
-       data['coordinates'] = position.coords.latitude
-       data['coordinates'] = position.coords.longitude
-       let xmlHttp = new XMLHttpRequest()
-       xmlHttp.open('POST', '/alert', true)
-       xmlHttp.setRequestHeader('Content-Type', 'application/json')
-       xmlHttp.send(JSON.stringify(data))
+    data['coordinates'] = {}
+    data['coordinates'] = position.coords.latitude
+    data['coordinates'] = position.coords.longitude
+    let xmlHttp = new XMLHttpRequest()
+    xmlHttp.open('POST', '/alert', true)
+    xmlHttp.setRequestHeader('Content-Type', 'application/json')
+    xmlHttp.send(JSON.stringify(data))
    }
 ```
 
