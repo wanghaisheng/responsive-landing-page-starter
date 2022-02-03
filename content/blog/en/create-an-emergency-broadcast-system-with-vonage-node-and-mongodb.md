@@ -163,7 +163,7 @@ Now, let’s create a few endpoints. Add the following code to `app.js`:
 
 ```javascript
 app.post('/contacts', function (req, res) {
-   const contact = new Contacts({ name: req.body.name})
+   const contact = new Contacts({name: req.body.name})
    contact.save()
    res.redirect('/')
 })
@@ -401,7 +401,7 @@ body {
 
 h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
 
-.forms{
+.forms {
     height: 2.5em;
     width: 30%;
 }
