@@ -1,6 +1,6 @@
 ---
 title: Translating SMS Messages Using Google Cloud’s Translation API
-description: Find out how to create an inbound Nexmo SMS webhook and translate
+description: Find out how to create an inbound Vonage SMS webhook and translate
   the message into English using the Google Cloud Translation API
 thumbnail: /content/blog/extending-nexmo-google-cloud-translation-api-dr/E_EN_Translate-SMS_1200x600.png
 author: kellyjandrews
@@ -15,18 +15,18 @@ comments: true
 redirect: ""
 canonical: ""
 ---
-Text messaging has become a part of our daily lives.  We integrate it into multiple aspects like banking, alerts, marketing, and support. It has become simple to implement, and Nexmo is no different.  
+Text messaging has become a part of our daily lives.  We integrate it into multiple aspects like banking, alerts, marketing, and support. It has become simple to implement, and Vonage is no different.  
 
 As a part of the Extend team here, integrating text messages with translation API's makes perfect sense. Translating incoming text messages can help break down communication barriers and help you reach a broader audience.
 
 ## Overview
 
-In this post, I show you how to create an [inbound Nexmo SMS](https://developer.nexmo.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [Google Cloud Translation API](https://cloud.google.com/translate/).  
+In this post, I show you how to create an [inbound Vonage SMS](https://developer.vonage.com/messaging/sms/guides/inbound-sms) webhook and translate the message into English using the [Google Cloud Translation API](https://cloud.google.com/translate/).  
 
 In order to get started, you will need the following items setup:
 
 * [Google Cloud Account](https://console.cloud.google.com)
-* [Nexmo CLI installed](https://github.com/Nexmo/nexmo-cli#installation)
+* [Vonage CLI installed](https://developer.vonage.com/application/vonage-cli)
 
 <sign-up></sign-up> 
 
@@ -84,9 +84,9 @@ This will set up the server to run the example.
 
 ### Installing Ngrok
 
-Webhooks need to be publicly available so that the Nexmo service can reach the application when incoming SMS messages are received. You could push your code up to a publicly available server, or you can use [`ngrok`](https://ngrok.com) to allow for public traffic to reach your local application.
+Webhooks need to be publicly available so that the Vonage service can reach the application when incoming SMS messages are received. You could push your code up to a publicly available server, or you can use [`ngrok`](https://ngrok.com) to allow for public traffic to reach your local application.
 
-You can learn more about installing `ngrok` with [this post](https://www.nexmo.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr). After you have everything ready to go you can start ngrok using the following command to create your tunnel.
+You can learn more about installing `ngrok` with [this post](https://learn.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr/). After you have everything ready to go you can start ngrok using the following command to create your tunnel.
 
 ```bash
 ngrok http 3000
@@ -124,25 +124,35 @@ The Google Cloud Translation API is now set up and ready to use.
 
 Next, we can set up the phone number.
 
-## Setting Up Nexmo Inbound SMS Messages
+## Setting Up Vonage Inbound SMS Messages
 
-This example requires a phone number from Nexmo to receive inbound messages. We can do this by using the [Nexmo CLI](https://github.com/Nexmo/nexmo-cli#installation) right from a terminal.
+This example requires a phone number from Vonage to receive inbound messages. We can do this by using the [Vonage CLI](https://developer.vonage.com/application/vonage-cli) right from a terminal.
 
 ### Purchase a Virtual Phone Number
 
 The first step will be to purchase a number (feel free to use a different [ISO 3166 alpha-2](https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes) country code as needed).
 
 ```bash
-nexmo number:buy --country_code US
+vonage numbers:search US
+
+ Country Number      Type       Cost Features  
+ ─────── ─────────── ────────── ──── ───────── 
+ US      12017621343 mobile-lvn 0.90 VOICE,SMS 
+ US      12017782770 mobile-lvn 0.90 VOICE,SMS 
+ US      12018011956 mobile-lvn 0.90 VOICE,SMS 
+ US      12018099074 mobile-lvn 0.90 VOICE,SMS 
+ US      12018099756 mobile-lvn 0.90 VOICE,SMS 
+
+vonage numbers:buy 12017621343 US
 ```
 
 Although the actual route to use in the application isn't set up, you will name it `/message`. The phone number needs to be linked to this route so inbound messages know where to go. Get the `ngrok` host name from the previous setup and use it here:
 
 ```bash
-nexmo link:sms phone_number https://my-ngrok-hostname/message
+vonage number:update 12017621343 US --url=https://my-ngrok-hostname/message
 ```
 
-Now we have the Nexmo webhook set up as a place for inbound SMS messages to be routed.  
+Now we have the webhook setup as a place for inbound SMS messages to be routed.
 
 ## Finish the Application
 
@@ -150,9 +160,9 @@ All that is left for this tutorial is creating the Express route to handle the i
 
 ### Build the Webhook
 
-First, we need to build the webhook code. Nexmo has a built in feature for setting default SMS behaviour.  [In the settings panel](https://dashboard.nexmo.com/settings) you can change the default `HTTP` method used. Mine is set to `POST-JSON`. I would recommend using this setting if possible, however the code used in this example will handle all three options in case you are unable to modify this setting.
+First, we need to build the webhook code. Vonage has a built-in feature for setting default SMS behaviour.  [In the settings panel](https://dashboard.nexmo.com/settings) you can change the default `HTTP` method used. Mine is set to `POST-JSON`. I would recommend using this setting if possible, however the code used in this example will handle all three options in case you are unable to modify this setting.
 
-![Default Nexmo SMS HTTP Method](https://www.nexmo.com/wp-content/uploads/2019/10/default-sms-settings.png "Default Nexmo SMS HTTP Method")
+![Default Vonage SMS HTTP Method](https://www.nexmo.com/wp-content/uploads/2019/10/default-sms-settings.png "Default Vonage SMS HTTP Method")
 
 Open up the `index.js` file, and at the bottom, paste the following code:
 
