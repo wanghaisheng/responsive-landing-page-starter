@@ -457,7 +457,7 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
     margin-bottom: 1.5em;
 }
 
-.cons{
+.cons {
     font-size: 22px;
 }
 
