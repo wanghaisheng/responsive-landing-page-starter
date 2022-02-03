@@ -157,7 +157,7 @@ FROM_NUMBER=your_vonage_number
 PORT=5000
 ```
 
-Make sure to replace everything after each equals sign for each variable with the information from your Vonage account. You can now replace the line of code `const port = 3000` from earlier with  `process.env.PORT`, so your app gets the port from an environment variable (instead of hard coding it). 
+Make sure to replace everything after each equals sign for each variable with the information from your Vonage account. You can now replace the line of code `const port = 3000` from earlier with `process.env.PORT`, so your app gets the port from an environment variable (instead of hard coding it). 
 
 Now, let’s create a few endpoints. Add the following code to `app.js`: 
 
