@@ -117,7 +117,7 @@ Now, add this code underneath`const app = express()`:
 ```javascript
 app.use( bodyParser.json() )
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static("public"))
+app.use(express.static('public'))
 ```
 
 This code helps you accept POST requests using Express and tells Express serve static files from a directory called `public`. 
@@ -125,7 +125,7 @@ This code helps you accept POST requests using Express and tells Express serve s
 It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
 
 ```javascript
-mongoose.connect("mongodb+srv://…", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://…', { useNewUrlParser: true, useUnifiedTopology: true });
 const contactsSchema = new mongoose.Schema({
    name: String,
    number: Number
@@ -197,12 +197,12 @@ app.post('/alert', function (req, res){
    let contacts = req.body['contacts']
    for (let i = 0; i <= contacts.length; i++) {
        vonage.channel.send(
-           { "type": "sms", "number": contacts[i].number},
-           { "type": "sms", "number": process.env.FROM_NUMBER},
+           { 'type': 'sms', "number": contacts[i].number},
+           { 'type': 'sms', "number": process.env.FROM_NUMBER},
            {
-               "content": {
-                   "type": "text",
-                   "text": `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+               'content': {
+                   'type': 'text',
+                   'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
                        `their longitude is ${long}!`
                }
            },
@@ -231,12 +231,12 @@ Then, it loops through the contacts and uses the Vonage Messages API to send a m
 ```javascript
   for (let i = 0; i <= contacts.length; i++) {
        vonage.channel.send(
-           { "type": "sms", "number": contacts[i].number},
-           { "type": "sms", "number": process.env.FROM_NUMBER},
+           { 'type': 'sms', "number": contacts[i].number},
+           { 'type': 'sms', "number": process.env.FROM_NUMBER},
            {
-               "content": {
-                   "type": "text",
-                   "text": `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+               'content': {
+                   'type': "text",
+                   'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
                        `their longitude is ${long}!`
                }
            },
@@ -320,11 +320,11 @@ function create_contacts(contacts) {
    for (let i = 0; i < contacts.length; i++) {
        let contact = contacts[i]
        data['contacts'].push(contact)
-       const newDiv = document.createElement("div")
+       const newDiv = document.createElement('div')
        newDiv.className = 'left'
        const newContent = document.createTextNode(contact.name)
        newDiv.appendChild(newContent)
-       const currentDiv = document.getElementById("contacts")
+       const currentDiv = document.getElementById('contacts')
        document.body.insertBefore(newDiv, currentDiv)
    }
 }
@@ -341,7 +341,7 @@ function httpPostAsync(theUrl, callback) {
        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
            callback(JSON.parse(xmlHttp.responseText))
    }
-   xmlHttp.open("GET", theUrl, true)
+   xmlHttp.open('GET', theUrl, true)
    xmlHttp.send(null)
 }
 ```
@@ -357,10 +357,10 @@ function alert_them(){
        data['coordinates'] = position.coords.latitude
        data['coordinates'] = position.coords.longitude
        let xmlHttp = new XMLHttpRequest()
-       xmlHttp.open("POST", '/alert', true)
-       xmlHttp.setRequestHeader("Content-Type", "application/json")
+       xmlHttp.open('POST', '/alert', true)
+       xmlHttp.setRequestHeader('Content-Type', 'application/json')
        xmlHttp.send(JSON.stringify(data))
-       alert("Message Sent!")
+       alert('Message Sent!')
    }
 
    function error(){
@@ -384,8 +384,8 @@ function success(position) {
        data['coordinates'] = position.coords.latitude
        data['coordinates'] = position.coords.longitude
        let xmlHttp = new XMLHttpRequest()
-       xmlHttp.open("POST", '/alert', true)
-       xmlHttp.setRequestHeader("Content-Type", "application/json")
+       xmlHttp.open('POST', '/alert', true)
+       xmlHttp.setRequestHeader('Content-Type', 'application/json')
        xmlHttp.send(JSON.stringify(data))
    }
 ```
