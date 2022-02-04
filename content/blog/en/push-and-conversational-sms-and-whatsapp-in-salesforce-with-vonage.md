@@ -138,7 +138,7 @@ So now that inbound messages from Vonage should be working, let’s look at sett
 1. As before, go into the Setup section (top left menu).
 2. Then look for Custom Settings.
 
-![](https://lh4.googleusercontent.com/Z-PYpNRM5xjaeKLP4UhZomdK9iN4TfIJGUGTA1POVqJ34BU2dCkwKhN_pmJd8-eQNcZoFE54yEMcCRgSMXkPFmF7z84m1LXxMfXGN3IUnufXbJwABZX-dWxZz8XYApqaco23JxT5)
+![Custom Settings](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img8.png)
 
 3. You will find one called 'Vonage API Configuration'.
 
