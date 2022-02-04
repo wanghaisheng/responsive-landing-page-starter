@@ -168,7 +168,7 @@ Let’s see how you can add it to the cases.
 
 4. Click 'Add Tab' and select 'Custom' to rename it. 
 
-![](https://lh6.googleusercontent.com/VxKUUUFZAcEWMWGMFoXrnivO3gS6wP3F4xt8h25JtqDysqoUsbcxy3_Uc_1xYxV-quE2eJqF8D6vAdM4Ed28sr2ZQOiiSbcN_hYUebcedpeuIno2vB1oHTve9g-Dc9T-UK-dcQOv)![](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img13.png)
+![Custom](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img13.png)
 
 5. Look on the left-hand side and look under the Custom Lightning component. Drag and drop the `VonageMessaging` component into the right part of the page.
 
