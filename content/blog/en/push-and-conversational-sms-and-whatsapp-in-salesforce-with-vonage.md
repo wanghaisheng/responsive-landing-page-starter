@@ -176,7 +176,7 @@ Let’s see how you can add it to the cases.
 
 You’re DONE. You can now send and receive messages from any case. 
 
-![](https://lh3.googleusercontent.com/vz5lK0AKA0VLpVxbBVwzCv17KgL2V9TDfyLeZOz5eNb0c4GrVKjiNfcc_MEB6zt0piS7aE2L9oVoEbSJ9_lQt8KjEjJWKqKE0x0N32aQtEJiq2Ulp7gl3-m3ETesWVQvx2dSpYx-)
+![Case](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img15.png)
 
 ## Bonus: You Can Also Automate Outbound Notification via the Process Builder and Flow
 
