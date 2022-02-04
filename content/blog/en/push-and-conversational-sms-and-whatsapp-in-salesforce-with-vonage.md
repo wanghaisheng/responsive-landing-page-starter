@@ -162,7 +162,7 @@ Let’s see how you can add it to the cases.
 
 ![Setup](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img11.png)
 
-3. Let’s create a new tab next to Feed and Details. Select the middle window.
+3. Let’s create a new tab next to Feed and Related Select the middle window.
 
 ![Feed and Details](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img12.png)
 
@@ -172,7 +172,7 @@ Let’s see how you can add it to the cases.
 
 5. Look on the left-hand side and look under the Custom Lightning component. Drag and drop the `VonageMessaging` component into the right part of the page.
 
-![](https://lh6.googleusercontent.com/BNLJbgwOZnbDjuQwbdq9U0TUy-kqi2m8QzGFbegWSo-Lk9cXP38SEXUJR9MKwTr-01mG97VqVWPD_M0OzifsvSMZ5k32H0dqP6pCpcF22aCMahnXxQdH0xb9W9J5h7f47nbMNyZC)
+![Screenshot of the Components Page](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img14.png)
 
 You’re DONE. You can now send and receive messages from any case. 
 
@@ -184,7 +184,7 @@ If you need to automate messages straight out of Salesforce, you can use the int
 
 1. Go to 'Setup' and search for 'Process Builder'. 
 2. Click 'New' to create a new process. 
-3. Build your process with objects, conditions, and under 'Immediate Action', you can decide to send an SMS or a WhatsApp message as per screenshot. 
+3. Build your process with objects, conditions, and under 'Immediate Action', you can decide to send an SMS or a WhatsApp message as per the screenshot. 
 4. Select Apex and then 'Send Vonage Message'.
 
 ![Process Builder](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img16.png)
