@@ -57,7 +57,7 @@ By the time you have gone through the onboarding flow, you will have your OWN de
 ![App Manager Setup View](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img4.png "App Manager Setup View")
 
 5. Add a callback URL to a local webhook (this does not get used in our case)
-   under the API section and select 'Full Access' under 'Selected OAuth Scopes' 
+   under the API section and select 'Full Access' under 'Selected OAuth Scopes'. 
 
 ![Enable Oauth settings](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img5.png "Enable Oauth settings")
 
