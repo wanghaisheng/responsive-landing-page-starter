@@ -54,10 +54,9 @@ By the time you have gone through the onboarding flow, you will have your OWN de
    ![New Connected App](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img3.png "New Connected App")
 4. Create the Connected App as per the screenshot and tick 'Enable OAuth Settings'.
 5. Add a callback URL to a local webhook (this does not get used in our case)
-   under the API section and select 'Full Access' under 'Selected OAuth Scopes':
+   under the API section and select 'Full Access' under 'Selected OAuth Scopes'
 
-![](https://lh3.googleusercontent.com/Cmyhi8HbPvRf_otmSt0qIiQ5ZFZr0F1BIKzX0jnWQTZ_7DK3ZnAtw6OKY_jWpNRh6lt03Rv67WRoWsbffP4HValg24Ywy1cFJiTYox7sRrtr-TjPvZWUSh8Fz-0lS9oYXeiP2VAm)
-
+   ![App Manager Setup View](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img4.png "App Manager Setup View")
 6. When you click 'Continue' on the following page, you will find the 'Consumer Key' and 'Consumer Secret'. Store both of these for the later part of the integration.
 
 ## Install the Salesforce Unmanaged Package
