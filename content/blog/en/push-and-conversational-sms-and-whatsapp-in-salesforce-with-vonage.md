@@ -44,7 +44,7 @@ By the time you have gone through the onboarding flow, you will have your OWN de
 ## Create Connected App Inside Salesforce
 
 1. When connected to your Salesforce Org, go to 'Setup' in the top right!
-2. ⚙️  Search for App Manager in the left-hand menu.=
+2. ⚙️  Search for App Manager in the left-hand menu.
 
 ![App manager selection](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img2.png)
 
