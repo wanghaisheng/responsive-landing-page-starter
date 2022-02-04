@@ -44,19 +44,25 @@ By the time you have gone through the onboarding flow, you will have your OWN de
 ## Create Connected App Inside Salesforce
 
 1. When connected to your Salesforce Org, go to 'Setup' in the top right!
-2. ![gear icon](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img1.png)
+2. Search for App Manager in the left-hand menu.
 
-   Search for App Manager in the left-hand menu.
+![gear icon](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img1.png)
 
-   ![App manager selection](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img2.png)
+![App manager selection](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img2.png)
+
 3. Then click on 'New Connected App'.
 
-   ![New Connected App](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img3.png "New Connected App")
+![New Connected App](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img3.png "New Connected App")
+
 4. Create the Connected App as per the screenshot and tick 'Enable OAuth Settings'.
-   ![App Manager Setup View](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img4.png "App Manager Setup View")
+
+![App Manager Setup View](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img4.png "App Manager Setup View")
+
 5. Add a callback URL to a local webhook (this does not get used in our case)
    under the API section and select 'Full Access' under 'Selected OAuth Scopes' 
+
 ![Enable Oauth settings](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img5.png "Enable Oauth settings")
+
 6. When you click 'Continue' on the following page, you will find the 'Consumer Key' and 'Consumer Secret'. Store both of these for the later part of the integration.
 
 ## Install the Salesforce Unmanaged Package
@@ -66,7 +72,7 @@ Option 1: Install it via the link 
 1. Go to the [GitHub link for the Lightning Web Component](https://github.com/Vonage-Community/sample-messages-salesforce-lightning_component), and at the very top, you will find a link to 'install the unmanaged package'. Please use the link in the first paragraph of GitHub, as it will be updated with the latest version.
 2. Click on the link to install the package. When you have finished, it will take you to the installed application page:
 
-![](https://lh3.googleusercontent.com/BWqgtbBzhBemFAg221lpTF3_Jqu_6QACJbJ2gDEptw0IMN1ILPJG3ibkIOFOL8fflJqEApWmieZGnabOYhfgEWz2mObeqb9TiKbnz4NJ9U6EGRYfxObq4nUnZaV3P-Grupx_UdPm)
+![Installed packages](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img6.png "Installed packages")
 
 Option 2: Install it via GitHub
 
