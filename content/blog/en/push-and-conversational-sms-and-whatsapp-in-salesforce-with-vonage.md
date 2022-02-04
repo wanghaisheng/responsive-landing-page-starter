@@ -1,11 +1,12 @@
 ---
-title: Send SMS and WhatsApp Messages in Salesforce with the Vonage APIs
+title: Send SMS and WhatsApp Messages in Salesforce With the Vonage APIs
 description: Learn to install Vonage’s open source connector and Lightning
   component to allow you to send push notifications and perform 2-way SMS and
   WhatsApp messaging straight from Salesforce.
+thumbnail: /content/blog/send-sms-and-whatsapp-messages-in-salesforce-with-the-vonage-apis/whatsapp_salesforce_api.png
 author: marc-marchal-de-corny
 published: true
-published_at: 2022-02-03T16:18:50.485Z
+published_at: 2022-02-04T14:50:52.935Z
 updated_at: 2022-02-03T16:18:50.499Z
 category: tutorial
 tags:
