@@ -43,8 +43,12 @@ By the time you have gone through the onboarding flow, you will have your OWN de
 
 ## Create Connected App Inside Salesforce
 
-1. When connected to your Salesforce Org, go to 'Setup' in the top right.![](https://lh5.googleusercontent.com/5Ttiql-vKW8rW6qRbLysNHI12YNJPDgHYqwkpFrCt9JodR4DH5jACLQn5OKVzgSdyoSj7p_Qu9cZeZvVrF3niRGOcEYmjCHPhUvA8_MShnqMW7GOsjY1jw-eugkRwJQxRbLhlpwV) 
-2. Search for App Manager in the left-hand menu.
+1. When connected to your Salesforce Org, go to 'Setup' in the top right!
+2. ![gear icon](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img1.png)
+
+   Search for App Manager in the left-hand menu.
+
+   ![App manager selection](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img2.png)
 3. Then click on 'New Connected App'.
 4. Create the Connected App as per the screenshot and tick 'Enable OAuth Settings'.
 5. Add a callback URL to a local webhook (this does not get used in our case)
