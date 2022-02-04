@@ -160,7 +160,7 @@ Let’s see how you can add it to the cases.
 1. Open a case by going to the Service Console and viewing an existing open case.
 2. Click on the cog in the top right-hand menu and select 'Edit Page'.
 
-![](https://lh5.googleusercontent.com/1MuuaJNUw7pbzCeJSOXRXdLTYxpXtUrDjWcvXEC13HXZSijIuiYocyDYxCDEX16txvT9s7ivH70wow1XO4NAtzrrWTYloGhHauyC2CF4MzhdZPxVnSTgSz2jB5dKn4ZCmOZijA6E)
+![Setup](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img11.png)
 
 3. Let’s create a new tab next to Feed and Details. Select the middle window.
 
