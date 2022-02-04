@@ -50,6 +50,8 @@ By the time you have gone through the onboarding flow, you will have your OWN de
 
    ![App manager selection](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img2.png)
 3. Then click on 'New Connected App'.
+
+   ![New Connected App](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img3.png "New Connected App")
 4. Create the Connected App as per the screenshot and tick 'Enable OAuth Settings'.
 5. Add a callback URL to a local webhook (this does not get used in our case)
    under the API section and select 'Full Access' under 'Selected OAuth Scopes':
