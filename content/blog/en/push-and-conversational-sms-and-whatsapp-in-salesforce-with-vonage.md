@@ -146,7 +146,7 @@ So now that inbound messages from Vonage should be working, let’s look at sett
 
 4. Click on 'Manage' and then 'New' at the top to add your credentials.
 
-![](https://lh5.googleusercontent.com/YnMC2D7X0TfaLZR-txMi9R39BCQYyhhdLmILDjZGi9e3__FcOqiv9wv2d87piukZJ27IS2RttrEYja1cTu5E6FzCqFZrJREwb971XhWHLxV9Bg170DySxRmD-51drr8Mj4YBZkI8)
+![Edit Vonage API Configuration](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img10.png)
 
 5. Enter all fields accordingly. Tick 'USE_SANDBOX_FOR_MESSAGES_API' and enter 'WHATSAPP_LVN' as '14157386102', if you are using the WhatsApp Sandbox.
 6. Save it!
