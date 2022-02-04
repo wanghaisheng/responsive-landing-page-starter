@@ -142,7 +142,7 @@ So now that inbound messages from Vonage should be working, let’s look at sett
 
 3. You will find one called 'Vonage API Configuration'.
 
-![](https://lh5.googleusercontent.com/ZYvyXW7Ki0aqCgZGiYm2cZV4s2Q7OKyZWaic8uFrOgkb-7edediaZ7zdCxISB0EeAPONy7QJ17DTdoFiKfyNEJSPXyXmkVz4IuBipZaY3QRcymTq3Y_FANZOuWiW0UD3oI0WcHIy)
+![Vonage API Configuration](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img9.png)
 
 4. Click on 'Manage' and then 'New' at the top to add your credentials.
 
