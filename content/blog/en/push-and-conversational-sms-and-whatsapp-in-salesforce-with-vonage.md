@@ -121,7 +121,7 @@ You will need to perform 3 things:
 
 Generate a public and private key (these will not be used). Under the Capabilities, activate Messages and insert the two callback URLs you created in the previous Node.js step.
 
-![](https://lh4.googleusercontent.com/Icq-GYJkotC2mU8cuLOW7YlBUELj2UNrwXNzMUckYVnJXp1aP89Chie-NUXXL1NtmXx5U6Vtdo_0osSlfppcDYOYkBRXkUcuIUnNYeWpwhqnwMmOJ5l2LUgNPjkG8c2b-zN3sGzs)
+![](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img7.png)
 
 3. Associate an SMS/WhatsApp phone number or use the WhatsApp Sandbox: you will need to order a phone number for WhatsApp or SMS. You can buy these by logging on to the [Numbers page](https://dashboard.nexmo.com/buy-numbers).
 
