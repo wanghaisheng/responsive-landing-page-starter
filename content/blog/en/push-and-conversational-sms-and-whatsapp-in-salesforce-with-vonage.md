@@ -187,7 +187,7 @@ If you need to automate messages straight out of Salesforce, you can use the int
 3. Build your process with objects, conditions, and under 'Immediate Action', you can decide to send an SMS or a WhatsApp message as per screenshot. 
 4. Select Apex and then 'Send Vonage Message'.
 
-![](https://lh3.googleusercontent.com/i9soWlNZ3Yg7n2A02dfcXYAVo_lYs-CunIHzAi2S-L3cCVoTYgpE2QSKdfQo04G1qJgw5wjNuzRWVMk2j5RUYwScI-QjRrj0x4jYgrhOdbNFc2GI8qqhpIrLYb24T8WPloB-cPQp)
+![Process Builder](/content/blog/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage/img16.png)
 
 ## What's Next?
 
