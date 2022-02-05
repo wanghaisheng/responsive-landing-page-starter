@@ -1,6 +1,6 @@
 ---
 title: Create an Emergency Broadcast System With Vonage, Node, and MongoDB
-description: Create an emergency broadcast system with Vonage, Node, and MongoDB.
+description: "Create an emergency broadcast system with Vonage, Node, and MongoDB "
 author: cory-althoff
 published: true
 published_at: 2022-02-01T00:31:09.675Z
@@ -101,7 +101,7 @@ Let’s start by creating a `"Hello, World!"` Express app. Here is how:
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
+app.get('/', function(req, res){
     res.send('Hello World!')
 })
 
@@ -201,15 +201,16 @@ app.post('/alert', function (req, res){
             { 'type': 'sms', "number": process.env.FROM_NUMBER},
             {
               'content': {
-                  'type': 'text',
-                  'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+              'type': 'text',
+              'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
                        `their longitude is ${long}!`
                }
            },
            (err, data) => {
                if (err) {
                    console.error(err)
-               } else {
+               } 
+               else {
                    console.log(data.message_uuid)
                }
            }
@@ -245,7 +246,7 @@ for (let i = 0; i <= contacts.length; i++) {
 Finally, let’s update our homepage endpoint to handle when users go to our web app’s homepage. Change this code from earlier:
 
 ```javascript
-app.get('/', (req, res) => {
+app.get('/', function(req, res){
     res.send('Hello World!')
 })
 ```
