@@ -101,7 +101,7 @@ Let’s start by creating a `"Hello, World!"` Express app. Here is how:
 const app = express()
 const port = 3000
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     res.send('Hello World!')
 })
 
@@ -116,7 +116,7 @@ Now, add this code underneath`const app = express()`:
 
 ```javascript
 app.use( bodyParser.json() )
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static('public'))
 ```
 
@@ -125,7 +125,7 @@ This code helps you accept POST requests using Express and tells Express serve s
 It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
 
 ```javascript
-mongoose.connect('mongodb+srv://…', { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect('mongodb+srv://…', { useNewUrlParser: true, useUnifiedTopology: true })
 const contactsSchema = new mongoose.Schema({
     name: String,
     number: Number
@@ -174,8 +174,8 @@ Now, when you send a POST request to `/contacts`, this code creates a new contac
 Let’s create an endpoint to get all of the contacts from your database. Add the following code to `app.js`: 
 
 ```javascript
-app.get('/contacts', function(req, res){
-    Contacts.find({}, function(err, contacts){
+app.get('/contacts', function(req, res) {
+    Contacts.find({}, function(err, contacts) {
         if(err){
             console.log(err)
        }
@@ -191,20 +191,20 @@ This code gets all of the contacts in your database and returns it as JSON when 
 Now, let’s define an endpoint to send an SMS message. Add this code to `app.js`: 
 
 ```javascript
-app.post('/alert', function (req, res){
+app.post('/alert', function (req, res) {
     let long = req.body['coordinates']['long']
     let lat = req.body['coordinates']['lat']
     let contacts = req.body['contacts']
     for (let i = 0; i <= contacts.length; i++) {
         vonage.channel.send(
-            { 'type': 'sms', "number": contacts[i].number},
-            { 'type': 'sms', "number": process.env.FROM_NUMBER},
+            {'type': 'sms', "number": contacts[i].number},
+            {'type': 'sms', "number": process.env.FROM_NUMBER},
             {
-              'content': {
-              'type': 'text',
-              'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+             'content': {
+             'type': 'text',
+             'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
                        `their longitude is ${long}!`
-               }
+             }
            },
            (err, data) => {
                if (err) {
@@ -232,21 +232,21 @@ Then, it loops through the contacts and uses the Vonage Messages API to send a m
 ```javascript
 for (let i = 0; i <= contacts.length; i++) {
     vonage.channel.send(
-        { 'type': 'sms', "number": contacts[i].number},
-        { 'type': 'sms', "number": process.env.FROM_NUMBER},
+        {'type': 'sms', "number": contacts[i].number},
+        {'type': 'sms', "number": process.env.FROM_NUMBER},
         {
-          'content': {
-          'type': "text",
-          'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+         'content':{
+         'type': "text",
+         'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
                   `their longitude is ${long}!`
-               }
-           },
+           }
+          },
 ```
 
 Finally, let’s update our homepage endpoint to handle when users go to our web app’s homepage. Change this code from earlier:
 
 ```javascript
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     res.send('Hello World!')
 })
 ```
@@ -254,7 +254,7 @@ app.get('/', function(req, res){
 To this:
 
 ```javascript
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     res.sendFile('index.html')
 })
 ```
@@ -353,7 +353,7 @@ This code sends a GET request to a URL and passes in the JSON it receives in the
 Finally, you need to define a function that responds when a user clicks the ALERT button.
 
 ```javascript
-function alert_them(){
+function alert_them() {
     function success(position) {
         data['coordinates'] = {}
         data['coordinates'] = position.coords.latitude
@@ -365,7 +365,7 @@ function alert_them(){
         alert('Message Sent!')
    }
 
-function error(){
+function error() {
     console.log('error')
    }
     if(!navigator.geolocation) {
