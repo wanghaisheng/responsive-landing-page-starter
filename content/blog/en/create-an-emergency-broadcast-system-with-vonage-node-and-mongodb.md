@@ -115,8 +115,10 @@ When you run this code on your local server on port 3000 (http://127.0.0.1:3000)
 Now, add this code underneath`const app = express()`:
 
 ```javascript
-app.use( bodyParser.json() )
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+    extended: true
+}))
 app.use(express.static('public'))
 ```
 
