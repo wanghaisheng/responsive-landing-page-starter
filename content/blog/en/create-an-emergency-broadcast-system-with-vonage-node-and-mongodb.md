@@ -127,7 +127,10 @@ This code helps you accept POST requests using Express and tells Express serve s
 It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
 
 ```javascript
-mongoose.connect('mongodb+srv://…', { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect('mongodb+srv://…', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 const contactsSchema = new mongoose.Schema({
     name: String,
     number: Number
@@ -164,8 +167,10 @@ Make sure to replace everything after each equals sign for each variable with th
 Now, let’s create a few endpoints. Add the following code to `app.js`: 
 
 ```javascript
-app.post('/contacts', function (req, res) {
-    const contact = new Contacts({name: req.body.name})
+app.post('/contacts', function(req, res) {
+    const contact = new Contacts({
+        name: req.body.name
+    })
     contact.save()
     res.redirect('/')
 })
@@ -193,31 +198,33 @@ This code gets all of the contacts in your database and returns it as JSON when 
 Now, let’s define an endpoint to send an SMS message. Add this code to `app.js`: 
 
 ```javascript
-app.post('/alert', function (req, res) {
+app.post('/alert', function(req, res) {
     let long = req.body['coordinates']['long']
     let lat = req.body['coordinates']['lat']
     let contacts = req.body['contacts']
     for (let i = 0; i <= contacts.length; i++) {
-        vonage.channel.send(
-            {'type': 'sms', "number": contacts[i].number},
-            {'type': 'sms', "number": process.env.FROM_NUMBER},
-            {
-             'content': {
-             'type': 'text',
-             'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
-                       `their longitude is ${long}!`
-             }
-           },
-           (err, data) => {
-               if (err) {
-                   console.error(err)
-               } 
-               else {
-                   console.log(data.message_uuid)
-               }
-           }
-       )
-   }
+        vonage.channel.send({
+                'type': 'sms',
+                "number": contacts[i].number
+            }, {
+                'type': 'sms',
+                "number": process.env.FROM_NUMBER
+            }, {
+                'content': {
+                    'type': 'text',
+                    'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+                        `their longitude is ${long}!`
+                }
+            },
+            (err, data) => {
+                if (err) {
+                    console.error(err)
+                } else {
+                    console.log(data.message_uuid)
+                }
+            }
+        )
+    }
 })
 ```
 
@@ -233,16 +240,19 @@ Then, it loops through the contacts and uses the Vonage Messages API to send a m
 
 ```javascript
 for (let i = 0; i <= contacts.length; i++) {
-    vonage.channel.send(
-        {'type': 'sms', "number": contacts[i].number},
-        {'type': 'sms', "number": process.env.FROM_NUMBER},
-        {
-         'content':{
-         'type': "text",
-         'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
-                  `their longitude is ${long}!`
-           }
-          },
+    vonage.channel.send({
+                'type': 'sms',
+                "number": contacts[i].number
+            }, {
+                'type': 'sms',
+                "number": process.env.FROM_NUMBER
+            }, {
+                'content': {
+                    'type': "text",
+                    'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
+                        `their longitude is ${long}!`
+                }
+            },
 ```
 
 Finally, let’s update our homepage endpoint to handle when users go to our web app’s homepage. Change this code from earlier:
@@ -330,7 +340,7 @@ function create_contacts(contacts) {
         newDiv.appendChild(newContent)
         const currentDiv = document.getElementById('contacts')
         document.body.insertBefore(newDiv, currentDiv)
-   }
+    }
 }
 ```
 
@@ -343,8 +353,8 @@ function httpPostAsync(theUrl, callback) {
     let xmlHttp = new XMLHttpRequest()
     xmlHttp.onreadystatechange = function() {
         if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-           callback(JSON.parse(xmlHttp.responseText))
-   }
+            callback(JSON.parse(xmlHttp.responseText))
+    }
     xmlHttp.open('GET', theUrl, true)
     xmlHttp.send(null)
 }
@@ -365,16 +375,16 @@ function alert_them() {
         xmlHttp.setRequestHeader('Content-Type', 'application/json')
         xmlHttp.send(JSON.stringify(data))
         alert('Message Sent!')
-   }
+    }
 
-function error() {
-    console.log('error')
-   }
-    if(!navigator.geolocation) {
+    function error() {
+        console.log('error')
+    }
+    if (!navigator.geolocation) {
         console.log('Geolocation is not supported by your browser')
-   } else {
+    } else {
         navigator.geolocation.getCurrentPosition(success, error)
-   }
+    }
 }
 ```
 
@@ -391,7 +401,7 @@ function success(position) {
     xmlHttp.open('POST', '/alert', true)
     xmlHttp.setRequestHeader('Content-Type', 'application/json')
     xmlHttp.send(JSON.stringify(data))
-   }
+}
 ```
 
 Your `/alert` endpoint then sends an SMS message to all of the contacts in the database, letting them know they are in trouble along with the user’s latitude and longitude. 
