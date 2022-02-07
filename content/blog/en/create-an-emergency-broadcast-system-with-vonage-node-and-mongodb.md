@@ -362,7 +362,7 @@ function httpPostAsync(theUrl, callback) {
 }
 ```
 
-This code sends a GET request to a URL and passes in the JSON it receives in the response to a callback function. 
+This code sends a GET request to a URL and passes in the JSON it received in the response to a callback function. 
 
 Finally, you need to define a function that responds when a user clicks the ALERT button.
 
@@ -392,7 +392,7 @@ function alert_them() {
 
 This function checks to see if `navigator.geolocation` is `true`. `Navigator.geolocation` lets you get the user’s location. You have to check if it is true because some browser versions do not support it. If it is true, the function above calls `navigator.geolocation.getCurrentPosition(success, error)` and passes in two functions: one that handles what happens if the browser successfully gets the user’s location and one that handles errors.
 
-The success function adds the user’s coordinates to `data['coordinates']` and then sends a POST request to `/alert` with the data. 
+The `success` function adds the user’s coordinates to `data['coordinates']` and then sends a POST request to `/alert` with the data. 
 
 ```javascript
 function success(position) {
@@ -406,7 +406,7 @@ function success(position) {
 }
 ```
 
-Your `/alert` endpoint then sends an SMS message to all of the contacts in the database, letting them know they are in trouble along with the user’s latitude and longitude. 
+Your `/alert` endpoint then sends an SMS message to all of the contacts in the database, letting them know the sender is in trouble along with the sender's latitude and longitude. 
 Now all you need is to style your app with some CSS. 
 Create a new file in public called `style.css` and add the following code:
 
@@ -481,7 +481,7 @@ h1 { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 30px; fo
 }
 ```
 
-Now when you go to your website’s homepage, you should see a website like the preview at the beginning of this article. 
+Now when you go to your website’s homepage, you should see a website like the image at the beginning of this article. 
 
 Add yourself as a contact and press alert. 
 
@@ -493,7 +493,7 @@ This demo is only a starting point!
 There are a ton of features you can add to it. 
 For example, if you were using this in production, you would want to create a feature to handle different users (logging in with a username and password, etc.). 
 You could also add features like editing contacts and adding options for what type of emergency is happening. 
-If you decide to build on this demo, I would love to see what you do: make sure to send us what you build on Twitter. 
+If you decide to build on this demo, I would love to see what you do: make sure to [send us what you build on Twitter](https://twitter.com/VonageDev). 
 Also, make sure to join the Vonage developer community for more awesome content and tutorials. 
 You can follow Vonage on [Twitter here](https://twitter.com/VonageDev) and join our [Slack channel here](https://developer.vonage.com/community/slack).
 I hope you enjoyed this tutorial!
