@@ -233,8 +233,8 @@ app.post('/alert', function(req, res) {
 This endpoint accepts a POST request with JSON containing the user’s latitude, longitude, and a list of numbers to send an SMS message to. 
 
 ```javascript
-let long = req.body['coordinates']
-let lat = req.body['coordinates']
+let long = req.body['coordinates']['long']
+let lat = req.body['coordinates']['lat']
 let contacts = req.body['contacts']
 ```
 
