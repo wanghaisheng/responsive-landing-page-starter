@@ -85,7 +85,7 @@ To get started, you need to install the JavaScript libraries you will use for th
 npm install express body-parser dotenv firebase mongodb mongoose nexmo@beta
 ```
 
-Next, create a .env file in your project and 
+Next, create a .env file in your project and add the following variables:  
 
 ```
 API_KEY=your_vonage_api_key
@@ -97,7 +97,7 @@ PORT=5000
 MONGO_URL=your_mongodb_url
 ```
 
-Make sure to replace everything after each equals sign for each variable with the information from your Vonage and MongoDB accounts. You can now replace the line of code `const port = 3000` from earlier with  `process.env.PORT`, so your app gets the port from an environment variable (instead of hard coding it). 
+Make sure to replace everything after each equals sign for each variable with the information from your Vonage and MongoDB accounts. 
 
 Now, create a file called `app.js` and import these libraries:
 
@@ -120,9 +120,7 @@ app.get('/', function(req, res) {
     res.send('Hello World!')
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-}) 
+app.listen(process.env.PORT)
 ```
 
 When you run this code on your local server on port 3000 (http://127.0.0.1:3000), and go to the homepage, it should say `Hello, World!`
