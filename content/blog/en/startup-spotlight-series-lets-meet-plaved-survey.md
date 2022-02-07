@@ -1,11 +1,11 @@
 ---
-title: "Startup Spotlight Series: Let's meet Plaved Survey"
+title: "Startup Spotlight Series: Let's Meet Plaved Survey"
 description: Meet Spain-based startup Plaved Survey as a part of Vonage Startup
   Spotlight series.
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-plaved-survey/plaved-survey.png
 author: filippos-kyprianou
 published: true
-published_at: 2022-02-04T11:01:49.248Z
+published_at: 2022-02-07T08:55:25.524Z
 updated_at: 2022-02-04T11:01:49.332Z
 category: startup
 tags:
@@ -65,7 +65,7 @@ Actually, the biggest challenge we have is to gain confidence and gain a foothol
 
 ## The biggest mistake Plaved Survey has made so far and what did you learn from it?
 
-In a startup project, errors appear everyday. We are constantly communicating with our network of mentors and counselors and adding new features to the platform. We need to be updating code and patching the apps daily because cybersecurity is a must in this kind of tools and our clients must feel safe and comfortable. 
+In a startup project, errors appear everyday. We are constantly communicating with our network of mentors and counsellors and adding new features to the platform. We need to be updating code and patching the apps daily because cybersecurity is a must in this kind of tools and our clients must feel safe and comfortable. 
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos and Bill Gates. Who do you choose and why? 
 
