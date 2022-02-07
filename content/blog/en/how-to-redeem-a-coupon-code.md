@@ -41,6 +41,12 @@ On the left-hand side of your dashboard, you will see what your balance is. Typi
 
 Next, click on your name on the left-hand side to expand the menu, then click on "Coupons". 
 
+**Note:** If this is your first time redeeming a coupon, you will see a prompt to enter a service address first. See below image. This is done for tax purposes and can not be skipped. If you don't have a business address, please enter your home address.
+
+![Enter service address prompt](/content/blog/how-to-redeem-a-vonage-coupon-code/address.png "Service address prompt")
+
+Once you have entered your service address, or if this is not your first time redeeming a coupon, you will see the coupon redemption window.
+
 ![Coupon redemption screenshot with an arrow pointing at coupon box.](/content/blog/how-to-redeem-a-coupon-code/addcode.png "Coupon redemption screenshot with an arrow pointing at coupon box.")
 
 The coupon redemption will open. In this view, navigate to the text box, enter your coupon code, and click the "Submit" button.
