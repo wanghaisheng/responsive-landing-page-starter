@@ -1,6 +1,7 @@
 ---
 title: Create an Emergency Broadcast System With Vonage, Node, and MongoDB
-description: "Create an emergency broadcast system with Vonage, Node, and MongoDB "
+description: "Learn how to build an emergency broadcast system to alert your
+  friends and family via SMS in an emergency. "
 author: cory-althoff
 published: true
 published_at: 2022-02-01T00:31:09.675Z
@@ -122,12 +123,12 @@ app.use(bodyParser.urlencoded({
 app.use(express.static('public'))
 ```
 
-This code helps you accept POST requests using Express and tells Express serve static files from a directory called `public`. 
+This code helps you accept POST requests using Express and tells Express to serve static files from a directory called `public`. 
 
-It is time to add code to connect to your MongoDB database! Add this code to your app but replace `mongodb+srv://…` with the link to your MongoDB database. 
+It is time to add code to connect to your MongoDB database! Add this code to your app and update your .env file to include an environment variable called MONGO_URL that contains the link to your MongoDB database. 
 
 ```javascript
-mongoose.connect('mongodb+srv://…', {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
