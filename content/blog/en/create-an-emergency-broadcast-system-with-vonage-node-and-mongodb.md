@@ -305,7 +305,7 @@ Go ahead and create a new file called index.html and add the following code:
 </html>
 ```
 
-The HTML above creates a form that allows you to enter a person’s name and number and press an Add button. When you press Add the form sends a POST request to `/contacts`, which creates a new contact in your database. Your HTML also has an ALERT button. When you press it, it sends a POST request to /alert, sending an SMS message to all contacts in your database.
+The HTML above creates a form that allows you to enter a person’s name and number and press an Add button. When you press Add the form sends a POST request to `/contacts`, which creates a new contact in your database. This HTML also has an ALERT button. When you press it, it sends a POST request to `/alert`, sending an SMS message to all contacts in your database.
 
 Finally, you need to add some JavaScript to this HTML to display the user’s contacts list and prepare the data to send to `/alert`. 
 
