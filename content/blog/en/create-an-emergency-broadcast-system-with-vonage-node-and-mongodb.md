@@ -137,7 +137,7 @@ app.use(express.static('public'))
 
 This code helps you accept POST requests using Express and tells Express to serve static files from a directory called `public`. 
 
-It is time to add code to connect to your MongoDB database! Add this code to your app and update your .env file to include an environment variable called MONGO_URL that contains the link to your MongoDB database. 
+It is time to add code to connect to your MongoDB database! Add this code to your app and update your `.env` file to include an environment variable called `MONGO_URL` that contains the link to your MongoDB database. 
 
 ```javascript
 mongoose.connect(process.env.MONGO_URL, {
