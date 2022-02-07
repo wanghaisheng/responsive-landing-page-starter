@@ -85,6 +85,20 @@ To get started, you need to install the JavaScript libraries you will use for th
 npm install express body-parser dotenv firebase mongodb mongoose nexmo@beta
 ```
 
+Next, create a .env file in your project and 
+
+```
+API_KEY=your_vonage_api_key
+API_SECRET=your_vonage_secret
+APPLICATION_ID=your_vonage_application_id
+PRIVATE_KEY=your_vonage_private_key
+FROM_NUMBER=your_vonage_number
+PORT=5000
+MONGO_URL=your_mongodb_url
+```
+
+Make sure to replace everything after each equals sign for each variable with the information from your Vonage and MongoDB accounts. You can now replace the line of code `const port = 3000` from earlier with  `process.env.PORT`, so your app gets the port from an environment variable (instead of hard coding it). 
+
 Now, create a file called `app.js` and import these libraries:
 
 ```javascript
@@ -132,7 +146,7 @@ mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-const contactsSchema = new mongoose.Schema({
+const contactsSchema = new mongoose.Schema({f
     name: String,
     number: Number
 })
@@ -153,17 +167,6 @@ const vonage = new Vonage({
 ```
 
 The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. It gets this information from a `.env`file in your project, so create a `.env` file and add it to your project, and add the following variables:
-
-```javascript
-API_KEY=your_vonage_api_key
-API_SECRET=your_vonage_secret
-APPLICATION_ID=your_vonage_application_id
-PRIVATE_KEY=your_vonage_private_key
-FROM_NUMBER=your_vonage_number
-PORT=5000
-```
-
-Make sure to replace everything after each equals sign for each variable with the information from your Vonage account. You can now replace the line of code `const port = 3000` from earlier with  `process.env.PORT`, so your app gets the port from an environment variable (instead of hard coding it). 
 
 Now, let’s create a few endpoints. Add the following code to `app.js`: 
 
