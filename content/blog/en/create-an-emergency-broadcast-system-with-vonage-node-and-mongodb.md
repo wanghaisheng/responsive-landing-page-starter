@@ -164,7 +164,7 @@ const vonage = new Vonage({
 })
 ```
 
-The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. It gets this information from a `.env`file in your project, so create a `.env` file and add it to your project, and add the following variables:
+The code above creates a new Vonage object and passes in your API key, secret, application ID, and the private key from your app. 
 
 Now, let’s create a few endpoints. Add the following code to `app.js`: 
 
