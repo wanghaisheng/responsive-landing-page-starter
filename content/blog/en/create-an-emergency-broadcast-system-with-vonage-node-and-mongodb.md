@@ -357,7 +357,7 @@ function httpPostAsync(theUrl, callback) {
             callback(JSON.parse(xmlHttp.responseText))
     }
     xmlHttp.open('GET', theUrl, true)
-    xmlHttp.send(null)
+    xmlHttp.send()
 }
 ```
 
