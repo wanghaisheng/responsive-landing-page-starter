@@ -32,7 +32,7 @@ Ready to get started? Let's build an emergency broadcast app!
 
 To follow this tutorial, you need Node (you can [download it here](https://nodejs.org/en/download/)). You also need a Vonage account, which you can [register for here](https://www.vonage.com/communications-apis/). You will also need a [MongoDB account](https://account.mongodb.com/account/register).
 
-After you register for your MongoDB account, you need to set up a database, which you can learn to [do in MongoDB’s documentation](https://docs.mongodb.com/manual/tutorial/getting-started/).  
+After you register for your MongoDB account, you need to set up a MongoDB Atlas database, which you can learn to [do in MongoDB’s documentation](https://docs.mongodb.com/manual/tutorial/getting-started/).  
 
 Once you’ve created your Vonage account, you need to do some initial setup.  
 
