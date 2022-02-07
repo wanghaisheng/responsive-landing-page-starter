@@ -143,7 +143,7 @@ mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
-const contactsSchema = new mongoose.Schema({f
+const contactsSchema = new mongoose.Schema({
     name: String,
     number: Number
 })
