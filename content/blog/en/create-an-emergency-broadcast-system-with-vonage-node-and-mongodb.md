@@ -317,7 +317,7 @@ After the ALERT button in your HTML, add a script tag and define an object calle
 </script>
 ```
 
-We will use data to store the data to send to `/alert`. 
+We will use `data` to store the data to send to `/alert`. 
 
 Next, call a function called `httpPostAsync` and pass in `‘/contacts’`and `create_contacts`:
 
