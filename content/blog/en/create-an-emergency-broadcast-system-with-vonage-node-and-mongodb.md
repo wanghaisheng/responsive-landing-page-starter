@@ -82,7 +82,7 @@ vonage apps:link --number=VONAGE_NUMBER APP_ID
 To get started, you need to install the JavaScript libraries you will use for this project like this: 
 
 ```
-npm install express body-parser dotenv firebase mongodb mongoose nexmo@beta
+npm install express body-parser dotenv firebase mongodb mongoose @vonage/server-sdk
 ```
 
 Next, create a .env file in your project and add the following variables:  
