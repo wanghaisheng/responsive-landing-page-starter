@@ -243,13 +243,13 @@ Then, it loops through the contacts and uses the Vonage Messages API to send a m
 for (let i = 0; i <= contacts.length; i++) {
     vonage.channel.send({
                 'type': 'sms',
-                "number": contacts[i].number
+                'number': contacts[i].number
             }, {
                 'type': 'sms',
-                "number": process.env.FROM_NUMBER
+                'number': process.env.FROM_NUMBER
             }, {
                 'content': {
-                    'type': "text",
+                    'type': 'text',
                     'text': `SOS! Your friend is in an emergency! Their latitude is ${lat} and` +
                         `their longitude is ${long}!`
                 }
