@@ -122,7 +122,13 @@ app.get('/', function(req, res) {
 app.listen(process.env.PORT)
 ```
 
-When you run this code on your local server (http://127.0.0.1:5000), and go to the homepage, it should say `Hello, World!`
+Now, run your code like this:
+
+```
+node app.js
+```
+
+When you run this code and go to your local server (http://127.0.0.1:5000), it should say `Hello, World!`
 
 Now, add this code underneath`const app = express()`:
 
