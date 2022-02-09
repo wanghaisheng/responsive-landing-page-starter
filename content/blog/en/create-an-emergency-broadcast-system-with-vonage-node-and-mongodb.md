@@ -285,28 +285,28 @@ Go ahead and create a new file called index.html and add the following code:
 ```html
 <!DOCTYPE html>
 <html lang='en'>
-<head>
-    <meta charset='UTF-8'>
-    <title>Emergency Broadcast</title>
-    <link rel='stylesheet' href='style.css'>
-</head>
-<body>
-    <h1 id='top'>Add Contact</h1>
-    <form action='/contacts' method='POST'>
-        <div>
+   <head>
+      <meta charset='UTF-8'>
+      <title>Emergency Broadcast</title>
+      <link rel='stylesheet' href='style.css'>
+   </head>
+   <body>
+      <h1 id='top'>Add Contact</h1>
+      <form action='/contacts' method='POST'>
+         <div>
             <input id='name' class='forms' type='text' name='name' placeholder='name'> <br>
             <input id='number' class='forms' type='text' name='number' placeholder='number'>
-        </div>
-        <div>
+         </div>
+         <div>
             <input type='submit' value='Add' class='tons' id='add'>
-        </div>
-    </form>
-    <br> <br>
-    <h1>Your Contacts</h1>
-    <div></div>
-    <div id='contacts'></div>
-    <button onclick='alert_them()' class='tons' id='alert'>ALERT</button>
-  </body>
+         </div>
+      </form>
+      <br> <br>
+      <h1>Your Contacts</h1>
+      <div></div>
+      <div id='contacts'></div>
+      <button onclick='alert_them()' class='tons' id='alert'>ALERT</button>
+   </body>
 </html>
 ```
 
