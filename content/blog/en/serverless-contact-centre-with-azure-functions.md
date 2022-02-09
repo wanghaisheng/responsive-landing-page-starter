@@ -16,6 +16,16 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+
+
+
+
+
+
+
+
+
+
 I would be surprised if there isn’t a company out there, from the smallest startup to the largest mega-corporation, that doesn’t want to provide its customers with brilliant customer service. Part of that service could be offering a dynamic and affordable contact centre that can provide self-service options or direct calls to the correct agent or department. Vonage's Voice API and it’s NCCOs are an easy way to build high-quality voice applications that can control the flow of inbound and outbound calls, create conference calls, record and store calls, playback pre-recorded messages and send text-to-speech messages in 40 different languages.
 
 These days most software one way or the other is hosted wholly or partially in the cloud and it’s no secret that without regulation cloud hosting costs can grow quickly over time. Having worked with Azure for many years I love learning about the different services it has to offer, my favourite for a while now has been Azure Functions, Microsoft’s serverless offering. They offer all of the security, reliability and scalability that you’d expect from any cloud provider at a cost that is very reasonable. In fact, using the Consumption plan the first 1,000,000 executions are free.
@@ -94,36 +104,37 @@ vonage apps:create
 ✔ Application Name … contact centre
 ✔ Select App Capabilities › Voice
 ✔ Create voice webhooks? … yes
-✔ Answer Webhook - URL … https://contactcentre123.azurewebsites.net/answer
+✔ Answer Webhook - URL … https://contactcentre123.azurewebsites.net/api/answer
 ✔ Answer Webhook - Method › POST
-✔ Event Webhook - URL … https://contactcentre123.azurewebsites.net/event
-✔ Event Webhook - Method › POST
 ```
 
-Now we can search for a number to buy and link to our application. We will look for a landline in the country you reside in. Our help pages have lists of [what products are supported in which countries](https://help.nexmo.com/hc/en-us/articles/204015043-Which-countries-does-Vonage-have-numbers-in-) and we use the [ISO 3166-1 alpha-2 codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) in our search. I'm based in the United Kingdom so I use "GB" when searching for numbers.
+Now we can search for a number to buy and link to our application. We will search for a mobile number in the country you reside in. Our help pages have lists of [what products are supported in which countries](https://help.nexmo.com/hc/en-us/articles/204015043-Which-countries-does-Vonage-have-numbers-in-) and we use the [ISO 3166-1 alpha-2 codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) in our search. I'm based in the United Kingdom so I use "GB" when searching for numbers.
 
 ```shell
-vonage numbers:search GB --features=VOICE
+vonage numbers:search GB --features=VOICE --type=mobile-lvn
 
-Country Number      Type     Cost Features
-─────── ──────────── ──────── ──── ────────
-GB      441223622911 landline 1.00 VOICE
-GB      442036178230 landline 1.00 VOICE
-GB      442036178250 landline 1.00 VOICE
-GB      442037642218 landline 1.00 VOICE
-GB      442037642309 landline 1.00 VOICE
-
-
+Country Number       Type       Cost Features
+─────── ──────────── ────────── ──── ─────────
+GB      447418368151 mobile-lvn 1.25 VOICE,SMS
+GB      447418368155 mobile-lvn 1.25 VOICE,SMS
+GB      447418368156 mobile-lvn 1.25 VOICE,SMS
+GB      447418368157 mobile-lvn 1.25 VOICE,SMS
+GB      447418368158 mobile-lvn 1.25 VOICE,SMS
 ```
 
-```
+When we find a number that we like we can purchase it and link it to the Vonage Application we created earlier.
 
+```
+vonage numbers:buy 447418368151 GB
+vonage apps:link 3ff94f7c-fb86-4afd-b338-fe39707b5ef5 --number=447418367999
 ```
 
 # Creating the Project
 
-```shell
-func init ContactCentre —dotnet
+Right, let's get coding! First we'll create a new functions project using the dotnet runtime.
+
+```
+func init ContactCentre —dotnet --worker-runtime dotnet
 ```
 
 This will create a Function App project in the folder ContactCentre. Once created we need to first add a reference to the Vonage Nuget package and then we will create two functions that both have HTTP Triggers, one that is the Answer endpoint and the second that will be the Event endpoint. Change into the ContactCentre project folder and run:
@@ -132,4 +143,104 @@ This will create a Function App project in the folder ContactCentre. Once create
 dotnet add package vonage
 func new --name Answer --template "HTTP trigger" --authlevel "anonymous"
 func new --name Event --template "HTTP trigger" --authlevel "anonymous"
+func new --name Menu --template "HTTP trigger" --authlevel "anonymous"
+```
+
+
+
+Answer Func
+
+
+
+```csharp
+using Vonage.Voice.Nccos;
+
+
+public static class Answer
+{
+    [FunctionName("Answer")]
+    public static IActionResult Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req, ILogger log)
+    {
+        log.LogInformation("Phone call answered");
+
+        var ncco = new Ncco(new NccoAction[] {
+            new TalkAction
+            {
+                Text = "Welcome to the Contact Centre. Press 1 for order information. Press 2 to speak to an operator."
+            },
+            new MultiInputAction
+            {
+                Dtmf = new DtmfSettings{MaxDigits = 1},
+                EventUrl = new []{ "https://contactcentre123.azurewebsites.net/api/menu" }
+            }
+        });
+
+        return new OkObjectResult(ncco);
+    }
+}
+```
+
+
+
+Menu Func
+
+```
+using Vonage.Voice.Nccos;
+using Vonage.Voice.Nccos.Endpoints;
+
+
+public static class Menu
+{
+    [FunctionName("Menu")]
+    public static async Task<IActionResult> Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "post", Route = null)] HttpRequest req,
+        ILogger log)
+    {
+        log.LogInformation("Menu event triggered");
+
+        string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
+        dynamic data = JsonConvert.DeserializeObject(requestBody);
+
+
+        var ncco = new Ncco();
+
+        var selectedOption = data.dtmf.digits;
+        switch (selectedOption)
+        {
+            case "1":
+                // LOOK UP CUSTOMER SPECIFIC DATA
+                ncco.Actions.Add(
+                    new TalkAction
+                    {
+                        Text = "Your order is on it's way.",
+                        Style = 2
+                    });
+                break;
+            case "2":
+                // CONNECT TO TELEPHONE AGENT
+                ncco.Actions.Add(
+                    new TalkAction
+                    {
+                        Text = "Please wait while we connect you to the next available operator.",
+                        Style = 2
+                    });
+
+                ncco.Actions.Add(
+                    new ConnectAction
+                    {
+                        Endpoint = new Endpoint[]
+                        {
+                            new PhoneEndpoint
+                            {
+                                Number = "01231232345456"
+                            }
+                        }
+                    });
+                break;
+        }
+
+        return new OkObjectResult(ncco);
+    }
+}
 ```
