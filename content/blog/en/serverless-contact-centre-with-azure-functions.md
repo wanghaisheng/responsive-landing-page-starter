@@ -146,11 +146,9 @@ func new --name Event --template "HTTP trigger" --authlevel "anonymous"
 func new --name Menu --template "HTTP trigger" --authlevel "anonymous"
 ```
 
+## Answer Function
 
-
-Answer Func
-
-
+Whenever someone phones our contact centre the answer function is the first endpoint that will be hit. We will return our NCCO object describing the first step in our process. We'll create a [Talk Action](https://developer.vonage.com/voice/voice-api/ncco-reference#talk) that welcomes our caller and describes what they can do using English and voice style 2, I find this the nicest, but there are plenty of [styles and languages](https://developer.vonage.com/voice/voice-api/guides/text-to-speech#supported-languages) to chose from. The next action here is the [MultiInputAction](https://developer.vonage.com/voice/voice-api/ncco-reference#input), which collects digits or speech input by the person you are calling and will pass this input to the EventUrl we supply, in this case, the Menu Function below.
 
 ```csharp
 using Vonage.Voice.Nccos;
@@ -167,7 +165,9 @@ public static class Answer
         var ncco = new Ncco(new NccoAction[] {
             new TalkAction
             {
-                Text = "Welcome to the Contact Centre. Press 1 for order information. Press 2 to speak to an operator."
+                Text = "Welcome to the Contact Centre. Press 1 for order information. Press 2 to speak to an operator.",
+                Language = "en-GB",
+                Style = 2
             },
             new MultiInputAction
             {
@@ -183,9 +183,9 @@ public static class Answer
 
 
 
-Menu Func
+## Menu Func
 
-```
+```csharp
 using Vonage.Voice.Nccos;
 using Vonage.Voice.Nccos.Endpoints;
 
@@ -201,7 +201,6 @@ public static class Menu
 
         string requestBody = await new StreamReader(req.Body).ReadToEndAsync();
         dynamic data = JsonConvert.DeserializeObject(requestBody);
-
 
         var ncco = new Ncco();
 
