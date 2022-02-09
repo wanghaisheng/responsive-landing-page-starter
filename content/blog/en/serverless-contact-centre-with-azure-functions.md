@@ -148,7 +148,9 @@ func new --name Menu --template "HTTP trigger" --authlevel "anonymous"
 
 ## Answer Function
 
-Whenever someone phones our contact centre the answer function is the first endpoint that will be hit. We will return our NCCO object describing the first step in our process. We'll create a [Talk Action](https://developer.vonage.com/voice/voice-api/ncco-reference#talk) that welcomes our caller and describes what they can do using English and voice style 2, I find this the nicest, but there are plenty of [styles and languages](https://developer.vonage.com/voice/voice-api/guides/text-to-speech#supported-languages) to chose from. The next action here is the [MultiInputAction](https://developer.vonage.com/voice/voice-api/ncco-reference#input), which collects digits or speech input by the person you are calling and will pass this input to the EventUrl we supply, in this case, the Menu Function below.
+Whenever someone phones our contact centre the answer function is the first endpoint that will be hit. We will return our NCCO object describing the first step in our process. We'll create a [Talk Action](https://developer.vonage.com/voice/voice-api/ncco-reference#talk) that welcomes our caller and describes what they can do using English and voice style 2, I find this the nicest, but there are plenty of [styles and languages](https://developer.vonage.com/voice/voice-api/guides/text-to-speech#supported-languages) to chose from. The next action here is the [MultiInputAction](https://developer.vonage.com/voice/voice-api/ncco-reference#input), which collects digits or speech input by the person you are calling and will pass this input to the EventUrl we supply, in this case, the Menu Function.
+
+Below is the code for the Answer Function.
 
 ```csharp
 using Vonage.Voice.Nccos;
@@ -183,7 +185,11 @@ public static class Answer
 
 
 
-## Menu Func
+## Menu Function
+
+
+
+Below is the code for the Menu Function
 
 ```csharp
 using Vonage.Voice.Nccos;
@@ -205,7 +211,7 @@ public static class Menu
         var ncco = new Ncco();
 
         var selectedOption = data.dtmf.digits;
-        switch (selectedOption)
+        switch (selectedOption.ToString())
         {
             case "1":
                 // LOOK UP CUSTOMER SPECIFIC DATA
@@ -213,6 +219,7 @@ public static class Menu
                     new TalkAction
                     {
                         Text = "Your order is on it's way.",
+                        Language = "en-GB",
                         Style = 2
                     });
                 break;
@@ -222,6 +229,7 @@ public static class Menu
                     new TalkAction
                     {
                         Text = "Please wait while we connect you to the next available operator.",
+                        Language = "en-GB",
                         Style = 2
                     });
 
@@ -232,7 +240,7 @@ public static class Menu
                         {
                             new PhoneEndpoint
                             {
-                                Number = "01231232345456"
+                                Number = "44123456789"
                             }
                         }
                     });
