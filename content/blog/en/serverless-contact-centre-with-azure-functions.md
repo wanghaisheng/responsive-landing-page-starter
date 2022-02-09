@@ -98,7 +98,7 @@ Once you have registered for a free Vonage account you will be able to retrieve 
 vonage config:set -h --apiKey=<key> --apiSecret=<secret>
 ```
 
-With your Azure Function hostname to hand, we can now create the Vonage Application. 
+With your Azure Function hostname to hand, we can now create the Vonage Application. Select yes when asked to create Webhooks and enter then as I did below, remember to replace \`contactcentre123.azurewebsites.net\` with your own hostname.
 
 ```shell
 vonage apps:create
@@ -108,9 +108,11 @@ vonage apps:create
 ✔ Create voice webhooks? … yes
 ✔ Answer Webhook - URL … https://contactcentre123.azurewebsites.net/api/answer
 ✔ Answer Webhook - Method › POST
+✔ Event Webhook - URL ... https://contactcentre123.azurewebsites.net/api/event
+✔ Event Webhook - Method » POST
 ```
 
-Now we can search for a number to buy and link to our application. We will search for a mobile number in the country you reside in. Our help pages have lists of [what products are supported in which countries](https://help.nexmo.com/hc/en-us/articles/204015043-Which-countries-does-Vonage-have-numbers-in-) and we use the [ISO 3166-1 alpha-2 codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) in our search. I'm based in the United Kingdom so I use "GB" when searching for numbers.
+Now we can search for a number to buy and link to our application. We will search for a mobile number in the country you reside in. Our help pages have lists of [what products are supported in which countries](https://help.nexmo.com/hc/en-us/articles/204015043-Which-countries-does-Vonage-have-numbers-in-) and we use the [ISO 3166-1 alpha-2 codes](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) for our country in our search. I'm based in the United Kingdom so I use "GB" when searching for numbers.
 
 ```shell
 vonage numbers:search GB --features=VOICE --type=mobile-lvn
@@ -133,13 +135,13 @@ vonage apps:link 3ff94f7c-fb86-4afd-b338-fe39707b5ef5 --number=447418367999
 
 # Creating the Project
 
-Right, let's get coding! First we'll create a new functions project using the dotnet runtime.
+Right, let's get coding! To start we'll create a new Azure Functions project using the dotnet runtime.
 
 ```
 func init ContactCentre —dotnet --worker-runtime dotnet
 ```
 
-This will create a Function App project in the folder ContactCentre. Once created we need to first add a reference to the Vonage Nuget package and then we will create two functions that both have HTTP Triggers, one that is the Answer endpoint and the second that will be the Event endpoint. Change into the ContactCentre project folder and run:
+This will create a Function App project in the folder ContactCentre. Next, we need to first add a reference to the Vonage Nuget package and then we will create three functions that all have HTTP Triggers; one that is the Answer endpoint and the second that will be the Event endpoint and the last that will be used to perform and action based on the option provided by the caller. Change into the ContactCentre project folder and run the code below.
 
 ```shell
 dotnet add package vonage
