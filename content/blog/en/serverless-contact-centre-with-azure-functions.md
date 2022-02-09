@@ -248,7 +248,19 @@ public static class Menu
 
 To get everything working the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. 
 
+
+
+
+
 ## Now We Have a Contact Centre?
+
+While this isn't a fully functional contact centre yet we now have the basis for one. There are a few things that spring to mind that we could add to make this more functional. 
+
+When a caller presses 1 for order information we could use the phone number they are calling from to retrieve their latest order and customer information and ask for some sort of data to confirm their identity before giving them an order update. Or instead of just connecting the call to a regular phone number we could pass them to a SIP line, a WebSocket endpoint or a Vonage Business Cloud extension. Have a look at the [NCCO Reference](https://developer.vonage.com/voice/voice-api/ncco-reference#connect) for more information on those.
+
+We also have a [Pay Action](https://developer.vonage.com/voice/voice-api/ncco-reference#pay) in developer preview allowing the caller to pay an outstanding bill or perhaps order additional products right there on the call. 
+
+Building from the basics I've covered here it's very easy to see how having a fully functional, customised contact centre hosted at a reasonable price in the cloud is within reach of every business large and small.
 
 ## References
 
