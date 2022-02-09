@@ -26,7 +26,7 @@ replacement_url: ""
 
 
 
-I would be surprised if there isn’t a company out there, from the smallest startup to the largest mega-corporation, that doesn’t want to provide its customers with brilliant customer service. Part of that service could be offering a dynamic and affordable contact centre that can provide self-service options or direct calls to the correct agent or department. Vonage's Voice API and it’s NCCOs are an easy way to build high-quality voice applications that can control the flow of inbound and outbound calls, create conference calls, record and store calls, playback pre-recorded messages and send text-to-speech messages in 40 different languages.
+I would be surprised if there isn’t a company out there, from the smallest startup to the largest mega-corporation, that doesn’t want to provide its customers with brilliant customer service. Part of that service could be offering a dynamic and affordable contact centre that can provide self-service options or direct calls to the correct agent or department. [Vonage's Voice API](https://developer.vonage.com/voice/voice-api/overview) and it’s NCCOs are an easy way to build high-quality voice applications that can control the flow of inbound and outbound calls, create conference calls, record and store calls, playback pre-recorded messages and send text-to-speech messages in 40 different languages.
 
 These days most software one way or the other is hosted wholly or partially in the cloud and it’s no secret that without regulation cloud hosting costs can grow quickly over time. Having worked with Azure for many years I love learning about the different services it has to offer, my favourite for a while now has been Azure Functions, Microsoft’s serverless offering. They offer all of the security, reliability and scalability that you’d expect from any cloud provider at a cost that is very reasonable. In fact, using the Consumption plan the first 1,000,000 executions are free.
 
@@ -42,15 +42,15 @@ Armed with these two great bits of technology I thought it would be a good idea 
 
 <sign-up number></sign-up>
 
-# Overview
+# The Plan
 
 For our Contact Centre we will need to set up a couple of things. First a Vonage Application and Number, the Number will be linked to the Application and it's the Application that will call into our Azure Function. The Function will then return Nexmo Call Control Objects (NCCO) as JSON and it is this that will describe the flow of the incoming call.
 
-When a call is received to our number we will use text-to-speech to play a message and give the caller a couple of options. 
+When a call is received to our number we will use text-to-speech to play a message and give the caller a couple of options. I'm only going to create a basic functioning prototype, but there are so many [different actions](https://developer.vonage.com/voice/voice-api/ncco-reference) that can be performed using NCCO that the possibilities are endless!
 
 # Azure Resources
 
-Before we can set up the Vonage Application we will need to know the hostname for our functions so that we can enter the Answer and Event URLs. To obtain these we will first need to create an Azure Function App. 
+Before we can set up the Vonage Application we will need to know the hostname for our functions so that we can enter the Answer and Event URLs during its creation. To obtain these we will first need to create an Azure Function App, I find that the easiest way to do this is using the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/), but creating a Function App through the [Azure Portal](https://portal.azure.com/) works just as well. I've just created a simple bash script that does all of this for me in one go, this could be typed out manually or indeed converted to a PowerShell script.
 
 ```shell
 #!/bin/bash
@@ -82,11 +82,13 @@ az functionapp create \
   --functions-version 4
 ```
 
-Once your function app has been created we will need to retrieve the hostname. We can easily retrieve the hostname with the Azure CLI command below, changing the "webapp-name" for the name of the function we just created.
+Once your function app has been created we will need to retrieve the hostname. We can retrieve the hostname with the Azure CLI command below, changing the "webapp-name" for the name of the function we just created.
 
 ```
  az functionapp config hostname list --resource-group ContactCentreResourceGroup --webapp-name contactcentre123 -o tsv --query [].name
 ```
+
+Make a note of the hostname for when we create the Vonage Application.
 
 # Vonage Application
 
