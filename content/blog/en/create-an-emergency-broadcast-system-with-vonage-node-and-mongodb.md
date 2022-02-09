@@ -63,7 +63,7 @@ Now, use the CLI to create a Vonage application with this command:
 vonage apps:create
 ```
 
-Scroll to SMS, click the spacebar, and it hit enter. 
+Scroll to Messages, click the spacebar, and it hit enter. 
 Now you need a number so you can receive calls. You can rent one by using the following command (replacing the country code with your code). For example, if you are in Great Britain, replace US with GB:
 
 ```
