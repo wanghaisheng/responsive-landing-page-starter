@@ -480,7 +480,7 @@ h1 {
     background-color: pink;
 }
 
-#top{
+#top {
     margin-top: 5em;
     margin-bottom: 1.5em;
 }
@@ -489,7 +489,7 @@ h1 {
     font-size: 22px;
 }
 
-#number{
+#number {
     margin-top: 1em;
 }
 ```
