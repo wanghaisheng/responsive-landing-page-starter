@@ -246,13 +246,19 @@ public static class Menu
 
 ## Publish the Function App
 
-To get everything working the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. Having loaded the project into Visual Studio all we need to do is right-click on the project name and select "Publish" from the drop-down menu. You will then be presented with the screen below.
+To get everything working the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. Having loaded the project into Visual Studio all we need to do is right-click on the project name and select "Publish" from the drop-down menu. You will then be presented with the screen below. Select the target as Azure.
 
 ![Publishing to Azure](/content/blog/serverless-contact-centre-with-azure-functions/publish-1.png)
 
+The function app we're created earlier used the defaults to it will be an Azure Function App (Windows).
+
 ![Choose Function Type](/content/blog/serverless-contact-centre-with-azure-functions/publish-2.png)
 
+Location the Contact Centre Function App and select finish.
+
 ![Select Contact Centre Function App](/content/blog/serverless-contact-centre-with-azure-functions/publish-3.png)
+
+You will now have a publish profile set up and be able to upload the app to Azure by simply clicking publish. When that has succeeded the last thing to do is call the phone number of your application and follow the instructions!
 
 ## Now We Have a Contact Centre?
 
