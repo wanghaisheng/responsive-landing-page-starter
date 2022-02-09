@@ -1,7 +1,7 @@
 ---
 title: Create an Emergency Broadcast System With Vonage, Node, and MongoDB
-description: "Learn how to build an emergency broadcast system to alert your
-  friends and family via SMS in an emergency. "
+description: Learn how to build an emergency broadcast system to alert your
+  friends and family via SMS in an emergency.
 author: cory-althoff
 published: true
 published_at: 2022-02-01T00:31:09.675Z
