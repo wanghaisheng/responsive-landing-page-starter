@@ -131,7 +131,7 @@ Right, let's get coding! To start we'll create a new Azure Functions project usi
 func init ContactCentre —dotnet --worker-runtime dotnet
 ```
 
-This will create a Function App project in the folder ContactCentre. Next, we need to first add a reference to the Vonage Nuget package and then we will create three functions that all have HTTP Triggers; one that is the Answer endpoint and the second that will be the Event endpoint and the last that will be used to perform and action based on the option provided by the caller. Change into the ContactCentre project folder and run the code below.
+This will create a Function App project in the folder ContactCentre. Next, we need to first add a reference to the Vonage Nuget package and then we will create three functions that all have HTTP Triggers; one that is the Answer endpoint and the second that will be the Event endpoint and the last that will be used to perform and action based on the option provided by the caller. Change into the ContactCentre project folder and run the commands below.
 
 ```shell
 dotnet add package vonage
@@ -246,11 +246,13 @@ public static class Menu
 
 ## Publish the Function App
 
-To get everything working the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. 
+To get everything working the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. Having loaded the project into Visual Studio all we need to do is right-click on the project name and select "Publish" from the drop-down menu. You will then be presented with the screen below.
 
+![Publishing to Azure](/content/blog/serverless-contact-centre-with-azure-functions/publish-1.png)
 
+![Choose Function Type](/content/blog/serverless-contact-centre-with-azure-functions/publish-2.png)
 
-
+![Select Contact Centre Function App](/content/blog/serverless-contact-centre-with-azure-functions/publish-3.png)
 
 ## Now We Have a Contact Centre?
 
