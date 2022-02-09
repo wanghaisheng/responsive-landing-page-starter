@@ -16,23 +16,13 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-
-
-
-
-
-
-
-
-
-
 I would be surprised if there isn’t a company out there, from the smallest startup to the largest mega-corporation, that doesn’t want to provide its customers with brilliant customer service. Part of that service could be offering a dynamic and affordable contact centre that can provide self-service options or direct calls to the correct agent or department. [Vonage's Voice API](https://developer.vonage.com/voice/voice-api/overview) and it’s NCCOs are an easy way to build high-quality voice applications that can control the flow of inbound and outbound calls, create conference calls, record and store calls, playback pre-recorded messages and send text-to-speech messages in 40 different languages.
 
 These days most software one way or the other is hosted wholly or partially in the cloud and it’s no secret that without regulation cloud hosting costs can grow quickly over time. Having worked with Azure for many years I love learning about the different services it has to offer, my favourite for a while now has been Azure Functions, Microsoft’s serverless offering. They offer all of the security, reliability and scalability that you’d expect from any cloud provider at a cost that is very reasonable. In fact, using the Consumption plan the first 1,000,000 executions are free.
 
 Armed with these two great bits of technology I thought it would be a good idea to see what it would take to create a low-cost serverless contact centre that could be expanded on or customised to suit many different requirements.
 
-# Prerequisites
+## Prerequisites
 
 * Visual Studio 2022 Preview or Visual Studio Code
 * [Vonage CLI](https://developer.vonage.com/application/vonage-cli)
@@ -42,13 +32,13 @@ Armed with these two great bits of technology I thought it would be a good idea 
 
 <sign-up number></sign-up>
 
-# The Plan
+## The Plan
 
 For our Contact Centre we will need to set up a couple of things. First a Vonage Application and Number, the Number will be linked to the Application and it's the Application that will call into our Azure Function. The Function will then return Nexmo Call Control Objects (NCCO) as JSON and it is this that will describe the flow of the incoming call.
 
 When a call is received to our number we will use text-to-speech to play a message and give the caller a couple of options. I'm only going to create a basic functioning prototype, but there are so many [different actions](https://developer.vonage.com/voice/voice-api/ncco-reference) that can be performed using NCCO that the possibilities are endless!
 
-# Azure Resources
+## Azure Resources
 
 Before we can set up the Vonage Application we will need to know the hostname for our functions so that we can enter the Answer and Event URLs during its creation. To obtain these we will first need to create an Azure Function App, I find that the easiest way to do this is using the [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/), but creating a Function App through the [Azure Portal](https://portal.azure.com/) works just as well. I've just created a simple bash script that does all of this for me in one go, this could be typed out manually or indeed converted to a PowerShell script.
 
@@ -90,7 +80,7 @@ Once your function app has been created we will need to retrieve the hostname. W
 
 Make a note of the hostname for when we create the Vonage Application.
 
-# Vonage Application
+## Vonage Application
 
 Once you have registered for a free Vonage account you will be able to retrieve your API Key and API Secret from the [Vonage Dashboard](https://dashboard.nexmo.com/) to configure the Vonage CLI
 
@@ -133,7 +123,7 @@ vonage numbers:buy 447418368151 GB
 vonage apps:link 3ff94f7c-fb86-4afd-b338-fe39707b5ef5 --number=447418367999
 ```
 
-# Creating the Project
+## Creating the Project
 
 Right, let's get coding! To start we'll create a new Azure Functions project using the dotnet runtime.
 
@@ -150,7 +140,7 @@ func new --name Event --template "HTTP trigger" --authlevel "anonymous"
 func new --name Menu --template "HTTP trigger" --authlevel "anonymous"
 ```
 
-## Answer Function
+### Answer Function
 
 Whenever someone phones our contact centre the answer function is always the first endpoint that will be hit. We will return an NCCO object describing the first steps in our process. We'll create a [Talk Action](https://developer.vonage.com/voice/voice-api/ncco-reference#talk) that welcomes our caller and describes what they can do using UK English and voice style 2, I find this the nicest, but there are plenty of [styles and languages](https://developer.vonage.com/voice/voice-api/guides/text-to-speech#supported-languages) to chose from. The next action is the [MultiInputAction](https://developer.vonage.com/voice/voice-api/ncco-reference#input) which collects digits or speech input by the person you are calling and will pass this input to the EventUrl we supply, in this case, the Menu Function.
 
@@ -187,9 +177,7 @@ public static class Answer
 }
 ```
 
-
-
-## Menu Function
+### Menu Function
 
 We specified the Menu Function's URL in NCCOs EventUrl property. The input action will POST data relating to the caller's input as JSON to this URL, check out the [webhook reference](https://developer.vonage.com/voice/voice-api/webhook-reference#input) for a full description of the properties. For this exercise, we're just interested in the digits that the caller pressed. The Menu Function below retrieves the digits as the \`selectedOption\` and then we take action based on that.
 
@@ -256,18 +244,14 @@ public static class Menu
 }
 ```
 
-
-
-# Publish the Function App
+## Publish the Function App
 
 To get everything working the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. 
 
+## Now We Have a Contact Centre?
 
+## References
 
-# Now We Have a Contact Centre?
-
-
-
-# References
-
-*
+* The code from this tutorial can all be found on [GitHub](https://github.com/Vonage-Community/blog-voice-dotnet-serverless_contact_centre)
+* More information about [Vonage's NCCO](https://developer.vonage.com/voice/voice-api/overview) and [Voice API](https://www.vonage.co.uk/communications-apis/voice/)
+* Try [Azure Functions](https://azure.microsoft.com/en-gb/services/functions/) for free if you haven't already
