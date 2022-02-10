@@ -144,7 +144,7 @@ Next, whenever a subscriber is added to the session, we connect the subscriber o
   let source = resonanceAudioScene.createSource();
   audioElementSource.connect(source.input);
   source.setPosition(x, y, z);
-  resonanceSources\[subscriberId] = source;
+  resonanceSources[subscriberId] = source;
   }
 ```
 
@@ -173,7 +173,7 @@ In this snippet, we place the listener at the center of the sphere and then plac
   /* for each subscriber, get the bounding box and find the center relative to
   the center of layoutContainer */
   let subscriberRect =
-  document.getElementById(streams\[i].subscriber.id).getBoundingClientRect();
+  document.getElementById(streams[i].subscriber.id).getBoundingClientRect();
   let subscriberCenterX = subscriberRect.left + (subscriberRect.width/2);
   let subscriberCenterZ = subscriberRect.top + (subscriberRect.height/2);
   
@@ -182,7 +182,7 @@ In this snippet, we place the listener at the center of the sphere and then plac
   /* lets keep people closer to the center of screen further away on Y axis, so
   it should be like people sitting in half spherical shape */
   let Y = 2 * (1 - (Math.abs(relativeX)/(roomWidth/2)));
-  setSourcePosition(streams\[i].subscriber.id,relativeX,Y,relativeZ);
+  setSourcePosition(streams[i].subscriber.id,relativeX,Y,relativeZ);
   }
   }
 ```
@@ -212,7 +212,7 @@ If you want to enable spatial mode, all you have to do is to set resonanceGain g
   if(!isSupported)
   return;
   for (var streamId in subscriberMap) {
-  subscriberMap\[streamId].setAudioVolume(vol);
+  subscriberMap[streamId].setAudioVolume(vol);
   }
   }
 ```
