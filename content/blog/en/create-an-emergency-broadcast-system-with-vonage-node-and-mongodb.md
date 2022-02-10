@@ -26,7 +26,7 @@ Your web app will look like this.
 
 You can add contacts, see them, and when you press the Alert button, it sends an SMS message to all of your contacts, letting them know your location and that you are in an emergency. 
 
-As you are following along, you can find all the code for this project in [this GitHub repository](https://github.com/calthoff). 
+As you are following along, you can find all the code for this project in [this GitHub repository](https://github.com/Vonage-Community/blog-messages-node-emergency_broadcast). 
 
 Ready to get started? Let's build an emergency broadcast app!
 
