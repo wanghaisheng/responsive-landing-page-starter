@@ -16,9 +16,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-I would be surprised if there isn’t a company out there, from the smallest startup to the largest mega-corporation, that doesn’t want to provide its customers with brilliant customer service. Part of that service could be offering a dynamic and affordable contact centre that can provide self-service options or direct calls to the correct agent or department. [Vonage's Voice API](https://developer.vonage.com/voice/voice-api/overview) and it’s NCCOs are an easy way to build high-quality voice applications that can control the flow of inbound and outbound calls, create conference calls, record and store calls, playback pre-recorded messages and send text-to-speech messages in 40 different languages.
+I would be surprised if there isn’t a company out there, from the smallest startup to the largest mega-corporation, that doesn’t want to provide its customers with brilliant customer service. Part of that service could be offering a dynamic and affordable contact centre that can provide self-service options or direct calls to the correct agent or department. [Vonage's Voice API](https://developer.vonage.com/voice/voice-api/overview) and its NCCOs are an easy way to build high-quality voice applications that can control the flow of inbound and outbound calls, create conference calls, record and store calls, playback pre-recorded messages and send text-to-speech messages in 40 different languages.
 
-These days most software one way or the other is hosted wholly or partially in the cloud and it’s no secret that without regulation cloud hosting costs can grow quickly over time. Having worked with Azure for many years I love learning about the different services it has to offer, my favourite for a while now has been Azure Functions, Microsoft’s serverless offering. They offer all of the security, reliability and scalability that you’d expect from any cloud provider at a cost that is very reasonable. In fact, using the Consumption plan the first 1,000,000 executions are free.
+These days most software one way or the other is hosted wholly or partially in the cloud and it’s no secret that without regulation cloud hosting costs can grow quickly over time. Having worked with Azure for many years, I love learning about the different services it has to offer. My favourite for a while now has been Azure Functions, Microsoft’s serverless offering. They offer all of the security, reliability and scalability that you’d expect from any cloud provider at a cost that is very reasonable. In fact, when using the Consumption plan the first 1,000,000 executions are free.
 
 Armed with these two great bits of technology I thought it would be a good idea to see what it would take to create a low-cost serverless contact centre that could be expanded on or customised to suit many different requirements.
 
@@ -36,7 +36,7 @@ Armed with these two great bits of technology I thought it would be a good idea 
 
 For our Contact Centre we will need to set up a couple of things. First a Vonage Application and Number, the Number will be linked to the Application and it's the Application that will call into our Azure Function. The Function will then return Nexmo Call Control Objects (NCCO) as JSON and it is this that will describe the flow of the incoming call.
 
-When a call is received to our number we will use text-to-speech to play a message and give the caller a couple of options. I'm only going to create a basic functioning prototype, but there are so many [different actions](https://developer.vonage.com/voice/voice-api/ncco-reference) that can be performed using NCCO that the possibilities are endless!
+When receiving a call to our number, we will use text-to-speech to play a message and give the caller a couple of options. I'm only going to create a basic functioning prototype, but there are so many [different actions](https://developer.vonage.com/voice/voice-api/ncco-reference) that we can use with NCCO the possibilities are endless!
 
 ## Azure Resources
 
@@ -142,7 +142,7 @@ func new --name Menu --template "HTTP trigger" --authlevel "anonymous"
 
 ### Answer Function
 
-Whenever someone phones our contact centre the answer function is always the first endpoint that will be hit. We will return an NCCO object describing the first steps in our process. We'll create a [Talk Action](https://developer.vonage.com/voice/voice-api/ncco-reference#talk) that welcomes our caller and describes what they can do using UK English and voice style 2, I find this the nicest, but there are plenty of [styles and languages](https://developer.vonage.com/voice/voice-api/guides/text-to-speech#supported-languages) to chose from. The next action is the [MultiInputAction](https://developer.vonage.com/voice/voice-api/ncco-reference#input) which collects digits or speech input by the person you are calling and will pass this input to the EventUrl we supply, in this case, the Menu Function.
+Whenever someone phones our contact centre, the answer function is always the first endpoint that will be hit. We will return an NCCO object describing the first steps in our process. We'll create a [Talk Action](https://developer.vonage.com/voice/voice-api/ncco-reference#talk) that welcomes our caller and describes what they can do using UK English and voice style 2 (I find this the nicest) but there are plenty of [styles and languages](https://developer.vonage.com/voice/voice-api/guides/text-to-speech#supported-languages) to chose from. The next action is the [MultiInputAction](https://developer.vonage.com/voice/voice-api/ncco-reference#input) which collects digits or speech input by the person you are calling and will pass this input to the EventUrl we supply, in this case, the Menu Function.
 
 Below is the code for the Answer Function.
 
@@ -179,7 +179,7 @@ public static class Answer
 
 ### Menu Function
 
-We specified the Menu Function's URL in NCCOs EventUrl property. The input action will POST data relating to the caller's input as JSON to this URL, check out the [webhook reference](https://developer.vonage.com/voice/voice-api/webhook-reference#input) for a full description of the properties. For this exercise, we're just interested in the digits that the caller pressed. The Menu Function below retrieves the digits as the \`selectedOption\` and then we take action based on that.
+We specified the Menu Function's URL in NCCOs EventUrl property. The input action will POST data relating to the caller's input as JSON to this URL - check out the [webhook reference](https://developer.vonage.com/voice/voice-api/webhook-reference#input) for a full description of the properties. For this exercise, we're just interested in the digits that the caller pressed. The Menu Function below retrieves the digits as the \`selectedOption\` and then we take action based on that.
 
 Below is the code for the Menu Function
 
@@ -246,7 +246,7 @@ public static class Menu
 
 ## Publish the Function App
 
-To get everything working the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. Having loaded the project into Visual Studio all we need to do is right-click on the project name and select "Publish" from the drop-down menu. You will then be presented with the screen below. Select the target as Azure.
+To get everything working, the last thing we need to do is put our code onto Azure. I find that the quickest way to do this is using the Publish command in Visual Studio. Having loaded the project into Visual Studio all we need to do is right-click on the project name and select "Publish" from the drop-down menu. You will then be presented with the screen below. Select the target as Azure.
 
 ![Publishing to Azure](/content/blog/serverless-contact-centre-with-azure-functions/publish-1.png)
 
@@ -262,7 +262,7 @@ You will now have a publish profile set up and be able to upload the app to Azur
 
 ## Now We Have a Contact Centre?
 
-While this isn't a fully functional contact centre yet we now have the basis for one. There are a few things that spring to mind that we could add to make this more functional. 
+While this isn't a fully functional contact centre yet, we now have the basis for one. There are a few things that spring to mind that we could add to make this more functional. 
 
 When a caller presses 1 for order information we could use the phone number they are calling from to retrieve their latest order and customer information and ask for some sort of data to confirm their identity before giving them an order update. Or instead of just connecting the call to a regular phone number we could pass them to a SIP line, a WebSocket endpoint or a Vonage Business Cloud extension. Have a look at the [NCCO Reference](https://developer.vonage.com/voice/voice-api/ncco-reference#connect) for more information on those.
 
