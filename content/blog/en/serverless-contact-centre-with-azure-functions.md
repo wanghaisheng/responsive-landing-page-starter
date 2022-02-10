@@ -20,7 +20,7 @@ I would be surprised if there isn’t a company out there, from the smallest sta
 
 These days most software one way or the other is hosted wholly or partially in the cloud and it’s no secret that without regulation cloud hosting costs can grow quickly over time. Having worked with Azure for many years, I love learning about the different services it has to offer. My favourite for a while now has been Azure Functions, Microsoft’s serverless offering. They offer all of the security, reliability and scalability that you’d expect from any cloud provider at a cost that is very reasonable. In fact, when using the Consumption plan the first 1,000,000 executions are free.
 
-Armed with these two great bits of technology I thought it would be a good idea to see what it would take to create a low-cost serverless contact centre that could be expanded on or customised to suit many different requirements.
+Armed with these two bits of technology, I thought it would be a good idea to see what it would take to create a low-cost serverless contact centre that could be expanded on or customised to suit many different requirements.
 
 ## Prerequisites
 
