@@ -23,7 +23,7 @@ It is hard to get anything right during an emergency, especially if you are pani
 
 Your web app will look like this.
 
-![Emergency broadcast web app demo](/content/blog/screen-shot-2022-01-31-at-3.25.22-pm.png)
+![Emergency broadcast web app demo](/content/blog/create-an-emergency-broadcast-system-with-vonage-node-and-mongodb/screen-shot-2022-01-31-at-3.25.22-pm.png)
 
 You can add contacts, see them, and when you press the Alert button, it sends an SMS message to all of your contacts, letting them know your location and that you are in an emergency. 
 
