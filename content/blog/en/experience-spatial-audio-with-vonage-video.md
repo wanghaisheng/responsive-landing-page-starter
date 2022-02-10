@@ -144,7 +144,7 @@ Next, whenever a subscriber is added to the session, we connect the subscriber o
   let source = resonanceAudioScene.createSource();
   audioElementSource.connect(source.input);
   source.setPosition(x, y, z);
-  resonanceSources\[subscriberId] = source;
+  resonanceSources[subscriberId] = source;
   }
 ```
 
