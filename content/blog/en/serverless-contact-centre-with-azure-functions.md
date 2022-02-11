@@ -4,7 +4,7 @@ description: Creating a low cost serverless contact centre with Azure Functions
 thumbnail: /content/blog/serverless-contact-centre-with-azure-functions/serverless-contact-center.png
 author: matt-hunt
 published: true
-published_at: 2022-02-11T10:15:52.200Z
+published_at: 2022-02-11T10:17:37.032Z
 updated_at: 2022-02-11T09:00:54.797Z
 category: tutorial
 tags:
