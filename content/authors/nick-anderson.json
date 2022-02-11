@@ -6,6 +6,6 @@
   "spotlight": false,
   "title": "Technical Writer",
   "noteworthy": false,
-  "team": true,
-  "alumni": false
+  "team": false,
+  "alumni": true
 }
