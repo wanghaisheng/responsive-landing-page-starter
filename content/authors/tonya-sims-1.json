@@ -8,6 +8,6 @@
   "spotlight": false,
   "title": "Python Developer Advocate",
   "noteworthy": false,
-  "team": true,
-  "alumni": false
+  "team": false,
+  "alumni": true
 }
