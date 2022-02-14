@@ -43,8 +43,6 @@ This week we caught up with Carles Brunet Medina, the Founder of Plaved Survey t
 
 Plaved Survey is a platform where surveyors and insurance adjusters can remotely inspect damage or goods. 
 
-
-
 ## What is the problem you are solving? Was this the initial problem or did you pivot?
 
 The industry of insurance has been evolving a lot, and in 2020 due to the COVID-19 pandemic surveyors and expert cabinets had to develop their daily jobs remotely. This opened a business model where Plaved Survey takes action, Remote Surveying. Our platform enables the user to accelerate its workflow by reducing expenses in money, time, and mind wear. From home, from the office, or from anywhere, our users are able to interact with the affected peers and solve (or at least, have a first contact) the problems as soon as possible. 
@@ -56,8 +54,6 @@ There always is a secret sauce. We love competition because it makes us innovate
 ## VC, Angel, Bootstrap or Other?
 
 It has been mainly bootstrapped, we have now some early adopters using the MVP for its businesses, and helping us move faster to a step forward in our course. But we are looking for more ;)
-
-
 
 ## What’s the biggest challenge you faced and how did you overcome it?
 
@@ -71,11 +67,7 @@ In a startup project, errors appear everyday. We are constantly communicating wi
 
 In my opinion, they all are brilliant people and incredible founders, but if we could have one on our board Elon will be the one. Our mindset and the mindset that Elon has shown publicly is nearly the same, and synergy will probably be the key performance indicator that will lead to success. 
 
-
-
-How have you been using Vonage’s APIs?
-
-
+## How have you been using Vonage’s APIs?
 
 We have used Vonage APIs since before the public launch of the platform. We use the Communication APIs for the SMS part of our app and for client engagement, and parts of the Video API for the workflow of the remote surveying because Vonage offers us security, scalability and stability in all sessions. 
 
@@ -83,17 +75,11 @@ We have used Vonage APIs since before the public launch of the platform. We use 
 
 We have improved our MVP a lot, mainly obtained info about what our clients desired and added new functionalities to the app that allow things like GPS location and proof validation through cutting-edge mechanisms. We also moved from Twilio to Vonage because Vonage brought us the care, help and technologies that we needed for our project.
 
-
-
 ## What’s next for Plaved Survey? Where do you want to be in 3 years?
 
 We have just joined Vonage Startups family, and we are trying to build a network with some incubators and accelerators to develop the project and its business model. In my opinion, Plaved in 3 years should have become the reference apps provider for surveyors and bureaus, or pivoted to the niche that suits best the goal of the project: simplifying workflows to make life easier. 
 
-
-
 Furthermore, and technically talking, we are preparing a Native app for iOS and Android, where users that become clients of our Premium plan will be able to scan documents, administrate their sessions from a handheld device, take photos in-place and add them to the session started with the remote survey, generate PDF reports, add appointments to the device’s calendar, interact with the session map and location and lots more that are willing to come. 
-
-
 
 ### Let's work together - Vonage for Startups
 
