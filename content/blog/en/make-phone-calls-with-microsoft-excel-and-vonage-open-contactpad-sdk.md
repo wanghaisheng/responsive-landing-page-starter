@@ -378,4 +378,4 @@ VonageDialer.init({
 
 ## Summary
 
-I hope from reading this, you can create a customizable Vonage dialer that can be used within many different applications. Please share if you have used this information to create useful implementations of your own.
+I hope from reading this, you can create a customizable Vonage dialer that can be used within many different applications. Please share in the [business-communications-api](https://vonage-community.slack.com/messages/business-communications-api) channel in the Vonage Community Slack org if you have used this information to create useful implementations of your own.
