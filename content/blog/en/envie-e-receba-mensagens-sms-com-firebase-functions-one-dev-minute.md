@@ -3,10 +3,10 @@ title: Envie e Receba Mensagens SMS com Firebase Functions | One Dev Minute
 description: Este passo a passo rápido mostrará como criar um registro de
   mensagens SMS e uma resposta ao remetente usando Firebase Cloud Functions
   assim como o Firebase Real Time Database juntamente a API de SMS da Vonage.
-thumbnail: /content/blog/send-and-receive-sms-messages-with-firebase-functions-one-dev-minute/thumbnail-and-assets-for-one-dev-minute.jpg
+thumbnail: /content/blog/envie-e-receba-mensagens-sms-com-firebase-functions-one-dev-minute/mqdefault.jpg
 author: amanda-cavallaro
 published: true
-published_at: 2022-01-20T09:47:51.097Z
+published_at: 2021-12-07T09:47:51.097Z
 updated_at: 2022-01-20T09:47:51.127Z
 category: tutorial
 tags:
