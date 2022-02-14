@@ -32,8 +32,7 @@ I selected [Microsoft Excel Online](https://www.office.com/launch/excel?ui=en-US
 
 To get the most of out this how-to, it's recommended to install the Script Lab Office Add-In and import the Gist from Github:
 
-[Source Code](https://gist.github.com/lvenezia/173737e5d254c4d855d61f3a789df909)
-The Gist contains the full source code for you to customize for your project. The examples below are at times very specific and don't include everything you need to get a certain function running.
+The [Gist](https://gist.github.com/lvenezia/173737e5d254c4d855d61f3a789df909) contains the full source code for you to customize for your project. The examples below are at times very specific and don't include everything you need to get a certain function running.
 
 ## Getting Started With the Vonage Open ContactPad
 
@@ -45,7 +44,7 @@ It's important to note that the Vonage Open ContactPad SDK product is meant to b
 
 ## Setting up Script Lab and First Lines of Code
 
-When you install Script Lab in Excel, it creates a Script Lab menu item to the right of the Help menu item. When you click on it, you will see 3 buttons that help you work with Script Lab - Code, Run, and Functions. When you click on Code, a window appears embedded into the Excel interface with a VisualStudio-like window that will hold your code. As long as you don't clear your browser’s cache, your Script Lab code remains. If you prefer more permanence, you will use the Share option to save your code as a [gist in GitHub](https://gist.github.com/). In my adventures, I ended up creating a lot of private gists. If I were working on a true integration project, I would probably transfer my code to Visual Studio Code and work with more precise version control.
+When you install Script Lab in Excel, it creates a Script Lab menu item to the right of the Help menu item. Click on Script Lab, you will see 3 buttons that help you work with Script Lab - Code, Run, and Functions. Next, click on Code, a window appears embedded into the Excel interface with a VisualStudio-like window that will hold your code. As long as you don't clear your browser’s cache, your Script Lab code remains. If you prefer more permanence, you will use the Share option to save your code as a [gist in GitHub](https://gist.github.com/). In my adventures, I ended up creating a lot of private gists. If I were working on a true integration project, I would probably transfer my code to Visual Studio Code and work with more precise version control.
 
 Once I got the lay of the land in Script Lab, I started with the HTML section where I knew I wanted to embed my dialer. To follow along, check out the instructions here for [loading the Open ContactPad](https://developer.uc.vonage.com/open-contactpad/loading-contactpad). This includes a [live sample](https://plnkr.co/edit/Hla8wmRvHPNTxe30?preview) of how to do this using [Plunker](https://plnkr.co/).
 
