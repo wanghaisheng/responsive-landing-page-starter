@@ -22,7 +22,7 @@ replacement_url: ""
 
 On this page, I will explain how I built a functioning VBC integration with a 3rd party platform in a short amount of time leveraging the new Vonage Open ContactPad. First, here is a video that demonstrates the available functionality of the integration.
 
-[Open ContactPad Excel.mp4](https://confluence.vonage.com/download/attachments/172731076/Open%20ContactPad%20Excel.mp4?version=1&modificationDate=1640810287405&api=v2)
+<youtube id="FxhiKFy-A1I"></youtube>
 
 ## Selected Application - Microsoft Excel Online
 
