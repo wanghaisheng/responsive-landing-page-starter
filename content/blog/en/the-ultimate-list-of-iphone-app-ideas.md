@@ -65,12 +65,12 @@ Now, let's dive into some application ideas!
 
 1. Did you know there is an app for cats in the Apple App Store? There is! It is called Paint for Cats, and it helps your cat make pictures. It costs $1.99, though, so there is an opportunity to create a similar app and give it away for free.
 2. Do you remember the app Yo? At one point, it was one of the most popular apps in the App Store, despite its only functionality being sending "Yo" to a friend. It is time for programmers to have their own "Yo" app. Make an app that only has one feature: to send "Hello, World!" to friends. 
-3. Are you inspired by "Yo" but looking to go even further? Try building an app that generates random text, puts it on a randomly selected meme, and texts it to a friend. 
+3. Are you inspired by "Yo" but looking to go even further? Try building an app that generates random text, puts it on a randomly selected meme, and [texts it to a friend. ](https://www.vonage.com/communications-apis/sms/)
 4. Here is one  last "Yo" idea, which also happens to be a great business idea. Since everyone is talking about crypto these days, create an app with only one function: it texts a friend "crypto!"
 5. There is an iPhone app called Sim Stapler that simulates stapling something. I think the world is missing an app that simulates shredding paper. I double-checked, and this app does not exist, so this is your chance to make history.  
-6. Getting things right during an emergency is extremely difficult. Something as simple as opening up your camera app can be tricky in an emergency, so you should build something to help solve this problem! Make an app that starts recording as soon as you open it and then automatically sends the video to your top contacts without you having to do anything. 
+6. Getting things right during an emergency is extremely difficult. Something as simple as opening up your camera app can be tricky in an emergency, so you should build something to help solve this problem! Make an app that starts recording as soon as you open it and then automatically [sends the video](https://www.vonage.com/communications-apis/video/) to your top contacts without you having to do anything. 
 7. One of my goals this year is to build a website for myself. Do you already have one? Why not go one step further and turn your website into an app? Your app could include your resume, projects, and more. 
-8. Create an emergency broadcast system to send friends and family an SOS message with your location when you are in an emergency. You can use this web app as a starting point. 
+8. Create an emergency broadcast system to send friends and family an SOS message with your location when you are in an emergency. [You can use this web app as a starting point. ](https://learn.vonage.com/blog/2022/02/10/create-an-emergency-broadcast-system-with-vonage-node-and-mongodb/)
 9. Continuing with the "emergency theme," build a flashlight app with a button to send an emergency message. For example, you might use it at night when you hear something at night, you need a flashlight to investigate, and you may need to send an emergency message quickly.
 10. There are many inspiring quotes apps, but if you narrow down quotes to one person, you can be the first person ever to build an app that gives you a new quote from them every day. 
 
@@ -82,8 +82,8 @@ I hope this article helped spark an idea for your newest app!
 
 Need more inspiration? 
 
-Check out the other articles in this series: The Ultimate List of Fun APIs and the Ultimate List of Hackathon Ideas for more projects to build. 
+Check out the other articles in this series: [The Ultimate List of Fun APIs ](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/)and [The Ultimate List of Hackathon Ideas](https://learn.vonage.com/blog/2021/10/27/31-hackathon-ideas-for-your-next-marathon-coding-event/) for more projects to build. 
 
-Also, make sure to join the Vonage Slack community and follow us on Twitter for more tutorials and inspiration. 
+Also, make sure to [join the Vonage Slack](https://developer.vonage.com/community/slack) community and [follow us on Twitter](https://twitter.com/VonageDev) for more tutorials and inspiration. 
 
 Thanks for reading!
