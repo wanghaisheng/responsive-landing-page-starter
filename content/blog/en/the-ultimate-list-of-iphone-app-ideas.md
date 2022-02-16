@@ -30,9 +30,7 @@ Swift is an open-source language Apple created to give app developers a better e
 If you are interested in learning Swift, here are some resources to get you started:
 
 1. Learn Swift on Codecademy. 
-
 2. iOS & Swift - The Complete iOS App Development Bootcamp
-
 3. The Apple Swift documentation. 
 
 Now, let's dive into some application ideas!
@@ -40,7 +38,7 @@ Now, let's dive into some application ideas!
 ## Easy Ideas
 
 1. Building an iPhone app to play the classic game Hangman is a great way to develop your skills. 
-2. Build a messaging app to send text messages. Add at least one feature Apple's messaging platform doesn't already have. 
+2. Make a messaging app to send text messages. Add at least one feature Apple's messaging platform doesn't already have. 
 3. Code an app to play TikTak Toe with your friends. 
 4. Program the cook dinner app. Every day it sends you a text message with a new, home-cooked dinner to inspire you to make dinner that night. 
 5. Build an app to play chess. Creating a chess app will not only make you a better iPhone app developer, but it will also make you a much better programmer too!  
@@ -52,9 +50,9 @@ Now, let's dive into some application ideas!
 
 ## Education
 
-1. Create an app for remote learning. These already exist, but I bet you can make an even better one! What if you added AI that could detect students faces when you hovered over them and then gave you  
-2. I'm obsessed with to-do lists. I use them to manage everything. There are a million To-Do lists, but even the best program out there most likely doesn't have every feature that would work best with your productivity system if you are into to-do lists. Code a to-do list with two features the to-do list you are currently using don't have.  
-3. Continuing with the to-do list theme, I currently use a calendar app, notes app, reminder app, and a to-do list to manage my entire life. I would love it if someone created an app that combined all these things into one master app I could use to manage everything.  
+1. Create an app for remote learning. These already exist, but I bet you can make an even better one! What if you added AI that could detect students' faces when you hovered over them and then gave you information about each student?   
+2. I'm obsessed with to-do lists. I use them to manage everything. There are a million To-Do lists, but even the best program out there most likely doesn't have every feature that would work best with your productivity system. Code a to-do list with two features the to-do list you are currently using don't have.  
+3. Continuing with the to-do list theme, I use a calendar app, notes app, reminder app, and a to-do list to manage my entire life. I would love it if someone created an app that combined all these things into one master app I could use to manage everything.  
 4. Build an app that highlights a coding library or framework every day. 
 5. There are many apps to teach people how to code, but not as many that 
 6. Develop a "standup app" for kids in classrooms. 
