@@ -54,7 +54,7 @@ Now, let's dive into some application ideas!
 2. I'm obsessed with to-do lists. I use them to manage everything. There are a million To-Do lists, but even the best program out there most likely doesn't have every feature that would work best with your productivity system. Code a to-do list with two features the to-do list you are currently using don't have.  
 3. Continuing with the to-do list theme, I use a calendar app, notes app, reminder app, and a to-do list to manage my entire life. I would love it if someone created an app that combined all these things into one master app I could use to manage everything.  
 4. Build an app that highlights a coding library or framework every day. 
-5. There are many apps to teach people how to code, but not as many that 
+5. There are many apps to teach people how to code, but not as many that teach how to program in machine language. Make an app that teaches people how to code at a low level! 
 6. Develop a "standup app" for kids in classrooms. 
 7. Code a tool that lets you organize your Kindle highlights in various ways. You could create folders for them, export them to programs like Notion, drag and drop them in different orders, etc. 
 8. Remember when you did group projects in school and how one person would do most of the work? Create an app to help manage group projects. 
