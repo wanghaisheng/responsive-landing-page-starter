@@ -2,9 +2,10 @@
 title: Make Phone Calls With Microsoft Excel and Vonage Open ContactPad SDK
 description: Walkthrough on how to use the Vonage Open ContactPad SDK in
   Microsoft Excel to make phone calls with Script Lab.
+thumbnail: /content/blog/make-phone-calls-with-microsoft-excel-and-vonage-open-contactpad-sdk/embed-vbc.png
 author: lisa-venezia
 published: true
-published_at: 2022-02-14T17:18:02.285Z
+published_at: 2022-02-16T10:47:44.563Z
 updated_at: 2022-02-14T17:18:02.320Z
 category: tutorial
 tags:
