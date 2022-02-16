@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-*この記事はJavier Molina Sanzとの共同執筆によるものです [Javier Molina Sanz](https://learn.vonage.com/authors/javier-molina-sanz/)*
+*この記事は[Javier Molina Sanz](https://learn.vonage.com/authors/javier-molina-sanz/)との共同執筆によるものです*
 
 このブログ記事は、ReactJSと新しいVonage Video Expressを活用して、マルチパーティビデオアプリケーションを開発する上で役立ちます。Video Express は、デフォルトで以下の機能を提供します：
 
