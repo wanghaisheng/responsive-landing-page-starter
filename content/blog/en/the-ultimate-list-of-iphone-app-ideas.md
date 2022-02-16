@@ -29,9 +29,9 @@ Swift is an open-source language Apple created to give app developers a better e
 
 If you are interested in learning Swift, here are some resources to get you started:
 
-1. Learn Swift on Codecademy. 
-2. iOS & Swift - The Complete iOS App Development Bootcamp
-3. The Apple Swift documentation. 
+1. Learn Swift [on Codecademy](https://www.codecademy.com/learn/learn-swift). 
+2. iOS & Swift - [The Complete iOS App Development Bootcamp](https://www.udemy.com/course/ios-13-app-development-bootcamp/).
+3. The Apple [Swift documentation](https://developer.apple.com/documentation/swift). 
 
 Now, let's dive into some application ideas!
 
