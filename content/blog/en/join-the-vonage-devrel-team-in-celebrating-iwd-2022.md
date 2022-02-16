@@ -1,0 +1,32 @@
+---
+title: Join the Vonage DevRel Team in Celebrating IWD 2022
+description: Find out how we are Celebrating International Women’s Day in March
+author: lucinda-bone
+published: true
+published_at: 2022-02-16T11:33:26.323Z
+updated_at: 2022-02-16T11:33:26.341Z
+category: event
+tags:
+  - "#inclusion #diversity"
+comments: true
+spotlight: false
+redirect: ""
+canonical: ""
+outdated: false
+replacement_url: ""
+---
+Here at Vonage the DevRel team is really passionate about engaging and nurturing the global Devrel community we're part of. With International Women’s Day around the corner, we’re thrilled to announce that on March 9th we will be hosting two online events designed to help you supercharge your DevRel career - wherever you’re starting from.
+
+As a part of the DevRel community, we all have a role to play in celebrating and developing the talents of all underrepresented groups in the industry. And what better time to do just that than International Women’s Day!
+
+So, join us on March 9th 2022 as we welcome women from around the globe who will be sharing the opportunities, challenges and lessons that have shaped their career journeys in developer relations and experience. Following the panels, there will be live Q&As and the chance to network with fellow attendees, discuss your experiences and make new connections that will help a diverse DevRel community to thrive. 
+
+We look forward to welcoming attendees from around the world! Register for both events or choose the time zone that works best for you, and register now for free to secure your place:
+
+[March 9th 12PM GMT / 1PM CET / 8PM SGT - Register here](https://hopin.com/events/iwd-2022-supercharge-your-devrel-career-journey-with-vonage)
+
+[March 9th 6PM GMT / 10AM PST / 1PM EST  - Register here](https://hopin.com/events/copy-of-iwd-2022-supercharge-your-devrel-career-journey-with-vonage)
+
+For speaker announcements and more details around the events, keep an eye out on our social channels.
+
+We can’t wait to see you there!
