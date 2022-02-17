@@ -82,7 +82,7 @@ I hope this article helped spark an idea for your newest app!
 
 Need more inspiration? 
 
-Check out the other articles in this series: [The Ultimate List of Fun APIs ](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/)and [The Ultimate List of Hackathon Ideas](https://learn.vonage.com/blog/2021/10/27/31-hackathon-ideas-for-your-next-marathon-coding-event/) for more projects to build. 
+Check out the other articles in this series: [The Ultimate List of Fun APIs](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/) and [The Ultimate List of Hackathon Ideas](https://learn.vonage.com/blog/2021/10/27/31-hackathon-ideas-for-your-next-marathon-coding-event/) for more projects to build. 
 
 Also, make sure to [join the Vonage Slack](https://developer.vonage.com/community/slack) community and [follow us on Twitter](https://twitter.com/VonageDev) for more tutorials and inspiration. 
 
