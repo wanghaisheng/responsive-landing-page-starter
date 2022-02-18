@@ -23,9 +23,7 @@ replacement_url: ""
 
 We continue to work hard on improving interactive broadcasts with even more participant streams (now with up to 15,000 REAL TIME participants!), a brand new Experience Composer, low-latency live streaming, full HD broadcasts, as well as improvements to on screen layouts and overall video quality of interactive broadcasts and recordings. 
 
-The Vonage Video API has long offered the ability to [compose video layouts for broadcasting and recording](https://www.vonage.com/communications-apis/video/features/interactive-broadcast/) in real-time as the video conversation occurs and streaming to an unlimited number of viewers with live streaming and to social platforms, like Facebook Live or Twitch.tv. Of all the exciting differentiating features we are adding this year, the Experience Composer - released in Beta - is the biggest game changer, enabling our customers to compose not just the video streams, but the entire surround experience, their built-for-purpose application UX, as well. Jump directly to Experience Composer..
-
-The real-time [interactive broadcasts](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) combined with composed cloud [recordings](https://tokbox.com/developer/guides/archiving/) has been a favorite use case on virtual events and education platforms last year.
+The Vonage Video API has long offered the ability to [compose video layouts for broadcasting and recording](https://www.vonage.com/communications-apis/video/features/interactive-broadcast/) in real-time as the video conversation occurs and streaming to an unlimited number of viewers with live streaming and to social platforms, like Facebook Live or Twitch.tv. Of all the exciting differentiating features we are adding this year, the Experience Composer - released in Beta - is the biggest game changer, enabling our customers to compose not just the video streams, but the entire surround experience, their built-for-purpose application UX, as well. Jump directly to Experience Composer.
 
 ## Broadcast Interactive
 
