@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 ## Vonage multiparty video reaches 5,000 live interactive participants, improving interactive broadcast quality, layouts and recording
 
-We continue to work hard on improving interactive broadcasts with even more participant streams (now with up to 15,000 REAL TIME participants!), a brand new Experience Composer, low-latency live streaming, full HD broadcasts, as well as improvements to on screen layouts and overall video quality of interactive broadcasts and recordings. 
+We continue to work hard on improving interactive broadcasts with even more participant streams (now with up to 15,000 REAL TIME participants!), a brand new Experience Composer, low-latency live streaming, full HD broadcasts, as well as improvements to on-screen layouts and overall video quality of interactive broadcasts and recordings. 
 
 The Vonage Video API has long offered the ability to [compose video layouts for broadcasting and recording](https://www.vonage.com/communications-apis/video/features/interactive-broadcast/) in real-time as the video conversation occurs and streaming to an unlimited number of viewers with live streaming and to social platforms, like Facebook Live or Twitch.tv. Of all the exciting differentiating features we are adding this year, the Experience Composer - released in Beta - is the biggest game changer, enabling our customers to compose not just the video streams, but the entire surround experience, their built-for-purpose application UX, as well. Jump directly to Experience Composer.
 
@@ -49,9 +49,9 @@ As with the rest of our lives, the global pandemic impacted our use of video, be
 
 ### More Interactive Participants with WebRTC
 
-In a [live interactive video broadcast](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The recent platform update increased the number of live interactive participants supported in a video broadcast session, up to 5,000 - depending on the number of active publishers in the session.
+In a [live interactive video broadcast](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The latest platform update increased the number of live interactive participants supported in a video broadcast session, up to 15,000 - depending on the number of active publishers in the session.
 
-For example, when there are 1 or 2 published streams in the session, up to 5,000 participants can view both of these published streams with real-time latency as live broadcast participants. Similarly, when there are 3 or 4 published streams in the session, up to 4,000 participants can view all 3 or 4 published streams.
+For example, when there are 1 or 2 published streams in the session, up to 15,000 participants can view both of these published streams in real-time as interactive broadcast participants. When there are 3 published streams in the session, up to 12,000 participants can view all published streams, and so on.
 
 Learn more about the new limits and how to build your app to support interactive broadcasts in our [Live interactive broadcasts developer guide](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/).
 
