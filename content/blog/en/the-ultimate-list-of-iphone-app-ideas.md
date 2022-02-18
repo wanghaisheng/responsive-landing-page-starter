@@ -2,9 +2,10 @@
 title: The Ultimate List of iPhone App Ideas
 description: Are you looking for inspiration for your next iPhone app? This
   article will help you come up with your next big iPhone app idea!
+thumbnail: /content/blog/the-ultimate-list-of-iphone-app-ideas/ultimate-list_iphone-api.png
 author: cory-althoff
 published: true
-published_at: 2022-02-16T20:48:36.347Z
+published_at: 2022-02-18T12:30:11.655Z
 updated_at: 2022-02-16T20:48:36.384Z
 category: inspiration
 tags:
