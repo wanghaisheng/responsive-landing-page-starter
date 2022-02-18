@@ -51,7 +51,7 @@ As with the rest of our lives, the global pandemic impacted our use of video, be
 
 In a [live interactive video broadcast](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The latest platform update increased the number of live interactive participants supported in a video broadcast session, up to 15,000 - depending on the number of active publishers in the session.
 
-For example, when there are 1 or 2 published streams in the session, up to 15,000 participants can view both of these published streams in real-time as interactive broadcast participants. When there are 3 published streams in the session, up to 12,000 participants can view all published streams, and so on.
+For example, when there are 1 or 2 published streams in the session, up to 15,000 participants can view both of these published streams in real-time as interactive broadcast participants. When there are 3 published streams in the session, up to 12,000 participants can view all published streams, and so on. Please reference the [developer guide](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) to learn more about the number of participants supported by number of publishers.
 
 Learn more about the new limits and how to build your app to support interactive broadcasts in our [Live interactive broadcasts developer guide](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/).
 
