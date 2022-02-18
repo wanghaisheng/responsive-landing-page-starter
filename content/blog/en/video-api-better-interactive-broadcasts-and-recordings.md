@@ -31,7 +31,7 @@ Virtual events companies grew like mushrooms last year as organizations needed s
 
 2020 demonstrated that anyone could benefit from attending a virtual event. Remote events, when done thoughtfully, can be very effective. The purpose-built experience allows for specialized stage environments with text-based audience interactions like Q&A and voting, while the breakout rooms allow for networking and open exchange of ideas.  
 
-The move to virtual services during the last year has necessitated rapid digital transformation. Virtual town halls became one of the trademark features of corporate and civic organizations attempting to stay in touch with their people.
+The move to virtual services during the last two years has necessitated rapid digital transformation. Virtual town halls became one of the trademark features of corporate and civic organizations attempting to stay in touch with their people.
 
 *“With Vonage’s Video API, we are able to keep users within our ecosystem, allowing us to ensure that both local authority employees and members of the public can join meetings, communicate, and view secure and easily accessible information from any device.” - Steven Garratt, CIVICA Modern.Gov.*
 
@@ -47,7 +47,7 @@ That is our practice here at Vonage, and we are not alone. Nearly 11% of  [Von
 
 As with the rest of our lives, the global pandemic impacted our use of video, be it broadcasting or recording. As more of your customers are joining video sessions, these sessions got longer with more participants and with various devices - the recordings and broadcasts needed to keep up, too! The world our platform was initially designed for has changed, and we threw ourselves into identifying the features most needed to keep up. 
 
-### More Interactive Participants
+### More Interactive Participants with WebRTC
 
 In a [live interactive video broadcast](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The recent platform update increased the number of live interactive participants supported in a video broadcast session, up to 5,000 - depending on the number of active publishers in the session.
 
