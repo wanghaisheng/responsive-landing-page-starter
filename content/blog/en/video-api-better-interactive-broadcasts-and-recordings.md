@@ -65,6 +65,14 @@ The low latency addition is supported natively by iOS devices and is also backwa
 ### Interactive vs Live, what’s the difference?
 A quick overview of the two methods Vonage Video API employs for broadcasting.
 
+| | WebRTC, or Interactive Broadcasts | HLS and LL-HLS Live Broadcasts |
+|---|---|---|
+| Latency | Presenters interact with audiences and other presenters by subscribing to each other's real-time media and signaling with sub-second latency (for chat, polls, etc.)  | Presenters' composed media stream reaches audiences close to real-time. 1) With NewLow-Latency HLS (LL-HLS) the delay is down to 4-6 seconds, barely noticeable for chat and Q&A sync 2) HLS streaming creates latency of around 15+ seconds. Real-time signaling may still be deployed for chat, polls and other interactive application elements |
+| Capacity | Video API currently supports any number of on-screen presenters and up to 15,000 audience participants - depending on the number of active publishers in the session ([learn more](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) about interactive capacity) | This type of broadcast allows the event to reach an unlimited number of viewers at low latency and stream directly to social platforms such as Facebook Live, YTlive, Twitch and others via RTMP |
+| Implementation | Easy to implement with the standard Video API calls; your application controls the look and feel, no extra composition steps needed | Requires [stream composition](https://tokbox.com/developer/guides/broadcast/live-streaming/) to transmit the desired broadcast experience |
+| Flexibility | Easy to bring an audience member "on stage" - just enable them to publish their video and audio streams! | Requires additional coding to bring audience members "on stage" by switching the HLS participants to WebRTC mode |
+| Reach | WebRTC is available on all modern browsers as well as on native clients for all major platforms. More on [WebRTC browser support](https://bloggeek.me/webrtc-browser-support/). | Greater compatibility across browsers and better video performance over restricted networks and on older devices. More on HLS browser support. |
+
 
 ### More Power to Compose the Experience
 Our customers have always built personalized experience applications using the Video API. These applications often enable rich user and customer experiences for the participants which go beyond the basic media streams and encompass web native components, custom layouts, custom application look & feel, chat widgets, emojis, whiteboards etc. This trend has become more prevalent due to the pandemic as more and more in-person experiences such as learning, conferences, meetups and events have moved online.
@@ -80,6 +88,12 @@ Imagine a distributed group of scientists or product designers unveiling a new i
 
 
 Application experiences captured by the Experience Composer include video backgrounds and overlays, like watermarks, real time audience interaction, chats, emojis, whiteboard or any other programmed application user interfaces. To get started with the Experience Composer, please reference the developer guide to video composition.
+
+
+### Play, Pause and Resume HLS Streams
+As an enhancement to standard HLS broadcasts, we are enabling DVR functionality that allows participants to pause, resume and rewind the live HLS broadcasts when enabled.   
+The feature is compatible with all HLS players and will provide a 2 hour rewind history for broadcasts. 
+*It should be noted that the DVR feature can only be enabled on standard HLS streams and is not available when LL-HLS is active.* 
 
 
 ### More In-Sync Live Participants with LL-HLS
@@ -143,4 +157,4 @@ When it comes to video broadcasts and recordings, privacy and security related f
 
 We are very excited to put the power of improved broadcasting and recording into the hands of our customers to ensure they can keep up with today’s communications demands. The features are already available in the [Vonage Video API](https://tokbox.com/account/) Standard and Enterprise environments so customers can gain immediate access to these improved capabilities. 
 
-If you liked this Video API update, check out our [Client SDK 2.19 release](https://learn.vonage.com/blog/2021/03/26/announcing-the-vonage-video-client-sdk-version-2-19/), including specifying a video source, more audio processing controls, and much more!
+If you liked this Video API update, check out our new [Video Express](https://learn.vonage.com/blog/2021/09/23/video-express-is-here-and-why-it%E2%80%99s-awesome/), and why it’s awesome!
