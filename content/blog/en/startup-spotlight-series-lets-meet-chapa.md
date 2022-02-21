@@ -17,8 +17,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The African startup ecosystem is starting to take-off, with startups raising over 4.27 billion US Dollars in 2021. This record quadrupled the 1.1 billion USD that was pumped into the continent in 2020. The ecosystem has often been ignored, but African startups have started making waves, catching the eye of leading international organizations.\
-\
+The African startup ecosystem is starting to take off, with startups raising over 4.27 billion US Dollars in 2021. This record quadrupled the 1.1 billion USD that was pumped into the continent in 2020. The ecosystem has often been ignored, but African startups have started making waves, catching the eye of leading international organizations.
+
 One of the startups shaping the future of the African continent is Chapa, established in 2020 by a team of engineers, researchers, and entrepreneurs. Chapa, an Ethiopian Financial Service and Data Engineering startup, is aiming to simplify payment and trading methods for companies in the region. This week we caught up with Israel Goytom, Co-Founder and CTO at Chapa, to find out more about the future of the company!
 
 ## The startup at a glance
