@@ -66,6 +66,20 @@ The low latency addition is supported natively by iOS devices and is also backwa
 A quick overview of the two methods Vonage Video API employs for broadcasting.
 
 
+### More Power to Compose the Experience
+Our customers have always built personalized experience applications using the Video API. These applications often enable rich user and customer experiences for the participants which go beyond the basic media streams and encompass web native components, custom layouts, custom application look & feel, chat widgets, emojis, whiteboards etc. This trend has become more prevalent due to the pandemic as more and more in-person experiences such as learning, conferences, meetups and events have moved online.
+
+
+
+Experience Composer enables developers to programmatically capture personalized experiences offered by their applications and provides them with a composite media stream which can be broadcast or recorded for a more immersive on-demand viewing experience. 
+
+
+
+Imagine a distributed group of scientists or product designers unveiling a new idea using simulations, voting tools, chat and whiteboards – in addition to videos of the presenters – and wanting to easily share all of these elements with tens of thousands of engaged audience members or preserve the live event, just as it happened, for posterity. Vonage Experience Composer does that. 
+
+
+
+Application experiences captured by the Experience Composer include video backgrounds and overlays, like watermarks, real time audience interaction, chats, emojis, whiteboard or any other programmed application user interfaces. To get started with the Experience Composer, please reference the developer guide to video composition.
 
 
 ### More In-Sync Live Participants with LL-HLS
