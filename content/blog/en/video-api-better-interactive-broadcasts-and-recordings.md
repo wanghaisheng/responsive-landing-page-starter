@@ -44,9 +44,29 @@ As with the rest of our lives, the global pandemic impacted our use of video, be
 
 In a [live interactive video broadcast](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The latest platform update increased the number of live interactive participants supported in a video broadcast session, up to 15,000 - depending on the number of active publishers in the session.
 
-For example, when there are 1 or 2 published streams in the session, up to 15,000 participants can view both of these published streams in real-time as interactive broadcast participants. When there are 3 published streams in the session, up to 12,000 participants can view all published streams, and so on. Please reference the [developer guide](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) to learn more about the number of participants supported by number of publishers.
+For example, when there are 1 or 2 published streams in the session, up to 15,000 participants can view both of these published streams in real-time as interactive broadcast participants. When there are 3 published streams in the session, up to 12,000 participants can view all published streams, and so on. With an interactive broadcast, the Vonage Video Router will forward all publisher streams to any of the subscribing participants, allowing applications to be independently dynamic about how the video is presented to each of the subscribing participants. Please reference the [developer guide](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) to learn more about  the number of live interactive broadcast participants that can subscribe to all the publishers of the session.
 
 Learn more about the new limits and how to build your app to support interactive broadcasts in our [Live interactive broadcasts developer guide](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/).
+
+### More In-Sync Live Participants with Low Latency HLS
+
+
+With an already large capacity of 15,000 real-time viewers via WebRTC, Video API can take your video sessions to ever-greater audiences with a single composed stream,  leveraging HTTP Live Streaming (HLS), and beyond to eyeballs on Facebook Live, Twitch and YouTube Live.
+
+
+However, live streaming can be useful for more than just getting to more eyeballs! One advantage of streaming is, while limiting flexibility compared to multiple streams, a single stream can be used to reach viewers on restricted networks or older devices. The downside of live streaming compared to the real-time video is that streaming audiences experience the event with a slight delay, but this does not make them passive participants. Live audiences make for highly engaged chat participants, engage in polls and even ask questions. And with the introduction of Low Latency HLS in Vonage Video API, the gap between live and interactive is narrowing down to a blink (from something like a sigh, or two). [Learn more](https://learn.vonage.com/blog/2020/05/14/broadcast-video-chat-with-javascript-and-vonage-dr/) about broadcasting video Chat. 
+
+
+Low Latency HLS (LL-HLS) is an addition to the Apple HLS standard (and not a new streaming protocol) enabling latencies down to 4-6 sec, compared to standard HLS latencies in the order of 15-30 sec.  
+
+
+The low latency addition is supported natively by iOS devices and is also backward compatible with standard HLS players, meaning that the new manifest files are produced so that players that do not support LL-HLS can ignore the new standard and just play the files as standard HLS. 
+
+### Interactive vs Live, what’s the difference?
+A quick overview of the two methods Vonage Video API employs for broadcasting.
+
+
+
 
 ### More In-Sync Live Participants with LL-HLS
 
