@@ -1,6 +1,7 @@
 ---
 title: 新しいVonage Video Expressでマルチパーティビデオを作成
-description: 新しいVonage Video Expressでマルチパーティビデオを作成
+description: このガイドに従って、Vonage Video API セッションを 1 対 1
+  からマルチパーティビデオに移行する際のプラットフォームの制限とベストプラクティスを学んでください。
 thumbnail: /content/blog/新しいvonage-video-expressでマルチパーティビデオを作成/react-native_video-express_1200x600.png
 author: enrico-portolan
 published: true
