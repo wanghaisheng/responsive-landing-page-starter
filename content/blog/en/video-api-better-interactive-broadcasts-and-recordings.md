@@ -23,7 +23,7 @@ replacement_url: ""
 
 We continue to work hard on improving interactive broadcasts with even more participant streams (now with up to 15,000 REAL TIME participants!), a brand new Experience Composer, low-latency live streaming, full HD broadcasts, as well as improvements to on-screen layouts and overall video quality of interactive broadcasts and recordings. 
 
-The Vonage Video API has long offered the ability to [compose video layouts for broadcasting and recording](https://www.vonage.com/communications-apis/video/features/interactive-broadcast/) in real-time as the video conversation occurs and streaming to an unlimited number of viewers with live streaming and to social platforms, like Facebook Live or Twitch.tv. Of all the exciting differentiating features we are adding this year, the Experience Composer - released in Beta - is the biggest game changer, enabling our customers to compose not just the video streams, but the entire surround experience, their built-for-purpose application UX, as well. Jump directly to Experience Composer.
+The Vonage Video API has long offered the ability to [compose video layouts for broadcasting and recording](https://www.vonage.com/communications-apis/video/features/interactive-broadcast/) in real-time as the video conversation occurs and streaming to an unlimited number of viewers with live streaming and to social platforms, like Facebook Live or Twitch.tv. Of all the exciting differentiating features we are adding this year, the Experience Composer - released in Beta - is the biggest game changer, enabling our customers to compose not just the video streams, but the entire surround experience, their built-for-purpose application UX, as well. Jump directly to [Experience Composer](#experience-composer).
 
 ## Broadcast Interactive
 
@@ -74,7 +74,7 @@ A quick overview of the two methods Vonage Video API employs for broadcasting.
 | Reach | WebRTC is available on all modern browsers as well as on native clients for all major platforms. More on [WebRTC browser support](https://bloggeek.me/webrtc-browser-support/). | Greater compatibility across browsers and better video performance over restricted networks and on older devices. More on [HLS browser support](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Live_streaming_web_audio_and_video#video_streaming_file_formats). |
 
 
-### More Power to Compose the Experience
+### <a name="experience-composer">More Power to Compose the Experience</a> 
 Our customers have always built personalized experience applications using the Video API. These applications often enable rich user and customer experiences for the participants which go beyond the basic media streams and encompass web native components, custom layouts, custom application look & feel, chat widgets, emojis, whiteboards etc. This trend has become more prevalent due to the pandemic as more and more in-person experiences such as learning, conferences, meetups and events have moved online.
 
 
