@@ -71,7 +71,7 @@ A quick overview of the two methods Vonage Video API employs for broadcasting.
 | Capacity | Video API currently supports any number of on-screen presenters and up to 15,000 audience participants - depending on the number of active publishers in the session ([learn more](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) about interactive capacity) | This type of broadcast allows the event to reach an unlimited number of viewers at low latency and stream directly to social platforms such as Facebook Live, YTlive, Twitch and others via RTMP |
 | Implementation | Easy to implement with the standard Video API calls; your application controls the look and feel, no extra composition steps needed | Requires [stream composition](https://tokbox.com/developer/guides/broadcast/live-streaming/) to transmit the desired broadcast experience |
 | Flexibility | Easy to bring an audience member "on stage" - just enable them to publish their video and audio streams! | Requires additional coding to bring audience members "on stage" by switching the HLS participants to WebRTC mode |
-| Reach | WebRTC is available on all modern browsers as well as on native clients for all major platforms. More on [WebRTC browser support](https://bloggeek.me/webrtc-browser-support/). | Greater compatibility across browsers and better video performance over restricted networks and on older devices. More on HLS browser support. |
+| Reach | WebRTC is available on all modern browsers as well as on native clients for all major platforms. More on [WebRTC browser support](https://bloggeek.me/webrtc-browser-support/). | Greater compatibility across browsers and better video performance over restricted networks and on older devices. More on [HLS browser support](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Live_streaming_web_audio_and_video#video_streaming_file_formats). |
 
 
 ### More Power to Compose the Experience
@@ -87,7 +87,12 @@ Imagine a distributed group of scientists or product designers unveiling a new i
 
 
 
-Application experiences captured by the Experience Composer include video backgrounds and overlays, like watermarks, real time audience interaction, chats, emojis, whiteboard or any other programmed application user interfaces. To get started with the Experience Composer, please reference the developer guide to video composition.
+Application experiences captured by the Experience Composer include video backgrounds and overlays, like watermarks, real time audience interaction, chats, emojis, whiteboard or any other programmed application user interfaces. To get started with the Experience Composer, please reference the [developer guide](https://tokbox.com/developer/guides/experience-composer) to video composition.
+
+### Full HD Interactive Broadcast
+To give your events the big screen appeal, we are adding Full HD (1080p) support within the Vonage Video API clients, letting you broadcast the highest resolution available today to any device that supports it, in both relayed and routed sessions, and few to many live broadcast sessions.  
+The support for 1080p is being optimized through the use of simulcast so that multiple layers of video can be published and routed to clients based on the bandwidths that they have available to them. 
+
 
 
 ### Play, Pause and Resume HLS Streams
