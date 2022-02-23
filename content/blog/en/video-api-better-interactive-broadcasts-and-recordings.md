@@ -6,7 +6,7 @@ thumbnail: /content/blog/video-api-better-interactive-broadcasts-and-recordings/
 author: jon-montana
 published: true
 published_at: 2021-05-11T08:11:10.597Z
-updated_at: 2021-05-10T21:03:38.670Z
+updated_at: 2022-02-23T13:37:22.648Z
 category: release
 tags:
   - video-api
@@ -19,8 +19,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-## March 2022 Update: Tripling interactive participants to 15,000, introducing Experience Composer and LL-HLS. 
-## Vonage multiparty video reaches ~~5,000~~ – now 15,000 – live interactive participants, improving interactive broadcast quality, layouts and recording
+### March 2022 Update: Tripling interactive participants to 15,000, introducing Experience Composer and LL-HLS. 
+### Vonage multiparty video reaches ~~5,000~~ – now 15,000 – live interactive participants, improving interactive broadcast quality, layouts and recording
 
 We continue to work hard on improving interactive broadcasts with even more participant streams (now with up to 15,000 REAL TIME participants!), a brand new Experience Composer, low-latency live streaming, full HD broadcasts, as well as improvements to on-screen layouts and overall video quality of interactive broadcasts and recordings. 
 
