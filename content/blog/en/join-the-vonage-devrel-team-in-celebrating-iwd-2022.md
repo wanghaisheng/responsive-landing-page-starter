@@ -1,13 +1,15 @@
 ---
 title: Join the Vonage DevRel Team in Celebrating IWD 2022
 description: Find out how we are Celebrating International Women’s Day in March
+thumbnail: /content/blog/join-the-vonage-devrel-team-in-celebrating-iwd-2022/iwd.jpg
 author: lucinda-bone
 published: true
-published_at: 2022-02-16T11:33:26.323Z
+published_at: 2022-02-23T10:50:40.479Z
 updated_at: 2022-02-16T11:33:26.341Z
 category: event
 tags:
-  - "#inclusion #diversity"
+  - inclusion
+  - diversity
 comments: true
 spotlight: false
 redirect: ""
