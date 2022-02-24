@@ -21,7 +21,7 @@ It's been in the works for a year, and on the 8th of February, it finally shippe
 
 ### The Big Stuff
 
-There are no big architectural changes or changes to set backward-compatibility alarm bells off (having said that, this is a major release and therefore contains breaking changes in line with [semver](https://semver.org/)). There are, however, some big changes outside the code. Let's go through them:
+There are no big architectural changes or changes to set backwards-compatibility alarm bells off (having said that, this is a major release and therefore contains breaking changes in line with [semver](https://semver.org/)). There are, however, some big changes outside the code. Let's go through them:
 
 #### Release Cycle
 
