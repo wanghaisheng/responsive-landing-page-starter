@@ -176,7 +176,7 @@ Route::get('/events/{eventType}', function (EventType $eventType) {
 
 #### Testing Coverage
 
-Getting back into Xdebug to use it in my day-to-day development toolchain [was kind of a revelation ](https://www.youtube.com/watch?v=app2UUq5Xsk)after years of using `die()` and `dd()` debugging. As I started work on our PHP SDK, I saw that our CI uses [CodeCov](https://about.codecov.io/) to ensure Pull Requests cannot be merged without sufficient coverage within the test suite. Coverage comes courtesy of Xdebug, so you need to enable coverage in your .ini file firstly:
+Getting back into Xdebug to use it in my day-to-day development toolchain [was kind of a revelation ](https://www.youtube.com/watch?v=app2UUq5Xsk) after years of using `die()` and `dd()` debugging. As I started work on our PHP SDK, I saw that our CI uses [CodeCov](https://about.codecov.io/) to ensure Pull Requests cannot be merged without sufficient coverage within the test suite. Coverage comes courtesy of Xdebug, so you need to enable coverage in your .ini file firstly:
 
 `xdebug.mode=develop,debug,coverage`
 
