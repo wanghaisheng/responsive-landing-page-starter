@@ -25,9 +25,9 @@ So, join us on March 9th 2022 as we welcome women from around the globe who will
 
 We look forward to welcoming attendees from around the world! Register for both events or choose the time zone that works best for you, and register now for free to secure your place:
 
-[March 9th 12PM GMT / 1PM CET / 8PM SGT - Register here](https://hopin.com/events/iwd-2022-supercharge-your-devrel-career-journey-with-vonage)
+[March 9th 12PM GMT / 1PM CET / 8PM SGT - Register here](https://vonage.dev/iwd22-blog)
 
-[March 9th 6PM GMT / 10AM PST / 1PM EST  - Register here](https://hopin.com/events/copy-of-iwd-2022-supercharge-your-devrel-career-journey-with-vonage)
+[March 9th 6PM GMT / 10AM PST / 1PM EST  - Register here](https://vonage.dev/iwd22-na-blog)
 
 For speaker announcements and more details around the events, keep an eye out on our social channels.
 
