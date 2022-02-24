@@ -85,7 +85,7 @@ Route::controller(ReportController::class)->group(function () {
 
 Talking of routes, the output of `routes:list` has been changed, to a much more developer-friendly view:
 
-![](/content/blog/laravel-9-strap-in/screenshot-2022-02-23-at-12.33.32.png)
+![Screenshot of the new route list output from Laravel's console](/content/blog/laravel-9-strap-in/screenshot-2022-02-23-at-12.33.32.png)
 
 #### Forced Scope Bindings
 
@@ -182,10 +182,10 @@ Getting back into Xdebug to use it in my day-to-day development toolchain [was k
 
 Now, if you run `artisan test --coverage`, it will give you a report including coverage of your application:
 
-![](/content/blog/laravel-9-strap-in/screenshot-2022-02-23-at-14.58.50.png)
+![Screenshot of the new test coverage output from Laravel's console](/content/blog/laravel-9-strap-in/screenshot-2022-02-23-at-14.58.50.png)
 
 Pretty neat huh?
 
-#### And what's next?
+#### And What's Next?
 
 This version marks another milestone in Laravel's journey, but what is truly astonishing is the extended ecosystem built around it - Vapor, Breeze, Octane, Sail, Horizon... the list goes on. What I find exciting about the ever-growing list of Laravel projects is its inclusion into [the PHP Foundation](https://opencollective.com/phpfoundation), created in the wake of [Nikita Popov's retirement from PHP core development](https://blog.jetbrains.com/phpstorm/2021/11/the-php-foundation/). Alongside Symfony, it's pretty clear that the immortal line "[PHP is Dead](https://medium.com/swlh/stop-saying-php-is-dead-9489ed7dc25e)" couldn't be further from the truth.
