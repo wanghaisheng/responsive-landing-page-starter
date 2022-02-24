@@ -146,6 +146,6 @@ Take a look at the [Video Express documentation](https://tokbox.com/developer/vi
 
 Play around with the [basic starter project](https://glitch.com/edit/#!/remix/video-express-demo?path=README.md%3A1%3A0).
 
-Build a [Multiparty Video Application based on ReactJS and the new Vonage Video Express](https://learn.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express/)
+Build a [Multiparty Video Application based on ReactJS and the new Vonage Video Express](https://learn.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express/).
 
 Show us what you are working on and give us any feedback in our [Community Slack Channel](https://developer.vonage.com/slack).
