@@ -32,6 +32,8 @@ The Video Express provides by default the following features:
 
 > Want to skip to the end? You can find all the source code for this tutorial on [GitHub](https://github.com/nexmo-se/video-express-react-app).
 
+> Learn how the [Video Express simplifies multiparty video](https://learn.vonage.com/blog/2021/09/23/video-express-is-here-and-why-it%E2%80%99s-awesome/).
+
 ## App Architecture
 
 The app is divided into two main sections, server and client-side:
