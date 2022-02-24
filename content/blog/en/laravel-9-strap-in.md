@@ -33,7 +33,7 @@ Symfony Mailer has replaced Swift Mailer. On the subject of Symfony, I had a ver
 
 #### PHP8
 
-I remember watching [Jenny Wong](https://twitter.com/miss_jwo) from Human Made give a talk on Wordpress security, and how rolling out [Jetpack](https://jetpack.com/) was an essential tool for the Wordpress ecosystem, albeit with very low adoption rates. One of the biggest vulnerabilities facing PHP is the unwillingness of developers to bump their PHP versions. Over 50% of the Wordpress scene at that point in time was running software on PHP versions that were not even supported.
+I remember watching [Jenny Wong](https://twitter.com/miss_jwo) from Human Made give a talk on WordPress security, and how rolling out [Jetpack](https://jetpack.com/) was an essential tool for the WordPress ecosystem, albeit with very low adoption rates. One of the biggest vulnerabilities facing PHP is the unwillingness of developers to bump their PHP versions. Over 50% of the WordPress scene at that point in time was running software on PHP versions that were not even supported.
 
 So, it's a massive boost to see that Laravel is bumping required PHP versions in line with the core PHP lifecycle. It gives access to a whole new host of API features, but more importantly forcing a minimum version of PHP8 means you get the Just-In-Time (JIT) runtime compiler, and thus Laravel benefits from a significant performance boost.
 
