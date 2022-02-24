@@ -1,5 +1,5 @@
 ---
-title: Video Express Is Here and Why It Is Awesome
+title: Video Express Is Here and Why It Is Awesome!
 description: The Vonage Video Express is here! Here are some advantages, code
   samples, demo application and other reasons to give it a try.
 thumbnail: /content/blog/video-express-is-here-and-why-it’s-awesome/video-express_1200x600.png
@@ -9,9 +9,9 @@ published_at: 2021-09-23T13:38:38.639Z
 updated_at: 2021-09-23T13:38:38.678Z
 category: release
 tags:
-  - JavaScript
+  - javascript
   - video-api
-  - express
+  - video-express
 comments: false
 spotlight: false
 redirect: ""
@@ -19,6 +19,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+## Express Explanation
+
 Vonage, with a decade of video development expertise, has created a simple high-level API called Video Express to accelerate the development and integration of multiparty video into web applications.
 
 ## Multiparty?
@@ -143,5 +145,7 @@ Ready to build something amazing?!
 Take a look at the [Video Express documentation](https://tokbox.com/developer/video-express/) for more details.
 
 Play around with the [basic starter project](https://glitch.com/edit/#!/remix/video-express-demo?path=README.md%3A1%3A0).
+
+Build a [Multiparty Video Application based on ReactJS and the new Vonage Video Express](https://learn.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express/)
 
 Show us what you are working on and give us any feedback in our [Community Slack Channel](https://developer.vonage.com/slack).
