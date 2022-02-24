@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It's been in the works for a year, and on the 8th of February, it finally shipped: Laravel 9 is here! In this article we'll go through a few new features, but rather than a "list of things" (which, to be honest, you can get by [viewing the release notes](https://laravel.com/docs/9.x/releases) or by viewing one of the many articles replicating the release notes masquerading as blog content), I'm going to provide some commentary and extra context on the changes that have caught my eye.
+It's been in the works for a year, and on the 8th of February, it finally shipped: Laravel 9 is here! In this article we'll go through a few new features, but rather than a "list of things", I'm going to provide some commentary and extra context on the changes that have caught my eye.
 
 ### The Big Stuff
 
@@ -113,7 +113,7 @@ PHP8.1 shipped with the new `enums` class, which can be treated as an object wit
 
 With the introduction of Enums, a couple of Laravel 9 features have been written to take advantage of this.
 
-##### Attribute cast enums
+##### Attribute cast Enums
 
 I have worked on a project where this would have really, really saved a whole lot of headaches. Everything in a pretty sizeable MySQL database extended off an "Event" base class/database table, with the extended entities being restricted by MySQL enums. Sounds OK, right? When we expanded the platform, a new enum would need to be added, triggering a reindex in one table with several hundred million records. It fell over, every time.
 
@@ -158,7 +158,7 @@ php artisan tinker
 
 And your string value will come back. `eventType` will actually return an enum object, so this is why we need to add the `value` attribute in order to get out the backed property.
 
-##### Route binding with enums
+##### Route binding with Enums
 
 You can also use enum classes within route binding. Say you want to restrict the following route:
 
