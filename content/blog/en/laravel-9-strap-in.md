@@ -29,7 +29,7 @@ One of the biggest changes within Laravel recently was Taylor Otwell's announcem
 
 #### Symfony Mailer
 
-Symfony Mailer has replaced Swift Mailer. On the subject of Symfony, I had a very interesting conversation with the folks at SensioLabs during PHPUK on the subject of Laravel and Symfony's interactions with each other. Some developers may like to think of themselves as brand ambassadors to one or the other, and think that is the norm "take sides", but as seen from the `artisan cli` , Symfony Mailer and other chunks of Laravel it is clear that the two frameworks work together far more than people trying to be divisive might know. It's worth remembering that both [Fabien Potencier](https://twitter.com/fabpot) and [Taylor Otwell](https://twitter.com/taylorotwell) both contribute code to each other's organisations, and that the PHP ecosystem as a whole has modern relevance and direction because of it.
+Symfony Mailer has replaced Swift Mailer. On the subject of Symfony, I had a very interesting conversation with the folks at SensioLabs during PHPUK on the subject of Laravel and Symfony's interactions with each other. Some developers may like to think of themselves as brand ambassadors to one or the other, and think that is the norm "take sides", but as seen from the `artisan cli`, Symfony Mailer and other chunks of Laravel it is clear that the two frameworks work together far more than people trying to be divisive might know. It's worth remembering that both [Fabien Potencier](https://twitter.com/fabpot) and [Taylor Otwell](https://twitter.com/taylorotwell) both contribute code to each other's organisations, and that the PHP ecosystem as a whole has modern relevance and direction because of it.
 
 #### PHP8
 
