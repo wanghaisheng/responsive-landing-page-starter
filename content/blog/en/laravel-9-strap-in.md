@@ -1,10 +1,10 @@
 ---
 title: "Laravel 9: Strap In!"
-description: Another milestone hit in the Laravel journey
+description: Another milestone hit in the Laravel journey. Find out what's new in Laravel 9!
 thumbnail: /content/blog/laravel-9-strap-in/laravel-9.png
 author: james-seconde
-published: false
-published_at: 2022-02-23T15:13:53.810Z
+published: true
+published_at: 2022-02-25T10:25:32.234Z
 updated_at: 2022-02-23T15:13:53.848Z
 category: tutorial
 tags:
