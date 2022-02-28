@@ -29,7 +29,7 @@ replacement_url: ""
 * **ネットワークの最適化**: 見えない参加者や話さない参加者の映像や音声を自動的に削除し、帯域幅のリソースを最適化
 * **優れた操作性**: パブリッシュ、サブスクライブ、ストリームをルームと参加者にリプレースすることで、より自然なインタラクションを提供
 
-> このチュートリアルの全てのソースコードはGitHubに掲載されています。
+> このチュートリアルの全てのソースコードは[GitHub](https://github.com/nexmo-se/video-express-react-app)に掲載されています。
 
 ## アプリのアーキテクチャ
 
@@ -45,7 +45,7 @@ Reactアプリケーションは、NPM経由でReactアプリケーションは�
 
 ### UseRoom
 
-[UseRoom](https://github.com/nexmo-se/video-express-react-app/blob/main/src/hooks/useRoom.js)フックは、ビデオルームのライフサイクルを扱うフックです。Video Expressを活用することにより、セッション、パブリッシャー、サブスクライバーのライフサイクルを管理する必要がありません。代わりに、 [Room](https://tokbox.com/developer/video-express/reference/room.htmlオブジェクトをインスタンス化し、`room.join()`メソッドを使用するだけで、裏側ですべてを処理してくれます。
+[UseRoom](https://github.com/nexmo-se/video-express-react-app/blob/main/src/hooks/useRoom.js)フックは、ビデオルームのライフサイクルを扱うフックです。Video Expressを活用することにより、セッション、パブリッシャー、サブスクライバーのライフサイクルを管理する必要がありません。代わりに、 [Room](https://tokbox.com/developer/video-express/reference/room.html)オブジェクトをインスタンス化し、`room.join()`メソッドを使用するだけで、裏側ですべてを処理してくれます。
 
 まず、Roomオブジェクトを初期化し、コールに参加するための関数を作成する必要があります。認証情報 (`apiKey`、`sessionId`、`token`) と、`userName`などパブリッシャーの設定に用いるパラメータや、Roomを表示するコンテナ、およびその他のパブリッシャーの設定が必要になります。
 
@@ -275,7 +275,7 @@ let [videoDevice, setVideoDevice] = useState('');
 ```
 
 
-オーディオやビデオのソースなど、ユーザーの選択を処理する[UserContext]https://github.com/nexmo-se/video-express-react-app/blob/main/src/App.js#L53)を作成しました。`usePreviewPublisher`フックを使って、ウェイティングルームのパブリッシャープレビューを作成・破棄し、利用可能なデバイスのリストとその他の有用なステート変数を獲得します。
+オーディオやビデオのソースなど、ユーザーの選択を処理する[UserContext](https://github.com/nexmo-se/video-express-react-app/blob/main/src/App.js#L53)を作成しました。`usePreviewPublisher`フックを使って、ウェイティングルームのパブリッシャープレビューを作成・破棄し、利用可能なデバイスのリストとその他の有用なステート変数を獲得します。
 
 ```js
 const {
