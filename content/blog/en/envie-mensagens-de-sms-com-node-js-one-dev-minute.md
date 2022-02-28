@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 Boas vindas ao [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY)! Esta série está hospedada no [canal de YouTube VonageDev](https://www.youtube.com/vonagedev). O objetivo desta série de vídeos é compartilhar conhecimento de uma maneira breve.
 
-Este passo a passo rápido mostrará como enviar mensagens de SMS utilizando Node.js assim como a API de Mensagens da Vonage
+Este passo a passo rápido mostrará como enviar mensagens de SMS utilizando Node.js assim como a API de Mensagens da Vonage.
 
 <youtube id="IxH5OwAW8"></youtube>
 
