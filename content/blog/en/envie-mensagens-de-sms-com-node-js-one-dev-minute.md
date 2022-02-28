@@ -2,9 +2,10 @@
 title: Envie Mensagens de SMS com Node.js | One Dev Minute
 description: Este passo a passo rápido mostrará como enviar mensagens de SMS
   utilizando Node.js assim como a API de Mensagens da Vonage
+thumbnail: /content/blog/envie-mensagens-de-sms-com-node-js-one-dev-minute/thumbnail-and-assets-for-one-dev-minute-1-.jpg
 author: amanda-cavallaro
 published: true
-published_at: 2022-02-28T12:17:43.824Z
+published_at: 2022-02-22T12:17:43.824Z
 updated_at: 2022-02-28T12:17:43.838Z
 category: tutorial
 tags:
