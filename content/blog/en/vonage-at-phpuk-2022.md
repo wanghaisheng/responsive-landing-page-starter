@@ -93,7 +93,7 @@ The difference now is that fibers are native, and [Milko](https://twitter.com/mk
 
 ![James Seconde speaking on PHP-VCR on the Porter Tun Stage](/content/blog/vonage-at-phpuk-2022/pxl_20220218_145006739.jpg)
 
-Numbers were already down this year because of COVID, but I was also somewhat unlucky in that [Storm Eunice](https://www.bbc.co.uk/news/uk-60426382) was arriving in London, and not surprisingly people had started leaving early. As I found out later, it was probably a smart move as the storm took out the entire West Coast Mainline and Chiltern railway lines, leaving me stuck in London.
+Numbers were already down this year because of COVID, but I was also somewhat unlucky in that [storm Eunice](https://www.bbc.co.uk/news/uk-60426382) was arriving in London, and not surprisingly people had started leaving early. As I found out later, it was probably a smart move as the storm took out the entire West Coast Mainline and Chiltern railway lines, leaving me stuck in London.
 
 Despite these challenges, I thoroughly enjoyed getting on stage to talk about the discovery of [PHP-VCR](https://github.com/php-vcr/php-vcr) and showing code examples using the [PEST testing framework](https://pestphp.com/). Q&A turned out to be pretty lengthy, with interactions resulting in possible collaborations to bring PHP-VCR to Laravel and PEST (something I have already started investigating).
 
