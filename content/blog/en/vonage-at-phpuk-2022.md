@@ -16,15 +16,17 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-It will probably not come as too much of a surprise that the team was very excited about PHPUK 2022, given the circumstances of the past two and a half years. We've all had a number of setbacks (or false dawns, perhaps - for example, we were set to attend [LaraconEU](<https://laracon.eu/online/>) which was understandably pulled due to Amsterdam being the epicentre of the new COVID wave at that point) with tech events reopening back up to the world, and as you can imagine - from a Developer Relations standpoint we've found it extremely challenging. After all, meetups and conferences are a key part of connecting with people. We'd got a team heading to the event, armed with a full conference booth; things *feel* like they are starting to return "to normal".
+It will probably not come as too much of a surprise that the team was very excited about PHPUK 2022, given the circumstances of the past two and a half years. We've all had a number of setbacks (or false dawns, perhaps - for example, we were set to attend [LaraconEU](https://laracon.eu/online/) which was understandably pulled due to Amsterdam being the epicentre of the new COVID wave at that point) with tech events reopening back up to the world, and as you can imagine - from a Developer Relations standpoint we've found it extremely challenging. After all, meetups and conferences are a key part of connecting with people. We'd got a team heading to the event, armed with a full conference booth; things *feel* like they are starting to return "to normal".
 
-The Omicron variant came along just as we were ready to get back out there. At PHPUK I spoke with [Gary Hockin](<https://twitter.com/GeeH>) on delivering his keynote at [PHPScotland](https://conference.scotlandphp.co.uk/2021/) at the end of last year, which really was the only major PHP event other than [LonghornPHP](https://www.longhornphp.com/) that managed to actually happen. Numbers were down, and essential precautions made aspects of the conference harder. So, with PHPUK being more or less at the end of the Omicron COVID wave, we didn't know what to expect.
+The Omicron variant came along just as we were ready to get back out there. At PHPUK I spoke with [Gary Hockin](https://twitter.com/GeeH) on delivering his keynote at [PHPScotland](https://conference.scotlandphp.co.uk/2021/) at the end of last year, which really was the only major PHP event other than [LonghornPHP](https://www.longhornphp.com/) that managed to actually happen. Numbers were down, and essential precautions made aspects of the conference harder. So, with PHPUK being more or less at the end of the Omicron COVID wave, we didn't know what to expect.
+
+![Vonage's booth at PHPUK 2022](/content/blog/vonage-at-phpuk-2022/vonage.jpeg "Our booth at PHPUK 2022")
 
 Precaution-wise we opted for team masks at our booth - you wear a mask, we wear a mask. While it made sense for us to be overly cautious, it seemed that the majority of delegates at the conference had opted not to wear masks.
 
 ### On elephpants
 
-![](/content/blog/vonage-at-phpuk-2022/pxl_20220218_110235485.jpg)
+![Elephpantsm prizes and swag at our conference booth](/content/blog/vonage-at-phpuk-2022/pxl_20220218_110235485.jpg)
 
 It has always given me a vague sense of pride that [PHP is the only language with a large set of collectible toys to be had](https://elephpant.me/) ([sorry Golang, you're new to this!](https://gopher.golangmarket.com/)). Even during the [recording of a short comedy moment](https://twitter.com/VonageDev/status/1494615543533477939), the appearance of yellow elephpants had [the world's largest collector](https://twitter.com/asgrim) instantly DMing me to ask if these were new ones(!)
 
@@ -89,7 +91,7 @@ The difference now is that fibers are native, and [Milko](https://twitter.com/mk
 
 ### And last but not least: James Seconde on PHP-VCR
 
-![](/content/blog/vonage-at-phpuk-2022/pxl_20220218_145006739.jpg)
+![James Seconde speaking on PHP-VCR on the Porter Tun Stage](/content/blog/vonage-at-phpuk-2022/pxl_20220218_145006739.jpg)
 
 Numbers were already down this year because of COVID, but I was also somewhat unlucky in that [Storm Eunice](https://www.bbc.co.uk/news/uk-60426382) was arriving in London, and not surprisingly people had started leaving early. As I found out later, it was probably a smart move as the storm took out the entire West Coast Mainline and Chiltern railway lines, leaving me stuck in London.
 
