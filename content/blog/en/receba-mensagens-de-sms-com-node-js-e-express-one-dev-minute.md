@@ -43,7 +43,7 @@ Para executar o código, digite `node server.js` em uma aba do terminal, e em ou
 
 No painel da Vonage, clique em "*Settings* (Configurações em inglês)" no menu à esquerda. Certifique-se de que a API de mensagens esteja definida como padrão nas configurações de SMS, e depois clique em "*save*" para salvar. 
 
-Vá para o painel da Vonage e clique para criar um novo aplicativo. Dê um nome, role para baixo até "*Capabilities* (recursos)" e selecione "Messages (mensagens)" à direita.
+Vá para o painel da Vonage e clique para criar um novo aplicativo. Dê um nome, role para baixo até "*Capabilities* (recursos)" e selecione "*Messages* (mensagens)" à direita.
 
 Volte para a guia do seu terminal e copie o URL HTTPS que foi gerado para usarmos no ngrok.
 
