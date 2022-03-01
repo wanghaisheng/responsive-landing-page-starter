@@ -24,9 +24,9 @@ The Omicron variant came along just as we were ready to get back out there. At P
 
 Precaution-wise we opted for team masks at our booth - you wear a mask, we wear a mask. While it made sense for us to be overly cautious, it seemed that the majority of delegates at the conference had opted not to wear masks.
 
-### On elephpants
+### On Elephpants
 
-![Elephpantsm prizes and swag at our conference booth](/content/blog/vonage-at-phpuk-2022/pxl_20220218_110235485.jpg)
+![Elephpants, prizes and swag at our conference booth](/content/blog/vonage-at-phpuk-2022/pxl_20220218_110235485.jpg)
 
 It has always given me a vague sense of pride that [PHP is the only language with a large set of collectible toys to be had](https://elephpant.me/) ([sorry Golang, you're new to this!](https://gopher.golangmarket.com/)). Even during the [recording of a short comedy moment](https://twitter.com/VonageDev/status/1494615543533477939), the appearance of yellow elephpants had [the world's largest collector](https://twitter.com/asgrim) instantly DMing me to ask if these were new ones(!)
 
