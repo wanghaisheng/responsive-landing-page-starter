@@ -1,10 +1,11 @@
 ---
 title: Vonage at PHPUK 2022
-description: We went to and spoke at PHPUK 2022 in London. How was it?
+description: Vonage went to and spoke at PHPUK 2022 in London. How was it? Find
+  out more in this post!
 thumbnail: /content/blog/vonage-at-phpuk-2022/event-report.png
 author: james-seconde
-published: false
-published_at: 2022-03-01T11:55:33.536Z
+published: true
+published_at: 2022-03-02T11:41:49.049Z
 updated_at: 2022-03-01T11:55:33.578Z
 category: event
 tags:
