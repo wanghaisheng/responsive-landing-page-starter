@@ -6,7 +6,7 @@ author: james-seconde
 published: false
 published_at: 2022-03-01T11:55:33.536Z
 updated_at: 2022-03-01T11:55:33.578Z
-category: community
+category: event
 tags:
   - php
 comments: true
