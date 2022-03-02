@@ -29,7 +29,7 @@ Precaution-wise we opted for team masks at our booth - you wear a mask, we wear 
 
 ![Elephpants, prizes and swag at our conference booth](/content/blog/vonage-at-phpuk-2022/pxl_20220218_110235485.jpg)
 
-It has always given me a vague sense of pride that [PHP is the only language with a large set of collectible toys to be had](https://elephpant.me/) ([sorry Golang, you're new to this!](https://gopher.golangmarket.com/)). Even during the [recording of a short comedy moment](https://twitter.com/VonageDev/status/1494615543533477939), the appearance of yellow elephpants had [the world's largest collector](https://twitter.com/asgrim) instantly DMing me to ask if these were new ones(!)
+It has always given me a vague sense of pride that PHP is the only language with a [large set of collectable toys(https://elephpant.me/)to be had (sorry [Golang](https://gopher.golangmarket.com/), you're new to this!). Even during the [recording of a short comedy moment](https://twitter.com/VonageDev/status/1494615543533477939), the appearance of yellow elephpants had [the world's largest collector](https://twitter.com/asgrim) instantly DMing me to ask if these were new ones(!)
 
 They were, in fact, not. We had some leftover branded ones from [our previous corporate entity](https://www.nojitter.com/vonage-acquires-nexmo-jumps-cpaas) to give away, but it did prompt the question: do we order a new batch of Vonage limited edition elephants? The answer among them team seemed to be a resounding "yes!"
 
@@ -37,7 +37,7 @@ I also managed to attend a handful of talks, all of which were of course superb.
 
 ### Derek Rethans on PHP8.1
 
-OK, I'll admit it: I have been very lapsed in checking out PHP8.1 new language features. The only reason I actually have it on my machine was that I [wrote an experimental article on using PHP8.1 native fibers](https://learn.vonage.com/blog/2021/11/12/asyncronous-php-with-revoltphp-vonage-voice-api), but more on that later.
+OK, I'll admit it: I have been very lapsed in checking out PHP8.1 new language features. The only reason I actually have it on my machine was that I wrote an [experimental article on using PHP8.1 native fibers](https://learn.vonage.com/blog/2021/11/12/asyncronous-php-with-revoltphp-vonage-voice-api), but more on that later.
 
 There are 3 things that stuck out for me here that Derek spoke on.
 
