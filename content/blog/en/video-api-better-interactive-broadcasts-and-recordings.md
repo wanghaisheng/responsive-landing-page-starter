@@ -19,7 +19,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-### March 2022 Update: Tripling interactive participants to 15,000, introducing Experience Composer and LL-HLS. 
+### March 2022 Update: Tripling interactive participants to 15,000, introducing Experience Composer and LL-HLS.
+
 ### Vonage multiparty video reaches ~~5,000~~ – now 15,000 – live interactive participants, improving interactive broadcast quality, layouts and recording
 
 We continue to work hard on improving interactive broadcasts with even more participant streams (now with up to 15,000 REAL TIME participants!), a brand new Experience Composer, low-latency live streaming, full HD broadcasts, as well as improvements to on-screen layouts and overall video quality of interactive broadcasts and recordings. 
@@ -36,7 +37,6 @@ The move to virtual services during the last two years has necessitated rapid di
 
 *“With Vonage’s Video API, we are able to keep users within our ecosystem, allowing us to ensure that both local authority employees and members of the public can join meetings, communicate, and view secure and easily accessible information from any device.” - Steven Garratt, CIVICA Modern.Gov.*
 
-
 ## These Times, They Call for... *More*
 
 As with the rest of our lives, the global pandemic impacted our use of video, be it broadcasting or recording. As more of your customers are joining video sessions, these sessions got longer with more participants and with various devices - the recordings and broadcasts needed to keep up, too! The world our platform was initially designed for has changed, and we threw ourselves into identifying the features most needed to keep up. 
@@ -51,77 +51,46 @@ Learn more about the new limits and how to build your app to support interactive
 
 ### More In-Sync Live Participants with Low Latency HLS
 
-
 With an already large capacity of 15,000 real-time viewers via WebRTC, Video API can take your video sessions to ever-greater audiences with a single composed stream,  leveraging HTTP Live Streaming (HLS), and beyond to eyeballs on Facebook Live, Twitch and YouTube Live.
-
 
 However, live streaming can be useful for more than just getting to more eyeballs! One advantage of streaming is, while limiting flexibility compared to multiple streams, a single stream can be used to reach viewers on restricted networks or older devices. The downside of live streaming compared to the real-time video is that streaming audiences experience the event with a slight delay, but this does not make them passive participants. Live audiences make for highly engaged chat participants, engage in polls and even ask questions. And with the introduction of Low Latency HLS in Vonage Video API, the gap between live and interactive is narrowing down to a blink (from something like a sigh, or two). [Learn more](https://learn.vonage.com/blog/2020/05/14/broadcast-video-chat-with-javascript-and-vonage-dr/) about broadcasting video Chat. 
 
-
 Low Latency HLS (LL-HLS) is an addition to the Apple HLS standard (and not a new streaming protocol) enabling latencies down to 4-6 sec, compared to standard HLS latencies in the order of 15-30 sec.  
-
 
 The low latency addition is supported natively by iOS devices and is also backward compatible with standard HLS players, meaning that the new manifest files are produced so that players that do not support LL-HLS can ignore the new standard and just play the files as standard HLS. 
 
 ### Interactive vs Live, what’s the difference?
+
 A quick overview of the two methods Vonage Video API employs for broadcasting.
 
-| | WebRTC, or Interactive Broadcasts | HLS and LL-HLS Live Broadcasts |
-|---|---|---|
-| Latency | Presenters interact with audiences and other presenters by subscribing to each other's real-time media and signaling with sub-second latency (for chat, polls, etc.)  | Presenters' composed media stream reaches audiences close to real-time. 1) With NewLow-Latency HLS (LL-HLS) the delay is down to 4-6 seconds, barely noticeable for chat and Q&A sync 2) HLS streaming creates latency of around 15+ seconds. Real-time signaling may still be deployed for chat, polls and other interactive application elements |
-| Capacity | Video API currently supports any number of on-screen presenters and up to 15,000 audience participants - depending on the number of active publishers in the session ([learn more](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) about interactive capacity) | This type of broadcast allows the event to reach an unlimited number of viewers at low latency and stream directly to social platforms such as Facebook Live, YTlive, Twitch and others via RTMP |
-| Implementation | Easy to implement with the standard Video API calls; your application controls the look and feel, no extra composition steps needed | Requires [stream composition](https://tokbox.com/developer/guides/broadcast/live-streaming/) to transmit the desired broadcast experience |
-| Flexibility | Easy to bring an audience member "on stage" - just enable them to publish their video and audio streams! | Requires additional coding to bring audience members "on stage" by switching the HLS participants to WebRTC mode |
-| Reach | WebRTC is available on all modern browsers as well as on native clients for all major platforms. More on [WebRTC browser support](https://bloggeek.me/webrtc-browser-support/). | Greater compatibility across browsers and better video performance over restricted networks and on older devices. More on [HLS browser support](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Live_streaming_web_audio_and_video#video_streaming_file_formats). |
+|                | WebRTC, or Interactive Broadcasts                                                                                                                                                                                                                                                     | HLS and LL-HLS Live Broadcasts                                                                                                                                                                                                                                                                                                                     |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Latency        | Presenters interact with audiences and other presenters by subscribing to each other's real-time media and signaling with sub-second latency (for chat, polls, etc.)                                                                                                                  | Presenters' composed media stream reaches audiences close to real-time. 1) With NewLow-Latency HLS (LL-HLS) the delay is down to 4-6 seconds, barely noticeable for chat and Q&A sync 2) HLS streaming creates latency of around 15+ seconds. Real-time signaling may still be deployed for chat, polls and other interactive application elements |
+| Capacity       | Video API currently supports any number of on-screen presenters and up to 15,000 audience participants - depending on the number of active publishers in the session ([learn more](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) about interactive capacity) | This type of broadcast allows the event to reach an unlimited number of viewers at low latency and stream directly to social platforms such as Facebook Live, YTlive, Twitch and others via RTMP                                                                                                                                                   |
+| Implementation | Easy to implement with the standard Video API calls; your application controls the look and feel, no extra composition steps needed                                                                                                                                                   | Requires [stream composition](https://tokbox.com/developer/guides/broadcast/live-streaming/) to transmit the desired broadcast experience                                                                                                                                                                                                          |
+| Flexibility    | Easy to bring an audience member "on stage" - just enable them to publish their video and audio streams!                                                                                                                                                                              | Requires additional coding to bring audience members "on stage" by switching the HLS participants to WebRTC mode                                                                                                                                                                                                                                   |
+| Reach          | WebRTC is available on all modern browsers as well as on native clients for all major platforms. More on [WebRTC browser support](https://bloggeek.me/webrtc-browser-support/).                                                                                                       | Greater compatibility across browsers and better video performance over restricted networks and on older devices. More on [HLS browser support](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Live_streaming_web_audio_and_video#video_streaming_file_formats).                                                      |
 
+### <a name="experience-composer">More Power to Compose the Experience</a>
 
-### <a name="experience-composer">More Power to Compose the Experience</a> 
 Our customers have always built personalized experience applications using the Video API. These applications often enable rich user and customer experiences for the participants which go beyond the basic media streams and encompass web native components, custom layouts, custom application look & feel, chat widgets, emojis, whiteboards etc. This trend has become more prevalent due to the pandemic as more and more in-person experiences such as learning, conferences, meetups and events have moved online.
-
-
 
 Experience Composer enables developers to programmatically capture personalized experiences offered by their applications and provides them with a composite media stream which can be broadcast or recorded for a more immersive on-demand viewing experience. 
 
-
-
 Imagine a distributed group of scientists or product designers unveiling a new idea using simulations, voting tools, chat and whiteboards – in addition to videos of the presenters – and wanting to easily share all of these elements with tens of thousands of engaged audience members or preserve the live event, just as it happened, for posterity. Vonage Experience Composer does that. 
-
-
 
 Application experiences captured by the Experience Composer include video backgrounds and overlays, like watermarks, real time audience interaction, chats, emojis, whiteboard or any other programmed application user interfaces. To get started with the Experience Composer, please reference the [developer guide](https://tokbox.com/developer/guides/experience-composer) to video composition.
 
 ### Full HD Interactive Broadcast
-To give your events the big screen appeal, we are adding Full HD (1080p) support within the Vonage Video API clients, letting you broadcast the highest resolution available today to any device that supports it, in both relayed and routed sessions, and few to many live broadcast sessions.  
+
+To give your events the big screen appeal, we are adding Full HD (1080p) support within the Vonage Video API clients, letting you broadcast the highest resolution available today to any device that supports it, in both relayed and routed sessions, and few to many live broadcast sessions.\
 The support for 1080p is being optimized through the use of simulcast so that multiple layers of video can be published and routed to clients based on the bandwidths that they have available to them. 
 
-
-
 ### Play, Pause and Resume HLS Streams
-As an enhancement to standard HLS broadcasts, we are enabling DVR functionality that allows participants to pause, resume and rewind the live HLS broadcasts when enabled.   
+
+As an enhancement to standard HLS broadcasts, we are enabling DVR functionality that allows participants to pause, resume and rewind the live HLS broadcasts when enabled.\
 The feature is compatible with all HLS players and will provide a 2 hour rewind history for broadcasts. 
 *It should be noted that the DVR feature can only be enabled on standard HLS streams and is not available when LL-HLS is active.* 
-
-
-### More In-Sync Live Participants with LL-HLS
-
-
-With an already large capacity of 15,000 real-time viewers via WebRTC, Video API can take your video sessions to ever-greater audiences leveraging HTTP Live Streaming (HLS), and beyond to eyeballs on Facebook Live, Twitch and YouTube Live.
-
-
-However, live streaming can be useful for more than just getting to more eyeballs! One advantage of streaming is, while limiting flexibility, a single stream can be used to reach users on restricted networks. The downside of live streaming compared to the real-time video is that streaming audiences experience the event with a slight delay, but this does not make them passive participants. Live audiences make for highly engaged chat participants, engage in polls and even ask questions. And with the introduction of Low Latency HLS in Vonage Video API, the gap between live and interactive is narrowing down to a blink (from something like a sigh, or two). 
-
-
-Low Latency HLS (LL-HLS) is an addition to the Apple HLS standard (and not a new streaming protocol) enabling latencies down to 4-6 sec, compared to standard HLS latencies in the order of 15-30 sec. 
- 
-
-The low latency addition is supported natively by iOS devices and is also backward compatible with standard HLS players, meaning that the new manifest files are produced so that players that do not support LL-HLS can ignore the new standard and just play the files as standard HLS. 
-
-### Interactive vs Live, what’s the difference?
-A quick overview of the two methods Vonage Video API employs for broadcasting.
-
-
-
-
 
 ### More Video and Audio Participant in Composed Views
 
