@@ -1,9 +1,10 @@
 ---
 title: Receba Mensagens de SMS com Node.js e Express | One Dev Minute
 description: Vamos receber mensagens usando Node.js, Express e a API de Mensagens da Vonage.
+thumbnail: /content/blog/receba-mensagens-de-sms-com-node-js-e-express-one-dev-minute/thumbnail-and-assets-for-one-dev-minute.jpg
 author: amanda-cavallaro
 published: true
-published_at: 2022-03-01T10:06:55.114Z
+published_at: 2022-02-24T10:06:55.114Z
 updated_at: 2022-03-01T10:06:55.129Z
 category: tutorial
 tags:
