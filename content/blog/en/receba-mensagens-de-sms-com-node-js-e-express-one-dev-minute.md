@@ -21,7 +21,7 @@ Boas vindas ao [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsni
 
 Este passo a passo rápido mostrará como receber mensagens de SMS utilizando Node.js, Express assim como a API de Mensagens da Vonage.
 
-<youtube id="EiPB-wIh_zQ"></youtube>
+<youtube id="watch?v=EiPB-wIh_zQ"></youtube>
 
 ## Trancrição
 
