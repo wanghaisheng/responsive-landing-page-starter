@@ -8,8 +8,8 @@ published_at: 2022-02-24T10:06:55.114Z
 updated_at: 2022-03-01T10:06:55.129Z
 category: tutorial
 tags:
-  - "#node"
-  - "#messages-api"
+  - node
+  - messages-api
 comments: true
 spotlight: false
 redirect: ""
