@@ -23,11 +23,13 @@ In education and events spaces particularly, adding an active moderation on part
 
 The application we build with this tutorial will add audio moderation on the video streams created using Vonage Video API. 
 
-In this blog post, we will implement a Video Moderation application using \[Vonage Video API](https://www.vonage.com/communications-apis/video/) and \[AWS Transcribe]|(https://aws.amazon.com/transcribe/). The application will moderate the audio published by Camera for each of the publishers into the session. If the application detects inappropriate words, it will mute the audio from the offending publisher and send a notification to all the participants. 
+In this blog post, we will implement a Video Moderation application using the [Vonage Video API](https://www.vonage.com/communications-apis/video/) and [AWS Transcribe](https://aws.amazon.com/transcribe/). The application will moderate the audio published by Camera for each of the publishers into the session. If the application detects inappropriate words, it will mute the audio from the offending publisher and send a notification to all the participants. 
 
 ### Prerequisites
 
-1. A Vonage Video API account. If you don't have one already, you can create an account in the Video Dashboard (https://tokbox.com/account/#/).
+<sign-up></sign-up>
+
+1. A Vonage Video API account. If you don't have one already, you can create an account in the [Video Dashboard](<1. https://tokbox.com/account/#/>).
 2. An AWS account: <https://aws.amazon.com>
 
 ### Project Architecture
