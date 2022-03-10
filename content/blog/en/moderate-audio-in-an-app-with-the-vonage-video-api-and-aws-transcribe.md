@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-This is the second part of blog posts about Video Moderation. The first is focused on video moderation; you can have a look [here](<https://learn.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition/>).
+This is the second part of my series of blog posts about Video Moderation. The first is focused on video moderation; you can have a look [here](https://learn.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition/).
 
 In education and events spaces particularly, adding an active moderation on participants' audio can be very useful, as it makes it possible to block inappropriate content from others. 
 
@@ -28,7 +28,6 @@ In this blog post, we will implement a Video Moderation application using \[Vona
 ### Prerequisites
 
 1. A Vonage Video API account. If you don't have one already, you can create an account in the Video Dashboard (https://tokbox.com/account/#/).
-
 2. An AWS account: <https://aws.amazon.com>
 
 ### Project Architecture
@@ -96,7 +95,7 @@ The AWS Transcribe service receives the audio stream and transcribes it to text.
 
 ### Conclusion
 
-This post demonstrates how to integrate a content moderation API, AWS Transcribe, into the Vonage Video API. How the application reacts to inappropriate content is completely customizable based on your use case— it can mute the audio/video of the Publisher, or even forcefully disconnect the user and ban them from joining the session again. For more details on how you can moderate content using Vonage Video API, have a look at this [article](<https://learn.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api/>). For the first part of this blog, have a look at this <https://learn.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition/>.
+This post demonstrates how to integrate a content moderation API, AWS Transcribe, into the Vonage Video API. How the application reacts to inappropriate content is completely customizable based on your use case— it can mute the audio/video of the Publisher, or even forcefully disconnect the user and ban them from joining the session again. For more details on how you can moderate content using Vonage Video API, have a look at this [article](https://learn.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api/). For the first part of this blog, have a look at this <https://learn.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition/>.
 
 Resources: <https://github.com/nexmo-se/video-api-aws-moderation>.
 
