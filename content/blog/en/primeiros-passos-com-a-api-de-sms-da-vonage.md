@@ -2,13 +2,15 @@
 title: Primeiros Passos com a API de SMS da Vonage
 description: Vou te mostrar como mandar uma mensagem de SMS com a API de SMS da
   Vonage em 2 minutos com apenas algumas linhas de código.
+thumbnail: /content/blog/primeiros-passos-com-a-api-de-sms-da-vonage/getting-started-sms_yt_thumbnail_2.png
 author: amanda-cavallaro
 published: true
 published_at: 2022-03-01T10:38:47.105Z
-updated_at: 2022-03-01T10:38:47.117Z
+updated_at: 2022-02-23T08:47:46.351Z
 category: tutorial
 tags:
-  - "#sms-api"
+  - sms-api
+  - portuguese
 comments: true
 spotlight: false
 redirect: ""
@@ -18,7 +20,7 @@ replacement_url: ""
 ---
 Neste passo a passo rápido, irei te mostrar como enviar mensagens de SMS com a API de SMS Vonage e cURL em apenas 2 minutos.
 
-<Video Link>
+<youtube id="lx0sHnXPfao"></youtube>
 
 ## Transcrição
 
