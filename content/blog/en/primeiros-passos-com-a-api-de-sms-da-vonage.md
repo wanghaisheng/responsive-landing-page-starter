@@ -5,8 +5,8 @@ description: Vou te mostrar como mandar uma mensagem de SMS com a API de SMS da
 thumbnail: /content/blog/primeiros-passos-com-a-api-de-sms-da-vonage/getting-started-sms_yt_thumbnail_2.png
 author: amanda-cavallaro
 published: true
-published_at: 2022-03-01T10:38:47.105Z
-updated_at: 2022-02-23T08:47:46.351Z
+published_at: 2022-02-17T10:38:47.105Z
+updated_at: 2022-03-10T13:19:07.358Z
 category: tutorial
 tags:
   - sms-api
