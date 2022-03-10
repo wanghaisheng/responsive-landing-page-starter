@@ -20,7 +20,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-*Post has been updated to include an increase in simultaneous live interactive participants, low latency HLS broadcasts, and the new Vonage Experience Composer.*
+*Post has been updated to include the Vonage Video API March 2022 Release with an increase in simultaneous live interactive participants, low latency HLS broadcasts, and the new Vonage Experience Composer.*
 
 To start, let’s define some things and set expectations. Twitch is a gigantic platform that allows people to broadcast and interact with viewers. From [Wikipedia](https://en.wikipedia.org/wiki/Twitch_(service)):
 “As of February 2020, it had 3 million broadcasters monthly and 15 million daily active users, with 1.4 million average concurrent users.” 
@@ -37,7 +37,7 @@ The Vonage Video API offers two ways to share video sessions with audiences.
 
 [Live interactive video broadcasts](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) - This option has presenters (host and guest) as well as viewers connected to the video session. Presenters are publishing and subscribing to each other's audio and video streams while the viewers are just subscribing to the presenters’ individual streams. (Note: Viewers can be allowed to publish their streams since they are already connected to the session.) Since everyone is subscribing to everyone else’s stream, the latency is lower, but there is an upper limit to the number of participants based on the number of publishing streams. That limit is 15,000 simultaneous live interactive participants. There’s a handy table in the docs to help determine the number of viewers possible.
 
-[Live streaming broadcasts](https://tokbox.com/developer/guides/broadcast/live-streaming/) - The presenters are still publishing and subscribing to each other's streams, but there is a combined single broadcast stream that the viewers consume. Merging the streams will add some latency for the viewer. Both HLS and RTMP streams are available to broadcast. The March 2022 SDK release introduces a low latency HLS broadcast option that greatly reduces the latency to around 4 to 6 seconds. This option is closer to how Twitch, YouTube, Facebook, and others handle live streams. There is also the new HLS DVR option that allows viewers to pause and resume live broadcasts.
+[Live streaming broadcasts](https://tokbox.com/developer/guides/broadcast/live-streaming/) - The presenters are still publishing and subscribing to each other's streams, but there is a combined single broadcast stream that the viewers consume. Merging the streams will add some latency for the viewer. Both HLS and RTMP streams are available to broadcast. The latest release introduces a low latency HLS broadcast option that greatly reduces the latency to around 4 to 6 seconds. This option is closer to how Twitch, YouTube, Facebook, and others handle live streams. There is also the new HLS DVR option that allows viewers to pause and resume live broadcasts.
 
 The Vonage Video API broadcast sample can do both, but we will focus on the live streaming broadcasts option here for our personal Twitch application.
 
