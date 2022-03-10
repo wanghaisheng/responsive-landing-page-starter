@@ -10,6 +10,7 @@ category: tutorial
 tags:
   - node
   - messages-api
+  - portuguese
 comments: true
 spotlight: false
 redirect: ""
