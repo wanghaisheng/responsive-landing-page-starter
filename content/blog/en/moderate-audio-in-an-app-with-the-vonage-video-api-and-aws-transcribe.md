@@ -42,11 +42,11 @@ The backend side is mostly for video room credentials handling. The audio modera
 
 ### Client-Side
 
-The client-side application is a React Single Page Application. The entry point of the project is the src/client/index.js file. The index file imports the App file, which contains the Routes and Component definition.
+The client-side application is a React Single Page Application. The entry point of the project is the `src/client/index.js` file. The index file imports the App file, which contains the Routes and Component definition.
 
 ### Pages
 
-The routes are defined in the App.js file. The code uses the react-router-dom module to declare the routes. There are two main routes:
+The routes are defined in the App.js file. The code uses the `react-router-dom` module to declare the routes. There are two main routes:
 
 * Waiting Room: The user can set up their microphone and camera settings and run a pre-call test on this page. Then, they can join the video call.
 * Video Room: The user can connect to the session, publish their stream, and subscribe to each stream inside the room.
