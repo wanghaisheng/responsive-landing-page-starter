@@ -20,7 +20,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-*Post has been updated to include an increase in simultaneous live interactive participants, low latency HLS broadcasts, and the Experience Composer.*
+*Post has been updated to include an increase in simultaneous live interactive participants, low latency HLS broadcasts, and the new Vonage Experience Composer.*
 
 To start, let’s define some things and set expectations. Twitch is a gigantic platform that allows people to broadcast and interact with viewers. From [Wikipedia](https://en.wikipedia.org/wiki/Twitch_(service)):
 “As of February 2020, it had 3 million broadcasters monthly and 15 million daily active users, with 1.4 million average concurrent users.” 
