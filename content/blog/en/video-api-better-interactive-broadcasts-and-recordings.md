@@ -59,7 +59,7 @@ Low Latency HLS (LL-HLS) is an addition to the Apple HLS standard (and not a new
 
 The low latency addition is supported natively by iOS devices and is also backward compatible with standard HLS players, meaning that the new manifest files are produced so that players that do not support LL-HLS can ignore the new standard and just play the files as standard HLS. 
 
-### Interactive vs Live, what’s the difference?
+### <a name="interactive-live">Interactive vs Live, what’s the difference?</a>
 
 A quick overview of the two methods Vonage Video API employs for broadcasting.
 
