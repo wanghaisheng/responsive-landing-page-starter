@@ -96,7 +96,9 @@ The AWS Transcribe service receives the audio stream and transcribes it to text.
 
 ### Conclusion
 
-This post demonstrates how to integrate a content moderation API, AWS Transcribe, into the Vonage Video API. How the application reacts to inappropriate content is completely customizable based on your use case— it can mute the audio/video of the Publisher, or even forcefully disconnect the user and ban them from joining the session again. 
+This post demonstrates how to integrate a content moderation API, AWS Transcribe, into the Vonage Video API. 
+
+How the application reacts to inappropriate content is completely customizable based on your use case— it can mute the audio/video of the Publisher, or even forcefully disconnect the user and ban them from joining the session again. 
 
 ### Resources
 
