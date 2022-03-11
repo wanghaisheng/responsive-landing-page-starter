@@ -18,7 +18,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Virtual technical conferences always seemed to make perfect sense. Who better than a bunch of technologists to find a way to deliver the content and conversations of a traditional professional conference, without the difficulty of travel, or the overhead of seating and feeding thousands of attendees? And yet, for years tech conferences were primarily in-person events. 
+Virtual technical conferences always seemed to make perfect sense. Who better than a bunch of technologists to find a way to deliver the content and conversations of a traditional professional conference, without the difficulty of travel or the overhead of seating and feeding thousands of attendees? And yet, for years tech conferences were primarily in-person events. 
 
 When the pandemic triggered worldwide lockdowns in March of 2020, the tech industry was challenged to determine if it had a viable model for virtual conferences and if an appetite for them existed. This meant an explosion of conference platforms, and the emergence of competing schools of thought about things few people had even considered before. It meant we could try and hold our tech communities together at times when we couldn't even see our families, and it meant learning what parts of tech conferences we genuinely value.
 
@@ -26,7 +26,7 @@ As someone who's been attending and speaking at tech conferences for over a deca
 
 ## Low Engagement
 
-It's pretty understandable that a pandemic, and all the other major events of the past two years, distracted people. It may be that attending a tech conference just felt too much like pretending things were normal. Whatever the reason, I didn't hear a lot about people attending conferences. The conferences I took part in had low participation. Overall, my impression is that the move online wasn't a success.
+It's pretty understandable that a pandemic (and all the other major events of the past two years) distracted people. It may be that attending a tech conference just felt too much like pretending things were normal. Whatever the reason, I didn't hear a lot about people attending conferences. The conferences I took part in had low participation. Overall, my impression is that the move online wasn't a success.
 
 However, I think it would be a mistake to believe that's the end of the story. Nothing seems inherently bad about virtual conferences. What seems questionable is that people would benefit from a virtual conference in the same way they benefit from in-person ones.
 
@@ -56,7 +56,7 @@ One last thing to consider about talks is how many a conference really needs. Co
 
 Online, it can be a struggle to feel you're interacting with people who aren't speaking at or organizing the conference. And as an attendee, passively watching a conference online is lonelier than attending one in person.
 
-This pain point has highlighted for me one of the things that makes conferences so great: the people. Not the big names you get to rub shoulders with or the famous speakers, but the diverse and fascinating people attending the conference alongside you. Being in devrel, those people are actually the biggest draw for me. Other developers' perspectives and experiences are invaluable.
+This pain point has highlighted for me one of the things that makes conferences so great: the people. Not the big names you get to rub shoulders with or the famous speakers, but the diverse and fascinating people attending the conference alongside you. Being in Developer Relations, those people are actually the biggest draw for me. Other developers' perspectives and experiences are invaluable.
 
 Without the constraints of (event) space and time, there are additional ways to get conference participants more actively involved. The unconference model adapts well to online events. To make it more collaborative, attendees could volunteer to moderate discussions on hyper-specific topics. 
 
@@ -76,7 +76,7 @@ I've never seen a conference platform that allowed the spontaneous creation of c
 
 Overall, I hope to see online conferences evolve in such a way that they feel more open-ended. As an attendee, I want to see all the things I can do on a single screen, and have it assumed that I can listen and chat simultaneously. As a speaker, I want to know that my audience isn't held captive, getting antsy wondering about the other aspects of the conference, prone to leave at any time and never come back. It seems like online conferences should feel more _online_. We should be encouraged to click and play, with no danger of finding ourselves separated from everyone else or being thrust into a surprise interaction.
 
-## What Next
+## What Next?
 
 As in-person conferences come back, it will be interesting to see what happens to virtual events. I think conference platforms will be under less pressure but will need to offer experiences that differentiate them from in-person events, not mimic them. Some very exciting ways of attending conferences could start appearing in a couple more versions. 
 
