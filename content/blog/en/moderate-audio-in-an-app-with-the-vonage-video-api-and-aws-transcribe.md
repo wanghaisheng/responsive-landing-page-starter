@@ -104,7 +104,7 @@ How the application reacts to inappropriate content is completely customizable b
 
 ### Resources
 
-The first article of the series of posts about Video Moderation is [How to Build a Video Moderation Application with AWS Rekognition] (https://learn.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition/).
+The first article of the series of posts about Video Moderation is ["How to Build a Video Moderation Application with AWS Rekognition"](https://learn.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition/).
 
 For more details on how you can moderate content using Vonage Video API, have a look at ["Ban the Trolls! Adding Moderation to the Video API"](https://learn.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api/). 
 
