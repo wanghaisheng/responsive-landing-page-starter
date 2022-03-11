@@ -92,7 +92,9 @@ const command = new StartStreamTranscriptionCommand({
       const response = await transcribeStreamingClient.current.send(command);
 ```
 
-The AWS Transcribe service receives the audio stream and transcribes it to text. On the AWS Transcribe service, it’s possible to add custom vocabularies to filter unwanted words. For this example, I created a vocabulary with several profanity words. If any word is detected, the service will add the \`\*\*\*\` character. On the client-side, if the transcription contains the `\*\*\*’ character, the useTranscribe hook will mute the local audio of the stream. It will also show a warning message to the user and send a notification to all the users connected to the room.
+The AWS Transcribe service receives the audio stream and transcribes it to text. On the AWS Transcribe service, it’s possible to add custom vocabularies to filter unwanted words. 
+
+For this example, I created a vocabulary with several profanity words. If any word is detected, the service will add the \`\*\*\*\` character. On the client-side, if the transcription contains the `\*\*\*’ character, the useTranscribe hook will mute the local audio of the stream. It will also show a warning message to the user and send a notification to all the users connected to the room.
 
 ### Conclusion
 
