@@ -97,6 +97,6 @@ If you end up using any of the ideas from this article, let us know!
 
 You can [reach us on Twitter](https://twitter.com/VonageDev) or on our Slack channel. 
 
-Do you need even more inspiration? Check out the first article in this series: *The Ultimate List of Fun APIs For Your Next Coding Project* for [cool APIs you can use to build side projects.](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/) 
+Do you need even more inspiration? Check out the first article in this series: The Ultimate List of Fun APIs For Your Next Coding Project for [cool APIs you can use to build side projects](https://learn.vonage.com/blog/2021/03/15/the-ultimate-list-of-fun-apis-for-your-next-coding-project/) and *[The Ultimate List of iPhone App Ideas](https://learn.vonage.com/blog/2022/02/18/the-ultimate-list-of-iphone-app-ideas/)*. 
 
 Best of luck at your next hackathon!
