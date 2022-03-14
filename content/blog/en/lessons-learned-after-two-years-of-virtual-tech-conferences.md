@@ -4,9 +4,10 @@ description: Since the start of worldwide lockdowns in March 2020, we've been
   forced to create and implement best practices for online technical conferences
   on our feet. Two years later, what worked, what new ideas have we come up
   with, and what does the future of a tech conference look like?
+thumbnail: /content/blog/lessons-learned-after-two-years-of-virtual-tech-conferences/two-years-of-video-chat.png
 author: garann-means
 published: true
-published_at: 2022-03-09T16:17:58.841Z
+published_at: 2022-03-14T10:37:54.278Z
 updated_at: 2022-03-09T16:17:58.877Z
 category: devlife
 tags:
