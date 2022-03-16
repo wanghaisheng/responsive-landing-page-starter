@@ -244,7 +244,6 @@ When you fill out the form and press submit, your text message should send at th
 ## 
 Final Thoughts
 
-
 I hope this tutorial helped you learn more about the Vonage Messages API and how to schedule SMS messages.
 
 Make sure to follow us on Twitter and join our Slack channel for more information.
