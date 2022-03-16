@@ -156,14 +156,13 @@ Add the following code to your app:
 app.post('/api/sms', (req, res) => {
     res.send(200)
     const triggerTime = new Date(req.body\['meeting-time'])
-    let seconds = (triggerTime - new Date()) / 1000
-    let task = cron.schedule('\* \* \* \* \* \*', () => {
+    let task = cron.schedule('* * * * * *', () => {
         if (new Date() > triggerTime) {
-            vonage.message.sendSms(req.body\[from], req.body\['number'], req.body\['message'], (err, responseData) => {
+            vonage.message.sendSms(req.body[from], req.body['number'], req.body['message'], (err, responseData) => {
                 if (err) {
                     console.log(err);
                 } else {
-                    if (responseData.messages\[0] === "0") {
+                    if (responseData.messages[0] === "0") {
                         console.log("Message sent successfully.");
                     } else {
                         console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
