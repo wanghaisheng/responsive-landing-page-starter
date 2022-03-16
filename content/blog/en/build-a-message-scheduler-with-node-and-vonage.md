@@ -82,10 +82,7 @@ vonage apps:link --number=VONAGE_NUMBER APP_ID
 
 ## Building the Back-End
 
-
-
 Now, we are ready to start writing the code for our app. 
-
 
 CD into the directory you created your Vonage app in and create a .env file. 
 
