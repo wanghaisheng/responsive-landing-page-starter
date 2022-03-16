@@ -119,7 +119,7 @@ Now, add the middleware your app needs to handle POST requests:
 ```javascript
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
-  extended: true
+    extended: true
 }))
 app.use(express.static('public'))
 ```
@@ -129,10 +129,10 @@ Add this code to set up the Vonage Messages API:
 
 ```javascript
 const vonage = new Vonage({
-  apiKey: process.env.API_KEY,
-  apiSecret: process.env.API_SECRET,
-  applicationId: process.env.APPLICATION_ID,
-  privateKey: process.env.PRIVATE_KEY
+    apiKey: process.env.API_KEY,
+    apiSecret: process.env.API_SECRET,
+    applicationId: process.env.APPLICATION_ID,
+    privateKey: process.env.PRIVATE_KEY
 })
 ```
 
@@ -140,10 +140,9 @@ const vonage = new Vonage({
 Next, define a function to serve index.html when you go to your web app’s homepage.
 
 ```javascript
-app.get('/', (req, res)=> {
-      res.sendFile(path.join(__dirname, '/index.html'))
-  }
-)
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/index.html'))
+})
 ```
 
 
@@ -153,25 +152,25 @@ Add the following code to your app:
 
 ```javascript
 app.post('/api/sms', (req, res) => {
-   res.send(200)
-   const triggerTime = new Date(req.body\['meeting-time'])
-   let seconds = (triggerTime - new Date()) / 1000
-   let task = cron.schedule('\* \* \* \* \* \*', () => {
-       if (new Date() > triggerTime) {
-           vonage.message.sendSms(req.body\[from], req.body\['number'], req.body\['message'], (err, responseData) => {
-               if (err) {
-                   console.log(err);
-               } else {
-                   if(responseData.messages\[0] === "0") {
-                       console.log("Message sent successfully.");
-                   } else {
-                       console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
-                   }
-               }
-           })
-       task.stop()
-       }
-   });
+    res.send(200)
+    const triggerTime = new Date(req.body\['meeting-time'])
+    let seconds = (triggerTime - new Date()) / 1000
+    let task = cron.schedule('\* \* \* \* \* \*', () => {
+        if (new Date() > triggerTime) {
+            vonage.message.sendSms(req.body\[from], req.body\['number'], req.body\['message'], (err, responseData) => {
+                if (err) {
+                    console.log(err);
+                } else {
+                    if (responseData.messages\[0] === "0") {
+                        console.log("Message sent successfully.");
+                    } else {
+                        console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+                    }
+                }
+            })
+            task.stop()
+        }
+    });
 })
 ```
 
@@ -199,27 +198,30 @@ Create a new file called index.html and add the following:
 
 ```html
 <!DOCTYPE html>
-
-<html lang="en">
-<head>
-   <meta charset="UTF-8">
-   <title>Message Scheduler</title>
-   <link rel='stylesheet' href='style.css'>
-</head>
-<body>
-<h1>Message Scheduler </h1>
-<form action="/api/sms" method="POST">
-   <label for="time">Start date:</label><br>
-   <input type="datetime-local" id="time"
-          name="meeting-time" value="2022-03-03sT00:00"
-          min="2022-03-03sT00:00" max="2023-06-14T00:00"> <br>
-   <label for="number">Number:</label><br>
-   <input id="number" name="number"> <br>
-   <label for="message">Message:</label><br>
-   <input id="message" name="message"> <br>
-   <input type="submit" value="Submit" id="submit">
-</form>
-</body>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8'>
+    <title>Message Scheduler</title>
+    <link rel='stylesheet' href='style.css'>
+  </head>
+  <body>
+    <h1>Message Scheduler </h1>
+    <form action='/api/sms' method='POST'>
+      <label for='time'>Start date:</label>
+      <br>
+      <input type='datetime-local' id='time' name='meeting-time' value='2022-03-03sT00:00' min='2022-03-03sT00:00' max='2023-06-14T00:00'>
+      <br>
+      <label for='number'>Number:</label>
+      <br>
+      <input id='number' name='number'>
+      <br>
+      <label for='message'>Message:</label>
+      <br>
+      <input id='message' name='message'>
+      <br>
+      <input type='submit' value='Submit' id='submit'>
+    </form>
+  </body>
 </html>
 ```
 
