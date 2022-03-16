@@ -67,6 +67,6 @@ If you would like to see the application created in action for yourself, you can
 
 ## What's Next?
 
-Keep a look out for an upcoming blog post where we incorporate the new Vonage Experience Composer. Think of it as a way to screen capture your whole application (video streams, User Interface, chat, and all) that can be then used for recordings and/or broadcasting.
+Keep a look out for an upcoming blog post where we incorporate the new Vonage Experience Composer. Think of it as a way to screen capture your whole application (video streams, User Interface, chat, and all) that can be then used for recordings and/or broadcasting. More information can be found in the [documentation](https://tokbox.com/developer/guides/experience-composer/).
 
 As always, if you have any questions or comments, feel free to connect with us in our [community Slack channel](https://developer.vonage.com/slack).
