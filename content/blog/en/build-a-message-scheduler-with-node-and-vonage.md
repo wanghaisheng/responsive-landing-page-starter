@@ -86,7 +86,7 @@ vonage apps:link --number=VONAGE_NUMBER APP_ID
 
 Now, we are ready to start writing the code for our app. 
 
-CD into the directory you created your Vonage app in and create a .env file. 
+CD into the directory you created your Vonage app in and create a `.env` file. 
 
 Add the following information: 
 
@@ -155,10 +155,10 @@ Add the following code to your app:
 ```javascript
 app.post('/api/sms', (req, res) => {
     res.send(200)
-    const triggerTime = new Date(req.body\['meeting-time'])
+    const triggerTime = new Date(req.body['meeting-time'])
     let task = cron.schedule('* * * * * *', () => {
         if (new Date() > triggerTime) {
-            vonage.message.sendSms(req.body[from], req.body['number'], req.body['message'], (err, responseData) => {
+            vonage.message.sendSms(process.env.FROM, req.body['number'], req.body['message'], (err, responseData) => {
                 if (err) {
                     console.log(err);
                 } else {
@@ -175,7 +175,7 @@ app.post('/api/sms', (req, res) => {
 })
 ```
 
-This code accepts a POST request with a time (when to send the SMS message), the number to send the message to, and the message to send and sends it to the recipient at the scheduled time using node-cron to schedule the message.
+This code accepts a POST request with a time (when to send the SMS message), the number to send the message to, and the message to send and sends it to the recipient at the scheduled time using `node-cron` to schedule the message.
 
 Node-chron accepts two parameters: the time to do something and a function containing the code of what to do. 
 
