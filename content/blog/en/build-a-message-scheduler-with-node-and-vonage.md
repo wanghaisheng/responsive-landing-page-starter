@@ -23,16 +23,11 @@ Here at Vonage, we’ve written many articles on how to send an SMS message. How
 
 Let’s build it!
 
-## 
-Prerequisites
+## Prerequisites
 
+To follow along with this tutorial, you need a Vonage account. You also need Node, which you can [download here.](https://nodejs.org/en/download/)
 
-
-To follow along with this tutorial, you need a Vonage account. You also need Node, which you can download here.
-
-## 
 Initial Set-Up
-
 
 To get started, the first thing you need to do is install the following modules: 
 
