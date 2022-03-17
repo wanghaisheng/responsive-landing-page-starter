@@ -58,7 +58,7 @@ Once I sorted that out, I realized I needed to [create Promise wrappers](https:/
 
 ### Requesting the Verify Code
 
-The Verify request method in the [Nexmo JavaScript SDK](https://developer.nexmo.com/sdk/stitch/javascript/) is quite minimal code, as the framework there makes it simple to do most everything. The first thing I had to do was wrap it in a promise.
+The Verify request method in the [Vonage JavaScript SDK](https://developer.vonage.com/sdk/stitch/javascript/) is quite minimal code, as the framework there makes it simple to do most everything. The first thing I had to do was wrap it in a promise.
 
 ```js
 function verifyRequest(opts) {
@@ -186,4 +186,4 @@ The Firebase SDK provides a `functions` export to let you use `httpsCallable()` 
 
 The Verify API is simple to use, and with Firebase and React you can quickly write the code needed to validate your users and their phone numbers. Feel free to try it out. You can sign up for a [Vonage](https://dashboard.nexmo.com/sign-up) account, and if you need some credits to get you started send us an email at devrel@vonage.com.
 
-You can find my [https://github.com/kellyjandrews/smart-home-app](sample application code here). The app I built is more of a personal app for me, but feel free to have a look and use anything you might find useful.  Over the next month or so, I'll be adding some additional functionality to the app as well—first is opening and closing my garage door.
+You can find my [sample application code here](https://github.com/kellyjandrews/smart-home-app). The app I built is more of a personal app for me, but feel free to have a look and use anything you might find useful.  Over the next month or so, I'll be adding some additional functionality to the app as well—first is opening and closing my garage door.
