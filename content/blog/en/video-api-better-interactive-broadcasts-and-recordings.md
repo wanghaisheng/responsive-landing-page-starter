@@ -43,11 +43,11 @@ As with the rest of our lives, the global pandemic impacted our use of video, be
 
 ### More Interactive Participants with WebRTC
 
-In a [live interactive video broadcast](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The latest platform update increased the number of live interactive participants supported in a video broadcast session, up to 15,000 - depending on the number of active publishers in the session.
+In a [live interactive video broadcast](https://www.tokbox.com/developer/guides/broadcast/live-interactive-video/), a large number of clients can communicate in real time by publishing and subscribing to each others' streams in the session. The latest platform update increased the number of live interactive participants supported in a video broadcast session, up to 15,000 - depending on the number of active publishers in the session.
 
 For example, when there are 1 or 2 published streams in the session, up to 15,000 participants can view both of these published streams in real-time as interactive broadcast participants. When there are 3 published streams in the session, up to 12,000 participants can view all published streams, and so on. With an interactive broadcast, the Vonage Video Router will forward all publisher streams to any of the subscribing participants, allowing applications to be independently dynamic about how the video is presented to each of the subscribing participants. Please reference the [developer guide](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) to learn more about  the number of live interactive broadcast participants that can subscribe to all the publishers of the session.
 
-Learn more about the new limits and how to build your app to support interactive broadcasts in our [Live interactive broadcasts developer guide](https://www-tbdev.tokbox.com/developer/guides/broadcast/live-interactive-video/).
+Learn more about the new limits and how to build your app to support interactive broadcasts in our [Live interactive broadcasts developer guide](https://www.tokbox.com/developer/guides/broadcast/live-interactive-video/).
 
 ### More In-Sync Live Participants with Low Latency HLS
 
