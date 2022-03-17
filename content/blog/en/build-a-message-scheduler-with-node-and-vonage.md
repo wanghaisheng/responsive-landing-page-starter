@@ -59,7 +59,7 @@ Now, use the CLI to create a Vonage application.
 vonage apps:create
 ✔ Application Name ... new_app
 ✔ Select App Capabilities > Messages
-✔ Create voice webhooks? ... No
+✔ Create messages webhooks? ... No
 ✔ Allow use of data for AI training? Read data collection disclosure  ... yes
 
 Application created: 34abcd12-ef12-40e3-9c6c-4274b3633761
@@ -244,8 +244,7 @@ When you run the JavaScript file you created earlier and navigate your local ser
 
 When you fill out the form and press submit, your text message should send at the scheduled time. 
 
-## 
-Final Thoughts
+## Final Thoughts
 
 I hope this tutorial helped you learn more about the Vonage Messages API and how to schedule SMS messages.
 
