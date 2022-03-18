@@ -1,7 +1,7 @@
 {
   "team": true,
   "name": "Paul Ardeleanu",
-  "image_url": "https://secure.gravatar.com/avatar/689487ff9f0777129ffb4874ea615500?s=384&d=mm&r=g",
-  "bio": "Paul is an iOS Developer Advocate at Nexmo. A seasoned software engineer, trainer and speaker, he specialised in data-driven solutions on Apple platforms with an emphasis on prototyping, best practices and balance with agility.",
+  "image_url": "/content/images/pardel_2019_400.jpg",
+  "bio": "Paul is a Senior Developer Relations Manager at Vonage. A seasoned software engineer, trainer and speaker, he specialised in data-driven solutions on Apple platforms with an emphasis on prototyping, best practices and balance with business practices. Having used quite a few programming languages over the years, he now enjoys writing JavaScript, Ruby and Swift.",
   "website_url": ""
 }
