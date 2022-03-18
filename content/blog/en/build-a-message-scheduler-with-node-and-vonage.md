@@ -1,9 +1,10 @@
 ---
 title: Build a Message Scheduler with Node and Vonage
 description: Learn how to create a message scheduler with Node and Vonage
+thumbnail: /content/blog/build-a-message-scheduler-with-node-and-vonage/message-scheduler.png
 author: cory-althoff
 published: true
-published_at: 2022-03-15T23:57:46.319Z
+published_at: 2022-03-18T11:32:27.535Z
 updated_at: 2022-03-15T23:57:46.360Z
 category: tutorial
 tags:
