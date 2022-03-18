@@ -8,6 +8,6 @@
   "spotlight": false,
   "title": "Community Manager",
   "noteworthy": false,
-  "team": true,
-  "alumni": false
+  "team": false,
+  "alumni": true
 }
