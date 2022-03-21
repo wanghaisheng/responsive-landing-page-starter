@@ -5,7 +5,7 @@ description: Working on a multi-language team can be both challenging and
 thumbnail: /content/blog/working-on-a-multi-language-team/multi-language-team-1-.png
 author: karl-lingiah
 published: true
-published_at: 2022-03-17T15:58:22.988Z
+published_at: 2022-03-21T09:36:20.709Z
 updated_at: 2022-03-17T15:58:23.091Z
 category: devlife
 tags:
