@@ -12,8 +12,8 @@ tags:
   - open-api
   - postman
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/16/announcing-the-vonage-apis-postman-collection
+canonical: https://developer.vonage.com/blog/2020/09/16/announcing-the-vonage-apis-postman-collection
 ---
 At Vonage, we publish OpenAPI specifications for all our APIs. These specs enable our developer community to explore, evaluate, and integrate the Vonage APIs efficiently.
 

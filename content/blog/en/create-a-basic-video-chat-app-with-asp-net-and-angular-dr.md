@@ -14,8 +14,8 @@ tags:
   - angular
   - aspnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/08/create-a-basic-video-chat-app-with-asp-net-and-angular-dr
+canonical: https://developer.vonage.com/blog/2020/05/08/create-a-basic-video-chat-app-with-asp-net-and-angular-dr
 ---
 Angular is by far the most popular single-page application (SPA) framework used by .NET developers. Until this project, I hadn't used Angular since *before* it dropped the JS from its name. Consequentially, I was excited to try my hat at it again, this time using it to show off Vonage's Video API. You can follow along in this tutorial, where we'll be creating a basic video chat application using [Angular](https://angular.io/) (though it'll always have the JS in my ❤).
 

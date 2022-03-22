@@ -10,8 +10,8 @@ category: release
 tags:
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/19/net-sdk-update-dr
+canonical: https://developer.vonage.com/blog/2019/11/19/net-sdk-update-dr
 ---
 The last couple of months have been a bit of a whirlwind here at Nexmo as I've been working on fixing bugs and upgrading the .NET SDK for you all.
 

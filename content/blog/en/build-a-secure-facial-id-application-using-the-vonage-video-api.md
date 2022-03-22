@@ -13,8 +13,8 @@ tags:
   - facial-id
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/21/build-a-secure-facial-id-application-using-the-vonage-video-api
+canonical: https://developer.vonage.com/blog/2020/10/21/build-a-secure-facial-id-application-using-the-vonage-video-api
 ---
 In the current global pandemic, many industry verticals have maximized digital adoption to scale productivity and bring effective implementation techniques to serve widespread use cases for their client base. Facial ID has become more prevalent evidencing widespread proliferation of this technology in industry verticals such as:
 

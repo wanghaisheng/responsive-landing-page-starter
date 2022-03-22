@@ -13,8 +13,8 @@ tags:
   - node
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/30/basic-video-chat
+canonical: https://developer.vonage.com/blog/2020/03/30/basic-video-chat
 ---
 This series of tutorials will explore the [Vonage Video API (formerly TokBox OpenTok)](https://tokbox.com/developer/) and what you can build with it. The Video API is very robust and highly customizable, and in each post we’ll show how to implement a specific feature using the API, starting with the most basic audio-video chat.
 

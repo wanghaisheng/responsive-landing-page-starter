@@ -14,8 +14,8 @@ tags:
   - swift
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/26/how-to-make-video-calls-with-swiftui
+canonical: https://developer.vonage.com/blog/2021/05/26/how-to-make-video-calls-with-swiftui
 outdated: false
 replacement_url: ""
 ---

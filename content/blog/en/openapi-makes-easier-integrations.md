@@ -13,8 +13,8 @@ tags:
   - open-api
   - documentation
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/03/openapi-makes-easier-integrations
+canonical: https://developer.vonage.com/blog/2020/06/03/openapi-makes-easier-integrations
 ---
 We take our [developer documentation](https://developer.nexmo.com) very seriously, especially our [API Reference](https://developer.nexmo.com/api/). The reference docs are generated from a machine-readable description of each API, in [OpenAPI](https://openapis.org) format. Working with a text-based, machine-readable format makes maintaining the docs easier. That's lovely for us, your documentation caretakers, but how does it help you, the user? I'm glad you asked!
 

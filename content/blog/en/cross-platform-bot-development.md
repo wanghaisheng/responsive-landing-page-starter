@@ -12,8 +12,8 @@ tags:
   - chatbots
   - voicebots
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/10/13/cross-platform-bot-development
+canonical: https://developer.vonage.com/blog/2017/10/13/cross-platform-bot-development
 ---
 Building a text or voice bot that can be deployed across all the major bot platforms is not unlike trying to build a mobile app for iOS and Android a decade ago. I spoke with Opearlo Co-Founder / CTO Oscar Merry and Microsoft Technical Evangelist Martin Beeby about how developers should approach cross-platform bot development today and what it might look like in the future. 
 

@@ -15,8 +15,8 @@ tags:
   - javascript
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/10/restaurant-is-now-delivering-a-facebook-bot-in-node-js
+canonical: https://developer.vonage.com/blog/2021/11/10/restaurant-is-now-delivering-a-facebook-bot-in-node-js
 outdated: false
 replacement_url: ""
 ---

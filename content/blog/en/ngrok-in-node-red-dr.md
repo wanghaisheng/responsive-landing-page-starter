@@ -13,8 +13,8 @@ tags:
   - ngrok
   - node-red
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/03/ngrok-in-node-red-dr
+canonical: https://developer.vonage.com/blog/2019/07/03/ngrok-in-node-red-dr
 ---
 If you've been getting your feet wet in the world of Nexmo APIs, chances are that you've come across webhooks. That's great! They are a perfect way to get notified about events like incoming SMS, delivery receipts and a variety of voice call events. There's a catch though. When building webhook consumers, you need a publicly accessible URL to configure the API service with. Without exposing your server to the internet, there is no way of receiving messages on your webhooks. If you're developing on localhost, this is where [Ngrok](https://ngrok.com/) comes into play.
 

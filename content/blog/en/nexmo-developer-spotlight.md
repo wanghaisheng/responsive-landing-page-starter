@@ -12,8 +12,8 @@ tags:
   - developer-spotlight
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/11/nexmo-developer-spotlight
+canonical: https://developer.vonage.com/blog/2018/10/11/nexmo-developer-spotlight
 ---
 Technical writers and bloggers, influencers and innovators! Nexmo is opening up this blog to our community with our new **Developer Spotlight** guest blogging program, and we need your submissions. Our goal is to provide a destination for developers in search of high-quality tutorials and interesting development stories, and we know the best resource for stories like these is you, the Nexmo community and friends. 
 

@@ -13,8 +13,8 @@ tags:
   - portuguese
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/17/primeiros-passos-com-a-api-de-sms-da-vonage
+canonical: https://developer.vonage.com/blog/2022/02/17/primeiros-passos-com-a-api-de-sms-da-vonage
 outdated: false
 replacement_url: ""
 ---

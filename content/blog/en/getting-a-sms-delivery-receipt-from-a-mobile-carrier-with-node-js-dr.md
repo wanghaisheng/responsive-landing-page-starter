@@ -12,8 +12,8 @@ tags:
   - sms-api
   - nodejs
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/11/23/getting-a-sms-delivery-receipt-from-a-mobile-carrier-with-node-js-dr
+canonical: https://developer.vonage.com/blog/2016/11/23/getting-a-sms-delivery-receipt-from-a-mobile-carrier-with-node-js-dr
 ---
 In previous articles, you have learned [how to send SMS messages](https://learn.vonage.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr/), and [how to consume a webhook for incoming SMS](https://learn.vonage.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr/) with Node.js.  
 

@@ -13,8 +13,8 @@ tags:
   - international-womens-day
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/08/in-celebration-of-international-womens-day-2021
+canonical: https://developer.vonage.com/blog/2021/03/08/in-celebration-of-international-womens-day-2021
 outdated: false
 replacement_url: ""
 ---

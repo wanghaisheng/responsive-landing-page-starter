@@ -12,8 +12,8 @@ category: release
 tags:
   - go
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/30/go-explore-the-vonage-apis-with-vonage-go-sdk
+canonical: https://developer.vonage.com/blog/2020/09/30/go-explore-the-vonage-apis-with-vonage-go-sdk
 ---
 
 We're delighted to announce the immediate availability of the [Vonage Go SDK](https://github.com/Vonage/vonage-go-sdk). We love our developer communities, and it is our mission to make tools that make life easier for them. We know that more and more "gophers" are picking up this excellent Go stack and starting to use our APIs. You can do that from Go directly, but by creating an SDK for you all to try, we hope this will help you get it shipped sooner!

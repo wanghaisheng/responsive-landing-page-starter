@@ -12,8 +12,8 @@ tags:
   - conversation-api
   - vue
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/16/building-a-slack-clone-using-vue-js-part-1-dr
+canonical: https://developer.vonage.com/blog/2020/04/16/building-a-slack-clone-using-vue-js-part-1-dr
 ---
 ## Building a Slack-like Vue.js Chat Application
 

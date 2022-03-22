@@ -13,8 +13,8 @@ tags:
   - ruby-on-rails
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/27/is-it-the-weekend-yet-build-a-web-scraping-app-with-sms-to-find-out-dr
+canonical: https://developer.vonage.com/blog/2020/03/27/is-it-the-weekend-yet-build-a-web-scraping-app-with-sms-to-find-out-dr
 ---
 We have all been there. You wake up and it is a new day, and you just need to know the answer to the most burning question. Is it the weekend yet? Your week has been so busy with professional and personal responsibilities. All you want to do is take a couple of days to sit back and relax. 
 

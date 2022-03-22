@@ -13,8 +13,8 @@ tags:
   - node-red
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/15/stream-audio-node-red-dr
+canonical: https://developer.vonage.com/blog/2019/07/15/stream-audio-node-red-dr
 ---
 *This is the fifth article in a series of “Getting Started with Nexmo and Node-RED” tutorials.*
 

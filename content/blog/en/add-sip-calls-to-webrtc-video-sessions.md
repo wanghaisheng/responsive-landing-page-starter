@@ -14,8 +14,8 @@ tags:
   - javascript
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/08/add-sip-calls-to-webrtc-video-sessions
+canonical: https://developer.vonage.com/blog/2021/02/08/add-sip-calls-to-webrtc-video-sessions
 outdated: false
 replacement_url: ""
 ---

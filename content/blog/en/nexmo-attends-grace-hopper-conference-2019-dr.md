@@ -12,8 +12,8 @@ tags:
   - conference
   - community
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/30/nexmo-attends-grace-hopper-conference-2019-dr
+canonical: https://developer.vonage.com/blog/2019/09/30/nexmo-attends-grace-hopper-conference-2019-dr
 ---
 ## The Nexmo DevRel team is beyond excited to attend Grace Hopper this year!
 

@@ -13,8 +13,8 @@ tags:
   - sms-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/25/building-a-realtime-graphql-chat-application-with-sms-notifications
+canonical: https://developer.vonage.com/blog/2021/02/25/building-a-realtime-graphql-chat-application-with-sms-notifications
 outdated: false
 replacement_url: ""
 ---

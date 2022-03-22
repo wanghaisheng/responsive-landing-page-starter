@@ -11,8 +11,8 @@ tags:
   - php
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/10/handle-user-input-with-php-dr
+canonical: https://developer.vonage.com/blog/2018/08/10/handle-user-input-with-php-dr
 ---
 In this tutorial, we're going to go through everything you need to know to set up a PHP application that can receive inbound calls and capture user input entered via the keypad.
 

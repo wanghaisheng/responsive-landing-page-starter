@@ -14,8 +14,8 @@ tags:
   - java
   - security
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/10/forward-phone-call-voice-proxy-java-dr
+canonical: https://developer.vonage.com/blog/2019/04/10/forward-phone-call-voice-proxy-java-dr
 ---
 ## Introduction
 

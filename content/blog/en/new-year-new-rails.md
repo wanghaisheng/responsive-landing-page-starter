@@ -12,8 +12,8 @@ tags:
   - ruby
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/02/new-year-new-rails
+canonical: https://developer.vonage.com/blog/2022/02/02/new-year-new-rails
 outdated: false
 replacement_url: ""
 ---

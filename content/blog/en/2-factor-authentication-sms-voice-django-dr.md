@@ -13,8 +13,8 @@ tags:
   - python
   - 2fa
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/07/13/2-factor-authentication-sms-voice-django-dr
+canonical: https://developer.vonage.com/blog/2017/07/13/2-factor-authentication-sms-voice-django-dr
 ---
 I showed my love for two factor authentication before on the Vonage blog with a demo application for my ["Kittens & Co" business](https://www.nexmo.com/blog/2016/06/07/two-factor-authentication-2fa-ruby-rails-devise-nexmo-verify/). Interestingly enough not everyone is equally a fan of cats, some of us prefer dogs, some of us prefer other animals, but we all love two factor authentication, right?
 

@@ -12,8 +12,8 @@ tags:
   - startups
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/24/introducing-vonage-for-startups
+canonical: https://developer.vonage.com/blog/2021/02/24/introducing-vonage-for-startups
 outdated: false
 replacement_url: ""
 ---

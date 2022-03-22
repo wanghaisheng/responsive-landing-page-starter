@@ -15,8 +15,8 @@ tags:
   - messages-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/04/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage
+canonical: https://developer.vonage.com/blog/2022/02/04/push-and-conversational-sms-and-whatsapp-in-salesforce-with-vonage
 outdated: false
 replacement_url: ""
 ---

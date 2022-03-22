@@ -12,8 +12,8 @@ tags:
   - number-insight
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr
+canonical: https://developer.vonage.com/blog/2018/05/22/getting-started-with-nexmo-number-insight-apis-and-asp-net-dr
 ---
 Our [Number Insight API](https://developer.nexmo.com/number-insight/overview) is perfect for real-time validation of user input that could potentially protect your apps from fraud and spam and help you get details about a phone number such as validity, reachability and roaming status.
 You can use also the Number Insight API to validate that a phone number is formatted properly. This is very useful especially if you are using our other APIs.

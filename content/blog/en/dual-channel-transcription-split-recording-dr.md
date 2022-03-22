@@ -13,8 +13,8 @@ tags:
   - transcription
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/04/17/dual-channel-transcription-split-recording-dr
+canonical: https://developer.vonage.com/blog/2018/04/17/dual-channel-transcription-split-recording-dr
 ---
 As part of our [Voice API](https://developer.nexmo.com/voice/voice-api/overview) offering, Nexmo allows you to record parts (or all) of a call and fetch the audio once the call has completed. Today, we're happy to announce a new enhancement to this functionality: split recording. Split recording makes common tasks such as call transcription even easier.
 

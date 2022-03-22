@@ -13,8 +13,8 @@ tags:
   - php
   - whatsapp
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/26/send-whatsapp-messages-with-laravel-dr
+canonical: https://developer.vonage.com/blog/2020/10/26/send-whatsapp-messages-with-laravel-dr
 old_categories:
   - developer
   - tutorial

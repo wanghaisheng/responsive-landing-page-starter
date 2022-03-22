@@ -12,8 +12,8 @@ tags:
   - javascript
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/31/checking-the-tube-status-with-nexmo-and-tfl-apis-dr
+canonical: https://developer.vonage.com/blog/2019/07/31/checking-the-tube-status-with-nexmo-and-tfl-apis-dr
 ---
 Today we'll be building an application that will allow us to check the status of a given line of the London Underground using the Vonage [SMS API](https://developer.nexmo.com/messaging/sms/overview). We are going to leverage the Transport for London  ([TFL API](https://api-portal.tfl.gov.uk/)) to retrieve real-time data about the status of a tube line chosen by the user. The trigger will be an inbound SMS to our Virtual number. Does it sound like a plan? Follow through this tutorial then.  We will get the same status as in [their website](https://tfl.gov.uk/tube-dlr-overground/status/) straight into our handset via SMS. This is especially handy if for some reason you don't have internet access to check Google Maps/Citymapper or if you've exceeded your monthly data allowance.
 

@@ -12,8 +12,8 @@ tags:
   - number-insight-api
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/25/getting-started-with-the-nexmo-number-insight-api-and-rails-dr
+canonical: https://developer.vonage.com/blog/2019/03/25/getting-started-with-the-nexmo-number-insight-api-and-rails-dr
 ---
 The Vonage [Number Insight API](https://developer.nexmo.com/number-insight/overview) provides you with the ability to quickly check in real time the validity, reachability, roaming status, and more about any phone number globally.
 

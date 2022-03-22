@@ -12,8 +12,8 @@ tags:
   - voice-api
   - nodejs
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/02/introducing-voice-api-speech-recognition
+canonical: https://developer.vonage.com/blog/2020/06/02/introducing-voice-api-speech-recognition
 ---
 We recently announced a new [Automatic Speech Recognition (ASR)](https://developer.nexmo.com/voice/voice-api/guides/asr) feature which enables your application to understand what humans are saying when they speak. This feature allows you to create a full range of voice interactions from simple IVRs with voice navigation, to sophisticated voice bots and assistants.
 

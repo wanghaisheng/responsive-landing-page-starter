@@ -13,8 +13,8 @@ tags:
   - java
   - react
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/15/full-stack-nexmo-with-express-react-dr
+canonical: https://developer.vonage.com/blog/2019/03/15/full-stack-nexmo-with-express-react-dr
 ---
 
 With the JavaScript Nexmo Client SDK, you can provide a front-end application that allows users to control the conversations they're part of. A [Nexmo Conversation](https://developer.nexmo.com/conversation/concepts/conversation) can include two [users](https://developer.nexmo.com/conversation/concepts/user) or many, and use multiple different media. Letting participants control elements of the conversation only opens up more options for what your app can provide. 

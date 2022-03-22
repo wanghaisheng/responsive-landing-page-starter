@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/07/getting-started-with-advanced-insights
+canonical: https://developer.vonage.com/blog/2020/04/07/getting-started-with-advanced-insights
 ---
 ## Get Started Accessing Your Session-Level Video Data with GraphQL and Advanced Insights
 

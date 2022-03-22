@@ -15,8 +15,8 @@ tags:
   - aws
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot
+canonical: https://developer.vonage.com/blog/2021/03/10/connecting-voice-calls-to-an-amazon-lex-bot
 outdated: false
 replacement_url: ""
 ---

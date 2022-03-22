@@ -14,8 +14,8 @@ tags:
   - fastapi
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/10/the-ultimate-face-off-flask-vs-fastapi
+canonical: https://developer.vonage.com/blog/2021/08/10/the-ultimate-face-off-flask-vs-fastapi
 outdated: false
 replacement_url: ""
 ---

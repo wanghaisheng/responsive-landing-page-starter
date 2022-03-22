@@ -14,8 +14,8 @@ tags:
   - symblai
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/16/enable-live-captions-in-vonage-video-using-symbl-ai
+canonical: https://developer.vonage.com/blog/2021/12/16/enable-live-captions-in-vonage-video-using-symbl-ai
 outdated: false
 replacement_url: ""
 ---

@@ -14,8 +14,8 @@ tags:
   - python
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/03/14/speech-voice-translation-microsoft-dr
+canonical: https://developer.vonage.com/blog/2018/03/14/speech-voice-translation-microsoft-dr
 ---
 If you were on the internet in these past few months chances are you saw Google's real-time translation Pixel Buds. A technology quite like the Babel fish in *The Hitchhiker’s Guide to the Galaxy* that can translate any sentient speech for its wearer thus enabling them to communicate with virtually every being. The Google Pixel Buds come at a price of course - so why not build our own?! That’s what [Danielle](https://twitter.com/dantoml) and I thought at the latest [hackference](https://2017.hackference.co.uk/). We went on to create a Nexmo Babel fish that lets two people talk on the phone with either party hearing a translated version of what the respective other party says.
 

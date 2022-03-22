@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/28/using-message-signatures-to-ensure-secure-incoming-webhooks-dr
+canonical: https://developer.vonage.com/blog/2019/06/28/using-message-signatures-to-ensure-secure-incoming-webhooks-dr
 ---
 One-way conversations are no fun - at Vonage we're all about two-way conversations and that includes our APIs. For example, to send an SMS you call our API. To receive an SMS reply, your application will need to handle an incoming webhook. Webhooks are brilliant for using HTTP to notify of events, but they require that your application be available on a public URL. The downside? Your public URL is, well, public. Anyone or anything could send data to it, and how will you be sure that the messages came from Vonage?
 

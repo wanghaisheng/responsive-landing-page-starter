@@ -14,8 +14,8 @@ tags:
   - azure
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/18/speech-to-text-with-nexmo-and-azure-speech-dr
+canonical: https://developer.vonage.com/blog/2019/03/18/speech-to-text-with-nexmo-and-azure-speech-dr
 ---
 If you've ever found yourself in need of something to help you receive inbound phone calls and automatically transcribe them in real time you're in luck, because you can do that using our newly updated [Nexmo-to-Azure Speech Service connector](https://github.com/nexmo-community/voice-microsoft-speechtotext).
 

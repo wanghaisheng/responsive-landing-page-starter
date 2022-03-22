@@ -12,8 +12,8 @@ tags:
   - python
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/17/sending-sms-templates-python-dr
+canonical: https://developer.vonage.com/blog/2018/12/17/sending-sms-templates-python-dr
 ---
 Need to send a message to many people at once? Want to personalise it so that it doesn't seem so, well, impersonal? Can't send a group message as you don't want your mum seeing you sent the same heartfelt text to every one of your relations and not just her? We're going to look at how to create an SMS client which supports bulk messages and templates for personalisation.
 

@@ -13,8 +13,8 @@ tags:
   - node
   - number-management-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/23/manage-a-pool-of-phone-numbers-with-node-js
+canonical: https://developer.vonage.com/blog/2020/04/23/manage-a-pool-of-phone-numbers-with-node-js
 ---
 You may not always be near your office phone, and when this is the case, customers may struggle to get in touch with you. In this tutorial, we'll be building an application that uses the [Number Management API](https://developer.nexmo.com/api/numbers) for Vonage APIs to manage multiple masked phone numbers. Each number will redirect calls to another number, such as a private mobile that can be used from home.
 

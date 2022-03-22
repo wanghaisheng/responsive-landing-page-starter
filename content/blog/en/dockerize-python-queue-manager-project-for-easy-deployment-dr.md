@@ -13,8 +13,8 @@ tags:
   - sms-api
   - docker
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/07/dockerize-python-queue-manager-project-for-easy-deployment-dr
+canonical: https://developer.vonage.com/blog/2020/02/07/dockerize-python-queue-manager-project-for-easy-deployment-dr
 ---
 Last month, I showed you how to build an [SMS-based queue management application with Python and Flask](https://www.nexmo.com/blog/2020/01/03/use-python-and-flask-to-manage-queues-via-sms-dr). That application was great for showing a basic example of using the [Nexmo SMS API](https://developer.nexmo.com/messaging/sms/overview), but it was really only good for prototyping and doing local development. In this post, I'll walk through a few steps you can take to make that application more production ready, with the end result being a [Dockerized](https://www.docker.com/) version of the application that you can deploy straight to [Heroku](https://www.heroku.com/).
 

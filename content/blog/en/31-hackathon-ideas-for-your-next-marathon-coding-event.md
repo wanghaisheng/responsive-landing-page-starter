@@ -14,8 +14,8 @@ tags:
   - sms-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/27/31-hackathon-ideas-for-your-next-marathon-coding-event
+canonical: https://developer.vonage.com/blog/2021/10/27/31-hackathon-ideas-for-your-next-marathon-coding-event
 outdated: false
 replacement_url: ""
 ---

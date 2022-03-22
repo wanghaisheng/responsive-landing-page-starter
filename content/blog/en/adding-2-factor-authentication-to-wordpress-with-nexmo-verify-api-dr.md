@@ -14,8 +14,8 @@ tags:
   - wordpress
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/09/adding-2-factor-authentication-to-wordpress-with-nexmo-verify-api-dr
+canonical: https://developer.vonage.com/blog/2019/10/09/adding-2-factor-authentication-to-wordpress-with-nexmo-verify-api-dr
 ---
 ## Introduction
 

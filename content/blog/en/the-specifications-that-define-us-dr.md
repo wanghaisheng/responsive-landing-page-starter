@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - community
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/09/the-specifications-that-define-us-dr
+canonical: https://developer.vonage.com/blog/2020/03/09/the-specifications-that-define-us-dr
 ---
 As a developer, I am lazy. If someone has built software that solves a problem I have, I want to use it. I should be able to hit the ground running and quickly get up to speed with a new library without much interference. 
 

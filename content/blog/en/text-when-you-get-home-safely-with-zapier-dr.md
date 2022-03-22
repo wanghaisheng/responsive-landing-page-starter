@@ -14,8 +14,8 @@ tags:
   - no-code
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/09/text-when-you-get-home-safely-with-zapier-dr
+canonical: https://developer.vonage.com/blog/2020/04/09/text-when-you-get-home-safely-with-zapier-dr
 ---
 When I go out with friends, we always ask each other to check in when we safely reach our homes. I always have good intentions of doing this, but after a late night, I sometimes forget, or it can seem too complicated. So I made a little setup to make this easier for myself. And best of all? It uses no code at all. By linking a smart button to the [Vonage SMS integration](https://zapier.com/apps/vonage-sms/integrations) on Zapier, I can send a friend a message at the click of a button. Today's post walks you through setting up something similar for yourself.
 

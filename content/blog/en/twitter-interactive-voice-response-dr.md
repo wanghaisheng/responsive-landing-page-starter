@@ -14,8 +14,8 @@ tags:
   - voice-api
   - twitter
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/06/26/twitter-interactive-voice-response-dr
+canonical: https://developer.vonage.com/blog/2018/06/26/twitter-interactive-voice-response-dr
 ---
 I'm a bit of a Twitter addict. Like many other techies, I joined when Twitter exploded in popularity at SXSW in 2007, and it still really shines as a way to keep track of what's going on at festivals or conferences.
 

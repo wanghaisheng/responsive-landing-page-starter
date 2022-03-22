@@ -11,8 +11,8 @@ category: announcement
 tags:
   - voyagers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/15/introducing-the-vonage-voyagers-developer-champions-program
+canonical: https://developer.vonage.com/blog/2020/07/15/introducing-the-vonage-voyagers-developer-champions-program
 ---
 We’re so excited to announce the launch of our new developer champions program, [Vonage Voyagers](https://nexmo.dev/2AxZcP9). 
 

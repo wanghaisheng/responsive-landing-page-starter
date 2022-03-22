@@ -7,8 +7,8 @@ author: dwanehemmings
 published: true
 published_at: 2020-10-30T14:30:54.000Z
 category: inspiration
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/30/use-web-components-in-vue-2-and-3-composition-api-dr
+canonical: https://developer.vonage.com/blog/2020/10/30/use-web-components-in-vue-2-and-3-composition-api-dr
 comments: true
 old_categories:
   - developer

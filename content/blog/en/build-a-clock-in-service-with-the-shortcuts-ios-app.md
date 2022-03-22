@@ -14,8 +14,8 @@ tags:
   - low-code
   - no-code
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/27/build-a-clock-in-service-with-the-shortcuts-ios-app
+canonical: https://developer.vonage.com/blog/2020/08/27/build-a-clock-in-service-with-the-shortcuts-ios-app
 ---
 Years ago people didn't have phones, *places* did.
 

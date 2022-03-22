@@ -15,8 +15,8 @@ tags:
   - greenhouse
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/17/send-sms-alerts-with-zapier-greenhouse-and-trello
+canonical: https://developer.vonage.com/blog/2020/11/17/send-sms-alerts-with-zapier-greenhouse-and-trello
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - 2fa
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/07/11/add-two-factor-authentication-to-a-microsoft-bot-with-nexmos-verify-api-dr
+canonical: https://developer.vonage.com/blog/2018/07/11/add-two-factor-authentication-to-a-microsoft-bot-with-nexmos-verify-api-dr
 ---
 2FA (Two Factor Authentication) is increasingly used to increase security within applications.
 As bots become increasingly popular, developers will need to consider how to integrate 2FA with their bots

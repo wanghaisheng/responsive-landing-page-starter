@@ -13,8 +13,8 @@ tags:
   - video-api
   - slack
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/01/how-launch-video-meetings-slack-with-tokbox-app
+canonical: https://developer.vonage.com/blog/2019/02/01/how-launch-video-meetings-slack-with-tokbox-app
 ---
 Slack is a popular workplace collaboration tool that has an estimated [10+ million daily active users.](https://slackhq.com/slack-has-10-million-daily-active-users) 
 

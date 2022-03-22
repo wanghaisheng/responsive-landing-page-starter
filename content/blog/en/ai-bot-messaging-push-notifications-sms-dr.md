@@ -13,8 +13,8 @@ tags:
   - ai
   - chatbots
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/09/14/ai-bot-messaging-push-notifications-sms-dr
+canonical: https://developer.vonage.com/blog/2017/09/14/ai-bot-messaging-push-notifications-sms-dr
 ---
 With so many channels available to deliver messages to users these days—SMS, email, push notifications, and so on—where does bot messaging fit in? And how different from the other channels is it really from a tech standpoint? CEO/Co-Founder of The Bot Platform Syd Lawrence and Microsoft Technical Evangelist Martin Beeby shared their viewpoints in a discussion that also touched on the influence of marketing interests in new channels.
 

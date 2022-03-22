@@ -12,8 +12,8 @@ tags:
   - javascript
   - web-components
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/24/getting-started-with-web-components-dr
+canonical: https://developer.vonage.com/blog/2020/03/24/getting-started-with-web-components-dr
 ---
 JavaScript frameworks and libraries, we can all agree there are a lot of them. Angular, React, Vue, Svelte—the list seems to grow every year. But, what do they all have in common? The answer is that they are used to build applications on the web, and they provide the ability to create reusable components.
 

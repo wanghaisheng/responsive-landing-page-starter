@@ -15,8 +15,8 @@ tags:
   - twitch
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/15/create-a-personal-twitch-with-vonage-video-api-and-web-components
+canonical: https://developer.vonage.com/blog/2021/12/15/create-a-personal-twitch-with-vonage-video-api-and-web-components
 outdated: false
 replacement_url: ""
 ---

@@ -10,8 +10,8 @@ category: announcement
 tags:
   - devrel
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/03/14/one-year-developer-relations-nexmo-dr
+canonical: https://developer.vonage.com/blog/2017/03/14/one-year-developer-relations-nexmo-dr
 ---
 It's been a crazy and fun first year at Nexmo for the growing Developer Relations team. Since our [Hello World from the Nexmo DevRel Team post](https://learn.vonage.com/blog/2016/05/03/developer-relations-at-nexmo/) we've reached eight full-time people spread from San Francisco to London, with members in six different geographic locations. We're a truly remote-first team.
 

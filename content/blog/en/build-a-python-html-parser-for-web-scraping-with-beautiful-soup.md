@@ -12,8 +12,8 @@ tags:
   - python
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/16/build-a-python-html-parser-for-web-scraping-with-beautiful-soup
+canonical: https://developer.vonage.com/blog/2021/09/16/build-a-python-html-parser-for-web-scraping-with-beautiful-soup
 outdated: false
 replacement_url: ""
 ---

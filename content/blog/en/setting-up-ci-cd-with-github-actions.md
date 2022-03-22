@@ -1,6 +1,7 @@
 ---
 title: Setting up CI/CD with Github Actions
-description: This article walks you through the process of using github actions to build CI/CD flows.
+description: This article walks you through the process of using github actions
+  to build CI/CD flows.
 thumbnail: /content/blog/setting-up-ci-cd-with-github-actions/Blog_GitHub-Desktop_1200x600.png
 author: yonatankra
 published: true
@@ -10,8 +11,8 @@ category: engineering
 tags:
   - github
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/17/setting-up-ci-cd-with-github-actions
+canonical: https://developer.vonage.com/blog/2021/02/17/setting-up-ci-cd-with-github-actions
 ---
 
 Continuous integration and continuous deployment are must-haves for organizations that wish to scale and deliver high quality software at a high velocity. This article walks you through the process of using github actions to build CI/CD flows.

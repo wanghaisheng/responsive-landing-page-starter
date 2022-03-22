@@ -15,8 +15,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/22/build-a-birthday-congratulations-time-capsule-with-go
+canonical: https://developer.vonage.com/blog/2021/06/22/build-a-birthday-congratulations-time-capsule-with-go
 outdated: false
 replacement_url: ""
 ---

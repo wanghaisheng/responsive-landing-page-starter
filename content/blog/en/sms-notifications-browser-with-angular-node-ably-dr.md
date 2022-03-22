@@ -14,8 +14,8 @@ tags:
   - angular
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/07/sms-notifications-browser-with-angular-node-ably-dr
+canonical: https://developer.vonage.com/blog/2018/08/07/sms-notifications-browser-with-angular-node-ably-dr
 ---
 The [Vonage SMS API](https://developer.nexmo.com/messaging/sms/overview "Nexmo SMS API Overview") allows you to send and receive messages around the world using a virtual number that you can rent from Vonage. In this tutorial, we'll see how you can use Node.js and Express to receive an SMS, send it via Ably to a web browser, and then use Angular to display it as a notification in a Single Page Application.
 

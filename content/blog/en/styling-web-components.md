@@ -14,8 +14,8 @@ tags:
   - css
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/18/styling-web-components
+canonical: https://developer.vonage.com/blog/2021/10/18/styling-web-components
 outdated: false
 replacement_url: ""
 ---

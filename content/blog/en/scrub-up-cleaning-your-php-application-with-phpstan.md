@@ -13,8 +13,8 @@ tags:
   - testing
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/30/scrub-up-cleaning-your-php-application-with-phpstan
+canonical: https://developer.vonage.com/blog/2021/11/30/scrub-up-cleaning-your-php-application-with-phpstan
 outdated: false
 replacement_url: ""
 ---

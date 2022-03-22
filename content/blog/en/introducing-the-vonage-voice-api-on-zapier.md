@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/21/introducing-the-vonage-voice-api-on-zapier
+canonical: https://developer.vonage.com/blog/2021/01/21/introducing-the-vonage-voice-api-on-zapier
 outdated: false
 replacement_url: ""
 ---

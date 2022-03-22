@@ -14,8 +14,8 @@ tags:
   - event-sourcing
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/10/audit-phone-calls-with-event-sourcing-in-net
+canonical: https://developer.vonage.com/blog/2020/11/10/audit-phone-calls-with-event-sourcing-in-net
 outdated: false
 replacement_url: ""
 ---

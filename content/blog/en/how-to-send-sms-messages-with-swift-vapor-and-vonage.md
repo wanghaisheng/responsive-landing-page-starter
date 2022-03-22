@@ -13,8 +13,8 @@ tags:
   - vapor
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/12/how-to-send-sms-messages-with-swift-vapor-and-vonage
+canonical: https://developer.vonage.com/blog/2021/01/12/how-to-send-sms-messages-with-swift-vapor-and-vonage
 outdated: false
 replacement_url: ""
 ---

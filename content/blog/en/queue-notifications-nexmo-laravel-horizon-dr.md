@@ -15,8 +15,8 @@ tags:
   - sms-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/13/queue-notifications-nexmo-laravel-horizon-dr
+canonical: https://developer.vonage.com/blog/2018/11/13/queue-notifications-nexmo-laravel-horizon-dr
 ---
 Web applications need to perform computationally-expensive, time-consuming tasks like sending emails, processing uploaded files, or calling APIs. Performing these tasks during a user's web request can make your web application feel slow and clunky, which is frustrating for users.
 

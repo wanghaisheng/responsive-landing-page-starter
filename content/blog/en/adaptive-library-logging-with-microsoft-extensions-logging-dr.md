@@ -12,8 +12,8 @@ tags:
   - dotnet
   - logging
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/10/adaptive-library-logging-with-microsoft-extensions-logging-dr
+canonical: https://developer.vonage.com/blog/2020/02/10/adaptive-library-logging-with-microsoft-extensions-logging-dr
 ---
 ## How I Learned to Stop Worrying and Love to Log
 

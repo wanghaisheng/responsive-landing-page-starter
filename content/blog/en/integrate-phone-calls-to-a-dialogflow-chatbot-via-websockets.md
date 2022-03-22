@@ -15,8 +15,8 @@ tags:
   - dialogflow
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/13/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets
+canonical: https://developer.vonage.com/blog/2021/10/13/integrate-phone-calls-to-a-dialogflow-chatbot-via-websockets
 outdated: false
 replacement_url: ""
 ---

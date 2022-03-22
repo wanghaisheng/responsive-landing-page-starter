@@ -13,8 +13,8 @@ tags:
   - playground
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/12/explore-vonage-video-api-capabilities-with-vonage-video-api-playground
+canonical: https://developer.vonage.com/blog/2021/08/12/explore-vonage-video-api-capabilities-with-vonage-video-api-playground
 outdated: false
 replacement_url: ""
 ---

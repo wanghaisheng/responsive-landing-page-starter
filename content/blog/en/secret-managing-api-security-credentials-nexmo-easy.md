@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - secret-management-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/05/secret-managing-api-security-credentials-nexmo-easy
+canonical: https://developer.vonage.com/blog/2018/10/05/secret-managing-api-security-credentials-nexmo-easy
 ---
 If you're a developer who builds and maintains applications for a large enterprise, you likely have a set of policies that govern how often your team needs to update the security credentials for any APIs that your apps utilize. Large enterprises often enforce these policies to minimize the possibility of someone outside the organization gaining access to the APIs and using their accounts for fraudulent activity. 
 

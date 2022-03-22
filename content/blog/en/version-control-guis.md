@@ -13,8 +13,8 @@ tags:
   - git
   - opensource
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/02/version-control-guis
+canonical: https://developer.vonage.com/blog/2020/10/02/version-control-guis
 ---
 
 A lot of contributing to open source changes depending on the angle you approached programming from. Some people find a command line interface the easiest and most direct way of getting programming tasks like managing version control accomplished. For others, the time to move a cursor across a desktop is a good trade-off for the time saved not having to look up Git syntax. Tutorials are often biased toward the command line, but that's because the command line can be very consistently explained. 

@@ -13,8 +13,8 @@ tags:
   - serverless
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/22/build-a-basic-video-call-platform-with-netlify-functions
+canonical: https://developer.vonage.com/blog/2020/05/22/build-a-basic-video-call-platform-with-netlify-functions
 ---
 While you can get started with the Vonage Video API with very little code, you will still require a server to handle session and token generation. If you have a server to host a basic Express.js application, we have a delightful [blog post](https://learn.vonage.com/blog/2020/03/30/basic-video-chat) on building a basic video chat, but not everyone does. 
 

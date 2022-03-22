@@ -15,8 +15,8 @@ tags:
   - precall
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/15/waiting-room-and-pre-call-best-practices-with-vonage-video-api
+canonical: https://developer.vonage.com/blog/2021/07/15/waiting-room-and-pre-call-best-practices-with-vonage-video-api
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - verify-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/25/verify-phone-numbers-with-node-red-dr
+canonical: https://developer.vonage.com/blog/2019/09/25/verify-phone-numbers-with-node-red-dr
 ---
 In [previous tutorials](https://www.nexmo.com/blog/tag/node-red) you've learnt about the Nexmo SMS and Voice APIs, you've gotten comfortable with sending and receiving messages and calls, and hopefully, you've also had a chance to experiment and play around with customizing these experiences in Node-RED.
 

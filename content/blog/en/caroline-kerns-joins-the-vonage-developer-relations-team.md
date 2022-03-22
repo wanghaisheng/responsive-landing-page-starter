@@ -12,8 +12,8 @@ tags:
   - careers
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/07/caroline-kerns-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2021/04/07/caroline-kerns-joins-the-vonage-developer-relations-team
 outdated: false
 replacement_url: ""
 ---

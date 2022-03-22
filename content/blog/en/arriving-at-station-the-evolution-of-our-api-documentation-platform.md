@@ -13,8 +13,8 @@ tags:
   - open-api
   - station
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/02/arriving-at-station-the-evolution-of-our-api-documentation-platform
+canonical: https://developer.vonage.com/blog/2020/09/02/arriving-at-station-the-evolution-of-our-api-documentation-platform
 ---
 Three years ago, our documentation platform was born. Little did we know the impact that some of the design decisions that we made then were going to have now. For example, we chose to build an open-source web application using Ruby on Rails instead of static site generators for markdown files, e.g., Jekyll, Middleman, etc.
 

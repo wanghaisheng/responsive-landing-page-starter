@@ -11,8 +11,8 @@ tags:
   - number-insight
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/24/how-to-get-standard-number-insights-within-an-asp-net-app-dr
+canonical: https://developer.vonage.com/blog/2018/05/24/how-to-get-standard-number-insights-within-an-asp-net-app-dr
 ---
 This is the third article in a step-by-step series on how to use [Nexmo's Number Insight API](https://developer.nexmo.com/number-insight/overview) within an ASP.NET web application.
 

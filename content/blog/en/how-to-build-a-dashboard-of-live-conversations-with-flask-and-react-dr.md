@@ -13,8 +13,8 @@ tags:
   - react
   - conversation-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/24/how-to-build-a-dashboard-of-live-conversations-with-flask-and-react-dr
+canonical: https://developer.vonage.com/blog/2019/09/24/how-to-build-a-dashboard-of-live-conversations-with-flask-and-react-dr
 ---
 Vonage recently introduced the [Conversation API](https://developer.nexmo.com/conversation/overview). This API  enables you to have different styles of communication (voice, messaging, and video) and connect them all to each other.
 

@@ -15,6 +15,8 @@ tags:
   - google-cloud
 comments: true
 spotlight: true
+redirect: https://developer.vonage.com/blog/2019/03/21/sending-sms-from-python-with-google-cloud-functions-dr
+canonical: https://developer.vonage.com/blog/2019/03/21/sending-sms-from-python-with-google-cloud-functions-dr
 ---
 The tutorial below shows how to deploy a function on [Google Cloud Platform](https://cloud.google.com/) using [Python 3.7](https://www.python.org/).
 

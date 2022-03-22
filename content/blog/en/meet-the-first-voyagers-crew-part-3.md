@@ -12,8 +12,8 @@ tags:
   - voyagers
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/16/meet-the-first-voyagers-crew-part-3
+canonical: https://developer.vonage.com/blog/2020/11/16/meet-the-first-voyagers-crew-part-3
 outdated: false
 replacement_url: ""
 ---

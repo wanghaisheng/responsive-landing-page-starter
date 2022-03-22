@@ -12,8 +12,8 @@ tags:
   - dotnet
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr
+canonical: https://developer.vonage.com/blog/2019/01/10/how-to-handle-user-input-with-asp-net-core-dr
 ---
 *This is the fourth tutorial on how to use Voice APIs with ASP.NET series.* In the previous tutorial, we learnt [how to Receive a Phone Call with Vonage Voice API, ASP.NET Core, and NancyFX](https://learn.vonage.com/blog/2018/11/21/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-core-core-and-nancyfx-dr/). This is a great start, but in a real life scenario we expect some sort of interaction with the caller. Maybe they will be prompted to pick an option or enter a PIN. We need a way to handle user input. 
 

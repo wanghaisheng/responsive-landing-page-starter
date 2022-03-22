@@ -15,8 +15,8 @@ tags:
   - stripe
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/11/stripe-sms-laravel-dotun
+canonical: https://developer.vonage.com/blog/2019/04/11/stripe-sms-laravel-dotun
 ---
 In this tutorial, we will create a simple application that sends SMS notifications using Nexmo whenever Stripe sends out a charge succeeded event.
 

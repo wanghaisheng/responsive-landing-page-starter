@@ -14,8 +14,8 @@ tags:
   - vscode
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/31/introducing-vonage-for-visual-studio-code
+canonical: https://developer.vonage.com/blog/2021/03/31/introducing-vonage-for-visual-studio-code
 outdated: false
 replacement_url: ""
 ---

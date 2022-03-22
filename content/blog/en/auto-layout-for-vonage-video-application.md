@@ -13,8 +13,8 @@ tags:
   - video-api
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/18/auto-layout-for-vonage-video-application
+canonical: https://developer.vonage.com/blog/2021/11/18/auto-layout-for-vonage-video-application
 outdated: false
 replacement_url: ""
 ---

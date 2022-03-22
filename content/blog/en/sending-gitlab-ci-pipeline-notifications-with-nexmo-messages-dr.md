@@ -13,8 +13,8 @@ tags:
   - messages-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/30/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages-dr
+canonical: https://developer.vonage.com/blog/2019/09/30/sending-gitlab-ci-pipeline-notifications-with-nexmo-messages-dr
 ---
 I operate my own blog, [The Polyglot Developer](https://www.thepolyglotdeveloper.com), which publishes as part of a continuous integration and continuous deployment pipeline. Essentially, the following series of events happens every time a `git push` is done:
 

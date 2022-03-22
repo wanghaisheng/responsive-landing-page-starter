@@ -13,8 +13,8 @@ tags:
   - voice-api
   - python
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/08/03/inbound-voice-call-campaign-tracking-dr
+canonical: https://developer.vonage.com/blog/2017/08/03/inbound-voice-call-campaign-tracking-dr
 ---
 Campaign tracking is a “must have” for any marketing or advertising campaign. Without the ability to accurately track the number of users engaging with each advertisement you can’t work out your cost per acquisition (CPA), so ultimately you can’t determine which campaigns are successful and which are losing your business money; CPA greater than ARPU (Average Revenue Per User).
 

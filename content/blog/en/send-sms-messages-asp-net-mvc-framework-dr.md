@@ -13,8 +13,8 @@ tags:
   - dotnet
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr
+canonical: https://developer.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr
 outdated: true
 replacement_url: https://www.nexmo.com/blog/2020/07/09/how-to-send-an-sms-with-asp-net-core-mvc
 ---

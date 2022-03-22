@@ -14,8 +14,8 @@ tags:
   - websocket
   - browser
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/12/19/streaming-calls-to-a-browser-with-voice-websockets-dr
+canonical: https://developer.vonage.com/blog/2016/12/19/streaming-calls-to-a-browser-with-voice-websockets-dr
 outdated: true
 ---
 We recently announced [WebSocket support](https://www.nexmo.com/blog/2016/11/09/announcing-websocket-sip-early-access-integration-ibm-watson/) within our new Voice API. The initial use cases for this are around server-to-server communication between the Vonage Voice API and speech AI platforms such as IBM Watson or Amazon Alexa. However, I'd like to show you a little demo we built for our booth at AWS ReInvent that shows another use. It demonstrates streaming the audio of a conference call to a web browser and plays it back with the [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API).

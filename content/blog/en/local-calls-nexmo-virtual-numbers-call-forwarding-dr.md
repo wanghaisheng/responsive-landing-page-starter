@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - number-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/10/local-calls-nexmo-virtual-numbers-call-forwarding-dr
+canonical: https://developer.vonage.com/blog/2018/12/10/local-calls-nexmo-virtual-numbers-call-forwarding-dr
 ---
 If you have friends and family in more than one location, the ones that you are not spending Christmas with will probably complain about the costs of calling you at Christmas. At least, I'm pretty sure that's not just me! This post is an opportunity for me to share my favourite Nexmo trick for giving your dad (or whomever) a local rate number to call that won't cost you a small fortune if he decides to talk for an hour.
 

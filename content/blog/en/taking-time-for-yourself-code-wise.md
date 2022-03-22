@@ -14,8 +14,8 @@ tags:
   - devrel
   - developer-experience
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/22/taking-time-for-yourself-code-wise
+canonical: https://developer.vonage.com/blog/2020/07/22/taking-time-for-yourself-code-wise
 ---
 Back in March of 2020, I [talked about revisiting our Server Specifications](https://www.nexmo.com/blog/2020/03/09/the-specifications-that-define-us-dr), and that one of my main goals was to make sure that we are providing the best experience possible for the developers that use our SDKs. Updating the server specification allowed our team to open up a bit and build out the SDKs in ways that made sense for the language, and gave each developer the experience they expected.
 

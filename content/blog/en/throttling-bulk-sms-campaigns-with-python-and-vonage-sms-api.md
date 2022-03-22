@@ -14,8 +14,8 @@ tags:
   - django
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/09/throttling-bulk-sms-campaigns-with-python-and-vonage-sms-api
+canonical: https://developer.vonage.com/blog/2021/09/09/throttling-bulk-sms-campaigns-with-python-and-vonage-sms-api
 outdated: false
 replacement_url: ""
 ---

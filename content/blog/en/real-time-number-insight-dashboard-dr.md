@@ -14,8 +14,8 @@ tags:
   - number-insight-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/12/real-time-number-insight-dashboard-dr
+canonical: https://developer.vonage.com/blog/2018/12/12/real-time-number-insight-dashboard-dr
 ---
 If you like a freebie and you have an app that receives inbound SMS, then today's post is definitely for you.
 

@@ -11,8 +11,8 @@ tags:
   - JetPack
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/15/a-better-way-of-creating-android-views-with-jetpackcompose
+canonical: https://developer.vonage.com/blog/2021/06/15/a-better-way-of-creating-android-views-with-jetpackcompose
 outdated: false
 replacement_url: ""
 ---

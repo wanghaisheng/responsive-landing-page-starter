@@ -14,8 +14,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/07/startup-spotlight-series-lets-meet-plaved-survey
+canonical: https://developer.vonage.com/blog/2022/02/07/startup-spotlight-series-lets-meet-plaved-survey
 outdated: false
 replacement_url: ""
 ---

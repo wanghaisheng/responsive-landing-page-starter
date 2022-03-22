@@ -13,8 +13,8 @@ tags:
   - accessibility
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/11/wcag-how-to-implement-web-accessibility-1
+canonical: https://developer.vonage.com/blog/2021/11/11/wcag-how-to-implement-web-accessibility-1
 outdated: false
 replacement_url: ""
 ---

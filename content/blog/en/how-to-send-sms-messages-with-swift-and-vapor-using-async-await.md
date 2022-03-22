@@ -14,8 +14,8 @@ tags:
   - messages-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/24/how-to-send-sms-messages-with-swift-and-vapor-using-async-await
+canonical: https://developer.vonage.com/blog/2021/11/24/how-to-send-sms-messages-with-swift-and-vapor-using-async-await
 outdated: false
 replacement_url: ""
 ---

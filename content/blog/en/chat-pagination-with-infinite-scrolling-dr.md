@@ -13,8 +13,8 @@ tags:
   - node
   - conversation-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/03/chat-pagination-with-infinite-scrolling-dr
+canonical: https://developer.vonage.com/blog/2020/02/03/chat-pagination-with-infinite-scrolling-dr
 ---
 Following on from the previous post [Create a Simple Messaging UI with Bootstrap](https://learn.vonage.com/blog/2019/12/18/create-a-simple-messaging-ui-with-bootstrap-dr/), this article will show you how to load older messages from the conversation using the Vonage Conversation Client SDK, which is now delivered paginated from the Conversation API.
 

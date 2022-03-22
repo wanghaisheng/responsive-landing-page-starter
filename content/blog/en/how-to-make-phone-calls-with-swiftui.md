@@ -15,8 +15,8 @@ tags:
   - aws
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/11/how-to-make-phone-calls-with-swiftui
+canonical: https://developer.vonage.com/blog/2020/11/11/how-to-make-phone-calls-with-swiftui
 outdated: false
 replacement_url: ""
 ---

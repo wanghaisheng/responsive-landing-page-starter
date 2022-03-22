@@ -14,8 +14,8 @@ tags:
   - voice-api
   - sanic
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/10/05/fast-voice-broadcast-python-dr
+canonical: https://developer.vonage.com/blog/2017/10/05/fast-voice-broadcast-python-dr
 ---
 SMS has become the de facto method for sending notifications when push isn't available. So much so that I rarely receive an SMS from an actual "person" anymore. My colleagues use Slack, friends use Facebook Messenger, security-conscious friends use Telegram, and paranoid friends use Signal. Even my mum, who only got her first smartphone in the last year, now sends me cute pictures of my niece via WhatsApp instead of email.
 

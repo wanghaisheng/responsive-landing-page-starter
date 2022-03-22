@@ -12,8 +12,8 @@ tags:
   - react
   - vue
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/20/migrating-react-components-to-vue-js-dr
+canonical: https://developer.vonage.com/blog/2020/02/20/migrating-react-components-to-vue-js-dr
 ---
 In this blog post, I'm going to share the journey we went through when we migrated our [Developer Platform](https://developer.nexmo.com/) from [React](https://reactjs.org/) to [Vue.js](https://vuejs.org/). I'll go through the reasons behind the change, how we did it, and a few lessons we learned along the way.
 

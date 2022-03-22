@@ -12,8 +12,8 @@ tags:
   - java
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/02/06/full-voice-api-support-coming-nexmo-java-client-v2-0-dr
+canonical: https://developer.vonage.com/blog/2017/02/06/full-voice-api-support-coming-nexmo-java-client-v2-0-dr
 ---
 We’re very excited to announce that the *first* snapshot release of v2.0 of the [Nexmo Java client library](https://github.com/nexmo/nexmo-java) is now available. We're publishing this now because we would like to start capturing your feedback, but it’s important to note that this is a SNAPSHOT release. There are some significant code changes coming soon.
 

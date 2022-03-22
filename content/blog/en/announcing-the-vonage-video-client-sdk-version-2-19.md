@@ -13,8 +13,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/26/announcing-the-vonage-video-client-sdk-version-2-19
+canonical: https://developer.vonage.com/blog/2021/03/26/announcing-the-vonage-video-client-sdk-version-2-19
 outdated: false
 replacement_url: ""
 ---

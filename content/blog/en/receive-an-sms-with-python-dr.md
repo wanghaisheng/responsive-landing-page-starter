@@ -12,8 +12,8 @@ tags:
   - python
   - sms-api
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/05/31/receive-an-sms-with-python-dr
+canonical: https://developer.vonage.com/blog/2019/05/31/receive-an-sms-with-python-dr
 ---
 In this post, we'll show you how to receive SMS messages on your Vonage virtual number.
 

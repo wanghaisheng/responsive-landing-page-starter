@@ -14,8 +14,8 @@ tags:
   - javascript
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/02/state-machines-for-messaging-bots
+canonical: https://developer.vonage.com/blog/2021/09/02/state-machines-for-messaging-bots
 outdated: false
 replacement_url: ""
 ---

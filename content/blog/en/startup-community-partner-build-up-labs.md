@@ -12,8 +12,8 @@ tags:
   - startups
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/12/startup-community-partner-build-up-labs
+canonical: https://developer.vonage.com/blog/2021/05/12/startup-community-partner-build-up-labs
 outdated: false
 replacement_url: ""
 ---

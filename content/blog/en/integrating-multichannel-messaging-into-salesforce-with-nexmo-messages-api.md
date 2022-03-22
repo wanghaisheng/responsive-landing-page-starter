@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/17/integrating-multichannel-messaging-into-salesforce-with-nexmo-messages-api
+canonical: https://developer.vonage.com/blog/2019/04/17/integrating-multichannel-messaging-into-salesforce-with-nexmo-messages-api
 ---
 [Nexmo Messages API for Salesforce](https://www.nexmo.com/salesforce), powered by [Billennium](https://www.nexmo.com/partners/billennium), enables you to send messages via SMS, MMS, WhatsApp Business, Facebook Messenger, and Viber Service Messages directly on the Salesforce Apex class. This means that you can call the API within your Salesforce environment. Whether you are a developer creating a messaging app or an administrator creating a messaging flow, the Messages API is a simple way to integrate an omnichannel strategy.
 

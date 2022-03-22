@@ -12,8 +12,8 @@ category: release
 tags:
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/15/opentok-version-2-17-whats-new-and-how-you-can-use-it-dr
+canonical: https://developer.vonage.com/blog/2020/05/15/opentok-version-2-17-whats-new-and-how-you-can-use-it-dr
 ---
 The latest version of our Video Client SDKs, OpenTok v2.17, is now available. We wanted to update you on some of the great new features included and how you can use them.
 

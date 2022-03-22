@@ -13,8 +13,8 @@ tags:
   - ruby-on-rails
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/05/10/build-a-conference-call-with-the-nexmo-voice-api-and-ruby-on-rails-dr
+canonical: https://developer.vonage.com/blog/2019/05/10/build-a-conference-call-with-the-nexmo-voice-api-and-ruby-on-rails-dr
 ---
 In this walkthrough, we are going to create a Ruby on Rails conference call application that utilizes the Nexmo Voice API. Within the Nexmo documentation, a conference call is also referred to as a *conversation*, and we will be using these terms interchangeably. 
 

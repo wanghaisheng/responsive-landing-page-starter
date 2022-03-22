@@ -13,8 +13,8 @@ tags:
   - voice-api
   - web-components
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/07/using-web-components-in-a-react-application-dr
+canonical: https://developer.vonage.com/blog/2020/10/07/using-web-components-in-a-react-application-dr
 ---
 In a [previous post](https://www.nexmo.com/blog/2020/08/13/creating-a-web-component-with-open-wc), we showed you how to build and publish a Web Component.
 

@@ -12,8 +12,8 @@ tags:
   - cli
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0
+canonical: https://developer.vonage.com/blog/2021/09/21/vonage-cli-is-v1-0-0
 outdated: false
 replacement_url: ""
 ---

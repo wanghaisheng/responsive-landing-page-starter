@@ -13,8 +13,8 @@ tags:
   - messages-api
   - marketo
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/07/nexmo-messages-api-integration-with-marketo-dr
+canonical: https://developer.vonage.com/blog/2019/08/07/nexmo-messages-api-integration-with-marketo-dr
 ---
 Vonage, Whatsapp, and SMS make it easy to leverage text messaging applications for customer outreach, appointment reminders, and mobile marketing. Vonage Messages API supports native app features and multimedia messaging—including video, audio, and geolocation—so your brand can deliver a more engaging user experience. You can use Messages API to help your business to get in touch with customers on the channel that's most convenient for them. Or, you can send a notification that surprise and delight your users, such as reminders, booking confirmation, etc.
 

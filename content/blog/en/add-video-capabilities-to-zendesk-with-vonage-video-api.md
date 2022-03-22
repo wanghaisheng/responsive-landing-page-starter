@@ -12,8 +12,8 @@ tags:
   - video-api
   - zendesk
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/08/add-video-capabilities-to-zendesk-with-vonage-video-api
+canonical: https://developer.vonage.com/blog/2020/09/08/add-video-capabilities-to-zendesk-with-vonage-video-api
 ---
 In this tutorial, we're going to add video, screen sharing and recording functionality to Zendesk by using Vonage Video API so that you can offer a richer customer experience. 
 

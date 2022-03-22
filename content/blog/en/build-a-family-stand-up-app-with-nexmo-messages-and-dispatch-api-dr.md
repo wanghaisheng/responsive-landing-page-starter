@@ -14,8 +14,8 @@ tags:
   - dispatch-api
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/18/build-a-family-stand-up-app-with-nexmo-messages-and-dispatch-api-dr
+canonical: https://developer.vonage.com/blog/2019/09/18/build-a-family-stand-up-app-with-nexmo-messages-and-dispatch-api-dr
 ---
 ## Introduction
 

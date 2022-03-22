@@ -14,8 +14,8 @@ tags:
   - dialogflow
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/30/add-dialogflow-and-the-vonage-messages-api-to-your-flask-app-dr
+canonical: https://developer.vonage.com/blog/2020/07/30/add-dialogflow-and-the-vonage-messages-api-to-your-flask-app-dr
 ---
 Dialogflow is a natural language understanding (NLU) platform provided by Google. It is used to design and integrate conversational user interfaces into mobile and web apps, devices, bots, and interactive voice systems. In this tutorial, we'll demonstrate how to integrate with the Dialogflow and Vonage SMS APIs to build a quiz bot that interacts with the end user via SMS. We won't be covering every piece of the application, so if you're starting from scratch check out the [full project repo](https://github.com/nexmo-community/Vonage-QnA-app) (or read one of our [previous](https://www.nexmo.com/blog/2020/01/03/use-python-and-flask-to-manage-queues-via-sms-dr) [tutorials](https://www.nexmo.com/blog/2020/02/24/nightscout-notification-nexmo-dr) on Flask development from the ground up!)
 

@@ -12,8 +12,8 @@ tags:
   - messages-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/16/announcing-vonage-messages-api-version-1-0
+canonical: https://developer.vonage.com/blog/2021/11/16/announcing-vonage-messages-api-version-1-0
 outdated: false
 replacement_url: ""
 ---

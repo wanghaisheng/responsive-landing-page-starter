@@ -14,8 +14,8 @@ tags:
   - deliverability
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/18/receive-sms-delivery-receipts-with-go
+canonical: https://developer.vonage.com/blog/2020/11/18/receive-sms-delivery-receipts-with-go
 outdated: false
 replacement_url: ""
 ---

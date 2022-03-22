@@ -14,8 +14,8 @@ tags:
   - node
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/01/adding-2fa-to-a-react-app-using-firebase-function
+canonical: https://developer.vonage.com/blog/2020/04/01/adding-2fa-to-a-react-app-using-firebase-function
 ---
 If you're like me, you probably have a few "smart" devices around your home. There are multiple ways to interact and control these devices, but I wanted to be able to control them with text messages and eventually voice as well.  
 

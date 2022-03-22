@@ -14,8 +14,8 @@ tags:
   - zapier
   - stripe
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/03/how-to-send-sms-confirmations-for-new-stripe-charges-with-zapier
+canonical: https://developer.vonage.com/blog/2020/04/03/how-to-send-sms-confirmations-for-new-stripe-charges-with-zapier
 ---
 Although [Stripe](https://stripe.com/en-ca) can make collecting payments feel seamless, there are some extra things you can do to fully streamline the purchasing process and enhance communication with your customers. If your goal is to improve customer experience and brand perception, automating paperless receipts is worth considering. While Stripe can send customers a standard email receipt for each successful payment, it does not currently allow for SMS confirmations. Providing your customers with the option to choose how they want to be communicated with makes a profound impact on the end-user and demonstrates how much your company values their experience. And if there's a way that implementing that seamless experience can save money in developer resources, you’re looking at a win-win.
 

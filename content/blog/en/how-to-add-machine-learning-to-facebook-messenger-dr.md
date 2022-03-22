@@ -13,8 +13,8 @@ tags:
   - dotnet
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/31/how-to-add-machine-learning-to-facebook-messenger-dr
+canonical: https://developer.vonage.com/blog/2019/10/31/how-to-add-machine-learning-to-facebook-messenger-dr
 ---
 Convolutional Neural Networks (CNNs) provide a powerful and scalable mechanism for preforming image classification. They can be relatively difficult to build, train, and tune from scratch, which is what makes tools like TensorFlow and the inception models so indispensable to improving our ML workflows.
 

@@ -12,8 +12,8 @@ tags:
   - go
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/18/download-vonage-voice-api-recordings-with-golang
+canonical: https://developer.vonage.com/blog/2020/05/18/download-vonage-voice-api-recordings-with-golang
 ---
 We love the [Voice API](https://developer.nexmo.com/voice) and all the fun things you can do with it. Today I'm going to show you a Golang application I'm using to download the recordings of the calls.
 

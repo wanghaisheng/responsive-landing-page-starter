@@ -11,8 +11,8 @@ category: release
 tags:
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/06/nexmo-ruby-v7-0-0-release-dr
+canonical: https://developer.vonage.com/blog/2020/04/06/nexmo-ruby-v7-0-0-release-dr
 ---
 The Nexmo Ruby SDK recently published a major version release, v7.0.0. This new version introduced improved support for API error handling, renamed an existing class name to match the rest of the Nexmo SDKs, and added more static typing.
 

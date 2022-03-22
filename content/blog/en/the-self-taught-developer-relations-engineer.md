@@ -11,8 +11,8 @@ tags:
   - devrel
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/05/the-self-taught-developer-relations-engineer
+canonical: https://developer.vonage.com/blog/2021/11/05/the-self-taught-developer-relations-engineer
 outdated: false
 replacement_url: ""
 ---

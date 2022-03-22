@@ -16,8 +16,8 @@ tags:
   - graphql
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/25/build-a-whatsapp-and-messenger-graphql-bot-to-find-hospital-beds
+canonical: https://developer.vonage.com/blog/2021/03/25/build-a-whatsapp-and-messenger-graphql-bot-to-find-hospital-beds
 outdated: false
 replacement_url: ""
 ---

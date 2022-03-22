@@ -14,8 +14,8 @@ tags:
   - aws
   - lambda
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/25/how-permissions-work-in-aws-lambda-dr
+canonical: https://developer.vonage.com/blog/2020/03/25/how-permissions-work-in-aws-lambda-dr
 ---
 When working with AWS Lambda, many users struggle with permissions using other AWS services. More specifically, how to access services like S3, RDS, Transcribe, or others.
 

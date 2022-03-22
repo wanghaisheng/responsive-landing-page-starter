@@ -13,8 +13,8 @@ tags:
   - ruby-sdk
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/17/all-i-want-for-christmas-is-ruby-3
+canonical: https://developer.vonage.com/blog/2020/12/17/all-i-want-for-christmas-is-ruby-3
 outdated: false
 replacement_url: ""
 ---

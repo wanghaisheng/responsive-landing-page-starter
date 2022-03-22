@@ -13,8 +13,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/30/startup-spotlight-series-lets-meet-speedbird-aero
+canonical: https://developer.vonage.com/blog/2021/06/30/startup-spotlight-series-lets-meet-speedbird-aero
 outdated: false
 replacement_url: ""
 ---

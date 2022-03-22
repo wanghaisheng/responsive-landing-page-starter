@@ -13,8 +13,8 @@ tags:
   - python
   - open-cv
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/15/real-time-human-detection-with-opencv-and-vonage-sms-api-dr
+canonical: https://developer.vonage.com/blog/2020/04/15/real-time-human-detection-with-opencv-and-vonage-sms-api-dr
 ---
 This blog post will show how to build your own “smart” video camera. It will show how to take an image from the frame of a web camera, detect if there is a human in the frame, and send out an SMS via Vonage Communication APIs to notify you about potential threats.
 

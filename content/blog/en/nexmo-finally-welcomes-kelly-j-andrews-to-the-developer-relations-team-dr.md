@@ -11,8 +11,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/02/nexmo-finally-welcomes-kelly-j-andrews-to-the-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2019/02/02/nexmo-finally-welcomes-kelly-j-andrews-to-the-developer-relations-team-dr
 ---
 
 Hey there, my name is [Kelly J Andrews](https://twitter.com/kellyjandrews) and I joined the Developer Relations team back in August. To be honest, I didn't want to announce I was working here until I was sure they would let me stick around for a bit. Now that it feels a bit more "safe," I'm happy to announce that I am the Extend initiative leader with Nexmo!

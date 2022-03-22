@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - python
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/27/serverless-paging-amazon-transcribe-dr
+canonical: https://developer.vonage.com/blog/2018/11/27/serverless-paging-amazon-transcribe-dr
 ---
 The 90’s had some great technologies: MiniDisc, Tamagotchi, and PAGERS!
 

@@ -12,8 +12,8 @@ tags:
   - java
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/05/31/receive-sms-messages-java-dr
+canonical: https://developer.vonage.com/blog/2017/05/31/receive-sms-messages-java-dr
 ---
 In the [last tutorial](https://www.nexmo.com/blog/2017/05/03/send-sms-messages-with-java-dr/), we set up a Java web app that can send SMS messages using Vonage SMS API. This tutorial builds on that, adding an endpoint that will be called by Vonage when someone sends an SMS message to your Vonage number.
 

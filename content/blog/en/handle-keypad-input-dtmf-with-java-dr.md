@@ -12,8 +12,8 @@ tags:
   - java
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/15/handle-keypad-input-dtmf-with-java-dr
+canonical: https://developer.vonage.com/blog/2018/08/15/handle-keypad-input-dtmf-with-java-dr
 ---
 ## Introduction
 

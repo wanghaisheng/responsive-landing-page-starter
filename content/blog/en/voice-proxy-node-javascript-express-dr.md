@@ -13,8 +13,8 @@ tags:
   - node
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/22/voice-proxy-node-javascript-express-dr
+canonical: https://developer.vonage.com/blog/2018/05/22/voice-proxy-node-javascript-express-dr
 ---
 We've all been there: you've gotten out of your cab and a few minutes later you realise you've left your umbrella behind. Alternatively, you're starving, staring out the window whenever you hear a car drive by, wondering where the food delivery you ordered an hour ago is.
 

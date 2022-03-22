@@ -13,8 +13,8 @@ tags:
   - python
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/17/use-python-and-the-number-insights-api-to-analyze-leads-dr
+canonical: https://developer.vonage.com/blog/2020/09/17/use-python-and-the-number-insights-api-to-analyze-leads-dr
 ---
 Cold calling is a very expensive activity when you take into account the time and energy needed to reach out to an unknown prospect. David Cummings, a renowned entrepreneur, estimates that it takes [$1.72 per cold call](https://davidcummings.org/2015/09/23/how-much-does-a-single-cold-call-cost/), without any guarantee of conversion. Must customer acquisition be so costly? With the [Vonage Number Insights API](https://developer.nexmo.com/number-insight/overview), it's possible to make big improvements on these costs.
 

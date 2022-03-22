@@ -14,8 +14,8 @@ tags:
   - javascript
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/12/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api
+canonical: https://developer.vonage.com/blog/2022/01/12/build-an-appointment-scheduler-using-js-firebase-and-the-vonage-api
 outdated: false
 replacement_url: ""
 ---

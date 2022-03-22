@@ -15,8 +15,8 @@ tags:
   - dispatch-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/07/build-an-otp-service-dr
+canonical: https://developer.vonage.com/blog/2019/02/07/build-an-otp-service-dr
 ---
 
 One-time passwords (OTPs) have become quite familiar in recent times, mainly due to a security requirement that traditional passwords do not guarantee. While the protection of the traditional password is the responsibility of the user, who as we well know often does not care enough, the OTP is practically self-protected because it is generated randomly, and its validity is limited in time.

@@ -15,8 +15,8 @@ tags:
   - errors
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/22/minimizing-production-headaches-with-log-tracing
+canonical: https://developer.vonage.com/blog/2021/03/22/minimizing-production-headaches-with-log-tracing
 outdated: false
 replacement_url: ""
 ---

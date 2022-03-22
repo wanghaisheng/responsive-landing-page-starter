@@ -12,8 +12,8 @@ tags:
   - php
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/03/02/vonage-at-phpuk-2022
+canonical: https://developer.vonage.com/blog/2022/03/02/vonage-at-phpuk-2022
 outdated: false
 replacement_url: ""
 ---

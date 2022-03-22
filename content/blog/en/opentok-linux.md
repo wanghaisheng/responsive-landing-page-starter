@@ -13,8 +13,8 @@ tags:
   - video-api
   - linux-sdk
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/14/opentok-linux
+canonical: https://developer.vonage.com/blog/2019/08/14/opentok-linux
 ---
 ## How to Add Streaming Video on Linux with OpenTok Linux SDK
 

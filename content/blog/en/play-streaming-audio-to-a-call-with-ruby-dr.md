@@ -12,8 +12,8 @@ tags:
   - ruby
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/01/24/play-streaming-audio-to-a-call-with-ruby-dr
+canonical: https://developer.vonage.com/blog/2019/01/24/play-streaming-audio-to-a-call-with-ruby-dr
 ---
 In this post, we are going to look at streaming an audio file into an in-progress phone call. There are many use cases for streaming audio files into calls, and with the Vonage Voice API and the Vonage Ruby gem, it is a relatively straightforward process. Whether you want to share music with someone over the phone or a snippet from a work meeting, you can do so with a few lines of Ruby and Vonage.
 

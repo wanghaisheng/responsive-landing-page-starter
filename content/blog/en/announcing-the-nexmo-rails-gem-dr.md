@@ -12,8 +12,8 @@ tags:
   - ruby
   - conference
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/30/announcing-the-nexmo-rails-gem-dr
+canonical: https://developer.vonage.com/blog/2019/04/30/announcing-the-nexmo-rails-gem-dr
 ---
 Back at RailsConf 2016, we adopted the community-driven Nexmo Ruby gem and [made it an officially supported client library](https://www.nexmo.com/blog/2016/05/04/ruby-gem/). Since then, Ruby developers have been able to integrate Nexmo into their applications with more ease. Whether you were looking to create a [Voice app](https://www.nexmo.com/blog/2017/11/02/outbound-text-to-speech-voice-call-ruby-on-rails-dr/), [send](https://www.nexmo.com/blog/2017/10/16/send-sms-ruby-on-rails-dr/) or [receive](https://www.nexmo.com/blog/2017/10/23/receive-sms-messages-ruby-on-rails-dr/) an SMS, obtain [insights on numbers](https://www.nexmo.com/blog/2019/03/25/getting-started-with-the-nexmo-number-insight-api-and-rails-dr/) around the world, or more, you could do it with the Nexmo Ruby gem. 
 

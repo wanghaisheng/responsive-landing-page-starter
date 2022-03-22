@@ -14,8 +14,8 @@ tags:
   - node
   - node-red
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/14/make-text-to-speech-phone-calls-node-red-dr
+canonical: https://developer.vonage.com/blog/2019/06/14/make-text-to-speech-phone-calls-node-red-dr
 ---
 *This is the fourth article in a series of “Getting Started with Nexmo and Node-RED” tutorials.*
 

@@ -11,8 +11,8 @@ tags:
   - go
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/28/how-to-send-sms-with-go-dr
+canonical: https://developer.vonage.com/blog/2019/08/28/how-to-send-sms-with-go-dr
 ---
 In this blog post, we'll show you how to use the [Vonage Go SDK](https://github.com/Vonage/vonage-go-sdk) to send an SMS using Go in less than 20 lines of code.
 

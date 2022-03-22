@@ -13,8 +13,8 @@ tags:
   - go
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/03/receive-inbound-sms-with-go
+canonical: https://developer.vonage.com/blog/2020/11/03/receive-inbound-sms-with-go
 outdated: false
 replacement_url: ""
 ---

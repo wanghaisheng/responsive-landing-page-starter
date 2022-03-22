@@ -13,8 +13,8 @@ tags:
   - ruby
   - sdk
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/23/lessons-learned-along-the-way-with-static-type-checking-in-ruby-dr
+canonical: https://developer.vonage.com/blog/2020/03/23/lessons-learned-along-the-way-with-static-type-checking-in-ruby-dr
 ---
 Nexmo offers SDKs in a variety of languages to support the developer community in working with our diverse API offerings. It is quite possible to interact directly with each REST API through HTTP calls that a developer custom builds. However, taking advantage of an SDK lets a developer achieve their goals faster and with less overhead in their work. 
 

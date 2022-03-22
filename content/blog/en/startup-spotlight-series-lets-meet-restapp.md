@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/08/startup-spotlight-series-lets-meet-restapp
+canonical: https://developer.vonage.com/blog/2021/10/08/startup-spotlight-series-lets-meet-restapp
 outdated: false
 replacement_url: ""
 ---

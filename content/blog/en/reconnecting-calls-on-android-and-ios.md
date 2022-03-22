@@ -14,8 +14,8 @@ tags:
   - conversation-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/25/reconnecting-calls-on-android-and-ios
+canonical: https://developer.vonage.com/blog/2022/01/25/reconnecting-calls-on-android-and-ios
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - startups
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/04/why-should-your-startup-use-communications-apis
+canonical: https://developer.vonage.com/blog/2021/03/04/why-should-your-startup-use-communications-apis
 outdated: false
 replacement_url: ""
 ---

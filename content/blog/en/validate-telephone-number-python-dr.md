@@ -13,8 +13,8 @@ tags:
   - python
   - number-insight-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/26/validate-telephone-number-python-dr
+canonical: https://developer.vonage.com/blog/2019/06/26/validate-telephone-number-python-dr
 ---
 Phone number verification can do a lot more than ensuring that a telephone number is formatted correctly; it can help protect you and your customers from fraud, ensure your customers are reachable and offer a better overall customer experience.
 

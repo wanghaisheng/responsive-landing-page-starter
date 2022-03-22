@@ -12,8 +12,8 @@ tags:
   - messages-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/30/send-sms-typeform-submitted-using-node-hapi-messages-api-dr
+canonical: https://developer.vonage.com/blog/2018/10/30/send-sms-typeform-submitted-using-node-hapi-messages-api-dr
 ---
 In this tutorial we are going to learn how to send a SMS when your [Typeform](http://typeform.com/) is submitted using the [Nexmo Messages API](https://developer.nexmo.com/messages/overview) and the Node.js framework [Hapi](https://hapijs.com/).
 

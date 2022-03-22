@@ -13,8 +13,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/07/troubleshooting-vonage-video-calls-using-session-inspector
+canonical: https://developer.vonage.com/blog/2021/09/07/troubleshooting-vonage-video-calls-using-session-inspector
 outdated: false
 replacement_url: ""
 ---

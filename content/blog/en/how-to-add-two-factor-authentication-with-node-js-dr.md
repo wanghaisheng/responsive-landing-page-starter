@@ -13,8 +13,8 @@ tags:
   - verify-api
   - 2fa
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/15/how-to-add-two-factor-authentication-with-node-js-dr
+canonical: https://developer.vonage.com/blog/2019/04/15/how-to-add-two-factor-authentication-with-node-js-dr
 ---
 Two-factor authentication (2FA) gets its name from the fact that you require two things to verify your identity. Something you know, like a password, and something you have, like the verification code from your mobile device or physical token.
 

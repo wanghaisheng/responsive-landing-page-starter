@@ -14,8 +14,8 @@ tags:
   - php
   - transcription
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/19/voice-transcription-pipeline-in-php-with-vonage-dr
+canonical: https://developer.vonage.com/blog/2020/06/19/voice-transcription-pipeline-in-php-with-vonage-dr
 ---
 In this post, you'll create a voice transcription pipeline. The objective is to use [Amazon Transcribe](https://aws.amazon.com/transcribe/) to process an entire conversation into channels and then insert the results into an [RDS](https://aws.amazon.com/rds/) MySQL database instance. To accomplish this will take two [AWS Lambda](https://aws.amazon.com/lambda/) functions: an [HTTP application](https://github.com/nexmo-community/voice-channels-aws-transcribe-php) to retrieve an MP3 file and submit to Amazon Transcribe, and a [callback function](https://github.com/nexmo-community/aws-voice-transcription-rds-callback-php) upon completion of the transcription to store the results into a MySQL database.
 

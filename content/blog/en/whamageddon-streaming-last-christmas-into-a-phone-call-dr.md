@@ -13,8 +13,8 @@ tags:
   - python
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/12/whamageddon-streaming-last-christmas-into-a-phone-call-dr
+canonical: https://developer.vonage.com/blog/2018/12/12/whamageddon-streaming-last-christmas-into-a-phone-call-dr
 ---
 Christmas is an expensive time, but I can help save you a fortune on gifts by ensuring no-one is speaking to you on Christmas day by sending them all to Whamhalla!
 

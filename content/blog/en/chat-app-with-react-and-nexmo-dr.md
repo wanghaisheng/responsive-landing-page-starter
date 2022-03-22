@@ -14,8 +14,8 @@ tags:
   - conversation-api
   - react
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/30/chat-app-with-react-and-nexmo-dr
+canonical: https://developer.vonage.com/blog/2019/08/30/chat-app-with-react-and-nexmo-dr
 ---
 One of the simplest ways to communicate online is also among the simplest to add to your website, using [React](https://reactjs.org/) and [Nexmo's client-side JavaScript tooling](https://developer.nexmo.com/client-sdk/overview). A chat application can provide customer service, facilitate collaboration on a project, or let you catch up with friends. And good news: if you've followed our previous [full-stack React and Express tutorial](https://www.nexmo.com/blog/2019/03/15/full-stack-nexmo-with-express-react-dr), you already have most of the pieces you need to build one.
 

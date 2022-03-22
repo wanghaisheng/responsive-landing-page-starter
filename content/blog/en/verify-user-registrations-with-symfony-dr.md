@@ -16,8 +16,8 @@ tags:
   - php
   - symfony
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/20/verify-user-registrations-with-symfony-dr
+canonical: https://developer.vonage.com/blog/2020/04/20/verify-user-registrations-with-symfony-dr
 ---
 Users registering with false information can be a pest, which is especially the case when registering with phone numbers that you expect to be contactable. [Vonage's Verify API](https://developer.nexmo.com/api/verify) provides a solution to this by enabling you to confirm that the phone number is correct and owned by the user. The API takes a phone number, sends a pin code to that phone number and expects it to be relayed back through the correct source.
 

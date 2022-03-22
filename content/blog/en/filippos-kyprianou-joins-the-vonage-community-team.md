@@ -13,8 +13,8 @@ tags:
   - careers
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/06/filippos-kyprianou-joins-the-vonage-community-team
+canonical: https://developer.vonage.com/blog/2020/11/06/filippos-kyprianou-joins-the-vonage-community-team
 outdated: false
 replacement_url: ""
 ---

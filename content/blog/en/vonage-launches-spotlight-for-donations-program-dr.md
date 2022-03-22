@@ -12,8 +12,8 @@ category: announcement
 tags:
   - spotlight
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr
+canonical: https://developer.vonage.com/blog/2019/09/04/vonage-launches-spotlight-for-donations-program-dr
 ---
 ## What is Spotlight for Donations?
 Spotlight for Donations is a new program that offers more options to people interested in creating content for Vonage's Developer Spotlight program.

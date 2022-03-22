@@ -13,8 +13,8 @@ tags:
   - sms-api
   - flask
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/06/22/send-sms-messages-python-flask-dr
+canonical: https://developer.vonage.com/blog/2017/06/22/send-sms-messages-python-flask-dr
 ---
 The [Vonage SMS API](https://docs.nexmo.com/messaging/sms-api/api-reference) is an HTTP-based API using either XML or JSON to describe how to send an SMS or understand a received SMS. Fortunately, you don't need to worry about that too much because Vonage provides a [Python SDK](https://github.com/Vonage/vonage-python-sdk) that takes care of a lot of the underlying detail for you.
 

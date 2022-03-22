@@ -12,8 +12,8 @@ category: announcement
 tags:
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/25/introducing-the-ncco-examples-collection-dr
+canonical: https://developer.vonage.com/blog/2019/10/25/introducing-the-ncco-examples-collection-dr
 ---
 At Nexmo, we take our (award-winning) developer documentation very seriously. You will find detailed API reference, lots of code samples, high-level concept explanations... Everything you'd expect. However, we don't want to take ourselves or our products too seriously, which is why we shared our [NCCO examples collection](https://nexmo-community.github.io/ncco-examples/).
 

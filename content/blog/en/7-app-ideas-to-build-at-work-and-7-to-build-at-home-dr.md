@@ -13,8 +13,8 @@ tags:
   - voice-api
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/05/7-app-ideas-to-build-at-work-and-7-to-build-at-home-dr
+canonical: https://developer.vonage.com/blog/2020/05/05/7-app-ideas-to-build-at-work-and-7-to-build-at-home-dr
 ---
 It isn’t easy navigating through uncertainty. But nothing happens in isolation, and even when we’re apart, it’s essential we find ways to bring us together. More than ever, we need each other to help us through these unprecedented times. We have to stay connected by using the tools out there—and when required, build our own solutions. Below you’ll find 14 exciting ideas that we hope will help you create or enhance communications between you and your peers, loved ones, or clients.
 

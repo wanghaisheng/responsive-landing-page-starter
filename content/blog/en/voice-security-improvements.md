@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/17/voice-security-improvements
+canonical: https://developer.vonage.com/blog/2021/06/17/voice-security-improvements
 outdated: false
 replacement_url: ""
 ---

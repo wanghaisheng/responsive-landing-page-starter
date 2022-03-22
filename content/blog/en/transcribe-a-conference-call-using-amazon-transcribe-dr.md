@@ -13,8 +13,8 @@ tags:
   - voice-api
   - aws
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/26/transcribe-a-conference-call-using-amazon-transcribe-dr
+canonical: https://developer.vonage.com/blog/2019/08/26/transcribe-a-conference-call-using-amazon-transcribe-dr
 ---
 Every now and then, I'm reminded of the fact that I'm living in the future. At least the future I dreamed about back in the 80's.
 

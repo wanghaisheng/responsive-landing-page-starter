@@ -14,8 +14,8 @@ tags:
   - sms-api
   - azure
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/12/10/text-translation-api-comparison-dr
+canonical: https://developer.vonage.com/blog/2019/12/10/text-translation-api-comparison-dr
 ---
 Text translation APIs are essential in the global environment of inbound and outbound messaging. Amazon Web Services, Google Cloud Platform, IBM Watson, and Microsoft Azure all have strong offerings. This post will highlight some of my learnings from using each service.
 

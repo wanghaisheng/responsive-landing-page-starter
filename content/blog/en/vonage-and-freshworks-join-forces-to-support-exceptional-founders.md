@@ -12,8 +12,8 @@ tags:
   - partners
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/10/vonage-and-freshworks-join-forces-to-support-exceptional-founders
+canonical: https://developer.vonage.com/blog/2021/06/10/vonage-and-freshworks-join-forces-to-support-exceptional-founders
 outdated: false
 replacement_url: ""
 ---

@@ -13,8 +13,8 @@ tags:
   - javascript
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/14/broadcast-video-chat-with-javascript-and-vonage-dr
+canonical: https://developer.vonage.com/blog/2020/05/14/broadcast-video-chat-with-javascript-and-vonage-dr
 ---
 This series of tutorials will explore the [Vonage Video API (formerly TokBox OpenTok)](https://tokbox.com/developer/) and what you can build with it. The Video API is very robust and highly customizable, and in each post, we’ll show how to implement a specific feature using the API. This time we will look at how to broadcast your video chat to many viewers online.
 

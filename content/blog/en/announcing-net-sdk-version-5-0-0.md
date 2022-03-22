@@ -13,8 +13,8 @@ tags:
   - sdk
   - sdk-announcements
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/22/announcing-net-sdk-version-5-0-0
+canonical: https://developer.vonage.com/blog/2020/06/22/announcing-net-sdk-version-5-0-0
 ---
 I'm happy to announce the release of our new [.NET 5.0.0 SDK](https://github.com/nexmo/nexmo-dotnet). This is my first major release since joining the Platform & Developer Experience team at Vonage last year, and I'm excited to share what's new.
 

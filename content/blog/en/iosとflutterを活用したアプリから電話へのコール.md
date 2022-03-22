@@ -13,8 +13,8 @@ tags:
   - ios
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/01/iosとflutterを活用したアプリから電話へのコール
+canonical: https://developer.vonage.com/blog/2021/04/01/iosとflutterを活用したアプリから電話へのコール
 outdated: false
 replacement_url: ""
 ---

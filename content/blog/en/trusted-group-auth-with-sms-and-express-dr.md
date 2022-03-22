@@ -14,8 +14,8 @@ tags:
   - sms-api
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/18/trusted-group-auth-with-sms-and-express-dr
+canonical: https://developer.vonage.com/blog/2019/06/18/trusted-group-auth-with-sms-and-express-dr
 ---
 Is there anything better than working on a project with your friends? Maybe so! How about not having to arrange times and places you can all meet up, and instead being able to collaborate online? 
 

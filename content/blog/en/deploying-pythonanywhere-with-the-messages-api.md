@@ -13,8 +13,8 @@ tags:
   - python
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/01/deploying-pythonanywhere-with-the-messages-api
+canonical: https://developer.vonage.com/blog/2021/06/01/deploying-pythonanywhere-with-the-messages-api
 outdated: false
 replacement_url: ""
 ---

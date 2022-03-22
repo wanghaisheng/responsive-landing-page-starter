@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/14/serverless-sms-nexmo-ibm-dr
+canonical: https://developer.vonage.com/blog/2018/08/14/serverless-sms-nexmo-ibm-dr
 ---
 Communicating with users via SMS is an excellent way of interacting with people informally. Whether you are automating response to your most-asked questions, running a competition, or connecting with your users over something completely different, SMS is an excellent choice. In this post, we'll look at a fun and trivial example while we look at the detail of how to achieve these tasks. We'll build a system that responds to an incoming SMS with a "fortune cookie". These are the greetings used in the "message of the day" feature on old *nix workstations, think of it as a geekier version of the adorable loading messages you see on Slack.
 

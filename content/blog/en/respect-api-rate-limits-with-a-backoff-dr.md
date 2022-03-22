@@ -14,8 +14,8 @@ tags:
   - messages-api
 comments: false
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/22/respect-api-rate-limits-with-a-backoff-dr
+canonical: https://developer.vonage.com/blog/2020/10/22/respect-api-rate-limits-with-a-backoff-dr
 ---
 When working with the [Vonage Communication APIs](https://www.vonage.com/communications-apis/)—or [any API really](https://developer.twitter.com/en/docs/basics/rate-limiting)—you should be cognizant of their rate limits. Rate limits are one of the ways service providers can reduce the load on their servers, prevent malicious activity, or ensure a single user is not monopolizing the available resources.
 

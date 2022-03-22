@@ -14,8 +14,8 @@ tags:
   - client-sdk
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/15/startup-spotlight-series-billseye
+canonical: https://developer.vonage.com/blog/2021/04/15/startup-spotlight-series-billseye
 outdated: false
 replacement_url: ""
 ---

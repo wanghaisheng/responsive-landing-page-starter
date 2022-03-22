@@ -13,8 +13,8 @@ tags:
   - express
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr
+canonical: https://developer.vonage.com/blog/2016/10/19/how-to-send-sms-messages-with-node-js-and-express-dr
 ---
 The [Vonage SMS API](https://developer.vonage.com/messaging/sms/overview) allows you to send and receive a high volume of SMS messages anywhere in the world. Once you get your virtual phone number, you can use the API to manage outbound messages ("sending") and inbound messages (“receiving”). In this article, you will learn how to send SMS messages with Node.js and Express.
 

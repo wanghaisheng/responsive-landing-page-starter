@@ -13,8 +13,8 @@ tags:
   - voice-api
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/11/29/how-to-play-audio-to-a-caller-in-asp-net-core-dr
+canonical: https://developer.vonage.com/blog/2017/11/29/how-to-play-audio-to-a-caller-in-asp-net-core-dr
 ---
 *Welcome to the second tutorial in our* how to use Voice APIs with ASP.NET *series. To check out other tutorials, please go to the* Learn more *section at the end of this post.*
 

@@ -13,8 +13,8 @@ tags:
   - messages-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/24/handling-unsupported-inbound-messages-with-the-messages-api-dr
+canonical: https://developer.vonage.com/blog/2020/09/24/handling-unsupported-inbound-messages-with-the-messages-api-dr
 ---
 The [Messages API](https://developer.nexmo.com/messages/overview) enables you to connect with your customers over many social-messaging channels such as WhatsApp, Facebook Messenger, and Viber.
 

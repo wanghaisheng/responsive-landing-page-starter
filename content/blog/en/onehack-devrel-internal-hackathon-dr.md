@@ -12,8 +12,8 @@ category: event
 tags:
   - onehack
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/15/onehack-devrel-internal-hackathon-dr
+canonical: https://developer.vonage.com/blog/2018/12/15/onehack-devrel-internal-hackathon-dr
 ---
 On the 29th and 30th of November, we held the inaugural **[OneHack](https://twitter.com/search?f=tweets&vertical=default&q=%23onehack&src=typd)** in the Vonage London office. OneHack is a new series of internal hackathons run by our Developer Relations team which we’re planning on running in more global Vonage office locations in 2019. In this article, we’ll give you an overview of the planning that went into the hackathon and recount what happened at the event.
 

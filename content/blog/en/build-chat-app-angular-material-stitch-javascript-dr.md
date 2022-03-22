@@ -13,8 +13,8 @@ tags:
   - typescript
   - conversation-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/03/29/build-chat-app-angular-material-stitch-javascript-dr
+canonical: https://developer.vonage.com/blog/2018/03/29/build-chat-app-angular-material-stitch-javascript-dr
 ---
 In this tutorial, we'll enable chat in an Angular web application using the [JavaScript SDK](https://developer.nexmo.com/sdk/stitch/javascript/) and the [In-App API](https://developer.nexmo.com/api/stitch) so that users can communicate in our application. If you'd like to check out the source code, it lives on our [community GitHub page](https://github.com/nexmo-community/nexmo-stitch-angular).
 

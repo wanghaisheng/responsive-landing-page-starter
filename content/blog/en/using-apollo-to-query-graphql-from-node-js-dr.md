@@ -13,8 +13,8 @@ tags:
   - node
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/12/using-apollo-to-query-graphql-from-node-js-dr
+canonical: https://developer.vonage.com/blog/2020/03/12/using-apollo-to-query-graphql-from-node-js-dr
 ---
 It's a common scenario—you built a quick prototype, it worked great, and now management wants it live yesterday. Maybe you were accessing a third-party GraphQL endpoint and now you're in a rush to get something out the door. One of your roadblocks? That endpoint doesn't provide CORS headers. No more calling it directly from your frontend JavaScript app.
 

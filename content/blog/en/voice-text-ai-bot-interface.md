@@ -14,8 +14,8 @@ tags:
   - chat-bots
   - bots
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/09/21/voice-text-ai-bot-interface
+canonical: https://developer.vonage.com/blog/2017/09/21/voice-text-ai-bot-interface
 ---
 How do you decide whether your AI bot should be a chatbot or a voice bot? The context of the use case is an important factor of course, but should it be <span style="font-style: italic;">the</span> deciding factor or should you make both channels available to users? Microsoft Technical Evangelist Martin Beeby, CEO/Co-Founder of The Bot Platform Syd Lawrence, and CTO/Co-Founder of Opearlo Oscar Merry shared their thoughts from the frontlines of bot development.
 

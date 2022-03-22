@@ -13,8 +13,8 @@ tags:
   - c-sharp
   - azure
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/09/sms-language-understanding-with-luis-and-net-dr
+canonical: https://developer.vonage.com/blog/2020/04/09/sms-language-understanding-with-luis-and-net-dr
 ---
 How do you go about getting your user inputs? I bet if you're building a web app or GUI, you're probably going to be using some form that your user can fill out and submit. If you're writing a console app, you're going to have some coded series of inputs and flags that your user is going to give you. What if you wanted to take in a message, say an SMS, from a user and parse out actionable information from that SMS?
 

@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/07/receive-call-swift-dr
+canonical: https://developer.vonage.com/blog/2019/02/07/receive-call-swift-dr
 ---
 In this tutorial you will create a Swift application that can receive phone calls using the [Vapor](https://vapor.codes/) web framework and the [Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview). You can follow this tutorial on both MacOS or Ubuntu.
 

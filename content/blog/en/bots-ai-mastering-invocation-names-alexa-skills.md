@@ -14,8 +14,8 @@ tags:
   - bots
   - ai
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/11/02/bots-ai-mastering-invocation-names-alexa-skills
+canonical: https://developer.vonage.com/blog/2017/11/02/bots-ai-mastering-invocation-names-alexa-skills
 ---
 The invocation name you choose for an Alexa skill can have a huge impact on the usability of your voice app. In this video, CEO of The Bot Platform Syd Lawrence shares his own frustrations with the naming convention for Alexa apps. Opearlo Co-Founder Oscar Merry then offers one naming technique that will make your app much more engaging. Watch the video of their conversation here, or scroll below the video to read the full transcript. 
 

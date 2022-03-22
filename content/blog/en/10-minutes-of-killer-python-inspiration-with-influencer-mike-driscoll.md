@@ -13,8 +13,8 @@ tags:
   - fastapi
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/07/10-minutes-of-killer-python-inspiration-with-influencer-mike-driscoll
+canonical: https://developer.vonage.com/blog/2021/10/07/10-minutes-of-killer-python-inspiration-with-influencer-mike-driscoll
 outdated: false
 replacement_url: ""
 ---

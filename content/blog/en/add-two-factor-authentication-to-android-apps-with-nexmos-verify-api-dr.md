@@ -15,8 +15,8 @@ tags:
   - android
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/10/add-two-factor-authentication-to-android-apps-with-nexmos-verify-api-dr
+canonical: https://developer.vonage.com/blog/2018/05/10/add-two-factor-authentication-to-android-apps-with-nexmos-verify-api-dr
 ---
 [Two-factor authentication](https://www.nexmo.com/blog/2014/11/11/why-two-factor-authentication-2fa/) (2FA) adds an extra layer of security for users that are accessing sensitive information. In this tutorial, we will cover how to implement two-factor authentication for a user's phone number with Nexmo's Verify API endpoints.
 

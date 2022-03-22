@@ -12,8 +12,8 @@ tags:
   - environment variables
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/01/python-environment-variables-a-primer
+canonical: https://developer.vonage.com/blog/2021/10/01/python-environment-variables-a-primer
 outdated: false
 replacement_url: ""
 ---

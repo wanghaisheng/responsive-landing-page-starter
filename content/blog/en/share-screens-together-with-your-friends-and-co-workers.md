@@ -13,8 +13,8 @@ tags:
   - javascript
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/11/share-screens-together-with-your-friends-and-co-workers
+canonical: https://developer.vonage.com/blog/2021/03/11/share-screens-together-with-your-friends-and-co-workers
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - ruby-on-rails
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/04/build-an-ivr-with-ruby-on-rails-dr
+canonical: https://developer.vonage.com/blog/2019/07/04/build-an-ivr-with-ruby-on-rails-dr
 ---
 > We've built this example using Ruby 3.0.0 and Ruby on Rails 6.1.4.1, and the Vonage Voice API.
 

@@ -13,8 +13,8 @@ tags:
   - websockets
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/29/startup-spotlight-lets-meet-tucuvi
+canonical: https://developer.vonage.com/blog/2021/04/29/startup-spotlight-lets-meet-tucuvi
 outdated: false
 replacement_url: ""
 ---

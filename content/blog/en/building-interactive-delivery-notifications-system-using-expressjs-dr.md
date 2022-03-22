@@ -12,8 +12,8 @@ tags:
   - sms-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/09/29/building-interactive-delivery-notifications-system-using-expressjs-dr
+canonical: https://developer.vonage.com/blog/2016/09/29/building-interactive-delivery-notifications-system-using-expressjs-dr
 ---
 One of the amazing things about SMS is how ubiquitous it is. Whether you have a smartphone or an old '90s "dumb" phone you will be able to send and receive SMS messages. While many companies only use them as a notification service, they become **really** powerful when they facilitate a two way communication channel between companies and customers.
 

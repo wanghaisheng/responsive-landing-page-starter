@@ -12,8 +12,8 @@ tags:
   - Careers
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/22/rachel-sunderland-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2021/09/22/rachel-sunderland-joins-the-vonage-developer-relations-team
 outdated: false
 replacement_url: ""
 ---

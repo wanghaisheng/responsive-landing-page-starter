@@ -14,8 +14,8 @@ tags:
   - number-insight
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/06/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups
+canonical: https://developer.vonage.com/blog/2021/04/06/whatsapp-analytics-spatial-mapping-of-users-of-whatsapp-groups
 outdated: false
 replacement_url: ""
 ---

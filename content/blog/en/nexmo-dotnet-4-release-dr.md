@@ -12,8 +12,8 @@ tags:
   - csharp
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/25/nexmo-dotnet-4-release-dr
+canonical: https://developer.vonage.com/blog/2019/06/25/nexmo-dotnet-4-release-dr
 ---
 
 We are pleased to announce that the [Nexmo .NET client library v4.0.0](https://github.com/Nexmo/nexmo-dotnet) is now available via the NuGet Package Manager Console.

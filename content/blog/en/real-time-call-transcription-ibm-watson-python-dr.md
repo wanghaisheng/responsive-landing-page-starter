@@ -13,8 +13,8 @@ tags:
   - python
   - websockets
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/10/03/real-time-call-transcription-ibm-watson-python-dr
+canonical: https://developer.vonage.com/blog/2017/10/03/real-time-call-transcription-ibm-watson-python-dr
 ---
 We think our WebSocket feature is pretty awesome; it gives you a real-time stream of the audio from your phone call (and allows you to stream audio back) all within your web framework.
 

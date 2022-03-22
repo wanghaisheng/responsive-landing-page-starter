@@ -14,8 +14,8 @@ tags:
   - voice-api
   - stitch
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/14/connect-phone-call-to-stitch-in-app-voice-dr
+canonical: https://developer.vonage.com/blog/2018/05/14/connect-phone-call-to-stitch-in-app-voice-dr
 ---
 The [Nexmo Voice API](https://developer.nexmo.com/voice/voice-api/overview) allows you to build high-quality programmable voice applications in the cloud. With the Voice API, you can manage outbound and inbound calls in JSON, record and store calls, create a conference call, send text-to-speech messages in 23 languages with varieties of voices and accents, and so on.
 

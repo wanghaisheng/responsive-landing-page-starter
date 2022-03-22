@@ -11,8 +11,8 @@ tags:
   - startups
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/21/startup-community-partner-dms-accelerator
+canonical: https://developer.vonage.com/blog/2021/04/21/startup-community-partner-dms-accelerator
 outdated: false
 replacement_url: ""
 ---

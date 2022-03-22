@@ -14,8 +14,8 @@ tags:
   - UI
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/23/introducing-the-client-sdk-ui-web-components
+canonical: https://developer.vonage.com/blog/2021/04/23/introducing-the-client-sdk-ui-web-components
 outdated: false
 replacement_url: ""
 ---

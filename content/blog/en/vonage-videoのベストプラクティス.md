@@ -12,8 +12,8 @@ tags:
   - ビデオapi
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/24/vonage-videoのベストプラクティス
+canonical: https://developer.vonage.com/blog/2021/05/24/vonage-videoのベストプラクティス
 outdated: false
 replacement_url: ""
 ---

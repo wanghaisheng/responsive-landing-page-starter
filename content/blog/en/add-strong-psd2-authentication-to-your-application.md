@@ -13,6 +13,8 @@ tags:
   - verify-api
   - authentication
 comments: true
+redirect: https://developer.vonage.com/blog/2020/06/23/add-strong-psd2-authentication-to-your-application
+canonical: https://developer.vonage.com/blog/2020/06/23/add-strong-psd2-authentication-to-your-application
 ---
 
 With more and more purchases made online, the dangers of fraud and unauthorized payments increase.

@@ -12,8 +12,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/15/laura-joins-nexmos-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2019/08/15/laura-joins-nexmos-developer-relations-team-dr
 ---
 Hello :) I’m [Laura Czajkowski](https://twitter.com/czajkowski) and I’m super excited to join the Developer Relations Team at Nexmo! 
 

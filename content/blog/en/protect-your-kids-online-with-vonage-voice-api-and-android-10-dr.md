@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/30/protect-your-kids-online-with-vonage-voice-api-and-android-10-dr
+canonical: https://developer.vonage.com/blog/2020/04/30/protect-your-kids-online-with-vonage-voice-api-and-android-10-dr
 ---
 ## Build a Proxy App to Mask Sensitive Phone Numbers
 

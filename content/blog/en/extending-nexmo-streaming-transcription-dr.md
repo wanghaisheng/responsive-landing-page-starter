@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - streaming-transcription
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/10/extending-nexmo-streaming-transcription-dr
+canonical: https://developer.vonage.com/blog/2019/09/10/extending-nexmo-streaming-transcription-dr
 ---
 
 In the world of communication, words are vital, and getting the right ones is incredibly important. Transcriptions of voice calls can help businesses understand emerging trends in content from sales and support phone calls.

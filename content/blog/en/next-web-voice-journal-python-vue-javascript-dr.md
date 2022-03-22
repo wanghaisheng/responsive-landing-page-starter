@@ -13,8 +13,8 @@ tags:
   - python
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/06/19/next-web-voice-journal-python-vue-javascript-dr
+canonical: https://developer.vonage.com/blog/2018/06/19/next-web-voice-journal-python-vue-javascript-dr
 ---
 The world-wide-web is a wondrous thing. We can create and share information easier than at any point before in human history.
 

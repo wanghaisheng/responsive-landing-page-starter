@@ -12,8 +12,8 @@ tags:
   - go
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/03/handle-an-incoming-call-with-go
+canonical: https://developer.vonage.com/blog/2020/12/03/handle-an-incoming-call-with-go
 outdated: false
 replacement_url: ""
 ---

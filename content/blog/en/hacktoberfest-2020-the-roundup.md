@@ -13,8 +13,8 @@ tags:
   - hacktoberfest
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/05/hacktoberfest-2020-the-roundup
+canonical: https://developer.vonage.com/blog/2020/11/05/hacktoberfest-2020-the-roundup
 outdated: false
 replacement_url: ""
 ---

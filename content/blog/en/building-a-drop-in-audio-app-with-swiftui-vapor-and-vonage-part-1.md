@@ -14,8 +14,8 @@ tags:
   - vapor
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/02/building-a-drop-in-audio-app-with-swiftui-vapor-and-vonage-part-1
+canonical: https://developer.vonage.com/blog/2021/03/02/building-a-drop-in-audio-app-with-swiftui-vapor-and-vonage-part-1
 outdated: false
 replacement_url: ""
 ---

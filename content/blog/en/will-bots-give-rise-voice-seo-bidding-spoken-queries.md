@@ -13,8 +13,8 @@ tags:
   - bots
   - ai
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/11/09/will-bots-give-rise-voice-seo-bidding-spoken-queries
+canonical: https://developer.vonage.com/blog/2017/11/09/will-bots-give-rise-voice-seo-bidding-spoken-queries
 ---
 As users increasingly rely on voice bots and personal assistants for recommendations on their buying decisions, businesses will do all they can to have their products and services listed among the suggested options. Opearlo Co-Founder/CTO Oscar Merry and I speculated on what that experience might be like for users. Watch the video of our conversation here, or scroll below the video to read the full transcript. 
 

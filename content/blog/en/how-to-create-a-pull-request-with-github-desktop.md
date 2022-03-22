@@ -13,8 +13,8 @@ tags:
   - git
   - hacktoberfest
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/01/how-to-create-a-pull-request-with-github-desktop
+canonical: https://developer.vonage.com/blog/2020/10/01/how-to-create-a-pull-request-with-github-desktop
 ---
 In this tutorial, we will learn how to review code changes in GitHub Desktop, commit these changes and then create a pull request on GitHub. [Git](https://git-scm.com/) is a distributed version control system that allows developers to keep track of all changes to files within their projects. [GitHub](https://www.github.com) is a remote hosting platform that enables developers to store their projects externally. [GitHub Desktop](https://desktop.github.com) is a native application for both Windows and macOS to allow developers to manage their repositories.
 

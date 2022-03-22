@@ -11,8 +11,8 @@ category: inspiration
 tags:
   - ai
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/12/developers-primer-ai-terminology-dr
+canonical: https://developer.vonage.com/blog/2018/11/12/developers-primer-ai-terminology-dr
 ---
 If you’re a developer working on customer communication tech, you’ve almost certainly started to explore how AI can enhance what you’re building. And during your research you may well have looked back on your CS courses then wondered if the AI that people talk about today is the same thing that computer scientists have been working on for the past few decades. 
 

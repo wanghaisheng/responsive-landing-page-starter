@@ -15,8 +15,8 @@ tags:
   - messages-api
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/15/introducing-google-verified-sms-with-vonage
+canonical: https://developer.vonage.com/blog/2020/10/15/introducing-google-verified-sms-with-vonage
 old_categories:
   - developer
   - product

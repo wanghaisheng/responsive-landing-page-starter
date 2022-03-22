@@ -11,8 +11,8 @@ category: inspiration
 tags:
   - github
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/17/using-github-repository-guidelines-to-enhance-developer-experience-dr
+canonical: https://developer.vonage.com/blog/2020/01/17/using-github-repository-guidelines-to-enhance-developer-experience-dr
 ---
 At Nexmo, we love sharing code with our developer communities. Usually, this means publishing to a git repo on GitHub so that any developer that wants to use the code can go ahead and do so.
 

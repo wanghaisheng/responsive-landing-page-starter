@@ -14,8 +14,8 @@ tags:
   - laravel
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/14/converting-your-test-suite-to-pest
+canonical: https://developer.vonage.com/blog/2022/01/14/converting-your-test-suite-to-pest
 outdated: false
 replacement_url: ""
 ---

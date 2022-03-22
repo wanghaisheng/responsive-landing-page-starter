@@ -12,8 +12,8 @@ tags:
   - sms-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/21/startup-spotlight-series-lets-meet-chapa
+canonical: https://developer.vonage.com/blog/2022/02/21/startup-spotlight-series-lets-meet-chapa
 outdated: false
 replacement_url: ""
 ---

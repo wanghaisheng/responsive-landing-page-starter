@@ -13,8 +13,8 @@ tags:
   - hacktoberfest
   - opensource
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/28/vonage-joins-hacktoberfest-2020
+canonical: https://developer.vonage.com/blog/2020/09/28/vonage-joins-hacktoberfest-2020
 ---
 October is just around the corner—and that means [Hacktoberfest](https://hacktoberfest.digitalocean.com/) is nearly upon us! This year, Vonage is thrilled to be a Hacktoberfest 2020 partner. We're [no strangers to open source](https://youtu.be/zYJpYMCy6PA), with our libraries, code snippets, and demos all on GitHub. We couldn't be more excited to support participants, share our knowledge, and chat about how important open source contributions can be! To fully immerse yourself in the festivities, be sure to check out our [Hacktoberfest page](https://nexmo.dev/2GZcyHc) for details on all that we have planned!
 

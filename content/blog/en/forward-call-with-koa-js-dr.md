@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/05/forward-call-with-koa-js-dr
+canonical: https://developer.vonage.com/blog/2019/02/05/forward-call-with-koa-js-dr
 ---
 It's easy to [have an automated voice answer](https://learn.vonage.com/blog/2017/01/26/handle-inbound-text-speech-phone-call-node-js-dr/) when people call your [Vonage virtual number](https://developer.vonage.com/numbers/guides/number-management), but there are times you'll want to forward those calls on to a real person. With a minimal configuration and one webhook on a [Koa.js](https://koajs.com/) server, you can pass inbound calls to any number you choose.
 

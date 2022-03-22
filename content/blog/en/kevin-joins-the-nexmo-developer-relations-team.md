@@ -11,8 +11,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/06/kevin-joins-the-nexmo-developer-relations-team
+canonical: https://developer.vonage.com/blog/2020/02/06/kevin-joins-the-nexmo-developer-relations-team
 ---
 Hey there! My name is Kevin Lewis and I’m super excited to be joining the Developer Relations team at Nexmo.
 

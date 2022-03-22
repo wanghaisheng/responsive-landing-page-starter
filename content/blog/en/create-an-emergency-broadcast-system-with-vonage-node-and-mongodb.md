@@ -14,8 +14,8 @@ tags:
   - sms
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/10/create-an-emergency-broadcast-system-with-vonage-node-and-mongodb
+canonical: https://developer.vonage.com/blog/2022/02/10/create-an-emergency-broadcast-system-with-vonage-node-and-mongodb
 outdated: false
 replacement_url: ""
 ---

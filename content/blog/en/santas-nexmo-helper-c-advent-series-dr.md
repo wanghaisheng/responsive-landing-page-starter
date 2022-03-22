@@ -13,8 +13,8 @@ tags:
   - azure
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/12/19/santas-nexmo-helper-c-advent-series-dr
+canonical: https://developer.vonage.com/blog/2019/12/19/santas-nexmo-helper-c-advent-series-dr
 ---
 'Tis the season of Advent, such a busy time for so many, but none more than Ol' St. Nick, whose feast day the Eastern Rite celebrates today. In honor of the season of [C# Advent](https://crosscuttingconcerns.com/The-Third-Annual-csharp-Advent) that's upon us, we're going to help Santa out by automating some of his correspondence and providing him more modern means of fielding questions than the postal service.
 

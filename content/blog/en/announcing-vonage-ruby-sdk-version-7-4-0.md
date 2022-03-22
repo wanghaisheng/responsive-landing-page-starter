@@ -12,8 +12,8 @@ tags:
   - sdk
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/19/announcing-vonage-ruby-sdk-version-7-4-0
+canonical: https://developer.vonage.com/blog/2021/03/19/announcing-vonage-ruby-sdk-version-7-4-0
 outdated: false
 replacement_url: ""
 ---

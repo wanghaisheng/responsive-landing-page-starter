@@ -13,8 +13,8 @@ tags:
   - video-api
   - ""
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/04/stream-video-chat-with-texting-using-vonage-video-api-dr
+canonical: https://developer.vonage.com/blog/2020/05/04/stream-video-chat-with-texting-using-vonage-video-api-dr
 ---
 This series of tutorials will explore the [Vonage Video API (formerly TokBox OpenTok)](https://tokbox.com/developer/) and what you can build with it. The Video API is very robust and highly customizable, and in each post, we’ll show how to implement a specific feature using the API. This time we will look at how to provide an option for people to watch a stream of your video chat and interact with each other via text chat.
 

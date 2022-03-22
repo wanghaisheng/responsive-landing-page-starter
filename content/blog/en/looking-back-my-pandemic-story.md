@@ -13,8 +13,8 @@ tags:
   - devlife
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/03/looking-back-my-pandemic-story
+canonical: https://developer.vonage.com/blog/2021/11/03/looking-back-my-pandemic-story
 outdated: false
 replacement_url: ""
 ---

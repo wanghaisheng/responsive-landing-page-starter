@@ -13,8 +13,8 @@ tags:
   - ruby
   - ruby-on-rails
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/12/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1-building-the-backend-dr
+canonical: https://developer.vonage.com/blog/2020/05/12/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1-building-the-backend-dr
 ---
 My son recently celebrated his 9th birthday, and like many kids his age, he was looking forward to his birthday party for months. In the midst of the Covid-19 pandemic, we knew that we needed to do something different this year, so I built him a video watch party app using the Vonage Video API! 
 

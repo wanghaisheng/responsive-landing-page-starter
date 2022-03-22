@@ -13,8 +13,8 @@ tags:
   - github
   - hacktoberfest
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/29/an-introduction-to-git-dr
+canonical: https://developer.vonage.com/blog/2020/09/29/an-introduction-to-git-dr
 ---
 Vonage is thrilled to be a Hacktoberfest 2020 partner. We’re [no strangers to open source](https://youtu.be/zYJpYMCy6PA), with our libraries, code snippets, and demos all on GitHub. To fully immerse yourself in the festivities, be sure to check out our [Hacktoberfest page](https://nexmo.dev/2GZcyHc) for details on all that we have planned!
 

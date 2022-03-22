@@ -13,8 +13,8 @@ tags:
   - java
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/26/receiving-sms-delivery-receipts-with-java-and-spark-dr
+canonical: https://developer.vonage.com/blog/2019/07/26/receiving-sms-delivery-receipts-with-java-and-spark-dr
 ---
 You've learned [how to send a text message](https://www.nexmo.com/blog/2017/05/03/send-sms-messages-with-java-dr) from your Vonage virtual number using the SMS API. Everything looks good: your application is error-free and the API returns `status: 0`, so you're pretty confident that your message has been sent.
 

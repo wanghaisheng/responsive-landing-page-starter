@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - tensorflow
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/02/image-classifier-in-tensorflow-dr
+canonical: https://developer.vonage.com/blog/2018/10/02/image-classifier-in-tensorflow-dr
 ---
 In this post, you are going to build a basic image classification model for processing images sent by members of a conversation in an iOS app integrated with Nexmo In-App Messaging. After a user uploads an image, a caption describing the image will be displayed.
 

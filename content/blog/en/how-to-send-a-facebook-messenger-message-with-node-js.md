@@ -14,8 +14,8 @@ tags:
   - messages-api
   - facebook
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/11/how-to-send-a-facebook-messenger-message-with-node-js
+canonical: https://developer.vonage.com/blog/2020/05/11/how-to-send-a-facebook-messenger-message-with-node-js
 ---
 With Facebook Messenger, people connected to your organization on Facebook can access useful automated services. You might take orders, provide updates, or answer questions. If you're new to communicating this way or have relied exclusively on Facebook for your web presence until now, you might want to try it out first using Vonage's [Messages API Sandbox](https://developer.nexmo.com/messages/concepts/messages-api-sandbox). 
 

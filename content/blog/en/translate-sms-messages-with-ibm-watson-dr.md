@@ -12,8 +12,8 @@ tags:
   - sms-api
   - ibm-watson
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/12/translate-sms-messages-with-ibm-watson-dr
+canonical: https://developer.vonage.com/blog/2019/11/12/translate-sms-messages-with-ibm-watson-dr
 ---
 In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://learn.vonage.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr/) and [AWS Translate](https://learn.vonage.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr/).
 

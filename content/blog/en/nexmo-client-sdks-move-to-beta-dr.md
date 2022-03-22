@@ -12,8 +12,8 @@ category: announcement
 tags:
   - client-sdk
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/19/nexmo-client-sdks-move-to-beta-dr
+canonical: https://developer.vonage.com/blog/2019/09/19/nexmo-client-sdks-move-to-beta-dr
 ---
 We are happy to announce that *Nexmo Client SDKs have moved from Developer Preview to Beta!*
 

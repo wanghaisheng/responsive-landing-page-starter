@@ -14,8 +14,8 @@ tags:
   - xstate
   - state-machines
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/01/learn-and-apply-xstate-with-vonage-video
+canonical: https://developer.vonage.com/blog/2020/07/01/learn-and-apply-xstate-with-vonage-video
 ---
 Over the last few months, I have heard more about [state machines](https://en.wikipedia.org/wiki/Finite-state_machine) used for front-end development. The idea of a state machine is that it has only a finite number of states and can only be in one state at any given time. Conceptually this makes perfect sense for app development -  there are only a certain number of states available.
 

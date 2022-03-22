@@ -14,8 +14,8 @@ tags:
   - verify-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/16/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk
+canonical: https://developer.vonage.com/blog/2021/03/16/add-2fa-to-your-application-with-the-verify-api-and-golang-sdk
 outdated: false
 replacement_url: ""
 ---

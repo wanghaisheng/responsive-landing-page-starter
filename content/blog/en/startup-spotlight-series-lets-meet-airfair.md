@@ -12,8 +12,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/14/startup-spotlight-series-lets-meet-airfair
+canonical: https://developer.vonage.com/blog/2021/07/14/startup-spotlight-series-lets-meet-airfair
 outdated: false
 replacement_url: ""
 ---

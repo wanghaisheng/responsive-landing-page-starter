@@ -14,8 +14,8 @@ tags:
   - aws
   - serverless
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/20/serverless-python-with-aws-lambda-dr
+canonical: https://developer.vonage.com/blog/2020/03/20/serverless-python-with-aws-lambda-dr
 ---
 Using Python in serverless environments can be more automated than what I shared in my previous [post using PHP and Bref](https://www.nexmo.com/blog/2020/03/02/aws-lambda-with-php-using-bref-and-serverless-framework-dr). At AWS, there are already pre-existing environments making initial deployment easier without using additional tools. However, using tools like the Serverless framework still carries value.
 

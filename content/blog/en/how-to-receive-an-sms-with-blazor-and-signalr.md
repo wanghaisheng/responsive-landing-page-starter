@@ -13,8 +13,8 @@ tags:
   - signalr
   - sms
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/14/how-to-receive-an-sms-with-blazor-and-signalr
+canonical: https://developer.vonage.com/blog/2020/07/14/how-to-receive-an-sms-with-blazor-and-signalr
 ---
 When it comes to managing SMS messages with the [Vonage Messaging API](https://developer.nexmo.com/messaging/sms/overview), receiving inbound SMS messages is paramount. In this tutorial, we're going to explore receiving SMS messages into our app and pushing them out to our front end in real-time using [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) and [SignalR Core](https://docs.microsoft.com/en-us/aspnet/core/signalr/introduction?view=aspnetcore-3.1).
 

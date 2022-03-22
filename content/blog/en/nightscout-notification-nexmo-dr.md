@@ -13,8 +13,8 @@ tags:
   - messages-api
   - firebase
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/24/nightscout-notification-nexmo-dr
+canonical: https://developer.vonage.com/blog/2020/02/24/nightscout-notification-nexmo-dr
 ---
 In this tutorial, we'll be building **Scout**, an application created using [Python](https://www.python.org/) with [Flask](https://palletsprojects.com/p/flask/). On the client side, we'll use JavaScript for certain dynamic functionalities required for our app. This tutorial is split into two parts—in the first, we'll set up Google auth, build a user interface, and implement a Firebase Firestore.
 

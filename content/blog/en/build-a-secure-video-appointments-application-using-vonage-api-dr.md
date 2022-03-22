@@ -13,8 +13,8 @@ tags:
   - video-api
   - vue
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/09/build-a-secure-video-appointments-application-using-vonage-api-dr
+canonical: https://developer.vonage.com/blog/2020/04/09/build-a-secure-video-appointments-application-using-vonage-api-dr
 ---
 In today’s world, video is an essential and powerful tool for many use cases: whether you’re remotely joining a classroom, consulting with your doctor, or even sharing your whereabouts in an emergency. Those are just some examples of what developers have built with our platform, and they all have at least one thing in common: their solution provides a personalized experience using video.
 

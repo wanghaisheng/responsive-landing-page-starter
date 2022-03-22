@@ -13,8 +13,8 @@ tags:
   - dotnet
   - webassembly
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/20/build-an-sms-dashboard-with-blazor-webassembly
+canonical: https://developer.vonage.com/blog/2020/08/20/build-an-sms-dashboard-with-blazor-webassembly
 ---
 If you've been following [my Twitter feed](https://twitter.com/slorello), you may have noticed I've been building some demo apps with SMS along parallel tracks, with [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) and pure MVC.
 

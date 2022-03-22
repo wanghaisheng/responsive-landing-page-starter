@@ -13,8 +13,8 @@ tags:
   - node
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/12/introducing-distribution-ledger-technology-sms-indian-regulation
+canonical: https://developer.vonage.com/blog/2021/05/12/introducing-distribution-ledger-technology-sms-indian-regulation
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - opensource
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/06/visual-studio-code-extensions-to-enhance-productivity-in-2021
+canonical: https://developer.vonage.com/blog/2021/01/06/visual-studio-code-extensions-to-enhance-productivity-in-2021
 outdated: false
 replacement_url: ""
 ---

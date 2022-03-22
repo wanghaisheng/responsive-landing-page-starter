@@ -12,8 +12,8 @@ category: announcement
 tags:
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/08/introducing-the-messages-api-sandbox
+canonical: https://developer.vonage.com/blog/2020/04/08/introducing-the-messages-api-sandbox
 ---
 The Messages API Sandbox is a new way of developing and testing any application you want to build using [WhatsApp](https://www.whatsapp.com/), [Viber](https://www.viber.com/), or [Facebook Messenger](https://www.messenger.com/) via our [Messages API](https://developer.nexmo.com/messages/overview).
 

@@ -13,8 +13,8 @@ tags:
   - java
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/02/ivr-java-spark-framework-dr
+canonical: https://developer.vonage.com/blog/2019/07/02/ivr-java-spark-framework-dr
 ---
 An IVR is the technical name given to an automated phone call where you enter digits on your phone keypad and the call responds appropriately - by reading you information, or connecting you to a number, or whatever. The great thing is that you can build them with Nexmo Voice!
 

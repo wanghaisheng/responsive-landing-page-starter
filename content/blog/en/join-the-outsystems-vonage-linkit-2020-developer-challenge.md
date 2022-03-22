@@ -13,8 +13,8 @@ tags:
   - low-code
   - outsystems
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/29/join-the-outsystems-vonage-linkit-2020-developer-challenge
+canonical: https://developer.vonage.com/blog/2020/10/29/join-the-outsystems-vonage-linkit-2020-developer-challenge
 old_categories:
   - developer
 ---

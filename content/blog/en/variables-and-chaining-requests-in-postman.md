@@ -13,8 +13,8 @@ tags:
   - postman
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/19/variables-and-chaining-requests-in-postman
+canonical: https://developer.vonage.com/blog/2020/10/19/variables-and-chaining-requests-in-postman
 ---
 At Vonage, we use OpenAPI to describe all our APIs, and we also make those specifications [publicly available](https://developer.nexmo.com/concepts/guides/openapi). 
 One of our favourite things to do with an OpenAPI file we haven't seen before is to import it into [Postman](https://www.postman.com/). Therefore, we've decided to pay it forward and create a [Postman Collection](https://developer.nexmo.com/tools/postman) for our APIs so that evaluating and exploring them is quicker and easier than ever.

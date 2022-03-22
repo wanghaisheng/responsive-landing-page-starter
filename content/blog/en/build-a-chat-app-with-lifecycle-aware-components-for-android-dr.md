@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - android
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/03/28/build-a-chat-app-with-lifecycle-aware-components-for-android-dr
+canonical: https://developer.vonage.com/blog/2018/03/28/build-a-chat-app-with-lifecycle-aware-components-for-android-dr
 ---
 The Nexmo In-App SDK makes it easy for you to build chat features into your Android apps. When combined with [Android Architecture Components](https://developer.android.com/topic/libraries/architecture/index.html), the Nexmo In-App SDK can help you produce better-organized, easier to maintain, and lighter-weight code. In this post, we're going to take [our first Android quickstart](https://developer.nexmo.com/stitch/in-app-messaging/guides/1-simple-conversation?platform=android) and add lifecycle-aware components so that it's a bit easier to maintain.
 

@@ -14,8 +14,8 @@ tags:
   - netlify
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/17/build-a-serverless-eurovision-voting-system-with-node-js-and-vonage
+canonical: https://developer.vonage.com/blog/2020/06/17/build-a-serverless-eurovision-voting-system-with-node-js-and-vonage
 ---
 Eurovision is one of my favorite events of the year. For those who don't know, Eurovision is a singing competition which is [weird](https://www.youtube.com/watch?v=Ovt7YGHAj8I), [wonderful](https://www.youtube.com/watch?v=WXwgZL4zx9o) and [wacky](https://www.youtube.com/watch?v=NTjmX1JPoSA) in equal measures. Each participating country submits one act to perform an original song - which are often [ridiculous](https://youtu.be/hfjHJneVonE) and [brilliant](https://www.youtube.com/watch?v=gAh9NRGNhUU). Go on then - [have](https://www.youtube.com/watch?v=R3D-r4ogr7s) [a](https://www.youtube.com/watch?v=C-VMHOlCyW8) [few](https://www.youtube.com/watch?v=L_dWvTCdDQ4) [more](https://www.youtube.com/watch?v=SaolVEJEjV4) [links](https://www.youtube.com/watch?v=Eo5H62mCIsg).
 

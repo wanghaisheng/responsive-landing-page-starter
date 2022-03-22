@@ -13,8 +13,8 @@ tags:
   - cloudinary
   - conversation-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/29/screenshot-and-save-a-chatlog-with-conversation-api-and-cloudinary-dr
+canonical: https://developer.vonage.com/blog/2019/11/29/screenshot-and-save-a-chatlog-with-conversation-api-and-cloudinary-dr
 ---
 Imagine that in a moment of brilliance, after collaborating with teammates online, you’ve created and designed something rather impressive and now, before it flees from your memory, you need to quickly save the idea!
 

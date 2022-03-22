@@ -10,8 +10,8 @@ category: announcement
 tags:
   - vonage-voyagers
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/02/meet-the-first-voyagers-crew-part-1
+canonical: https://developer.vonage.com/blog/2020/11/02/meet-the-first-voyagers-crew-part-1
 outdated: false
 replacement_url: ""
 ---

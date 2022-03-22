@@ -14,8 +14,8 @@ tags:
   - javascript
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/03/02/getting-bad-date-fitbit-nexmo-dr
+canonical: https://developer.vonage.com/blog/2018/03/02/getting-bad-date-fitbit-nexmo-dr
 ---
 So, you've been set up for a blind date by your friends Bob and Carol, who it turns out are *fantastically* bad judges of character. Your date is rude, has terrible table manners and to be honest, smells funny.
 

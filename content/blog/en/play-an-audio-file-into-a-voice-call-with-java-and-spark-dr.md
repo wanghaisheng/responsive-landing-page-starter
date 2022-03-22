@@ -12,8 +12,8 @@ tags:
   - java
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/02/play-an-audio-file-into-a-voice-call-with-java-and-spark-dr
+canonical: https://developer.vonage.com/blog/2019/08/02/play-an-audio-file-into-a-voice-call-with-java-and-spark-dr
 ---
 This tutorial shows you how to stream audio into a call using the Nexmo Voice API.
 

@@ -13,8 +13,8 @@ tags:
   - swift
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/01/18/adding-phone-sms-tts-biometric-verification-ios-application-dr
+canonical: https://developer.vonage.com/blog/2017/01/18/adding-phone-sms-tts-biometric-verification-ios-application-dr
 ---
 [Two-factor authentication](https://learn.vonage.com/blog/2014/11/11/why-two-factor-authentication-2fa/) (2FA) adds an extra layer of security for users that are accessing sensitive information. There are multiple types of 2FA, such as:
 

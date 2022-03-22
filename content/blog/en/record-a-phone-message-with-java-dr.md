@@ -13,8 +13,8 @@ tags:
   - java
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/19/record-a-phone-message-with-java-dr
+canonical: https://developer.vonage.com/blog/2019/02/19/record-a-phone-message-with-java-dr
 ---
 ## Introduction
 

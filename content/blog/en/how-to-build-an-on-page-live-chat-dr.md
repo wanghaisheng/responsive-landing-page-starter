@@ -14,8 +14,8 @@ category: tutorial
 tags:
   - conversation-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/18/how-to-build-an-on-page-live-chat-dr
+canonical: https://developer.vonage.com/blog/2019/10/18/how-to-build-an-on-page-live-chat-dr
 ---
 The Vonage [Conversation API](https://developer.vonage.com/conversation/overview) allows developers to build conversation features where communication can take place across multiple mediums. A key aspect of this is that the context of the conversations can be maintained across mediums, which opens up a myriad of possibilities. 
 

@@ -12,8 +12,8 @@ tags:
   - deno
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/09/build-a-speech-translation-app-on-deno-with-azure-and-vonage
+canonical: https://developer.vonage.com/blog/2020/06/09/build-a-speech-translation-app-on-deno-with-azure-and-vonage
 ---
 Vonage recently released [Automatic Speech Recognition (ASR)](https://developer.nexmo.com/voice/voice-api/guides/asr) as a new feature on the Voice API, which is a great reason to build an entertaining new voice application to leverage this new capability! 
 

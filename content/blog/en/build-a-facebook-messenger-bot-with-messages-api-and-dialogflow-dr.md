@@ -13,8 +13,8 @@ tags:
   - javascript
   - messaging-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/16/build-a-facebook-messenger-bot-with-messages-api-and-dialogflow-dr
+canonical: https://developer.vonage.com/blog/2018/10/16/build-a-facebook-messenger-bot-with-messages-api-and-dialogflow-dr
 ---
 *Post updated by[ Amanda Cavallaro](https://learn.vonage.com/authors/amanda-cavallaro/)*
 

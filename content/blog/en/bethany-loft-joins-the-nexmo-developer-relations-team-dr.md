@@ -12,8 +12,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/10/bethany-loft-joins-the-nexmo-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2019/09/10/bethany-loft-joins-the-nexmo-developer-relations-team-dr
 ---
 
 Hello everyone, I’m Bethany Loft and I am delighted to be joining the Nexmo Developer Relations Team as Junior Developer Community Event Manager. 

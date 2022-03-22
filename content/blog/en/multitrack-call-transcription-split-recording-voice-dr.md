@@ -13,8 +13,8 @@ tags:
   - javascript
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/03/multitrack-call-transcription-split-recording-voice-dr
+canonical: https://developer.vonage.com/blog/2018/12/03/multitrack-call-transcription-split-recording-voice-dr
 ---
 Back in April we announced that [split recording](https://www.nexmo.com/blog/2018/04/17/dual-channel-transcription-split-recording-dr/) was available as part of the Nexmo Voice API. Split recording allows you to record a conversation in stereo, one participant in each channel. This makes common use cases such as transcription much easier to handle.
 

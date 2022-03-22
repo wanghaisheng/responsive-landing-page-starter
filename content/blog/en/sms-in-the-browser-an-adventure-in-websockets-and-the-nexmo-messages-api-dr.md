@@ -12,8 +12,8 @@ tags:
   - javascript
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/01/15/sms-in-the-browser-an-adventure-in-websockets-and-the-nexmo-messages-api-dr
+canonical: https://developer.vonage.com/blog/2019/01/15/sms-in-the-browser-an-adventure-in-websockets-and-the-nexmo-messages-api-dr
 ---
 A lot of the heavy lifting done by the Nexmo Messages API happens on the server-side. Messages are sent, received, processed and so on but usually all this activity is hidden away from end users of many of the applications that utilise the API.
 

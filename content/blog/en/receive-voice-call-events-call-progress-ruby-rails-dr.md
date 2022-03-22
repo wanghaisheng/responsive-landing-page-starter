@@ -13,8 +13,8 @@ tags:
   - ruby
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/12/19/receive-voice-call-events-call-progress-ruby-rails-dr
+canonical: https://developer.vonage.com/blog/2017/12/19/receive-voice-call-events-call-progress-ruby-rails-dr
 ---
 _This is the second article in a series of "Getting Started with Nexmo APIs and Ruby on Rails" tutorials. It continues the "[Getting Started with Nexmo SMS and Ruby on Rails](https://www.nexmo.com/blog/2017/10/16/send-sms-ruby-on-rails-dr/)" series._
 

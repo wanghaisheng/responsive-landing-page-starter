@@ -13,8 +13,8 @@ tags:
   - messages-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/18/break-awkward-silences-with-terrible-festive-jokes-via-sms-dr
+canonical: https://developer.vonage.com/blog/2018/12/18/break-awkward-silences-with-terrible-festive-jokes-via-sms-dr
 ---
 In this tutorial I'll show you how to build your own awkward silence breaker, in the form of an SMS app that will reply to you with terrible festive jokes and one-liners that you can throw out to the table, quickly breaking the tension.
 

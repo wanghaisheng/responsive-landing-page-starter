@@ -13,8 +13,8 @@ tags:
   - voice-api
   - azure
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/27/how-to-use-azure-functions-with-python-dr
+canonical: https://developer.vonage.com/blog/2019/09/27/how-to-use-azure-functions-with-python-dr
 ---
 Here at Vonage, we try to make our APIs as simple to use as possible. One awkward thing we can't get away from, though, is that many of our APIs, like the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview), need to ask your app what to do during a call. This means you need to run your own *server*. Or do you?
 

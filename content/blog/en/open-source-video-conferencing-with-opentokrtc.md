@@ -14,8 +14,8 @@ tags:
   - node
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/24/open-source-video-conferencing-with-opentokrtc
+canonical: https://developer.vonage.com/blog/2021/03/24/open-source-video-conferencing-with-opentokrtc
 outdated: false
 replacement_url: ""
 ---

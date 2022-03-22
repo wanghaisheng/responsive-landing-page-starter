@@ -13,8 +13,8 @@ tags:
   - new-joiner
   - introduction
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/03/clarisse-ng-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2020/07/03/clarisse-ng-joins-the-vonage-developer-relations-team
 ---
 Hello Everyone, I'm Clarisse. I am excited to join the Developer Relations team as a Developer Community Manager in APAC.
  

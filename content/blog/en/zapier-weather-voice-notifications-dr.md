@@ -14,8 +14,8 @@ tags:
   - low-code
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/13/zapier-weather-voice-notifications-dr
+canonical: https://developer.vonage.com/blog/2020/07/13/zapier-weather-voice-notifications-dr
 ---
 During the past couple of months, most people's lives and routines took a turn for the unexpected, and mine was no exception.
 

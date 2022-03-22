@@ -12,8 +12,8 @@ tags:
   - sms-api
   - aws
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr
+canonical: https://developer.vonage.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr
 ---
 In my previous post, I showed how we can set up the translation of text messages with the [Google Translation API](https://learn.vonage.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr/). I will continue with that same idea in this post using AWS Translate.
 

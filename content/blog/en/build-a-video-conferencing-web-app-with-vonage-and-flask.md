@@ -13,8 +13,8 @@ tags:
   - flask
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/10/build-a-video-conferencing-web-app-with-vonage-and-flask
+canonical: https://developer.vonage.com/blog/2021/12/10/build-a-video-conferencing-web-app-with-vonage-and-flask
 outdated: false
 replacement_url: ""
 ---

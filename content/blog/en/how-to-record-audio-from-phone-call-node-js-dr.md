@@ -12,8 +12,8 @@ tags:
   - voice-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/02/06/how-to-record-audio-from-phone-call-node-js-dr
+canonical: https://developer.vonage.com/blog/2017/02/06/how-to-record-audio-from-phone-call-node-js-dr
 ---
 *This is the third tutorial in the “Getting Started with Nexmo and Node.js” series, which followed our Getting Started series on SMS APIs. See links to prior tutorials in these series at the bottom of the post.*
 

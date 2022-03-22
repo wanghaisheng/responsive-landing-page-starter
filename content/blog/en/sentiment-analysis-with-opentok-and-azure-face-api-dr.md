@@ -14,8 +14,8 @@ tags:
   - video-api
   - azure
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/27/sentiment-analysis-with-opentok-and-azure-face-api-dr
+canonical: https://developer.vonage.com/blog/2020/01/27/sentiment-analysis-with-opentok-and-azure-face-api-dr
 ---
 You know that person. It could be your significant other, a child, a co-worker, or a friend. The person that says one thing, but you can tell by their face, they mean something completely different. You probably just pictured them in your head. Maybe you remember the exact conversation. Perhaps it went like this:
 

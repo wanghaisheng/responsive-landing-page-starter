@@ -13,8 +13,8 @@ tags:
   - video-api
   - machine-learning
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/20/building-a-machine-learning-model-for-answering-machine-detection-dr
+canonical: https://developer.vonage.com/blog/2019/03/20/building-a-machine-learning-model-for-answering-machine-detection-dr
 ---
 Did you ever need a way to detect when an answering machine was on a voice call? No? Thats ok. I did!
 

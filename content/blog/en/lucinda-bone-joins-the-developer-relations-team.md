@@ -11,8 +11,8 @@ tags:
   - careers
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/24/lucinda-bone-joins-the-developer-relations-team
+canonical: https://developer.vonage.com/blog/2022/01/24/lucinda-bone-joins-the-developer-relations-team
 outdated: false
 replacement_url: ""
 ---

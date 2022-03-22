@@ -14,8 +14,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/14/play-an-audio-file-into-a-voice-call-with-go
+canonical: https://developer.vonage.com/blog/2021/01/14/play-an-audio-file-into-a-voice-call-with-go
 outdated: false
 replacement_url: ""
 ---

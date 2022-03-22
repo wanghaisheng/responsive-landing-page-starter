@@ -12,8 +12,8 @@ tags:
   - voice-api
   - node-red
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/07/conference-call-node-red-dr
+canonical: https://developer.vonage.com/blog/2019/10/07/conference-call-node-red-dr
 ---
 In [previous tutorials](https://www.nexmo.com/blog/tag/node-red) you've had a chance to get your feet wet in the world of Nexmo APIs, making and receiving phone calls using the [Voice API](https://developer.nexmo.com/voice/voice-api/overview), and hopefully also customizing these experiences.
 

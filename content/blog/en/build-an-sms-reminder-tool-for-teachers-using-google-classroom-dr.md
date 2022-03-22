@@ -15,8 +15,8 @@ tags:
   - google-classroom
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/04/build-an-sms-reminder-tool-for-teachers-using-google-classroom-dr
+canonical: https://developer.vonage.com/blog/2020/06/04/build-an-sms-reminder-tool-for-teachers-using-google-classroom-dr
 ---
 I've worked in education technology for several years now, and one challenge that I often hear from teachers is that students don't check their email accounts. There are whole businesses, like [Remind](https://www.remind.com/), built around this communication problem.
 

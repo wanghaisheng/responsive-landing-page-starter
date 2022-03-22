@@ -12,8 +12,8 @@ tags:
   - careers
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/25/nick-anderson-joins-the-vonage-technical-writing-team
+canonical: https://developer.vonage.com/blog/2021/06/25/nick-anderson-joins-the-vonage-technical-writing-team
 outdated: false
 replacement_url: ""
 ---

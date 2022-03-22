@@ -13,8 +13,8 @@ tags:
   - python
   - audit-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/09/get-nexmo-audit-events-with-python-dr
+canonical: https://developer.vonage.com/blog/2018/10/09/get-nexmo-audit-events-with-python-dr
 ---
 In this blog post you'll see how to create a web application in Python that allows you to view Nexmo audit events. Within Nexmo this monitoring of accounts is achieved through the Audit API.
 

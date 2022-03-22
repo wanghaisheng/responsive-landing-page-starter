@@ -11,8 +11,8 @@ category: release
 tags:
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/03/opentok-version-2-18-whats-new-and-how-you-can-use-it
+canonical: https://developer.vonage.com/blog/2020/09/03/opentok-version-2-18-whats-new-and-how-you-can-use-it
 ---
 
 The Vonage Video API team recently released a new version of the Vonage Video Client SDK - v2.18 (formerly TokBox OpenTok). This post is an overview of the new features and how you can use them. I will cover the launch of our latest Linux SDK, IP Proxy feature, updates to WebRTC stats, improvements to security, and more!

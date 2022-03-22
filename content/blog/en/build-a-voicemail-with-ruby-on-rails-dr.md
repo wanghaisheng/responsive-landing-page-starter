@@ -12,8 +12,8 @@ tags:
   - ruby-on-rails
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/17/build-a-voicemail-with-ruby-on-rails-dr
+canonical: https://developer.vonage.com/blog/2019/06/17/build-a-voicemail-with-ruby-on-rails-dr
 ---
 Have you ever wanted to be able to provide customers with a phone number they can call and just leave you a message? You can create your own voicemail application powered by the Nexmo Voice API and Ruby on Rails. In this tutorial we will walk through the steps to get up and running. Your application will be able to receive phone calls, record voicemail messages and have a web interface to display all messages and play them.
 

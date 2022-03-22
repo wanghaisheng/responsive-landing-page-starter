@@ -12,8 +12,8 @@ tags:
   - java
   - spark
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/15/create-websocket-server-spark-framework-dr
+canonical: https://developer.vonage.com/blog/2018/10/15/create-websocket-server-spark-framework-dr
 ---
 [WebSocket](https://en.wikipedia.org/wiki/WebSocket) is a protocol which enables communication between the server and the browser. It has an advantage over RESTful HTTP because communications are both bi-directional and real-time. This allows for the server to notify the client at any time instead of the client polling on a regular interval for updates.
 

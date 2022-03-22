@@ -15,8 +15,8 @@ tags:
   - cloud-functions
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/27/build-a-voice-proxy-with-cloud-functions
+canonical: https://developer.vonage.com/blog/2021/07/27/build-a-voice-proxy-with-cloud-functions
 outdated: false
 replacement_url: ""
 ---

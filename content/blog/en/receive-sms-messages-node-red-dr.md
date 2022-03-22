@@ -13,8 +13,8 @@ tags:
   - javascript
   - node-red
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/24/receive-sms-messages-node-red-dr
+canonical: https://developer.vonage.com/blog/2019/04/24/receive-sms-messages-node-red-dr
 ---
 *This is the second article in a series of “Getting Started with Nexmo and Node-RED” tutorials.*
 

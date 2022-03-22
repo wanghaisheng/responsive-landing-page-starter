@@ -15,8 +15,8 @@ tags:
   - verify-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/26/add-sms-verification-in-a-react-native-app-using-node-js-and-express-dr
+canonical: https://developer.vonage.com/blog/2020/05/26/add-sms-verification-in-a-react-native-app-using-node-js-and-express-dr
 ---
 Building a mobile app comes with many challenges. React Native can ease many of these challenges when it comes to cross-compatibility support, but obviously, there's still a significant amount of engineering effort involved in any app. You may want to implement SMS-based two-factor-authentication (2FA) to block [upwards of 100% of bot-based account takeovers](https://security.googleblog.com/2019/05/new-research-how-effective-is-basic.html), or even integrate a "share this app with your friends" marketing tool. 
 

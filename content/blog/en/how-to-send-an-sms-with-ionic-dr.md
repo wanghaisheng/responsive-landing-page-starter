@@ -14,8 +14,8 @@ tags:
   - ionic
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/19/how-to-send-an-sms-with-ionic-dr
+canonical: https://developer.vonage.com/blog/2020/08/19/how-to-send-an-sms-with-ionic-dr
 ---
 
 Developing cross-platform mobile applications and connecting to 3rd-party APIs are highly in-demand skills in tech. Today I’ll show you how to build a basic Ionic mobile application that connects to the Vonage SMS API to send SMS messages!

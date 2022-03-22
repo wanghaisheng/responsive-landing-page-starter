@@ -14,8 +14,8 @@ tags:
   - hackathon
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/30/vonage-joins-code-chrysalis-api-night-hackathon
+canonical: https://developer.vonage.com/blog/2021/09/30/vonage-joins-code-chrysalis-api-night-hackathon
 outdated: false
 replacement_url: ""
 ---

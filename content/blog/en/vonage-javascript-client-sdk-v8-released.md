@@ -13,8 +13,8 @@ tags:
   - release
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/13/vonage-javascript-client-sdk-v8-released
+canonical: https://developer.vonage.com/blog/2021/07/13/vonage-javascript-client-sdk-v8-released
 outdated: false
 replacement_url: ""
 ---

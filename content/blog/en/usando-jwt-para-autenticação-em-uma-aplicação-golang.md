@@ -14,8 +14,8 @@ tags:
   - messages-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/13/usando-jwt-para-autenticação-em-uma-aplicação-golang
+canonical: https://developer.vonage.com/blog/2020/03/13/usando-jwt-para-autenticação-em-uma-aplicação-golang
 outdated: false
 replacement_url: ""
 ---

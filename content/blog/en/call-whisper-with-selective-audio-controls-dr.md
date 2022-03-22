@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/13/call-whisper-with-selective-audio-controls-dr
+canonical: https://developer.vonage.com/blog/2018/12/13/call-whisper-with-selective-audio-controls-dr
 ---
 
 Nexmo's been a popular choice for contact centre solutions for a long time, but with today's release of Selective Audio Controls we're taking it to the next level. Selective audio controls solve a common use case - a supervisor listening to a call but only being heard by their employee and not the customer - in an intuitive way.

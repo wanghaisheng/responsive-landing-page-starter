@@ -13,8 +13,8 @@ tags:
   - sms-api
   - ibm-cloud
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/13/sentiment-analysis-using-ibm-watson-tone-analyzer-in-php-dr
+canonical: https://developer.vonage.com/blog/2020/01/13/sentiment-analysis-using-ibm-watson-tone-analyzer-in-php-dr
 ---
 In a world where data and text often take a front-row seat, it is increasingly important to understand the sentiment of communications we receive. It is also important to understand how words we use can convey a mistaken sentiment.
 

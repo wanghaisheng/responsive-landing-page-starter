@@ -1,5 +1,5 @@
 ---
-title: "SMS Spam Detection with Machine Learning in Python"
+title: SMS Spam Detection with Machine Learning in Python
 description: Use Python to build a machine learning model for detecting spam SMS
   messages and incorporate the model into Flask application.
 thumbnail: /content/blog/sms-spam-detection-with-machine-learning-in-python/python_flash_ml-sms_spam1200x600.png
@@ -14,8 +14,8 @@ tags:
   - flask
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/19/sms-spam-detection-with-machine-learning-in-python
+canonical: https://developer.vonage.com/blog/2020/11/19/sms-spam-detection-with-machine-learning-in-python
 outdated: false
 replacement_url: ""
 ---

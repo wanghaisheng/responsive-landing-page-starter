@@ -13,8 +13,8 @@ tags:
   - devrel
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/17/happy-holidays-from-vonage
+canonical: https://developer.vonage.com/blog/2021/12/17/happy-holidays-from-vonage
 outdated: false
 replacement_url: ""
 ---

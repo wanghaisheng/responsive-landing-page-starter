@@ -13,8 +13,8 @@ tags:
   - whatsapp
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/13/provisioning-and-sending-whatsapp-stickers-with-vonage-apis
+canonical: https://developer.vonage.com/blog/2022/01/13/provisioning-and-sending-whatsapp-stickers-with-vonage-apis
 outdated: false
 replacement_url: ""
 ---

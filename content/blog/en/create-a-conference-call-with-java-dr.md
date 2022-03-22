@@ -12,8 +12,8 @@ tags:
   - java
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/23/create-a-conference-call-with-java-dr
+canonical: https://developer.vonage.com/blog/2019/08/23/create-a-conference-call-with-java-dr
 ---
 In this tutorial, you will learn how to initiate a conference call to connect multiple people who phone into a number. The example code is [on GitHub](https://github.com/nexmo-community/java-conference-call).
 

@@ -11,8 +11,8 @@ tags:
   - php
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/27/announcing-the-php-server-sdk-version-3-0-release
+canonical: https://developer.vonage.com/blog/2022/01/27/announcing-the-php-server-sdk-version-3-0-release
 outdated: false
 replacement_url: ""
 ---

@@ -13,8 +13,8 @@ tags:
   - open-source
   - social-impact
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/16/33-high-impact-open-source-projects-seeking-contributors
+canonical: https://developer.vonage.com/blog/2020/10/16/33-high-impact-open-source-projects-seeking-contributors
 ---
 
 There is no shortage of open source projects dedicated to social change and improving lives. However, projects with a social good application often do not get the support and attention they deserve. This is unfortunate as the collaborative nature of open source can spark innovation and accelerate social good.

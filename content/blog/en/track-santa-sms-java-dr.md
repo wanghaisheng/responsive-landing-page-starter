@@ -14,8 +14,8 @@ tags:
   - number-insight-api
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/07/track-santa-sms-java-dr
+canonical: https://developer.vonage.com/blog/2018/12/07/track-santa-sms-java-dr
 ---
 Since December of 2004, [Google](http://google.com) has provided an annual Christmas-themed site which allows users to track Santa during Christmas Eve. Additionally, [NORAD](http://www.norad.mil/) has been tracking Santa since 1955. While no official API exists, there is an [unofficial API](https://santa-api.appspot.com/info?client=web) which can be used to track Santa’s whereabouts.
 

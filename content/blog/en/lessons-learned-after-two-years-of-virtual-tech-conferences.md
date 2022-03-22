@@ -14,8 +14,8 @@ tags:
   - conferences
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/03/14/lessons-learned-after-two-years-of-virtual-tech-conferences
+canonical: https://developer.vonage.com/blog/2022/03/14/lessons-learned-after-two-years-of-virtual-tech-conferences
 outdated: false
 replacement_url: ""
 ---

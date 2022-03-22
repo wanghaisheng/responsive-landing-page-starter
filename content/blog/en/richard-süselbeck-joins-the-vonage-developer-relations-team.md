@@ -13,8 +13,8 @@ tags:
   - introduction
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/04/richard-süselbeck-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2021/10/04/richard-süselbeck-joins-the-vonage-developer-relations-team
 outdated: false
 replacement_url: ""
 ---

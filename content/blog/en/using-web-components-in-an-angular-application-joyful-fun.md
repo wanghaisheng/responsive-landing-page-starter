@@ -14,8 +14,8 @@ tags:
   - WebComponent
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/16/using-web-components-in-an-angular-application-joyful-fun
+canonical: https://developer.vonage.com/blog/2021/02/16/using-web-components-in-an-angular-application-joyful-fun
 outdated: false
 replacement_url: ""
 ---

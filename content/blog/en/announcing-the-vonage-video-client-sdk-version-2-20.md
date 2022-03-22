@@ -12,8 +12,8 @@ tags:
   - video-api
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/30/announcing-the-vonage-video-client-sdk-version-2-20
+canonical: https://developer.vonage.com/blog/2021/07/30/announcing-the-vonage-video-client-sdk-version-2-20
 outdated: false
 replacement_url: ""
 ---

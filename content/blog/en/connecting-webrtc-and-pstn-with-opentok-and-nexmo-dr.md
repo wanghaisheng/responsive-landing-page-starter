@@ -14,8 +14,8 @@ tags:
   - javascript
   - SIP
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr
+canonical: https://developer.vonage.com/blog/2019/04/23/connecting-webrtc-and-pstn-with-opentok-and-nexmo-dr
 ---
 At Nexmo, we recently announced [SIP Connect](https://www.nexmo.com/blog/2019/04/23/introducing-sip-connect-beta/) which allows you to connect WebRTC endpoints with the Nexmo Voice API. This feature makes it possible for PSTN users to dial into an OpenTok video session.
 

@@ -12,8 +12,8 @@ tags:
   - payments
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/11/payments-over-the-phone-now-supports-multi-currency
+canonical: https://developer.vonage.com/blog/2022/01/11/payments-over-the-phone-now-supports-multi-currency
 outdated: false
 replacement_url: ""
 ---

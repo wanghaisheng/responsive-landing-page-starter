@@ -12,8 +12,8 @@ category: community
 tags:
   - vonage-campus
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/11/announcing-the-vonage-campus-developer-track-dr
+canonical: https://developer.vonage.com/blog/2019/09/11/announcing-the-vonage-campus-developer-track-dr
 ---
 Our first developer conference, [Vonage Campus](https://www.vonage.com/campus/#developers), is taking place in San Francisco on October 29-30 and we’re excited to share the final agenda for this special code-on-screen event where we’ll be digging deep into all the tools and APIs you need to create engaging customer journeys through conversation.
 

@@ -12,8 +12,8 @@ tags:
   - ai
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/06/20/nexmo-integrations-ai-vendors-real-time-intelligence
+canonical: https://developer.vonage.com/blog/2018/06/20/nexmo-integrations-ai-vendors-real-time-intelligence
 ---
 Nexmo has long led the charge in providing you with the tools to add contextual communications to your applications. Today we announced new partnerships with a number of Artificial Intelligence leaders including Amazon, Google, IBM Watson, and Microsoft. Together with these partners, Nexmo enables rapid, agile innovation, allowing you to combine AI and communications solutions. Nexmo is uniquely positioned to enable you to integrate AI into real-time communications apps using the WebSockets feature of the Voice API.
 

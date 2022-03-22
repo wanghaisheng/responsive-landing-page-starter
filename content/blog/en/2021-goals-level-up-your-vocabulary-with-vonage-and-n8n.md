@@ -14,8 +14,8 @@ tags:
   - sms-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/09/2021-goals-level-up-your-vocabulary-with-vonage-and-n8n
+canonical: https://developer.vonage.com/blog/2021/03/09/2021-goals-level-up-your-vocabulary-with-vonage-and-n8n
 outdated: false
 replacement_url: ""
 ---

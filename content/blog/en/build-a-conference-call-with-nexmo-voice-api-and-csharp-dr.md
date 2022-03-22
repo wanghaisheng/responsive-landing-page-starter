@@ -13,8 +13,8 @@ tags:
   - voice-api
   - csharp
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/05/16/build-a-conference-call-with-nexmo-voice-api-and-csharp-dr
+canonical: https://developer.vonage.com/blog/2019/05/16/build-a-conference-call-with-nexmo-voice-api-and-csharp-dr
 ---
 This is the sixth tutorial on how to use Voice APIs with ASP.NET series. In the previous tutorial, we learnt [how to forward a call via voice proxy with ASP.NET Core](https://learn.vonage.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr/). In today's tutorial, we will learn how to set up a conference call so multiple people can join the same call.
 

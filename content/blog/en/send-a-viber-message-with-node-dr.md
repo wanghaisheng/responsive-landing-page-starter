@@ -13,8 +13,8 @@ tags:
   - viber
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/22/send-a-viber-message-with-node-dr
+canonical: https://developer.vonage.com/blog/2020/04/22/send-a-viber-message-with-node-dr
 ---
 If you or your customers are in a country where Viber is the default messaging platform, you'll want your organization to be able to communicate using the service too. You might perform core work via text message or just want to send out notifications. Whatever the complexity, you can add Viber communication to your Node.js app. To see how it works without applying for a [Viber business profile](https://developer.nexmo.com/messages/concepts/viber), you can use [Vonage's Viber sandbox](https://learn.vonage.com/blog/2020/04/08/introducing-the-messages-api-sandbox).
 

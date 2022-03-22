@@ -12,8 +12,8 @@ tags:
   - sms
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/19/mitigate-2fa-sms-fraud-using-vonage-apis
+canonical: https://developer.vonage.com/blog/2022/01/19/mitigate-2fa-sms-fraud-using-vonage-apis
 outdated: false
 replacement_url: ""
 ---

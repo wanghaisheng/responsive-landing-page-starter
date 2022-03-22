@@ -13,8 +13,8 @@ tags:
   - opensource
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/28/hacktoberfest-dos-and-donts
+canonical: https://developer.vonage.com/blog/2021/09/28/hacktoberfest-dos-and-donts
 outdated: false
 replacement_url: ""
 ---

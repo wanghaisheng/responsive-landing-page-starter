@@ -13,8 +13,8 @@ tags:
   - android
   - firebase
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/07/03/make-and-receive-phone-calls-in-android-apps-with-nexmo-in-app-voice-and-firebase-dr
+canonical: https://developer.vonage.com/blog/2018/07/03/make-and-receive-phone-calls-in-android-apps-with-nexmo-in-app-voice-and-firebase-dr
 ---
 With [Nexmo In-App Voice](https://developer.nexmo.com/stitch/in-app-voice/overview), you can easily make and receive phone calls with the Nexmo Stitch Android SDK and WebRTC technology. In this tutorial we'll show you how to make a simple Android app that can make outbound phone calls and receive incoming phone calls. This functionality could be used where customers want to make and receive calls to customer service, without leaving the app.
 

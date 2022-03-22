@@ -13,8 +13,8 @@ tags:
   - javascript
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/03/18/build-a-message-scheduler-with-node-and-vonage
+canonical: https://developer.vonage.com/blog/2022/03/18/build-a-message-scheduler-with-node-and-vonage
 outdated: false
 replacement_url: ""
 ---

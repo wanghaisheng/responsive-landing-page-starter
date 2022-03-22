@@ -14,8 +14,8 @@ tags:
   - messages-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/25/send-messages-with-nexmo-through-golang-and-aws-lambda-dr
+canonical: https://developer.vonage.com/blog/2019/11/25/send-messages-with-nexmo-through-golang-and-aws-lambda-dr
 ---
 I recently saw a tutorial by [Tom Morris](https://twitter.com/tommorris) on the Nexmo blog titled [Sending SMS from Python with Google Cloud Functions](https://www.nexmo.com/blog/2019/03/21/sending-sms-from-python-with-google-cloud-functions-dr), and thought it was an interesting example and use of SMS messaging, even though Python and Google Cloud Functions are not my normal.
 

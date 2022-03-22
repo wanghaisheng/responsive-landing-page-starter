@@ -14,8 +14,8 @@ tags:
   - firebase
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/01/30/add-two-factor-authentication-2fa-android-app-nexmo-firebase-dr
+canonical: https://developer.vonage.com/blog/2017/01/30/add-two-factor-authentication-2fa-android-app-nexmo-firebase-dr
 ---
 The [Firebase Auth Quickstart](https://github.com/firebase/quickstart-android/tree/master/auth) provides a great tutorial on how to add authentication to your application, but without two-factor authentication (2FA), it's a bit insecure! Adding an extra layer of security to your application is simple using the Nexmo Verify SDK. Let's get started!
 

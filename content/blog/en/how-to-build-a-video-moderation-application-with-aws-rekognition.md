@@ -14,8 +14,8 @@ tags:
   - moderation
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition
+canonical: https://developer.vonage.com/blog/2021/05/27/how-to-build-a-video-moderation-application-with-aws-rekognition
 outdated: false
 replacement_url: ""
 ---

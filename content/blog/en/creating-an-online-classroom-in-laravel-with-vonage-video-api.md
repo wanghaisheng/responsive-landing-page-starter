@@ -15,8 +15,8 @@ tags:
   - spotlight
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/11/creating-an-online-classroom-in-laravel-with-vonage-video-api
+canonical: https://developer.vonage.com/blog/2020/12/11/creating-an-online-classroom-in-laravel-with-vonage-video-api
 outdated: false
 replacement_url: ""
 ---

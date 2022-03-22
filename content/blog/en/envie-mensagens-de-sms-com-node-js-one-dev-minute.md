@@ -14,8 +14,8 @@ tags:
   - portuguese
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/22/envie-mensagens-de-sms-com-node-js-one-dev-minute
+canonical: https://developer.vonage.com/blog/2022/02/22/envie-mensagens-de-sms-com-node-js-one-dev-minute
 outdated: false
 replacement_url: ""
 ---

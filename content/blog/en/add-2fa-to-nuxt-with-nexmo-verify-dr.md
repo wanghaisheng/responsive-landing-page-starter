@@ -15,8 +15,8 @@ tags:
   - nuxt
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/09/11/add-2fa-to-nuxt-with-nexmo-verify-dr
+canonical: https://developer.vonage.com/blog/2018/09/11/add-2fa-to-nuxt-with-nexmo-verify-dr
 ---
 In this tutorial we're going to build a basic application with two-factor authentication using the [Nuxt JS](https://nuxtjs.org) framework.
 

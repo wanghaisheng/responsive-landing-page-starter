@@ -14,8 +14,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/26/startup-spotlight-series-lets-meet-trutriage
+canonical: https://developer.vonage.com/blog/2021/08/26/startup-spotlight-series-lets-meet-trutriage
 outdated: false
 replacement_url: ""
 ---

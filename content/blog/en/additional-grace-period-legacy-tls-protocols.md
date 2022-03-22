@@ -14,8 +14,8 @@ tags:
   - security
   - tls
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/09/additional-grace-period-legacy-tls-protocols
+canonical: https://developer.vonage.com/blog/2018/08/09/additional-grace-period-legacy-tls-protocols
 ---
 On the 7th of August 2018 at 09:40 UTC, Nexmo disabled support of legacy TLSv1 and TLSv1.1 protocols. At 15:25 UTC we have temporarily restored support for TLSv1 and TLSv1.1 for a period of two weeks in order to mitigate adverse impact to your business and assist with your transition.
 

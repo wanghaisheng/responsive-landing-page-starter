@@ -13,8 +13,8 @@ tags:
   - chatbots
   - ai
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/08/24/bots-chatbots-ai-tech-maturity-dr
+canonical: https://developer.vonage.com/blog/2017/08/24/bots-chatbots-ai-tech-maturity-dr
 ---
 Bots have come a long way since the days of using chatbots in your IRC channel or instant messenger. But just how far have they come from a tech standpoint? Yes, every company and business media outlet is talking about them, but what are the real bits and what's just hype? To help me separate the reality from the marketing, I spoke with CEO/Co-Founder of The Bot Platform Syd Lawrence and Microsoft Technical Evangelist Martin Beeby about the current state of bots and AI.
 

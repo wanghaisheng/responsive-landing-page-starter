@@ -13,8 +13,8 @@ tags:
   - AWS
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/03/11/moderate-audio-in-an-app-with-the-vonage-video-api-and-aws-transcribe
+canonical: https://developer.vonage.com/blog/2022/03/11/moderate-audio-in-an-app-with-the-vonage-video-api-and-aws-transcribe
 outdated: false
 replacement_url: ""
 ---

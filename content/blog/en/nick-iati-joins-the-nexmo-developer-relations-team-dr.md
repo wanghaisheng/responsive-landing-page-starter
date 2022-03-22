@@ -12,8 +12,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/11/nick-iati-joins-the-nexmo-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2020/02/11/nick-iati-joins-the-nexmo-developer-relations-team-dr
 ---
 Hello! My name is Nick Iati and I am excited to be joining the Nexmo Developer Relations team as a technical writer responsible for documenting the Vonage Business Cloud APIs.
 

@@ -15,8 +15,8 @@ tags:
   - graphql
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/15/how-to-build-a-learning-platform-using-vonage-javascript-typescript-react-express-and-apollo-graphql
+canonical: https://developer.vonage.com/blog/2020/12/15/how-to-build-a-learning-platform-using-vonage-javascript-typescript-react-express-and-apollo-graphql
 outdated: false
 replacement_url: ""
 ---

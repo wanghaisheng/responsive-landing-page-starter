@@ -12,8 +12,8 @@ tags:
   - sms-api
   - php
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/06/25/receiving-sms-delivery-receipts-with-php-dr
+canonical: https://developer.vonage.com/blog/2018/06/25/receiving-sms-delivery-receipts-with-php-dr
 ---
 We've previously covered [sending](/blog/2017/09/20/sending-sms-messages-with-php-dr/) and [receiving](/blog/2018/06/19/receiving-an-sms-with-php/) SMS messages with PHP, but there's one thing missing - delivery receipts.
 

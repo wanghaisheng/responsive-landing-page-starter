@@ -13,8 +13,8 @@ tags:
   - sms-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/16/startup-spotlight-series-lets-meet-plato-immo
+canonical: https://developer.vonage.com/blog/2021/06/16/startup-spotlight-series-lets-meet-plato-immo
 outdated: false
 replacement_url: ""
 ---

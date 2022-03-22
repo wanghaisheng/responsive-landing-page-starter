@@ -1,6 +1,8 @@
 ---
 title: "Quality and Velocity: Our Seven Year Journey to 99.999% Availability"
-description: How can your teams take a stronger approach to software testing without compromising on speed and product growth? The growing software developer in test team defined a solution.
+description: How can your teams take a stronger approach to software testing
+  without compromising on speed and product growth? The growing software
+  developer in test team defined a solution.
 thumbnail: /content/blog/quality-and-velocity-our-seven-year-journey-to-availability/Blog_1200x600-1.png
 author: yuvalgolan
 published: true
@@ -10,8 +12,8 @@ category: engineering
 tags:
   - high-availability
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/17/quality-and-velocity-our-seven-year-journey-to-availability
+canonical: https://developer.vonage.com/blog/2021/02/17/quality-and-velocity-our-seven-year-journey-to-availability
 ---
 
 In the face of a highly dynamic software ecosystem, the world of software testing has remained stagnant. As products grow in complexity, development teams are left facing a dilemma: the demand for rapid delivery is at war with the need to ensure quality products.

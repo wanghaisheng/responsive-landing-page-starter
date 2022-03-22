@@ -14,8 +14,8 @@ tags:
   - blockchain
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/24/connect-to-the-ethereum-blockchain-with-node-js-and-vonage-dr
+canonical: https://developer.vonage.com/blog/2020/04/24/connect-to-the-ethereum-blockchain-with-node-js-and-vonage-dr
 ---
 Blockchain is a commonly used term that has many innovations associated with it. The blockchain is, quite literally, a chain of blocks, where each block is a piece of information stored in a public database, the chain. One such blockchain is Ethereum, which takes the concept of a blockchain to a whole new level.
 

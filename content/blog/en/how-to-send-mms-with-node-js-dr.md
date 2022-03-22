@@ -15,8 +15,8 @@ tags:
   - messaging-api
   - node
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/26/how-to-send-mms-with-node-js-dr
+canonical: https://developer.vonage.com/blog/2019/03/26/how-to-send-mms-with-node-js-dr
 ---
 The Nexmo Messages & Dispatch API now allows you to send MMS (Multimedia Messaging Service) from any US shortcode number you have in your dashboard to other numbers within the United States.
 

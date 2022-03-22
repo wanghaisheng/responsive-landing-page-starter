@@ -14,8 +14,8 @@ tags:
   - google-apps-script
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/08/create-a-balance-reminder-with-vonage-account-api-and-google-apps
+canonical: https://developer.vonage.com/blog/2021/06/08/create-a-balance-reminder-with-vonage-account-api-and-google-apps
 outdated: false
 replacement_url: ""
 ---

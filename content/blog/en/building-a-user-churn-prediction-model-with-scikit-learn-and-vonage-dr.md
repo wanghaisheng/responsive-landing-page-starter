@@ -13,8 +13,8 @@ tags:
   - machine-learning
   - conversation-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/27/building-a-user-churn-prediction-model-with-scikit-learn-and-vonage-dr
+canonical: https://developer.vonage.com/blog/2020/04/27/building-a-user-churn-prediction-model-with-scikit-learn-and-vonage-dr
 ---
 Vonage’s Conversation API allows developers to build their own Contact Center solution. With voice, text, and integrations to other solutions, Vonage allows you to build a complex solution, without the development being complex.
 

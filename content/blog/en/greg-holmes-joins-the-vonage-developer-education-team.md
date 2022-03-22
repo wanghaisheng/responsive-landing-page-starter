@@ -14,8 +14,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/24/greg-holmes-joins-the-vonage-developer-education-team
+canonical: https://developer.vonage.com/blog/2020/03/24/greg-holmes-joins-the-vonage-developer-education-team
 ---
 Hi! My name is Greg Holmes, and I'm excited to be joining the Vonage team as a Developer Educator. For the last two months, I have been painfully containing my excitement while working my notice period for my former employer. But, now the time has come!
 

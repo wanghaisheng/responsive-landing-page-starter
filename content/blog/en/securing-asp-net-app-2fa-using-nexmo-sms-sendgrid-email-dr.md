@@ -13,8 +13,8 @@ tags:
   - 2fa
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/08/10/securing-asp-net-app-2fa-using-nexmo-sms-sendgrid-email-dr
+canonical: https://developer.vonage.com/blog/2016/08/10/securing-asp-net-app-2fa-using-nexmo-sms-sendgrid-email-dr
 ---
 2FA (2 Factor Authentication) is a must nowadays to increase the security within your application. It is seen in all kinds of apps: from the signup process to user action verification. The most common types of 2FA are phone verification and email verification.
 

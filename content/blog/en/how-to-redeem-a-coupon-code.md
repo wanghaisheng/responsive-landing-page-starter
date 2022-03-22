@@ -11,8 +11,8 @@ tags:
   - coupons
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/25/how-to-redeem-a-coupon-code
+canonical: https://developer.vonage.com/blog/2021/11/25/how-to-redeem-a-coupon-code
 outdated: false
 replacement_url: ""
 ---

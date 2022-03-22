@@ -13,8 +13,8 @@ tags:
   - asr
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/20/voice-api-speech-recognition-now-in-general-availability
+canonical: https://developer.vonage.com/blog/2020/11/20/voice-api-speech-recognition-now-in-general-availability
 outdated: false
 replacement_url: ""
 ---

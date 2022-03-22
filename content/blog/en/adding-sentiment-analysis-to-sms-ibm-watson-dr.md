@@ -14,8 +14,8 @@ tags:
   - sentiment-analysis
   - ibm-watson
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/04/adding-sentiment-analysis-to-sms-ibm-watson-dr
+canonical: https://developer.vonage.com/blog/2019/04/04/adding-sentiment-analysis-to-sms-ibm-watson-dr
 ---
 When it comes to communications via SMS, I think we all can agree that sometimes the sender's intent can be misinterpreted.  I know that, personally, meaning and context around words can easily be misunderstood.
 

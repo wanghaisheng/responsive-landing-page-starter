@@ -12,8 +12,8 @@ tags:
   - messages-api
   - dotnet
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/20/how-to-receive-an-sms-message-with-asp-net-core-mvc-and-signalr
+canonical: https://developer.vonage.com/blog/2020/07/20/how-to-receive-an-sms-message-with-asp-net-core-mvc-and-signalr
 ---
 In this tutorial, we'll learn how to receive SMS Messages from the [Vonage Messages API](https://developer.nexmo.com/messages/overview), and push them out to a browser in real-time. We will use ASP.NET Core MVC for our API server and web page, and we will be using SignalR to allow us to receive SMS messages in real-time.
 

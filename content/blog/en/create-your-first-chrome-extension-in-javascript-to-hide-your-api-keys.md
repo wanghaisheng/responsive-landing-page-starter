@@ -17,8 +17,8 @@ tags:
   - browser
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/31/create-your-first-chrome-extension-in-javascript-to-hide-your-api-keys
+canonical: https://developer.vonage.com/blog/2021/08/31/create-your-first-chrome-extension-in-javascript-to-hide-your-api-keys
 outdated: false
 replacement_url: ""
 ---

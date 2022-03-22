@@ -12,8 +12,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/25/text-to-speech-voice-calls-with-go
+canonical: https://developer.vonage.com/blog/2020/11/25/text-to-speech-voice-calls-with-go
 outdated: false
 replacement_url: ""
 ---

@@ -15,8 +15,8 @@ tags:
   - slack
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/01/forward-nexmo-sms-to-slack-using-express-and-node-dr
+canonical: https://developer.vonage.com/blog/2020/01/01/forward-nexmo-sms-to-slack-using-express-and-node-dr
 ---
 ## Introduction
 

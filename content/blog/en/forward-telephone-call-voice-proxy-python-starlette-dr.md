@@ -12,8 +12,8 @@ tags:
   - python
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/09/forward-telephone-call-voice-proxy-python-starlette-dr
+canonical: https://developer.vonage.com/blog/2019/08/09/forward-telephone-call-voice-proxy-python-starlette-dr
 ---
 There are a few situations where we might need a stranger to be able to call us, or for us to be able to call them. A delivery driver might need to call you about your package; you might need to call your taxi driver because you've forgotten your umbrella. In these situations, it is convenient to be able to call and speak to the actual person and not a call centre. However, neither person wants a stranger to have their private number.
 

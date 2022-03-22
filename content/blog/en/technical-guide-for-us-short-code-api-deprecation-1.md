@@ -12,8 +12,8 @@ tags:
   - ""
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/18/technical-guide-for-us-short-code-api-deprecation-1
+canonical: https://developer.vonage.com/blog/2021/02/18/technical-guide-for-us-short-code-api-deprecation-1
 outdated: false
 replacement_url: ""
 ---

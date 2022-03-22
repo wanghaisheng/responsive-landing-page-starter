@@ -13,8 +13,8 @@ tags:
   - php
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/06/02/building-text-message-group-chat-nexmo-sms-api-php-dr
+canonical: https://developer.vonage.com/blog/2016/06/02/building-text-message-group-chat-nexmo-sms-api-php-dr
 ---
 To exercise the new PHP client library a bit, we're going to build a simple SMS group chat where a user's inbound message is sent to all the other members of the chat. You can follow along here and build it with me, or just clone [the Nexmo SMS Group Chat repository](https://github.com/nexmo-community/nexmo-php-sms-group-chat) and see it in action.
 

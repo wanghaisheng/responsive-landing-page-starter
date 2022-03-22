@@ -14,8 +14,8 @@ tags:
   - messages-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/22/testing-external-apis-in-ruby-with-webmock-and-vcr
+canonical: https://developer.vonage.com/blog/2021/11/22/testing-external-apis-in-ruby-with-webmock-and-vcr
 outdated: false
 replacement_url: ""
 ---

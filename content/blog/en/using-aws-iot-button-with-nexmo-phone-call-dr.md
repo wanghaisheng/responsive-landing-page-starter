@@ -14,8 +14,8 @@ tags:
   - voice-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/06/14/using-aws-iot-button-with-nexmo-phone-call-dr
+canonical: https://developer.vonage.com/blog/2017/06/14/using-aws-iot-button-with-nexmo-phone-call-dr
 replacement_url: ""
 ---
 *By integrating the Nexmo Voice API with an Amazon IoT button, guest blogger [Michael Piccuirro](http://mickeypickles.com/) enabled his son to make a phone call by clicking a button so he could walk to school. Here's how he did it.*

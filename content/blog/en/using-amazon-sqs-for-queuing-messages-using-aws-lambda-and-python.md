@@ -13,8 +13,8 @@ tags:
   - sms-api
   - aws
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/10/using-amazon-sqs-for-queuing-messages-using-aws-lambda-and-python
+canonical: https://developer.vonage.com/blog/2020/06/10/using-amazon-sqs-for-queuing-messages-using-aws-lambda-and-python
 ---
 
 When expecting to receive large bulks of messages, ensuring they are all received can be problematic. One way to navigate these pitfalls is by using a message queue, such as [AWS SQS](https://aws.amazon.com/sqs/).

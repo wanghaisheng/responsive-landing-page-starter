@@ -12,8 +12,8 @@ tags:
   - insight-api
   - php
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/29/how-to-use-number-insight-with-php-dr
+canonical: https://developer.vonage.com/blog/2019/03/29/how-to-use-number-insight-with-php-dr
 ---
 In this post I'll show you an example application I made recently that uses the Nexmo Number Insight API to validate and gain information about any phone number. You could either use my project as a starting point (the code is [on GitHub](https://github.com/nexmo-community/php-number-insights)), or adapt the examples here to use in your own applications. Number Insights API is ideal for checking that a phone number is valid, current, and in a particular geography so it's commonly used to verify contact details at signup time.
 

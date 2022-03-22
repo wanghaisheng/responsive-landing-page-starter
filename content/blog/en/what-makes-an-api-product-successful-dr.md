@@ -12,8 +12,8 @@ category: inspiration
 tags:
   - api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/12/06/what-makes-an-api-product-successful-dr
+canonical: https://developer.vonage.com/blog/2019/12/06/what-makes-an-api-product-successful-dr
 ---
 In addition to spending our time creating delightful APIs for our users, we also participate in events with other API-makers.
 

@@ -14,8 +14,8 @@ tags:
   - new-joiner
   - introduction
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/03/abdul-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2020/07/03/abdul-joins-the-vonage-developer-relations-team
 ---
 Hey folks! My name is Abdul Ajetunmobi and I’m thrilled to be joining the Developer Relations team at Vonage. 
 

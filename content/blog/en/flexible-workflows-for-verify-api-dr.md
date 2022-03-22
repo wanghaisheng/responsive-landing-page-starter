@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/02/flexible-workflows-for-verify-api-dr
+canonical: https://developer.vonage.com/blog/2019/10/02/flexible-workflows-for-verify-api-dr
 ---
 Nexmo's [Verify API](https://developer.nexmo.com/verify/overview) is designed to allow you to confirm that a user has supplied a correct and valid phone number, by sending them a PIN code and asking them to input it.
 

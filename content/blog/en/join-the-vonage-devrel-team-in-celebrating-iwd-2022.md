@@ -12,8 +12,8 @@ tags:
   - diversity
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/23/join-the-vonage-devrel-team-in-celebrating-iwd-2022
+canonical: https://developer.vonage.com/blog/2022/02/23/join-the-vonage-devrel-team-in-celebrating-iwd-2022
 outdated: false
 replacement_url: ""
 ---

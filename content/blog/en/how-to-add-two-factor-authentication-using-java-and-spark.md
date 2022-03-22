@@ -14,8 +14,8 @@ tags:
   - java
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/18/how-to-add-two-factor-authentication-using-java-and-spark
+canonical: https://developer.vonage.com/blog/2020/08/18/how-to-add-two-factor-authentication-using-java-and-spark
 ---
 Two-factor authentication (2FA) is an increasingly popular method of protecting against fraudulent signups. It works by adding an extra layer of security that requires not only the traditional username and password but also something that the user has in their possession. That's typically their mobile phone.
 

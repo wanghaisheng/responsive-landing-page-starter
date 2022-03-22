@@ -14,8 +14,8 @@ tags:
   - conversation-api
   - javascript
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/12/18/create-a-simple-messaging-ui-with-bootstrap-dr
+canonical: https://developer.vonage.com/blog/2019/12/18/create-a-simple-messaging-ui-with-bootstrap-dr
 ---
 [Bootstrap](https://getbootstrap.com/), originally named Twitter Blueprint, was developed by [@mdo](https://github.com/mdo) (Mark Otto) and [@fat](https://github.com/fat) (Jacob Thornton) while working at Twitter as a way to encourage consistency across tooling. Now, it is one of the most popular front-end frameworks and open source projects in the world. While still considered a shortcut by many front-end developers, it has played an important role in bringing a consistent and friendly user experience into the clutches of all developers, globally.
 

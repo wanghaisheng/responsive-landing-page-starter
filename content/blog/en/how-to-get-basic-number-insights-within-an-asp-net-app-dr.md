@@ -14,8 +14,8 @@ tags:
   - Number-insights
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/22/how-to-get-basic-number-insights-within-an-asp-net-app-dr
+canonical: https://developer.vonage.com/blog/2018/05/22/how-to-get-basic-number-insights-within-an-asp-net-app-dr
 ---
 This is the second article in this step-by-step series about [Vonage's Number Insight API](https://developer.vonage.com/number-insight/overview) within an ASP.NET web application.
 

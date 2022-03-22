@@ -12,8 +12,8 @@ tags:
   - python
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/03/receiving-sms-delivery-receipts-with-python-dr
+canonical: https://developer.vonage.com/blog/2019/06/03/receiving-sms-delivery-receipts-with-python-dr
 ---
 You've already learned how to [send an SMS with Python](https://www.nexmo.com/blog/2017/06/22/send-sms-messages-python-flask-dr/). But unless you have access to the device you've sent it to, how can you be sure that your SMS arrived?
 

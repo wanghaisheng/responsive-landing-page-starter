@@ -14,8 +14,8 @@ tags:
   - ios
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/04/introducing-the-vonage-ios-client-sdk-video-tutorials
+canonical: https://developer.vonage.com/blog/2021/11/04/introducing-the-vonage-ios-client-sdk-video-tutorials
 outdated: false
 replacement_url: ""
 ---

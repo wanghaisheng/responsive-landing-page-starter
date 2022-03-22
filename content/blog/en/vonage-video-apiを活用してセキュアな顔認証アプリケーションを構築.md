@@ -13,8 +13,8 @@ tags:
   - フェイシャル-id
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/21/vonage-video-apiを活用してセキュアな顔認証アプリケーションを構築
+canonical: https://developer.vonage.com/blog/2020/10/21/vonage-video-apiを活用してセキュアな顔認証アプリケーションを構築
 outdated: false
 replacement_url: ""
 ---

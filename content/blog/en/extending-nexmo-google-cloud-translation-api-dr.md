@@ -12,8 +12,8 @@ tags:
   - sms-api
   - google-cloud
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr
+canonical: https://developer.vonage.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr
 ---
 Text messaging has become a part of our daily lives.  We integrate it into multiple aspects like banking, alerts, marketing, and support. It has become simple to implement, and Vonage is no different.  
 

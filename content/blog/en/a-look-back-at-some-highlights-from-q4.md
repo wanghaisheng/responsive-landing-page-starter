@@ -14,8 +14,8 @@ tags:
   - vonage-ai-studio
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/18/a-look-back-at-some-highlights-from-q4
+canonical: https://developer.vonage.com/blog/2022/01/18/a-look-back-at-some-highlights-from-q4
 outdated: false
 replacement_url: ""
 ---

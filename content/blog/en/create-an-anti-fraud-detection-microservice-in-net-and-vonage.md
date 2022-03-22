@@ -17,8 +17,8 @@ tags:
   - dotnet
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/17/create-an-anti-fraud-detection-microservice-in-net-and-vonage
+canonical: https://developer.vonage.com/blog/2021/08/17/create-an-anti-fraud-detection-microservice-in-net-and-vonage
 outdated: false
 replacement_url: ""
 ---

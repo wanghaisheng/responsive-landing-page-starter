@@ -13,8 +13,8 @@ tags:
   - conversation-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/19/how-to-make-phone-calls-on-web-ios-and-android-with-ionic
+canonical: https://developer.vonage.com/blog/2021/05/19/how-to-make-phone-calls-on-web-ios-and-android-with-ionic
 outdated: false
 replacement_url: ""
 ---

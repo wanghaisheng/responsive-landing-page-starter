@@ -13,8 +13,8 @@ tags:
   - voice-api
   - nuxt
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/02/how-make-receive-phone-calls-with-nuxt-js-dr
+canonical: https://developer.vonage.com/blog/2020/03/02/how-make-receive-phone-calls-with-nuxt-js-dr
 ---
 I've explored the Nuxt.js framework in [a previous blog post](https://learn.vonage.com/blog/2020/02/19/how-send-receive-sms-messages-with-nuxt-js-dr/), and I liked it so much that I was looking for reasons to use it more. So I thought it would be good to take what I learned in there and apply it to a more complex API. I wrote the Middleware methods using Node.js requests, so this blog post expands on them, using them not only for plain text but for JSON requests as well.
 

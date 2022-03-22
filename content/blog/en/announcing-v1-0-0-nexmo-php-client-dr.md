@@ -10,8 +10,8 @@ category: release
 tags:
   - php
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/08/29/announcing-v1-0-0-nexmo-php-client-dr
+canonical: https://developer.vonage.com/blog/2017/08/29/announcing-v1-0-0-nexmo-php-client-dr
 ---
 After a heroic effort from [Tim](https://github.com/tjlytle) and some work from [Michael](https://github.com/mheap) to get it over the line, we’re proud to announce that we've just tagged version 1.0 of the Nexmo PHP client library - it’s just one `composer require` away!
 

@@ -13,8 +13,8 @@ tags:
   - react-native
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/17/how-to-build-an-on-call-application-with-react-native-and-symfony
+canonical: https://developer.vonage.com/blog/2021/03/17/how-to-build-an-on-call-application-with-react-native-and-symfony
 outdated: false
 replacement_url: ""
 ---

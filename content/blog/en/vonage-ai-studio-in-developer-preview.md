@@ -15,8 +15,8 @@ tags:
   - vonage-ai
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/02/vonage-ai-studio-in-developer-preview
+canonical: https://developer.vonage.com/blog/2021/12/02/vonage-ai-studio-in-developer-preview
 outdated: false
 replacement_url: ""
 ---

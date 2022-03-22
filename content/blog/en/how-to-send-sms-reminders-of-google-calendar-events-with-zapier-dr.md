@@ -12,8 +12,8 @@ tags:
   - zapier
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/04/how-to-send-sms-reminders-of-google-calendar-events-with-zapier-dr
+canonical: https://developer.vonage.com/blog/2020/03/04/how-to-send-sms-reminders-of-google-calendar-events-with-zapier-dr
 ---
 Are your days packed with meetings and events? Do you find yourself wishing you had an assistant to remind you of what to anticipate next? Fortunately, there is a quick way to make sure you never forget about a meeting and to control how much time you give yourself to prepare for it.
 

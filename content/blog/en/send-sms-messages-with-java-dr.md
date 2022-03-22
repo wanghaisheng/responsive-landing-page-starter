@@ -13,8 +13,8 @@ tags:
   - sms-api
   - gradle
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/05/03/send-sms-messages-with-java-dr
+canonical: https://developer.vonage.com/blog/2017/05/03/send-sms-messages-with-java-dr
 outdated: false
 ---
 > *We've built this example using JDK 16, Gradle 7.1 and the Vonage Server SDK for Java v.6.4.0*  

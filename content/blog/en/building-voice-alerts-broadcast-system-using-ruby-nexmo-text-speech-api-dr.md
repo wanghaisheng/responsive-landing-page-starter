@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/06/21/building-voice-alerts-broadcast-system-using-ruby-nexmo-text-speech-api-dr
+canonical: https://developer.vonage.com/blog/2016/06/21/building-voice-alerts-broadcast-system-using-ruby-nexmo-text-speech-api-dr
 ---
 Sometimes a text message won't do. When you really want to be alerted about something important you probably want to receive an actual phone call; whether it's because a server is down, or because a natural disaster has occurred in your area.
 

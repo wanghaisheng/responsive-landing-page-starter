@@ -11,8 +11,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/27/welcoming-myrsini-to-the-nexmo-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2018/08/27/welcoming-myrsini-to-the-nexmo-developer-relations-team-dr
 ---
 Hello! I’m Myrsini and I’ve recently joined the Developer Relations team at Nexmo. 
 

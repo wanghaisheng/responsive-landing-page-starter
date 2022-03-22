@@ -13,8 +13,8 @@ tags:
   - devrel
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/23/vonage-developer-relations-in-2020
+canonical: https://developer.vonage.com/blog/2021/02/23/vonage-developer-relations-in-2020
 outdated: false
 replacement_url: ""
 ---

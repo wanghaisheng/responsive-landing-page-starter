@@ -13,8 +13,8 @@ tags:
   - CRM
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/20/building-a-social-crm-with-django-and-the-vonage-messages-api
+canonical: https://developer.vonage.com/blog/2022/01/20/building-a-social-crm-with-django-and-the-vonage-messages-api
 outdated: false
 replacement_url: ""
 ---

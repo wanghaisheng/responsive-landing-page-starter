@@ -15,8 +15,8 @@ tags:
   - nextjs
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/27/show-sms-notifications-in-the-browser-with-next-js-ably-and-vercel
+canonical: https://developer.vonage.com/blog/2021/04/27/show-sms-notifications-in-the-browser-with-next-js-ably-and-vercel
 outdated: false
 replacement_url: ""
 ---

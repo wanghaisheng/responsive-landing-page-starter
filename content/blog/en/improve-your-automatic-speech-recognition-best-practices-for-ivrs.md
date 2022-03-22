@@ -15,8 +15,8 @@ tags:
   - node
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/14/improve-your-automatic-speech-recognition-best-practices-for-ivrs
+canonical: https://developer.vonage.com/blog/2021/12/14/improve-your-automatic-speech-recognition-best-practices-for-ivrs
 outdated: false
 replacement_url: ""
 ---

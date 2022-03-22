@@ -13,8 +13,8 @@ tags:
   - sms-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/29/startup-spotlight-series-lets-meet-callspot
+canonical: https://developer.vonage.com/blog/2021/07/29/startup-spotlight-series-lets-meet-callspot
 outdated: false
 replacement_url: ""
 ---

@@ -13,8 +13,8 @@ tags:
   - voice-api
   - flask
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/05/29/build-a-conference-call-with-python-dr
+canonical: https://developer.vonage.com/blog/2019/05/29/build-a-conference-call-with-python-dr
 ---
 Today's post shows you how you can connect multiple parties to the same call using the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview).
 

@@ -14,8 +14,8 @@ tags:
   - react
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/27/新しいvonage-video-expressでマルチパーティビデオを作成
+canonical: https://developer.vonage.com/blog/2021/09/27/新しいvonage-video-expressでマルチパーティビデオを作成
 outdated: false
 replacement_url: ""
 ---

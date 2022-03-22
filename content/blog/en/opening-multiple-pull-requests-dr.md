@@ -12,8 +12,8 @@ tags:
   - github
   - hacktoberfest
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/06/opening-multiple-pull-requests-dr
+canonical: https://developer.vonage.com/blog/2020/10/06/opening-multiple-pull-requests-dr
 ---
 'Tis the season of many pull requests, so today I thought I'd share a tip for avoiding common pull request mistakes that arise from having an out of date master branch.  
 Becoming a repeat contributor of a project is one of the best things that can happen to anyone taking part in Hacktoberfest - but there are some things to look out for when you're making a pull request that isn't the first on a freshly forked repo. Today I'll share my tips for making sure that every pull request is as good as the first one!

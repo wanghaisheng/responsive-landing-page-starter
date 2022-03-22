@@ -14,8 +14,8 @@ tags:
   - developer
   - event
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/09/11/how-we-powered-emf-camp-dr
+canonical: https://developer.vonage.com/blog/2018/09/11/how-we-powered-emf-camp-dr
 ---
 Around the start of September, some 2000 people descended on an internet-connected field for three days of [EMF Camp](https://www.emfcamp.org/) talks, performances, and workshops. There was everything from blacksmithing to biometrics, chiptunes to computer security, high-altitude ballooning to lockpicking, origami to democracy, and online privacy to knitting. 
 

@@ -12,8 +12,8 @@ tags:
   - javascript
   - dispatch-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/19/santa-delivery-notifications-via-facebook-messenger-dr
+canonical: https://developer.vonage.com/blog/2018/12/19/santa-delivery-notifications-via-facebook-messenger-dr
 ---
 One of the biggest moments of excitement for me every Christmas as I grew up was waiting to hear if Santa had delivered our presents. Every Christmas morning my Dad would go through to the room with the Christmas tree to check *if* "Santa had been" before we were allowed to run to see our presents.
 

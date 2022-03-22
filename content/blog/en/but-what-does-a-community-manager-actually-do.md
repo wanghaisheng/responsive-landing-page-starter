@@ -13,8 +13,8 @@ tags:
   - recruitment
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/28/but-what-does-a-community-manager-actually-do
+canonical: https://developer.vonage.com/blog/2021/10/28/but-what-does-a-community-manager-actually-do
 outdated: false
 replacement_url: ""
 ---

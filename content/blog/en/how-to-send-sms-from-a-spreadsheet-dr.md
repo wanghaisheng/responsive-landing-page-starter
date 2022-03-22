@@ -13,8 +13,8 @@ tags:
   - javascript
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/01/23/how-to-send-sms-from-a-spreadsheet-dr
+canonical: https://developer.vonage.com/blog/2019/01/23/how-to-send-sms-from-a-spreadsheet-dr
 ---
 
 

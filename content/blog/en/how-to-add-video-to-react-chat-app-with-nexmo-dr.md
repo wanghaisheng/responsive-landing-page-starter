@@ -14,8 +14,8 @@ tags:
   - conversation-api
   - react
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/04/how-to-add-video-to-react-chat-app-with-nexmo-dr
+canonical: https://developer.vonage.com/blog/2019/10/04/how-to-add-video-to-react-chat-app-with-nexmo-dr
 ---
 At Nexmo, we’re really excited about the ability to create customer journeys through conversations with our new Conversation API. It allows users to not only deploy an omnichannel experience leveraging voice, messaging, and video all within one experience but also maintains the context of those conversations to deliver a superior customer experience.
 

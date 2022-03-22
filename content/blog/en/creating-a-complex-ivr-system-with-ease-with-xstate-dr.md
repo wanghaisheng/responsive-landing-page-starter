@@ -12,8 +12,8 @@ tags:
   - javascript
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/20/creating-a-complex-ivr-system-with-ease-with-xstate-dr
+canonical: https://developer.vonage.com/blog/2019/06/20/creating-a-complex-ivr-system-with-ease-with-xstate-dr
 ---
 Even if you didn't know that's what they're called, you probably use IVR systems all the time. An [IVR system](https://developer.vonage.com/use-cases/interactive-voice-response/) lets you call a phone number, listen the audio-cues, and navigate your way through the call to get the info you need. Vonage makes creating a full-fledged IVR system as simple as spinning up a Web server. In this post we'll see how to create very complex and elaborate IVR systems while keeping the code simple and easy to maintain. In order to accomplish this, we'll use [XState](https://xstate.js.org/) which is a popular State Machine library for Javascript.
 

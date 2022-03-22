@@ -13,8 +13,8 @@ tags:
   - github
   - hacktoberfest
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/08/hacktoberfest-using-github-desktop
+canonical: https://developer.vonage.com/blog/2020/10/08/hacktoberfest-using-github-desktop
 ---
 It must have been a revelation when the first directories of open source projects offering free-to-use tools and seeking contributions were created. Now it's such an institution in the world of technology that we barely pause to explain what GitHub is. That might be a problem if this is your first Hacktoberfest because you're new to open source or coding in general.
 

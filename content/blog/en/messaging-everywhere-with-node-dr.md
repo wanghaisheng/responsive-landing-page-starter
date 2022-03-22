@@ -14,8 +14,8 @@ tags:
   - messages-api
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/27/messaging-everywhere-with-node-dr
+canonical: https://developer.vonage.com/blog/2020/05/27/messaging-everywhere-with-node-dr
 ---
 The Vonage [Messages API Sandbox](https://developer.nexmo.com/messages/concepts/messages-api-sandbox) is great for trying out communication channels your organization may not have already. Once you see how useful WhatsApp, Viber, and Facebook Messenger chat can be you might be inspired to start adding it to production.
 

@@ -14,8 +14,8 @@ tags:
   - sms
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/06/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots-dr
+canonical: https://developer.vonage.com/blog/2020/08/06/track-device-data-in-real-time-with-vonage-messages-api-and-ubidots-dr
 ---
 I consider the **Internet of Things (IoT)** a superhero: mostly invisible, yet it makes our life better at work, socially, and personally. Superheroes have the tremendous power to be there for you wherever you need them, whether it's in cities, hospitals, educational institutions, manufacturing plants, farms, or any place you can have in mind. Sounds a lot like the Internet of Things, don't you think?
 

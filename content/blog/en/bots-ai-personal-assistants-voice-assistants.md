@@ -13,8 +13,8 @@ tags:
   - bots
   - ai
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/11/16/bots-ai-personal-assistants-voice-assistants
+canonical: https://developer.vonage.com/blog/2017/11/16/bots-ai-personal-assistants-voice-assistants
 ---
 Will AI-powered personal assistants know users well enough to make relevant, personalized recommendations? WIll they then become a channel for advertisers? Microsoft Technical Evangelist Martin Beeby and I discuss. Watch the clip of our conversation here, or scroll below the video to read the transcript. 
 

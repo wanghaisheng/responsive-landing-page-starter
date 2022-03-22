@@ -13,8 +13,8 @@ tags:
   - video-api
   - javascript
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/16/opentok-react-components-dr
+canonical: https://developer.vonage.com/blog/2019/07/16/opentok-react-components-dr
 ---
 *Please note that React is not officially supported by the Vonage Video API*
 

@@ -13,8 +13,8 @@ tags:
   - node
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/21/phone-call-web-browser-nexmo-in-app-voice-vue-js-dr
+canonical: https://developer.vonage.com/blog/2018/08/21/phone-call-web-browser-nexmo-in-app-voice-vue-js-dr
 ---
 In this blog post we'll walk through how you can make a phone call from a web brower to a phone with [Vonage In-App Voice](https://developer.nexmo.com/stitch/in-app-voice/overview) using the Vonage Client SDK for JavaScript and Vue.JS. In-App Voice and [In-App Messaging](https://developer.nexmo.com/stitch/in-app-messaging/overview) is in Developer Preview so we'd love your feedback on both the development experience that you have and on the functionality that's provided. You can get in touch via the [Vonage Developer Community Slack](https://developer.nexmo.com/community/slack).
 

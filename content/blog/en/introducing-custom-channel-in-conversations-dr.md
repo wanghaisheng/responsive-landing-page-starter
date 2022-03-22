@@ -12,8 +12,8 @@ tags:
   - client-sdk
   - conversations
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/05/introducing-custom-channel-in-conversations-dr
+canonical: https://developer.vonage.com/blog/2020/02/05/introducing-custom-channel-in-conversations-dr
 ---
 At Vonage, we are committed to building the most robust, flexible and scalable platforms possible so that you can continue creating great conversation experiences for your users. With that in mind, we're happy to announce a new sibling for in-app voice and messages channels: Custom Channels! 
 

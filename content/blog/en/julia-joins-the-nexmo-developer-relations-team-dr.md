@@ -10,8 +10,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/07/16/julia-joins-the-nexmo-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2018/07/16/julia-joins-the-nexmo-developer-relations-team-dr
 ---
 Oh, hey! I’m Julia and I’m super excited to start my Developer Relations career at Nexmo!
 

@@ -12,8 +12,8 @@ category: community
 tags:
   - open-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/05/openapi-led-development-at-nexmo
+canonical: https://developer.vonage.com/blog/2018/11/05/openapi-led-development-at-nexmo
 ---
 At Nexmo, we’ve adopted an OpenAPI-led development process. Here’s why.
 

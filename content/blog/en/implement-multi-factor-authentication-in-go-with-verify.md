@@ -14,8 +14,8 @@ tags:
   - mfa
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/13/implement-multi-factor-authentication-in-go-with-verify
+canonical: https://developer.vonage.com/blog/2020/11/13/implement-multi-factor-authentication-in-go-with-verify
 outdated: false
 replacement_url: ""
 ---

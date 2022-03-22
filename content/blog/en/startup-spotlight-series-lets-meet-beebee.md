@@ -14,8 +14,8 @@ tags:
   - verify-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/21/startup-spotlight-series-lets-meet-beebee
+canonical: https://developer.vonage.com/blog/2021/10/21/startup-spotlight-series-lets-meet-beebee
 outdated: false
 replacement_url: ""
 ---

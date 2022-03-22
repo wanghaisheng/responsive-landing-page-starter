@@ -15,8 +15,8 @@ tags:
   - whatsapp
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/04/building-github-actions-with-the-vonage-messages-api
+canonical: https://developer.vonage.com/blog/2021/02/04/building-github-actions-with-the-vonage-messages-api
 outdated: false
 replacement_url: ""
 ---

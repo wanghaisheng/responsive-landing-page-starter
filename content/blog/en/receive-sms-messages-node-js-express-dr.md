@@ -13,8 +13,8 @@ tags:
   - nodejs
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr
+canonical: https://developer.vonage.com/blog/2016/10/27/receive-sms-messages-node-js-express-dr
 outdated: false
 replacement_url: ""
 ---

@@ -14,8 +14,8 @@ tags:
   - lambda
   - php
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/02/deploying-an-aws-lambda-function-for-nexmo-voice-callbacks-with-php-dr
+canonical: https://developer.vonage.com/blog/2020/04/02/deploying-an-aws-lambda-function-for-nexmo-voice-callbacks-with-php-dr
 ---
 Deploying a complete and web-accessible application to AWS Lambda presents a unique set of requirements and hurdles. Among these are execution and permissions settings. In this post, I'll build upon a few previous posts, bringing them together as a practical example.
 

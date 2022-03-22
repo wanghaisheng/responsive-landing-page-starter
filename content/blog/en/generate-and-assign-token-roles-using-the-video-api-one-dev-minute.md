@@ -15,8 +15,8 @@ tags:
   - nodejs
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/15/generate-and-assign-token-roles-using-the-video-api-one-dev-minute
+canonical: https://developer.vonage.com/blog/2021/09/15/generate-and-assign-token-roles-using-the-video-api-one-dev-minute
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - dotnet
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/08/how-to-send-an-sms-with-blazor
+canonical: https://developer.vonage.com/blog/2020/07/08/how-to-send-an-sms-with-blazor
 ---
 [Blazor](https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor) is the latest in a series of what I'd call "magnificent" developer-friendly web frameworks that .NET has built. In this tutorial, we'll be reviewing how to send an SMS using Blazor and the Vonage [SMS API](https://developer.nexmo.com/messaging/sms/overview).
 

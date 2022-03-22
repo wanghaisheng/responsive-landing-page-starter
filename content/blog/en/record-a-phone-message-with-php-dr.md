@@ -12,8 +12,8 @@ tags:
   - php
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/08/14/record-a-phone-message-with-php-dr
+canonical: https://developer.vonage.com/blog/2018/08/14/record-a-phone-message-with-php-dr
 ---
 Recording a phone message is the key first step in building a fully fledged voice mail system. In this tutorial, we'll go through the steps required to set up a phone number with the ability to record an incoming call using PHP and the Nexmo command line interface.
 

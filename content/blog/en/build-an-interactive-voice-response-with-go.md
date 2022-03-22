@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/11/build-an-interactive-voice-response-with-go
+canonical: https://developer.vonage.com/blog/2021/02/11/build-an-interactive-voice-response-with-go
 outdated: false
 replacement_url: ""
 ---

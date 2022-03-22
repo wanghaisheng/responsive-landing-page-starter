@@ -10,8 +10,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/13/steve-lorello-joins-the-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2019/11/13/steve-lorello-joins-the-developer-relations-team-dr
 ---
 I'm Steve Lorello, and I'm ecstatic to join the Developer Relations Team here at Nexmo.
 

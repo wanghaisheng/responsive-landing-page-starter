@@ -12,8 +12,8 @@ tags:
   - nuxt
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/08/build-a-video-conversation-platform-for-online-gatherings-with-nuxt-js-dr
+canonical: https://developer.vonage.com/blog/2020/04/08/build-a-video-conversation-platform-for-online-gatherings-with-nuxt-js-dr
 ---
 During a time where many events are going online, one challenge we still face as community organizers is how to facilitate conversations between attendees during breaks and after talks have ended.
 

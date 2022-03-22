@@ -13,8 +13,8 @@ tags:
   - hacktoberfest
   - opensource
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/13/surviving-hacktoberfest-a-guide-for-maintainers
+canonical: https://developer.vonage.com/blog/2020/10/13/surviving-hacktoberfest-a-guide-for-maintainers
 ---
 Happy Hacktoberfest to one and all! Contributors, I hope you are having a wonderful time learning new skills and discovering projects where you can make a difference. Maintainers, today's post is just for you. Hopefully, the rules changes mean a better quality of pull requests for your projects, but it can still be a lot to handle. I'm a long-time maintainer, and today I'd like to share some tips that I hope will help you through.
 

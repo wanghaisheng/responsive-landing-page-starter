@@ -13,8 +13,8 @@ tags:
   - php
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/09/18/anything-to-sms-ifttt-nexmo-dr
+canonical: https://developer.vonage.com/blog/2018/09/18/anything-to-sms-ifttt-nexmo-dr
 ---
 SMS alerts are a very convenient way to convey small amounts of information in a way that works for most people in most places. I use them both to alert users of my applications and also for my own convenience. In today's post, I'm making use of [IFTTT](https://ifttt.com) (IF This Then That), a tool to link more or less anything to more or less anything else. If that sounds like an extravagant claim, just look at their homepage:
 

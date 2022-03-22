@@ -13,8 +13,8 @@ tags:
   - voice-api
   - audio
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/03/how-to-play-an-audio-stream-into-a-call-with-python-dr
+canonical: https://developer.vonage.com/blog/2019/04/03/how-to-play-an-audio-stream-into-a-call-with-python-dr
 outdated: true
 ---
 This blog post shows you, step-by-step, how to play an audio stream into a voice phone call using Python. Two methods for doing this are described in this article:

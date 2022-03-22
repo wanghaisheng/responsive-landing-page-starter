@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/22/dynamic-layouts-in-hls-rmtp-broadcasts-with-the-video-api-dr
+canonical: https://developer.vonage.com/blog/2020/09/22/dynamic-layouts-in-hls-rmtp-broadcasts-with-the-video-api-dr
 ---
 The Video API allows you to full control over your user interface when building applications with multi-party video sessions, but what options are available when you need to broadcast those sessions via HLS and/or RTMP streams?
 

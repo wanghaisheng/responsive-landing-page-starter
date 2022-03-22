@@ -11,8 +11,8 @@ category: community
 tags:
   - devrel-awards
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/28/all-your-devrel-award-belong-to-us-dr
+canonical: https://developer.vonage.com/blog/2018/11/28/all-your-devrel-award-belong-to-us-dr
 ---
 It’s been an exciting month for the Nexmo Developer Relations team! Our team has been recognized in not one but two separate competitions, winning a total of [four awards](https://ir.vonage.com/press-releases/2018/11-15-2018-133629530)! 
 

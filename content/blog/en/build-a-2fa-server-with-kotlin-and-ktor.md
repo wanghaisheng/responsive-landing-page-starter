@@ -14,8 +14,8 @@ tags:
   - ktor
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/20/build-a-2fa-server-with-kotlin-and-ktor
+canonical: https://developer.vonage.com/blog/2021/01/20/build-a-2fa-server-with-kotlin-and-ktor
 outdated: false
 replacement_url: ""
 ---

@@ -11,8 +11,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/16/nahrin-jalal-joins-the-nexmo-developer-education-team-dr
+canonical: https://developer.vonage.com/blog/2020/01/16/nahrin-jalal-joins-the-nexmo-developer-education-team-dr
 ---
 Hello! My name is Nahrin, and I’m delighted to be joining the Nexmo Developer Education team. 
 

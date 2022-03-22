@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - machine-learning
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/05/introduction-to-gpt-3
+canonical: https://developer.vonage.com/blog/2020/10/05/introduction-to-gpt-3
 ---
 If you haven't noticed, AI is everywhere, and we've finally come to a point where it is in almost everything we interact with. From Amazon product recommendations to Netflix suggestions to autonomous driving, and writing excellent blog posts... Don't worry, this post was written by a human, for now.
 

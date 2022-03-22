@@ -12,8 +12,8 @@ tags:
   - number-insight-api
   - java
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/09/04/creating-a-caller-id-with-java-dr
+canonical: https://developer.vonage.com/blog/2018/09/04/creating-a-caller-id-with-java-dr
 ---
 ## Introduction
 

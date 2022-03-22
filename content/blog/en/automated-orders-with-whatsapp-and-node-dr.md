@@ -13,8 +13,8 @@ tags:
   - messages-api
   - nodejs
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/07/automated-orders-with-whatsapp-and-node-dr
+canonical: https://developer.vonage.com/blog/2020/05/07/automated-orders-with-whatsapp-and-node-dr
 ---
 Automated ordering is a great place to begin offering your customers the ability to interact with your organization via [WhatsApp](https://www.whatsapp.com/). If you have a fairly short list of products, completing an order by messaging back and forth is totally possible. That way people can make their order while they're standing in line. And because your system is using WhatsApp, you can always augment the ordering process with things like media or location data that might appear inconsistently across SMS.
 

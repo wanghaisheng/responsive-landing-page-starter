@@ -12,8 +12,8 @@ tags:
   - python
   - inbound-calls
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/28/handling-inbound-calls-with-python-dr
+canonical: https://developer.vonage.com/blog/2019/03/28/handling-inbound-calls-with-python-dr
 ---
 This blog post shows you, step-by-step, how to create a Vonage application that can handle an inbound phone call using Python.
 

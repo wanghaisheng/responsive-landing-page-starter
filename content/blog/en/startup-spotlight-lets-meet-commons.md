@@ -13,8 +13,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/18/startup-spotlight-lets-meet-commons
+canonical: https://developer.vonage.com/blog/2021/05/18/startup-spotlight-lets-meet-commons
 outdated: false
 replacement_url: ""
 ---

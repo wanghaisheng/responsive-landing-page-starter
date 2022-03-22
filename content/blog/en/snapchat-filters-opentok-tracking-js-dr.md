@@ -14,8 +14,8 @@ tags:
   - video-api
   - trackingjs
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/03/snapchat-filters-opentok-tracking-js-dr
+canonical: https://developer.vonage.com/blog/2019/04/03/snapchat-filters-opentok-tracking-js-dr
 ---
 Be Batman or just freak some people out. In this guide, you're going to add facial tracking using Tracking.js and create some cool Snapchat style filters for a video stream. Cool!
 

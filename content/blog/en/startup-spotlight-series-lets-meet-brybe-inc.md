@@ -13,8 +13,8 @@ tags:
   - verify-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/01/startup-spotlight-series-lets-meet-brybe-inc
+canonical: https://developer.vonage.com/blog/2021/11/01/startup-spotlight-series-lets-meet-brybe-inc
 outdated: false
 replacement_url: ""
 ---

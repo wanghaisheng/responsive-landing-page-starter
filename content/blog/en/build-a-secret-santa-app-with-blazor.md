@@ -15,8 +15,8 @@ tags:
   - sms-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/18/build-a-secret-santa-app-with-blazor
+canonical: https://developer.vonage.com/blog/2020/12/18/build-a-secret-santa-app-with-blazor
 outdated: false
 replacement_url: ""
 ---

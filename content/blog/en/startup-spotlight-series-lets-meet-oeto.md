@@ -12,8 +12,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/23/startup-spotlight-series-lets-meet-oeto
+canonical: https://developer.vonage.com/blog/2021/06/23/startup-spotlight-series-lets-meet-oeto
 outdated: false
 replacement_url: ""
 ---

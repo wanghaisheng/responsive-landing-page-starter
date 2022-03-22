@@ -13,8 +13,8 @@ tags:
   - cobol
   - text
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/01/send-text-message-cobol-dr
+canonical: https://developer.vonage.com/blog/2019/04/01/send-text-message-cobol-dr
 ---
 COBOL is all the rage in the banking and finance industry with over 95 percent of ATM swipes relying on COBOL code according to a [report by Reuters](http://fingfx.thomsonreuters.com/gfx/rngs/USA-BANKS-COBOL/010040KH18J/index.html).
 

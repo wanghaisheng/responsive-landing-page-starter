@@ -12,8 +12,8 @@ category: release
 tags:
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/02/opentok-v2-16-new-release
+canonical: https://developer.vonage.com/blog/2019/07/02/opentok-v2-16-new-release
 ---
 Just in time to unlock the new features of Safari version 12.1, we released OpenTok v2.16, the latest version of our OpenTok Client SDKs. We wanted to update you on some of the great new features included and how you can use them.
 

@@ -13,8 +13,8 @@ tags:
   - ruby
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/11/02/outbound-text-to-speech-voice-call-ruby-on-rails-dr
+canonical: https://developer.vonage.com/blog/2017/11/02/outbound-text-to-speech-voice-call-ruby-on-rails-dr
 ---
 *This is the first article in a series of "Getting Started with Vonage Voice APIs and Ruby on Rails" tutorials. It continues the "Getting Started with Vonage SMS and Ruby on Rails" series.*
 

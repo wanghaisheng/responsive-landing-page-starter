@@ -13,8 +13,8 @@ tags:
   - node
   - whatsapp
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/15/send-a-whatsapp-message-with-node-dr
+canonical: https://developer.vonage.com/blog/2020/04/15/send-a-whatsapp-message-with-node-dr
 ---
 Traditionally, businesses contact customers by phone or SMS, but sometimes you really want to communicate with your customers via WhatsApp. The [Vonage dashboard](https://dashboard.nexmo.com/) now allows you to test out WhatsApp messaging without a WhatsApp business account. You can use the cURL command in the [Messages API Sandbox](https://dashboard.nexmo.com/messages/sandbox) to verify you're able to send a message. Once you've tried that, you might like to see how you can incorporate WhatsApp messaging into your Node.js application.
 

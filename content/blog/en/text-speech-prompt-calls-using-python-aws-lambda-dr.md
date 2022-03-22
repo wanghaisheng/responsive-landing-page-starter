@@ -14,8 +14,8 @@ tags:
   - voice-api
   - aws
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/02/16/text-speech-prompt-calls-using-python-aws-lambda-dr
+canonical: https://developer.vonage.com/blog/2018/02/16/text-speech-prompt-calls-using-python-aws-lambda-dr
 ---
 The Nexmo [Voice API](https://www.nexmo.com/products/voice) offers great flexibility in the call scenarios you can activate, however in order to do this you often need to make several interactions with the API. For some scenarios, you may want to have a single API call from your business logic that invokes a series of interactions with the Voice API. This is an ideal scenario to build a serverless application that you can then call and let it deal with the Voice API interactions.
 

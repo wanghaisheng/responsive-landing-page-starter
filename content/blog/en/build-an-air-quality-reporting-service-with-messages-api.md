@@ -14,8 +14,8 @@ tags:
   - node
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/02/build-an-air-quality-reporting-service-with-messages-api
+canonical: https://developer.vonage.com/blog/2020/12/02/build-an-air-quality-reporting-service-with-messages-api
 outdated: false
 replacement_url: ""
 ---

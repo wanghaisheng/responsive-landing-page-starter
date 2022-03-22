@@ -12,8 +12,8 @@ tags:
   - careers
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/18/tonya-sims-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2021/06/18/tonya-sims-joins-the-vonage-developer-relations-team
 outdated: false
 replacement_url: ""
 ---

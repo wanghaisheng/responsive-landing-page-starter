@@ -13,8 +13,8 @@ tags:
   - azure
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/12/30/building-a-real-time-net-transcription-service-dr
+canonical: https://developer.vonage.com/blog/2019/12/30/building-a-real-time-net-transcription-service-dr
 ---
 Building speech to text transcription services has never been easier. In this demo you will be building an extremely simple, yet powerful, real-time transcription service in ASP.NET using the [Vonage .NET SDK](https://developer.nexmo.com/tools) and [Microsoft Azure's Speech SDK](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk).
 

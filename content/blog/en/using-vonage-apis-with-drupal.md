@@ -15,8 +15,8 @@ tags:
   - drupal
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/10/using-vonage-apis-with-drupal
+canonical: https://developer.vonage.com/blog/2020/12/10/using-vonage-apis-with-drupal
 outdated: false
 replacement_url: ""
 ---

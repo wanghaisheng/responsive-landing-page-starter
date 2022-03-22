@@ -12,8 +12,8 @@ category: inspiration
 tags:
   - chatbots
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/10/25/developer-tooling-ai-bots
+canonical: https://developer.vonage.com/blog/2017/10/25/developer-tooling-ai-bots
 ---
 The developer tooling for bots makes certain aspects of building one painful. And the deployment process after it’s built has its own challenges. I spoke with senior bot developers from Microsoft, Opearlo, and The Bot Platform about the current state of bot tools and deployments. Watch the video of our conversation here, or scroll below the video to read the full transcript. <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 

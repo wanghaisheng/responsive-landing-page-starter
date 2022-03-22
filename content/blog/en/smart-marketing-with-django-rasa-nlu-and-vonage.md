@@ -14,8 +14,8 @@ tags:
   - sms-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/08/smart-marketing-with-django-rasa-nlu-and-vonage
+canonical: https://developer.vonage.com/blog/2020/12/08/smart-marketing-with-django-rasa-nlu-and-vonage
 outdated: false
 replacement_url: ""
 ---

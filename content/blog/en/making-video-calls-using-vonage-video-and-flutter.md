@@ -14,8 +14,8 @@ tags:
   - mobile
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/06/making-video-calls-using-vonage-video-and-flutter
+canonical: https://developer.vonage.com/blog/2021/07/06/making-video-calls-using-vonage-video-and-flutter
 outdated: false
 replacement_url: ""
 ---

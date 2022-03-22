@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - swift
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/07/18/nexmo-in-app-messaging-uitableview-swift-dr
+canonical: https://developer.vonage.com/blog/2018/07/18/nexmo-in-app-messaging-uitableview-swift-dr
 ---
 ## Build a Conversational UI with Nexmo Stitch In-App Messaging in a UITableView
 

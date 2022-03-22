@@ -14,8 +14,8 @@ tags:
   - minimal-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/09/how-to-send-an-sms-with-net-6-minimal-api
+canonical: https://developer.vonage.com/blog/2021/11/09/how-to-send-an-sms-with-net-6-minimal-api
 outdated: false
 replacement_url: ""
 ---

@@ -13,8 +13,8 @@ tags:
   - javascript
   - text-to-speech
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/05/09/receive-phone-calls-node-red-dr
+canonical: https://developer.vonage.com/blog/2019/05/09/receive-phone-calls-node-red-dr
 ---
 *This is the third article in a series of "Getting Started with Nexmo and Node-RED" tutorials.*
 

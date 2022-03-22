@@ -15,8 +15,8 @@ tags:
   - python
   - reports-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/14/introducing-the-vonage-reports-api
+canonical: https://developer.vonage.com/blog/2020/10/14/introducing-the-vonage-reports-api
 ---
 The [Vonage Reports API](https://developer.nexmo.com/reports/overview) is a robust API that allows you to gather data about all of the activity that takes place across your account.
 

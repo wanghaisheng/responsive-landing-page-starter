@@ -13,8 +13,8 @@ tags:
   - graphql
   - insights-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/30/integrate-advanced-insights-to-monitor-video-quality
+canonical: https://developer.vonage.com/blog/2020/06/30/integrate-advanced-insights-to-monitor-video-quality
 ---
 Healthcare. Education. Collaboration. Odds are you've been communicating via online video conferencing a lot more frequently. Minutes used by customers of the Vonage Video API increased 232% from February to March alone. In the healthcare industry, video minutes increased by 727%.
 

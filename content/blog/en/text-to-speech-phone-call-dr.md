@@ -13,8 +13,8 @@ tags:
   - voice-api
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr
+canonical: https://developer.vonage.com/blog/2017/07/28/text-to-speech-phone-call-dr
 ---
 *This is the first tutorial on how to use Voice APIs with ASP.NET series.*
 

@@ -12,8 +12,8 @@ tags:
   - python
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/03/dial-a-christmas-carol-with-nexmo-and-python-dr
+canonical: https://developer.vonage.com/blog/2018/12/03/dial-a-christmas-carol-with-nexmo-and-python-dr
 ---
 *Note from the editor:* Want to give [Tony's](https://twitter.com/tonytechwriter) Dial-a-Carol service a try? We'll be hosting it throughout December for you to call! Just dial **[?? (44)-203-905-1327](tel:+442039051327)** or **[?? (1)-201-355-3236](tel:+12013553236)** and spread some Christmas cheer! 
 --- 

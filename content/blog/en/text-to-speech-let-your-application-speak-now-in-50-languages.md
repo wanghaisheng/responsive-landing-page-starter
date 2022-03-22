@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/01/text-to-speech-let-your-application-speak-now-in-50-languages
+canonical: https://developer.vonage.com/blog/2020/12/01/text-to-speech-let-your-application-speak-now-in-50-languages
 outdated: false
 replacement_url: ""
 ---

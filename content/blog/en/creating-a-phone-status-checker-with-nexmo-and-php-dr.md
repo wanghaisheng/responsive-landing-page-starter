@@ -12,8 +12,8 @@ tags:
   - voice-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/14/creating-a-phone-status-checker-with-nexmo-and-php-dr
+canonical: https://developer.vonage.com/blog/2019/11/14/creating-a-phone-status-checker-with-nexmo-and-php-dr
 ---
 Working at a web agency brings a lot of challenges because we are tasked with juggling multiple different clients. Our focus should always be on those clients, to make sure their requirements are met and they are satisfied with the work we’re doing. So, something you probably do not want is outside distractions. This is what happened at our office on a nearly daily basis.
 

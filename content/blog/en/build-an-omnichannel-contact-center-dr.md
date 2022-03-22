@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - conversation-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/24/build-an-omnichannel-contact-center-dr
+canonical: https://developer.vonage.com/blog/2019/06/24/build-an-omnichannel-contact-center-dr
 ---
 
 Nexmo’s various communication APIs and SDKs allow you to provide a wonderful and rich communication experience for your users. 

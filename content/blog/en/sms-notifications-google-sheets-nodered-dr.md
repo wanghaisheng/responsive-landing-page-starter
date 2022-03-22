@@ -13,8 +13,8 @@ tags:
   - sms-api
   - google
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/06/sms-notifications-google-sheets-nodered-dr
+canonical: https://developer.vonage.com/blog/2020/03/06/sms-notifications-google-sheets-nodered-dr
 ---
 Ever got a phone call at 7:59 AM telling you your kid's school is closed? It was handy, as you were only a couple miles away - on your way home, after dropping them off.  
 

@@ -16,8 +16,8 @@ tags:
   - sdk
   - release
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/03/announcing-the-php-server-sdk-version-2-2-0-release
+canonical: https://developer.vonage.com/blog/2020/08/03/announcing-the-php-server-sdk-version-2-2-0-release
 ---
 I am happy to announce the release of [version 2.2.0](https://github.com/Nexmo/nexmo-php/releases/tag/2.2.0) of our [PHP Server SDK](https://github.com/Nexmo/nexmo-php) for the Vonage APIs.
 

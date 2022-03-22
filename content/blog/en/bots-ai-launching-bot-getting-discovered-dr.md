@@ -14,8 +14,8 @@ tags:
   - bots
   - ai
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/08/31/bots-ai-launching-bot-getting-discovered-dr
+canonical: https://developer.vonage.com/blog/2017/08/31/bots-ai-launching-bot-getting-discovered-dr
 ---
 Launching a mobile app on the Apple App Store or on Google Play is a pretty well-defined process, but things aren’t nearly as straightforward in the bot world. After you’ve built that killer voice bot or chatbot, where do you launch it and how do you get it in front of new users? I asked CEO/Co-Founder of The Bot Platform Syd Lawrence and CTO/Co-Founder of Opearlo Oscar Merry for their insights and they had some great advice.
 

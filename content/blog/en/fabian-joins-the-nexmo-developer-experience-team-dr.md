@@ -11,8 +11,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/13/fabian-joins-the-nexmo-developer-experience-team-dr
+canonical: https://developer.vonage.com/blog/2019/06/13/fabian-joins-the-nexmo-developer-experience-team-dr
 ---
 
 Hi 👋, I'm Fabian Rodriguez and I'm really excited to say that I've recently joined the Nexmo Developer Experience team as a Ruby Tech Lead, where I'll be focusing on improving the Developer Platform and taking our docs to the next level.

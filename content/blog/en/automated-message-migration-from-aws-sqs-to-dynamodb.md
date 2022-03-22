@@ -15,8 +15,8 @@ tags:
   - aws
   - php
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/15/automated-message-migration-from-aws-sqs-to-dynamodb
+canonical: https://developer.vonage.com/blog/2020/06/15/automated-message-migration-from-aws-sqs-to-dynamodb
 ---
 Enterprise applications experience a very high volume of notifications that can wreak havoc on applications.  Rather than overloading an application, or constantly scaling up and down based on bursts of usage, using a message queue like [AWS SQS](https://aws.amazon.com/sqs/) can throttle the load. By adding messages to the queue, the application can handle them in a more timely and cost-conscious manner.
 

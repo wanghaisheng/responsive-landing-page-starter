@@ -14,8 +14,8 @@ tags:
   - chatbots
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/09/build-a-whatsapp-currency-conversion-bot-with-node-js
+canonical: https://developer.vonage.com/blog/2020/09/09/build-a-whatsapp-currency-conversion-bot-with-node-js
 ---
 In this tutorial, we’ll be looking at how to build a simple WhatsApp Chat Bot using Node.js & Vonage. The Bot will be responsible for converting any given number of units in a base currency to the equivalent in the preferred currency.
 

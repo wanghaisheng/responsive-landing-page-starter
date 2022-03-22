@@ -13,8 +13,8 @@ tags:
   - startups
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/06/startup-community-partner-aurelia-ventures
+canonical: https://developer.vonage.com/blog/2021/05/06/startup-community-partner-aurelia-ventures
 outdated: false
 replacement_url: ""
 ---

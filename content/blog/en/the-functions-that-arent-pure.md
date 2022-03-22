@@ -13,8 +13,8 @@ tags:
   - purefunction
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/29/the-functions-that-arent-pure
+canonical: https://developer.vonage.com/blog/2021/06/29/the-functions-that-arent-pure
 outdated: false
 replacement_url: ""
 ---

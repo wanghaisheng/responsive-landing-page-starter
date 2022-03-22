@@ -13,8 +13,8 @@ tags:
   - blazor
   - azure
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/27/translate-a-phone-call-with-blazor-signalr-and-azure-dr
+canonical: https://developer.vonage.com/blog/2020/10/27/translate-a-phone-call-with-blazor-signalr-and-azure-dr
 old_categories:
   - developer
   - tutorial

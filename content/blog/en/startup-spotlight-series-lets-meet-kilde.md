@@ -13,8 +13,8 @@ tags:
   - verify-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/05/startup-spotlight-series-lets-meet-kilde
+canonical: https://developer.vonage.com/blog/2021/08/05/startup-spotlight-series-lets-meet-kilde
 outdated: false
 replacement_url: ""
 ---

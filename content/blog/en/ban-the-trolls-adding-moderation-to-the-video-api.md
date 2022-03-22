@@ -13,8 +13,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api
+canonical: https://developer.vonage.com/blog/2020/11/12/ban-the-trolls-adding-moderation-to-the-video-api
 outdated: false
 replacement_url: ""
 ---

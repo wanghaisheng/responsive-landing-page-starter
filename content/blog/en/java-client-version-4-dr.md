@@ -11,8 +11,8 @@ category: release
 tags:
   - java
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/16/java-client-version-4-dr
+canonical: https://developer.vonage.com/blog/2018/11/16/java-client-version-4-dr
 ---
 Today we released version 4.0.0 of our [Nexmo Java Client Library](https://github.com/nexmo/nexmo-java). While we felt really good about our 3.x versions of the library, we realized that there are a few things holding it back from providing the ideal user experience.
 

@@ -13,8 +13,8 @@ tags:
   - opensource
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/26/vonage-attends-hack-the-north-2020
+canonical: https://developer.vonage.com/blog/2021/01/26/vonage-attends-hack-the-north-2020
 outdated: false
 replacement_url: ""
 ---

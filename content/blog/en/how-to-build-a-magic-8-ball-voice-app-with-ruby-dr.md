@@ -12,8 +12,8 @@ tags:
   - voice-api
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/11/how-to-build-a-magic-8-ball-voice-app-with-ruby-dr
+canonical: https://developer.vonage.com/blog/2019/06/11/how-to-build-a-magic-8-ball-voice-app-with-ruby-dr
 ---
 Let’s be real. Our days are constantly filled with tough questions:
 

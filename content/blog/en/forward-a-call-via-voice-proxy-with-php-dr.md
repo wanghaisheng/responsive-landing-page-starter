@@ -12,8 +12,8 @@ tags:
   - voice-api
   - php
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/05/15/forward-a-call-via-voice-proxy-with-php-dr
+canonical: https://developer.vonage.com/blog/2019/05/15/forward-a-call-via-voice-proxy-with-php-dr
 ---
 
 Today's post shows you how to proxy a voice call so that it appears to come from another number.

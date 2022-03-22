@@ -13,8 +13,8 @@ tags:
   - php
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/12/play-audio-voice-call-php-dr
+canonical: https://developer.vonage.com/blog/2019/04/12/play-audio-voice-call-php-dr
 ---
 In addition to making [text-to-speech calls](https://learn.vonage.com/blog/2017/10/20/text-to-speech-voice-calls-with-php-dr/), the Vonage Voice API allows you to play prerecorded audio files into a call. This can be used for good (to provide a more human sounding prompt when [building an IVR](https://laravel-news.com/laravel-hotline-ivr)) and for evil (playing [Never Gonna Give You Up](https://www.youtube.com/watch?v=dQw4w9WgXcQ)). In this post, we’ll be focusing on the good by building an application that welcomes the caller using the [stream action](https://developer.nexmo.com/voice/voice-api/ncco-reference#stream) in an NCCO and updates them about their position in the queue at a regular interval using the [REST API](https://developer.nexmo.com/api/voice#startStream).
 

@@ -1,6 +1,8 @@
 ---
 title: Introducing RxZu, an Engine for Intuitive Graphs
-description: RxZu is a diagrams engine system, built on top of RxJS, that takes the  graphic visualization to the next level in terms of performance, optimization, and customizability.
+description: RxZu is a diagrams engine system, built on top of RxJS, that takes
+  the  graphic visualization to the next level in terms of performance,
+  optimization, and customizability.
 thumbnail: /content/blog/introducing-rxzu-an-engine-for-intuitive-graphs/Blog_1200x600.png
 author: avital-tzubelivonage-com
 published: false
@@ -11,8 +13,8 @@ tags:
   - angular
   - rxjs
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/17/introducing-rxzu-an-engine-for-intuitive-graphs
+canonical: https://developer.vonage.com/blog/2021/02/17/introducing-rxzu-an-engine-for-intuitive-graphs
 ---
 
 In the beginning, all was linear. 

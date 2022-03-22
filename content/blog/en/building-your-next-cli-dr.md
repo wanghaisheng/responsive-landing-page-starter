@@ -14,8 +14,8 @@ tags:
   - cli
   - nodejs
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/05/building-your-next-cli-dr
+canonical: https://developer.vonage.com/blog/2020/06/05/building-your-next-cli-dr
 ---
 If you're not familiar with CLIs, let's have a short refresher. CLI stands for Command-Line Interface and is a tool that uses a text-based interface, usually accessible inside a Terminal-like application or a shell-like environment.
 

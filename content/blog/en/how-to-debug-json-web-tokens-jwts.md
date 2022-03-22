@@ -13,8 +13,8 @@ tags:
   - jwt
   - json
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/26/how-to-debug-json-web-tokens-jwts
+canonical: https://developer.vonage.com/blog/2020/08/26/how-to-debug-json-web-tokens-jwts
 ---
 Many modern web applications, both client-side and server-side, use JSON Web Tokens (JWTs) for authentication, which is an excellent approach. However, when things don't work, it can be tricky to work out why.
 

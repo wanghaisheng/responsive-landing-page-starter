@@ -14,8 +14,8 @@ tags:
   - python
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/19/how-wsgi-vs-asgi-is-like-baking-a-cake
+canonical: https://developer.vonage.com/blog/2021/11/19/how-wsgi-vs-asgi-is-like-baking-a-cake
 outdated: false
 replacement_url: ""
 ---

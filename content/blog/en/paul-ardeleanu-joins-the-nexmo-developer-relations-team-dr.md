@@ -11,8 +11,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/01/paul-ardeleanu-joins-the-nexmo-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2019/02/01/paul-ardeleanu-joins-the-nexmo-developer-relations-team-dr
 ---
 Hey! I'm Paul Ardeleanu and I'm thrilled to be joining the Developer Relations team at Nexmo, working primarly on the mobile developer experience of our new Client SDK. It is an honour to join such an [amazing crew](https://www.nexmo.com/blog/2018/11/28/all-your-devrel-award-belong-to-us-dr/)! 
 

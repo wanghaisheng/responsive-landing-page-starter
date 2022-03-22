@@ -13,8 +13,8 @@ tags:
   - node
   - http
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/11/5-ways-to-build-a-node-js-api
+canonical: https://developer.vonage.com/blog/2020/08/11/5-ways-to-build-a-node-js-api
 ---
 This article will help you build a small API in five ways, using [Node.js](https://nodejs.org/en/) and four popular frameworks.
 

@@ -15,8 +15,8 @@ tags:
   - jamstack
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/30/server-side-analytics-with-jamstack-sites
+canonical: https://developer.vonage.com/blog/2020/11/30/server-side-analytics-with-jamstack-sites
 outdated: false
 replacement_url: ""
 ---

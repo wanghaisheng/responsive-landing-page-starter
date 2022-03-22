@@ -12,8 +12,8 @@ tags:
   - careers
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/05/cory-althoff-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2021/03/05/cory-althoff-joins-the-vonage-developer-relations-team
 outdated: false
 replacement_url: ""
 ---

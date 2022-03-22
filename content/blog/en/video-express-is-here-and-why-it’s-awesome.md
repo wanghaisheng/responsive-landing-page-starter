@@ -14,8 +14,8 @@ tags:
   - video-express
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/23/video-express-is-here-and-why-it’s-awesome
+canonical: https://developer.vonage.com/blog/2021/09/23/video-express-is-here-and-why-it’s-awesome
 outdated: false
 replacement_url: ""
 ---

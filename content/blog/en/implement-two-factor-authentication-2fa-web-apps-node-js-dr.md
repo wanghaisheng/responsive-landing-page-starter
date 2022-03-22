@@ -13,8 +13,8 @@ tags:
   - 2fa
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/04/11/implement-two-factor-authentication-2fa-web-apps-node-js-dr
+canonical: https://developer.vonage.com/blog/2017/04/11/implement-two-factor-authentication-2fa-web-apps-node-js-dr
 outdated: true
 ---
 *This tutorial is part of the “Getting Started with Vonage APIs and Node.js” series. See links to prior tutorials at the bottom of the post.*

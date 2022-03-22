@@ -14,8 +14,8 @@ tags:
   - sql
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/03/using-terraform-for-database-management
+canonical: https://developer.vonage.com/blog/2021/06/03/using-terraform-for-database-management
 outdated: false
 replacement_url: ""
 ---

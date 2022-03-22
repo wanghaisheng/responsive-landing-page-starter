@@ -12,8 +12,8 @@ tags:
   - voice-api
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/16/forward-a-call-via-voice-proxy-with-ruby-on-rails-dr
+canonical: https://developer.vonage.com/blog/2019/04/16/forward-a-call-via-voice-proxy-with-ruby-on-rails-dr
 ---
 We may conduct a lot of our daily lives with apps, but nonetheless, making phone calls is still a necessary part of our world. Every time we do business over a phone call we expose our private phone number to others. This can pose both privacy and security risks for all parties involved. However, with utilizing a voice proxy, you can alleviate this issue and make phone calls with confidence.
 

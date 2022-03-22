@@ -12,8 +12,8 @@ tags:
   - asp.net
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/28/how-to-receive-sms-delivery-receipts-with-asp-net-core-mvc-dr
+canonical: https://developer.vonage.com/blog/2020/07/28/how-to-receive-sms-delivery-receipts-with-asp-net-core-mvc-dr
 ---
 After sending an SMS message, it's good to validate that the message was delivered to its destination. Fortunately, that's a functionality you can easily build with ASP.NET. In this example, we'll be receiving a webhook from the Vonage SMS API and printing the JSON in that webhook out to the console.
 

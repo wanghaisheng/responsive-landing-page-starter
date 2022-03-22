@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/21/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-core-core-and-nancyfx-dr
+canonical: https://developer.vonage.com/blog/2018/11/21/how-to-receive-a-phone-call-with-nexmo-voice-api-asp-core-core-and-nancyfx-dr
 ---
 *This is the third tutorial on how to use Voice APIs with ASP.NET series.* 
 

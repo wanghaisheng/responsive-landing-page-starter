@@ -14,8 +14,8 @@ tags:
   - sms-api
   - websockets
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/11/real-time-sms-demo-with-react-node-and-google-translate-dr
+canonical: https://developer.vonage.com/blog/2020/03/11/real-time-sms-demo-with-react-node-and-google-translate-dr
 ---
 Last year I worked with the [Google Translate API](https://www.nexmo.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr) to translate SMS messages. After showing the rest of the team, they wanted a demo they could show off to other developers at conferences we attended. Based on that, I set out to create a frontend with React that could display the translations in real-time.
 

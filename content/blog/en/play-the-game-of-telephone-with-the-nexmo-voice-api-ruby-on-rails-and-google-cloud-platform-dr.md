@@ -12,8 +12,8 @@ tags:
   - voice-api
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/06/13/play-the-game-of-telephone-with-the-nexmo-voice-api-ruby-on-rails-and-google-cloud-platform-dr
+canonical: https://developer.vonage.com/blog/2019/06/13/play-the-game-of-telephone-with-the-nexmo-voice-api-ruby-on-rails-and-google-cloud-platform-dr
 ---
 Do you remember the game of telephone from when you were a kid? Perhaps you played it in the school playground during recess, or while at a sleepaway camp during the summer? I remember a teacher in grade school using the game to illustrate how unreliable communications could be. If you never played it here is a quick recap:
 

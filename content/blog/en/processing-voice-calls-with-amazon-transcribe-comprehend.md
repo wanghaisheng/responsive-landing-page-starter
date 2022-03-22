@@ -14,8 +14,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/17/processing-voice-calls-with-amazon-transcribe-comprehend
+canonical: https://developer.vonage.com/blog/2021/05/17/processing-voice-calls-with-amazon-transcribe-comprehend
 outdated: false
 replacement_url: ""
 ---

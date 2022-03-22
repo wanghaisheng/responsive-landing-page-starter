@@ -14,8 +14,8 @@ tags:
   - mysql
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/07/22/self-service-datastores
+canonical: https://developer.vonage.com/blog/2021/07/22/self-service-datastores
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - python
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/20/build-a-family-hotline-dr
+canonical: https://developer.vonage.com/blog/2018/11/20/build-a-family-hotline-dr
 ---
 Any company I ever phone always has one of those automated answering systems that ask me questions before I get to speak to a real person, and because I'm a bit weird, I've always thought "why can't *I* have one of those?"
 

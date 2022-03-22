@@ -13,8 +13,8 @@ tags:
   - ruby
   - sdk
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/27/nexmo-ruby-v7-2-0-release
+canonical: https://developer.vonage.com/blog/2020/07/27/nexmo-ruby-v7-2-0-release
 ---
 The Nexmo Ruby SDK recently published a new release, v7.2.0. This new version has rewritten the JSON Web Token generation feature to use the new `nexmo-jwt` Ruby gem to generate tokens. 
 

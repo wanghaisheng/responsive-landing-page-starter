@@ -15,8 +15,8 @@ tags:
   - messages-api
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/29/how-to-guide-send-an-sms-with-python-fastapi-and-vonage
+canonical: https://developer.vonage.com/blog/2021/09/29/how-to-guide-send-an-sms-with-python-fastapi-and-vonage
 outdated: false
 replacement_url: ""
 ---

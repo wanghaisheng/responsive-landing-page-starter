@@ -13,8 +13,8 @@ tags:
   - sms-api
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/15/how-to-create-an-interactive-scavenger-hunt-with-nexmos-sms-and-voice-api-dr
+canonical: https://developer.vonage.com/blog/2019/08/15/how-to-create-an-interactive-scavenger-hunt-with-nexmos-sms-and-voice-api-dr
 ---
 ### Introduction
 

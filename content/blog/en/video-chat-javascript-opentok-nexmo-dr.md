@@ -12,8 +12,8 @@ tags:
   - javascript
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/01/09/video-chat-javascript-opentok-nexmo-dr
+canonical: https://developer.vonage.com/blog/2019/01/09/video-chat-javascript-opentok-nexmo-dr
 ---
 In this blog post, we’re going to build a web application that allows users to video chat and send messages to each other using [OpenTok](https://tokbox.com/developer/) and [Nexmo In-App Messaging](https://developer.nexmo.com/stitch/in-app-messaging/overview).
 

@@ -12,8 +12,8 @@ tags:
   - sdk
   - ""
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/15/announcing-nexmos-net-server-sdk-version-4-3-0-release-dr
+canonical: https://developer.vonage.com/blog/2020/01/15/announcing-nexmos-net-server-sdk-version-4-3-0-release-dr
 ---
 We are pushing out a new version of the .NET server SDK—version 4.3.0. This new version has two new core features.
 

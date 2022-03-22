@@ -12,8 +12,8 @@ tags:
   - android
   - firebase
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/09/25/a-strawberry-or-not-classify-an-image-with-mlkit-for-android-dr
+canonical: https://developer.vonage.com/blog/2018/09/25/a-strawberry-or-not-classify-an-image-with-mlkit-for-android-dr
 ---
 Not too long ago, machine learning (ML) used to sound like a magic ?. Details on what, and how, it should be used were quite vague for many of us for some time.
 

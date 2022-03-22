@@ -13,8 +13,8 @@ tags:
   - video-api
   - augmented-reality
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/01/create-custom-ar-filters-with-vonage-video-api-and-deepar
+canonical: https://developer.vonage.com/blog/2020/09/01/create-custom-ar-filters-with-vonage-video-api-and-deepar
 ---
 Augmentation using AI is the future of video calling.  It will help us break the (virtual) ice, assist in navigating emerging use cases in interactive video, like shopping and remote assistance, and create entirely new experiences. Those experiences' future inventors are probably "sitting" in a virtual classroom being shaped by virtual video like no generation before them.
 

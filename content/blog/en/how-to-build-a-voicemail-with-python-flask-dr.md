@@ -14,8 +14,8 @@ tags:
   - python
   - flask
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/05/how-to-build-a-voicemail-with-python-flask-dr
+canonical: https://developer.vonage.com/blog/2019/04/05/how-to-build-a-voicemail-with-python-flask-dr
 ---
 *I picked up the grubby handset of the public payphone and dialled the number, like I had a hundred times before.*
 

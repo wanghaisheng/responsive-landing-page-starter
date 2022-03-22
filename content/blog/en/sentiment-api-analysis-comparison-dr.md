@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - sentiment-analysis
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/17/sentiment-api-analysis-comparison-dr
+canonical: https://developer.vonage.com/blog/2019/10/17/sentiment-api-analysis-comparison-dr
 ---
 Written communication between two people often proves challenging when trying to interpret emotion. Online conversations are easily misunderstood, leading to unwanted or unexpected outcomes.  
 

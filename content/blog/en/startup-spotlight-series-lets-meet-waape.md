@@ -13,8 +13,8 @@ tags:
   - verify-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/10/startup-spotlight-series-lets-meet-waape
+canonical: https://developer.vonage.com/blog/2022/01/10/startup-spotlight-series-lets-meet-waape
 outdated: false
 replacement_url: ""
 ---

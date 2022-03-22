@@ -15,8 +15,8 @@ tags:
   - nodejs
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/20/call-control-objects-nccos-one-dev-minute
+canonical: https://developer.vonage.com/blog/2021/10/20/call-control-objects-nccos-one-dev-minute
 outdated: false
 replacement_url: ""
 ---

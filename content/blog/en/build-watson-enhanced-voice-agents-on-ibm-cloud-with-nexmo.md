@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - ibm-watson
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/02/25/build-watson-enhanced-voice-agents-on-ibm-cloud-with-nexmo
+canonical: https://developer.vonage.com/blog/2019/02/25/build-watson-enhanced-voice-agents-on-ibm-cloud-with-nexmo
 ---
 Why do I love being an engineer at Nexmo, the Vonage API Platform? Because I get to work not only on the real-time communication tech we build but also on integrations with other amazing technologies. Case in point: Nexmo just became the preferred voice integration partner for IBM Voice Gateway, a SIP endpoint that you can use to connect phone calls with IBM Watson speech and conversation services. 
 

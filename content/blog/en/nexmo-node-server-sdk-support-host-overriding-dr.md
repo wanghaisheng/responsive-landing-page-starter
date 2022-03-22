@@ -13,8 +13,8 @@ tags:
   - sdk
   - javascript
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/17/nexmo-node-server-sdk-support-host-overriding-dr
+canonical: https://developer.vonage.com/blog/2020/01/17/nexmo-node-server-sdk-support-host-overriding-dr
 ---
 We've recently released [v2.6.0 of our Node.js SDK](https://www.npmjs.com/package/nexmo) and added the ability to change the host used for making the HTTP requests.
 

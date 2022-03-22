@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - ios
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/02/27/conversational-ui-nexmo-in-app-messaging-safe-layout-ios-11-dr
+canonical: https://developer.vonage.com/blog/2018/02/27/conversational-ui-nexmo-in-app-messaging-safe-layout-ios-11-dr
 ---
 In this tutorial we will review the brand new feature Apple released at WWDC 2017 called Safe Area Layout. After the review, we will lay out a basic conversational user interface with the Safe Area Layout, adding conversational functionality with Nexmo In-App Messaging!
 

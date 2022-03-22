@@ -13,8 +13,8 @@ tags:
   - sms-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/19/the-coders-guide-to-sms-1
+canonical: https://developer.vonage.com/blog/2021/08/19/the-coders-guide-to-sms-1
 outdated: false
 replacement_url: ""
 ---

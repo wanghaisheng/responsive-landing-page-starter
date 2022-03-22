@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/09/build-high-availability-voice-api-applications
+canonical: https://developer.vonage.com/blog/2020/12/09/build-high-availability-voice-api-applications
 outdated: false
 replacement_url: ""
 ---

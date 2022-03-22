@@ -13,8 +13,8 @@ tags:
   - sms-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/18/the-ultimate-list-of-iphone-app-ideas
+canonical: https://developer.vonage.com/blog/2022/02/18/the-ultimate-list-of-iphone-app-ideas
 outdated: false
 replacement_url: ""
 ---

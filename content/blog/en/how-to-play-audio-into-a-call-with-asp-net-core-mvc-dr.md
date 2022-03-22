@@ -12,8 +12,8 @@ tags:
   - aspnet
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/07/how-to-play-audio-into-a-call-with-asp-net-core-mvc-dr
+canonical: https://developer.vonage.com/blog/2020/08/07/how-to-play-audio-into-a-call-with-asp-net-core-mvc-dr
 ---
 When you are building applications that are voice-enabled, meaning they can make and receive phone calls, the most fundamental thing you need to be able to do is to play audio into the call programmatically.
 

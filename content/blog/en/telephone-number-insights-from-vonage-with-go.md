@@ -12,8 +12,8 @@ tags:
   - number-insight-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/13/telephone-number-insights-from-vonage-with-go
+canonical: https://developer.vonage.com/blog/2021/01/13/telephone-number-insights-from-vonage-with-go
 outdated: false
 replacement_url: ""
 ---

@@ -13,8 +13,8 @@ tags:
   - python
   - django
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/08/14/text-to-speech-phone-call-with-django-dr
+canonical: https://developer.vonage.com/blog/2017/08/14/text-to-speech-phone-call-with-django-dr
 ---
 Amongst the incessant notifications people receive every day; a ringing phone is still much harder to ignore or overlook.
 

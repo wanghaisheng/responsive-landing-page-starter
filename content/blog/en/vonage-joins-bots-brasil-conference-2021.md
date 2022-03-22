@@ -14,8 +14,8 @@ tags:
   - bots
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/06/vonage-joins-bots-brasil-conference-2021
+canonical: https://developer.vonage.com/blog/2021/10/06/vonage-joins-bots-brasil-conference-2021
 outdated: false
 replacement_url: ""
 ---

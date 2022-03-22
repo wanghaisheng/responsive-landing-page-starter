@@ -12,8 +12,8 @@ tags:
   - messages-api
   - nodejs
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/06/validating-inbound-messages-from-the-vonage-messages-api-dr
+canonical: https://developer.vonage.com/blog/2020/07/06/validating-inbound-messages-from-the-vonage-messages-api-dr
 ---
 ## An Introduction to Webhooks
 

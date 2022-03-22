@@ -13,8 +13,8 @@ tags:
   - ai
   - chatbots
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/10/05/ai-bot-platform
+canonical: https://developer.vonage.com/blog/2017/10/05/ai-bot-platform
 ---
 The major providers in the AI bot space—IBM Watson, Microsoft Cognitive Services, Amazon Lex, Google APIs—all offer roughly the same things, but each one has its own terminology. From bot platform to bot channel to bot framework, I asked Microsoft Technical Evangelist Martin Beeby and CEO/Co-Founder of The Bot Platform Syd Lawrence to help me put technology to the terms.
 

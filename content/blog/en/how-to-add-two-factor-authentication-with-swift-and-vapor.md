@@ -14,8 +14,8 @@ tags:
   - verify-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/24/how-to-add-two-factor-authentication-with-swift-and-vapor
+canonical: https://developer.vonage.com/blog/2020/11/24/how-to-add-two-factor-authentication-with-swift-and-vapor
 outdated: false
 replacement_url: ""
 ---

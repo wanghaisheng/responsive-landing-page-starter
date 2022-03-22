@@ -13,8 +13,8 @@ tags:
   - html
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/25/add-overlay-to-video-with-the-vonage-video-api
+canonical: https://developer.vonage.com/blog/2020/08/25/add-overlay-to-video-with-the-vonage-video-api
 ---
 When creating a Vonage Video publisher, the video stream can be sourced directly from a user camera, from an element, or an HTML element. Once pixels get drawn to the canvas, they can be easily manipulated before being used in a Video API session.
 

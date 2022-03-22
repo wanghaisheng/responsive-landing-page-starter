@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - open-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/09/13/evaluate-apis-quickly-and-easily-with-openapi-dr
+canonical: https://developer.vonage.com/blog/2019/09/13/evaluate-apis-quickly-and-easily-with-openapi-dr
 ---
 At Nexmo, we publish OpenAPI specifications for all our APIs. This makes it easier for developers to explore, evaluate and integrate our APIs into their own applications. Read on to find out more about OpenAPI and why we share these API specifications with developers.
 

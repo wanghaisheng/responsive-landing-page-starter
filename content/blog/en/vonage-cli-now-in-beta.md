@@ -13,8 +13,8 @@ tags:
   - Lerna
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/24/vonage-cli-now-in-beta
+canonical: https://developer.vonage.com/blog/2021/08/24/vonage-cli-now-in-beta
 outdated: false
 replacement_url: ""
 ---

@@ -11,8 +11,8 @@ category: community
 tags:
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/08/supporting-communities-to-go-online
+canonical: https://developer.vonage.com/blog/2020/04/08/supporting-communities-to-go-online
 ---
 In our effort to support developer communities around the world, we’re excited to announce ways in which we are helping groups host events and engage with their community members online: 
 

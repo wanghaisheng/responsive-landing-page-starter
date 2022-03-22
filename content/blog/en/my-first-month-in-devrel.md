@@ -14,8 +14,8 @@ tags:
   - devrel
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/24/my-first-month-in-devrel
+canonical: https://developer.vonage.com/blog/2021/06/24/my-first-month-in-devrel
 outdated: false
 replacement_url: ""
 ---

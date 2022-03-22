@@ -14,8 +14,8 @@ tags:
   - 2fa
   - verify-api
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/17/how-to-add-two-factor-authentication-with-node-js-and-express
+canonical: https://developer.vonage.com/blog/2020/07/17/how-to-add-two-factor-authentication-with-node-js-and-express
 ---
 Two-factor authentication refers to a pattern of users needing both something they know, like a password, and something they have, like a verification token from a mobile device. 
 

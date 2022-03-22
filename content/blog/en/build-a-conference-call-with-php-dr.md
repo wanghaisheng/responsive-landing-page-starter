@@ -12,8 +12,8 @@ tags:
   - php
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/05/08/build-a-conference-call-with-php-dr
+canonical: https://developer.vonage.com/blog/2019/05/08/build-a-conference-call-with-php-dr
 ---
 
 Today's post will show you how to set up a conference call using Nexmo, so you can distribute a phone number and everyone who calls it will be connected to the same conference call. It's an ideal feature for a regular team meeting or another telephonic get-together. We'll be using PHP for the code examples, using no particular framework, and the code if you want it is available [on GitHub](https://github.com/nexmo-community/php-conference-call).

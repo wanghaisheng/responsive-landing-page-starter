@@ -14,8 +14,8 @@ tags:
   - nodejs
   - conference-call
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/21/create-a-code-of-conduct-incident-line-with-node-js
+canonical: https://developer.vonage.com/blog/2020/07/21/create-a-code-of-conduct-incident-line-with-node-js
 ---
 Having a Code of Conduct as a community organizer is only one part of the story—having well-thought-out ways to report and respond to bad behavior is also vital. At events I've run in the past, a phone number has been one way provided to attendees—they can either call or text the number and it forwards on to several organizers who have the responsibility to be available to deal with any issues. 
 

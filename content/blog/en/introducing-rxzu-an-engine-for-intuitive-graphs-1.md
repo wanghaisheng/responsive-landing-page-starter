@@ -11,8 +11,8 @@ tags:
   - angular
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/05/introducing-rxzu-an-engine-for-intuitive-graphs-1
+canonical: https://developer.vonage.com/blog/2021/05/05/introducing-rxzu-an-engine-for-intuitive-graphs-1
 outdated: false
 replacement_url: ""
 ---

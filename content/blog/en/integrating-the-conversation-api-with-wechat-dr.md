@@ -12,8 +12,8 @@ tags:
   - conversation-api
   - javascript
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/01/integrating-the-conversation-api-with-wechat-dr
+canonical: https://developer.vonage.com/blog/2019/11/01/integrating-the-conversation-api-with-wechat-dr
 ---
 In this blog post, we’ll show you how to use the Conversation API to establish an external communication channel with your application and demonstrate how to do so using WeChat.
 

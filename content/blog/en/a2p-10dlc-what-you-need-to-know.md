@@ -12,8 +12,8 @@ tags:
   - A2P
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/17/a2p-10dlc-what-you-need-to-know
+canonical: https://developer.vonage.com/blog/2022/01/17/a2p-10dlc-what-you-need-to-know
 outdated: false
 replacement_url: ""
 ---

@@ -12,8 +12,8 @@ tags:
   - devlife
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/03/21/working-on-a-multi-language-team
+canonical: https://developer.vonage.com/blog/2022/03/21/working-on-a-multi-language-team
 outdated: false
 replacement_url: ""
 ---

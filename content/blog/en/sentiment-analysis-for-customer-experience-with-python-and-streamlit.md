@@ -14,8 +14,8 @@ tags:
   - python
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/04/sentiment-analysis-for-customer-experience-with-python-and-streamlit
+canonical: https://developer.vonage.com/blog/2021/05/04/sentiment-analysis-for-customer-experience-with-python-and-streamlit
 outdated: false
 replacement_url: ""
 ---

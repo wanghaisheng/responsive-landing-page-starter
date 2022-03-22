@@ -14,8 +14,8 @@ tags:
   - python
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/03/30/building-a-python-error-alerting-tool
+canonical: https://developer.vonage.com/blog/2021/03/30/building-a-python-error-alerting-tool
 outdated: false
 replacement_url: ""
 ---

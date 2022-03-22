@@ -12,8 +12,8 @@ tags:
   - dotnet
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr
+canonical: https://developer.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr
 ---
 My previous tutorial explained how to use the Vonage [C# Client Library](https://github.com/Vonage/vonage-dotnet-sdk) to [send your first SMS message](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) from an ASP.NET MVC web app. In this follow-up, I continue exploring the Vonage Platform by showing how to receive SMS messages on a Vonage phone number using the C# Client Library.
 

@@ -14,8 +14,8 @@ tags:
   - pagerduty
 comments: false
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/21/incident-reporting-with-pagerduty-and-nexmo-dr
+canonical: https://developer.vonage.com/blog/2019/08/21/incident-reporting-with-pagerduty-and-nexmo-dr
 ---
 ## Introduction
 

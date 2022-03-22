@@ -12,8 +12,8 @@ tags:
   - voice-api
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/12/asyncronous-php-with-revoltphp-vonage-voice-api
+canonical: https://developer.vonage.com/blog/2021/11/12/asyncronous-php-with-revoltphp-vonage-voice-api
 outdated: false
 replacement_url: ""
 ---

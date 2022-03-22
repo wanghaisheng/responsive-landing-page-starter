@@ -14,8 +14,8 @@ tags:
   - client-sdk
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/14/build-a-web-application-to-chat-with-your-facebook-page-users
+canonical: https://developer.vonage.com/blog/2021/10/14/build-a-web-application-to-chat-with-your-facebook-page-users
 outdated: false
 replacement_url: ""
 ---

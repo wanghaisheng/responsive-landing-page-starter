@@ -11,8 +11,8 @@ category: event
 tags:
   - hacktoberfest
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/09/join-nextoberfest-tis-the-season-to-be-hacking-dr
+canonical: https://developer.vonage.com/blog/2018/10/09/join-nextoberfest-tis-the-season-to-be-hacking-dr
 ---
 We wanted to encourage and help people participating in [#Hacktoberfest](https://twitter.com/hashtag/Hacktoberfest?src=hash) this month. We want to celebrate people submitting pull requests to open source projects and reward those who choose to do so on the Nexmo repositories on GitHub, helping make them better!
 

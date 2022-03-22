@@ -13,8 +13,8 @@ tags:
   - azure
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/29/how-send-receive-sms-messages-with-node-js-azure-functions-dr
+canonical: https://developer.vonage.com/blog/2020/01/29/how-send-receive-sms-messages-with-node-js-azure-functions-dr
 ---
 *This blog post is part of the [Applied Cloud Stories](http://aka.ms/applied-cloud-stories) initiative.*
 

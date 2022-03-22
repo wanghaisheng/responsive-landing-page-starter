@@ -11,8 +11,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/01/11/garann-means-is-joining-the-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2019/01/11/garann-means-is-joining-the-developer-relations-team-dr
 ---
 
 Hi there! I'm Garann, and I'm pleased to be joining Nexmo as a JavaScript Developer Advocate. I'll be working from Glasgow, the UK's second-greenest city and, [legend has it](https://en.wikipedia.org/wiki/Chicken_tikka_masala#Origins), the birthplace of chicken tikka masala.

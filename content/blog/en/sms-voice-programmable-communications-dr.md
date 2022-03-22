@@ -13,8 +13,8 @@ tags:
   - sms-api
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/03/03/sms-voice-programmable-communications-dr
+canonical: https://developer.vonage.com/blog/2017/03/03/sms-voice-programmable-communications-dr
 ---
 We recently ran a webinar with [David Leary](https://twitter.com/davidleary) from [Intuit Developer](https://developer.intuit.com/) to go over the basics of using the Nexmo SMS and Voice APIs. If you are planning to attend the upcoming Intuit [Small Business Hack](http://www.smallbizhack.com/) and want a heads-up of what's possible, or if you're just interested in getting a quick overview of SMS and Voice programmable communications with Nexmo, here are the sections of the webinar that directly address sending an SMS, receiving an SMS, making an outbound phone call and receiving an inbound phone call. All examples also come with code snippets and links to further in-depth reading.
 

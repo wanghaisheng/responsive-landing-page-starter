@@ -13,8 +13,8 @@ tags:
   - node-red
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/08/interactive-voice-response-node-red-dr
+canonical: https://developer.vonage.com/blog/2020/01/08/interactive-voice-response-node-red-dr
 ---
 An IVR or Interactive Voice Response is a menu of options presented to a caller. They then navigate that menu using the numbers on their keypad to send DTMF (Dual Tone Multi-Frequency) signals.
 

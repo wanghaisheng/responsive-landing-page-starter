@@ -14,8 +14,8 @@ tags:
   - java
   - text-to-speech
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/03/21/make-text-to-speech-phone-call-java-dr
+canonical: https://developer.vonage.com/blog/2019/03/21/make-text-to-speech-phone-call-java-dr
 ---
 ## Introduction
 

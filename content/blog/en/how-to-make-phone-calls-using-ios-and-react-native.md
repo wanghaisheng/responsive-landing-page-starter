@@ -15,8 +15,8 @@ tags:
   - cross-platform
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native
+canonical: https://developer.vonage.com/blog/2021/04/20/how-to-make-phone-calls-using-ios-and-react-native
 outdated: false
 replacement_url: ""
 ---

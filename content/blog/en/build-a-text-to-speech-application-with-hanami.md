@@ -14,8 +14,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/02/02/build-a-text-to-speech-application-with-hanami
+canonical: https://developer.vonage.com/blog/2021/02/02/build-a-text-to-speech-application-with-hanami
 outdated: false
 replacement_url: ""
 ---

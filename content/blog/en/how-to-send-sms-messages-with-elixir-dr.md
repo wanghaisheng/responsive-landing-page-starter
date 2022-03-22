@@ -12,8 +12,8 @@ tags:
   - elixir
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/12/how-to-send-sms-messages-with-elixir-dr
+canonical: https://developer.vonage.com/blog/2020/02/12/how-to-send-sms-messages-with-elixir-dr
 ---
 SMS continues to drive much of our global communication today, and with the new experimental [Nexmo Elixir SDK](https://github.com/nexmo-community/nexmo-elixir) you can get started sending SMS messages in Elixir. All you need is a Nexmo account, a virtual phone number, and a few lines of code. 
 

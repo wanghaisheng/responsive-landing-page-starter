@@ -12,8 +12,8 @@ tags:
   - node
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/18/dial-ynab-dr
+canonical: https://developer.vonage.com/blog/2019/07/18/dial-ynab-dr
 ---
 Between paying the mortgage, saving an emergency fund, and buying far too many board games I used to have a tough time tracking where all of my money was going each month. Thankfully, I discovered [You Need A Budget (YNAB)](https://www.youneedabudget.com/) a few years ago, which allows me to put money into different categories each month and keep track of how much is in each category.
 

@@ -14,8 +14,8 @@ tags:
   - javascript
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/16/make-phone-calls-with-microsoft-excel-and-vonage-open-contactpad-sdk
+canonical: https://developer.vonage.com/blog/2022/02/16/make-phone-calls-with-microsoft-excel-and-vonage-open-contactpad-sdk
 outdated: false
 replacement_url: ""
 ---

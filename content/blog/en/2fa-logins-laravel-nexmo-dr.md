@@ -13,8 +13,8 @@ tags:
   - laravel
   - php
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/07/26/2fa-logins-laravel-nexmo-dr
+canonical: https://developer.vonage.com/blog/2017/07/26/2fa-logins-laravel-nexmo-dr
 ---
 *This post originally appeared on [michaelheap.com](https://michaelheap.com/2fa-logins-with-laravel-and-nexmo/) before [Michael](https://www.nexmo.com/blog/author/mheap/) joined the Nexmo team!*
 

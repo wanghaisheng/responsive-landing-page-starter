@@ -13,8 +13,8 @@ tags:
   - firebase
   - SMS
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/24/send-and-receive-sms-messages-with-firebase-functions-dr
+canonical: https://developer.vonage.com/blog/2020/01/24/send-and-receive-sms-messages-with-firebase-functions-dr
 ---
 The Firebase platform allows developers to build an application backend rapidly. It's enjoyable to use as well. For this tutorial, I wanted to start using it for some SMS messaging with [Vonage](https://www.vonage.com/). After this walk-through, you will be able to create an SMS message log and a response to the sender using [Firebase Cloud Functions](https://firebase.google.com/docs/functions/get-started) and the Real Time Database alongside the Vonage SMS API.
 

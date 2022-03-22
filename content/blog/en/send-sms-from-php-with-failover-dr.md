@@ -12,8 +12,8 @@ tags:
   - php
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/10/23/send-sms-from-php-with-failover-dr
+canonical: https://developer.vonage.com/blog/2018/10/23/send-sms-from-php-with-failover-dr
 ---
 Staying in touch with customers is key for any organisation. In this post, we'll explore the [Vonage Messages API](https://developer.nexmo.com/messages/overview) and how it can be used to make sure that a business can get messages to its customers in a manner that suits them. The case study is an imaginary "Cupcake Bakery" business that needs the ability to send messages to its customers. This post shows how to use the cornerstone of modern communication, SMS, in your PHP web application. It also demonstrates how the Messages API can use other communication channels to send your message if your first attempt fails, to give you the best chance of reaching your customer.
 

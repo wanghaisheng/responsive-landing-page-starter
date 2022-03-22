@@ -13,8 +13,8 @@ tags:
   - python
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/05/31/building-sms-google-sheets-application-aws-lambda-dr
+canonical: https://developer.vonage.com/blog/2016/05/31/building-sms-google-sheets-application-aws-lambda-dr
 ---
 In this tutorial, we'll show how you can capture SMS Messages sent to your own Nexmo number and log those into a Google spreadsheet using an AWS Lambda written in Python. This can be used for capturing feedback, registration for further information, recording votes, or any form of data collection. What's great about this is that you don't need your own dedicated server, just a small chunk of code hosted on AWS Lambda and a Nexmo account.
 

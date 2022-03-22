@@ -13,8 +13,8 @@ tags:
   - flask
   - python
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/03/use-python-and-flask-to-manage-queues-via-sms-dr
+canonical: https://developer.vonage.com/blog/2020/01/03/use-python-and-flask-to-manage-queues-via-sms-dr
 ---
 While many human experiences can be improved with the application of technology, there is one clearly ripe for a modern solution: **waiting in line**. Whether you plan to renew your driver’s license or get a seat at a popular brunch spot, time spent crammed into waiting rooms with strangers is something you’d likely be happy to avoid. Fortunately, the ubiquity of cell phones means new text and web-based queue systems are becoming more common—send a text to reserve your place in line, check in for status updates, and get notified when you’ve reached the front of the line.
 

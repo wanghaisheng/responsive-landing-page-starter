@@ -12,8 +12,8 @@ tags:
   - php
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/06/19/receiving-an-sms-with-php-dr
+canonical: https://developer.vonage.com/blog/2018/06/19/receiving-an-sms-with-php-dr
 ---
 ## Intro
 

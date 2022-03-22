@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - ngrok
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr
+canonical: https://developer.vonage.com/blog/2017/07/04/local-development-nexmo-ngrok-tunnel-dr
 ---
 Often when [developing demos for conferences](https://www.nexmo.com/blog/2016/12/19/streaming-calls-to-a-browser-with-voice-websockets-dr/), writing [blog posts and “how-tos”](https://www.nexmo.com/?s=how+to) or [creating a guide for our developer portal](https://developer.nexmo.com/) we need to expose our local developer environment to the public internet so that it is reachable by the Vonage APIs.
 

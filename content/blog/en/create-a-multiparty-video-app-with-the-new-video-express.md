@@ -14,8 +14,8 @@ tags:
   - react
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express
+canonical: https://developer.vonage.com/blog/2021/09/27/create-a-multiparty-video-app-with-the-new-video-express
 outdated: false
 replacement_url: ""
 ---

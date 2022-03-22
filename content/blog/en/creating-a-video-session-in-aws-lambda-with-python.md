@@ -14,8 +14,8 @@ tags:
   - video-api
   - aws
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/21/creating-a-video-session-in-aws-lambda-with-python
+canonical: https://developer.vonage.com/blog/2020/05/21/creating-a-video-session-in-aws-lambda-with-python
 ---
 In this post, you'll deploy a [Vonage Video](https://www.vonage.com/communications-apis/video/) `OpenTok session client` as a microservice to [AWS Lambda](https://aws.amazon.com/lambda/), written in Python. You do so using this [Python application available on Github](https://github.com/nexmo-community/opentok-session-lambda-python) that uses [Flask](https://flask.palletsprojects.com/en/1.1.x/), and [Serverless](https://serverless.com/framework/docs/getting-started/).
 

@@ -12,8 +12,8 @@ tags:
   - ios
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/04/17/make-calls-with-a-custom-call-button-in-your-ios-app-dr
+canonical: https://developer.vonage.com/blog/2020/04/17/make-calls-with-a-custom-call-button-in-your-ios-app-dr
 ---
 In this tutorial, we will review how to easily make calls inside of your iOS application using a custom UI component, `NXMCallButton`.
 

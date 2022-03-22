@@ -14,8 +14,8 @@ tags:
   - node
   - messenger
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/01/using-dialogflow-with-firebase-and-the-vonage-messages-sandbox-dr
+canonical: https://developer.vonage.com/blog/2020/06/01/using-dialogflow-with-firebase-and-the-vonage-messages-sandbox-dr
 ---
 Using [Dialogflow](https://Dialogflow.com/) to build a chatbot to interact with your customer is a great way to handle incoming requests like reservations, bank inquiries, FAQs, and initial support. When you combine Dialogflow with [Firebase](https://firebase.google.com/) and [Vonage Messages API](https://developer.nexmo.com/messages/overview), things start to heat up. 
 

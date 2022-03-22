@@ -12,8 +12,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/24/best-practices-to-get-started-with-the-vonage-video-api
+canonical: https://developer.vonage.com/blog/2021/05/24/best-practices-to-get-started-with-the-vonage-video-api
 outdated: false
 replacement_url: ""
 ---

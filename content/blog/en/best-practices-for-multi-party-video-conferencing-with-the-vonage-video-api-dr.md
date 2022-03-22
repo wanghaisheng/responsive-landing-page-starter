@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - video-api
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/23/best-practices-for-multi-party-video-conferencing-with-the-vonage-video-api-dr
+canonical: https://developer.vonage.com/blog/2020/07/23/best-practices-for-multi-party-video-conferencing-with-the-vonage-video-api-dr
 outdated: true
 ---
 

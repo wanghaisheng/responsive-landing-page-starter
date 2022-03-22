@@ -12,8 +12,8 @@ category: team
 tags:
   - careers
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/01/14/daniela-joins-the-nexmo-developer-relations-team-dr
+canonical: https://developer.vonage.com/blog/2020/01/14/daniela-joins-the-nexmo-developer-relations-team-dr
 ---
 Hi! I am Daniela, and I am really excited to be joining Nexmo as Developer Education Coordinator.
 

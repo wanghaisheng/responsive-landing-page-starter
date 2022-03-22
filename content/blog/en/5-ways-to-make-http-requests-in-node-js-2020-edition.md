@@ -12,8 +12,8 @@ tags:
   - http
   - node
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/09/23/5-ways-to-make-http-requests-in-node-js-2020-edition
+canonical: https://developer.vonage.com/blog/2020/09/23/5-ways-to-make-http-requests-in-node-js-2020-edition
 ---
 
 Learning how to make HTTP requests can feel overwhelming as there are dozens of libraries available, with each solution claiming to be more efficient than the last. Some libraries offer cross-platform support, while others focus on bundle size or developer experience. In this post, we'll explore five of the most popular ways to achieve this core functionality in Node.js.

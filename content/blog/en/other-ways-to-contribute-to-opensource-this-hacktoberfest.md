@@ -12,8 +12,8 @@ tags:
   - hacktoberfest
   - opensource
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/09/other-ways-to-contribute-to-opensource-this-hacktoberfest
+canonical: https://developer.vonage.com/blog/2020/10/09/other-ways-to-contribute-to-opensource-this-hacktoberfest
 ---
 There are other ways to contribute to open source this Hacktoberfest. From translating docs to removing uninclusive or patronising language.
 

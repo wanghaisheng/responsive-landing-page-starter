@@ -12,8 +12,8 @@ tags:
   - bots
   - ai
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/09/28/bots-ai-user-privacy-environments-bots-listening
+canonical: https://developer.vonage.com/blog/2017/09/28/bots-ai-user-privacy-environments-bots-listening
 ---
 This is a short clip, but it deals with a very important issue in the bot and AI space. As voice assistants like Alexa get wider adoption, how do we as developers balance the need for user privacy against the value of organic user data?
 

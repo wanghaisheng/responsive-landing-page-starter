@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/02/23/eliminate-failed-calls-with-dynamic-connection-capabilities
+canonical: https://developer.vonage.com/blog/2017/02/23/eliminate-failed-calls-with-dynamic-connection-capabilities
 ---
 We’re excited to announce the addition of dynamic connect for your [voice apps](https://www.nexmo.com/products/voice).
 

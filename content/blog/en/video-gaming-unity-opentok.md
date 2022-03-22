@@ -13,8 +13,8 @@ tags:
   - video-api
   - unity
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/12/video-gaming-unity-opentok
+canonical: https://developer.vonage.com/blog/2019/08/12/video-gaming-unity-opentok
 ---
 Time has passed quickly, since we first talked about [using OpenTok in Unity, the real-time, cross-platform game engine, a year ago](https://tokbox.com/blog/add-opentok-live-video-chat-to-unity/). Fast forward to a month ago, and we introduced our first iteration with Unity3d in beta, during our v2.16 release of OpenTok. Unity enables developers so they can build 3D, 2D, VR, and AR visualizations for games across platforms and devices, including Console, PC, Mobile, Instant, AR, and VR games. 
 

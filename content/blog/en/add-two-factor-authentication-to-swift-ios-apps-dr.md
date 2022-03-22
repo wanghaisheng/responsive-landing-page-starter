@@ -14,8 +14,8 @@ tags:
   - ios
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/10/add-two-factor-authentication-to-swift-ios-apps-dr
+canonical: https://developer.vonage.com/blog/2018/05/10/add-two-factor-authentication-to-swift-ios-apps-dr
 ---
 [Two-factor authentication](https://www.nexmo.com/blog/2014/11/11/why-two-factor-authentication-2fa/) (2FA) adds an extra layer of security for users that are accessing sensitive information.
 

@@ -13,8 +13,8 @@ tags:
   - messages-api
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/13/sms-bot-glitch-hapi-js-nexmo-messages-api-dr
+canonical: https://developer.vonage.com/blog/2018/12/13/sms-bot-glitch-hapi-js-nexmo-messages-api-dr
 ---
 The [Nexmo Messages API](https://developer.nexmo.com/messages/overview) allows you to utilise a single API to send messages via multiple channels, like SMS, MMS and several popular social chat applications. You can handle incoming messages, decide what to do with the message content, and send out a reply accordingly. This blog post will cover how to build a simple bot that can tell you random facts about numbers.
 

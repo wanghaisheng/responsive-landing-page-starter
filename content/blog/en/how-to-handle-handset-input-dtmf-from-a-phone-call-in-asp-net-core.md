@@ -12,8 +12,8 @@ tags:
   - dot-net
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/20/how-to-handle-handset-input-dtmf-from-a-phone-call-in-asp-net-core
+canonical: https://developer.vonage.com/blog/2020/10/20/how-to-handle-handset-input-dtmf-from-a-phone-call-in-asp-net-core
 ---
 The fundamental building block of any Interactive Voice Response (IVR) system is handling input. There are generally two types of input that you can take programmatically from a Public Switched Telephone Network (PSTN), both of which are supported by Vonage:
 

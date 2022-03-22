@@ -11,8 +11,8 @@ category: tutorial
 tags:
   - javascript
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/20/register-to-chat-with-typeform-dr
+canonical: https://developer.vonage.com/blog/2019/11/20/register-to-chat-with-typeform-dr
 ---
 In this article, you'll learn how to set up [Typeform](https://www.typeform.com/) and capture data from a webhook in the [Node.js](https://nodejs.org/en/) framework [Express.js](https://expressjs.com/). You'll use [Passport.js](http://www.passportjs.org/) to authenticate a user, use [Nexmo's Node.js Server SDK](https://github.com/Nexmo/nexmo-node/tree/beta) to register a user, and generate a JWT to use with [Nexmo's JavaScript Client SDK](https://developer.nexmo.com/client-sdk/overview).
 

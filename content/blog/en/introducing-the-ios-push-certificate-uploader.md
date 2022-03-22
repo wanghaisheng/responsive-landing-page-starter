@@ -14,8 +14,8 @@ tags:
   - ""
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/07/introducing-the-ios-push-certificate-uploader
+canonical: https://developer.vonage.com/blog/2021/01/07/introducing-the-ios-push-certificate-uploader
 outdated: false
 replacement_url: ""
 ---

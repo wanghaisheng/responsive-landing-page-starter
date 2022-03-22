@@ -14,8 +14,8 @@ tags:
   - sms-api
   - slimphp
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/09/20/sending-sms-messages-with-php-dr
+canonical: https://developer.vonage.com/blog/2017/09/20/sending-sms-messages-with-php-dr
 ---
 The [Vonage SMS API](https://developer.nexmo.com/api/sms) allows you to send an SMS and receive an SMS by interacting with a simple, HTTP based API. You can [read the docs](https://docs.nexmo.com/messaging/sms-api/api-reference) if you're interested, but there's no need to thanks to the [PHP client](https://github.com/Nexmo/nexmo-php), which handles talking to the API for you.
 

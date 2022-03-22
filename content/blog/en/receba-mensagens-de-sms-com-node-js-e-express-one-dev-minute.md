@@ -13,8 +13,8 @@ tags:
   - portuguese
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/24/receba-mensagens-de-sms-com-node-js-e-express-one-dev-minute
+canonical: https://developer.vonage.com/blog/2022/02/24/receba-mensagens-de-sms-com-node-js-e-express-one-dev-minute
 outdated: false
 replacement_url: ""
 ---

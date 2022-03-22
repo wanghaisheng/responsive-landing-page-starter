@@ -11,8 +11,8 @@ category: community
 tags:
   - iwd
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/10/in-celebration-of-international-womens-day-2020
+canonical: https://developer.vonage.com/blog/2020/03/10/in-celebration-of-international-womens-day-2020
 ---
 To celebrate International Women's Day this year, we wanted to do something special. Some of us took part in events last year and had tons of support from our colleagues to do so. But this year, we really wanted to make a measured effort to celebrate the amazing journeys, stories and voices of our colleagues and the fantastic people around us.
 

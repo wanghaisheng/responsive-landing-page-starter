@@ -12,8 +12,8 @@ tags:
   - javascript
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/01/30/stream-audio-into-a-phone-call-with-node-js
+canonical: https://developer.vonage.com/blog/2019/01/30/stream-audio-into-a-phone-call-with-node-js
 ---
 When you have your customer on a voice call, you have her undivided attention. Why not use that opportunity to tell her the latest news about your company, relay an inspiring message from your CEO, or even just play her your latest advertising jingle?
 

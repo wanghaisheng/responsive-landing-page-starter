@@ -13,8 +13,8 @@ tags:
   - messages-api
   - airtable
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/05/save-received-sms-messages-with-airtable-and-node-js-dr
+canonical: https://developer.vonage.com/blog/2020/03/05/save-received-sms-messages-with-airtable-and-node-js-dr
 ---
 [Airtable](https://airtable.com) is an online database tool that allows you to create linked datasets with a friendly interface. Instead of needing to build admin dashboards for your data, Airtable lets you query, sort, and filter data through its accessible, collaborative, and (dare I say) fun interface.
 

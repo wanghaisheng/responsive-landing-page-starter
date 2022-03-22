@@ -14,8 +14,8 @@ tags:
   - aspnet
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/08/03/send-sms-notifications-on-application-performance-using-c
+canonical: https://developer.vonage.com/blog/2021/08/03/send-sms-notifications-on-application-performance-using-c
 outdated: false
 replacement_url: ""
 ---

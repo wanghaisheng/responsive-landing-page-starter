@@ -13,8 +13,8 @@ tags:
   - voice-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/11/15/pycascades-code-of-conduct-hotline-nexmo-voice-api-dr
+canonical: https://developer.vonage.com/blog/2018/11/15/pycascades-code-of-conduct-hotline-nexmo-voice-api-dr
 ---
 Hello, my name is [Mariatta](https://mariatta.ca). I work as a Platform Engineer at [Zapier](https://zapier.com). I am a Python Core Developer, and I also help organize the [PyCascades](https://www.pycascades.com) conference.
 

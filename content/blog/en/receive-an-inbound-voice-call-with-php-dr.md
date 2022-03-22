@@ -12,8 +12,8 @@ tags:
   - php
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/06/28/receive-an-inbound-voice-call-with-php-dr
+canonical: https://developer.vonage.com/blog/2018/06/28/receive-an-inbound-voice-call-with-php-dr
 ---
 In our last PHP and voice blog post, we covered how to make an [outbound voice call using Text-To-Speech](/blog/2017/10/20/text-to-speech-voice-calls-with-php-dr/). In this post, we're going to change direction and write an application that handles inbound voice calls and returns a dynamic response.
 

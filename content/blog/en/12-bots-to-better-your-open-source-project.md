@@ -14,8 +14,8 @@ tags:
   - hacktoberfest
   - bots
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/28/12-bots-to-better-your-open-source-project
+canonical: https://developer.vonage.com/blog/2020/10/28/12-bots-to-better-your-open-source-project
 old_categories:
   - developer
   - developers

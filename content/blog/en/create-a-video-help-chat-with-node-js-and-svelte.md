@@ -15,8 +15,8 @@ tags:
   - svelte
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/12/16/create-a-video-help-chat-with-node-js-and-svelte
+canonical: https://developer.vonage.com/blog/2020/12/16/create-a-video-help-chat-with-node-js-and-svelte
 outdated: false
 replacement_url: ""
 ---

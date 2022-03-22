@@ -13,8 +13,8 @@ tags:
   - php
   - bref
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/03/16/aws-lambda-with-php-using-bref-and-serverless-framework-dr
+canonical: https://developer.vonage.com/blog/2020/03/16/aws-lambda-with-php-using-bref-and-serverless-framework-dr
 ---
 Using PHP in serverless environments has previously been challenging due to the lack of default runtimes provided by the various cloud providers. However, this has changed recently with added libraries and functionality, making the use of PHP more approachable.
 

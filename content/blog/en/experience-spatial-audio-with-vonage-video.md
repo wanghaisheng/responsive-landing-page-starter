@@ -13,8 +13,8 @@ tags:
   - video-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/11/17/experience-spatial-audio-with-vonage-video
+canonical: https://developer.vonage.com/blog/2021/11/17/experience-spatial-audio-with-vonage-video
 outdated: false
 replacement_url: ""
 ---

@@ -16,8 +16,8 @@ tags:
   - verify-api
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/08/befriending-service-with-symfony-and-vonage
+canonical: https://developer.vonage.com/blog/2020/06/08/befriending-service-with-symfony-and-vonage
 old_categories:
   - developer
   - tutorial

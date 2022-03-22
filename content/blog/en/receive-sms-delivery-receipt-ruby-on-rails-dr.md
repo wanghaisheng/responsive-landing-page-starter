@@ -12,8 +12,8 @@ tags:
   - ruby
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/10/19/receive-sms-delivery-receipt-ruby-on-rails-dr
+canonical: https://developer.vonage.com/blog/2017/10/19/receive-sms-delivery-receipt-ruby-on-rails-dr
 ---
 *This is the second article in a series of "Getting Started with Nexmo SMS and Ruby on Rails" tutorials.*
 

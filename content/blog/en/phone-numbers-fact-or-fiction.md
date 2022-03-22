@@ -12,8 +12,8 @@ tags:
   - phone-numbers
   - numbers-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/06/22/phone-numbers-fact-or-fiction
+canonical: https://developer.vonage.com/blog/2016/06/22/phone-numbers-fact-or-fiction
 ---
 I'm a phone number geek, I always have been. As a child I used to read the front section of the phone directory where all the area codes and special numbers were listed! So, it's not really surprising that I ended up with a career in telecoms. There's something fascinating about the structure of phone numbers to me. Its like a map all laid out in a (mostly) logical structure.
 

@@ -12,8 +12,8 @@ tags:
   - node
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/10/11/adding-voice-functionality-to-an-existing-chat-application-dr
+canonical: https://developer.vonage.com/blog/2019/10/11/adding-voice-functionality-to-an-existing-chat-application-dr
 ---
 Have you ever gotten halfway through writing a long message to someone in a chat and think; wouldn't this just be so much easier if I could talk to them? Of course, you have! By using the Nexmo Client SDK in your chat application, you'll be able to do just that.
 

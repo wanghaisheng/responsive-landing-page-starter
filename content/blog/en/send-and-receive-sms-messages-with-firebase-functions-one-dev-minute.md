@@ -15,8 +15,8 @@ tags:
   - javascript
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/06/send-and-receive-sms-messages-with-firebase-functions-one-dev-minute
+canonical: https://developer.vonage.com/blog/2021/12/06/send-and-receive-sms-messages-with-firebase-functions-one-dev-minute
 outdated: false
 replacement_url: ""
 ---

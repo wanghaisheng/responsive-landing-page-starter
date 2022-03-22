@@ -12,8 +12,8 @@ category: tutorial
 tags:
   - python
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/04/dog-breed-detector-using-machine-learning-dr
+canonical: https://developer.vonage.com/blog/2018/12/04/dog-breed-detector-using-machine-learning-dr
 ---
 Here, at Nexmo, we use Facebook Workplace as one of our many channels for communication. If you haven't used it or heard about it, it's just like Facebook, but for companies. All of us here at Nexmo have an account, and we are able to view and join different groups throughout the organization.
 

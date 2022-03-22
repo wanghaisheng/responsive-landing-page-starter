@@ -12,8 +12,8 @@ tags:
   - careers
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/10/11/james-seconde-joins-the-developer-relations-team
+canonical: https://developer.vonage.com/blog/2021/10/11/james-seconde-joins-the-developer-relations-team
 outdated: false
 replacement_url: ""
 ---

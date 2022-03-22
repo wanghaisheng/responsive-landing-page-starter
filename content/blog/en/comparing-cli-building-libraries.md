@@ -12,8 +12,8 @@ tags:
   - node
   - cli
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/12/comparing-cli-building-libraries
+canonical: https://developer.vonage.com/blog/2020/06/12/comparing-cli-building-libraries
 ---
 Nexmo has a [CLI](https://github.com/nexmo/nexmo-cli), which we use as an alternative to the [Dashboard](https://dashboard.nexmo.com/). It allows you to manage your Nexmo account and use Vonage products from the command line. We've had this tool for about 4 years, and it is written in [Node.js](https://nodejs.org/).
 

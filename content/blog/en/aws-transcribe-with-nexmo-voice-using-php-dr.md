@@ -13,8 +13,8 @@ tags:
   - php
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/02/14/aws-transcribe-with-nexmo-voice-using-php-dr
+canonical: https://developer.vonage.com/blog/2020/02/14/aws-transcribe-with-nexmo-voice-using-php-dr
 ---
 Use cases for voice transcription are becoming more and more prevalent—from IoT devices, which often only have an audio interface, to voice messaging services, which are expected to provide realtime text previews of message contents, speech-to-text capabilities are becoming essential for a wide variety of applications.
 

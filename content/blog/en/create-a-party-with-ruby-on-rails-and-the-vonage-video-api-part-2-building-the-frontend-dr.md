@@ -13,8 +13,8 @@ tags:
   - ruby
   - ruby-on-rails
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/13/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-2-building-the-frontend-dr
+canonical: https://developer.vonage.com/blog/2020/05/13/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-2-building-the-frontend-dr
 ---
 This is the second part of a two-part series on creating a video watch party application using the Vonage Video API and Ruby on Rails. 
 

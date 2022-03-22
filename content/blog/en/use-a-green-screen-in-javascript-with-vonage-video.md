@@ -13,8 +13,8 @@ tags:
   - javascript
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/06/24/use-a-green-screen-in-javascript-with-vonage-video
+canonical: https://developer.vonage.com/blog/2020/06/24/use-a-green-screen-in-javascript-with-vonage-video
 ---
 When creating a Vonage Video publisher, the stream can be sourced directly from a user camera, from a `<video>` element, or a HTML `<canvas>` element. Once pixels get drawn to the canvas, they can be easily manipulated before being used in a Video API session. 
 

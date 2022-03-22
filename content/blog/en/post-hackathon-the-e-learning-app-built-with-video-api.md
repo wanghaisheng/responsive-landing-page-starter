@@ -14,8 +14,8 @@ tags:
   - react
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/12/08/post-hackathon-the-e-learning-app-built-with-video-api
+canonical: https://developer.vonage.com/blog/2021/12/08/post-hackathon-the-e-learning-app-built-with-video-api
 outdated: false
 replacement_url: ""
 ---

@@ -13,8 +13,8 @@ tags:
   - new-joiner
   - introduction
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/24/avital-tzubeli-joins-the-vonage-developer-relations-team
+canonical: https://developer.vonage.com/blog/2020/07/24/avital-tzubeli-joins-the-vonage-developer-relations-team
 ---
 My story at Vonage begins with hummus, as most good stories do. 
 It was June of 2019, back when we were all traveling. I had just landed in San Francisco for DevRelCon SF; I was jet-lagged, painfully tired, and very nervous for my talk the next day, but I couldn't surrender to my hotel room slumber until after the speakers’ dinner. 

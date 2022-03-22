@@ -13,8 +13,8 @@ tags:
   - ASP.NET
   - voice-proxy
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr
+canonical: https://developer.vonage.com/blog/2019/04/18/forward-a-call-via-voice-proxy-with-asp-net-core-dr
 ---
 *This is the fifth tutorial on how to use Voice APIs with ASP.NET series.*
 

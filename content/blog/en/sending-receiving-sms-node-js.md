@@ -13,8 +13,8 @@ tags:
   - node
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/02/28/sending-receiving-sms-node-js
+canonical: https://developer.vonage.com/blog/2017/02/28/sending-receiving-sms-node-js
 ---
 ICYMI, we’ve been hard at work blogging tutorials about how to use the Nexmo [SMS API](https://docs.nexmo.com/messaging/sms-api) to add programmable SMS to Node.js applications using Express. We explained how to:
 

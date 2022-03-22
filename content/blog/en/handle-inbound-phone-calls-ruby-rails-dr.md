@@ -12,8 +12,8 @@ tags:
   - ruby
   - voice-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/12/21/handle-inbound-phone-calls-ruby-rails-dr
+canonical: https://developer.vonage.com/blog/2017/12/21/handle-inbound-phone-calls-ruby-rails-dr
 ---
 *This is the third article in a series of "[Getting Started with Vonage Voice APIs and Ruby on Rails](https://learn.vonage.com/blog/2017/11/02/outbound-text-to-speech-voice-call-ruby-on-rails-dr/)" tutorials. It continues the "[Getting Started with Vonage and Ruby on Rails](https://learn.vonage.com/blog/2017/10/16/send-sms-ruby-on-rails-dr/)" series.*
 

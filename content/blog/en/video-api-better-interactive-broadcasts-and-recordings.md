@@ -14,8 +14,8 @@ tags:
   - multiparty
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/05/11/video-api-better-interactive-broadcasts-and-recordings
+canonical: https://developer.vonage.com/blog/2021/05/11/video-api-better-interactive-broadcasts-and-recordings
 outdated: false
 replacement_url: ""
 ---

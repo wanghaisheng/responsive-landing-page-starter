@@ -13,8 +13,8 @@ tags:
   - javascript
   - messages-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/08/05/voice-chat-with-vue-and-express-dr
+canonical: https://developer.vonage.com/blog/2019/08/05/voice-chat-with-vue-and-express-dr
 ---
 Adding a service to a complex web application can be tricky to do in a maintainable way. This is even more true when the service has a user interface component. With Nexmo's API you can create an in-browser voice chat that becomes the basis for a variety of communications applications. But even organizing the pieces of that basic UI can be difficult. Components like those used in [Vue.js](https://vuejs.org/) make this easier by providing a pattern for the templates, styling, and UI scripting an individual UI component may require. An Express server connecting to Nexmo's tools gives you a lightweight full-stack solution that can be adapted to whatever real-world architecture you end up with, thanks to separation of concerns.
 

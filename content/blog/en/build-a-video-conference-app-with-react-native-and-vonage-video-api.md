@@ -13,8 +13,8 @@ tags:
   - video-api
   - video-conferencing
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/10/12/build-a-video-conference-app-with-react-native-and-vonage-video-api
+canonical: https://developer.vonage.com/blog/2020/10/12/build-a-video-conference-app-with-react-native-and-vonage-video-api
 ---
 Having video call functionality in your application seems to be a must-have these days. However, building a native application from scratch and handling Android and iOS different capabilities can be a very long and expensive process.
 

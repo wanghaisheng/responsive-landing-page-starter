@@ -14,8 +14,8 @@ tags:
   - javascript
   - verify-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/05/10/nexmo-verify-api-implementation-guide-dr
+canonical: https://developer.vonage.com/blog/2018/05/10/nexmo-verify-api-implementation-guide-dr
 ---
 This implementation guide will instruct you on how to set up a server to use the Verify API with your iOS or Android apps.
 

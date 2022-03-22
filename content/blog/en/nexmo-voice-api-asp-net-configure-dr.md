@@ -13,8 +13,8 @@ tags:
   - voice-api
   - dotnet
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr
+canonical: https://developer.vonage.com/blog/2017/07/28/nexmo-voice-api-asp-net-configure-dr
 ---
 *This is part of a series on using The Vonage Voice API with ASP.NET projects. It continues the “Getting Started with Vonage and ASP.NET” series, which follows our [Getting Started series on SMS APIs](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/).*
 

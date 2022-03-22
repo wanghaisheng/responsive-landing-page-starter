@@ -15,8 +15,8 @@ tags:
   - ruby
   - ruby-on-rails
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/10/16/send-sms-ruby-on-rails-dr
+canonical: https://developer.vonage.com/blog/2017/10/16/send-sms-ruby-on-rails-dr
 outdated: true
 ---
 With the help of the [Vonage SMS API](https://developer.nexmo.com/messaging/sms/overview) you can send SMS anywhere in the world. All you need is your virtual phone number, the [Ruby SDK](https://github.com/Nexmo/nexmo-ruby), and a few lines of code.

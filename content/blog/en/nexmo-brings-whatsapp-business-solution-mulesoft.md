@@ -11,8 +11,8 @@ category: announcement
 tags:
   - announcement
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/09/26/nexmo-brings-whatsapp-business-solution-mulesoft
+canonical: https://developer.vonage.com/blog/2018/09/26/nexmo-brings-whatsapp-business-solution-mulesoft
 ---
 One of the great things about being an engineer here at Nexmo is having a front row seat to the development of some really compelling customer engagement solutions. Integrating those solutions with technology partners who then enable their users to build new and innovative customer experience use cases is an added treat. 
 

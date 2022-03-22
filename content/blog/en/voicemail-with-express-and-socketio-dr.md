@@ -14,8 +14,8 @@ tags:
   - javascript
   - web-sockets
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/02/voicemail-with-express-and-socketio-dr
+canonical: https://developer.vonage.com/blog/2019/04/02/voicemail-with-express-and-socketio-dr
 ---
 
 The most pleasant user experiences you've ever had have probably not been using (or, worse, setting up) your voicemail. My voicemail, for example, is fine except that before playing the message it reads every digit of the date, time, and phone number from whence it came as slowly as possible. Some people don't like receiving any voicemail _at all_ and might prefer to only give the option to a few trusted contacts. 

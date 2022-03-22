@@ -14,8 +14,8 @@ tags:
   - swift
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/01/28/handling-voip-push-notifications-with-callkit
+canonical: https://developer.vonage.com/blog/2021/01/28/handling-voip-push-notifications-with-callkit
 outdated: false
 replacement_url: ""
 ---

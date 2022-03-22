@@ -13,8 +13,8 @@ tags:
   - sms-api
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/12/04/introducing-nexmo-rack-middleware-dr
+canonical: https://developer.vonage.com/blog/2019/12/04/introducing-nexmo-rack-middleware-dr
 ---
 Behind every great web framework is infrastructure that makes it all possible. Whether you are building with Ruby on Rails, Sinatra or other Ruby based web frameworks, you are most likely utilizing Rack.
 

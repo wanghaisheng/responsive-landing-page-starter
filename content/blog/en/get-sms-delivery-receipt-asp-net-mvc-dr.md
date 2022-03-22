@@ -13,8 +13,8 @@ tags:
   - asp.net
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/07/21/get-sms-delivery-receipt-asp-net-mvc-dr
+canonical: https://developer.vonage.com/blog/2017/07/21/get-sms-delivery-receipt-asp-net-mvc-dr
 ---
 Now that you have successfully [sent an SMS](https://learn.vonage.com/blog/2017/03/23/send-sms-messages-asp-net-mvc-framework-dr/) and [received an SMS](https://learn.vonage.com/blog/2017/03/31/recieve-sms-messages-with-asp-net-mvc-framework-dr/) using your Vonage number, it’s time to check the status of the message to ensure it was delivered. To do this, we have to fetch the delivery receipt, which will return the delivery status of the message.
 

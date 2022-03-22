@@ -14,8 +14,8 @@ tags:
   - php
   - verify
 comments: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/07/10/aws-cognito-verify-with-php
+canonical: https://developer.vonage.com/blog/2020/07/10/aws-cognito-verify-with-php
 ---
 
 Doing user management the right way is hard work. Allowing users to register themselves, and verifying their identity can be difficult. However, using [Amazon Cognito](https://aws.amazon.com/cognito/) and the [Vonage Verify API](https://www.vonage.com/communications-apis/verify/) help make it a bit easier by doing the heavy lifting.

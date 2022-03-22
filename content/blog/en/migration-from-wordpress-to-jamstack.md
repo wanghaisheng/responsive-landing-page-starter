@@ -14,8 +14,8 @@ tags:
   - nuxt
 comments: false
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/23/migration-from-wordpress-to-jamstack
+canonical: https://developer.vonage.com/blog/2020/11/23/migration-from-wordpress-to-jamstack
 outdated: false
 replacement_url: ""
 ---

@@ -13,8 +13,8 @@ tags:
   - messages-api
   - twitter
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/07/01/discover-your-twitters-positivity-score-with-react-dr
+canonical: https://developer.vonage.com/blog/2019/07/01/discover-your-twitters-positivity-score-with-react-dr
 ---
 In 2019, I challenged myself to spread positivity and kindness in my day-to-day life.   
 

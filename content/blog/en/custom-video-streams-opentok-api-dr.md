@@ -12,8 +12,8 @@ tags:
   - javascript
   - video-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2018/12/20/custom-video-streams-opentok-api-dr
+canonical: https://developer.vonage.com/blog/2018/12/20/custom-video-streams-opentok-api-dr
 ---
 Growing up, I always wanted to be near the snow during the holiday season, but unfortunately, I live near San Francisco, so we never get snow. To make it feel like it's snowing, let's build a video chat app using the [OpenTok API](https://tokbox.com/developer) with moving snowflakes in our video stream!
 

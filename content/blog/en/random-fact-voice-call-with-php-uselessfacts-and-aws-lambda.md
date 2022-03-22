@@ -15,8 +15,8 @@ tags:
   - aws
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/13/random-fact-voice-call-with-php-uselessfacts-and-aws-lambda
+canonical: https://developer.vonage.com/blog/2021/04/13/random-fact-voice-call-with-php-uselessfacts-and-aws-lambda
 outdated: false
 replacement_url: ""
 ---

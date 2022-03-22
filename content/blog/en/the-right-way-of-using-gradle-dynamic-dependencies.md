@@ -14,8 +14,8 @@ tags:
   - Android
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/11/04/the-right-way-of-using-gradle-dynamic-dependencies
+canonical: https://developer.vonage.com/blog/2020/11/04/the-right-way-of-using-gradle-dynamic-dependencies
 outdated: false
 replacement_url: ""
 ---

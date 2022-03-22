@@ -11,8 +11,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/11/serverless-contact-centre-with-azure-functions
+canonical: https://developer.vonage.com/blog/2022/02/11/serverless-contact-centre-with-azure-functions
 outdated: false
 replacement_url: ""
 ---

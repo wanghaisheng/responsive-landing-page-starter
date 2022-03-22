@@ -12,8 +12,8 @@ tags:
   - laravel
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/02/25/laravel-9-strap-in
+canonical: https://developer.vonage.com/blog/2022/02/25/laravel-9-strap-in
 outdated: false
 replacement_url: ""
 ---

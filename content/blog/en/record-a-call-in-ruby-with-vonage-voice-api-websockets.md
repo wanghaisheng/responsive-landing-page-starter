@@ -14,8 +14,8 @@ tags:
   - voice-api
   - ruby
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/04/record-a-call-in-ruby-with-vonage-voice-api-websockets
+canonical: https://developer.vonage.com/blog/2020/08/04/record-a-call-in-ruby-with-vonage-voice-api-websockets
 ---
 The [Vonage Voice API WebSockets](https://developer.nexmo.com/voice/voice-api/guides/websockets) feature recently left Beta status and became generally available. WebSockets allows you to create two-way communication over a single persistent TCP connection. You do not need to handle multiple HTTP requests and responses with WebSockets. A single WebSocket connection can enable text and binary data communication continuously, with only a single connection opened.
 

@@ -13,8 +13,8 @@ tags:
   - javascript
   - PBX
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/04/08/build-interactive-voice-response-node-express-javascript-dr
+canonical: https://developer.vonage.com/blog/2019/04/08/build-interactive-voice-response-node-express-javascript-dr
 ---
 We're going to build an interactive voice response menu, going through everything you need to know to set up a Node.js application that can receive inbound calls and capture user input entered via the keypad.
 

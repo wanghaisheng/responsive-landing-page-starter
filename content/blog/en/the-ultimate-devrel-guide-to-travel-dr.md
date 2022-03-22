@@ -11,8 +11,8 @@ category: devlife
 tags:
   - devrel
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/27/the-ultimate-devrel-guide-to-travel-dr
+canonical: https://developer.vonage.com/blog/2019/11/27/the-ultimate-devrel-guide-to-travel-dr
 ---
 It’s fair to say that we travel a lot in the [Developer Relations team at Nexmo](https://www.nexmo.com/blog/2018/11/28/all-your-devrel-award-belong-to-us-dr). With the number of [events we attend, sponsor, or speak at](https://developer.nexmo.com/community/past-events) always going up, as well as our [seemingly constant recruitment drive](https://developer.nexmo.com/team#join), this isn’t going to change anytime soon.
 

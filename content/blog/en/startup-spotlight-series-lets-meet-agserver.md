@@ -14,8 +14,8 @@ tags:
   - voice-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/06/04/startup-spotlight-series-lets-meet-agserver
+canonical: https://developer.vonage.com/blog/2021/06/04/startup-spotlight-series-lets-meet-agserver
 outdated: false
 replacement_url: ""
 ---

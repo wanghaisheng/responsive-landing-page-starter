@@ -13,8 +13,8 @@ tags:
   - voice-api
   - voicemail
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/08/10/how-to-build-a-voicemail-app-with-asp-net-core-dr
+canonical: https://developer.vonage.com/blog/2020/08/10/how-to-build-a-voicemail-app-with-asp-net-core-dr
 ---
 You can build extremely powerful and flexible contact center solutions with the Vonage Voice API. But what happens if there's no one there to answer the phone on the other end? Well, I suppose you could just simply let the phone ring or play a message back asking them to call again later. Probably what most people would do, including myself, is to take the customer's message in the form of a voicemail. With the [Vonage Voice API](https://developer.nexmo.com/voice/voice-api/overview) and our [.NET SDK](https://www.nuget.org/packages/Nexmo.Csharp.Client/), this is a snap to do in [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1)!
 

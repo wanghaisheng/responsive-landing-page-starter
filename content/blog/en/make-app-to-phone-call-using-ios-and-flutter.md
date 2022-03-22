@@ -14,8 +14,8 @@ tags:
   - conversation-api
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2021/04/01/make-app-to-phone-call-using-ios-and-flutter
+canonical: https://developer.vonage.com/blog/2021/04/01/make-app-to-phone-call-using-ios-and-flutter
 outdated: false
 replacement_url: ""
 ---

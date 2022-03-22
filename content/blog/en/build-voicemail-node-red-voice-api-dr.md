@@ -13,8 +13,8 @@ tags:
   - node-red
   - low-code
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/14/build-voicemail-node-red-voice-api-dr
+canonical: https://developer.vonage.com/blog/2019/11/14/build-voicemail-node-red-voice-api-dr
 ---
 I have been avoiding voicemail for most of my life. Most of the time for one simple reason—I could never quite get 100% of the message.
 

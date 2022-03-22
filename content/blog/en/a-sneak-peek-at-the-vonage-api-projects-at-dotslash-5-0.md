@@ -14,8 +14,8 @@ tags:
   - hackathon
 comments: true
 spotlight: false
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2022/01/26/a-sneak-peek-at-the-vonage-api-projects-at-dotslash-5-0
+canonical: https://developer.vonage.com/blog/2022/01/26/a-sneak-peek-at-the-vonage-api-projects-at-dotslash-5-0
 outdated: false
 replacement_url: ""
 ---

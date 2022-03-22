@@ -13,8 +13,8 @@ tags:
   - ai
   - bots
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2017/12/01/future-bots-voice-primary-computer-interface
+canonical: https://developer.vonage.com/blog/2017/12/01/future-bots-voice-primary-computer-interface
 ---
 In my college days, I had serious doubts about voice ever becoming a viable computer interface, but the rapid advancements in bot and AI technology have me reconsidering that stance. I spoke with Microsoft Technical Evangelist Martin Beeby and Opearlo Co-Founder/CTO Oscar Merry about what they envision as the future of bots and AI. They both see voice-led computing happening sooner than many expect.
 

@@ -16,8 +16,8 @@ tags:
   - node
   - raspberry-pi
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2020/05/19/home-surveillance-system-with-node-and-a-raspberry-pi
+canonical: https://developer.vonage.com/blog/2020/05/19/home-surveillance-system-with-node-and-a-raspberry-pi
 ---
 Have you ever wondered how to build a home surveillance system? Perhaps to monitor your children, supervise vulnerable people in their home, or to be your home security system? This tutorial will guide you through how to the introductory process to build one.
 

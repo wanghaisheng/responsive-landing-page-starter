@@ -12,8 +12,8 @@ tags:
   - azure
   - sms-api
 comments: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2019/11/25/translating-sms-messages-with-azure-translator-text-dr
+canonical: https://developer.vonage.com/blog/2019/11/25/translating-sms-messages-with-azure-translator-text-dr
 ---
 In my previous posts, I showed how you can translate text messages with the [Google Translation API](https://learn.vonage.com/blog/2019/10/24/extending-nexmo-google-cloud-translation-api-dr/), [AWS Translate](https://www.nexmo.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr). and [IBM Watson Language Translator](https://learn.vonage.com/blog/2019/11/04/translating-sms-messages-with-aws-translate-dr/).
 

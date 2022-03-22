@@ -13,8 +13,8 @@ tags:
   - sms-api
 comments: true
 spotlight: true
-redirect: ""
-canonical: ""
+redirect: https://developer.vonage.com/blog/2016/07/14/building-customer-service-chat-rails-5-action-cable-sms-dr
+canonical: https://developer.vonage.com/blog/2016/07/14/building-customer-service-chat-rails-5-action-cable-sms-dr
 ---
 [Rails 5](http://weblog.rubyonrails.org/2016/6/30/Rails-5-0-final/) shipped with some amazing new features like [Turbolinks 5](https://github.com/turbolinks/turbolinks/) and API mode, but the feature that caught our eye is the new built in WebSocket integration with [Action Cable](https://github.com/rails/rails/tree/master/actioncable). This new abstraction around WebSocket is baked straight into Rails and it's perfect for real-time events and two way communication. Today we're going to have a look at building a customer service experience on top of it and the [Nexmo SMS API](https://www.nexmo.com/products/sms/).
 
