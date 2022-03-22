@@ -17,6 +17,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+# Pushing on: a retrospective of Q1 at Vonage
+
 From a personal perspective, Q1 in the Vonage Developer Relations team was always set to be exciting. The world opened up again, we started booking in events to our calendars and we are back on the road, doing what we do best: talking to developers.
 
 Given that we are active once again off the back of [phenomenal events in Q4 2021](https://www.ericsson.com/en/press-releases/2021/11/ericsson-to-acquire-vonage-for-usd-6.2-billion-to-spearhead-the-creation-of-a-global-network-and-communication-platform-for-open-innovation), it's well worth taking the time to slow down a bit (we're a busy bunch, and [now there's more of us!](<>)) and looking at what we have been working on, our content and successes we've had here over the past three months of 2022.
@@ -39,29 +41,26 @@ Something about release note pages, Paul to investigate.
 
 ### Video Everywhere
 
-We're excited about the work the engineering teams are doing to evolve our Video API products, and this quarter has seen plenty of updates.
+We're excited about the work the engineering and product teams are doing to evolve our Video API products, and this quarter has seen plenty of big updates for us to get our teeth into from a developers' perspective.
 
 ##### Meetings API
 
 Expected from Avital on March 30th
 
-##### Experience Composer Early Access Announced
+##### Interactive Broadcast with Experience Composer Beta Announced
 
 Link to **<https://learn.vonage.com/blog/2021/05/11/video-api-better-interactive-broadcasts-and-recordings/#experience-composer>**
 
 (Intro to launch of experience composer.)
 
-Press releases from Tanya Vemitsky
-
-##### Interactive Broadcast
+Press release:
+https://docs.google.com/document/d/1Q4Y7KrvGSqDmwYHwS7TrB7Nipgfr7qCm2j8aF3n8wYs/edit
 
 Link to **<https://learn.vonage.com/blog/2021/05/11/video-api-better-interactive-broadcasts-and-recordings/#interactive-live>**
 
-Press releases from Tanya Vemitsky
-
 Mofi Post
 
-Dwayne post **<https://learn.vonage.com/blog/2021/05/11/video-api-better-interactive-broadcasts-and-recordings/#interactive-live>**
+Dwayne post https://learn.vonage.com/blog/2021/12/15/create-a-personal-twitch-with-vonage-video-api-and-web-components/
 
 #### Jumper.AI
 
