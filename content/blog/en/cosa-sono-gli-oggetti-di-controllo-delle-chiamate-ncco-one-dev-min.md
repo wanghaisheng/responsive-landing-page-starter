@@ -1,8 +1,7 @@
 ---
 title: Cosa sono gli oggetti di controllo delle chiamate (NCCO) | One Dev Min
-description: Welcome to One Dev Minute! The goal of this video series is to
-  share knowledge in a bite-sized manner. Let's learn about Call Control
-  Objects.
+description: Benvenuti a One Dev Minute ! L'obiettivo di questa serie di video è
+  condividere informazioni in un formato velocemente consumabile.
 thumbnail: /content/blog/call-control-objects-nccos-one-dev-minute/thumbnail-and-assets-for-one-dev-minute-1-.png
 author: amanda-cavallaro
 published: true
