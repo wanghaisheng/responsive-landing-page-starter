@@ -17,7 +17,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Pushing on: a retrospective of Q1 at Vonage
 
 From a personal perspective, Q1 in the Vonage Developer Relations team was always set to be exciting. The world opened up again, we started booking in events to our calendars and we are back on the road, doing what we do best: talking to developers.
 
