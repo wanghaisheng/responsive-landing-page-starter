@@ -29,7 +29,7 @@
     "algoliasearch": "^4.10.5",
     "ap-style-title-case": "^1.1.2",
     "autoprefixer": "^10.3.5",
-    "defu": "^3.2.2",
+    "defu": "^6.0.0",
     "dotenv": "^10.0.0",
     "front-matter": "^4.0.2",
     "globby": "^11.0.4",
