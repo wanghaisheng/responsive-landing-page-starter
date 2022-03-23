@@ -25,13 +25,13 @@ Given that we are active once again off the back of [phenomenal events in Q4 202
 
 ### Turning notifications to conversations
 
-One of the ideas we are concentrating this year is revising how you communicate with your customers - in an ever growing, hyper-connected world it is sometimes not _enough_ to simply fire off notifications via typical mediums (email, SMS etc). What we're looking at is to how to turn these from one-way traffic into meaningful conversations to enhance your business's ability to communicate.
+One of the ideas we are concentrating on this year is revising how you communicate with your customers - in an ever-growing, hyper-connected world it is sometimes not _enough_ to simply fire off notifications via. typical mediums (email, SMS, etc). What we're looking at is how to turn these interactions from one-way traffic into meaningful conversations to enhance your business's ability to communicate.
 
 ##### 10DLC
 Application-to-person (A2P) messaging in the United States has seen the launch of a major new standard, 10DLC (which stands for 10-Digit Long Code). Messaging communications sent through the major carriers such as Verizon, T-Mobile and AT&T are now registered and signed to ensure system-generated communications are from a trusted source. You can read more about 10DLC and how it impacts your business [in this article by Cory Althoff]().
 
 ##### New WhatsApp Conversational Pricing
-In February 2022, WhatsApp introduced a new pricing model for conversation-based messaging. In line with this, Vonage has introduced new enhanced conversation-based pricing, which affects initiated messaging between a customer and business in one 24 hour _session_. Our documentation has been updated according for more information - [you can find everything you'll need to take advantage of this new model here.](https://developer.vonage.com/messages/concepts/whatsapp)
+In February 2022, WhatsApp introduced a new pricing model for conversation-based messaging. In line with this, Vonage has introduced new enhanced conversation-based pricing, which affects initiated messaging between a customer and business in one 24 hour _session_. Our documentation has been updated accordingly - [you can find everything you'll need to take advantage of this new model here.](https://developer.vonage.com/messages/concepts/whatsapp)
 
 #### Release Notes
 
@@ -47,9 +47,9 @@ Expected from Avital on March 30th
 
 #### Interactive Broadcast Beta Announced
 
-Our Developer Advocate Garann Means [wrote an article on lessons learned after two years of Virtual Conferences](https://learn.vonage.com/blog/2022/03/14/lessons-learned-after-two-years-of-virtual-tech-conferences/) , and how we approached Developer Relations during the time of COVID has certainly been a hot topic.
+Our Developer Advocate Garann Means [wrote an article on lessons learned after two years of Virtual Conferences](https://learn.vonage.com/blog/2022/03/14/lessons-learned-after-two-years-of-virtual-tech-conferences/), and how we approached Developer Relations during the time of COVID has certainly been a hot topic.
 
-So, given our experiences with conference online platforms and the successes or failures of how they are implemented, what apt timing for the announcement that, as a developer, you can implement your own solution! The Vonage Video API now has a big feature update that introduces true _Interactive Broadcast_ experiences for end users. [You can find the Press Release here. EDIT: LIVE DOCS COPY UNDER EMBARGO](https://docs.google.com/document/d/1Q4Y7KrvGSqDmwYHwS7TrB7Nipgfr7qCm2j8aF3n8wYs/edit).
+So, given our experiences with conference online platforms and the successes or failures of how they are implemented, what apt timing for the announcement that, as a developer, you can implement your own solution! The Vonage Video API now has a big feature update that introduces true _Interactive Broadcast_ experiences for end-users. [You can find the Press Release here. EDIT: LIVE DOCS COPY UNDER EMBARGO](https://docs.google.com/document/d/1Q4Y7KrvGSqDmwYHwS7TrB7Nipgfr7qCm2j8aF3n8wYs/edit).
 
 Among the features we've released include: 
 
@@ -59,9 +59,9 @@ Among the features we've released include:
 
 You can read more in-depth about the new features in [this post, from Senior Product Manager Jon Montana](https://learn.vonage.com/blog/2021/05/11/video-api-better-interactive-broadcasts-and-recordings/#).
 
-Naturally our Developer Advocates wanted to get their hands on these new features to check them out. [In this article](https://learn.vonage.com/blog/2021/12/15/create-a-personal-twitch-with-vonage-video-api-and-web-components/) you can read up on our JavaScript Advocate [Dwayne Hemmings](https://twitter.com/lifelongdev) writing on [using the VideoAPI and Web Components to create a personal Twitch-like broadcasting platform](https://learn.vonage.com/blog/2021/12/15/create-a-personal-twitch-with-vonage-video-api-and-web-components/).
+Naturally, our Developer Advocates wanted to get their hands on these new features to check them out. [In this article](https://learn.vonage.com/blog/2021/12/15/create-a-personal-twitch-with-vonage-video-api-and-web-components/) you can read up on our JavaScript Advocate [Dwayne Hemmings](https://twitter.com/lifelongdev) writing on [using the VideoAPI and Web Components to create a personal Twitch-like broadcasting platform](https://learn.vonage.com/blog/2021/12/15/create-a-personal-twitch-with-vonage-video-api-and-web-components/).
 
-Want to see some of these high definition features in action? We've got you covered! Our Video API Advocate [Mofi Rahman](https://twitter.com/moficodes) wrote an article on implementing HLS broadcasts
+Want to see some of these high-definition features in action? We've got you covered! Our Video API Advocate [Mofi Rahman](https://twitter.com/moficodes) wrote an article on implementing HLS broadcasts
 
 
 #### Jumper.AI
