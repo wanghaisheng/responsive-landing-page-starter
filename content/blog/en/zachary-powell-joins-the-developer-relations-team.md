@@ -2,9 +2,10 @@
 title: Zachary Powell Joins the Developer Relations Team
 description: My name is Zachary Powell and i'm excited to announce that I have
   joined Vonage as the new Sr Android Developer Advocate.
+thumbnail: /content/blog/zachary-powell-joins-the-developer-relations-team/zachary-powell.png
 author: zachary-powell-1
 published: true
-published_at: 2022-03-21T10:40:56.143Z
+published_at: 2022-03-23T10:38:13.280Z
 updated_at: 2022-03-21T10:40:56.155Z
 category: team
 tags:
