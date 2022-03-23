@@ -20,6 +20,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*Post has been updated to include the Vonage Video API March 2022 Release with an increase in simultaneous live interactive participants, low latency HLS broadcasts, and the new Vonage Experience Composer.*
+
 To start, let’s define some things and set expectations. Twitch is a gigantic platform that allows people to broadcast and interact with viewers. From [Wikipedia](https://en.wikipedia.org/wiki/Twitch_(service)):
 “As of February 2020, it had 3 million broadcasters monthly and 15 million daily active users, with 1.4 million average concurrent users.” 
 
@@ -33,9 +35,9 @@ The aforementioned existing application is the [Broadcast Sample App](https://gi
 
 The Vonage Video API offers two ways to share video sessions with audiences.
 
-[Live interactive video broadcasts](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) - This option has presenters (host and guest) as well as viewers connected to the video session. Presenters are publishing and subscribing to each other's audio and video streams while the viewers are just subscribing to the presenters’ individual streams. (Note: Viewers can be allowed to publish their streams since they are already connected to the session.) Since everyone is subscribing to everyone else’s stream, the latency is lower, but there is an upper limit to the number of participants based on the number of publishing streams. There’s a handy table in the docs to help determine the number of viewers possible.
+[Live interactive video broadcasts](https://tokbox.com/developer/guides/broadcast/live-interactive-video/) - This option has presenters (host and guest) as well as viewers connected to the video session. Presenters are publishing and subscribing to each other's audio and video streams while the viewers are just subscribing to the presenters’ individual streams. (Note: Viewers can be allowed to publish their streams since they are already connected to the session.) Since everyone is subscribing to everyone else’s stream, the latency is lower, but there is an upper limit to the number of participants based on the number of publishing streams. That limit is 15,000 simultaneous live interactive participants. There’s a handy table in the docs to help determine the number of viewers possible.
 
-[Live streaming broadcasts](https://tokbox.com/developer/guides/broadcast/live-streaming/) - The presenters are still publishing and subscribing to each other's streams, but there is a combined single broadcast stream that the viewers consume. Merging the streams will add some latency for the viewer. This option is closer to how Twitch, YouTube, Facebook, and others handle live streams.
+[Live streaming broadcasts](https://tokbox.com/developer/guides/broadcast/live-streaming/) - The presenters are still publishing and subscribing to each other's streams, but there is a combined single broadcast stream that the viewers consume. Merging the streams will add some latency for the viewer. Both HLS and RTMP streams are available to broadcast. The latest release introduces a low latency HLS broadcast option that greatly reduces the latency to around 4 to 6 seconds. This option is closer to how Twitch, YouTube, Facebook, and others handle live streams. There is also the new HLS DVR option that allows viewers to pause and resume live broadcasts.
 
 The Vonage Video API broadcast sample can do both, but we will focus on the live streaming broadcasts option here for our personal Twitch application.
 
@@ -62,5 +64,9 @@ One more thing. Have you ever gone to a page on Twitch where there is a live str
 ## The Final Product
 
 If you would like to see the application created in action for yourself, you can remix the [Glitch project](https://glitch.com/edit/#!/remix/personal-twitch-demo?path=README.md%3A1%3A0). By running a setup script and entering a couple of API Keys and Secrets, you too can have your own personal Twitch.
+
+## What's Next?
+
+Keep a lookout for an upcoming blog post where we incorporate the new Vonage Experience Composer. Think of it as a way to screen capture your whole application (video streams, User Interface, chat, and all) that can be then used for recordings and/or broadcasting.
 
 As always, if you have any questions or comments, feel free to connect with us in our [community Slack channel](https://developer.vonage.com/slack).
