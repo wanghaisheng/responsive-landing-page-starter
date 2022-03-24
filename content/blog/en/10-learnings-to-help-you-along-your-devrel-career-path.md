@@ -19,7 +19,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-On March 9th, as part of our celebrations for International Women's Day, our Developer Relations team at Vonage hosted an online event on DevRel career paths. You can watch the [entire panel discussion here](https://www.youtube.com/watch?v=S9ukWmK16Dg).
+On March 9th, as part of our celebrations for International Women's Day, our Developer Relations team at Vonage hosted an online event on DevRel career paths. You can watch the entire panel discussion on the video below.
+
+<youtube id="S9ukWmK16Dg"></youtube>
 
 Our panelists [Jessica West](https://www.linkedin.com/in/jessicagwest/), [Sarah Thiam](https://www.linkedin.com/in/sarahthiam/), and [Shuba Swaminathan](https://www.linkedin.com/in/shubas/) talked about their backgrounds and how they broke into DevRel. They shared the opportunities, lessons, and challenges they faced as women in the industry and how it all shaped their career journeys. As I listened to our speakers, I appreciated their honest approach and the insights they provided. Whether you're at the start of your DevRel career journey or you're looking for that next step in a leadership role, here are 10 learnings I had from the discussion.
 
