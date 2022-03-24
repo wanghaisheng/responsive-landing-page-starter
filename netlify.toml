@@ -105,6 +105,24 @@
   force = true
 
 [[redirects]]
+  from = "/authors/*"
+  to = "https://developer.vonage.com/blog/authors/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tags/*"
+  to = "https://developer.vonage.com/blog/tags/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/*"
+  to = "https://developer.vonage.com/blog/categories/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/page/*"
   to = "/blog/"
   status = 301
