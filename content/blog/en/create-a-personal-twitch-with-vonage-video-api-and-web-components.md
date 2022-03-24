@@ -7,7 +7,7 @@ thumbnail: /content/blog/create-a-personal-twitch-with-vonage-video-api-and-web-
 author: dwanehemmings
 published: true
 published_at: 2021-12-15T10:24:41.091Z
-updated_at: 2021-12-13T11:41:12.384Z
+updated_at: 2022-03-24T10:33:37.105Z
 category: inspiration
 tags:
   - video
