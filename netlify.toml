@@ -88,19 +88,37 @@
 
 [[redirects]]
   from = "/blog/author/*"
-  to = "/authors/:splat"
+  to = "https://developer.vonage.com/blog/authors/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/tag/*"
-  to = "/tags/:splat"
+  to = "https://developer.vonage.com/blog/tags/:splat"
   status = 301
   force = true
 
 [[redirects]]
   from = "/blog/category/*"
-  to = "/categories/:splat"
+  to = "https://developer.vonage.com/blog/categories/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/authors/*"
+  to = "https://developer.vonage.com/blog/authors/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/tags/*"
+  to = "https://developer.vonage.com/blog/tags/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/categories/*"
+  to = "https://developer.vonage.com/blog/categories/:splat"
   status = 301
   force = true
 
@@ -110,4 +128,14 @@
   status = 301
   force = true
 
+[[redirects]]
+  from = "/blog"
+  to = "https://developer.vonage.com/blog"
+  status = 301
+  force = true
 
+[[redirects]]
+  from = "/blog/:year/:month/:day/:blog_path"
+  to = "https://developer.vonage.com/blog/:year/:month/:day/:blog_path"
+  status = 301
+  force = true
