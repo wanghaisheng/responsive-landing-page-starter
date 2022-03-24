@@ -29,7 +29,7 @@ If there's one key takeaway from the discussion, it's that there is no same path
 
 ## Have a Beginner Mindset
 
-A common thread on succeeding in DevRel that emerged from the discussion was having a beginner mindset. All our speakers came into DevRel with different lenses; Shuba with that of a Product Manager, Sarah from a Product Marketers perspective, and Jessica from Marketing. But a general characteristic they all mentioned was the ability to think like a beginner. Being empathetic and able to put yourself in the place of your customer, in most cases your customer being a developer for our panel, is a skill in itself. And to take it a step further, communicating your product’s capabilities to someone that might be a beginner user or generally a beginner in tech is essential for people in DevRel no matter what your role is. 
+A common thread on succeeding in DevRel that emerged from the discussion was having a beginner mindset. All our speakers came into DevRel with different lenses; Shuba with that of a Product Manager, Sarah from a Product Marketer's perspective, and Jessica from Marketing. But a general characteristic they all mentioned was the ability to think like a beginner. Being empathetic and able to put yourself in the place of your customer, in most cases your customer being a developer for our panel, is a skill in itself. And to take it a step further, communicating your product’s capabilities to someone that might be a beginner user or generally a beginner in tech is essential for people in DevRel no matter what your role is. 
 
 ## Create Opportunities for Yourself and Others
 
