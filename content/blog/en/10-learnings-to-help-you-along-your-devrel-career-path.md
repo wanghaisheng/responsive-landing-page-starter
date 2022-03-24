@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-On March 9th, as part of our celebrations for International Women's Day, our Developer Relations team at Vonage hosted an online event on DevRel career paths. You can watch the entire panel discussion [here](https://www.youtube.com/watch?v=S9ukWmK16Dg).
+On March 9th, as part of our celebrations for International Women's Day, our Developer Relations team at Vonage hosted an online event on DevRel career paths. You can watch the [entire panel discussion here](https://www.youtube.com/watch?v=S9ukWmK16Dg).
 
 Our panelists [Jessica West](https://www.linkedin.com/in/jessicagwest/), [Sarah Thiam](https://www.linkedin.com/in/sarahthiam/), and [Shuba Swaminathan](https://www.linkedin.com/in/shubas/) talked about their backgrounds and how they broke into DevRel. They shared the opportunities, lessons, and challenges they faced as women in the industry and how it all shaped their career journeys. As I listened to our speakers, I appreciated their honest approach and the insights they provided. Whether you're at the start of your DevRel career journey or you're looking for that next step in a leadership role, here are 10 learnings I had from the discussion.
 
@@ -39,7 +39,9 @@ Something all our panelists were passionate about was advocating for underrepres
 
 ## You Don't Need to Be an Engineer to Get Into DevRel
 
-Further to the traditional (although it can encompass a million different things) Developer Advocate role there are many other disciplines in DevRel that can often be overlooked - program and community management, content creation, technical writing. For Sarah, there needs to be more education around the different roles both for companies and for candidates. As Jessica mentioned there can be other skills and values someone can bring into DevRel further than engineering and public speaking hours. Your diverse background, empathy, and learning capacity and how you can bring that to life into a role could be more valuable to a team or organization.
+Further to the traditional (although it can encompass a million different things) Developer Advocate role there are many other disciplines in DevRel that can often be overlooked - program and community management, content creation, technical writing. For Sarah, there needs to be more education around the different roles both for companies and for candidates. 
+
+As Jessica mentioned there can be other skills and values someone can bring into DevRel further than engineering and public speaking hours. Your diverse background, empathy, and learning capacity and how you can bring that to life into a role could be more valuable to a team or organization.
 
 ## Be Prepared to Wear Multiple Hats
 
@@ -49,7 +51,7 @@ For Shuba, soft skills like communication are sometimes underestimated by both e
 
 ## Create Your Own Board of Advisors
 
-When asked about having a mentor or being mentors our speakers all had the same story to share. Throughout their careers, they've turned connections and friendships they've made into their own board of advisors. A collective of people with different skills and expertise who you can reach out to depending on what you need, for advice or just a reality check. For Shuba, being able to air a challenge you're facing in a safe space before taking it to your manager can help you become more self-aware when the time comes to have that conversation. And as for Jessica's community ties, bringing the outside perspective can help you with what you need in different situations.
+When asked about having a mentor or being mentors our speakers all had a similar story to share. Throughout their careers, they've turned connections and friendships they've made into their own board of advisors. A collective of people with different skills and expertise who you can reach out to depending on what you need, for advice or just a reality check. For Shuba, being able to air a challenge you're facing in a safe space before taking it to your manager can help you become more self-aware when the time comes to have that conversation. And as for Jessica's community ties, bringing the outside perspective can help you with what you need in different situations.
 
 ## Be Your Full Self 
 
@@ -57,7 +59,7 @@ Authenticity is not a new concept in DevRel. Your community will want to get to 
 
 ## Managing Imposter Syndrome
 
-We can all at times be our own worst critics. When questioning whether you can do something or whether you're good enough, try looking at it from a different lens. Would your colleague think the same about you? Or as Sarah said, would someone of a different gender, role title, who’s in a different region think they can or cannot do what you're trying to achieve? Our speakers discussed how DevRel can be challenging on its own and for those who have faced assumptions and biases even more so. However, as Jessica put it, "peacocking" or claiming your space and making a statement that you belong, can be motivating and empowering.
+We can all at times be our own worst critics. When questioning whether you can do something or whether you're good enough, try looking at it from a different lens. Would your colleague think the same about you? Or as Sarah said, would someone of a different gender, role title, who's in a different region think they can or cannot do what you're trying to achieve? Our speakers discussed how DevRel can be challenging on its own and for those who have faced assumptions and biases even more so. However, as Jessica put it, "peacocking" or claiming your space and making a statement that you belong, can be motivating and empowering.
 
 ## Being a Leader
 
