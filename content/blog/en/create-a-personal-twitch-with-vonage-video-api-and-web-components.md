@@ -1,5 +1,5 @@
 ---
-title: Create a personal Twitch with Vonage Video API and Web Components
+title: Create a Personal Twitch with Vonage Video API and Web Components
 description: By integrating the Client SDK UI Web Components into the Vonage
   Video API Broadcast Sample App, the user can live stream themselves along with
   guests to an audience and interact via text chat.
