@@ -33,9 +33,9 @@ A common thread on succeeding in DevRel that emerged from the discussion was hav
 
 ## Create Opportunities for Yourself and Others
 
-It can be hard to break into DevRel for those who are just starting out, whatever your background may be. For Jessica, going to community events and creating opportunities outside her day-to-day work allowed her to meet people that like her didnt follow a traditional path. That affinity gave her the motivational boost she needed to pursue her first role in DevRel.
+It can be hard to break into DevRel for those who are just starting out, whatever your background may be. For Jessica, going to community events and creating opportunities outside her day-to-day work allowed her to meet people that like her didn't follow a traditional path. That affinity gave her the motivational boost she needed to pursue her first role in DevRel.
 
-Something all our panelists were passionate about was advocating for underrepresented groups. Theyve all faced challenges where they were blocked or had assumptions be made because of their gender or where they were from. For Sarah, doing DevRel in Southeast Asia is a challenge, it's something new and the community is small. To help folks who are just starting out she started a group aiming to boost people up in related skills like public speaking. Wherever you are in your journey, seeking out groups so you can skill up or help others learn in this relatively new field is key for the future generations of DevRel folks.
+Something all our panelists were passionate about was advocating for underrepresented groups. They've all faced challenges where they were blocked or had assumptions be made because of their gender or where they were from. For Sarah, doing DevRel in Southeast Asia is a challenge, it's something new and the community is small. To help folks who are just starting out she started a group aiming to boost people up in related skills like public speaking. Wherever you are in your journey, seeking out groups so you can skill up or help others learn in this relatively new field is key for the future generations of DevRel folks.
 
 ## You Don't Need to Be an Engineer to Get Into DevRel
 
