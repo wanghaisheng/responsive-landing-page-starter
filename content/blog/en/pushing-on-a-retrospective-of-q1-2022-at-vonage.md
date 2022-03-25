@@ -17,8 +17,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-# Pushing on: a retrospective of Q1 at Vonage
-
 From a personal perspective, Q1 in the Vonage Developer Relations team was always set to be exciting. The world opened up again, we started booking in events to our calendars and we are back on the road, doing what we do best: talking to developers.
 
 Given that we are active once again off the back of [phenomenal events in Q4 2021](https://www.ericsson.com/en/press-releases/2021/11/ericsson-to-acquire-vonage-for-usd-6.2-billion-to-spearhead-the-creation-of-a-global-network-and-communication-platform-for-open-innovation), it's well worth taking the time to slow down a bit (we're a busy bunch, and [now there's more of us!](https://learn.vonage.com/blog/2022/03/23/zachary-powell-joins-the-developer-relations-team/)) and looking at what we have been working on, our content and successes we've had here over the past three months of 2022.
