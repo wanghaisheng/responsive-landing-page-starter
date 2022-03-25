@@ -3,9 +3,10 @@ title: 10 Learnings to Help You Along Your DevRel Career Path
 description: On March 9th, as part of our celebrations for International Women’s
   Day, our Developer Relations team at Vonage hosted an online event on DevRel
   career paths.
+thumbnail: /content/blog/10-learnings-to-help-you-along-your-devrel-career-path/iwd_career-path-1-.jpg
 author: myrsini
 published: true
-published_at: 2022-03-24T09:57:38.774Z
+published_at: 2022-03-25T10:13:12.139Z
 updated_at: 2022-03-24T09:57:38.789Z
 category: event
 tags:
