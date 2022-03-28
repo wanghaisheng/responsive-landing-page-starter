@@ -17,9 +17,9 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-The commercial real estate industry is continually being disrupted through the rise of what is called “space-as-a-service”. Space-as-a-service (SPaaS) as a concept has evolved massively over the past couple of decades and is a paradigm shift in the way in which the commercial real estate industry operates.
+The commercial real estate industry is continually being disrupted through the rise of what is called "space-as-a-service". Space-as-a-service (SPaaS) as a concept has evolved massively over the past couple of decades and is a paradigm shift in the way in which the commercial real estate industry operates.
 
-New entrants in this market provide digital platforms for individuals or established businesses to monetize their unused space at home, the workplace, or elsewhere. This provides a great opportunity for property owners but also wider, more flexible options to renters. This disruption has led to an evolution in the type of spaces available on the market, anywhere from storage facilities and living spaces to curbsides and gardens.
+New entrants in this market provide digital platforms for individuals or established businesses to monetize their unused space at home, the workplace, or elsewhere. This provides a great opportunity for property owners but also wider, more flexible options for renters. This disruption has led to an evolution in the type of spaces available on the market, anywhere from storage facilities and living spaces to curbsides and gardens.
 
 One of the ambitious new startups aiming to disrupt this market even further is Dallas-based Ezynest. Madhu Korepu, one of Ezynest’s founders, caught up with us this week and explained their big plans for the future.
 
@@ -63,7 +63,7 @@ Initially, we did not concentrate on the user experience, we only focused on dev
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos, and Bill Gates. Who do you choose and why?  
 
-## Elon Musk, because he is a visionary. He believes dreams don't come true unless you envision them and work on them to make them a reality. 
+Elon Musk, because he is a visionary. He believes dreams don't come true unless you envision them and work on them to make them a reality. 
 
 ## How have you been using Vonage’s APIs?
 
@@ -75,10 +75,10 @@ We launched the Ezynest mobile application on FEB14 on iOS and android platforms
 
 ## What’s next for Ezynest? Where do you want to be in 3 years?
 
-We want to expand in all the major cities of the USA and CANADA  and reach 1 million users with 250k Subscriptions, generating a revenue of up to 5 million a month.
+We want to expand in all the major cities of the USA and Canada and reach 1 million users with 250k Subscriptions, generating a revenue of up to 5 million a month.
 
 ### Let's work together - Vonage for Startups
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
-**Apply to join us [here](https://vonage.dev/3d093hA).**
+**Apply to [join us here](https://vonage.dev/3d093hA).**
