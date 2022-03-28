@@ -135,6 +135,12 @@
   force = true
 
 [[redirects]]
+  from = "/"
+  to = "https://developer.vonage.com/blog"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/blog/:year/:month/:day/:blog_path"
   to = "https://developer.vonage.com/blog/:year/:month/:day/:blog_path"
   status = 301
