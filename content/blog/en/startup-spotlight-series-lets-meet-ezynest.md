@@ -63,7 +63,7 @@ Initially we did not concentrate on the user experience, we only focused on deve
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos and Bill Gates. Who do you choose and why?  
 
-Elon Musk, because he is a visionary. He believes dreams don't come true unless you envision them and work on them to make it a reality. 
+## Elon Musk, because he is a visionary. He believes dreams don't come true unless you envision them and work on them to make it a reality. 
 
 ## How have you been using Vonage’s APIs?
 
@@ -71,7 +71,7 @@ We have been using the Vonage Verify API to ensure users are legitimate for the 
 
 ## What progress have you made since launching? 
 
-We launched the ezynest mobile application on FEB14 on iOS and android platforms and shared in our social circle, collected the feedback and worked on the bugs. We are also planning to concentrate on one major location to start marketing to reach the users as a starting point \[ i.e Dallas, TX ] and gather insights.
+We launched the ezynest mobile application on FEB14 on iOS and android platforms and shared in our social circle, collected the feedback and worked on the bugs. We are also planning to concentrate on one major location to start marketing to reach the users as a starting point [ i.e Dallas, TX ] and gather insights.
 
 ## What’s next for Ezynest? Where do you want to be in 3 years?
 
@@ -81,5 +81,4 @@ We want to expand in all the major cities of the USA and CANADA  and reach 1 mi
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
-**\
-Apply to join us [here](https://vonage.dev/3d093hA).**
+**Apply to join us [here](https://vonage.dev/3d093hA).**
