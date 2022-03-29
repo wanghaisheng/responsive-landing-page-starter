@@ -173,5 +173,7 @@ If you've configured callbacks on your account, you'll receive notifications abo
 
 ## Resources
 
-To learn more about room management, callbacks, recording management, and configuring your themes, visit the Meetings API [documentation](https://developer.vonage.com/meetings/overview).
+To learn more about room management, callbacks, recording management, and configuring your themes, visit [the Meetings API Documentation](https://developer.vonage.com/meetings/overview).
+
+Once you've configured your account, free free to try out the API, create some rooms, play around and tell us what you think!
 To set up your account and configure callbacks, email us at meetings-api@vonage.com
