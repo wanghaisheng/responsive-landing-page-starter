@@ -1,6 +1,7 @@
 ---
 title: Introducing the Meetings API
 description: The quickest path to a video meeting that Vonage has to offer
+thumbnail: /content/blog/introducing-the-meetings-api/intro-to-meetings-api.png
 author: avital-tzubelivonage-com
 published: true
 published_at: 2022-03-29T15:26:31.727Z
