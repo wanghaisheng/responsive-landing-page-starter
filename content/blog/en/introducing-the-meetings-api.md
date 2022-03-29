@@ -21,9 +21,9 @@ If you need an integrated video solution in your applications but don't have tim
 ## How does it work?
 
 Using the API, you can generate *rooms*, which are fully-fledged Vonage meetings that come pre-built with features like messaging, recording, screen sharing, and a handful of other collaborations tools. 
-The API also allows for _Whitelabeling_, which means that with the Themes endpoint you can customize the colors and logos that will be displayed in your meeting rooms. Finally, with configured callbacks, you can view details about the meeting, such as when participants joined and recording information. 
+The API also allows for *Whitelabeling*, which means that with the Themes endpoint you can customize the colors and logos that will be displayed in your meeting rooms. Finally, with configured callbacks, you can view details about the meeting, such as when participants joined and recording information. 
 
-![](/content/blog/introducing-the-meetings-api/meetings.jpeg)
+![Screenshot of new Meetings API session in progress](/content/blog/introducing-the-meetings-api/meetings.jpeg)
 
 ## Instant and Long Term Rooms
 
@@ -138,11 +138,12 @@ curl -X POST 'https://api-eu.vonage.com/beta/meetings/themes' \
 As seen in the response, different colors and logos can be set for light or dark mode.
 Once the theme ID is applied to a room (by setting `theme_id` on creation or update), the meeting room will look like this: 
 
-![](/content/blog/introducing-the-meetings-api/orange-theme.png)
+![Screenshot of new orange blog theme applied](/content/blog/introducing-the-meetings-api/orange-theme.png)
 
 ## Callbacks
 
 If you've configured callbacks on your account, you'll receive notifications about various events happening in your meeting rooms, such as: 
+
 * Room expiration
 * Participant attendance
 * Recording events
