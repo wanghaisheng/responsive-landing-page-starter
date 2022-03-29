@@ -21,7 +21,7 @@ If you need an integrated video solution in your applications but don't have tim
 ## How does it work?
 
 Using the API, you can generate *rooms*, which are fully fledged Vonage meetings that come pre-built with features like messaging, recording, screen sharing, and a handful of other collaborations tools. 
-The API also allows for whitelabeling, which means that with the Themes endpoint, you can customize the colors and logos that will be displayed in your meeting rooms. Finally, with configured callbacks, you can view details about the meeting, like when participants joined and recording information. 
+The API also allows for _Whitelabeling_, which means that with the Themes endpoint you can customize the colors and logos that will be displayed in your meeting rooms. Finally, with configured callbacks, you can view details about the meeting, such as when participants joined and recording information. 
 
 ![](/content/blog/introducing-the-meetings-api/meetings.jpeg)
 
