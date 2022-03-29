@@ -136,7 +136,7 @@ curl -X POST 'https://api-eu.vonage.com/beta/meetings/themes' \
 ```
 
 As seen in the response, different colors and logos can be set for light or dark mode.
-Once the theme ID is applied on a room (by setting `theme_id` on creation or update), the meeting room will look like this: 
+Once the theme ID is applied to a room (by setting `theme_id` on creation or update), the meeting room will look like this: 
 
 ![](/content/blog/introducing-the-meetings-api/orange-theme.png)
 
