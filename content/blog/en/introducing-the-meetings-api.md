@@ -142,7 +142,11 @@ Once the theme ID is applied to a room (by setting `theme_id` on creation or upd
 
 ## Callbacks
 
-If you've configured callbacks on your account, you'll receive notifications about various events happening in your meeting rooms, such as: room expiration, participant attendance, recording events, and the URL where the recording can be downloaded from. 
+If you've configured callbacks on your account, you'll receive notifications about various events happening in your meeting rooms, such as: 
+* Room expiration
+* Participant attendance
+* Recording events
+* Recording URL
 
 ### Some payload examples:
 
