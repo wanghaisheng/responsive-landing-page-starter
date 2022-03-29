@@ -18,7 +18,7 @@ replacement_url: ""
 ---
 If you need an integrated video solution in your applications but don't have time or resources to build out video capabilities, then the Meetings API is right for you! It allows you to add real-time, high-quality interactive video meetings into your Web Apps with only a few lines of code. 
 
-## How does it work?
+## How Does It Work?
 
 Using the API, you can generate *rooms*, which are fully-fledged Vonage meetings that come pre-built with features like messaging, recording, screen sharing, and a handful of other collaborations tools. 
 The API also allows for *Whitelabeling*, which means that with the Themes endpoint you can customize the colors and logos that will be displayed in your meeting rooms. Finally, with configured callbacks, you can view details about the meeting, such as when participants joined and recording information. 
