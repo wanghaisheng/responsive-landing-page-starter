@@ -18,25 +18,25 @@ replacement_url: ""
 ---
 If you need an integrated video solution in your applications, but don't have time or resources to build out video capabilities, then the Meetings API is right for you. It allows you to add real-time, high quality interactive video meetings into your webapps, with only a few lines of code. 
 
-## How does it work? 
+## How does it work?
 
 Using the API, you can generate *rooms*, which are fully fledged Vonage meetings that come pre-built with features like messaging, recording, screen sharing, and a handful of other collaborations tools. 
 The API also allows for whitelabeling, which means that with the Themes endpoint, you can customize the colors and logos that will be displayed in your meeting rooms. Finally, with configured callbacks, you can view details about the meeting, like when participants joined and recording information. 
 
-[insert image of Meetings UI]
+![](/content/blog/introducing-the-meetings-api/meetings.jpeg)
 
 ## Instant and Long Term Rooms
 
 The API allows the creation of two types of rooms: 
+
 * An **Instant Room**, or the default room, which is created for meetings happening now, and is active for ten minutes until the first participant joins the room, and for ten minutes after the last participant leaves. 
 * A **Long Term Room**, which remains alive until specified expiration date (maximum one year). This room is typically linked to a recurring meeting, person, or resource. 
 
 To use the API, you need to authorize the request with a JSON Web Token. To learn more, visit the Meetings API [Documentation](https://developer.vonage.com/meetings/overview). 
 
- ### Create an Instant Room
+### Create an Instant Room
 
-``` curl
-
+```curl
    curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms' \
    -H 'Authorization: Bearer XXXXX' \
    -H 'content-type: application/json' \
@@ -45,7 +45,7 @@ To use the API, you need to authorize the request with a JSON Web Token. To lear
                }'
 ```
 
-#### Response 
+#### Response
 
 ```curl
 {
@@ -78,12 +78,12 @@ To use the API, you need to authorize the request with a JSON Web Token. To lear
 
 In the code above, we've created an Instant Meeting Room, and you can see that the response contains both host and guest URLs, which lead straight to a meeting room. You'll also notice that theme_id is null, because we haven't added a theme, and that auto_record is false, which means that the recording won't begin automatically when the room opens. 
 
-### Create a Long Term Room 
+### Create a Long Term Room
 
 This creation requires a type of `long_term` and the expiration date in ISO format. 
 We will also set auto recording to true, which means that the recording will start as soon as the session is started. 
 
-``` curl
+```curl
    curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms' \
    -H 'Authorization: Bearer XXXXX' \
    -H 'content-type: application/json' \
@@ -100,7 +100,7 @@ The themes API can be used to create themes with different colors, logos, or tex
 
 The styles of the theme affect the welcome page of the meeting, as well as the color scheme within the meeting. 
 
-### Create a Theme 
+### Create a Theme
 
 ```curl
 curl -X POST 'https://api-eu.vonage.com/beta/meetings/themes' \
@@ -114,7 +114,7 @@ curl -X POST 'https://api-eu.vonage.com/beta/meetings/themes' \
 }'
 ```
 
-#### Response 
+#### Response
 
 ```
 {
@@ -138,15 +138,15 @@ curl -X POST 'https://api-eu.vonage.com/beta/meetings/themes' \
 As seen in the response, different colors and logos an be set for light or dark mode.
 Once the theme ID is applied on a room (by setting `theme_id` on creation or update), the meeting room will look like this: 
 
-[](blog-orange.png)
+![](/content/blog/introducing-the-meetings-api/orange-theme.png)
 
-## Callbacks 
+## Callbacks
 
 If you've configured callbacks on your account, you'll receive notifications about various events happening in your meeting rooms, such as: room expiration, participant attendance, recording events, and the URL where the recording can be downloaded from. 
 
-### Some payload examples: 
+### Some payload examples:
 
-``` json
+```json
 {
     "event": "session:started",
     "session_id": "2_MX40NjMzOTg5Mn5-MTYzNTg2ODQwODY4NH41cXIzMDdSa1BZa05BUDFpYnhxcTV4MCt-fg",
@@ -167,7 +167,7 @@ If you've configured callbacks on your account, you'll receive notifications abo
 }
 ```
 
-## Resources 
+## Resources
 
 To learn more about room management, callbacks, recording management, and configuring your themes, visit the Meetings API [documentation](https://developer.vonage.com/meetings/overview).
-To set up your account and configure callbacks, email us at meetings-api@vonage.com 
+To set up your account and configure callbacks, email us at meetings-api@vonage.com
