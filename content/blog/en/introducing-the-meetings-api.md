@@ -81,7 +81,7 @@ In the code above, we've created an Instant Meeting Room, and you can see that t
 ### Create a Long Term Room
 
 This creation requires a type of `long_term` and the expiration date in ISO format. 
-We will also set auto recording to true, which means that the recording will start as soon as the session is started. 
+We will also set auto-recording to true, which means that the recording will start as soon as the session is started. 
 
 ```curl
    curl -X POST 'https://api-eu.vonage.com/beta/meetings/rooms' \
