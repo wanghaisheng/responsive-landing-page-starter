@@ -16,7 +16,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-If you need an integrated video solution in your applications, but don't have time or resources to build out video capabilities, then the Meetings API is right for you. It allows you to add real-time, high quality interactive video meetings into your webapps, with only a few lines of code. 
+If you need an integrated video solution in your applications but don't have time or resources to build out video capabilities, then the Meetings API is right for you! It allows you to add real-time, high-quality interactive video meetings into your Web Apps with only a few lines of code. 
 
 ## How does it work?
 
