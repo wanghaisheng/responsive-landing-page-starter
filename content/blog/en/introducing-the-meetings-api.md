@@ -29,7 +29,7 @@ The API also allows for _Whitelabeling_, which means that with the Themes endpoi
 
 The API allows the creation of two types of rooms: 
 
-* An **Instant Room**, or the default room, which is created for meetings happening now, and is active for ten minutes until the first participant joins the room, and for ten minutes after the last participant leaves. 
+* An **Instant Room** (or the default room), which is created for meetings happening now, and is active for ten minutes until the first participant joins the room, and for ten minutes after the last participant leaves. 
 * A **Long Term Room**, which remains alive until specified expiration date (maximum one year). This room is typically linked to a recurring meeting, person, or resource. 
 
 To use the API, you need to authorize the request with a JSON Web Token. To learn more, visit the Meetings API [Documentation](https://developer.vonage.com/meetings/overview). 
