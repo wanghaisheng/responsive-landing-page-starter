@@ -17,6 +17,13 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+### First off...
+
+One of the things we have been mindful of here at Vonage is going about our jobs as if nothing is wrong in the world. It feels disingenuous to simply write a roundup of what we have been up to without mentioning the ongoing war in Ukraine that is affecting so many (and many of our own employees).
+
+Our position is clear in that we in no way condone the actions taken by the Russian Federation against Ukraine, and are adhering to the sanctions that have been imposed. We are also supporting active humanitarian relief efforts, such as
+
+
 From a personal perspective, Q1 in the Vonage Developer Relations team was always set to be exciting. The world opened up again, we started booking in events to our calendars and we are back on the road, doing what we do best: talking to developers.
 
 Given that we are active once again off the back of [phenomenal events in Q4 2021](https://www.ericsson.com/en/press-releases/2021/11/ericsson-to-acquire-vonage-for-usd-6.2-billion-to-spearhead-the-creation-of-a-global-network-and-communication-platform-for-open-innovation), it's well worth taking the time to slow down a bit (we're a busy bunch, and [now there's more of us!](https://learn.vonage.com/blog/2022/03/23/zachary-powell-joins-the-developer-relations-team/)) and looking at what we have been working on, our content and successes we've had here over the past three months of 2022.
