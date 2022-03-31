@@ -52,7 +52,7 @@ We're excited about the work the engineering and product teams are doing to evol
 
 ### Meetings API
 
-If you're looking to use the Video capabilities of Vonage for meetings and want a solution to fast-track your MVP: we've got you covered! The Developer Relations team had the new [Meetings API]() demoed to us, and we got excited. Before we get ahead of ourselves though, allow us to present a more formal [introduction to the API in this article from Avital Tzubeli]().
+If you're looking to use the Video capabilities of Vonage for meetings and want a solution to fast-track your MVP: we've got you covered! The Developer Relations team had the new [Meetings API]() demoed to us, and we got excited. Before we get ahead of ourselves though, allow us to present a more formal [introduction to the API in this article from Avital Tzubeli](https://developer.vonage.com/blog/22/03/29/introducing-the-meetings-api).
 
 ### Interactive Broadcast Beta Announced
 
