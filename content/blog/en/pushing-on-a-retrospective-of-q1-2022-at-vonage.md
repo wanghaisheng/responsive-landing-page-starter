@@ -21,11 +21,12 @@ replacement_url: ""
 
 One of the things we have been mindful of here at Vonage is going about our jobs while people, friends and colleagues' lives are affected or torn apart by current events. It feels disingenuous to simply write a roundup of what we have been up to without mentioning the ongoing war in Ukraine.
 
-Our position is clear. We that we condone the actions taken by the Russian Federation against Ukraine, while strictly adhering to the sanctions that have been imposed by the European Union, United Kingdom and United States. We are also supporting active humanitarian relief efforts for the Ukrainian people. Vonage is currently doubling individual donations internally for the following organisations: 
+Our position is clear. We condone the actions taken by the Russian Federation against Ukraine. We are strictly adhering to the sanctions that have been imposed by the European Union, United Kingdom and United States. 
+
+We are also supporting active humanitarian relief efforts for the Ukrainian people. Vonage is currently doubling individual donations internally for the following organisations: 
 
 * [Nova Ukraine](https://novaukraine.org/)
 * [The Disasters Emergency Commitee](https://www.dec.org.uk/)
-
 
 ### ...And Now, The Summary
 
