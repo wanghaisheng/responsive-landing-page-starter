@@ -36,7 +36,7 @@ Given that we are active once again off the back of [phenomenal events in Q4 202
 
 ## Turning notifications to conversations
 
-One of the ideas we are concentrating on this year is revising how you communicate with your customers - in an ever-growing, hyper-connected world it is sometimes not _enough_ to simply fire off notifications via. typical mediums (email, SMS, etc). What we're looking at is how to turn these interactions from one-way traffic into meaningful conversations to enhance your business's ability to communicate.
+One of the ideas we are concentrating on this year is revising how you communicate with your customers - in an ever-growing, hyper-connected world it is sometimes not *enough* to simply fire off notifications via. typical mediums (email, SMS, etc). What we're looking at is how to turn these interactions from one-way traffic into meaningful conversations to enhance your business's ability to communicate.
 
 ### 10DLC
 
@@ -44,27 +44,29 @@ Application-to-person (A2P) messaging in the United States has seen the launch o
 
 ### New WhatsApp Conversational Pricing
 
-In February 2022, WhatsApp introduced a new pricing model for conversation-based messaging. In line with this, Vonage has introduced new enhanced conversation-based pricing, which affects initiated messaging between a customer and business in one 24 hour _session_. Our documentation has been updated accordingly - [you can find everything you'll need to take advantage of this new model here.](https://developer.vonage.com/messages/concepts/whatsapp)
+In February 2022, WhatsApp introduced a new pricing model for conversation-based messaging. In line with this, Vonage has introduced new enhanced conversation-based pricing, which affects initiated messaging between a customer and business in one 24 hour *session*. Our documentation has been updated accordingly - [you can find everything you'll need to take advantage of this new model here.](https://developer.vonage.com/messages/concepts/whatsapp)
 
 ## Video...Everywhere!
 
-We're excited about the work the engineering and product teams are doing to evolve our Video API products, and this quarter has seen a handful of _big_ updates for us to get our teeth into from a developers' perspective.
+We're excited about the work the engineering and product teams are doing to evolve our Video API products, and this quarter has seen a handful of *big* updates for us to get our teeth into from a developers' perspective.
 
 ### Meetings API Early Access
 
-If you're looking to use the Video capabilities of Vonage for meetings and want a solution to fast-track your MVP: we've got you covered! The Developer Relations team had the new [Meetings API]() demoed to us, and we got excited. Before we get ahead of ourselves though, allow us to present a more formal [introduction to the API in this article from Avital Tzubeli](https://developer.vonage.com/blog/22/03/29/introducing-the-meetings-api).
+If you're looking to use the Video capabilities of Vonage for meetings and want a solution to fast-track your MVP: we've got you covered! The Developer Relations team had the new [Meetings API](<>) demoed to us, and we got excited. Before we get ahead of ourselves though, allow us to present a more formal [introduction to the API in this article from Avital Tzubeli](https://developer.vonage.com/blog/22/03/29/introducing-the-meetings-api).
 
 ### Interactive Broadcast Beta Announced
 
 Our Developer Advocate Garann Means [wrote an article on lessons learned after two years of Virtual Conferences](https://learn.vonage.com/blog/2022/03/14/lessons-learned-after-two-years-of-virtual-tech-conferences/), and how we approached Developer Relations during the time of COVID has certainly been a hot topic.
 
-So, given our experiences with conference online platforms and the successes or failures of how they are implemented, what apt timing for the announcement that, as a developer, you can implement your own solution! The Vonage Video API now has a big feature update that introduces true _Interactive Broadcast_ experiences for end-users. [You can find the Press Release here. EDIT: LIVE DOCS COPY UNDER EMBARGO](https://docs.google.com/document/d/1Q4Y7KrvGSqDmwYHwS7TrB7Nipgfr7qCm2j8aF3n8wYs/edit).
+So, given our experiences with conference online platforms and the successes or failures of how they are implemented, what apt timing for the announcement that, as a developer, you can implement your own solution! The Vonage Video API now has a big feature update that introduces true *Interactive Broadcast* experiences for end-users.
+
+![](/content/blog/pushing-on-a-retrospective-of-q1-2022-at-vonage/screenshot-2022-03-31-at-14.36.06.png)
 
 Among the features we've released include:
 
--   using our new _Experience Composer (Beta)_ to broadcast full HD streams to up to 15,000 active participants in a new, highly customisable platform
--   protocol choices between WebRTC or HTTP Live Streaming (HLS) for lower latency interactions between your hosts and your participants
--   Stream with additional costs to all major social media platforms such as Twitch and Facebook Live
+* using our new *Experience Composer (Beta)* to broadcast full HD streams to up to 15,000 active participants in a new, highly customisable platform
+* protocol choices between WebRTC or HTTP Live Streaming (HLS) for lower latency interactions between your hosts and your participants
+* Stream with additional costs to all major social media platforms such as Twitch and Facebook Live
 
 You can read more in-depth about the new features in [this post, from Senior Product Manager Jon Montana](https://learn.vonage.com/blog/2021/05/11/video-api-better-interactive-broadcasts-and-recordings/#).
 
