@@ -62,7 +62,7 @@ So, given our experiences with conference online platforms and the successes or 
 
 Among the features we've released include:
 
--   using our new _Experience Composer_ to broadcast full HD streams to up to 15,000 active participants in a new, highly customisable platform
+-   using our new _Experience Composer (Beta)_ to broadcast full HD streams to up to 15,000 active participants in a new, highly customisable platform
 -   protocol choices between WebRTC or HTTP Live Streaming (HLS) for lower latency interactions between your hosts and your participants
 -   Stream with additional costs to all major social media platforms such as Twitch and Facebook Live
 
