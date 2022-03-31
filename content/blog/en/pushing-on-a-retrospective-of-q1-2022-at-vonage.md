@@ -46,10 +46,6 @@ Application-to-person (A2P) messaging in the United States has seen the launch o
 
 In February 2022, WhatsApp introduced a new pricing model for conversation-based messaging. In line with this, Vonage has introduced new enhanced conversation-based pricing, which affects initiated messaging between a customer and business in one 24 hour _session_. Our documentation has been updated accordingly - [you can find everything you'll need to take advantage of this new model here.](https://developer.vonage.com/messages/concepts/whatsapp)
 
-### Release Notes
-
-Something about release note pages, Paul to investigate.
-
 ## Video...Everywhere!
 
 We're excited about the work the engineering and product teams are doing to evolve our Video API products, and this quarter has seen a handful of _big_ updates for us to get our teeth into from a developers' perspective.
