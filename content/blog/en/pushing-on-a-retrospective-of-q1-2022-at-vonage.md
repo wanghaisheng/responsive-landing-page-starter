@@ -50,7 +50,7 @@ In February 2022, WhatsApp introduced a new pricing model for conversation-based
 
 We're excited about the work the engineering and product teams are doing to evolve our Video API products, and this quarter has seen a handful of _big_ updates for us to get our teeth into from a developers' perspective.
 
-### Meetings API
+### Meetings API Early Access
 
 If you're looking to use the Video capabilities of Vonage for meetings and want a solution to fast-track your MVP: we've got you covered! The Developer Relations team had the new [Meetings API]() demoed to us, and we got excited. Before we get ahead of ourselves though, allow us to present a more formal [introduction to the API in this article from Avital Tzubeli](https://developer.vonage.com/blog/22/03/29/introducing-the-meetings-api).
 
