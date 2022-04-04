@@ -1,6 +1,7 @@
 ---
 title: "Startup Spotlight Series: Let's meet Gigli"
 description: Meet Ontario-based startup Gigli as a part of Vonage Startup Spotlight series.
+thumbnail: /content/blog/startup-spotlight-series-lets-meet-gigli/vonage-startup_gigli.png
 author: filippos-kyprianou
 published: true
 published_at: 2022-04-04T15:32:10.371Z
