@@ -16,12 +16,10 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-
 Today, people have more options than ever when it comes to supporting themselves, it’s no longer strictly necessary to rely on a classic 9-to-5 job to earn a living. This is in part due to the rise of the gig economy.
 
 The gig economy is a labor market made up of freelance or part-time jobs as opposed to full-time, fixed contracts and it encompasses a wide range of fields—from driving a taxi or delivery vehicle, to editing documents, to helping with moving, to performing artists. Gig jobs might not be a new concept, but they have become popular among the younger generation over the years
 
- 
 Advances in technology have given people the opportunity to choose their work location and hours, providing unprecedented flexibility, often without the need to compromise on financial security. As part of this model of employment, niche tech companies are enabling the gig economy to broaden its reach by connecting workers with consumers faster. As a result the gig economy is broken down in 3 main components:
 
 * Gig economy workers - individuals available to be hired for a specific task or project 
@@ -48,11 +46,9 @@ Vonage API used: SMS Verification and Sandbox for Chat
 
 ## In one sentence, what does Gigli do?
 
-
-
 Gigli is an online marketplace that connects students with community members to complete their household tasks. 
 
-
+<youtube id="P_nfST0Hr4o"></youtube>
 
 ## What is the problem you are solving? Was this the initial problem or did you pivot?
 
@@ -61,10 +57,6 @@ For far too long, university towns have failed to seize the opportunity before t
 ## What differentiates Gigli from your competitors? Is there a secret sauce?
 
 Gigli is a revolutionary online marketplace that was uniquely constructed from the ground up to optimize the experience of our end-users: students and community members. We were able to do this through the assembly of our fantastic team: Narges Rezeai, Allan Foran, and Jake Moodie. The three of us come from different backgrounds, with unique perspectives and skill sets that complement one another; we leverage these characteristics to brainstorm and ideate the best possible solutions. Our solution aims to be the Uber of student gig work in university towns. We have taken several steps to get there: brilliantly designed application with an optimized user experience, trustability, and validity through user reviews and ratings that go both ways, verified accounts, and personalizable profiles to allow users to get the most from the application. Our solution has all the tools for a successful brokerage platform; we make it easy for students and community members to solve the problems mentioned above. The formulation of the application design was an extensive process; it looks good, has substantial ease of use, and provides users with an overall fantastic experience.
-
- 
-
-
 
 ## VC, Angel, Bootstrap or Other?
 
@@ -80,15 +72,9 @@ The biggest mistake that Gigli made so far is setting a premature date to offici
 
 ## You can choose one to be on your board: Elon Musk, Jeff Bezos and Bill Gates. Who do you choose and why? 
 
-
-
 The Gigli team would choose Jeff Bezos to join our board. This is not a diss at Elon or Bill, but Jeff Bezos does happen to have the most successful marketplace ever created. Coupled with that, Amazon continues to use innovative technologies to improve upon their existing customer experiences and interactions on Amazon.
 
-
-
 How have you been using Vonage’s APIs?
-
-
 
 We’ve been using SMS Verification in production and now testing the Sandbox for Chat. 
 
@@ -103,20 +89,12 @@ We’ve been using SMS Verification in production and now testing the Sandbox fo
 
 ## What’s next for Gigli? Where do you want to be in 3 years?
 
-
-
 Gigli is looking forward to our upcoming initial launch of our web application in Kingston, ON, Canada. We are excited for students and community members to interact with Gigli’s marketplace after over 11 months of developing it. Our goal with this launch is to validate proof of concept before seeking fundraising to begin scaling this solution. In 3 years, we want to be in every single Canadian community providing jobs to millions of students. We are also ambitious to penetrate international markets such as the United States. We want to be the Uber of student jobs. Gigli will be the vessel that empowers youth while simultaneously benefiting communities.
-
- 
 
 ### Let's work together - Vonage for Startups
 
 At Vonage for Startups, we help early-stage startups better understand Communications APIs' power and enable them to utilise these tools better. We provide the necessary educational resources and a supportive environment for the startup community to benefit from Communications APIs, whatever their individual needs are.
 
-
-
 Apply to join us [here](https://vonage.dev/3d093hA).
-
-
 
 <!--EndFragment-->
