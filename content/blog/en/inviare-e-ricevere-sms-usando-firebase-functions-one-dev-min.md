@@ -20,7 +20,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-Benvenuti a [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY) ! L'obiettivo di questa serie di video è condividere informazioni in un formato velocemente consumabile. Puoi seguirla sul [canale YouTube di Vonage Dev](https://www.youtube.com/vonagedev).
+Benvenuti a [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY)! L'obiettivo di questa serie di video è condividere informazioni in un formato velocemente consumabile. Puoi seguirla sul [canale YouTube di Vonage Dev](https://www.youtube.com/vonagedev).
 
 Questa panoramica ti mostrerà come creare un registro dei messaggi SMS ricevuti e come inviare una risposta al mittente utilizzando Firebase Cloud Functions e Firebase Real-Time Database insieme alle API Vonage SMS.
 
@@ -31,7 +31,7 @@ Questa panoramica ti mostrerà come creare un registro dei messaggi SMS ricevuti
 Per inviare messaggi SMS utilizzando Cloud Functions per Firebase, dovrai creare un paio di account:
 
 * uno per Firebase
-* e uno dell'API Vonage.
+* e uno dell'API Vonage
 
 Crea il progetto nella console Firebase e scegli se utilizzare Analytics o meno.
 
@@ -47,7 +47,7 @@ Inizializza le Cloud Functions per Firebase.
 
 Installa le dipendenze che useremo all'interno della cartella delle funzioni.
 
-Crea un `.env` file e aggiungi lì le variabili d'ambiente per Vonage API.
+Crea un file `.env`e aggiungi lì le variabili d'ambiente per Vonage API.
 
 All'interno del file `index.js`, aggiungi tutte le dipendenze e le variabili di ambiente richieste e inizializza Firebase.
 
