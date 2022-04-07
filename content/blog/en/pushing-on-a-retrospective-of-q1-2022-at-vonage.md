@@ -84,7 +84,7 @@ Jumper.ai, with its ready-to-go integration of messaging channels, payment gatew
 
 ## Looking Ahead…
 
-We’ve had a great start to the year, so now we’re looking at where we go next. Our Developer Relations team are looking to release more integrations to use Vonage APIs with more of your trusted/favourite libraries and frameworks (for example, the [newly released WordPress 2FA Plugin](https://en-gb.wordpress.org/plugins/vonage-2fa/)) so we’ll keep you posted as we roll them out. 
+We’ve had a great start to the year, so now we’re looking at where we go next. Our Developer Relations team is looking to release more integrations to use Vonage APIs with more of your trusted/favourite libraries and frameworks (for example, the [newly released WordPress 2FA Plugin](https://en-gb.wordpress.org/plugins/vonage-2fa/)) so we’ll keep you posted as we roll them out. 
 
 Want to chat with us? We’re on the road! You can catch at many events during the next Quarter, including:
 
