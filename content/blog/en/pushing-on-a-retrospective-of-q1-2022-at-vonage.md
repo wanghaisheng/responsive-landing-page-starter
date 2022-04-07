@@ -1,14 +1,15 @@
 ---
-title: "Pushing on: a retrospective of Q1 2022 at Vonage"
+title: "Pushing On: A Retrospective of Q1 2022 at Vonage"
 description: "Read what we've been up to in the first quarter of the year.
   Spoiler: it's a lot!"
 thumbnail: /content/blog/pushing-on-a-retrospective-of-q1-2022-at-vonage/quaterly-releases_q1.png
 author: james-seconde
-published: false
-published_at: 2022-03-22T09:05:31.318Z
-updated_at: 2022-03-22T09:05:31.347Z
+published: true
+published_at: 2022-04-07T09:12:14.664Z
+updated_at: 2022-04-07T09:12:17.773Z
 category: announcement
 tags:
+  - releases
   - messages-api
   - video-api
 comments: false
