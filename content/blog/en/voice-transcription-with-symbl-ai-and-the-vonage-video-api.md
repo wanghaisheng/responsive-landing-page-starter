@@ -56,9 +56,7 @@ const processor = context.createScriptProcessor(1024, 1, 1);
 const gainNode = context.createGain();
 ```
 
-
-
-In these three lines of code, we first declare our source node, then we declare our `ScriptProcessorNode`, and finally our gainNode. None of these three nodes do anything right now because we haven’t connected them together. The gainNode is like the volume knob on the boombox and the processor node is like the magnetic reader or needle that reads data off of the cassette or CD.
+In these three lines of code, we first declare our source node, then we declare our `ScriptProcessorNode`, and finally our \`gainNode\`. None of these three nodes do anything right now because we haven’t connected them together. The \`gainNode\` is like the volume knob on the boombox and the processor node is like the magnetic reader or needle that reads data off of the cassette or CD.
 
 Now let’s connect them together.
 
@@ -68,9 +66,7 @@ gainNode.connect(processor);
 processor.connect(context.destination);
 ```
 
-
-
-Here, we connect the source to the gainNode. We can use the gainNode to increase or decrease the volume of the source. So if let’s say, a person’s microphone is too low we can increase the value of the gain to mitigate.
+Here, we connect the source to the gainNode.\` We can use the \`gainNode` to increase or decrease the volume of the source. So if let’s say, a person’s microphone is too low we can increase the value of the gain to mitigate.
 
 ```javascript
 gainNode.gain.value = 2;
@@ -78,7 +74,7 @@ gainNode.gain.value = 2;
 
 This is not necessary for this tutorial as we’re assuming everyone has a decent enough microphone.
 
-Then we connect the output of the gainNode to the processor node. The processor node takes in three arguments: the buffer size, number of input channels, and number of output channels respectively. We chose 1024 as the buffer size because it’s on the lower end of the sample-frame spectrum (256, 512, 1024, 2048, 4096, 8192, 16384). This means we’ll get better latency/performance at the cost of extremely accurate audio. If you feel like Symbl.ai is missing words in your audio, then increasing this might help. Note that it will result in the `onaudioprocess` event getting called more often, which might slow down your machine. 
+Then we connect the output of the \`gainNode\` to the processor node. The processor node takes in three arguments: the buffer size, number of input channels, and number of output channels respectively. We chose 1024 as the buffer size because it’s on the lower end of the sample-frame spectrum (256, 512, 1024, 2048, 4096, 8192, 16384). This means we’ll get better latency/performance at the cost of extremely accurate audio. If you feel like Symbl.ai is missing words in your audio, then increasing this might help. Note that it will result in the `onaudioprocess` event getting called more often, which might slow down your machine. 
 
 Speaking of `onaudioprocess`, this is the event that will be fired whenever the processor node has an audio buffer ready for the size specified. Symbl.ai likes to prepare the buffer to send like so:
 
@@ -98,7 +94,7 @@ processor.onaudioprocess = (e) => {
 };
 ```
 
-We will talk about how we send the buffer using websockets later in this article.
+We will talk about how we send the buffer using WebSockets later in this article.
 
 Lastly, we feed the processor node back to the destination. The destination is like the speakers of the boombox.
 
@@ -162,9 +158,7 @@ ws.onclose = (event) => {
 };
 ```
 
-
-
-We chose to use the `data.message.punctuated.transcript` key which delivers live transcription. This comes with the cost of some accuracy, but you can decide how to use the data. When the websocket connection opens, we need to send a message to Symbl.ai describing our meeting and the speakers involved. This helps create an after call transcript for us, as well as other things like [speaker diarization](https://symbl.ai/blog/what-is-speaker-diarization/). 
+We chose to use the `data.message.punctuated.transcript` key which delivers live transcription. This comes with the cost of some accuracy, but you can decide how to use the data. When the WebSocket connection opens, we need to send a message to Symbl.ai describing our meeting and the speakers involved. This helps create an after-call transcript for us, as well as other things like [speaker diarization](https://symbl.ai/blog/what-is-speaker-diarization/). 
 
 ```javascript
 // Fired when the connection succeeds.
@@ -188,8 +182,6 @@ ws.onopen = (event) => {
   }));
 };
 ```
-
-
 
 And with that, the core of our Speech to Text demo is complete! With some UI work, this is what a call with speech transcription looks like:[](http://webrtc.ventures/wp-content/uploads/2021/10/screenshare_-_2021-10-19_4_31_17_pm.mp4)
 
