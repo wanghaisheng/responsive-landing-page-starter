@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 Voice transcription, speech-to-text, and live closed captioning are in popular demand in today’s world where video/audio meetings are a primary form of communication. [Symbl.ai](https://symbl.ai/) excels at conversational intelligence. Today, we will be building live closed captioning into our [SimplyDoc Telehealth Starter Kit](https://simplydoc.com/) using Symbl.ai’s streaming and insights API. Our video and audio will be powered by [Vonage’s Video API](https://www.vonage.com/communications-apis/video/). Let’s begin.
 
-![](http://webrtc.ventures/wp-content/uploads/2021/10/symbl.png)
+![A video call between Mariana and Hanza. Text says: "Mariana: Okay, I just wanted to let you know that I am currently recording"](http://webrtc.ventures/wp-content/uploads/2021/10/symbl.png)
 
 ## Getting The Audio Track from OpenTok Publisher
 
@@ -39,7 +39,7 @@ Now we have the stream object that we can use with the Web Audio API to create a
 
 ## Making a Boombox with the Web Audio API
 
-![](http://webrtc.ventures/wp-content/uploads/2021/10/symbl2.png)
+![blue and orange audio player](http://webrtc.ventures/wp-content/uploads/2021/10/symbl2.png)
 
 Firstly, it’s important to understand the Web Audio API a little since we’ll be using that to process our audio on the frontend. Think of the Web Audio API as a boombox where we declare every single component. First, we declare the AudioContext object, which is like the outer chassis of the boombox.
 
@@ -66,7 +66,7 @@ gainNode.connect(processor);
 processor.connect(context.destination);
 ```
 
-Here, we connect the source to the gainNode.\` We can use the \`gainNode` to increase or decrease the volume of the source. So if let’s say, a person’s microphone is too low we can increase the value of the gain to mitigate.
+Here, we connect the source to the \`gainNode.\` We can use the \`gainNode\` to increase or decrease the volume of the source. So if let’s say, a person’s microphone is too low we can increase the value of the gain to mitigate.
 
 ```javascript
 gainNode.gain.value = 2;
@@ -100,7 +100,7 @@ Lastly, we feed the processor node back to the destination. The destination is l
 
 Here’s a diagram for what we’ve built so far using the Web Audio API.
 
-![](http://webrtc.ventures/wp-content/uploads/2021/10/symbl3.png)
+![Diagram containing the text: "Audio Source, Gain Node (Volume), Audio Processor, Audio Destination, onaudioprocess, Audio Buffer, Symbl.ai](http://webrtc.ventures/wp-content/uploads/2021/10/symbl3.png)
 
 And with that, our boombox is ready to go!
 
