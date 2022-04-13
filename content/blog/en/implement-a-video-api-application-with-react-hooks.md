@@ -1,10 +1,11 @@
 ---
 title: Implement a Video API Application With React Hooks
 description: How to use React Hooks to implement the Vonage Video API into your application.
+thumbnail: /content/blog/implement-a-video-api-application-with-react-hooks/videoapi_reacthook.png
 author: enrico-portolan
 published: true
-published_at: 2022-04-12T16:13:58.116Z
-updated_at: 2022-04-12T16:13:58.143Z
+published_at: 2022-04-13T08:03:30.499Z
+updated_at: 2022-04-13T08:03:32.947Z
 category: tutorial
 tags:
   - video-api
