@@ -17,7 +17,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-If you have been a ReactJS developer for a couple of years, you probably had to refactor your code to use React Hooks. React Hooks has been introduced since the 16.8 version (February 2019, [documentation](https://reactjs.org/docs/hooks-intro.html)) and let you use state and other React features without writing a class. 
+If you have been a ReactJS developer for a couple of years, you probably had to refactor your code to use React Hooks. React Hooks has been introduced since the 16.8 version (February 2019, [documentation](https://reactjs.org/docs/hooks-intro.html)) and lets you use state and other React features without writing a class. 
 
 This blog post will explain how to integrate Vonage Video API JS into your React application using Hooks. 
 
@@ -55,11 +55,11 @@ After the session creation, the next effect will trigger the publish function fr
 
 In addition, the video room includes the `Chat` component which uses the [Video API Signal](https://tokbox.com/developer/sdks/js/reference/SignalEvent.html) to send and receive messages.
 
-Lastly, the `ControlToolBar` components include the buttons used during the video call: mute/unmute microphone and camera, screen-sharing and chat.
+Lastly, the `ControlToolBar` components include the buttons used during the video call: mute/unmute microphone and camera, screen-sharing, and chat.
 
 ### React Context
 
-The only context used in this App is the `UserContext` that stores the username, localAudio and localVideo preferences.
+The only context used in this App is the `UserContext` which stores the username, localAudio, and localVideo preferences.
 
 ### React Hooks
 
