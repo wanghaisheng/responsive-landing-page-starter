@@ -3,7 +3,7 @@ title: Voice Transcription with Symbl.ai and the Vonage Video API
 description: Today, we will be building live closed captioning into our
   SimplyDoc Telehealth Starter Kit using Symbl.ai’s streaming and insights API.
   Our video and audio will be powered by Vonage’s Video API
-thumbnail: /content/blog/voice-transcription-with-symbl-ai-and-the-vonage-video-api/voice-transcription-with-symbl.ai-and-the-vonage-video-api.png
+thumbnail: /content/blog/voice-transcription-with-symbl-ai-and-the-vonage-video-api/symbl-ai_videoapi.png
 author: amanda-cavallaro
 published: true
 published_at: 2022-04-19T12:01:01.447Z
