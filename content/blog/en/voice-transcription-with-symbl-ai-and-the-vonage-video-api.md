@@ -39,7 +39,7 @@ Now we have the stream object that we can use with the Web Audio API to create a
 
 ## Making a Boombox with the Web Audio API
 
-![blue and orange audio player](http://webrtc.ventures/wp-content/uploads/2021/10/symbl2.png)
+![blue and orange audio player](/content/blog/voice-transcription-with-symbl-ai-and-the-vonage-video-api/symbl2.png)
 
 Firstly, it’s important to understand the Web Audio API a little since we’ll be using that to process our audio on the frontend. Think of the Web Audio API as a boombox where we declare every single component. First, we declare the AudioContext object, which is like the outer chassis of the boombox.
 
