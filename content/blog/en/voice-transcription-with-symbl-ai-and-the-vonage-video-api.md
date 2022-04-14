@@ -21,7 +21,7 @@ replacement_url: ""
 ---
 Voice transcription, speech-to-text, and live closed captioning are in popular demand in today’s world where video/audio meetings are a primary form of communication. [Symbl.ai](https://symbl.ai/) excels at conversational intelligence. Today, we will be building live closed captioning into our [SimplyDoc Telehealth Starter Kit](https://simplydoc.com/) using Symbl.ai’s streaming and insights API. Our video and audio will be powered by [Vonage’s Video API](https://www.vonage.com/communications-apis/video/). Let’s begin.
 
-![A video call between Mariana and Hanza. Text says: "Mariana: Okay, I just wanted to let you know that I am currently recording"](http://webrtc.ventures/wp-content/uploads/2021/10/symbl.png)
+![A video call between Mariana and Hanza. Text says: "Mariana: Okay, I just wanted to let you know that I am currently recording"](/content/blog/voice-transcription-with-symbl-ai-and-the-vonage-video-api/symbl.png)
 
 ## Getting The Audio Track from OpenTok Publisher
 
