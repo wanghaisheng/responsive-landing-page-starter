@@ -100,7 +100,7 @@ Lastly, we feed the processor node back to the destination. The destination is l
 
 Here’s a diagram for what we’ve built so far using the Web Audio API.
 
-![Diagram containing the text: "Audio Source, Gain Node (Volume), Audio Processor, Audio Destination, onaudioprocess, Audio Buffer, Symbl.ai](http://webrtc.ventures/wp-content/uploads/2021/10/symbl3.png)
+![Diagram containing the text: "Audio Source, Gain Node (Volume), Audio Processor, Audio Destination, onaudioprocess, Audio Buffer, Symbl.ai](/content/blog/voice-transcription-with-symbl-ai-and-the-vonage-video-api/symbl3.png)
 
 And with that, our boombox is ready to go!
 
