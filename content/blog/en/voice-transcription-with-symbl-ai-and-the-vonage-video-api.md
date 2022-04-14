@@ -183,8 +183,8 @@ ws.onopen = (event) => {
 };
 ```
 
+## Conclusion
+
 And with that, the core of our Speech to Text demo is complete! With some UI work, this is what a call with speech transcription looks like:[](http://webrtc.ventures/wp-content/uploads/2021/10/screenshare_-_2021-10-19_4_31_17_pm.mp4)
 
-***<Add Non Youtube Video here>*** http://webrtc.ventures/wp-content/uploads/2021/10/screenshare_-_2021-10-19_4_31_17_pm.mp4
-
-***Here at*** ***[WebRTC.ventures](https://webrtc.ventures/), we specialize in building live video applications. We’re one of the few agencies in the world dedicated to WebRTC development. We’re happy to bring our live video experience to bear on your ideas and help you bring your application live. [Contact us today!](https://webrtc.ventures/contact/)***
+<youtube id="fStTR1wgl1I"></youtube>
