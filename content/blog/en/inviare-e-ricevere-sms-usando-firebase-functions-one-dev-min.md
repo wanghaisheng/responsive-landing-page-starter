@@ -6,8 +6,8 @@ description: Questa panoramica ti mostrerà come creare un registro dei messaggi
 thumbnail: /content/blog/send-and-receive-sms-messages-with-firebase-functions-one-dev-minute/thumbnail-and-assets-for-one-dev-minute.jpg
 author: amanda-cavallaro
 published: true
-published_at: 2022-03-25T16:06:52.389Z
-updated_at: 2022-03-25T16:06:52.400Z
+published_at: 2022-04-19T11:03:40.217Z
+updated_at: 2022-04-19T11:03:43.379Z
 category: tutorial
 tags:
   - italian
@@ -22,22 +22,24 @@ replacement_url: ""
 ---
 Benvenuti a [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsniPr_mwb65DDl3Kr6xeh6l7_pVY)! L'obiettivo di questa serie di video è condividere informazioni in un formato velocemente consumabile. Puoi seguirla sul [canale YouTube di Vonage Dev](https://www.youtube.com/vonagedev).
 
-Questa panoramica ti mostrerà come creare un registro dei messaggi SMS ricevuti e come inviare una risposta al mittente utilizzando Firebase Cloud Functions e Firebase Real-Time Database insieme alle API Vonage SMS.
+Questa panoramica ti mostrerà come creare un registro dei messaggi SMS ricevuti e come inviare una risposta al mittente utilizzando Firebase Cloud Functions e Firebase Real-Time Database insieme alla API SMS di Vonage.
 
-<youtube id="c8gHy_KvQAE"></youtube>
+<youtube id="BC4MCjtRn3I"></youtube>
 
 ## **Trascrizione**
 
-Per inviare messaggi SMS utilizzando Cloud Functions per Firebase, dovrai creare un paio di account:
+Per inviare messaggi SMS utilizzando Cloud Functions per Firebase dovrai creare un paio di account:
 
 * uno per Firebase
-* e uno dell'API Vonage
+* e uno per l'API Vonage
 
-Crea il progetto nella console Firebase e scegli se utilizzare Analytics o meno.
+<sign-up></sign-up>
+
+Crea il progetto nella console Firebase e scegli se utilizzare Analytics opuure no.
 
 Attendi la creazione del tuo progetto.
 
-Seleziona il piano di fatturazione Firebase, in questo caso è il pagamento in base al consumo, pay as you go.
+Seleziona il piano di fatturazione Firebase, in questo caso è il pagamento in base al consumo, "pay as you go".
 
 Nella riga di comando, installa gli strumenti Firebase.
 
@@ -53,13 +55,15 @@ All'interno del file `index.js`, aggiungi tutte le dipendenze e le variabili di 
 
 Nello stesso file, crea la prima funzione che fungerà da webhook per acquisire e registrare i messaggi SMS in arrivo su un numero di telefono Vonage.
 
-Creiamo quindi una funzione per Firebase per inviare l'SMS di risposta e per reagire agli aggiornamenti del database.
+Crea quindi una funzione per Firebase per inviare l'SMS di risposta e per reagire agli aggiornamenti del database.
 
 Rilascia la funzione e invia un messaggio SMS dal tuo telefono al numero di telefono dell'applicazione Vonage.
 
 Riceverai quindi un messaggio SMS di risposta sul telefono e un aggiornamento al Firebase Real-Time Database.
 
-Puoi trovare il codice completo su GitHub. Grazie per la visione e buono sviluppo!
+Puoi trovare il codice completo su GitHub. 
+
+Grazie per la visione e buono sviluppo!
 
 ## Links
 
