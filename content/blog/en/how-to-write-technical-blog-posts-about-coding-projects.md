@@ -1,5 +1,5 @@
 ---
-title: How To Write Technical Blog Posts About Coding Projects
+title: Writing Technical Blog Posts About Coding Projects
 description: Sharing knowledge with technical blog posts helps everyone in our
   developer communities. In this post, we review some of the differences when
   writing about code and how to do it successfully.
