@@ -3,9 +3,10 @@ title: Writing Technical Blog Posts About Coding Projects
 description: Sharing knowledge with technical blog posts helps everyone in our
   developer communities. In this post, we review some of the differences when
   writing about code and how to do it successfully.
+thumbnail: /content/blog/writing-technical-blog-posts-about-coding-projects/technical-blog-writing.png
 author: garann-means
 published: true
-published_at: 2022-04-19T20:48:53.553Z
+published_at: 2022-04-26T09:19:04.531Z
 updated_at: 2022-04-19T20:48:53.578Z
 category: devlife
 tags:
