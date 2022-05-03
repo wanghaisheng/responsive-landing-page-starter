@@ -44,7 +44,7 @@ Podemos aceitar Dual Tone Multi Frequency (DTMF), fala ou ambos.
 
 Você pode aprender mais nos links abaixo.
 
-## [](https://developer.vonage.com/blog/21/10/20/call-control-objects-nccos-one-dev-minute#links)Links
+## Links
 
 Mais recursos relacionados ao NCCO:
 
