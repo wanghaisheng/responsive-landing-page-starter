@@ -24,9 +24,11 @@ Boas vindas ao [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsni
 
 Neste vídeo, Amanda Cavallaro, nossa Developer Advocate, fala sobre os objetos de controle de chamadas, que são um conjunto de ações que instruem o Vonage a controlar a chamada para seu aplicativo Vonage. Por exemplo, você pode conectar uma chamada, enviar fala sintetizada usando conversa, transmitir áudio ou gravar uma chamada.
 
-<Add Youtube Link>
+<youtube id="Mfw9GP8CoSw"></youtube>
 
 ## Transcrição
+
+Olá, eu sou a Amanda Cavallaro, trabalho como developer advocate na Vonage.
 
 Um objeto de controle de chamada, ou um NCCO, é um conjunto de instruções que uma chamada de voz irá seguir.
 
