@@ -23,7 +23,7 @@ The QAI is an open-source initiative that is exploring technologies, use cases a
 
 The initiative is a respectful, consensus-driven community, founded on the ideals of open-source (transparency, collaboration, sharing, open to all). It operates in accordance with a community agreed [charter](https://quick-app-initiative.ow2.io/docs/charter.pdf) and is overseen by [OW2](https://www.ow2.org/view/Main/), one of Europe’s preeminent open source organisations.
 
-If you are interested in learning more about the Initiative itself they also have a detailed [whitepaper](https://quick-app-initiative.ow2.io/page/whitepaper/) outlining the goals of the initiative.
+If you are interested in learning more about the Initiative itself they also have a detailed [whitepaper](https://quick-app-initiative.ow2.io/page/whitepaper/) outlining their goals.
 
 **But what are Quick Apps? and why does Vonage want to get involved?** 
 
