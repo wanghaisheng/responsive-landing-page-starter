@@ -6,7 +6,7 @@ description: Aprenda sobre os objetos de controle de chamadas, que são um
 thumbnail: /content/blog/o-que-são-os-objetos-de-controle-de-chamadas-nccos-one-dev-minute/title.png
 author: amanda-cavallaro
 published: true
-published_at: 2022-05-03T09:40:02.154Z
+published_at: 2022-05-04T09:01:49.102Z
 updated_at: 2022-05-03T09:40:02.172Z
 category: tutorial
 tags:
