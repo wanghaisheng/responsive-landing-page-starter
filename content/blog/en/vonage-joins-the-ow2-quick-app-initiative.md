@@ -5,7 +5,7 @@ description: Vonage has joined the OW2 Quick App Initiative to explore Quick App
 thumbnail: /content/blog/vonage-joins-the-ow2-quick-app-initiative/vonage_quickapp.png
 author: zachary-powell-1
 published: true
-published_at: 2022-05-04T09:48:30.028Z
+published_at: 2022-05-05T08:57:11.484Z
 updated_at: 2022-05-04T09:48:30.043Z
 category: announcement
 tags:
