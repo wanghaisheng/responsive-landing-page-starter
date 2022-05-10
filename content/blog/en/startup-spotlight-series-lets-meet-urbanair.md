@@ -37,13 +37,11 @@ UrbanAir, a startup based in Bucharest Romania, is aiming to solve this current 
 
 **Number of employees**: 10
 
-**Vonage API used:** Communications APIs
+**Vonage API used:** Numbers APIs
 
 ## In one sentence, what does UrbanAir do?
 
 UrbanAir is a mobile app where you find & ride all shared mobility vehicles around you - e-scooters, bikes, scooters, carsharing - wherever you travel globally, our mission is to accelerate the urban mobility revolution towards multi-modal, sustainable transportation.
-
-
 
 ## What is the problem you are solving? Was this the initial problem or did you pivot?
 
