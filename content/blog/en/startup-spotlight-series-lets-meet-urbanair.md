@@ -2,6 +2,7 @@
 title: "Startup Spotlight Series: Let's meet UrbanAir"
 description: Meet Bucharest-based startup UrbanAir as a part of Vonage Startup
   Spotlight series.
+thumbnail: /content/blog/startup-spotlight-series-lets-meet-urbanair/startups_urbanair.png
 author: filippos-kyprianou
 published: true
 published_at: 2022-05-10T15:05:54.996Z
