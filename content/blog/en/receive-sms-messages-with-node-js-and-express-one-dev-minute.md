@@ -29,13 +29,12 @@ In this quick walkthrough, Amanda Cavallaro will show you how to receive SMS mes
 
 Let's receive messages using Node.js, Express and the Vonage Messages API.
 
-
 Before we get started, make sure you have:
 
 * created a Vonage account,
 * installed Node.js, installed Ngrok, and the Vonage CLI globally.
 
-Create a folder, change directory inside of it, install Express, and the Vonage server SDK beta.
+Create a folder, change the directory inside of it, install Express, and the Vonage server SDK beta.
 Create a new file called `server.js`, and open it in your favorite code editor.
 
 We'll create an Express application that makes use of the JSON parser and the URL encoded modules. 
@@ -60,7 +59,7 @@ You can learn further from the links below
 
 ## Links
 
-[Read the written version of the tutorial](https://developer.vonage.com/blog/2019/09/16/how-to-send-and-receive-sms-messages-with-node-js-and-express-dr)[](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbFBoZkpGSkpJLXdXbmlOdHNCOW4tdndmT2l5d3xBQ3Jtc0tsUlpNR2JjaXY5ZVJfY2FRc2JSOUZxd2E1R0tvWWR5WlMxdU9rdW9FbVFTWVBNVEVOa1lwRFdPVG9Wd25yOEdIbU1ZVW9pd25YQjRuRGxMYWlGNXRVb2JwbFZCaFV5M0xvdm9QNi1sWk9rN3hyTU5kNA&q=https%3A%2F%2Flearn.vonage.com%2Fblog%2F2019%2F09%2F16%2Fhow-to-send-and-receive-sms-messages-with-node-js-and-express-dr%2F&v=JmC4y2ycF6c)
+[Read the written version of the tutorial](https://developer.vonage.com/blog/2019/09/16/how-to-send-and-receive-sms-messages-with-node-js-and-express-dr)
 
 [Reference the code on GitHub](https://github.com/nexmo-community/nexmo-sms-autoresponder-node/)
 
