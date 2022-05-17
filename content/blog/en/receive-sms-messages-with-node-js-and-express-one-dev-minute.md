@@ -5,8 +5,8 @@ description: " In this quick walkthrough, you'll learn how to receive SMS
 thumbnail: /content/blog/receive-sms-messages-with-node-js-and-express-one-dev-minute/receive-title.png
 author: amanda-cavallaro
 published: true
-published_at: 2022-05-12T07:45:39.695Z
-updated_at: 2022-05-12T07:45:39.710Z
+published_at: 2022-05-17T13:22:33.889Z
+updated_at: 2022-05-17T13:22:35.141Z
 category: tutorial
 tags:
   - javascript
