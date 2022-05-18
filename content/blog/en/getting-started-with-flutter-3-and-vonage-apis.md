@@ -19,10 +19,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-
-
-
-
 With the release of Flutter 3.0 (which includes a range of [stability and performance improvements](https://medium.com/flutter/whats-new-in-flutter-3-8c74a5bc32d0)) now is a great time to take a look at how you can use communication APIs to improve your user experience and enhance your cross platform applications.
 
 Thanks to Flutters ability to make use of native platforms SDKs and APIs we can easily use the Vonage Android and iOS SDKs within our Flutter applications. Let's take a look at how we can create a simple Flutter application that's able to make a voice phone call to a physical phone. By the end of this guide you will have a good understanding of how to use the Vonage SDK to make a voice call and how you can use native Android and iOS SDKs in your Flutter application.
@@ -522,6 +518,7 @@ class CallWidget extends StatefulWidget {
   _CallWidgetState createState() => _CallWidgetState();
 }
 ```
+
 The `CallWidgetState` will manage the UI elements, the current state of the app and all communication back to the native platform code.
 
 ```dart
@@ -549,6 +546,7 @@ class _CallWidgetState extends State<CallWidget> {
     }
   }
 ```
+
 Here we set the starting state of the app as `SdkState.LOGGED_OUT`, we create the `MethodChannel` which will handle all communication between Flutter and native code. Then we go on to set the `methodCallHandler` in which we set the state to what ever state has been passed back up to Flutter from the native code. 
 
 The UI is then build up using the `build` method, which simply created a `Box` that is of height 64. We will updated this element depending on the apps state to display different information.
@@ -662,6 +660,7 @@ enum SdkState {
   ERROR
 }
 ```
+
 ### Android
 
 Next lets take a look at the Android specific code for this application. First we need to setup the permissions that the app will need from the Android system. 
@@ -851,6 +850,7 @@ Next wek override the `configureFlutterEngine` method, this lets us run code whe
         addFlutterChannelListener()
     }
 ```
+
 Initlising the `NexmoClient` is straight forward thanks to the build method, we simply pass in the current context of the app. Then we create a `ConnectionListener` which will give us the current status of the client, these status map to values we need to send back to Flutter. So using a when statement we can send the values as required.
 
 ```kotlin
@@ -959,7 +959,18 @@ Finally we have the `nofityFlutter` method, this is where we use the Flutter mag
         }
     }
 ```
+
 And thats all the native code we need! At this point we have a functioning Flutter application that we could build for Android and be able to make a phone call from the app to a physical phone.
 But before we test the app lets take a look at how we can do the same for iOS.
 
 ### iOS
+
+First we need to setup the audio permissions within iOS, we already have the package in Flutter setup to request them so all we need to do is open the `ios/Runner/info.plist` file and add `Privacy - Microphone Usage Description` key with the value of "`Make a call"`
+
+![Xcode showing the info file selected and pricacy microphone usage description set](/content/blog/getting-started-with-flutter-3-and-vonage-apis/screenshot-2022-05-18-at-14.42.32.png)
+
+Next open the file `ios/Runner/AppDelegate` this is where we will include the code to interface between flutter and the SDK much in the same way we have already done for Android. The complete code looks like:
+
+```swift
+
+```
