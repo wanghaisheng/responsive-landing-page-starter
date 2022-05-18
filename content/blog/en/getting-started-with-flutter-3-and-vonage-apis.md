@@ -227,10 +227,55 @@ Once your IDE is setup follow the [test drive](https://docs.flutter.dev/get-star
 
 ## Installing SDKs
 
-With the project now setup we can install the Vonage client SDK. 
+With the project now setup we can install the Vonage client SDK. Currently, the Client SDK is not available as a Flutter package, so we will have to use the [Android native Client SDK](https://developer.nexmo.com/client-sdk/setup/add-sdk-to-your-app/android) and the [iOS native Client SDK](https://developer.vonage.com/client-sdk/setup/add-sdk-to-your-app/ios) Communicate between Android/iOS and Flutter will use [MethodChannel](https://api.flutter.dev/flutter/services/MethodChannel-class.html) - this way, Flutter will call Android/iOS methods, Android/iOS will call Flutter methods.
 
 ### Android SDK
 
-iOS SDK
+To install the Android SDK open your project level `build.gradle` file which can be found at `android/build.gradle` and add the following repository:
+
+```
+maven {
+    url "https://artifactory.ess-dev.com/artifactory/gradle-dev-local"
+}
+```
+
+So that your all projects repositories now looks like:
+
+```
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url "https://artifactory.ess-dev.com/artifactory/gradle-dev-local"
+        }
+    }
+}
+```
+
+Next open your app level `build.gradle` file which can be found at `android/app/build.gradle` and implment the vonage sdk like so:
+
+```
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "com.nexmo.android:client-sdk:4.1.0"
+}
+```
+
+Finally make sure your `minSdkVersion` is set to at least `23`:
+
+```
+    defaultConfig {
+        applicationId "com.vonage.tutorial.voice.app_to_phone"
+        minSdkVersion 23
+        targetSdkVersion flutter.targetSdkVersion
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+```
+
+The Android SDK is now setup and ready to be used for the Android build of the flutter application.
+
+### iOS SDK
 
 ## Code
