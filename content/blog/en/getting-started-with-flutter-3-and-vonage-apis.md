@@ -278,4 +278,51 @@ The Android SDK is now setup and ready to be used for the Android build of the f
 
 ### iOS SDK
 
+To install the iOS SDK start by generating the `PodFile` by opening a command line in the root of your Flutter project and then running the commands below:
+
+```
+cd ios/
+pod init
+```
+
+This will generate the `PodFile`, open this file and add the below pod:
+
+```
+pod 'NexmoClient'
+```
+
+Make sure to also set the platform to at least ios 10
+
+```
+platform :ios, '10.0'
+```
+
+Your complete file should look something like:
+
+```
+platform :ios, '11.0'
+
+target 'Runner' do
+  use_frameworks!
+
+  pod 'NexmoClient'
+end
+```
+
+Next from the command line, again in the iOS directory run:
+
+```
+pod update
+```
+
+This will download and install the Vonage SDK and its dependencies.
+
+Finally to link this to your Flutter project, from the root directory of your project run the below Flutter command. This will trigger an iOS build and generate the files needed to make use of the SDK.
+
+```
+flutter build ios
+```
+
+Once complete and successfully built your SDK is setup and ready to be used.
+
 ## Code
