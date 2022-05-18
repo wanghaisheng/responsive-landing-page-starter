@@ -573,4 +573,92 @@ The UI is then build up using the `build` method, which simply created a `Box` t
   }
 ```
 
+Next the `_updateView` method is used to change what is currently displayed in the box based on the current state of the app. This state model allows for a clean UI only showing the user what they need to see at any given time in the app life cycle.
 
+```dart
+  Widget _updateView() {
+    if (_sdkState == SdkState.LOGGED_OUT) {
+      return ElevatedButton(
+          onPressed: () { _loginUser(); },
+          child: const Text("LOGIN AS ALICE")
+      );
+    } else if (_sdkState == SdkState.WAIT) {
+      return const Center(
+        child: CircularProgressIndicator(),
+      );
+    } else if (_sdkState == SdkState.LOGGED_IN) {
+      return ElevatedButton(
+          onPressed: () { _makeCall(); },
+          child: const Text("MAKE PHONE CALL")
+      );
+    } else if (_sdkState == SdkState.ON_CALL) {
+      return ElevatedButton(
+          onPressed: () { _endCall(); },
+          child: const Text("END CALL")
+      );
+    } else {
+      return const Center(
+          child: Text("ERROR")
+      );
+    }
+  }
+```
+
+The _loginUser and _endCall methods are very similar in that all we are doing here is invoking the the loginUser/endCall methods in the native code. This is how we trigger the native code when the user presses a button on the UI.
+
+```dart
+Future<void> _loginUser() async {
+    String token = "ALICE_TOKEN";
+
+    try {
+      await platformMethodChannel
+          .invokeMethod('loginUser', <String, dynamic>{'token': token});
+    } on PlatformException catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  Future<void> _endCall() async {
+    try {
+      await platformMethodChannel.invokeMethod('endCall');
+    } on PlatformException catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+```
+
+The `_makeCall` method also involved a method on the native code, calling the makeCall method. However before it does that we use the requestPermissions method to request the required run time permissions from the user. In this case that is just the microphone/audio recording.
+
+```dart
+Future<void> _makeCall() async {
+    try {
+      await requestPermissions();
+
+      await platformMethodChannel.invokeMethod('makeCall');
+    } on PlatformException catch (e) {
+      if (kDebugMode) {
+        print(e);
+      }
+    }
+  }
+
+  Future<void> requestPermissions() async {
+    await [ Permission.microphone] .request();
+  }
+```
+
+And finally we have a enum which holds the different states that the SDK and the app can be in.
+
+```dart
+enum SdkState {
+  LOGGED_OUT,
+  LOGGED_IN,
+  WAIT,
+  ON_CALL,
+  ERROR
+}
+```
