@@ -219,10 +219,18 @@ We now have everything we need to use the Vonage Voice API within a flutter appl
 
 ## Flutter setup
 
-## Android setup
+If you haven't already, start by downloading and installing Flutter and its dependencies. You can do this by following the [Install Guide](https://docs.flutter.dev/get-started/install). Once you have Flutter setup correctly the next thing you will need to do is configure your IDE, how to do this will depend on the IDE you wish to use but the [Set up an editor](https://docs.flutter.dev/get-started/editor) guide will help you with this. 
 
-## iOS setup
+For this guide we will be using Android Studio. 
+
+Once your IDE is setup follow the [test drive](https://docs.flutter.dev/get-started/test-drive) guide to setup a basic Flutter application with support for both Android and iOS. We will be using this base app as the start to this project, but of course if you already have a Flutter project you want to use you can do this as well.
 
 ## Installing SDKs
+
+With the project now setup we can install the Vonage client SDK. 
+
+### Android SDK
+
+iOS SDK
 
 ## Code
