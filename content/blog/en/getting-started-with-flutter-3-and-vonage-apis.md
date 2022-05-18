@@ -662,3 +662,20 @@ enum SdkState {
   ERROR
 }
 ```
+### Android
+
+Next lets take a look at the Android specific code for this application. First we need to setup the permissions that the app will need from the Android system. 
+In your `AndroidManifest.xml` which is located at `android/app/src/main/AndroidManifest.xml` add the below permissions:
+
+```xml
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+```
+
+Next lets open the `MainActivity.kt` file which can be located at `android/app/src/main/kotlin/PACKAGE_NAME/MainActivity.kt`
+
+### iOS
