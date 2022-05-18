@@ -25,7 +25,7 @@ replacement_url: ""
 
 With the release of Flutter 3.0 (which includes a range of [stability and performance improvements](https://medium.com/flutter/whats-new-in-flutter-3-8c74a5bc32d0)) now is a great time to take a look at how you can use communication APIs to improve your user experience and enhance your cross platform applications.
 
-Thanks to Flutters ability to make use of native platforms SDKs and APIs we can easily use the Vonage Android and iOS SDKs within our Flutter applications. Let's take a look at how we can create a simple Flutter application that's able to make a voice phone call to a physical phone.
+Thanks to Flutters ability to make use of native platforms SDKs and APIs we can easily use the Vonage Android and iOS SDKs within our Flutter applications. Let's take a look at how we can create a simple Flutter application that's able to make a voice phone call to a physical phone. By the end of this guide you will have a good understanding of how to use the Vonage SDK to make a voice call and how you can use native Android and iOS SDKs in your Flutter application.
 
 For this guide we will create a basic app from scratch but you could just as easily build the below into your own application.
 
@@ -604,7 +604,7 @@ Next the `_updateView` method is used to change what is currently displayed in t
   }
 ```
 
-The _loginUser and _endCall methods are very similar in that all we are doing here is invoking the the loginUser/endCall methods in the native code. This is how we trigger the native code when the user presses a button on the UI.
+The _loginUser and _endCall methods are very similar in that all we are doing here is invoking the the loginUser/endCall methods in the native code. This is how we trigger the native code when the user presses a button on the UI. Within the `_loginUser` we have a variable `token` this should be the JWT value you generated earlier using the Vonage CLI
 
 ```dart
 Future<void> _loginUser() async {
@@ -677,5 +677,289 @@ In your `AndroidManifest.xml` which is located at `android/app/src/main/AndroidM
 ```
 
 Next lets open the `MainActivity.kt` file which can be located at `android/app/src/main/kotlin/PACKAGE_NAME/MainActivity.kt`
+
+The complete content for this file is as follows: 
+
+```kotlin
+import android.annotation.SuppressLint
+import android.os.Handler
+import android.os.Looper
+import androidx.annotation.NonNull
+import com.nexmo.client.*
+import com.nexmo.client.request_listener.NexmoApiError
+import com.nexmo.client.request_listener.NexmoConnectionListener.ConnectionStatus
+import com.nexmo.client.request_listener.NexmoRequestListener
+import io.flutter.embedding.android.FlutterActivity
+import io.flutter.embedding.engine.FlutterEngine
+import io.flutter.plugin.common.MethodChannel
+
+class MainActivity : FlutterActivity() {
+    private lateinit var client: NexmoClient
+    private var onGoingCall: NexmoCall? = null
+
+    private val callEventListener = object : NexmoCallEventListener {
+        override fun onMemberStatusUpdated(callMemberStatus: NexmoCallMemberStatus, callMember: NexmoMember) {
+            if (callMemberStatus == NexmoCallMemberStatus.COMPLETED || callMemberStatus == NexmoCallMemberStatus.CANCELLED) {
+                onGoingCall = null
+                notifyFlutter(SdkState.LOGGED_IN)
+            }
+        }
+
+        override fun onMuteChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoMember) {}
+        override fun onEarmuffChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoMember) {}
+        override fun onDTMF(dtmf: String, callMember: NexmoMember) {}
+        override fun onLegTransfer(event: NexmoLegTransferEvent?, member: NexmoMember?) {}
+    }
+
+    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
+
+        initClient()
+        addFlutterChannelListener()
+    }
+
+    private fun initClient() {
+        client = NexmoClient.Builder().build(this)
+
+        client.setConnectionListener { connectionStatus, _ ->
+            when (connectionStatus) {
+                ConnectionStatus.CONNECTED -> notifyFlutter(SdkState.LOGGED_IN)
+                ConnectionStatus.DISCONNECTED -> notifyFlutter(SdkState.LOGGED_OUT)
+                ConnectionStatus.CONNECTING -> notifyFlutter(SdkState.WAIT)
+                ConnectionStatus.UNKNOWN -> notifyFlutter(SdkState.ERROR)
+            }
+        }
+    }
+
+    private fun addFlutterChannelListener() {
+        flutterEngine?.dartExecutor?.binaryMessenger?.let {
+            MethodChannel(it, "com.vonage").setMethodCallHandler { call, result ->
+
+                when (call.method) {
+                    "loginUser" -> {
+                        val token = requireNotNull(call.argument<String>("token"))
+                        loginUser(token)
+                        result.success("")
+                    }
+                    "makeCall" -> {
+                        makeCall()
+                        result.success("")
+                    }
+                    "endCall" -> {
+                        endCall()
+                        result.success("")
+                    }
+                    else -> {
+                        result.notImplemented()
+                    }
+                }
+            }
+        }
+    }
+
+    private fun loginUser(token: String) {
+        client.login(token)
+    }
+
+    @SuppressLint("MissingPermission")
+    private fun makeCall() {
+        notifyFlutter(SdkState.WAIT)
+
+        client.serverCall("PHONE_NUMBER", null, object : NexmoRequestListener<NexmoCall> {
+            override fun onSuccess(call: NexmoCall?) {
+                onGoingCall = call
+                onGoingCall?.addCallEventListener(callEventListener)
+                notifyFlutter(SdkState.ON_CALL)
+            }
+
+            override fun onError(apiError: NexmoApiError) {
+                notifyFlutter(SdkState.ERROR)
+            }
+        })
+    }
+
+    private fun endCall() {
+        notifyFlutter(SdkState.WAIT)
+
+        onGoingCall?.hangup(object : NexmoRequestListener<NexmoCall> {
+            override fun onSuccess(call: NexmoCall?) {
+                onGoingCall?.removeCallEventListener(callEventListener)
+                onGoingCall = null
+                notifyFlutter(SdkState.LOGGED_IN)
+            }
+
+            override fun onError(apiError: NexmoApiError) {
+                notifyFlutter(SdkState.ERROR)
+            }
+        })
+    }
+
+    private fun notifyFlutter(state: SdkState) {
+        Handler(Looper.getMainLooper()).post {
+            flutterEngine?.dartExecutor?.binaryMessenger?.let {
+                MethodChannel(it, "com.vonage")
+                    .invokeMethod("updateState", state.toString())
+            }
+        }
+    }
+}
+
+enum class SdkState {
+    LOGGED_OUT,
+    LOGGED_IN,
+    WAIT,
+    ON_CALL,
+    ERROR
+}
+```
+
+Lets break this down and take a look at whats going on.
+
+The first thing you will notice is that we are extending the class `FlutterActivity` this is a Flutter provided Activity class that handles alot of the additional lifecycle and Flutter magic that makes it possible to run native code.
+
+Next up we have three variables that we will be using:
+
+```kotlin
+    private lateinit var client: NexmoClient
+    private var onGoingCall: NexmoCall? = null
+
+    private val callEventListener = object : NexmoCallEventListener {
+        override fun onMemberStatusUpdated(callMemberStatus: NexmoCallMemberStatus, callMember: NexmoMember) {
+            if (callMemberStatus == NexmoCallMemberStatus.COMPLETED || callMemberStatus == NexmoCallMemberStatus.CANCELLED) {
+                onGoingCall = null
+                notifyFlutter(SdkState.LOGGED_IN)
+            }
+        }
+
+        override fun onMuteChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoMember) {}
+        override fun onEarmuffChanged(mediaActionState: NexmoMediaActionState, callMember: NexmoMember) {}
+        override fun onDTMF(dtmf: String, callMember: NexmoMember) {}
+        override fun onLegTransfer(event: NexmoLegTransferEvent?, member: NexmoMember?) {}
+    }
+```
+
+The `NexmoClient` is the object responsible for all of the SDK interactions, making a phone call, hanging up etc. The `onGoingCall` will be used to keep track of the current phone call while one is happening. Finally we have a `NexmoCallEventListener` object, this will feed back any events that happen during a call which we can use to then decide if a call has finished. 
+Using the `onMemberStatusUpdated` method we check to see if the call is completed or cancelled. If this is the case we null the `onGoingCall` and send back the state `LOGGED_IN` to Flutter.
+
+Next wek override the `configureFlutterEngine` method, this lets us run code when the app is being created by the Flutter engine. Here we use this to run two methods, one to add a channel listener and another to setup the `NexmoClient`.
+
+```kotlin
+    override fun configureFlutterEngine(@NonNull flutterEngine: FlutterEngine) {
+        super.configureFlutterEngine(flutterEngine)
+
+        initClient()
+        addFlutterChannelListener()
+    }
+```
+Initlising the `NexmoClient` is straight forward thanks to the build method, we simply pass in the current context of the app. Then we create a `ConnectionListener` which will give us the current status of the client, these status map to values we need to send back to Flutter. So using a when statement we can send the values as required.
+
+```kotlin
+    private fun initClient() {
+        client = NexmoClient.Builder().build(this)
+
+        client.setConnectionListener { connectionStatus, _ ->
+            when (connectionStatus) {
+                ConnectionStatus.CONNECTED -> notifyFlutter(SdkState.LOGGED_IN)
+                ConnectionStatus.DISCONNECTED -> notifyFlutter(SdkState.LOGGED_OUT)
+                ConnectionStatus.CONNECTING -> notifyFlutter(SdkState.WAIT)
+                ConnectionStatus.UNKNOWN -> notifyFlutter(SdkState.ERROR)
+            }
+        }
+    }
+```
+
+The `addFlutterChannelListener` adds a listner that will watch for any method calls from Flutter. As you can see these relate to the three methods we have in Flutter, this allows us to map this calls to specific methods within the native code.
+
+```kotlin
+    private fun addFlutterChannelListener() {
+        flutterEngine?.dartExecutor?.binaryMessenger?.let {
+            MethodChannel(it, "com.vonage").setMethodCallHandler { call, result ->
+
+                when (call.method) {
+                    "loginUser" -> {
+                        val token = requireNotNull(call.argument<String>("token"))
+                        loginUser(token)
+                        result.success("")
+                    }
+                    "makeCall" -> {
+                        makeCall()
+                        result.success("")
+                    }
+                    "endCall" -> {
+                        endCall()
+                        result.success("")
+                    }
+                    else -> {
+                        result.notImplemented()
+                    }
+                }
+            }
+        }
+    }
+```
+
+The `loginUser` method is called when Flutter sends the loginUser method call, this passes in the JWT token we set and then triggers the login method on the client.
+
+```kotlin
+private fun loginUser(token: String) {
+        client.login(token)
+    }
+```
+
+The `makeCall` method is called when Flutter sends the makeCall method call, this starts a phone call to the specified phone number `"PHONE_NUMBER"` you should replace this with an actual phone number that you wish to call.
+Again here we pass back the state to Flutter depending on if the call is successful and starts or if their is some kind of error.
+
+```kotlin
+    private fun makeCall() {
+        notifyFlutter(SdkState.WAIT)
+
+        client.serverCall("PHONE_NUMBER", null, object : NexmoRequestListener<NexmoCall> {
+            override fun onSuccess(call: NexmoCall?) {
+                onGoingCall = call
+                onGoingCall?.addCallEventListener(callEventListener)
+                notifyFlutter(SdkState.ON_CALL)
+            }
+
+            override fun onError(apiError: NexmoApiError) {
+                notifyFlutter(SdkState.ERROR)
+            }
+        })
+    }
+```
+
+The `endCall` method is called when Flutter sends the endCall method call, this ends the current phone call (if there is one). 
+
+```kotlin
+    private fun endCall() {
+        notifyFlutter(SdkState.WAIT)
+
+        onGoingCall?.hangup(object : NexmoRequestListener<NexmoCall> {
+            override fun onSuccess(call: NexmoCall?) {
+                onGoingCall?.removeCallEventListener(callEventListener)
+                onGoingCall = null
+                notifyFlutter(SdkState.LOGGED_IN)
+            }
+
+            override fun onError(apiError: NexmoApiError) {
+                notifyFlutter(SdkState.ERROR)
+            }
+        })
+    }
+```
+
+Finally we have the `nofityFlutter` method, this is where we use the Flutter magic to send back the current state of the application so Flutter can update the UI. Using this we are able to involve the Flutter updateState method and pass the current state as a varible.
+
+```kotlin
+    private fun notifyFlutter(state: SdkState) {
+        Handler(Looper.getMainLooper()).post {
+            flutterEngine?.dartExecutor?.binaryMessenger?.let {
+                MethodChannel(it, "com.vonage")
+                    .invokeMethod("updateState", state.toString())
+            }
+        }
+    }
+```
+And thats all the native code we need! At this point we have a functioning Flutter application that we could build for Android and be able to make a phone call from the app to a physical phone.
+But before we test the app lets take a look at how we can do the same for iOS.
 
 ### iOS
