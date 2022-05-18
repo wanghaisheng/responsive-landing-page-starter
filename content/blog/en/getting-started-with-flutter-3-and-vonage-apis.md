@@ -19,6 +19,18 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+
+
+
+
+An
+
+Once 
+
+
+
+
+
 With the release of Flutter 3.0 (which includes a range of [stability and performance improvements](https://medium.com/flutter/whats-new-in-flutter-3-8c74a5bc32d0)) now is a great time to take a look at how you can use communication APIs to improve your user experience and enhance your cross platform applications.
 
 Thanks to Flutters ability to make use of native platforms SDKs and APIs we can easily use the Vonage Android and iOS SDKs within our Flutter applications. Let's take a look at how we can create a simple Flutter application that's able to make a voice phone call to a physical phone. By the end of this guide you will have a good understanding of how to use the Vonage SDK to make a voice call and how you can use native Android and iOS SDKs in your Flutter application.
@@ -1104,3 +1116,22 @@ This is all the code you will need to also be able to build for iOS, now that we
 
 ## Build and Test
 
+With everything now in place we can build and run the application, we will build the Android version and run it in the Android emulation.
+
+**NOTE** make sure you have set the JWT in the Flutter code and the PHONE_NUMBER in the native code. Also make sure your web server is still running.
+
+Start the Android emulator so that flutter can attach to it, below is where you can do this in Android studio
+
+![Android studio with device manager selected](/content/blog/getting-started-with-flutter-3-and-vonage-apis/screenshot-2022-05-18-at-16.24.37.png)
+
+Once this is running you can select this device as the target for the Flutter build and press the green arrow to build and run the Flutter app (with Android native code).
+
+![android studio with emulator selected and main.dart](/content/blog/getting-started-with-flutter-3-and-vonage-apis/screenshot-2022-05-18-at-16.24.53.png)
+
+Once the application has build and installed you will be presented with the below left screen. Clicking the Login as Alice button will take you to the next screen. From here you can press the Make phone call button which will (on the first run) prompt you to allow the audio permissions. After this the phone call will start and the phone number you entered will be called connecting the audio session.
+
+Once you wish to finish the call you can do so by pressing the end call button.
+
+![](/content/blog/getting-started-with-flutter-3-and-vonage-apis/app-screens.png)
+
+And thats a wrap! You now have your fully functional app to phone call written in Flutter with support for both Android and iOS. But of course this is not the end! With your knowledge on how to use Android and iOS SDKs take a look at the other example projects which will help you build other communication features into your Flutter application.
