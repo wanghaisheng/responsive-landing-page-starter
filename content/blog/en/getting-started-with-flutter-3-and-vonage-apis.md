@@ -21,9 +21,9 @@ replacement_url: ""
 ---
 With the release of Flutter 3.0 (which includes a range of [stability and performance improvements](https://medium.com/flutter/whats-new-in-flutter-3-8c74a5bc32d0)) now is a great time to take a look at how you can use communication APIs to improve your user experience and enhance your cross-platform applications.
 
-Thanks to Flutter's ability to use native platform SDKs we can easily use the Vonage Android and iOS SDKs within our Flutter applications. Let's take a look at how we can create a simple Flutter application that's able to make a voice phone call to a physical phone. By the end of this guide, you will have a good understanding of how to use the Vonage SDK to make a voice call and how you can use native Android and iOS SDKs in your Flutter application.
+Thanks to Flutter's ability to use native platform SDKs we can seamlessly use the Vonage Android and iOS SDKs within our Flutter applications. Let's take a look at how we can create a simple Flutter application that's able to make a voice phone call to a physical phone. By the end of this guide, you will have a good understanding of how to use the Vonage SDK to make a voice call and how you can use native Android and iOS SDKs in your Flutter application.
 
-For this guide, we will create a basic app from scratch but you could just as easily build the below into your application.
+For this guide, we will create a basic app from scratch but you could just as quickly build the below into your application.
 
 The full source code for this project can be found on [GitHub](https://github.com/Vonage-Community/blog-voice-flutter-app_to_phone).
 
@@ -37,7 +37,7 @@ Start by signing up for a free Vonage Developer account. This can be done via th
 
 ![Vonage dashboard home page showing API key and API secret location](/content/blog/getting-started-with-flutter-3-and-vonage-apis/dashboard.png)
 
-### Install Vonage CLI
+### Install the Vonage CLI
 
 The [Vonage CLI](https://developer.nexmo.com/application/vonage-cli) allows you to carry out many operations on the command line. Examples include creating applications, purchasing numbers, and linking a number to an application all of which we will be doing today.
 
@@ -66,7 +66,7 @@ vonage numbers:search US
 vonage numbers:buy 15555555555 US
 ```
 
-### Create webhook server
+### Create a Webhook Server
 
 When an inbound call is received, Vonage makes a request to a publicly accessible URL of your choice - we call this the `answer_url`. You need to create a webhook server that is capable of receiving this request and returning an [NCCO](https://developer.vonage.com/voice/voice-api/ncco-reference) containing a `connect` action that will forward the call to the [PSTN phone number](https://developer.vonage.com/concepts/guides/glossary#virtual-number). You do this by extracting the destination number from the `to` query parameter and returning it in your response.
 
@@ -127,14 +127,6 @@ app.all('/voice/event', (req, res) => {
   res.sendStatus(200);
 });
 
-if(subdomain == "SUBDOMAIN") {
-  console.log('\n\t🚨🚨🚨 Please change the SUBDOMAIN value');
-  return false;
-}
-if(vonageNumber == "NUMBER") {
-  console.log('\n\t🚨🚨🚨 Please change the NUMBER value');
-  return false;
-}
 app.listen(3000);
 
 const localtunnel = require('localtunnel');
@@ -631,7 +623,7 @@ Future<void> _loginUser() async {
   }
 ```
 
-The `_makeCall` method also involved a method on the native code, calling the makeCall method. However, before it does that we use the requestPermissions method to request the required run time permissions from the user. In this case that is just the microphone/audio recording.
+The `_makeCall` method also involved a method on the native code, calling the `makeCall` method. However, before it does that we use the `requestPermissions` method to request the required run time permissions from the user. In this case that is just the microphone/audio recording.
 
 ```dart
 Future<void> _makeCall() async {
@@ -909,7 +901,7 @@ private fun loginUser(token: String) {
 ```
 
 The `makeCall` method is called when Flutter sends the makeCall method call, this starts a phone call to the specified phone number `"PHONE_NUMBER"` you should replace this with an actual phone number that you wish to call.
-Again here we pass back the state to Flutter depending on if the call is successful and starts or if there is some kind of error.
+Again, here we pass back the state to Flutter depending on if the call is successful and starts or if there is some kind of error.
 
 ```kotlin
     private fun makeCall() {
@@ -929,7 +921,7 @@ Again here we pass back the state to Flutter depending on if the call is success
     }
 ```
 
-The `endCall` method is called when Flutter sends the endCall method call, this ends the current phone call (if there is one). 
+The `endCall` method is called when Flutter sends the `endCall` method call, this ends the current phone call (if there is one). 
 
 ```kotlin
     private fun endCall() {
@@ -949,7 +941,7 @@ The `endCall` method is called when Flutter sends the endCall method call, this 
     }
 ```
 
-Finally, we have the `nofityFlutter` method, this is where we use the Flutter magic to send back the current state of the application so Flutter can update the UI. Using this we are able to involve the Flutter updateState method and pass the current state as a variable.
+Finally, we have the `nofityFlutter` method, this is where we use the Flutter magic to send back the current state of the application so Flutter can update the UI. Using this we are able to involve the Flutter `updateState` method and pass the current state as a variable.
 
 ```kotlin
     private fun notifyFlutter(state: SdkState) {
@@ -1122,6 +1114,6 @@ Once the application has build and installed you will be presented with the belo
 
 Once you wish to finish the call you can do so by pressing the end call button.
 
-![](/content/blog/getting-started-with-flutter-3-and-vonage-apis/app-screens.png)
+![The four UI screens of the app, from right to left. The App startup screen, the logged in screen, the permission request screen and finally the in call screen](/content/blog/getting-started-with-flutter-3-and-vonage-apis/app-screens.png)
 
 And that's a wrap! You now have your fully functional app to phone call written in Flutter with support for both Android and iOS. But of course, this is not the end! With your knowledge of how to use Android and iOS SDKs take a look at the other [example projects](https://github.com/nexmo-community/client-sdk-tutorials) which will help you build other communication features into your Flutter application. If you want more detail make sure to check out the [developer portal](https://developer.vonage.com/) which has all the documentation and sample code you could ever need!
