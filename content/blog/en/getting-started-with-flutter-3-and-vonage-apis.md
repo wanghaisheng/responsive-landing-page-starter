@@ -25,6 +25,8 @@ Thanks to Flutter's ability to use native platform SDKs we can easily use the Vo
 
 For this guide, we will create a basic app from scratch but you could just as easily build the below into your application.
 
+The full source code for this project can be found on [GitHub](https://github.com/Vonage-Community/blog-voice-flutter-app_to_phone).
+
 ## Vonage Setup
 
 Before we get into the code there are a few things we need to do to set up the Vonage API and make use of it.
