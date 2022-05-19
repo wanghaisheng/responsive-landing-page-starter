@@ -5,8 +5,8 @@ description: Flutter 3 has now been released! Lets take a look at how we can use
 thumbnail: /content/blog/getting-started-with-flutter-3-and-vonage-apis/flutter-3.png
 author: zachary-powell-1
 published: true
-published_at: 2022-05-17T08:58:39.152Z
-updated_at: 2022-05-17T08:58:39.171Z
+published_at: 2022-05-19T13:03:16.756Z
+updated_at: 2022-05-19T13:03:19.112Z
 category: tutorial
 tags:
   - android
