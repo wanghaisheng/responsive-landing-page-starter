@@ -42,7 +42,7 @@ ReactJS version >= 16.8
 Node.js version >= 16.13
 PostgreSQL 14 as the Database, you can choose any storage you prefer
 
-You should be able to see all the dependencies in the GitHub [repo](https://github.com/nexmo-se/video-breakout-room) and we’d suggest you always use the latest version of Vonage SDK. The versions listed here were the ones used when we were working on this demo app. 
+You should be able to see all the dependencies in the [GitHub repo](https://github.com/nexmo-se/video-breakout-room) and we’d suggest you always use the latest version of Vonage SDK. The versions listed here were the ones used when we were working on this demo app. 
 
 ## Application’s Server and Database Design
 
@@ -72,7 +72,7 @@ When the meeting is on-going and a host user decides to create breakout rooms, a
 
 The Room object holds the references to the session, message(breakoutRoomSignal) and participants and provides the entries for creating breakout rooms and managing participants. 
 
-The application uses [signaling-REST API](https://tokbox.com/developer/guides/signaling/rest/) to send messages to clients connected to all sessions related to a main-room/breakout-room, informing of room changes, timer and raise-hand requests, etc.
+The application uses [Signaling-REST API](https://tokbox.com/developer/guides/signaling/rest/) to send messages to clients connected to all sessions related to a main-room/breakout-room, informing of room changes, timer and raise-hand requests, etc.
 
 For example, signaling message with below type and data is to inform application users of new breakout rooms being created and they can choose one to join: 
 
