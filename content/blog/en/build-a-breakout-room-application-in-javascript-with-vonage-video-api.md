@@ -6,7 +6,7 @@ thumbnail: /content/blog/build-a-breakout-room-application-in-javascript-with-vo
 author: amanda-cavallaro
 published: true
 published_at: 2022-05-24T11:04:44.847Z
-updated_at: 2022-05-23T10:39:30.261Z
+updated_at: 2022-05-24T12:51:48.481Z
 category: tutorial
 tags:
   - video-api
