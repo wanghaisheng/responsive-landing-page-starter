@@ -27,12 +27,13 @@ This tutorial explains how to use the **separate sessions** to build the Breakou
 
 Hope the following graphs can give you a general idea first. Initially, all participants connect to the main-room’s session:
 
+![Graph showing all participants connect to the main-room’s session](/content/blog/build-a-breakout-room-application-in-javascript-with-vonage-video-api/screenshot-2022-05-18-at-14.53.42.png)
+
 After the host clicks the button to create breakout rooms, the application server calls Vonage Video API to create a session for each breakout room and returns these session IDs to each participant.
 
 Then the application connects participants to these breakout rooms’ sessions by letting participants choose a room to join or splitting participants into different rooms automatically, depending on what option the host has selected when creating the breakout rooms. (Host can choose between "Assign automatically" and "Let participants choose a room").
 
 ## Prerequisites
-
 
 A Vonage Video API account. Click [Sign Up](https://www.tokbox.com/account/user/signup) to create one if you don't have one already.
 ReactJS version >= 16.8
@@ -122,38 +123,38 @@ For these breakoutRoomSignal messages, the app takes actions accordingly, for ex
 
 ```javascript
 if (mMessage.breakoutRoomSignal.message === 'participantMoved' && roomAssigned && (!currentRoomAssigned || currentRoomAssigned.id !== roomAssigned.id)) {
-     setCurrentRoomAssigned(roomAssigned);
-     mNotification.openNotification("Room assigned by Host/Co-host", `You will be redirected to Room: ${roomAssigned.name} in 5 seconds.`, () => handleChangeRoom(roomAssigned.name))
-   }
+    setCurrentRoomAssigned(roomAssigned);
+    mNotification.openNotification("Room assigned by Host/Co-host", `You will be redirected to Room: ${roomAssigned.name} in 5 seconds.`, () => handleChangeRoom(roomAssigned.name))
+}
 ```
 
 Within handleChangeRoom, the application will leave the current room (by disconnecting from its associated session) and join to the assigned room (by connecting to its associated session).
 
 ```javascript
 async function handleChangeRoom(publisher, roomName) {
-   const newRooms = \[...mMessage.breakoutRooms];
-   let targetRoom = newRooms.find((room) => room.name === roomName);
+    const newRooms = \ [...mMessage.breakoutRooms];
+    let targetRoom = newRooms.find((room) => room.name === roomName);
 
-   await mSession.session.unpublish(publisher);
-   await mSession.session.disconnect();
+    await mSession.session.unpublish(publisher);
+    await mSession.session.disconnect();
 
-   const connectionSuccess = await connect(mSession.user, targetRoom ? targetRoom.id : '');
+    const connectionSuccess = await connect(mSession.user, targetRoom ? targetRoom.id : '');
 
-   if (!connectionSuccess) {
-     // Force connect to main room;
-     targetRoom = null;
-     roomName = '';
-     await connect(mSession.user);
-   }
+    if (!connectionSuccess) {
+        // Force connect to main room;
+        targetRoom = null;
+        roomName = '';
+        await connect(mSession.user);
+    }
 
-   let data = {
-     fromRoom: currentRoom.name,
-     toRoom: roomName ? roomName : mainRoom.name,
-     participant: mSession.user.name
-   }
+    let data = {
+        fromRoom: currentRoom.name,
+        toRoom: roomName ? roomName : mainRoom.name,
+        participant: mSession.user.name
+    }
 
-   setInBreakoutRoom(targetRoom && targetRoom.name !== mainRoom.name ? targetRoom : null);
- }
+    setInBreakoutRoom(targetRoom && targetRoom.name !== mainRoom.name ? targetRoom : null);
+}
 ```
 
 ## Re-Use the Publisher Object When Switching Back and Forth Among Rooms
@@ -163,52 +164,55 @@ When a participant leaves the main room and joins a breakout room (or otherwise)
 For each "type": "signal:breakout-room" message that can lead a client to leave a room and join another room, eg. “roomCreated (automatic)”, what the application does is to disconnect from a session and then connect to another session. Within the process, the stream published to the previous session will be destroyed and the event [streamDestroyed](https://tokbox.com/developer/sdks/js/reference/StreamEvent.html) will be dispatched to the publisher client. In order to retain the Publisher object for reuse, the method preventDefault of the streamDestroyed event should be called.
 
 ```javascript
-function handleStreamDestroyed(e){
-   if (e.stream.name !== "sharescreen") e.preventDefault();
-   if (e.reason === 'forceUnpublished') {
-     console.log('You are forceUnpublished');
-     setStream({...e.stream})
-     setPublisher({...e.stream.publisher})
-   }
- }
+function handleStreamDestroyed(e) {
+    if (e.stream.name !== "sharescreen") e.preventDefault();
+    if (e.reason === 'forceUnpublished') {
+        console.log('You are forceUnpublished');
+        setStream({
+            ...e.stream
+        })
+        setPublisher({
+            ...e.stream.publisher
+        })
+    }
+}
 ```
 
 The demo application re-uses this Publisher object to publish to the session associated with the breakout room. 
 
 ```javascript
 async function publish(
-   user,
-   extraData
- ){
-   try{
-     if(!mSession.session) throw new Error("You are not connected to session");
-     if (!publisher || publisherOptions.publishVideo !== hasVideo || publisherOptions.publishAudio !== hasAudio ) {
+    user,
+    extraData
+) {
+    try {
+        if (!mSession.session) throw new Error("You are not connected to session");
+        if (!publisher || publisherOptions.publishVideo !== hasVideo || publisherOptions.publishAudio !== hasAudio) {
 
 
-   if (publisher) resetPublisher();
-   const isScreenShare = extraData && extraData.videoSource === 'screen' ? true : false;
-   const options = {
-     insertMode: "append",
-     name: user.name,
-     publishAudio: isScreenShare ? true : hasVideo,
-     publishVideo: isScreenShare ? true : hasAudio,
-     style: {
-       buttonDisplayMode: "off",
-       nameDisplayMode: displayName? "on": "off"
-     }
-   };
-   const finalOptions = Object.assign({}, options, extraData);
-   setPublisherOptions(finalOptions);
-   const newPublisher = OT.initPublisher(containerId, finalOptions);
-   publishAttempt(newPublisher, 1, isScreenShare);    
- }
- else {
-   publishAttempt(publisher);
- }  
-   }catch(err){
-     console.log(err.stack);
-   }
- }
+            if (publisher) resetPublisher();
+            const isScreenShare = extraData && extraData.videoSource === 'screen' ? true : false;
+            const options = {
+                insertMode: "append",
+                name: user.name,
+                publishAudio: isScreenShare ? true : hasVideo,
+                publishVideo: isScreenShare ? true : hasAudio,
+                style: {
+                    buttonDisplayMode: "off",
+                    nameDisplayMode: displayName ? "on" : "off"
+                }
+            };
+            const finalOptions = Object.assign({}, options, extraData);
+            setPublisherOptions(finalOptions);
+            const newPublisher = OT.initPublisher(containerId, finalOptions);
+            publishAttempt(newPublisher, 1, isScreenShare);
+        } else {
+            publishAttempt(publisher);
+        }
+    } catch (err) {
+        console.log(err.stack);
+    }
+}
 ```
 
 ## Conclusion
