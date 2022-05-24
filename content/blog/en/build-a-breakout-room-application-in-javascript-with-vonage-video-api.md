@@ -31,6 +31,8 @@ Hope the following graphs can give you a general idea first. Initially, all part
 
 After the host clicks the button to create breakout rooms, the application server calls Vonage Video API to create a session for each breakout room and returns these session IDs to each participant.
 
+![Graph showing application connects participants to breakout rooms](/content/blog/build-a-breakout-room-application-in-javascript-with-vonage-video-api/screenshot-2022-05-18-at-15.15.15.png)
+
 Then the application connects participants to these breakout rooms’ sessions by letting participants choose a room to join or splitting participants into different rooms automatically, depending on what option the host has selected when creating the breakout rooms. (Host can choose between "Assign automatically" and "Let participants choose a room").
 
 ## Prerequisites
