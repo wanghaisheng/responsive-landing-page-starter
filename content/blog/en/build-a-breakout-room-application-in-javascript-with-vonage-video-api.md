@@ -33,7 +33,7 @@ After the host clicks the button to create breakout rooms, the application serve
 
 ![Graph showing application connects participants to breakout rooms](/content/blog/build-a-breakout-room-application-in-javascript-with-vonage-video-api/screenshot-2022-05-18-at-15.15.15.png)
 
-Then the application connects participants to these breakout rooms’ sessions by letting participants choose a room to join or splitting participants into different rooms automatically, depending on what option the host has selected when creating the breakout rooms. (Host can choose between "Assign automatically" and "Let participants choose a room").
+Then the application connects participants to these breakout rooms' sessions by letting participants choose a room to join or splitting participants into different rooms automatically, depending on what option the host has selected when creating the breakout rooms. (Host can choose between "Assign automatically" and "Let participants choose a room").
 
 ## Prerequisites
 
@@ -62,11 +62,11 @@ CREATE TABLE IF NOT EXISTS rooms(
 )
 ```
 
-The session_id stores the id of a session associated with the room. The max_participants defines the maximum number of participants the room allows. The main_room_id differentiates whether this is a breakout room that belongs to the main room or just a main room that can have breakout rooms: when it is set to NULL, it is a main room; otherwise, it is a breakout room and its value should be set to the room id of its main room. 
+The `session_id` stores the id of a session associated with the room. The `max_participants` defines the maximum number of participants the room allows. The `main_room_id` differentiates whether this is a breakout room that belongs to the main room or just a main room that can have breakout rooms: when it is set to `NULL`, it is a main room; otherwise, it is a breakout room and its value should be set to the room id of its main room. 
 
-Initially, on the log-in page, all users choose to join one room, aka the main room. Upon receiving the front-end request, the application server calls Video API to create a session for this main room and adds a record to the room table with session_id set to the id of the session created and main_room_id set to NULL. Then it returns the session_id to all logged-in users for them to connect to the session.
+Initially, on the log-in page, all users choose to join one room, aka the main room. Upon receiving the front-end request, the application server calls Video API to create a session for this main room and adds a record to the room table with `session_id` set to the id of the session created and `main_room_id` set to `NULL`. Then it returns the `session_id` to all logged-in users for them to connect to the session.
 
-When the meeting is on-going and a host user decides to create breakout rooms, after they submits options listed in "Breakout Room Control", such as how many breakout rooms to be created", "Let participants choose room", or "Assign automatically", etc. Front-end sends a createSession request with the parameter "breakoutRooms" carrying the above selections to the application server, which will then create a session for each breakout-room accordingly and store the session id and other information to the room table, one record for each breakout room with main_room_id set to the main room id.
+When the meeting is on-going and a host user decides to create breakout rooms, after they submits options listed in "Breakout Room Control", such as how many breakout rooms to be created", "Let participants choose room", or "Assign automatically", etc. Front-end sends a `createSession` request with the parameter `breakoutRooms` carrying the above selections to the application server, which will then create a session for each breakout-room accordingly and store the session id and other information to the room table, one record for each breakout room with `main_room_id` set to the main room id.
 
 ## Use Signaling API to Implement Breakout Room Management
 
@@ -86,7 +86,7 @@ For example, signaling message with below type and data is to inform application
 }
 ```
 
-signaling message to inform “all rooms have been removed”:
+* signaling message to inform "all rooms have been removed":
 
 ```json
 {
@@ -98,7 +98,7 @@ signaling message to inform “all rooms have been removed”:
  }
 ```
 
-inform a participant that is moved from one (breakout) room to another:
+* inform a participant that is moved from one (breakout) room to another:
 
 ```json
 {
@@ -110,7 +110,7 @@ inform a participant that is moved from one (breakout) room to another:
 }
 ```
 
-while, a signaling message with type set to “signal:count-down-timer” is to inform of a timer:
+* while, a signaling message with type set to `signal:count-down-timer` is to inform of a timer:
 
 ```json
 {
@@ -121,7 +121,7 @@ while, a signaling message with type set to “signal:count-down-timer” is to 
 }
 ```
 
-For these breakoutRoomSignal messages, the app takes actions accordingly, for example for 'participantMoved', it moves the participant to the assigned room.
+For these `breakoutRoomSignal` messages, the app takes actions accordingly, for example for `participantMoved`, it moves the participant to the assigned room.
 
 ```javascript
 if (mMessage.breakoutRoomSignal.message === 'participantMoved' && roomAssigned && (!currentRoomAssigned || currentRoomAssigned.id !== roomAssigned.id)) {
@@ -130,7 +130,7 @@ if (mMessage.breakoutRoomSignal.message === 'participantMoved' && roomAssigned &
 }
 ```
 
-Within handleChangeRoom, the application will leave the current room (by disconnecting from its associated session) and join to the assigned room (by connecting to its associated session).
+Within `handleChangeRoom`, the application will leave the current room (by disconnecting from its associated session) and join to the assigned room (by connecting to its associated session).
 
 ```javascript
 async function handleChangeRoom(publisher, roomName) {
@@ -163,7 +163,7 @@ async function handleChangeRoom(publisher, roomName) {
 
 When a participant leaves the main room and joins a breakout room (or otherwise),  **it is recommended to re-use the Publisher object** to save resources. 
 
-For each "type": "signal:breakout-room" message that can lead a client to leave a room and join another room, eg. “roomCreated (automatic)”, what the application does is to disconnect from a session and then connect to another session. Within the process, the stream published to the previous session will be destroyed and the event [streamDestroyed](https://tokbox.com/developer/sdks/js/reference/StreamEvent.html) will be dispatched to the publisher client. In order to retain the Publisher object for reuse, the method preventDefault of the streamDestroyed event should be called.
+For each `type": "signal:breakout-room` message that can lead a client to leave a room and join another room, eg. `roomCreated (automatic)`, what the application does is to disconnect from a session and then connect to another session. Within the process, the stream published to the previous session will be destroyed and the event [streamDestroyed](https://tokbox.com/developer/sdks/js/reference/StreamEvent.html) will be dispatched to the publisher client. In order to retain the Publisher object for reuse, the method preventDefault of the streamDestroyed event should be called.
 
 ```javascript
 function handleStreamDestroyed(e) {
