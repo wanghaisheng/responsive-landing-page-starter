@@ -2,9 +2,10 @@
 title: Build a Breakout Room Application in JavaScript with Vonage Video API
 description: "This tutorial explains how to use the separate sessions to build
   the Breakout Room feature into our Demo Application, which "
+thumbnail: /content/blog/build-a-breakout-room-application-in-javascript-with-vonage-video-api/breakoutroom.jpg
 author: amanda-cavallaro
 published: true
-published_at: 2022-05-23T10:39:30.247Z
+published_at: 2022-05-24T11:04:44.847Z
 updated_at: 2022-05-23T10:39:30.261Z
 category: tutorial
 tags:
@@ -17,6 +18,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*This article was written in collaboration with Yinping Ge*
+
 Breakout Room is a common feature required by many customers, especially those in education. It often allows "splitting the main meeting room into separate ones", "splitting participants into these breakout rooms", and "participants to send messages to the host no matter which room they are in", etc.
 
 With Vonage [Video API](https://www.vonage.com/communications-apis/video/), there is more than one way to implement such a Breakout Room feature for your application. 
