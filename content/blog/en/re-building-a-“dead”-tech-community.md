@@ -26,7 +26,7 @@ So what happened in between? I helped build the community (with two amazing co-o
 
 ![](https://cdn-images-1.medium.com/max/1200/1*yDO_w6fZlY4TCd_Cv5BTrg.png)
 
-
+## Background
 
 #### The Problem
 
@@ -41,8 +41,6 @@ Internally, improving student happiness was pretty straightforward: listen, brai
 
 ![](https://cdn-images-1.medium.com/max/1200/0*Qrjg0iYmVJzf46Px)
 
-
-
 For the next year and a half, I was attending 1–3 meetups or tech events a week. I was cold calling organizers, speakers, startups, programmers, product managers, designers, VCs, and basically anyone that I thought could provide even a bit of value for our community. It yielded many amazing results. Sometimes students were attending events with me. But most of the time we were hosting meetups ourselves with a wide diversity of profiles and topics. We had some events that were literally overflowing, with 130+ attendees squeezing in the door.
 
 But time and time again, there was one big problem. We couldn’t connect in any meaningful way with current Rubyists or companies actively developing in Ruby. Online I would read that top local companies like Fiverr, Monday.com, WeWork, and others were Ruby shops. WeWork in particular seemed like a great place to connect as some of their engineers ran a Ruby group called Ruby Underground with 1300+ members!
@@ -52,8 +50,10 @@ When I reached out to the organizers to offer a location, to handle promotion, t
 A few months later I was ecstatic when Ruby Underground announced a meetup. I made sure to clear my calendar and attend. The talks were super interesting, the two alumni I dragged along met with WeWork HR looking to hire, and I even got a few minutes to talk to the meetup organizer. It all seemed to be falling into place. That is until I followed up with the organizer. Again, radio silence. In hindsight, this was 2019 at WeWork as the company was in a period of flux with an upcoming and then canceled IPO. 
 
 > *It became clear that Ruby was no longer a priority for even top Ruby organizers in Tel Aviv.*
->
->
+
+
+
+## A  Meetup Is Formed
 
 #### The Co-Stars
 
@@ -63,13 +63,9 @@ To be specific, I attended the first DEV IRL meetup in Tel Aviv. It was organize
 
 After spending all of 5 minutes on Vonage’s rooftop. I was sold! I was the one now getting in contact with HR. Within 6 months both I and Avital would join Ben at Vonage. And Israel.rb would be set in motion.
 
-
-
 *The Four Speakers at DEV IRL: [Jonathan](https://twitter.com/johnnymakestuff), [Ben](https://twitter.com/rabbigreenberg?lang=en), [Avital](https://twitter.com/avitaltzubeli), and [Clara](https://twitter.com/Clara_Morgen)*
 
 ![](https://cdn-images-1.medium.com/max/1200/0*tazK_h18hRXy88x0.jpg)
-
-
 
 I started my new position at Vonage in February 2020. Yes. That February 2020. The one with the beginning of a global pandemic. Great timing!
 
@@ -79,13 +75,7 @@ It didn’t take much convincing. Ben was in!
 
 Ben had a great insight; “let’s bring in a third organizer so the group wasn’t 100% Vonage”. And so Ariel Caplan, Ruby Backend extraordinaire completed our trifecta. At the time Ariel was at Cloudinary and had already spoken at both RubyConf and RailsConf multiple times. Oh and that one last Ruby Underground I attended? Ariel was a speaker so I knew he was equally brilliant and intelligible for all levels.
 
-
-
-
-
 *Ariel, Ruby speaker extraordinaire*![](https://cdn-images-1.medium.com/max/1200/0*J4hw02z7vn69vxtW.jpg)
-
-
 
 So the A-Team was:
 
@@ -117,11 +107,7 @@ Ok, so that’s how we got started. And what’s actually happened? 
   * Speakers: Dan Moore (FusionAuth)
   * Sponsors: Vonage, Cloudinary
 
-
-
 *Allison McMillian at our very first meetup!*![](https://cdn-images-1.medium.com/max/1200/0*V3HCpTsFoD1LVbHt)
-
-
 
 **1 Hybrid Mini-Conference:**
 
@@ -140,15 +126,9 @@ Ok, so that’s how we got started. And what’s actually happened? 
   * Speakers: Yoel Blum (Tailor Brands), Maya Shavin (Microsoft)
   * Sponsor: Tailor Brands
 
-#### The Lessons
+## Lessons and the Future
 
-* Getting Started
-* The Formula: People + Content + Place
-* Going Hybrid
-* Consistency
-* Tools
-
-**Start**
+**Start Now!**
 
 Like studying or exercising, the biggest hurdle of building a community is getting started. You might think of all the reasons to put off building a community. But at the end of the day, you are definitely going to make mistakes. The sooner you get started, the quicker you can make those mistakes and iterate your way to success.
 
@@ -166,8 +146,6 @@ Beyond online, you can see if there are any local bootcamps or courses still tea
 
 While looking for people you’ll also be killing two birds with one stone; finding people will lead you to your sources of content. As you research those former speakers at meetups and conferences, google their name and look for their Dev.to/Medium pages, are they still actively writing content? Have they given talks recently? The best and easiest thing for a content creator is if they can repurpose content for multiple events. “Oh, you gave that talk at RailsConf? Can you do it again for your local fans?”. Think about recording the talks. Recorded talks which can then be shared on YouTube make events more attractive for speakers.
 
-
-
 *Maya Shavin with Front End tips for Ruby Devs*![](https://cdn-images-1.medium.com/max/1200/0*mizjeRhXmtGYdydZ)
 
 If you can’t find any past local speakers, look for new ones! Search for combinations of your tech and location. Look on Twitter. Is anyone talking about the “dead tech” in your local language? Look on LinkedIn. Who’s working in the “dead tech”? 
@@ -175,8 +153,6 @@ If you can’t find any past local speakers, look for new ones! Search for combi
 One more secret to finding great content in a post-2020 world is that remote life is no longer stigmatized. Israel.rb was able to really take advantage of this, bringing in world-class Rubyists that would have never been able to make it to Tel Aviv from around the world for a meetup. Now with in-person events opening up, you can get the best of both worlds. Meet with your local group in person and bring in a top expert for a live watch party!
 
 Lastly, you’ll need a place. That means a place for meeting. Is it in person? Try coworking offices, incubators, and programming bootcamps. They all usually have everything needed for meetups and are happy to host for free. Even better is to find a company working in your tech stack and let them use some HR budget on you. It’s best to set expectations ahead of time about turnout. Many eager HR reps might not realize that dying communities may mean 10–20 attendees is a good result. If they are expecting 20–50+, there may be ill will and you can lose one of your best potential partners.
-
-
 
 **Going Hybrid**
 
@@ -210,7 +186,7 @@ So this advice can be seen as “After Launch” but it’s also what I’m usin
 
 1. Schedule regular check-ins with the organizers. Once a month, every other month, etc. Make sure everyone is clear on the state of the group and what needs to be happening for the next event. Always good to try to include more people in this process after meetups. Each new member helps rejuvenate the motivation.
 2. Understand your main stakeholders. Since launching Israel.rb, the biggest new, unexpected community member type are small to medium companies that are looking for new employees. We created a simple [Job Board](https://airtable.com/shr2EZCTlzE73skSH/tblxs9zBQANucf8y2) but are thinking about how to better incorporate them into our community. 
-3. Create a landing page. As we found, jumping from tool to tool, the “frontpage” of our community was inconsistent, and hard to find valuable information. Having a single source of truth landing page that then points to all your different initiatives will help attract new members. You can use the Israel.rb [landing page mockup](<1. <https://www.figma.com/proto/w8dEFZC7dieuFb8OL4qD6p/Untitled?page-id=0%3A1&node-id=3%3A2&viewport=619%2C233%2C0.25&scaling=scale-down>>) for inspiration.
+3. Create a landing page. As we found, jumping from tool to tool, the “frontpage” of our community was inconsistent, and hard to find valuable information. Having a single source of truth landing page that then points to all your different initiatives will help attract new members. You can use the Israel.rb \[landing page mockup](<1. <https://www.figma.com/proto/w8dEFZC7dieuFb8OL4qD6p/Untitled?page-id=0%3A1&node-id=3%3A2&viewport=619%2C233%2C0.25&scaling=scale-down>>) for inspiration.
 
    Have some clear community initiatives that they can find on the landing page, these are ours:
 
@@ -219,12 +195,14 @@ So this advice can be seen as “After Launch” but it’s also what I’m usin
    * j**ob board**: this may be the single most valuable initiative you engage in, helping folks in their career.
    * **state of your tech in your location:** create a list of companies that are using your technology in your area. Identifiable logos will provide a lot of social proof that this is still a cool area to be in.
 
-
-
-
-
 ![Ben Greenberg being warm and welcoming at the last meetup.](/content/blog/re-building-a-“dead”-tech-community/ben-greenberg-tailorbrands-1.png "Ben Greenberg being warm and welcoming at the last meetup.")
 
 ### Do it!
 
 If you’re thinking about meeting with others in your field, there are probably others thinking the same. The feeling of bringing together the no-longer cool kids in developer land is honestly incredible. Stop thinking and just do it! All those companies running legacy code are relying on you!
+
+
+
+If you have questions about tech communities, the Vonage developer relations team is full of very talented tech community builders. [Join us](https://developer.vonage.com/community/slack) on Developer Community Slack!
+
+If you are interested in building developer communities professionally, the Vonage developer relations team is growing! Check out our [job openings](vonage.dev/join).
