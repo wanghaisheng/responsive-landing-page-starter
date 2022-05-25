@@ -17,8 +17,6 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-WordPress 2FA using Vonage is here!
-
 One of the areas we are focused on this year at Vonage is Integrations, and with me being [the PHP Advocate in my team](https://developer.vonage.com/blog/21/10/11/james-seconde-joins-the-developer-relations-team) it would be impossible to ignore the Content Management System that powers [43% of the world's websites](https://kinsta.com/wordpress-market-share/).
 
 So, it was time to create a Plugin for WordPress, and the most logical product of ours to use was the Verify API. (more on that shortly) The Plugin has now been released for general usage, so in this article I'm going to walk through how to use it.
@@ -35,15 +33,15 @@ Our WordPress plugin wraps the API calls in this workflow to integrate it as par
 
 You can install the plugin from [the WordPress plugin storefront](https://en-gb.wordpress.org/plugins/) which you can also access from your Plugins admin menu when logged into your site:
 
-!\[[Screenshot 2022-05-24 at 13.39.48 1.png]]
+![Screenshot of the WordPress admin Plugin page](/content/blog/wordpress-2fa-by-vonage-is-here/screenshot-2022-05-24-at-13.39.48-1.png)
 
 Once you've entered the storefront, go to the search bar and type in `vonage`. You should then see the plugin:
 
-!\[[Screenshot 2022-05-24 at 13.41.54.png]]
+![](/content/blog/wordpress-2fa-by-vonage-is-here/screenshot-2022-05-24-at-13.41.54.png)
 
-Install and activate the plugin. Once activated, providing you are an administrator (we're going to assume you are here, as you were able to install a new plugin), you'll see the Vonage 2FA setup menu appear in the left hand menu:
+Install and activate the plugin. Once activated, providing you are an administrator (we're going to assume you are here, as you were able to install a new plugin), you'll see the Vonage 2FA setup menu appear in the left-hand menu:
 
-!\[[Screenshot 2022-05-24 at 13.43.25 1.png]]
+![](/content/blog/wordpress-2fa-by-vonage-is-here/screenshot-2022-05-24-at-13.43.25-1.png)
 
 #### Vonage Signup + Credentials
 
@@ -51,17 +49,17 @@ In order to use the Plugin, we'll need a Vonage Developer account. Follow [this 
 
 Once we have an account, we need the Master API key and API Secret. You can find them here:
 
-!\[[Screenshot 2022-05-24 at 13.47.13.png]]
+![](/content/blog/wordpress-2fa-by-vonage-is-here/screenshot-2022-05-24-at-13.47.13.png)
 
 Copy the two keys into their respective fields within the 2FA plugin settings page, which looks like this:
 
-!\[[Screenshot 2022-05-24 at 13.51.59.png]]
+![](/content/blog/wordpress-2fa-by-vonage-is-here/screenshot-2022-05-24-at-13.51.59.png)
 
 Save your changes, and your account is all hooked up.
 
 Now, each user can configure their 2FA settings. Head to a WordPress user profile and scroll to the bottom: you'll see the Vonage 2FA user settings here.
 
-!\[[Screenshot 2022-05-24 at 13.57.48.png]]
+![](/content/blog/wordpress-2fa-by-vonage-is-here/screenshot-2022-05-24-at-13.57.48.png)
 
 You're all set. Enable 2FA and log out, and attempt to log in again.
 
@@ -69,7 +67,7 @@ You're all set. Enable 2FA and log out, and attempt to log in again.
 
 What you'll now see when trying to login is the new login flow. Instead of logging out, WordPress now requires you to complete the Verify process by entering the PIN sent out to your cellphone.
 
-!\[[Screenshot 2022-05-25 at 08.41.41.png]]
+![](/content/blog/wordpress-2fa-by-vonage-is-here/screenshot-2022-05-25-at-08.41.41.png)
 
 Put in the correct PIN, and you should now be logged into your WordPress Dashboard.
 
@@ -82,6 +80,6 @@ There's a little more to how this actually works, so here are some points on wha
 
 #### And there will be more...
 
-It wasn't a totally smooth ride to write this plugin - from a technical point of view, I'd like to state the following: *Anyone who says WordPress Development is easy, doesn't work with WordPress much*. There tends to be a certain snobbery around WordPress when it comes to Development, but the amount of tech debt accrued by the project over the years, plus the sheer volume of installations means that coding for this platform just *isn't easy*.
+It wasn't a totally smooth ride to write this plugin - from a technical point of view, I'd like to state the following: *Anyone who says WordPress Development is easy doesn't work with WordPress much*. There tends to be a certain snobbery around WordPress when it comes to Development, but the amount of tech debt accrued by the project over the years, plus the sheer volume of installations means that coding for this platform just *isn't easy*.
 
 This was the first in my adventures into Integrations (although I also work with the Laravel core team as Vonage is the default carrier for outbound SMS messages), and there will be more to come. Coming soon in the near future will be *other* implementations of this 2FA workflow on other popular CMS platforms, so watch this space. For now, enjoy your increased security in your WordPress site!
