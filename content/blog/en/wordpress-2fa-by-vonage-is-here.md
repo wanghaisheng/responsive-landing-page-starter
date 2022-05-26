@@ -76,7 +76,7 @@ There's a little more to how this actually works, so here are some points on wha
 * The Verify API charges per successful Verification as the default plan. For more information, check out the pricing structure [here](https://www.vonage.com/communications-apis/verify/pricing/)
 * Your approved Verification is saved in your browser's session once you've successfully passed it - so if you change machines, wipe local data or your Verification expires at the Vonage end then you will be required to repeat the Verification step.
 
-#### And there will be more...
+#### And There Will Be More...
 
 It wasn't a totally smooth ride to write this plugin - from a technical point of view, I'd like to state the following: *Anyone who says WordPress Development is easy doesn't work with WordPress much*. There tends to be a certain snobbery around WordPress when it comes to Development, but the amount of tech debt accrued by the project over the years, plus the sheer volume of installations means that coding for this platform just *isn't easy*.
 
