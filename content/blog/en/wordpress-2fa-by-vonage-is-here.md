@@ -69,7 +69,7 @@ What you'll now see when trying to log in is the new sign in flow. Instead of lo
 
 Put in the correct PIN, and you should now be logged into your WordPress Dashboard.
 
-#### Under The Hood
+#### Under the Hood
 
 There's a little more to how this actually works, so here are some points on what is actually happening in the background:
 
