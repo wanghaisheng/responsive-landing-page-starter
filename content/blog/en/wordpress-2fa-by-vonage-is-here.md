@@ -21,7 +21,7 @@ One of the areas we are focused on this year at Vonage is Integrations, and with
 
 So, it was time to create a Plugin for WordPress, and the most logical product of ours to use was the Verify API. (more on that shortly) The Plugin has now been released for general usage, so in this article I'm going to walk through how to use it.
 
-### Installation and Plugin usage
+### Installation and Plugin Usage
 
 #### What it Does
 
