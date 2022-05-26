@@ -45,7 +45,7 @@ Install and activate the plugin. Once activated, providing you are an administra
 
 #### Vonage Signup + Credentials
 
-In order to use the Plugin, we'll need a Vonage Developer account. Follow [this link](https://dashboard.nexmo.com/sign-up) and complete the signup process in order to create an account.
+In order to use the Plugin, we'll need a Vonage Developer account. Head over to [the Vonage Account Creation page](https://dashboard.nexmo.com/sign-up) and complete the signup process in order to create an account.
 
 Once we have an account, we need the Master API key and API Secret. You can find them here:
 
