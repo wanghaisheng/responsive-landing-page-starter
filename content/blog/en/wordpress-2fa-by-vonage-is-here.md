@@ -73,7 +73,7 @@ Put in the correct PIN, and you should now be logged into your WordPress Dashboa
 
 There's a little more to how this actually works, so here are some points on what is actually happening in the background:
 
-* The Verify API charges per successful Verification as the default plan. For more information, check out the pricing structure [here](https://www.vonage.com/communications-apis/verify/pricing/)
+* The Verify API charges per successful Verification as the default plan. For more information, check out the [pricing structure here](https://www.vonage.com/communications-apis/verify/pricing/).
 * Your approved Verification is saved in your browser's session once you've successfully passed it - so if you change machines, wipe local data or your Verification expires at the Vonage end then you will be required to repeat the Verification step.
 
 #### And There Will Be More...
