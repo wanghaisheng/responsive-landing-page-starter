@@ -68,7 +68,7 @@ After spending all of 5 minutes on Vonage’s rooftop, I was sold! I was the one
 
 ![](https://cdn-images-1.medium.com/max/1200/0*tazK_h18hRXy88x0.jpg)
 
-I started my new position at Vonage in February 2020. Yes. That February 2020. The one with the beginning of a global pandemic. Great timing!
+I started my new position at Vonage in February 2020. Yes, _that_ February 2020. The one with the beginning of a global pandemic. Great timing!
 
 Even as we entered uncertain times, my boss at the time Olia continued to encourage me to find ways to make work meaningful and meet personal goals. One big obvious way: exploiting my new access to one of the coolest Ruby devs in Israel, and now colleague Mr. Greenberg.
 
