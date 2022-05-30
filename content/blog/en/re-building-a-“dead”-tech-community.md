@@ -131,7 +131,7 @@ Ok, so that’s how we got started. So, what’s actually happened? 
 
 **Start Now!**
 
-Like studying or exercising, the biggest hurdle of building a community is getting started. You might think of all the reasons to put off building a community. But at the end of the day, you are definitely going to make mistakes. The sooner you get started, the quicker you can make those mistakes and iterate your way to success.
+Like studying or exercising, the biggest hurdle of building a community is getting started. You might think of all the reasons to put off building a community but at the end of the day, you are definitely going to make mistakes. The sooner you get started, the quicker you can make those mistakes and iterate your way to success.
 
 As you can see, I had a few advantages to get off the ground. But the basics of any (dead tech) community are always the same:
 
