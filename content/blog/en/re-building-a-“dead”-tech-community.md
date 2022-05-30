@@ -206,4 +206,4 @@ If you’re thinking about meeting with others in your field, there are probably
 
 If you have questions about tech communities, the Vonage developer relations team is full of very talented tech community builders. [Join us](https://developer.vonage.com/community/slack) on Developer Community Slack!
 
-If you are interested in building developer communities professionally, the Vonage developer relations team is growing! Check out our [job openings](vonage.dev/join).
+If you are interested in building developer communities professionally, the Vonage Developer Relations team is growing! Check out our [job openings](vonage.dev/join).
