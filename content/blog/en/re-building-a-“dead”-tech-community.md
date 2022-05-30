@@ -165,7 +165,9 @@ One area that we struggled with was consistency. We had our second meetup one mo
 
 **Tools**
 
-Along with consistent planning. Agree with your co-organizers from the beginning on consistent tooling. Each organizer in our A-team had a different preferred method for communication. We also had different preferred methods for engaging the community. And it caused a lot of problems. At first, we opened a Slack workspace, thinking this would be the home of our new community. But quickly realized that it didn’t fit our community. Slack is too cumbersome and if our maximum potential community is in the dozens, how many will actually remember to open it often enough? In the end, it became our place to organize meetups, with more friction than function.
+Along with consistent planning, you'll need to agree with your co-organizers from the beginning on consistent tooling. Each organizer in our A-team had a different preferred method for communication. We also had different preferred methods for engaging the community, and it caused a lot of problems. 
+
+At first, we opened a Slack workspace, thinking this would be the home of our new community. But quickly realized that it didn’t fit our community. Slack is too cumbersome and if our maximum potential community is in the dozens, how many will actually remember to open it often enough? In the end, it became our place to organize meetups, with more friction than function.
 
 You need to think about your local community and find the best fit for each function. How will you communicate with community members? Twitter? Facebook? Email? Telegram? Will you create a specific community hub like Discord or a web forum or a Facebook Group? How will you handle event registrations? Meetup or Eventbrite or Luma?
 
