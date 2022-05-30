@@ -117,7 +117,7 @@ Ok, so that’s how we got started. So, what’s actually happened? 
 
   * 30 in-person attendees, 120 online attendees
   * 12 speakers
-  * Sponsors: Jet Brains, Signal Wire, Le Wagon, Vonage, Cloudinary, Orbit, Zerus & Ona
+  * Sponsors: JetBrains, Signal Wire, Le Wagon, Vonage, Cloudinary, Orbit, Zerus & Ona
 
 **1 In-Person Meetup:**
 
