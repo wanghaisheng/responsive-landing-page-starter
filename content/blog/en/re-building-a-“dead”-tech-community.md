@@ -88,7 +88,7 @@ Me: Makes Ok-ish Graphics, Social Media Spammer, Knows Ruby Juniors
 
 #### **The Metrics**
 
-Ok, so that’s how we got started. And what’s actually happened? 
+Ok, so that’s how we got started. So, what’s actually happened? 
 
 **3 Online Meetups:** 
 
