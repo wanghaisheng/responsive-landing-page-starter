@@ -62,7 +62,7 @@ By the fall of 2019 something amazing happened that changed my life. I attended 
 
 To be specific, I attended the first DEV IRL meetup in Tel Aviv. It was organized by Ben Greenberg and Avital Tzubeli. Avital had spoken at Le Wagon and we were quickly becoming friends. Ben was one of the few locals talking Ruby on the internet, so obviously I was a big fanboy. My coworker at the time Clara Morgen had been accepted to give a talk and I rallied the troops to support our lead teacher.
 
-After spending all of 5 minutes on Vonage’s rooftop. I was sold! I was the one now getting in contact with HR. Within 6 months both I and Avital would join Ben at Vonage. And Israel.rb would be set in motion.
+After spending all of 5 minutes on Vonage’s rooftop, I was sold! I was the one now getting in contact with HR. Within 6 months both Avital and I would join Ben at Vonage, and Israel.rb would be set in motion.
 
 *The Four Speakers at DEV IRL: [Jonathan](https://twitter.com/johnnymakestuff), [Ben](https://twitter.com/rabbigreenberg?lang=en), [Avital](https://twitter.com/avitaltzubeli), and [Clara](https://twitter.com/Clara_Morgen)*
 
