@@ -193,7 +193,7 @@ So this advice can be seen as “After Launch” but it’s also what I’m usin
 
    * **meetups:** pictures of former meetups will provide proof that this is an active community. Adding videos of past talks will provide instant value and show the quality of the group.
    * **discussions:** link to an online space for discussions and sharing news between events. We use a Facebook group as Facebook continues to be popular in Israel.
-   * j**ob board**: this may be the single most valuable initiative you engage in, helping folks in their career.
+   **job board**: this may be the single most valuable initiative you engage in, helping folks in their career.
    * **state of your tech in your location:** create a list of companies that are using your technology in your area. Identifiable logos will provide a lot of social proof that this is still a cool area to be in.
 
 ![Ben Greenberg being warm and welcoming at the last meetup.](/content/blog/re-building-a-“dead”-tech-community/ben-greenberg-tailorbrands-1.png "Ben Greenberg being warm and welcoming at the last meetup.")
