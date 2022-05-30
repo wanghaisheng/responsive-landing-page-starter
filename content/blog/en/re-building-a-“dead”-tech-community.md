@@ -74,7 +74,7 @@ Even as we entered uncertain times, my boss at the time Olia continued to encour
 
 It didn’t take much convincing. Ben was in!
 
-Ben had a great insight; “let’s bring in a third organizer so the group wasn’t 100% Vonage”. And so Ariel Caplan, Ruby Backend extraordinaire completed our trifecta. At the time Ariel was at Cloudinary and had already spoken at both RubyConf and RailsConf multiple times. Oh and that one last Ruby Underground I attended? Ariel was a speaker so I knew he was equally brilliant and intelligible for all levels.
+Ben had a great insight; “let’s bring in a third organizer so the group wasn’t 100% Vonage”. And so Ariel Caplan, Ruby Backend extraordinaire completed our trifecta. At the time Ariel was at Cloudinary and had already spoken at both RubyConf and RailsConf multiple times. Oh, and that one last Ruby Underground I attended? Ariel was a speaker so I knew he was equally brilliant and intelligible for all levels.
 
 *Ariel, Ruby speaker extraordinaire*![](https://cdn-images-1.medium.com/max/1200/0*J4hw02z7vn69vxtW.jpg)
 
