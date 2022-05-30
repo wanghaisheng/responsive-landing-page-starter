@@ -19,7 +19,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
-In 2018 I wrote a [post](https://medium.com/le-wagon/yes-we-still-teach-ruby-19d3d9b163e) about learning and teaching Ruby long after the (local) tech world considered it a dead language. For all my love for Ruby and Rails, one thing that was sorely missing was an active, local community in Tel Aviv. 
+In 2018 [I wrote a blog post](https://medium.com/le-wagon/yes-we-still-teach-ruby-19d3d9b163e) about learning and teaching Ruby long after the (local) tech world considered it a dead language. For all my love for Ruby and Rails, one thing that was sorely missing was an active, local community in Tel Aviv. 
 
 Fast forward to 2022, and a few weeks ago I attended the first in-person [Israel.rb](https://www.facebook.com/groups/272757750683415) meetup. There were 2 amazing talks, food and drinks at a gorgeous office, Ruby job openings, and 30+ very much alive Rubyists. 
 
