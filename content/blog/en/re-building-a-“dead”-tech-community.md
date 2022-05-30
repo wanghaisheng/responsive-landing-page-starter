@@ -157,7 +157,7 @@ Lastly, you’ll need a place. That means a place for meeting. Is it in person? 
 
 **Going Hybrid**
 
-Or you can also opt for virtual/hybrid meetups. We learned a very big lesson with our hybrid event. It turned out that while the local community of Rubyists was small, there are still many loyal Rubyists in our region. We thought we’d be able to split in-person and online duties between the organizers. What we found out was that it’s really like running two seperate events. You need one set of organizers/moderators for the online and one for the in-person.
+You can also opt for virtual/hybrid meetups; we learned a very big lesson with our hybrid event. It turned out that while the local community of Rubyists was small, there are still many loyal Rubyists in our region. We thought we’d be able to split in-person and online duties between the organizers. What we found out was that it’s really like running two separate events. You need one set of organizers/moderators for the online and one for the in-person.
 
 **Consistency**
 
