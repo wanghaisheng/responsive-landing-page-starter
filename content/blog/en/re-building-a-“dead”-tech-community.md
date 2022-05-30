@@ -23,7 +23,7 @@ In 2018 [I wrote a blog post](https://medium.com/le-wagon/yes-we-still-teach-rub
 
 Fast forward to 2022, and a few weeks ago I attended the first in-person [Israel.rb](https://www.facebook.com/groups/272757750683415) meetup. There were 2 amazing talks, food and drinks at a gorgeous office, Ruby job openings, and 30+ very much alive Rubyists. 
 
-So what happened in between? I helped build the community (with two amazing co-organizers!) that I so desperately wanted. So let’s celebrate this milestone with some thoughts, observations, and hopefully lessons for someone somewhere.
+So what happened in-between? I helped build the community (with two amazing co-organizers!) that I so desperately wanted. So let’s celebrate this milestone with some thoughts, observations, and hopefully lessons for someone, somewhere.
 
 ![](https://cdn-images-1.medium.com/max/1200/1*yDO_w6fZlY4TCd_Cv5BTrg.png)
 
