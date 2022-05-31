@@ -61,7 +61,7 @@ After spending all of 5 minutes on Vonage’s rooftop, I was sold! I was the one
 
 *The Four Speakers at DEV IRL: [Jonathan](https://twitter.com/johnnymakestuff), [Ben](https://twitter.com/rabbigreenberg?lang=en), [Avital](https://twitter.com/avitaltzubeli), and [Clara](https://twitter.com/Clara_Morgen)*
 
-![The Four Speakers at DEV IRL: Jonathan, Ben, Avital, and Clara.](https://cdn-images-1.medium.com/max/1200/0*tazK_h18hRXy88x0.jpg)
+![The Four Speakers at DEV IRL: Jonathan, Ben, Avital, and Clara.](https://cdn-images-1.medium.com/max/1200/0*tazK_h18hRXy88x0.jpg "The Four Speakers at DEV IRL: Jonathan, Ben, Avital, and Clara.")
 
 I started my new position at Vonage in February 2020. Yes, *that* February 2020. The one with the beginning of a global pandemic. Great timing!
 
