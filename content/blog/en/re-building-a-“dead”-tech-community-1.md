@@ -153,8 +153,6 @@ While looking for people you’ll also be killing two birds with one stone; find
 
 ![Maya Shavin with Front End tips for Ruby Devs](/content/blog/re-building-a-“dead”-tech-community/maya-s.jpeg "Maya Shavin with Front End tips for Ruby Devs")
 
-
-
 If you can’t find any past local speakers, look for new ones! Search for combinations of your tech and location. Look on Twitter. Is anyone talking about the “dead tech” in your local language? Look on LinkedIn. Who’s working in the “dead tech”? 
 
 One more secret to finding great content in a post-2020 world is that remote life is no longer stigmatized. Israel.rb was able to really take advantage of this, bringing in world-class Rubyists that would have never been able to make it to Tel Aviv from around the world for a meetup. Now with in-person events opening up, you can get the best of both worlds. Meet with your local group in person and bring in a top expert for a live watch party!
@@ -195,7 +193,7 @@ So this advice can be seen as “After Launch” but it’s also what I’m usin
 
 1. Schedule regular check-ins with the organizers. Once a month, every other month, etc. Make sure everyone is clear on the state of the group and what needs to be happening for the next event. Always good to try to include more people in this process after meetups. Each new member helps rejuvenate the motivation.
 2. Understand your main stakeholders. Since launching Israel.rb, the biggest new, unexpected community member type are small to medium companies that are looking for new employees. We created a simple [Job Board](https://airtable.com/shr2EZCTlzE73skSH/tblxs9zBQANucf8y2) but are thinking about how to better incorporate them into our community. 
-3. Create a landing page. As we found, jumping from tool to tool, the “frontpage” of our community was inconsistent, and hard to find valuable information. Having a single source of truth landing page that then points to all your different initiatives will help attract new members. You can use the Israel.rb \[landing page mockup](<1. <https://www.figma.com/proto/w8dEFZC7dieuFb8OL4qD6p/Untitled?page-id=0%3A1&node-id=3%3A2&viewport=619%2C233%2C0.25&scaling=scale-down>>) for inspiration.
+3. Create a landing page. As we found, jumping from tool to tool, the “frontpage” of our community was inconsistent, and hard to find valuable information. Having a single source of truth landing page that then points to all your different initiatives will help attract new members. You can use the Israel.rb [landing page mockup](<https://www.figma.com/proto/w8dEFZC7dieuFb8OL4qD6p/Untitled?page-id=0%3A1&node-id=3%3A2&viewport=619%2C233%2C0.25&scaling=scale-down>) for inspiration.
 
    Have some clear community initiatives that they can find on the landing page, these are ours:
 
