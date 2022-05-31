@@ -1,12 +1,12 @@
 ---
 title: Re-Building a “Dead” Tech Community
-description: Tips and lessons about rebuilding a dormant tech community. In
-  this   example, a Ruby on Rails meetup group; Developer Relations.
+description: Tips and lessons about rebuilding a dormant tech community. In this
+  example, a Ruby on Rails meetup group.u
 thumbnail: /content/blog/re-building-a-“dead”-tech-community/rebuilding-community-1.png
 author: benjamin-aronov
 published: true
-published_at: 2022-05-30T22:09:39.204Z
-updated_at: 2022-05-30T22:09:39.261Z
+published_at: 2022-05-31T10:32:43.327Z
+updated_at: 2022-05-31T10:32:43.996Z
 category: devlife
 tags:
   - ruby
