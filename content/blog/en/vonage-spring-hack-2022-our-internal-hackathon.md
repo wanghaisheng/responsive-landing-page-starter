@@ -31,7 +31,7 @@ The creative use of our APIs was the most important aspect of the hackathon. We 
 
 Teams were asked to build hacks around two themes: Customer Experience and Developer Experience. We asked each team to use their imagination and coding skills to showcase the power of our APIs, improve them or invent new ones.
 
-We had three challenge categories that were evaluated by an internal team of judges: Best in Show, Best Integration and Most Creative. Two special challenges: AWS Challenge - which required utilising one or more API-based AWS’ AI services to deliver additional value to Vonage customers and Best UI - a special prize awarded to the team with the best use of Vivid, Vonage’s design system. Finally, the People’s Choice award,  allowed Vonage colleagues to vote for their favourite project.
+We had three challenge categories that were evaluated by an internal team of judges: **Best in Show, Best Integration, and Most Creative**; two special challenges: **AWS Challenge** - which required utilising one or more API-based AWS’ AI services to deliver additional value to Vonage customers -,  and **Best UI** - a special prize awarded to the team with the best use of Vivid, Vonage’s design system; and, finally, the **People’s Choice award**, that allowed Vonage colleagues to vote for their favourite project.
 
 Vonage’s culture is based on our values of Accountability, Collaboration, Trust & Excellence and this hackathon is a perfect example of how our Team Members live and breathe these values. Spring Hack is a true reflection of our employee brand “Be What’s next. Right Now”.
 
@@ -53,15 +53,15 @@ And finally, the swag! Everyone that joined the Spring Hack received a swag pack
 
 In planning the hackathon schedule we took into account public holidays across countries participants were based in; Singapore, India, Israel, Poland, Spain, the UK and the US.
 
-Pre-Hackathon event - On the 20th of April, we hosted a pre-hackathon stream session during which the team from AWS presented the technologies included in their special Spring Hack challenge: Transcribe, Translate, Polly, Comprehend, and Rekognition.
+**Pre-Hackathon event** - On the 20th of April, we hosted a pre-hackathon stream session during which the team from AWS presented the technologies included in their special Spring Hack challenge: Transcribe, Translate, Polly, Comprehend, and Rekognition.
 
 **Kick-off** - Then, we kicked off the Spring Hack on Monday 25th of April, with two welcome sessions to go over the goals and prize categories, the schedule and the logistics.
 
-The hack - Spring Hack runs on Monday 25th and Tuesday 26th of April. To be eligible for prizes, each team, represented by one person, needed to complete a project submission form by 23:59 PDT on April 26th. As part of the form, participants were asked to upload a video demo of a maximum of 4 minutes. 
+**The hack** - Spring Hack runs on Monday 25th and Tuesday 26th of April. To be eligible for prizes, each team, represented by one person, needed to complete a project submission form by 23:59 PDT on April 26th. As part of the form, participants were asked to upload a video demo of a maximum of 4 minutes. 
 
-Demo showcase - On April 28th we showcased the videos during two live events. Both sessions were recorded and shared with all employees. The voting for the People’s Choice awards opened after the showcase.
+**Demo showcase** - On April 28th we showcased the videos during two live events. Both sessions were recorded and shared with all employees. The voting for the People’s Choice awards opened after the showcase.
 
-Awards Ceremony - On the 10th of May we hosted a live stream session for the announcement of the winners. After the revelation, the winning teams were invited to join the stream for some Q&A. 
+**Awards Ceremony** - On the 10th of May we hosted a live stream session for the announcement of the winners. After the revelation, the winning teams were invited to join the stream for some Q&A. 
 
 ![Remote collaboration for Team "Intelligent Engagement with Contact Buddy"](/content/blog/vonage-spring-hack-2022-our-internal-hackathon/spring-hack_3.jpg "Remote collaboration for Team \"Intelligent Engagement with Contact Buddy\"")
 
