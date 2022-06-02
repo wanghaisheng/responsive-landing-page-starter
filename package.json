@@ -24,7 +24,7 @@
     "@nuxtjs/axios": "^5.13.6",
     "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/feed": "^1.1.0",
-    "@nuxtjs/tailwindcss": "^3.4.3",
+    "@nuxtjs/tailwindcss": "^4.0.0",
     "@tailwindcss/typography": "^0.4.1",
     "algoliasearch": "^4.10.5",
     "ap-style-title-case": "^1.1.2",
