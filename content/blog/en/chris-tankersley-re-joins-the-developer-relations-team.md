@@ -2,6 +2,7 @@
 title: Chris Tankersley Re-Joins the Developer Relations Team!
 description: Chris Tankersley has returned to the Developer Relations team at
   Vonage to work on integrations.
+thumbnail: /content/blog/chris-tankersley-re-joins-the-developer-relations-team/chris-tankersley.jpg
 author: christankersley
 published: false
 published_at: 2022-06-01T13:16:01.127Z
