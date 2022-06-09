@@ -5,8 +5,8 @@ description: Meet Munich-based startup Reachaus as a part of Vonage Startup
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-reachaus/startups_reachaus.png
 author: filippos-kyprianou
 published: true
-published_at: 2022-06-09T10:48:34.067Z
-updated_at: 2022-06-09T10:48:34.115Z
+published_at: 2022-06-09T13:25:46.956Z
+updated_at: 2022-06-09T13:25:50.087Z
 category: startup
 tags:
   - startups
