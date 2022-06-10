@@ -21,6 +21,8 @@ One of the areas we are focused on this year at Vonage is Integrations, and with
 
 So, it was time to create a Plugin for WordPress, and the most logical product of ours to use was the Verify API. (more on that shortly) The Plugin has now been released for general usage, so in this article I'm going to walk through how to use it.
 
+If you want a concinse, short video tutorial which contains a summary of the plugin's usage, [you can find a tutorial here](https://www.youtube.com/watch?v=OYMGqh0R__k).
+
 #### What it Does
 
 [The Vonage Verify API](https://developer.vonage.com/verify/overview) is a product from Vonage that allows developers and product owners to integrate two-factor authentication into their software using their Vonage account. The Verify API has a built-in workflow that enables you to choose the delivery medium for PIN codes it uses (SMS, Voice) and allows you to check against previous Verification flows via a unique Request ID assigned to each attempt to use it.
