@@ -19,7 +19,7 @@ replacement_url: ""
 ---
 One of the areas we are focused on this year at Vonage is Integrations, and with me being [the PHP Advocate in my team](https://developer.vonage.com/blog/21/10/11/james-seconde-joins-the-developer-relations-team) it would be impossible to ignore the Content Management System that powers [43% of the world's websites](https://kinsta.com/wordpress-market-share/).
 
-So, it was time to create a Plugin for WordPress, and the most logical product of ours to use was the Verify API (more on that shortly). The Plugin has now been released for general usage, so in this article I'm going to walk through how to use it.
+So, it was time to create a plugin for WordPress, and the most logical product of ours to use was the Verify API (more on that shortly). The plugin has now been released for general usage, so in this article I'm going to walk through how to use it.
 
 If you want a concise, short video tutorial which contains a summary of the plugin's usage, [you can find it here](https://www.youtube.com/watch?v=OYMGqh0R__k) (or below).
 
