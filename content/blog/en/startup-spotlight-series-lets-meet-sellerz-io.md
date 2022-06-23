@@ -4,7 +4,7 @@ description: Meet SaaS startup Sellerz.io as a part of Vonage Startup Spotlight 
 thumbnail: /content/blog/startup-spotlight-series-lets-meet-sellerz-io/startups_sellerz.png
 author: filippos-kyprianou
 published: true
-published_at: 2022-06-23T14:05:05.106Z
+published_at: 2022-06-23T14:27:30.594Z
 updated_at: 2022-06-23T14:05:05.160Z
 category: startup
 tags:
