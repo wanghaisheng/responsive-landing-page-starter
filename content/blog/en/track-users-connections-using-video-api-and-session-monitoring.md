@@ -3,10 +3,11 @@ title: Track Users Connections Using Video API and Session Monitoring
 description: Session Monitoring offers reliable and secure connection monitoring
   in Vonage Video API. Developers can monitor server-side activity and verify
   each connection.
+thumbnail: /content/blog/track-users-connections-using-video-api-and-session-monitoring/session-monitoring-1.png
 author: enrico-portolan
 published: true
-published_at: 2022-06-27T19:22:59.728Z
-updated_at: 2022-06-27T19:22:59.761Z
+published_at: 2022-06-28T09:14:01.363Z
+updated_at: 2022-06-28T09:14:03.020Z
 category: tutorial
 tags:
   - video-api
