@@ -5,12 +5,14 @@ description: Show Rooming is a growing concern for brick-and-mortar retailers.
   experience.
 author: christankersley
 published: true
-published_at: 2022-06-28T23:16:13.175Z
-updated_at: 2022-06-28T23:16:13.189Z
+published_at:
+updated_at:
 category: inspiration
 tags:
-  - "#node"
-comments: false
+  - node
+  - verify-api
+  - voice-api
+comments: true
 spotlight: false
 redirect: ""
 canonical: ""
@@ -35,7 +37,7 @@ While this article is meant to help get some gears turning, we do have some samp
 
 * Node.js v14 or higher
 * Our Command Line Interface, which you can install with `npm install @vonage/cli -g`
-* [Example Code] that shows this solution working end-to-end
+* [Example Code](https://github.com/Vonage-Community/blog-retail-demo) that shows this solution working end-to-end
 * [Ngrok](https://ngrok.com/) for testing locally
 
 <sign-up></sign-up>
