@@ -257,17 +257,20 @@ async function bootstrap() {
 ```
 
 Research has also shown that sales conversations that involve a video conversation are more likely to result in a successful outcome for the sellers. 
-Vonage video can be used to allow the shopper to see the human they are speaking to, with facial expressions and everything that makes an interaction rich;
-for the shopper to show the agent what they are looking at;
-and for the agent to share their screen if need be
-A Retailer can easily measure the ROI by enabling a switch to video for those conversations (with the shopper’s consent of course).
+Vonage video can be used to allow the shopper to see the human they are speaking to, with facial expressions and everything that makes an interaction rich; for the shopper to show the agent what they are looking at; and for the agent to share their screen if need be. A Retailer can easily measure the ROI by enabling a switch to video for those conversations (with the shopper’s consent of course).
 
 Back to the showrooming issue, by enabling communications while they are in the store, a remote sales assistant can help seal the deal there and then, by gauging any hesitation and addressing any questions. 
+
+
 For instance, if the shopper is indeed thinking about comparison shopping, the agent can do an instant price match while communicating with the shopper in the store and possibly throw in a special coupon or promotion such as for delivery or installation. If the store can meet the customer’s needs while they are ready to make a purchase, they should.
 
 ## Conclusion
 
-With Vonage APIs, retail executives can meet their brick-and-mortar customers’ needs and minimize leakage of revenue to their competition. Vonage APIs can be added to a variety of applications in almost any programming language, allowing your users to decide how they want to be contacted. Hopefully, this gives you some ideas to start seeing how you can integrate Vonage Communication APIs into your retail experience. 
+With Vonage APIs, retail executives can meet their brick-and-mortar customers’ needs and minimize leakage of revenue to their competition. Vonage APIs can be added to a variety of applications in almost any programming language, allowing your users to decide how they want to be contacted.
+
+Hopefully, this gives you some ideas to start seeing how you can integrate Vonage Communication APIs into your retail experience. 
+
+If you have any questions come join our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
 
 ## Further Reading
 
