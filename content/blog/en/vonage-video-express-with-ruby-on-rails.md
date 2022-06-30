@@ -22,7 +22,7 @@ Since 2004 Ruby on Rails has been beloved by developers and especially startup f
 
 Last year Vonage released Video Express. This Javascript library which sits ontop of Vonage's Video API is like the "Convention Over Configuration" extension to make building Video Call Applications easier and faster. Any developer can now spin up powerful, robust Video Meetings without knowing all the nuts and bolts.
 
-In this tutorial, I'll show you how to combine these powerful technologies to build a modern, fullstack application with all the video conferencing features that users have come to expect. I'll use Ruby on Rails, Vonage Video Express, and Vonage's new UI Toolkit VIVID.
+In this tutorial, I'll show you how to combine these powerful technologies to build a modern, fullstack application with all the video conferencing features that users have come to expect. I'll use Ruby on Rails, Vonage Video Express, and Vonage's new UI Toolkit Vivid.
 
 This post is inspired by [Create a Party With Ruby on Rails and the Vonage Video API](https://developer.vonage.com/blog/20/05/12/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1-building-the-backend-dr). I will largely recreate the functionality and afterwards you can see just how much much less code was required!
 
@@ -38,7 +38,7 @@ This app will have two pages; a landing page with a login form and a "party" pag
 - [Rails v6.1.6+] (https://rubyonrails.org/)
 - [Vonage Video API](https://tokbox.com/account/user/signup)
 - [Vonage Video Express v1.2.3+](https://tokbox.com/developer/video-express/)
-- [VIVID v2.34.0+](https://vivid.vonage.com/)
+- [Vivid v2.34.0+](https://vivid.vonage.com/)
 
 
 ## Vonage Video API Setup
@@ -91,7 +91,20 @@ gem 'dotenv-rails'
 Once that is done, we can run bundle install from the command line to install our dependencies.
 
 ### Node Modules
-We'll be using two 
+We'll be using two Javascript libraries in the front end: Video Express and Vivid. Before we use them, let's get to know a little bit more about them.
+
+#### Video Express
+I promised that Video Express makes a developers life easier, but how? In primarily two ways: **Performance** and **Layout**.
+
+##### Performance
+Video Express' **Quality Manager** continuously optimizes stream resolution, framerate, and rendering sizes. This is very important as the number of streams in a classic video conference session grows exponentially fast! For instance, 25 people in a video call mean that 625 streams are concurrently active.
+
+The quality manager works to upgrade and downgrade resolution as networks and CPU allow, pause non-visible video streams and muted audio streams, and request smaller video streams from media servers when displayed videos becomes smaller.
+
+This can result in **60% decreased bandwith** usage for 10 participant sessions and **80% decreased bandwith** usage for 25 participant sessions!
+
+
+
 `yarn add @vonage/video-express @vonage/vivid`
 
 `rails g model WatchParty session_id:string expired:boolean`
