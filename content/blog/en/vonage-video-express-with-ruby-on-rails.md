@@ -18,6 +18,27 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+Since 2004 Ruby on Rails has been beloved by developers and especially startup founders for it's ability to quickly build full scale web applications. Kerry Doyle perfectly summed up the "Convention Over Configuration" philosophy that underpins Rails, "(Ruby on Rails) attempts to decrease the number of decisions that a developer using the framework is required to make without necessarily losing flexibility and don't repeat yourself (DRY) principles". This philosophy makes Rails ideal for the [LEAN](https://en.wikipedia.org/wiki/Lean_software_development) mindest.
+
+Last year Vonage released Video Express. This Javascript library which sits ontop of Vonage's Video API is like the "Convention Over Configuration" extension to make building Video Call Applications easier and faster. Any developer can now spin up powerful, robust Video Meetings without knowing all the nuts and bolts.
+
+In this tutorial, I'll show you how to combine these powerful technologies to build a modern, fullstack application with all the video conferencing features that users have come to expect. I'll use Ruby on Rails, Vonage Video Express, and Vonage's new UI Toolkit VIVID.
+
+This post is inspired by [Create a Party With Ruby on Rails and the Vonage Video API](https://developer.vonage.com/blog/20/05/12/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1-building-the-backend-dr). I will largely recreate the functionality and afterwards you can see just how much much less code was required!
+
+## What The App Will Do
+Back in 2020 Ben Greenberg built an app to allow his son to watch movies with his friends. This app will be essentially the same. Only I don't watch movies online with friends. But since moving across the world, it's been hard to find fans of my favorite ice hockey team, the Blues. So instead of watching movies with my friends, I'd love to watch the Blues or sports in general with friends from back home. Functionally, the app is the same and borrows heavily from Ben's movie app. This will make it easy to compare the pros/cons between using Video Express and writing in native Vonage Video API.
+
+This app will have two pages; a landing page with a login form and a "party" page. When users login they will be taken to a "Chill Zone" to hang out. Here they will be displayed in equal size. Then when the game is beginning, the "moderator" who owns the session will trigger a screenshare to display the game. In the "Watch Mode", the shared screen of the moderator will be dominant and take up most of the video call. Because the best part of watching sports with friends is the banter, I will still see and hear the other participants. But if my friends are being too loud, I still want the ability to mute them. We'll also allow participants to mute themselves, turn off their video camera, and select their video/audio inputs and outputs.
+
+**Yalla! Let's go!**
+
+## Requirements
+- [ruby 3.0.0+](https://www.ruby-lang.org/en/)
+- Rails 6.1.6
+
+
+
 `rails new video-express-rails –database=postgresql`
 
 `cd video-express`
@@ -51,7 +72,6 @@ gem 'dotenv-rails'
        end
      end
    end
-
    ```
 2. Add logic in WathcParty model
 3. 1. Require opentok
@@ -138,7 +158,6 @@ gem 'dotenv-rails'
       @token = user_name == moderator_name ? @opentok.generate_token(session_id, { role: :moderator }) : @opentok.generate_token(session_id)
     end
   end
-
   ```
 
 10. Touch .env and Add our .env variables
@@ -167,7 +186,7 @@ gem 'dotenv-rails'
 
 * Delete extra routes
 
-14. Home page 
+14. Home page
 
 * A bit rails magic with some vivid magic (add html to home.html.erb)
 
@@ -178,7 +197,7 @@ gem 'dotenv-rails'
         <vwc-text font-face="subtitle-1" >Big Game Watch Party
           <br>
           <span><vwc-text font-face="body-1-code">Built With Vonage Video Express on Rails</vwc-text></span></vwc-text>
-          
+
         <%= form_with(url: "/login", method: "post") do %>
           <vwc-textfield name="name" label="Enter Your Name" icon="user" outlined="">
           </vwc-textfield>
@@ -196,10 +215,9 @@ gem 'dotenv-rails'
       </div>
     </vwc-card>
   </div>
-
   ```
 * Uh oh, doesn't work
-* import '@vonage/vivid'; in application.js 
+* import '@vonage/vivid'; in application.js
 
   `import '@vonage/vivid';`
 * Works but ugly
@@ -268,13 +286,13 @@ gem 'dotenv-rails'
   end
   ```
 * Need to capture name and password from form: login_params
-* Don't forget to delete the view 
+* Don't forget to delete the view
 * Ok now we're here on the page, what do we want to do?
 
 16. Build structure
 
-* Header 
-* Main 
+* Header
+* Main
 * For now removed the chat. Will update post with chat component from vivid
 
   ```
@@ -342,10 +360,7 @@ gem 'dotenv-rails'
    });
    room.join();
   </script>
-
   ```
-
-
 * Rails s and….. Nothing!
 * We haven't used any of that OpenTok logic to send to Video Express
 * Need to set_opentok_vars in WatchParty Controller
@@ -406,12 +421,11 @@ class WatchPartyController < ApplicationController
     params.permit(:name, :password, :authenticity_token, :commit)
   end
 end
-
 ```
 
 18. Now if we refresh…..we see that our camera turns on and audio goes all weird. But nothing on the screen. Why?! Video Express is working and we are connected to a video session in opentok. But haven't given the video screen any room
 
-* Add some css for the video screen. Targeting #roomContainer. 
+* Add some css for the video screen. Targeting #roomContainer.
 
   ```
   // Video Express Styles
@@ -433,7 +447,7 @@ end
     border-radius: 10px;
   }
   ```
-* Boom now we have a video session. 
+* Boom now we have a video session.
 * Try joining from multiple tabs/different names!
 * Boom! You have video conferencing in Rails!
 * Now let's add some of the functionality you expect in modern video conferencing:
@@ -464,7 +478,7 @@ end
   * Tooltips
 * Add JS in toolbar.js
 * * 3 times we'll need to toggle hide/show, let's build a small function toggleButtonView
-  * Lets combine toggling the view with toggling the functionality of Video Express: 
+  * Lets combine toggling the view with toggling the functionality of Video Express:
   * * toggleMuteAllButton
     * toggleInputButton - audio/video input devices on/off
     * listenForToggle lets us listen for both states of the button
