@@ -3,10 +3,11 @@ title: " How Vonage Communications APIs Enable 21st Century Retail Experiences"
 description: Show Rooming is a growing concern for brick-and-mortar retailers.
   See how Vonage APIs can work together to provide a smooth in-person
   experience.
+thumbnail: /content/blog/how-vonage-communications-apis-enable-21st-century-retail-experiences/21st-century-retail.png
 author: christankersley
 published: true
-published_at:
-updated_at:
+published_at: 2022-06-30T10:17:39.617Z
+updated_at: 2022-06-30T10:17:41.114Z
 category: inspiration
 tags:
   - node
@@ -19,6 +20,7 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+*This article was written in collaboration with [Chris Tankersley](https://developer.vonage.com/blog/authors/christankersley)*
 
 Before we look at the solution, let’s look at the seriousness of the situation for Retail as an industry.
 A number of years ago, the Director of a leading North American retailer sent an alarmed email to his fellow board members: "We are In deep trouble". He had just been to one of the stores and noticed a number of shoppers walking around with their phones and seemingly taking pictures of the merchandise. Puzzled, he asked a few of them what they were doing. 
@@ -43,6 +45,7 @@ While this article is meant to help get some gears turning, we do have some samp
 <sign-up></sign-up>
 
 ### Application Setup
+
 The example code requires a Vonage Application to be created. To create the application, we will be using our command-line interface. If you have not set up the CLI yet, do so by running the command `vonage config:set --apiKey=api_key --apiSecret=api_secret` in your terminal, where the API Key and Secret are the API key and secret found on your [account’s settings](https://dashboard.nexmo.com/settings) page.
 
 If you're running the application locally you'll want to use ngrok to provide an external endpoint. Provide either your ngrok URL or (or other hosting URL) with routes `/webhooks/answer` for the Answer Url and `/webhooks/events` for the Event Url.
@@ -53,7 +56,7 @@ You now need to create a Vonage Application. An application contains the securit
 vonage apps:create "Store Demo" --voice_event_url=https://example.com/webhooks/events --voice_answer_url=https://example.com/webhooks/answer 
 ```
 
-## To Combat Showrooming, Digitally Engage The Customers While They Are In The Store 
+## To Combat Showrooming, Digitally Engage The Customers While They Are In The Store
 
 Digital communications are helping solve some of those challenges by enabling new experiences. 
 The dream of every retailer is that when you walk into a store, you make a purchase there and then - and that you come back over and over again. (If you have ever purchased a car, you may have experienced that the dealership doesn’t want you to leave empty-handed).
@@ -263,9 +266,11 @@ Back to the showrooming issue, by enabling communications while they are in the 
 For instance, if the shopper is indeed thinking about comparison shopping, the agent can do an instant price match while communicating with the shopper in the store and possibly throw in a special coupon or promotion such as for delivery or installation. If the store can meet the customer’s needs while they are ready to make a purchase, they should.
 
 ## Conclusion
+
 With Vonage APIs, retail executives can meet their brick-and-mortar customers’ needs and minimize leakage of revenue to their competition. Vonage APIs can be added to a variety of applications in almost any programming language, allowing your users to decide how they want to be contacted. Hopefully, this gives you some ideas to start seeing how you can integrate Vonage Communication APIs into your retail experience. 
 
 ## Further Reading
+
 * [Vonage SMS API](https://developer.vonage.com/messaging/sms/overview)
 * [Vonage Verify API](https://developer.vonage.com/verify/overview)
 * [Vonage Voice API](https://developer.vonage.com/verify/overview)
