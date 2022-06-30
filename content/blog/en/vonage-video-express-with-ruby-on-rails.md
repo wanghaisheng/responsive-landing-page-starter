@@ -436,7 +436,17 @@ end
 * Boom now we have a video session. 
 * Try joining from multiple tabs/different names!
 * Boom! You have video conferencing in Rails!
-* Now let's add some of the functionality you expect in modern video conferencing
+* Now let's add some of the functionality you expect in modern video conferencing:
+
+  * screensharing: will be limited so that only our moderator can use it
+  * Mute the room
+  * Mute self
+  * Hide self
+  * Select Inputs: mic and camera
+  * Select Audio Output
+  * List other capabilities of Video Express to explore
+
+**Rest of Tutorial Will be in JS/HTML**
 
 19. Top - Bottom: Let's build that header
 20. 1. Great news! Vivid comes with some powerful toolbars
