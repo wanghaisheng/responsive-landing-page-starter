@@ -18,79 +18,427 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+`rails new video-express-rails –database=postgresql`
 
+`cd video-express`
 
+`gem install opentok dotenv-rails`
 
+Open gemfile and add gems in gemfile
 
-1. rails new video-express-rails –database=postgresql
-2. cd video-express
-3. gem install opentok dotenv-rails
-4. Open gemfile and add gems in gemfile
-5. bundle install
-6. yarn add @vonage/video-express @vonage/vivid 
-7. rails g model WatchParty session_id:string expired:boolean
-8. Update in migration session_id -> null: false, expired -> default false
-9. Add logic in WathcParty model
-10. 1. Require opentok
-    2. Pass our env variables to opentok
-    3. Def self.create_new_session
-    4. Def self.create_or_load_session_id
-    5. Def self.create_token
+```
+gem 'opentok'
+gem 'dotenv-rails'
+```
+
+`bundle install`
+
+`yarn add @vonage/video-express @vonage/vivid`
+
+`rails g model WatchParty session_id:string expired:boolean`
+
+1. Update in migration session_id -> null: false, expired -> default false\
+   in db/migrate directory:  TIMESTAMP_create_watch_parties.rb
+
+   ```
+   class CreateWatchParties < ActiveRecord::Migration[6.1]
+     def change
+       create_table :watch_parties do |t|
+         t.string :session_id, null:false
+         t.boolean :expired, default: false
+
+         t.timestamps
+       end
+     end
+   end
+
+   ```
+2. Add logic in WathcParty model
+3. 1. Require opentok
+
+      `require 'opentok'`
+   2. Pass our env variables to opentok
+
+      `@opentok = OpenTok::OpenTok.new ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET']`
+   3. Def self.create_new_session
+
+      ```
+        def self.create_new_session
+          session = @opentok.create_session
+          record = WatchParty.new
+          record.session_id = session.session_id
+          record.save
+          @session_id = session.session_id
+          @session_id
+        end
+      ```
+   4. Def self.create_or_load_session_id
+
+      ```
+        def self.create_or_load_session_id
+          if WatchParty.any?
+            last_session = WatchParty.last
+            if last_session && last_session.expired == false
+              @session_id = last_session.session_id
+              @session_id
+            elsif (last_session && last_session.expired == true) || !last_session
+              @session_id = create_new_session
+            else
+              raise 'Something went wrong with the session creation!'
+            end
+          else
+            @session_id = create_new_session
+          end
+        end
+      ```
+   5. Def self.create_token
+
+      ```
+        def self.create_token(user_name, moderator_name, session_id)
+          @token = user_name == moderator_name ? @opentok.generate_token(session_id, { role: :moderator }) : @opentok.generate_token(session_id)
+        end
+      ```
 
 * Ask about moderator role here
 
+  Full WatchParty looks like:
+
+  ```
+  class WatchParty < ApplicationRecord
+    require 'opentok'
+
+    @opentok = OpenTok::OpenTok.new ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET']
+
+    def self.create_or_load_session_id
+      if WatchParty.any?
+        last_session = WatchParty.last
+        if last_session && last_session.expired == false
+          @session_id = last_session.session_id
+          @session_id
+        elsif (last_session && last_session.expired == true) || !last_session
+          @session_id = create_new_session
+        else
+          raise 'Something went wrong with the session creation!'
+        end
+      else
+        @session_id = create_new_session
+      end
+    end
+
+    def self.create_new_session
+      session = @opentok.create_session
+      record = WatchParty.new
+      record.session_id = session.session_id
+      record.save
+      @session_id = session.session_id
+      @session_id
+    end
+
+    def self.create_token(user_name, moderator_name, session_id)
+      @token = user_name == moderator_name ? @opentok.generate_token(session_id, { role: :moderator }) : @opentok.generate_token(session_id)
+    end
+  end
+
+  ```
+
 10. Touch .env and Add our .env variables
+
+    ```
+    OPENTOK_API_KEY=''
+    OPENTOK_API_SECRET=''
+    MODERATOR_NAME=''
+    PARTY_PASSWORD=''
+    ```
 11. rails db:create db:migrate
+
+    `rails db:create db:migrate`
 12. rails routes
-13. rails g controller WatchParty home login party 
+
+    ```
+    Rails.application.routes.draw do
+      get '/', to: 'watch_party#home'
+      get '/party', to: 'watch_party#party'
+      post 'login', to: 'watch_party#login'
+    end
+    ```
+13. rails g controller WatchParty home login party
+
+    `rails g controller WatchParty home login party`
 
 * Delete extra routes
 
-14. Home page 
+14. Home page 
 
 * A bit rails magic with some vivid magic (add html to home.html.erb)
-* Uh oh, doesn’t work
-* import '@vonage/vivid'; in application.js 
+
+  ```
+  <div class="card-wrapper">
+    <vwc-card>
+      <div slot="main" id="box">
+        <vwc-text font-face="subtitle-1" >Big Game Watch Party
+          <br>
+          <span><vwc-text font-face="body-1-code">Built With Vonage Video Express on Rails</vwc-text></span></vwc-text>
+          
+        <%= form_with(url: "/login", method: "post") do %>
+          <vwc-textfield name="name" label="Enter Your Name" icon="user" outlined="">
+          </vwc-textfield>
+          <vwc-textfield name="password" label="Enter Team Passcode" icon="lock" type="password" outlined="">
+          </vwc-textfield>
+          <div class="controls">
+            <vwc-button layout="outlined" type="reset" outlined="">
+              Reset
+            </vwc-button>
+            <vwc-button layout="filled" type="submit" unelevated="">
+              Submit
+            </vwc-button>
+          </div>
+        <% end %>
+      </div>
+    </vwc-card>
+  </div>
+
+  ```
+* Uh oh, doesn't work
+* import '@vonage/vivid'; in application.js 
+
+  `import '@vonage/vivid';`
 * Works but ugly
-* Add some css in video.scss
-* Before move on, let’s add the beautiful Vonage background in application.scss
+* Add some css in watch_party.scss
 
+  ```
+  // Home Page Styles
 
+  .card-wrapper{
+    display: flex;
+   }
+   vwc-card{
+     margin: auto;
+     padding: 10%;
+   }
+
+   #box{
+     padding: 50px 100px;
+   }
+
+  form {
+    display: grid;
+    gap: 20px;
+   }
+   .controls {
+     display: flex;
+     justify-content: flex-end;
+     gap: 10px;
+   }
+  ```
+* Before move on, let's add the beautiful Vonage background in application.scss
+
+  ```
+  body{
+    background: linear-gradient(90deg, #9DD2FE 4.86%, #8728FB 96.11%);
+    margin: 0px;
+  }
+  ```
 
 15. Login page logic
 
 * Add simple redirect logic
+
+  ```
+  class WatchPartyController < ApplicationController
+    def home
+    end
+
+    def login
+      @name = login_params[:name]
+      if login_params[:password] == ENV['PARTY_PASSWORD']
+        redirect_to party_path(name: @name)
+      else
+        redirect_to('/', flash: { error: 'Incorrect password' })
+      end
+    end
+
+    def party
+    end
+
+    private
+
+    def login_params
+      params.permit(:name, :password, :authenticity_token, :commit)
+    end
+  end
+  ```
 * Need to capture name and password from form: login_params
-* Don’t forget to delete the view 
-* Ok now we’re here on the page, what do we want to do?
+* Don't forget to delete the view 
+* Ok now we're here on the page, what do we want to do?
 
 16. Build structure
 
-* Header 
-* Main 
+* Header 
+* Main 
 * For now removed the chat. Will update post with chat component from vivid
+
+  ```
+  <header>
+    <%= render partial: 'header' %>
+  </header>
+
+  <main class="app">
+    <!-- Video Chat Will Go Here -->
+    <toolbar class="toolbar-wrapper">
+      <%= render partial: 'toolbar' %>
+    </toolbar>
+  </main>
+  ```
 * Header and toolbar will hold the Vivid UI to control Video Express logic. Create empty partials
+
+  `touch app/views/watch_party/_header.html.erb`
+
+  `touch app/views/watch_party/_toolbox.html.erb`
 * So all that remains on Party Page is Video Express. Lets build that now
 
 17. Video Express
 
 * Require library
-* Add script tag
+
+  `<script src="https://static.opentok.com/v1/js/video-express.js"></script>`
+* Add new VideoExpress.Room from documentation
 * Note passing participant name. Video Express is lightweight but comes with some options, explore the docs
+
+  ```
+  <script>
+    const room = new VideoExpress.Room({
+     apiKey: '<%= @api_key %>', // add your OpenTok API key
+     sessionId: '<%= @session_id %>', // add your OpenTok Session ID
+     token: '<%= @token %>', // add your OpenTok token
+     roomContainer: 'roomContainer',
+     participantName: '<%= @name %>'
+   });
+   room.join();
+  </script>
+  ```
+* Can see thatr roomContainer is targetting the roomContainer id, so need to do that and final html will look like:
+
+  ```
+  <script src="https://static.opentok.com/v1/js/video-express.js"></script>
+  <header>
+    <%= render partial: 'header' %>
+  </header>
+
+  <main class="app">
+    <div id="roomContainer"></div>
+    <!--  -->
+    <toolbar class="toolbar-wrapper">
+      <%= render partial: 'toolbar' %>
+    </toolbar>
+  </main>
+
+  <script>
+    const room = new VideoExpress.Room({
+     apiKey: '<%= @api_key %>', // add your OpenTok API key
+     sessionId: '<%= @session_id %>', // add your OpenTok Session ID
+     token: '<%= @token %>', // add your OpenTok token
+     roomContainer: 'roomContainer',
+     participantName: '<%= @name %>'
+   });
+   room.join();
+  </script>
+
+  ```
+
+
 * Rails s and….. Nothing!
-* We haven’t used any of that OpenTok logic to send to Video Express
-* Need to set_opentok_vars in Video Controller
-* Why before_action, and why verify_authenticity token?
+* We haven't used any of that OpenTok logic to send to Video Express
+* Need to set_opentok_vars in WatchParty Controller
+* ```
+    def set_opentok_vars
+      @api_key = ENV['OPENTOK_API_KEY']
+      @api_secret = ENV['OPENTOK_API_SECRET']
+      @session_id = WatchParty.create_or_load_session_id
+      @moderator_name = ENV['MODERATOR_NAME']
+      @name ||= params[:name]
+      @token = WatchParty.create_token(@name, @moderator_name, @session_id)
+    end
+  ```
 
-18. Now if we refresh…..we see that our camera turns on and audio goes all weird. But nothing on the screen. Why?! Video Express is working and we are connected to a video session in opentok. But haven’t given the video screen any room
+  * Why before_action, and why verify_authenticity token?
 
-* Add some css for the video screen. Targeting #roomContainer. 
-* Boom now we have a video session. 
+  ```
+    skip_before_action :verify_authenticity_token
+    before_action :set_opentok_vars
+  ```
+
+  Full controller looks like:
+
+Full Controller Looks Like:
+
+```
+class WatchPartyController < ApplicationController
+  skip_before_action :verify_authenticity_token
+  before_action :set_opentok_vars
+
+  def set_opentok_vars
+    @api_key = ENV['OPENTOK_API_KEY']
+    @api_secret = ENV['OPENTOK_API_SECRET']
+    @session_id = WatchParty.create_or_load_session_id
+    @moderator_name = ENV['MODERATOR_NAME']
+    @name ||= params[:name]
+    @token = WatchParty.create_token(@name, @moderator_name, @session_id)
+  end
+
+  def home
+  end
+
+  def login
+    @name = login_params[:name]
+    if login_params[:password] == ENV['PARTY_PASSWORD']
+      redirect_to party_path(name: @name)
+    else
+      redirect_to('/', flash: { error: 'Incorrect password' })
+    end
+  end
+
+  def party
+  end
+
+  private
+
+  def login_params
+    params.permit(:name, :password, :authenticity_token, :commit)
+  end
+end
+
+```
+
+18. Now if we refresh…..we see that our camera turns on and audio goes all weird. But nothing on the screen. Why?! Video Express is working and we are connected to a video session in opentok. But haven't given the video screen any room
+
+* Add some css for the video screen. Targeting #roomContainer. 
+
+  ```
+  // Video Express Styles
+  #roomContainer {
+    width: 100vw;
+    height: calc(100vh - 130px);
+    position: relative;
+  }
+  #roomContainer > .OT_publisher {
+    top: 25px;
+    right: 25px;
+    position: absolute;
+    border-radius: 10px;
+  }
+  #roomContainer > .OT_screenshare {
+    top: 25px;
+    left: 25px;
+    position: absolute;
+    border-radius: 10px;
+  }
+  ```
+* Boom now we have a video session. 
 * Try joining from multiple tabs/different names!
 * Boom! You have video conferencing in Rails!
-* Now let’s add some of the functionality you expect in modern video conferencing
+* Now let's add some of the functionality you expect in modern video conferencing
 
-19. Top - Bottom: Let’s build that header
+19. Top - Bottom: Let's build that header
 20. 1. Great news! Vivid comes with some powerful toolbars
     2. Concept of slots
     3. Add javascript, because most of our javascript is responding to user actions, add defer: true to javascript pack tag in application.html.erb
@@ -105,8 +453,8 @@ replacement_url: ""
   * Select Audio Output
   * Tooltips
 * Add JS in toolbar.js
-* * 3 times we’ll need to toggle hide/show, let’s build a small function toggleButtonView
-  * Lets combine toggling the view with toggling the functionality of Video Express: 
+* * 3 times we'll need to toggle hide/show, let's build a small function toggleButtonView
+  * Lets combine toggling the view with toggling the functionality of Video Express: 
   * * toggleMuteAllButton
     * toggleInputButton - audio/video input devices on/off
     * listenForToggle lets us listen for both states of the button
@@ -118,4 +466,4 @@ replacement_url: ""
     * Audio Output alone
     * * getAudioOutputDevices()
       * setudioOutPtDevice
-  * Lasatly, Vivid gives us tooltips out of the box! Let’s help our users understand the toolbar with tooltips!
+  * Lasatly, Vivid gives us tooltips out of the box! Let's help our users understand the toolbar with tooltips!
