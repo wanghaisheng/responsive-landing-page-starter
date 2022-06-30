@@ -617,14 +617,91 @@ Now let's add some of the functionality you expect in modern video conferencing:
   * Select Inputs: mic and camera
   * Select Audio Output
 
+## Building Out Helper Components
+The rest of this tutorial will be building the components to users control their Video Express room. Each component will follow a similar structure: HTML with Vivid components and Javascript to trigger Video Express functions.
 
-**Rest of Tutorial Will be in JS/HTML**
+### Building The Header
+Going top to bottom, let's build that header! Some great news is that Vivid has exactly what we need, a [Top App Bar](https://vivid.vonage.com/?path=/story/components-top-app-bar-fixed--dense&args=dense:) component.
+The top app bar comes with a few slot options but two that we care about: `title` and `actionItems`. The title is great for a logo or in our case title. And the `actionitems` can be used as the content of the app bar. This is where we will add the toggler for the moderator to change modes between chill mode and party mode. We can accomplish this with the `vwc-switch` component.
 
-19. Top - Bottom: Let's build that header
-20. 1. Great news! Vivid comes with some powerful toolbars
-    2. Concept of slots
-    3. Add javascript, because most of our javascript is responding to user actions, add defer: true to javascript pack tag in application.html.erb
-    4. Create components folder in javascript, in header.js add the header javascript code
+We'll need to add some Javascript. So let's create a compenents folder in `app/javascript` with the following command
+
+`mkdir app/javascript/componenets`
+
+And here we'll add the a file `header.js`, again from the command line:
+`touch app/javascript/components/header.js`.
+
+Here we'll have two parts: an event listener that will toggle the Video Express ScreenSharing and a function to iterate through all participants in the room to update their display.
+
+First, let's look at the `toggleParticipants`. It toggles through each participants window to update the layout. This is important to note because the `room` is unique to each participant, so updates must be done to each user.
+
+```
+let toggleParticipants = (participants, state) => {
+    const title = document.querySelector('#title');
+    const mode_name = document.querySelector('#mode-name');
+    Object.entries(participants).forEach(participant => {
+      if (state === "chill"){
+        title.innerHTML = "Big Game Live!";
+        mode_name.innerHTML = "Watch Mode"
+        room.setLayoutMode("active-speaker");
+      } else if (state === "watch") {
+        title.innerHTML = "Big Game Chill Zone";
+        mode_name.innerHTML = "Chill Mode";
+        room.setLayoutMode("grid")
+      } else {
+        console.log("Error in state of toggleParticipants")
+      }
+    })
+  }
+```
+
+We will call the `toggleParticpants` only when the `vwc-switch` is toggled. Notice that this listener is scoped to only listen in the moderators session. Additionally, the Video Express functions `.startScreensharing()` and `.stopScreensharing()` are call here on `room`.
+
+An optional targetElement can be passed to change the location of the screenShare. Read more [here](https://tokbox.com/developer/video-express/reference/room.html).
+```
+if (document.querySelector('vwc-switch') !== null){
+  const switch_btn = document.querySelector('vwc-switch');
+  switch_btn.addEventListener('change', (event) => {
+    if (event.target.checked){
+      room.startScreensharing();
+      toggleParticipants(room.participants, "chill");
+    }
+    else if (!event.target.checked){
+      room.stopScreensharing();
+      toggleParticipants(room.participants, "watch");
+    }
+    else{
+      console.log("Error in Switch Button Listener");
+    }
+  });
+}
+```
+
+Because our Javascript is responding to user actions in the DOM, we want to make sure that Javascript is loaded by Rails after the DOM is loaded. So we need to make a small addition and `defer:true` to the `javascript_pack_tag` in `application.html.erb`:
+
+`    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true  %>
+`
+
+### Building The Toolbar
+Now we can add the last and most complicated component we have: the toolbar. But it won't be so bad, just building out the HTML with Vivid components and then adding some javascript to trigger Video Express functions. You know the drill!
+
+
+
+
+### Building The Mute Others Button
+
+
+### Building The Mute Self Button
+
+### Building The Disable Camera Button
+
+### Building The Select Device Inputs
+
+### Building The Select Audio Output
+
+### Building The Tooltips
+
+
 21. Toolbar
 
 * Go left to right with each vivid element build the structure of html/css
