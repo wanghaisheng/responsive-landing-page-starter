@@ -34,26 +34,64 @@ This app will have two pages; a landing page with a login form and a "party" pag
 **Yalla! Let's go!**
 
 ## Requirements
-- [ruby 3.0.0+](https://www.ruby-lang.org/en/)
-- Rails 6.1.6
+- [ruby v3.0.0+](https://www.ruby-lang.org/en/)
+- [Rails v6.1.6+] (https://rubyonrails.org/)
+- [Vonage Video API](https://tokbox.com/account/user/signup)
+- [Vonage Video Express v1.2.3+](https://tokbox.com/developer/video-express/)
+- [VIVID v2.34.0+](https://vivid.vonage.com/)
 
 
+## Vonage Video API Setup
+
+It is free to create a Vonage Video API account. You need to do so in order to obtain your API key and secret, which are essential to making the app functional.
+
+### Credentials
+After you have [created an account with the Vonage Video API](https://tokbox.com/account/user/signup), you will see a dashboard interface. The first step in obtaining API credentials is to create a new project.
+
+- Open the **Projects** tab from the left sidebar.
+- Click the **Create New Project** option.
+- Select **Vonage Video API** when asked what kind of project to create; *Create Custom Project*
+- Provide any name for the project name
+- Choose the VP8 codec option. (Details on the difference between VP8 and H.264 are detailed [here](https://tokbox.com/developer/guides/codecs/))
+
+- You now have access to your project's API key and secret. Keep them somewhere safe, we will be using them soon.
+
+
+
+### Enable Video Express
+To use Video Express, be sure to activate the Video Express add-on for your account.
+
+
+- Go to your [Video API Account](https://tokbox.com/account/) and click **Account Settings** in the left-hand menu.
+- In the list of **Account add-ons**, find **Video Express** and click **Add to account**. Then follow the remaining instructions to enable the add-on.
+
+## Setting Up The Rails App
+Before we can add the frontend magic with Video Express and Vivid, we need to do a bit of work to get our Rails app created and ready with Vonage Video API on the backend.
+
+### Installation
+Create a new rails app using postgresql as the database.
 
 `rails new video-express-rails –database=postgresql`
 
+Move into the project:
 `cd video-express`
 
-`gem install opentok dotenv-rails`
+Now open up the project with your favorite text editor.
 
-Open gemfile and add gems in gemfile
+### Gem Dependencies
+We'll need to add two gems: [Vonage Video API Ruby SDK](https://github.com/opentok/OpenTok-Ruby-SDK) (formerly known as OpenTok) and [dotenv-rails](https://github.com/bkeepers/dotenv) to handle our environment variables.
+
+
+Open the `Gemfile` and add the gems:
 
 ```
 gem 'opentok'
 gem 'dotenv-rails'
 ```
+Once that is done, we can run bundle install from the command line to install our dependencies.
 
-`bundle install`
-
+### Node Modules
+We'll be using two 
 `yarn add @vonage/video-express @vonage/vivid`
 
 `rails g model WatchParty session_id:string expired:boolean`
@@ -73,7 +111,7 @@ gem 'dotenv-rails'
      end
    end
    ```
-2. Add logic in WathcParty model
+2. Add logic in WatchParty model
 3. 1. Require opentok
 
       `require 'opentok'`
