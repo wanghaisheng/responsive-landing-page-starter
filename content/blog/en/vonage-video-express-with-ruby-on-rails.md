@@ -543,7 +543,7 @@ In the WatchParty Controller we need to add the `set_opentok_vars` action"
   ```
 
 
-We will call this with the `before_action` Full Controller Looks Like:
+We will use the `before_action` which will call the method before entering the `party` action. So the full Controller looks like:
 
 ```
 class WatchPartyController < ApplicationController
@@ -582,9 +582,9 @@ class WatchPartyController < ApplicationController
 end
 ```
 
-18. Now if we refresh…..we see that our camera turns on and audio goes all weird. But nothing on the screen. Why?! Video Express is working and we are connected to a video session in opentok. But haven't given the video screen any room
+Now if we refresh… we see that our camera turns on and the audio goes all weird. But nothing shows on the screen. Why?! Video Express is working and we are connected to a video session through the Video API. But we haven't given the video screen any room to exist!
 
-* Add some css for the video screen. Targeting #roomContainer.
+Let's add some CSS from the Video Express boilerplate for the video screen. We target the #roomContainer and give it full width and full height, minus the header. We also add a bit of CSS to tell Video Express where to put **What is the OT_publisher?** and the screenshare when it is triggered.
 
   ```
   // Video Express Styles
@@ -606,18 +606,17 @@ end
     border-radius: 10px;
   }
   ```
-* Boom now we have a video session.
-* Try joining from multiple tabs/different names!
-* Boom! You have video conferencing in Rails!
-* Now let's add some of the functionality you expect in modern video conferencing:
+** Boom!** now we have a video session. Try joining from multiple tabs/different names! ** Boom!** You have video conferencing in Rails!
 
-  * screensharing: will be limited so that only our moderator can use it
-  * Mute the room
-  * Mute self
-  * Hide self
+Now let's add some of the functionality you expect in modern video conferencing:
+
+  * Screensharing: will be scoped so that only our moderator can use it
+  * Mute all other participants
+  * Mute yourself
+  * Hide yourself (turn off camera)
   * Select Inputs: mic and camera
   * Select Audio Output
-  * List other capabilities of Video Express to explore
+
 
 **Rest of Tutorial Will be in JS/HTML**
 
