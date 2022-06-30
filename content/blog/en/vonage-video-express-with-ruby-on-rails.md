@@ -94,7 +94,7 @@ Once that is done, we can run bundle install from the command line to install ou
 We'll be using two Javascript libraries in the front end: Video Express and Vivid. Before we use them, let's get to know a little bit more about them.
 
 #### Video Express
-I promised that Video Express makes a developers life easier, but how? In primarily two ways: **Performance** and **Layout**.
+I promised that Video Express makes a developers life easier, but how? In primarily two ways: **Performance** and **Design**.
 
 ##### Performance
 Video Express' **Quality Manager** continuously optimizes stream resolution, framerate, and rendering sizes. This is very important as the number of streams in a classic video conference session grows exponentially fast! For instance, 25 people in a video call mean that 625 streams are concurrently active.
@@ -103,76 +103,130 @@ The quality manager works to upgrade and downgrade resolution as networks and CP
 
 This can result in **60% decreased bandwith** usage for 10 participant sessions and **80% decreased bandwith** usage for 25 participant sessions!
 
+##### Design
+Since the beginning of COVID, the world has become intimately familiar with video conferencing. Everyone at this point more or less knows what to expect from a video conference. And for most applications, there's no need to reinvent the wheel. Video Express does the heavy lifting with its **Layout Manager** and **Experience Manager**.
 
+The Layout Manager handles the responsiveness of the video call, automatically adjusting the video windows as participants leave and join, screenshare, and optimizes video resolutions and frame rates based on the rendering sizes.
+
+The Experience Manager dynamically sets speaker priority and auto-mutes joiners for larger meetings.
+
+All of this heavy lifting means Video Express has a ton of features built that just need to be hooked up to a UI. Video Express gives you all of thes out of the box:
+- Detecting when users do actions like join/leave, activate their cameras/audio
+- Different layout options: grid vs active speaker
+- Changing the camera and microphone used
+- Setting the audio output device
+- Creating a preview publisher
+- Active speaker detection
+- Accessing the screen-sharing publisher's audio/video
+- Detecting when other clients publish screen-sharing streams
+- Enabling and disabling a screen-sharing subscriber's audio and video 
+
+#### Vivid
+As I said Video Express has all the front-end functionality built out, it just needs a developer to build out a UI for the end user. Vonage Does That! We've been building a gorgeous UI Toolkit called Vivid which makes building applications with communications features much faster.
+
+Vivid is built using Web Components so they will work in any framework or even vanilla HTML/JS like Rails. And they look great! And they're [web accessible](https://developer.vonage.com/blog/21/11/11/wcag-how-to-implement-web-accessibility-1)!
+
+[Learn more about Vivid](https://github.com/Vonage/vivid)
+
+### Node Modules Install
+Now that I've convinced you that Video Express and Vivid are great, let's install them:
 
 `yarn add @vonage/video-express @vonage/vivid`
 
-`rails g model WatchParty session_id:string expired:boolean`
+### Model Generation
+Next, we will generate a model to hold and manipulate the watch party information. In order to connect to users to the same video call, we will need to pass Vonage Video API the `session_id`. From the command line execute the following:
 
-1. Update in migration session_id -> null: false, expired -> default false\
-   in db/migrate directory:  TIMESTAMP_create_watch_parties.rb
+`rails g model WatchParty session_id:string`
 
-   ```
-   class CreateWatchParties < ActiveRecord::Migration[6.1]
-     def change
-       create_table :watch_parties do |t|
-         t.string :session_id, null:false
-         t.boolean :expired, default: false
+Before we run the migration to create this data type in our database, we'll need to update in the migration to ensure that sessions don't default to null when need to retrieve them.
 
-         t.timestamps
-       end
+Open the `db/migrate` directory and find the file called:  TIMESTAMP_create_watch_parties.rb
+
+```
+//In TIMESTAMP_create_watch_parties.rb
+class CreateWatchParties < ActiveRecord::Migration[6.1]
+  def change
+    create_table :watch_parties do |t|
+       t.string :session_id, null:false
+       t.boolean :expired, default: false
+
+       t.timestamps
      end
    end
-   ```
-2. Add logic in WatchParty model
-3. 1. Require opentok
+ end
+```
 
-      `require 'opentok'`
-   2. Pass our env variables to opentok
+You can now commit this database migration to the schema by running From the command line run:
 
-      `@opentok = OpenTok::OpenTok.new ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET']`
-   3. Def self.create_new_session
+`rails db:create db:migrate rake db:create`
 
-      ```
-        def self.create_new_session
-          session = @opentok.create_session
-          record = WatchParty.new
-          record.session_id = session.session_id
-          record.save
-          @session_id = session.session_id
-          @session_id
-        end
-      ```
-   4. Def self.create_or_load_session_id
+This command will create the PostgreSQL database and the sessions table with the session_id column.
 
-      ```
-        def self.create_or_load_session_id
-          if WatchParty.any?
-            last_session = WatchParty.last
-            if last_session && last_session.expired == false
-              @session_id = last_session.session_id
-              @session_id
-            elsif (last_session && last_session.expired == true) || !last_session
-              @session_id = create_new_session
-            else
-              raise 'Something went wrong with the session creation!'
-            end
-          else
-            @session_id = create_new_session
-          end
-        end
-      ```
-   5. Def self.create_token
+### Creating the Model Methods
 
-      ```
-        def self.create_token(user_name, moderator_name, session_id)
-          @token = user_name == moderator_name ? @opentok.generate_token(session_id, { role: :moderator }) : @opentok.generate_token(session_id)
-        end
-      ```
+Now let's implement our watch party logic will use the Vonage Video API to connect users to a video call session.
+
+Each Vonage Video session has its own unique session ID. This session ID is what enables different participants to join the same video chat. Additionally, each participant in the video chat is granted a [token](https://tokbox.com/developer/guides/basics/#token) that enables them to participate. A token can be given special permissions, like moderation capabilities.
+
+In the Session model we are going to create three class methods that will be used to either create a new session ID or load the previous one, and generate tokens for each participant.
+
+Learn more about [Vonage Video API Sessions](https://tokbox.com/developer/guides/basics/#sessions).
+
+
+Open `app/models/watch_party.rb`
+
+First, we need to access our Vonage Video API functionality by instantiating an instance of the OpenTok Ruby SDK. We'll pass our API_KEY and API_SECRET from the credentials section above through ENV environment variables
+
+```
+require 'opentok'
+@opentok = OpenTok::OpenTok.new ENV['OPENTOK_API_KEY'], ENV['OPENTOK_API_SECRET']
+```
+
+Now we can add those model methods. The Session#create_or_load_session_id method will check to see if there already is a session ID. If there is an ID, it will use that ID. If not, it will generate a new one.
+
+```
+def self.create_or_load_session_id
+  if WatchParty.any?
+    last_session = WatchParty.last
+    if last_session
+      @session_id = last_session.session_id
+      @session_id
+    elsif !last_session
+      @session_id = create_new_session
+    else
+      raise 'Something went wrong with the session creation!'
+    end
+  else
+    @session_id = create_new_session
+  end
+end
+```
+
+The above method also references an additional method we need to create called Session#create_new_session that does the work of creating a new session if one does not exist:
+
+
+```def self.create_new_session
+  session = @opentok.create_session
+  record = WatchParty.new
+  record.session_id = session.session_id
+  record.save
+  @session_id = session.session_id
+  @session_id
+end
+```
+ 
+Lastly, we will create a method that will assign the right token for each participant:
+
+```
+def self.create_token(session_id)
+  @token = @opentok.generate_token(session_id)
+end
+```
 
 * Ask about moderator role here
 
-  Full WatchParty looks like:
+
+Full WatchParty looks like:
 
   ```
   class WatchParty < ApplicationRecord
@@ -211,17 +265,26 @@ This can result in **60% decreased bandwith** usage for 10 participant sessions 
   end
   ```
 
-10. Touch .env and Add our .env variables
+### Setting our ENV variables
+We saw that our Video API logic requires the use of some secret environment variables. Let's set those now.
 
-    ```
-    OPENTOK_API_KEY=''
-    OPENTOK_API_SECRET=''
-    MODERATOR_NAME=''
-    PARTY_PASSWORD=''
-    ```
-11. rails db:create db:migrate
+Create the `.env` file from the root of the `video-express` project:
+`touch .env`
 
-    `rails db:create db:migrate`
+```
+OPENTOK_API_KEY=''
+OPENTOK_API_SECRET=''
+MODERATOR_NAME=''
+PARTY_PASSWORD=''
+```
+
+Here you will need to add your Video API credentials from above. In a real app you would want to store information about moderators and passwords in your database but for this demo, storing in an ENV variable does the trick!
+
+Don't forget to add a `MODERATOR_NAME` and `PARTY_PASSWORD`to use in the login page.
+
+
+
+
 12. rails routes
 
     ```
@@ -366,6 +429,8 @@ This can result in **60% decreased bandwith** usage for 10 participant sessions 
 * So all that remains on Party Page is Video Express. Lets build that now
 
 17. Video Express
+
+The Vonage Video API gives developers full control of customizing their video layout by manipulating `publisher` and `subscriber` elements. In Video Express, these are replaced with the concept of a `room`. 
 
 * Require library
 
