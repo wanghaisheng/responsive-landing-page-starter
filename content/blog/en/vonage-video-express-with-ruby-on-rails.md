@@ -1337,6 +1337,6 @@ Now we can run our rails server:
 
 And now our app is up and running and you can invite friends to join your watch party by sending them the ngrok URL. And the password!
 
-### Your Feedback
+### Get In Touch
 
-How was this
+How did you like this tutorial? Have questions or feedback about Video Express or Vivid? Join us on the [Vonage Developer Slack](https://developer.vonage.com/community/slack). And follow us on [Twitter](https://twitter.com/VonageDev) to keep up with the latest Vonage Developer updates.
