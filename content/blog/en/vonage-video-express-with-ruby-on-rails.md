@@ -1323,7 +1323,7 @@ In your terminal you'll see a window that looks like this:
 
 ![ngrok server screenshot](/content/blog/vonage-video-express-with-ruby-on-rails/screen-shot-2022-07-01-at-16.32.41.png "ngrok server screenshot")
 
-You'll want to copy the line that ends in ngrok.io. This is the temporarily accessible URL that ngrok will forward your Rails server to. We need Rails to give permission to ngrok to be a host. In our \`config/environments/development.rb\` file we add the following line:
+You'll want to copy the line that ends in ngrok.io. This is the temporarily accessible URL that ngrok will forward your Rails server to. We need Rails to give permission to ngrok to be a host. In our \`config/environments/development.rb\` file, inside the `Rails.application.configure do` we need to add the following line:
 
 `config.hosts << "[ngrok url]"`
 
