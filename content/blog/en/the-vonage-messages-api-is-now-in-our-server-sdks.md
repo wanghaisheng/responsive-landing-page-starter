@@ -201,7 +201,12 @@ public class SendMessengerAudio {
 				.privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
 				.build();
 
-		client.getMessagesClient().sendMessage(MessengerAudioRequest.builder() .from(FROM_ID).to(TO_ID) .url("https://example.com/audio.mp3") .build() );
+		client.getMessagesClient().sendMessage(
+                  MessengerAudioRequest.builder()
+ 				                       .from(FROM_ID).to(TO_ID)
+ 				                       .url("https://example.com/audio.mp3")
+ 				                       .build()
+);
 ```
 
 ## Viber
