@@ -201,34 +201,7 @@ public class SendMessengerAudio {
 				.privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
 				.build();
 
-		var message = MessengerAudioRequest.builder()
-				.from(FROM_ID).to(TO_ID)
-				.url("https://example.com/audio.mp3")
-				.build();
-
-		try {
-			var response = client.getMessagesClient().sendMessage(message);
-			System.out.println("Message sent successfully. ID: " + response.getMessageUuid());
-		}
-		catch (MessageResponseException mrx) {
-			switch (mrx.getStatusCode()) {
-				default:
-					throw mrx;
-				case 401: // Bad credentials
-					throw new IllegalStateException(mrx.getTitle(), mrx);
-				case 402: // Low balance
-					client.getAccountClient().topUp("transactionID");
-					break;
-				case 429: // Rate limit
-					Thread.sleep(12_000);
-					break;
-				case 422: // Invalid
-					System.out.println(mrx.getDetail());
-					break;
-			}
-		}
-	}
-}
+		client.getMessagesClient().sendMessage(MessengerAudioRequest.builder() .from(FROM_ID).to(TO_ID) .url("https://example.com/audio.mp3") .build() );
 ```
 
 ## Viber
