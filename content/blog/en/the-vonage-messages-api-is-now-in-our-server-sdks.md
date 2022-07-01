@@ -143,10 +143,6 @@ The Messages API supports numerous WhatsApp message types, including text, image
 Below is an example of sending a WhatsApp video message using the the **PHP SDK**.
 
 ```php
-// initializing dependencies
-require_once __DIR__ . '../../config.php';
-require_once __DIR__ . '../../vendor/autoload.php';
-
 // creating a Keypair object using private key and app id
 $keypair = new \Vonage\Client\Credentials\Keypair(
     file_get_contents('private.key'),
@@ -157,18 +153,21 @@ $keypair = new \Vonage\Client\Credentials\Keypair(
 $client = new \Vonage\Client($keypair);
 
 
-// instantiating a VideoObject message object
+// instantiating a VideoObject message attachment
 $videoObject = new \Vonage\Messages\MessageObjects\VideoObject(
     'https://example.com/video.mp4',
     'This is an video file'
 );
 
-// sending the WhatsAppVideo message
+// instantiating a WhatsAppVideo message which contains the VideoObject attachment
 $whatsApp = new \Vonage\Messages\MessageType\WhatsApp\WhatsAppVideo(
     '447700900001',
     '447700900000',
     $videoObject
 );
+
+// sending the WhatsAppVideo message
+$client->send($whatsApp);
 ```
 
 
