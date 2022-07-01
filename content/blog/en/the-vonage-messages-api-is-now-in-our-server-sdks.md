@@ -136,7 +136,7 @@ public class SendMmsImage : ICodeSnippet
 
 ## WhatsApp
 
-WhatsApp is a messaging channel that has exploded in popularity over recent years. WhatsApp in a business context is great for transactional messaging, as well as being really well suited to conversational commerce use-cases. With the Vonage Messages API, you can send and receive WhatsApp messages using a WhatsApp Business Account. With Messages now in the SDKs, its even easier to incorporate WhatsApp messaging flows into your applications.
+WhatsApp is a messaging channel that has exploded in popularity over recent years. WhatsApp in a business context is great for transactional messaging, as well as being really well suited to conversational commerce use-cases. With the Vonage Messages API, you can send and receive WhatsApp messages using a WhatsApp Business Account. With Messages now in the SDKs, it's even easier to incorporate WhatsApp messaging flows into your applications.
 
 The Messages API supports numerous WhatsApp message types, including text, image, audio, and video, among others, with support for more messages types to be added soon! [Find out more about WhatsApp messaging and setting up a WhatsApp Business Account](https://developer.vonage.com/messages/concepts/whatsapp).
 
@@ -216,7 +216,7 @@ client = vonage.Client(
 )
 
 # sending a message using the Messages object's send_message method
-response = messages.send_message(
+client.messages.send_message(
     {
         'channel': 'viber_service',
         'message_type': 'text',
