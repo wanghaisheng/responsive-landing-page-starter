@@ -20,15 +20,15 @@ Vonage's [Messages API](https://developer.vonage.com/messages/overview) offers d
 
 Up until now though, if you wanted to use the Messages API, you needed to access the endpoint directly. That meant dealing with all the various low-level concerns such as managing the Request/Response cycle, creating headers, dealing with authentication, and serializing data.
 
-I'm super excited to announce that our [Server SDKs](https://developer.vonage.com/tools) now support the Messages API. So, if you're a developer working [Ruby](https://github.com/vonage/vonage-ruby-sdk), [Node](https://github.com/vonage/vonage-node-sdk), [PHP](https://github.com/vonage/vonage-php-sdk), [Python](https://github.com/vonage/vonage-python-sdk), [Java](https://github.com/Vonage/vonage-java-sdk), or [.net](https://github.com/vonage/vonage-dotnet-sdk), you can let our SDKs deal with the low-level detail for you and instead focus on building your application!
+I'm super excited to announce that our [Server SDKs](https://developer.vonage.com/tools) now support the Messages API. So, if you're a developer working with [Ruby](https://github.com/vonage/vonage-ruby-sdk), [Node](https://github.com/vonage/vonage-node-sdk), [PHP](https://github.com/vonage/vonage-php-sdk), [Python](https://github.com/vonage/vonage-python-sdk), [Java](https://github.com/Vonage/vonage-java-sdk), or [.net](https://github.com/vonage/vonage-dotnet-sdk), you can let our SDKs deal with the low-level detail for you and instead focus on building your application!
 
 Let's take a look at just a few of the things you can do using the Messages API via our SDKs.
 
 ## SMS
 
-One of the things you can do with the Messages API is to send SMS messages. You may already have sent SMS messages using our Server SDKs via our [SMS API](https://developer.vonage.com/messaging/sms/overview). You now have the option to use either the SMS API or the Messages API to send SMS messages.
+One of the things you can do with the Messages API is to send SMS messages. You may have already have sent SMS messages using our Server SDKs via our [SMS API](https://developer.vonage.com/messaging/sms/overview). You now have the option to use either the SMS API or the Messages API to send SMS messages.
 
-There are some differences between the two APIs A couple of examples would be the authentication options and the set-up for webhooks. There are also differences in terms of how these different APIs are implemented in our Server SDKs.
+There are some differences between the two APIs. A couple of examples would be the authentication options and the set-up for webhooks. There are also differences in terms of how these different APIs are implemented in our Server SDKs.
 
 Here are examples of sending an SMS via the Messages API using the **Ruby SDK** and **Node SDK**.
 
@@ -138,7 +138,7 @@ public class SendMmsImage : ICodeSnippet
 
 WhatsApp is a messaging channel that has exploded in popularity over recent years. WhatsApp in a business context is great for transactional messaging, as well as being really well suited to conversational commerce use-cases. With the Vonage Messages API, you can send and receive WhatsApp messages using a WhatsApp Business Account. With Messages now in the SDKs, its even easier to incorporate WhatsApp messaging flows into your applications.
 
-The Messages API supports numerous WhatsApp message types, including text, image, audio, and video, among others, with support for more messages types to be added soon! [Find out more about WhatsApp messaging and setting up a WhatsApp Business Account](https://developer.vonage.com/messages/concepts/whatsapp)
+The Messages API supports numerous WhatsApp message types, including text, image, audio, and video, among others, with support for more messages types to be added soon! [Find out more about WhatsApp messaging and setting up a WhatsApp Business Account](https://developer.vonage.com/messages/concepts/whatsapp).
 
 Below is an example of sending a WhatsApp video message using the the **PHP SDK**.
 
@@ -172,7 +172,7 @@ $whatsApp = new \Vonage\Messages\MessageType\WhatsApp\WhatsAppVideo(
 ```
 
 
-## Messenger
+## Facebook Messenger
 
 Similarly to WhatsApp, the Messages API lets you use Facebook Messenger in a business context to enable conversations between Facebook users and Facebook Pages. Again, there are multiple message types within this channel such as text, image, audio, video, and file.
 
