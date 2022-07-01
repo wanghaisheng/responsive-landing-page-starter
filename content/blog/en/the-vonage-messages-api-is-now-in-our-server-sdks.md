@@ -216,17 +216,16 @@ client = vonage.Client(
     private_key='private.key',
 )
 
-# instantiating a Messages object using the Client
-messages = vonage.Messages(client)
-
 # sending a message using the Messages object's send_message method
-response = messages.send_message({
-  'channel': 'viber_service',
-  'message_type': 'text',
-  'to': '447700900000',
-  'from': '9876543210',
-  'text': 'This is a Viber message from the Vonage Messages API'
-})
+response = messages.send_message(
+    {
+        'channel': 'viber_service',
+        'message_type': 'text',
+        'to': '447700900000',
+        'from': '9876543210',
+        'text': 'This is a Viber message from the Vonage Messages API'
+    }
+)
 ```
 
 ---
