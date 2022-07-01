@@ -180,32 +180,23 @@ You can find out more about Messenger in our documentation, and check out an exa
 
 ```java
 import com.vonage.client.VonageClient;
-import com.vonage.client.messages.MessageResponseException;
-import com.vonage.client.messages.messenger.MessengerAudioRequest;
-
-import static com.vonage.quickstart.Util.configureLogging;
 import static com.vonage.quickstart.Util.envVar;
 
-public class SendMessengerAudio {
+String VONAGE_APPLICATION_ID = envVar("VONAGE_APPLICATION_ID");
+String VONAGE_PRIVATE_KEY_PATH = envVar("VONAGE_PRIVATE_KEY_PATH");
+String FROM_ID = envVar("FROM_ID");
+String TO_ID = envVar("TO_ID");
 
-	public static void main(String[] args) throws Exception {
-		configureLogging();
+VonageClient client = VonageClient.builder()
+                                  .applicationId(VONAGE_APPLICATION_ID)
+                                  .privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
+                                  .build();
 
-		String VONAGE_APPLICATION_ID = envVar("VONAGE_APPLICATION_ID");
-		String VONAGE_PRIVATE_KEY_PATH = envVar("VONAGE_PRIVATE_KEY_PATH");
-		String FROM_ID = envVar("FROM_ID");
-		String TO_ID = envVar("TO_ID");
-
-		VonageClient client = VonageClient.builder()
-				.applicationId(VONAGE_APPLICATION_ID)
-				.privateKeyPath(VONAGE_PRIVATE_KEY_PATH)
-				.build();
-
-		client.getMessagesClient().sendMessage(
-                  MessengerAudioRequest.builder()
- 				                       .from(FROM_ID).to(TO_ID)
- 				                       .url("https://example.com/audio.mp3")
- 				                       .build()
+client.getMessagesClient().sendMessage(
+   MessengerAudioRequest.builder()
+                        .from(FROM_ID).to(TO_ID)
+                        .url("https://example.com/audio.mp3")
+                        .build()
 );
 ```
 
