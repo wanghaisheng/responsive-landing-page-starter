@@ -20,9 +20,9 @@ replacement_url: ""
 ---
 Since 2004 Ruby on Rails has been beloved by developers and especially startup founders for it's ability to quickly build full scale web applications. [Kerry Doyle](https://www.techtarget.com/searchapparchitecture/tip/Programming-in-Ruby-A-critical-look-at-the-pros-and-cons) perfectly summed up the "Convention Over Configuration" philosophy that underpins Rails, (Ruby on Rails) attempts to decrease the number of decisions that a developer using the framework is required to make without necessarily losing flexibility and don't repeat yourself (DRY) principles. This philosophy makes Rails ideal for the [LEAN](https://en.wikipedia.org/wiki/Lean_software_development) mindest.
 
-Last year Vonage released Video Express. This Javascript library which sits ontop of Vonage's Video API is like the "Convention Over Configuration" extension to make building Video Call Applications easier and faster. Any developer can now spin up powerful, robust Video Meetings without knowing all the nuts and bolts.
+Last year Vonage released [Video Express](https://tokbox.com/developer/video-express/). This Javascript library which sits ontop of Vonage's [Video API](https://tokbox.com/developer/guides/basics/) is like the "Convention Over Configuration" extension to make building Video Call Applications easier and faster. Any developer can now spin up powerful, robust Video Meetings without knowing all the nuts and bolts.
 
-In this tutorial, I'll show you how to combine these powerful technologies to build a modern, fullstack application with all the video conferencing features that users have come to expect. I'll use Ruby on Rails, Vonage Video Express, and Vonage's new UI Toolkit Vivid.
+In this tutorial, I'll show you how to combine these powerful technologies to build a modern, fullstack application with all the video conferencing features that users have come to expect. I'll use Ruby on Rails, Vonage Video Express, and Vonage's new UI Toolkit [Vivid](https://vivid.vonage.com/).
 
 This post is inspired by [Create a Party With Ruby on Rails and the Vonage Video API](https://developer.vonage.com/blog/20/05/12/create-a-party-with-ruby-on-rails-and-the-vonage-video-api-part-1-building-the-backend-dr). I will largely recreate the functionality and afterwards you can see just how much much less code was required!
 
@@ -610,9 +610,11 @@ Let's add some CSS from the Video Express boilerplate for the video screen. We t
 }
 ```
 
- **Boom!** now we have a video session. Try joining from multiple tabs/different names!  **Boom!** You have video conferencing in Rails!
+ **Boom!** Now we have a video session. Try joining from multiple tabs/different names.  **Boom!** You have video conferencing in Rails!
 
-Now let's add some of the functionality you expect in modern video conferencing:
+## Next Steps
+
+In the Part 2 we'll add some of the functionality you expect in modern video conferencing:
 
 * Screensharing: will be scoped so that only our moderator can use it
 * Mute all other participants
@@ -621,3 +623,6 @@ Now let's add some of the functionality you expect in modern video conferencing:
 * Select Inputs: mic and camera
 * Select Audio Output
 
+We'll do this by adding more Vivid components and adding some Video Express Javascript.
+
+If you got this far, great job! Give me a shout on [Twitter](https://twitter.com/AronovBenjamin) and let me know how you find the tutorial.
