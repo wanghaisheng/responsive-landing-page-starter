@@ -452,6 +452,8 @@ There's one thing to note here. In the header, only the moderator has a switch c
 
 ### Building The Structure
 
+**Update to add partials in part 2**
+
 Let's start with the bones of the page, the HTML. We have 3 components; a header, the video call, and a toolbar. Add this to your `app/views/video/party.html.erb`:
 
 ```
