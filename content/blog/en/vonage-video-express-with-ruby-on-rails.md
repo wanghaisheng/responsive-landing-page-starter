@@ -92,7 +92,7 @@ gem 'opentok'
 gem 'dotenv-rails'
 ```
 
-Once that is done, we can run bundle install from the command line to install our dependencies.
+Once that is done, we can run `bundle install` from the command line to install our dependencies.
 
 ### Node Modules
 
@@ -100,15 +100,15 @@ We'll be using two Javascript libraries in the front end: Video Express and Vivi
 
 #### Video Express
 
-I promised that Video Express makes a developers life easier, but how? In primarily two ways: **Performance** and **Design**.
+I promised that Video Express makes a developer's life easier, but how? In primarily two ways: **Performance** and **Design**.
 
 ##### Performance
 
-Video Express' **Quality Manager** continuously optimizes stream resolution, framerate, and rendering sizes. This is very important as the number of streams in a classic video conference session grows exponentially fast! For instance, 25 people in a video call mean that 625 streams are concurrently active.
+Video Express' **Quality Manager** continuously optimizes stream resolution, framerate, and rendering sizes. This is very important as the number of streams in a classic video conference session grows quadratically fast! For instance, 2 people in a video call create 1 stream. 6 people in a video call create 36 streams. But 25 people in a video call mean that 625 streams are concurrently active!
 
 The quality manager works to upgrade and downgrade resolution as networks and CPU allow, pause non-visible video streams and muted audio streams, and request smaller video streams from media servers when displayed videos becomes smaller.
 
-This can result in **60% decreased bandwith** usage for 10 participant sessions and **80% decreased bandwith** usage for 25 participant sessions!
+This can result in **60% decreased Bandwith** usage for 10 participant sessions and **80% decreased Bandwith** usage for 25 participant sessions!
 
 ##### Design
 
@@ -132,7 +132,7 @@ All of this heavy lifting means Video Express has a ton of features built that j
 
 #### Vivid
 
-As I said Video Express has all the front-end functionality built out, it just needs a developer to build out a UI for the end user. Vonage Does That! We've been building a gorgeous UI Toolkit called Vivid which makes building applications with communications features much faster.
+As I said Video Express has all the front-end functionality built out, it just needs a developer to build out a UI for the end user. Vonage Does That! We've been building a gorgeous UI toolkit called Vivid which makes building applications with communications features much faster.
 
 Vivid is built using Web Components so they will work in any framework or even vanilla HTML/JS like Rails. And they look great! And they're [web accessible](https://developer.vonage.com/blog/21/11/11/wcag-how-to-implement-web-accessibility-1)!
 
@@ -168,7 +168,7 @@ class CreateWatchParties < ActiveRecord::Migration[6.1]
  end
 ```
 
-You can now commit this database migration to the schema by running From the command line run:
+You can now commit this database migration to the schema by running from the command line run:
 
 `rails db:create db:migrate rake db:create`
 
@@ -176,11 +176,11 @@ This command will create the PostgreSQL database and the sessions table with the
 
 ### Creating the Model Methods
 
-Now let's implement our watch party logic will use the Vonage Video API to connect users to a video call session.
+Now let's implement our watch party logic which will use the Vonage Video API to connect users to a video call session.
 
-Each Vonage Video session has its own unique session ID. This session ID is what enables different participants to join the same video chat. Additionally, each participant in the video chat is granted a [token](https://tokbox.com/developer/guides/basics/#token) that enables them to participate. A token can be given special permissions, like moderation capabilities.
+Each Vonage Video session has its own unique session ID. This session ID is what enables different participants to join the same video chat. Additionally, each participant in the video chat requires a [token](https://tokbox.com/developer/guides/basics/#token) that enables them to participate. A token can be given special permissions, like moderation capabilities.
 
-In the Session model we are going to create three class methods that will be used to either create a new session ID or load the previous one, and generate tokens for each participant.
+In the Session model, we are going to create three class methods that will be used to either create a new session ID or load the previous one, and generate tokens for each participant.
 
 Learn more about [Vonage Video API Sessions](https://tokbox.com/developer/guides/basics/#sessions).
 
@@ -233,9 +233,8 @@ def self.create_token(session_id)
 end
 ```
 
-* Ask about moderator role here
 
-Full WatchParty looks like:
+Your full WatchParty model should look like this :
 
 ```
 class WatchParty < ApplicationRecord
@@ -279,8 +278,10 @@ end
 We saw that our Video API logic requires the use of some secret environment variables. Let's set those now.
 
 Create the `.env` file from the root of the `video-express` project:
+
 `touch .env`
 
+Inside define our ENV varialbes:
 ```
 OPENTOK_API_KEY=''
 OPENTOK_API_SECRET=''
@@ -288,7 +289,7 @@ MODERATOR_NAME=''
 PARTY_PASSWORD=''
 ```
 
-Here you will need to add your Video API credentials from above. In a real app you would want to store information about moderators and passwords in your database but for this demo, storing in an ENV variable does the trick!
+Here you will need to add your Video API credentials from above. In a real app you would want to store information about moderators and watch party passwords in your database but for this demo, storing in an ENV variable does the trick!
 
 Don't forget to add a `MODERATOR_NAME` and `PARTY_PASSWORD`to use in the login page.
 
@@ -310,7 +311,7 @@ end
 
 With Rails "Convention over Configuration" we already know what actions we'll need for our controller, the same as the routes!
 
-From the command line generate the WatchParty controller with home, login, and party actions"
+From the command line generate the WatchParty controller with home, login, and party actions.
 
 `rails g controller WatchParty home login party`
 
@@ -331,7 +332,7 @@ If we look at the Vivid documentation we see that we have all the components we 
 * [Forms](https://vivid.vonage.com/?path=/story/components-textfield--login-form)
 * [Buttons](https://vivid.vonage.com/?path=/story/components-button--basic&args=label:Basic;layout:text)
 
-So with bit rails magic with some vivid magic, we have everything we need. There are only two tricky things here. One, you'll notice that cards can have titles and subtitels in Vivid. So why do we need to use the vwc-text component? Because Vivid makes use of slots in their web components and when using the `slot="main"` to have content in the card, this overrides the slots of the title and subtitle.
+So with bit of Rails magic with some Vivid magic, we have everything we need. There are only two tricky things here. One, you'll notice that cards can have titles and subtitles in Vivid. So why do we need to use the vwc-text component? Because Vivid makes use of slots in their web components and when using the `slot="main"` to have content in the card, this overrides the slots of the title and subtitle.
 
 Secondly, the form doesn't help us actually pass the data to the server. So we need to make use of the Rails helper `form_with`. Altogether it looks like this:
 
@@ -440,21 +441,12 @@ Successful logins will redirect to the `party_path`. This path will lead users t
 
 ## Building The Party Page
 
-First let's take a look at what we're building. This is the Party page in the "Chill Mode" as a non-moderator.
+First, let's take a look at what we're building. This is the Party page in the "Chill Mode" as a non-moderator. But for Part 1 we won't worry about the header or toolbar components, so we really just have Video Chat left to build out.
 
 ![Party Page: Chill Mode, Non Moderator](/content/blog/vonage-video-express-with-ruby-on-rails/macbook-pro-16_-10.png "Party Page: Chill Mode, Non Moderator")
 
-And this is how it will look in the "Watch Mode" as a moderator.
 
-![Party Page: Watch Mode, Moderator](/content/blog/vonage-video-express-with-ruby-on-rails/macbook-pro-16_-12.png "Party Page: Watch Mode, Moderator")
-
-There's one thing to note here. In the header, only the moderator has a switch controller to trigger the change in modes. 
-
-### Building The Structure
-
-**Update to add partials in part 2**
-
-Let's start with the bones of the page, the HTML. We have 3 components; a header, the video call, and a toolbar. Add this to your `app/views/video/party.html.erb`:
+Let's start with the bones of the page, the HTML. We have 3 components; a header, the video call, and a toolbar. But for now we'll just leave comments where the `header` and `toolbar` will go: Add this to your `app/views/video/party.html.erb`:
 
 ```
 <header>
@@ -468,12 +460,6 @@ Let's start with the bones of the page, the HTML. We have 3 components; a header
   </toolbar>
 </main>
 ```
-
-The header and toolbar will hold the Vivid UI to control our Video Express logic. For now, build empty partials:
-
-`touch app/views/watch_party/_header.html.erb`
-
-`touch app/views/watch_party/_toolbox.html.erb`
 
 So now all that remains on the Party Page is adding our video call with Video Express. Lets build that now.
 
