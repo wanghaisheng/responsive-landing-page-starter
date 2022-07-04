@@ -450,18 +450,18 @@ Let's start with the bones of the page, the HTML. We have 3 components; a header
 
 ```
 <header>
-  <%= render partial: 'header' %>
+  <!-- Header Will Go Here -->
 </header>
 
 <main class="app">
   <!-- Video Chat Will Go Here -->
   <toolbar class="toolbar-wrapper">
-    <%= render partial: 'toolbar' %>
+    <!-- Toolbar Will Go Here -->
   </toolbar>
 </main>
 ```
 
-So now all that remains on the Party Page is adding our video call with Video Express. Lets build that now.
+So now all that remains on the Party Page is adding our video call with Video Express. Let's build that now.
 
 ### Building A Room With Video Express
 
