@@ -233,7 +233,6 @@ def self.create_token(session_id)
 end
 ```
 
-
 Your full WatchParty model should look like this :
 
 ```
@@ -282,6 +281,7 @@ Create the `.env` file from the root of the `video-express` project:
 `touch .env`
 
 Inside define our ENV varialbes:
+
 ```
 OPENTOK_API_KEY=''
 OPENTOK_API_SECRET=''
@@ -323,7 +323,7 @@ At this point with all the main config and setup done, I just like to go one act
 
 The home page we want to build will look like this:
 
-![Watch Party Home Page](/content/blog/vonage-video-express-with-ruby-on-rails/macbook-pro-16_-1-1-.png "Watch Party Home Page")
+![Watch Party Home Page](/content/blog/vonage-video-express-with-ruby-on-rails-part-1/macbook-pro-16_-1.png "Watch Party Home Page")
 
 If we look at the Vivid documentation we see that we have all the components we need:
 
@@ -444,7 +444,6 @@ Successful logins will redirect to the `party_path`. This path will lead users t
 First, let's take a look at what we're building. This is the Party page in the "Chill Mode" as a non-moderator. But for Part 1 we won't worry about the header or toolbar components, so we really just have Video Chat left to build out.
 
 ![Party Page: Chill Mode, Non Moderator](/content/blog/vonage-video-express-with-ruby-on-rails/macbook-pro-16_-10.png "Party Page: Chill Mode, Non Moderator")
-
 
 Let's start with the bones of the page, the HTML. We have 3 components; a header, the video call, and a toolbar. But for now we'll just leave comments where the `header` and `toolbar` will go: Add this to your `app/views/video/party.html.erb`:
 
