@@ -494,14 +494,13 @@ The final code of the `party.html.erb` looks like this:
 ```
 <script src="https://static.opentok.com/v1/js/video-express.js"></script>
 <header>
-  <%= render partial: 'header' %>
+  <!-- Header Will Go Here -->
 </header>
 
 <main class="app">
   <div id="roomContainer"></div>
-  <!--  -->
   <toolbar>
-    <%= render partial: 'toolbar' %>
+    <!-- Toolbar Will Go Here -->
   </toolbar>
 </main>
 
