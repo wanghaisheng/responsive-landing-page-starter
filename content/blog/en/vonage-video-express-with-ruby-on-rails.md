@@ -573,7 +573,7 @@ end
 
 Now if we refresh… we see that our camera turns on and the audio goes all weird. But nothing shows on the screen. Why?! Video Express is working and we are connected to a video session through the Video API. But we haven't given the video screen any room to exist!
 
-Let's add some CSS from the Video Express boilerplate for the video screen. We target the #roomContainer and give it full width and full height, minus the header. We also add a bit of CSS to tell Video Express where to put **What is the OT_publisher?** and the screenshare when it is triggered.
+Let's add some CSS from the Video Express boilerplate for the video screen. We target the #roomContainer and give it full width and full height, minus the header. We also add a bit of CSS to tell Video Express where to put local self-view and the screenshare when it is triggered.
 
 ```
 // Video Express Styles
