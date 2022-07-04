@@ -20,27 +20,29 @@ replacement_url: ""
 ---
 This is the second part of a two-part series on creating a video watch party application using Ruby on Rails with Vonage Video API and the Video Express library.
 
-In the [Part 1](), we went through the steps of building the Rails app, showed how to use a few Vivid components, and got the Video Express video chat to run. If you have not read that post yet, it would be a good place to start.
+In the [Part 1](<>), we went through the steps of building the Rails app, showed how to use a few Vivid components, and got the Video Express video chat to run. If you have not read that post yet, it would be a good place to start.
 
 Once we are done, we will have a watch party app that we can use to chat with our friends and watch sports or videos together!
 
 ## What The App Will Do
+
 A quick reminder, we are building a video-conferencing application that gives a toolbar to users for different audio/video controls. Additionally, the application gives the moderator the ability to send the Watch Party into different viewing modes.
 
 At this point, we have a working Video Express [Room](https://tokbox.com/developer/video-express/reference/room.html). This object gives us the ability to call different functions to trigger the actions in our toolbar. We want to give the user a way to trigger this functionality, we'll do that with Vivid components. We will organize both our HTML and JS into components. With Webpack, we'll then  `import` our Modules and `require` our components into `application.js` which will expose our Javascript in the client-side.
-
 
 ## Building Out Helper Components
 
 The rest of this tutorial will be building the components to users control their Video Express room. Each component will follow a similar structure: HTML with Vivid components and Javascript to trigger Video Express functions.
 
 ### Organizing the HTML
+
 Let's build out our partials where the HTML will live. From the command line, run:
 
 `touch app/views/watch_party/header.html.erb`
 `touch app/views/watch_party/_toolbox.html.erb`
 
 And update the `party.html.erb` file to render the partials:
+
 ```
 <header>
   <%= render partial: 'components/header' %>
@@ -55,6 +57,7 @@ And update the `party.html.erb` file to render the partials:
 ```
 
 ### Organizing the Javascript
+
 Just as we have a components folder in our Views, let's create a components folder in our Javascript folder to house our corresponding component logic.
 
 `mkdir app/javascript/components`
@@ -72,13 +75,13 @@ require("components/toolbar");
 
 Now we're ready to build out our components.
 
-## Building the Header 
+## Building the Header
 
 ### Building the HTML
 
 A reminder of the header we want to build:
 
-![The Header in Moderator View](/content/blog/vonage-video-express-with-ruby-on-rails/header.png "The Header in Moderator View")
+![The Header in Moderator View](/content/blog/vonage-video-express-with-ruby-on-rails-part-2/screen-shot-2022-07-01-at-13.25.36.png "The Header in Moderator View")
 
 Going top to bottom, let's build that header! Some great news is that Vivid has exactly what we need, a [Top App Bar](https://vivid.vonage.com/?path=/story/components-top-app-bar-fixed--dense&args=dense:) component.
 The top app bar comes with a few slot options but two that we care about: `title` and `actionItems`. The title is great for a logo or in our case title. And the `actionitems` can be used as the content of the app bar. This is where we will add the toggler for the moderator to change modes between chill mode and party mode. We can accomplish this with the `vwc-switch` component.
