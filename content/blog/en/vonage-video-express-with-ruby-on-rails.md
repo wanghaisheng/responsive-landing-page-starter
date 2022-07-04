@@ -170,7 +170,7 @@ class CreateWatchParties < ActiveRecord::Migration[6.1]
 
 You can now commit this database migration to the schema by running from the command line run:
 
-`rails db:create db:migrate rake db:create`
+`rails db:create db:migrate`
 
 This command will create the PostgreSQL database and the sessions table with the session_id column.
 
