@@ -337,30 +337,31 @@ So with bit of Rails magic with some Vivid magic, we have everything we need. Th
 Secondly, the form doesn't help us actually pass the data to the server. So we need to make use of the Rails helper `form_with`. Altogether it looks like this:
 
 ```
-  <div class="card-wrapper">
-    <vwc-card>
-      <div slot="main" id="box">
-        <vwc-text font-face="subtitle-1" >Big Game Watch Party
-          <br>
-          <span><vwc-text font-face="body-1-code">Built With Vonage Video Express on Rails</vwc-text></span></vwc-text>
+<div class="card-wrapper">
+  <vwc-card>
+    <div slot="main" id="box">
+      <vwc-text font-face="subtitle-1" >Big Game Watch Party
+        <br>
+        <span><vwc-text font-face="body-1-code">Built With Vonage Video Express on Rails</vwc-text></span></vwc-text>
 
-        <%= form_with(url: "/login", method: "post") do %>
-          <vwc-textfield name="name" label="Enter Your Name" icon="user" outlined="">
-          </vwc-textfield>
-          <vwc-textfield name="password" label="Enter Team Passcode" icon="lock" type="password" outlined="">
-          </vwc-textfield>
-          <div class="controls">
-            <vwc-button layout="outlined" type="reset" outlined="">
-              Reset
-            </vwc-button>
-            <vwc-button layout="filled" type="submit" unelevated="">
-              Submit
-            </vwc-button>
-          </div>
-        <% end %>
-      </div>
-    </vwc-card>
-  </div>
+      <%= form_with(url: "/login", method: "post") do %>
+        <vwc-textfield name="name" label="Enter Your Name" icon="user" outlined="">
+        </vwc-textfield>
+        <vwc-textfield name="password" label="Enter Team Passcode" icon="lock" type="password" outlined="">
+        </vwc-textfield>
+        <div class="controls">
+          <vwc-button layout="outlined" type="reset" outlined="">
+            Reset
+          </vwc-button>
+          <vwc-button layout="filled" type="submit" unelevated="">
+            Submit
+          </vwc-button>
+        </div>
+      <% end %>
+    </div>
+  </vwc-card>
+</div>
+
 ```
 
 So now if we run our server we should have a beautiful home page like in the picture right? So try it! Run `rails s` from your command line and open `localhost:3000` in your browser.
@@ -649,13 +650,13 @@ And our full, updated `party.html.erb` looks like this:
 
 ```
 <header>
-  <%= render partial: 'header' %>
+  <!-- Header Goes Here -->
 </header>
 
 <main class="app">
   <div id="roomContainer"></div>
   <toolbar class="toolbar-wrapper">
-    <%= render partial: 'toolbar' %>
+    <!-- Toolbar Goes Here -->
   </toolbar>
 </main>
 
