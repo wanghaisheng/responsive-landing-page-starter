@@ -315,7 +315,7 @@ From the command line generate the WatchParty controller with home, login, and p
 
 `rails g controller WatchParty home login party`
 
-* The rails generator will some extra stuff we don't want. So now go and delete the routes it generated in `app/config/routes.rb`. And completely delete login view file; `app/views/login.html.erb`
+* The rails generator will some extra stuff we don't want. So now go and delete the routes it generated in `app/config/routes.rb`. And completely delete login view file; `app/views/watch_party/login.html.erb`
 
 At this point with all the main config and setup done, I just like to go one action/view pair at a time until I finish an application. 
 
