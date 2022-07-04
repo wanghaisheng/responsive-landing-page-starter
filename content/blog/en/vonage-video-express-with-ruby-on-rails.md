@@ -466,11 +466,9 @@ So now all that remains on the Party Page is adding our video call with Video Ex
 
 The Vonage Video API gives developers full control of customizing their video layout by manipulating `publisher` and `subscriber` elements. In Video Express, these are replaced with the concept of a `room`. To add this is as easy as 1, 2, 3.
 
- **Do I still need this if I have Video Express installed and exposed in packs?** 
-
 1. Include the library. Add this script at the top of the file:
    `<script src="https://static.opentok.com/v1/js/video-express.js"></script>`
-    **Do I still need this if I have Video Express installed and exposed in packs?** 
+ 
 2. Now run create the room with the sample code from the Video Express documentation. Note that we pass the additional parameter `participantName`. Video Express is lightweight but comes with some options, explore the docs!
 
 ```
@@ -597,6 +595,80 @@ Let's add some CSS from the Video Express boilerplate for the video screen. We t
 ```
 
  **Boom!** Now we have a video session. Try joining from multiple tabs/different names.  **Boom!** You have video conferencing in Rails!
+
+## Enhancing Our Code
+The Room is working and it was way too easy right? Yes. But in the next step we will be writing a lot of Javascript. We don't want to write this all in the <script> tag. Also, remember we installed the Video Express node module. We should use this instead of also including the CDN. This next step is a little bit complicated to pass the Ruby and Javascript information back and forth, but we can do it!
+
+First, let's us that node module and move our Javascript logic out of our view. We're going to create the `plugins` folder and our `video-express.js` file:
+
+`mkdir app/javascript/plugins`
+
+`touch app/javascript/plugins/video-express.js`
+
+
+Now instead of our `video-express.js`, we want to recreate the Javascript from our view. First, we need import our node module. Now, because the instance variables we set in `set_opentok_vars` in our controller aren't available in our Javascript, we need to be sneaky here. Our solution is to create a function in the Javascript which we will make available in the view (`party.html.erb`) where it still has access to the instance variables.
+
+We do this with the `joinRoom` function which allows us to join a room given an apiKey, sessionId, token, and participantName. And we attach it to the [browser window](https://www.w3schools.com/js/js_window.asp), so that we can then call it from the view.
+
+```
+import * as VideoExpress from "@vonage/video-express";
+
+let room;
+
+function joinRoom(apiKey, sessionId, token, participantName) {
+room = new VideoExpress.Room({
+apiKey,
+sessionId,
+token,
+roomContainer: 'roomContainer',
+participantName,
+});
+
+room.join();
+
+}
+
+window.joinRoom = joinRoom;
+```
+
+Before we can call our new functionality, we need Webpacker to serve it up. So inside the `app/javascript/application.js` we need to add:
+
+`require('plugins/video-express');`
+
+And now in the view we can call our `joinRoom` function. We need to mindful of the Javascript event life cycle. The party.html.erb will render out before the webpacker finishes loading all the Javascript. So we need to make sure out `joinRoom` is only called after the Webpacker has finished loading. We can do so by adding the eventListener, like so:
+
+```
+<script type="text/javascript">
+window.addEventListener('DOMContentLoaded', (event) => {
+window.joinRoom('<%= @api_key %>', '<%= @session_id %>', '<%= @token %>', '<%= @name %>')
+});
+</script>
+```
+
+And our full, updated `party.html.erb` looks like this:
+
+```
+<header>
+  <%= render partial: 'header' %>
+</header>
+
+<main class="app">
+  <div id="roomContainer"></div>
+  <toolbar class="toolbar-wrapper">
+    <%= render partial: 'toolbar' %>
+  </toolbar>
+</main>
+
+<script type="text/javascript">
+  window.addEventListener('DOMContentLoaded', (event) => {
+     window.joinRoom('<%= @api_key %>', '<%= @session_id %>', '<%= @token %>', '<%= @name %>')
+});
+</script>
+
+```
+
+So now, our video call room is working. And our code is neat, organized, and efficient, ready for us to add some more javascript components which can now call on the `room` object we've created.
+
 
 ## Next Steps
 
