@@ -18,11 +18,63 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+This is the second part of a two-part series on creating a video watch party application using Ruby on Rails with Vonage Video API and the Video Express library.
+
+In the [Part 1](), we went through the steps of building the Rails app, showed how to use a few Vivid components, and got the Video Express video chat to run. If you have not read that post yet, it would be a good place to start.
+
+Once we are done, we will have a watch party app that we can use to chat with our friends and watch sports or videos together!
+
+## What The App Will Do
+A quick reminder, we are building a video-conferencing application that gives a toolbar to users for different audio/video controls. Additionally, the application gives the moderator the ability to send the Watch Party into different viewing modes.
+
+At this point, we have a working Video Express [Room](https://tokbox.com/developer/video-express/reference/room.html). This object gives us the ability to call different functions to trigger the actions in our toolbar. We want to give the user a way to trigger this functionality, we'll do that with Vivid components. We will organize both our HTML and JS into components. With Webpack, we'll then  `import` our Modules and `require` our components into `application.js` which will expose our Javascript in the client-side.
+
+
 ## Building Out Helper Components
 
 The rest of this tutorial will be building the components to users control their Video Express room. Each component will follow a similar structure: HTML with Vivid components and Javascript to trigger Video Express functions.
 
-### Building The Header HTML
+### Organizing the HTML
+Let's build out our partials where the HTML will live. From the command line, run:
+
+`touch app/views/watch_party/header.html.erb`
+`touch app/views/watch_party/_toolbox.html.erb`
+
+And update the `party.html.erb` file to render the partials:
+```
+<header>
+  <%= render partial: 'components/header' %>
+</header>
+
+<main class="app">
+  <div id="roomContainer"></div>
+  <!--  -->
+  <toolbar>
+    <%= render partial: 'components/toolbar' %>
+  </toolbar>
+```
+
+### Organizing the Javascript
+Just as we have a components folder in our Views, let's create a components folder in our Javascript folder to house our corresponding component logic.
+
+`mkdir app/javascript/components`
+
+Here we'll add our component files:
+`touch app/javascript/components/header.js`
+`touch app/javascript/components/header.js`
+
+And we'll need to tell Webpack to require them for our clientside. So add the following lines in Application.js belowe our module imports.
+
+```
+require("components/header");
+require("components/toolbar");
+```
+
+Now we're ready to build out our components.
+
+## Building the Header 
+
+### Building the HTML
 
 A reminder of the header we want to build:
 
@@ -47,22 +99,9 @@ Inside `app/view/watch_party/_header.html.erb` will look like this:
 
 ### Building The Header Javascript
 
-We'll need to add some Javascript. So let's create a compenents folder in `app/javascript` with the following command
+Inside the `components/header.js` file we'll have two parts: an event listener that will toggle the Video Express ScreenSharing and a function to iterate through all participants in the room to update their display.
 
-`mkdir app/javascript/componenets`
-
-And here we'll add the a file `header.js`, again from the command line:
-`touch app/javascript/components/header.js`.
-
-And we need to make sure that webpacker is serving our Javascript to the application. So inside of `app/javascript/packs/application.js`, we need to require the component:
-
-```
-require("components/header");
-```
-
-Inside the JS file we'll have two parts: an event listener that will toggle the Video Express ScreenSharing and a function to iterate through all participants in the room to update their display.
-
-First, let's look at the `toggleParticipants`. It toggles through each participants window to update the layout. This is important to note because the `room` is unique to each participant, so updates must be done to each user.
+First, let's look at the `toggleParticipants`. It toggles through each participant's window to update the layout. This is important to note because the `room` is unique to each participant, so updates must be done to each user.
 
 ```
 let toggleParticipants = (participants, state) => {
