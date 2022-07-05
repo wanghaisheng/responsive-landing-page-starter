@@ -34,7 +34,7 @@ Okay, let's try something else. If we can't structurally misuse `MessageRequest`
 
 Let's stop there. All of these cases have been considered, and none of them are possible. Yes, your code will compile if you try to pass in a malformed URL, an invalid number or neglect to set mandatory parameters on the builder. But at runtime, you will not be able to send the message. You won't even get as far as constructing the `MessageRequest` object! Why? Because every parameter is validated in the constructor. The moment you call `build()` on the Builder, the constructor is invoked, and if the parameters used to construct the message are missing or invalid, then you'll get an `IllegalArgumentException` thrown at you explaining the problem. This is what I meant when I said "correct by construction". If you can construct a `MessageRequest`, then as far as we can tell, it's not obviously wrong, and you are clear to proceed to sending it. Of course, that doesn't mean that the message is completely valid or that you won't get back an error response from the server. You could, for example, try sending a text to a phone number that doesn't exist, yet is an E164-compliant number. This kind of validation is beyond the scope of the SDK and is performed by the backend service that the API communicates with. What the SDK guards against is essentially the 422 errors. So, what is this in contrast to? Where am I going with this? To answer that, let's look at the diametric opposite: cURL.
 
-Why do I need the SDK when I can use the API directly? That's fine, here's an example of sending an image over MMS:
+Why do I need the SDK when I can use the API directly? That's fine, here's an example of sending an image over Viber using cURL:
 
 ```
 curl -X POST https://api.nexmo.com/v1/messages \
@@ -42,12 +42,26 @@ curl -X POST https://api.nexmo.com/v1/messages \
   -H 'Content-Type: application/json' \
   -H 'Accept: application/json' \
   -d $'{
-            "message_type": "image",
-            "image": {
-                "url": "https://example.com/image.jpg"
-            },
-            "to": "'$TO_NUMBER'",
-            "from": "'$FROM_NUMBER'",
-            "channel": "mms"
-}'
+        "message_type": "image",
+        "channel": "viber_service",
+        "image": {
+            "url": "https://example.com/image.jpg"
+        },
+        "to": "447700900000",
+        "from": "9876543210",
+        "viber_service": {
+            "ttl": 600
+        }
+    }'
 ```
+
+Whilst this is relatively easy to read, it is easy to get wrong when writing such a request manually. Not only do you need to remember the endpoint's URL, HTTP method, headers, authorisation type etc. but also the JSON format. You could miss the quotation marks (almost everything is a string), but watch out for that `ttl` - it's actually an integer, not an int wrapped in a string! You have to remember all of the fields and their exact naming - no IDE here is going to help you with auto-complete, because you're just typing out text. Your terminal doesn't know anything about the API, so if you mistype something, there's no way to know until you send off the request and get a 422 response back. And remembering that schema, it's not really intuitive, is it? If you want to set the time-to-live, you have to remember to wrap it in a `viber_service` object. And don't forget the image URL has to be in an `image` object as well, oh and you can't include a caption with your image for Viber messages, but cURL won't stop you from trying. You can pass in whatever you want as the body. It doesn't even have to be valid JSON, let alone conform to the Messages API schema!
+
+It's fair to say then that in order to use the Messages API with cURL, you're going to need the API reference to hand and refer to it extensively to ensure that your requests are correct - not only the body, but also the headers (authorisation method, for example). It's error-prone and there's nothing to stop you making mistakes, or to help you formulate your intended message request. By contrast, if you want to use the Messages API through the Java SDK, you don't need the API reference at all. All of the public methods you need are documented, explaining what is required and what is optional, the usage pattern, examples etc. Even without reading the documentation, you can explore the API using nothing more than auto-completion provided by your IDE. For example, you won't try to set a caption on a Viber image, because there is no way to do that in the Java SDK. So, as the user, you conclude that it's not supported. What about discoverability? Well, all of the `MessageRequest` subclasses follow the `[Channel][MessageType]Request` naming scheme (for example, `SmsTextRequest`). You can even use your IDE to list all subclasses of `MessageRequest`. And there's only one way to construct requests: through the builder associated with each `MessageRequest` subclass. On top of that, the constructors for the builders are not public, so the only way to instantiate a builder is by calling the static `builder()` method on the class. This, combined with the package-private constructors, prevents you from misusing them.
+
+A strongly typed language like Java prevents you from providing invalid values, not only at runtime but also at compile-time. For instance, you may not know what the valid values are for `Category` in the optional `viber_service` object, but in the Java SDK, these are made obvious to you by the compiler / your IDE, because [it's an enum](https://github.com/Vonage/vonage-java-sdk/blob/main/src/main/java/com/vonage/client/messages/viber/Category.java). And the whole thing about wrapping it in a `viber_service` object? You don't need to worry about that, you just set what you need on the builder and the SDK will take care of it for you. Infact, the SDK takes care of all the serialisation and deserialisation. As a user, you don't know or need to care what serialisation format is being used behind the scenes - it's all taken care of. That's one of the main advantages of using an SDK instead of the API: it's *declarative* rather than *imperative*. You declare *what* you want to send, not *how* to send it. Look at it this way: suppose that we decided all of our APIs are now going to use Avro or Protobuf (or, heaven forbid, plain old XML) instead of JSON. Those cURL scripts you had lying around are going to need a rewrite. Maybe if you're lucky and we kept the schmea exactly the same, and you happen to be a RegEx guru, you could at least partially automate the migration. But what if we changed the schema? Sticking with the above example, what if we decided that the `url` parameter no longer needs to be wrapped in an object? Or we removed `viber_service` container, which is used for `ttl` and `category` parameters? Or what if we renamed the `viber_service` message type to `viber` for consistency? If you're hand-rolling your requests with cURL, you need to be aware of all these changes. If you're using the Java SDK, you just need to upgrade to the next version - a single character change in your `pom.xml` or `build.gradle` file. No need to refactor anything - it's all taken care of behind the scenes.
+
+// Doesn't have to be strongly typed to validate - see Python SDK
+
+This strict approach to SDK design has its disadvantages though. Let's suppose that at some point in the future, the API supports sending video over Viber. You can immediately take advantage of this with cURL, but an SDK which validates the message type and channel combinations will require an update.
+
