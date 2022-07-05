@@ -2,10 +2,11 @@
 title: The Vonage Messages API is Now in Our Server SDKs
 description: Announcing that the Vonage Messages API has been added to Server
   SDKs for Ruby, Node, Python, PHP, Java, and .net
+thumbnail: /content/blog/the-vonage-messages-api-is-now-in-our-server-sdks/social_sdk-updates_1200x627.png
 author: karl-lingiah
 published: true
-published_at: 2022-07-01T11:59:40.264Z
-updated_at: 2022-07-01T11:59:40.396Z
+published_at: 2022-07-05T09:51:10.765Z
+updated_at: 2022-07-05T09:51:12.743Z
 category: announcement
 tags:
   - messages-api
