@@ -94,7 +94,7 @@ gem 'dotenv-rails'
 
 Once that is done, we can run `bundle install` from the command line to install our dependencies.
 
-### Javascript Libraries
+### Node Modules
 
 We'll be using two Javascript libraries in the front end: Video Express and Vivid. Before we use them, let's get to know a little bit more about them.
 
@@ -138,10 +138,11 @@ Vivid is built using Web Components so they will work in any framework or even v
 
 [Learn more about Vivid](https://github.com/Vonage/vivid)
 
+### Node Modules Install
 
-Now that I've convinced you that Vivid is great, let's install it now:
+Now that I've convinced you that Video Express and Vivid are great, let's install them:
 
-`yarn add @vonage/vivid`
+`yarn add @vonage/video-express @vonage/vivid`
 
 ### Model Generation
 
@@ -290,7 +291,7 @@ PARTY_PASSWORD=''
 
 Here you will need to add your Video API credentials from above. In a real app you would want to store information about moderators and watch party passwords in your database but for this demo, storing in an ENV variable does the trick!
 
-Don't forget to add a `MODERATOR_NAME` and `PARTY_PASSWORD` to use in the login page.
+Don't forget to add a `MODERATOR_NAME` and `PARTY_PASSWORD`to use in the login page.
 
 ### Defining The Routes
 
@@ -472,18 +473,16 @@ The Vonage Video API gives developers full control of customizing their video la
 2. Now run create the room with the sample code from the Video Express documentation. Note that we pass the additional parameter `participantName`. Video Express is lightweight but comes with some options, explore the docs!
 
 ```
-<script>
-  const room = new VideoExpress.Room({
-    apiKey: '<%= @api_key %>', // add your OpenTok API key
-    sessionId: '<%= @session_id %>', // add your OpenTok Session ID
-    token: '<%= @token %>', // add your OpenTok token
-    roomContainer: 'roomContainer',
-    participantName: '<%= @name %>'
-  });
-  
-  room.join();
-</script>
-
+    <script>
+      const room = new VideoExpress.Room({
+       apiKey: '<%= @api_key %>', // add your OpenTok API key
+       sessionId: '<%= @session_id %>', // add your OpenTok Session ID
+       token: '<%= @token %>', // add your OpenTok token
+       roomContainer: 'roomContainer',
+       participantName: '<%= @name %>'
+      });
+      room.join();
+    </script>
 ```
 
 3. We can see that the roomContainer is looking for the entry point in the html where to latch onto and embed the Room. So we need to create an element with an id of `roomContainter`. 
@@ -515,7 +514,7 @@ The final code of the `party.html.erb` looks like this:
 </script>
 ```
 
-So now we should be able to run our server and see a beautiful video call site, right? You should know the answer is no by now 😆. What are we missing? Well, we haven't used any of that OpenTok logic from the Video API to send to Video Express.
+So now we should be able to run our server and see a beautiful video call site, right? You should know the answer is no by now 😆. What are we missing? Well we haven't used any of that OpenTok logic from the Video API to send to Video Express.
 
 So we need to set our OpenTok variables in the `WatchParty Controller` and pass them through to our frontend.
 
@@ -597,6 +596,8 @@ Let's add some CSS from the Video Express boilerplate for the video screen. We t
 ```
 
  **Boom!** Now we have a video session. Try joining from multiple tabs/different names.  **Boom!** You have video conferencing in Rails!
+
+
 
 ## Next Steps
 
