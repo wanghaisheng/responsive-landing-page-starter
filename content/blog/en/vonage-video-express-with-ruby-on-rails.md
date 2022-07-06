@@ -94,7 +94,7 @@ gem 'dotenv-rails'
 
 Once that is done, we can run `bundle install` from the command line to install our dependencies.
 
-### Node Modules
+### Javascript Libraries
 
 We'll be using two Javascript libraries in the front end: Video Express and Vivid. Before we use them, let's get to know a little bit more about them.
 
@@ -138,11 +138,10 @@ Vivid is built using Web Components so they will work in any framework or even v
 
 [Learn more about Vivid](https://github.com/Vonage/vivid)
 
-### Node Modules Install
 
-Now that I've convinced you that Video Express and Vivid are great, let's install them:
+Now that I've convinced you that Vivid is great, let's install it now:
 
-`yarn add @vonage/video-express @vonage/vivid`
+`yarn add @vonage/vivid`
 
 ### Model Generation
 
@@ -291,7 +290,7 @@ PARTY_PASSWORD=''
 
 Here you will need to add your Video API credentials from above. In a real app you would want to store information about moderators and watch party passwords in your database but for this demo, storing in an ENV variable does the trick!
 
-Don't forget to add a `MODERATOR_NAME` and `PARTY_PASSWORD`to use in the login page.
+Don't forget to add a `MODERATOR_NAME` and `PARTY_PASSWORD` to use in the login page.
 
 ### Defining The Routes
 
@@ -473,16 +472,18 @@ The Vonage Video API gives developers full control of customizing their video la
 2. Now run create the room with the sample code from the Video Express documentation. Note that we pass the additional parameter `participantName`. Video Express is lightweight but comes with some options, explore the docs!
 
 ```
-    <script>
-      const room = new VideoExpress.Room({
-       apiKey: '<%= @api_key %>', // add your OpenTok API key
-       sessionId: '<%= @session_id %>', // add your OpenTok Session ID
-       token: '<%= @token %>', // add your OpenTok token
-       roomContainer: 'roomContainer',
-       participantName: '<%= @name %>'
-      });
-      room.join();
-    </script>
+<script>
+  const room = new VideoExpress.Room({
+    apiKey: '<%= @api_key %>', // add your OpenTok API key
+    sessionId: '<%= @session_id %>', // add your OpenTok Session ID
+    token: '<%= @token %>', // add your OpenTok token
+    roomContainer: 'roomContainer',
+    participantName: '<%= @name %>'
+  });
+  
+  room.join();
+</script>
+
 ```
 
 3. We can see that the roomContainer is looking for the entry point in the html where to latch onto and embed the Room. So we need to create an element with an id of `roomContainter`. 
@@ -514,7 +515,7 @@ The final code of the `party.html.erb` looks like this:
 </script>
 ```
 
-So now we should be able to run our server and see a beautiful video call site, right? You should know the answer is no by now 😆. What are we missing? Well we haven't used any of that OpenTok logic from the Video API to send to Video Express.
+So now we should be able to run our server and see a beautiful video call site, right? You should know the answer is no by now 😆. What are we missing? Well, we haven't used any of that OpenTok logic from the Video API to send to Video Express.
 
 So we need to set our OpenTok variables in the `WatchParty Controller` and pass them through to our frontend.
 
@@ -596,80 +597,6 @@ Let's add some CSS from the Video Express boilerplate for the video screen. We t
 ```
 
  **Boom!** Now we have a video session. Try joining from multiple tabs/different names.  **Boom!** You have video conferencing in Rails!
-
-## Enhancing Our Code
-The Room is working and it was way too easy right? Yes. But in the next step we will be writing a lot of Javascript. We don't want to write this all in the <script> tag. Also, remember we installed the Video Express node module. We should use this instead of also including the CDN. This next step is a little bit complicated to pass the Ruby and Javascript information back and forth, but we can do it!
-
-First, let's us that node module and move our Javascript logic out of our view. We're going to create the `plugins` folder and our `video-express.js` file:
-
-`mkdir app/javascript/plugins`
-
-`touch app/javascript/plugins/video-express.js`
-
-
-Now instead of our `video-express.js`, we want to recreate the Javascript from our view. First, we need import our node module. Now, because the instance variables we set in `set_opentok_vars` in our controller aren't available in our Javascript, we need to be sneaky here. Our solution is to create a function in the Javascript which we will make available in the view (`party.html.erb`) where it still has access to the instance variables.
-
-We do this with the `joinRoom` function which allows us to join a room given an apiKey, sessionId, token, and participantName. And we attach it to the [browser window](https://www.w3schools.com/js/js_window.asp), so that we can then call it from the view.
-
-```
-import * as VideoExpress from "@vonage/video-express";
-
-let room;
-
-function joinRoom(apiKey, sessionId, token, participantName) {
-room = new VideoExpress.Room({
-apiKey,
-sessionId,
-token,
-roomContainer: 'roomContainer',
-participantName,
-});
-
-room.join();
-
-}
-
-window.joinRoom = joinRoom;
-```
-
-Before we can call our new functionality, we need Webpacker to serve it up. So inside the `app/javascript/application.js` we need to add:
-
-`require('plugins/video-express');`
-
-And now in the view we can call our `joinRoom` function. We need to mindful of the Javascript event life cycle. The party.html.erb will render out before the webpacker finishes loading all the Javascript. So we need to make sure out `joinRoom` is only called after the Webpacker has finished loading. We can do so by adding the eventListener, like so:
-
-```
-<script type="text/javascript">
-window.addEventListener('DOMContentLoaded', (event) => {
-window.joinRoom('<%= @api_key %>', '<%= @session_id %>', '<%= @token %>', '<%= @name %>')
-});
-</script>
-```
-
-And our full, updated `party.html.erb` looks like this:
-
-```
-<header>
-  <!-- Header Goes Here -->
-</header>
-
-<main class="app">
-  <div id="roomContainer"></div>
-  <toolbar class="toolbar-wrapper">
-    <!-- Toolbar Goes Here -->
-  </toolbar>
-</main>
-
-<script type="text/javascript">
-  window.addEventListener('DOMContentLoaded', (event) => {
-     window.joinRoom('<%= @api_key %>', '<%= @session_id %>', '<%= @token %>', '<%= @name %>')
-});
-</script>
-
-```
-
-So now, our video call room is working. And our code is neat, organized, and efficient, ready for us to add some more javascript components which can now call on the `room` object we've created.
-
 
 ## Next Steps
 
