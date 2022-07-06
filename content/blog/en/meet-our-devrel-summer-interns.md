@@ -1,5 +1,5 @@
 ---
-title: Meet our DevRel Summer Interns!
+title: Meet Our DevRel Summer Interns!
 description: "We are excited to introduce our DevRel Summer Interns: Elena,
   Rushil and Zoe. Find out more about them! "
 thumbnail: /content/blog/meet-our-devrel-summer-interns/welcome_interns.png
