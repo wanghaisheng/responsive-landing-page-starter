@@ -38,8 +38,10 @@ The rest of this tutorial will be building the components to users control their
 
 Let's build out our partials where the HTML will live. From the command line, run:
 
-`touch app/views/watch_party/header.html.erb`
-`touch app/views/watch_party/_toolbox.html.erb`
+`mkdir app/views/components`
+
+`touch app/views/components/_header.html.erb`
+`touch app/views/components/_toolbox.html.erb`
 
 And update the `party.html.erb` file to render the partials:
 
@@ -50,7 +52,6 @@ And update the `party.html.erb` file to render the partials:
 
 <main class="app">
   <div id="roomContainer"></div>
-  <!--  -->
   <toolbar>
     <%= render partial: 'components/toolbar' %>
   </toolbar>
