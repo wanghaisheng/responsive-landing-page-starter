@@ -82,9 +82,9 @@ Now we're ready to build out our components.
 
 A reminder of the header we want to build:
 
-![The Header in Moderator View](/content/blog/vonage-video-express-with-ruby-on-rails-part-2/screen-shot-2022-07-01-at-13.25.36.png "The Header in Moderator View")
+![The Header in Moderator View](/content/blog/vonage-video-express-with-ruby-on-rails-part-2/group-10-4-.png "The Header in Moderator View")
 
-Going top to bottom, let's build that header! Some great news is that Vivid has exactly what we need, a [Top App Bar](https://vivid.vonage.com/?path=/story/components-top-app-bar-fixed--dense&args=dense:) component.
+Some great news is that Vivid has exactly what we need, a [Top App Bar](https://vivid.vonage.com/?path=/story/components-top-app-bar-fixed--dense&args=dense:) component.
 The top app bar comes with a few slot options but two that we care about: `title` and `actionItems`. The title is great for a logo or in our case title. And the `actionitems` can be used as the content of the app bar. This is where we will add the toggler for the moderator to change modes between chill mode and party mode. We can accomplish this with the `vwc-switch` component.
 
 Inside `app/view/watch_party/_header.html.erb` will look like this:
@@ -103,7 +103,13 @@ Inside `app/view/watch_party/_header.html.erb` will look like this:
 
 ### Building The Header Javascript
 
-Inside the `components/header.js` file we'll have two parts: an event listener that will toggle the Video Express ScreenSharing and a function to iterate through all participants in the room to update their display.
+Inside the `components/header.js` file we'll have 3 essential parts: listening for a toggle, toggling the sharescreen, and toggling the accompanying visuals.
+
+**Important Note About Video Express**
+
+In Video Express you have two set layouts: "Grid" and "Active Speaker". Video Express gives you a standarized video call running fast! But if you want to deviate from the default behaviour, tread lightly and you will probably be better off using the full Video API.\
+\
+In this example, the moderator is the screen sharer. In standardized video conferencing, the screensharer presents while watching the screen being shared. This way they can control things on the screen. However, in our example, the moderator doesn't need to control the screen and wants to see it big, just like everyone else. This is not the default behaviour. We will need to build it out ourselves. Thankfully, Video Express has the `[screenSharingContainer](https://tokbox.com/developer/video-express/reference/room.html)` option which will allow us to build what we want.
 
 First, let's look at the `toggleParticipants`. It toggles through each participant's window to update the layout. This is important to note because the `room` is unique to each participant, so updates must be done to each user.
 
@@ -127,7 +133,7 @@ let toggleParticipants = (participants, state) => {
   }
 ```
 
-We will call the `toggleParticpants` only when the `vwc-switch` is toggled. Notice that this listener is scoped to only listen in the moderators session. Additionally, the Video Express functions `.startScreensharing()` and `.stopScreensharing()` are call here on `room`.
+We will call the `toggleParticpants` only when the `vwc-switch` is toggled. Notice that this listener is scoped to only listen in the moderator's session. Additionally, the Video Express functions `.startScreensharing()` and `.stopScreensharing()` are call here on `room`.
 
 An optional targetElement can be passed to change the location of the screenShare. Read more [here](https://tokbox.com/developer/video-express/reference/room.html).
 
