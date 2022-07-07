@@ -6,8 +6,8 @@ description: Show Rooming is a growing concern for brick-and-mortar retailers.
 thumbnail: /content/blog/how-vonage-communications-apis-enable-21st-century-retail-experiences/21st-century-retail.png
 author: christankersley
 published: true
-published_at: 2022-06-30T10:17:39.617Z
-updated_at: 2022-06-30T10:17:41.114Z
+published_at: 2022-07-07T09:20:41.503Z
+updated_at: 2022-07-07T09:20:42.316Z
 category: inspiration
 tags:
   - node
@@ -24,7 +24,7 @@ replacement_url: ""
 
 ## The Perfect Storm of Challenges for Retailers
 
-Before we look at the solution, let’s look at the seriousness of the situation for Retail as an industry. A few years ago, the Director of a leading North American retailer sent an alarmed email to his fellow board members: "We are in deep trouble". He had just been to one of the stores and noticed a number of shoppers walking around with their phones and seemingly taking pictures of the merchandise. Puzzled, he asked a few of them what they were doing.
+Before we look at the solution, let’s look at the seriousness of the situation for retail as an industry. A few years ago, the director of a leading North American retailer sent an alarmed email to his fellow board members: "We are in deep trouble". He had just been to one of the stores and noticed a number of shoppers walking around with their phones and seemingly taking pictures of the merchandise. Puzzled, he asked a few of them what they were doing.
 
 They were actually using their phones to read the bar codes, check out the item prices at a rival online store, and complete purchases on their phones. That effectively meant the brick-and-mortar retailer was serving as the showroom for the online competitor! This phenomenon, called “showrooming”, meant each retailer was now sitting on real estate assets that it was no longer exclusively benefiting from.
 
@@ -34,12 +34,11 @@ Recent trends in several markets have heightened the challenge for retailers: th
 
 ## Digital Engagement in Physical Spaces
 
-As we saw, Retail is facing major challenges with “showrooming”, diminishing foot traffic, supply chain disruptions and hiring issues. Digital communications are helping solve some of those challenges by enabling new experiences. 
+As we saw, retail is facing major challenges with “showrooming”, diminishing foot traffic, supply chain disruptions and hiring issues. Digital communications are helping solve some of those challenges by enabling new experiences. 
 
 Research has shown that sales conversations that involve a video interaction are more likely to result in a successful outcome for the sellers. 
 
 Back to the showrooming issue, by enabling communications while the customers are in the store, a remote sales assistant can help seal the deal there and then, by measuring sentiment, gauging any hesitation and addressing any questions.
-
 
 For instance, if the shopper is indeed thinking about comparison shopping, the agent can do an instant price match while communicating with the shopper in the store and possibly throw in a special coupon or promotion such as for delivery or installation. If the store can meet the customer’s needs while they are ready to make a purchase, they should.
 
@@ -55,9 +54,7 @@ To help visualize a solution that can be rapidly implemented, here is a contact 
 * On that page, the shopper can enter their phone number to chat using Vonage SMS
   this effectively puts the shopper in live communication with a remote store representative who is knowledgeable about TV products.
 
-![Vonage contact center augmentation scenario](/content/blog/how-vonage-communications-apis-enable-21st-century-retail-experiences/cc-retail_blog-graphic.png)
-
-
+![Vonage contact center augmentation scenario](/content/blog/how-vonage-communications-apis-enable-21st-century-retail-experiences/cc-retail_blog-graphic-xs.png)
 
 While this article is meant to help get some gears turning, we do have some sample code you can use to see sample code on how Vonage APIs can help with retail interactions. The sample application will show you how to use our Verify API to validate a user and our Voice API to place an in-browser call to a support agent. 
 
@@ -81,16 +78,6 @@ You now need to create a Vonage Application. An application contains the securit
 ```sh
 vonage apps:create "Store Demo" --voice_event_url=https://example.com/webhooks/events --voice_answer_url=https://example.com/webhooks/answer 
 ```
-
-## To Combat Showrooming, Digitally Engage The Customers While They Are In The Store
-
-Digital communications are helping solve some of those challenges by enabling new experiences. 
-The dream of every retailer is that when you walk into a store, you make a purchase there and then - and that you come back over and over again. (If you have ever purchased a car, you may have experienced that the dealership doesn’t want you to leave empty-handed).
-
-To help visualize a solution that can be rapidly implemented, here is a contact center augmentation scenario that Vonage is actively working on with some of its partners: a customer walks into a store to purchase a high-priced TV set, needs help deciding and there is no experienced store staff to assist them.
-
-The retailer has placed QR codes on their TV sets.
-The shopper scans a QR code which takes them to a webpage on their phone where they have the ability to enter their phone number to chat via Vonage SMS with a remote store representative who is knowledgeable about TV products.
 
 We can use Vonage Verify to make sure that the chat request is valid. First, we can make a small page to ask for the user's telephone number:
 
