@@ -6,7 +6,7 @@ thumbnail: /content/blog/新しいvonage-video-expressでマルチパーティ�
 author: enrico-portolan
 published: true
 published_at: 2021-09-27T12:34:21.375Z
-updated_at: 2022-02-17T13:34:21.433Z
+updated_at: 2022-03-01T09:10:50.223Z
 category: tutorial
 tags:
   - video-express
