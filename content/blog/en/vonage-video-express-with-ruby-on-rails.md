@@ -94,7 +94,7 @@ gem 'dotenv-rails'
 
 Once that is done, we can run `bundle install` from the command line to install our dependencies.
 
-### Node Modules
+### Javascript Libraries
 
 We'll be using two Javascript libraries in the front end: Video Express and Vivid. Before we use them, let's get to know a little bit more about them.
 
@@ -138,11 +138,11 @@ Vivid is built using Web Components so they will work in any framework or even v
 
 [Learn more about Vivid](https://github.com/Vonage/vivid)
 
-### Node Modules Install
+### Vivid Install
 
-Now that I've convinced you that Video Express and Vivid are great, let's install them:
+Let's install Vivid and get going:
 
-`yarn add @vonage/video-express @vonage/vivid`
+`yarn add @vonage/vivid`
 
 ### Model Generation
 
