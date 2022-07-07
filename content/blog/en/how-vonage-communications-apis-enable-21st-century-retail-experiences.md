@@ -4,7 +4,7 @@ description: Show Rooming is a growing concern for brick-and-mortar retailers.
   See how Vonage APIs can work together to provide a smooth in-person
   experience.
 thumbnail: /content/blog/how-vonage-communications-apis-enable-21st-century-retail-experiences/21st-century-retail.png
-author: christankersley
+author: bernard-slede
 published: true
 published_at: 2022-07-07T09:20:41.503Z
 updated_at: 2022-07-07T09:20:42.316Z
