@@ -22,7 +22,7 @@ replacement_url: ""
 ---
 *This article was written in collaboration with [Chris Tankersley](https://developer.vonage.com/blog/authors/christankersley)*
 
-## The Perfect Storm of Challenges for Retailers
+## The perfect storm of challenges for retailers
 
 Before we look at the solution, let’s look at the seriousness of the situation for retail as an industry. A few years ago, the director of a leading North American retailer sent an alarmed email to his fellow board members: "We are in deep trouble". He had just been to one of the stores and noticed a number of shoppers walking around with their phones and seemingly taking pictures of the merchandise. Puzzled, he asked a few of them what they were doing.
 
@@ -32,7 +32,7 @@ Recent trends in several markets have heightened the challenge for retailers: th
 
 [UBS is predicting](https://www.cnbc.com/2022/04/13/ubs-50000-retail-store-closures-in-us-by-2026-after-pandemic-pause.html) 50,000 store closures in the U.S. alone over the next 5 years. So, the question is: how do you keep the doors open and customers coming? 
 
-## Digital Engagement in Physical Spaces
+## Digital engagement in physical spaces
 
 As we saw, retail is facing major challenges with “showrooming”, diminishing foot traffic, supply chain disruptions and hiring issues. Digital communications are helping solve some of those challenges by enabling new experiences. 
 
@@ -58,7 +58,9 @@ To help visualize a solution that can be rapidly implemented, here is a contact 
 
 While this article is meant to help get some gears turning, we do have some sample code you can use to see sample code on how Vonage APIs can help with retail interactions. The sample application will show you how to use our Verify API to validate a user and our Voice API to place an in-browser call to a support agent. 
 
-## Prerequisites
+## Sample code
+
+### Prerequisites
 
 * Node.js v14 or higher
 * Our Command Line Interface, which you can install with `npm install @vonage/cli -g`
@@ -67,7 +69,7 @@ While this article is meant to help get some gears turning, we do have some samp
 
 <sign-up></sign-up>
 
-### Application Setup
+### Application setup
 
 The example code requires a Vonage Application to be created. To create the application, we will be using our command-line interface. If you have not set up the CLI yet, do so by running the command `vonage config:set --apiKey=api_key --apiSecret=api_secret` in your terminal, where the API Key and Secret are the API key and secret found on your [account’s settings](https://dashboard.nexmo.com/settings) page.
 
@@ -279,7 +281,7 @@ Hopefully, this gives you some ideas to start seeing how you can integrate Vonag
 
 If you have any questions come join our [Vonage Community Slack](https://developer.vonage.com/community/slack) or send us a message on [Twitter](https://twitter.com/VonageDev).
 
-## Further Reading
+### Further Reading
 
 * [Vonage SMS API](https://developer.vonage.com/messaging/sms/overview)
 * [Vonage Verify API](https://developer.vonage.com/verify/overview)
