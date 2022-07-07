@@ -22,20 +22,46 @@ replacement_url: ""
 ---
 *This article was written in collaboration with [Chris Tankersley](https://developer.vonage.com/blog/authors/christankersley)*
 
-Before we look at the solution, let’s look at the seriousness of the situation for Retail as an industry.
-A number of years ago, the Director of a leading North American retailer sent an alarmed email to his fellow board members: "We are In deep trouble". He had just been to one of the stores and noticed a number of shoppers walking around with their phones and seemingly taking pictures of the merchandise. Puzzled, he asked a few of them what they were doing. 
+## The Perfect Storm of Challenges for Retailers
 
-They were actually using their phones to read the bar codes, check out the item prices at a rival online store, and complete the purchases on their phones. That effectively meant the brick-and-mortar retailer was serving as the showroom for the online competitor!
-This phenomenon, called showrooming, meant each retailer was now sitting on real estate assets that it was no longer exclusively benefiting from.
+Before we look at the solution, let’s look at the seriousness of the situation for Retail as an industry. A few years ago, the Director of a leading North American retailer sent an alarmed email to his fellow board members: "We are in deep trouble". He had just been to one of the stores and noticed a number of shoppers walking around with their phones and seemingly taking pictures of the merchandise. Puzzled, he asked a few of them what they were doing.
 
-Recent trends in several markets have heightened the challenge for retailers: the Covid-19 pandemic significantly impacted foot traffic in stores for several months, as economies have restarted, supply chain issues have increased and now, it has become difficult to fully staff the stores.
-UBS is predicting 50,000 store closures in the U.S. alone over the next 5 years.
+They were actually using their phones to read the bar codes, check out the item prices at a rival online store, and complete purchases on their phones. That effectively meant the brick-and-mortar retailer was serving as the showroom for the online competitor! This phenomenon, called “showrooming”, meant each retailer was now sitting on real estate assets that it was no longer exclusively benefiting from.
 
-So the question is: how do you keep the doors open and customers coming?
+Recent trends in several markets have heightened the challenge for retailers: the Covid-19 pandemic significantly impacted foot traffic in stores for several months, and now that economies have restarted, supply chain issues have increased, and stores are having difficulties finding staff.
+
+[UBS is predicting](https://www.cnbc.com/2022/04/13/ubs-50000-retail-store-closures-in-us-by-2026-after-pandemic-pause.html) 50,000 store closures in the U.S. alone over the next 5 years. So, the question is: how do you keep the doors open and customers coming? 
+
+## Digital Engagement in Physical Spaces
+
+As we saw, Retail is facing major challenges with “showrooming”, diminishing foot traffic, supply chain disruptions and hiring issues. Digital communications are helping solve some of those challenges by enabling new experiences. 
+
+Research has shown that sales conversations that involve a video interaction are more likely to result in a successful outcome for the sellers. 
+
+Back to the showrooming issue, by enabling communications while the customers are in the store, a remote sales assistant can help seal the deal there and then, by measuring sentiment, gauging any hesitation and addressing any questions.
+
+
+For instance, if the shopper is indeed thinking about comparison shopping, the agent can do an instant price match while communicating with the shopper in the store and possibly throw in a special coupon or promotion such as for delivery or installation. If the store can meet the customer’s needs while they are ready to make a purchase, they should.
+
+## How the Vonage APIs can help with retail challenges
+
+Vonage Video API can be used to allow the shopper to see the human they are speaking to, with facial expressions and everything that makes an interaction rich; for the shopper to show the agent what they are looking at; and for the agent to share their screen if need be. A Retailer can easily measure the ROI by enabling a switch to video for those conversations (with the shopper’s consent, of course).
+
+To help visualize a solution that can be rapidly implemented, here is a contact center augmentation scenario that Vonage is actively working on with some of its partners:
+
+* A customer walks into a store to purchase a high-priced TV set, needs help deciding and there is no experienced store staff to assist them; 
+* The retailer has placed QR codes on their TV sets; 
+* The shopper scans a QR code which takes them to a webpage on their phone; 
+* On that page, the shopper can enter their phone number to chat using Vonage SMS
+  this effectively puts the shopper in live communication with a remote store representative who is knowledgeable about TV products.
+
+![Vonage contact center augmentation scenario](/content/blog/how-vonage-communications-apis-enable-21st-century-retail-experiences/cc-retail_blog-graphic.png)
+
+
+
+While this article is meant to help get some gears turning, we do have some sample code you can use to see sample code on how Vonage APIs can help with retail interactions. The sample application will show you how to use our Verify API to validate a user and our Voice API to place an in-browser call to a support agent. 
 
 ## Prerequisites
-
-While this article is meant to help get some gears turning, we do have some sample code you can use to see this in action. If you would like to try the sample app
 
 * Node.js v14 or higher
 * Our Command Line Interface, which you can install with `npm install @vonage/cli -g`
@@ -256,13 +282,7 @@ async function bootstrap() {
 }
 ```
 
-Research has also shown that sales conversations that involve a video conversation are more likely to result in a successful outcome for the sellers. 
-Vonage video can be used to allow the shopper to see the human they are speaking to, with facial expressions and everything that makes an interaction rich; for the shopper to show the agent what they are looking at; and for the agent to share their screen if need be. A Retailer can easily measure the ROI by enabling a switch to video for those conversations (with the shopper’s consent of course).
-
-Back to the showrooming issue, by enabling communications while they are in the store, a remote sales assistant can help seal the deal there and then, by gauging any hesitation and addressing any questions. 
-
-
-For instance, if the shopper is indeed thinking about comparison shopping, the agent can do an instant price match while communicating with the shopper in the store and possibly throw in a special coupon or promotion such as for delivery or installation. If the store can meet the customer’s needs while they are ready to make a purchase, they should.
+To see the code described in this blog post in action have a look at the [Github repo](https://github.com/Vonage-Community/blog-retail-demo). 
 
 ## Conclusion
 
@@ -278,3 +298,4 @@ If you have any questions come join our [Vonage Community Slack](https://develo
 * [Vonage Verify API](https://developer.vonage.com/verify/overview)
 * [Vonage Voice API](https://developer.vonage.com/verify/overview)
 * [Contact Center Intelligence](https://www.vonage.com/communications-apis/contact-center-intelligence/)
+* [Real-Time Sentiment Analysis](https://www.vonage.com/communications-apis/programmable-solutions/sentiment-analysis/)
