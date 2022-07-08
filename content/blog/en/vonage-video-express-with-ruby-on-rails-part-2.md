@@ -18,6 +18,8 @@ canonical: ""
 outdated: false
 replacement_url: ""
 ---
+Photo by [Alex Korolkoff](https://unsplash.com/@koff?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/s/photos/ice-hockey?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)\
+\
 This is the second part of a two-part series on creating a video watch party application using Ruby on Rails with Vonage Video API and the Video Express library.
 
 In the [Part 1](<>), we went through the steps of building the Rails app, showed how to use a few Vivid components, and got the Video Express video chat to run. If you have not read that post yet, it would be a good place to start.
@@ -74,6 +76,10 @@ require("components/header");
 require("components/toolbar");
 ```
 
+Because our Javascript will respond to user actions in the DOM, we want to make sure that Javascript is loaded by Rails after the DOM is loaded. So we need to make a small addition and add `defer:true` to the `javascript_pack_tag` in `application.html.erb`:
+
+`<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true  %>`
+
 Now we're ready to build out our components.
 
 ## Building the Header
@@ -107,47 +113,29 @@ Inside the `components/header.js` file we'll have 3 essential parts: listening f
 
 **Important Note About Video Express**
 
-In Video Express you have two set layouts: "Grid" and "Active Speaker". Video Express gives you a standarized video call running fast! But if you want to deviate from the default behaviour, tread lightly and you will probably be better off using the full Video API.\
-\
-In this example, the moderator is the screen sharer. In standardized video conferencing, the screensharer presents while watching the screen being shared. This way they can control things on the screen. However, in our example, the moderator doesn't need to control the screen and wants to see it big, just like everyone else. This is not the default behaviour. We will need to build it out ourselves. Thankfully, Video Express has the `[screenSharingContainer](https://tokbox.com/developer/video-express/reference/room.html)` option which will allow us to build what we want.
+In Video Express you have two set layouts: "Grid" and "Active Speaker". Video Express gives you a standarized video call running fast! But if you want to deviate from the default behaviour, tread lightly and you will probably be better off using the full Video API.
 
-First, let's look at the `toggleParticipants`. It toggles through each participant's window to update the layout. This is important to note because the `room` is unique to each participant, so updates must be done to each user.
+In this example, the moderator is the only screen sharer. We might think that the "Active Speaker" layout would allow us to make the shared screen the dominant screen. However, in standardized video conferencing, the expected behaviour is that the screen sharer presents from another tab. So by default, Video Express does not make their shared screen window the dominant view.
 
-```
-let toggleParticipants = (participants, state) => {
-    const title = document.querySelector('#title');
-    const mode_name = document.querySelector('#mode-name');
-    Object.entries(participants).forEach(participant => {
-      if (state === "chill"){
-        title.innerHTML = "Big Game Live!";
-        mode_name.innerHTML = "Watch Mode"
-        room.setLayoutMode("active-speaker");
-      } else if (state === "watch") {
-        title.innerHTML = "Big Game Chill Zone";
-        mode_name.innerHTML = "Chill Mode";
-        room.setLayoutMode("grid")
-      } else {
-        console.log("Error in state of toggleParticipants")
-      }
-    })
-  }
-```
+In our use case, the moderator doesn't need to control the screen and wants to see their screenshare big, just like everyone else. This is not the default behaviour. We will need to build it out ourselves. Thankfully, Video Express has the `[screenSharingContainer](https://tokbox.com/developer/video-express/reference/room.html)` option which will allow us to build what we want.
 
-We will call the `toggleParticpants` only when the `vwc-switch` is toggled. Notice that this listener is scoped to only listen in the moderator's session. Additionally, the Video Express functions `.startScreensharing()` and `.stopScreensharing()` are call here on `room`.
+We can see from the documentation that we just need to add an empty DIV with id of `screenSharingContainer`. But we need to make it look nice and still be able to take advantage of VideoExpress LayoutManager for responsiveness. And, we only want to have this applied for the moderator in the screensharing mode. So our solution is to append the `screenSharingContainer` beside the `layoutContainer` and write some CSS to make the moderator's view as close as possible to what everyone else sees!
 
-An optional targetElement can be passed to change the location of the screenShare. Read more [here](https://tokbox.com/developer/video-express/reference/room.html).
+
+First let's create the base logic of the listener for the toggle:
 
 ```
-if (document.querySelector('vwc-switch') !== null){
-  const switch_btn = document.querySelector('vwc-switch');
+const switch_btn = document.querySelector('vwc-switch');
+
+if (switch_btn !== null){
   switch_btn.addEventListener('change', (event) => {
     if (event.target.checked){
-      room.startScreensharing();
-      toggleParticipants(room.participants, "chill");
+      <!-- Custom Styles To Scope Moderator View --->
+      <!-- Start Screen Share --> 
     }
     else if (!event.target.checked){
-      room.stopScreensharing();
-      toggleParticipants(room.participants, "watch");
+      <!-- Stop Screen Share -->
+      <!-- Remove Custome Styles From Moderator --->
     }
     else{
       console.log("Error in Switch Button Listener");
@@ -156,9 +144,75 @@ if (document.querySelector('vwc-switch') !== null){
 }
 ```
 
-Because our Javascript is responding to user actions in the DOM, we want to make sure that Javascript is loaded by Rails after the DOM is loaded. So we need to make a small addition and `defer:true` to the `javascript_pack_tag` in `application.html.erb`:
+Now before we can trigger the screenshare in Video Express, we need to prepare the Moderator's view so that the custom styling, which will touch the `layoutContainerWrapper` and `layoutContainer` doesn't affect the view of everyone else. We'll call this function `addModeratorCustomStyles`. 
 
-`<%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true  %>`
+```
+let addModeratorCustomStyles = () => {
+  mode_name.innerHTML = "Watch Mode"
+  layoutContainerWrapper.firstElementChild.classList.add("moderator-screenshare");
+  layoutContainerWrapper.classList.add("moderator-screenshare");
+  screenShare.setAttribute("id", "screenSharingContainer");
+  layoutContainer.appendChild(screenShare);
+}
+```
+We can see this function does two things: update the label of the toggler and adds an id of `screenSharingContainer`. This added id helps us scope CSS to only be applied for the Moderator.
+
+When the screenShare stops, we'll need to remove the custom styling so the Moderator's view is not messed up. So we have a function `removeModeratorCustomStyles` to undo everything from before:
+
+```
+let removeModeratorCustomStyles = () => {
+  mode_name.innerHTML = "Chill Mode";
+  layoutContainerWrapper.firstElementChild.classList.remove("moderator-screenshare");
+  layoutContainerWrapper.classList.remove("moderator-screenshare");
+  screenShare.removeAttribute("id");
+  layoutContainer.removeChild(layoutContainer.lastChild);
+}
+```
+
+Now our toggle header is basically complete. We just need to query our elements and call the Video Express screensharing functions. The full header looks like this:
+
+```
+const switch_btn = document.querySelector('vwc-switch');
+const layoutContainer = document.querySelector('#layoutContainerWrapper');
+const screenShare = document.createElement('div');
+const layoutContainerWrapper = document.querySelector('#layoutContainerWrapper');
+const mode_name = document.querySelector('#mode-name');
+
+let addModeratorCustomStyles = () => {
+  mode_name.innerHTML = "Watch Mode";
+  layoutContainerWrapper.firstElementChild.classList.add("moderator-screenshare");
+  layoutContainerWrapper.classList.add("moderator-screenshare");
+  screenShare.setAttribute("id", "screenSharingContainer");
+  layoutContainer.appendChild(screenShare);
+}
+
+let removeModeratorCustomStyles = () => {
+  mode_name.innerHTML = "Chill Mode";
+  layoutContainerWrapper.firstElementChild.classList.remove("moderator-screenshare");
+  layoutContainerWrapper.classList.remove("moderator-screenshare");
+  screenShare.removeAttribute("id");
+  layoutContainer.removeChild(layoutContainer.lastChild);
+}
+
+if (switch_btn !== null){
+  switch_btn.addEventListener('change', (event) => {
+    if (event.target.checked){
+      addModeratorCustomStyles();
+      room.startScreensharing('screenSharingContainer');
+    }
+    else if (!event.target.checked){
+      room.stopScreensharing('screenSharingContainer');
+      removeModeratorCustomStyles();
+    }
+    else{
+      console.log("Error in Switch Button Listener");
+    }
+  });
+}
+```
+
+
+
 
 ### Building The Toolbar HTML
 
@@ -190,7 +244,7 @@ We can see in the toolbar that there are 3 groups of buttons that will toggle on
 <vwc-icon-button icon="video-solid" shape="circled" layout="ghost" id="unhide-self" class="hidden vvd-scheme-alternate"></vwc-icon-button>
 ```
 
-#### Building DropDown Selects
+#### Building Dropdown Selects
 
 We can see that the second and third sets of buttons are a little different though. They also should be accompanied by a dropdown which will allow the user to select the associated input; microphone or camera. This is possible with Vivid's [`<vwc-action-group` element](https://vivid.vonage.com/?path=/story/alpha-components-actiongroup--split-button). The left side of the action group comes straight from documentation with a button and a separator. On the right side, we'll make use of the Vivid `vwc-select` component to generate a `select` element which we can target with the different options we receive from VideoExpress. We also pass the `vwc-select` two options: selected and disabled to tell it to show and disable the default `vwc-list-item` which will act as a label.
 
