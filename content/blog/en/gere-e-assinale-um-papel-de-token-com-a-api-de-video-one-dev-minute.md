@@ -1,7 +1,8 @@
 ---
-title: Gere e Assinale um Papel de Token com a API de Video | One Dev Minute
+title: Gere e Assinale um Papel de Token com a API de Vídeo | One Dev Minute
 description: Veja como as funções de token permitem identificar usuários e
   alterar as funções de permissão usando a API de Vídeo da Vonage.
+thumbnail: /content/blog/gere-e-assinale-um-papel-de-token-com-a-api-de-vídeo-one-dev-minute/thumbnail.png
 author: amanda-cavallaro
 published: true
 published_at: 2022-07-08T10:09:05.915Z
@@ -22,7 +23,7 @@ Boas vindas ao [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsni
 
 Veja como as funções de token permitem identificar usuários e alterar as funções de permissão usando a API de Vídeo da Vonage.
 
-<youtube id="Mfw9GP8CoSw"></youtube>
+// update with video link <youtube id="Mfw9GP8CoSw"></youtube>
 
 ## Transcrição
 
