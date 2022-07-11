@@ -58,6 +58,6 @@ Puoi approfondire l’argomento seguendo i link qui in basso.
 
 [Fai riferimento al codice su GitHub](https://github.com/nexmo-community/nexmo-sms-autoresponder-node/)
 
-Fai riferimento al codice su Glitch
+[Fai riferimento al codice su Glitch](https://glitch.com/edit/#!/whispering-rebel-ixia)
 
-Unisciti alla Community di Sviluppatori Vonage su Slack
+[Unisciti alla Community di Sviluppatori Vonage su Slack](https://developer.vonage.com/community/slack)
