@@ -53,3 +53,11 @@ Per vederlo all’opera, puoi inviare un messaggio dal tuo telefono al tuo numer
 Puoi approfondire l’argomento seguendo i link qui in basso.
 
 ## Links
+
+[Leggi la versione scritta del tutorial](https://developer.vonage.com/blog/2019/09/16/how-to-send-and-receive-sms-messages-with-node-js-and-express-dr)
+
+[Fai riferimento al codice su GitHub](https://github.com/nexmo-community/nexmo-sms-autoresponder-node/)
+
+Fai riferimento al codice su Glitch
+
+Unisciti alla Community di Sviluppatori Vonage su Slack
