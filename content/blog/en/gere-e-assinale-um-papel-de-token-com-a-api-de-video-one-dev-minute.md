@@ -23,7 +23,7 @@ Boas vindas ao [One Dev Minute](https://www.youtube.com/playlist?list=PLWYngsni
 
 Veja como as funções de token permitem identificar usuários e alterar as funções de permissão usando a API de Vídeo da Vonage.
 
-// update with video link <youtube id="Mfw9GP8CoSw"></youtube>
+<youtube id="EMkGCDKup2Q"></youtube>
 
 ## Transcrição
 
