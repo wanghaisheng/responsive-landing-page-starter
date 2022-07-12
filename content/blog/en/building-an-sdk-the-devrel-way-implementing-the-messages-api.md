@@ -1,5 +1,5 @@
 ---
-title: "Building an SDK the DevRel Way: Implementing the Messages API"
+title: How an SDK Can Add Value to REST APIs
 description: This article provides an inside look into the design of the Java
   SDK's implementation of the Vonage Messages v1 API.
 author: sina-madani
