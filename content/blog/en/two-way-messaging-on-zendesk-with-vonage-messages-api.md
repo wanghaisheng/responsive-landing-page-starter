@@ -53,8 +53,7 @@ An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any 
 1. Deploy webhooks to perform the logic for inbound WhatsApp messages. You can deploy these webhooks on open source platforms such as ngrok or groom IDE
 2. Inbound message webhook will do the following:
 
-   ![1. Navigate to Apps and integrations from left hand menu options. 2. Select webhooks and click on create a new webhook 3. Add details of your webhook including name, optional description, end point URL, request method and  authentication mechanism](/content/blog/two-way-messaging-on-zendesk-with-vonage-messages-api/create-webhook.png "Create a new webhook")
-3. 1. Call Zendesk Search API to check if there’s an open ticket raised by the requestor (in this case, the requestor is the mobile number of the user messaging over WhatsApp)
+   1. Call Zendesk Search API to check if there’s an open ticket raised by the requestor (in this case, the requestor is the mobile number of the user messaging over WhatsApp)
    2. If the ticket is available, use messages API to send the requestor ticket details on WhatsApp
    3. If no open tickets are found, use Zendesk create ticket API to create a ticket based on the user’s inbound message. Use messages API to confirm back successful ticket creation
 
@@ -62,6 +61,9 @@ An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any 
 
 1. Deploy a webhook that will be triggered on a chosen action (the webhook is triggered when an agent adds a comment on a ticket)
 2. From the Zendesk admin center, navigate to Apps and integrations, webhooks, and create a new webhook. Add details of your webhook as below
+
+![1. Navigate to Apps and integrations from the left-hand menu options. 2. Select webhooks and click on create a new webhook 3. Add details of your webhook, including name, an optional description, endpoint URL, request method and  authentication mechanism](/content/blog/two-way-messaging-on-zendesk-with-vonage-messages-api/create-webhook.png "Create a new webhook")
+
 3. Now it’s time to link the webhook to a trigger. From objects and rules, Business rules, choose Triggers.
 4. Add a new trigger. Give a name to the trigger and select the conditions as per your use case. For this example, the webhook is triggered when a ticket is updated by an agent.
 5. Add an action and select Notify active webhooks
