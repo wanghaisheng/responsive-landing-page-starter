@@ -66,6 +66,9 @@ An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any 
 
 3. Now it’s time to link the webhook to a trigger. From objects and rules, Business rules, choose Triggers.
 4. Add a new trigger. Give a name to the trigger and select the conditions as per your use case. For this example, the webhook is triggered when a ticket is updated by an agent.
+
+![1. From Objects and rules in the left-hand menu, navigate to Business rules 2. Select Triggers 3. Choose Add a new trigger 4. Add a name to the trigger and select an appropriate category 5. Select the required conditions for the trigger. In this tutorial it is if a ticket is updated by an agent](/content/blog/two-way-messaging-on-zendesk-with-vonage-messages-api/create-trigger_choosecondition.png "Create trigger")
+
 5. Add an action and select Notify active webhooks
 6. Choose from various placeholders the ticket details you want to send back to your webhook
 
