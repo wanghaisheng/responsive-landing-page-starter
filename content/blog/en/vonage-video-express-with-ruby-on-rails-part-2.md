@@ -119,7 +119,6 @@ In our use case, the moderator doesn't need to control the screen and wants to s
 
 We can see from the documentation that we just need to add an empty DIV with id of `screenSharingContainer`. But we need to make it look nice and still be able to take advantage of VideoExpress LayoutManager for responsiveness. And, we only want to have this applied for the moderator in the screensharing mode. So our solution is to append the `screenSharingContainer` beside the `layoutContainer` and write some CSS to make the moderator's view as close as possible to what everyone else sees!
 
-
 First let's create the base logic of the listener for the toggle:
 
 ```
@@ -153,6 +152,7 @@ let addModeratorCustomStyles = () => {
   layoutContainer.appendChild(screenShare);
 }
 ```
+
 We can see this function does two things: update the label of the toggler and adds an id of `screenSharingContainer`. This added id helps us scope CSS to only be applied for the Moderator.
 
 When the screenShare stops, we'll need to remove the custom styling so the Moderator's view is not messed up. So we have a function `removeModeratorCustomStyles` to undo everything from before:
@@ -208,9 +208,6 @@ if (switch_btn !== null){
   });
 }
 ```
-
-
-
 
 ### Building The Toolbar HTML
 
@@ -821,7 +818,7 @@ Then use ngrok to run a publicly accessible server. From the command line run:
 
 In your terminal you'll see a window that looks like this:
 
-![ngrok server screenshot](/content/blog/vonage-video-express-with-ruby-on-rails/screen-shot-2022-07-01-at-16.32.41.png "ngrok server screenshot")
+![ngrok server screenshot](/content/blog/vonage-video-express-with-ruby-on-rails-part-2/screen-shot-2022-07-01-at-16.32.41.png "ngrok server screenshot")
 
 You'll want to copy the line that ends in ngrok.io. This is the temporarily accessible URL that ngrok will forward your Rails server to. We need Rails to give permission to ngrok to be a host. In our \`config/environments/development.rb\` file, inside the `Rails.application.configure do` we need to add the following line:
 
