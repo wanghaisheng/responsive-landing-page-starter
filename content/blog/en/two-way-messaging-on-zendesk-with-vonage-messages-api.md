@@ -52,6 +52,8 @@ An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any 
 
 1. Deploy webhooks to perform the logic for inbound WhatsApp messages. You can deploy these webhooks on open source platforms such as ngrok or groom IDE
 2. Inbound message webhook will do the following:
+
+   ![1. Navigate to Apps and integrations from left hand menu options. 2. Select webhooks and click on create a new webhook 3. Add details of your webhook including name, optional description, end point URL, request method and  authentication mechanism](/content/blog/two-way-messaging-on-zendesk-with-vonage-messages-api/create-webhook.png "Create a new webhook")
 3. 1. Call Zendesk Search API to check if there’s an open ticket raised by the requestor (in this case, the requestor is the mobile number of the user messaging over WhatsApp)
    2. If the ticket is available, use messages API to send the requestor ticket details on WhatsApp
    3. If no open tickets are found, use Zendesk create ticket API to create a ticket based on the user’s inbound message. Use messages API to confirm back successful ticket creation
