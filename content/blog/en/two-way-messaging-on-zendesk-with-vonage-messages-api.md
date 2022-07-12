@@ -26,8 +26,8 @@ Emailing your customers about Zendesk ticket updates not working well enough? Re
 
 ## We’ll be using
 
-* Vonage messages API, 
-* Zendesk triggers/automations,
+* Vonage messages API 
+* Zendesk triggers/automations
 * A sample application as a middle layer. Here is the [available GitHub SDK](https://github.com/Vonage-Community/tutorial-messagesAPI-nodejs-vonageZendesk) (developed in collaboration with [Toni Kuschan](https://www.linkedin.com/in/kuschan))
 
 ## Objective
@@ -71,6 +71,8 @@ An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any 
 
 5. Add an action and select Notify active webhooks
 6. Choose from various placeholders the ticket details you want to send back to your webhook
+
+![1. From Actions, select Notify active webhook and choose the webhook added earlier 2. Choose from the available parameter to send back to the webhook. In this tutorial, we are sending the ticket title, ID, comment and requester details](/content/blog/two-way-messaging-on-zendesk-with-vonage-messages-api/createtrigger_createaction.png "Create action")
 
 ## Conclusion and Next Steps
 
