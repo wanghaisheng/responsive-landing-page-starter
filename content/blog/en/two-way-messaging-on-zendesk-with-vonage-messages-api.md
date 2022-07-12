@@ -24,13 +24,11 @@ Hi there! In this tutorial, we’ll outline a proof of concept of Zendesk integr
 
 Emailing your customers about Zendesk ticket updates not working well enough? Reach out to your users on SMS or, better yet, on WhatsApp!
 
-
-
 ## We’ll be using
 
 * Vonage messages API, 
 * Zendesk triggers/automations,
-* A sample application as a middle layer. Here is the [available GitHub SDK](https://github.com/Vonage-Community/tutorial-messagesAPI-nodejs-vonageZendesk) (in collaboration with [Toni Kuschan](mailto:toni.kuschan@vonage.com))
+* A sample application as a middle layer. Here is the [available GitHub SDK](https://github.com/Vonage-Community/tutorial-messagesAPI-nodejs-vonageZendesk) (developed in collaboration with [Toni Kuschan](https://www.linkedin.com/in/kuschan))
 
 ## Objective
 
@@ -38,17 +36,13 @@ Connect WhatsApp with Zendesk via Vonage Messages API to create and update ticke
 
 ## Workflow 
 
-In this tutorial, an incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any open tickets from the same requestor). If there are open tickets, the requester receives a WhatsApp message with the ticket details. Additionally, ticket updates trigger a WhatsApp message to the requestor. Below is the workflow carried out in this tutorial.
-
-
+An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any open tickets from the same requestor). If there are open tickets, the requester receives a WhatsApp message with the ticket details. Additionally, ticket updates trigger a WhatsApp message to the requestor. Below is the workflow carried out by this use case.
 
 ## Prerequisites
 
-1. Vonage application
-2. WhatsApp number
-3. Zendesk account (trial account will do as well)
-
-
+* Vonage application
+* WhatsApp number
+* Zendesk account (trial account will do as well)
 
 ## Create a Zendesk Ticket From WhatsApp
 
@@ -60,13 +54,16 @@ In this tutorial, an incoming message on WhatsApp creates a Zendesk ticket (if t
 
 ## Update a Zendesk Ticket
 
-1. Deploy a webhook that will be triggered on a chosen action (in this tutorial, the webhook is triggered when an agent adds a comment on a ticket)
+1. Deploy a webhook that will be triggered on a chosen action (the webhook is triggered when an agent adds a comment on a ticket)
 2. From the Zendesk admin center, navigate to Apps and integrations, webhooks, and create a new webhook. Add details of your webhook as below
+
+
+
 3. Now it’s time to link the webhook to a trigger. From objects and rules, Business rules, choose Triggers.
 4. Add a new trigger. Give a name to the trigger and select the conditions as per your use case. For this example, the webhook is triggered when a ticket is updated by an agent.
 5. Add an action and select Notify active webhooks
 6. Choose from various placeholders the ticket details you want to send back to your webhook
 
-## What’s Next?
+## Conclusion and Next Steps
 
-This tutorial can be customized and tailored to your business requirements and use cases. Care to take it a step further! Check out our conversational AI platform, [Vonage AI studio](https://studio.docs.ai.vonage.com/), to build a complete workflow.
+Today you learnt how to connect WhatsApp with Zendesk using the Vonage Messages API. This tutorial can be customized and tailored to your business requirements and use cases. Care to take it a step further! Check out our conversational AI platform, [Vonage AI studio](https://studio.docs.ai.vonage.com/), to build a complete workflow.
