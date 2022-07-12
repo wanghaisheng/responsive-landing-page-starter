@@ -40,6 +40,8 @@ An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any 
 
 ![Step 1: User sends a message on preferred messaging channel (could be SMS or WhatsApp) Step 2: Inbound webhook added in Vonage application captures the message from step 1 Step 3: The back end application utilizes Zendesk create  or search ticket API to create or search a ticket based on the inbound message Step 4: Upon successful ticket creation or identification, use Vonage messaging API to update the requester on the ticket details](/content/blog/two-way-messaging-on-zendesk-with-vonage-messages-api/vonage-and-zendesk_createticket.jpg "Zendesk and Vonage high level architecture to create tickets")
 
+![Step 1: Configure webhook and triggers on Zendesk to be triggered based on the required action. In this tutorial, the webhook is triggered when an agent updates a ticket Step 2: Utilize Vonage messages API to update the requester on the ticket details based on the original messaging channel (could be SMS or WhatsApp)](/content/blog/two-way-messaging-on-zendesk-with-vonage-messages-api/vonage-and-zendesk_updateticket.jpg "Zendesk and Vonage high level architecture to update ticket")
+
 ## Prerequisites
 
 * Vonage application
