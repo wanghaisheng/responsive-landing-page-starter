@@ -36,7 +36,7 @@ Let's stop there. All of these cases have been considered, and none of them are 
 
 Why do I need the SDK when I can use the API directly? That's fine, here's an example of sending an image over Viber using cURL:
 
-```
+```sh
 curl -X POST https://api.nexmo.com/v1/messages \
   -H 'Authorization: Bearer '$JWT\
   -H 'Content-Type: application/json' \
