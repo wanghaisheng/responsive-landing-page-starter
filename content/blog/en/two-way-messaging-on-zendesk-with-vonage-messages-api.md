@@ -34,6 +34,10 @@ Emailing your customers about Zendesk ticket updates not working well enough? Re
 
 Connect WhatsApp with Zendesk via Vonage Messages API to create and update tickets.
 
+You can see a video presentation of what we will build today below:
+
+
+
 ## Workflow 
 
 An incoming message on WhatsApp creates a Zendesk ticket (if there aren’t any open tickets from the same requestor). If there are open tickets, the requester receives a WhatsApp message with the ticket details. Additionally, ticket updates trigger a WhatsApp message to the requestor. Below is the workflow carried out by this use case.
