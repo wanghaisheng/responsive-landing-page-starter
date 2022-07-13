@@ -93,13 +93,6 @@ The concrete class `MmsVcardRequest.Builder` would look the same, since that's w
 public static final class Builder extends MmsRequest.Builder<Builder> {
     Builder() {}
 
-    /**
-    * (REQUIRED)
-    * Sets the URL of the vCard attachment. Supports only <code>.vcf</code> file extension.
-    *
-    * @param url The URL as a string.
-    * @return This builder.
-    */
     public Builder url(String url) {
         return super.url(url);
     }
@@ -187,6 +180,13 @@ Finally, the concrete sublcass (sticking with the `MmsVcardRequest` example) bec
 public static final class Builder extends MmsRequest.Builder<MmsVcardRequest> {
     Builder() {}
 
+    /**
+    * (REQUIRED)
+    * Sets the URL of the vCard attachment. Supports only <code>.vcf</code> file extension.
+    *
+    * @param url The URL as a string.
+    * @return This builder.
+    */
     public Builder url(String url) {
         return (Builder) super.url(url);
     }
